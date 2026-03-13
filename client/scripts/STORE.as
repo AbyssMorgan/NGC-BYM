@@ -181,12 +181,12 @@ package
       {
          var _loc3_:int = 0;
          var _loc4_:int = 0;
-         if(param2 && param1 <= 300)
+         if(param2 && param1 <= 600)
          {
             return 0;
          }
-         _loc3_ = Math.ceil(param1 * 20 / 60 / 60);
-         _loc4_ = int(Math.sqrt(param1 * 0.8));
+         _loc3_ = Math.ceil(param1 * 10 / 60 / 60);
+         _loc4_ = int(Math.sqrt(param1 * 0.4));
          return Math.min(_loc3_,_loc4_);
       }
       
@@ -451,7 +451,7 @@ package
             if(_loc7_._repairing)
             {
                _repairCount += 1;
-               if(_loc7_._repairTime > 300)
+               if(_loc7_._repairTime > 600)
                {
                   _loc4_ += _loc7_._repairTime;
                   _loc5_ += 1;

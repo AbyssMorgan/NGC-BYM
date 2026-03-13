@@ -8,224 +8,107 @@ package
    
    public class YARD_PROPS
    {
-      public static const _yardProps:Array = [{
-         "id":1,
-         "group":1,
-         "order":1,
-         "buildStatus":0,
-         "type":"resource",
-         "name":"#b_twigsnapper#",
-         "size":100,
-         "cycle":30,
-         "attackgroup":1,
-         "tutstage":0,
-         "sale":0,
-         "description":"twigsnapper_desc",
-         "cls":BUILDING1,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(750),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(15),
-            "re":[[14,1,1]]
-         },{
-            "r1":new SecNum(0),
-            "r2":new SecNum(1575),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(300),
-            "re":[[14,1,1]]
-         },{
-            "r1":new SecNum(0),
-            "r2":new SecNum(3300),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(1200),
-            "re":[[14,1,1]]
-         },{
-            "r1":new SecNum(0),
-            "r2":new SecNum(6950),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(3600),
-            "re":[[14,1,2]]
-         },{
-            "r1":new SecNum(0),
-            "r2":new SecNum(14500),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(7200),
-            "re":[[14,1,2]]
-         },{
-            "r1":new SecNum(0),
-            "r2":new SecNum(30600),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(18000),
-            "re":[[14,1,3]]
-         },{
-            "r1":new SecNum(0),
-            "r2":new SecNum(64300),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(43200),
-            "re":[[14,1,3]]
-         },{
-            "r1":new SecNum(0),
-            "r2":new SecNum(135000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(86400),
-            "re":[[14,1,4]]
-         },{
-            "r1":new SecNum(0),
-            "r2":new SecNum(283600),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(172800),
-            "re":[[14,1,4]]
-         },{
-            "r1":new SecNum(0),
-            "r2":new SecNum(600000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(259200),
-            "re":[[14,1,5]]
-         },{
-            "r1":new SecNum(0),
-            "r2":new SecNum(700000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(345600),
-            "re":[[14,1,6]]
-         },{
-            "r1":new SecNum(0),
-            "r2":new SecNum(800000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(432000),
-            "re":[[14,1,8]]
-         },{
-            "r1":new SecNum(0),
-            "r2":new SecNum(1000000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(518400),
-            "re":[[14,1,10]]
-         },{
-            "r1":new SecNum(0),
-            "r2":new SecNum(2000000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(604800),
-            "re":[[14,1,12]]
-         },{
-            "r1":new SecNum(0),
-            "r2":new SecNum(3000000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(691200),
-            "re":[[14,1,14]]
-         },{
-            "r1":new SecNum(0),
-            "r2":new SecNum(4000000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(777600),
-            "re":[[14,1,15]]
-         },{
-            "r1":new SecNum(0),
-            "r2":new SecNum(5000000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(864000),
-            "re":[[14,1,16]]
-         },{
-            "r1":new SecNum(0),
-            "r2":new SecNum(10000000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(950400),
-            "re":[[14,1,18]]
-         },{
-            "r1":new SecNum(0),
-            "r2":new SecNum(25000000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(1036800),
-            "re":[[14,1,19]]
-         },{
-            "r1":new SecNum(0),
-            "r2":new SecNum(50000000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(1209600),
-            "re":[[14,1,20]]
-         }],
-         "imageData":{
-            "baseurl":"buildings/twigsnapper.v2/",
-            "1":{
-               "anim":["anim.1.png",new Rectangle(-4,10,23,33),34],
-               "top":["top.1.png",new Point(-30,-19)],
-               "shadow":["shadow.1.jpg",new Point(-23,29)],
-               "topdamaged":["top.1.damaged.png",new Point(-30,-19)],
-               "shadowdamaged":["shadow.1.damaged.jpg",new Point(-28,28)],
-               "topdestroyed":["top.destroyed.png",new Point(-34,2)],
-               "shadowdestroyed":["shadow.destroyed.jpg",new Point(-31,20)]
+      public static const _yardProps:Array = [
+         {
+            "id":1,
+            "group":1,
+            "order":1,
+            "buildStatus":0,
+            "type":"resource",
+            "name":"#b_twigsnapper#",
+            "size":100,
+            "cycle":30,
+            "attackgroup":1,
+            "tutstage":0,
+            "sale":0,
+            "description":"twigsnapper_desc",
+            "cls":BUILDING1,
+            "costs":[
+               {"r1":new SecNum(0), "r2":new SecNum(750), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(15), "re":[[14,1,1]]},            // Level 1
+               {"r1":new SecNum(0), "r2":new SecNum(1575), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(300), "re":[[14,1,1]]},          // Level 2
+               {"r1":new SecNum(0), "r2":new SecNum(3300), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1200), "re":[[14,1,1]]},         // Level 3
+               {"r1":new SecNum(0), "r2":new SecNum(6950), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(3600), "re":[[14,1,2]]},         // Level 4
+               {"r1":new SecNum(0), "r2":new SecNum(14500), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(7200), "re":[[14,1,2]]},        // Level 5
+               {"r1":new SecNum(0), "r2":new SecNum(30600), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(18000), "re":[[14,1,3]]},       // Level 6
+               {"r1":new SecNum(0), "r2":new SecNum(64300), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(43200), "re":[[14,1,3]]},       // Level 7
+               {"r1":new SecNum(0), "r2":new SecNum(135000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,4]]},      // Level 8
+               {"r1":new SecNum(0), "r2":new SecNum(283600), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(172800), "re":[[14,1,4]]},     // Level 9
+               {"r1":new SecNum(0), "r2":new SecNum(600000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,5]]},     // Level 10
+               {"r1":new SecNum(0), "r2":new SecNum(700000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(345600), "re":[[14,1,6]]},     // Level 11
+               {"r1":new SecNum(0), "r2":new SecNum(800000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(432000), "re":[[14,1,8]]},     // Level 12
+               {"r1":new SecNum(0), "r2":new SecNum(1000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(518400), "re":[[14,1,10]]},   // Level 13
+               {"r1":new SecNum(0), "r2":new SecNum(2000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(604800), "re":[[14,1,12]]},   // Level 14
+               {"r1":new SecNum(0), "r2":new SecNum(3000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(691200), "re":[[14,1,14]]},   // Level 15
+               {"r1":new SecNum(0), "r2":new SecNum(4000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(777600), "re":[[14,1,15]]},   // Level 16
+               {"r1":new SecNum(0), "r2":new SecNum(5000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(864000), "re":[[14,1,16]]},   // Level 17
+               {"r1":new SecNum(0), "r2":new SecNum(10000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(950400), "re":[[14,1,18]]},  // Level 18
+               {"r1":new SecNum(0), "r2":new SecNum(25000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1036800), "re":[[14,1,19]]}, // Level 19
+               {"r1":new SecNum(0), "r2":new SecNum(50000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1209600), "re":[[14,1,20]]   // Level 20
+            }],
+            "imageData":{
+               "baseurl":"buildings/twigsnapper.v2/",
+               "1":{
+                  "anim":["anim.1.png",new Rectangle(-4,10,23,33),34],
+                  "top":["top.1.png",new Point(-30,-19)],
+                  "shadow":["shadow.1.jpg",new Point(-23,29)],
+                  "topdamaged":["top.1.damaged.png",new Point(-30,-19)],
+                  "shadowdamaged":["shadow.1.damaged.jpg",new Point(-28,28)],
+                  "topdestroyed":["top.destroyed.png",new Point(-34,2)],
+                  "shadowdestroyed":["shadow.destroyed.jpg",new Point(-31,20)]
+               },
+               "3":{
+                  "anim":["anim.3.png",new Rectangle(0,6,23,30),34],
+                  "top":["top.3.png",new Point(-32,-40)],
+                  "shadow":["shadow.3.jpg",new Point(-38,11)],
+                  "topdamaged":["top.3.damaged.png",new Point(-33,-37)],
+                  "shadowdamaged":["shadow.3.damaged.jpg",new Point(-27,25)],
+                  "topdestroyed":["top.destroyed.png",new Point(-34,2)],
+                  "shadowdestroyed":["shadow.destroyed.jpg",new Point(-31,20)]
+               },
+               "6":{
+                  "anim":["anim.6.png",new Rectangle(-1,1,34,34),34],
+                  "top":["top.6.png",new Point(-34,-42)],
+                  "shadow":["shadow.6.jpg",new Point(-25,26)],
+                  "topdamaged":["top.6.damaged.png",new Point(-35,-42)],
+                  "shadowdamaged":["shadow.6.damaged.jpg",new Point(-28,25)],
+                  "topdestroyed":["top.destroyed.png",new Point(-34,2)],
+                  "shadowdestroyed":["shadow.destroyed.jpg",new Point(-31,20)]
+               },
+               "10":{
+                  "anim":["anim.10.png",new Rectangle(-2,3,35,33),34],
+                  "top":["top.10.png",new Point(-34,-54)],
+                  "shadow":["shadow.10.jpg",new Point(-26,26)],
+                  "topdamaged":["top.10.damaged.png",new Point(-35,-41)],
+                  "shadowdamaged":["shadow.10.damaged.jpg",new Point(-28,22)],
+                  "topdestroyed":["top.destroyed.png",new Point(-34,2)],
+                  "shadowdestroyed":["shadow.destroyed.jpg",new Point(-31,20)]
+               }
             },
-            "3":{
-               "anim":["anim.3.png",new Rectangle(0,6,23,30),34],
-               "top":["top.3.png",new Point(-32,-40)],
-               "shadow":["shadow.3.jpg",new Point(-38,11)],
-               "topdamaged":["top.3.damaged.png",new Point(-33,-37)],
-               "shadowdamaged":["shadow.3.damaged.jpg",new Point(-27,25)],
-               "topdestroyed":["top.destroyed.png",new Point(-34,2)],
-               "shadowdestroyed":["shadow.destroyed.jpg",new Point(-31,20)]
+            "upgradeImgData":{
+               "baseurl":"buildingbuttons/",
+               "1":{
+                  "img":"1.1.jpg",
+                  "silhouette_img":"1.3.silhouette.jpg"
+               },
+               "3":{"img":"1.3.jpg"},
+               "6":{"img":"1.6.jpg"},
+               "10":{"img":"1.10.jpg"}
             },
-            "6":{
-               "anim":["anim.6.png",new Rectangle(-1,1,34,34),34],
-               "top":["top.6.png",new Point(-34,-42)],
-               "shadow":["shadow.6.jpg",new Point(-25,26)],
-               "topdamaged":["top.6.damaged.png",new Point(-35,-42)],
-               "shadowdamaged":["shadow.6.damaged.jpg",new Point(-28,25)],
-               "topdestroyed":["top.destroyed.png",new Point(-34,2)],
-               "shadowdestroyed":["shadow.destroyed.jpg",new Point(-31,20)]
+            "thumbImgData":{
+               "baseurl":"buildingthumbs/",
+               "1":{"img":"1.1.png"},
+               "3":{"img":"1.3.png"},
+               "6":{"img":"1.6.png"},
+               "10":{"img":"1.10.png"}
             },
-            "10":{
-               "anim":["anim.10.png",new Rectangle(-2,3,35,33),34],
-               "top":["top.10.png",new Point(-34,-54)],
-               "shadow":["shadow.10.jpg",new Point(-26,26)],
-               "topdamaged":["top.10.damaged.png",new Point(-35,-41)],
-               "shadowdamaged":["shadow.10.damaged.jpg",new Point(-28,22)],
-               "topdestroyed":["top.destroyed.png",new Point(-34,2)],
-               "shadowdestroyed":["shadow.destroyed.jpg",new Point(-31,20)]
-            }
+            "quantity":[0,1,2,4,5,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6],
+            "produce":[2,4,7,11,16,22,29,37,46,56,100,200,360,720,1450,2200,2900,4500,9000,15000],
+            "cycleTime":[10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10],
+            "capacity":[720,2160,5670,13365,29160,60142,118918,227584,424414,775018,1400000,2800000,5000000,10000000,20000000,30000000,40000000,62500000,125000000,250000000],
+            "hp":[500,950,1800,3400,6500,12000,24000,45000,85000,165000,300000,350000,400000,450000,500000,550000,600000,650000,700000,800000],
+            "repairTime":[30,60,120,240,480,960,1920,3840,7680,15360,15360,15360,15360,15360,15360,15360,15360,15360,15360,15360]
          },
-         "upgradeImgData":{
-            "baseurl":"buildingbuttons/",
-            "1":{
-               "img":"1.1.jpg",
-               "silhouette_img":"1.3.silhouette.jpg"
-            },
-            "3":{"img":"1.3.jpg"},
-            "6":{"img":"1.6.jpg"},
-            "10":{"img":"1.10.jpg"}
-         },
-         "thumbImgData":{
-            "baseurl":"buildingthumbs/",
-            "1":{"img":"1.1.png"},
-            "3":{"img":"1.3.png"},
-            "6":{"img":"1.6.png"},
-            "10":{"img":"1.10.png"}
-         },
-         "quantity":[0,1,2,4,5,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6],
-         "produce":[2,4,7,11,16,22,29,37,46,56,100,200,360,720,1450,2200,2900,4500,9000,15000],
-         "cycleTime":[10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10],
-         "capacity":[720,2160,5670,13365,29160,60142,118918,227584,424414,775018,1400000,2800000,5000000,10000000,20000000,30000000,40000000,62500000,125000000,250000000],
-         "hp":[500,950,1800,3400,6500,12000,24000,45000,85000,165000,300000,350000,400000,450000,500000,550000,600000,650000,700000,800000],
-         "repairTime":[30,60,120,240,480,960,1920,3840,7680,15360,15360,15360,15360,15360,15360,15360,15360,15360,15360,15360]
-      },{
+      {
          "id":2,
          "group":1,
          "order":2,
@@ -239,146 +122,27 @@ package
          "sale":0,
          "description":"pebbleshiner_desc",
          "cls":BUILDING2,
-         "costs":[{
-            "r1":new SecNum(750),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(15),
-            "re":[[14,1,1]]
-         },{
-            "r1":new SecNum(1575),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(300),
-            "re":[[14,1,1]]
-         },{
-            "r1":new SecNum(3300),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(1200),
-            "re":[[14,1,1]]
-         },{
-            "r1":new SecNum(6950),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(3600),
-            "re":[[14,1,2]]
-         },{
-            "r1":new SecNum(14500),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(7200),
-            "re":[[14,1,2]]
-         },{
-            "r1":new SecNum(30600),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(18000),
-            "re":[[14,1,3]]
-         },{
-            "r1":new SecNum(64300),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(43200),
-            "re":[[14,1,3]]
-         },{
-            "r1":new SecNum(135000),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(86400),
-            "re":[[14,1,4]]
-         },{
-            "r1":new SecNum(283600),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(172800),
-            "re":[[14,1,4]]
-         },{
-            "r1":new SecNum(600000),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(259200),
-            "re":[[14,1,5]]
-         },{
-            "r1":new SecNum(700000),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(345600),
-            "re":[[14,1,6]]
-         },{
-            "r1":new SecNum(800000),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(432000),
-            "re":[[14,1,8]]
-         },{
-            "r1":new SecNum(1000000),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(518400),
-            "re":[[14,1,10]]
-         },{
-            "r1":new SecNum(2000000),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(604800),
-            "re":[[14,1,12]]
-         },{
-            "r1":new SecNum(3000000),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(691200),
-            "re":[[14,1,14]]
-         },{
-            "r1":new SecNum(4000000),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(777600),
-            "re":[[14,1,15]]
-         },{
-            "r1":new SecNum(5000000),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(864000),
-            "re":[[14,1,16]]
-         },{
-            "r1":new SecNum(10000000),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(950400),
-            "re":[[14,1,18]]
-         },{
-            "r1":new SecNum(25000000),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(1036800),
-            "re":[[14,1,19]]
-         },{
-            "r1":new SecNum(50000000),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(1209600),
-            "re":[[14,1,20]]
+         "costs":[
+            {"r1":new SecNum(750), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(15), "re":[[14,1,1]]},            // Level 1
+            {"r1":new SecNum(1575), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(300), "re":[[14,1,1]]},          // Level 2
+            {"r1":new SecNum(3300), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1200), "re":[[14,1,1]]},         // Level 3
+            {"r1":new SecNum(6950), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(3600), "re":[[14,1,2]]},         // Level 4
+            {"r1":new SecNum(14500), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(7200), "re":[[14,1,2]]},        // Level 5
+            {"r1":new SecNum(30600), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(18000), "re":[[14,1,3]]},       // Level 6
+            {"r1":new SecNum(64300), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(43200), "re":[[14,1,3]]},       // Level 7
+            {"r1":new SecNum(135000), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,4]]},      // Level 8
+            {"r1":new SecNum(283600), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(172800), "re":[[14,1,4]]},     // Level 9
+            {"r1":new SecNum(600000), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,5]]},     // Level 10
+            {"r1":new SecNum(700000), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(345600), "re":[[14,1,6]]},     // Level 11
+            {"r1":new SecNum(800000), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(432000), "re":[[14,1,8]]},     // Level 12
+            {"r1":new SecNum(1000000), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(518400), "re":[[14,1,10]]},   // Level 13
+            {"r1":new SecNum(2000000), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(604800), "re":[[14,1,12]]},   // Level 14
+            {"r1":new SecNum(3000000), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(691200), "re":[[14,1,14]]},   // Level 15
+            {"r1":new SecNum(4000000), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(777600), "re":[[14,1,15]]},   // Level 16
+            {"r1":new SecNum(5000000), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(864000), "re":[[14,1,16]]},   // Level 17
+            {"r1":new SecNum(10000000), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(950400), "re":[[14,1,18]]},  // Level 18
+            {"r1":new SecNum(25000000), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1036800), "re":[[14,1,19]]}, // Level 19
+            {"r1":new SecNum(50000000), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1209600), "re":[[14,1,20]]   // Level 20
          }],
          "imageData":{
             "baseurl":"buildings/pebbleshiner.v2/",
@@ -456,146 +220,27 @@ package
          "sale":0,
          "description":"puttysquisher_desc",
          "cls":BUILDING3,
-         "costs":[{
-            "r1":new SecNum(525),
-            "r2":new SecNum(224),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(20),
-            "re":[[14,1,1]]
-         },{
-            "r1":new SecNum(1102),
-            "r2":new SecNum(470),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(300),
-            "re":[[14,1,1]]
-         },{
-            "r1":new SecNum(2315),
-            "r2":new SecNum(992),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(1200),
-            "re":[[14,1,1]]
-         },{
-            "r1":new SecNum(4862),
-            "r2":new SecNum(2086),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(3600),
-            "re":[[14,1,2]]
-         },{
-            "r1":new SecNum(10210),
-            "r2":new SecNum(4375),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(7200),
-            "re":[[14,1,2]]
-         },{
-            "r1":new SecNum(21441),
-            "r2":new SecNum(9190),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(18000),
-            "re":[[14,1,3]]
-         },{
-            "r1":new SecNum(45027),
-            "r2":new SecNum(19298),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(43200),
-            "re":[[14,1,3]]
-         },{
-            "r1":new SecNum(94557),
-            "r2":new SecNum(40524),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(86400),
-            "re":[[14,1,4]]
-         },{
-            "r1":new SecNum(198570),
-            "r2":new SecNum(85102),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(172800),
-            "re":[[14,1,4]]
-         },{
-            "r1":new SecNum(416997),
-            "r2":new SecNum(178716),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(259200),
-            "re":[[14,1,5]]
-         },{
-            "r1":new SecNum(350000),
-            "r2":new SecNum(350000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(345600),
-            "re":[[14,1,6]]
-         },{
-            "r1":new SecNum(400000),
-            "r2":new SecNum(400000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(432000),
-            "re":[[14,1,8]]
-         },{
-            "r1":new SecNum(500000),
-            "r2":new SecNum(500000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(518400),
-            "re":[[14,1,10]]
-         },{
-            "r1":new SecNum(1000000),
-            "r2":new SecNum(1000000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(604800),
-            "re":[[14,1,12]]
-         },{
-            "r1":new SecNum(1500000),
-            "r2":new SecNum(1500000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(691200),
-            "re":[[14,1,14]]
-         },{
-            "r1":new SecNum(2000000),
-            "r2":new SecNum(2000000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(777600),
-            "re":[[14,1,15]]
-         },{
-            "r1":new SecNum(2500000),
-            "r2":new SecNum(2500000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(864000),
-            "re":[[14,1,16]]
-         },{
-            "r1":new SecNum(5000000),
-            "r2":new SecNum(5000000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(950400),
-            "re":[[14,1,18]]
-         },{
-            "r1":new SecNum(12500000),
-            "r2":new SecNum(12500000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(1036800),
-            "re":[[14,1,19]]
-         },{
-            "r1":new SecNum(25000000),
-            "r2":new SecNum(25000000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(1209600),
-            "re":[[14,1,20]]
+         "costs":[
+		      {"r1":new SecNum(525), "r2":new SecNum(224), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(20), "re":[[14,1,1]]},                 // Level 1
+            {"r1":new SecNum(1102), "r2":new SecNum(470), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(300), "re":[[14,1,1]]},               // Level 2
+            {"r1":new SecNum(2315), "r2":new SecNum(992), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1200), "re":[[14,1,1]]},              // Level 3
+            {"r1":new SecNum(4862), "r2":new SecNum(2086), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(3600), "re":[[14,1,2]]},             // Level 4
+            {"r1":new SecNum(10210), "r2":new SecNum(4375), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(7200), "re":[[14,1,2]]},            // Level 5
+            {"r1":new SecNum(21441), "r2":new SecNum(9190), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(18000), "re":[[14,1,3]]},           // Level 6
+            {"r1":new SecNum(45027), "r2":new SecNum(19298), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(43200), "re":[[14,1,3]]},          // Level 7
+            {"r1":new SecNum(94557), "r2":new SecNum(40524), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,4]]},          // Level 8
+            {"r1":new SecNum(198570), "r2":new SecNum(85102), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(172800), "re":[[14,1,4]]},        // Level 9
+            {"r1":new SecNum(416997), "r2":new SecNum(178716), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,5]]},       // Level 10
+            {"r1":new SecNum(350000), "r2":new SecNum(350000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(345600), "re":[[14,1,6]]},       // Level 11
+            {"r1":new SecNum(400000), "r2":new SecNum(400000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(432000), "re":[[14,1,8]]},       // Level 12
+            {"r1":new SecNum(500000), "r2":new SecNum(500000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(518400), "re":[[14,1,10]]},      // Level 13
+            {"r1":new SecNum(1000000), "r2":new SecNum(1000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(604800), "re":[[14,1,12]]},    // Level 14
+            {"r1":new SecNum(1500000), "r2":new SecNum(1500000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(691200), "re":[[14,1,14]]},    // Level 15
+            {"r1":new SecNum(2000000), "r2":new SecNum(2000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(777600), "re":[[14,1,15]]},    // Level 16
+            {"r1":new SecNum(2500000), "r2":new SecNum(2500000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(864000), "re":[[14,1,16]]},    // Level 17
+            {"r1":new SecNum(5000000), "r2":new SecNum(5000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(950400), "re":[[14,1,18]]},    // Level 18
+            {"r1":new SecNum(12500000), "r2":new SecNum(12500000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1036800), "re":[[14,1,19]]}, // Level 19
+            {"r1":new SecNum(25000000), "r2":new SecNum(25000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1209600), "re":[[14,1,20]]   // Level 20
          }],
          "imageData":{
             "baseurl":"buildings/puttysquisher.v2/",
@@ -673,146 +318,27 @@ package
          "sale":0,
          "description":"goofactory_desc",
          "cls":BUILDING4,
-         "costs":[{
-            "r1":new SecNum(247),
-            "r2":new SecNum(577),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(20),
-            "re":[[14,1,1]]
-         },{
-            "r1":new SecNum(520),
-            "r2":new SecNum(1212),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(300),
-            "re":[[14,1,1]]
-         },{
-            "r1":new SecNum(1090),
-            "r2":new SecNum(2546),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(1200),
-            "re":[[14,1,1]]
-         },{
-            "r1":new SecNum(2290),
-            "r2":new SecNum(5348),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(3600),
-            "re":[[14,1,2]]
-         },{
-            "r1":new SecNum(4810),
-            "r2":new SecNum(11231),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(7200),
-            "re":[[14,1,2]]
-         },{
-            "r1":new SecNum(10108),
-            "r2":new SecNum(23585),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(18000),
-            "re":[[14,1,3]]
-         },{
-            "r1":new SecNum(21227),
-            "r2":new SecNum(49529),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(43200),
-            "re":[[14,1,3]]
-         },{
-            "r1":new SecNum(44580),
-            "r2":new SecNum(104012),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(86400),
-            "re":[[14,1,4]]
-         },{
-            "r1":new SecNum(93600),
-            "r2":new SecNum(218427),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(172800),
-            "re":[[14,1,4]]
-         },{
-            "r1":new SecNum(196584),
-            "r2":new SecNum(458696),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(259200),
-            "re":[[14,1,5]]
-         },{
-            "r1":new SecNum(350000),
-            "r2":new SecNum(350000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(345600),
-            "re":[[14,1,6]]
-         },{
-            "r1":new SecNum(400000),
-            "r2":new SecNum(400000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(432000),
-            "re":[[14,1,8]]
-         },{
-            "r1":new SecNum(500000),
-            "r2":new SecNum(500000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(518400),
-            "re":[[14,1,10]]
-         },{
-            "r1":new SecNum(1000000),
-            "r2":new SecNum(1000000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(604800),
-            "re":[[14,1,12]]
-         },{
-            "r1":new SecNum(1500000),
-            "r2":new SecNum(1500000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(691200),
-            "re":[[14,1,14]]
-         },{
-            "r1":new SecNum(2000000),
-            "r2":new SecNum(2000000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(777600),
-            "re":[[14,1,15]]
-         },{
-            "r1":new SecNum(2500000),
-            "r2":new SecNum(2500000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(864000),
-            "re":[[14,1,16]]
-         },{
-            "r1":new SecNum(5000000),
-            "r2":new SecNum(5000000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(950400),
-            "re":[[14,1,18]]
-         },{
-            "r1":new SecNum(12500000),
-            "r2":new SecNum(12500000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(1036800),
-            "re":[[14,1,19]]
-         },{
-            "r1":new SecNum(25000000),
-            "r2":new SecNum(25000000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(1209600),
-            "re":[[14,1,20]]
+         "costs":[
+            {"r1":new SecNum(247), "r2":new SecNum(577), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(20), "re":[[14,1,1]]},                 // Level 1
+            {"r1":new SecNum(520), "r2":new SecNum(1212), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(300), "re":[[14,1,1]]},               // Level 2
+            {"r1":new SecNum(1090), "r2":new SecNum(2546), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1200), "re":[[14,1,1]]},             // Level 3
+            {"r1":new SecNum(2290), "r2":new SecNum(5348), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(3600), "re":[[14,1,2]]},             // Level 4
+            {"r1":new SecNum(4810), "r2":new SecNum(11231), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(7200), "re":[[14,1,2]]},            // Level 5
+            {"r1":new SecNum(10108), "r2":new SecNum(23585), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(18000), "re":[[14,1,3]]},          // Level 6
+            {"r1":new SecNum(21227), "r2":new SecNum(49529), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(43200), "re":[[14,1,3]]},          // Level 7
+            {"r1":new SecNum(44580), "r2":new SecNum(104012), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,4]]},         // Level 8
+            {"r1":new SecNum(93600), "r2":new SecNum(218427), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(172800), "re":[[14,1,4]]},        // Level 9
+            {"r1":new SecNum(196584), "r2":new SecNum(458696), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,5]]},       // Level 10
+            {"r1":new SecNum(350000), "r2":new SecNum(350000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(345600), "re":[[14,1,6]]},       // Level 11
+            {"r1":new SecNum(400000), "r2":new SecNum(400000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(432000), "re":[[14,1,8]]},       // Level 12
+            {"r1":new SecNum(500000), "r2":new SecNum(500000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(518400), "re":[[14,1,10]]},      // Level 13
+            {"r1":new SecNum(1000000), "r2":new SecNum(1000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(604800), "re":[[14,1,12]]},    // Level 14
+            {"r1":new SecNum(1500000), "r2":new SecNum(1500000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(691200), "re":[[14,1,14]]},    // Level 15
+            {"r1":new SecNum(2000000), "r2":new SecNum(2000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(777600), "re":[[14,1,15]]},    // Level 16
+            {"r1":new SecNum(2500000), "r2":new SecNum(2500000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(864000), "re":[[14,1,16]]},    // Level 17
+            {"r1":new SecNum(5000000), "r2":new SecNum(5000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(950400), "re":[[14,1,18]]},    // Level 18
+            {"r1":new SecNum(12500000), "r2":new SecNum(12500000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1036800), "re":[[14,1,19]]}, // Level 19
+            {"r1":new SecNum(25000000), "r2":new SecNum(25000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1209600), "re":[[14,1,20]]   // Level 20
          }],
          "imageData":{
             "baseurl":"buildings/goofactory.v2/",
@@ -889,41 +415,12 @@ package
          "sale":0,
          "description":"flinger_desc",
          "cls":BUILDING5,
-         "costs":[{
-            "r1":new SecNum(1000),
-            "r2":new SecNum(1000),
-            "r3":new SecNum(500),
-            "r4":new SecNum(0),
-            "time":new SecNum(900),
-            "re":[[14,1,1]]
-         },{
-            "r1":new SecNum(20000),
-            "r2":new SecNum(20000),
-            "r3":new SecNum(10000),
-            "r4":new SecNum(0),
-            "time":new SecNum(7200),
-            "re":[[14,1,2],[11,1,1]]
-         },{
-            "r1":new SecNum(64300),
-            "r2":new SecNum(64300),
-            "r3":new SecNum(32150),
-            "r4":new SecNum(0),
-            "time":new SecNum(10800),
-            "re":[[14,1,3],[11,1,1]]
-         },{
-            "r1":new SecNum(1247840),
-            "r2":new SecNum(1247840),
-            "r3":new SecNum(623920),
-            "r4":new SecNum(0),
-            "time":new SecNum(97200),
-            "re":[[14,1,4],[11,1,1]]
-         },{
-            "r1":new SecNum(5500000),
-            "r2":new SecNum(5500000),
-            "r3":new SecNum(2750000),
-            "r4":new SecNum(0),
-            "time":new SecNum(302400),
-            "re":[[14,1,5],[11,1,1]]
+         "costs":[
+            {"r1":new SecNum(1000), "r2":new SecNum(1000), "r3":new SecNum(500), "r4":new SecNum(0), "time":new SecNum(900), "re":[[14,1,1]]},
+            {"r1":new SecNum(20000), "r2":new SecNum(20000), "r3":new SecNum(10000), "r4":new SecNum(0), "time":new SecNum(7200), "re":[[14,1,2],[11,1,1]]},
+            {"r1":new SecNum(64300), "r2":new SecNum(64300), "r3":new SecNum(32150), "r4":new SecNum(0), "time":new SecNum(10800), "re":[[14,1,3],[11,1,1]]},
+            {"r1":new SecNum(1247840), "r2":new SecNum(1247840), "r3":new SecNum(623920), "r4":new SecNum(0), "time":new SecNum(97200), "re":[[14,1,4],[11,1,1]]},
+            {"r1":new SecNum(5500000), "r2":new SecNum(5500000), "r3":new SecNum(2750000), "r4":new SecNum(0), "time":new SecNum(302400), "re":[[14,1,5],[11,1,1]]
          }],
          "imageData":{
             "baseurl":"buildings/flinger/",
@@ -1004,176 +501,33 @@ package
          "sale":0,
          "description":"storagesilo_desc",
          "cls":BUILDING6,
-         "costs":[{
-            "r1":new SecNum(3010),
-            "r2":new SecNum(1855),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(1200),
-            "re":[[14,1,1],[1,1,1],[2,1,1],[3,1,1],[4,1,1]]
-         },{
-            "r1":new SecNum(7421),
-            "r2":new SecNum(3710),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(1800),
-            "re":[[14,1,2]]
-         },{
-            "r1":new SecNum(14843),
-            "r2":new SecNum(7421),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(2700),
-            "re":[[14,1,2]]
-         },{
-            "r1":new SecNum(29687),
-            "r2":new SecNum(14843),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(4050),
-            "re":[[14,1,3]]
-         },{
-            "r1":new SecNum(59375),
-            "r2":new SecNum(29687),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(6075),
-            "re":[[14,1,3]]
-         },{
-            "r1":new SecNum(118750),
-            "r2":new SecNum(59375),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(9112),
-            "re":[[14,1,3]]
-         },{
-            "r1":new SecNum(237500),
-            "r2":new SecNum(118750),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(13668),
-            "re":[[14,1,4]]
-         },{
-            "r1":new SecNum(475000),
-            "r2":new SecNum(237500),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(20503),
-            "re":[[14,1,4]]
-         },{
-            "r1":new SecNum(950000),
-            "r2":new SecNum(475000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(30754),
-            "re":[[14,1,5]]
-         },{
-            "r1":new SecNum(1900000),
-            "r2":new SecNum(950000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(46132),
-            "re":[[14,1,6]]
-         },{
-            "r1":new SecNum(2500000),
-            "r2":new SecNum(2500000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(86400),
-            "re":[[14,1,8]]
-         },{
-            "r1":new SecNum(5000000),
-            "r2":new SecNum(5000000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(172800),
-            "re":[[14,1,10]]
-         },{
-            "r1":new SecNum(7500000),
-            "r2":new SecNum(7500000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(259200),
-            "re":[[14,1,12]]
-         },{
-            "r1":new SecNum(10000000),
-            "r2":new SecNum(10000000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(345600),
-            "re":[[14,1,14]]
-         },{
-            "r1":new SecNum(25000000),
-            "r2":new SecNum(25000000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(432000),
-            "re":[[14,1,15]]
-         },{
-            "r1":new SecNum(50000000),
-            "r2":new SecNum(50000000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(518400),
-            "re":[[14,1,16]]
-         },{
-            "r1":new SecNum(75000000),
-            "r2":new SecNum(75000000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(604800),
-            "re":[[14,1,17]]
-         },{
-            "r1":new SecNum(100000000),
-            "r2":new SecNum(100000000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(691200),
-            "re":[[14,1,18]]
-         },{
-            "r1":new SecNum(250000000),
-            "r2":new SecNum(250000000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(777600),
-            "re":[[14,1,19]]
-         },{
-            "r1":new SecNum(500000000),
-            "r2":new SecNum(500000000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(864000),
-            "re":[[14,1,20]]
+         "costs":[
+            {"r1":new SecNum(3010), "r2":new SecNum(1855), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1200), "re":[[14,1,1],[1,1,1],[2,1,1],[3,1,1],[4,1,1]]},
+            {"r1":new SecNum(7421), "r2":new SecNum(3710), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1800), "re":[[14,1,2]]},
+            {"r1":new SecNum(14843), "r2":new SecNum(7421), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(2700), "re":[[14,1,2]]},
+            {"r1":new SecNum(29687), "r2":new SecNum(14843), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(4050), "re":[[14,1,3]]},
+            {"r1":new SecNum(59375), "r2":new SecNum(29687), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(6075), "re":[[14,1,3]]},
+            {"r1":new SecNum(118750), "r2":new SecNum(59375), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(9112), "re":[[14,1,3]]},
+            {"r1":new SecNum(237500), "r2":new SecNum(118750), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(13668), "re":[[14,1,4]]},
+            {"r1":new SecNum(475000), "r2":new SecNum(237500), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(20503), "re":[[14,1,4]]},
+            {"r1":new SecNum(950000), "r2":new SecNum(475000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(30754), "re":[[14,1,5]]},
+            {"r1":new SecNum(1900000), "r2":new SecNum(950000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(46132), "re":[[14,1,6]]},
+            {"r1":new SecNum(2500000), "r2":new SecNum(2500000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,8]]},
+            {"r1":new SecNum(5000000), "r2":new SecNum(5000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(172800), "re":[[14,1,10]]},
+            {"r1":new SecNum(7500000), "r2":new SecNum(7500000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,12]]},
+            {"r1":new SecNum(10000000), "r2":new SecNum(10000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(345600), "re":[[14,1,14]]},
+            {"r1":new SecNum(25000000), "r2":new SecNum(25000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(432000), "re":[[14,1,15]]},
+            {"r1":new SecNum(50000000), "r2":new SecNum(50000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(518400), "re":[[14,1,16]]},
+            {"r1":new SecNum(75000000), "r2":new SecNum(75000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(604800), "re":[[14,1,17]]},
+            {"r1":new SecNum(100000000), "r2":new SecNum(100000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(691200), "re":[[14,1,18]]},
+            {"r1":new SecNum(250000000), "r2":new SecNum(250000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(777600), "re":[[14,1,19]]},
+            {"r1":new SecNum(500000000), "r2":new SecNum(500000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(864000), "re":[[14,1,20]]
          }],
          "can_fortify":true,
-         "fortify_costs":[{
-            "r1":new SecNum(59375),
-            "r2":new SecNum(29687),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(60750),
-            "re":[[14,1,5]]
-         },{
-            "r1":new SecNum(118750),
-            "r2":new SecNum(59375),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(91120),
-            "re":[[14,1,6]]
-         },{
-            "r1":new SecNum(637500),
-            "r2":new SecNum(518750),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(136680),
-            "re":[[14,1,7]]
-         },{
-            "r1":new SecNum(1475000),
-            "r2":new SecNum(1237500),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(205030),
-            "re":[[14,1,8]]
+         "fortify_costs":[{"r1":new SecNum(59375), "r2":new SecNum(29687), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(60750), "re":[[14,1,5]]},
+            {"r1":new SecNum(118750), "r2":new SecNum(59375), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(91120), "re":[[14,1,6]]},
+            {"r1":new SecNum(637500), "r2":new SecNum(518750), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(136680), "re":[[14,1,7]]},
+            {"r1":new SecNum(1475000), "r2":new SecNum(1237500), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(205030), "re":[[14,1,8]]
          }],
          "imageData":{
             "baseurl":"buildings/storagesilo/",
@@ -1234,13 +588,8 @@ package
          "sale":0,
          "description":"flag_desc",
          "cls":BUILDING7,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(0),
-            "re":[[0,0,0]]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(0), "re":[[0,0,0]]
          }],
          "thumbImgData":{
             "baseurl":"buildingthumbs/",
@@ -1262,34 +611,11 @@ package
          "sale":0,
          "description":"monsterlocker_desc",
          "cls":BUILDING8,
-         "costs":[{
-            "r1":new SecNum(1800),
-            "r2":new SecNum(2300),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(600),
-            "re":[[14,1,2]]
-         },{
-            "r1":new SecNum(28800),
-            "r2":new SecNum(18400),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(18000),
-            "re":[[14,1,3]]
-         },{
-            "r1":new SecNum(115200),
-            "r2":new SecNum(147200),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(72000),
-            "re":[[14,1,4]]
-         },{
-            "r1":new SecNum(460800),
-            "r2":new SecNum(588800),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(129600),
-            "re":[[14,1,5]]
+         "costs":[
+            {"r1":new SecNum(1800), "r2":new SecNum(2300), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(600), "re":[[14,1,2]]},
+            {"r1":new SecNum(28800), "r2":new SecNum(18400), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(18000), "re":[[14,1,3]]},
+            {"r1":new SecNum(115200), "r2":new SecNum(147200), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(72000), "re":[[14,1,4]]},
+            {"r1":new SecNum(460800), "r2":new SecNum(588800), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(129600), "re":[[14,1,5]]
          }],
          "imageData":{
             "baseurl":"buildings/monsterlocker/",
@@ -1363,27 +689,10 @@ package
          "sale":0,
          "description":"monsterjuicer_desc",
          "cls":BUILDING9,
-         "costs":[{
-            "r1":new SecNum(1000),
-            "r2":new SecNum(1000),
-            "r3":new SecNum(1000),
-            "r4":new SecNum(0),
-            "time":new SecNum(300),
-            "re":[[14,1,1],[15,1,1]]
-         },{
-            "r1":new SecNum(10000),
-            "r2":new SecNum(10000),
-            "r3":new SecNum(10000),
-            "r4":new SecNum(0),
-            "time":new SecNum(7200),
-            "re":[[14,1,2],[15,1,1]]
-         },{
-            "r1":new SecNum(100000),
-            "r2":new SecNum(100000),
-            "r3":new SecNum(100000),
-            "r4":new SecNum(0),
-            "time":new SecNum(21600),
-            "re":[[14,1,3],[15,1,1]]
+         "costs":[
+            {"r1":new SecNum(1000), "r2":new SecNum(1000), "r3":new SecNum(1000), "r4":new SecNum(0), "time":new SecNum(300), "re":[[14,1,1],[15,1,1]]},
+            {"r1":new SecNum(10000), "r2":new SecNum(10000), "r3":new SecNum(10000), "r4":new SecNum(0), "time":new SecNum(7200), "re":[[14,1,2],[15,1,1]]},
+            {"r1":new SecNum(100000), "r2":new SecNum(100000), "r3":new SecNum(100000), "r4":new SecNum(0), "time":new SecNum(21600), "re":[[14,1,3],[15,1,1]]
          }],
          "imageData":{
             "baseurl":"buildings/monsterjuiceloosener/",
@@ -1424,14 +733,9 @@ package
          "sale":0,
          "description":"yardplanner_desc",
          "cls":BUILDING10,
-         "costs":[{
-            "r1":new SecNum(250000),
-            "r2":new SecNum(250000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":0,
-            "time":new SecNum(43200),
-            "re":[[14,1,3]]
+         "costs":[
+            {"r1":new SecNum(250000), "r2":new SecNum(250000), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":0, "time":new SecNum(43200), "re":[[14,1,3]]
          }],
          "imageData":{
             "baseurl":"buildings/yardplanner/",
@@ -1471,20 +775,9 @@ package
          "sale":0,
          "description":"maproom_desc",
          "cls":BUILDING11,
-         "costs":[{
-            "r1":new SecNum(2000),
-            "r2":new SecNum(2000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(900),
-            "re":[[14,1,1]]
-         },{
-            "r1":new SecNum(1000000),
-            "r2":new SecNum(1000000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(345600),
-            "re":[[14,1,6]]
+         "costs":[
+            {"r1":new SecNum(2000), "r2":new SecNum(2000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(900), "re":[[14,1,1]]},
+            {"r1":new SecNum(1000000), "r2":new SecNum(1000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(345600), "re":[[14,1,6]]
          }],
          "imageData":{
             "baseurl":"buildings/maproom/",
@@ -1523,13 +816,8 @@ package
          "tutstage":0,
          "sale":0,
          "description":"generalstore_desc",
-         "costs":[{
-            "r1":new SecNum(1080),
-            "r2":new SecNum(720),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(10),
-            "re":[[14,1,1]]
+         "costs":[
+            {"r1":new SecNum(1080), "r2":new SecNum(720), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(10), "re":[[14,1,1]]
          }],
          "cls":BUILDING12,
          "imageData":{
@@ -1570,27 +858,10 @@ package
          "sale":0,
          "description":"hatchery_desc",
          "cls":BUILDING13,
-         "costs":[{
-            "r1":new SecNum(2000),
-            "r2":new SecNum(2000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(900),
-            "re":[[14,1,1],[15,1,1]]
-         },{
-            "r1":new SecNum(21227),
-            "r2":new SecNum(49529),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(3600),
-            "re":[[14,1,3],[8,1,1]]
-         },{
-            "r1":new SecNum(93600),
-            "r2":new SecNum(218427),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(43200),
-            "re":[[14,1,4]]
+         "costs":[
+            {"r1":new SecNum(2000), "r2":new SecNum(2000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(900), "re":[[14,1,1],[15,1,1]]},
+            {"r1":new SecNum(21227), "r2":new SecNum(49529), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(3600), "re":[[14,1,3],[8,1,1]]},
+            {"r1":new SecNum(93600), "r2":new SecNum(218427), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(43200), "re":[[14,1,4]]
          }],
          "imageData":{
             "baseurl":"buildings/hatchery/",
@@ -1654,176 +925,33 @@ package
          "description":"townhall_desc",
          "block":true,
          "cls":BUILDING14,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(10),
-            "re":[]
-         },{
-            "r1":new SecNum(7000),
-            "r2":new SecNum(7000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(600),
-            "re":[[14,1,1]]
-         },{
-            "r1":new SecNum(42000),
-            "r2":new SecNum(42000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(14400),
-            "re":[[14,1,2]]
-         },{
-            "r1":new SecNum(240000),
-            "r2":new SecNum(240000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(57600),
-            "re":[[14,1,3]]
-         },{
-            "r1":new SecNum(1400000),
-            "r2":new SecNum(1400000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(172800),
-            "re":[[14,1,4]]
-         },{
-            "r1":new SecNum(7560000),
-            "r2":new SecNum(7560000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(345600),
-            "re":[[14,1,5]]
-         },{
-            "r1":new SecNum(11340000),
-            "r2":new SecNum(11340000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(518400),
-            "re":[[14,1,6]]
-         },{
-            "r1":new SecNum(14420000),
-            "r2":new SecNum(14420000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(691200),
-            "re":[[14,1,7]]
-         },{
-            "r1":new SecNum(18680000),
-            "r2":new SecNum(18680000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(1036800),
-            "re":[[14,1,8]]
-         },{
-            "r1":new SecNum(25000000),
-            "r2":new SecNum(25000000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(1209600),
-            "re":[[14,1,9]]
-         },{
-            "r1":new SecNum(50000000),
-            "r2":new SecNum(50000000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(1209600),
-            "re":[[14,1,10]]
-         },{
-            "r1":new SecNum(75000000),
-            "r2":new SecNum(75000000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(1209600),
-            "re":[[14,1,11]]
-         },{
-            "r1":new SecNum(100000000),
-            "r2":new SecNum(100000000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(1209600),
-            "re":[[14,1,12]]
-         },{
-            "r1":new SecNum(200000000),
-            "r2":new SecNum(200000000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(1209600),
-            "re":[[14,1,13]]
-         },{
-            "r1":new SecNum(300000000),
-            "r2":new SecNum(300000000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(1209600),
-            "re":[[14,1,14]]
-         },{
-            "r1":new SecNum(400000000),
-            "r2":new SecNum(400000000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(1209600),
-            "re":[[14,1,15]]
-         },{
-            "r1":new SecNum(500000000),
-            "r2":new SecNum(500000000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(1209600),
-            "re":[[14,1,16]]
-         },{
-            "r1":new SecNum(1000000000),
-            "r2":new SecNum(1000000000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(1209600),
-            "re":[[14,1,17]]
-         },{
-            "r1":new SecNum(2000000000),
-            "r2":new SecNum(2000000000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(1209600),
-            "re":[[14,1,18]]
-         },{
-            "r1":new SecNum(2500000000),
-            "r2":new SecNum(2500000000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(1209600),
-            "re":[[14,1,19]]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(10), "re":[]},
+            {"r1":new SecNum(7000), "r2":new SecNum(7000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(600), "re":[[14,1,1]]},
+            {"r1":new SecNum(42000), "r2":new SecNum(42000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(14400), "re":[[14,1,2]]},
+            {"r1":new SecNum(240000), "r2":new SecNum(240000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(57600), "re":[[14,1,3]]},
+            {"r1":new SecNum(1400000), "r2":new SecNum(1400000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(172800), "re":[[14,1,4]]},
+            {"r1":new SecNum(7560000), "r2":new SecNum(7560000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(345600), "re":[[14,1,5]]},
+            {"r1":new SecNum(11340000), "r2":new SecNum(11340000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(518400), "re":[[14,1,6]]},
+            {"r1":new SecNum(14420000), "r2":new SecNum(14420000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(691200), "re":[[14,1,7]]},
+            {"r1":new SecNum(18680000), "r2":new SecNum(18680000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1036800), "re":[[14,1,8]]},
+            {"r1":new SecNum(25000000), "r2":new SecNum(25000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1209600), "re":[[14,1,9]]},
+            {"r1":new SecNum(50000000), "r2":new SecNum(50000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1209600), "re":[[14,1,10]]},
+            {"r1":new SecNum(75000000), "r2":new SecNum(75000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1209600), "re":[[14,1,11]]},
+            {"r1":new SecNum(100000000), "r2":new SecNum(100000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1209600), "re":[[14,1,12]]},
+            {"r1":new SecNum(200000000), "r2":new SecNum(200000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1209600), "re":[[14,1,13]]},
+            {"r1":new SecNum(300000000), "r2":new SecNum(300000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1209600), "re":[[14,1,14]]},
+            {"r1":new SecNum(400000000), "r2":new SecNum(400000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1209600), "re":[[14,1,15]]},
+            {"r1":new SecNum(500000000), "r2":new SecNum(500000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1209600), "re":[[14,1,16]]},
+            {"r1":new SecNum(1000000000), "r2":new SecNum(1000000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1209600), "re":[[14,1,17]]},
+            {"r1":new SecNum(2000000000), "r2":new SecNum(2000000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1209600), "re":[[14,1,18]]},
+            {"r1":new SecNum(2500000000), "r2":new SecNum(2500000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1209600), "re":[[14,1,19]]
          }],
          "can_fortify":true,
-         "fortify_costs":[{
-            "r1":new SecNum(500000),
-            "r2":new SecNum(100000),
-            "r3":new SecNum(50000),
-            "r4":new SecNum(0),
-            "time":new SecNum(14400),
-            "re":[[14,1,5]]
-         },{
-            "r1":new SecNum(1000000),
-            "r2":new SecNum(1000000),
-            "r3":new SecNum(500000),
-            "r4":new SecNum(0),
-            "time":new SecNum(57600),
-            "re":[[14,1,6]]
-         },{
-            "r1":new SecNum(5000000),
-            "r2":new SecNum(5000000),
-            "r3":new SecNum(2000000),
-            "r4":new SecNum(0),
-            "time":new SecNum(172800),
-            "re":[[14,1,7]]
-         },{
-            "r1":new SecNum(10000000),
-            "r2":new SecNum(10000000),
-            "r3":new SecNum(5000000),
-            "r4":new SecNum(0),
-            "time":new SecNum(345600),
-            "re":[[14,1,8]]
+         "fortify_costs":[{"r1":new SecNum(500000), "r2":new SecNum(100000), "r3":new SecNum(50000), "r4":new SecNum(0), "time":new SecNum(14400), "re":[[14,1,5]]},
+            {"r1":new SecNum(1000000), "r2":new SecNum(1000000), "r3":new SecNum(500000), "r4":new SecNum(0), "time":new SecNum(57600), "re":[[14,1,6]]},
+            {"r1":new SecNum(5000000), "r2":new SecNum(5000000), "r3":new SecNum(2000000), "r4":new SecNum(0), "time":new SecNum(172800), "re":[[14,1,7]]},
+            {"r1":new SecNum(10000000), "r2":new SecNum(10000000), "r3":new SecNum(5000000), "r4":new SecNum(0), "time":new SecNum(345600), "re":[[14,1,8]]
          }],
          "imageData":{
             "baseurl":"buildings/townhall/",
@@ -1977,76 +1105,17 @@ package
          "sale":0,
          "description":"housing_desc",
          "cls":BUILDING15,
-         "costs":[{
-            "r1":new SecNum(2160),
-            "r2":new SecNum(2160),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(300),
-            "re":[[14,1,1]]
-         },{
-            "r1":new SecNum(8640),
-            "r2":new SecNum(8640),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(4500),
-            "re":[[14,1,3],[8,1,1]]
-         },{
-            "r1":new SecNum(34560),
-            "r2":new SecNum(34560),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(10800),
-            "re":[[14,1,4],[8,1,1]]
-         },{
-            "r1":new SecNum(138240),
-            "r2":new SecNum(138240),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(28800),
-            "re":[[14,1,5],[8,1,1]]
-         },{
-            "r1":new SecNum(552960),
-            "r2":new SecNum(552960),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(72000),
-            "re":[[14,1,6],[8,1,1]]
-         },{
-            "r1":new SecNum(2211840),
-            "r2":new SecNum(2211840),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(144000),
-            "re":[[14,1,6],[8,1,1]]
-         },{
-            "r1":new SecNum(4000000),
-            "r2":new SecNum(4000000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(216000),
-            "re":[[14,1,7],[8,1,1]]
-         },{
-            "r1":new SecNum(8000000),
-            "r2":new SecNum(8000000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(216000),
-            "re":[[14,1,8],[8,1,1]]
-         },{
-            "r1":new SecNum(16000000),
-            "r2":new SecNum(16000000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(216000),
-            "re":[[14,1,9],[8,1,1]]
-         },{
-            "r1":new SecNum(32000000),
-            "r2":new SecNum(32000000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(216000),
-            "re":[[14,1,10],[8,1,1]]
+         "costs":[
+            {"r1":new SecNum(2160), "r2":new SecNum(2160), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(300), "re":[[14,1,1]]},
+            {"r1":new SecNum(8640), "r2":new SecNum(8640), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(4500), "re":[[14,1,3],[8,1,1]]},
+            {"r1":new SecNum(34560), "r2":new SecNum(34560), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(10800), "re":[[14,1,4],[8,1,1]]},
+            {"r1":new SecNum(138240), "r2":new SecNum(138240), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(28800), "re":[[14,1,5],[8,1,1]]},
+            {"r1":new SecNum(552960), "r2":new SecNum(552960), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(72000), "re":[[14,1,6],[8,1,1]]},
+            {"r1":new SecNum(2211840), "r2":new SecNum(2211840), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(144000), "re":[[14,1,6],[8,1,1]]},
+            {"r1":new SecNum(4000000), "r2":new SecNum(4000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(216000), "re":[[14,1,7],[8,1,1]]},
+            {"r1":new SecNum(8000000), "r2":new SecNum(8000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(216000), "re":[[14,1,8],[8,1,1]]},
+            {"r1":new SecNum(16000000), "r2":new SecNum(16000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(216000), "re":[[14,1,9],[8,1,1]]},
+            {"r1":new SecNum(32000000), "r2":new SecNum(32000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(216000), "re":[[14,1,10],[8,1,1]]
          }],
          "imageData":{
             "baseurl":"buildings/monsterhousing/",
@@ -2088,13 +1157,8 @@ package
          "description":"hcc_desc",
          "recycleconfirmationoverride":"hcc_msg_recycle",
          "cls":BUILDING16,
-         "costs":[{
-            "r1":new SecNum(4000000),
-            "r2":new SecNum(4000000),
-            "r3":new SecNum(4000000),
-            "r4":new SecNum(0),
-            "time":new SecNum(90000),
-            "re":[[14,1,3],[13,3,2]]
+         "costs":[
+            {"r1":new SecNum(4000000), "r2":new SecNum(4000000), "r3":new SecNum(4000000), "r4":new SecNum(0), "time":new SecNum(90000), "re":[[14,1,3],[13,3,2]]
          }],
          "imageData":{
             "baseurl":"buildings/hatcherycontrolcenter/",
@@ -2134,41 +1198,12 @@ package
          "sale":0,
          "description":"woodenblock_desc",
          "cls":BUILDING17,
-         "costs":[{
-            "r1":new SecNum(1000),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(5),
-            "re":[[14,1,2]]
-         },{
-            "r1":new SecNum(0),
-            "r2":new SecNum(10000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(5),
-            "re":[[14,1,3]]
-         },{
-            "r1":new SecNum(100000),
-            "r2":new SecNum(100000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(5),
-            "re":[[14,1,4]]
-         },{
-            "r1":new SecNum(200000),
-            "r2":new SecNum(200000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(5),
-            "re":[[14,1,5]]
-         },{
-            "r1":new SecNum(400000),
-            "r2":new SecNum(400000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(5),
-            "re":[[14,1,6]]
+         "costs":[
+            {"r1":new SecNum(1000), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(5), "re":[[14,1,2]]},
+            {"r1":new SecNum(0), "r2":new SecNum(10000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(5), "re":[[14,1,3]]},
+            {"r1":new SecNum(100000), "r2":new SecNum(100000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(5), "re":[[14,1,4]]},
+            {"r1":new SecNum(200000), "r2":new SecNum(200000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(5), "re":[[14,1,5]]},
+            {"r1":new SecNum(400000), "r2":new SecNum(400000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(5), "re":[[14,1,6]]
          }],
          "buildingbuttons":["17.1"],
          "imageData":{
@@ -2256,13 +1291,8 @@ package
          "description":"stoneblock_desc",
          "block":true,
          "cls":BUILDING18,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(2000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(5),
-            "re":[[14,1,3]]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(2000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(5), "re":[[14,1,3]]
          }],
          "imageData":{
             "baseurl":"buildings/walls/stone/",
@@ -2299,55 +1329,14 @@ package
          "sale":0,
          "description":"wildmonsterbaiter_desc",
          "cls":BUILDING19,
-         "costs":[{
-            "r1":new SecNum(25000),
-            "r2":new SecNum(25000),
-            "r3":new SecNum(15000),
-            "r4":new SecNum(0),
-            "time":new SecNum(18000),
-            "re":[[14,1,4],[8,1,1]]
-         },{
-            "r1":new SecNum(1000000),
-            "r2":new SecNum(1000000),
-            "r3":new SecNum(500000),
-            "r4":new SecNum(0),
-            "time":new SecNum(36000),
-            "re":[[14,1,4],[8,1,2]]
-         },{
-            "r1":new SecNum(2000000),
-            "r2":new SecNum(2000000),
-            "r3":new SecNum(1000000),
-            "r4":new SecNum(0),
-            "time":new SecNum(72000),
-            "re":[[14,1,4],[8,1,3]]
-         },{
-            "r1":new SecNum(4000000),
-            "r2":new SecNum(4000000),
-            "r3":new SecNum(2000000),
-            "r4":new SecNum(0),
-            "time":new SecNum(144000),
-            "re":[[14,1,5],[8,1,4]]
-         },{
-            "r1":new SecNum(6000000),
-            "r2":new SecNum(6000000),
-            "r3":new SecNum(4000000),
-            "r4":new SecNum(0),
-            "time":new SecNum(288000),
-            "re":[[14,1,6],[8,1,4]]
-         },{
-            "r1":new SecNum(10000000),
-            "r2":new SecNum(10000000),
-            "r3":new SecNum(6000000),
-            "r4":new SecNum(0),
-            "time":new SecNum(576000),
-            "re":[[14,1,7],[8,1,4]]
-         },{
-            "r1":new SecNum(16000000),
-            "r2":new SecNum(16000000),
-            "r3":new SecNum(10000000),
-            "r4":new SecNum(0),
-            "time":new SecNum(1152000),
-            "re":[[14,1,8],[8,1,4]]
+         "costs":[
+            {"r1":new SecNum(25000), "r2":new SecNum(25000), "r3":new SecNum(15000), "r4":new SecNum(0), "time":new SecNum(18000), "re":[[14,1,4],[8,1,1]]},
+            {"r1":new SecNum(1000000), "r2":new SecNum(1000000), "r3":new SecNum(500000), "r4":new SecNum(0), "time":new SecNum(36000), "re":[[14,1,4],[8,1,2]]},
+            {"r1":new SecNum(2000000), "r2":new SecNum(2000000), "r3":new SecNum(1000000), "r4":new SecNum(0), "time":new SecNum(72000), "re":[[14,1,4],[8,1,3]]},
+            {"r1":new SecNum(4000000), "r2":new SecNum(4000000), "r3":new SecNum(2000000), "r4":new SecNum(0), "time":new SecNum(144000), "re":[[14,1,5],[8,1,4]]},
+            {"r1":new SecNum(6000000), "r2":new SecNum(6000000), "r3":new SecNum(4000000), "r4":new SecNum(0), "time":new SecNum(288000), "re":[[14,1,6],[8,1,4]]},
+            {"r1":new SecNum(10000000), "r2":new SecNum(10000000), "r3":new SecNum(6000000), "r4":new SecNum(0), "time":new SecNum(576000), "re":[[14,1,7],[8,1,4]]},
+            {"r1":new SecNum(16000000), "r2":new SecNum(16000000), "r3":new SecNum(10000000), "r4":new SecNum(0), "time":new SecNum(1152000), "re":[[14,1,8],[8,1,4]]
          }],
          "imageData":{
             "baseurl":"buildings/monsterbaiter/",
@@ -2396,162 +1385,79 @@ package
             "damage":20,
             "rate":40,
             "speed":5,
-            "splash":30
-         },{
+            "splash":30},
+            {
             "range":170,
             "damage":40,
             "rate":40,
             "speed":6,
-            "splash":35
-         },{
+            "splash":35},
+            {
             "range":180,
             "damage":60,
             "rate":40,
             "speed":7,
-            "splash":40
-         },{
+            "splash":40},
+            {
             "range":190,
             "damage":80,
             "rate":40,
             "speed":8,
-            "splash":45
-         },{
+            "splash":45},
+            {
             "range":200,
             "damage":100,
             "rate":40,
             "speed":8,
-            "splash":50
-         },{
+            "splash":50},
+            {
             "range":210,
             "damage":120,
             "rate":40,
             "speed":8,
-            "splash":55
-         },{
+            "splash":55},
+            {
             "range":220,
             "damage":140,
             "rate":40,
             "speed":8,
-            "splash":60
-         },{
+            "splash":60},
+            {
             "range":230,
             "damage":160,
             "rate":40,
             "speed":8,
-            "splash":65
-         },{
+            "splash":65},
+            {
             "range":240,
             "damage":180,
             "rate":40,
             "speed":8,
-            "splash":70
-         },{
+            "splash":70},
+            {
             "range":250,
             "damage":200,
             "rate":40,
             "speed":8,
             "splash":75
          }],
-         "costs":[{
-            "r1":new SecNum(2000),
-            "r2":new SecNum(1500),
-            "r3":new SecNum(500),
-            "r4":new SecNum(0),
-            "time":new SecNum(30),
-            "re":[[14,1,1]]
-         },{
-            "r1":new SecNum(10000),
-            "r2":new SecNum(7500),
-            "r3":new SecNum(2500),
-            "r4":new SecNum(0),
-            "time":new SecNum(900),
-            "re":[[14,1,2]]
-         },{
-            "r1":new SecNum(50000),
-            "r2":new SecNum(37500),
-            "r3":new SecNum(12500),
-            "r4":new SecNum(0),
-            "time":new SecNum(2700),
-            "re":[[14,1,3]]
-         },{
-            "r1":new SecNum(250000),
-            "r2":new SecNum(187500),
-            "r3":new SecNum(62500),
-            "r4":new SecNum(0),
-            "time":new SecNum(8100),
-            "re":[[14,1,4]]
-         },{
-            "r1":new SecNum(1250000),
-            "r2":new SecNum(937500),
-            "r3":new SecNum(312500),
-            "r4":new SecNum(0),
-            "time":new SecNum(24300),
-            "re":[[14,1,4]]
-         },{
-            "r1":new SecNum(6250000),
-            "r2":new SecNum(4687500),
-            "r3":new SecNum(1562500),
-            "r4":new SecNum(0),
-            "time":new SecNum(72900),
-            "re":[[14,1,5]]
-         },{
-            "r1":new SecNum(9375000),
-            "r2":new SecNum(7000000),
-            "r3":new SecNum(1562500),
-            "r4":new SecNum(0),
-            "time":new SecNum(172800),
-            "re":[[14,1,6]]
-         },{
-            "r1":new SecNum(14000000),
-            "r2":new SecNum(10500000),
-            "r3":new SecNum(1562500),
-            "r4":new SecNum(0),
-            "time":new SecNum(259200),
-            "re":[[14,1,7]]
-         },{
-            "r1":new SecNum(21000000),
-            "r2":new SecNum(15800000),
-            "r3":new SecNum(1562500),
-            "r4":new SecNum(0),
-            "time":new SecNum(345600),
-            "re":[[14,1,8]]
-         },{
-            "r1":new SecNum(31600000),
-            "r2":new SecNum(23700000),
-            "r3":new SecNum(1562500),
-            "r4":new SecNum(0),
-            "time":new SecNum(475200),
-            "re":[[14,1,8]]
+         "costs":[
+            {"r1":new SecNum(2000), "r2":new SecNum(1500), "r3":new SecNum(500), "r4":new SecNum(0), "time":new SecNum(30), "re":[[14,1,1]]},
+            {"r1":new SecNum(10000), "r2":new SecNum(7500), "r3":new SecNum(2500), "r4":new SecNum(0), "time":new SecNum(900), "re":[[14,1,2]]},
+            {"r1":new SecNum(50000), "r2":new SecNum(37500), "r3":new SecNum(12500), "r4":new SecNum(0), "time":new SecNum(2700), "re":[[14,1,3]]},
+            {"r1":new SecNum(250000), "r2":new SecNum(187500), "r3":new SecNum(62500), "r4":new SecNum(0), "time":new SecNum(8100), "re":[[14,1,4]]},
+            {"r1":new SecNum(1250000), "r2":new SecNum(937500), "r3":new SecNum(312500), "r4":new SecNum(0), "time":new SecNum(24300), "re":[[14,1,4]]},
+            {"r1":new SecNum(6250000), "r2":new SecNum(4687500), "r3":new SecNum(1562500), "r4":new SecNum(0), "time":new SecNum(72900), "re":[[14,1,5]]},
+            {"r1":new SecNum(9375000), "r2":new SecNum(7000000), "r3":new SecNum(1562500), "r4":new SecNum(0), "time":new SecNum(172800), "re":[[14,1,6]]},
+            {"r1":new SecNum(14000000), "r2":new SecNum(10500000), "r3":new SecNum(1562500), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,7]]},
+            {"r1":new SecNum(21000000), "r2":new SecNum(15800000), "r3":new SecNum(1562500), "r4":new SecNum(0), "time":new SecNum(345600), "re":[[14,1,8]]},
+            {"r1":new SecNum(31600000), "r2":new SecNum(23700000), "r3":new SecNum(1562500), "r4":new SecNum(0), "time":new SecNum(475200), "re":[[14,1,8]]
          }],
          "can_fortify":true,
-         "fortify_costs":[{
-            "r1":new SecNum(50000),
-            "r2":new SecNum(37500),
-            "r3":new SecNum(12500),
-            "r4":new SecNum(0),
-            "time":new SecNum(8100),
-            "re":[[14,1,5]]
-         },{
-            "r1":new SecNum(250000),
-            "r2":new SecNum(187500),
-            "r3":new SecNum(62500),
-            "r4":new SecNum(0),
-            "time":new SecNum(24300),
-            "re":[[14,1,6]]
-         },{
-            "r1":new SecNum(1250000),
-            "r2":new SecNum(937500),
-            "r3":new SecNum(312500),
-            "r4":new SecNum(0),
-            "time":new SecNum(72900),
-            "re":[[14,1,7]]
-         },{
-            "r1":new SecNum(6250000),
-            "r2":new SecNum(4687500),
-            "r3":new SecNum(1562500),
-            "r4":new SecNum(0),
-            "time":new SecNum(172800),
-            "re":[[14,1,8]]
+         "fortify_costs":[{"r1":new SecNum(50000), "r2":new SecNum(37500), "r3":new SecNum(12500), "r4":new SecNum(0), "time":new SecNum(8100), "re":[[14,1,5]]},
+            {"r1":new SecNum(250000), "r2":new SecNum(187500), "r3":new SecNum(62500), "r4":new SecNum(0), "time":new SecNum(24300), "re":[[14,1,6]]},
+            {"r1":new SecNum(1250000), "r2":new SecNum(937500), "r3":new SecNum(312500), "r4":new SecNum(0), "time":new SecNum(72900), "re":[[14,1,7]]},
+            {"r1":new SecNum(6250000), "r2":new SecNum(4687500), "r3":new SecNum(1562500), "r4":new SecNum(0), "time":new SecNum(172800), "re":[[14,1,8]]
          }],
          "imageData":{
             "baseurl":"buildings/cannontower/",
@@ -2617,162 +1523,79 @@ package
             "damage":100,
             "rate":80,
             "speed":10,
-            "splash":0
-         },{
+            "splash":0},
+            {
             "range":308,
             "damage":210,
             "rate":80,
             "speed":10,
-            "splash":0
-         },{
+            "splash":0},
+            {
             "range":316,
             "damage":320,
             "rate":80,
             "speed":10,
-            "splash":0
-         },{
+            "splash":0},
+            {
             "range":324,
             "damage":430,
             "rate":80,
             "speed":12,
-            "splash":0
-         },{
+            "splash":0},
+            {
             "range":332,
             "damage":540,
             "rate":80,
             "speed":15,
-            "splash":0
-         },{
+            "splash":0},
+            {
             "range":340,
             "damage":650,
             "rate":80,
             "speed":17,
-            "splash":0
-         },{
+            "splash":0},
+            {
             "range":348,
             "damage":760,
             "rate":80,
             "speed":18,
-            "splash":0
-         },{
+            "splash":0},
+            {
             "range":356,
             "damage":870,
             "rate":80,
             "speed":19,
-            "splash":0
-         },{
+            "splash":0},
+            {
             "range":364,
             "damage":980,
             "rate":80,
             "speed":20,
-            "splash":0
-         },{
+            "splash":0},
+            {
             "range":372,
             "damage":1100,
             "rate":80,
             "speed":20,
             "splash":0
          }],
-         "costs":[{
-            "r1":new SecNum(1500),
-            "r2":new SecNum(2000),
-            "r3":new SecNum(500),
-            "r4":new SecNum(0),
-            "time":new SecNum(30),
-            "re":[[14,1,1]]
-         },{
-            "r1":new SecNum(7500),
-            "r2":new SecNum(10000),
-            "r3":new SecNum(2500),
-            "r4":new SecNum(0),
-            "time":new SecNum(900),
-            "re":[[14,1,2]]
-         },{
-            "r1":new SecNum(37500),
-            "r2":new SecNum(50000),
-            "r3":new SecNum(12500),
-            "r4":new SecNum(0),
-            "time":new SecNum(2700),
-            "re":[[14,1,3]]
-         },{
-            "r1":new SecNum(187500),
-            "r2":new SecNum(250000),
-            "r3":new SecNum(62500),
-            "r4":new SecNum(0),
-            "time":new SecNum(18000),
-            "re":[[14,1,4]]
-         },{
-            "r1":new SecNum(937500),
-            "r2":new SecNum(1250000),
-            "r3":new SecNum(312500),
-            "r4":new SecNum(0),
-            "time":new SecNum(43200),
-            "re":[[14,1,5]]
-         },{
-            "r1":new SecNum(4687500),
-            "r2":new SecNum(6250000),
-            "r3":new SecNum(1562500),
-            "r4":new SecNum(0),
-            "time":new SecNum(86400),
-            "re":[[14,1,6]]
-         },{
-            "r1":new SecNum(7031250),
-            "r2":new SecNum(9375000),
-            "r3":new SecNum(2343750),
-            "r4":new SecNum(0),
-            "time":new SecNum(172800),
-            "re":[[14,1,7]]
-         },{
-            "r1":new SecNum(10547000),
-            "r2":new SecNum(14062000),
-            "r3":new SecNum(3515000),
-            "r4":new SecNum(0),
-            "time":new SecNum(259200),
-            "re":[[14,1,8]]
-         },{
-            "r1":new SecNum(15820000),
-            "r2":new SecNum(21095000),
-            "r3":new SecNum(5275000),
-            "r4":new SecNum(0),
-            "time":new SecNum(345600),
-            "re":[[14,1,8]]
-         },{
-            "r1":new SecNum(32730000),
-            "r2":new SecNum(31650000),
-            "r3":new SecNum(7900000),
-            "r4":new SecNum(0),
-            "time":new SecNum(475200),
-            "re":[[14,1,8]]
+         "costs":[
+            {"r1":new SecNum(1500), "r2":new SecNum(2000), "r3":new SecNum(500), "r4":new SecNum(0), "time":new SecNum(30), "re":[[14,1,1]]},
+            {"r1":new SecNum(7500), "r2":new SecNum(10000), "r3":new SecNum(2500), "r4":new SecNum(0), "time":new SecNum(900), "re":[[14,1,2]]},
+            {"r1":new SecNum(37500), "r2":new SecNum(50000), "r3":new SecNum(12500), "r4":new SecNum(0), "time":new SecNum(2700), "re":[[14,1,3]]},
+            {"r1":new SecNum(187500), "r2":new SecNum(250000), "r3":new SecNum(62500), "r4":new SecNum(0), "time":new SecNum(18000), "re":[[14,1,4]]},
+            {"r1":new SecNum(937500), "r2":new SecNum(1250000), "r3":new SecNum(312500), "r4":new SecNum(0), "time":new SecNum(43200), "re":[[14,1,5]]},
+            {"r1":new SecNum(4687500), "r2":new SecNum(6250000), "r3":new SecNum(1562500), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,6]]},
+            {"r1":new SecNum(7031250), "r2":new SecNum(9375000), "r3":new SecNum(2343750), "r4":new SecNum(0), "time":new SecNum(172800), "re":[[14,1,7]]},
+            {"r1":new SecNum(10547000), "r2":new SecNum(14062000), "r3":new SecNum(3515000), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,8]]},
+            {"r1":new SecNum(15820000), "r2":new SecNum(21095000), "r3":new SecNum(5275000), "r4":new SecNum(0), "time":new SecNum(345600), "re":[[14,1,8]]},
+            {"r1":new SecNum(32730000), "r2":new SecNum(31650000), "r3":new SecNum(7900000), "r4":new SecNum(0), "time":new SecNum(475200), "re":[[14,1,8]]
          }],
          "can_fortify":true,
-         "fortify_costs":[{
-            "r1":new SecNum(37500),
-            "r2":new SecNum(50000),
-            "r3":new SecNum(12500),
-            "r4":new SecNum(0),
-            "time":new SecNum(18000),
-            "re":[[14,1,5]]
-         },{
-            "r1":new SecNum(187500),
-            "r2":new SecNum(250000),
-            "r3":new SecNum(62500),
-            "r4":new SecNum(0),
-            "time":new SecNum(43200),
-            "re":[[14,1,6]]
-         },{
-            "r1":new SecNum(937500),
-            "r2":new SecNum(1250000),
-            "r3":new SecNum(312500),
-            "r4":new SecNum(0),
-            "time":new SecNum(86400),
-            "re":[[14,1,7]]
-         },{
-            "r1":new SecNum(4687500),
-            "r2":new SecNum(6250000),
-            "r3":new SecNum(1562500),
-            "r4":new SecNum(0),
-            "time":new SecNum(172800),
-            "re":[[14,1,8]]
+         "fortify_costs":[{"r1":new SecNum(37500), "r2":new SecNum(50000), "r3":new SecNum(12500), "r4":new SecNum(0), "time":new SecNum(18000), "re":[[14,1,5]]},
+            {"r1":new SecNum(187500), "r2":new SecNum(250000), "r3":new SecNum(62500), "r4":new SecNum(0), "time":new SecNum(43200), "re":[[14,1,6]]},
+            {"r1":new SecNum(937500), "r2":new SecNum(1250000), "r3":new SecNum(312500), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,7]]},
+            {"r1":new SecNum(4687500), "r2":new SecNum(6250000), "r3":new SecNum(1562500), "r4":new SecNum(0), "time":new SecNum(172800), "re":[[14,1,8]]
          }],
          "imageData":{
             "baseurl":"buildings/snipertower/",
@@ -2836,41 +1659,12 @@ package
          "description":"monsterbunker_desc",
          "cls":BUILDING22,
          "stats":[{"range":300},{"range":350},{"range":400},{"range":450},{"range":500}],
-         "costs":[{
-            "r1":new SecNum(250000),
-            "r2":new SecNum(187500),
-            "r3":new SecNum(62500),
-            "r4":new SecNum(0),
-            "time":new SecNum(21600),
-            "re":[[14,1,3],[15,1,1]]
-         },{
-            "r1":new SecNum(1000000),
-            "r2":new SecNum(1000000),
-            "r3":new SecNum(500000),
-            "r4":new SecNum(0),
-            "time":new SecNum(43200),
-            "re":[[14,1,4],[15,1,2]]
-         },{
-            "r1":new SecNum(2000000),
-            "r2":new SecNum(2000000),
-            "r3":new SecNum(1000000),
-            "r4":new SecNum(0),
-            "time":new SecNum(86400),
-            "re":[[14,1,5],[15,1,3]]
-         },{
-            "r1":new SecNum(4000000),
-            "r2":new SecNum(4000000),
-            "r3":new SecNum(2000000),
-            "r4":new SecNum(0),
-            "time":new SecNum(172800),
-            "re":[[14,1,9],[15,1,3]]
-         },{
-            "r1":new SecNum(8000000),
-            "r2":new SecNum(8000000),
-            "r3":new SecNum(4000000),
-            "r4":new SecNum(0),
-            "time":new SecNum(345600),
-            "re":[[14,1,10],[15,1,3]]
+         "costs":[
+            {"r1":new SecNum(250000), "r2":new SecNum(187500), "r3":new SecNum(62500), "r4":new SecNum(0), "time":new SecNum(21600), "re":[[14,1,3],[15,1,1]]},
+            {"r1":new SecNum(1000000), "r2":new SecNum(1000000), "r3":new SecNum(500000), "r4":new SecNum(0), "time":new SecNum(43200), "re":[[14,1,4],[15,1,2]]},
+            {"r1":new SecNum(2000000), "r2":new SecNum(2000000), "r3":new SecNum(1000000), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,5],[15,1,3]]},
+            {"r1":new SecNum(4000000), "r2":new SecNum(4000000), "r3":new SecNum(2000000), "r4":new SecNum(0), "time":new SecNum(172800), "re":[[14,1,9],[15,1,3]]},
+            {"r1":new SecNum(8000000), "r2":new SecNum(8000000), "r3":new SecNum(4000000), "r4":new SecNum(0), "time":new SecNum(345600), "re":[[14,1,10],[15,1,3]]
          }],
          "imageData":{
             "baseurl":"buildings/bunker/",
@@ -2915,136 +1709,65 @@ package
             "damage":120,
             "rate":80,
             "speed":0,
-            "splash":40
-         },{
+            "splash":40},
+            {
             "range":162,
             "damage":150,
             "rate":80,
             "speed":0,
-            "splash":40
-         },{
+            "splash":40},
+            {
             "range":164,
             "damage":180,
             "rate":80,
             "speed":0,
-            "splash":40
-         },{
+            "splash":40},
+            {
             "range":168,
             "damage":200,
             "rate":80,
             "speed":0,
-            "splash":40
-         },{
+            "splash":40},
+            {
             "range":170,
             "damage":220,
             "rate":80,
             "speed":0,
-            "splash":40
-         },{
+            "splash":40},
+            {
             "range":175,
             "damage":240,
             "rate":80,
             "speed":0,
-            "splash":40
-         },{
+            "splash":40},
+            {
             "range":178,
             "damage":260,
             "rate":80,
             "speed":0,
-            "splash":40
-         },{
+            "splash":40},
+            {
             "range":180,
             "damage":280,
             "rate":80,
             "speed":0,
             "splash":40
          }],
-         "costs":[{
-            "r1":new SecNum(500000),
-            "r2":new SecNum(250000),
-            "r3":new SecNum(100000),
-            "r4":new SecNum(0),
-            "time":new SecNum(18000),
-            "re":[[14,1,4]]
-         },{
-            "r1":new SecNum(1000000),
-            "r2":new SecNum(500000),
-            "r3":new SecNum(200000),
-            "r4":new SecNum(0),
-            "time":new SecNum(86400),
-            "re":[[14,1,5]]
-         },{
-            "r1":new SecNum(2000000),
-            "r2":new SecNum(1000000),
-            "r3":new SecNum(400000),
-            "r4":new SecNum(0),
-            "time":new SecNum(172800),
-            "re":[[14,1,6]]
-         },{
-            "r1":new SecNum(4000000),
-            "r2":new SecNum(2000000),
-            "r3":new SecNum(800000),
-            "r4":new SecNum(0),
-            "time":new SecNum(259200),
-            "re":[[14,1,7]]
-         },{
-            "r1":new SecNum(8000000),
-            "r2":new SecNum(4000000),
-            "r3":new SecNum(1600000),
-            "r4":new SecNum(0),
-            "time":new SecNum(388800),
-            "re":[[14,1,8]]
-         },{
-            "r1":new SecNum(16000000),
-            "r2":new SecNum(8000000),
-            "r3":new SecNum(3200000),
-            "r4":new SecNum(0),
-            "time":new SecNum(777600),
-            "re":[[14,1,9]]
-         },{
-            "r1":new SecNum(24000000),
-            "r2":new SecNum(16000000),
-            "r3":new SecNum(6400000),
-            "r4":new SecNum(0),
-            "time":new SecNum(1036800),
-            "re":[[14,1,10]]
-         },{
-            "r1":new SecNum(27000000),
-            "r2":new SecNum(25000000),
-            "r3":new SecNum(12800000),
-            "r4":new SecNum(0),
-            "time":new SecNum(1209600),
-            "re":[[14,1,10]]
+         "costs":[
+            {"r1":new SecNum(500000), "r2":new SecNum(250000), "r3":new SecNum(100000), "r4":new SecNum(0), "time":new SecNum(18000), "re":[[14,1,4]]},
+            {"r1":new SecNum(1000000), "r2":new SecNum(500000), "r3":new SecNum(200000), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,5]]},
+            {"r1":new SecNum(2000000), "r2":new SecNum(1000000), "r3":new SecNum(400000), "r4":new SecNum(0), "time":new SecNum(172800), "re":[[14,1,6]]},
+            {"r1":new SecNum(4000000), "r2":new SecNum(2000000), "r3":new SecNum(800000), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,7]]},
+            {"r1":new SecNum(8000000), "r2":new SecNum(4000000), "r3":new SecNum(1600000), "r4":new SecNum(0), "time":new SecNum(388800), "re":[[14,1,8]]},
+            {"r1":new SecNum(16000000), "r2":new SecNum(8000000), "r3":new SecNum(3200000), "r4":new SecNum(0), "time":new SecNum(777600), "re":[[14,1,9]]},
+            {"r1":new SecNum(24000000), "r2":new SecNum(16000000), "r3":new SecNum(6400000), "r4":new SecNum(0), "time":new SecNum(1036800), "re":[[14,1,10]]},
+            {"r1":new SecNum(27000000), "r2":new SecNum(25000000), "r3":new SecNum(12800000), "r4":new SecNum(0), "time":new SecNum(1209600), "re":[[14,1,10]]
          }],
          "can_fortify":true,
-         "fortify_costs":[{
-            "r1":new SecNum(500000),
-            "r2":new SecNum(250000),
-            "r3":new SecNum(100000),
-            "r4":new SecNum(0),
-            "time":new SecNum(18000),
-            "re":[[14,1,5]]
-         },{
-            "r1":new SecNum(1000000),
-            "r2":new SecNum(500000),
-            "r3":new SecNum(200000),
-            "r4":new SecNum(0),
-            "time":new SecNum(86400),
-            "re":[[14,1,6]]
-         },{
-            "r1":new SecNum(2000000),
-            "r2":new SecNum(1000000),
-            "r3":new SecNum(400000),
-            "r4":new SecNum(0),
-            "time":new SecNum(172800),
-            "re":[[14,1,7]]
-         },{
-            "r1":new SecNum(4000000),
-            "r2":new SecNum(2000000),
-            "r3":new SecNum(800000),
-            "r4":new SecNum(0),
-            "time":new SecNum(259200),
-            "re":[[14,1,8]]
+         "fortify_costs":[{"r1":new SecNum(500000), "r2":new SecNum(250000), "r3":new SecNum(100000), "r4":new SecNum(0), "time":new SecNum(18000), "re":[[14,1,5]]},
+            {"r1":new SecNum(1000000), "r2":new SecNum(500000), "r3":new SecNum(200000), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,6]]},
+            {"r1":new SecNum(2000000), "r2":new SecNum(1000000), "r3":new SecNum(400000), "r4":new SecNum(0), "time":new SecNum(172800), "re":[[14,1,7]]},
+            {"r1":new SecNum(4000000), "r2":new SecNum(2000000), "r3":new SecNum(800000), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,8]]
          }],
          "imageData":{
             "baseurl":"buildings/lasertower/",
@@ -3107,13 +1830,8 @@ package
          "sale":0,
          "description":"boobytrap_desc",
          "cls":BUILDING24,
-         "costs":[{
-            "r1":new SecNum(1000),
-            "r2":new SecNum(1000),
-            "r3":new SecNum(1000),
-            "r4":new SecNum(0),
-            "time":new SecNum(5),
-            "re":[[14,1,2]]
+         "costs":[
+            {"r1":new SecNum(1000), "r2":new SecNum(1000), "r3":new SecNum(1000), "r4":new SecNum(0), "time":new SecNum(5), "re":[[14,1,2]]
          }],
          "imageData":{
             "baseurl":"buildings/boobytrap/",
@@ -3156,136 +1874,65 @@ package
             "damage":100,
             "rate":10,
             "speed":10,
-            "splash":0
-         },{
+            "splash":0},
+            {
             "range":270,
             "damage":120,
             "rate":15,
             "speed":10,
-            "splash":0
-         },{
+            "splash":0},
+            {
             "range":300,
             "damage":140,
             "rate":20,
             "speed":10,
-            "splash":0
-         },{
+            "splash":0},
+            {
             "range":320,
             "damage":160,
             "rate":25,
             "speed":10,
-            "splash":0
-         },{
+            "splash":0},
+            {
             "range":340,
             "damage":180,
             "rate":25,
             "speed":10,
-            "splash":0
-         },{
+            "splash":0},
+            {
             "range":360,
             "damage":200,
             "rate":30,
             "speed":10,
-            "splash":0
-         },{
+            "splash":0},
+            {
             "range":380,
             "damage":220,
             "rate":30,
             "speed":10,
-            "splash":0
-         },{
+            "splash":0},
+            {
             "range":400,
             "damage":240,
             "rate":35,
             "speed":10,
             "splash":0
          }],
-         "costs":[{
-            "r1":new SecNum(187500),
-            "r2":new SecNum(250000),
-            "r3":new SecNum(62500),
-            "r4":new SecNum(0),
-            "time":new SecNum(18000),
-            "re":[[14,1,4]]
-         },{
-            "r1":new SecNum(750000),
-            "r2":new SecNum(1000000),
-            "r3":new SecNum(250000),
-            "r4":new SecNum(0),
-            "time":new SecNum(86400),
-            "re":[[14,1,5]]
-         },{
-            "r1":new SecNum(2250000),
-            "r2":new SecNum(3000000),
-            "r3":new SecNum(750000),
-            "r4":new SecNum(0),
-            "time":new SecNum(172800),
-            "re":[[14,1,6]]
-         },{
-            "r1":new SecNum(5250000),
-            "r2":new SecNum(5000000),
-            "r3":new SecNum(1250000),
-            "r4":new SecNum(0),
-            "time":new SecNum(345600),
-            "re":[[14,1,7]]
-         },{
-            "r1":new SecNum(12000000),
-            "r2":new SecNum(10000000),
-            "r3":new SecNum(2000000),
-            "r4":new SecNum(0),
-            "time":new SecNum(518400),
-            "re":[[14,1,7]]
-         },{
-            "r1":new SecNum(18000000),
-            "r2":new SecNum(15000000),
-            "r3":new SecNum(5000000),
-            "r4":new SecNum(0),
-            "time":new SecNum(691200),
-            "re":[[14,1,9]]
-         },{
-            "r1":new SecNum(24000000),
-            "r2":new SecNum(20000000),
-            "r3":new SecNum(6500000),
-            "r4":new SecNum(0),
-            "time":new SecNum(864000),
-            "re":[[14,1,10]]
-         },{
-            "r1":new SecNum(30000000),
-            "r2":new SecNum(25000000),
-            "r3":new SecNum(7800000),
-            "r4":new SecNum(0),
-            "time":new SecNum(1209600),
-            "re":[[14,1,10]]
+         "costs":[
+            {"r1":new SecNum(187500), "r2":new SecNum(250000), "r3":new SecNum(62500), "r4":new SecNum(0), "time":new SecNum(18000), "re":[[14,1,4]]},
+            {"r1":new SecNum(750000), "r2":new SecNum(1000000), "r3":new SecNum(250000), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,5]]},
+            {"r1":new SecNum(2250000), "r2":new SecNum(3000000), "r3":new SecNum(750000), "r4":new SecNum(0), "time":new SecNum(172800), "re":[[14,1,6]]},
+            {"r1":new SecNum(5250000), "r2":new SecNum(5000000), "r3":new SecNum(1250000), "r4":new SecNum(0), "time":new SecNum(345600), "re":[[14,1,7]]},
+            {"r1":new SecNum(12000000), "r2":new SecNum(10000000), "r3":new SecNum(2000000), "r4":new SecNum(0), "time":new SecNum(518400), "re":[[14,1,7]]},
+            {"r1":new SecNum(18000000), "r2":new SecNum(15000000), "r3":new SecNum(5000000), "r4":new SecNum(0), "time":new SecNum(691200), "re":[[14,1,9]]},
+            {"r1":new SecNum(24000000), "r2":new SecNum(20000000), "r3":new SecNum(6500000), "r4":new SecNum(0), "time":new SecNum(864000), "re":[[14,1,10]]},
+            {"r1":new SecNum(30000000), "r2":new SecNum(25000000), "r3":new SecNum(7800000), "r4":new SecNum(0), "time":new SecNum(1209600), "re":[[14,1,10]]
          }],
          "can_fortify":true,
-         "fortify_costs":[{
-            "r1":new SecNum(187500),
-            "r2":new SecNum(250000),
-            "r3":new SecNum(62500),
-            "r4":new SecNum(0),
-            "time":new SecNum(18000),
-            "re":[[14,1,5]]
-         },{
-            "r1":new SecNum(750000),
-            "r2":new SecNum(1000000),
-            "r3":new SecNum(250000),
-            "r4":new SecNum(0),
-            "time":new SecNum(86400),
-            "re":[[14,1,6]]
-         },{
-            "r1":new SecNum(2250000),
-            "r2":new SecNum(3000000),
-            "r3":new SecNum(750000),
-            "r4":new SecNum(0),
-            "time":new SecNum(172800),
-            "re":[[14,1,7]]
-         },{
-            "r1":new SecNum(5250000),
-            "r2":new SecNum(5000000),
-            "r3":new SecNum(1250000),
-            "r4":new SecNum(0),
-            "time":new SecNum(345600),
-            "re":[[14,1,8]]
+         "fortify_costs":[{"r1":new SecNum(187500), "r2":new SecNum(250000), "r3":new SecNum(62500), "r4":new SecNum(0), "time":new SecNum(18000), "re":[[14,1,5]]},
+            {"r1":new SecNum(750000), "r2":new SecNum(1000000), "r3":new SecNum(250000), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,6]]},
+            {"r1":new SecNum(2250000), "r2":new SecNum(3000000), "r3":new SecNum(750000), "r4":new SecNum(0), "time":new SecNum(172800), "re":[[14,1,7]]},
+            {"r1":new SecNum(5250000), "r2":new SecNum(5000000), "r3":new SecNum(1250000), "r4":new SecNum(0), "time":new SecNum(345600), "re":[[14,1,8]]
          }],
          "imageData":{
             "baseurl":"buildings/lightningtower/",
@@ -3345,41 +1992,12 @@ package
          "sale":0,
          "description":"monsteracademy_desc",
          "cls":BUILDING26,
-         "costs":[{
-            "r1":new SecNum(100000),
-            "r2":new SecNum(100000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(10800),
-            "re":[[14,1,3],[8,1,2]]
-         },{
-            "r1":new SecNum(250000),
-            "r2":new SecNum(250000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(21600),
-            "re":[[14,1,4],[8,1,3]]
-         },{
-            "r1":new SecNum(400000),
-            "r2":new SecNum(400000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(43200),
-            "re":[[14,1,5],[8,1,3]]
-         },{
-            "r1":new SecNum(600000),
-            "r2":new SecNum(600000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(86400),
-            "re":[[14,1,6],[8,1,4]]
-         },{
-            "r1":new SecNum(900000),
-            "r2":new SecNum(900000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(86400),
-            "re":[[14,1,7],[8,1,4]]
+         "costs":[
+            {"r1":new SecNum(100000), "r2":new SecNum(100000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(10800), "re":[[14,1,3],[8,1,2]]},
+            {"r1":new SecNum(250000), "r2":new SecNum(250000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(21600), "re":[[14,1,4],[8,1,3]]},
+            {"r1":new SecNum(400000), "r2":new SecNum(400000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(43200), "re":[[14,1,5],[8,1,3]]},
+            {"r1":new SecNum(600000), "r2":new SecNum(600000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,6],[8,1,4]]},
+            {"r1":new SecNum(900000), "r2":new SecNum(900000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,7],[8,1,4]]
          }],
          "imageData":{
             "baseurl":"buildings/academy/",
@@ -3455,13 +2073,8 @@ package
          "cls":BUILDING27,
          "isImmobile":true,
          "isUntargetable":true,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(5),
-            "re":[[14,1,1]]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(5), "re":[[14,1,1]]
          }],
          "imageData":{
             "baseurl":"buildings/trojanhorse/",
@@ -3489,14 +2102,9 @@ package
          "sale":0,
          "description":"flag_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/flags/",
@@ -3523,14 +2131,9 @@ package
          "sale":0,
          "description":"flag_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/flags/",
@@ -3557,14 +2160,9 @@ package
          "sale":0,
          "description":"flag_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/flags/",
@@ -3591,14 +2189,9 @@ package
          "sale":0,
          "description":"flag_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/flags/",
@@ -3625,15 +2218,9 @@ package
          "sale":0,
          "description":"flag_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "r4":new SecNum(0),
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "r4":new SecNum(0), "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/flags/",
@@ -3660,14 +2247,9 @@ package
          "sale":0,
          "description":"flag_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/flags/",
@@ -3694,14 +2276,9 @@ package
          "sale":0,
          "description":"flag_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/flags/",
@@ -3728,14 +2305,9 @@ package
          "sale":0,
          "description":"flag_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/flags/",
@@ -3762,14 +2334,9 @@ package
          "sale":0,
          "description":"flag_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/flags/",
@@ -3796,14 +2363,9 @@ package
          "sale":0,
          "description":"flag_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/flags/",
@@ -3830,14 +2392,9 @@ package
          "sale":0,
          "description":"flag_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/flags/",
@@ -3864,14 +2421,9 @@ package
          "sale":0,
          "description":"flag_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/flags/",
@@ -3898,14 +2450,9 @@ package
          "sale":0,
          "description":"flag_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/flags/",
@@ -3932,14 +2479,9 @@ package
          "sale":0,
          "description":"flag_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/flags/",
@@ -3966,14 +2508,9 @@ package
          "sale":0,
          "description":"flag_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/flags/",
@@ -4000,14 +2537,9 @@ package
          "sale":0,
          "description":"flag_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/flags/",
@@ -4034,14 +2566,9 @@ package
          "sale":0,
          "description":"flag_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/flags/",
@@ -4068,14 +2595,9 @@ package
          "sale":0,
          "description":"flag_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/flags/",
@@ -4102,14 +2624,9 @@ package
          "sale":0,
          "description":"flag_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/flags/",
@@ -4136,14 +2653,9 @@ package
          "sale":0,
          "description":"flag_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/flags/",
@@ -4170,14 +2682,9 @@ package
          "sale":0,
          "description":"flag_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/flags/",
@@ -4204,15 +2711,9 @@ package
          "sale":1,
          "description":"flag_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":250,
-            "r4":new SecNum(0),
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":250, "r4":new SecNum(0), "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/flags/",
@@ -4239,15 +2740,9 @@ package
          "sale":1,
          "description":"flag_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":250,
-            "r4":new SecNum(0),
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":250, "r4":new SecNum(0), "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/flags/",
@@ -4274,34 +2769,11 @@ package
          "description":"catapult_desc",
          "block":false,
          "cls":BUILDING51,
-         "costs":[{
-            "r1":new SecNum(75000),
-            "r2":new SecNum(75000),
-            "r3":new SecNum(75000),
-            "r4":new SecNum(0),
-            "time":new SecNum(5400),
-            "re":[[14,1,3],[5,1,1]]
-         },{
-            "r1":new SecNum(128600),
-            "r2":new SecNum(128600),
-            "r3":new SecNum(128600),
-            "r4":new SecNum(0),
-            "time":new SecNum(10800),
-            "re":[[14,1,4],[5,1,1]]
-         },{
-            "r1":new SecNum(257200),
-            "r2":new SecNum(257200),
-            "r3":new SecNum(257200),
-            "r4":new SecNum(0),
-            "time":new SecNum(21600),
-            "re":[[14,1,5],[5,1,1]]
-         },{
-            "r1":new SecNum(514400),
-            "r2":new SecNum(514400),
-            "r3":new SecNum(514400),
-            "r4":new SecNum(0),
-            "time":new SecNum(43200),
-            "re":[[14,1,6],[5,1,1]]
+         "costs":[
+            {"r1":new SecNum(75000), "r2":new SecNum(75000), "r3":new SecNum(75000), "r4":new SecNum(0), "time":new SecNum(5400), "re":[[14,1,3],[5,1,1]]},
+            {"r1":new SecNum(128600), "r2":new SecNum(128600), "r3":new SecNum(128600), "r4":new SecNum(0), "time":new SecNum(10800), "re":[[14,1,4],[5,1,1]]},
+            {"r1":new SecNum(257200), "r2":new SecNum(257200), "r3":new SecNum(257200), "r4":new SecNum(0), "time":new SecNum(21600), "re":[[14,1,5],[5,1,1]]},
+            {"r1":new SecNum(514400), "r2":new SecNum(514400), "r3":new SecNum(514400), "r4":new SecNum(0), "time":new SecNum(43200), "re":[[14,1,6],[5,1,1]]
          }],
          "imageData":{
             "baseurl":"buildings/catapult/",
@@ -4364,14 +2836,9 @@ package
          "description":"Leave a little note for a friend.",
          "block":true,
          "cls":BUILDING52,
-         "costs":[{
-            "r1":new SecNum(100000),
-            "r2":new SecNum(100000),
-            "r3":new SecNum(100000),
-            "r4":new SecNum(100000),
-            "r5":0,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(100000), "r2":new SecNum(100000), "r3":new SecNum(100000), "r4":new SecNum(100000),
+            "r5":0, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/flags/",
@@ -4447,14 +2914,9 @@ package
          "sale":0,
          "description":"bdg_acorn_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/acorn/",
@@ -4480,14 +2942,9 @@ package
          "sale":0,
          "description":"bdg_beehive_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/beehive/",
@@ -4513,14 +2970,9 @@ package
          "sale":0,
          "description":"bdg_birdhous_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/birdhouse/",
@@ -4547,14 +2999,9 @@ package
          "description":"bdg_tent_desc",
          "block":true,
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/campingtent/",
@@ -4581,14 +3028,9 @@ package
          "description":"bdg_jax_desc",
          "block":true,
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/childrensjax/",
@@ -4614,14 +3056,9 @@ package
          "sale":0,
          "description":"bdg_gnome_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/gnomes/",
@@ -4647,14 +3084,9 @@ package
          "sale":0,
          "description":"bdg_gnome_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/gnomes/",
@@ -4680,14 +3112,9 @@ package
          "sale":0,
          "description":"bdg_gnome_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/gnomes/",
@@ -4713,14 +3140,9 @@ package
          "sale":0,
          "description":"bdg_hammock_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/hammock/",
@@ -4746,14 +3168,9 @@ package
          "sale":0,
          "description":"bdg_lawnchair_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/lawnchair/",
@@ -4779,14 +3196,9 @@ package
          "sale":0,
          "description":"bdg_outhouse_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/outhouse/",
@@ -4812,14 +3224,9 @@ package
          "sale":0,
          "description":"bdg_pinecone_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/pinecone/",
@@ -4846,14 +3253,9 @@ package
          "description":"bdg_rock_desc",
          "block":true,
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/rock/",
@@ -4879,14 +3281,9 @@ package
          "sale":0,
          "description":"bdg_scaleelectric_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/scaleelectriccartoyset/",
@@ -4913,14 +3310,9 @@ package
          "description":"flag_desc",
          "block":true,
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/scarecrow/",
@@ -4947,14 +3339,9 @@ package
          "description":"bdg_sundial_desc",
          "block":true,
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/sundial/",
@@ -4980,14 +3367,9 @@ package
          "sale":0,
          "description":"bdg_tikitorch_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/tikitorch/",
@@ -5014,14 +3396,9 @@ package
          "sale":0,
          "description":"bdg_walnut_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/walnut/",
@@ -5047,14 +3424,9 @@ package
          "sale":0,
          "description":"bdg_tombstone_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/graveyardtombstone/",
@@ -5080,14 +3452,9 @@ package
          "sale":0,
          "description":"bdg_pokeyhead_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/headsonsticks/",
@@ -5113,14 +3480,9 @@ package
          "sale":0,
          "description":"bdg_octohead_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/headsonsticks/",
@@ -5146,14 +3508,9 @@ package
          "sale":0,
          "description":"bdg_bolthead_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/headsonsticks/",
@@ -5179,14 +3536,9 @@ package
          "sale":0,
          "description":"bdg_banditohead_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/headsonsticks/",
@@ -5212,14 +3564,9 @@ package
          "sale":0,
          "description":"bdg_brainhead_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/headsonsticks/",
@@ -5245,14 +3592,9 @@ package
          "sale":0,
          "description":"bdg_crabhead_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/headsonsticks/",
@@ -5278,14 +3620,9 @@ package
          "sale":0,
          "description":"bdg_davehead_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/headsonsticks/",
@@ -5311,14 +3648,9 @@ package
          "sale":0,
          "description":"bdg_eyerahead_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/headsonsticks/",
@@ -5344,14 +3676,9 @@ package
          "sale":0,
          "description":"bdg_fanghead_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/headsonsticks/",
@@ -5377,14 +3704,9 @@ package
          "sale":0,
          "description":"bdg_finkhead_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/headsonsticks/",
@@ -5410,14 +3732,9 @@ package
          "sale":0,
          "description":"bdg_ichihead_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/headsonsticks/",
@@ -5443,14 +3760,9 @@ package
          "sale":0,
          "description":"bdg_projectxhead_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/headsonsticks/",
@@ -5476,14 +3788,9 @@ package
          "sale":0,
          "description":"bdg_blackberrybush_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/blackberrybush/",
@@ -5506,14 +3813,9 @@ package
          "sale":0,
          "description":"bdg_bonsaitree_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/bonsaitree/",
@@ -5539,14 +3841,9 @@ package
          "sale":0,
          "description":"bdg_cactus_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/cactus/",
@@ -5572,14 +3869,9 @@ package
          "sale":0,
          "description":"bdg_flytrap_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/flytrap/",
@@ -5605,14 +3897,9 @@ package
          "sale":0,
          "description":"bdg_thorns_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/thorns/",
@@ -5638,14 +3925,9 @@ package
          "sale":0,
          "description":"bdg_pinkflowers_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/flowers/",
@@ -5671,14 +3953,9 @@ package
          "sale":0,
          "description":"bdg_purpleflowers_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/flowers/",
@@ -5704,14 +3981,9 @@ package
          "sale":0,
          "description":"bdg_redflowers_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/flowers/",
@@ -5737,14 +4009,9 @@ package
          "sale":0,
          "description":"bdg_whiteflowers_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/flowers/",
@@ -5770,14 +4037,9 @@ package
          "sale":0,
          "description":"bdg_yellowflowers_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/flowers/",
@@ -5803,14 +4065,9 @@ package
          "sale":0,
          "description":"bdg_baseballstatue_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "buildingbuttons":["96.v2"],
          "upgradeImgData":{
@@ -5841,14 +4098,9 @@ package
          "sale":0,
          "description":"bdg_footballstatue_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "buildingbuttons":["97.v2"],
          "upgradeImgData":{
@@ -5879,14 +4131,9 @@ package
          "sale":0,
          "description":"bdg_soccerstatue_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "buildingbuttons":["98.v2"],
          "upgradeImgData":{
@@ -5917,14 +4164,9 @@ package
          "sale":0,
          "description":"bdg_libertystatue_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "buildingbuttons":["99.v2"],
          "upgradeImgData":{
@@ -5955,14 +4197,9 @@ package
          "sale":0,
          "description":"bdg_eiffelstatue_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "buildingbuttons":["100.v2"],
          "upgradeImgData":{
@@ -5993,14 +4230,9 @@ package
          "sale":0,
          "description":"bdg_bigben_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "buildingbuttons":["101.v2"],
          "upgradeImgData":{
@@ -6031,14 +4263,9 @@ package
          "sale":0,
          "description":"bdg_pool_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/pool/",
@@ -6064,14 +4291,9 @@ package
          "sale":0,
          "description":"bdg_pond_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/pond/",
@@ -6094,14 +4316,9 @@ package
          "sale":0,
          "description":"bdg_zengarden_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/zengarden/",
@@ -6127,14 +4344,9 @@ package
          "sale":0,
          "description":"bdg_fountain_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/fountain/",
@@ -6160,14 +4372,9 @@ package
          "sale":0,
          "description":"bdg_teagarden_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/japaneseteagarden/",
@@ -6193,14 +4400,9 @@ package
          "sale":0,
          "description":"bdg_monsterskull_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/headsonsticks/",
@@ -6226,14 +4428,9 @@ package
          "sale":0,
          "description":"bdg_rubikunsolved_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/rubikscube/",
@@ -6259,14 +4456,9 @@ package
          "sale":0,
          "description":"bdg_rubiksolved_desc",
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/rubikscube/",
@@ -6293,14 +4485,9 @@ package
          "description":"bdg_halloween_desc",
          "block":true,
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":1000,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":1000, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/pumpkins/",
@@ -6326,14 +4513,9 @@ package
          "sale":0,
          "description":"bdg_halloween_desc",
          "block":true,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":0,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":0, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/pumpkins/",
@@ -6375,13 +4557,8 @@ package
          "isNew":true,
          "block":false,
          "cls":BUILDING113,
-         "costs":[{
-            "r1":new SecNum(2000),
-            "r2":new SecNum(2000),
-            "r3":new SecNum(2000),
-            "r4":new SecNum(0),
-            "time":new SecNum(300),
-            "re":[[14,1,1]]
+         "costs":[
+            {"r1":new SecNum(2000), "r2":new SecNum(2000), "r3":new SecNum(2000), "r4":new SecNum(0), "time":new SecNum(300), "re":[[14,1,1]]
          }],
          "imageData":{
             "baseurl":"buildings/radiotower/",
@@ -6417,13 +4594,8 @@ package
          "sale":0,
          "description":"monstercage_desc",
          "cls":CHAMPIONCAGE,
-         "costs":[{
-            "r1":new SecNum(500000),
-            "r2":new SecNum(500000),
-            "r3":new SecNum(250000),
-            "r4":new SecNum(0),
-            "time":new SecNum(86400),
-            "re":[[14,1,4]]
+         "costs":[
+            {"r1":new SecNum(500000), "r2":new SecNum(500000), "r3":new SecNum(250000), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,4]]
          }],
          "imageData":{
             "baseurl":"buildings/monstercage/",
@@ -6462,136 +4634,65 @@ package
             "damage":200,
             "rate":60,
             "speed":20,
-            "splash":180
-         },{
+            "splash":180},
+            {
             "range":320,
             "damage":250,
             "rate":60,
             "speed":24,
-            "splash":185
-         },{
+            "splash":185},
+            {
             "range":340,
             "damage":250,
             "rate":60,
             "speed":28,
-            "splash":190
-         },{
+            "splash":190},
+            {
             "range":360,
             "damage":250,
             "rate":60,
             "speed":32,
-            "splash":195
-         },{
+            "splash":195},
+            {
             "range":380,
             "damage":300,
             "rate":60,
             "speed":36,
-            "splash":200
-         },{
+            "splash":200},
+            {
             "range":400,
             "damage":350,
             "rate":60,
             "speed":40,
-            "splash":215
-         },{
+            "splash":215},
+            {
             "range":420,
             "damage":350,
             "rate":60,
             "speed":44,
-            "splash":220
-         },{
+            "splash":220},
+            {
             "range":440,
             "damage":400,
             "rate":60,
             "speed":48,
             "splash":225
          }],
-         "costs":[{
-            "r1":new SecNum(215000),
-            "r2":new SecNum(280000),
-            "r3":new SecNum(62500),
-            "r4":new SecNum(0),
-            "time":new SecNum(18000),
-            "re":[[14,1,4]]
-         },{
-            "r1":new SecNum(850000),
-            "r2":new SecNum(1200000),
-            "r3":new SecNum(250000),
-            "r4":new SecNum(0),
-            "time":new SecNum(86400),
-            "re":[[14,1,5]]
-         },{
-            "r1":new SecNum(2750000),
-            "r2":new SecNum(3400000),
-            "r3":new SecNum(750000),
-            "r4":new SecNum(0),
-            "time":new SecNum(172800),
-            "re":[[14,1,6]]
-         },{
-            "r1":new SecNum(5750000),
-            "r2":new SecNum(5200000),
-            "r3":new SecNum(1250000),
-            "r4":new SecNum(0),
-            "time":new SecNum(345600),
-            "re":[[14,1,7]]
-         },{
-            "r1":new SecNum(13500000),
-            "r2":new SecNum(11000000),
-            "r3":new SecNum(2000000),
-            "r4":new SecNum(0),
-            "time":new SecNum(518400),
-            "re":[[14,1,7]]
-         },{
-            "r1":new SecNum(16000000),
-            "r2":new SecNum(14000000),
-            "r3":new SecNum(4000000),
-            "r4":new SecNum(0),
-            "time":new SecNum(691200),
-            "re":[[14,1,9]]
-         },{
-            "r1":new SecNum(19200000),
-            "r2":new SecNum(16800000),
-            "r3":new SecNum(8000000),
-            "r4":new SecNum(0),
-            "time":new SecNum(864000),
-            "re":[[14,1,10]]
-         },{
-            "r1":new SecNum(23040000),
-            "r2":new SecNum(21000000),
-            "r3":new SecNum(16000000),
-            "r4":new SecNum(0),
-            "time":new SecNum(1209600),
-            "re":[[14,1,10]]
+         "costs":[
+            {"r1":new SecNum(215000), "r2":new SecNum(280000), "r3":new SecNum(62500), "r4":new SecNum(0), "time":new SecNum(18000), "re":[[14,1,4]]},
+            {"r1":new SecNum(850000), "r2":new SecNum(1200000), "r3":new SecNum(250000), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,5]]},
+            {"r1":new SecNum(2750000), "r2":new SecNum(3400000), "r3":new SecNum(750000), "r4":new SecNum(0), "time":new SecNum(172800), "re":[[14,1,6]]},
+            {"r1":new SecNum(5750000), "r2":new SecNum(5200000), "r3":new SecNum(1250000), "r4":new SecNum(0), "time":new SecNum(345600), "re":[[14,1,7]]},
+            {"r1":new SecNum(13500000), "r2":new SecNum(11000000), "r3":new SecNum(2000000), "r4":new SecNum(0), "time":new SecNum(518400), "re":[[14,1,7]]},
+            {"r1":new SecNum(16000000), "r2":new SecNum(14000000), "r3":new SecNum(4000000), "r4":new SecNum(0), "time":new SecNum(691200), "re":[[14,1,9]]},
+            {"r1":new SecNum(19200000), "r2":new SecNum(16800000), "r3":new SecNum(8000000), "r4":new SecNum(0), "time":new SecNum(864000), "re":[[14,1,10]]},
+            {"r1":new SecNum(23040000), "r2":new SecNum(21000000), "r3":new SecNum(16000000), "r4":new SecNum(0), "time":new SecNum(1209600), "re":[[14,1,10]]
          }],
          "can_fortify":true,
-         "fortify_costs":[{
-            "r1":new SecNum(215000),
-            "r2":new SecNum(280000),
-            "r3":new SecNum(62500),
-            "r4":new SecNum(0),
-            "time":new SecNum(18000),
-            "re":[[14,1,5]]
-         },{
-            "r1":new SecNum(850000),
-            "r2":new SecNum(1200000),
-            "r3":new SecNum(250000),
-            "r4":new SecNum(0),
-            "time":new SecNum(86400),
-            "re":[[14,1,6]]
-         },{
-            "r1":new SecNum(2750000),
-            "r2":new SecNum(3400000),
-            "r3":new SecNum(750000),
-            "r4":new SecNum(0),
-            "time":new SecNum(172800),
-            "re":[[14,1,7]]
-         },{
-            "r1":new SecNum(5750000),
-            "r2":new SecNum(5200000),
-            "r3":new SecNum(1250000),
-            "r4":new SecNum(0),
-            "time":new SecNum(345600),
-            "re":[[14,1,8]]
+         "fortify_costs":[{"r1":new SecNum(215000), "r2":new SecNum(280000), "r3":new SecNum(62500), "r4":new SecNum(0), "time":new SecNum(18000), "re":[[14,1,5]]},
+            {"r1":new SecNum(850000), "r2":new SecNum(1200000), "r3":new SecNum(250000), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,6]]},
+            {"r1":new SecNum(2750000), "r2":new SecNum(3400000), "r3":new SecNum(750000), "r4":new SecNum(0), "time":new SecNum(172800), "re":[[14,1,7]]},
+            {"r1":new SecNum(5750000), "r2":new SecNum(5200000), "r3":new SecNum(1250000), "r4":new SecNum(0), "time":new SecNum(345600), "re":[[14,1,8]]
          }],
          "imageData":{
             "baseurl":"buildings/flaktower/",
@@ -6648,27 +4749,10 @@ package
          "sale":0,
          "description":"monsterlab_desc",
          "cls":MONSTERLAB,
-         "costs":[{
-            "r1":new SecNum(100000),
-            "r2":new SecNum(100000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(10800),
-            "re":[[14,1,5],[8,1,3],[26,1,2]]
-         },{
-            "r1":new SecNum(300000),
-            "r2":new SecNum(300000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(43200),
-            "re":[[14,1,6],[8,1,4],[26,1,3]]
-         },{
-            "r1":new SecNum(600000),
-            "r2":new SecNum(600000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(86400),
-            "re":[[14,1,7],[8,1,4],[26,1,4]]
+         "costs":[
+            {"r1":new SecNum(100000), "r2":new SecNum(100000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(10800), "re":[[14,1,5],[8,1,3],[26,1,2]]},
+            {"r1":new SecNum(300000), "r2":new SecNum(300000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(43200), "re":[[14,1,6],[8,1,4],[26,1,3]]},
+            {"r1":new SecNum(600000), "r2":new SecNum(600000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,7],[8,1,4],[26,1,4]]
          }],
          "imageData":{
             "baseurl":"buildings/monsterlab/",
@@ -6707,13 +4791,8 @@ package
          "sale":0,
          "description":"heavytrap_desc",
          "cls":BUILDING117,
-         "costs":[{
-            "r1":new SecNum(50000),
-            "r2":new SecNum(50000),
-            "r3":new SecNum(50000),
-            "r4":new SecNum(0),
-            "time":new SecNum(5),
-            "re":[[14,1,4]]
+         "costs":[
+            {"r1":new SecNum(50000), "r2":new SecNum(50000), "r3":new SecNum(50000), "r4":new SecNum(0), "time":new SecNum(5), "re":[[14,1,4]]
          }],
          "imageData":{
             "baseurl":"buildings/heavytrap/",
@@ -6754,136 +4833,65 @@ package
             "damage":400,
             "rate":160,
             "speed":20,
-            "splash":0
-         },{
+            "splash":0},
+            {
             "range":315,
             "damage":600,
             "rate":160,
             "speed":20,
-            "splash":0
-         },{
+            "splash":0},
+            {
             "range":330,
             "damage":900,
             "rate":160,
             "speed":20,
-            "splash":0
-         },{
+            "splash":0},
+            {
             "range":345,
             "damage":1200,
             "rate":160,
             "speed":20,
-            "splash":0
-         },{
+            "splash":0},
+            {
             "range":360,
             "damage":1600,
             "rate":160,
             "speed":20,
-            "splash":0
-         },{
+            "splash":0},
+            {
             "range":380,
             "damage":2000,
             "rate":160,
             "speed":20,
-            "splash":0
-         },{
+            "splash":0},
+            {
             "range":390,
             "damage":2200,
             "rate":160,
             "speed":20,
-            "splash":0
-         },{
+            "splash":0},
+            {
             "range":400,
             "damage":2500,
             "rate":160,
             "speed":20,
             "splash":0
          }],
-         "costs":[{
-            "r1":new SecNum(2000000),
-            "r2":new SecNum(2400000),
-            "r3":new SecNum(1600000),
-            "r4":new SecNum(0),
-            "time":new SecNum(43200),
-            "re":[[14,1,5]]
-         },{
-            "r1":new SecNum(3600000),
-            "r2":new SecNum(4320000),
-            "r3":new SecNum(2880000),
-            "r4":new SecNum(0),
-            "time":new SecNum(86400),
-            "re":[[14,1,6]]
-         },{
-            "r1":new SecNum(6480000),
-            "r2":new SecNum(7776000),
-            "r3":new SecNum(5184000),
-            "r4":new SecNum(0),
-            "time":new SecNum(172800),
-            "re":[[14,1,7]]
-         },{
-            "r1":new SecNum(11664000),
-            "r2":new SecNum(13996800),
-            "r3":new SecNum(9331200),
-            "r4":new SecNum(0),
-            "time":new SecNum(345600),
-            "re":[[14,1,7]]
-         },{
-            "r1":new SecNum(16995200),
-            "r2":new SecNum(18194240),
-            "r3":new SecNum(16796160),
-            "r4":new SecNum(0),
-            "time":new SecNum(518400),
-            "re":[[14,1,8]]
-         },{
-            "r1":new SecNum(20220000),
-            "r2":new SecNum(24202000),
-            "r3":new SecNum(19000000),
-            "r4":new SecNum(0),
-            "time":new SecNum(691200),
-            "re":[[14,1,9]]
-         },{
-            "r1":new SecNum(25000000),
-            "r2":new SecNum(25000000),
-            "r3":new SecNum(22000000),
-            "r4":new SecNum(0),
-            "time":new SecNum(864000),
-            "re":[[14,1,10]]
-         },{
-            "r1":new SecNum(27000000),
-            "r2":new SecNum(27000000),
-            "r3":new SecNum(26500000),
-            "r4":new SecNum(0),
-            "time":new SecNum(1209600),
-            "re":[[14,1,10]]
+         "costs":[
+            {"r1":new SecNum(2000000), "r2":new SecNum(2400000), "r3":new SecNum(1600000), "r4":new SecNum(0), "time":new SecNum(43200), "re":[[14,1,5]]},
+            {"r1":new SecNum(3600000), "r2":new SecNum(4320000), "r3":new SecNum(2880000), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,6]]},
+            {"r1":new SecNum(6480000), "r2":new SecNum(7776000), "r3":new SecNum(5184000), "r4":new SecNum(0), "time":new SecNum(172800), "re":[[14,1,7]]},
+            {"r1":new SecNum(11664000), "r2":new SecNum(13996800), "r3":new SecNum(9331200), "r4":new SecNum(0), "time":new SecNum(345600), "re":[[14,1,7]]},
+            {"r1":new SecNum(16995200), "r2":new SecNum(18194240), "r3":new SecNum(16796160), "r4":new SecNum(0), "time":new SecNum(518400), "re":[[14,1,8]]},
+            {"r1":new SecNum(20220000), "r2":new SecNum(24202000), "r3":new SecNum(19000000), "r4":new SecNum(0), "time":new SecNum(691200), "re":[[14,1,9]]},
+            {"r1":new SecNum(25000000), "r2":new SecNum(25000000), "r3":new SecNum(22000000), "r4":new SecNum(0), "time":new SecNum(864000), "re":[[14,1,10]]},
+            {"r1":new SecNum(27000000), "r2":new SecNum(27000000), "r3":new SecNum(26500000), "r4":new SecNum(0), "time":new SecNum(1209600), "re":[[14,1,10]]
          }],
          "can_fortify":true,
-         "fortify_costs":[{
-            "r1":new SecNum(2000000),
-            "r2":new SecNum(2400000),
-            "r3":new SecNum(1600000),
-            "r4":new SecNum(0),
-            "time":new SecNum(43200),
-            "re":[[14,1,5]]
-         },{
-            "r1":new SecNum(2600000),
-            "r2":new SecNum(3320000),
-            "r3":new SecNum(1880000),
-            "r4":new SecNum(0),
-            "time":new SecNum(86400),
-            "re":[[14,1,6]]
-         },{
-            "r1":new SecNum(4480000),
-            "r2":new SecNum(4776000),
-            "r3":new SecNum(2184000),
-            "r4":new SecNum(0),
-            "time":new SecNum(172800),
-            "re":[[14,1,7]]
-         },{
-            "r1":new SecNum(9664000),
-            "r2":new SecNum(9996800),
-            "r3":new SecNum(4331200),
-            "r4":new SecNum(0),
-            "time":new SecNum(345600),
-            "re":[[14,1,8]]
+         "fortify_costs":[{"r1":new SecNum(2000000), "r2":new SecNum(2400000), "r3":new SecNum(1600000), "r4":new SecNum(0), "time":new SecNum(43200), "re":[[14,1,5]]},
+            {"r1":new SecNum(2600000), "r2":new SecNum(3320000), "r3":new SecNum(1880000), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,6]]},
+            {"r1":new SecNum(4480000), "r2":new SecNum(4776000), "r3":new SecNum(2184000), "r4":new SecNum(0), "time":new SecNum(172800), "re":[[14,1,7]]},
+            {"r1":new SecNum(9664000), "r2":new SecNum(9996800), "r3":new SecNum(4331200), "r4":new SecNum(0), "time":new SecNum(345600), "re":[[14,1,8]]
          }],
          "imageData":{
             "baseurl":"buildings/railguntower/",
@@ -6945,13 +4953,8 @@ package
          "sale":0,
          "description":"championchamber_desc",
          "cls":CHAMPIONCHAMBER,
-         "costs":[{
-            "r1":new SecNum(500000),
-            "r2":new SecNum(500000),
-            "r3":new SecNum(250000),
-            "r4":new SecNum(0),
-            "time":new SecNum(86400),
-            "re":[[14,1,4],[114,1,1]]
+         "costs":[
+            {"r1":new SecNum(500000), "r2":new SecNum(500000), "r3":new SecNum(250000), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,4],[114,1,1]]
          }],
          "imageData":{
             "baseurl":"buildings/champchamber/",
@@ -6989,14 +4992,9 @@ package
          "description":"bdg_biggulp_desc",
          "block":true,
          "cls":BDECORATION,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":150,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/biggulp/",
@@ -7023,54 +5021,19 @@ package
          "description":"bdg_wmitotem1_desc",
          "block":true,
          "cls":BTOTEM,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":0,
-            "time":new SecNum(0),
-            "re":[]
-         },{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":0,
-            "time":new SecNum(0),
-            "re":[]
-         },{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":0,
-            "time":new SecNum(0),
-            "re":[]
-         },{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":0,
-            "time":new SecNum(0),
-            "re":[]
-         },{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":0,
-            "time":new SecNum(0),
-            "re":[]
-         },{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":0,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":0, "time":new SecNum(0), "re":[]},
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":0, "time":new SecNum(0), "re":[]},
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":0, "time":new SecNum(0), "re":[]},
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":0, "time":new SecNum(0), "re":[]},
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":0, "time":new SecNum(0), "re":[]},
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":0, "time":new SecNum(0), "re":[]
          }],
          "names":["bdg_wmitotem1","bdg_wmitotem2","bdg_wmitotem3","bdg_wmitotem4","bdg_wmitotem5","bdg_wmitotem6"],
          "descriptions":["bdg_wmitotem1_desc","bdg_wmitotem2_desc","bdg_wmitotem3_desc","bdg_wmitotem4_desc","bdg_wmitotem5_desc","bdg_wmitotem6_desc"],
@@ -7118,7 +5081,8 @@ package
          "sale":0,
          "description":"placeholder",
          "cls":null,
-         "costs":[{"r1":new SecNum(0),"r2":new SecNum(0),"r3":new SecNum(0),"r4":new SecNum(0),"time":new SecNum(0),"re":[]}],
+         "costs":[
+            {"r1":new SecNum(0),"r2":new SecNum(0),"r3":new SecNum(0),"r4":new SecNum(0),"time":new SecNum(0),"re":[]}],
          "quantity":[0],
          "hp":[1],
          "repairTime":[1]
@@ -7135,7 +5099,8 @@ package
          "sale":0,
          "description":"placeholder",
          "cls":null,
-         "costs":[{"r1":new SecNum(0),"r2":new SecNum(0),"r3":new SecNum(0),"r4":new SecNum(0),"time":new SecNum(0),"re":[]}],
+         "costs":[
+            {"r1":new SecNum(0),"r2":new SecNum(0),"r3":new SecNum(0),"r4":new SecNum(0),"time":new SecNum(0),"re":[]}],
          "quantity":[0],
          "hp":[1],
          "repairTime":[1]
@@ -7152,7 +5117,8 @@ package
          "sale":0,
          "description":"placeholder",
          "cls":null,
-         "costs":[{"r1":new SecNum(0),"r2":new SecNum(0),"r3":new SecNum(0),"r4":new SecNum(0),"time":new SecNum(0),"re":[]}],
+         "costs":[
+            {"r1":new SecNum(0),"r2":new SecNum(0),"r3":new SecNum(0),"r4":new SecNum(0),"time":new SecNum(0),"re":[]}],
          "quantity":[0],
          "hp":[1],
          "repairTime":[1]
@@ -7169,7 +5135,8 @@ package
          "sale":0,
          "description":"placeholder",
          "cls":null,
-         "costs":[{"r1":new SecNum(0),"r2":new SecNum(0),"r3":new SecNum(0),"r4":new SecNum(0),"time":new SecNum(0),"re":[]}],
+         "costs":[
+            {"r1":new SecNum(0),"r2":new SecNum(0),"r3":new SecNum(0),"r4":new SecNum(0),"time":new SecNum(0),"re":[]}],
          "quantity":[0],
          "hp":[1],
          "repairTime":[1]
@@ -7186,7 +5153,8 @@ package
          "sale":0,
          "description":"placeholder",
          "cls":null,
-         "costs":[{"r1":new SecNum(0),"r2":new SecNum(0),"r3":new SecNum(0),"r4":new SecNum(0),"time":new SecNum(0),"re":[]}],
+         "costs":[
+            {"r1":new SecNum(0),"r2":new SecNum(0),"r3":new SecNum(0),"r4":new SecNum(0),"time":new SecNum(0),"re":[]}],
          "quantity":[0],
          "hp":[1],
          "repairTime":[1]
@@ -7205,41 +5173,12 @@ package
          "cls":INFERNOPORTAL,
          "isImmobile":true,
          "isUntargetable":true,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(5),
-            "re":[[14,1,1]]
-         },{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(5),
-            "re":[[14,1,1]]
-         },{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(5),
-            "re":[[14,1,1]]
-         },{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(5),
-            "re":[[14,1,1]]
-         },{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(5),
-            "re":[[14,1,1]]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(5), "re":[[14,1,1]]},
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(5), "re":[[14,1,1]]},
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(5), "re":[[14,1,1]]},
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(5), "re":[[14,1,1]]},
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(5), "re":[[14,1,1]]
          }],
          "imageData":{
             "baseurl":"buildings/iportal/",
@@ -7301,99 +5240,40 @@ package
          "stats":[{
             "range":160,
             "damage":1100,
-            "rate":15
-         },{
+            "rate":15},
+            {
             "range":170,
             "damage":1680,
-            "rate":15
-         },{
+            "rate":15},
+            {
             "range":180,
             "damage":2220,
-            "rate":15
-         },{
+            "rate":15},
+            {
             "range":190,
             "damage":2880,
-            "rate":15
-         },{
+            "rate":15},
+            {
             "range":200,
             "damage":3640,
-            "rate":15
-         },{
+            "rate":15},
+            {
             "range":210,
             "damage":4400,
             "rate":15
          }],
-         "costs":[{
-            "r1":new SecNum(312500),
-            "r2":new SecNum(187500),
-            "r3":new SecNum(125000),
-            "r4":new SecNum(0),
-            "time":new SecNum(18000),
-            "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]
-         },{
-            "r1":new SecNum(1250000),
-            "r2":new SecNum(750000),
-            "r3":new SecNum(500000),
-            "r4":new SecNum(0),
-            "time":new SecNum(86400),
-            "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]
-         },{
-            "r1":new SecNum(3750000),
-            "r2":new SecNum(2250000),
-            "r3":new SecNum(1500000),
-            "r4":new SecNum(0),
-            "time":new SecNum(172800),
-            "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]
-         },{
-            "r1":new SecNum(7187500),
-            "r2":new SecNum(4312500),
-            "r3":new SecNum(2875000),
-            "r4":new SecNum(0),
-            "time":new SecNum(259200),
-            "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]
-         },{
-            "r1":new SecNum(12000000),
-            "r2":new SecNum(9000000),
-            "r3":new SecNum(6000000),
-            "r4":new SecNum(0),
-            "time":new SecNum(388800),
-            "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]
-         },{
-            "r1":new SecNum(16500000),
-            "r2":new SecNum(12687500),
-            "r3":new SecNum(7562500),
-            "r4":new SecNum(0),
-            "time":new SecNum(475200),
-            "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]
+         "costs":[
+            {"r1":new SecNum(312500), "r2":new SecNum(187500), "r3":new SecNum(125000), "r4":new SecNum(0), "time":new SecNum(18000), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]},
+            {"r1":new SecNum(1250000), "r2":new SecNum(750000), "r3":new SecNum(500000), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]},
+            {"r1":new SecNum(3750000), "r2":new SecNum(2250000), "r3":new SecNum(1500000), "r4":new SecNum(0), "time":new SecNum(172800), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]},
+            {"r1":new SecNum(7187500), "r2":new SecNum(4312500), "r3":new SecNum(2875000), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]},
+            {"r1":new SecNum(12000000), "r2":new SecNum(9000000), "r3":new SecNum(6000000), "r4":new SecNum(0), "time":new SecNum(388800), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]},
+            {"r1":new SecNum(16500000), "r2":new SecNum(12687500), "r3":new SecNum(7562500), "r4":new SecNum(0), "time":new SecNum(475200), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]
          }],
-         "fortify_costs":[{
-            "r1":new SecNum(50000),
-            "r2":new SecNum(37500),
-            "r3":new SecNum(12500),
-            "r4":new SecNum(0),
-            "time":new SecNum(8100),
-            "re":[[14,1,5]]
-         },{
-            "r1":new SecNum(250000),
-            "r2":new SecNum(187500),
-            "r3":new SecNum(62500),
-            "r4":new SecNum(0),
-            "time":new SecNum(24300),
-            "re":[[14,1,6]]
-         },{
-            "r1":new SecNum(1250000),
-            "r2":new SecNum(937500),
-            "r3":new SecNum(312500),
-            "r4":new SecNum(0),
-            "time":new SecNum(72900),
-            "re":[[14,1,7]]
-         },{
-            "r1":new SecNum(6250000),
-            "r2":new SecNum(4687500),
-            "r3":new SecNum(1562500),
-            "r4":new SecNum(0),
-            "time":new SecNum(172800),
-            "re":[[14,1,8]]
+         "fortify_costs":[{"r1":new SecNum(50000), "r2":new SecNum(37500), "r3":new SecNum(12500), "r4":new SecNum(0), "time":new SecNum(8100), "re":[[14,1,5]]},
+            {"r1":new SecNum(250000), "r2":new SecNum(187500), "r3":new SecNum(62500), "r4":new SecNum(0), "time":new SecNum(24300), "re":[[14,1,6]]},
+            {"r1":new SecNum(1250000), "r2":new SecNum(937500), "r3":new SecNum(312500), "r4":new SecNum(0), "time":new SecNum(72900), "re":[[14,1,7]]},
+            {"r1":new SecNum(6250000), "r2":new SecNum(4687500), "r3":new SecNum(1562500), "r4":new SecNum(0), "time":new SecNum(172800), "re":[[14,1,8]]
          }],
          "imageData":{
             "baseurl":"buildings/iquaketower/",
@@ -7471,54 +5351,19 @@ package
          "description":"bdg_wmi2totem_desc",
          "block":true,
          "cls":BTOTEM,
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":0,
-            "time":new SecNum(0),
-            "re":[]
-         },{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":0,
-            "time":new SecNum(0),
-            "re":[]
-         },{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":0,
-            "time":new SecNum(0),
-            "re":[]
-         },{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":0,
-            "time":new SecNum(0),
-            "re":[]
-         },{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":0,
-            "time":new SecNum(0),
-            "re":[]
-         },{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":0,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":0, "time":new SecNum(0), "re":[]},
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":0, "time":new SecNum(0), "re":[]},
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":0, "time":new SecNum(0), "re":[]},
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":0, "time":new SecNum(0), "re":[]},
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":0, "time":new SecNum(0), "re":[]},
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":0, "time":new SecNum(0), "re":[]
          }],
          "names":["bdg_wmi2totem1","bdg_wmi2totem2","bdg_wmi2totem3","bdg_wmi2totem4","bdg_wmi2totem5","bdg_wmi2totem6"],
          "descriptions":["bdg_wmi2totem1_desc","bdg_wmi2totem2_desc","bdg_wmi2totem3_desc","bdg_wmi2totem4_desc","bdg_wmi2totem5_desc","bdg_wmi2totem6_desc"],
@@ -7574,109 +5419,50 @@ package
             "damage":180,
             "rate":20,
             "speed":14,
-            "splash":0
-         },{
+            "splash":0},
+            {
             "range":190,
             "damage":240,
             "rate":20,
             "speed":15,
-            "splash":0
-         },{
+            "splash":0},
+            {
             "range":200,
             "damage":300,
             "rate":20,
             "speed":16,
-            "splash":0
-         },{
+            "splash":0},
+            {
             "range":210,
             "damage":360,
             "rate":20,
             "speed":17,
-            "splash":0
-         },{
+            "splash":0},
+            {
             "range":220,
             "damage":420,
             "rate":20,
             "speed":18,
-            "splash":0
-         },{
+            "splash":0},
+            {
             "range":230,
             "damage":480,
             "rate":20,
             "speed":19,
             "splash":0
          }],
-         "costs":[{
-            "r1":new SecNum(187500),
-            "r2":new SecNum(250000),
-            "r3":new SecNum(62500),
-            "r4":new SecNum(0),
-            "time":new SecNum(18000),
-            "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]
-         },{
-            "r1":new SecNum(750000),
-            "r2":new SecNum(1000000),
-            "r3":new SecNum(250000),
-            "r4":new SecNum(0),
-            "time":new SecNum(86400),
-            "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]
-         },{
-            "r1":new SecNum(2250000),
-            "r2":new SecNum(3000000),
-            "r3":new SecNum(750000),
-            "r4":new SecNum(0),
-            "time":new SecNum(172800),
-            "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]
-         },{
-            "r1":new SecNum(5250000),
-            "r2":new SecNum(5000000),
-            "r3":new SecNum(1250000),
-            "r4":new SecNum(0),
-            "time":new SecNum(345600),
-            "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]
-         },{
-            "r1":new SecNum(12000000),
-            "r2":new SecNum(10000000),
-            "r3":new SecNum(2000000),
-            "r4":new SecNum(0),
-            "time":new SecNum(518400),
-            "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]
-         },{
-            "r1":new SecNum(16000000),
-            "r2":new SecNum(15000000),
-            "r3":new SecNum(3000000),
-            "r4":new SecNum(0),
-            "time":new SecNum(791200),
-            "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]
+         "costs":[
+            {"r1":new SecNum(187500), "r2":new SecNum(250000), "r3":new SecNum(62500), "r4":new SecNum(0), "time":new SecNum(18000), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]},
+            {"r1":new SecNum(750000), "r2":new SecNum(1000000), "r3":new SecNum(250000), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]},
+            {"r1":new SecNum(2250000), "r2":new SecNum(3000000), "r3":new SecNum(750000), "r4":new SecNum(0), "time":new SecNum(172800), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]},
+            {"r1":new SecNum(5250000), "r2":new SecNum(5000000), "r3":new SecNum(1250000), "r4":new SecNum(0), "time":new SecNum(345600), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]},
+            {"r1":new SecNum(12000000), "r2":new SecNum(10000000), "r3":new SecNum(2000000), "r4":new SecNum(0), "time":new SecNum(518400), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]},
+            {"r1":new SecNum(16000000), "r2":new SecNum(15000000), "r3":new SecNum(3000000), "r4":new SecNum(0), "time":new SecNum(791200), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]
          }],
-         "fortify_costs":[{
-            "r1":new SecNum(215000),
-            "r2":new SecNum(280000),
-            "r3":new SecNum(62500),
-            "r4":new SecNum(0),
-            "time":new SecNum(18000),
-            "re":[[14,1,5]]
-         },{
-            "r1":new SecNum(850000),
-            "r2":new SecNum(1200000),
-            "r3":new SecNum(250000),
-            "r4":new SecNum(0),
-            "time":new SecNum(86400),
-            "re":[[14,1,6]]
-         },{
-            "r1":new SecNum(2750000),
-            "r2":new SecNum(3400000),
-            "r3":new SecNum(750000),
-            "r4":new SecNum(0),
-            "time":new SecNum(172800),
-            "re":[[14,1,7]]
-         },{
-            "r1":new SecNum(5750000),
-            "r2":new SecNum(5200000),
-            "r3":new SecNum(1250000),
-            "r4":new SecNum(0),
-            "time":new SecNum(345600),
-            "re":[[14,1,8]]
+         "fortify_costs":[{"r1":new SecNum(215000), "r2":new SecNum(280000), "r3":new SecNum(62500), "r4":new SecNum(0), "time":new SecNum(18000), "re":[[14,1,5]]},
+            {"r1":new SecNum(850000), "r2":new SecNum(1200000), "r3":new SecNum(250000), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,6]]},
+            {"r1":new SecNum(2750000), "r2":new SecNum(3400000), "r3":new SecNum(750000), "r4":new SecNum(0), "time":new SecNum(172800), "re":[[14,1,7]]},
+            {"r1":new SecNum(5750000), "r2":new SecNum(5200000), "r3":new SecNum(1250000), "r4":new SecNum(0), "time":new SecNum(345600), "re":[[14,1,8]]
          }],
          "imageData":{
             "baseurl":"buildings/imagmatower/",
@@ -7738,13 +5524,8 @@ package
          "block":true,
          "cls":SiegeFactory,
          "hitCls":siegeFactoryHit,
-         "costs":[{
-            "r1":new SecNum(1500000),
-            "r2":new SecNum(1500000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(86400),
-            "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1],[SiegeLab.ID,1,1]]
+         "costs":[
+            {"r1":new SecNum(1500000), "r2":new SecNum(1500000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1],[SiegeLab.ID,1,1]]
          }],
          "imageData":{
             "baseurl":"buildings/siegefactory/",
@@ -7784,76 +5565,17 @@ package
          "block":true,
          "cls":SiegeLab,
          "hitCls":siegeLabHit,
-         "costs":[{
-            "r1":new SecNum(600000),
-            "r2":new SecNum(600000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(43200),
-            "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]
-         },{
-            "r1":new SecNum(1200000),
-            "r2":new SecNum(1200000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(64800),
-            "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]
-         },{
-            "r1":new SecNum(1800000),
-            "r2":new SecNum(1800000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(86400),
-            "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]
-         },{
-            "r1":new SecNum(2400000),
-            "r2":new SecNum(2400000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(129600),
-            "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]
-         },{
-            "r1":new SecNum(3000000),
-            "r2":new SecNum(3000000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(172800),
-            "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]
-         },{
-            "r1":new SecNum(4000000),
-            "r2":new SecNum(4000000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(216000),
-            "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]
-         },{
-            "r1":new SecNum(5000000),
-            "r2":new SecNum(5000000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(259200),
-            "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]
-         },{
-            "r1":new SecNum(6000000),
-            "r2":new SecNum(6000000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(302400),
-            "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]
-         },{
-            "r1":new SecNum(7500000),
-            "r2":new SecNum(7500000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(345600),
-            "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]
-         },{
-            "r1":new SecNum(9000000),
-            "r2":new SecNum(9000000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(432000),
-            "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]
+         "costs":[
+            {"r1":new SecNum(600000), "r2":new SecNum(600000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(43200), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]},
+            {"r1":new SecNum(1200000), "r2":new SecNum(1200000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(64800), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]},
+            {"r1":new SecNum(1800000), "r2":new SecNum(1800000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]},
+            {"r1":new SecNum(2400000), "r2":new SecNum(2400000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(129600), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]},
+            {"r1":new SecNum(3000000), "r2":new SecNum(3000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(172800), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]},
+            {"r1":new SecNum(4000000), "r2":new SecNum(4000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(216000), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]},
+            {"r1":new SecNum(5000000), "r2":new SecNum(5000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]},
+            {"r1":new SecNum(6000000), "r2":new SecNum(6000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(302400), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]},
+            {"r1":new SecNum(7500000), "r2":new SecNum(7500000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(345600), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]},
+            {"r1":new SecNum(9000000), "r2":new SecNum(9000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(432000), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]
          }],
          "imageData":{
             "baseurl":"buildings/siegelab/",
@@ -7872,40 +5594,40 @@ package
          "stats":[{
             "range":200,
             "duration":380,
-            "radius":200
-         },{
+            "radius":200},
+            {
             "range":210,
             "duration":390,
-            "radius":210
-         },{
+            "radius":210},
+            {
             "range":235,
             "duration":400,
-            "radius":235
-         },{
+            "radius":235},
+            {
             "range":335,
             "duration":410,
-            "radius":335
-         },{
+            "radius":335},
+            {
             "range":360,
             "duration":200,
-            "radius":360
-         },{
+            "radius":360},
+            {
             "range":370,
             "duration":210,
-            "radius":370
-         },{
+            "radius":370},
+            {
             "range":380,
             "duration":235,
-            "radius":380
-         },{
+            "radius":380},
+            {
             "range":390,
             "duration":335,
-            "radius":390
-         },{
+            "radius":390},
+            {
             "range":400,
             "duration":360,
-            "radius":400
-         },{
+            "radius":400},
+            {
             "range":410,
             "duration":370,
             "radius":410
@@ -7938,14 +5660,9 @@ package
          "locked":true,
          "cls":BDECORATION,
          "lockedButtonOverlay":"buildingbuttons/135locked.png",
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":0,
-            "time":new SecNum(0),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
+            "r5":0, "time":new SecNum(0), "re":[]
          }],
          "buildingbuttons":["135"],
          "imageData":{
@@ -7984,29 +5701,29 @@ package
             "rate":72,
             "speed":11,
             "splash":35,
-            "shots":10
-         },{
+            "shots":10},
+            {
             "range":350,
             "damage":300,
             "rate":96,
             "speed":12,
             "splash":45,
-            "shots":20
-         },{
+            "shots":20},
+            {
             "range":400,
             "damage":320,
             "rate":120,
             "speed":13,
             "splash":55,
-            "shots":30
-         },{
+            "shots":30},
+            {
             "range":450,
             "damage":340,
             "rate":144,
             "speed":14,
             "splash":65,
-            "shots":40
-         },{
+            "shots":40},
+            {
             "range":500,
             "damage":360,
             "rate":170,
@@ -8014,41 +5731,12 @@ package
             "splash":75,
             "shots":50
          }],
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(0),
-            "re":[]
-         },{
-            "r1":new SecNum(500000),
-            "r2":new SecNum(375000),
-            "r3":new SecNum(250000),
-            "r4":new SecNum(0),
-            "time":new SecNum(432000),
-            "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1],[14,1,7]]
-         },{
-            "r1":new SecNum(1000000),
-            "r2":new SecNum(750000),
-            "r3":new SecNum(500000),
-            "r4":new SecNum(0),
-            "time":new SecNum(604800),
-            "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1],[14,1,8]]
-         },{
-            "r1":new SecNum(3000000),
-            "r2":new SecNum(2250000),
-            "r3":new SecNum(1500000),
-            "r4":new SecNum(0),
-            "time":new SecNum(864000),
-            "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1],[14,1,9]]
-         },{
-            "r1":new SecNum(12000000),
-            "r2":new SecNum(9000000),
-            "r3":new SecNum(6000000),
-            "r4":new SecNum(0),
-            "time":new SecNum(1209600),
-            "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1],[14,1,10]]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(0), "re":[]},
+            {"r1":new SecNum(500000), "r2":new SecNum(375000), "r3":new SecNum(250000), "r4":new SecNum(0), "time":new SecNum(432000), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1],[14,1,7]]},
+            {"r1":new SecNum(1000000), "r2":new SecNum(750000), "r3":new SecNum(500000), "r4":new SecNum(0), "time":new SecNum(604800), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1],[14,1,8]]},
+            {"r1":new SecNum(3000000), "r2":new SecNum(2250000), "r3":new SecNum(1500000), "r4":new SecNum(0), "time":new SecNum(864000), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1],[14,1,9]]},
+            {"r1":new SecNum(12000000), "r2":new SecNum(9000000), "r3":new SecNum(6000000), "r4":new SecNum(0), "time":new SecNum(1209600), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1],[14,1,10]]
          }],
          "imageData":{
             "baseurl":"buildings/spurtztower/",
@@ -8096,29 +5784,29 @@ package
             "rate":72,
             "speed":11,
             "splash":35,
-            "shots":15
-         },{
+            "shots":15},
+            {
             "range":350,
             "damage":350,
             "rate":96,
             "speed":12,
             "splash":45,
-            "shots":25
-         },{
+            "shots":25},
+            {
             "range":400,
             "damage":370,
             "rate":120,
             "speed":13,
             "splash":55,
-            "shots":35
-         },{
+            "shots":35},
+            {
             "range":450,
             "damage":390,
             "rate":144,
             "speed":14,
             "splash":65,
-            "shots":45
-         },{
+            "shots":45},
+            {
             "range":500,
             "damage":410,
             "rate":170,
@@ -8126,41 +5814,12 @@ package
             "splash":75,
             "shots":55
          }],
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(0),
-            "re":[]
-         },{
-            "r1":new SecNum(500000),
-            "r2":new SecNum(375000),
-            "r3":new SecNum(250000),
-            "r4":new SecNum(0),
-            "time":new SecNum(432000),
-            "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1],[14,1,7]]
-         },{
-            "r1":new SecNum(1000000),
-            "r2":new SecNum(750000),
-            "r3":new SecNum(500000),
-            "r4":new SecNum(0),
-            "time":new SecNum(604800),
-            "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1],[14,1,8]]
-         },{
-            "r1":new SecNum(3000000),
-            "r2":new SecNum(2250000),
-            "r3":new SecNum(1500000),
-            "r4":new SecNum(0),
-            "time":new SecNum(864000),
-            "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1],[14,1,9]]
-         },{
-            "r1":new SecNum(12000000),
-            "r2":new SecNum(9000000),
-            "r3":new SecNum(6000000),
-            "r4":new SecNum(0),
-            "time":new SecNum(1209600),
-            "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1],[14,1,10]]
+         "costs":[
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(0), "re":[]},
+            {"r1":new SecNum(500000), "r2":new SecNum(375000), "r3":new SecNum(250000), "r4":new SecNum(0), "time":new SecNum(432000), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1],[14,1,7]]},
+            {"r1":new SecNum(1000000), "r2":new SecNum(750000), "r3":new SecNum(500000), "r4":new SecNum(0), "time":new SecNum(604800), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1],[14,1,8]]},
+            {"r1":new SecNum(3000000), "r2":new SecNum(2250000), "r3":new SecNum(1500000), "r4":new SecNum(0), "time":new SecNum(864000), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1],[14,1,9]]},
+            {"r1":new SecNum(12000000), "r2":new SecNum(9000000), "r3":new SecNum(6000000), "r4":new SecNum(0), "time":new SecNum(1209600), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1],[14,1,10]]
          }],
          "imageData":{
             "baseurl":"buildings/blackspurtztower/",
@@ -8206,37 +5865,20 @@ package
          "stats":[{
             "range":360,
             "damage":900,
-            "rate":1
-         },{
+            "rate":1},
+            {
             "range":380,
             "damage":1000,
-            "rate":1
-         },{
+            "rate":1},
+            {
             "range":400,
             "damage":1100,
             "rate":1
          }],
-         "costs":[{
-            "r1":new SecNum(5),
-            "r2":new SecNum(5),
-            "r3":new SecNum(5),
-            "r4":new SecNum(5),
-            "time":new SecNum(1),
-            "re":[]
-         },{
-            "r1":new SecNum(5),
-            "r2":new SecNum(5),
-            "r3":new SecNum(5),
-            "r4":new SecNum(5),
-            "time":new SecNum(1),
-            "re":[]
-         },{
-            "r1":new SecNum(5),
-            "r2":new SecNum(5),
-            "r3":new SecNum(5),
-            "r4":new SecNum(5),
-            "time":new SecNum(1),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(5), "r2":new SecNum(5), "r3":new SecNum(5), "r4":new SecNum(5), "time":new SecNum(1), "re":[]},
+            {"r1":new SecNum(5), "r2":new SecNum(5), "r3":new SecNum(5), "r4":new SecNum(5), "time":new SecNum(1), "re":[]},
+            {"r1":new SecNum(5), "r2":new SecNum(5), "r3":new SecNum(5), "r4":new SecNum(5), "time":new SecNum(1), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/guardtower/",
@@ -8276,13 +5918,8 @@ package
          "isImmobile":true,
          "isUntargetable":true,
          "isNoMoreInfoButton":true,
-         "costs":[{
-            "r1":new SecNum(5),
-            "r2":new SecNum(5),
-            "r3":new SecNum(5),
-            "r4":new SecNum(5),
-            "time":new SecNum(1),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(5), "r2":new SecNum(5), "r3":new SecNum(5), "r4":new SecNum(5), "time":new SecNum(1), "re":[]
          }],
          "rps":[1,2,5,11,23],
          "imageData":{
@@ -8313,41 +5950,12 @@ package
          "isImmobile":true,
          "isUntargetable":false,
          "isNoMoreInfoButton":true,
-         "costs":[{
-            "r1":new SecNum(5),
-            "r2":new SecNum(5),
-            "r3":new SecNum(5),
-            "r4":new SecNum(5),
-            "time":new SecNum(1),
-            "re":[]
-         },{
-            "r1":new SecNum(5),
-            "r2":new SecNum(5),
-            "r3":new SecNum(5),
-            "r4":new SecNum(5),
-            "time":new SecNum(1),
-            "re":[]
-         },{
-            "r1":new SecNum(5),
-            "r2":new SecNum(5),
-            "r3":new SecNum(5),
-            "r4":new SecNum(5),
-            "time":new SecNum(1),
-            "re":[]
-         },{
-            "r1":new SecNum(5),
-            "r2":new SecNum(5),
-            "r3":new SecNum(5),
-            "r4":new SecNum(5),
-            "time":new SecNum(1),
-            "re":[]
-         },{
-            "r1":new SecNum(5),
-            "r2":new SecNum(5),
-            "r3":new SecNum(5),
-            "r4":new SecNum(5),
-            "time":new SecNum(1),
-            "re":[]
+         "costs":[
+            {"r1":new SecNum(5), "r2":new SecNum(5), "r3":new SecNum(5), "r4":new SecNum(5), "time":new SecNum(1), "re":[]},
+            {"r1":new SecNum(5), "r2":new SecNum(5), "r3":new SecNum(5), "r4":new SecNum(5), "time":new SecNum(1), "re":[]},
+            {"r1":new SecNum(5), "r2":new SecNum(5), "r3":new SecNum(5), "r4":new SecNum(5), "time":new SecNum(1), "re":[]},
+            {"r1":new SecNum(5), "r2":new SecNum(5), "r3":new SecNum(5), "r4":new SecNum(5), "time":new SecNum(1), "re":[]},
+            {"r1":new SecNum(5), "r2":new SecNum(5), "r3":new SecNum(5), "r4":new SecNum(5), "time":new SecNum(1), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/outpostdefender/",

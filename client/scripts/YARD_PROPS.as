@@ -794,6 +794,76 @@ package
             "r4":new SecNum(0),
             "time":new SecNum(46132),
             "re":[[14,1,6]]
+         },{
+            "r1":new SecNum(2500000),
+            "r2":new SecNum(2500000),
+            "r3":new SecNum(0),
+            "r4":new SecNum(0),
+            "time":new SecNum(86400),
+            "re":[[14,1,8]]
+         },{
+            "r1":new SecNum(5000000),
+            "r2":new SecNum(5000000),
+            "r3":new SecNum(0),
+            "r4":new SecNum(0),
+            "time":new SecNum(172800),
+            "re":[[14,1,10]]
+         },{
+            "r1":new SecNum(7500000),
+            "r2":new SecNum(7500000),
+            "r3":new SecNum(0),
+            "r4":new SecNum(0),
+            "time":new SecNum(259200),
+            "re":[[14,1,12]]
+         },{
+            "r1":new SecNum(10000000),
+            "r2":new SecNum(10000000),
+            "r3":new SecNum(0),
+            "r4":new SecNum(0),
+            "time":new SecNum(345600),
+            "re":[[14,1,14]]
+         },{
+            "r1":new SecNum(25000000),
+            "r2":new SecNum(25000000),
+            "r3":new SecNum(0),
+            "r4":new SecNum(0),
+            "time":new SecNum(432000),
+            "re":[[14,1,15]]
+         },{
+            "r1":new SecNum(50000000),
+            "r2":new SecNum(50000000),
+            "r3":new SecNum(0),
+            "r4":new SecNum(0),
+            "time":new SecNum(518400),
+            "re":[[14,1,16]]
+         },{
+            "r1":new SecNum(75000000),
+            "r2":new SecNum(75000000),
+            "r3":new SecNum(0),
+            "r4":new SecNum(0),
+            "time":new SecNum(604800),
+            "re":[[14,1,17]]
+         },{
+            "r1":new SecNum(100000000),
+            "r2":new SecNum(100000000),
+            "r3":new SecNum(0),
+            "r4":new SecNum(0),
+            "time":new SecNum(691200),
+            "re":[[14,1,18]]
+         },{
+            "r1":new SecNum(250000000),
+            "r2":new SecNum(250000000),
+            "r3":new SecNum(0),
+            "r4":new SecNum(0),
+            "time":new SecNum(777600),
+            "re":[[14,1,19]]
+         },{
+            "r1":new SecNum(500000000),
+            "r2":new SecNum(500000000),
+            "r3":new SecNum(0),
+            "r4":new SecNum(0),
+            "time":new SecNum(864000),
+            "re":[[14,1,20]]
          }],
          "can_fortify":true,
          "fortify_costs":[{
@@ -867,10 +937,10 @@ package
                "back":["fort70_B4.png",new Point(-62,-31)]
             }
          },
-         "quantity":[0,1,2,3,4,5,5,5,5,6,6],
-         "capacity":[7500,15000,30000,60000,120000,240000,480000,960000,1920000,3840000],
-         "hp":[750,1400,2550,4750,8800,16250,30000,55600,105000,190000],
-         "repairTime":[30,60,120,240,480,960,1920,3840,7680,15360]
+         "quantity":[0,1,2,3,4,5,5,5,5,6,6,6,6,6,6,7,7,7,7,7,8],
+         "capacity":[7500,15000,30000,60000,120000,240000,480000,960000,1920000,3840000,7680000,15360000,30720000,61440000,122880000,140000000,160000000,180000000,200000000,250000000],
+         "hp":[750,1400,2550,4750,8800,16250,30000,55600,105000,190000,250000,260000,270000,280000,290000,300000,310000,320000,330000,350000],
+         "repairTime":[30,60,120,240,480,960,1920,3840,7680,15360,15360,15360,15360,15360,15360,15360,15360,15360,15360,15360]
       },{
          "id":7,
          "group":999,
@@ -1374,6 +1444,76 @@ package
             "r4":new SecNum(0),
             "time":new SecNum(1209600),
             "re":[[14,1,9]]
+         },{
+            "r1":new SecNum(50000000),
+            "r2":new SecNum(50000000),
+            "r3":new SecNum(0),
+            "r4":new SecNum(0),
+            "time":new SecNum(1209600),
+            "re":[[14,1,10]]
+         },{
+            "r1":new SecNum(75000000),
+            "r2":new SecNum(75000000),
+            "r3":new SecNum(0),
+            "r4":new SecNum(0),
+            "time":new SecNum(1209600),
+            "re":[[14,1,11]]
+         },{
+            "r1":new SecNum(100000000),
+            "r2":new SecNum(100000000),
+            "r3":new SecNum(0),
+            "r4":new SecNum(0),
+            "time":new SecNum(1209600),
+            "re":[[14,1,12]]
+         },{
+            "r1":new SecNum(200000000),
+            "r2":new SecNum(200000000),
+            "r3":new SecNum(0),
+            "r4":new SecNum(0),
+            "time":new SecNum(1209600),
+            "re":[[14,1,13]]
+         },{
+            "r1":new SecNum(300000000),
+            "r2":new SecNum(300000000),
+            "r3":new SecNum(0),
+            "r4":new SecNum(0),
+            "time":new SecNum(1209600),
+            "re":[[14,1,14]]
+         },{
+            "r1":new SecNum(400000000),
+            "r2":new SecNum(400000000),
+            "r3":new SecNum(0),
+            "r4":new SecNum(0),
+            "time":new SecNum(1209600),
+            "re":[[14,1,15]]
+         },{
+            "r1":new SecNum(500000000),
+            "r2":new SecNum(500000000),
+            "r3":new SecNum(0),
+            "r4":new SecNum(0),
+            "time":new SecNum(1209600),
+            "re":[[14,1,16]]
+         },{
+            "r1":new SecNum(1000000000),
+            "r2":new SecNum(1000000000),
+            "r3":new SecNum(0),
+            "r4":new SecNum(0),
+            "time":new SecNum(1209600),
+            "re":[[14,1,17]]
+         },{
+            "r1":new SecNum(2000000000),
+            "r2":new SecNum(2000000000),
+            "r3":new SecNum(0),
+            "r4":new SecNum(0),
+            "time":new SecNum(1209600),
+            "re":[[14,1,18]]
+         },{
+            "r1":new SecNum(2500000000),
+            "r2":new SecNum(2500000000),
+            "r3":new SecNum(0),
+            "r4":new SecNum(0),
+            "time":new SecNum(1209600),
+            "re":[[14,1,19]]
          }],
          "can_fortify":true,
          "fortify_costs":[{
@@ -1540,9 +1680,9 @@ package
                "back":["fort130_B4.png",new Point(-116,-49)]
             }
          },
-         "quantity":[1,1,1,1,1,1,1,1,1,1,1],
-         "hp":[4000,8800,20000,42000,94000,200000,300000,400000,500000,600000],
-         "repairTime":[480,1920,3840,7680,15360,30720,64800,86400,172800,345600],
+         "quantity":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+         "hp":[4000,8800,20000,42000,94000,200000,300000,400000,500000,600000,700000,800000,900000,1000000,1200000,1400000,1600000,1800000,2000000,2500000],
+         "repairTime":[480,1920,3840,7680,15360,30720,64800,86400,172800,345600,345600,345600,345600,345600,345600,345600,345600,345600,345600,345600],
          "additionalUpgradeInfo":[null,null,null,null,null,null,null,null,"th_upgradeth10_msg",null]
       },{
          "id":15,

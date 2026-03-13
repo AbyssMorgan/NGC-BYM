@@ -1330,14 +1330,17 @@ package
          "description":"wildmonsterbaiter_desc",
          "cls":BUILDING19,
          "costs":[
-            {"r1":new SecNum(25000), "r2":new SecNum(25000), "r3":new SecNum(15000), "r4":new SecNum(0), "time":new SecNum(18000), "re":[[14,1,4],[8,1,1]]},
-            {"r1":new SecNum(1000000), "r2":new SecNum(1000000), "r3":new SecNum(500000), "r4":new SecNum(0), "time":new SecNum(36000), "re":[[14,1,4],[8,1,2]]},
-            {"r1":new SecNum(2000000), "r2":new SecNum(2000000), "r3":new SecNum(1000000), "r4":new SecNum(0), "time":new SecNum(72000), "re":[[14,1,4],[8,1,3]]},
-            {"r1":new SecNum(4000000), "r2":new SecNum(4000000), "r3":new SecNum(2000000), "r4":new SecNum(0), "time":new SecNum(144000), "re":[[14,1,5],[8,1,4]]},
-            {"r1":new SecNum(6000000), "r2":new SecNum(6000000), "r3":new SecNum(4000000), "r4":new SecNum(0), "time":new SecNum(288000), "re":[[14,1,6],[8,1,4]]},
-            {"r1":new SecNum(10000000), "r2":new SecNum(10000000), "r3":new SecNum(6000000), "r4":new SecNum(0), "time":new SecNum(576000), "re":[[14,1,7],[8,1,4]]},
-            {"r1":new SecNum(16000000), "r2":new SecNum(16000000), "r3":new SecNum(10000000), "r4":new SecNum(0), "time":new SecNum(1152000), "re":[[14,1,8],[8,1,4]]
-         }],
+            {"r1":new SecNum(25000), "r2":new SecNum(25000), "r3":new SecNum(15000), "r4":new SecNum(0), "time":new SecNum(18000), "re":[[14,1,4],[8,1,1]]},               // Level 1
+            {"r1":new SecNum(1000000), "r2":new SecNum(1000000), "r3":new SecNum(500000), "r4":new SecNum(0), "time":new SecNum(36000), "re":[[14,1,4],[8,1,2]]},          // Level 2
+            {"r1":new SecNum(2000000), "r2":new SecNum(2000000), "r3":new SecNum(1000000), "r4":new SecNum(0), "time":new SecNum(72000), "re":[[14,1,4],[8,1,3]]},         // Level 3
+            {"r1":new SecNum(4000000), "r2":new SecNum(4000000), "r3":new SecNum(2000000), "r4":new SecNum(0), "time":new SecNum(144000), "re":[[14,1,5],[8,1,4]]},        // Level 4
+            {"r1":new SecNum(6000000), "r2":new SecNum(6000000), "r3":new SecNum(4000000), "r4":new SecNum(0), "time":new SecNum(288000), "re":[[14,1,6],[8,1,4]]},        // Level 5
+            {"r1":new SecNum(10000000), "r2":new SecNum(10000000), "r3":new SecNum(6000000), "r4":new SecNum(0), "time":new SecNum(576000), "re":[[14,1,7],[8,1,4]]},      // Level 6
+            {"r1":new SecNum(16000000), "r2":new SecNum(16000000), "r3":new SecNum(10000000), "r4":new SecNum(0), "time":new SecNum(1152000), "re":[[14,1,8],[8,1,4]]},    // Level 7
+            {"r1":new SecNum(32000000), "r2":new SecNum(32000000), "r3":new SecNum(10000000), "r4":new SecNum(0), "time":new SecNum(1382400), "re":[[14,1,12],[8,1,4]]},   // Level 8
+            {"r1":new SecNum(64000000), "r2":new SecNum(64000000), "r3":new SecNum(10000000), "r4":new SecNum(0), "time":new SecNum(1468800), "re":[[14,1,14],[8,1,4]]},   // Level 9
+            {"r1":new SecNum(128000000), "r2":new SecNum(128000000), "r3":new SecNum(10000000), "r4":new SecNum(0), "time":new SecNum(1555200), "re":[[14,1,16],[8,1,4]]}  // Level 10
+         ],
          "imageData":{
             "baseurl":"buildings/monsterbaiter/",
             "1":{
@@ -1361,11 +1364,11 @@ package
             "baseurl":"buildingthumbs/",
             "1":{"img":"19.png"}
          },
-         "quantity":[0,0,0,0,1,1,1,1,1,1,1],
-         "produce":[2,2,2,2,2,2,2],
-         "capacity":[600,900,1200,1500,2100,3200,4800],
-         "hp":[1000,1500,2250,3375,5000,7500,12000],
-         "repairTime":[120,240,480,960,1920,3840,7680]
+         "quantity":[0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+         "produce":[2,2,2,2,2,2,2,2,2,2],
+         "capacity":[600,900,1200,1500,2100,3200,4800,7200,10800,16200],
+         "hp":[1000,1500,2250,3375,5000,7500,12000,12000,12000,12000],
+         "repairTime":[120,240,480,960,1920,3840,7680,7680,7680,7680]
       },{
          "id":20,
          "group":3,

@@ -1,0 +1,55 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "compile-debug",
+			"type": "actionscript",
+			"debug": true,
+			"problemMatcher": []
+		},
+		{
+			"label": "compile-local",
+			"type": "actionscript",
+			"debug": false,
+			"asconfig": "asconfig.local.json",
+			"problemMatcher": []
+		},
+		{
+			"label": "compile-stable",
+			"type": "actionscript",
+			"debug": false,
+			"asconfig": "asconfig.stable.json",
+			"problemMatcher": []
+		},
+		{
+			// Debug build is used for development and testing
+			"label": "BYMR - Debug",
+			"detail": "Debug build with stack traces and trace() output.",
+			"type": "shell",
+			"command": "${workspaceFolder}/archived/flashplayers/flashplayer_debug.exe",
+			"args": ["", "bin/bymr-debug.swf"],
+			"group": { "kind": "build", "isDefault": true },
+			"dependsOn": "compile-debug"
+		},
+		{
+			// Local build is used for releasing optimized local .swfs
+			"label": "BYMR - Local",
+			"detail": "Optimized local release build",
+			"type": "shell",
+			"command": "${workspaceFolder}/archived/flashplayers/flashplayer.exe",
+			"args": ["", "bin/bymr-local.swf"],
+			"group": { "kind": "build", "isDefault": true },
+			"dependsOn": "compile-local"
+		},
+		{
+			// Stable build is used for releasing optimized production-ready .swfs
+			"label": "BYMR - Stable",
+			"detail": "Optimized production release build",
+			"type": "shell",
+			"command": "${workspaceFolder}/archived/flashplayers/flashplayer.exe",
+			"args": ["", "bin/bymr-stable.swf"],
+			"group": { "kind": "build", "isDefault": true },
+			"dependsOn": "compile-stable"
+		}
+	]
+}

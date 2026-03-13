@@ -1,0 +1,59 @@
+import bcrypt from "bcrypt";
+import type { KoaController } from "../../utils/KoaController.js";
+import { postgres } from "../../server.js";
+import { User } from "../../models/user.model.js";
+import { FilterFrontendKeys } from "../../utils/FrontendKey.js";
+import { emailUniqueErr, usernameUniqueErr } from "../../errors/errors.js";
+import { logger } from "../../utils/logger.js";
+import { Status } from "../../enums/StatusCodes.js";
+import { UserRegistrationSchema } from "../../zod/AuthSchemas.js";
+
+/**
+ * Controller to handle user registration.
+ *
+ * This controller registers a new user based on the provided input. It hashes the user's
+ * password, saves the user to the database, and returns the filtered user information.
+ * If registration fails, it throws an authentication failure error.
+ *
+ * @param {Context} ctx - The Koa context object.
+ * @returns {Promise<void>} - A promise that resolves when the controller is complete.
+ * @throws {Error} - Throws an error if registration fails or if the request body is invalid.
+ */
+export const register: KoaController = async (ctx) => {
+  const registeredUser = UserRegistrationSchema.parse(ctx.request.body);
+
+  // Find user by username or email
+  const existingUser = await postgres.em.findOne(User, {
+    $or: [
+      { username: registeredUser.username },
+      { email: registeredUser.email },
+    ],
+  });
+
+  // If user exists, check if username or email is already taken
+  if (existingUser) {
+    const isUsernameTaken = existingUser.username === registeredUser.username;
+    const isEmailTaken = existingUser.email === registeredUser.email;
+
+    if (isUsernameTaken) throw usernameUniqueErr();
+    if (isEmailTaken) throw emailUniqueErr();
+  }
+
+  const hash = await bcrypt.hash(registeredUser.password, 10);
+
+  // Create new user record
+  const user = postgres.em.create(User, {
+    ...registeredUser,
+    pic_square: `${process.env.AVATAR_URL}?seed=${registeredUser.username}&size=50`,
+    password: hash,
+  });
+
+  await postgres.em.persistAndFlush(user);
+  const filteredUser = FilterFrontendKeys(user);
+  logger.info(
+    `User ${filteredUser.username} registered successfully | ID: ${filteredUser.userid} | Email: ${filteredUser.email} | IP Address: ${ctx.ip}`
+  );
+
+  ctx.status = Status.OK;
+  ctx.body = { user: filteredUser };
+};

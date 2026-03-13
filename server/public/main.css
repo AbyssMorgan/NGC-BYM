@@ -1,0 +1,50 @@
+@import url(https://db.onlinewebfonts.com/c/e48298e8aea37d29dd5ad484ba7dbce9?family=GROBOLDpro);
+@import url(https://db.onlinewebfonts.com/c/ec12e7aac950d20b15f9c39febdaffe7?family=Graveblade+W00+Regular);
+
+/* Webkit-based browsers */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #bfbfbf;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #bfbfbf;
+}
+
+/* Global styles */
+body {
+  background-color: hsl(212 18.3% 13.9%);
+  color: #333;
+}
+
+/* Header styles */
+header {
+  color: #000;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+  color: #fff;
+  font-size: 4rem;
+  font-family: "Graveblade W00 Regular";
+}
+
+header p {
+  font-size: 1.2rem;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}

@@ -1,0 +1,31 @@
+# Environment files
+.env
+
+# Node dependencies
+node_modules/
+
+# Build output
+dist/
+bin/
+
+# IDE / editor
+.idea
+.DS_Store
+
+# Documentation / misc
+CLAUDE.md
+
+# API / versioning
+api-versioning
+
+# Android / mobile
+android/bymr.keystore
+android/apk/BYMRefitted.apk
+
+# Server database / data
+server/data
+server/src/database/bym-db*
+server/src/database/migrations/.snapshot*
+
+# Private scripts / sensitive
+server/src/scripts/anticheat/priv/*

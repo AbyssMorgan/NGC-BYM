@@ -1,0 +1,15 @@
+.git
+.gitignore
+Dockerfile*
+docker-compose*
+README.md
+example.env
+.env
+.env.*
+node_modules/
+dist/
+coverage/
+.nyc_output/
+*.log
+.DS_Store
+Thumbs.db

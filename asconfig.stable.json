@@ -1,0 +1,38 @@
+{
+	"config": "flex",
+	"type": "app",
+	"mainClass": "GAME",
+	"compilerOptions": {
+		"output": "bin/bymr-stable.swf",
+		"target-player": "11.0",
+		"swf-version": 13,
+		"default-frame-rate": 40,
+		"default-background-color": "#FFFFFF",
+		"default-size": {
+			"width": 760,
+			"height": 670
+		},
+		"optimize": true,
+		"strict": true,
+		"warnings": false,
+		"use-network": true,
+		"advanced-telemetry": false,
+		"static-link-runtime-shared-libraries": true,
+		"source-path": [
+			"client/scripts"
+		],
+		"library-path": [
+			"./playerglobal.swc"
+		],
+		"define": [
+			{
+				"name": "CONFIG::SERVER_URL",
+				"value": "'https://server.bymrefitted.com/'"
+			},
+			{
+				"name": "CONFIG::CDN_URL",
+				"value": "'https://cdn.bymrefitted.com/'"
+			}
+		]
+	}
+}

@@ -5,6 +5,6 @@ export const relocate: KoaController = async (ctx) => {
   ctx.status = Status.OK;
   ctx.body = {
     error: 0,
-    mapheaderurl: "http://localhost:3001/api/bm/getnewmap", // Reminder: put in ENV
+    mapheaderurl: "http://93.95.92.35:60200/api/bm/getnewmap", // Reminder: put in ENV
   };
 };

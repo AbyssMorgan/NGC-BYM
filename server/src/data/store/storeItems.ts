@@ -16,7 +16,7 @@ export const storeItems: { [key: string]: StoreItem } = {
     t: "1 Extra Worker",
     d: "One extra worker to help you build and upgrade your village.",
     du: 0,
-    c: [250, 500, 1000, 2000],
+    c: [250, 500, 1000, 2000, 3000, 4000, 5000],
     i: 0,
     a: 1,
   },

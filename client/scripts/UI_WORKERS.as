@@ -47,7 +47,7 @@ package
          _workers = [];
          if(GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD)
          {
-            _maxWorkers = 5;
+            _maxWorkers = 8;
             if(!BASE.isMainYard)
             {
                _maxWorkers = 1;

@@ -46,7 +46,7 @@ export const storeItems: { [key: string]: StoreItem } = {
   },
   SP1: {
     t: "Close enough",
-    d: "If the worker has less than 5 minutes remaining you can finish now <b>for free</b>!",
+    d: "If the worker has less than 10 minutes remaining you can finish now <b>for free</b>!",
     du: 0,
     c: [0],
     i: 1,

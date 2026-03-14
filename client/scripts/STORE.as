@@ -2883,7 +2883,7 @@ package
          try
          {
             GLOBAL._mapWidth = 1000;
-            GLOBAL._mapHeight = 800;
+            GLOBAL._mapHeight = 1000;
             i = 0;
             while(i < 2)
             {

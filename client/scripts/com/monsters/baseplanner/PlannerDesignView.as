@@ -105,7 +105,7 @@ package com.monsters.baseplanner
 
       private const MAX_YARD_DIMENSIONS:Point = new Point(3240, 2600);
 
-      private const YARD_EXPANSIONS:Array = [new Point(1000, 800), new Point(1100, 880), new Point(1220, 980), new Point(1340, 1080), new Point(1480, 1180), new Point(1620, 1300), new Point(1780, 1420)];
+      private const YARD_EXPANSIONS:Array = [new Point(1000, 1000), new Point(1100, 1100), new Point(1220, 1220), new Point(1340, 1340), new Point(1480, 1480), new Point(1620, 1620), new Point(1780, 1780)];
 
       public var currentTool:String = "selectmove";
 

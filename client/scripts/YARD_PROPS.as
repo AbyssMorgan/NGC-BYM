@@ -36,14 +36,14 @@ package
                {"r1":new SecNum(0), "r2":new SecNum(600000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,5]]},     // Level 10
                {"r1":new SecNum(0), "r2":new SecNum(700000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,6]]},     // Level 11
                {"r1":new SecNum(0), "r2":new SecNum(800000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,8]]},     // Level 12
-               {"r1":new SecNum(0), "r2":new SecNum(1000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,10]]},   // Level 13
-               {"r1":new SecNum(0), "r2":new SecNum(2000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,12]]},   // Level 14
-               {"r1":new SecNum(0), "r2":new SecNum(3000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,14]]},   // Level 15
-               {"r1":new SecNum(0), "r2":new SecNum(4000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,15]]},   // Level 16
-               {"r1":new SecNum(0), "r2":new SecNum(5000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,16]]},   // Level 17
-               {"r1":new SecNum(0), "r2":new SecNum(10000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,18]]},  // Level 18
-               {"r1":new SecNum(0), "r2":new SecNum(25000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,19]]},  // Level 19
-               {"r1":new SecNum(0), "r2":new SecNum(50000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,20]]}   // Level 20
+               {"r1":new SecNum(0), "r2":new SecNum(1000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,10],[12,1,2]]},   // Level 13
+               {"r1":new SecNum(0), "r2":new SecNum(2000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,12],[12,1,2]]},   // Level 14
+               {"r1":new SecNum(0), "r2":new SecNum(3000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,14],[12,1,2]]},   // Level 15
+               {"r1":new SecNum(0), "r2":new SecNum(4000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,15],[12,1,2]]},   // Level 16
+               {"r1":new SecNum(0), "r2":new SecNum(5000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,16],[12,1,2]]},   // Level 17
+               {"r1":new SecNum(0), "r2":new SecNum(10000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,18],[12,1,2]]},  // Level 18
+               {"r1":new SecNum(0), "r2":new SecNum(25000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,19],[12,1,2]]},  // Level 19
+               {"r1":new SecNum(0), "r2":new SecNum(50000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,20],[12,1,2]]}   // Level 20
             ],
             "imageData":{
                "baseurl":"buildings/twigsnapper.v2/",
@@ -108,743 +108,757 @@ package
             "hp":[500,950,1800,3400,6500,12000,24000,45000,85000,165000,300000,350000,400000,450000,500000,550000,600000,650000,700000,800000],
             "repairTime":[30,60,120,240,480,960,1920,3840,7680,15360,15360,15360,15360,15360,15360,15360,15360,15360,15360,15360]
          },
-      {
-         "id":2,
-         "group":1,
-         "order":2,
-         "buildStatus":0,
-         "type":"resource",
-         "name":"#b_pebbleshiner#",
-         "size":100,
-         "cycle":30,
-         "attackgroup":1,
-         "tutstage":0,
-         "sale":0,
-         "description":"pebbleshiner_desc",
-         "cls":BUILDING2,
-         "costs":[
-            {"r1":new SecNum(750), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(15), "re":[[14,1,1]]},            // Level 1
-            {"r1":new SecNum(1575), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(300), "re":[[14,1,1]]},          // Level 2
-            {"r1":new SecNum(3300), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1200), "re":[[14,1,1]]},         // Level 3
-            {"r1":new SecNum(6950), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(3600), "re":[[14,1,2]]},         // Level 4
-            {"r1":new SecNum(14500), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(7200), "re":[[14,1,2]]},        // Level 5
-            {"r1":new SecNum(30600), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(18000), "re":[[14,1,3]]},       // Level 6
-            {"r1":new SecNum(64300), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(43200), "re":[[14,1,3]]},       // Level 7
-            {"r1":new SecNum(135000), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,4]]},      // Level 8
-            {"r1":new SecNum(283600), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(172800), "re":[[14,1,4]]},     // Level 9
-            {"r1":new SecNum(600000), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,5]]},     // Level 10
-            {"r1":new SecNum(700000), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,6]]},     // Level 11
-            {"r1":new SecNum(800000), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,8]]},     // Level 12
-            {"r1":new SecNum(1000000), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,10]]},   // Level 13
-            {"r1":new SecNum(2000000), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,12]]},   // Level 14
-            {"r1":new SecNum(3000000), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,14]]},   // Level 15
-            {"r1":new SecNum(4000000), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,15]]},   // Level 16
-            {"r1":new SecNum(5000000), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,16]]},   // Level 17
-            {"r1":new SecNum(10000000), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,18]]},  // Level 18
-            {"r1":new SecNum(25000000), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,19]]},  // Level 19
-            {"r1":new SecNum(50000000), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,20]]}   // Level 20
-         ],
-         "imageData":{
-            "baseurl":"buildings/pebbleshiner.v2/",
-            "1":{
-               "anim":["anim.1.png",new Rectangle(-21,8,42,24),26],
-               "top":["top.1.png",new Point(-34,-12)],
-               "shadow":["shadow.1.jpg",new Point(-33,27)],
-               "topdamaged":["top.1.damaged.png",new Point(-34,-6)],
-               "shadowdamaged":["shadow.1.damaged.jpg",new Point(-31,27)],
-               "topdestroyed":["top.destroyed.png",new Point(-35,-2)],
-               "shadowdestroyed":["shadow.destroyed.jpg",new Point(-33,22)]
+         {
+            "id":2,
+            "group":1,
+            "order":2,
+            "buildStatus":0,
+            "type":"resource",
+            "name":"#b_pebbleshiner#",
+            "size":100,
+            "cycle":30,
+            "attackgroup":1,
+            "tutstage":0,
+            "sale":0,
+            "description":"pebbleshiner_desc",
+            "cls":BUILDING2,
+            "costs":[
+               {"r1":new SecNum(750), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(15), "re":[[14,1,1]]},            // Level 1
+               {"r1":new SecNum(1575), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(300), "re":[[14,1,1]]},          // Level 2
+               {"r1":new SecNum(3300), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1200), "re":[[14,1,1]]},         // Level 3
+               {"r1":new SecNum(6950), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(3600), "re":[[14,1,2]]},         // Level 4
+               {"r1":new SecNum(14500), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(7200), "re":[[14,1,2]]},        // Level 5
+               {"r1":new SecNum(30600), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(18000), "re":[[14,1,3]]},       // Level 6
+               {"r1":new SecNum(64300), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(43200), "re":[[14,1,3]]},       // Level 7
+               {"r1":new SecNum(135000), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,4]]},      // Level 8
+               {"r1":new SecNum(283600), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(172800), "re":[[14,1,4]]},     // Level 9
+               {"r1":new SecNum(600000), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,5]]},     // Level 10
+               {"r1":new SecNum(700000), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,6]]},     // Level 11
+               {"r1":new SecNum(800000), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,8]]},     // Level 12
+               {"r1":new SecNum(1000000), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,10],[12,1,2]]},   // Level 13
+               {"r1":new SecNum(2000000), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,12],[12,1,2]]},   // Level 14
+               {"r1":new SecNum(3000000), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,14],[12,1,2]]},   // Level 15
+               {"r1":new SecNum(4000000), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,15],[12,1,2]]},   // Level 16
+               {"r1":new SecNum(5000000), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,16],[12,1,2]]},   // Level 17
+               {"r1":new SecNum(10000000), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,18],[12,1,2]]},  // Level 18
+               {"r1":new SecNum(25000000), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,19],[12,1,2]]},  // Level 19
+               {"r1":new SecNum(50000000), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,20],[12,1,2]]}   // Level 20
+            ],
+            "imageData":{
+               "baseurl":"buildings/pebbleshiner.v2/",
+               "1":{
+                  "anim":["anim.1.png",new Rectangle(-21,8,42,24),26],
+                  "top":["top.1.png",new Point(-34,-12)],
+                  "shadow":["shadow.1.jpg",new Point(-33,27)],
+                  "topdamaged":["top.1.damaged.png",new Point(-34,-6)],
+                  "shadowdamaged":["shadow.1.damaged.jpg",new Point(-31,27)],
+                  "topdestroyed":["top.destroyed.png",new Point(-35,-2)],
+                  "shadowdestroyed":["shadow.destroyed.jpg",new Point(-33,22)]
+               },
+               "3":{
+                  "anim":["anim.3.png",new Rectangle(-29,3,58,31),26],
+                  "top":["top.3.png",new Point(-34,-27)],
+                  "shadow":["shadow.3.jpg",new Point(-33,27)],
+                  "topdamaged":["top.3.damaged.png",new Point(-33,-26)],
+                  "shadowdamaged":["shadow.3.damaged.jpg",new Point(-31,22)],
+                  "topdestroyed":["top.destroyed.png",new Point(-35,-2)],
+                  "shadowdestroyed":["shadow.destroyed.jpg",new Point(-32,22)]
+               },
+               "6":{
+                  "anim":["anim.6.png",new Rectangle(-29,-5,58,41),26],
+                  "top":["top.6.png",new Point(-34,-34)],
+                  "shadow":["shadow.6.jpg",new Point(-34,20)],
+                  "topdamaged":["top.6.damaged.png",new Point(-45,-32)],
+                  "shadowdamaged":["shadow.6.damaged.jpg",new Point(-34,20)],
+                  "topdestroyed":["top.destroyed.png",new Point(-35,-2)],
+                  "shadowdestroyed":["shadow.destroyed.jpg",new Point(-33,22)]
+               },
+               "10":{
+                  "anim":["anim.10.png",new Rectangle(-29,-37,62,72),24],
+                  "top":["top.10.png",new Point(-34,-32)],
+                  "shadow":["shadow.10.jpg",new Point(-34,22)],
+                  "topdamaged":["top.10.damaged.png",new Point(-34,-36)],
+                  "shadowdamaged":["shadow.10.damaged.jpg",new Point(-34,15)],
+                  "topdestroyed":["top.destroyed.png",new Point(-35,-2)],
+                  "shadowdestroyed":["shadow.destroyed.jpg",new Point(-33,22)]
+               }
             },
-            "3":{
-               "anim":["anim.3.png",new Rectangle(-29,3,58,31),26],
-               "top":["top.3.png",new Point(-34,-27)],
-               "shadow":["shadow.3.jpg",new Point(-33,27)],
-               "topdamaged":["top.3.damaged.png",new Point(-33,-26)],
-               "shadowdamaged":["shadow.3.damaged.jpg",new Point(-31,22)],
-               "topdestroyed":["top.destroyed.png",new Point(-35,-2)],
-               "shadowdestroyed":["shadow.destroyed.jpg",new Point(-32,22)]
+            "upgradeImgData":{
+               "baseurl":"buildingbuttons/",
+               "1":{
+                  "img":"2.1.jpg",
+                  "silhouette_img":"2.1.silhouette.jpg"
+               },
+               "3":{"img":"2.3.jpg"},
+               "6":{"img":"2.6.jpg"},
+               "10":{"img":"2.10.jpg"}
             },
-            "6":{
-               "anim":["anim.6.png",new Rectangle(-29,-5,58,41),26],
-               "top":["top.6.png",new Point(-34,-34)],
-               "shadow":["shadow.6.jpg",new Point(-34,20)],
-               "topdamaged":["top.6.damaged.png",new Point(-45,-32)],
-               "shadowdamaged":["shadow.6.damaged.jpg",new Point(-34,20)],
-               "topdestroyed":["top.destroyed.png",new Point(-35,-2)],
-               "shadowdestroyed":["shadow.destroyed.jpg",new Point(-33,22)]
+            "thumbImgData":{
+               "baseurl":"buildingthumbs/",
+               "1":{"img":"2.1.png"},
+               "3":{"img":"2.3.png"},
+               "6":{"img":"2.6.png"},
+               "10":{"img":"2.10.png"}
             },
-            "10":{
-               "anim":["anim.10.png",new Rectangle(-29,-37,62,72),24],
-               "top":["top.10.png",new Point(-34,-32)],
-               "shadow":["shadow.10.jpg",new Point(-34,22)],
-               "topdamaged":["top.10.damaged.png",new Point(-34,-36)],
-               "shadowdamaged":["shadow.10.damaged.jpg",new Point(-34,15)],
-               "topdestroyed":["top.destroyed.png",new Point(-35,-2)],
-               "shadowdestroyed":["shadow.destroyed.jpg",new Point(-33,22)]
-            }
+            "quantity":[0,1,2,4,5,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6],
+            "produce":[2,4,7,11,16,22,29,37,46,56,100,200,360,720,1450,2200,2900,4500,9000,15000],
+            "cycleTime":[10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10],
+            "capacity":[720,2160,5670,13365,29160,60142,118918,227584,424414,775018,1400000,2800000,5000000,10000000,20000000,30000000,40000000,62500000,125000000,250000000],
+            "hp":[500,950,1800,3400,6500,12000,24000,45000,85000,165000,300000,350000,400000,450000,500000,550000,600000,650000,700000,800000],
+            "repairTime":[30,60,120,240,480,960,1920,3840,7680,15360,15360,15360,15360,15360,15360,15360,15360,15360,15360,15360]
          },
-         "upgradeImgData":{
-            "baseurl":"buildingbuttons/",
-            "1":{
-               "img":"2.1.jpg",
-               "silhouette_img":"2.1.silhouette.jpg"
+         {
+            "id":3,
+            "group":1,
+            "order":3,
+            "buildStatus":0,
+            "type":"resource",
+            "name":"#b_puttysquisher#",
+            "size":100,
+            "cycle":30,
+            "attackgroup":1,
+            "tutstage":80,
+            "sale":0,
+            "description":"puttysquisher_desc",
+            "cls":BUILDING3,
+            "costs":[
+               {"r1":new SecNum(525), "r2":new SecNum(224), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(20), "re":[[14,1,1]]},                 // Level 1
+               {"r1":new SecNum(1102), "r2":new SecNum(470), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(300), "re":[[14,1,1]]},               // Level 2
+               {"r1":new SecNum(2315), "r2":new SecNum(992), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1200), "re":[[14,1,1]]},              // Level 3
+               {"r1":new SecNum(4862), "r2":new SecNum(2086), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(3600), "re":[[14,1,2]]},             // Level 4
+               {"r1":new SecNum(10210), "r2":new SecNum(4375), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(7200), "re":[[14,1,2]]},            // Level 5
+               {"r1":new SecNum(21441), "r2":new SecNum(9190), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(18000), "re":[[14,1,3]]},           // Level 6
+               {"r1":new SecNum(45027), "r2":new SecNum(19298), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(43200), "re":[[14,1,3]]},          // Level 7
+               {"r1":new SecNum(94557), "r2":new SecNum(40524), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,4]]},          // Level 8
+               {"r1":new SecNum(198570), "r2":new SecNum(85102), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(172800), "re":[[14,1,4]]},        // Level 9
+               {"r1":new SecNum(416997), "r2":new SecNum(178716), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,5]]},       // Level 10
+               {"r1":new SecNum(350000), "r2":new SecNum(350000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,6]]},       // Level 11
+               {"r1":new SecNum(400000), "r2":new SecNum(400000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,8]]},       // Level 12
+               {"r1":new SecNum(500000), "r2":new SecNum(500000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,10],[12,1,2]]},      // Level 13
+               {"r1":new SecNum(1000000), "r2":new SecNum(1000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,12],[12,1,2]]},    // Level 14
+               {"r1":new SecNum(1500000), "r2":new SecNum(1500000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,14],[12,1,2]]},    // Level 15
+               {"r1":new SecNum(2000000), "r2":new SecNum(2000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,15],[12,1,2]]},    // Level 16
+               {"r1":new SecNum(2500000), "r2":new SecNum(2500000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,16],[12,1,2]]},    // Level 17
+               {"r1":new SecNum(5000000), "r2":new SecNum(5000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,18],[12,1,2]]},    // Level 18
+               {"r1":new SecNum(12500000), "r2":new SecNum(12500000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,19],[12,1,2]]},  // Level 19
+               {"r1":new SecNum(25000000), "r2":new SecNum(25000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,20],[12,1,2]]}   // Level 20
+            ],
+            "imageData":{
+               "baseurl":"buildings/puttysquisher.v2/",
+               "1":{
+                  "anim":["anim.1.png",new Rectangle(-10,8,28,18),26],
+                  "top":["top.1.png",new Point(-26,5)],
+                  "shadow":["shadow.1.jpg",new Point(-21,29)],
+                  "topdamaged":["top.1.damaged.png",new Point(-29,4)],
+                  "shadowdamaged":["shadow.1.damaged.jpg",new Point(-28,28)],
+                  "topdestroyed":["top.destroyed.png",new Point(-39,5)],
+                  "shadowdestroyed":["shadow.destroyed.jpg",new Point(-36,21)]
+               },
+               "3":{
+                  "anim":["anim.3.png",new Rectangle(-10,-7,29,20),26],
+                  "top":["top.3.png",new Point(-28,-20)],
+                  "shadow":["shadow.3.jpg",new Point(-33,18)],
+                  "topdamaged":["top.3.damaged.png",new Point(-38,-20)],
+                  "shadowdamaged":["shadow.3.damaged.jpg",new Point(-37,26)],
+                  "topdestroyed":["top.destroyed.png",new Point(-39,5)],
+                  "shadowdestroyed":["shadow.destroyed.jpg",new Point(-36,21)]
+               },
+               "6":{
+                  "anim":["anim.6.png",new Rectangle(-10,-6,29,19),26],
+                  "top":["top.6.png",new Point(-30,-43)],
+                  "shadow":["shadow.6.jpg",new Point(-28,23)],
+                  "topdamaged":["top.6.damaged.png",new Point(-28,-38)],
+                  "shadowdamaged":["shadow.6.damaged.jpg",new Point(-29,25)],
+                  "topdestroyed":["top.destroyed.png",new Point(-39,5)],
+                  "shadowdestroyed":["shadow.destroyed.jpg",new Point(-36,21)]
+               },
+               "10":{
+                  "anim":["anim.10.png",new Rectangle(-10,-39,44,52),25],
+                  "top":["top.10.png",new Point(-31,-42)],
+                  "shadow":["shadow.10.jpg",new Point(-31,22)],
+                  "topdamaged":["top.10.damaged.png",new Point(-40,-40)],
+                  "shadowdamaged":["shadow.10.damaged.jpg",new Point(-38,24)],
+                  "topdestroyed":["top.destroyed.png",new Point(-39,5)],
+                  "shadowdestroyed":["shadow.destroyed.jpg",new Point(-36,21)]
+               }
             },
-            "3":{"img":"2.3.jpg"},
-            "6":{"img":"2.6.jpg"},
-            "10":{"img":"2.10.jpg"}
-         },
-         "thumbImgData":{
-            "baseurl":"buildingthumbs/",
-            "1":{"img":"2.1.png"},
-            "3":{"img":"2.3.png"},
-            "6":{"img":"2.6.png"},
-            "10":{"img":"2.10.png"}
-         },
-         "quantity":[0,1,2,4,5,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6],
-         "produce":[2,4,7,11,16,22,29,37,46,56,100,200,360,720,1450,2200,2900,4500,9000,15000],
-         "cycleTime":[10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10],
-         "capacity":[720,2160,5670,13365,29160,60142,118918,227584,424414,775018,1400000,2800000,5000000,10000000,20000000,30000000,40000000,62500000,125000000,250000000],
-         "hp":[500,950,1800,3400,6500,12000,24000,45000,85000,165000,300000,350000,400000,450000,500000,550000,600000,650000,700000,800000],
-         "repairTime":[30,60,120,240,480,960,1920,3840,7680,15360,15360,15360,15360,15360,15360,15360,15360,15360,15360,15360]
-      },{
-         "id":3,
-         "group":1,
-         "order":3,
-         "buildStatus":0,
-         "type":"resource",
-         "name":"#b_puttysquisher#",
-         "size":100,
-         "cycle":30,
-         "attackgroup":1,
-         "tutstage":80,
-         "sale":0,
-         "description":"puttysquisher_desc",
-         "cls":BUILDING3,
-         "costs":[
-		      {"r1":new SecNum(525), "r2":new SecNum(224), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(20), "re":[[14,1,1]]},                 // Level 1
-            {"r1":new SecNum(1102), "r2":new SecNum(470), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(300), "re":[[14,1,1]]},               // Level 2
-            {"r1":new SecNum(2315), "r2":new SecNum(992), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1200), "re":[[14,1,1]]},              // Level 3
-            {"r1":new SecNum(4862), "r2":new SecNum(2086), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(3600), "re":[[14,1,2]]},             // Level 4
-            {"r1":new SecNum(10210), "r2":new SecNum(4375), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(7200), "re":[[14,1,2]]},            // Level 5
-            {"r1":new SecNum(21441), "r2":new SecNum(9190), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(18000), "re":[[14,1,3]]},           // Level 6
-            {"r1":new SecNum(45027), "r2":new SecNum(19298), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(43200), "re":[[14,1,3]]},          // Level 7
-            {"r1":new SecNum(94557), "r2":new SecNum(40524), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,4]]},          // Level 8
-            {"r1":new SecNum(198570), "r2":new SecNum(85102), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(172800), "re":[[14,1,4]]},        // Level 9
-            {"r1":new SecNum(416997), "r2":new SecNum(178716), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,5]]},       // Level 10
-            {"r1":new SecNum(350000), "r2":new SecNum(350000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,6]]},       // Level 11
-            {"r1":new SecNum(400000), "r2":new SecNum(400000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,8]]},       // Level 12
-            {"r1":new SecNum(500000), "r2":new SecNum(500000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,10]]},      // Level 13
-            {"r1":new SecNum(1000000), "r2":new SecNum(1000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,12]]},    // Level 14
-            {"r1":new SecNum(1500000), "r2":new SecNum(1500000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,14]]},    // Level 15
-            {"r1":new SecNum(2000000), "r2":new SecNum(2000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,15]]},    // Level 16
-            {"r1":new SecNum(2500000), "r2":new SecNum(2500000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,16]]},    // Level 17
-            {"r1":new SecNum(5000000), "r2":new SecNum(5000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,18]]},    // Level 18
-            {"r1":new SecNum(12500000), "r2":new SecNum(12500000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,19]]},  // Level 19
-            {"r1":new SecNum(25000000), "r2":new SecNum(25000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,20]]}   // Level 20
-         ],
-         "imageData":{
-            "baseurl":"buildings/puttysquisher.v2/",
-            "1":{
-               "anim":["anim.1.png",new Rectangle(-10,8,28,18),26],
-               "top":["top.1.png",new Point(-26,5)],
-               "shadow":["shadow.1.jpg",new Point(-21,29)],
-               "topdamaged":["top.1.damaged.png",new Point(-29,4)],
-               "shadowdamaged":["shadow.1.damaged.jpg",new Point(-28,28)],
-               "topdestroyed":["top.destroyed.png",new Point(-39,5)],
-               "shadowdestroyed":["shadow.destroyed.jpg",new Point(-36,21)]
+            "upgradeImgData":{
+               "baseurl":"buildingbuttons/",
+               "1":{
+                  "img":"3.1.jpg",
+                  "silhouette_img":"3.6.v2.silhouette.jpg"
+               },
+               "3":{"img":"3.3.v2.jpg"},
+               "6":{"img":"3.6.v2.jpg"},
+               "10":{"img":"3.10.v2.jpg"}
             },
-            "3":{
-               "anim":["anim.3.png",new Rectangle(-10,-7,29,20),26],
-               "top":["top.3.png",new Point(-28,-20)],
-               "shadow":["shadow.3.jpg",new Point(-33,18)],
-               "topdamaged":["top.3.damaged.png",new Point(-38,-20)],
-               "shadowdamaged":["shadow.3.damaged.jpg",new Point(-37,26)],
-               "topdestroyed":["top.destroyed.png",new Point(-39,5)],
-               "shadowdestroyed":["shadow.destroyed.jpg",new Point(-36,21)]
+            "thumbImgData":{
+               "baseurl":"buildingthumbs/",
+               "1":{"img":"3.1.png"},
+               "3":{"img":"3.3.png"},
+               "6":{"img":"3.6.png"},
+               "10":{"img":"3.10.png"}
             },
-            "6":{
-               "anim":["anim.6.png",new Rectangle(-10,-6,29,19),26],
-               "top":["top.6.png",new Point(-30,-43)],
-               "shadow":["shadow.6.jpg",new Point(-28,23)],
-               "topdamaged":["top.6.damaged.png",new Point(-28,-38)],
-               "shadowdamaged":["shadow.6.damaged.jpg",new Point(-29,25)],
-               "topdestroyed":["top.destroyed.png",new Point(-39,5)],
-               "shadowdestroyed":["shadow.destroyed.jpg",new Point(-36,21)]
+            "quantity":[0,1,2,4,5,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6],
+            "produce":[2,4,7,11,16,22,29,37,46,56,100,200,360,720,1450,2200,2900,4500,9000,15000],
+            "cycleTime":[10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10],
+            "capacity":[720,2160,5670,13365,29160,60142,118918,227584,424414,775018,1400000,2800000,5000000,10000000,20000000,30000000,40000000,62500000,125000000,250000000],
+            "hp":[500,950,1800,3400,6500,12000,24000,45000,85000,165000,300000,350000,400000,450000,500000,550000,600000,650000,700000,800000],
+            "repairTime":[30,60,120,240,480,960,1920,3840,7680,15360,15360,15360,15360,15360,15360,15360,15360,15360,15360,15360]
+         },
+         {
+            "id":4,
+            "group":1,
+            "order":4,
+            "buildStatus":0,
+            "type":"resource",
+            "name":"#b_goofactory#",
+            "size":100,
+            "cycle":30,
+            "attackgroup":1,
+            "tutstage":80,
+            "sale":0,
+            "description":"goofactory_desc",
+            "cls":BUILDING4,
+            "costs":[
+               {"r1":new SecNum(247), "r2":new SecNum(577), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(20), "re":[[14,1,1]]},                 // Level 1
+               {"r1":new SecNum(520), "r2":new SecNum(1212), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(300), "re":[[14,1,1]]},               // Level 2
+               {"r1":new SecNum(1090), "r2":new SecNum(2546), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1200), "re":[[14,1,1]]},             // Level 3
+               {"r1":new SecNum(2290), "r2":new SecNum(5348), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(3600), "re":[[14,1,2]]},             // Level 4
+               {"r1":new SecNum(4810), "r2":new SecNum(11231), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(7200), "re":[[14,1,2]]},            // Level 5
+               {"r1":new SecNum(10108), "r2":new SecNum(23585), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(18000), "re":[[14,1,3]]},          // Level 6
+               {"r1":new SecNum(21227), "r2":new SecNum(49529), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(43200), "re":[[14,1,3]]},          // Level 7
+               {"r1":new SecNum(44580), "r2":new SecNum(104012), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,4]]},         // Level 8
+               {"r1":new SecNum(93600), "r2":new SecNum(218427), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(172800), "re":[[14,1,4]]},        // Level 9
+               {"r1":new SecNum(196584), "r2":new SecNum(458696), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,5]]},       // Level 10
+               {"r1":new SecNum(350000), "r2":new SecNum(350000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,6]]},       // Level 11
+               {"r1":new SecNum(400000), "r2":new SecNum(400000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,8]]},       // Level 12
+               {"r1":new SecNum(500000), "r2":new SecNum(500000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,10],[12,1,2]]},      // Level 13
+               {"r1":new SecNum(1000000), "r2":new SecNum(1000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,12],[12,1,2]]},    // Level 14
+               {"r1":new SecNum(1500000), "r2":new SecNum(1500000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,14],[12,1,2]]},    // Level 15
+               {"r1":new SecNum(2000000), "r2":new SecNum(2000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,15],[12,1,2]]},    // Level 16
+               {"r1":new SecNum(2500000), "r2":new SecNum(2500000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,16],[12,1,2]]},    // Level 17
+               {"r1":new SecNum(5000000), "r2":new SecNum(5000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,18],[12,1,2]]},    // Level 18
+               {"r1":new SecNum(12500000), "r2":new SecNum(12500000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,19],[12,1,2]]},  // Level 19
+               {"r1":new SecNum(25000000), "r2":new SecNum(25000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,20],[12,1,2]]}   // Level 20
+            ],
+            "imageData":{
+               "baseurl":"buildings/goofactory.v2/",
+               "1":{
+                  "anim":["anim.1.png",new Rectangle(3,14,22,40),26],
+                  "top":["top.1.png",new Point(-26,-33)],
+                  "shadow":["shadow.1.jpg",new Point(-25,29)],
+                  "topdamaged":["top.1.damaged.png",new Point(-32,-15)],
+                  "shadowdamaged":["shadow.1.damaged.jpg",new Point(-30,27)],
+                  "topdestroyed":["top.destroyed.png",new Point(-31,0)],
+                  "shadowdestroyed":["shadow.destroyed.jpg",new Point(-35,24)]
+               },
+               "3":{
+                  "anim":["anim.3.png",new Rectangle(4,12,25,45),26],
+                  "top":["top.3.png",new Point(-27,-33)],
+                  "shadow":["shadow.3.jpg",new Point(-31,21)],
+                  "topdamaged":["top.3.damaged.png",new Point(-28,-31)],
+                  "shadowdamaged":["shadow.3.damaged.jpg",new Point(-31,20)],
+                  "topdestroyed":["top.destroyed.png",new Point(-31,0)],
+                  "shadowdestroyed":["shadow.destroyed.jpg",new Point(-35,24)]
+               },
+               "6":{
+                  "anim":["anim.6.png",new Rectangle(-21,12,51,48),26],
+                  "top":["top.6.png",new Point(-33,-33)],
+                  "shadow":["shadow.6.jpg",new Point(-26,27)],
+                  "topdamaged":["top.6.damaged.png",new Point(-37,-29)],
+                  "shadowdamaged":["shadow.6.damaged.jpg",new Point(-36,25)],
+                  "topdestroyed":["top.destroyed.png",new Point(-31,0)],
+                  "shadowdestroyed":["shadow.destroyed.jpg",new Point(-35,24)]
+               },
+               "10":{
+                  "anim":["anim.10.png",new Rectangle(-21,11,51,47),26],
+                  "top":["top.10.png",new Point(-40,-48)],
+                  "shadow":["shadow.10.jpg",new Point(-35,28)],
+                  "topdamaged":["top.10.damaged.png",new Point(-45,-42)],
+                  "shadowdamaged":["shadow.10.damaged.jpg",new Point(-37,25)],
+                  "topdestroyed":["top.destroyed.png",new Point(-31,0)],
+                  "shadowdestroyed":["shadow.destroyed.jpg",new Point(-35,24)]
+               }
             },
-            "10":{
-               "anim":["anim.10.png",new Rectangle(-10,-39,44,52),25],
-               "top":["top.10.png",new Point(-31,-42)],
-               "shadow":["shadow.10.jpg",new Point(-31,22)],
-               "topdamaged":["top.10.damaged.png",new Point(-40,-40)],
-               "shadowdamaged":["shadow.10.damaged.jpg",new Point(-38,24)],
-               "topdestroyed":["top.destroyed.png",new Point(-39,5)],
-               "shadowdestroyed":["shadow.destroyed.jpg",new Point(-36,21)]
-            }
-         },
-         "upgradeImgData":{
-            "baseurl":"buildingbuttons/",
-            "1":{
-               "img":"3.1.jpg",
-               "silhouette_img":"3.6.v2.silhouette.jpg"
+            "upgradeImgData":{
+               "baseurl":"buildingbuttons/",
+               "1":{
+                  "img":"4.1.jpg",
+                  "silhouette_img":"4.3.silhouette.jpg"
+               },
+               "3":{"img":"4.3.jpg"},
+               "6":{"img":"4.6.jpg"},
+               "10":{"img":"4.10.jpg"}
             },
-            "3":{"img":"3.3.v2.jpg"},
-            "6":{"img":"3.6.v2.jpg"},
-            "10":{"img":"3.10.v2.jpg"}
-         },
-         "thumbImgData":{
-            "baseurl":"buildingthumbs/",
-            "1":{"img":"3.1.png"},
-            "3":{"img":"3.3.png"},
-            "6":{"img":"3.6.png"},
-            "10":{"img":"3.10.png"}
-         },
-         "quantity":[0,1,2,4,5,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6],
-         "produce":[2,4,7,11,16,22,29,37,46,56,100,200,360,720,1450,2200,2900,4500,9000,15000],
-         "cycleTime":[10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10],
-         "capacity":[720,2160,5670,13365,29160,60142,118918,227584,424414,775018,1400000,2800000,5000000,10000000,20000000,30000000,40000000,62500000,125000000,250000000],
-         "hp":[500,950,1800,3400,6500,12000,24000,45000,85000,165000,300000,350000,400000,450000,500000,550000,600000,650000,700000,800000],
-         "repairTime":[30,60,120,240,480,960,1920,3840,7680,15360,15360,15360,15360,15360,15360,15360,15360,15360,15360,15360]
-      },{
-         "id":4,
-         "group":1,
-         "order":4,
-         "buildStatus":0,
-         "type":"resource",
-         "name":"#b_goofactory#",
-         "size":100,
-         "cycle":30,
-         "attackgroup":1,
-         "tutstage":80,
-         "sale":0,
-         "description":"goofactory_desc",
-         "cls":BUILDING4,
-         "costs":[
-            {"r1":new SecNum(247), "r2":new SecNum(577), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(20), "re":[[14,1,1]]},                 // Level 1
-            {"r1":new SecNum(520), "r2":new SecNum(1212), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(300), "re":[[14,1,1]]},               // Level 2
-            {"r1":new SecNum(1090), "r2":new SecNum(2546), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1200), "re":[[14,1,1]]},             // Level 3
-            {"r1":new SecNum(2290), "r2":new SecNum(5348), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(3600), "re":[[14,1,2]]},             // Level 4
-            {"r1":new SecNum(4810), "r2":new SecNum(11231), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(7200), "re":[[14,1,2]]},            // Level 5
-            {"r1":new SecNum(10108), "r2":new SecNum(23585), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(18000), "re":[[14,1,3]]},          // Level 6
-            {"r1":new SecNum(21227), "r2":new SecNum(49529), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(43200), "re":[[14,1,3]]},          // Level 7
-            {"r1":new SecNum(44580), "r2":new SecNum(104012), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,4]]},         // Level 8
-            {"r1":new SecNum(93600), "r2":new SecNum(218427), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(172800), "re":[[14,1,4]]},        // Level 9
-            {"r1":new SecNum(196584), "r2":new SecNum(458696), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,5]]},       // Level 10
-            {"r1":new SecNum(350000), "r2":new SecNum(350000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,6]]},       // Level 11
-            {"r1":new SecNum(400000), "r2":new SecNum(400000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,8]]},       // Level 12
-            {"r1":new SecNum(500000), "r2":new SecNum(500000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,10]]},      // Level 13
-            {"r1":new SecNum(1000000), "r2":new SecNum(1000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,12]]},    // Level 14
-            {"r1":new SecNum(1500000), "r2":new SecNum(1500000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,14]]},    // Level 15
-            {"r1":new SecNum(2000000), "r2":new SecNum(2000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,15]]},    // Level 16
-            {"r1":new SecNum(2500000), "r2":new SecNum(2500000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,16]]},    // Level 17
-            {"r1":new SecNum(5000000), "r2":new SecNum(5000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,18]]},    // Level 18
-            {"r1":new SecNum(12500000), "r2":new SecNum(12500000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,19]]},  // Level 19
-            {"r1":new SecNum(25000000), "r2":new SecNum(25000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,20]]}   // Level 20
-         ],
-         "imageData":{
-            "baseurl":"buildings/goofactory.v2/",
-            "1":{
-               "anim":["anim.1.png",new Rectangle(3,14,22,40),26],
-               "top":["top.1.png",new Point(-26,-33)],
-               "shadow":["shadow.1.jpg",new Point(-25,29)],
-               "topdamaged":["top.1.damaged.png",new Point(-32,-15)],
-               "shadowdamaged":["shadow.1.damaged.jpg",new Point(-30,27)],
-               "topdestroyed":["top.destroyed.png",new Point(-31,0)],
-               "shadowdestroyed":["shadow.destroyed.jpg",new Point(-35,24)]
+            "thumbImgData":{
+               "baseurl":"buildingthumbs/",
+               "1":{"img":"4.1.png"},
+               "3":{"img":"4.3.png"},
+               "6":{"img":"4.6.png"},
+               "10":{"img":"4.10.png"}
             },
-            "3":{
-               "anim":["anim.3.png",new Rectangle(4,12,25,45),26],
-               "top":["top.3.png",new Point(-27,-33)],
-               "shadow":["shadow.3.jpg",new Point(-31,21)],
-               "topdamaged":["top.3.damaged.png",new Point(-28,-31)],
-               "shadowdamaged":["shadow.3.damaged.jpg",new Point(-31,20)],
-               "topdestroyed":["top.destroyed.png",new Point(-31,0)],
-               "shadowdestroyed":["shadow.destroyed.jpg",new Point(-35,24)]
+            "quantity":[0,1,2,4,5,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6],
+            "produce":[2,4,7,11,16,22,29,37,46,56,100,200,360,720,1450,2200,2900,4500,9000,15000],
+            "cycleTime":[10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10],
+            "capacity":[720,2160,5670,13365,29160,60142,118918,227584,424414,775018,1400000,2800000,5000000,10000000,20000000,30000000,40000000,62500000,125000000,250000000],
+            "hp":[500,950,1800,3400,6500,12000,24000,45000,85000,165000,300000,350000,400000,450000,500000,550000,600000,650000,700000,800000],
+            "repairTime":[30,60,120,240,480,960,1920,3840,7680,15360,15360,15360,15360,15360,15360,15360,15360,15360,15360,15360]
+         },
+         {
+            "id":5,
+            "group":2,
+            "order":9,
+            "buildStatus":0,
+            "type":"special",
+            "name":"#b_flinger#",
+            "size":190,
+            "attackgroup":1,
+            "tutstage":60,
+            "sale":0,
+            "description":"flinger_desc",
+            "cls":BUILDING5,
+            "costs":[
+               {"r1":new SecNum(1000), "r2":new SecNum(1000), "r3":new SecNum(500), "r4":new SecNum(0), "time":new SecNum(900), "re":[[14,1,1]]},                         // Level 1
+               {"r1":new SecNum(20000), "r2":new SecNum(20000), "r3":new SecNum(10000), "r4":new SecNum(0), "time":new SecNum(7200), "re":[[14,1,2],[11,1,1]]},           // Level 2
+               {"r1":new SecNum(64300), "r2":new SecNum(64300), "r3":new SecNum(32150), "r4":new SecNum(0), "time":new SecNum(10800), "re":[[14,1,3],[11,1,1]]},          // Level 3
+               {"r1":new SecNum(1247840), "r2":new SecNum(1247840), "r3":new SecNum(623920), "r4":new SecNum(0), "time":new SecNum(97200), "re":[[14,1,4],[11,1,1]]},     // Level 4
+               {"r1":new SecNum(5500000), "r2":new SecNum(5500000), "r3":new SecNum(2750000), "r4":new SecNum(0), "time":new SecNum(302400), "re":[[14,1,5],[11,1,1]]},   // Level 5
+               {"r1":new SecNum(11000000), "r2":new SecNum(11000000), "r3":new SecNum(5500000), "r4":new SecNum(0), "time":new SecNum(600000), "re":[[14,1,11],[11,1,1],[12,1,2]]} // Level 6
+            ],
+            "imageData":{
+               "baseurl":"buildings/flinger/",
+               "1":{
+                  "top":["top.1.png",new Point(-46,-43)],
+                  "shadow":["shadow.1.jpg",new Point(-50,20)],
+                  "topdamaged":["top.1.damaged.png",new Point(-63,-36)],
+                  "shadowdamaged":["shadow.1.damaged.jpg",new Point(-63,23)],
+                  "topdestroyed":["top.2.destroyed.png",new Point(-75,-3)],
+                  "shadowdestroyed":["shadow.2.destroyed.jpg",new Point(-70,24)]
+               },
+               "2":{
+                  "top":["top.2.png",new Point(-45,-40)],
+                  "shadow":["shadow.2.jpg",new Point(-48,19)],
+                  "topdamaged":["top.2.damaged.png",new Point(-63,-18)],
+                  "shadowdamaged":["shadow.2.damaged.jpg",new Point(-63,26)],
+                  "topdestroyed":["top.2.destroyed.png",new Point(-75,-3)],
+                  "shadowdestroyed":["shadow.2.destroyed.jpg",new Point(-70,24)]
+               },
+               "3":{
+                  "top":["top.3.png",new Point(-47,-45)],
+                  "shadow":["shadow.3.jpg",new Point(-44,20)],
+                  "topdamaged":["top.3.damaged.png",new Point(-75,-37)],
+                  "shadowdamaged":["shadow.3.damaged.jpg",new Point(-73,23)],
+                  "topdestroyed":["top.2.destroyed.png",new Point(-75,-3)],
+                  "shadowdestroyed":["shadow.2.destroyed.jpg",new Point(-70,24)]
+               },
+               "4":{
+                  "top":["top.4.png",new Point(-45,-66)],
+                  "shadow":["shadow.4.jpg",new Point(-47,22)],
+                  "topdamaged":["top.4.damaged.png",new Point(-76,-53)],
+                  "shadowdamaged":["shadow.4.damaged.jpg",new Point(-76,23)],
+                  "topdestroyed":["top.2.destroyed.png",new Point(-75,-3)],
+                  "shadowdestroyed":["shadow.2.destroyed.jpg",new Point(-70,24)]
+               },
+               "5":{
+                  "top":["top.4.png",new Point(-45,-66)],
+                  "shadow":["shadow.4.jpg",new Point(-47,22)],
+                  "topdamaged":["top.4.damaged.png",new Point(-76,-53)],
+                  "shadowdamaged":["shadow.4.damaged.jpg",new Point(-76,23)],
+                  "topdestroyed":["top.2.destroyed.png",new Point(-75,-3)],
+                  "shadowdestroyed":["shadow.2.destroyed.jpg",new Point(-70,24)]
+               }
             },
-            "6":{
-               "anim":["anim.6.png",new Rectangle(-21,12,51,48),26],
-               "top":["top.6.png",new Point(-33,-33)],
-               "shadow":["shadow.6.jpg",new Point(-26,27)],
-               "topdamaged":["top.6.damaged.png",new Point(-37,-29)],
-               "shadowdamaged":["shadow.6.damaged.jpg",new Point(-36,25)],
-               "topdestroyed":["top.destroyed.png",new Point(-31,0)],
-               "shadowdestroyed":["shadow.destroyed.jpg",new Point(-35,24)]
+            "upgradeImgData":{
+               "baseurl":"buildingbuttons/",
+               "1":{
+                  "img":"5.1.jpg",
+                  "silhouette_img":"5.3.silhouette.jpg"
+               },
+               "2":{"img":"5.2.jpg"},
+               "3":{"img":"5.3.jpg"},
+               "4":{"img":"5.4.jpg"},
+               "5":{"img":"5.4.jpg"}
             },
-            "10":{
-               "anim":["anim.10.png",new Rectangle(-21,11,51,47),26],
-               "top":["top.10.png",new Point(-40,-48)],
-               "shadow":["shadow.10.jpg",new Point(-35,28)],
-               "topdamaged":["top.10.damaged.png",new Point(-45,-42)],
-               "shadowdamaged":["shadow.10.damaged.jpg",new Point(-37,25)],
-               "topdestroyed":["top.destroyed.png",new Point(-31,0)],
-               "shadowdestroyed":["shadow.destroyed.jpg",new Point(-35,24)]
-            }
-         },
-         "upgradeImgData":{
-            "baseurl":"buildingbuttons/",
-            "1":{
-               "img":"4.1.jpg",
-               "silhouette_img":"4.3.silhouette.jpg"
+            "thumbImgData":{
+               "baseurl":"buildingthumbs/",
+               "1":{"img":"5.1.png"},
+               "2":{"img":"5.2.png"},
+               "3":{"img":"5.3.png"},
+               "4":{"img":"5.4.png"},
+               "5":{"img":"5.4.png"}
             },
-            "3":{"img":"4.3.jpg"},
-            "6":{"img":"4.6.jpg"},
-            "10":{"img":"4.10.jpg"}
+            "quantity":[0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+            "capacity":[500,1000,1750,2250,5000],
+            "hp":[4000,8000,16000,28000,56000,80000],
+            "repairTime":[100,300,600,900,900,900]
          },
-         "thumbImgData":{
-            "baseurl":"buildingthumbs/",
-            "1":{"img":"4.1.png"},
-            "3":{"img":"4.3.png"},
-            "6":{"img":"4.6.png"},
-            "10":{"img":"4.10.png"}
-         },
-         "quantity":[0,1,2,4,5,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6],
-         "produce":[2,4,7,11,16,22,29,37,46,56,100,200,360,720,1450,2200,2900,4500,9000,15000],
-         "cycleTime":[10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10],
-         "capacity":[720,2160,5670,13365,29160,60142,118918,227584,424414,775018,1400000,2800000,5000000,10000000,20000000,30000000,40000000,62500000,125000000,250000000],
-         "hp":[500,950,1800,3400,6500,12000,24000,45000,85000,165000,300000,350000,400000,450000,500000,550000,600000,650000,700000,800000],
-         "repairTime":[30,60,120,240,480,960,1920,3840,7680,15360,15360,15360,15360,15360,15360,15360,15360,15360,15360,15360]
-      },{
-         "id":5,
-         "group":2,
-         "order":9,
-         "buildStatus":0,
-         "type":"special",
-         "name":"#b_flinger#",
-         "size":190,
-         "attackgroup":1,
-         "tutstage":60,
-         "sale":0,
-         "description":"flinger_desc",
-         "cls":BUILDING5,
-         "costs":[
-            {"r1":new SecNum(1000), "r2":new SecNum(1000), "r3":new SecNum(500), "r4":new SecNum(0), "time":new SecNum(900), "re":[[14,1,1]]},
-            {"r1":new SecNum(20000), "r2":new SecNum(20000), "r3":new SecNum(10000), "r4":new SecNum(0), "time":new SecNum(7200), "re":[[14,1,2],[11,1,1]]},
-            {"r1":new SecNum(64300), "r2":new SecNum(64300), "r3":new SecNum(32150), "r4":new SecNum(0), "time":new SecNum(10800), "re":[[14,1,3],[11,1,1]]},
-            {"r1":new SecNum(1247840), "r2":new SecNum(1247840), "r3":new SecNum(623920), "r4":new SecNum(0), "time":new SecNum(97200), "re":[[14,1,4],[11,1,1]]},
-            {"r1":new SecNum(5500000), "r2":new SecNum(5500000), "r3":new SecNum(2750000), "r4":new SecNum(0), "time":new SecNum(302400), "re":[[14,1,5],[11,1,1]]
-         }],
-         "imageData":{
-            "baseurl":"buildings/flinger/",
-            "1":{
-               "top":["top.1.png",new Point(-46,-43)],
-               "shadow":["shadow.1.jpg",new Point(-50,20)],
-               "topdamaged":["top.1.damaged.png",new Point(-63,-36)],
-               "shadowdamaged":["shadow.1.damaged.jpg",new Point(-63,23)],
-               "topdestroyed":["top.2.destroyed.png",new Point(-75,-3)],
-               "shadowdestroyed":["shadow.2.destroyed.jpg",new Point(-70,24)]
+         {
+            "id":6,
+            "group":1,
+            "order":5,
+            "buildStatus":0,
+            "type":"special",
+            "name":"#b_storagesilo#",
+            "size":120,
+            "attackgroup":1,
+            "tutstage":200,
+            "sale":0,
+            "description":"storagesilo_desc",
+            "cls":BUILDING6,
+            "costs":[
+               {"r1":new SecNum(3010), "r2":new SecNum(1855), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1200), "re":[[14,1,1],[1,1,1],[2,1,1],[3,1,1],[4,1,1]]}, // Level 1
+               {"r1":new SecNum(7421), "r2":new SecNum(3710), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1800), "re":[[14,1,2]]},              // Level 2
+               {"r1":new SecNum(14843), "r2":new SecNum(7421), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(2700), "re":[[14,1,2]]},             // Level 3
+               {"r1":new SecNum(29687), "r2":new SecNum(14843), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(4050), "re":[[14,1,3]]},            // Level 4
+               {"r1":new SecNum(59375), "r2":new SecNum(29687), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(6075), "re":[[14,1,3]]},            // Level 5
+               {"r1":new SecNum(118750), "r2":new SecNum(59375), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(9112), "re":[[14,1,3]]},           // Level 6
+               {"r1":new SecNum(237500), "r2":new SecNum(118750), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(13668), "re":[[14,1,4]]},         // Level 7
+               {"r1":new SecNum(475000), "r2":new SecNum(237500), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(20503), "re":[[14,1,4]]},         // Level 8
+               {"r1":new SecNum(950000), "r2":new SecNum(475000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(30754), "re":[[14,1,5]]},         // Level 9
+               {"r1":new SecNum(1900000), "r2":new SecNum(950000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(46132), "re":[[14,1,6]]},        // Level 10
+               {"r1":new SecNum(2500000), "r2":new SecNum(2500000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,8]]},       // Level 11
+               {"r1":new SecNum(5000000), "r2":new SecNum(5000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,10],[12,1,2]]},      // Level 12
+               {"r1":new SecNum(7500000), "r2":new SecNum(7500000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(172800), "re":[[14,1,12],[12,1,2]]},     // Level 13
+               {"r1":new SecNum(10000000), "r2":new SecNum(10000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(172800), "re":[[14,1,14],[12,1,2]]},   // Level 14
+               {"r1":new SecNum(25000000), "r2":new SecNum(25000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,15],[12,1,2]]},   // Level 15
+               {"r1":new SecNum(50000000), "r2":new SecNum(50000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,16],[12,1,2]]},   // Level 16
+               {"r1":new SecNum(75000000), "r2":new SecNum(75000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(345600), "re":[[14,1,17],[12,1,2]]},   // Level 17
+               {"r1":new SecNum(100000000), "r2":new SecNum(100000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(345600), "re":[[14,1,18],[12,1,2]]}, // Level 18
+               {"r1":new SecNum(250000000), "r2":new SecNum(250000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(432000), "re":[[14,1,19],[12,1,2]]}, // Level 19
+               {"r1":new SecNum(500000000), "r2":new SecNum(500000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(432000), "re":[[14,1,20],[12,1,2]]}  // Level 20
+            ],
+            "can_fortify":true,
+            "fortify_costs":[
+               {"r1":new SecNum(59375), "r2":new SecNum(29687), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(60750), "re":[[14,1,5]]},
+               {"r1":new SecNum(118750), "r2":new SecNum(59375), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(91120), "re":[[14,1,6]]},
+               {"r1":new SecNum(637500), "r2":new SecNum(518750), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(136680), "re":[[14,1,7]]},
+               {"r1":new SecNum(1475000), "r2":new SecNum(1237500), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(205030), "re":[[14,1,8]]}
+            ],
+            "imageData":{
+               "baseurl":"buildings/storagesilo/",
+               "1":{
+                  "anim":["anim.3.png",new Rectangle(-37,-52,74,121),26],
+                  "top":["top.3.png",new Point(-37,-52)],
+                  "shadow":["shadow.3.jpg",new Point(-37,25)],
+                  "topdamaged":["top.3.damaged.png",new Point(-37,-50)],
+                  "shadowdamaged":["shadow.3.damaged.jpg",new Point(-36,33)],
+                  "topdestroyed":["top.3.destroyed.png",new Point(-51,23)],
+                  "shadowdestroyed":["shadow.3.destroyed.jpg",new Point(-45,29)]
+               }
             },
-            "2":{
-               "top":["top.2.png",new Point(-45,-40)],
-               "shadow":["shadow.2.jpg",new Point(-48,19)],
-               "topdamaged":["top.2.damaged.png",new Point(-63,-18)],
-               "shadowdamaged":["shadow.2.damaged.jpg",new Point(-63,26)],
-               "topdestroyed":["top.2.destroyed.png",new Point(-75,-3)],
-               "shadowdestroyed":["shadow.2.destroyed.jpg",new Point(-70,24)]
+            "upgradeImgData":{
+               "baseurl":"buildingbuttons/",
+               "1":{
+                  "img":"6.jpg",
+                  "silhouette_img":"6.silhouette.jpg"
+               }
             },
-            "3":{
-               "top":["top.3.png",new Point(-47,-45)],
-               "shadow":["shadow.3.jpg",new Point(-44,20)],
-               "topdamaged":["top.3.damaged.png",new Point(-75,-37)],
-               "shadowdamaged":["shadow.3.damaged.jpg",new Point(-73,23)],
-               "topdestroyed":["top.2.destroyed.png",new Point(-75,-3)],
-               "shadowdestroyed":["shadow.2.destroyed.jpg",new Point(-70,24)]
+            "thumbImgData":{
+               "baseurl":"buildingthumbs/",
+               "1":{"img":"6.png"}
             },
-            "4":{
-               "top":["top.4.png",new Point(-45,-66)],
-               "shadow":["shadow.4.jpg",new Point(-47,22)],
-               "topdamaged":["top.4.damaged.png",new Point(-76,-53)],
-               "shadowdamaged":["shadow.4.damaged.jpg",new Point(-76,23)],
-               "topdestroyed":["top.2.destroyed.png",new Point(-75,-3)],
-               "shadowdestroyed":["shadow.2.destroyed.jpg",new Point(-70,24)]
+            "fortImgData":{
+               "baseurl":"buildings/fortifications/",
+               "1":{
+                  "front":["fort70_F1.png",new Point(-73,28)],
+                  "back":["fort70_B1.png",new Point(-71,-4)]
+               },
+               "2":{
+                  "front":["fort70_F2.png",new Point(-69,26)],
+                  "back":["fort70_B2.png",new Point(-65,-7)]
+               },
+               "3":{
+                  "front":["fort70_F3.png",new Point(-73,17)],
+                  "back":["fort70_B3.png",new Point(-69,-5)]
+               },
+               "4":{
+                  "front":["fort70_F4.png",new Point(-70,-3)],
+                  "back":["fort70_B4.png",new Point(-62,-31)]
+               }
             },
-            "5":{
-               "top":["top.4.png",new Point(-45,-66)],
-               "shadow":["shadow.4.jpg",new Point(-47,22)],
-               "topdamaged":["top.4.damaged.png",new Point(-76,-53)],
-               "shadowdamaged":["shadow.4.damaged.jpg",new Point(-76,23)],
-               "topdestroyed":["top.2.destroyed.png",new Point(-75,-3)],
-               "shadowdestroyed":["shadow.2.destroyed.jpg",new Point(-70,24)]
-            }
+            "quantity":[0,1,2,3,4,5,5,5,5,6,6,6,6,6,6,6,6,6,6,6,6],
+            "capacity":[7500,15000,30000,60000,120000,240000,480000,960000,1920000,3840000,7680000,15360000,30720000,61440000,122880000,140000000,160000000,180000000,200000000,250000000],
+            "hp":[750,1400,2550,4750,8800,16250,30000,55600,105000,190000,250000,260000,270000,280000,290000,300000,310000,320000,330000,350000],
+            "repairTime":[30,60,120,240,480,960,1920,3840,7680,15360,15360,15360,15360,15360,15360,15360,15360,15360,15360,15360]
          },
-         "upgradeImgData":{
-            "baseurl":"buildingbuttons/",
-            "1":{
-               "img":"5.1.jpg",
-               "silhouette_img":"5.3.silhouette.jpg"
+         {
+            "id":7,
+            "group":999,
+            "order":1,
+            "buildStatus":0,
+            "type":"mushroom",
+            "name":"#b_mushroom#",
+            "size":10,
+            "attackgroup":0,
+            "tutstage":0,
+            "sale":0,
+            "description":"flag_desc",
+            "cls":BUILDING7,
+            "costs":[
+               {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(0), "re":[[0,0,0]]}
+            ],
+            "thumbImgData":{
+               "baseurl":"buildingthumbs/",
+               "1":{"img":"7.png"}
             },
-            "2":{"img":"5.2.jpg"},
-            "3":{"img":"5.3.jpg"},
-            "4":{"img":"5.4.jpg"},
-            "5":{"img":"5.4.jpg"}
+            "quantity":[0],
+            "hp":[10],
+            "repairTime":[10]
          },
-         "thumbImgData":{
-            "baseurl":"buildingthumbs/",
-            "1":{"img":"5.1.png"},
-            "2":{"img":"5.2.png"},
-            "3":{"img":"5.3.png"},
-            "4":{"img":"5.4.png"},
-            "5":{"img":"5.4.png"}
-         },
-         "quantity":[0,1,1,1,1,1,1,1,1,1,1],
-         "capacity":[500,1000,1750,2250,3000],
-         "hp":[4000,8000,16000,28000,56000],
-         "repairTime":[100,300,600,900,900]
-      },{
-         "id":6,
-         "group":1,
-         "order":5,
-         "buildStatus":0,
-         "type":"special",
-         "name":"#b_storagesilo#",
-         "size":120,
-         "attackgroup":1,
-         "tutstage":200,
-         "sale":0,
-         "description":"storagesilo_desc",
-         "cls":BUILDING6,
-         "costs":[
-            {"r1":new SecNum(3010), "r2":new SecNum(1855), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1200), "re":[[14,1,1],[1,1,1],[2,1,1],[3,1,1],[4,1,1]]}, // Level 1
-            {"r1":new SecNum(7421), "r2":new SecNum(3710), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1800), "re":[[14,1,2]]},              // Level 2
-            {"r1":new SecNum(14843), "r2":new SecNum(7421), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(2700), "re":[[14,1,2]]},             // Level 3
-            {"r1":new SecNum(29687), "r2":new SecNum(14843), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(4050), "re":[[14,1,3]]},            // Level 4
-            {"r1":new SecNum(59375), "r2":new SecNum(29687), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(6075), "re":[[14,1,3]]},            // Level 5
-            {"r1":new SecNum(118750), "r2":new SecNum(59375), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(9112), "re":[[14,1,3]]},           // Level 6
-            {"r1":new SecNum(237500), "r2":new SecNum(118750), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(13668), "re":[[14,1,4]]},         // Level 7
-            {"r1":new SecNum(475000), "r2":new SecNum(237500), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(20503), "re":[[14,1,4]]},         // Level 8
-            {"r1":new SecNum(950000), "r2":new SecNum(475000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(30754), "re":[[14,1,5]]},         // Level 9
-            {"r1":new SecNum(1900000), "r2":new SecNum(950000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(46132), "re":[[14,1,6]]},        // Level 10
-            {"r1":new SecNum(2500000), "r2":new SecNum(2500000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,8]]},       // Level 11
-            {"r1":new SecNum(5000000), "r2":new SecNum(5000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,10]]},      // Level 12
-            {"r1":new SecNum(7500000), "r2":new SecNum(7500000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(172800), "re":[[14,1,12]]},     // Level 13
-            {"r1":new SecNum(10000000), "r2":new SecNum(10000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(172800), "re":[[14,1,14]]},   // Level 14
-            {"r1":new SecNum(25000000), "r2":new SecNum(25000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,15]]},   // Level 15
-            {"r1":new SecNum(50000000), "r2":new SecNum(50000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,16]]},   // Level 16
-            {"r1":new SecNum(75000000), "r2":new SecNum(75000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(345600), "re":[[14,1,17]]},   // Level 17
-            {"r1":new SecNum(100000000), "r2":new SecNum(100000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(345600), "re":[[14,1,18]]}, // Level 18
-            {"r1":new SecNum(250000000), "r2":new SecNum(250000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(432000), "re":[[14,1,19]]}, // Level 19
-            {"r1":new SecNum(500000000), "r2":new SecNum(500000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(432000), "re":[[14,1,20]]}  // Level 20
-         ],
-         "can_fortify":true,
-         "fortify_costs":[{"r1":new SecNum(59375), "r2":new SecNum(29687), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(60750), "re":[[14,1,5]]},
-            {"r1":new SecNum(118750), "r2":new SecNum(59375), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(91120), "re":[[14,1,6]]},
-            {"r1":new SecNum(637500), "r2":new SecNum(518750), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(136680), "re":[[14,1,7]]},
-            {"r1":new SecNum(1475000), "r2":new SecNum(1237500), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(205030), "re":[[14,1,8]]
-         }],
-         "imageData":{
-            "baseurl":"buildings/storagesilo/",
-            "1":{
-               "anim":["anim.3.png",new Rectangle(-37,-52,74,121),26],
-               "top":["top.3.png",new Point(-37,-52)],
-               "shadow":["shadow.3.jpg",new Point(-37,25)],
-               "topdamaged":["top.3.damaged.png",new Point(-37,-50)],
-               "shadowdamaged":["shadow.3.damaged.jpg",new Point(-36,33)],
-               "topdestroyed":["top.3.destroyed.png",new Point(-51,23)],
-               "shadowdestroyed":["shadow.3.destroyed.jpg",new Point(-45,29)]
-            }
-         },
-         "upgradeImgData":{
-            "baseurl":"buildingbuttons/",
-            "1":{
-               "img":"6.jpg",
-               "silhouette_img":"6.silhouette.jpg"
-            }
-         },
-         "thumbImgData":{
-            "baseurl":"buildingthumbs/",
-            "1":{"img":"6.png"}
-         },
-         "fortImgData":{
-            "baseurl":"buildings/fortifications/",
-            "1":{
-               "front":["fort70_F1.png",new Point(-73,28)],
-               "back":["fort70_B1.png",new Point(-71,-4)]
+         {
+            "id":8,
+            "group":2,
+            "order":3,
+            "buildStatus":0,
+            "type":"special",
+            "name":"#b_monsterlocker#",
+            "size":120,
+            "attackgroup":2,
+            "tutstage":200,
+            "sale":0,
+            "description":"monsterlocker_desc",
+            "cls":BUILDING8,
+            "costs":[
+               {"r1":new SecNum(1800), "r2":new SecNum(2300), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(600), "re":[[14,1,2]]},
+               {"r1":new SecNum(28800), "r2":new SecNum(18400), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(18000), "re":[[14,1,3]]},
+               {"r1":new SecNum(115200), "r2":new SecNum(147200), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(72000), "re":[[14,1,4]]},
+               {"r1":new SecNum(460800), "r2":new SecNum(588800), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(129600), "re":[[14,1,5]]}
+            ],
+            "imageData":{
+               "baseurl":"buildings/monsterlocker/",
+               "1":{
+                  "anim":["anim.1.png",new Rectangle(-42,-44,36,41),21],
+                  "top":["top.1.png",new Point(-31,-29)],
+                  "shadow":["shadow.1.jpg",new Point(-27,37)],
+                  "topdamaged":["top.1.damaged.png",new Point(-38,-23)],
+                  "shadowdamaged":["shadow.1.damaged.jpg",new Point(-52,26)],
+                  "topdestroyed":["top.2.destroyed.png",new Point(-53,-41)],
+                  "shadowdestroyed":["shadow.2.destroyed.jpg",new Point(-52,25)]
+               },
+               "2":{
+                  "anim":["anim.2.png",new Rectangle(-46,-93,61,69),20],
+                  "top":["top.2.png",new Point(-51,-64)],
+                  "shadow":["shadow.2.jpg",new Point(-40,18)],
+                  "topdamaged":["top.2.damaged.png",new Point(-57,-47)],
+                  "shadowdamaged":["shadow.2.damaged.jpg",new Point(-52,26)],
+                  "topdestroyed":["top.2.destroyed.png",new Point(-53,-41)],
+                  "shadowdestroyed":["shadow.2.destroyed.jpg",new Point(-52,25)]
+               },
+               "3":{
+                  "anim":["anim.3.png",new Rectangle(-48,-90,87,89),20],
+                  "top":["top.3.png",new Point(-53,-79)],
+                  "shadow":["shadow.3.jpg",new Point(-55,23)],
+                  "topdamaged":["top.3.damaged.png",new Point(-54,-69)],
+                  "shadowdamaged":["shadow.3.damaged.jpg",new Point(-56,31)],
+                  "topdestroyed":["top.2.destroyed.png",new Point(-53,-41)],
+                  "shadowdestroyed":["shadow.2.destroyed.jpg",new Point(-52,25)]
+               },
+               "4":{
+                  "anim":["anim.4.png",new Rectangle(-50,-91,92,89),21],
+                  "top":["top.4.png",new Point(-54,-98)],
+                  "shadow":["shadow.4.jpg",new Point(-54,30)],
+                  "topdamaged":["top.4.damaged.png",new Point(-69,-78)],
+                  "shadowdamaged":["shadow.4.damaged.jpg",new Point(-59,30)],
+                  "topdestroyed":["top.2.destroyed.png",new Point(-53,-41)],
+                  "shadowdestroyed":["shadow.2.destroyed.jpg",new Point(-52,25)]
+               }
             },
-            "2":{
-               "front":["fort70_F2.png",new Point(-69,26)],
-               "back":["fort70_B2.png",new Point(-65,-7)]
+            "upgradeImgData":{
+               "baseurl":"buildingbuttons/",
+               "1":{
+                  "img":"8.1.jpg",
+                  "silhouette_img":"8.2.silhouette.jpg"
+               },
+               "2":{"img":"8.2.jpg"},
+               "3":{"img":"8.3.jpg"},
+               "4":{"img":"8.4.jpg"}
             },
-            "3":{
-               "front":["fort70_F3.png",new Point(-73,17)],
-               "back":["fort70_B3.png",new Point(-69,-5)]
+            "thumbImgData":{
+               "baseurl":"buildingthumbs/",
+               "1":{"img":"8.1.png"},
+               "2":{"img":"8.2.png"},
+               "3":{"img":"8.3.png"},
+               "4":{"img":"8.4.png"}
             },
-            "4":{
-               "front":["fort70_F4.png",new Point(-70,-3)],
-               "back":["fort70_B4.png",new Point(-62,-31)]
-            }
+            "quantity":[0,0,1,1,1,1,1,1,1,1,1],
+            "hp":[4000,16000,32000,64000],
+            "repairTime":[480,1920,3840,15360]
          },
-         "quantity":[0,1,2,3,4,5,5,5,5,6,6,6,6,6,6,6,6,6,6,6,6],
-         "capacity":[7500,15000,30000,60000,120000,240000,480000,960000,1920000,3840000,7680000,15360000,30720000,61440000,122880000,140000000,160000000,180000000,200000000,250000000],
-         "hp":[750,1400,2550,4750,8800,16250,30000,55600,105000,190000,250000,260000,270000,280000,290000,300000,310000,320000,330000,350000],
-         "repairTime":[30,60,120,240,480,960,1920,3840,7680,15360,15360,15360,15360,15360,15360,15360,15360,15360,15360,15360]
-      },{
-         "id":7,
-         "group":999,
-         "order":1,
-         "buildStatus":0,
-         "type":"mushroom",
-         "name":"#b_mushroom#",
-         "size":10,
-         "attackgroup":0,
-         "tutstage":0,
-         "sale":0,
-         "description":"flag_desc",
-         "cls":BUILDING7,
-         "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(0), "re":[[0,0,0]]
-         }],
-         "thumbImgData":{
-            "baseurl":"buildingthumbs/",
-            "1":{"img":"7.png"}
-         },
-         "quantity":[0],
-         "hp":[10],
-         "repairTime":[10]
-      },{
-         "id":8,
-         "group":2,
-         "order":3,
-         "buildStatus":0,
-         "type":"special",
-         "name":"#b_monsterlocker#",
-         "size":120,
-         "attackgroup":2,
-         "tutstage":200,
-         "sale":0,
-         "description":"monsterlocker_desc",
-         "cls":BUILDING8,
-         "costs":[
-            {"r1":new SecNum(1800), "r2":new SecNum(2300), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(600), "re":[[14,1,2]]},
-            {"r1":new SecNum(28800), "r2":new SecNum(18400), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(18000), "re":[[14,1,3]]},
-            {"r1":new SecNum(115200), "r2":new SecNum(147200), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(72000), "re":[[14,1,4]]},
-            {"r1":new SecNum(460800), "r2":new SecNum(588800), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(129600), "re":[[14,1,5]]
-         }],
-         "imageData":{
-            "baseurl":"buildings/monsterlocker/",
-            "1":{
-               "anim":["anim.1.png",new Rectangle(-42,-44,36,41),21],
-               "top":["top.1.png",new Point(-31,-29)],
-               "shadow":["shadow.1.jpg",new Point(-27,37)],
-               "topdamaged":["top.1.damaged.png",new Point(-38,-23)],
-               "shadowdamaged":["shadow.1.damaged.jpg",new Point(-52,26)],
-               "topdestroyed":["top.2.destroyed.png",new Point(-53,-41)],
-               "shadowdestroyed":["shadow.2.destroyed.jpg",new Point(-52,25)]
+         {
+            "id":9,
+            "group":2,
+            "order":14,
+            "buildStatus":0,
+            "type":"special",
+            "name":"#b_monsterjuicer#",
+            "size":120,
+            "attackgroup":2,
+            "tutstage":200,
+            "sale":0,
+            "description":"monsterjuicer_desc",
+            "cls":BUILDING9,
+            "costs":[
+               {"r1":new SecNum(1000), "r2":new SecNum(1000), "r3":new SecNum(1000), "r4":new SecNum(0), "time":new SecNum(300), "re":[[14,1,1],[15,1,1]]},
+               {"r1":new SecNum(10000), "r2":new SecNum(10000), "r3":new SecNum(10000), "r4":new SecNum(0), "time":new SecNum(7200), "re":[[14,1,2],[15,1,1]]},
+               {"r1":new SecNum(100000), "r2":new SecNum(100000), "r3":new SecNum(100000), "r4":new SecNum(0), "time":new SecNum(21600), "re":[[14,1,3],[15,1,1]]}
+            ],
+            "imageData":{
+               "baseurl":"buildings/monsterjuiceloosener/",
+               "1":{
+                  "anim":["anim.2.png",new Rectangle(-30,-17,60,39),51],
+                  "top":["top.2.png",new Point(-44,-8)],
+                  "shadow":["shadow.2.jpg",new Point(-44,16)],
+                  "topdamaged":["top.2.damaged.png",new Point(-59,-8)],
+                  "shadowdamaged":["shadow.2.damaged.jpg",new Point(-59,21)],
+                  "topdestroyed":["top.2.destroyed.png",new Point(-55,0)],
+                  "shadowdestroyed":["shadow.2.destroyed.jpg",new Point(-49,17)]
+               }
             },
-            "2":{
-               "anim":["anim.2.png",new Rectangle(-46,-93,61,69),20],
-               "top":["top.2.png",new Point(-51,-64)],
-               "shadow":["shadow.2.jpg",new Point(-40,18)],
-               "topdamaged":["top.2.damaged.png",new Point(-57,-47)],
-               "shadowdamaged":["shadow.2.damaged.jpg",new Point(-52,26)],
-               "topdestroyed":["top.2.destroyed.png",new Point(-53,-41)],
-               "shadowdestroyed":["shadow.2.destroyed.jpg",new Point(-52,25)]
+            "upgradeImgData":{
+               "baseurl":"buildingbuttons/",
+               "1":{
+                  "img":"9.jpg",
+                  "silhouette_img":"9.silhouette.jpg"
+               }
             },
-            "3":{
-               "anim":["anim.3.png",new Rectangle(-48,-90,87,89),20],
-               "top":["top.3.png",new Point(-53,-79)],
-               "shadow":["shadow.3.jpg",new Point(-55,23)],
-               "topdamaged":["top.3.damaged.png",new Point(-54,-69)],
-               "shadowdamaged":["shadow.3.damaged.jpg",new Point(-56,31)],
-               "topdestroyed":["top.2.destroyed.png",new Point(-53,-41)],
-               "shadowdestroyed":["shadow.2.destroyed.jpg",new Point(-52,25)]
+            "thumbImgData":{
+               "baseurl":"buildingthumbs/",
+               "1":{"img":"9.png"}
             },
-            "4":{
-               "anim":["anim.4.png",new Rectangle(-50,-91,92,89),21],
-               "top":["top.4.png",new Point(-54,-98)],
-               "shadow":["shadow.4.jpg",new Point(-54,30)],
-               "topdamaged":["top.4.damaged.png",new Point(-69,-78)],
-               "shadowdamaged":["shadow.4.damaged.jpg",new Point(-59,30)],
-               "topdestroyed":["top.2.destroyed.png",new Point(-53,-41)],
-               "shadowdestroyed":["shadow.2.destroyed.jpg",new Point(-52,25)]
-            }
+            "quantity":[0,1,1,1,1,1,1,1,1,1,1],
+            "hp":[16000,32000,64000],
+            "repairTime":[480,1920,7680]
          },
-         "upgradeImgData":{
-            "baseurl":"buildingbuttons/",
-            "1":{
-               "img":"8.1.jpg",
-               "silhouette_img":"8.2.silhouette.jpg"
+         {
+            "id":10,
+            "group":2,
+            "order":13,
+            "buildStatus":0,
+            "type":"special",
+            "name":"#b_yardplanner#",
+            "size":120,
+            "attackgroup":2,
+            "tutstage":200,
+            "sale":0,
+            "description":"yardplanner_desc",
+            "cls":BUILDING10,
+            "costs":[
+               {"r1":new SecNum(250000), "r2":new SecNum(250000), "r3":new SecNum(0), "r4":new SecNum(0), "r5":0, "time":new SecNum(43200), "re":[[14,1,3]]}
+            ],
+            "imageData":{
+               "baseurl":"buildings/yardplanner/",
+               "1":{
+                  "top":["top.1.png",new Point(-45,-29)],
+                  "shadow":["shadow.1.jpg",new Point(-57,16)],
+                  "topdamaged":["top.1.damaged.png",new Point(-58,-27)],
+                  "shadowdamaged":["shadow.1.damaged.jpg",new Point(-46,23)],
+                  "topdestroyed":["top.1.destroyed.png",new Point(-52,6)],
+                  "shadowdestroyed":["shadow.1.destroyed.jpg",new Point(-50,32)]
+               }
             },
-            "2":{"img":"8.2.jpg"},
-            "3":{"img":"8.3.jpg"},
-            "4":{"img":"8.4.jpg"}
+            "upgradeImgData":{
+               "baseurl":"buildingbuttons/",
+               "1":{
+                  "img":"10.jpg",
+                  "silhouette_img":"10.silhouette.jpg"
+               }
+            },
+            "thumbImgData":{
+               "baseurl":"buildingthumbs/",
+               "1":{"img":"10.png"}
+            },
+            "quantity":[0,0,0,1,1,1,1,1,1,1,1],
+            "hp":[16000],
+            "repairTime":[3840]
          },
-         "thumbImgData":{
-            "baseurl":"buildingthumbs/",
-            "1":{"img":"8.1.png"},
-            "2":{"img":"8.2.png"},
-            "3":{"img":"8.3.png"},
-            "4":{"img":"8.4.png"}
+         {
+            "id":11,
+            "group":2,
+            "order":11,
+            "buildStatus":0,
+            "type":"special",
+            "name":"#b_maproom#",
+            "size":120,
+            "attackgroup":1,
+            "tutstage":80,
+            "sale":0,
+            "description":"maproom_desc",
+            "cls":BUILDING11,
+            "costs":[
+               {"r1":new SecNum(2000), "r2":new SecNum(2000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(900), "re":[[14,1,1]]},
+               {"r1":new SecNum(1000000), "r2":new SecNum(1000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(345600), "re":[[14,1,6]]}
+            ],
+            "imageData":{
+               "baseurl":"buildings/maproom/",
+               "1":{
+                  "top":["top.1.png",new Point(-58,-67)],
+                  "shadow":["shadow.1.jpg",new Point(-68,15)],
+                  "topdamaged":["top.1.damaged.png",new Point(-73,-44)],
+                  "shadowdamaged":["shadow.1.damaged.jpg",new Point(-67,23)],
+                  "topdestroyed":["top.1.destroyed.png",new Point(-70,0)],
+                  "shadowdestroyed":["shadow.1.destroyed.jpg",new Point(-67,27)]
+               }
+            },
+            "upgradeImgData":{
+               "baseurl":"buildingbuttons/",
+               "1":{
+                  "img":"11.jpg",
+                  "silhouette_img":"11.silhouette.jpg"
+               }
+            },
+            "thumbImgData":{
+               "baseurl":"buildingthumbs/",
+               "1":{"img":"11.png"}
+            },
+            "quantity":[0,1,1,1,1,1,1,1,1,1,1],
+            "hp":[5000,10000],
+            "repairTime":[300,600]
          },
-         "quantity":[0,0,1,1,1,1,1,1,1,1,1],
-         "hp":[4000,16000,32000,64000],
-         "repairTime":[480,1920,3840,15360]
-      },{
-         "id":9,
-         "group":2,
-         "order":14,
-         "buildStatus":0,
-         "type":"special",
-         "name":"#b_monsterjuicer#",
-         "size":120,
-         "attackgroup":2,
-         "tutstage":200,
-         "sale":0,
-         "description":"monsterjuicer_desc",
-         "cls":BUILDING9,
-         "costs":[
-            {"r1":new SecNum(1000), "r2":new SecNum(1000), "r3":new SecNum(1000), "r4":new SecNum(0), "time":new SecNum(300), "re":[[14,1,1],[15,1,1]]},
-            {"r1":new SecNum(10000), "r2":new SecNum(10000), "r3":new SecNum(10000), "r4":new SecNum(0), "time":new SecNum(7200), "re":[[14,1,2],[15,1,1]]},
-            {"r1":new SecNum(100000), "r2":new SecNum(100000), "r3":new SecNum(100000), "r4":new SecNum(0), "time":new SecNum(21600), "re":[[14,1,3],[15,1,1]]
-         }],
-         "imageData":{
-            "baseurl":"buildings/monsterjuiceloosener/",
-            "1":{
-               "anim":["anim.2.png",new Rectangle(-30,-17,60,39),51],
-               "top":["top.2.png",new Point(-44,-8)],
-               "shadow":["shadow.2.jpg",new Point(-44,16)],
-               "topdamaged":["top.2.damaged.png",new Point(-59,-8)],
-               "shadowdamaged":["shadow.2.damaged.jpg",new Point(-59,21)],
-               "topdestroyed":["top.2.destroyed.png",new Point(-55,0)],
-               "shadowdestroyed":["shadow.2.destroyed.jpg",new Point(-49,17)]
-            }
+         {
+            "id":12,
+            "group":2,
+            "order":2,
+            "buildStatus":0,
+            "type":"special",
+            "name":"#b_generalstore#",
+            "size":80,
+            "attackgroup":2,
+            "tutstage":0,
+            "sale":0,
+            "description":"generalstore_desc",
+            "costs":[
+               {"r1":new SecNum(1080), "r2":new SecNum(720), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(10), "re":[[14,1,1]]},
+               {"r1":new SecNum(75000000), "r2":new SecNum(75000000), "r3":new SecNum(75000000), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,10]]}
+            ],
+            "cls":BUILDING12,
+            "imageData":{
+               "baseurl":"buildings/generalstore/",
+               "1":{
+                  "top":["top.1.png",new Point(-40,-37)],
+                  "shadow":["shadow.1.jpg",new Point(-44,13)],
+                  "topdamaged":["top.1.damaged.png",new Point(-44,-49)],
+                  "shadowdamaged":["shadow.1.damaged.jpg",new Point(-44,15)],
+                  "topdestroyed":["top.1.destroyed.png",new Point(-49,-28)],
+                  "shadowdestroyed":["shadow.1.destroyed.jpg",new Point(-48,13)]
+               }
+            },
+            "upgradeImgData":{
+               "baseurl":"buildingbuttons/",
+               "1":{
+                  "img":"12.jpg",
+                  "silhouette_img":"12.silhouette.jpg"
+               }
+            },
+            "thumbImgData":{
+               "baseurl":"buildingthumbs/",
+               "1":{"img":"12.png"}
+            },
+            "quantity":[0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+            "hp":[4000,10000],
+            "repairTime":[10,30]
          },
-         "upgradeImgData":{
-            "baseurl":"buildingbuttons/",
-            "1":{
-               "img":"9.jpg",
-               "silhouette_img":"9.silhouette.jpg"
-            }
-         },
-         "thumbImgData":{
-            "baseurl":"buildingthumbs/",
-            "1":{"img":"9.png"}
-         },
-         "quantity":[0,1,1,1,1,1,1,1,1,1,1],
-         "hp":[16000,32000,64000],
-         "repairTime":[480,1920,7680]
-      },{
-         "id":10,
-         "group":2,
-         "order":13,
-         "buildStatus":0,
-         "type":"special",
-         "name":"#b_yardplanner#",
-         "size":120,
-         "attackgroup":2,
-         "tutstage":200,
-         "sale":0,
-         "description":"yardplanner_desc",
-         "cls":BUILDING10,
-         "costs":[
-            {"r1":new SecNum(250000), "r2":new SecNum(250000), "r3":new SecNum(0), "r4":new SecNum(0), "r5":0, "time":new SecNum(43200), "re":[[14,1,3]]
-         }],
-         "imageData":{
-            "baseurl":"buildings/yardplanner/",
-            "1":{
-               "top":["top.1.png",new Point(-45,-29)],
-               "shadow":["shadow.1.jpg",new Point(-57,16)],
-               "topdamaged":["top.1.damaged.png",new Point(-58,-27)],
-               "shadowdamaged":["shadow.1.damaged.jpg",new Point(-46,23)],
-               "topdestroyed":["top.1.destroyed.png",new Point(-52,6)],
-               "shadowdestroyed":["shadow.1.destroyed.jpg",new Point(-50,32)]
-            }
-         },
-         "upgradeImgData":{
-            "baseurl":"buildingbuttons/",
-            "1":{
-               "img":"10.jpg",
-               "silhouette_img":"10.silhouette.jpg"
-            }
-         },
-         "thumbImgData":{
-            "baseurl":"buildingthumbs/",
-            "1":{"img":"10.png"}
-         },
-         "quantity":[0,0,0,1,1,1,1,1,1,1,1],
-         "hp":[16000],
-         "repairTime":[3840]
-      },{
-         "id":11,
-         "group":2,
-         "order":11,
-         "buildStatus":0,
-         "type":"special",
-         "name":"#b_maproom#",
-         "size":120,
-         "attackgroup":1,
-         "tutstage":80,
-         "sale":0,
-         "description":"maproom_desc",
-         "cls":BUILDING11,
-         "costs":[
-            {"r1":new SecNum(2000), "r2":new SecNum(2000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(900), "re":[[14,1,1]]},
-            {"r1":new SecNum(1000000), "r2":new SecNum(1000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(345600), "re":[[14,1,6]]
-         }],
-         "imageData":{
-            "baseurl":"buildings/maproom/",
-            "1":{
-               "top":["top.1.png",new Point(-58,-67)],
-               "shadow":["shadow.1.jpg",new Point(-68,15)],
-               "topdamaged":["top.1.damaged.png",new Point(-73,-44)],
-               "shadowdamaged":["shadow.1.damaged.jpg",new Point(-67,23)],
-               "topdestroyed":["top.1.destroyed.png",new Point(-70,0)],
-               "shadowdestroyed":["shadow.1.destroyed.jpg",new Point(-67,27)]
-            }
-         },
-         "upgradeImgData":{
-            "baseurl":"buildingbuttons/",
-            "1":{
-               "img":"11.jpg",
-               "silhouette_img":"11.silhouette.jpg"
-            }
-         },
-         "thumbImgData":{
-            "baseurl":"buildingthumbs/",
-            "1":{"img":"11.png"}
-         },
-         "quantity":[0,1,1,1,1,1,1,1,1,1,1],
-         "hp":[5000,10000],
-         "repairTime":[300,600]
-      },{
-         "id":12,
-         "group":2,
-         "order":2,
-         "buildStatus":0,
-         "type":"special",
-         "name":"#b_generalstore#",
-         "size":80,
-         "attackgroup":2,
-         "tutstage":0,
-         "sale":0,
-         "description":"generalstore_desc",
-         "costs":[
-            {"r1":new SecNum(1080), "r2":new SecNum(720), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(10), "re":[[14,1,1]]
-         }],
-         "cls":BUILDING12,
-         "imageData":{
-            "baseurl":"buildings/generalstore/",
-            "1":{
-               "top":["top.1.png",new Point(-40,-37)],
-               "shadow":["shadow.1.jpg",new Point(-44,13)],
-               "topdamaged":["top.1.damaged.png",new Point(-44,-49)],
-               "shadowdamaged":["shadow.1.damaged.jpg",new Point(-44,15)],
-               "topdestroyed":["top.1.destroyed.png",new Point(-49,-28)],
-               "shadowdestroyed":["shadow.1.destroyed.jpg",new Point(-48,13)]
-            }
-         },
-         "upgradeImgData":{
-            "baseurl":"buildingbuttons/",
-            "1":{
-               "img":"12.jpg",
-               "silhouette_img":"12.silhouette.jpg"
-            }
-         },
-         "thumbImgData":{
-            "baseurl":"buildingthumbs/",
-            "1":{"img":"12.png"}
-         },
-         "quantity":[0,1,1,1,1,1,1,1,1,1,1],
-         "hp":[4000],
-         "repairTime":[10]
-      },{
+         {
          "id":13,
          "group":2,
          "order":7,
@@ -925,26 +939,26 @@ package
          "block":true,
          "cls":BUILDING14,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(10), "re":[]},
-            {"r1":new SecNum(7000), "r2":new SecNum(7000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(600), "re":[[14,1,1]]},
-            {"r1":new SecNum(42000), "r2":new SecNum(42000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(14400), "re":[[14,1,2]]},
-            {"r1":new SecNum(240000), "r2":new SecNum(240000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(57600), "re":[[14,1,3]]},
-            {"r1":new SecNum(1400000), "r2":new SecNum(1400000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(172800), "re":[[14,1,4]]},
-            {"r1":new SecNum(7560000), "r2":new SecNum(7560000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(345600), "re":[[14,1,5]]},
-            {"r1":new SecNum(11340000), "r2":new SecNum(11340000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(518400), "re":[[14,1,6]]},
-            {"r1":new SecNum(14420000), "r2":new SecNum(14420000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(691200), "re":[[14,1,7]]},
-            {"r1":new SecNum(18680000), "r2":new SecNum(18680000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1036800), "re":[[14,1,8]]},
-            {"r1":new SecNum(25000000), "r2":new SecNum(25000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1209600), "re":[[14,1,9]]},
-            {"r1":new SecNum(50000000), "r2":new SecNum(50000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1209600), "re":[[14,1,10]]},
-            {"r1":new SecNum(75000000), "r2":new SecNum(75000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1209600), "re":[[14,1,11]]},
-            {"r1":new SecNum(100000000), "r2":new SecNum(100000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1209600), "re":[[14,1,12]]},
-            {"r1":new SecNum(200000000), "r2":new SecNum(200000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1209600), "re":[[14,1,13]]},
-            {"r1":new SecNum(300000000), "r2":new SecNum(300000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1209600), "re":[[14,1,14]]},
-            {"r1":new SecNum(400000000), "r2":new SecNum(400000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1209600), "re":[[14,1,15]]},
-            {"r1":new SecNum(500000000), "r2":new SecNum(500000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1209600), "re":[[14,1,16]]},
-            {"r1":new SecNum(1000000000), "r2":new SecNum(1000000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1209600), "re":[[14,1,17]]},
-            {"r1":new SecNum(2000000000), "r2":new SecNum(2000000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1209600), "re":[[14,1,18]]},
-            {"r1":new SecNum(2500000000), "r2":new SecNum(2500000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1209600), "re":[[14,1,19]]}
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(10), "re":[]},                                 // Level 1
+            {"r1":new SecNum(7000), "r2":new SecNum(7000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(600), "re":[[14,1,1]]},                  // Level 2
+            {"r1":new SecNum(42000), "r2":new SecNum(42000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(14400), "re":[[14,1,2]]},              // Level 3
+            {"r1":new SecNum(240000), "r2":new SecNum(240000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(57600), "re":[[14,1,3]]},            // Level 4
+            {"r1":new SecNum(1400000), "r2":new SecNum(1400000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(172800), "re":[[14,1,4]]},         // Level 5
+            {"r1":new SecNum(7560000), "r2":new SecNum(7560000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(345600), "re":[[14,1,5]]},         // Level 6
+            {"r1":new SecNum(11340000), "r2":new SecNum(11340000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(518400), "re":[[14,1,6]]},       // Level 7
+            {"r1":new SecNum(14420000), "r2":new SecNum(14420000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(691200), "re":[[14,1,7]]},       // Level 8
+            {"r1":new SecNum(18680000), "r2":new SecNum(18680000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1036800), "re":[[14,1,8]]},      // Level 9
+            {"r1":new SecNum(25000000), "r2":new SecNum(25000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1209600), "re":[[14,1,9]]},      // Level 10
+            {"r1":new SecNum(50000000), "r2":new SecNum(50000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1209600), "re":[[12,1,2]]},      // Level 11
+            {"r1":new SecNum(75000000), "r2":new SecNum(75000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1209600), "re":[[14,1,11]]},     // Level 12
+            {"r1":new SecNum(100000000), "r2":new SecNum(100000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1209600), "re":[[14,1,12]]},   // Level 13
+            {"r1":new SecNum(200000000), "r2":new SecNum(200000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1209600), "re":[[14,1,13]]},   // Level 14
+            {"r1":new SecNum(300000000), "r2":new SecNum(300000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1209600), "re":[[14,1,14]]},   // Level 15
+            {"r1":new SecNum(400000000), "r2":new SecNum(400000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1209600), "re":[[14,1,15]]},   // Level 16
+            {"r1":new SecNum(500000000), "r2":new SecNum(500000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1209600), "re":[[14,1,16]]},   // Level 17
+            {"r1":new SecNum(1000000000), "r2":new SecNum(1000000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1209600), "re":[[14,1,17]]}, // Level 18
+            {"r1":new SecNum(2000000000), "r2":new SecNum(2000000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1209600), "re":[[14,1,18]]}, // Level 19
+            {"r1":new SecNum(2400000000), "r2":new SecNum(2400000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1209600), "re":[[14,1,19]]}  // Level 20
          ],
          "can_fortify":true,
          "fortify_costs":[
@@ -1116,8 +1130,8 @@ package
             {"r1":new SecNum(8000000), "r2":new SecNum(8000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(133490), "re":[[14,1,8],[8,1,1]]},     // Level 8
             {"r1":new SecNum(16000000), "r2":new SecNum(16000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(133490), "re":[[14,1,9],[8,1,1]]},   // Level 9
             {"r1":new SecNum(32000000), "r2":new SecNum(32000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(133490), "re":[[14,1,10],[8,1,1]]},  // Level 10
-            {"r1":new SecNum(64000000), "r2":new SecNum(64000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(133490), "re":[[14,1,18],[8,1,1]]},  // Level 11
-            {"r1":new SecNum(128000000), "r2":new SecNum(128000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(133490), "re":[[14,1,20],[8,1,1]]} // Level 12
+            {"r1":new SecNum(64000000), "r2":new SecNum(64000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(133490), "re":[[14,1,18],[8,1,1],[12,1,2]]},  // Level 11
+            {"r1":new SecNum(128000000), "r2":new SecNum(128000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(133490), "re":[[14,1,20],[8,1,1],[12,1,2]]} // Level 12
          ],
          "imageData":{
             "baseurl":"buildings/monsterhousing/",
@@ -1141,7 +1155,7 @@ package
             "baseurl":"buildingthumbs/",
             "1":{"img":"15.png"}
          },
-         "quantity":[0,1,1,2,2,3,3,3,4,4,4,4,4,4,4,5,5,5,6,6,6],
+         "quantity":[0,1,1,2,2,3,3,3,4,4,4,4,4,4,4,4,4,4,4,4,4],
          "capacity":[250,425,520,670,740,870,1090,1225,1440,1680,2000,2500],
          "hp":[4000,14000,25000,43000,75000,130000,145000,160000,175000,190000,205200,215460],
          "repairTime":[100,200,300,400,500,600,700,800,900,1000,1100,1200]

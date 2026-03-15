@@ -485,7 +485,7 @@ package
             "5":{"img":"5.4.png"}
          },
          "quantity":[0,1,1,1,1,1,1,1,1,1,1],
-         "capacity":[250,850,1500,2500,3500,3500,3500],
+         "capacity":[500,1000,1750,2250,3000],
          "hp":[4000,8000,16000,28000,56000],
          "repairTime":[100,300,600,900,900]
       },{
@@ -1106,16 +1106,18 @@ package
          "description":"housing_desc",
          "cls":BUILDING15,
          "costs":[
-            {"r1":new SecNum(2160), "r2":new SecNum(2160), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(300), "re":[[14,1,1]]},                     // Level 1
-            {"r1":new SecNum(8640), "r2":new SecNum(8640), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(4500), "re":[[14,1,3],[8,1,1]]},            // Level 2
-            {"r1":new SecNum(34560), "r2":new SecNum(34560), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(10800), "re":[[14,1,4],[8,1,1]]},         // Level 3
-            {"r1":new SecNum(138240), "r2":new SecNum(138240), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(28800), "re":[[14,1,5],[8,1,1]]},       // Level 4
-            {"r1":new SecNum(552960), "r2":new SecNum(552960), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(72000), "re":[[14,1,6],[8,1,1]]},       // Level 5
-            {"r1":new SecNum(2211840), "r2":new SecNum(2211840), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(133490), "re":[[14,1,6],[8,1,1]]},    // Level 6
-            {"r1":new SecNum(4000000), "r2":new SecNum(4000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(133490), "re":[[14,1,7],[8,1,1]]},    // Level 7
-            {"r1":new SecNum(8000000), "r2":new SecNum(8000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(133490), "re":[[14,1,8],[8,1,1]]},    // Level 8
-            {"r1":new SecNum(16000000), "r2":new SecNum(16000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(133490), "re":[[14,1,9],[8,1,1]]},  // Level 9
-            {"r1":new SecNum(32000000), "r2":new SecNum(32000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(133490), "re":[[14,1,10],[8,1,1]]}  // Level 10
+            {"r1":new SecNum(2160), "r2":new SecNum(2160), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(300), "re":[[14,1,1]]},                      // Level 1
+            {"r1":new SecNum(8640), "r2":new SecNum(8640), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(4500), "re":[[14,1,3],[8,1,1]]},             // Level 2
+            {"r1":new SecNum(34560), "r2":new SecNum(34560), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(10800), "re":[[14,1,4],[8,1,1]]},          // Level 3
+            {"r1":new SecNum(138240), "r2":new SecNum(138240), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(28800), "re":[[14,1,5],[8,1,1]]},        // Level 4
+            {"r1":new SecNum(552960), "r2":new SecNum(552960), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(72000), "re":[[14,1,6],[8,1,1]]},        // Level 5
+            {"r1":new SecNum(2211840), "r2":new SecNum(2211840), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(133490), "re":[[14,1,6],[8,1,1]]},     // Level 6
+            {"r1":new SecNum(4000000), "r2":new SecNum(4000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(133490), "re":[[14,1,7],[8,1,1]]},     // Level 7
+            {"r1":new SecNum(8000000), "r2":new SecNum(8000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(133490), "re":[[14,1,8],[8,1,1]]},     // Level 8
+            {"r1":new SecNum(16000000), "r2":new SecNum(16000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(133490), "re":[[14,1,9],[8,1,1]]},   // Level 9
+            {"r1":new SecNum(32000000), "r2":new SecNum(32000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(133490), "re":[[14,1,10],[8,1,1]]},  // Level 10
+            {"r1":new SecNum(64000000), "r2":new SecNum(64000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(133490), "re":[[14,1,18],[8,1,1]]},  // Level 11
+            {"r1":new SecNum(128000000), "r2":new SecNum(128000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(133490), "re":[[14,1,20],[8,1,1]]} // Level 12
          ],
          "imageData":{
             "baseurl":"buildings/monsterhousing/",
@@ -1140,9 +1142,9 @@ package
             "1":{"img":"15.png"}
          },
          "quantity":[0,1,1,2,2,3,3,3,4,4,4,4,4,4,4,5,5,5,6,6,6],
-         "capacity":[250,425,520,670,740,870,1090,1225,1440,1680],
-         "hp":[4000,14000,25000,43000,75000,130000,145000,160000,175000,190000],
-         "repairTime":[100,200,300,400,500,600,700,800,900,1000]
+         "capacity":[250,425,520,670,740,870,1090,1225,1440,1680,2000,2500],
+         "hp":[4000,14000,25000,43000,75000,130000,145000,160000,175000,190000,205200,215460],
+         "repairTime":[100,200,300,400,500,600,700,800,900,1000,1100,1200]
       },{
          "id":16,
          "group":2,
@@ -1664,12 +1666,12 @@ package
          "description":"monsterbunker_desc",
          "cls":BUILDING22,
          "stats":[
-            {"range":300},
-            {"range":350},
-            {"range":400},
-            {"range":450},
-            {"range":500},
-            {"range":500}
+            {"range":300}, // Level 1
+            {"range":350}, // Level 2
+            {"range":400}, // Level 3
+            {"range":450}, // Level 4
+            {"range":500}, // Level 5
+            {"range":500}  // Level 6
          ],
          "costs":[
             {"r1":new SecNum(250000), "r2":new SecNum(187500), "r3":new SecNum(62500), "r4":new SecNum(0), "time":new SecNum(21600), "re":[[14,1,3],[15,1,1]]},         // Level 1
@@ -1701,10 +1703,10 @@ package
             "baseurl":"buildingthumbs/",
             "1":{"img":"22.png"}
          },
-         "quantity":[0,0,0,1,1,2,2,3,4,4,4],
-         "capacity":[190,225,270,330,400],
+         "quantity":[0,0,0,1,1,2,2,3,4,4,4,4,4,4,4,4,4,4,4,4,4],
+         "capacity":[380,450,540,660,800,1000],
          "hp":[10000,24500,52000,75000,105000,147000],
-         "repairTime":[120,240,480,960,1920,3840]
+         "repairTime":[120,240,480,960,1920,3600]
       },{
          "id":23,
          "group":3,

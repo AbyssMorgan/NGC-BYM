@@ -34,17 +34,17 @@ package
                {"r1":new SecNum(0), "r2":new SecNum(135000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,4]]},      // Level 8
                {"r1":new SecNum(0), "r2":new SecNum(283600), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(172800), "re":[[14,1,4]]},     // Level 9
                {"r1":new SecNum(0), "r2":new SecNum(600000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,5]]},     // Level 10
-               {"r1":new SecNum(0), "r2":new SecNum(700000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(345600), "re":[[14,1,6]]},     // Level 11
-               {"r1":new SecNum(0), "r2":new SecNum(800000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(432000), "re":[[14,1,8]]},     // Level 12
-               {"r1":new SecNum(0), "r2":new SecNum(1000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(518400), "re":[[14,1,10]]},   // Level 13
-               {"r1":new SecNum(0), "r2":new SecNum(2000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(604800), "re":[[14,1,12]]},   // Level 14
-               {"r1":new SecNum(0), "r2":new SecNum(3000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(691200), "re":[[14,1,14]]},   // Level 15
-               {"r1":new SecNum(0), "r2":new SecNum(4000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(777600), "re":[[14,1,15]]},   // Level 16
-               {"r1":new SecNum(0), "r2":new SecNum(5000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(864000), "re":[[14,1,16]]},   // Level 17
-               {"r1":new SecNum(0), "r2":new SecNum(10000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(950400), "re":[[14,1,18]]},  // Level 18
-               {"r1":new SecNum(0), "r2":new SecNum(25000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1036800), "re":[[14,1,19]]}, // Level 19
-               {"r1":new SecNum(0), "r2":new SecNum(50000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1209600), "re":[[14,1,20]]   // Level 20
-            }],
+               {"r1":new SecNum(0), "r2":new SecNum(700000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,6]]},     // Level 11
+               {"r1":new SecNum(0), "r2":new SecNum(800000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,8]]},     // Level 12
+               {"r1":new SecNum(0), "r2":new SecNum(1000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,10]]},   // Level 13
+               {"r1":new SecNum(0), "r2":new SecNum(2000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,12]]},   // Level 14
+               {"r1":new SecNum(0), "r2":new SecNum(3000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,14]]},   // Level 15
+               {"r1":new SecNum(0), "r2":new SecNum(4000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,15]]},   // Level 16
+               {"r1":new SecNum(0), "r2":new SecNum(5000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,16]]},   // Level 17
+               {"r1":new SecNum(0), "r2":new SecNum(10000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,18]]},  // Level 18
+               {"r1":new SecNum(0), "r2":new SecNum(25000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,19]]},  // Level 19
+               {"r1":new SecNum(0), "r2":new SecNum(50000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,20]]}    // Level 20
+            ],
             "imageData":{
                "baseurl":"buildings/twigsnapper.v2/",
                "1":{
@@ -133,17 +133,17 @@ package
             {"r1":new SecNum(135000), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,4]]},      // Level 8
             {"r1":new SecNum(283600), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(172800), "re":[[14,1,4]]},     // Level 9
             {"r1":new SecNum(600000), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,5]]},     // Level 10
-            {"r1":new SecNum(700000), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(345600), "re":[[14,1,6]]},     // Level 11
-            {"r1":new SecNum(800000), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(432000), "re":[[14,1,8]]},     // Level 12
-            {"r1":new SecNum(1000000), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(518400), "re":[[14,1,10]]},   // Level 13
-            {"r1":new SecNum(2000000), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(604800), "re":[[14,1,12]]},   // Level 14
-            {"r1":new SecNum(3000000), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(691200), "re":[[14,1,14]]},   // Level 15
-            {"r1":new SecNum(4000000), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(777600), "re":[[14,1,15]]},   // Level 16
-            {"r1":new SecNum(5000000), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(864000), "re":[[14,1,16]]},   // Level 17
-            {"r1":new SecNum(10000000), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(950400), "re":[[14,1,18]]},  // Level 18
-            {"r1":new SecNum(25000000), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1036800), "re":[[14,1,19]]}, // Level 19
-            {"r1":new SecNum(50000000), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1209600), "re":[[14,1,20]]   // Level 20
-         }],
+            {"r1":new SecNum(700000), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,6]]},     // Level 11
+            {"r1":new SecNum(800000), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,8]]},     // Level 12
+            {"r1":new SecNum(1000000), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,10]]},   // Level 13
+            {"r1":new SecNum(2000000), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,12]]},   // Level 14
+            {"r1":new SecNum(3000000), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,14]]},   // Level 15
+            {"r1":new SecNum(4000000), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,15]]},   // Level 16
+            {"r1":new SecNum(5000000), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,16]]},   // Level 17
+            {"r1":new SecNum(10000000), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,18]]},  // Level 18
+            {"r1":new SecNum(25000000), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,19]]},  // Level 19
+            {"r1":new SecNum(50000000), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,20]]}    // Level 20
+         ],
          "imageData":{
             "baseurl":"buildings/pebbleshiner.v2/",
             "1":{
@@ -231,17 +231,17 @@ package
             {"r1":new SecNum(94557), "r2":new SecNum(40524), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,4]]},          // Level 8
             {"r1":new SecNum(198570), "r2":new SecNum(85102), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(172800), "re":[[14,1,4]]},        // Level 9
             {"r1":new SecNum(416997), "r2":new SecNum(178716), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,5]]},       // Level 10
-            {"r1":new SecNum(350000), "r2":new SecNum(350000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(345600), "re":[[14,1,6]]},       // Level 11
-            {"r1":new SecNum(400000), "r2":new SecNum(400000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(432000), "re":[[14,1,8]]},       // Level 12
-            {"r1":new SecNum(500000), "r2":new SecNum(500000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(518400), "re":[[14,1,10]]},      // Level 13
-            {"r1":new SecNum(1000000), "r2":new SecNum(1000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(604800), "re":[[14,1,12]]},    // Level 14
-            {"r1":new SecNum(1500000), "r2":new SecNum(1500000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(691200), "re":[[14,1,14]]},    // Level 15
-            {"r1":new SecNum(2000000), "r2":new SecNum(2000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(777600), "re":[[14,1,15]]},    // Level 16
-            {"r1":new SecNum(2500000), "r2":new SecNum(2500000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(864000), "re":[[14,1,16]]},    // Level 17
-            {"r1":new SecNum(5000000), "r2":new SecNum(5000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(950400), "re":[[14,1,18]]},    // Level 18
-            {"r1":new SecNum(12500000), "r2":new SecNum(12500000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1036800), "re":[[14,1,19]]}, // Level 19
-            {"r1":new SecNum(25000000), "r2":new SecNum(25000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1209600), "re":[[14,1,20]]   // Level 20
-         }],
+            {"r1":new SecNum(350000), "r2":new SecNum(350000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,6]]},       // Level 11
+            {"r1":new SecNum(400000), "r2":new SecNum(400000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,8]]},       // Level 12
+            {"r1":new SecNum(500000), "r2":new SecNum(500000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,10]]},      // Level 13
+            {"r1":new SecNum(1000000), "r2":new SecNum(1000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,12]]},    // Level 14
+            {"r1":new SecNum(1500000), "r2":new SecNum(1500000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,14]]},    // Level 15
+            {"r1":new SecNum(2000000), "r2":new SecNum(2000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,15]]},    // Level 16
+            {"r1":new SecNum(2500000), "r2":new SecNum(2500000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,16]]},    // Level 17
+            {"r1":new SecNum(5000000), "r2":new SecNum(5000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,18]]},    // Level 18
+            {"r1":new SecNum(12500000), "r2":new SecNum(12500000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,19]]},  // Level 19
+            {"r1":new SecNum(25000000), "r2":new SecNum(25000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,20]]}    // Level 20
+         ],
          "imageData":{
             "baseurl":"buildings/puttysquisher.v2/",
             "1":{
@@ -329,17 +329,17 @@ package
             {"r1":new SecNum(44580), "r2":new SecNum(104012), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,4]]},         // Level 8
             {"r1":new SecNum(93600), "r2":new SecNum(218427), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(172800), "re":[[14,1,4]]},        // Level 9
             {"r1":new SecNum(196584), "r2":new SecNum(458696), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,5]]},       // Level 10
-            {"r1":new SecNum(350000), "r2":new SecNum(350000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(345600), "re":[[14,1,6]]},       // Level 11
-            {"r1":new SecNum(400000), "r2":new SecNum(400000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(432000), "re":[[14,1,8]]},       // Level 12
-            {"r1":new SecNum(500000), "r2":new SecNum(500000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(518400), "re":[[14,1,10]]},      // Level 13
-            {"r1":new SecNum(1000000), "r2":new SecNum(1000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(604800), "re":[[14,1,12]]},    // Level 14
-            {"r1":new SecNum(1500000), "r2":new SecNum(1500000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(691200), "re":[[14,1,14]]},    // Level 15
-            {"r1":new SecNum(2000000), "r2":new SecNum(2000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(777600), "re":[[14,1,15]]},    // Level 16
-            {"r1":new SecNum(2500000), "r2":new SecNum(2500000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(864000), "re":[[14,1,16]]},    // Level 17
-            {"r1":new SecNum(5000000), "r2":new SecNum(5000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(950400), "re":[[14,1,18]]},    // Level 18
-            {"r1":new SecNum(12500000), "r2":new SecNum(12500000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1036800), "re":[[14,1,19]]}, // Level 19
-            {"r1":new SecNum(25000000), "r2":new SecNum(25000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1209600), "re":[[14,1,20]]   // Level 20
-         }],
+            {"r1":new SecNum(350000), "r2":new SecNum(350000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,6]]},       // Level 11
+            {"r1":new SecNum(400000), "r2":new SecNum(400000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,8]]},       // Level 12
+            {"r1":new SecNum(500000), "r2":new SecNum(500000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,10]]},      // Level 13
+            {"r1":new SecNum(1000000), "r2":new SecNum(1000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,12]]},    // Level 14
+            {"r1":new SecNum(1500000), "r2":new SecNum(1500000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,14]]},    // Level 15
+            {"r1":new SecNum(2000000), "r2":new SecNum(2000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,15]]},    // Level 16
+            {"r1":new SecNum(2500000), "r2":new SecNum(2500000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,16]]},    // Level 17
+            {"r1":new SecNum(5000000), "r2":new SecNum(5000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,18]]},    // Level 18
+            {"r1":new SecNum(12500000), "r2":new SecNum(12500000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,19]]},  // Level 19
+            {"r1":new SecNum(25000000), "r2":new SecNum(25000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,20]]}    // Level 20
+         ],
          "imageData":{
             "baseurl":"buildings/goofactory.v2/",
             "1":{
@@ -502,27 +502,27 @@ package
          "description":"storagesilo_desc",
          "cls":BUILDING6,
          "costs":[
-            {"r1":new SecNum(3010), "r2":new SecNum(1855), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1200), "re":[[14,1,1],[1,1,1],[2,1,1],[3,1,1],[4,1,1]]},
-            {"r1":new SecNum(7421), "r2":new SecNum(3710), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1800), "re":[[14,1,2]]},
-            {"r1":new SecNum(14843), "r2":new SecNum(7421), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(2700), "re":[[14,1,2]]},
-            {"r1":new SecNum(29687), "r2":new SecNum(14843), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(4050), "re":[[14,1,3]]},
-            {"r1":new SecNum(59375), "r2":new SecNum(29687), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(6075), "re":[[14,1,3]]},
-            {"r1":new SecNum(118750), "r2":new SecNum(59375), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(9112), "re":[[14,1,3]]},
-            {"r1":new SecNum(237500), "r2":new SecNum(118750), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(13668), "re":[[14,1,4]]},
-            {"r1":new SecNum(475000), "r2":new SecNum(237500), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(20503), "re":[[14,1,4]]},
-            {"r1":new SecNum(950000), "r2":new SecNum(475000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(30754), "re":[[14,1,5]]},
-            {"r1":new SecNum(1900000), "r2":new SecNum(950000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(46132), "re":[[14,1,6]]},
-            {"r1":new SecNum(2500000), "r2":new SecNum(2500000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,8]]},
-            {"r1":new SecNum(5000000), "r2":new SecNum(5000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(172800), "re":[[14,1,10]]},
-            {"r1":new SecNum(7500000), "r2":new SecNum(7500000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,12]]},
-            {"r1":new SecNum(10000000), "r2":new SecNum(10000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(345600), "re":[[14,1,14]]},
-            {"r1":new SecNum(25000000), "r2":new SecNum(25000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(432000), "re":[[14,1,15]]},
-            {"r1":new SecNum(50000000), "r2":new SecNum(50000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(518400), "re":[[14,1,16]]},
-            {"r1":new SecNum(75000000), "r2":new SecNum(75000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(604800), "re":[[14,1,17]]},
-            {"r1":new SecNum(100000000), "r2":new SecNum(100000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(691200), "re":[[14,1,18]]},
-            {"r1":new SecNum(250000000), "r2":new SecNum(250000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(777600), "re":[[14,1,19]]},
-            {"r1":new SecNum(500000000), "r2":new SecNum(500000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(864000), "re":[[14,1,20]]
-         }],
+            {"r1":new SecNum(3010), "r2":new SecNum(1855), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1200), "re":[[14,1,1],[1,1,1],[2,1,1],[3,1,1],[4,1,1]]}, // Level 1
+            {"r1":new SecNum(7421), "r2":new SecNum(3710), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1800), "re":[[14,1,2]]},              // Level 2
+            {"r1":new SecNum(14843), "r2":new SecNum(7421), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(2700), "re":[[14,1,2]]},             // Level 3
+            {"r1":new SecNum(29687), "r2":new SecNum(14843), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(4050), "re":[[14,1,3]]},            // Level 4
+            {"r1":new SecNum(59375), "r2":new SecNum(29687), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(6075), "re":[[14,1,3]]},            // Level 5
+            {"r1":new SecNum(118750), "r2":new SecNum(59375), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(9112), "re":[[14,1,3]]},           // Level 6
+            {"r1":new SecNum(237500), "r2":new SecNum(118750), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(13668), "re":[[14,1,4]]},         // Level 7
+            {"r1":new SecNum(475000), "r2":new SecNum(237500), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(20503), "re":[[14,1,4]]},         // Level 8
+            {"r1":new SecNum(950000), "r2":new SecNum(475000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(30754), "re":[[14,1,5]]},         // Level 9
+            {"r1":new SecNum(1900000), "r2":new SecNum(950000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(46132), "re":[[14,1,6]]},        // Level 10
+            {"r1":new SecNum(2500000), "r2":new SecNum(2500000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,8]]},       // Level 11
+            {"r1":new SecNum(5000000), "r2":new SecNum(5000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,10]]},      // Level 12
+            {"r1":new SecNum(7500000), "r2":new SecNum(7500000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(172800), "re":[[14,1,12]]},     // Level 13
+            {"r1":new SecNum(10000000), "r2":new SecNum(10000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(172800), "re":[[14,1,14]]},   // Level 14
+            {"r1":new SecNum(25000000), "r2":new SecNum(25000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,15]]},   // Level 15
+            {"r1":new SecNum(50000000), "r2":new SecNum(50000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,16]]},   // Level 16
+            {"r1":new SecNum(75000000), "r2":new SecNum(75000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(345600), "re":[[14,1,17]]},   // Level 17
+            {"r1":new SecNum(100000000), "r2":new SecNum(100000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(345600), "re":[[14,1,18]]}, // Level 18
+            {"r1":new SecNum(250000000), "r2":new SecNum(250000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(432000), "re":[[14,1,19]]}, // Level 19
+            {"r1":new SecNum(500000000), "r2":new SecNum(500000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(432000), "re":[[14,1,20]]}  // Level 20
+         ],
          "can_fortify":true,
          "fortify_costs":[{"r1":new SecNum(59375), "r2":new SecNum(29687), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(60750), "re":[[14,1,5]]},
             {"r1":new SecNum(118750), "r2":new SecNum(59375), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(91120), "re":[[14,1,6]]},
@@ -734,8 +734,7 @@ package
          "description":"yardplanner_desc",
          "cls":BUILDING10,
          "costs":[
-            {"r1":new SecNum(250000), "r2":new SecNum(250000), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":0, "time":new SecNum(43200), "re":[[14,1,3]]
+            {"r1":new SecNum(250000), "r2":new SecNum(250000), "r3":new SecNum(0), "r4":new SecNum(0), "r5":0, "time":new SecNum(43200), "re":[[14,1,3]]
          }],
          "imageData":{
             "baseurl":"buildings/yardplanner/",
@@ -945,14 +944,15 @@ package
             {"r1":new SecNum(500000000), "r2":new SecNum(500000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1209600), "re":[[14,1,16]]},
             {"r1":new SecNum(1000000000), "r2":new SecNum(1000000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1209600), "re":[[14,1,17]]},
             {"r1":new SecNum(2000000000), "r2":new SecNum(2000000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1209600), "re":[[14,1,18]]},
-            {"r1":new SecNum(2500000000), "r2":new SecNum(2500000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1209600), "re":[[14,1,19]]
-         }],
+            {"r1":new SecNum(2500000000), "r2":new SecNum(2500000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1209600), "re":[[14,1,19]]}
+         ],
          "can_fortify":true,
-         "fortify_costs":[{"r1":new SecNum(500000), "r2":new SecNum(100000), "r3":new SecNum(50000), "r4":new SecNum(0), "time":new SecNum(14400), "re":[[14,1,5]]},
+         "fortify_costs":[
+            {"r1":new SecNum(500000), "r2":new SecNum(100000), "r3":new SecNum(50000), "r4":new SecNum(0), "time":new SecNum(14400), "re":[[14,1,5]]},
             {"r1":new SecNum(1000000), "r2":new SecNum(1000000), "r3":new SecNum(500000), "r4":new SecNum(0), "time":new SecNum(57600), "re":[[14,1,6]]},
             {"r1":new SecNum(5000000), "r2":new SecNum(5000000), "r3":new SecNum(2000000), "r4":new SecNum(0), "time":new SecNum(172800), "re":[[14,1,7]]},
-            {"r1":new SecNum(10000000), "r2":new SecNum(10000000), "r3":new SecNum(5000000), "r4":new SecNum(0), "time":new SecNum(345600), "re":[[14,1,8]]
-         }],
+            {"r1":new SecNum(10000000), "r2":new SecNum(10000000), "r3":new SecNum(5000000), "r4":new SecNum(0), "time":new SecNum(345600), "re":[[14,1,8]]}
+         ],
          "imageData":{
             "baseurl":"buildings/townhall/",
             "1":{
@@ -1106,17 +1106,17 @@ package
          "description":"housing_desc",
          "cls":BUILDING15,
          "costs":[
-            {"r1":new SecNum(2160), "r2":new SecNum(2160), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(300), "re":[[14,1,1]]},
-            {"r1":new SecNum(8640), "r2":new SecNum(8640), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(4500), "re":[[14,1,3],[8,1,1]]},
-            {"r1":new SecNum(34560), "r2":new SecNum(34560), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(10800), "re":[[14,1,4],[8,1,1]]},
-            {"r1":new SecNum(138240), "r2":new SecNum(138240), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(28800), "re":[[14,1,5],[8,1,1]]},
-            {"r1":new SecNum(552960), "r2":new SecNum(552960), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(72000), "re":[[14,1,6],[8,1,1]]},
-            {"r1":new SecNum(2211840), "r2":new SecNum(2211840), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(144000), "re":[[14,1,6],[8,1,1]]},
-            {"r1":new SecNum(4000000), "r2":new SecNum(4000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(216000), "re":[[14,1,7],[8,1,1]]},
-            {"r1":new SecNum(8000000), "r2":new SecNum(8000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(216000), "re":[[14,1,8],[8,1,1]]},
-            {"r1":new SecNum(16000000), "r2":new SecNum(16000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(216000), "re":[[14,1,9],[8,1,1]]},
-            {"r1":new SecNum(32000000), "r2":new SecNum(32000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(216000), "re":[[14,1,10],[8,1,1]]
-         }],
+            {"r1":new SecNum(2160), "r2":new SecNum(2160), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(300), "re":[[14,1,1]]},                     // Level 1
+            {"r1":new SecNum(8640), "r2":new SecNum(8640), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(4500), "re":[[14,1,3],[8,1,1]]},            // Level 2
+            {"r1":new SecNum(34560), "r2":new SecNum(34560), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(10800), "re":[[14,1,4],[8,1,1]]},         // Level 3
+            {"r1":new SecNum(138240), "r2":new SecNum(138240), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(28800), "re":[[14,1,5],[8,1,1]]},       // Level 4
+            {"r1":new SecNum(552960), "r2":new SecNum(552960), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(72000), "re":[[14,1,6],[8,1,1]]},       // Level 5
+            {"r1":new SecNum(2211840), "r2":new SecNum(2211840), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(133490), "re":[[14,1,6],[8,1,1]]},    // Level 6
+            {"r1":new SecNum(4000000), "r2":new SecNum(4000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(133490), "re":[[14,1,7],[8,1,1]]},    // Level 7
+            {"r1":new SecNum(8000000), "r2":new SecNum(8000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(133490), "re":[[14,1,8],[8,1,1]]},    // Level 8
+            {"r1":new SecNum(16000000), "r2":new SecNum(16000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(133490), "re":[[14,1,9],[8,1,1]]},  // Level 9
+            {"r1":new SecNum(32000000), "r2":new SecNum(32000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(133490), "re":[[14,1,10],[8,1,1]]}  // Level 10
+         ],
          "imageData":{
             "baseurl":"buildings/monsterhousing/",
             "1":{
@@ -1139,7 +1139,7 @@ package
             "baseurl":"buildingthumbs/",
             "1":{"img":"15.png"}
          },
-         "quantity":[0,1,1,2,2,3,3,3,4,4,4],
+         "quantity":[0,1,1,2,2,3,3,3,4,4,4,4,4,4,4,5,5,5,6,6,6],
          "capacity":[250,425,520,670,740,870,1090,1225,1440,1680],
          "hp":[4000,14000,25000,43000,75000,130000,145000,160000,175000,190000],
          "repairTime":[100,200,300,400,500,600,700,800,900,1000]
@@ -1336,10 +1336,12 @@ package
             {"r1":new SecNum(4000000), "r2":new SecNum(4000000), "r3":new SecNum(2000000), "r4":new SecNum(0), "time":new SecNum(144000), "re":[[14,1,5],[8,1,4]]},        // Level 4
             {"r1":new SecNum(6000000), "r2":new SecNum(6000000), "r3":new SecNum(4000000), "r4":new SecNum(0), "time":new SecNum(288000), "re":[[14,1,6],[8,1,4]]},        // Level 5
             {"r1":new SecNum(10000000), "r2":new SecNum(10000000), "r3":new SecNum(6000000), "r4":new SecNum(0), "time":new SecNum(576000), "re":[[14,1,7],[8,1,4]]},      // Level 6
-            {"r1":new SecNum(16000000), "r2":new SecNum(16000000), "r3":new SecNum(10000000), "r4":new SecNum(0), "time":new SecNum(1152000), "re":[[14,1,8],[8,1,4]]},    // Level 7
-            {"r1":new SecNum(32000000), "r2":new SecNum(32000000), "r3":new SecNum(10000000), "r4":new SecNum(0), "time":new SecNum(1382400), "re":[[14,1,12],[8,1,4]]},   // Level 8
-            {"r1":new SecNum(64000000), "r2":new SecNum(64000000), "r3":new SecNum(10000000), "r4":new SecNum(0), "time":new SecNum(1468800), "re":[[14,1,14],[8,1,4]]},   // Level 9
-            {"r1":new SecNum(128000000), "r2":new SecNum(128000000), "r3":new SecNum(10000000), "r4":new SecNum(0), "time":new SecNum(1555200), "re":[[14,1,16],[8,1,4]]}  // Level 10
+            {"r1":new SecNum(16000000), "r2":new SecNum(16000000), "r3":new SecNum(10000000), "r4":new SecNum(0), "time":new SecNum(604800), "re":[[14,1,8],[8,1,4]]},     // Level 7
+            {"r1":new SecNum(32000000), "r2":new SecNum(32000000), "r3":new SecNum(20000000), "r4":new SecNum(0), "time":new SecNum(604800), "re":[[14,1,12],[8,1,4]]},    // Level 8
+            {"r1":new SecNum(64000000), "r2":new SecNum(64000000), "r3":new SecNum(40000000), "r4":new SecNum(0), "time":new SecNum(604800), "re":[[14,1,14],[8,1,4]]},    // Level 9
+            {"r1":new SecNum(128000000), "r2":new SecNum(128000000), "r3":new SecNum(80000000), "r4":new SecNum(0), "time":new SecNum(604800), "re":[[14,1,16],[8,1,4]]},  // Level 10
+            {"r1":new SecNum(256000000), "r2":new SecNum(256000000), "r3":new SecNum(80000000), "r4":new SecNum(0), "time":new SecNum(604800), "re":[[14,1,18],[8,1,4]]},  // Level 11
+            {"r1":new SecNum(512000000), "r2":new SecNum(512000000), "r3":new SecNum(160000000), "r4":new SecNum(0), "time":new SecNum(604800), "re":[[14,1,20],[8,1,4]]}  // Level 12
          ],
          "imageData":{
             "baseurl":"buildings/monsterbaiter/",
@@ -1365,10 +1367,10 @@ package
             "1":{"img":"19.png"}
          },
          "quantity":[0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
-         "produce":[2,2,2,2,2,2,2,2,2,2],
-         "capacity":[600,900,1200,1500,2100,3200,4800,7200,10800,16200],
-         "hp":[1000,1500,2250,3375,5000,7500,12000,12000,12000,12000],
-         "repairTime":[120,240,480,960,1920,3840,7680,7680,7680,7680]
+         "produce":[2,2,2,2,2,2,2,2,2,2,2,2],
+         "capacity":[600,900,1200,1500,2100,3200,4800,7200,10800,16200,24300,36450],
+         "hp":[1000,1500,2250,3375,5000,7500,12000,12000,12000,12000,12000,12000],
+         "repairTime":[120,240,480,960,1920,3840,7680,7680,7680,7680,7680,7680]
       },{
          "id":20,
          "group":3,
@@ -1661,14 +1663,22 @@ package
          "sale":0,
          "description":"monsterbunker_desc",
          "cls":BUILDING22,
-         "stats":[{"range":300},{"range":350},{"range":400},{"range":450},{"range":500}],
+         "stats":[
+            {"range":300},
+            {"range":350},
+            {"range":400},
+            {"range":450},
+            {"range":500},
+            {"range":500}
+         ],
          "costs":[
-            {"r1":new SecNum(250000), "r2":new SecNum(187500), "r3":new SecNum(62500), "r4":new SecNum(0), "time":new SecNum(21600), "re":[[14,1,3],[15,1,1]]},
-            {"r1":new SecNum(1000000), "r2":new SecNum(1000000), "r3":new SecNum(500000), "r4":new SecNum(0), "time":new SecNum(43200), "re":[[14,1,4],[15,1,2]]},
-            {"r1":new SecNum(2000000), "r2":new SecNum(2000000), "r3":new SecNum(1000000), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,5],[15,1,3]]},
-            {"r1":new SecNum(4000000), "r2":new SecNum(4000000), "r3":new SecNum(2000000), "r4":new SecNum(0), "time":new SecNum(172800), "re":[[14,1,9],[15,1,3]]},
-            {"r1":new SecNum(8000000), "r2":new SecNum(8000000), "r3":new SecNum(4000000), "r4":new SecNum(0), "time":new SecNum(345600), "re":[[14,1,10],[15,1,3]]
-         }],
+            {"r1":new SecNum(250000), "r2":new SecNum(187500), "r3":new SecNum(62500), "r4":new SecNum(0), "time":new SecNum(21600), "re":[[14,1,3],[15,1,1]]},         // Level 1
+            {"r1":new SecNum(1000000), "r2":new SecNum(1000000), "r3":new SecNum(500000), "r4":new SecNum(0), "time":new SecNum(43200), "re":[[14,1,4],[15,1,2]]},      // Level 2
+            {"r1":new SecNum(2000000), "r2":new SecNum(2000000), "r3":new SecNum(1000000), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,5],[15,1,3]]},     // Level 3
+            {"r1":new SecNum(4000000), "r2":new SecNum(4000000), "r3":new SecNum(2000000), "r4":new SecNum(0), "time":new SecNum(172800), "re":[[14,1,9],[15,1,3]]},    // Level 4
+            {"r1":new SecNum(8000000), "r2":new SecNum(8000000), "r3":new SecNum(4000000), "r4":new SecNum(0), "time":new SecNum(345600), "re":[[14,1,10],[15,1,3]]},   // Level 5
+            {"r1":new SecNum(16000000), "r2":new SecNum(16000000), "r3":new SecNum(8000000), "r4":new SecNum(0), "time":new SecNum(432000), "re":[[14,1,12],[15,1,3]]}  // Level 6
+         ],
          "imageData":{
             "baseurl":"buildings/bunker/",
             "1":{
@@ -1693,8 +1703,8 @@ package
          },
          "quantity":[0,0,0,1,1,2,2,3,4,4,4],
          "capacity":[190,225,270,330,400],
-         "hp":[10000,24500,52000,75000,105000],
-         "repairTime":[120,240,480,960,1920]
+         "hp":[10000,24500,52000,75000,105000,147000],
+         "repairTime":[120,240,480,960,1920,3840]
       },{
          "id":23,
          "group":3,
@@ -2106,8 +2116,7 @@ package
          "description":"flag_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":10, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/flags/",
@@ -2135,8 +2144,7 @@ package
          "description":"flag_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":10, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/flags/",
@@ -2164,8 +2172,7 @@ package
          "description":"flag_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":10, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/flags/",
@@ -2193,8 +2200,7 @@ package
          "description":"flag_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":10, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/flags/",
@@ -2222,8 +2228,7 @@ package
          "description":"flag_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "r4":new SecNum(0), "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "r4":new SecNum(0), "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/flags/",
@@ -2251,8 +2256,7 @@ package
          "description":"flag_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":10, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/flags/",
@@ -2280,8 +2284,7 @@ package
          "description":"flag_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":10, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/flags/",
@@ -2309,8 +2312,7 @@ package
          "description":"flag_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":10, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/flags/",
@@ -2338,8 +2340,7 @@ package
          "description":"flag_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":10, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/flags/",
@@ -2367,8 +2368,7 @@ package
          "description":"flag_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":10, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/flags/",
@@ -2396,8 +2396,7 @@ package
          "description":"flag_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":10, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/flags/",
@@ -2425,8 +2424,7 @@ package
          "description":"flag_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":10, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/flags/",
@@ -2454,8 +2452,7 @@ package
          "description":"flag_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":10, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/flags/",
@@ -2483,8 +2480,7 @@ package
          "description":"flag_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":10, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/flags/",
@@ -2512,8 +2508,7 @@ package
          "description":"flag_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":10, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/flags/",
@@ -2541,8 +2536,7 @@ package
          "description":"flag_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":10, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/flags/",
@@ -2570,8 +2564,7 @@ package
          "description":"flag_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":10, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/flags/",
@@ -2599,8 +2592,7 @@ package
          "description":"flag_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":10, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/flags/",
@@ -2628,8 +2620,7 @@ package
          "description":"flag_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":10, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/flags/",
@@ -2657,8 +2648,7 @@ package
          "description":"flag_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":10, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/flags/",
@@ -2686,8 +2676,7 @@ package
          "description":"flag_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":10, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/flags/",
@@ -2715,8 +2704,7 @@ package
          "description":"flag_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":250, "r4":new SecNum(0), "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":250, "r4":new SecNum(0), "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/flags/",
@@ -2744,8 +2732,7 @@ package
          "description":"flag_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":250, "r4":new SecNum(0), "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":250, "r4":new SecNum(0), "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/flags/",
@@ -2840,8 +2827,7 @@ package
          "block":true,
          "cls":BUILDING52,
          "costs":[
-            {"r1":new SecNum(100000), "r2":new SecNum(100000), "r3":new SecNum(100000), "r4":new SecNum(100000),
-            "r5":0, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(100000), "r2":new SecNum(100000), "r3":new SecNum(100000), "r4":new SecNum(100000), "r5":0, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/flags/",
@@ -2918,8 +2904,7 @@ package
          "description":"bdg_acorn_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/acorn/",
@@ -2946,8 +2931,7 @@ package
          "description":"bdg_beehive_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/beehive/",
@@ -2974,8 +2958,7 @@ package
          "description":"bdg_birdhous_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/birdhouse/",
@@ -3003,8 +2986,7 @@ package
          "block":true,
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/campingtent/",
@@ -3032,8 +3014,7 @@ package
          "block":true,
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/childrensjax/",
@@ -3060,8 +3041,7 @@ package
          "description":"bdg_gnome_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/gnomes/",
@@ -3088,8 +3068,7 @@ package
          "description":"bdg_gnome_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/gnomes/",
@@ -3116,8 +3095,7 @@ package
          "description":"bdg_gnome_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/gnomes/",
@@ -3144,8 +3122,7 @@ package
          "description":"bdg_hammock_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/hammock/",
@@ -3172,8 +3149,7 @@ package
          "description":"bdg_lawnchair_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/lawnchair/",
@@ -3200,8 +3176,7 @@ package
          "description":"bdg_outhouse_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/outhouse/",
@@ -3228,8 +3203,7 @@ package
          "description":"bdg_pinecone_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/pinecone/",
@@ -3257,8 +3231,7 @@ package
          "block":true,
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/rock/",
@@ -3285,8 +3258,7 @@ package
          "description":"bdg_scaleelectric_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/scaleelectriccartoyset/",
@@ -3314,8 +3286,7 @@ package
          "block":true,
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/scarecrow/",
@@ -3343,8 +3314,7 @@ package
          "block":true,
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/sundial/",
@@ -3371,8 +3341,7 @@ package
          "description":"bdg_tikitorch_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/tikitorch/",
@@ -3400,8 +3369,7 @@ package
          "description":"bdg_walnut_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/walnut/",
@@ -3428,8 +3396,7 @@ package
          "description":"bdg_tombstone_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/graveyardtombstone/",
@@ -3456,8 +3423,7 @@ package
          "description":"bdg_pokeyhead_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/headsonsticks/",
@@ -3484,8 +3450,7 @@ package
          "description":"bdg_octohead_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/headsonsticks/",
@@ -3512,8 +3477,7 @@ package
          "description":"bdg_bolthead_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/headsonsticks/",
@@ -3540,8 +3504,7 @@ package
          "description":"bdg_banditohead_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/headsonsticks/",
@@ -3568,8 +3531,7 @@ package
          "description":"bdg_brainhead_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/headsonsticks/",
@@ -3596,8 +3558,7 @@ package
          "description":"bdg_crabhead_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/headsonsticks/",
@@ -3624,8 +3585,7 @@ package
          "description":"bdg_davehead_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/headsonsticks/",
@@ -3652,8 +3612,7 @@ package
          "description":"bdg_eyerahead_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/headsonsticks/",
@@ -3680,8 +3639,7 @@ package
          "description":"bdg_fanghead_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/headsonsticks/",
@@ -3708,8 +3666,7 @@ package
          "description":"bdg_finkhead_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/headsonsticks/",
@@ -3736,8 +3693,7 @@ package
          "description":"bdg_ichihead_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/headsonsticks/",
@@ -3764,8 +3720,7 @@ package
          "description":"bdg_projectxhead_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/headsonsticks/",
@@ -3792,8 +3747,7 @@ package
          "description":"bdg_blackberrybush_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/blackberrybush/",
@@ -3817,8 +3771,7 @@ package
          "description":"bdg_bonsaitree_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/bonsaitree/",
@@ -3845,8 +3798,7 @@ package
          "description":"bdg_cactus_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/cactus/",
@@ -3873,8 +3825,7 @@ package
          "description":"bdg_flytrap_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/flytrap/",
@@ -3901,8 +3852,7 @@ package
          "description":"bdg_thorns_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/thorns/",
@@ -3929,8 +3879,7 @@ package
          "description":"bdg_pinkflowers_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/flowers/",
@@ -3957,8 +3906,7 @@ package
          "description":"bdg_purpleflowers_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/flowers/",
@@ -3985,8 +3933,7 @@ package
          "description":"bdg_redflowers_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/flowers/",
@@ -4013,8 +3960,7 @@ package
          "description":"bdg_whiteflowers_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/flowers/",
@@ -4041,8 +3987,7 @@ package
          "description":"bdg_yellowflowers_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/flowers/",
@@ -4069,8 +4014,7 @@ package
          "description":"bdg_baseballstatue_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]
          }],
          "buildingbuttons":["96.v2"],
          "upgradeImgData":{
@@ -4102,8 +4046,7 @@ package
          "description":"bdg_footballstatue_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]
          }],
          "buildingbuttons":["97.v2"],
          "upgradeImgData":{
@@ -4135,8 +4078,7 @@ package
          "description":"bdg_soccerstatue_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]
          }],
          "buildingbuttons":["98.v2"],
          "upgradeImgData":{
@@ -4168,8 +4110,7 @@ package
          "description":"bdg_libertystatue_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]
          }],
          "buildingbuttons":["99.v2"],
          "upgradeImgData":{
@@ -4201,8 +4142,7 @@ package
          "description":"bdg_eiffelstatue_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]
          }],
          "buildingbuttons":["100.v2"],
          "upgradeImgData":{
@@ -4234,8 +4174,7 @@ package
          "description":"bdg_bigben_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]
          }],
          "buildingbuttons":["101.v2"],
          "upgradeImgData":{
@@ -4267,8 +4206,7 @@ package
          "description":"bdg_pool_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/pool/",
@@ -4295,8 +4233,7 @@ package
          "description":"bdg_pond_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/pond/",
@@ -4320,8 +4257,7 @@ package
          "description":"bdg_zengarden_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/zengarden/",
@@ -4348,8 +4284,7 @@ package
          "description":"bdg_fountain_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/fountain/",
@@ -4376,8 +4311,7 @@ package
          "description":"bdg_teagarden_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/japaneseteagarden/",
@@ -4404,8 +4338,7 @@ package
          "description":"bdg_monsterskull_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/headsonsticks/",
@@ -4432,8 +4365,7 @@ package
          "description":"bdg_rubikunsolved_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/rubikscube/",
@@ -4460,8 +4392,7 @@ package
          "description":"bdg_rubiksolved_desc",
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/rubikscube/",
@@ -4489,8 +4420,7 @@ package
          "block":true,
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":1000, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":1000, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/pumpkins/",
@@ -4517,8 +4447,7 @@ package
          "description":"bdg_halloween_desc",
          "block":true,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":0, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":0, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/pumpkins/",
@@ -4996,8 +4925,7 @@ package
          "block":true,
          "cls":BDECORATION,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":150, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]
          }],
          "imageData":{
             "baseurl":"buildings/decorations/biggulp/",
@@ -5025,18 +4953,12 @@ package
          "block":true,
          "cls":BTOTEM,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":0, "time":new SecNum(0), "re":[]},
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":0, "time":new SecNum(0), "re":[]},
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":0, "time":new SecNum(0), "re":[]},
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":0, "time":new SecNum(0), "re":[]},
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":0, "time":new SecNum(0), "re":[]},
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":0, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":0, "time":new SecNum(0), "re":[]},
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":0, "time":new SecNum(0), "re":[]},
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":0, "time":new SecNum(0), "re":[]},
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":0, "time":new SecNum(0), "re":[]},
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":0, "time":new SecNum(0), "re":[]},
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":0, "time":new SecNum(0), "re":[]
          }],
          "names":["bdg_wmitotem1","bdg_wmitotem2","bdg_wmitotem3","bdg_wmitotem4","bdg_wmitotem5","bdg_wmitotem6"],
          "descriptions":["bdg_wmitotem1_desc","bdg_wmitotem2_desc","bdg_wmitotem3_desc","bdg_wmitotem4_desc","bdg_wmitotem5_desc","bdg_wmitotem6_desc"],
@@ -5240,31 +5162,14 @@ package
          "description":"bi_quaketower_desc",
          "block":true,
          "cls":INFERNOQUAKETOWER,
-         "stats":[{
-            "range":160,
-            "damage":1100,
-            "rate":15},
-            {
-            "range":170,
-            "damage":1680,
-            "rate":15},
-            {
-            "range":180,
-            "damage":2220,
-            "rate":15},
-            {
-            "range":190,
-            "damage":2880,
-            "rate":15},
-            {
-            "range":200,
-            "damage":3640,
-            "rate":15},
-            {
-            "range":210,
-            "damage":4400,
-            "rate":15
-         }],
+         "stats":[
+            {"range":160, "damage":1100, "rate":15},
+            {"range":170, "damage":1680, "rate":15},
+            {"range":180, "damage":2220, "rate":15},
+            {"range":190, "damage":2880, "rate":15},
+            {"range":200, "damage":3640, "rate":15},
+            {"range":210, "damage":4400, "rate":15}
+         ],
          "costs":[
             {"r1":new SecNum(312500), "r2":new SecNum(187500), "r3":new SecNum(125000), "r4":new SecNum(0), "time":new SecNum(18000), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]},
             {"r1":new SecNum(1250000), "r2":new SecNum(750000), "r3":new SecNum(500000), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]},
@@ -5355,18 +5260,12 @@ package
          "block":true,
          "cls":BTOTEM,
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":0, "time":new SecNum(0), "re":[]},
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":0, "time":new SecNum(0), "re":[]},
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":0, "time":new SecNum(0), "re":[]},
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":0, "time":new SecNum(0), "re":[]},
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":0, "time":new SecNum(0), "re":[]},
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":0, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":0, "time":new SecNum(0), "re":[]},
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":0, "time":new SecNum(0), "re":[]},
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":0, "time":new SecNum(0), "re":[]},
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":0, "time":new SecNum(0), "re":[]},
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":0, "time":new SecNum(0), "re":[]},
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":0, "time":new SecNum(0), "re":[]
          }],
          "names":["bdg_wmi2totem1","bdg_wmi2totem2","bdg_wmi2totem3","bdg_wmi2totem4","bdg_wmi2totem5","bdg_wmi2totem6"],
          "descriptions":["bdg_wmi2totem1_desc","bdg_wmi2totem2_desc","bdg_wmi2totem3_desc","bdg_wmi2totem4_desc","bdg_wmi2totem5_desc","bdg_wmi2totem6_desc"],
@@ -5664,8 +5563,7 @@ package
          "cls":BDECORATION,
          "lockedButtonOverlay":"buildingbuttons/135locked.png",
          "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0),
-            "r5":0, "time":new SecNum(0), "re":[]
+            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":0, "time":new SecNum(0), "re":[]
          }],
          "buildingbuttons":["135"],
          "imageData":{

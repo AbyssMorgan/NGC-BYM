@@ -1219,8 +1219,9 @@ package
             {"r1":new SecNum(0), "r2":new SecNum(10000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(5), "re":[[14,1,3]]},
             {"r1":new SecNum(100000), "r2":new SecNum(100000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(5), "re":[[14,1,4]]},
             {"r1":new SecNum(200000), "r2":new SecNum(200000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(5), "re":[[14,1,5]]},
-            {"r1":new SecNum(400000), "r2":new SecNum(400000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(5), "re":[[14,1,6]]
-         }],
+            {"r1":new SecNum(400000), "r2":new SecNum(400000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(5), "re":[[14,1,6]]},
+            {"r1":new SecNum(1000000), "r2":new SecNum(1000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(5), "re":[[14,1,16]]}
+         ],
          "buildingbuttons":["17.1"],
          "imageData":{
             "baseurl":"buildings/walls/",
@@ -1263,6 +1264,14 @@ package
                "shadowdamaged":["shadow.jpg",new Point(-28,-7)],
                "topdestroyed":["top.5.destroyed.png",new Point(-20,-3)],
                "shadowdestroyed":["shadow.jpg",new Point(-28,-7)]
+            },
+            "6":{
+               "top":["top.6.png",new Point(-20,-22)],
+               "shadow":["shadow.jpg",new Point(-28,-7)],
+               "topdamaged":["top.6.damaged.png",new Point(-20,-19)],
+               "shadowdamaged":["shadow.jpg",new Point(-28,-7)],
+               "topdestroyed":["top.6.destroyed.png",new Point(-20,-3)],
+               "shadowdestroyed":["shadow.jpg",new Point(-28,-7)]
             }
          },
          "upgradeImgData":{
@@ -1271,7 +1280,9 @@ package
                "img":"17.1.jpg",
                "silhouette_img":"17.1.silhouette.jpg"
             },
-            "2":{"img":"17.2.v2.jpg"},
+            "2":{
+               "img":"17.2.v2.jpg"
+            },
             "3":{
                "img":"17.3.v2.jpg",
                "silhouette_img":"17.3.v2.silhouette.jpg"
@@ -1280,7 +1291,12 @@ package
                "img":"17.4.jpg",
                "silhouette_img":"17.4.silhouette.jpg"
             },
-            "5":{"img":"17.5.jpg"}
+            "5":{
+               "img":"17.5.jpg"
+            },
+            "6":{
+               "img":"17.6.jpg"
+            }
          },
          "thumbImgData":{
             "baseurl":"buildingthumbs/",
@@ -1288,11 +1304,12 @@ package
             "2":{"img":"17.2.png"},
             "3":{"img":"17.3.png"},
             "4":{"img":"17.4.png"},
-            "5":{"img":"17.5.png"}
+            "5":{"img":"17.5.png"},
+            "6":{"img":"17.6.png"}
          },
-         "quantity":[0,0,30,60,120,200,220,280,300,340,400],
-         "hp":[1000,2300,5750,18000,27000],
-         "repairTime":[5,5,5,5,5]
+         "quantity":[0,0,30,60,120,200,220,280,300,340,400,420,440,460,480,500,520,540,560,580,600],
+         "hp":[1000,2300,5750,18000,27000,40000],
+         "repairTime":[5,5,5,5,5,5]
       },{
          "id":18,
          "group":3,

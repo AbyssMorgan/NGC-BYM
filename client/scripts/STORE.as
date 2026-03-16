@@ -221,17 +221,17 @@ package
          var _loc23_:String = null;
          if(BASE.isOutpost)
          {
-            _grouping = [[MapRoomManager.instance.isInMapRoom3 ? [] : ["BST","BLK2","BLK3","BLK4","BLK5"]],[MapRoomManager.instance.isInMapRoom3 ? [] : ["BR11","BR12","BR13","BR21","BR22","BR23","BR31","BR32","BR33","BR41","BR42","BR43"]],[MapRoomManager.instance.isInMapRoom3 ? ["SP1","SP2","SP3","SP4","FIX"] : ["SP1","SP2","SP3","SP4","POD","FIX","HOD","HOD2","HOD3"]],[MapRoomManager.instance.isInMapRoom3 ? [] : ["PRO1","PRO2","PRO3","TOD","EXH"]]];
+            _grouping = [[MapRoomManager.instance.isInMapRoom3 ? [] : ["BST","BLK2","BLK3","BLK4","BLK5","BLK6"]],[MapRoomManager.instance.isInMapRoom3 ? [] : ["BR11","BR12","BR13","BR21","BR22","BR23","BR31","BR32","BR33","BR41","BR42","BR43"]],[MapRoomManager.instance.isInMapRoom3 ? ["SP1","SP2","SP3","SP4","FIX"] : ["SP1","SP2","SP3","SP4","POD","FIX","HOD","HOD2","HOD3"]],[MapRoomManager.instance.isInMapRoom3 ? [] : ["PRO1","PRO2","PRO3","TOD","EXH"]]];
          }
          else if(BASE.isMainYard)
          {
             if(MAPROOM_DESCENT.DescentPassed)
             {
-               _grouping = [[["BEW","BST","ENL","BLK2","BLK3","BLK4","BLK5"]],[["BR11","BR12","BR13","BR21","BR22","BR23","BR31","BR32","BR33","BR41","BR42","BR43","BR11I","BR12I","BR13I","BR21I","BR22I","BR23I","BR31I","BR32I","BR33I","BR41I","BR42I","BR43I","BIP"]],[["SP1","SP2","SP3","SP4","POD","FIX","HOD","HOD2","HOD3"]],[MapRoomManager.instance.isInMapRoom3 ? ["PRO1","PRO2","PRO3","MOD","MDOD","MSOD","TOD"] : ["PRO1","PRO2","PRO3","MOD","MDOD","MSOD","EXH","TOD"]]];
+               _grouping = [[["BEW","BST","ENL","BLK2","BLK3","BLK4","BLK5","BLK6"]],[["BR11","BR12","BR13","BR21","BR22","BR23","BR31","BR32","BR33","BR41","BR42","BR43","BR11I","BR12I","BR13I","BR21I","BR22I","BR23I","BR31I","BR32I","BR33I","BR41I","BR42I","BR43I","BIP"]],[["SP1","SP2","SP3","SP4","POD","FIX","HOD","HOD2","HOD3"]],[MapRoomManager.instance.isInMapRoom3 ? ["PRO1","PRO2","PRO3","MOD","MDOD","MSOD","TOD"] : ["PRO1","PRO2","PRO3","MOD","MDOD","MSOD","EXH","TOD"]]];
             }
             else
             {
-               _grouping = [[["BEW","BST","ENL","BLK2","BLK3","BLK4","BLK5"]],[["BR11","BR12","BR13","BR21","BR22","BR23","BR31","BR32","BR33","BR41","BR42","BR43","BIP"]],[["SP1","SP2","SP3","SP4","POD","FIX","HOD","HOD2","HOD3"]],[MapRoomManager.instance.isInMapRoom3 ? ["PRO1","PRO2","PRO3","MOD","MDOD","MSOD","TOD"] : ["PRO1","PRO2","PRO3","MOD","MDOD","MSOD","EXH","TOD"]]];
+               _grouping = [[["BEW","BST","ENL","BLK2","BLK3","BLK4","BLK5","BLK6"]],[["BR11","BR12","BR13","BR21","BR22","BR23","BR31","BR32","BR33","BR41","BR42","BR43","BIP"]],[["SP1","SP2","SP3","SP4","POD","FIX","HOD","HOD2","HOD3"]],[MapRoomManager.instance.isInMapRoom3 ? ["PRO1","PRO2","PRO3","MOD","MDOD","MSOD","TOD"] : ["PRO1","PRO2","PRO3","MOD","MDOD","MSOD","EXH","TOD"]]];
             }
          }
          else
@@ -476,6 +476,7 @@ package
          var _loc15_:uint = 6;
          var _loc16_:uint = 10;
          var _loc17_:uint = 15;
+         var price_blk6:uint = 20;
          var _loc18_:Vector.<Object> = InstanceManager.getInstancesByClass(BWALL);
          for each(_loc13_ in _loc18_)
          {
@@ -608,6 +609,51 @@ package
                "v2":GLOBAL.FormatNumber(_loc11_)
             });
             _storeItems.BLK5.t = KEYS.Get("str_blackwalls");
+
+            _loc10_ = 0;
+            _loc12_ = 0;
+            _loc11_ = 0;
+            for each(_loc13_ in _loc18_)
+            {
+               if(_loc13_._lvl.Get() <= 1)
+               {
+                  _loc10_ += _loc14_ + _loc15_ + _loc16_ + _loc17_ + price_blk6;
+                  _loc11_ += 10000 + 100000 + 200000 + 400000 + 1000000;
+                  _loc12_ += 1;
+               }
+               if(_loc13_._lvl.Get() == 2)
+               {
+                  _loc10_ += _loc15_ + _loc16_ + _loc17_ + price_blk6;
+                  _loc11_ += 100000 + 200000 + 400000 + 1000000;
+                  _loc12_ += 1;
+               }
+               if(_loc13_._lvl.Get() == 3)
+               {
+                  _loc10_ += _loc16_ + _loc17_ + price_blk6;
+                  _loc11_ += 200000 + 400000 + 1000000;
+                  _loc12_ += 1;
+               }
+               if(_loc13_._lvl.Get() == 4)
+               {
+                  _loc10_ += _loc17_ + price_blk6;
+                  _loc11_ += 400000 + 1000000;
+                  _loc12_ += 1;
+               }
+               if(_loc13_._lvl.Get() == 5)
+               {
+                  _loc10_ += price_blk6;
+                  _loc11_ += 1000000;
+                  _loc12_ += 1;
+               }
+            }
+
+            _storeItems.BLK6.c = [_loc10_];
+            _storeItems.BLK6.d = KEYS.Get("desc_rubinwalls",{
+               "v1":_loc12_,
+               "v2":GLOBAL.FormatNumber(_loc11_)
+            });
+            _storeItems.BLK6.t = KEYS.Get("str_rubinwalls");
+
          }
          if(BASE.isInfernoMainYardOrOutpost)
          {
@@ -1360,6 +1406,10 @@ package
             {
                _loc20_ = KEYS.Get("upgradeth",{"v1":6});
             }
+            else if(!BASE.isOutpost && _loc26_ < 16 && _loc9_.substr(3,1) == "6")
+            {
+               _loc20_ = KEYS.Get("upgradeth",{"v1":16});
+            }
             else
             {
                _loc27_ = false;
@@ -2074,6 +2124,10 @@ package
                {
                   _loc32_ = KEYS.Get("upgradeth",{"v1":6});
                }
+               else if(!BASE.isOutpost && _loc36_ < 16 && item.substr(3,1) == "6")
+               {
+                  _loc32_ = KEYS.Get("upgradeth",{"v1":16});
+               }
                else
                {
                   _loc37_ = false;
@@ -2497,6 +2551,10 @@ package
             else if(_loc13_ == 5)
             {
                GLOBAL.Message("<b>" + KEYS.Get("msg_wallsblackdiamond") + "</b>");
+            }
+            else if(_loc13_ == 6)
+            {
+               GLOBAL.Message("<b>All your walls have been upgraded to Rubin Steel!</b>");
             }
          }
          if(param1.substr(0,2) == "BR")

@@ -50,7 +50,7 @@ package
             _maxWorkers = 8;
             if(!BASE.isMainYard)
             {
-               _maxWorkers = 1;
+               _maxWorkers = 4;
             }
             _loc1_ = 0;
             while(_loc1_ < _maxWorkers)

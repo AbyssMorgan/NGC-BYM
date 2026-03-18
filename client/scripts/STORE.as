@@ -185,7 +185,7 @@ package
          {
             return 0;
          }
-         _loc3_ = Math.ceil(param1 * 10 / 60 / 60);
+         _loc3_ = Math.ceil(param1 * 10 / 3600);
          _loc4_ = int(Math.sqrt(param1 * 0.4));
          return Math.min(_loc3_,_loc4_);
       }
@@ -472,17 +472,17 @@ package
          var _loc10_:int = 0;
          var _loc11_:int = 0;
          var _loc12_:int = 0;
-         var _loc14_:uint = 3;
-         var _loc15_:uint = 6;
-         var _loc16_:uint = 10;
-         var _loc17_:uint = 15;
-         var price_blk6:uint = 20;
+         var price_blk2:uint = 1;
+         var price_blk3:uint = 2;
+         var price_blk4:uint = 3;
+         var price_blk5:uint = 4;
+         var price_blk6:uint = 5;
          var _loc18_:Vector.<Object> = InstanceManager.getInstancesByClass(BWALL);
          for each(_loc13_ in _loc18_)
          {
             if(_loc13_._lvl == null || _loc13_._lvl.Get() <= 1)
             {
-               _loc10_ += _loc14_;
+               _loc10_ += price_blk2;
                _loc11_ += 10000;
                _loc12_ += 1;
             }
@@ -512,13 +512,13 @@ package
          {
             if(_loc13_._lvl.Get() <= 1)
             {
-               _loc10_ += _loc14_ + _loc15_;
+               _loc10_ += price_blk2 + price_blk3;
                _loc11_ += 100000 + 10000;
                _loc12_ += 1;
             }
             if(_loc13_._lvl.Get() == 2)
             {
-               _loc10_ += _loc15_;
+               _loc10_ += price_blk3;
                _loc11_ += 100000;
                _loc12_ += 1;
             }
@@ -550,19 +550,19 @@ package
             {
                if(_loc13_._lvl.Get() <= 1)
                {
-                  _loc10_ += _loc14_ + _loc15_ + _loc16_;
+                  _loc10_ += price_blk2 + price_blk3 + price_blk4;
                   _loc11_ += 200000 + 100000 + 10000;
                   _loc12_ += 1;
                }
                if(_loc13_._lvl.Get() == 2)
                {
-                  _loc10_ += _loc15_ + _loc16_;
+                  _loc10_ += price_blk3 + price_blk4;
                   _loc11_ += 100000 + 200000;
                   _loc12_ += 1;
                }
                if(_loc13_._lvl.Get() == 3)
                {
-                  _loc10_ += _loc16_;
+                  _loc10_ += price_blk4;
                   _loc11_ += 200000;
                   _loc12_ += 1;
                }
@@ -580,25 +580,25 @@ package
             {
                if(_loc13_._lvl.Get() <= 1)
                {
-                  _loc10_ += _loc14_ + _loc15_ + _loc16_ + _loc17_;
+                  _loc10_ += price_blk2 + price_blk3 + price_blk4 + price_blk5;
                   _loc11_ += 100000 + 10000 + 200000 + 400000;
                   _loc12_ += 1;
                }
                if(_loc13_._lvl.Get() == 2)
                {
-                  _loc10_ += _loc15_ + _loc16_ + _loc17_;
+                  _loc10_ += price_blk3 + price_blk4 + price_blk5;
                   _loc11_ += 100000 + 200000 + 400000;
                   _loc12_ += 1;
                }
                if(_loc13_._lvl.Get() == 3)
                {
-                  _loc10_ += _loc16_ + _loc17_;
+                  _loc10_ += price_blk4 + price_blk5;
                   _loc11_ += 200000 + 400000;
                   _loc12_ += 1;
                }
                if(_loc13_._lvl.Get() == 4)
                {
-                  _loc10_ += _loc17_;
+                  _loc10_ += price_blk5;
                   _loc11_ += 400000;
                   _loc12_ += 1;
                }
@@ -617,25 +617,25 @@ package
             {
                if(_loc13_._lvl.Get() <= 1)
                {
-                  _loc10_ += _loc14_ + _loc15_ + _loc16_ + _loc17_ + price_blk6;
+                  _loc10_ += price_blk2 + price_blk3 + price_blk4 + price_blk5 + price_blk6;
                   _loc11_ += 10000 + 100000 + 200000 + 400000 + 1000000;
                   _loc12_ += 1;
                }
                if(_loc13_._lvl.Get() == 2)
                {
-                  _loc10_ += _loc15_ + _loc16_ + _loc17_ + price_blk6;
+                  _loc10_ += price_blk3 + price_blk4 + price_blk5 + price_blk6;
                   _loc11_ += 100000 + 200000 + 400000 + 1000000;
                   _loc12_ += 1;
                }
                if(_loc13_._lvl.Get() == 3)
                {
-                  _loc10_ += _loc16_ + _loc17_ + price_blk6;
+                  _loc10_ += price_blk4 + price_blk5 + price_blk6;
                   _loc11_ += 200000 + 400000 + 1000000;
                   _loc12_ += 1;
                }
                if(_loc13_._lvl.Get() == 4)
                {
-                  _loc10_ += _loc17_ + price_blk6;
+                  _loc10_ += price_blk5 + price_blk6;
                   _loc11_ += 400000 + 1000000;
                   _loc12_ += 1;
                }
@@ -1042,7 +1042,7 @@ package
       
       public static function StreamlineBuy(param1:MouseEvent = null) : void
       {
-         if(_streamline_time < 300)
+         if(_streamline_time < 600)
          {
             STORE.BuyB("SP1");
             POPUPS.Next();

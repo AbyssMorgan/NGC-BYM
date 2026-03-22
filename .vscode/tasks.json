@@ -32,16 +32,6 @@
 			"dependsOn": "compile-debug"
 		},
 		{
-			// Local build is used for releasing optimized local .swfs
-			"label": "BYMR - Local",
-			"detail": "Optimized local release build",
-			"type": "shell",
-			"command": "${workspaceFolder}/archived/flashplayers/flashplayer.exe",
-			"args": ["", "bin/bymr-local.swf"],
-			"group": { "kind": "build", "isDefault": true },
-			"dependsOn": "compile-local"
-		},
-		{
 			// Stable build is used for releasing optimized production-ready .swfs
 			"label": "BYMR - Stable",
 			"detail": "Optimized production release build",

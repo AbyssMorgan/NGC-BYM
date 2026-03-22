@@ -5313,7 +5313,7 @@ package
             "baseurl":"buildingbuttons/",
             "1":{
                "img":"seige_factory.jpg",
-               "silhouette_img":"siege_factory.silhouette.v2.jpg"
+               "silhouette_img":"seige_factory.jpg"
             }
          },
          "quantity":[0,1,1,1,1,1,1,1,1,1,1],
@@ -5377,7 +5377,7 @@ package
             "baseurl":"buildingbuttons/",
             "1":{
                "img":"siege_lab.jpg",
-               "silhouette_img":"siege_lab.silhouette.jpg"
+               "silhouette_img":"siege_lab.jpg"
             }
          },
          "quantity":[0,1,1,1,1,1,1,1,1,1,1],

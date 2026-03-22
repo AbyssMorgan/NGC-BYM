@@ -124,7 +124,7 @@ package
                }
             }
          }
-         else if(STORE.CheckUpgrade("BEW").q + 1 == 5)
+         else if(STORE.CheckUpgrade("BEW").q + 1 == 8)
          {
             errorName = KEYS.Get("ui_worker_5busy");
          }

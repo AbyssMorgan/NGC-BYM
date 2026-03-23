@@ -8,13 +8,6 @@
 			"problemMatcher": []
 		},
 		{
-			"label": "compile-local",
-			"type": "actionscript",
-			"debug": false,
-			"asconfig": "asconfig.local.json",
-			"problemMatcher": []
-		},
-		{
 			"label": "compile-stable",
 			"type": "actionscript",
 			"debug": false,

@@ -296,8 +296,9 @@ package com.monsters.maproom_manager
          else
          {
             PLEASEWAIT.Hide();
-            LOGGER.Log("err",param1.error);
-            GLOBAL.ErrorMessage("Error upgrading to Map Room 3");
+            LOGGER.Log("err","MapRoom3UpgradeSuccess error payload: " + JSON.stringify(param1));
+            var errMsg:String = param1.error ? String(param1.error) : "Unknown error";
+            GLOBAL.ErrorMessage("Error upgrading to Map Room 3: " + errMsg);
          }
       }
 

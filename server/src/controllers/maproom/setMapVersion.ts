@@ -10,6 +10,7 @@ import { FilterFrontendKeys } from "../../utils/FrontendKey.js";
 import { MapRoomVersion } from "../../enums/MapRoom.js";
 import { Status } from "../../enums/StatusCodes.js";
 import { Env } from "../../enums/Env.js";
+import { logger } from "../../utils/logger.js";
 import { joinNewWorldMap } from "../../services/maproom/v3/joinNewWorldMap.js";
 
 /**
@@ -38,37 +39,45 @@ export const setMapVersion: KoaController = async (ctx) => {
   let save: Save = user.save;
   const { version } = SetMapVersionSchema.parse(ctx.request.body);
 
-  if (!ctx.meetsDiscordAgeCheck) {
+  // if (!ctx.meetsDiscordAgeCheck) {
+  //   ctx.status = Status.OK;
+  //   ctx.body = { error: "Discord account is not old enough." };
+  //   return;
+  // }
+
+  try {
+    switch (version) {
+      case MapRoomVersion.V2:
+        await joinOrCreateWorld(user, save);
+        break;
+
+      case MapRoomVersion.V3:
+        await joinNewWorldMap(user, save);
+        break;
+
+      default:
+        await leaveWorld(user, save);
+    }
+
+    const filteredSave = FilterFrontendKeys(save);
+
+    const baseurl =
+      process.env.ENV === Env.PROD
+        ? `${process.env.BASE_URL}/base/`
+        : `${process.env.BASE_URL}:${process.env.PORT}/base/`;
+
     ctx.status = Status.OK;
-    ctx.body = { error: "Discord account is not old enough." };
-    return;
+    ctx.body = {
+      error: 0,
+      id: filteredSave.basesaveid,
+      baseurl,
+      ...filteredSave,
+    };
+  } catch (error) {
+    logger.error(`MapRoom setMapVersion error: ${error?.message ?? error}`);
+    ctx.status = Status.OK;
+    ctx.body = {
+      error: error?.message || "Something went wrong, please contact support.",
+    };
   }
-
-  switch (version) {
-    case MapRoomVersion.V2:
-      await joinOrCreateWorld(user, save);
-      break;
-
-    case MapRoomVersion.V3:
-      await joinNewWorldMap(user, save);
-      break;
-
-    default:
-      await leaveWorld(user, save);
-  }
-
-  const filteredSave = FilterFrontendKeys(save);
-
-  const baseurl =
-    process.env.ENV === Env.PROD
-      ? `${process.env.BASE_URL}/base/`
-      : `${process.env.BASE_URL}:${process.env.PORT}/base/`;
-
-  ctx.status = Status.OK;
-  ctx.body = {
-    error: 0,
-    id: filteredSave.basesaveid,
-    baseurl,
-    ...filteredSave,
-  };
 };

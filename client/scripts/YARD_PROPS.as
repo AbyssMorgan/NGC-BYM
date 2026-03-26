@@ -5573,18 +5573,10 @@ package
          "isImmobile":true,
          "isUntargetable":false,
          "isNoMoreInfoButton":true,
-         "stats":[{
-            "range":360,
-            "damage":900,
-            "rate":1},
-            {
-            "range":380,
-            "damage":1000,
-            "rate":1},
-            {
-            "range":400,
-            "damage":1100,
-            "rate":1}
+         "stats":[
+            {"range":360, "damage":900, "rate":1},
+            {"range":380, "damage":1000, "rate":1},
+            {"range":400, "damage":1100, "rate":1}
          ],
          "costs":[
             {"r1":new SecNum(5), "r2":new SecNum(5), "r3":new SecNum(5), "r4":new SecNum(5), "time":new SecNum(1), "re":[]},

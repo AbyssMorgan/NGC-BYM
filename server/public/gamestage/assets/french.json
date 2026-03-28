@@ -1913,7 +1913,7 @@
     "heavytrap_desc": "Invisible aux yeux de l'ennemi. Le piège lourd se déclenche uniquement au contact des puissants ennemis mais affecte tout ennemi dans sa zone.",
     "desc_blackwalls": "Améliore tes #v1# blocs en Diamant Noir, économise #v2# de tes ressources.",
     "str_blackwalls": "Murs en Diamant Noir",
-    "desc_rubinwalls": "Instantly upgrades #v1# of your blocks to Rubin Stell, saving you #v2# resources.",
+    "desc_rubinwalls": "Instantly upgrades #v1# of your blocks to Rubin Stell, using you #v2# resources.",
     "str_rubinwalls": "Rubin Stell Walls",
     "str_code_mdod_title": "Mode Bestial !",
     "str_code_mdod_body": "Réduit les dégâts infligés à tes monstres de 30% pendant 24 heures.",

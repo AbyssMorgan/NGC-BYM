@@ -1913,7 +1913,7 @@
     "heavytrap_desc": "Invisíveis para os inimigos até que seja tarde demais, as armadilhas pesadas usam um gatilho especializado que só dispara quando os monstros mais poderosos pisam nelas, mas causam dano de respingo a todas as unidades próximas.",
     "desc_blackwalls": "Melhora instantaneamente #v1# de suas paredes para Diamante Negro, economizando #v2# de recursos.",
     "str_blackwalls": "Paredes de diamante negro",
-    "desc_rubinwalls": "Instantly upgrades #v1# of your blocks to Rubin Stell, saving you #v2# resources.",
+    "desc_rubinwalls": "Instantly upgrades #v1# of your blocks to Rubin Stell, using you #v2# resources.",
     "str_rubinwalls": "Rubin Stell Walls",
     "str_code_mdod_title": "Modo Besta",
     "str_code_mdod_body": "Reduz o dano sofrido pelos seus monstros em 30% por 24 horas.",

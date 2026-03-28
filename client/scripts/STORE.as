@@ -472,11 +472,11 @@ package
          var _loc10_:int = 0;
          var _loc11_:int = 0;
          var _loc12_:int = 0;
-         var price_blk2:uint = 1;
-         var price_blk3:uint = 2;
-         var price_blk4:uint = 3;
-         var price_blk5:uint = 4;
-         var price_blk6:uint = 5;
+         var price_blk2:uint = 0;
+         var price_blk3:uint = 0;
+         var price_blk4:uint = 0;
+         var price_blk5:uint = 0;
+         var price_blk6:uint = 0;
          var _loc18_:Vector.<Object> = InstanceManager.getInstancesByClass(BWALL);
          for each(_loc13_ in _loc18_)
          {
@@ -499,6 +499,7 @@ package
          else
          {
             _storeItems.BLK2.c = [_loc10_];
+            _storeItems.BLK2.resourceCost = _loc11_; // r1+r2 combined cost from existing calculation
             _storeItems.BLK2.d = KEYS.Get("desc_stonewalls",{
                "v1":_loc12_,
                "v2":GLOBAL.FormatNumber(_loc11_)
@@ -535,6 +536,7 @@ package
          else
          {
             _storeItems.BLK3.c = [_loc10_];
+            _storeItems.BLK3.resourceCost = _loc11_; // r1+r2 combined cost for BLK3
             _storeItems.BLK3.d = KEYS.Get("desc_metalwalls",{
                "v1":_loc12_,
                "v2":GLOBAL.FormatNumber(_loc11_)
@@ -568,6 +570,7 @@ package
                }
             }
             _storeItems.BLK4.c = [_loc10_];
+            _storeItems.BLK4.resourceCost = _loc11_; // r1+r2 combined cost for BLK4
             _storeItems.BLK4.d = KEYS.Get("desc_goldwalls",{
                "v1":_loc12_,
                "v2":GLOBAL.FormatNumber(_loc11_)
@@ -604,6 +607,7 @@ package
                }
             }
             _storeItems.BLK5.c = [_loc10_];
+            _storeItems.BLK5.resourceCost = _loc11_; // r1+r2 combined cost for BLK5
             _storeItems.BLK5.d = KEYS.Get("desc_blackwalls",{
                "v1":_loc12_,
                "v2":GLOBAL.FormatNumber(_loc11_)
@@ -648,6 +652,7 @@ package
             }
 
             _storeItems.BLK6.c = [_loc10_];
+            _storeItems.BLK6.resourceCost = _loc11_; // r1+r2 combined cost for BLK6
             _storeItems.BLK6.d = KEYS.Get("desc_rubinwalls",{
                "v1":_loc12_,
                "v2":GLOBAL.FormatNumber(_loc11_)
@@ -1445,6 +1450,16 @@ package
                }
             }
          }
+         if(_loc20_ == "" && _loc9_.substr(0,3) == "BLK" && _loc10_.resourceCost != undefined)
+         {
+            var _locRcost:int = int(_loc10_.resourceCost);
+            var _locR1:int = Math.ceil(_locRcost / 2);
+            var _locR2:int = _locRcost - _locR1;
+            if(BASE._resources.r1.Get() < _locR1 || BASE._resources.r2.Get() < _locR2)
+            {
+               _loc20_ = "Not enough resources";
+            }
+         }
          var _loc22_:Number = 0;
          var _loc23_:Number = 0;
          if(_loc17_)
@@ -1454,12 +1469,23 @@ package
          }
          else
          {
-            _loc21_ = "<b>" + GLOBAL.FormatNumber(_loc10_.c[_loc4_]) + "</b>";
-            _loc22_ = Number(_loc10_.c[_loc4_]);
-            if(_loc10_.c[_loc4_] == 0 && _loc20_ == "")
+            if(_loc9_.substr(0,3) == "BLK" && _loc10_.resourceCost != undefined)
             {
-               _loc21_ = "<font color=\"#0000CC\"><b>" + KEYS.Get("str_buy_free") + "</b></font>";
-               _loc22_ = 0;
+               var _rCost:int = int(_loc10_.resourceCost);
+               var _r1:int = Math.ceil(_rCost / 2);
+               var _r2:int = _rCost - _r1;
+               _loc21_ = "<b>0</b>";
+               _loc22_ = Number(_rCost);
+            }
+            else
+            {
+               _loc21_ = "<b>" + GLOBAL.FormatNumber(_loc10_.c[_loc4_]) + "</b>";
+               _loc22_ = Number(_loc10_.c[_loc4_]);
+               if(_loc10_.c[_loc4_] == 0 && _loc20_ == "")
+               {
+                  _loc21_ = "<font color=\"#0000CC\"><b>" + KEYS.Get("str_buy_free") + "</b></font>";
+                  _loc22_ = 0;
+               }
             }
          }
          if(_loc20_ != "")
@@ -1556,11 +1582,12 @@ package
          var _loc33_:* = null;
          var _loc34_:MONSTERLAB = null;
          var _loc35_:String = null;
-         var _loc36_:int = 0;
-         var _loc37_:Boolean = false;
-         var _loc38_:Boolean = false;
-         var _loc39_:Boolean = false;
-         var _loc40_:Boolean = false;
+         var town_hall_level:int = 0;
+         var block_level_2:Boolean = false;
+         var block_level_3:Boolean = false;
+         var block_level_4:Boolean = false;
+         var block_level_5:Boolean = false;
+         var block_level_6:Boolean = false;
          var _loc41_:Vector.<Object> = null;
          var _loc42_:BFOUNDATION = null;
          if(TUTORIAL._stage == TUTORIAL.k_STAGE_SNIPER_SPEEDUP && param1 != 3)
@@ -2103,88 +2130,118 @@ package
             }
             if(item.substr(0,3) == "BLK")
             {
-               _loc36_ = GLOBAL.townHall._lvl.Get();
+               town_hall_level = GLOBAL.townHall._lvl.Get();
                if(BASE.isOutpost)
                {
-                  _loc36_ = 7;
+                  town_hall_level = 7;
                }
-               if(!BASE.isOutpost && _loc36_ < 3 && item.substr(3,1) == "2")
+               if(!BASE.isOutpost && town_hall_level < 3 && item.substr(3,1) == "2")
                {
                   _loc32_ = KEYS.Get("upgradeth",{"v1":3});
                }
-               else if(!BASE.isOutpost && _loc36_ < 4 && item.substr(3,1) == "3")
+               else if(!BASE.isOutpost && town_hall_level < 4 && item.substr(3,1) == "3")
                {
                   _loc32_ = KEYS.Get("upgradeth",{"v1":4});
                }
-               else if(!BASE.isOutpost && _loc36_ < 5 && item.substr(3,1) == "4")
+               else if(!BASE.isOutpost && town_hall_level < 5 && item.substr(3,1) == "4")
                {
                   _loc32_ = KEYS.Get("upgradeth",{"v1":5});
                }
-               else if(!BASE.isOutpost && _loc36_ < 6 && item.substr(3,1) == "5")
+               else if(!BASE.isOutpost && town_hall_level < 6 && item.substr(3,1) == "5")
                {
                   _loc32_ = KEYS.Get("upgradeth",{"v1":6});
                }
-               else if(!BASE.isOutpost && _loc36_ < 16 && item.substr(3,1) == "6")
+               else if(!BASE.isOutpost && town_hall_level < 16 && item.substr(3,1) == "6")
                {
                   _loc32_ = KEYS.Get("upgradeth",{"v1":16});
                }
                else
                {
-                  _loc37_ = false;
-                  _loc38_ = false;
-                  _loc39_ = false;
-                  _loc40_ = false;
+                  block_level_2 = false;
+                  block_level_3 = false;
+                  block_level_4 = false;
+                  block_level_5 = false;
+                  block_level_6 = false;
                   _loc41_ = InstanceManager.getInstancesByClass(BWALL);
                   for each(_loc42_ in _loc41_)
                   {
-                     if(_loc42_._lvl.Get() == 1 && _loc36_ >= 3)
+                     if(_loc42_._lvl.Get() == 1 && town_hall_level >= 3)
                      {
-                        _loc37_ = true;
-                        _loc38_ = true;
-                        _loc39_ = true;
-                        _loc40_ = true;
+                        block_level_2 = true;
+                        block_level_3 = true;
+                        block_level_4 = true;
+                        block_level_5 = true;
+                        block_level_6 = true;
                         break;
                      }
-                     if(_loc42_._lvl.Get() == 2 && _loc36_ >= 4)
+                     if(_loc42_._lvl.Get() == 2 && town_hall_level >= 4)
                      {
-                        _loc38_ = true;
-                        _loc39_ = true;
-                        _loc40_ = true;
+                        block_level_3 = true;
+                        block_level_4 = true;
+                        block_level_5 = true;
+                        block_level_6 = true;
                      }
                      if(!BASE.isInfernoMainYardOrOutpost)
                      {
-                        if(_loc42_._lvl.Get() == 3 && _loc36_ >= 5)
+                        if(_loc42_._lvl.Get() == 3 && town_hall_level >= 5)
                         {
-                           _loc39_ = true;
-                           _loc40_ = true;
+                           block_level_4 = true;
+                           block_level_5 = true;
+                           block_level_6 = true;
                         }
-                        if(_loc42_._lvl.Get() == 4 && _loc36_ >= 6)
+                        if(_loc42_._lvl.Get() == 4 && town_hall_level >= 6)
                         {
-                           _loc40_ = true;
+                           block_level_5 = true;
+                           block_level_6 = true;
+                        }
+                        if(_loc42_._lvl.Get() == 5 && town_hall_level >= 16)
+                        {
+                           block_level_6 = true;
                         }
                      }
                   }
-                  if(item.substr(3,1) == "2" && !_loc37_)
+                  if(item.substr(3,1) == "2" && !block_level_2)
                   {
                      _loc32_ = KEYS.Get("str_prob_notneeded");
                   }
-                  if(item.substr(3,1) == "3" && !_loc38_)
+                  if(item.substr(3,1) == "3" && !block_level_3)
                   {
                      _loc32_ = KEYS.Get("str_prob_notneeded");
                   }
-                  if(item.substr(3,1) == "4" && !_loc39_)
+                  if(item.substr(3,1) == "4" && !block_level_4)
                   {
                      _loc32_ = KEYS.Get("str_prob_notneeded");
                   }
-                  if(item.substr(3,1) == "5" && !_loc40_)
+                  if(item.substr(3,1) == "5" && !block_level_5)
+                  {
+                     _loc32_ = KEYS.Get("str_prob_notneeded");
+                  }
+                  if(item.substr(3,1) == "6" && !block_level_6)
                   {
                      _loc32_ = KEYS.Get("str_prob_notneeded");
                   }
                }
             }
+            if(_loc32_ == "" && item.substr(0,3) == "BLK" && storeItemObject.resourceCost != undefined)
+            {
+               var _resourceTotal:int = int(storeItemObject.resourceCost);
+               var _resourceR1:int = Math.ceil(_resourceTotal / 2);
+               var _resourceR2:int = _resourceTotal - _resourceR1;
+               if(BASE._resources.r1.Get() < _resourceR1 || BASE._resources.r2.Get() < _resourceR2)
+               {
+                  _loc32_ = "Not enough resources";
+               }
+            }
             if(_loc29_)
             {
                _loc33_ = "<b><font color=\"#335280\">" + GLOBAL.FormatNumber(storeItemObject.fbc_cost[_loc6_]) + "</font></b>";
+            }
+            else if(item.substr(0,3) == "BLK" && storeItemObject.resourceCost != undefined)
+            {
+               var _blkTotal:int = int(storeItemObject.resourceCost);
+               var _blkR1:int = Math.ceil(_blkTotal / 2);
+               var _blkR2:int = _blkTotal - _blkR1;
+               _loc33_ = "<b>0</b>";
             }
             else
             {
@@ -2429,6 +2486,20 @@ package
                      }
                      BuyB(itemCode,true);
                   }
+                  else if(itemCode.substr(0,3) == "BLK" && _loc2_.resourceCost != undefined)
+                  {
+                     var blkCost:int = int(_loc2_.resourceCost);
+                     var r1cost:int = Math.ceil(blkCost/2);
+                     var r2cost:int = blkCost - r1cost;
+                     if(BASE._resources.r1.Get() >= r1cost && BASE._resources.r2.Get() >= r2cost)
+                     {
+                        BuyB(itemCode);
+                     }
+                     else
+                     {
+                        GLOBAL.Message("Not enough resources for wall upgrade");
+                     }
+                  }
                   else if(BASE._credits.Get() >= _loc3_)
                   {
                      BuyB(itemCode);
@@ -2496,7 +2567,15 @@ package
             _loc10_ = _loc4_;
          }
          var _loc11_:int = _loc10_;
-         if(!_loc7_ && !param2)
+         if(param1.substr(0,3) == "BLK" && !_loc7_ && !param2 && _loc3_.resourceCost != undefined)
+         {
+            var blkCost:int = int(_loc3_.resourceCost);
+            var r1cost:int = Math.ceil(blkCost / 2);
+            var r2cost:int = blkCost - r1cost;
+            BASE.Charge(1,r1cost,false,false);
+            BASE.Charge(2,r2cost,false,false);
+         }
+         else if(!_loc7_ && !param2)
          {
             BASE._credits.Add(-_loc4_);
             BASE._hpCredits -= _loc4_;

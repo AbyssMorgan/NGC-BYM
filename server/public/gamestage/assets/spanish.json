@@ -1913,7 +1913,7 @@
     "heavytrap_desc": "Invisible para los enemigos hasta que sea demasiado tarde, las trampas pesadas usan un disparador especializado que solo dispara cuando los monstruos más poderosos lo pisan pero provoca daño de salpicadura a todas las unidades cercanas.",
     "desc_blackwalls": "Mejora instantáneamente #v1# de tus bloques a Diaante Negro, ahorrándote #v2# recursos.",
     "str_blackwalls": "Paredes de diamante negro",
-    "desc_rubinwalls": "Instantly upgrades #v1# of your blocks to Rubin Stell, saving you #v2# resources.",
+    "desc_rubinwalls": "Instantly upgrades #v1# of your blocks to Rubin Stell, using you #v2# resources.",
     "str_rubinwalls": "Rubin Stell Walls",
     "str_code_mdod_title": "Modo Bestia",
     "str_code_mdod_body": "Reduce el daño infligido a tus monstruos un 30% durante 24 horas.",

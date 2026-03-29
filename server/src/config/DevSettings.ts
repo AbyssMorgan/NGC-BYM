@@ -23,7 +23,7 @@ export const devConfig = {
    * Set the default amount of shiny on the user's account.
    * Must be set before creating a new record.
    */
-  shiny: 3000,
+  shiny: 5000,
 
   /*
    * Enable or disable the debug console. Requires a client restart.

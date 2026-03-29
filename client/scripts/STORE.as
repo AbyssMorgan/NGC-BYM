@@ -469,27 +469,25 @@ package
             _storeItems.HAMS.c = [GetHealAllShinyCost()];
          }
          var _loc9_:int = 0;
-         var _loc10_:int = 0;
          var _loc11_:int = 0;
          var _loc12_:int = 0;
-         var price_blk2:uint = 0;
-         var price_blk3:uint = 0;
-         var price_blk4:uint = 0;
-         var price_blk5:uint = 0;
-         var price_blk6:uint = 0;
+         var resources_blk2:uint = 10000;
+         var resources_blk3:uint = 100000 * 2;
+         var resources_blk4:uint = 200000 * 2;
+         var resources_blk5:uint = 400000 * 2;
+         var resources_blk6:uint = 1000000 * 2;
          var _loc18_:Vector.<Object> = InstanceManager.getInstancesByClass(BWALL);
          for each(_loc13_ in _loc18_)
          {
             if(_loc13_._lvl == null || _loc13_._lvl.Get() <= 1)
             {
-               _loc10_ += price_blk2;
-               _loc11_ += 10000;
+               _loc11_ += resources_blk2;
                _loc12_ += 1;
             }
          }
          if(BASE.isInfernoMainYardOrOutpost)
          {
-            _storeItems.BLK2I.c = [_loc10_];
+            _storeItems.BLK2I.c = [0];
             _storeItems.BLK2I.d = KEYS.Get("bi_wall_2_str_desc",{
                "v1":_loc12_,
                "v2":GLOBAL.FormatNumber(_loc11_)
@@ -498,7 +496,7 @@ package
          }
          else
          {
-            _storeItems.BLK2.c = [_loc10_];
+            _storeItems.BLK2.c = [0];
             _storeItems.BLK2.resourceCost = _loc11_; // r1+r2 combined cost from existing calculation
             _storeItems.BLK2.d = KEYS.Get("desc_stonewalls",{
                "v1":_loc12_,
@@ -506,27 +504,24 @@ package
             });
             _storeItems.BLK2.t = KEYS.Get("str_stonewalls");
          }
-         _loc10_ = 0;
          _loc12_ = 0;
          _loc11_ = 0;
          for each(_loc13_ in _loc18_)
          {
             if(_loc13_._lvl.Get() <= 1)
             {
-               _loc10_ += price_blk2 + price_blk3;
-               _loc11_ += 100000 + 10000;
+               _loc11_ += resources_blk3 + resources_blk2;
                _loc12_ += 1;
             }
             if(_loc13_._lvl.Get() == 2)
             {
-               _loc10_ += price_blk3;
-               _loc11_ += 100000;
+               _loc11_ += resources_blk3;
                _loc12_ += 1;
             }
          }
          if(BASE.isInfernoMainYardOrOutpost)
          {
-            _storeItems.BLK3I.c = [_loc10_];
+            _storeItems.BLK3I.c = [0];
             _storeItems.BLK3I.d = KEYS.Get("bi_wall_3_str_desc",{
                "v1":_loc12_,
                "v2":GLOBAL.FormatNumber(_loc11_)
@@ -535,7 +530,7 @@ package
          }
          else
          {
-            _storeItems.BLK3.c = [_loc10_];
+            _storeItems.BLK3.c = [0];
             _storeItems.BLK3.resourceCost = _loc11_; // r1+r2 combined cost for BLK3
             _storeItems.BLK3.d = KEYS.Get("desc_metalwalls",{
                "v1":_loc12_,
@@ -545,68 +540,59 @@ package
          }
          if(!BASE.isInfernoMainYardOrOutpost)
          {
-            _loc10_ = 0;
             _loc12_ = 0;
             _loc11_ = 0;
             for each(_loc13_ in _loc18_)
             {
                if(_loc13_._lvl.Get() <= 1)
                {
-                  _loc10_ += price_blk2 + price_blk3 + price_blk4;
-                  _loc11_ += 200000 + 100000 + 10000;
+                  _loc11_ += resources_blk4 + resources_blk3 + resources_blk2;
                   _loc12_ += 1;
                }
                if(_loc13_._lvl.Get() == 2)
                {
-                  _loc10_ += price_blk3 + price_blk4;
-                  _loc11_ += 100000 + 200000;
+                  _loc11_ += resources_blk4 + resources_blk3;
                   _loc12_ += 1;
                }
                if(_loc13_._lvl.Get() == 3)
                {
-                  _loc10_ += price_blk4;
-                  _loc11_ += 200000;
+                  _loc11_ += resources_blk4;
                   _loc12_ += 1;
                }
             }
-            _storeItems.BLK4.c = [_loc10_];
+            _storeItems.BLK4.c = [0];
             _storeItems.BLK4.resourceCost = _loc11_; // r1+r2 combined cost for BLK4
             _storeItems.BLK4.d = KEYS.Get("desc_goldwalls",{
                "v1":_loc12_,
                "v2":GLOBAL.FormatNumber(_loc11_)
             });
             _storeItems.BLK4.t = KEYS.Get("str_goldwalls");
-            _loc10_ = 0;
             _loc12_ = 0;
             _loc11_ = 0;
             for each(_loc13_ in _loc18_)
             {
                if(_loc13_._lvl.Get() <= 1)
                {
-                  _loc10_ += price_blk2 + price_blk3 + price_blk4 + price_blk5;
-                  _loc11_ += 100000 + 10000 + 200000 + 400000;
+                  _loc11_ += resources_blk5 + resources_blk4 + resources_blk3 + resources_blk2;
                   _loc12_ += 1;
                }
                if(_loc13_._lvl.Get() == 2)
                {
-                  _loc10_ += price_blk3 + price_blk4 + price_blk5;
-                  _loc11_ += 100000 + 200000 + 400000;
+                  _loc11_ += resources_blk5 + resources_blk4 + resources_blk3;
                   _loc12_ += 1;
                }
                if(_loc13_._lvl.Get() == 3)
                {
-                  _loc10_ += price_blk4 + price_blk5;
-                  _loc11_ += 200000 + 400000;
+                  _loc11_ += resources_blk5 + resources_blk4
                   _loc12_ += 1;
                }
                if(_loc13_._lvl.Get() == 4)
                {
-                  _loc10_ += price_blk5;
-                  _loc11_ += 400000;
+                  _loc11_ += resources_blk5;
                   _loc12_ += 1;
                }
             }
-            _storeItems.BLK5.c = [_loc10_];
+            _storeItems.BLK5.c = [0];
             _storeItems.BLK5.resourceCost = _loc11_; // r1+r2 combined cost for BLK5
             _storeItems.BLK5.d = KEYS.Get("desc_blackwalls",{
                "v1":_loc12_,
@@ -614,44 +600,38 @@ package
             });
             _storeItems.BLK5.t = KEYS.Get("str_blackwalls");
 
-            _loc10_ = 0;
             _loc12_ = 0;
             _loc11_ = 0;
             for each(_loc13_ in _loc18_)
             {
                if(_loc13_._lvl.Get() <= 1)
                {
-                  _loc10_ += price_blk2 + price_blk3 + price_blk4 + price_blk5 + price_blk6;
-                  _loc11_ += 10000 + 100000 + 200000 + 400000 + 1000000;
+                  _loc11_ += resources_blk6 + resources_blk5 + resources_blk4 + resources_blk3 + resources_blk2;
                   _loc12_ += 1;
                }
                if(_loc13_._lvl.Get() == 2)
                {
-                  _loc10_ += price_blk3 + price_blk4 + price_blk5 + price_blk6;
-                  _loc11_ += 100000 + 200000 + 400000 + 1000000;
+                  _loc11_ += resources_blk6 + resources_blk5 + resources_blk4 + resources_blk3;
                   _loc12_ += 1;
                }
                if(_loc13_._lvl.Get() == 3)
                {
-                  _loc10_ += price_blk4 + price_blk5 + price_blk6;
-                  _loc11_ += 200000 + 400000 + 1000000;
+                  _loc11_ += resources_blk6 + resources_blk5 + resources_blk4;
                   _loc12_ += 1;
                }
                if(_loc13_._lvl.Get() == 4)
                {
-                  _loc10_ += price_blk5 + price_blk6;
-                  _loc11_ += 400000 + 1000000;
+                  _loc11_ += resources_blk6 + resources_blk5;
                   _loc12_ += 1;
                }
                if(_loc13_._lvl.Get() == 5)
                {
-                  _loc10_ += price_blk6;
-                  _loc11_ += 1000000;
+                  _loc11_ += resources_blk6;
                   _loc12_ += 1;
                }
             }
 
-            _storeItems.BLK6.c = [_loc10_];
+            _storeItems.BLK6.c = [0];
             _storeItems.BLK6.resourceCost = _loc11_; // r1+r2 combined cost for BLK6
             _storeItems.BLK6.d = KEYS.Get("desc_rubinwalls",{
                "v1":_loc12_,

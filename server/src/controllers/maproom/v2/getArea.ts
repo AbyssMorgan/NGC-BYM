@@ -4,7 +4,7 @@ import type { KoaController } from "../../../utils/KoaController.js";
 import { User } from "../../../models/user.model.js";
 import { WorldMapCell } from "../../../models/worldmapcell.model.js";
 import { postgres } from "../../../server.js";
-import { devConfig } from "../../../config/DevSettings.js";
+import { devConfig } from "../../../config/GameConfig.js";
 import { Status } from "../../../enums/StatusCodes.js";
 import { createCellData } from "../../../services/maproom/v2/createCellData.js";
 import type { Save } from "../../../models/save.model.js";
@@ -19,6 +19,27 @@ const getAreaSchema = z.object({
   y: z.string().transform(y => parseInt(y, 10)),
   sendresources: z.string().optional().transform(res => parseInt(res, 10) || 0),
 });
+
+/**
+ * Save fields fetched alongside each WorldMapCell in the DB query.
+ * Restricted to only what the cell handlers need.
+ */
+const CELL_SAVE_FIELDS = [
+  "*",
+  "save.basesaveid",
+  "save.savetime",
+  "save.locked",
+  "save.empirevalue",
+  "save.flinger",
+  "save.catapult",
+  "save.protected",
+  "save.resources",
+  "save.monsters",
+  "save.damage",
+  "save.destroyed",
+  "save.points",
+  "save.basevalue",
+] as const;
 
 /**
  * Controller for generating cells on the World Map.
@@ -62,7 +83,7 @@ export const getArea: KoaController = async (ctx) => {
         $lte: currentY + height,
       },
     },
-    { populate: ["save"] }
+    { populate: ["save"], fields: CELL_SAVE_FIELDS }
   );
 
   // Batch load all unique cell owners in a single query

@@ -1490,7 +1490,7 @@ package
             if(BASE._pendingPurchase.length > 0)
             {
             }
-            if(_loc4_ >= _loc5_ && !_loc10_.i || _loc9_.substr(0,3) == "BEW" && QUEUE._workerCount >= 8 || _loc9_.substr(0,2) == "BR" && BASE._resources["r" + _loc9_.substr(2,1)].Get() >= BASE._resources["r" + _loc9_.substr(2,1) + "max"])
+            if(_loc4_ >= _loc5_ && !_loc10_.i || _loc9_.substr(0,3) == "BEW" && QUEUE._workerCount >= UI_WORKERS._maxWorkers || _loc9_.substr(0,2) == "BR" && BASE._resources["r" + _loc9_.substr(2,1)].Get() >= BASE._resources["r" + _loc9_.substr(2,1) + "max"])
             {
                if((_loc19_ = _loc9_).substr(0,2) == "SP")
                {
@@ -2256,7 +2256,7 @@ package
                {
                   _loc23_.bBuy.Enabled = false;
                }
-               if(_loc6_ >= _loc7_ && !storeItemObject.i || item.substr(0,3) == "BEW" && QUEUE._workerCount >= 8 || item.substr(0,2) == "BR" && BASE._resources["r" + item.substr(2,1)].Get() >= BASE._resources["r" + item.substr(2,1) + "max"] && item.substr(item.length - 1) != "I" || item.substr(0,2) == "BR" && !BASE.isInfernoMainYardOrOutpost && item.substr(item.length - 1) == "I" && BASE._iresources["r" + item.substr(2,1)].Get() >= BASE._iresources["r" + item.substr(2,1) + "max"])
+               if(_loc6_ >= _loc7_ && !storeItemObject.i || item.substr(0,3) == "BEW" && QUEUE._workerCount >= UI_WORKERS._maxWorkers || item.substr(0,2) == "BR" && BASE._resources["r" + item.substr(2,1)].Get() >= BASE._resources["r" + item.substr(2,1) + "max"] && item.substr(item.length - 1) != "I" || item.substr(0,2) == "BR" && !BASE.isInfernoMainYardOrOutpost && item.substr(item.length - 1) == "I" && BASE._iresources["r" + item.substr(2,1)].Get() >= BASE._iresources["r" + item.substr(2,1) + "max"])
                {
                   _loc23_.mcScreen.visible = true;
                   _loc23_.mcScreen.enabled = true;

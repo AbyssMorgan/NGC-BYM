@@ -813,7 +813,7 @@ package
             "baseurl":"buildingbuttons/",
             1:{
                "img":"monster_locker.v2.jpg",
-               "silhouette_img":"monster_locker.v2.silhouette.jpg"
+               "silhouette_img":"monster_locker.v2.jpg"
             }
          },
          "quantity":[0,1,1,1,1,1,1,1,1,1],
@@ -1059,7 +1059,7 @@ package
             "baseurl":"buildingbuttons/",
             1:{
                "img":"hatchery.v2.jpg",
-               "silhouette_img":"hatchery.v2.silhouette.jpg"
+               "silhouette_img":"hatchery.v2.jpg"
             }
          },
          "quantity":[0,1,2,3,4,5,5,5,5,5],
@@ -2388,7 +2388,7 @@ package
             "baseurl":"buildingbuttons/",
             1:{
                "img":"inferno_monster_academy.jpg",
-               "silhouette_img":"inferno_monster_academy.silhouette.jpg"
+               "silhouette_img":"inferno_monster_academy.jpg"
             },
             2:{"img":"inferno_monster_academy.jpg"}
          },

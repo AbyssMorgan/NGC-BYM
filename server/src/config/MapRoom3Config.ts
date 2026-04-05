@@ -107,11 +107,11 @@ export const RESOURCE_PRODUCTION_RATES: Record<number, number> = {
 
 /** Additional resource storage capacity granted by a RESOURCE outpost per level. */
 export const RESOURCE_CAPACITIES: Record<number, number> = {
-  10: 0,
-  20: 0,
-  30: 0,
-  40: 0,
-  50: 0,
+  10: 175000,
+  20: 350000,
+  30: 750000,
+  40: 2000000,
+  50: 4000000,
 };
 
 /** Monster and tower damage bonus (%) granted by a STRONGHOLD per level. */

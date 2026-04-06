@@ -4,7 +4,6 @@ import type { WorldMapCell } from "../../../../models/worldmapcell.model.js";
 import type { CellData } from "../../../../types/CellData.js";
 import { EnumBaseRelationship } from "../../../../enums/EnumBaseRelationship.js";
 import { calculateBaseLevel } from "../../../../services/base/calculateBaseLevel.js";
-import { logger } from "../../../../utils/logger.js";
 import { PLAYER_RANGE, STRUCTURE_RANGE } from "../../../../config/MapRoom3Config.js";
 import { EnumYardType } from "../../../../enums/EnumYardType.js";
 import { getCurrentDateTime } from "../../../../utils/getCurrentDateTime.js";
@@ -30,7 +29,8 @@ export const playerCell = async (ctx: Context, cell: WorldMapCell, cellOwners: M
 
   const cellOwner = mine ? currentUser : cellOwners.get(cell.uid);
 
-  if (!cellOwner) logger.error(`Cell owner save data is missing for uid: ${cell.uid}`);
+  // We render an empty cell if the owner is not found or doesn't have save data
+  if (!cellOwner?.save) return { x: cell.x, y: cell.y, i: 0 };
 
   const points = cellOwner.save.points;
   const basevalue = cellOwner.save.basevalue;

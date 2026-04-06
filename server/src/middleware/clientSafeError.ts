@@ -71,7 +71,7 @@ export const ErrorInterceptor = async (ctx: Context, next: Next) => {
           message: "Something went wrong, please contact support.",
           status: Status.INTERNAL_SERVER_ERROR,
           data: {},
-          internalInfo: err,
+          internalInfo: err instanceof Error ? err : undefined,
           isClientFriendly: true,
         });
     const errorObj = clientError.toSafeJson();
@@ -83,10 +83,6 @@ export const ErrorInterceptor = async (ctx: Context, next: Next) => {
 
     // Put me in jail for my sins - this is bad to accomdate for the client
     ctx.status = errorObj.error ? Status.OK : errorObj.status;
-    ctx.body = {
-      error: errorObj.message,
-      errorDetails: errorObj,
-      ...(errorObj.internalInfo ? { internalInfo: errorObj.internalInfo } : {}),
-    };
+    ctx.body = { error: errorObj.message, errorDetails: errorObj };
   }
 };

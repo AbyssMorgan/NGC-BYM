@@ -2,10 +2,8 @@ import { User } from "../../../models/user.model.js";
 import { Status } from "../../../enums/StatusCodes.js";
 import { CellSchema } from "../../../zod/CellSchema.js";
 import { postgres } from "../../../server.js";
-import { Save } from "../../../models/save.model.js";
 import { MapRoom3, MapRoomVersion } from "../../../enums/MapRoom.js";
 import { WorldMapCell } from "../../../models/worldmapcell.model.js";
-import { mapByCoordinates } from "../../../services/maproom/v3/utils/mapByCoordinates.js";
 import { getGeneratedCells, cellKey } from "../../../services/maproom/v3/generateCells.js";
 import { EnumYardType } from "../../../enums/EnumYardType.js";
 import { createCellData } from "../../../services/maproom/v3/createCellData.js";
@@ -40,10 +38,17 @@ export const getMapRoomCells: KoaController = async (ctx) => {
     const user: User = ctx.authUser;
     await postgres.em.populate(user, ["save"]);
 
-    const save: Save = user.save;
+    const save = user.save;
+
+    if (!save) {
+      ctx.status = Status.OK;
+      ctx.body = { celldata: [] };
+      return;
+    }
+
     const worldid = save.worldid;
 
-    if (!cellids?.length) {
+    if (!worldid || !cellids?.length) {
       ctx.status = Status.OK;
       ctx.body = { celldata: [] };
       return;
@@ -119,7 +124,30 @@ export const getMapRoomCells: KoaController = async (ctx) => {
       { populate: ["save"], fields: CELL_SAVE_FIELDS },
     );
 
-    const dbCellsByCoord = mapByCoordinates(dbCells);
+    // Player-owned cells take priority over tribe outposts at the same coordinate.
+    const dbCellsByCoord = new Map<string, WorldMapCell>();
+
+    for (const cell of dbCells) {
+      const key = `${cell.x},${cell.y}`;
+      if (!dbCellsByCoord.has(key) || cell.uid > 0) dbCellsByCoord.set(key, cell);
+    }
+
+    let hasExpiredCells = false;
+
+    // Lazy-delete expired destroyed outpost cells and remove them from dbCellsByCoord
+    // so Phase 5 treats those positions as empty and repopulates from generated data.
+    for (const [key, dbCell] of dbCellsByCoord) {
+      if (!dbCell.destroyed_at) continue;
+      if (Date.now() - dbCell.destroyed_at.getTime() < TRIBE_REGEN_TIME) continue;
+
+      if (dbCell.save) postgres.em.remove(dbCell.save);
+      
+      postgres.em.remove(dbCell);
+      dbCellsByCoord.delete(key);
+      hasExpiredCells = true;
+    }
+
+    if (hasExpiredCells) await postgres.em.flush();
 
     // =========================================================================
     // PHASE 3: Process player-owned structures - add defender coords + levels
@@ -162,7 +190,6 @@ export const getMapRoomCells: KoaController = async (ctx) => {
     // PHASE 5: Build cell data for all coordinates
     // =========================================================================
     const cellsToReturn = new Map<string, CellData>();
-    const destroyedCells: WorldMapCell[] = [];
 
     for (const [key, { x, y }] of coords) {
       if (cellsToReturn.has(key)) continue;
@@ -171,41 +198,30 @@ export const getMapRoomCells: KoaController = async (ctx) => {
       const dbCell = dbCellsByCoord.get(key);
       const genCell = generateCells.get(cellKey(x, y));
 
-      if (dbCell) {
+      const isBorder = x < 0 || x >= MapRoom3.WIDTH || y < 0 || y >= MapRoom3.HEIGHT;
+
+      if (!isBorder && defenderPositions.has(key) && !dbCell?.uid) {
+        // Tribe outpost at a fortification position - defender wins
+        cell = new WorldMapCell(undefined, x, y, 0);
+        cell.base_type = EnumYardType.FORTIFICATION;
+      } else if (dbCell) {
         if (dbCell.destroyed_at) {
-          const elapsed = Date.now() - dbCell.destroyed_at.getTime();
-          if (elapsed >= TRIBE_REGEN_TIME) {
-            destroyedCells.push(dbCell);
-            if (genCell) {
-              cell = new WorldMapCell(undefined, genCell.x, genCell.y, genCell.altitude);
-              cell.base_type = genCell.type || 0;
-            } else {
-              cell = new WorldMapCell(undefined, x, y, 0);
-            }
-          } else {
-            cell = new WorldMapCell(undefined, dbCell.x, dbCell.y, dbCell.terrainHeight);
-          }
+          cell = new WorldMapCell(undefined, dbCell.x, dbCell.y, dbCell.terrainHeight);
         } else {
           cell = dbCell;
         }
       } else {
-        const isBorder = x < 0 || x >= MapRoom3.WIDTH || y < 0 || y >= MapRoom3.HEIGHT;
-
         if (isBorder) {
           cell = new WorldMapCell(undefined, x, y, 100);
           cell.base_type = EnumYardType.BORDER;
+        } else if (defenderPositions.has(key)) {
+          cell = new WorldMapCell(undefined, x, y, 0);
+          cell.base_type = EnumYardType.FORTIFICATION;
+        } else if (genCell) {
+          cell = new WorldMapCell(undefined, genCell.x, genCell.y, genCell.altitude);
+          cell.base_type = genCell.type || 0;
         } else {
-          const isDefender = defenderPositions.has(key);
-
-          if (isDefender) {
-            cell = new WorldMapCell(undefined, x, y, 0);
-            cell.base_type = EnumYardType.FORTIFICATION;
-          } else if (genCell) {
-            cell = new WorldMapCell(undefined, genCell.x, genCell.y, genCell.altitude);
-            cell.base_type = genCell.type || 0;
-          } else {
-            cell = new WorldMapCell(undefined, x, y, 0);
-          }
+          cell = new WorldMapCell(undefined, x, y, 0);
         }
       }
 
@@ -221,19 +237,10 @@ export const getMapRoomCells: KoaController = async (ctx) => {
       cellsToReturn.set(key, cellData);
     }
 
-    // Lazy-delete expired destroyed outpost cells so the generated cell repopulates
-    if (destroyedCells.length > 0) {
-      for (const deadCell of destroyedCells) {
-        if (deadCell.save) postgres.em.remove(deadCell.save);
-        postgres.em.remove(deadCell);
-      }
-      await postgres.em.flush();
-    }
-
     ctx.status = Status.OK;
     ctx.body = { celldata: [...cellsToReturn.values()] };
   } catch (error) {
-    logger.error("Error in getMapRoomCells:", error);
+    logger.error(`Error in getMapRoomCells: ${error}`);
     throw loadFailureErr();
   }
 };

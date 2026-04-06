@@ -21,12 +21,12 @@ export const canAttack = (attackerSave: Save, defenderSave: Save, mapversion?: M
    * Tribe resource outpost restriction: high-level players (30+) cannot attack
    * low-level (≤20) MR3 resource outposts.
    */
-  // if (
-  //   mapversion === MapRoomVersion.V3 &&
-  //   attackerLevel >= 30 &&
-  //   defenderSave.wmid === EnumYardType.RESOURCE &&
-  //   defenderSave.level <= 20
-  // ) return false;
+  if (
+    mapversion === MapRoomVersion.V3 &&
+    attackerLevel >= 30 &&
+    defenderSave.wmid === EnumYardType.RESOURCE &&
+    defenderSave.level <= 20
+  ) return false;
 
   /**
    * PvP level restriction: attackers cannot attack player main yards more than

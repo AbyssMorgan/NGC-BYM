@@ -1,6 +1,5 @@
 import z from "zod";
 
-import { Save } from "../../models/save.model.js";
 import { User } from "../../models/user.model.js";
 import type { KoaController } from "../../utils/KoaController.js";
 import { postgres } from "../../server.js";
@@ -10,7 +9,6 @@ import { FilterFrontendKeys } from "../../utils/FrontendKey.js";
 import { MapRoomVersion } from "../../enums/MapRoom.js";
 import { Status } from "../../enums/StatusCodes.js";
 import { Env } from "../../enums/Env.js";
-import { logger } from "../../utils/logger.js";
 import { joinNewWorldMap } from "../../services/maproom/v3/joinNewWorldMap.js";
 
 /**
@@ -36,7 +34,8 @@ export const setMapVersion: KoaController = async (ctx) => {
   const user: User = ctx.authUser;
   await postgres.em.populate(user, ["save"]);
 
-  let save: Save = user.save;
+  const save = user.save!;
+
   const { version } = SetMapVersionSchema.parse(ctx.request.body);
 
   // if (!ctx.meetsDiscordAgeCheck) {
@@ -45,39 +44,31 @@ export const setMapVersion: KoaController = async (ctx) => {
   //   return;
   // }
 
-  try {
-    switch (version) {
-      case MapRoomVersion.V2:
-        await joinOrCreateWorld(user, save);
-        break;
+  switch (version) {
+    case MapRoomVersion.V2:
+      await joinOrCreateWorld(user, save);
+      break;
 
-      case MapRoomVersion.V3:
-        await joinNewWorldMap(user, save);
-        break;
+    case MapRoomVersion.V3:
+      await joinNewWorldMap(user, save);
+      break;
 
-      default:
-        await leaveWorld(user, save);
-    }
-
-    const filteredSave = FilterFrontendKeys(save);
-
-    const baseurl =
-      process.env.ENV === Env.PROD
-        ? `${process.env.BASE_URL}/base/`
-        : `${process.env.BASE_URL}:${process.env.PORT}/base/`;
-
-    ctx.status = Status.OK;
-    ctx.body = {
-      error: 0,
-      id: filteredSave.basesaveid,
-      baseurl,
-      ...filteredSave,
-    };
-  } catch (error) {
-    logger.error(`MapRoom setMapVersion error: ${error?.message ?? error}`);
-    ctx.status = Status.OK;
-    ctx.body = {
-      error: error?.message || "Something went wrong, please contact support.",
-    };
+    default:
+      await leaveWorld(user, save);
   }
+
+  const filteredSave = FilterFrontendKeys(save);
+
+  const baseurl =
+    process.env.ENV === Env.PROD
+      ? `${process.env.BASE_URL}/base/`
+      : `${process.env.BASE_URL}:${process.env.PORT}/base/`;
+
+  ctx.status = Status.OK;
+  ctx.body = {
+    error: 0,
+    id: filteredSave.basesaveid,
+    baseurl,
+    ...filteredSave,
+  };
 };

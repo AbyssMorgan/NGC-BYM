@@ -221,17 +221,17 @@ package
          var _loc23_:String = null;
          if(BASE.isOutpost)
          {
-            _grouping = [[MapRoomManager.instance.isInMapRoom3 ? [] : ["BST","BLK2","BLK3","BLK4","BLK5","BLK6"]],[MapRoomManager.instance.isInMapRoom3 ? [] : ["BR11","BR12","BR13","BR21","BR22","BR23","BR31","BR32","BR33","BR41","BR42","BR43"]],[MapRoomManager.instance.isInMapRoom3 ? ["SP1","SP2","SP3","SP4","FIX"] : ["SP1","SP2","SP3","SP4","POD","FIX","HOD","HOD2","HOD3"]],[MapRoomManager.instance.isInMapRoom3 ? [] : ["PRO1","PRO2","PRO3","TOD","EXH"]]];
+            _grouping = [[MapRoomManager.instance.isInMapRoom3 ? [] : ["BST","BLK2","BLK3","BLK4","BLK5","BLK6","EXR1","EXR2","EXR3","EXR4"]],[MapRoomManager.instance.isInMapRoom3 ? [] : ["BR11","BR12","BR13","BR21","BR22","BR23","BR31","BR32","BR33","BR41","BR42","BR43"]],[MapRoomManager.instance.isInMapRoom3 ? ["SP1","SP2","SP3","SP4","FIX"] : ["SP1","SP2","SP3","SP4","POD","FIX","HOD","HOD2","HOD3"]],[MapRoomManager.instance.isInMapRoom3 ? [] : ["PRO1","PRO2","PRO3","TOD","EXH"]]];
          }
          else if(BASE.isMainYard)
          {
             if(MAPROOM_DESCENT.DescentPassed)
             {
-               _grouping = [[["BEW","BST","ENL","BLK2","BLK3","BLK4","BLK5","BLK6"]],[["BR11","BR12","BR13","BR21","BR22","BR23","BR31","BR32","BR33","BR41","BR42","BR43","BR11I","BR12I","BR13I","BR21I","BR22I","BR23I","BR31I","BR32I","BR33I","BR41I","BR42I","BR43I","BIP"]],[["SP1","SP2","SP3","SP4","POD","FIX","HOD","HOD2","HOD3"]],[MapRoomManager.instance.isInMapRoom3 ? ["PRO1","PRO2","PRO3","MOD","MDOD","MSOD","TOD"] : ["PRO1","PRO2","PRO3","MOD","MDOD","MSOD","EXH","TOD"]]];
+               _grouping = [[["BEW","BST","ENL","BLK2","BLK3","BLK4","BLK5","BLK6","EXR1","EXR2","EXR3","EXR4"]],[["BR11","BR12","BR13","BR21","BR22","BR23","BR31","BR32","BR33","BR41","BR42","BR43","BR11I","BR12I","BR13I","BR21I","BR22I","BR23I","BR31I","BR32I","BR33I","BR41I","BR42I","BR43I","BIP"]],[["SP1","SP2","SP3","SP4","POD","FIX","HOD","HOD2","HOD3"]],[MapRoomManager.instance.isInMapRoom3 ? ["PRO1","PRO2","PRO3","MOD","MDOD","MSOD","TOD"] : ["PRO1","PRO2","PRO3","MOD","MDOD","MSOD","EXH","TOD"]]];
             }
             else
             {
-               _grouping = [[["BEW","BST","ENL","BLK2","BLK3","BLK4","BLK5","BLK6"]],[["BR11","BR12","BR13","BR21","BR22","BR23","BR31","BR32","BR33","BR41","BR42","BR43","BIP"]],[["SP1","SP2","SP3","SP4","POD","FIX","HOD","HOD2","HOD3"]],[MapRoomManager.instance.isInMapRoom3 ? ["PRO1","PRO2","PRO3","MOD","MDOD","MSOD","TOD"] : ["PRO1","PRO2","PRO3","MOD","MDOD","MSOD","EXH","TOD"]]];
+               _grouping = [[["BEW","BST","ENL","BLK2","BLK3","BLK4","BLK5","BLK6","EXR1","EXR2","EXR3","EXR4"]],[["BR11","BR12","BR13","BR21","BR22","BR23","BR31","BR32","BR33","BR41","BR42","BR43","BIP"]],[["SP1","SP2","SP3","SP4","POD","FIX","HOD","HOD2","HOD3"]],[MapRoomManager.instance.isInMapRoom3 ? ["PRO1","PRO2","PRO3","MOD","MDOD","MSOD","TOD"] : ["PRO1","PRO2","PRO3","MOD","MDOD","MSOD","EXH","TOD"]]];
             }
          }
          else
@@ -662,6 +662,10 @@ package
             _storeItems.EXH.d = KEYS.Get(BASE.isInfernoMainYardOrOutpost ? "store_exhi_desc" : "store_exh_desc");
             _storeItems.EXH.t = KEYS.Get("store_exh_title");
          }
+         _storeItems.EXR1.resourceCost = 250000000;
+         _storeItems.EXR2.resourceCost = 250000000;
+         _storeItems.EXR3.resourceCost = 250000000;
+         _storeItems.EXR4.resourceCost = 250000000;
       }
       
       public static function AddInventory(param1:String) : void
@@ -2212,6 +2216,34 @@ package
                   _loc32_ = "Not enough resources";
                }
             }
+            else if(_loc32_ == "" && item == "EXR1" && storeItemObject.resourceCost != undefined)
+            {
+               if(BASE._resources.r1.Get() < storeItemObject.resourceCost)
+               {
+                  _loc32_ = "Not enough resources";
+               }
+            }
+            else if(_loc32_ == "" && item == "EXR2" && storeItemObject.resourceCost != undefined)
+            {
+               if(BASE._resources.r2.Get() < storeItemObject.resourceCost)
+               {
+                  _loc32_ = "Not enough resources";
+               }
+            }
+            else if(_loc32_ == "" && item == "EXR3" && storeItemObject.resourceCost != undefined)
+            {
+               if(BASE._resources.r3.Get() < storeItemObject.resourceCost)
+               {
+                  _loc32_ = "Not enough resources";
+               }
+            }
+            else if(_loc32_ == "" && item == "EXR4" && storeItemObject.resourceCost != undefined)
+            {
+               if(BASE._resources.r4.Get() < storeItemObject.resourceCost)
+               {
+                  _loc32_ = "Not enough resources";
+               }
+            }
             if(_loc29_)
             {
                _loc33_ = "<b><font color=\"#335280\">" + GLOBAL.FormatNumber(storeItemObject.fbc_cost[_loc6_]) + "</font></b>";
@@ -2229,6 +2261,10 @@ package
                if(storeItemObject.c[_loc6_] == 0 && _loc32_ == "")
                {
                   _loc33_ = "<font color=\"#0000CC\"><b>" + KEYS.Get("str_buy_free") + "</b></font>";
+               }
+               else if(storeItemObject.c[_loc6_] < 0 && _loc32_ == "")
+               {
+                  _loc33_ = "<font color=\"#0000CC\"><b>" + (-storeItemObject.c[_loc6_]) + "</b></font>";
                }
             }
             if(_loc32_ != "")
@@ -2554,6 +2590,14 @@ package
             var r2cost:int = blkCost - r1cost;
             BASE.Charge(1,r1cost,false,false);
             BASE.Charge(2,r2cost,false,false);
+         }
+         else if(param1.substr(0,3) == "EXR" && !_loc7_ && !param2 && _loc3_.resourceCost != undefined)
+         {
+            var resIndex:int = int(param1.substr(3,1));
+            BASE.Charge(resIndex, int(_loc3_.resourceCost), false, false);
+            BASE._credits.Add(-_loc4_);
+            BASE._hpCredits -= _loc4_;
+            BASE.Purchase(param1, _loc11_, "store");
          }
          else if(!_loc7_ && !param2)
          {

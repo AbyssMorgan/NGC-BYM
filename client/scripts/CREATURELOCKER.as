@@ -125,7 +125,13 @@ package
                "description":"mon_pokeydesc",
                "stream":["mon_pokeystream","mon_pokeystreambody","quests/monster1.v2.png"],
                "unlock":[""],
-               "trainingCosts":[[4000,60 * 60 * 2],[8000,60 * 60 * 3],[12000,60 * 60 * 5],[16000,60 * 60 * 8],[22000,60 * 60 * 12]],
+               "trainingCosts":[
+                  [4000,60 * 60 * 2],
+                  [8000,60 * 60 * 3],
+                  [12000,60 * 60 * 5],
+                  [16000,60 * 60 * 8],
+                  [22000,60 * 60 * 12]
+               ],
                "props":{
                   "speed":[1.2],
                   "health":[200,220,240,260,280,300],

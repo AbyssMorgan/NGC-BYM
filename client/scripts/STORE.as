@@ -2264,7 +2264,7 @@ package
                }
                else if(storeItemObject.c[_loc6_] < 0 && _loc32_ == "")
                {
-                  _loc33_ = "<font color=\"#0000CC\"><b>" + (-storeItemObject.c[_loc6_]) + "</b></font>";
+                  _loc33_ = "<font color=\"#0000CC\"><b>+1</b></font>";
                }
             }
             if(_loc32_ != "")

@@ -183,15 +183,21 @@ package com.monsters.baseplanner
          var _loc8_:Sprite = null;
          var _loc9_:DashedLine = null;
          var _loc1_:int = 1;
-         if (STORE._storeData.ENL)
-         {
-            _loc1_ = STORE._storeData.ENL.q + 1;
-         }
          var _loc2_:int = 0;
-         if (STORE._storeData.ENL)
-         {
-            _loc2_ = int(STORE._storeData.ENL.q);
+         if(BASE.isMainYard){
+            if (STORE._storeData.ENL)
+            {
+               _loc1_ = STORE._storeData.ENL.q + 1;
+               _loc2_ = int(STORE._storeData.ENL.q);
+            }
+         } else {
+            if (STORE._storeData.ENLI)
+            {
+               _loc1_ = STORE._storeData.ENLI.q + 1;
+               _loc2_ = int(STORE._storeData.ENLI.q);
+            }
          }
+         
          var _loc3_:Point = new Point();
          var _loc4_:Point = new Point();
          _loc3_ = this.YARD_EXPANSIONS[_loc2_];
@@ -657,10 +663,19 @@ package com.monsters.baseplanner
             _loc2_++;
          }
          var _loc3_:int = 0;
-         if (STORE._storeData.ENL)
-         {
-            _loc3_ = int(STORE._storeData.ENL.q);
+         
+         if(BASE.isMainYard){
+            if (STORE._storeData.ENL)
+            {
+               _loc3_ = int(STORE._storeData.ENL.q);
+            }
+         } else {
+            if (STORE._storeData.ENLI)
+            {
+               _loc3_ = int(STORE._storeData.ENLI.q);
+            }
          }
+
          var _loc4_:Point = this.YARD_EXPANSIONS[_loc3_];
          if (param1.category != BuildingItem.TYPE_DECORATION)
          {

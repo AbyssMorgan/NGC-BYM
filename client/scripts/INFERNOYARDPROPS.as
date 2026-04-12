@@ -8,251 +8,136 @@ package
    
    public class INFERNOYARDPROPS
    {
-      public static const _infernoYardProps:Array = [{
-         "id":1,
-         "group":1,
-         "order":1,
-         "buildStatus":0,
-         "type":"resource",
-         "name":"#bi_boneharvester#",
-         "size":100,
-         "cycle":30,
-         "attackgroup":1,
-         "tutstage":0,
-         "sale":0,
-         "description":"bi_boneharvester_desc",
-         "costs":[{
-            "r1":new SecNum(0),
-            "r2":new SecNum(750),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(15),
-            "re":[[14,1,1]]
-         },{
-            "r1":new SecNum(0),
-            "r2":new SecNum(1575),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(300),
-            "re":[[14,1,1]]
-         },{
-            "r1":new SecNum(0),
-            "r2":new SecNum(3300),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(1200),
-            "re":[[14,1,1]]
-         },{
-            "r1":new SecNum(0),
-            "r2":new SecNum(6950),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(3600),
-            "re":[[14,1,2]]
-         },{
-            "r1":new SecNum(0),
-            "r2":new SecNum(14500),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(7200),
-            "re":[[14,1,2]]
-         },{
-            "r1":new SecNum(0),
-            "r2":new SecNum(30600),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(18000),
-            "re":[[14,1,3]]
-         },{
-            "r1":new SecNum(0),
-            "r2":new SecNum(64300),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(43200),
-            "re":[[14,1,3]]
-         },{
-            "r1":new SecNum(0),
-            "r2":new SecNum(135000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(86400),
-            "re":[[14,1,4]]
-         },{
-            "r1":new SecNum(0),
-            "r2":new SecNum(283600),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(172800),
-            "re":[[14,1,4]]
-         },{
-            "r1":new SecNum(0),
-            "r2":new SecNum(600000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(259200),
-            "re":[[14,1,5]]
-         }],
-         "imageData":{
-            "baseurl":"buildings/iboneharvester/",
-            1:{
-               "anim":["anim.1.v2.png",new Rectangle(-32,-33,65,80),47],
-               "top":["top.1.v2.png",new Point(-48,-33)],
-               "shadow":["shadow.1.v4.jpg",new Point(-53,-1)],
-               //"shadow":["shadow.1.v4.jpg",new Point(-53,11)],
-               "topdamaged":["top.1.damaged.v2.png",new Point(-41,-26)],
-                "shadowdamaged":["shadow.1.damaged.v2.jpg",new Point(-51,-2)],
-               //"shadowdamaged":["shadow.1.damaged.v2.jpg",new Point(-51,5)],
-               "topdestroyed":["top.1.destroyed.v2.png",new Point(-45,0)],
-               "shadowdestroyed":["shadow.1.destroyed.v4.jpg",new Point(-46,-2)]
-               // "shadowdestroyed":["shadow.1.destroyed.v4.jpg",new Point(-46,4)]
+      public static const _infernoYardProps:Array = [
+         {
+            "id":1,
+            "group":1,
+            "order":1,
+            "buildStatus":0,
+            "type":"resource",
+            "name":"#bi_boneharvester#",
+            "size":100,
+            "cycle":30,
+            "attackgroup":1,
+            "tutstage":0,
+            "sale":0,
+            "description":"bi_boneharvester_desc",
+            "costs":[
+               {"r1":new SecNum(0), "r2":new SecNum(750), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(15), "re":[[14,1,1]]},
+               {"r1":new SecNum(0), "r2":new SecNum(1575), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(300), "re":[[14,1,1]]},
+               {"r1":new SecNum(0), "r2":new SecNum(3300), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1200), "re":[[14,1,1]]},
+               {"r1":new SecNum(0), "r2":new SecNum(6950), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(3600), "re":[[14,1,2]]},
+               {"r1":new SecNum(0), "r2":new SecNum(14500), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(7200), "re":[[14,1,2]]},
+               {"r1":new SecNum(0), "r2":new SecNum(30600), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(18000), "re":[[14,1,3]]},
+               {"r1":new SecNum(0), "r2":new SecNum(64300), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(43200), "re":[[14,1,3]]},
+               {"r1":new SecNum(0), "r2":new SecNum(135000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,4]]},
+               {"r1":new SecNum(0), "r2":new SecNum(283600), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(172800), "re":[[14,1,4]]},
+               {"r1":new SecNum(0), "r2":new SecNum(600000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,5]]}
+            ],
+            "imageData":{
+               "baseurl":"buildings/iboneharvester/",
+               1:{
+                  "anim":["anim.1.v2.png",new Rectangle(-32,-33,65,80),47],
+                  "top":["top.1.v2.png",new Point(-48,-33)],
+                  "shadow":["shadow.1.v4.jpg",new Point(-53,-1)],
+                  //"shadow":["shadow.1.v4.jpg",new Point(-53,11)],
+                  "topdamaged":["top.1.damaged.v2.png",new Point(-41,-26)],
+                  "shadowdamaged":["shadow.1.damaged.v2.jpg",new Point(-51,-2)],
+                  //"shadowdamaged":["shadow.1.damaged.v2.jpg",new Point(-51,5)],
+                  "topdestroyed":["top.1.destroyed.v2.png",new Point(-45,0)],
+                  "shadowdestroyed":["shadow.1.destroyed.v4.jpg",new Point(-46,-2)]
+                  // "shadowdestroyed":["shadow.1.destroyed.v4.jpg",new Point(-46,4)]
+               },
+               3:{
+                  "anim":["anim.2.png",new Rectangle(-44,-38,90,97),50],
+                  "top":["top.2.png",new Point(-44,25)],
+                  // "shadow":["shadow.2.jpg",new Point(-39,16)], // original
+                  "shadow":["shadow.2.jpg",new Point(-39,7)],
+                  "topdamaged":["top.2.damaged.png",new Point(-37,-27)],
+                  //"shadowdamaged":["shadow.2.damaged.jpg",new Point(-39,19)],
+                  "topdestroyed":["top.2.destroyed.png",new Point(-57,8)]
+                  //"shadowdestroyed":["shadow.2.destroyed.jpg",new Point(-60,19)]
+               }
             },
-            3:{
-               "anim":["anim.2.png",new Rectangle(-44,-38,90,97),50],
-               "top":["top.2.png",new Point(-44,25)],
-               // "shadow":["shadow.2.jpg",new Point(-39,16)], // original
-               "shadow":["shadow.2.jpg",new Point(-39,7)],
-               "topdamaged":["top.2.damaged.png",new Point(-37,-27)],
-               //"shadowdamaged":["shadow.2.damaged.jpg",new Point(-39,19)],
-               "topdestroyed":["top.2.destroyed.png",new Point(-57,8)]
-               //"shadowdestroyed":["shadow.2.destroyed.jpg",new Point(-60,19)]
-            }
-         },
-         "buildingbuttons":["bone_crusher.v2"],
-         "upgradeImgData":{
-            "baseurl":"buildingbuttons/",
-            1:{
-               "img":"bone_crusher.v2.jpg",
-               "silhouette_img":"bone_crusher.v2.silhouette.jpg"
-            }
-         },
-         "quantity":[0,1,2,4,5,6,6,6,6,6],
-         "produce":[2,4,7,11,16,22,29,37,46,56],
-         "cycleTime":[10,10,10,10,10,10,10,10,10,10],
-         "capacity":[720,2160,5670,13365,29160,60142,118918,227584,424414,775018],
-         "hp":[500,950,1800,3400,6500,12000,24000,45000,85000,165000],
-         "repairTime":[30,60,120,240,480,960,1920,3840,7680,15360]
-      },{
-         "id":2,
-         "group":1,
-         "order":2,
-         "buildStatus":0,
-         "type":"resource",
-         "name":"#bi_coalharvester#",
-         "size":100,
-         "cycle":30,
-         "attackgroup":1,
-         "tutstage":0,
-         "sale":0,
-         "description":"bi_coalharvester_desc",
-         "costs":[{
-            "r1":new SecNum(750),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(15),
-            "re":[[14,1,1]]
-         },{
-            "r1":new SecNum(1575),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(300),
-            "re":[[14,1,1]]
-         },{
-            "r1":new SecNum(3300),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(1200),
-            "re":[[14,1,1]]
-         },{
-            "r1":new SecNum(6950),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(3600),
-            "re":[[14,1,2]]
-         },{
-            "r1":new SecNum(14500),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(7200),
-            "re":[[14,1,2]]
-         },{
-            "r1":new SecNum(30600),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(18000),
-            "re":[[14,1,3]]
-         },{
-            "r1":new SecNum(64300),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(43200),
-            "re":[[14,1,3]]
-         },{
-            "r1":new SecNum(135000),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(86400),
-            "re":[[14,1,4]]
-         },{
-            "r1":new SecNum(283600),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(172800),
-            "re":[[14,1,4]]
-         },{
-            "r1":new SecNum(600000),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "time":new SecNum(259200),
-            "re":[[14,1,5]]
-         }],
-         "imageData":{
-            "baseurl":"buildings/icoalproducer/",
-            1:{
-               "anim":["anim.1.v2.png",new Rectangle(-21,-45,40,18),47],
-               "anim2":["anim.2.v2.png",new Rectangle(-39,-9,39,63),47],
-               "anim3":["anim.3.v2.png",new Rectangle(-3,8.9,31,18),47],
-               "top":["top.1.v2.png",new Point(-32,-40)],
-               "shadow":["shadow.1.jpg",new Point(-40,14)],
-               "topdamaged":["top.1.damaged.v2.png",new Point(-34,-42)],
-               "shadowdamaged":["shadow.1.damaged.v2.jpg",new Point(-64,4)],
-               "topdestroyed":["top.1.destroyed.v2.png",new Point(-44,-4)],
-               "shadowdestroyed":["shadow.1.destroyed.v2.jpg",new Point(-50,-2)]
+            "buildingbuttons":["bone_crusher.v2"],
+            "upgradeImgData":{
+               "baseurl":"buildingbuttons/",
+               1:{
+                  "img":"bone_crusher.v2.jpg",
+                  "silhouette_img":"bone_crusher.v2.silhouette.jpg"
+               }
             },
-            3:{
-               "anim":["anim.1.2.png",new Rectangle(-40,-52,74,105),45],
-               "top":["top.2.png",new Point(-40,-50)],
-               "shadow":["shadow.2.jpg",new Point(-42,7)],
-               "topdamaged":["top.2.damaged.png",new Point(-39,-52)],
-               "shadowdamaged":["shadow.2.damaged.jpg",new Point(-43,5)],
-               "topdestroyed":["top.2.destroyed.png",new Point(-43,-9)],
-               "shadowdestroyed":["shadow.2.destroyed.jpg",new Point(-46,17)]
-            }
+            "quantity":[0,1,2,4,5,6,6,6,6,6],
+            "produce":[2,4,7,11,16,22,29,37,46,56],
+            "cycleTime":[10,10,10,10,10,10,10,10,10,10],
+            "capacity":[720,2160,5670,13365,29160,60142,118918,227584,424414,775018],
+            "hp":[500,950,1800,3400,6500,12000,24000,45000,85000,165000],
+            "repairTime":[30,60,120,240,480,960,1920,3840,7680,15360]
          },
-         "buildingbuttons":["coal_producer.v2"],
-         "upgradeImgData":{
-            "baseurl":"buildingbuttons/",
-            1:{
-               "img":"coal_producer.v2.jpg",
-               "silhouette_img":"coal_producer.v2.silhouette.jpg"
-            }
+         {
+            "id":2,
+            "group":1,
+            "order":2,
+            "buildStatus":0,
+            "type":"resource",
+            "name":"#bi_coalharvester#",
+            "size":100,
+            "cycle":30,
+            "attackgroup":1,
+            "tutstage":0,
+            "sale":0,
+            "description":"bi_coalharvester_desc",
+            "costs":[
+               {"r1":new SecNum(750), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(15), "re":[[14,1,1]]},
+               {"r1":new SecNum(1575), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(300), "re":[[14,1,1]]},
+               {"r1":new SecNum(3300), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(1200), "re":[[14,1,1]]},
+               {"r1":new SecNum(6950), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(3600), "re":[[14,1,2]]},
+               {"r1":new SecNum(14500), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(7200), "re":[[14,1,2]]},
+               {"r1":new SecNum(30600), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(18000), "re":[[14,1,3]]},
+               {"r1":new SecNum(64300), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(43200), "re":[[14,1,3]]},
+               {"r1":new SecNum(135000), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,4]]},
+               {"r1":new SecNum(283600), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(172800), "re":[[14,1,4]]},
+               {"r1":new SecNum(600000), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,5]]}
+            ],
+            "imageData":{
+               "baseurl":"buildings/icoalproducer/",
+               1:{
+                  "anim":["anim.1.v2.png",new Rectangle(-21,-45,40,18),47],
+                  "anim2":["anim.2.v2.png",new Rectangle(-39,-9,39,63),47],
+                  "anim3":["anim.3.v2.png",new Rectangle(-3,8.9,31,18),47],
+                  "top":["top.1.v2.png",new Point(-32,-40)],
+                  "shadow":["shadow.1.jpg",new Point(-40,14)],
+                  "topdamaged":["top.1.damaged.v2.png",new Point(-34,-42)],
+                  "shadowdamaged":["shadow.1.damaged.v2.jpg",new Point(-64,4)],
+                  "topdestroyed":["top.1.destroyed.v2.png",new Point(-44,-4)],
+                  "shadowdestroyed":["shadow.1.destroyed.v2.jpg",new Point(-50,-2)]
+               },
+               3:{
+                  "anim":["anim.1.2.png",new Rectangle(-40,-52,74,105),45],
+                  "top":["top.2.png",new Point(-40,-50)],
+                  "shadow":["shadow.2.jpg",new Point(-42,7)],
+                  "topdamaged":["top.2.damaged.png",new Point(-39,-52)],
+                  "shadowdamaged":["shadow.2.damaged.jpg",new Point(-43,5)],
+                  "topdestroyed":["top.2.destroyed.png",new Point(-43,-9)],
+                  "shadowdestroyed":["shadow.2.destroyed.jpg",new Point(-46,17)]
+               }
+            },
+            "buildingbuttons":["coal_producer.v2"],
+            "upgradeImgData":{
+               "baseurl":"buildingbuttons/",
+               1:{
+                  "img":"coal_producer.v2.jpg",
+                  "silhouette_img":"coal_producer.v2.silhouette.jpg"
+               }
+            },
+            "quantity":[0,1,2,4,5,6,6,6,6,6],
+            "produce":[2,4,7,11,16,22,29,37,46,56],
+            "cycleTime":[10,10,10,10,10,10,10,10,10,10],
+            "capacity":[720,2160,5670,13365,29160,60142,118918,227584,424414,775018],
+            "hp":[500,950,1800,3400,6500,12000,24000,45000,85000,165000],
+            "repairTime":[30,60,120,240,480,960,1920,3840,7680,15360]
          },
-         "quantity":[0,1,2,4,5,6,6,6,6,6],
-         "produce":[2,4,7,11,16,22,29,37,46,56],
-         "cycleTime":[10,10,10,10,10,10,10,10,10,10],
-         "capacity":[720,2160,5670,13365,29160,60142,118918,227584,424414,775018],
-         "hp":[500,950,1800,3400,6500,12000,24000,45000,85000,165000],
-         "repairTime":[30,60,120,240,480,960,1920,3840,7680,15360]
-      },{
+         {
          "id":3,
          "group":1,
          "order":3,
@@ -889,16 +774,10 @@ package
          "tutstage":200,
          "sale":0,
          "description":"yardplanner_desc",
-         "block":true,
-         "costs":[{
-            "r1":new SecNum(250000),
-            "r2":new SecNum(250000),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0),
-            "r5":0,
-            "time":new SecNum(43200),
-            "re":[[14,1,3]]
-         }],
+         // "block":true,
+         "costs":[
+            {"r1":new SecNum(250000), "r2":new SecNum(250000), "r3":new SecNum(0), "r4":new SecNum(0), "r5":0, "time":new SecNum(43200), "re":[[14,1,3]]}
+         ],
          "imageData":{
             "baseurl":"buildings/yardplanner/",
             1:{
@@ -3215,91 +3094,70 @@ package
          "quantity":[0],
          "hp":[100],
          "repairTime":[1]
-      },{
-         "id":51,
-         "group":2,
-         "order":10,
-         "buildStatus":0,
-         "type":"special",
-         "name":"#b_catapult#",
-         "size":190,
-         "attackgroup":1,
-         "tutstage":200,
-         "sale":0,
-         "description":"catapult_desc",
-         "block":true,
-         "costs":[{
-            "r1":new SecNum(75000),
-            "r2":new SecNum(75000),
-            "r3":new SecNum(75000),
-            "r4":new SecNum(0),
-            "time":new SecNum(5400),
-            "re":[[14,1,3],[5,1,1]]
-         },{
-            "r1":new SecNum(128600),
-            "r2":new SecNum(128600),
-            "r3":new SecNum(128600),
-            "r4":new SecNum(0),
-            "time":new SecNum(10800),
-            "re":[[14,1,4],[5,1,1]]
-         },{
-            "r1":new SecNum(257200),
-            "r2":new SecNum(257200),
-            "r3":new SecNum(257200),
-            "r4":new SecNum(0),
-            "time":new SecNum(21600),
-            "re":[[14,1,5],[5,1,1]]
-         },{
-            "r1":new SecNum(514400),
-            "r2":new SecNum(514400),
-            "r3":new SecNum(514400),
-            "r4":new SecNum(0),
-            "time":new SecNum(43200),
-            "re":[[14,1,6],[5,1,1],[11,1,2]]
-         }],
-         "imageData":{
-            "baseurl":"buildings/catapult/",
-            1:{
-               "top":["top.1.png",new Point(-43,12)],
-               "shadow":["shadow.1.jpg",new Point(-42,28)],
-               "topdamaged":["top.1.damaged.png",new Point(-40,12)],
-               "shadowdamaged":["shadow.1.damaged.jpg",new Point(-39,28)],
-               "topdestroyed":["top.3.destroyed.png",new Point(-48,9)],
-               "shadowdestroyed":["shadow.3.destroyed.jpg",new Point(-47,23)]
+      },
+         {
+            "id":51,
+            "group":2,
+            "order":10,
+            "buildStatus":0,
+            "type":"special",
+            "name":"#b_catapult#",
+            "size":190,
+            "attackgroup":1,
+            "tutstage":200,
+            "sale":0,
+            "description":"catapult_desc",
+            "block":true,
+            "costs":[
+               {"r1":new SecNum(75000), "r2":new SecNum(75000), "r3":new SecNum(75000), "r4":new SecNum(0), "time":new SecNum(5400), "re":[[14,1,3],[5,1,1]]},
+               {"r1":new SecNum(128600), "r2":new SecNum(128600), "r3":new SecNum(128600), "r4":new SecNum(0), "time":new SecNum(10800), "re":[[14,1,4],[5,1,1]]},
+               {"r1":new SecNum(257200), "r2":new SecNum(257200), "r3":new SecNum(257200), "r4":new SecNum(0), "time":new SecNum(21600), "re":[[14,1,5],[5,1,1]]},
+               {"r1":new SecNum(514400), "r2":new SecNum(514400), "r3":new SecNum(514400), "r4":new SecNum(0), "time":new SecNum(43200), "re":[[14,1,6],[5,1,1],[11,1,2]]}
+            ],
+            "imageData":{
+               "baseurl":"buildings/catapult/",
+               1:{
+                  "top":["top.1.png",new Point(-43,12)],
+                  "shadow":["shadow.1.jpg",new Point(-42,28)],
+                  "topdamaged":["top.1.damaged.png",new Point(-40,12)],
+                  "shadowdamaged":["shadow.1.damaged.jpg",new Point(-39,28)],
+                  "topdestroyed":["top.3.destroyed.png",new Point(-48,9)],
+                  "shadowdestroyed":["shadow.3.destroyed.jpg",new Point(-47,23)]
+               },
+               2:{
+                  "top":["top.2.png",new Point(-44,-21)],
+                  "shadow":["shadow.2.jpg",new Point(-49,19)],
+                  "topdamaged":["top.2.damaged.png",new Point(-43,-16)],
+                  "shadowdamaged":["shadow.2.damaged.jpg",new Point(-41,29)],
+                  "topdestroyed":["top.3.destroyed.png",new Point(-48,9)],
+                  "shadowdestroyed":["shadow.3.destroyed.jpg",new Point(-47,23)]
+               },
+               3:{
+                  "top":["top.3.png",new Point(-43,-29)],
+                  "shadow":["shadow.3.jpg",new Point(-39,27)],
+                  "topdamaged":["top.3.damaged.png",new Point(-51,-29)],
+                  "shadowdamaged":["shadow.3.damaged.jpg",new Point(-51,30)],
+                  "topdestroyed":["top.3.destroyed.png",new Point(-48,9)],
+                  "shadowdestroyed":["shadow.3.destroyed.jpg",new Point(-47,23)]
+               }
             },
-            2:{
-               "top":["top.2.png",new Point(-44,-21)],
-               "shadow":["shadow.2.jpg",new Point(-49,19)],
-               "topdamaged":["top.2.damaged.png",new Point(-43,-16)],
-               "shadowdamaged":["shadow.2.damaged.jpg",new Point(-41,29)],
-               "topdestroyed":["top.3.destroyed.png",new Point(-48,9)],
-               "shadowdestroyed":["shadow.3.destroyed.jpg",new Point(-47,23)]
+            "upgradeImgData":{
+               "baseurl":"buildingbuttons/",
+               1:{"img":"51.1.jpg"},
+               2:{"img":"51.2.jpg"},
+               3:{"img":"51.3.jpg"}
             },
-            3:{
-               "top":["top.3.png",new Point(-43,-29)],
-               "shadow":["shadow.3.jpg",new Point(-39,27)],
-               "topdamaged":["top.3.damaged.png",new Point(-51,-29)],
-               "shadowdamaged":["shadow.3.damaged.jpg",new Point(-51,30)],
-               "topdestroyed":["top.3.destroyed.png",new Point(-48,9)],
-               "shadowdestroyed":["shadow.3.destroyed.jpg",new Point(-47,23)]
-            }
+            "thumbImgData":{
+               "baseurl":"buildingthumbs/",
+               1:{"img":"51.1.png"},
+               2:{"img":"51.2.png"},
+               3:{"img":"51.3.png"}
+            },
+            "quantity":[0,0,0,0,0,0],
+            "hp":[4000,8000,16000,32000],
+            "repairTime":[120,240,480,960]
          },
-         "upgradeImgData":{
-            "baseurl":"buildingbuttons/",
-            1:{"img":"51.1.jpg"},
-            2:{"img":"51.2.jpg"},
-            3:{"img":"51.3.jpg"}
-         },
-         "thumbImgData":{
-            "baseurl":"buildingthumbs/",
-            1:{"img":"51.1.png"},
-            2:{"img":"51.2.png"},
-            3:{"img":"51.3.png"}
-         },
-         "quantity":[0,0,0,0,0,0],
-         "hp":[4000,8000,16000,32000],
-         "repairTime":[120,240,480,960]
-      },{
+         {
          "id":52,
          "group":999,
          "subgroup":5,

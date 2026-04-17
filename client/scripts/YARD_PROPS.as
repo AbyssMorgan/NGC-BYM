@@ -1060,6 +1060,14 @@ package
                   "shadowdamaged":["shadow.10.damaged.jpg",new Point(-85,24)],
                   "topdestroyed":["top.10.destroyed.png",new Point(-75,-45)],
                   "shadowdestroyed":["shadow.10.destroyed.jpg",new Point(-82,20)]
+               },
+               "20":{
+                  "top":["top.20.png",new Point(-77,-110)],
+                  "shadow":["shadow.10.jpg",new Point(-85,24)],
+                  "topdamaged":["top.20.damaged.png",new Point(-77,-110)],
+                  "shadowdamaged":["shadow.10.damaged.jpg",new Point(-85,24)],
+                  "topdestroyed":["top.20.destroyed.png",new Point(-75,-45)],
+                  "shadowdestroyed":["shadow.10.destroyed.jpg",new Point(-82,20)]
                }
             },
             "upgradeImgData":{
@@ -2989,87 +2997,90 @@ package
             "repairTime":[1]
          },
          {
-         "id":61,
-         "group":4,
-         "subgroup":2,
-         "order":10,
-         "buildStatus":0,
-         "type":"decoration",
-         "name":"bdg_bluegnome",
-         "size":20,
-         "attackgroup":999,
-         "tutstage":200,
-         "sale":0,
-         "description":"bdg_gnome_desc",
-         "cls":BDECORATION,
-         "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]}
-         ],
-         "imageData":{
-            "baseurl":"buildings/decorations/gnomes/",
-            "1":{
-               "top":["top-blue.png",new Point(-10,-31)],
-               "shadow":["shadow.jpg",new Point(-13,2)]
-            }
+            "id":61,
+            "group":4,
+            "subgroup":2,
+            "order":10,
+            "buildStatus":0,
+            "type":"decoration",
+            "name":"bdg_bluegnome",
+            "size":20,
+            "attackgroup":999,
+            "tutstage":200,
+            "sale":0,
+            "description":"bdg_gnome_desc",
+            "cls":BDECORATION,
+            "costs":[
+               {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]}
+            ],
+            "imageData":{
+               "baseurl":"buildings/decorations/gnomes/",
+               "1":{
+                  "top":["top-blue.png",new Point(-10,-31)],
+                  "shadow":["shadow.jpg",new Point(-13,2)]
+               }
+            },
+            "quantity":[0],
+            "hp":[100],
+            "repairTime":[1]
          },
-         "quantity":[0],
-         "hp":[100],
-         "repairTime":[1]
-      },{
-         "id":62,
-         "group":4,
-         "subgroup":2,
-         "order":11,
-         "buildStatus":0,
-         "type":"decoration",
-         "name":"bdg_greengnome",
-         "size":20,
-         "attackgroup":999,
-         "tutstage":200,
-         "sale":0,
-         "description":"bdg_gnome_desc",
-         "cls":BDECORATION,
-         "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]}
-         ],
-         "imageData":{
-            "baseurl":"buildings/decorations/gnomes/",
-            "1":{
-               "top":["top-green.png",new Point(-10,-31)],
-               "shadow":["shadow.jpg",new Point(-13,2)]
-            }
+         {
+            "id":62,
+            "group":4,
+            "subgroup":2,
+            "order":11,
+            "buildStatus":0,
+            "type":"decoration",
+            "name":"bdg_greengnome",
+            "size":20,
+            "attackgroup":999,
+            "tutstage":200,
+            "sale":0,
+            "description":"bdg_gnome_desc",
+            "cls":BDECORATION,
+            "costs":[
+               {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]}
+            ],
+            "imageData":{
+               "baseurl":"buildings/decorations/gnomes/",
+               "1":{
+                  "top":["top-green.png",new Point(-10,-31)],
+                  "shadow":["shadow.jpg",new Point(-13,2)]
+               }
+            },
+            "quantity":[0],
+            "hp":[100],
+            "repairTime":[1]
          },
-         "quantity":[0],
-         "hp":[100],
-         "repairTime":[1]
-      },{
-         "id":63,
-         "group":4,
-         "subgroup":2,
-         "order":5,
-         "buildStatus":0,
-         "type":"decoration",
-         "name":"bdg_hammock",
-         "size":40,
-         "attackgroup":999,
-         "tutstage":200,
-         "sale":0,
-         "description":"bdg_hammock_desc",
-         "cls":BDECORATION,
-         "costs":[
-            {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]}
-         ],
-         "imageData":{
-            "baseurl":"buildings/decorations/hammock/",
-            "1":{
-               "top":["top.png",new Point(-25,-8)],
-               "shadow":["shadow.jpg",new Point(-26,6)]
-            }
+         {
+            "id":63,
+            "group":4,
+            "subgroup":2,
+            "order":5,
+            "buildStatus":0,
+            "type":"decoration",
+            "name":"bdg_hammock",
+            "size":40,
+            "attackgroup":999,
+            "tutstage":200,
+            "sale":0,
+            "description":"bdg_hammock_desc",
+            "cls":BDECORATION,
+            "costs":[
+               {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]}
+            ],
+            "imageData":{
+               "baseurl":"buildings/decorations/hammock/",
+               "1":{
+                  "top":["top.png",new Point(-25,-8)],
+                  "shadow":["shadow.jpg",new Point(-26,6)]
+               }
+            },
+            "quantity":[0],
+            "hp":[100],
+            "repairTime":[1]
          },
-         "quantity":[0],
-         "hp":[100],
-         "repairTime":[1]
-      },{
+         {
          "id":64,
          "group":4,
          "subgroup":2,

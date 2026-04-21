@@ -1116,6 +1116,14 @@ export const storeItems: { [key: string]: StoreItem } = {
     i: 1,
     a: 0,
   },
+  BUILDING141: {
+    t: "bdg_dave_trophy",
+    d: "",
+    du: 0,
+    c: [100000],
+    i: 1,
+    a: 0,
+  },
   IBSW: {
     t: "Instant Buy Siege Weapon",
     d: "Instantly buy using Shiny",

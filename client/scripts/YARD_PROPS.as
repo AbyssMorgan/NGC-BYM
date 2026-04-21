@@ -1731,6 +1731,17 @@ package
                   "topdestroyed":["top.1.destroyed.png",new Point(-39,-3)],
                   "shadowdestroyed":["shadow.1.jpg",new Point(-37,14)],
                   "topdestroyedfire":["top.1.destroyed.fire.png",new Point(-39,-3)]
+               },
+               "10":{
+                  "anim":["anim.10.png",new Rectangle(-13,-50,29,32),54],
+                  "top":["top.10.png",new Point(-33,-29)],
+                  "shadow":["shadow.1.jpg",new Point(-36,15)],
+                  "animdamaged":["anim.10.damaged.png",new Rectangle(-22,-46,52,44),54],
+                  "topdamaged":["top.10.damaged.png",new Point(-40,-28)],
+                  "shadowdamaged":["shadow.1.jpg",new Point(-37,-17)],
+                  "topdestroyed":["top.10.destroyed.png",new Point(-39,-3)],
+                  "shadowdestroyed":["shadow.1.jpg",new Point(-37,14)],
+                  "topdestroyedfire":["top.1.destroyed.fire.png",new Point(-39,-3)]
                }
             },
             "upgradeImgData":{
@@ -1912,13 +1923,14 @@ package
             "description":"monsteracademy_desc",
             "cls":BUILDING26,
             "costs":[
-               {"r1":new SecNum(100000), "r2":new SecNum(100000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(10800), "re":[[14,1,3],[8,1,2]]},           // Level 1
-               {"r1":new SecNum(250000), "r2":new SecNum(250000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(21600), "re":[[14,1,4],[8,1,3]]},           // Level 2
-               {"r1":new SecNum(400000), "r2":new SecNum(400000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(43200), "re":[[14,1,5],[8,1,3]]},           // Level 3
-               {"r1":new SecNum(600000), "r2":new SecNum(600000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,6],[8,1,4]]},           // Level 4
-               {"r1":new SecNum(900000), "r2":new SecNum(900000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,7],[8,1,4]]},           // Level 5
-               {"r1":new SecNum(900000), "r2":new SecNum(900000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,12],[8,1,4],[12,1,2]]}, // Level 6
-               {"r1":new SecNum(900000), "r2":new SecNum(900000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,15],[8,1,4],[12,1,2]]}  // Level 7
+               {"r1":new SecNum(100000), "r2":new SecNum(100000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(10800), "re":[[14,1,3],[8,1,2]]},                          // Level 1
+               {"r1":new SecNum(250000), "r2":new SecNum(250000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(21600), "re":[[14,1,4],[8,1,3]]},                          // Level 2
+               {"r1":new SecNum(400000), "r2":new SecNum(400000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(43200), "re":[[14,1,5],[8,1,3]]},                          // Level 3
+               {"r1":new SecNum(600000), "r2":new SecNum(600000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,6],[8,1,4]]},                          // Level 4
+               {"r1":new SecNum(900000), "r2":new SecNum(900000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 2), "re":[[14,1,7],[8,1,4]]},                      // Level 5
+               {"r1":new SecNum(5000000), "r2":new SecNum(5000000), "r3":new SecNum(5000000), "r4":new SecNum(0), "time":new SecNum(86400 * 3), "re":[[14,1,12],[8,1,4],[12,1,2]]},    // Level 6
+               {"r1":new SecNum(10000000), "r2":new SecNum(10000000), "r3":new SecNum(10000000), "r4":new SecNum(0), "time":new SecNum(86400 * 4), "re":[[14,1,14],[8,1,4],[12,1,2]]}, // Level 7
+               {"r1":new SecNum(25000000), "r2":new SecNum(25000000), "r3":new SecNum(25000000), "r4":new SecNum(0), "time":new SecNum(86400 * 5), "re":[[14,1,16],[8,1,4],[12,1,2]]}  // Level 8
             ],
             "imageData":{
                "baseurl":"buildings/academy/",
@@ -5700,7 +5712,49 @@ package
          "quantity":[0,1,1,1,1,1],
          "hp":[8800,42000,200000,400000,600000],
          "repairTime":[1920,7680,30720,86400,345600]
-      }];
+      },
+         {
+            "id":141,
+            "group":4,
+            "subgroup":4,
+            "order":11,
+            "buildStatus":0,
+            "type":"decoration",
+            "name":"#b_stronghold#",
+            "size":120,
+            "attackgroup":999,
+            "tutstage":200,
+            "sale":0,
+            "description":"b_stronghold_desc",
+            "cls":BDECORATION,
+            "costs":[
+               {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":100000, "time":new SecNum(0), "re":[]}
+            ],
+            "upgradeImgData":{
+               "baseurl":"buildingbuttons/",
+               "1":{"img":"stronghold.png"}
+            },
+            "imageData":{
+               "baseurl":"buildings/guardtower/",
+               "1":{
+                  "top":["top.v2.5.png",new Point(-98,-100)],
+                  // MISSING ASSETS TO RECREATE OR FIND:
+                  // "top":["top.v2.1.png",new Point(-98,-75)],
+                  // "shadow":["shadow.v2.1.png",new Point(-78,9)],
+                  // "anim":["anim.v2.1.png",new Rectangle(-47,-231,95,212),32],
+                  // "anim2":["anim.v2.2.png",new Rectangle(-79,-75,168,102),32],
+                  // "anim2damaged":["anim.v2.2.damaged.png",new Rectangle(-88,-72,163,103),32],
+                  "topdamaged":["top.v2.5.damaged.png",new Point(-98,-95)],
+                  // "shadowdamaged":["shadow.v2.1.damaged.png",new Point(-81,5)],
+                  "topdestroyed":["top.v2.5.destroyed.png",new Point(-102,-65)]
+                  // "shadowdestroyed":["shadow.v2.1.destroyed.png",new Point(-98,4)]
+               }
+            },
+            "quantity":[0],
+            "hp":[100],
+            "repairTime":[1]
+         }
+      ];
        
       
       public function YARD_PROPS()

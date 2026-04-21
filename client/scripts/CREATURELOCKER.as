@@ -126,17 +126,38 @@ package
                "stream":["mon_pokeystream","mon_pokeystreambody","quests/monster1.v2.png"],
                "unlock":[""],
                "trainingCosts":[
-                  [4000,60 * 60 * 2],
-                  [8000,60 * 60 * 3],
-                  [12000,60 * 60 * 5],
-                  [16000,60 * 60 * 8],
-                  [22000,60 * 60 * 12]
+                  [4000, 60 * 60 * 2],  // Level 2
+                  [8000, 60 * 60 * 3],  // Level 3
+                  [12000, 60 * 60 * 5], // Level 4
+                  [16000, 60 * 60 * 8], // Level 5
+                  [22000, 60 * 60 * 12] // Level 6
                ],
                "props":{
                   "speed":[1.2],
-                  "health":[200,220,240,260,280,300],
-                  "damage":[60,65,70,75,80,85],
-                  "cTime":[15,10,8,7,6,5],
+                  "health":[
+                     200, // Level 1
+                     220, // Level 2
+                     240, // Level 3
+                     260, // Level 4
+                     280, // Level 5
+                     300  // Level 6
+                  ],
+                  "damage":[
+                     60, // Level 1
+                     65, // Level 2
+                     70, // Level 3
+                     75, // Level 4
+                     80, // Level 5
+                     85  // Level 6
+                  ],
+                  "cTime":[
+                     15, // Level 1
+                     10, // Level 2
+                     8,  // Level 3
+                     7,  // Level 4
+                     6,  // Level 5
+                     5   // Level 6
+                  ],
                   "cResource":[250,450,675,800,1000,1250],
                   "cStorage":[10,10,10,9,8,7],
                   "bucket":[7],
@@ -155,7 +176,13 @@ package
                "name":"#m_octoooze#",
                "description":"mon_octooozedesc",
                "stream":["mon_octooozestream","mon_octooozestreambody","quests/monster2.v2.png"],
-               "trainingCosts":[[8000,60 * 60 * 4],[16000,60 * 60 * 6],[24000,60 * 60 * 10],[48000,60 * 60 * 16],[64000,60 * 60 * 24]],
+               "trainingCosts":[
+                  [8000,60 * 60 * 4],
+                  [16000,60 * 60 * 6],
+                  [24000,60 * 60 * 10],
+                  [48000,60 * 60 * 16],
+                  [64000,60 * 60 * 24]
+               ],
                "props":{
                   "speed":[1.4],
                   "health":[1000,1100,1300,1450,1600,1800],

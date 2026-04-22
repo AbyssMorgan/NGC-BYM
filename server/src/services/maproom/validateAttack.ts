@@ -45,7 +45,7 @@ export const validateAttack = async (user: User, attackData: AttackData, mapVers
         throw loadFailureErr();
       }
 
-      const expectedProps = isInMaproom3 ? mr3MonsterStats[id]?.props : monsterStats[id].props;
+      const expectedProps = isInMaproom3 ? mr3MonsterStats[id].props : monsterStats[id].props;
       const monsterPropsKeys = Object.keys(expectedProps) as Array<keyof typeof expectedProps>;
 
       for (const key of monsterPropsKeys) {
@@ -53,7 +53,10 @@ export const validateAttack = async (user: User, attackData: AttackData, mapVers
         const expected = expectedProps[key];
 
         if (!isMonsterStatsEqual(received, expected)) {
-          const message = `${id}'s stat '${key}' was modified. Received: ${stats[key]} but expected ${expected}`;
+          const receivedStr = JSON.stringify(received);
+          const expectedStr = JSON.stringify(expected);
+          
+          const message = `${id} stat '${key}' error. Client sent: ${receivedStr} | Server has: ${expectedStr}`;
           await logAttackViolation(user, message);
           throw loadFailureErr();
         }

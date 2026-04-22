@@ -19,8 +19,6 @@ export interface MonsterProps {
   targetGroup: number[];
   hTime?: number[];
   hResource?: number[];
-  movement?: string;
-  pathing?: string;
 }
 
 interface MonsterStat {
@@ -1134,26 +1132,26 @@ export const mr3MonsterStats: MR3MonsterStatsMap = {
         100, // Level 9
       ],
       cTime: [
-        15, // Level 1
-        10, // Level 2
-        8, // Level 3
-        7, // Level 4
-        6, // Level 5
-        5, // Level 6
-        5, // Level 7
-        5, // Level 8
-        5, // Level 9
+        15 * 3, // Level 1
+        10 * 3, // Level 2
+        8 * 3, // Level 3
+        7 * 3, // Level 4
+        6 * 3, // Level 5
+        5 * 3, // Level 6
+        5 * 3, // Level 7
+        5 * 3, // Level 8
+        5 * 3, // Level 9
       ],
       cResource: [
-        250, // Level 1
-        450, // Level 2
-        675, // Level 3
-        800, // Level 4
-        1000, // Level 5
-        1250, // Level 6
-        1500, // Level 7
-        2000, // Level 8
-        3000, // Level 9
+        250 * 3, // Level 1
+        450 * 3, // Level 2
+        675 * 3, // Level 3
+        800 * 3, // Level 4
+        1000 * 3, // Level 5
+        1250 * 3, // Level 6
+        1500 * 3, // Level 7
+        2000 * 3, // Level 8
+        3000 * 3, // Level 9
       ],
       cStorage: [
         10, // Level 1
@@ -1169,26 +1167,26 @@ export const mr3MonsterStats: MR3MonsterStatsMap = {
       bucket: [7],
       targetGroup: [1],
       hTime: [
-        5, // Level 1
-        3, // Level 2
-        2, // Level 3
-        2, // Level 4
-        2, // Level 5
-        2, // Level 6
-        2, // Level 7
-        2, // Level 8
-        2, // Level 9
+        15 * 0.75, // Level 1
+        10 * 0.75, // Level 2
+        8 * 0.75, // Level 3
+        7 * 0.75, // Level 4
+        6 * 0.75, // Level 5
+        5 * 0.75, // Level 6
+        5 * 0.75, // Level 7
+        5 * 0.75, // Level 8
+        5 * 0.75, // Level 9
       ],
       hResource: [
-        75, // Level 1
-        135, // Level 2
-        203, // Level 3
-        240, // Level 4
-        300, // Level 5
-        375, // Level 6
-        450, // Level 7
-        500, // Level 8
-        600, // Level 9
+        250 * 0.75, // Level 1
+        450 * 0.75, // Level 2
+        675 * 0.75, // Level 3
+        800 * 0.75, // Level 4
+        1000 * 0.75, // Level 5
+        1250 * 0.75, // Level 6
+        1500 * 0.75, // Level 7
+        2000 * 0.75, // Level 8
+        3000 * 0.75, // Level 9
       ],
     },
   },
@@ -1222,19 +1220,19 @@ export const mr3MonsterStats: MR3MonsterStatsMap = {
         50, // Level 9
       ],
       cTime: [
-        15, // Level 1
-        16, // Level 2
+        15 * 3, // Level 1
+        16 * 3, // Level 2
       ],
       cResource: [
-        500, // Level 1
-        900, // Level 2
-        1350, // Level 3
-        1800, // Level 4
-        2100, // Level 5
-        2500, // Level 6
-        3000, // Level 7
-        3600, // Level 8
-        4300, // Level 9
+        500 * 3, // Level 1
+        900 * 3, // Level 2
+        1350 * 3, // Level 3
+        1800 * 3, // Level 4
+        2100 * 3, // Level 5
+        2500 * 3, // Level 6
+        3000 * 3, // Level 7
+        3600 * 3, // Level 8
+        4300 * 3, // Level 9
       ],
       cStorage: [
         10, // Level 1
@@ -1244,18 +1242,18 @@ export const mr3MonsterStats: MR3MonsterStatsMap = {
       ],
       targetGroup: [4],
       hTime: [
-        5, // Level 1
+        15 * 0.75, // Level 1
       ],
       hResource: [
-        150, // Level 1
-        270, // Level 2
-        405, // Level 3
-        540, // Level 4
-        630, // Level 5
-        750, // Level 6
-        800, // Level 7
-        900, // Level 8
-        1000, // Level 9
+        500 * 0.75, // Level 1
+        900 * 0.75, // Level 2
+        1350 * 0.75, // Level 3
+        1800 * 0.75, // Level 4
+        2100 * 0.75, // Level 5
+        2500 * 0.75, // Level 6
+        3000 * 0.75, // Level 7
+        3600 * 0.75, // Level 8
+        4300 * 0.75, // Level 9
       ],
     },
   },
@@ -1289,18 +1287,18 @@ export const mr3MonsterStats: MR3MonsterStatsMap = {
         70, // Level 9
       ],
       cTime: [
-        23, // Level 1
+        23 * 3, // Level 1
       ],
       cResource: [
-        350, // Level 1
-        675, // Level 2
-        1015, // Level 3
-        1400, // Level 4
-        1800, // Level 5
-        2400, // Level 6
-        2800, // Level 7
-        3200, // Level 8
-        3600, // Level 9
+        350 * 3, // Level 1
+        675 * 3, // Level 2
+        1015 * 3, // Level 3
+        1400 * 3, // Level 4
+        1800 * 3, // Level 5
+        2400 * 3, // Level 6
+        2800 * 3, // Level 7
+        3200 * 3, // Level 8
+        3600 * 3, // Level 9
       ],
       cStorage: [
         15, // Level 1
@@ -1310,18 +1308,18 @@ export const mr3MonsterStats: MR3MonsterStatsMap = {
       ],
       targetGroup: [3],
       hTime: [
-        7, // Level 1
+        23 * 0.75, // Level 1
       ],
       hResource: [
-        105, // Level 1
-        203, // Level 2
-        305, // Level 3
-        420, // Level 4
-        540, // Level 5
-        720, // Level 6
-        900, // Level 7
-        1200, // Level 8
-        2500, // Level 9
+        350 * 0.75, // Level 1
+        675 * 0.75, // Level 2
+        1015 * 0.75, // Level 3
+        1400 * 0.75, // Level 4
+        1800 * 0.75, // Level 5
+        2400 * 0.75, // Level 6
+        2800 * 0.75, // Level 7
+        3200 * 0.75, // Level 8
+        3600 * 0.75, // Level 9
       ],
     },
   },
@@ -1355,26 +1353,26 @@ export const mr3MonsterStats: MR3MonsterStatsMap = {
         730, // Level 9
       ],
       cTime: [
-        100, // Level 1
-        100, // Level 2
-        100, // Level 3
-        100, // Level 4
-        90, // Level 5
-        90, // Level 6
-        90, // Level 7
-        90, // Level 8
-        80, // Level 9
+        100 * 3, // Level 1
+        100 * 3, // Level 2
+        100 * 3, // Level 3
+        100 * 3, // Level 4
+        90 * 3, // Level 5
+        90 * 3, // Level 6
+        90 * 3, // Level 7
+        90 * 3, // Level 8
+        80 * 3, // Level 9
       ],
       cResource: [
-        1500, // Level 1
-        2250, // Level 2
-        3375, // Level 3
-        4800, // Level 4
-        7200, // Level 5
-        10000, // Level 6
-        25000, // Level 7
-        50000, // Level 8
-        100000, // Level 9
+        1500 * 3, // Level 1
+        2250 * 3, // Level 2
+        3375 * 3, // Level 3
+        4800 * 3, // Level 4
+        7200 * 3, // Level 5
+        10000 * 3, // Level 6
+        25000 * 3, // Level 7
+        50000 * 3, // Level 8
+        100000 * 3, // Level 9
       ],
       cStorage: [
         20, // Level 1
@@ -1384,26 +1382,26 @@ export const mr3MonsterStats: MR3MonsterStatsMap = {
       ],
       targetGroup: [1],
       hTime: [
-        30, // Level 1
-        30, // Level 2
-        30, // Level 3
-        30, // Level 4
-        27, // Level 5
-        27, // Level 6
-        27, // Level 7
-        27, // Level 8
-        25, // Level 9
+        100 * 0.75, // Level 1
+        100 * 0.75, // Level 2
+        100 * 0.75, // Level 3
+        100 * 0.75, // Level 4
+        90 * 0.75, // Level 5
+        90 * 0.75, // Level 6
+        90 * 0.75, // Level 7
+        90 * 0.75, // Level 8
+        80 * 0.75, // Level 9
       ],
       hResource: [
-        450, // Level 1
-        675, // Level 2
-        1013, // Level 3
-        1440, // Level 4
-        2160, // Level 5
-        3000, // Level 6
-        5000, // Level 7
-        7000, // Level 8
-        10000, // Level 9
+        1500 * 0.75, // Level 1
+        2250 * 0.75, // Level 2
+        3375 * 0.75, // Level 3
+        4800 * 0.75, // Level 4
+        7200 * 0.75, // Level 5
+        10000 * 0.75, // Level 6
+        25000 * 0.75, // Level 7
+        50000 * 0.75, // Level 8
+        100000 * 0.75, // Level 9
       ],
     },
   },
@@ -1445,18 +1443,18 @@ export const mr3MonsterStats: MR3MonsterStatsMap = {
         36000, // Level 9
       ],
       cTime: [
-        1500, // Level 1
+        1500 * 3, // Level 1
       ],
       cResource: [
-        5000, // Level 1
-        15000, // Level 2
-        30000, // Level 3
-        45000, // Level 4
-        60000, // Level 5
-        80000, // Level 6
-        100000, // Level 7
-        200000, // Level 8
-        300000, // Level 9
+        5000 * 3, // Level 1
+        15000 * 3, // Level 2
+        30000 * 3, // Level 3
+        45000 * 3, // Level 4
+        60000 * 3, // Level 5
+        80000 * 3, // Level 6
+        100000 * 3, // Level 7
+        200000 * 3, // Level 8
+        300000 * 3, // Level 9
       ],
       cStorage: [
         60, // Level 1
@@ -1469,26 +1467,26 @@ export const mr3MonsterStats: MR3MonsterStatsMap = {
         1, // Level 1
       ],
       hTime: [
-        450, // Level 1
-        450, // Level 2
-        450, // Level 3
-        450, // Level 4
-        450, // Level 5
-        450, // Level 6
-        450, // Level 7
-        450, // Level 8
-        450, // Level 9
+        1500 * 0.75, // Level 1
+        1500 * 0.75, // Level 2
+        1500 * 0.75, // Level 3
+        1500 * 0.75, // Level 4
+        1500 * 0.75, // Level 5
+        1500 * 0.75, // Level 6
+        1500 * 0.75, // Level 7
+        1500 * 0.75, // Level 8
+        1500 * 0.75, // Level 9
       ],
       hResource: [
-        1500, // Level 1
-        4500, // Level 2
-        9000, // Level 3
-        13500, // Level 4
-        18000, // Level 5
-        24000, // Level 6
-        30000, // Level 7
-        36000, // Level 8
-        42000, // Level 9
+        5000 * 0.75, // Level 1
+        15000 * 0.75, // Level 2
+        30000 * 0.75, // Level 3
+        45000 * 0.75, // Level 4
+        60000 * 0.75, // Level 5
+        80000 * 0.75, // Level 6
+        100000 * 0.75, // Level 7
+        200000 * 0.75, // Level 8
+        300000 * 0.75, // Level 9
       ],
     },
   },
@@ -1522,20 +1520,20 @@ export const mr3MonsterStats: MR3MonsterStatsMap = {
         160, // Level 9
       ],
       cTime: [
-        100, // Level 1
-        100, // Level 2
-        90, // Level 3
+        100 * 3, // Level 1
+        100 * 3, // Level 2
+        90 * 3, // Level 3
       ],
       cResource: [
-        5000, // Level 1
-        5625, // Level 2
-        8440, // Level 3
-        11200, // Level 4
-        16000, // Level 5
-        24000, // Level 6
-        28000, // Level 7
-        32000, // Level 8
-        40000, // Level 9
+        5000 * 3, // Level 1
+        5625 * 3, // Level 2
+        8440 * 3, // Level 3
+        11200 * 3, // Level 4
+        16000 * 3, // Level 5
+        24000 * 3, // Level 6
+        28000 * 3, // Level 7
+        32000 * 3, // Level 8
+        40000 * 3, // Level 9
       ],
       cStorage: [
         20, // Level 1
@@ -1545,20 +1543,20 @@ export const mr3MonsterStats: MR3MonsterStatsMap = {
       ],
       targetGroup: [4],
       hTime: [
-        30, // Level 1
-        30, // Level 2
-        27, // Level 3
+        100 * 0.75, // Level 1
+        100 * 0.75, // Level 2
+        90 * 0.75, // Level 3
       ],
       hResource: [
-        1500, // Level 1
-        1688, // Level 2
-        2532, // Level 3
-        3360, // Level 4
-        4800, // Level 5
-        7200, // Level 6
-        9600, // Level 7
-        12000, // Level 8
-        15000, // Level 9
+        5000 * 0.75, // Level 1
+        5625 * 0.75, // Level 2
+        8440 * 0.75, // Level 3
+        11200 * 0.75, // Level 4
+        16000 * 0.75, // Level 5
+        24000 * 0.75, // Level 6
+        28000 * 0.75, // Level 7
+        32000 * 0.75, // Level 8
+        40000 * 0.75, // Level 9
       ],
     },
   },

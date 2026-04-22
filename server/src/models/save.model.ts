@@ -226,7 +226,7 @@ export class Save {
   healtime!: number;
 
   @FrontendKey
-  @Property({ type: "bigint", default: 0 })
+  @Property({ type: "number", default: 0 })
   empirevalue!: number;
 
   @FrontendKey

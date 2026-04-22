@@ -21,7 +21,7 @@ export const academyHandler = (ctx: Context, save: Save) => {
 
     for (const [monster, monsterData] of Object.entries(academyData)) {
       if (monsterData && typeof monsterData.level === "number") {
-        academyData[monster].level = Math.min(monsterData.level, 6);
+        academyData[monster].level = Math.min(monsterData.level, 9);
       }
     }
 

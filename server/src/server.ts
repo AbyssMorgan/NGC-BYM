@@ -1,5 +1,3 @@
-import "reflect-metadata";
-
 import Koa, { type Context, type Next } from "koa";
 import Router from "@koa/router";
 import bodyParser from "koa-bodyparser";
@@ -25,7 +23,7 @@ app.proxy = true;
 export const PORT = process.env.PORT || 3001;
 export const BASE_URL = process.env.BASE_URL;
 
-export const getApiVersion = () => "v1.5.5-ngc-1.0.3";
+export const getApiVersion = () => "v1.6.0-ngc-1.0.3";
 
 export const postgres = {} as {
   orm: MikroORM<PostgreSqlDriver>;
@@ -49,13 +47,11 @@ api.get("/", (ctx: Context) => (ctx.body = {}));
   postgres.em = postgres.orm.em;
 
   try {
-    await postgres.orm.getMigrator().up();
+    await postgres.orm.migrator.up();
     logger.info("Database migrations applied");
   } catch (err) {
-    logger.error(`Database migration failure: ${err?.message ?? err}`);
-    // continue startup anyway; runtime has safe guarding for outdated schema in routes
+    logger.error(`Database migration failure: ${err}`);
   }
-
   await redis.connect();
 
   app.use(
@@ -66,7 +62,7 @@ api.get("/", (ctx: Context) => (ctx.body = {}));
     }),
   );
 
-  app.use((_, next: Next) => RequestContext.createAsync(postgres.orm.em, next));
+  app.use((_, next: Next) => RequestContext.create(postgres.orm.em, next));
 
   // Logs
   app.use(logMissingAssets);
@@ -98,4 +94,4 @@ ${ascii_node}
 Server running on: ${BASE_URL}:${PORT}
     `);
   });
-})().catch((e) => logger.error(e));
+})().catch((e) => logger.error(`Startup failed: ${e}`));

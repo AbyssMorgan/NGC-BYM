@@ -3,8 +3,8 @@
     "types": [
       "bun-types"
     ],
-    "outDir": "dist",
-    "target": "es2022",
+    "rootDir": "src",
+    "target": "ESNext",
     "module": "NodeNext",
     "moduleResolution": "nodenext",
     "sourceMap": true,
@@ -14,12 +14,9 @@
     "esModuleInterop": true,
     "noUnusedParameters": true,
     "verbatimModuleSyntax": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
   },
   "include": [
-    "src/**/*",
-    "scripts/anticheat"
+    "src/**/*"
   ],
 }

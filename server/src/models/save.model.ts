@@ -1,16 +1,15 @@
-import { Entity, Property, PrimaryKey, OneToOne, Index, type RequiredEntityData } from "@mikro-orm/core";
-
+import { Entity, Property, PrimaryKey, OneToOne, Index } from "@mikro-orm/decorators/es";
 import { EntityManager, PostgreSqlDriver } from "@mikro-orm/postgresql";
 import { FrontendKey } from "../utils/FrontendKey.js";
 import { getDefaultBaseData } from "../data/getDefaultBaseData.js";
 import { User } from "./user.model.js";
-import type { AttackDetails } from "../controllers/base/load/modes/baseModeAttack.js";
 import { BaseType } from "../enums/Base.js";
+import { WorldMapCell } from "./worldmapcell.model.js";
+import { type RequiredEntityData, BigIntType } from "@mikro-orm/core";
+import type { AttackDetails } from "../controllers/base/load/modes/baseModeAttack.js";
 import type { Stats } from "../services/events/wmi/invasionUtils.js";
-
-export interface FieldData {
-  [key: string | number]: any;
-}
+import type { ChampionData } from "../types/ChampionData.js";
+import type { JsonObject } from "../types/JsonObject.js";
 
 const NEXT_USER_BASEID = `SELECT nextval('bym.user_baseid_seq') AS baseid`;
 
@@ -19,209 +18,211 @@ const NEXT_USER_BASEID = `SELECT nextval('bym.user_baseid_seq') AS baseid`;
 export class Save {
   // IDs & Foreign Keys
   @FrontendKey
-  @PrimaryKey({ autoincrement: true })
+  @PrimaryKey({ autoincrement: true, type: 'number' })
   basesaveid!: number;
 
   @Index()
   @FrontendKey
-  @Property({ default: "0" })
+  @Property({ type: 'string', default: "0" })
   baseid!: string;
 
-  /**
-   * Circular dependency between Save and WorldMapCell requires string-based entity reference
-   * and any type to avoid ES module initialization errors with emitDecoratorMetadata.
-   * Using @mikro-orm/reflection would solve this but requires MikroORM v6+ upgrade.
-   */
+  @Index()
   @OneToOne({
     nullable: true,
     orphanRemoval: true,
     inversedBy: "save",
-    entity: "WorldMapCell",
+    entity: () => WorldMapCell,
   })
-  cell: any;
+  cell?: WorldMapCell | null;
 
   @FrontendKey
-  @Property({ type: "bigint", default: 0 })
+  @Property({ type: new BigIntType('number'), default: 0 })
   homebaseid!: number;
 
   @Index()
   @FrontendKey
-  @Property()
+  @Property({ type: 'number' })
   userid!: number;
 
   @Index()
   @FrontendKey
-  @Property()
+  @Property({ type: 'number' })
   saveuserid!: number;
 
   @FrontendKey
-  @Property({ default: 0 })
+  @Property({ type: 'number', default: 0 })
   attackid!: number;
 
   @FrontendKey
-  @Property({ default: 0 })
+  @Property({ type: 'number', default: 0 })
   id!: number;
 
   @FrontendKey
-  @Property({ default: 0 })
+  @Property({ type: 'number', default: 0 })
   baseid_inferno!: number;
 
   @FrontendKey
-  @Property({ default: 0 })
+  @Property({ type: 'number', default: 0 })
   wmid!: number;
 
   // Primatives
   @Index()
   @FrontendKey
-  @Property({ default: "main" })
+  @Property({ type: 'string', default: "main" })
   type!: string;
 
   @FrontendKey
-  @Property()
+  @Property({ type: 'number' })
   createtime!: number;
 
   @FrontendKey
-  @Property({ default: 0 })
+  @Property({ type: 'number', default: 0 })
   savetime!: number; // Updates each time a save is triggered
 
   @FrontendKey
-  @Property({ default: 0 })
+  @Property({ type: 'number', default: 0 })
   seed!: number;
 
   @FrontendKey
-  @Property({ default: 0 })
+  @Property({ type: 'number', default: 0 })
   bookmarked!: number;
 
   @FrontendKey
-  @Property({ default: 0 })
+  @Property({ type: 'number', default: 0 })
   fan!: number;
 
   @FrontendKey
-  @Property({ default: 0 })
+  @Property({ type: 'number', default: 0 })
   emailshared!: number;
 
   @FrontendKey
-  @Property({ default: 0 })
+  @Property({ type: 'number', default: 0 })
   unreadmessages!: number;
 
   @FrontendKey
-  @Property({ default: 0 })
+  @Property({ type: 'number', default: 0 })
   giftsentcount!: number;
 
   @FrontendKey
-  @Property({ default: false })
+  @Property({ type: 'boolean', default: false })
   canattack!: boolean;
 
   @FrontendKey
-  @Property({ nullable: true })
-  fbid?: string;
+  @Property({ type: 'string', nullable: true })
+  fbid?: string | null;
 
   @FrontendKey
-  @Property({ default: 0 })
+  @Property({ type: 'number', default: 0 })
   fortifycellid!: number;
 
   @FrontendKey
-  @Property()
+  @Property({ type: 'string' })
   name!: string;
 
   @FrontendKey
-  @Property({ default: 1 })
+  @Property({ type: 'number', default: 1 })
   level!: number;
 
   @FrontendKey
-  @Property({ default: 0 })
+  @Property({ type: 'number', default: 0 })
   catapult!: number;
 
   @FrontendKey
-  @Property({ default: 0 })
+  @Property({ type: 'number', default: 0 })
   flinger!: number;
 
   @FrontendKey
-  @Property({ default: 0 })
+  @Property({ type: 'number', default: 0 })
   destroyed!: number;
 
   @FrontendKey
-  @Property({ default: 0 })
+  @Property({ type: 'number', default: 0 })
   damage!: number;
 
   @FrontendKey
-  @Property({ default: 0 })
+  @Property({ type: 'number', default: 0 })
   locked!: number;
 
   @FrontendKey
-  @Property({ default: "0" })
+  @Property({ type: 'string', default: "0" })
   points!: string;
 
   @FrontendKey
-  @Property({ default: "0" })
+  @Property({ type: 'string', default: "0" })
   basevalue!: string;
 
   @FrontendKey
-  @Property({ default: 0 })
+  @Property({ type: 'number', default: 0 })
   tutorialstage!: number;
 
   @FrontendKey
-  @Property({ default: 1 })
+  @Property({ type: 'number', default: 1 })
   protected!: number;
 
   @FrontendKey
-  @Property({ default: 0 })
+  @Property({ type: 'number', default: 0 })
   lastupdate!: number;
 
   @FrontendKey
-  @Property({ default: 0 })
+  @Property({ type: 'number', default: 0 })
   usemap!: number;
 
   @FrontendKey
-  @Property({ check: "credits >= 0" })
+  @Property({ type: 'number', check: "credits >= 0" })
   credits!: number;
 
-  @Property({ default: 0 })
+  @Property({ type: 'number', default: 0 })
   monthly_credits: number = 0;
 
   @FrontendKey
-  @Property({ type: "json", nullable: true, default: "null" })
-  champion?: string;
+  @Property({ columnType: "jsonb" })
+  champion: ChampionData[] = [];
 
   @FrontendKey
-  @Property({ default: 0 })
+  @Property({ type: 'number', default: 0 })
   empiredestroyed!: number;
 
   @FrontendKey
-  @Property({ nullable: true })
+  @Property({ type: 'string', nullable: true })
   worldid?: string | null;
 
+  @Property({ type: 'number', nullable: true })
+  mapversion?: number | null;
+
+  @Property({ type: 'boolean', default: false })
+  mr2upgraded: boolean = false;
+
   @FrontendKey
-  @Property({ default: 0 })
+  @Property({ type: 'number', default: 0 })
   event_score!: number;
 
   @FrontendKey
-  @Property({ default: 0 })
+  @Property({ type: 'number', default: 0 })
   chatenabled!: number;
 
   @FrontendKey
-  @Property({ default: 0 })
+  @Property({ type: 'number', default: 0 })
   relationship!: number;
 
   // Client save primitives
   @FrontendKey
-  @Property({ default: 0 })
+  @Property({ type: 'number', default: 0 })
   timeplayed!: number;
 
   @FrontendKey
-  @Property({ default: 128 })
+  @Property({ type: 'number', default: 128 })
   version!: number;
 
   @FrontendKey
-  @Property({ default: 0 })
+  @Property({ type: 'number', default: 0 })
   clienttime!: number;
 
   @FrontendKey
-  @Property({ default: 0 })
+  @Property({ type: 'number', default: 0 })
   baseseed!: number;
 
   @FrontendKey
-  @Property({ default: 0 })
+  @Property({ type: 'number', default: 0 })
   healtime!: number;
 
   @FrontendKey
@@ -229,220 +230,220 @@ export class Save {
   empirevalue!: number;
 
   @FrontendKey
-  @Property({ default: "basename" })
+  @Property({ type: 'string', default: "basename" })
   basename!: string;
 
   @FrontendKey
-  @Property({ default: 0 })
+  @Property({ type: 'number', default: 0 })
   over!: number;
 
   @FrontendKey
-  @Property({ default: 0 })
+  @Property({ type: 'number', default: 0 })
   protect!: number;
 
   @FrontendKey
-  @Property({ default: 0 })
+  @Property({ type: 'number', default: 0 })
   purchasecomplete!: number;
 
   @FrontendKey
-  @Property({ nullable: true })
+  @Property({ type: 'number', nullable: true })
   cantmovetill?: number | null;
 
   // Attack Objects
   @FrontendKey
-  @Property({ type: "json" })
+  @Property({ columnType: "jsonb" })
   attacks: AttackDetails[] = [];
 
   // MR3 specific Objects
   @FrontendKey
-  @Property({ type: "json", nullable: true })
-  buildingkeydata?: FieldData = {};
+  @Property({ columnType: "jsonb", nullable: true })
+  buildingkeydata?: JsonObject | null = {};
 
   @FrontendKey
-  @Property({ type: "json", nullable: true })
-  buildinghealthdata?: FieldData = {};
+  @Property({ columnType: "jsonb", nullable: true })
+  buildinghealthdata?: JsonObject | null = {};
 
   // Objects
   @FrontendKey
-  @Property({ type: "json", nullable: true })
-  buildingdata?: FieldData = {};
+  @Property({ columnType: "jsonb", nullable: true })
+  buildingdata?: JsonObject | null = {};
 
   @FrontendKey
-  @Property({ type: "json", nullable: true })
-  researchdata?: FieldData = {};
+  @Property({ columnType: "jsonb", nullable: true })
+  researchdata?: JsonObject | null = {};
 
   @FrontendKey
-  @Property({ type: "json", nullable: true })
-  stats?: Stats = {};
+  @Property({ columnType: "jsonb", nullable: true })
+  stats?: Stats | null = {};
 
   @FrontendKey
-  @Property({ type: "json", nullable: true })
-  academy?: FieldData = {};
+  @Property({ columnType: "jsonb", nullable: true })
+  academy?: JsonObject | null = {};
 
   @FrontendKey
-  @Property({ type: "json", nullable: true })
-  rewards?: FieldData = {};
+  @Property({ columnType: "jsonb", nullable: true })
+  rewards?: JsonObject | null = {};
 
   @FrontendKey
-  @Property({ type: "json", nullable: true })
-  aiattacks?: FieldData = {};
+  @Property({ columnType: "jsonb", nullable: true })
+  aiattacks?: JsonObject | null = {};
 
   @FrontendKey
-  @Property({ type: "json", nullable: true })
-  monsters?: FieldData = {};
+  @Property({ columnType: "jsonb", nullable: true })
+  monsters?: JsonObject | null = {};
 
   @FrontendKey
-  @Property({ type: "json", nullable: true })
-  resources?: FieldData;
+  @Property({ columnType: "jsonb", nullable: true })
+  resources?: JsonObject | null = {};
 
   @FrontendKey
-  @Property({ type: "json", nullable: true })
-  iresources?: FieldData;
+  @Property({ columnType: "jsonb", nullable: true })
+  iresources?: JsonObject | null = {};
 
   @FrontendKey
-  @Property({ type: "json", nullable: true })
-  lockerdata?: FieldData = {};
+  @Property({ columnType: "jsonb", nullable: true })
+  lockerdata?: JsonObject | null = {};
 
   @FrontendKey
-  @Property({ type: "json", nullable: true })
-  events?: FieldData = {};
+  @Property({ columnType: "jsonb", nullable: true })
+  events?: JsonObject | null = {};
 
   @FrontendKey
-  @Property({ type: "json", nullable: true })
-  inventory?: FieldData = {};
+  @Property({ columnType: "jsonb", nullable: true })
+  inventory?: JsonObject | null = {};
 
   @FrontendKey
-  @Property({ type: "json", nullable: true })
-  monsterbaiter?: FieldData = {};
+  @Property({ columnType: "jsonb", nullable: true })
+  monsterbaiter?: JsonObject | null = {};
 
   @FrontendKey
-  @Property({ type: "json", nullable: true })
-  loot?: FieldData = {};
+  @Property({ columnType: "jsonb", nullable: true })
+  loot?: JsonObject | null = {};
 
   @FrontendKey
   @Property({ type: "text", nullable: true })
-  attackreport!: FieldData;
+  attackreport?: JsonObject | null = {};
 
   @FrontendKey
-  @Property({ type: "json", nullable: true })
-  storedata?: FieldData = {};
+  @Property({ columnType: "jsonb", nullable: true })
+  storedata?: JsonObject | null = {};
 
   @FrontendKey
-  @Property({ type: "json", nullable: true })
-  coords?: FieldData = {};
+  @Property({ columnType: "jsonb", nullable: true })
+  coords?: JsonObject | null = {};
 
   @FrontendKey
-  @Property({ type: "json", nullable: true })
-  quests?: FieldData = {};
+  @Property({ columnType: "jsonb", nullable: true })
+  quests?: JsonObject | null = {};
 
   @FrontendKey
-  @Property({ type: "json", nullable: true })
-  player?: FieldData = {};
+  @Property({ columnType: "jsonb", nullable: true })
+  player?: JsonObject | null = {};
 
   @FrontendKey
-  @Property({ type: "json", nullable: true })
-  krallen?: FieldData = {};
+  @Property({ columnType: "jsonb", nullable: true })
+  krallen?: JsonObject | null = {};
 
   @FrontendKey
-  @Property({ type: "json", nullable: true })
-  siege?: FieldData = {};
+  @Property({ columnType: "jsonb", nullable: true })
+  siege?: JsonObject | null = {};
 
   @FrontendKey
-  @Property({ type: "json", nullable: true })
-  buildingresources?: FieldData = {};
+  @Property({ columnType: "jsonb", nullable: true })
+  buildingresources?: JsonObject | null = {};
 
   @FrontendKey
-  @Property({ type: "json", nullable: true })
-  mushrooms?: FieldData = {};
+  @Property({ columnType: "jsonb", nullable: true })
+  mushrooms?: JsonObject | null = {};
 
   @FrontendKey
-  @Property({ type: "json", nullable: true })
-  frontpage?: FieldData = {};
+  @Property({ columnType: "jsonb", nullable: true })
+  frontpage?: JsonObject | null = {};
 
-  @Property()
+  @Property({ type: Date })
   takeoverDate: Date = new Date();
 
-  @Property()
+  @Property({ type: Date })
   createdAt: Date = new Date();
 
-  @Property({ onUpdate: () => new Date() })
+  @Property({ type: Date, onUpdate: () => new Date() })
   lastupdateAt: Date = new Date();
 
   // Client save objects
   @FrontendKey
-  @Property({ type: "json", nullable: true })
-  attackloot?: FieldData = {};
+  @Property({ columnType: "jsonb", nullable: true })
+  attackloot?: JsonObject | null = {};
 
   @FrontendKey
-  @Property({ type: "json", nullable: true })
-  lootreport?: FieldData = {};
+  @Property({ columnType: "jsonb", nullable: true })
+  lootreport?: JsonObject | null = {};
 
   @FrontendKey
-  @Property({ type: "json", nullable: true })
-  attackersiege?: FieldData = {};
+  @Property({ columnType: "jsonb", nullable: true })
+  attackersiege?: JsonObject | null = {};
 
   // Arrays
   @FrontendKey
-  @Property({ type: "json", nullable: true })
-  monsterupdate?: FieldData = [];
+  @Property({ columnType: "jsonb", nullable: true })
+  monsterupdate?: JsonObject | null = [];
 
   @FrontendKey
-  @Property({ type: "json", nullable: true })
+  @Property({ columnType: "jsonb", nullable: true })
   savetemplate: any[] = [];
 
   @FrontendKey
-  @Property({ type: "json", nullable: true })
+  @Property({ columnType: "jsonb", nullable: true })
   updates: any[] = [];
 
   @FrontendKey
-  @Property({ type: "json", nullable: true })
+  @Property({ columnType: "jsonb", nullable: true })
   effects: (string | number)[][] = [];
 
   @FrontendKey
-  @Property({ type: "json", nullable: true })
+  @Property({ columnType: "jsonb", nullable: true })
   homebase: string[] | null = [];
 
   @FrontendKey
-  @Property({ type: "json", nullable: true })
+  @Property({ columnType: "jsonb", nullable: true })
   outposts: [number, number, string][] = [];
 
   @FrontendKey
-  @Property({ type: "json", nullable: true })
+  @Property({ columnType: "jsonb", nullable: true })
   wmstatus: number[][] = [];
 
   @FrontendKey
-  @Property({ type: "json", nullable: true })
+  @Property({ columnType: "jsonb", nullable: true })
   chatservers: string[] = ["bym-chat.kixeye.com"];
 
   @FrontendKey
-  @Property({ type: "json", nullable: true })
+  @Property({ columnType: "jsonb", nullable: true })
   achieved: any[] = [];
 
   @FrontendKey
-  @Property({ type: "json", nullable: true })
+  @Property({ columnType: "jsonb", nullable: true })
   gifts: any[] = [];
 
   @FrontendKey
-  @Property({ type: "json", nullable: true })
+  @Property({ columnType: "jsonb", nullable: true })
   sentinvites: any[] = [];
 
   @FrontendKey
-  @Property({ type: "json", nullable: true })
+  @Property({ columnType: "jsonb", nullable: true })
   sentgifts: any[] = [];
 
   @FrontendKey
-  @Property({ type: "json", nullable: true })
+  @Property({ columnType: "jsonb", nullable: true })
   fbpromos: any[] = [];
 
   @FrontendKey
-  @Property({ type: "json", nullable: true })
+  @Property({ columnType: "jsonb", nullable: true })
   powerups: string[] = [];
 
   @FrontendKey
-  @Property({ type: "json", nullable: true })
+  @Property({ columnType: "jsonb", nullable: true })
   attpowerups: string[] = [];
 
-  public static saveKeys: (keyof FieldData)[] = [
+  public static saveKeys: (keyof Save)[] = [
     "buildingdata",
     "buildingkeydata",
     "researchdata",
@@ -485,7 +486,6 @@ export class Save {
     "sentinvites",
     "sentgifts",
     "fbpromos",
-    "purchase",
     "powerups",
     "attpowerups",
     "level",
@@ -504,7 +504,7 @@ export class Save {
     "tutorialstage",
   ];
 
-  public static attackSaveKeys: (keyof FieldData)[] = [
+  public static attackSaveKeys: (keyof Save)[] = [
     "destroyed",
     "damage",
     "locked",
@@ -517,7 +517,6 @@ export class Save {
     "buildingresources",
     "attackreport",
     "attackersiege",
-    "attackcreatures",
   ];
 
   public static createMainSave = async (em: EntityManager<PostgreSqlDriver>, user: User) => {
@@ -528,10 +527,12 @@ export class Save {
 
     baseSave.baseid = baseid;
     baseSave.homebaseid = parseInt(baseid, 10);
-    await em.persistAndFlush(baseSave);
+    em.persist(baseSave);
+    await em.flush();
 
     user.save = baseSave;
-    await em.persistAndFlush(user);
+    em.persist(user);
+    await em.flush();
 
     return baseSave;
   };
@@ -557,7 +558,8 @@ export class Save {
     };
 
     user.infernosave = infernoSave;
-    await em.persistAndFlush(infernoSave);
+    em.persist(infernoSave);
+    await em.flush();
 
     return infernoSave;
   };

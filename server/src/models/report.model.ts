@@ -1,35 +1,35 @@
-import { Entity, PrimaryKey, Property } from "@mikro-orm/core";
+import { Entity, PrimaryKey, Property } from "@mikro-orm/decorators/es";
 
 import { FrontendKey } from "../utils/FrontendKey.js";
-import type { FieldData } from "./save.model.js";
+import type { JsonObject } from "../types/JsonObject.js";
 
 @Entity({ tableName: "report" })
 export class Report {
-  @PrimaryKey()
+  @PrimaryKey({ type: 'number' })
   userid!: number;
 
-  @Property({ unique: true })
+  @Property({ type: 'string', unique: true })
   @FrontendKey
   username!: string;
 
-  @Property({ nullable: true })
+  @Property({ type: 'string', nullable: true })
   discord_tag: string | null = null;
 
-  @Property({ type: "json", nullable: true })
-  report?: FieldData;
+  @Property({ columnType: "jsonb", nullable: true })
+  report?: JsonObject = {};
 
-  @Property({ type: "json", nullable: true })
-  banReason?: FieldData;
+  @Property({ columnType: "jsonb", nullable: true })
+  banReason?: JsonObject = {};
 
-  @Property({ default: 0 })
+  @Property({ type: 'number', default: 0 })
   violations: number = 0;
 
-  @Property({ default: 0 })
+  @Property({ type: 'number', default: 0 })
   attackViolations: number = 0;
 
-  @Property()
+  @Property({ type: Date })
   createdAt: Date = new Date();
 
-  @Property({ onUpdate: () => new Date() })
+  @Property({ type: Date, onUpdate: () => new Date() })
   lastupdateAt: Date = new Date();
 }

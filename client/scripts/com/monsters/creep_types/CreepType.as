@@ -56,15 +56,15 @@ package com.monsters.creep_types
          super();
       }
       
-      // public function get id() : String
-      // {
-      //    return this.m_Id;
-      // }
+      public function get id() : String
+      {
+         return this.m_Id;
+      }
       
-      // public function set id(param1:String) : void
-      // {
-      //    this.m_Id = param1;
-      // }
+      public function set id(param1:String) : void
+      {
+         this.m_Id = param1;
+      }
       
       public function get name() : String
       {

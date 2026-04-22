@@ -1,8 +1,10 @@
 import { MapRoomVersion } from "../../../../enums/MapRoom.js";
 import { Save } from "../../../../models/save.model.js";
+import { User } from "../../../../models/user.model.js";
 import { postgres } from "../../../../server.js";
 import { tribeSaveHandler } from "../../../../services/maproom/tribeSaveHandler.js";
 import { getCurrentDateTime } from "../../../../utils/getCurrentDateTime.js";
+import { MR1_TRIBE_IDS } from "../../../../data/tribes/v1/index.js";
 
 /**
  * The expiration time for a wild monster save in seconds.
@@ -19,17 +21,21 @@ const WILD_MONSTER_EXPIRATION = 43200;
  * @param {string} worldid - The world UUID, passed through for MR3 player yard defender lookups.
  * @returns {Promise<Loaded<Save, never>>} The save object or null if no valid save is found.
  */
-export const baseModeView = async (baseid: string, mapversion: MapRoomVersion = MapRoomVersion.V2, worldid?: string | null) => {
+export const baseModeView = async (baseid: string, mapversion: MapRoomVersion = MapRoomVersion.V2, worldid: string | null | undefined, user: User) => {
+  if (mapversion === MapRoomVersion.V1 && MR1_TRIBE_IDS.has(baseid))
+    return tribeSaveHandler(baseid, mapversion, worldid, user);
+
   let save = await postgres.em.findOne(Save, { baseid });
 
-  if (!save) save = await tribeSaveHandler(baseid, mapversion, worldid);
+  if (!save) save = await tribeSaveHandler(baseid, mapversion, worldid, user);
 
   if (mapversion !== MapRoomVersion.V3 && save && save.wmid !== 0) {
     const currentTimestamp = getCurrentDateTime();
 
     if (currentTimestamp - save.savetime > WILD_MONSTER_EXPIRATION) {
-      await postgres.em.removeAndFlush(save);
-      save = await tribeSaveHandler(baseid, mapversion, worldid);
+      postgres.em.remove(save);
+      await postgres.em.flush();
+      save = await tribeSaveHandler(baseid, mapversion, worldid, user);
     }
   }
 

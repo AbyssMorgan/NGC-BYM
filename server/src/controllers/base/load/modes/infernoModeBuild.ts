@@ -4,8 +4,9 @@ import { Save } from "../../../../models/save.model.js";
 import { User } from "../../../../models/user.model.js";
 import { postgres } from "../../../../server.js";
 import { calculateBaseLevel } from "../../../../services/base/calculateBaseLevel.js";
-import { createScaledTribes } from "../../../../services/maproom/v1/createScaledTribes.js";
-import { permissionErr } from "../../../../errors/errors.js";
+import { createInfernoTribes } from "../../../../services/maproom/inferno/createInfernoTribes.js";
+import { isAttackActive } from "../../../../services/base/isAttackActive.js";
+import { baseUnderAttackErr, permissionErr } from "../../../../errors/errors.js";
 
 /**
  * Retrieves the save data for the user based on their Inferno mode request.
@@ -28,6 +29,7 @@ export const infernoModeBuild = async (user: User) => {
   if (!infernoSave) infernoSave = await Save.createInfernoSave(postgres.em, user);
 
   if (infernoSave.userid !== user.userid) throw permissionErr();
+  if (isAttackActive(infernoSave)) throw baseUnderAttackErr();
 
   const { points, basevalue, stats, academy, lockerdata } = infernoSave;
   infernoSave.level = calculateBaseLevel(points, basevalue);
@@ -36,7 +38,7 @@ export const infernoModeBuild = async (user: User) => {
   infernoSave.worldid = userSave.worldid;
 
   // Create Inferno tribes based on the user's current level
-  infernoSave.wmstatus = await createScaledTribes(infernoSave, INFERNO_TRIBES);
+  infernoSave.wmstatus = await createInfernoTribes(infernoSave, INFERNO_TRIBES);
 
   infernoSave.credits = userSave.credits;
   infernoSave.resources = userSave.iresources;

@@ -5,8 +5,8 @@ import { permissionErr } from "../../errors/errors.js";
 import { ClientSafeError } from "../../middleware/clientSafeError.js";
 import { Save } from "../../models/save.model.js";
 import { User } from "../../models/user.model.js";
-import { postgres } from "../../server.js";
-import { scaledTribes } from "../../services/maproom/v1/scaledTribes.js";
+import { postgres, redis } from "../../server.js";
+import { scaledInfernoTribes } from "../../services/maproom/inferno/scaledInfernoTribes.js";
 import { FilterFrontendKeys } from "../../utils/FrontendKey.js";
 import { getCurrentDateTime } from "../../utils/getCurrentDateTime.js";
 import type { KoaController } from "../../utils/KoaController.js";
@@ -17,6 +17,7 @@ import { attackLootHandler } from "../base/save/handlers/attackLootHandler.js";
 import { buildingDataHandler } from "../base/save/handlers/buildingDataHandler.js";
 import { purchaseHandler } from "../base/save/handlers/purchaseHandler.js";
 import { resourcesHandler } from "../base/save/handlers/resourceHandler.js";
+import { damageProtection } from "../../services/maproom/v2/damageProtection.js";
 
 export const infernoSave: KoaController = async (ctx) => {
   const user: User = ctx.authUser;
@@ -35,7 +36,7 @@ export const infernoSave: KoaController = async (ctx) => {
 
     // Otherwise, retrieve a moloch tribe and handle tribe save logic
     if (!baseSave) {
-      const tribeSave = await scaledTribes(user, saveData);
+      const tribeSave = await scaledInfernoTribes(user, saveData);
       const filteredSave = FilterFrontendKeys(tribeSave);
 
       ctx.status = Status.OK;
@@ -69,16 +70,8 @@ export const infernoSave: KoaController = async (ctx) => {
           baseSave.basevalue = value.toString();
           break;
 
-        case SaveKeys.PURCHASE:
-          if (saveData.purchase) purchaseHandler(ctx, saveData.purchase, baseSave);
-          break;
-
         case SaveKeys.ACADEMY:
           academyHandler(ctx, baseSave);
-          break;
-
-        case SaveKeys.ATTACKCREATURES:
-          if (isAttack && userInfernoSave) userInfernoSave.monsters = JSON.parse(value);
           break;
 
         case SaveKeys.BUILDINGDATA:
@@ -101,6 +94,14 @@ export const infernoSave: KoaController = async (ctx) => {
             }
           }
       }
+    }
+
+    if (!isAttack && saveData.purchase) {
+      purchaseHandler(ctx, saveData.purchase, baseSave);
+    }
+
+    if (isAttack && saveData.attackcreatures && userInfernoSave) {
+      userInfernoSave.monsters = saveData.attackcreatures;
     }
 
     // Defender-specific save updates during an attack
@@ -127,15 +128,29 @@ export const infernoSave: KoaController = async (ctx) => {
               break;
           }
         }
-        await postgres.em.persistAndFlush(defenderSave);
+        postgres.em.persist(defenderSave);
       }
     }
 
-    if (isAttack) await postgres.em.persistAndFlush(userSave);
+    if (isAttack) postgres.em.persist(userSave);
+
+    if (isAttack) baseSave.attackid = saveData.over ? 0 : baseSave.attackid;
+
+    if (isAttack && saveData.over) {
+      await damageProtection(baseSave);
+    }
 
     baseSave.id = baseSave.savetime;
     baseSave.savetime = getCurrentDateTime();
-    await postgres.em.persistAndFlush(baseSave);
+
+    if (!isAttack) {
+      await redis.setex(`last-seen:inferno:${user.userid}`, 120, getCurrentDateTime().toString());
+    }
+
+    baseSave.champion = [];
+
+    postgres.em.persist(baseSave);
+    await postgres.em.flush();
 
     const filteredSave = FilterFrontendKeys(baseSave);
 
@@ -143,6 +158,7 @@ export const infernoSave: KoaController = async (ctx) => {
     ctx.body = {
       error: 0,
       ...filteredSave,
+      champion: [],
       credits: userSave.credits,
     };
   } catch (err) {

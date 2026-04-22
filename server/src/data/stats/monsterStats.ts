@@ -19,6 +19,8 @@ export interface MonsterProps {
   targetGroup: number[];
   hTime?: number[];
   hResource?: number[];
+  movement?: string;
+  pathing?: string;
 }
 
 interface MonsterStat {

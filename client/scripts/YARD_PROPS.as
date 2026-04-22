@@ -962,9 +962,9 @@ package
                {"r1":new SecNum(300000000), "r2":new SecNum(300000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 9), "re":[[14,1,14]]},    // Level 15
                {"r1":new SecNum(400000000), "r2":new SecNum(400000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 10), "re":[[14,1,15]]},   // Level 16
                {"r1":new SecNum(500000000), "r2":new SecNum(500000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 11), "re":[[14,1,16]]},   // Level 17
-               {"r1":new SecNum(1000000000), "r2":new SecNum(1000000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 12), "re":[[14,1,17]]}, // Level 18
-               {"r1":new SecNum(2000000000), "r2":new SecNum(2000000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 13), "re":[[14,1,18]]}, // Level 19
-               {"r1":new SecNum(2400000000), "r2":new SecNum(2400000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 14), "re":[[14,1,19]]}  // Level 20
+               {"r1":new SecNum(1000000000), "r2":new SecNum(1000000000), "r3":new SecNum(1000000000), "r4":new SecNum(1000000000), "time":new SecNum(86400 * 12), "re":[[14,1,17]]}, // Level 18
+               {"r1":new SecNum(2000000000), "r2":new SecNum(2000000000), "r3":new SecNum(2000000000), "r4":new SecNum(2000000000), "time":new SecNum(86400 * 13), "re":[[14,1,18]]}, // Level 19
+               {"r1":new SecNum(2400000000), "r2":new SecNum(2400000000), "r3":new SecNum(2400000000), "r4":new SecNum(2400000000), "time":new SecNum(86400 * 14), "re":[[14,1,19]]}  // Level 20
             ],
             "can_fortify":true,
             "fortify_costs":[
@@ -1969,6 +1969,15 @@ package
                   "shadowdamaged":["shadow.4.damaged.jpg",new Point(-69,22)],
                   "topdestroyed":["top.1.destroyed.png",new Point(-50,11)],
                   "shadowdestroyed":["shadow.1.destroyed.jpg",new Point(-48,26)]
+               },
+               "8":{
+                  "anim":["anim.8.png",new Rectangle(-24,-36,48,24),21],
+                  "top":["top.8.png",new Point(-53,-37)],
+                  "shadow":["shadow.4.jpg",new Point(-53,27)],
+                  "topdamaged":["top.8.damaged.png",new Point(-71,-35)],
+                  "shadowdamaged":["shadow.4.damaged.jpg",new Point(-69,22)],
+                  "topdestroyed":["top.8.destroyed.png",new Point(-50,11)],
+                  "shadowdestroyed":["shadow.1.destroyed.jpg",new Point(-48,26)]
                }
             },
             "upgradeImgData":{
@@ -1988,9 +1997,9 @@ package
                "3":{"img":"26.3.png"},
                "4":{"img":"26.4.png"}
             },
-            "quantity":[0,0,0,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],
-            "hp":[6000,10000,14000,20000,30000,35000,40000],
-            "repairTime":[3800,7680,10640,15600,22800,22800,22800]
+            "quantity":[0,0,0,1,1,2,2,2,2,2,2,2,2,2,3,3,3,3,3,3,3],
+            "hp":[6000,10000,14000,20000,30000,35000,40000,45000],
+            "repairTime":[3800,7680,10640,15600,22800,22800,22800,22800]
          },
          {
             "id":27,

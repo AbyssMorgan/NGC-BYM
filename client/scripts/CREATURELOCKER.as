@@ -126,15 +126,18 @@ package
                "stream":["mon_pokeystream","mon_pokeystreambody","quests/monster1.v2.png"],
                "unlock":[""],
                "trainingCosts":[
-                  [4000, 3600 * 2],  // Level 2
-                  [8000, 3600 * 3],  // Level 3
+                  [4000, 3600 * 2], // Level 2
+                  [8000, 3600 * 3], // Level 3
                   [12000, 3600 * 5], // Level 4
                   [16000, 3600 * 8], // Level 5
-                  [22000, 3600 * 12] // Level 6
+                  [22000, 3600 * 12], // Level 6
+                  [44000, 3600 * 15], // Level 7
+                  [88000, 3600 * 20], // Level 8
+                  [176000, 3600 * 25], // Level 9
                ],
                "props":{
                   "speed":[
-                     1.2  // Level 1
+                     1.2 // Level 1
                   ],
                   "health":[
                      200, // Level 1
@@ -142,7 +145,10 @@ package
                      240, // Level 3
                      260, // Level 4
                      280, // Level 5
-                     300  // Level 6
+                     300, // Level 6
+                     320, // Level 7
+                     340, // Level 8
+                     360, // Level 9
                   ],
                   "damage":[
                      60, // Level 1
@@ -150,22 +156,68 @@ package
                      70, // Level 3
                      75, // Level 4
                      80, // Level 5
-                     85  // Level 6
+                     85, // Level 6
+                     90, // Level 7
+                     95, // Level 8
+                     100, // Level 9
                   ],
                   "cTime":[
                      15, // Level 1
                      10, // Level 2
-                     8,  // Level 3
-                     7,  // Level 4
-                     6,  // Level 5
-                     5   // Level 6
+                     8, // Level 3
+                     7, // Level 4
+                     6, // Level 5
+                     5, // Level 6
+                     5, // Level 7
+                     5, // Level 8
+                     5, // Level 9
                   ],
-                  "cResource":[250,450,675,800,1000,1250],
-                  "cStorage":[10,10,10,9,8,7],
+                  "cResource":[
+                     250, // Level 1
+                     450, // Level 2
+                     675, // Level 3
+                     800, // Level 4
+                     1000, // Level 5
+                     1250, // Level 6
+                     1500, // Level 7
+                     2000, // Level 8
+                     3000, // Level 9
+                  ],
+                  "cStorage":[
+                     10, // Level 1
+                     10, // Level 2
+                     10, // Level 3
+                     9, // Level 4
+                     8, // Level 5
+                     7, // Level 6
+                     7, // Level 7
+                     6, // Level 8
+                     5, // Level 9
+                  ],
                   "bucket":[7],
                   "targetGroup":[1],
-                  "hTime":[5,3,2,2,2,2],
-                  "hResource":[75,135,203,240,300,375]
+                  "hTime":[
+                     5, // Level 1
+                     3, // Level 2
+                     2, // Level 3
+                     2, // Level 4
+                     2, // Level 5
+                     2, // Level 6
+                     2, // Level 7
+                     2, // Level 8
+                     2, // Level 9
+                  ],
+                  "hResource":[
+                     75, // Level 1
+                     135, // Level 2
+                     203, // Level 3
+                     240, // Level 4
+                     300, // Level 5
+                     375, // Level 6
+                     450, // Level 7
+                     500, // Level 8
+                     600, // Level 9
+                  ]
                }
             },
             "C2":{
@@ -179,15 +231,18 @@ package
                "description":"mon_octooozedesc",
                "stream":["mon_octooozestream","mon_octooozestreambody","quests/monster2.v2.png"],
                "trainingCosts":[
-                  [8000, 3600 * 4],  // Level 2
-                  [16000, 3600 * 6],  // Level 3
+                  [8000, 3600 * 4], // Level 2
+                  [16000, 3600 * 6], // Level 3
                   [24000, 3600 * 10], // Level 4
                   [48000, 3600 * 16], // Level 5
-                  [64000, 3600 * 24]  // Level 6
+                  [64000, 3600 * 24], // Level 6
+                  [128000, 3600 * 30], // Level 7
+                  [256000, 3600 * 36], // Level 8
+                  [512000, 3600 * 42], // Level 9
                ],
                "props":{
                   "speed":[
-                     1.4  // Level 1
+                     1.4 // Level 1
                   ],
                   "health":[
                      1000, // Level 1
@@ -195,7 +250,10 @@ package
                      1300, // Level 3
                      1450, // Level 4
                      1600, // Level 5
-                     1800  // Level 6
+                     1800, // Level 6
+                     2000, // Level 7
+                     2200, // Level 8
+                     2500, // Level 9
                   ],
                   "damage":[
                      15, // Level 1
@@ -203,31 +261,35 @@ package
                      20, // Level 3
                      25, // Level 4
                      30, // Level 5
-                     35  // Level 6
+                     35, // Level 6
+                     40, // Level 7
+                     45, // Level 8
+                     50, // Level 9
                   ],
                   "cTime":[
                      15, // Level 1
-                     16  // Level 2
+                     16, // Level 2
                   ],
                   "cResource":[
-                     500,   // Level 1
-                     900,   // Level 2
-                     1350,  // Level 3
-                     1800,  // Level 4
-                     2100,  // Level 5
-                     2500   // Level 6
+                     500, // Level 1
+                     900, // Level 2
+                     1350, // Level 3
+                     1800, // Level 4
+                     2100, // Level 5
+                     2500, // Level 6
+                     3000, // Level 7
+                     3600, // Level 8
+                     4300, // Level 9
                   ],
                   "cStorage":[
-                     10  // Level 1
+                     10 // Level 1
                   ],
                   "bucket":[
-                     10  // Level 1
+                     10 // Level 1
                   ],
-                  "targetGroup":[
-                     4  // Level 1
-                  ],
+                  "targetGroup":[4],
                   "hTime":[
-                     5  // Level 1
+                     5 // Level 1
                   ],
                   "hResource":[
                      150, // Level 1
@@ -235,7 +297,10 @@ package
                      405, // Level 3
                      540, // Level 4
                      630, // Level 5
-                     750  // Level 6
+                     750, // Level 6
+                     800, // Level 7
+                     900, // Level 8
+                     1000, // Level 9
                   ]
                }
             },
@@ -251,23 +316,29 @@ package
                "description":"mon_boltdesc",
                "stream":["mon_boltstream","mon_boltstreambody","quests/monster3.v2.png"],
                "trainingCosts":[
-                  [16000, 3600 * 4],  // Level 2
-                  [32000, 3600 * 6],  // Level 3
-                  [48000, 3600 * 8],  // Level 4
+                  [16000, 3600 * 4], // Level 2
+                  [32000, 3600 * 6], // Level 3
+                  [48000, 3600 * 8], // Level 4
                   [96000, 3600 * 12], // Level 5
-                  [144000, 3600 * 16] // Level 6
+                  [144000, 3600 * 16], // Level 6
+                  [288000, 3600 * 20], // Level 7
+                  [576000, 3600 * 24], // Level 8
+                  [1152000, 3600 * 30], // Level 9
                ],
                "props":{
                   "speed":[
-                     2.5,  // Level 1
+                     2.50, // Level 1
                      2.55, // Level 2
-                     2.6,  // Level 3
-                     2.8,  // Level 4
-                     3,    // Level 5
-                     3.2   // Level 6
+                     2.60, // Level 3
+                     2.80, // Level 4
+                     3.00, // Level 5
+                     3.20, // Level 6
+                     3.30, // Level 7
+                     3.40, // Level 8
+                     3.50, // Level 9
                   ],
                   "health":[
-                     150  // Level 1
+                     150 // Level 1
                   ],
                   "damage":[
                      15, // Level 1
@@ -275,30 +346,34 @@ package
                      25, // Level 3
                      35, // Level 4
                      45, // Level 5
-                     55  // Level 6
+                     55, // Level 6
+                     60, // Level 7
+                     65, // Level 8
+                     70, // Level 9
                   ],
                   "cTime":[
-                     23  // Level 1
+                     23 // Level 1
                   ],
                   "cResource":[
-                     350,   // Level 1
-                     675,   // Level 2
-                     1015,  // Level 3
-                     1400,  // Level 4
-                     1800,  // Level 5
-                     2400   // Level 6
+                     350, // Level 1
+                     675, // Level 2
+                     1015, // Level 3
+                     1400, // Level 4
+                     1800, // Level 5
+                     2400, // Level 6
+                     2800, // Level 7
+                     3200, // Level 8
+                     3600, // Level 9
                   ],
                   "cStorage":[
-                     15  // Level 1
+                     15 // Level 1
                   ],
                   "bucket":[
-                     15  // Level 1
+                     15 // Level 1
                   ],
-                  "targetGroup":[
-                     3  // Level 1
-                  ],
+                  "targetGroup":[3],
                   "hTime":[
-                     7  // Level 1
+                     7 // Level 1
                   ],
                   "hResource":[
                      105, // Level 1
@@ -306,7 +381,10 @@ package
                      305, // Level 3
                      420, // Level 4
                      540, // Level 5
-                     720  // Level 6
+                     720, // Level 6
+                     900, // Level 7
+                     1200, // Level 8
+                     2500, // Level 9
                   ]
                }
             },
@@ -322,15 +400,18 @@ package
                "description":"mon_finkdesc",
                "stream":["mon_finkstream","mon_finkstreambody","quests/monster4.v2.png"],
                "trainingCosts":[
-                  [32000, 3600 * 8],   // Level 2
-                  [64000, 3600 * 12],  // Level 3
-                  [96000, 3600 * 18],  // Level 4
+                  [32000, 3600 * 8], // Level 2
+                  [64000, 3600 * 12], // Level 3
+                  [96000, 3600 * 18], // Level 4
                   [128000, 3600 * 24], // Level 5
-                  [160000, 3600 * 30]  // Level 6
+                  [160000, 3600 * 30], // Level 6
+                  [320000, 3600 * 36], // Level 7
+                  [640000, 3600 * 42], // Level 8
+                  [1280000, 3600 * 50], // Level 9
                ],
                "props":{
                   "speed":[
-                     1.3  // Level 1
+                     1.3 // Level 1
                   ],
                   "health":[
                      200, // Level 1
@@ -338,7 +419,10 @@ package
                      200, // Level 3
                      200, // Level 4
                      220, // Level 5
-                     240  // Level 6
+                     240, // Level 6
+                     260, // Level 7
+                     280, // Level 8
+                     300, // Level 9
                   ],
                   "damage":[
                      300, // Level 1
@@ -346,48 +430,61 @@ package
                      380, // Level 3
                      430, // Level 4
                      470, // Level 5
-                     520  // Level 6
+                     520, // Level 6
+                     580, // Level 7
+                     650, // Level 8
+                     730, // Level 9
                   ],
                   "cTime":[
                      100, // Level 1
                      100, // Level 2
                      100, // Level 3
                      100, // Level 4
-                     90,  // Level 5
-                     90   // Level 6
+                     90, // Level 5
+                     90, // Level 6
+                     90, // Level 7
+                     90, // Level 8
+                     80, // Level 9
                   ],
                   "cResource":[
-                     1500,  // Level 1
-                     2250,  // Level 2
-                     3375,  // Level 3
-                     4800,  // Level 4
-                     7200,  // Level 5
-                     10000  // Level 6
+                     1500, // Level 1
+                     2250, // Level 2
+                     3375, // Level 3
+                     4800, // Level 4
+                     7200, // Level 5
+                     10000, // Level 6
+                     25000, // Level 7
+                     50000, // Level 8
+                     100000, // Level 9
                   ],
                   "cStorage":[
-                     20  // Level 1
+                     20 // Level 1
                   ],
                   "bucket":[
-                     20  // Level 1
+                     20 // Level 1
                   ],
-                  "targetGroup":[
-                     1  // Level 1
-                  ],
+                  "targetGroup":[1],
                   "hTime":[
                      30, // Level 1
                      30, // Level 2
                      30, // Level 3
                      30, // Level 4
                      27, // Level 5
-                     27  // Level 6
+                     27, // Level 6
+                     27, // Level 7
+                     27, // Level 8
+                     25, // Level 9
                   ],
                   "hResource":[
-                     450,  // Level 1
-                     675,  // Level 2
+                     450, // Level 1
+                     675, // Level 2
                      1013, // Level 3
                      1440, // Level 4
                      2160, // Level 5
-                     3000  // Level 6
+                     3000, // Level 6
+                     5000, // Level 7
+                     7000, // Level 8
+                     10000, // Level 9
                   ]
                }
             },
@@ -403,59 +500,72 @@ package
                "description":"mon_eyeradesc",
                "stream":["mon_eyerastream","mon_eyerastreambody","quests/monster5.v2.png"],
                "trainingCosts":[
-                  [64000, 3600 * 5],   // Level 2
-                  [128000, 3600 * 7],  // Level 3
+                  [64000, 3600 * 5], // Level 2
+                  [128000, 3600 * 7], // Level 3
                   [192000, 3600 * 12], // Level 4
                   [384000, 3600 * 24], // Level 5
-                  [512000, 3600 * 36]  // Level 6
+                  [512000, 3600 * 36], // Level 6
+                  [1024000, 3600 * 48], // Level 7
+                  [2048000, 3600 * 60], // Level 8
+                  [4096000, 3600 * 72], // Level 9
                ],
                "props":{
                   "speed":[
-                     2,   // Level 1
+                     2.0, // Level 1
                      2.2, // Level 2
                      2.4, // Level 3
                      2.6, // Level 4
                      2.8, // Level 5
-                     3    // Level 6
+                     3.0, // Level 6
+                     3.2, // Level 7
+                     3.4, // Level 8
+                     3.6, // Level 9
                   ],
                   "health":[
-                     600,  // Level 1
-                     900,  // Level 2
+                     600, // Level 1
+                     900, // Level 2
                      1200, // Level 3
                      1600, // Level 4
                      2000, // Level 5
-                     2400  // Level 6
+                     2400, // Level 6
+                     2800, // Level 7
+                     3200, // Level 8
+                     3600, // Level 9
                   ],
                   "damage":[
-                     4000,  // Level 1
-                     8000,  // Level 2
+                     4000, // Level 1
+                     8000, // Level 2
                      12000, // Level 3
                      16000, // Level 4
                      20000, // Level 5
-                     24000  // Level 6
+                     24000, // Level 6
+                     28000, // Level 7
+                     32000, // Level 8
+                     36000, // Level 9
                   ],
                   "cTime":[
-                     1500  // Level 1
+                     1500 // Level 1
                   ],
                   "cResource":[
-                     5000,  // Level 1
+                     5000, // Level 1
                      15000, // Level 2
                      30000, // Level 3
                      45000, // Level 4
                      60000, // Level 5
-                     80000  // Level 6
+                     80000, // Level 6
+                     100000, // Level 7
+                     200000, // Level 8
+                     300000, // Level 9
                   ],
                   "cStorage":[
-                     60  // Level 1
+                     60 // Level 1
                   ],
                   "bucket":[
-                     60  // Level 1
+                     60 // Level 1
                   ],
-                  "targetGroup":[
-                     2  // Level 1
-                  ],
+                  "targetGroup":[2],
                   "explode":[
-                     1  // Level 1
+                     1 // Level 1
                   ],
                   "hTime":[
                      450, // Level 1
@@ -463,15 +573,21 @@ package
                      450, // Level 3
                      450, // Level 4
                      450, // Level 5
-                     450  // Level 6
+                     450, // Level 6
+                     450, // Level 7
+                     450, // Level 8
+                     450, // Level 9
                   ],
                   "hResource":[
-                     1500,  // Level 1
-                     4500,  // Level 2
-                     9000,  // Level 3
+                     1500, // Level 1
+                     4500, // Level 2
+                     9000, // Level 3
                      13500, // Level 4
                      18000, // Level 5
-                     24000  // Level 6
+                     24000, // Level 6
+                     30000, // Level 7
+                     36000, // Level 8
+                     42000, // Level 9
                   ]
                }
             },
@@ -486,15 +602,18 @@ package
                "description":"mon_ichidesc",
                "stream":["mon_ichistream","mon_ichistreambody","quests/monster6.v2.png"],
                "trainingCosts":[
-                  [128000, 3600 * 12],  // Level 2
-                  [256000, 3600 * 18],  // Level 3
-                  [409600, 3600 * 24],  // Level 4
-                  [640000, 3600 * 48],  // Level 5
-                  [820000, 3600 * 72]   // Level 6
+                  [128000, 3600 * 12], // Level 2
+                  [256000, 3600 * 18], // Level 3
+                  [409600, 3600 * 24], // Level 4
+                  [640000, 3600 * 48], // Level 5
+                  [820000, 3600 * 72], // Level 6
+                  [1640000, 3600 * 96], // Level 7
+                  [3280000, 3600 * 120], // Level 8
+                  [6560000, 3600 * 144], // Level 9
                ],
                "props":{
                   "speed":[
-                     1.2  // Level 1
+                     1.2 // Level 1
                   ],
                   "health":[
                      2000, // Level 1
@@ -502,7 +621,10 @@ package
                      2200, // Level 3
                      2300, // Level 4
                      2500, // Level 5
-                     2800  // Level 6
+                     2800, // Level 6
+                     3100, // Level 7
+                     3400, // Level 8
+                     3800, // Level 9
                   ],
                   "damage":[
                      50, // Level 1
@@ -510,34 +632,38 @@ package
                      70, // Level 3
                      80, // Level 4
                      95, // Level 5
-                     110 // Level 6
+                     110, // Level 6
+                     125, // Level 7
+                     140, // Level 8
+                     160, // Level 9
                   ],
                   "cTime":[
                      100, // Level 1
                      100, // Level 2
-                     90   // Level 3
+                     90, // Level 3
                   ],
                   "cResource":[
-                     5000,  // Level 1
-                     5625,  // Level 2
-                     8440,  // Level 3
+                     5000, // Level 1
+                     5625, // Level 2
+                     8440, // Level 3
                      11200, // Level 4
                      16000, // Level 5
-                     24000  // Level 6
+                     24000, // Level 6
+                     28000, // Level 7
+                     32000, // Level 8
+                     40000, // Level 9
                   ],
                   "cStorage":[
-                     20  // Level 1
+                     20 // Level 1
                   ],
                   "bucket":[
-                     20  // Level 1
+                     20 // Level 1
                   ],
-                  "targetGroup":[
-                     4  // Level 1
-                  ],
+                  "targetGroup":[4],
                   "hTime":[
                      30, // Level 1
                      30, // Level 2
-                     27  // Level 3
+                     27, // Level 3
                   ],
                   "hResource":[
                      1500, // Level 1
@@ -545,7 +671,10 @@ package
                      2532, // Level 3
                      3360, // Level 4
                      4800, // Level 5
-                     7200  // Level 6
+                     7200, // Level 6
+                     9600, // Level 7
+                     12000, // Level 8
+                     15000, // Level 9
                   ]
                }
             },
@@ -561,15 +690,15 @@ package
                "description":"mon_banditodesc",
                "stream":["mon_banditostream","mon_banditostreambody","quests/monster7.v2.png"],
                "trainingCosts":[
-                  [256000, 3600 * 12],  // Level 2
-                  [512000, 3600 * 16],  // Level 3
-                  [756000, 3600 * 24],  // Level 4
+                  [256000, 3600 * 12], // Level 2
+                  [512000, 3600 * 16], // Level 3
+                  [756000, 3600 * 24], // Level 4
                   [1024000, 3600 * 36], // Level 5
-                  [1440000, 3600 * 48]  // Level 6
+                  [1440000, 3600 * 48] // Level 6
                ],
                "props":{
                   "speed":[
-                     1  // Level 1
+                     1 // Level 1
                   ],
                   "health":[
                      500, // Level 1
@@ -577,7 +706,7 @@ package
                      600, // Level 3
                      650, // Level 4
                      750, // Level 5
-                     900  // Level 6
+                     900 // Level 6
                   ],
                   "damage":[
                      200, // Level 1
@@ -585,7 +714,7 @@ package
                      300, // Level 3
                      350, // Level 4
                      400, // Level 5
-                     450  // Level 6
+                     450 // Level 6
                   ],
                   "cTime":[
                      225, // Level 1
@@ -593,40 +722,38 @@ package
                      225, // Level 3
                      225, // Level 4
                      180, // Level 5
-                     180  // Level 6
+                     180 // Level 6
                   ],
                   "cResource":[
-                     2500,  // Level 1
-                     4500,  // Level 2
-                     6750,  // Level 3
-                     8750,  // Level 4
+                     2500, // Level 1
+                     4500, // Level 2
+                     6750, // Level 3
+                     8750, // Level 4
                      11200, // Level 5
-                     14400  // Level 6
+                     14400 // Level 6
                   ],
                   "cStorage":[
-                     20  // Level 1
+                     20 // Level 1
                   ],
                   "bucket":[
-                     20  // Level 1
+                     20 // Level 1
                   ],
-                  "targetGroup":[
-                     1  // Level 1
-                  ],
+                  "targetGroup":[1],
                   "hTime":[
                      68, // Level 1
                      68, // Level 2
                      68, // Level 3
                      68, // Level 4
                      54, // Level 5
-                     54  // Level 6
+                     54 // Level 6
                   ],
                   "hResource":[
-                     750,  // Level 1
+                     750, // Level 1
                      1350, // Level 2
                      2025, // Level 3
                      2625, // Level 4
                      3360, // Level 5
-                     4320  // Level 6
+                     4320 // Level 6
                   ]
                }
             },
@@ -642,11 +769,11 @@ package
                "description":"mon_fangdesc",
                "stream":["mon_fangstream","mon_fangstreambody","quests/monster8.v2.png"],
                "trainingCosts":[
-                  [512000, 3600 * 12],  // Level 2
-                  [512000, 3600 * 16],  // Level 3
-                  [756000, 3600 * 24],  // Level 4
+                  [512000, 3600 * 12], // Level 2
+                  [512000, 3600 * 16], // Level 3
+                  [756000, 3600 * 24], // Level 4
                   [1024000, 3600 * 36], // Level 5
-                  [1440000, 3600 * 48]  // Level 6
+                  [1440000, 3600 * 48] // Level 6
                ],
                "props":{
                   "speed":[
@@ -655,10 +782,10 @@ package
                      1.3, // Level 3
                      1.4, // Level 4
                      1.5, // Level 5
-                     1.6  // Level 6
+                     1.6 // Level 6
                   ],
                   "health":[
-                     400  // Level 1
+                     400 // Level 1
                   ],
                   "damage":[
                      600, // Level 1
@@ -666,7 +793,7 @@ package
                      620, // Level 3
                      660, // Level 4
                      720, // Level 5
-                     800  // Level 6
+                     800 // Level 6
                   ],
                   "cTime":[
                      450, // Level 1
@@ -674,40 +801,38 @@ package
                      250, // Level 3
                      225, // Level 4
                      195, // Level 5
-                     195  // Level 6
+                     195 // Level 6
                   ],
                   "cResource":[
-                     18000,  // Level 1
-                     27000,  // Level 2
-                     40500,  // Level 3
-                     60500,  // Level 4
-                     80000,  // Level 5
-                     100000  // Level 6
+                     18000, // Level 1
+                     27000, // Level 2
+                     40500, // Level 3
+                     60500, // Level 4
+                     80000, // Level 5
+                     100000 // Level 6
                   ],
                   "cStorage":[
-                     30  // Level 1
+                     30 // Level 1
                   ],
                   "bucket":[
-                     30  // Level 1
+                     30 // Level 1
                   ],
-                  "targetGroup":[
-                     1  // Level 1
-                  ],
+                  "targetGroup":[1],
                   "hTime":[
                      135, // Level 1
                      105, // Level 2
-                     75,  // Level 3
-                     68,  // Level 4
-                     59,  // Level 5
-                     59   // Level 6
+                     75, // Level 3
+                     68, // Level 4
+                     59, // Level 5
+                     59 // Level 6
                   ],
                   "hResource":[
-                     5400,  // Level 1
-                     8100,  // Level 2
+                     5400, // Level 1
+                     8100, // Level 2
                      12150, // Level 3
                      18150, // Level 4
                      24000, // Level 5
-                     30000  // Level 6
+                     30000 // Level 6
                   ]
                }
             },
@@ -723,28 +848,28 @@ package
                "description":"mon_braindesc",
                "stream":["mon_brainstream","mon_brainstreambody","quests/monster9.v2.png"],
                "trainingCosts":[
-                  [1024000, 3600 * 12],  // Level 2
-                  [2056000, 3600 * 16],  // Level 3
-                  [2870000, 3600 * 20],  // Level 4
-                  [4500000, 3600 * 40],  // Level 5
-                  [6000000, 3600 * 60]   // Level 6
+                  [1024000, 3600 * 12], // Level 2
+                  [2056000, 3600 * 16], // Level 3
+                  [2870000, 3600 * 20], // Level 4
+                  [4500000, 3600 * 40], // Level 5
+                  [6000000, 3600 * 60] // Level 6
                ],
                "props":{
                   "speed":[
-                     2,   // Level 1
-                     2,   // Level 2
-                     2,   // Level 3
-                     2,   // Level 4
+                     2, // Level 1
+                     2, // Level 2
+                     2, // Level 3
+                     2, // Level 4
                      2.1, // Level 5
-                     2.2  // Level 6
+                     2.2 // Level 6
                   ],
                   "health":[
-                     600,  // Level 1
-                     700,  // Level 2
-                     750,  // Level 3
-                     800,  // Level 4
+                     600, // Level 1
+                     700, // Level 2
+                     750, // Level 3
+                     800, // Level 4
                      1100, // Level 5
-                     1400  // Level 6
+                     1400 // Level 6
                   ],
                   "damage":[
                      100, // Level 1
@@ -752,38 +877,36 @@ package
                      200, // Level 3
                      250, // Level 4
                      300, // Level 5
-                     350  // Level 6
+                     350 // Level 6
                   ],
                   "cTime":[
-                     342  // Level 1
+                     342 // Level 1
                   ],
                   "cResource":[
-                     12000,  // Level 1
-                     20250,  // Level 2
-                     30375,  // Level 3
-                     35000,  // Level 4
-                     50000,  // Level 5
-                     75000   // Level 6
+                     12000, // Level 1
+                     20250, // Level 2
+                     30375, // Level 3
+                     35000, // Level 4
+                     50000, // Level 5
+                     75000 // Level 6
                   ],
                   "cStorage":[
-                     30  // Level 1
+                     30 // Level 1
                   ],
                   "bucket":[
-                     30  // Level 1
+                     30 // Level 1
                   ],
-                  "targetGroup":[
-                     3  // Level 1
-                  ],
+                  "targetGroup":[3],
                   "hTime":[
-                     103  // Level 1
+                     103 // Level 1
                   ],
                   "hResource":[
-                     3600,  // Level 1
-                     6075,  // Level 2
-                     9113,  // Level 3
+                     3600, // Level 1
+                     6075, // Level 2
+                     9113, // Level 3
                      10500, // Level 4
-                     1500,  // Level 5
-                     22500  // Level 6
+                     1500, // Level 5
+                     22500 // Level 6
                   ]
                }
             },
@@ -798,20 +921,20 @@ package
                "description":"mon_crabatrondesc",
                "stream":["mon_crabatronstream","mon_crabatronstreambody","quests/monster10.v2.png"],
                "trainingCosts":[
-                  [2048000, 3600 * 12],  // Level 2
-                  [3000000, 3600 * 18],  // Level 3
-                  [4400000, 3600 * 24],  // Level 4
-                  [6000000, 3600 * 48],  // Level 5
-                  [7500000, 3600 * 72]   // Level 6
+                  [2048000, 3600 * 12], // Level 2
+                  [3000000, 3600 * 18], // Level 3
+                  [4400000, 3600 * 24], // Level 4
+                  [6000000, 3600 * 48], // Level 5
+                  [7500000, 3600 * 72] // Level 6
                ],
                "props":{
                   "speed":[
-                     1,   // Level 1
-                     1,   // Level 2
-                     1,   // Level 3
+                     1, // Level 1
+                     1, // Level 2
+                     1, // Level 3
                      1.2, // Level 4
                      1.4, // Level 5
-                     1.5  // Level 6
+                     1.5 // Level 6
                   ],
                   "health":[
                      4000, // Level 1
@@ -819,7 +942,7 @@ package
                      4300, // Level 3
                      4400, // Level 4
                      4600, // Level 5
-                     4800  // Level 6
+                     4800 // Level 6
                   ],
                   "damage":[
                      100, // Level 1
@@ -827,38 +950,36 @@ package
                      130, // Level 3
                      140, // Level 4
                      150, // Level 5
-                     170  // Level 6
+                     170 // Level 6
                   ],
                   "cTime":[
-                     750  // Level 1
+                     750 // Level 1
                   ],
                   "cResource":[
-                     30000,  // Level 1
-                     45000,  // Level 2
-                     67500,  // Level 3
-                     75000,  // Level 4
-                     90000,  // Level 5
-                     120000  // Level 6
+                     30000, // Level 1
+                     45000, // Level 2
+                     67500, // Level 3
+                     75000, // Level 4
+                     90000, // Level 5
+                     120000 // Level 6
                   ],
                   "cStorage":[
-                     40  // Level 1
+                     40 // Level 1
                   ],
                   "bucket":[
-                     40  // Level 1
+                     40 // Level 1
                   ],
-                  "targetGroup":[
-                     4  // Level 1
-                  ],
+                  "targetGroup":[4],
                   "hTime":[
-                     225  // Level 1
+                     225 // Level 1
                   ],
                   "hResource":[
-                     9000,  // Level 1
+                     9000, // Level 1
                      13500, // Level 2
                      20250, // Level 3
                      22500, // Level 4
                      27000, // Level 5
-                     36000  // Level 6
+                     36000 // Level 6
                   ]
                }
             },
@@ -874,28 +995,28 @@ package
                "description":"mon_projectxdesc",
                "stream":["mon_projectxstream","mon_projectxstreambody","quests/monster11.v2.png"],
                "trainingCosts":[
-                  [4096000, 3600 * 24],   // Level 2
-                  [7000000, 3600 * 36],   // Level 3
-                  [12000000, 3600 * 48],  // Level 4
-                  [18000000, 3600 * 96],  // Level 5
-                  [24000000, 3600 * 128]  // Level 6
+                  [4096000, 3600 * 24], // Level 2
+                  [7000000, 3600 * 36], // Level 3
+                  [12000000, 3600 * 48], // Level 4
+                  [18000000, 3600 * 96], // Level 5
+                  [24000000, 3600 * 128] // Level 6
                ],
                "props":{
                   "speed":[
                      0.9, // Level 1
                      0.9, // Level 2
-                     1,   // Level 3
+                     1, // Level 3
                      1.2, // Level 4
                      1.2, // Level 5
-                     1.3  // Level 6
+                     1.3 // Level 6
                   ],
                   "health":[
-                     800,  // Level 1
-                     900,  // Level 2
-                     950,  // Level 3
+                     800, // Level 1
+                     900, // Level 2
+                     950, // Level 3
                      1000, // Level 4
                      1100, // Level 5
-                     1200  // Level 6
+                     1200 // Level 6
                   ],
                   "damage":[
                      1200, // Level 1
@@ -903,30 +1024,28 @@ package
                      1600, // Level 3
                      1800, // Level 4
                      2000, // Level 5
-                     2200  // Level 6
+                     2200 // Level 6
                   ],
                   "cTime":[
-                     1384  // Level 1
+                     1384 // Level 1
                   ],
                   "cResource":[
-                     60000,  // Level 1
-                     90000,  // Level 2
+                     60000, // Level 1
+                     90000, // Level 2
                      135000, // Level 3
                      180000, // Level 4
                      234000, // Level 5
-                     280000  // Level 6
+                     280000 // Level 6
                   ],
                   "cStorage":[
-                     70  // Level 1
+                     70 // Level 1
                   ],
                   "bucket":[
-                     70  // Level 1
+                     70 // Level 1
                   ],
-                  "targetGroup":[
-                     4  // Level 1
-                  ],
+                  "targetGroup":[4],
                   "hTime":[
-                     415  // Level 1
+                     415 // Level 1
                   ],
                   "hResource":[
                      18000, // Level 1
@@ -934,7 +1053,7 @@ package
                      40500, // Level 3
                      54000, // Level 4
                      70200, // Level 5
-                     84000  // Level 6
+                     84000 // Level 6
                   ]
                }
             },
@@ -950,28 +1069,28 @@ package
                "description":"mon_davedesc",
                "stream":["mon_davestream","mon_davestreambody","quests/monster12.v2.png"],
                "trainingCosts":[
-                  [8192000, 3600 * 48],   // Level 2
-                  [10000000, 3600 * 72],  // Level 3
-                  [12200000, 3600 * 96],  // Level 4
+                  [8192000, 3600 * 48], // Level 2
+                  [10000000, 3600 * 72], // Level 3
+                  [12200000, 3600 * 96], // Level 4
                   [19200000, 3600 * 144], // Level 5
-                  [28000000, 3600 * 192]  // Level 6
+                  [28000000, 3600 * 192] // Level 6
                ],
                "props":{
                   "speed":[
-                     0.8,  // Level 1
+                     0.8, // Level 1
                      0.85, // Level 2
-                     0.9,  // Level 3
-                     1,    // Level 4
-                     1.1,  // Level 5
-                     1.2   // Level 6
+                     0.9, // Level 3
+                     1, // Level 4
+                     1.1, // Level 5
+                     1.2 // Level 6
                   ],
                   "health":[
-                     8000,  // Level 1
-                     9100,  // Level 2
+                     8000, // Level 1
+                     9100, // Level 2
                      10000, // Level 3
                      12000, // Level 4
                      16500, // Level 5
-                     21000  // Level 6
+                     21000 // Level 6
                   ],
                   "damage":[
                      1500, // Level 1
@@ -979,10 +1098,10 @@ package
                      1600, // Level 3
                      1700, // Level 4
                      1800, // Level 5
-                     1900  // Level 6
+                     1900 // Level 6
                   ],
                   "cTime":[
-                     3600  // Level 1
+                     3600 // Level 1
                   ],
                   "cResource":[
                      150000, // Level 1
@@ -990,27 +1109,25 @@ package
                      337500, // Level 3
                      440000, // Level 4
                      600000, // Level 5
-                     800000  // Level 6
+                     800000 // Level 6
                   ],
                   "cStorage":[
-                     160  // Level 1
+                     160 // Level 1
                   ],
                   "bucket":[
-                     160  // Level 1
+                     160 // Level 1
                   ],
-                  "targetGroup":[
-                     1  // Level 1
-                  ],
+                  "targetGroup":[1],
                   "hTime":[
-                     1080  // Level 1
+                     1080 // Level 1
                   ],
                   "hResource":[
-                     45000,  // Level 1
-                     67500,  // Level 2
+                     45000, // Level 1
+                     67500, // Level 2
                      101250, // Level 3
                      132000, // Level 4
                      180000, // Level 5
-                     240000  // Level 6
+                     240000 // Level 6
                   ]
                }
             },
@@ -1026,10 +1143,10 @@ package
                "description":"mon_wormzerdesc",
                "stream":["mon_wormzerstream","mon_wormzerstreambody","quests/monster13.v2.png"],
                "trainingCosts":[
-                  [4096000, 3600 * 24],  // Level 2
-                  [8192000, 3600 * 48],  // Level 3
-                  [8192000, 3600 * 72],  // Level 4
-                  [8192000, 3600 * 96],  // Level 5
+                  [4096000, 3600 * 24], // Level 2
+                  [8192000, 3600 * 48], // Level 3
+                  [8192000, 3600 * 72], // Level 4
+                  [8192000, 3600 * 96], // Level 5
                   [12800000, 3600 * 128] // Level 6
                ],
                "movement":"burrow",
@@ -1037,7 +1154,7 @@ package
                "props":{
                   "speed":[
                      3, // Level 1
-                     4  // Level 2
+                     4 // Level 2
                   ],
                   "health":[600,800,1100,1300,1500,1700],
                   "damage":[300,400,550,600,650,700],

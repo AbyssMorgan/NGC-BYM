@@ -25,7 +25,7 @@ app.proxy = true;
 export const PORT = process.env.PORT || 3001;
 export const BASE_URL = process.env.BASE_URL;
 
-export const getApiVersion = () => "v1.5.5-ngc-1.0.2";
+export const getApiVersion = () => "v1.5.5-ngc-1.0.3";
 
 export const postgres = {} as {
   orm: MikroORM<PostgreSqlDriver>;

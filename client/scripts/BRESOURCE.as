@@ -550,14 +550,7 @@ package
             if(_loc3_.Get() > 0)
             {
                ResourcePackages.Create(BASE.isInfernoMainYardOrOutpost ? _type + 4 : _type,this,_loc1_.Get());
-               if(TUTORIAL._stage < 200)
-               {
-                  BASE.PointsAdd(_loc3_.Get());
-               }
-               else
-               {
-                  BASE.PointsAdd(Math.ceil(_loc3_.Get() * 0.5));
-               }
+               BASE.PointsAdd(_loc3_.Get());
             }
             BASE.CalcResources();
             if(_loc1_.Get() > QUESTS._global.singleclickbank)

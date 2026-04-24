@@ -1507,6 +1507,7 @@ package
       {
          if (!BASE._loading)
          {
+            BASE.Save(0,false,true);
             if (BASE.isInfernoMainYardOrOutpost)
             {
                BASE._needCurrentCell = false;

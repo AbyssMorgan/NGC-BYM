@@ -3155,7 +3155,7 @@ package
          return true;
       }
 
-      public static function Save(param1:int = 0, param2:Boolean = false, param3:Boolean = false, param4:Boolean = false):void
+      public static function Save(param1:int = 0, return_home:Boolean = false, force:Boolean = false, param4:Boolean = false):void
       {
          if (Boolean(UI2._top) && Boolean(UI2._top.mcSave))
          {
@@ -3173,13 +3173,13 @@ package
          {
             _saveOver = param1;
          }
-         if (param2)
+         if (return_home)
          {
             _returnHome = true;
          }
          _lastSaveRequest = GLOBAL.Timestamp();
          ++_saveCounterA;
-         if (param3 || _pendingPurchase.length > 0)
+         if (force || _pendingPurchase.length > 0)
          {
             SaveB();
          }
@@ -3880,6 +3880,7 @@ package
          saveData["empirevalue"] = Number(0);
          saveData["inventory"] = STORE.InventoryExport();
          saveData["achieved"] = JSON.stringify(ACHIEVEMENTS.Report());
+         CalcBaseValue();
          var frontpageData:Object = FrontPageHandler.export();
          if (frontpageData)
          {

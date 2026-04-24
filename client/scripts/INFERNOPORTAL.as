@@ -65,6 +65,7 @@ package
                GLOBAL.Message(KEYS.Get("inferno_msg_disabled"));
                return;
             }
+            BASE.Save(0,false,true);
             ToggleYard();
          }
          else

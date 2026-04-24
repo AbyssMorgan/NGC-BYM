@@ -286,65 +286,56 @@ package com.monsters.autobanking
          return param1;
       }
       
-      public static function autobank(param1:int = 10, param2:Boolean = false) : void
-      {
-         var _loc3_:Object = null;
-         var _loc4_:int = 0;
-         var _loc5_:SecNum = null;
-         var _loc6_:Array = null;
-         var _loc7_:SecNum = null;
-         var _loc8_:Vector.<String> = null;
-         var _loc9_:int = 0;
-         var _loc10_:String = null;
-         var _loc11_:int = 0;
-         var _loc12_:int = 0;
-         var _loc13_:Number = NaN;
-         var _loc14_:AutoBankBaseBuff = null;
-         if(MapRoomManager.instance.isInMapRoom2)
-         {
-            _loc3_ = BASE._GIP;
-            if(!_loc3_)
-            {
-               return;
+      public static function autobank(param1:int = 10, param2:Boolean = false) : void {
+         var loot_mr2:Object = null;
+         var loot_mr3:int;
+         var resource_index:int = 1;
+         var resources_total:SecNum = new SecNum(0);
+         var resources_quantity:SecNum = new SecNum(0);
+         var multiplier_buff:SecNum = null;
+         var auto_bank_buff:AutoBankBaseBuff = null;
+         if(MapRoomManager.instance.isInMapRoom2){
+            loot_mr2 = BASE._GIP;
+            if(!loot_mr2) return;
+            if(GLOBAL._harvesterOverdrive >= GLOBAL.Timestamp() && Boolean(GLOBAL._harvesterOverdrivePower.Get())){
+               multiplier_buff = GLOBAL._harvesterOverdrivePower;
+            } else {
+               multiplier_buff = new SecNum(1);
             }
-            _loc5_ = new SecNum(0);
-            _loc6_ = [new SecNum(0),new SecNum(0),new SecNum(0),new SecNum(0)];
-            if(GLOBAL._harvesterOverdrive >= GLOBAL.Timestamp() && Boolean(GLOBAL._harvesterOverdrivePower.Get()))
-            {
-               _loc7_ = GLOBAL._harvesterOverdrivePower;
-            }
-            else
-            {
-               _loc7_ = new SecNum(1);
-            }
-            _loc4_ = 1;
-            while(_loc4_ < k_MAX_RESOURCES)
-            {
-               if(Boolean(_loc3_["r" + _loc4_]) && Boolean(_loc3_["r" + _loc4_].Get()))
-               {
-                  _loc6_[_loc4_ - 1].Set(BASE.Fund(_loc4_,_loc3_["r" + _loc4_].Get() * _loc7_.Get() * param1 / 10,false,null,false,false));
-                  _loc5_.Add(_loc6_[_loc4_ - 1].Get());
+            while(resource_index < k_MAX_RESOURCES){
+               resources_quantity = new SecNum(0);
+               if(Boolean(loot_mr2["r" + resource_index]) && Boolean(loot_mr2["r" + resource_index].Get())){
+                  resources_quantity.Set(BASE.Fund(resource_index, loot_mr2["r" + resource_index].Get() * multiplier_buff.Get() * param1 / 10, false, null, false, false));
+                  resources_total.Add(resources_quantity.Get());
                }
-               if(param1 > 10 || s_logCounter == 0)
-               {
-                  if(_loc6_[_loc4_ - 1].Get() > 0)
-                  {
-                     LOGGER.Stat([96,_loc4_,_loc6_[_loc4_ - 1].Get() * (param1 > 10 ? 1 : 10)]);
+               if(param1 > 10 || s_logCounter == 0){
+                  if(resources_quantity.Get() > 0){
+                     LOGGER.Stat([96, resource_index, resources_quantity.Get() * (param1 > 10 ? 1 : 10)]);
                   }
                   s_logCounter = 10;
                }
-               _loc4_++;
+               resource_index++;
             }
-            BASE.PointsAdd(Math.ceil(_loc5_.Get() * 0.375));
-         }
-         else if(MapRoomManager.instance.isInMapRoom3)
-         {
-            _loc5_ = new SecNum(0);
-            _loc14_ = BaseBuffHandler.instance.getBuffByName(AutoBankBaseBuff.k_NAME) as AutoBankBaseBuff;
-            if(_loc14_)
-            {
-               _loc5_ = fundAllResources(_loc14_.value * Math.max(0,param1),param2 || s_logCounter == 0);
-               BASE.PointsAdd(Math.ceil(_loc5_.Get() * 2.0));
+            BASE.PointsAdd(Math.ceil(resources_total.Get() * 0.375)); // Experience multiplier
+         } else if(MapRoomManager.instance.isInMapRoom3){
+            auto_bank_buff = BaseBuffHandler.instance.getBuffByName(AutoBankBaseBuff.k_NAME) as AutoBankBaseBuff;
+            if(auto_bank_buff){
+               loot_mr3 = auto_bank_buff.value * Math.max(0, param1);
+               while(resource_index < k_MAX_RESOURCES){
+                  resources_quantity = new SecNum(0);
+                  if(loot_mr3 > 0){
+                     resources_quantity.Add(BASE.Fund(resource_index, loot_mr3, false, null, false, false));
+                     resources_total.Add(resources_quantity.Get());
+                  }
+                  if(param1 > 10 || s_logCounter == 0){
+                     if(resources_quantity.Get() > 0){
+                        LOGGER.Stat([96, resource_index, resources_quantity.Get() * (param1 > 10 ? 1 : 10)]);
+                     }
+                     s_logCounter = 10;
+                  }
+                  resource_index++;
+               }
+               BASE.PointsAdd(Math.ceil(resources_total.Get() * 10.0)); // Experience multiplier
             }
          }
          --s_logCounter;
@@ -355,26 +346,6 @@ package com.monsters.autobanking
          return int(param1) - int(param2);
       }
       
-      private static function fundAllResources(param1:Number, param2:Boolean) : SecNum
-      {
-         var _loc3_:uint = 0;
-         var _loc4_:SecNum = new SecNum(0);
-         _loc3_ = 1;
-         while(_loc3_ < k_MAX_RESOURCES)
-         {
-            _loc4_.Add(BASE.Fund(_loc3_,param1,false,null,false,false));
-            if(param2 && Boolean(param1))
-            {
-               LOGGER.Stat([96,_loc3_,param1]);
-            }
-            _loc3_++;
-         }
-         if(param2)
-         {
-            s_logCounter = 10;
-         }
-         return _loc4_;
-      }
    }
 }
 

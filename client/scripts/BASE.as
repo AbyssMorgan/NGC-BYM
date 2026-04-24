@@ -2249,6 +2249,7 @@ package
          if (!isInfernoMainYardOrOutpost && !MapRoomManager.instance.isInMapRoom3)
          {
             AutoBankManager.autobank(MapRoomManager.instance.isInMapRoom3 ? _currentTime : _currentTime - _lastProcessedGIP, true);
+            BASE.Save(0,false,true);
          }
          hatqueue2 = [];
          hatcount2 = 0;

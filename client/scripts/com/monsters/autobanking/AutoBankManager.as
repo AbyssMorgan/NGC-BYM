@@ -335,7 +335,7 @@ package com.monsters.autobanking
                   }
                   resource_index++;
                }
-               BASE.PointsAdd(Math.ceil(resources_total.Get() * 10.0)); // Experience multiplier
+               BASE.PointsAdd(Math.ceil(resources_total.Get() * 1.0)); // Experience multiplier
             }
          }
          --s_logCounter;

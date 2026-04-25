@@ -234,7 +234,7 @@ package buildings.yard {
 				1600000, // Level 17
 				1800000, // Level 18
 				2000000, // Level 19
-				250000, // Level 20
+				2500000, // Level 20
 			],
 			"repairTime":[
 				480, // Level 1

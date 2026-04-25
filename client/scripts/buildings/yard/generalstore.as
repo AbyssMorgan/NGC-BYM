@@ -19,7 +19,7 @@ package buildings.yard {
 			"description":"generalstore_desc",
 			"costs":[
 				{"r1":new SecNum(1080), "r2":new SecNum(720), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(10), "re":[[14,1,1]]},
-				{"r1":new SecNum(50000000), "r2":new SecNum(50000000), "r3":new SecNum(50000000), "r4":new SecNum(50000000), "time":new SecNum(10), "re":[[14,1,10]]}
+				{"r1":new SecNum(50000000), "r2":new SecNum(50000000), "r3":new SecNum(50000000), "r4":new SecNum(50000000), "time":new SecNum(10), "re":[[14,1,10],[11,1,3]]}
 			],
 			"cls":BUILDING12,
 			"imageData":{

@@ -55,6 +55,10 @@ package {
 	import buildings.yard.austrianflag;
 	import buildings.yard.pirateflag;
 	import buildings.yard.peaceflag;
+	import buildings.yard.catapult;
+	import buildings.yard.simplesign;
+	import buildings.yard.hwn_pumpkin;
+	import buildings.yard.hwn_massivepumpkin;
 	
 	public class YARD_PROPS {
 
@@ -109,154 +113,10 @@ package {
 			austrianflag.DATA,      // ID 48
 			pirateflag.DATA,        // ID 49
 			peaceflag.DATA,         // ID 50
-		{
-			"id":51,
-			"group":2,
-			"order":10,
-			"buildStatus":0,
-			"type":"special",
-			"name":"#b_catapult#",
-			"size":190,
-			"attackgroup":1,
-			"tutstage":200,
-			"sale":0,
-			"description":"catapult_desc",
-			"block":false,
-			"cls":BUILDING51,
-			"costs":[
-				{"r1":new SecNum(75000), "r2":new SecNum(75000), "r3":new SecNum(75000), "r4":new SecNum(0), "time":new SecNum(5400), "re":[[14,1,3],[5,1,1]]},
-				{"r1":new SecNum(128600), "r2":new SecNum(128600), "r3":new SecNum(128600), "r4":new SecNum(0), "time":new SecNum(10800), "re":[[14,1,4],[5,1,1]]},
-				{"r1":new SecNum(257200), "r2":new SecNum(257200), "r3":new SecNum(257200), "r4":new SecNum(0), "time":new SecNum(21600), "re":[[14,1,5],[5,1,1]]},
-				{"r1":new SecNum(514400), "r2":new SecNum(514400), "r3":new SecNum(514400), "r4":new SecNum(0), "time":new SecNum(43200), "re":[[14,1,6],[5,1,1]]}
-			],
-			"imageData":{
-				"baseurl":"buildings/catapult/",
-				"1":{
-					"top":["top.1.png",new Point(-43,12)],
-					"shadow":["shadow.1.jpg",new Point(-42,28)],
-					"topdamaged":["top.1.damaged.png",new Point(-40,12)],
-					"shadowdamaged":["shadow.1.damaged.jpg",new Point(-39,28)],
-					"topdestroyed":["top.3.destroyed.png",new Point(-48,9)],
-					"shadowdestroyed":["shadow.3.destroyed.jpg",new Point(-47,23)]
-				},
-				"2":{
-					"top":["top.2.png",new Point(-44,-21)],
-					"shadow":["shadow.2.jpg",new Point(-49,19)],
-					"topdamaged":["top.2.damaged.png",new Point(-43,-16)],
-					"shadowdamaged":["shadow.2.damaged.jpg",new Point(-41,29)],
-					"topdestroyed":["top.3.destroyed.png",new Point(-48,9)],
-					"shadowdestroyed":["shadow.3.destroyed.jpg",new Point(-47,23)]
-				},
-				"3":{
-					"top":["top.3.png",new Point(-43,-29)],
-					"shadow":["shadow.3.jpg",new Point(-39,27)],
-					"topdamaged":["top.3.damaged.png",new Point(-51,-29)],
-					"shadowdamaged":["shadow.3.damaged.jpg",new Point(-51,30)],
-					"topdestroyed":["top.3.destroyed.png",new Point(-48,9)],
-					"shadowdestroyed":["shadow.3.destroyed.jpg",new Point(-47,23)]
-				}
-			},
-			"upgradeImgData":{
-				"baseurl":"buildingbuttons/",
-				"1":{
-					"img":"51.1.jpg",
-					"silhouette_img":"51.3.silhouette.jpg"
-				},
-				"2":{"img":"51.2.jpg"},
-				"3":{"img":"51.3.jpg"}
-			},
-			"thumbImgData":{
-				"baseurl":"buildingthumbs/",
-				"1":{"img":"51.1.png"},
-				"2":{"img":"51.2.png"},
-				"3":{"img":"51.3.png"}
-			},
-			"quantity":[0,0,0,1,1,1,1,1,1,1,1],
-			"hp":[4000,8000,16000,32000],
-			"repairTime":[120,240,480,960]
-		},
-		{
-			"id":52,
-			"group":999,
-			"subgroup":5,
-			"order":1,
-			"buildStatus":0,
-			"type":"taunt",
-			"name":"Simple Sign",
-			"lifespan":172800,
-			"size":100,
-			"attackgroup":999,
-			"tutstage":200,
-			"sale":0,
-			"description":"Leave a little note for a friend.",
-			"block":true,
-			"cls":BUILDING52,
-			"costs":[
-				{"r1":new SecNum(100000), "r2":new SecNum(100000), "r3":new SecNum(100000), "r4":new SecNum(100000), "r5":0, "time":new SecNum(0), "re":[]}
-			],
-			"imageData":{
-				"baseurl":"buildings/decorations/flags/",
-				"1":{
-					"anim":["flag-pirate.png",new Rectangle(1,-25,24,30),21],
-					"top":["flagpole.png",new Point(-5,-33)],
-					"shadow":["shadow.jpg",new Point(-3,15)]
-				}
-			},
-			"quantity":[0],
-			"hp":[100],
-			"repairTime":[1]
-		},
-		{
-			"id":53,
-			"group":999,
-			"order":1,
-			"buildStatus":0,
-			"type":"immovable",
-			"name":"hwn_pumpkin",
-			"size":10,
-			"attackgroup":0,
-			"tutstage":0,
-			"sale":0,
-			"description":"Temporary pumpkin for picking",
-			"block":true,
-			"cls":BDECORATION,
-			"quantity":[0],
-			"hp":[10],
-			"repairTime":[10],
-			"imageData":{
-				"baseurl":"buildings/decorations/pumpkins/",
-				"1":{
-					"anim":["anim.png",new Rectangle(-18,-15,37,36),30],
-					"shadow":["shadow.jpg",new Point(-22,-1)]
-				}
-			}
-		},
-		{
-			"id":54,
-			"group":999,
-			"order":1,
-			"buildStatus":0,
-			"type":"immovable",
-			"name":"hwn_massivepumpkin",
-			"size":10,
-			"attackgroup":0,
-			"tutstage":0,
-			"sale":0,
-			"description":"Massive Pumpkin for the \"Event\"",
-			"block":true,
-			"cls":BDECORATION,
-			"quantity":[0],
-			"hp":[10],
-			"repairTime":[10],
-			"imageData":{
-				"baseurl":"buildings/decorations/pumpkins/",
-				"1":{
-					"top":["large-top-6.png",new Point(-169,-60)],
-					"shadow":["large-shadow-6.jpg",new Point(-168,5)],
-					"anim":["large-anim-6.png",new Rectangle(-119,-113,189,155),45]
-				}
-			}
-		},
+			catapult.DATA,          // ID 51
+			simplesign.DATA,        // ID 52
+			hwn_pumpkin.DATA,       // ID 53 TODO unlock buy
+			hwn_massivepumpkin.DATA,// ID 54 TODO unlock buy
 		{
 			"id":55,
 			"group":4,

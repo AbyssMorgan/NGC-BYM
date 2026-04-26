@@ -21,7 +21,7 @@ package buildings.yard {
 			"description":"flag_desc",
 			"cls":BDECORATION,
 			"costs":[
-				{"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":10, "time":new SecNum(0), "re":[]}
+				{"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":100, "time":new SecNum(0), "re":[]}
 			],
 			"imageData":{
 				"baseurl":"buildings/decorations/flags/",

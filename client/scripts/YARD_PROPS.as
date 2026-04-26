@@ -95,697 +95,144 @@ package {
 	import buildings.yard.bdg_cactus;
 	import buildings.yard.bdg_flytrap;
 	import buildings.yard.bdg_thorns;
+	import buildings.yard.bdg_pinkflowers;
+	import buildings.yard.bdg_purpleflowers;
+	import buildings.yard.bdg_redflowers;
+	import buildings.yard.bdg_whiteflowers;
+	import buildings.yard.bdg_yellowflowers;
+	import buildings.yard.bdg_baseballstatue;
+	import buildings.yard.bdg_footballstatue;
+	import buildings.yard.bdg_soccerstatue;
+	import buildings.yard.bdg_libertystatue;
+	import buildings.yard.bdg_eiffelstatue;
+	import buildings.yard.bdg_bigben;
+	import buildings.yard.bdg_pool;
+	import buildings.yard.bdg_pond;
+	import buildings.yard.bdg_zengarden;
+	import buildings.yard.bdg_fountain;
+	import buildings.yard.bdg_teagarden;
+	import buildings.yard.bdg_monsterskull;
+	import buildings.yard.bdg_rubikunsolved;
+	import buildings.yard.bdg_rubiksolved;
+	import buildings.yard.bdg_halloween;
+	import buildings.yard.bdg_halloween_small;
 	
 	public class YARD_PROPS {
 
 		public static const _yardProps:Array = [
-			twigsnapper.DATA,        // ID 1
-			pebbleshiner.DATA,       // ID 2
-			puttysquisher.DATA,      // ID 3
-			goofactory.DATA,         // ID 4
-			flinger.DATA,            // ID 5
-			storagesilo.DATA,        // ID 6
-			mushroom.DATA,           // ID 7
-			monsterlocker.DATA,      // ID 8
-			monsterjuicer.DATA,      // ID 9
-			yardplanner.DATA,        // ID 10
-			maproom.DATA,            // ID 11
-			generalstore.DATA,       // ID 12
-			hatchery.DATA,           // ID 13
-			townhall.DATA,           // ID 14
-			housing.DATA,            // ID 15
-			hcc.DATA,                // ID 16
-			woodenblock.DATA,        // ID 17
-			stoneblock.DATA,         // ID 18 (Removed)
-			wildmonsterbaiter.DATA,  // ID 19
-			cannontower.DATA,        // ID 20
-			snipertower.DATA,        // ID 21
-			monsterbunker.DATA,      // ID 22
-			lasertower.DATA,         // ID 23
-			boobytrap.DATA,          // ID 24
-			teslatower.DATA,         // ID 25
-			monsteracademy.DATA,     // ID 26
-			trojanhorse.DATA,        // ID 27
-			americanflag.DATA,       // ID 28
-			britishflag.DATA,        // ID 29
-			australianflag.DATA,     // ID 30
-			brazilianflag.DATA,      // ID 31
-			europeanflag.DATA,       // ID 32
-			frenchflag.DATA,         // ID 33
-			indonesianflag.DATA,     // ID 34
-			italianflag.DATA,        // ID 35
-			malaysianflag.DATA,      // ID 36
-			dutchflag.DATA,          // ID 37
-			newzealandflag.DATA,     // ID 38
-			norwegianflag.DATA,      // ID 39
-			polishflag.DATA,         // ID 40
-			swedishflag.DATA,        // ID 41
-			turkishflag.DATA,        // ID 42
-			canadianflag.DATA,       // ID 43
-			danishflag.DATA,         // ID 44
-			germanflag.DATA,         // ID 45
-			filipinoflag.DATA,       // ID 46
-			singaporeanflag.DATA,    // ID 47
-			austrianflag.DATA,       // ID 48
-			pirateflag.DATA,         // ID 49
-			peaceflag.DATA,          // ID 50
-			catapult.DATA,           // ID 51
-			simplesign.DATA,         // ID 52 (Locked)
-			hwn_pumpkin.DATA,        // ID 53 (Locked)
-			hwn_massivepumpkin.DATA, // ID 54 (Locked)
-			bdg_acorn.DATA,          // ID 55
-			bdg_beehive.DATA,        // ID 56
-			bdg_birdhous.DATA,       // ID 57
-			bdg_tent.DATA,           // ID 58
-			bdg_jax.DATA,            // ID 59
-			bdg_redgnome.DATA,       // ID 60
-			bdg_bluegnome.DATA,      // ID 61
-			bdg_greengnome.DATA,     // ID 62
-			bdg_hammock.DATA,        // ID 63
-			bdg_lawnchair.DATA,      // ID 64
-			bdg_outhouse.DATA,       // ID 65
-			bdg_pinecone.DATA,       // ID 66
-			bdg_rock.DATA,           // ID 67 (Test)
-			bdg_scaleelectric.DATA,  // ID 68
-			bdg_scarecrow.DATA,      // ID 69 (Test)
-			bdg_sundial.DATA,        // ID 70 (Test)
-			bdg_tikitorch.DATA,      // ID 71
-			bdg_walnut.DATA,         // ID 72
-			bdg_tombstone.DATA,      // ID 73
-			bdg_pokeyhead.DATA,      // ID 74
-			bdg_octohead.DATA,       // ID 75
-			bdg_bolthead.DATA,       // ID 76
-			bdg_banditohead.DATA,    // ID 77
-			bdg_brainhead.DATA,      // ID 78
-			bdg_crabhead.DATA,       // ID 79
-			bdg_davehead.DATA,       // ID 80
-			bdg_eyerahead.DATA,      // ID 81
-			bdg_fanghead.DATA,       // ID 82
-			bdg_finkhead.DATA,       // ID 83
-			bdg_ichihead.DATA,       // ID 84
-			bdg_projectxhead.DATA,   // ID 85
-			bdg_blackberrybush.DATA, // ID 86
-			bdg_bonsaitree.DATA,     // ID 87
-			bdg_cactus.DATA,         // ID 88
-			bdg_flytrap.DATA,        // ID 89
-			bdg_thorns.DATA,         // ID 90
-			
+			twigsnapper.DATA,         // ID 1
+			pebbleshiner.DATA,        // ID 2
+			puttysquisher.DATA,       // ID 3
+			goofactory.DATA,          // ID 4
+			flinger.DATA,             // ID 5
+			storagesilo.DATA,         // ID 6
+			mushroom.DATA,            // ID 7
+			monsterlocker.DATA,       // ID 8
+			monsterjuicer.DATA,       // ID 9
+			yardplanner.DATA,         // ID 10
+			maproom.DATA,             // ID 11
+			generalstore.DATA,        // ID 12
+			hatchery.DATA,            // ID 13
+			townhall.DATA,            // ID 14
+			housing.DATA,             // ID 15
+			hcc.DATA,                 // ID 16
+			woodenblock.DATA,         // ID 17
+			stoneblock.DATA,          // ID 18 (Removed)
+			wildmonsterbaiter.DATA,   // ID 19
+			cannontower.DATA,         // ID 20
+			snipertower.DATA,         // ID 21
+			monsterbunker.DATA,       // ID 22
+			lasertower.DATA,          // ID 23
+			boobytrap.DATA,           // ID 24
+			teslatower.DATA,          // ID 25
+			monsteracademy.DATA,      // ID 26
+			trojanhorse.DATA,         // ID 27
+			americanflag.DATA,        // ID 28
+			britishflag.DATA,         // ID 29
+			australianflag.DATA,      // ID 30
+			brazilianflag.DATA,       // ID 31
+			europeanflag.DATA,        // ID 32
+			frenchflag.DATA,          // ID 33
+			indonesianflag.DATA,      // ID 34
+			italianflag.DATA,         // ID 35
+			malaysianflag.DATA,       // ID 36
+			dutchflag.DATA,           // ID 37
+			newzealandflag.DATA,      // ID 38
+			norwegianflag.DATA,       // ID 39
+			polishflag.DATA,          // ID 40
+			swedishflag.DATA,         // ID 41
+			turkishflag.DATA,         // ID 42
+			canadianflag.DATA,        // ID 43
+			danishflag.DATA,          // ID 44
+			germanflag.DATA,          // ID 45
+			filipinoflag.DATA,        // ID 46
+			singaporeanflag.DATA,     // ID 47
+			austrianflag.DATA,        // ID 48
+			pirateflag.DATA,          // ID 49
+			peaceflag.DATA,           // ID 50
+			catapult.DATA,            // ID 51
+			simplesign.DATA,          // ID 52 (Locked)
+			hwn_pumpkin.DATA,         // ID 53 (Missing in storeItems)
+			hwn_massivepumpkin.DATA,  // ID 54 (Missing in storeItems)
+			bdg_acorn.DATA,           // ID 55
+			bdg_beehive.DATA,         // ID 56
+			bdg_birdhous.DATA,        // ID 57
+			bdg_tent.DATA,            // ID 58
+			bdg_jax.DATA,             // ID 59
+			bdg_redgnome.DATA,        // ID 60
+			bdg_bluegnome.DATA,       // ID 61
+			bdg_greengnome.DATA,      // ID 62
+			bdg_hammock.DATA,         // ID 63
+			bdg_lawnchair.DATA,       // ID 64
+			bdg_outhouse.DATA,        // ID 65
+			bdg_pinecone.DATA,        // ID 66
+			bdg_rock.DATA,            // ID 67 (Test)
+			bdg_scaleelectric.DATA,   // ID 68
+			bdg_scarecrow.DATA,       // ID 69 (Test)
+			bdg_sundial.DATA,         // ID 70 (Test)
+			bdg_tikitorch.DATA,       // ID 71
+			bdg_walnut.DATA,          // ID 72
+			bdg_tombstone.DATA,       // ID 73
+			bdg_pokeyhead.DATA,       // ID 74
+			bdg_octohead.DATA,        // ID 75
+			bdg_bolthead.DATA,        // ID 76
+			bdg_banditohead.DATA,     // ID 77
+			bdg_brainhead.DATA,       // ID 78
+			bdg_crabhead.DATA,        // ID 79
+			bdg_davehead.DATA,        // ID 80
+			bdg_eyerahead.DATA,       // ID 81
+			bdg_fanghead.DATA,        // ID 82
+			bdg_finkhead.DATA,        // ID 83
+			bdg_ichihead.DATA,        // ID 84
+			bdg_projectxhead.DATA,    // ID 85
+			bdg_blackberrybush.DATA,  // ID 86
+			bdg_bonsaitree.DATA,      // ID 87
+			bdg_cactus.DATA,          // ID 88
+			bdg_flytrap.DATA,         // ID 89
+			bdg_thorns.DATA,          // ID 90
+			bdg_pinkflowers.DATA,     // ID 91
+			bdg_purpleflowers.DATA,   // ID 92
+			bdg_redflowers.DATA,      // ID 93
+			bdg_whiteflowers.DATA,    // ID 94
+			bdg_yellowflowers.DATA,   // ID 95
+			bdg_baseballstatue.DATA,  // ID 96
+			bdg_footballstatue.DATA,  // ID 97
+			bdg_soccerstatue.DATA,    // ID 98
+			bdg_libertystatue.DATA,   // ID 99
+			bdg_eiffelstatue.DATA,    // ID 100
+			bdg_bigben.DATA,          // ID 101
+			bdg_pool.DATA,            // ID 102
+			bdg_pond.DATA,            // ID 103
+			bdg_zengarden.DATA,       // ID 104
+			bdg_fountain.DATA,        // ID 105
+			bdg_teagarden.DATA,       // ID 106
+			bdg_monsterskull.DATA,    // ID 107
+			bdg_rubikunsolved.DATA,   // ID 108
+			bdg_rubiksolved.DATA,     // ID 109
+			bdg_halloween.DATA,       // ID 110 (Missing in storeItems)
+			bdg_halloween_small.DATA, // ID 111 (Missing in storeItems)
+		
 		{
-		"id":91,
-		"group":4,
-		"subgroup":1,
-		"order":5,
-		"buildStatus":0,
-		"type":"decoration",
-		"name":"bdg_pinkflowers",
-		"size":20,
-		"attackgroup":999,
-		"tutstage":200,
-		"sale":0,
-		"description":"bdg_pinkflowers_desc",
-		"cls":BDECORATION,
-		"costs":[
-			{"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]}
-		],
-		"imageData":{
-			"baseurl":"buildings/decorations/flowers/",
-			"1":{
-				"top":["top-pink.png",new Point(-18,-21)],
-				"shadow":["shadow.jpg",new Point(-10,2)]
-			}
-		},
-		"quantity":[0],
-		"hp":[100],
-		"repairTime":[1]
-		},{
-		"id":92,
-		"group":4,
-		"subgroup":1,
-		"order":6,
-		"buildStatus":0,
-		"type":"decoration",
-		"name":"bdg_purpleflowers",
-		"size":20,
-		"attackgroup":999,
-		"tutstage":200,
-		"sale":0,
-		"description":"bdg_purpleflowers_desc",
-		"cls":BDECORATION,
-		"costs":[
-			{"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]}
-		],
-		"imageData":{
-			"baseurl":"buildings/decorations/flowers/",
-			"1":{
-				"top":["top-purple.png",new Point(-18,-21)],
-				"shadow":["shadow.jpg",new Point(-10,2)]
-			}
-		},
-		"quantity":[0],
-		"hp":[100],
-		"repairTime":[1]
-		},{
-		"id":93,
-		"group":4,
-		"subgroup":1,
-		"order":9,
-		"buildStatus":0,
-		"type":"decoration",
-		"name":"bdg_redflowers",
-		"size":20,
-		"attackgroup":999,
-		"tutstage":200,
-		"sale":0,
-		"description":"bdg_redflowers_desc",
-		"cls":BDECORATION,
-		"costs":[
-			{"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]}
-		],
-		"imageData":{
-			"baseurl":"buildings/decorations/flowers/",
-			"1":{
-				"top":["top-red.png",new Point(-18,-21)],
-				"shadow":["shadow.jpg",new Point(-10,2)]
-			}
-		},
-		"quantity":[0],
-		"hp":[100],
-		"repairTime":[1]
-		},{
-		"id":94,
-		"group":4,
-		"subgroup":1,
-		"order":7,
-		"buildStatus":0,
-		"type":"decoration",
-		"name":"bdg_whiteflowers",
-		"size":20,
-		"attackgroup":999,
-		"tutstage":200,
-		"sale":0,
-		"description":"bdg_whiteflowers_desc",
-		"cls":BDECORATION,
-		"costs":[
-			{"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]}
-		],
-		"imageData":{
-			"baseurl":"buildings/decorations/flowers/",
-			"1":{
-				"top":["top-white.png",new Point(-18,-21)],
-				"shadow":["shadow.jpg",new Point(-10,2)]
-			}
-		},
-		"quantity":[0],
-		"hp":[100],
-		"repairTime":[1]
-		},{
-		"id":95,
-		"group":4,
-		"subgroup":1,
-		"order":8,
-		"buildStatus":0,
-		"type":"decoration",
-		"name":"bdg_yellowflowers",
-		"size":20,
-		"attackgroup":999,
-		"tutstage":200,
-		"sale":0,
-		"description":"bdg_yellowflowers_desc",
-		"cls":BDECORATION,
-		"costs":[
-			{"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]}
-		],
-		"imageData":{
-			"baseurl":"buildings/decorations/flowers/",
-			"1":{
-				"top":["top-yellow.png",new Point(-18,-21)],
-				"shadow":["shadow.jpg",new Point(-10,2)]
-			}
-		},
-		"quantity":[0],
-		"hp":[100],
-		"repairTime":[1]
-		},{
-		"id":96,
-		"group":4,
-		"subgroup":4,
-		"order":5,
-		"buildStatus":0,
-		"type":"decoration",
-		"name":"bdg_baseballstatue",
-		"size":40,
-		"attackgroup":999,
-		"tutstage":200,
-		"sale":0,
-		"description":"bdg_baseballstatue_desc",
-		"cls":BDECORATION,
-		"costs":[
-			{"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]}
-		],
-		"buildingbuttons":["96.v2"],
-		"upgradeImgData":{
-			"baseurl":"buildingbuttons/",
-			"1":{"img":"96.v2.jpg"}
-		},
-		"imageData":{
-			"baseurl":"buildings/decorations/statue-baseball/",
-			"1":{
-				"top":["top.v2.png",new Point(-20,-36)],
-				"shadow":["shadow.v2.jpg",new Point(-21,10)]
-			}
-		},
-		"quantity":[0],
-		"hp":[100],
-		"repairTime":[1]
-		},{
-		"id":97,
-		"group":4,
-		"subgroup":4,
-		"order":6,
-		"buildStatus":0,
-		"type":"decoration",
-		"name":"bdg_footballstatue",
-		"size":40,
-		"attackgroup":999,
-		"tutstage":200,
-		"sale":0,
-		"description":"bdg_footballstatue_desc",
-		"cls":BDECORATION,
-		"costs":[
-			{"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]}
-		],
-		"buildingbuttons":["97.v2"],
-		"upgradeImgData":{
-			"baseurl":"buildingbuttons/",
-			"1":{"img":"97.v2.jpg"}
-		},
-		"imageData":{
-			"baseurl":"buildings/decorations/statue-football/",
-			"1":{
-				"top":["top.v2.png",new Point(-19,-39)],
-				"shadow":["shadow.v2.jpg",new Point(-17,10)]
-			}
-		},
-		"quantity":[0],
-		"hp":[100],
-		"repairTime":[1]
-		},{
-		"id":98,
-		"group":4,
-		"subgroup":4,
-		"order":7,
-		"buildStatus":0,
-		"type":"decoration",
-		"name":"bdg_soccerstatue",
-		"size":40,
-		"attackgroup":999,
-		"tutstage":200,
-		"sale":0,
-		"description":"bdg_soccerstatue_desc",
-		"cls":BDECORATION,
-		"costs":[
-			{"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]}
-		],
-		"buildingbuttons":["98.v2"],
-		"upgradeImgData":{
-			"baseurl":"buildingbuttons/",
-			"1":{"img":"98.v2.jpg"}
-		},
-		"imageData":{
-			"baseurl":"buildings/decorations/statue-soccer/",
-			"1":{
-				"top":["top.v2.png",new Point(-23,-36)],
-				"shadow":["shadow.v2.jpg",new Point(-15,12)]
-			}
-		},
-		"quantity":[0],
-		"hp":[100],
-		"repairTime":[1]
-		},{
-		"id":99,
-		"group":4,
-		"subgroup":4,
-		"order":8,
-		"buildStatus":0,
-		"type":"decoration",
-		"name":"bdg_libertystatue",
-		"size":70,
-		"attackgroup":999,
-		"tutstage":200,
-		"sale":0,
-		"description":"bdg_libertystatue_desc",
-		"cls":BDECORATION,
-		"costs":[
-			{"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]}
-		],
-		"buildingbuttons":["99.v2"],
-		"upgradeImgData":{
-			"baseurl":"buildingbuttons/",
-			"1":{"img":"99.v2.jpg"}
-		},
-		"imageData":{
-			"baseurl":"buildings/decorations/statue-liberty/",
-			"1":{
-				"top":["top.v2.png",new Point(-37,-118)],
-				"shadow":["shadow.v2.jpg",new Point(-31,20)]
-			}
-		},
-		"quantity":[0],
-		"hp":[100],
-		"repairTime":[1]
-		},{
-		"id":100,
-		"group":4,
-		"subgroup":4,
-		"order":9,
-		"buildStatus":0,
-		"type":"decoration",
-		"name":"bdg_eiffelstatue",
-		"size":70,
-		"attackgroup":999,
-		"tutstage":200,
-		"sale":0,
-		"description":"bdg_eiffelstatue_desc",
-		"cls":BDECORATION,
-		"costs":[
-			{"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]}
-		],
-		"buildingbuttons":["100.v2"],
-		"upgradeImgData":{
-			"baseurl":"buildingbuttons/",
-			"1":{"img":"100.v2.jpg"}
-		},
-		"imageData":{
-			"baseurl":"buildings/decorations/statue-eiffeltower/",
-			"1":{
-				"top":["top.v2.png",new Point(-60,-121)],
-				"shadow":["shadow.v2.jpg",new Point(-60,5)]
-			}
-		},
-		"quantity":[0],
-		"hp":[100],
-		"repairTime":[1]
-		},{
-		"id":101,
-		"group":4,
-		"subgroup":4,
-		"order":10,
-		"buildStatus":0,
-		"type":"decoration",
-		"name":"bdg_bigben",
-		"size":70,
-		"attackgroup":999,
-		"tutstage":200,
-		"sale":0,
-		"description":"bdg_bigben_desc",
-		"cls":BDECORATION,
-		"costs":[
-			{"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]}
-		],
-		"buildingbuttons":["101.v2"],
-		"upgradeImgData":{
-			"baseurl":"buildingbuttons/",
-			"1":{"img":"101.v2.jpg"}
-		},
-		"imageData":{
-			"baseurl":"buildings/decorations/statue-bigben/",
-			"1":{
-				"top":["top.v2.png",new Point(-32,-104)],
-				"shadow":["shadow.v2.jpg",new Point(-32,19)]
-			}
-		},
-		"quantity":[0],
-		"hp":[100],
-		"repairTime":[1]
-		},{
-		"id":102,
-		"group":4,
-		"subgroup":2,
-		"order":13,
-		"buildStatus":0,
-		"type":"decoration",
-		"name":"bdg_pool",
-		"size":100,
-		"attackgroup":999,
-		"tutstage":200,
-		"sale":0,
-		"description":"bdg_pool_desc",
-		"cls":BDECORATION,
-		"costs":[
-			{"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]}
-		],
-		"imageData":{
-			"baseurl":"buildings/decorations/pool/",
-			"1":{
-				"top":["top.png",new Point(-65,8)],
-				"shadow":["shadow.jpg",new Point(-65,15)]
-			}
-		},
-		"quantity":[0],
-		"hp":[100],
-		"repairTime":[1]
-		},{
-		"id":103,
-		"group":4,
-		"subgroup":2,
-		"order":14,
-		"buildStatus":0,
-		"type":"decoration",
-		"name":"bdg_pond",
-		"size":100,
-		"attackgroup":999,
-		"tutstage":200,
-		"sale":0,
-		"description":"bdg_pond_desc",
-		"cls":BDECORATION,
-		"costs":[
-			{"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]}
-		],
-		"imageData":{
-			"baseurl":"buildings/decorations/pond/",
-			"1":{"top":["top.png",new Point(-40,14)]}
-		},
-		"quantity":[0],
-		"hp":[100],
-		"repairTime":[1]
-		},{
-		"id":104,
-		"group":4,
-		"subgroup":2,
-		"order":16,
-		"buildStatus":0,
-		"type":"decoration",
-		"name":"bdg_zengarden",
-		"size":100,
-		"attackgroup":999,
-		"tutstage":200,
-		"sale":0,
-		"description":"bdg_zengarden_desc",
-		"cls":BDECORATION,
-		"costs":[
-			{"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]}
-		],
-		"imageData":{
-			"baseurl":"buildings/decorations/zengarden/",
-			"1":{
-				"top":["top.png",new Point(-72,-5)],
-				"shadow":["shadow.jpg",new Point(-72,16)]
-			}
-		},
-		"quantity":[0],
-		"hp":[100],
-		"repairTime":[1]
-		},{
-		"id":105,
-		"group":4,
-		"subgroup":2,
-		"order":17,
-		"buildStatus":0,
-		"type":"decoration",
-		"name":"bdg_fountain",
-		"size":70,
-		"attackgroup":999,
-		"tutstage":200,
-		"sale":0,
-		"description":"bdg_fountain_desc",
-		"cls":BDECORATION,
-		"costs":[
-			{"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]}
-		],
-		"imageData":{
-			"baseurl":"buildings/decorations/fountain/",
-			"1":{
-				"anim":["anim.png",new Rectangle(-47,-51,89,114),42],
-				"shadow":["shadow.jpg",new Point(-41,16)]
-			}
-		},
-		"quantity":[0],
-		"hp":[100],
-		"repairTime":[1]
-		},{
-		"id":106,
-		"group":4,
-		"subgroup":2,
-		"order":18,
-		"buildStatus":0,
-		"type":"decoration",
-		"name":"bdg_teagarden",
-		"size":100,
-		"attackgroup":999,
-		"tutstage":200,
-		"sale":0,
-		"description":"bdg_teagarden_desc",
-		"cls":BDECORATION,
-		"costs":[
-			{"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]}
-		],
-		"imageData":{
-			"baseurl":"buildings/decorations/japaneseteagarden/",
-			"1":{
-				"top":["top.png",new Point(-62,-38)],
-				"shadow":["shadow.jpg",new Point(-57,12)]
-			}
-		},
-		"quantity":[0],
-		"hp":[100],
-		"repairTime":[1]
-		},{
-		"id":107,
-		"group":4,
-		"subgroup":0,
-		"order":1,
-		"buildStatus":0,
-		"type":"decoration",
-		"name":"bdg_monsterskull",
-		"size":20,
-		"attackgroup":999,
-		"tutstage":200,
-		"sale":0,
-		"description":"bdg_monsterskull_desc",
-		"cls":BDECORATION,
-		"costs":[
-			{"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]}
-		],
-		"imageData":{
-			"baseurl":"buildings/decorations/headsonsticks/",
-			"1":{
-				"top":["top-skull.png",new Point(-7,-39)],
-				"shadow":["shadow.jpg",new Point(-1,-7)]
-			}
-		},
-		"quantity":[0],
-		"hp":[100],
-		"repairTime":[1]
-		},{
-		"id":108,
-		"group":4,
-		"subgroup":2,
-		"order":8,
-		"buildStatus":0,
-		"type":"decoration",
-		"name":"bdg_rubikunsolved",
-		"size":20,
-		"attackgroup":999,
-		"tutstage":200,
-		"sale":0,
-		"description":"bdg_rubikunsolved_desc",
-		"cls":BDECORATION,
-		"costs":[
-			{"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]}
-		],
-		"imageData":{
-			"baseurl":"buildings/decorations/rubikscube/",
-			"1":{
-				"top":["top-unsolved.png",new Point(-20,-23)],
-				"shadow":["shadow.jpg",new Point(-22,-5)]
-			}
-		},
-		"quantity":[0],
-		"hp":[100],
-		"repairTime":[1]
-		},{
-		"id":109,
-		"group":4,
-		"subgroup":2,
-		"order":9,
-		"buildStatus":0,
-		"type":"decoration",
-		"name":"bdg_rubiksolved",
-		"size":20,
-		"attackgroup":999,
-		"tutstage":200,
-		"sale":0,
-		"description":"bdg_rubiksolved_desc",
-		"cls":BDECORATION,
-		"costs":[
-			{"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]}
-		],
-		"imageData":{
-			"baseurl":"buildings/decorations/rubikscube/",
-			"1":{
-				"top":["top-solved.png",new Point(-20,-23)],
-				"shadow":["shadow.jpg",new Point(-22,-5)]
-			}
-		},
-		"quantity":[0],
-		"hp":[100],
-		"repairTime":[1]
-		},{
-		"id":110,
-		"group":4,
-		"subgroup":4,
-		"order":11,
-		"buildStatus":0,
-		"type":"decoration",
-		"name":"bdg_halloween",
-		"size":40,
-		"attackgroup":999,
-		"tutstage":200,
-		"sale":0,
-		"description":"bdg_halloween_desc",
-		"block":true,
-		"cls":BDECORATION,
-		"costs":[
-			{"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":1000, "time":new SecNum(0), "re":[]}
-		],
-		"imageData":{
-			"baseurl":"buildings/decorations/pumpkins/",
-			"1":{
-				"top":["attended-large-top.png",new Point(-24,-32)],
-				"shadow":["attended-large-shadow.jpg",new Point(-25,1)]
-			}
-		},
-		"quantity":[0],
-		"hp":[100],
-		"repairTime":[1]
-		},{
-		"id":111,
-		"group":4,
-		"subgroup":4,
-		"order":12,
-		"buildStatus":0,
-		"type":"decoration",
-		"name":"bdg_halloween_small",
-		"size":20,
-		"attackgroup":999,
-		"tutstage":200,
-		"sale":0,
-		"description":"bdg_halloween_desc",
-		"block":true,
-		"costs":[
-			{"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":0, "time":new SecNum(0), "re":[]}
-		],
-		"imageData":{
-			"baseurl":"buildings/decorations/pumpkins/",
-			"1":{
-				"top":["attended-small-top.png",new Point(-10,-4)],
-				"shadow":["attended-small-shadow.jpg",new Point(-12,2)]
-			}
-		},
-		"quantity":[6],
-		"hp":[100],
-		"repairTime":[1]
-		},{
 		"id":112,
 		"group":2,
 		"order":1,

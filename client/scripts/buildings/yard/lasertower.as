@@ -152,12 +152,12 @@ package buildings.yard {
 				11520, // Level 4
 				23000, // Level 5
 				46000, // Level 6
-				86400 * 1, // Level 7
-				86400 * 1, // Level 8
-				86400 * 2, // Level 9
-				86400 * 2, // Level 10
-				86400 * 3, // Level 11
-				86400 * 3, // Level 12
+				86400, // Level 7
+				86400, // Level 8
+				172800, // Level 9
+				172800, // Level 10
+				259200, // Level 11
+				259200, // Level 12
 			]
 		};
 		

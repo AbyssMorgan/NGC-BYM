@@ -116,6 +116,22 @@ package {
 	import buildings.yard.bdg_rubiksolved;
 	import buildings.yard.bdg_halloween;
 	import buildings.yard.bdg_halloween_small;
+	import buildings.yard.outpost;
+	import buildings.yard.radio;
+	import buildings.yard.monstercage;
+	import buildings.yard.flaktower;
+	import buildings.yard.monsterlab;
+	import buildings.yard.heavytrap;
+	import buildings.yard.railguntower;
+	import buildings.yard.championchamber;
+	import buildings.yard.bdg_biggulp;
+	import buildings.yard.bdg_wmitotem1;
+	import buildings.yard.building122;
+	import buildings.yard.building123;
+	import buildings.yard.building124;
+	import buildings.yard.building125;
+	import buildings.yard.building126;
+	import buildings.yard.infernoentrance;
 	
 	public class YARD_PROPS {
 
@@ -133,7 +149,7 @@ package {
 			maproom.DATA,             // ID 11
 			generalstore.DATA,        // ID 12
 			hatchery.DATA,            // ID 13
-			townhall.DATA,            // ID 14
+			townhall.DATA,            // ID 14 (Locked always exists)
 			housing.DATA,             // ID 15
 			hcc.DATA,                 // ID 16
 			woodenblock.DATA,         // ID 17
@@ -231,135 +247,256 @@ package {
 			bdg_rubiksolved.DATA,     // ID 109
 			bdg_halloween.DATA,       // ID 110 (Missing in storeItems)
 			bdg_halloween_small.DATA, // ID 111 (Missing in storeItems)
-		
+			outpost.DATA,             // ID 112 (Locked)
+			radio.DATA,               // ID 113
+			monstercage.DATA,         // ID 114
+			flaktower.DATA,           // ID 115
+			monsterlab.DATA,          // ID 116
+			heavytrap.DATA,           // ID 117
+			railguntower.DATA,        // ID 118
+			championchamber.DATA,     // ID 119
+			bdg_biggulp.DATA,         // ID 120 (Locked)
+			bdg_wmitotem1.DATA,       // ID 121 (WMI only)
+			building122.DATA,         // ID 122 (Empty building)
+			building123.DATA,         // ID 123 (Empty building)
+			building124.DATA,         // ID 124 (Empty building)
+			building125.DATA,         // ID 125 (Empty building)
+			building126.DATA,         // ID 126 (Empty building)
+			infernoentrance.DATA,     // ID 127
 		{
-		"id":112,
-		"group":2,
-		"order":1,
-		"buildStatus":0,
-		"type":"special",
-		"name":"#b_outpost#",
-		"size":190,
-		"attackgroup":1,
-		"tutstage":0,
-		"sale":0,
-		"description":"outpost_desc",
-		"block":true,
-		"cls":BUILDING112,
-		"quantity":[0]
-		},{
-		"id":113,
-		"group":2,
-		"order":15,
-		"buildStatus":0,
-		"type":"special",
-		"name":"#b_radio#",
-		"size":80,
-		"attackgroup":1,
-		"tutstage":0,
-		"sale":0,
-		"description":"radio_build_desc",
-		"isNew":true,
-		"block":false,
-		"cls":BUILDING113,
-		"costs":[
-			{"r1":new SecNum(2000), "r2":new SecNum(2000), "r3":new SecNum(2000), "r4":new SecNum(0), "time":new SecNum(300), "re":[[14,1,1]]}
-		],
-		"imageData":{
-			"baseurl":"buildings/radiotower/",
-			"1":{
-				"top":["top.1.png",new Point(-40,-80)],
-				"topdamaged":["top.1.damaged.png",new Point(-40,-83)],
-				"topdestroyed":["top.1.destroyed.png",new Point(-41,11)],
-				"shadow":["shadow.1.jpg",new Point(-44,7)],
-				"shadowdamaged":["shadow.1.damaged.jpg",new Point(-44,7)],
-				"shadowdestroyed":["shadow.1.destroyed.jpg",new Point(-41,19)]
-			}
-		},
-		"upgradeImgData":{
-			"baseurl":"buildingbuttons/",
-			"1":{
-				"img":"113.jpg",
-				"silhouette_img":"113.silhouette.jpg"
-			}
-		},
-		"quantity":[0,1,1,1,1,1,1,1,1,1,1],
-		"hp":[3400],
-		"repairTime":[240]
-		},{
-		"id":114,
-		"group":3,
-		"order":6,
-		"buildStatus":0,
-		"type":"cage",
-		"name":"#b_monstercage#",
-		"size":200,
-		"attackgroup":2,
-		"tutstage":200,
-		"sale":0,
-		"description":"monstercage_desc",
-		"cls":CHAMPIONCAGE,
-		"costs":[
-			{"r1":new SecNum(500000), "r2":new SecNum(500000), "r3":new SecNum(250000), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,4]]}
-		],
-		"imageData":{
-			"baseurl":"buildings/monstercage/",
-			"1":{
-				"top":["top.1.png",new Point(-128,-13)],
-				"topopen":["top.1.v2.png",new Point(-129,-13)],
-				"shadow":["shadow.1.jpg",new Point(-132,10)],
-				"shadowopen":["shadow.1.jpg",new Point(-132,10)]
-			}
-		},
-		"upgradeImgData":{
-			"baseurl":"buildingbuttons/",
-			"1":{
-				"img":"114.jpg",
-				"silhouette_img":"114.silhouette.jpg"
-			}
-		},
-		"quantity":[0,0,0,0,1,1,1,1,1,1,1],
-		"hp":[10000],
-		"repairTime":[1080]
+			"id":128,
+			"group":2,
+			"order":6,
+			"buildStatus":0,
+			"type":"tower",
+			"name":"#b_housingbunker#",
+			"size":200,
+			"attackgroup":2,
+			"tutstage":50,
+			"sale":0,
+			"description":"housing_desc",
+			"block":true,
+			"cls":HOUSINGBUNKER,
+			"quantity":[0]
 		},
 		{
-			"id":115,
+			"id":129,
+			"group":3,
+			"order":2,
+			"buildStatus":0,
+			"type":"tower",
+			"name":"#bi_quaketower#",
+			"attackType":1,
+			"size":64,
+			"attackgroup":1,
+			"tutstage":200,
+			"sale":0,
+			"description":"bi_quaketower_desc",
+			"block":true,
+			"cls":INFERNOQUAKETOWER,
+			"stats":[
+				{"range":160, "damage":1100, "rate":15},
+				{"range":170, "damage":1680, "rate":15},
+				{"range":180, "damage":2220, "rate":15},
+				{"range":190, "damage":2880, "rate":15},
+				{"range":200, "damage":3640, "rate":15},
+				{"range":210, "damage":4400, "rate":15}
+			],
+			"costs":[
+				{"r1":new SecNum(312500), "r2":new SecNum(187500), "r3":new SecNum(125000), "r4":new SecNum(0), "time":new SecNum(18000), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]},
+				{"r1":new SecNum(1250000), "r2":new SecNum(750000), "r3":new SecNum(500000), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]},
+				{"r1":new SecNum(3750000), "r2":new SecNum(2250000), "r3":new SecNum(1500000), "r4":new SecNum(0), "time":new SecNum(172800), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]},
+				{"r1":new SecNum(7187500), "r2":new SecNum(4312500), "r3":new SecNum(2875000), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]},
+				{"r1":new SecNum(12000000), "r2":new SecNum(9000000), "r3":new SecNum(6000000), "r4":new SecNum(0), "time":new SecNum(388800), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]},
+				{"r1":new SecNum(16500000), "r2":new SecNum(12687500), "r3":new SecNum(7562500), "r4":new SecNum(0), "time":new SecNum(475200), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]}
+			],
+			"fortify_costs":[
+				{"r1":new SecNum(50000), "r2":new SecNum(37500), "r3":new SecNum(12500), "r4":new SecNum(0), "time":new SecNum(8100), "re":[[14,1,5]]},
+				{"r1":new SecNum(250000), "r2":new SecNum(187500), "r3":new SecNum(62500), "r4":new SecNum(0), "time":new SecNum(24300), "re":[[14,1,6]]},
+				{"r1":new SecNum(1250000), "r2":new SecNum(937500), "r3":new SecNum(312500), "r4":new SecNum(0), "time":new SecNum(72900), "re":[[14,1,7]]},
+				{"r1":new SecNum(6250000), "r2":new SecNum(4687500), "r3":new SecNum(1562500), "r4":new SecNum(0), "time":new SecNum(172800), "re":[[14,1,8]]}
+			],
+			"imageData":{
+				"baseurl":"buildings/iquaketower/",
+				"1":{
+					"anim":["anim.1.png",new Rectangle(-37,-75,75,132),33],
+					"shadow":["shadow.1.v2.jpg",new Point(-37,17)],
+					"topdamaged":["top.1.damaged.png",new Point(-40,-75)],
+					"animdamaged":["anim.1.damaged.png",new Rectangle(-40,-75,84,133),33],
+					"shadowdamaged":["shadow.1.v2.jpg",new Point(-40,16)],
+					"topdestroyed":["top.1.destroyed.png",new Point(-42,-8)]
+					// "shadowdestroyed":["shadow.1.v2.jpg",new Point(-44,10)]
+				}
+			},
+			"buildingbuttons":["quake_tower.v2"],
+			"upgradeImgData":{
+				"baseurl":"buildingbuttons/",
+				"1":{
+					"img":"quake_tower.v2.jpg",
+					"silhouette_img":"quake_tower.v2.silhouette.jpg"
+				}
+			},
+			"thumbImgData":{
+				"baseurl":"buildingthumbs/",
+				"1":{"img":"20.png"}
+			},
+			"fortImgData":{
+				"baseurl":"buildings/fortifications/",
+				"1":{
+					"front":["fort70_F1.png",new Point(-73,21)],
+					"back":["fort70_B1.png",new Point(-70,-10)]
+				},
+				"2":{
+					"front":["fort70_F2.png",new Point(-69,22)],
+					"back":["fort70_B2.png",new Point(-65,-12)]
+				},
+				"3":{
+					"front":["fort70_F3.png",new Point(-72,10)],
+					"back":["fort70_B3.png",new Point(-68,-12)]
+				},
+				"4":{
+					"front":["fort70_F4.png",new Point(-70,-11)],
+					"back":["fort70_B4.png",new Point(-61,-36)]
+				}
+			},
+			"quantity":[0,1,1,2,2,4,4,4,4,4,4],
+			"hp":[10000,16000,22000,28000,34000,34000,34000,34000],
+			"repairTime":[1440,2880,5760,11520,23000,23000,23000,23000]
+		},
+		{
+			"id":130,
+			"group":3,
+			"order":2,
+			"buildStatus":0,
+			"type":"tower",
+			"name":"#b_icannontower#",
+			"size":64,
+			"attackgroup":1,
+			"tutstage":200,
+			"sale":0,
+			"description":"icannontower_desc",
+			"block":true,
+			"cls":INFERNO_CANNON_TOWER,
+			"quantity":[0]
+		},
+		{
+			"id":131,
+			"group":4,
+			"subgroup":4,
+			"order":8,
+			"buildStatus":0,
+			"type":"decoration",
+			"name":"bdg_wmi2totem",
+			"size":40,
+			"attackgroup":999,
+			"tutstage":200,
+			"sale":0,
+			"description":"bdg_wmi2totem_desc",
+			"block":true,
+			"cls":BTOTEM,
+			"costs":[
+				{"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":0, "time":new SecNum(0), "re":[]},
+				{"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":0, "time":new SecNum(0), "re":[]},
+				{"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":0, "time":new SecNum(0), "re":[]},
+				{"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":0, "time":new SecNum(0), "re":[]},
+				{"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":0, "time":new SecNum(0), "re":[]},
+				{"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":0, "time":new SecNum(0), "re":[]}
+			],
+			"names":["bdg_wmi2totem1","bdg_wmi2totem2","bdg_wmi2totem3","bdg_wmi2totem4","bdg_wmi2totem5","bdg_wmi2totem6"],
+			"descriptions":["bdg_wmi2totem1_desc","bdg_wmi2totem2_desc","bdg_wmi2totem3_desc","bdg_wmi2totem4_desc","bdg_wmi2totem5_desc","bdg_wmi2totem6_desc"],
+			"buildingbuttons":["131.bb1","131.bb2","131.bb3","131.bb4","131.bb5.v2","131.bb6"],
+			"imageData":{
+				"baseurl":"buildings/decorations/wmitotem2/",
+				"1":{
+					"top":["top1.png",new Point(-31,-25)],
+					"shadow":["shadow1.jpg",new Point(-55,-20)]
+				},
+				"2":{
+					"top":["top2.png",new Point(-31,-60)],
+					"shadow":["shadow2.jpg",new Point(-64,-44)]
+				},
+				"3":{
+					"top":["top3.png",new Point(-31,-86)],
+					"shadow":["shadow3.jpg",new Point(-66,-61)]
+				},
+				"4":{
+					"top":["top4.png",new Point(-31,-122)],
+					"shadow":["shadow4.jpg",new Point(-66,-83)]
+				},
+				"5":{
+					"top":["top5.v2.png",new Point(-30,-125)],
+					"shadow":["shadow4.jpg",new Point(-66,-83)]
+				},
+				"6":{
+					"top":["top6.png",new Point(-31,-128)],
+					"shadow":["shadow4.jpg",new Point(-66,-83)]
+				}
+			},
+			"quantity":[0],
+			"hp":[100,100,100,100,100,100],
+			"repairTime":[1,1,1,1,1,1,1]
+		},
+		{
+			"id":132,
 			"group":3,
 			"order":5,
 			"buildStatus":0,
 			"type":"tower",
-			"name":"#b_flaktower#",
-			"attackType":2,
-			"attackgroup":2,
+			"name":"#bi_magmatower#",
+			"attackType":1,
+			"size":64,
+			"attackgroup":1,
 			"tutstage":200,
 			"sale":0,
-			"description":"flaktower_desc",
-			"cls":BUILDING115,
-			"stats":[
-				{"range":300, "damage":200, "rate":60, "speed":20, "splash":180}, // Level 1
-				{"range":320, "damage":250, "rate":60, "speed":24, "splash":185}, // Level 2
-				{"range":340, "damage":250, "rate":60, "speed":28, "splash":190}, // Level 3
-				{"range":360, "damage":250, "rate":60, "speed":32, "splash":195}, // Level 4
-				{"range":380, "damage":300, "rate":60, "speed":36, "splash":200}, // Level 5
-				{"range":400, "damage":350, "rate":60, "speed":40, "splash":215}, // Level 6
-				{"range":420, "damage":350, "rate":60, "speed":44, "splash":220}, // Level 7
-				{"range":440, "damage":400, "rate":60, "speed":48, "splash":225}, // Level 8
-				{"range":460, "damage":400, "rate":60, "speed":52, "splash":230}, // Level 9
-				{"range":480, "damage":450, "rate":60, "speed":56, "splash":235} // Level 10
+			"description":"bi_magmatower_desc",
+			"block":true,
+			"cls":INFERNO_MAGMA_TOWER,
+			"rewarded":false,
+			"stats":[{
+				"range":180,
+				"damage":180,
+				"rate":20,
+				"speed":14,
+				"splash":0},
+				{
+				"range":190,
+				"damage":240,
+				"rate":20,
+				"speed":15,
+				"splash":0},
+				{
+				"range":200,
+				"damage":300,
+				"rate":20,
+				"speed":16,
+				"splash":0},
+				{
+				"range":210,
+				"damage":360,
+				"rate":20,
+				"speed":17,
+				"splash":0},
+				{
+				"range":220,
+				"damage":420,
+				"rate":20,
+				"speed":18,
+				"splash":0},
+				{
+				"range":230,
+				"damage":480,
+				"rate":20,
+				"speed":19,
+				"splash":0}
 			],
 			"costs":[
-				{"r1":new SecNum(215000), "r2":new SecNum(280000), "r3":new SecNum(62500), "r4":new SecNum(0), "time":new SecNum(18000), "re":[[14,1,4]]}, // Level 1
-				{"r1":new SecNum(850000), "r2":new SecNum(1200000), "r3":new SecNum(250000), "r4":new SecNum(0), "time":new SecNum(86400 * 2), "re":[[14,1,5]]}, // Level 2
-				{"r1":new SecNum(2750000), "r2":new SecNum(3400000), "r3":new SecNum(750000), "r4":new SecNum(0), "time":new SecNum(86400 * 3), "re":[[14,1,6]]}, // Level 3
-				{"r1":new SecNum(5750000), "r2":new SecNum(5200000), "r3":new SecNum(1250000), "r4":new SecNum(0), "time":new SecNum(86400 * 4), "re":[[14,1,7]]}, // Level 4
-				{"r1":new SecNum(13500000), "r2":new SecNum(11000000), "r3":new SecNum(2000000), "r4":new SecNum(0), "time":new SecNum(86400 * 5), "re":[[14,1,7]]}, // Level 5
-				{"r1":new SecNum(16000000), "r2":new SecNum(14000000), "r3":new SecNum(4000000), "r4":new SecNum(0), "time":new SecNum(86400 * 6), "re":[[14,1,9]]}, // Level 6
-				{"r1":new SecNum(19200000), "r2":new SecNum(16800000), "r3":new SecNum(8000000), "r4":new SecNum(0), "time":new SecNum(86400 * 7), "re":[[14,1,10]]}, // Level 7
-				{"r1":new SecNum(23040000), "r2":new SecNum(21000000), "r3":new SecNum(16000000), "r4":new SecNum(0), "time":new SecNum(86400 * 8), "re":[[14,1,10]]}, // Level 8
-				{"r1":new SecNum(46080000), "r2":new SecNum(42000000), "r3":new SecNum(32000000), "r4":new SecNum(0), "time":new SecNum(86400 * 9), "re":[[14,1,12],[12,1,2]]}, // Level 9
-				{"r1":new SecNum(92160000), "r2":new SecNum(84000000), "r3":new SecNum(64000000), "r4":new SecNum(0), "time":new SecNum(86400 * 10), "re":[[14,1,15],[12,1,2]]} // Level 10
+				{"r1":new SecNum(187500), "r2":new SecNum(250000), "r3":new SecNum(62500), "r4":new SecNum(0), "time":new SecNum(18000), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]},
+				{"r1":new SecNum(750000), "r2":new SecNum(1000000), "r3":new SecNum(250000), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]},
+				{"r1":new SecNum(2250000), "r2":new SecNum(3000000), "r3":new SecNum(750000), "r4":new SecNum(0), "time":new SecNum(172800), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]},
+				{"r1":new SecNum(5250000), "r2":new SecNum(5000000), "r3":new SecNum(1250000), "r4":new SecNum(0), "time":new SecNum(345600), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]},
+				{"r1":new SecNum(12000000), "r2":new SecNum(10000000), "r3":new SecNum(2000000), "r4":new SecNum(0), "time":new SecNum(518400), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]},
+				{"r1":new SecNum(16000000), "r2":new SecNum(15000000), "r3":new SecNum(3000000), "r4":new SecNum(0), "time":new SecNum(791200), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]}
 			],
-			"can_fortify":true,
 			"fortify_costs":[
 				{"r1":new SecNum(215000), "r2":new SecNum(280000), "r3":new SecNum(62500), "r4":new SecNum(0), "time":new SecNum(18000), "re":[[14,1,5]]},
 				{"r1":new SecNum(850000), "r2":new SecNum(1200000), "r3":new SecNum(250000), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,6]]},
@@ -367,24 +504,26 @@ package {
 				{"r1":new SecNum(5750000), "r2":new SecNum(5200000), "r3":new SecNum(1250000), "r4":new SecNum(0), "time":new SecNum(345600), "re":[[14,1,8]]}
 			],
 			"imageData":{
-				"baseurl":"buildings/flaktower/",
+				"baseurl":"buildings/imagmatower/",
 				"1":{
-					"anim":["anim.3.png",new Rectangle(-32,-23,62,52),32],
-					"top":["top.3.png",new Point(-39,6)],
-					"shadow":["shadow.3.jpg",new Point(-43,14)],
-					"animdamaged":["anim.3.damaged.png",new Rectangle(-29,-17,62,53),32],
-					"topdamaged":["top.3.damaged.png",new Point(-39,5)],
-					"shadowdamaged":["shadow.3.jpg",new Point(-40,24)],
-					"topdestroyed":["top.3.destroyed.png",new Point(-36,13)],
-					"shadowdestroyed":["shadow.3.destroyed.jpg",new Point(-33,26)],
-					"topdestroyedfire":["top.3.destroyed.fire.png",new Point(-45,-13)]
+					"anim":["anim.1.v2.png",new Rectangle(-26,-50,54,42),31],
+					"anim2":["anim.2.v2.png",new Rectangle(-17,26,38,19),31],
+					"top":["top.1.v2.png",new Point(-34,-9)],
+					"shadow":["shadow.1.v2.jpg",new Point(-31,10)],
+					//"animdamaged":["anim.1.damaged.v2.png",new Rectangle(-28.6,-47.6,52,43),31],
+					//"animdamaged2":["anim.2.damaged.v2.png",new Rectangle(-21,28,38,19),31],
+					"topdamaged":["top.1.damaged.v2.png",new Point(-38,-4)],
+					"shadowdamaged":["shadow.1.v2.jpg",new Point(-38,16)],
+					"topdestroyed":["top.1.destroyed.v2.png",new Point(-36,6)]
+					//"shadowdestroyed":["shadow.1.destroyed.v2.jpg",new Point(-36,22)]
 				}
 			},
+			"buildingbuttons":["magma_tower.v2"],
 			"upgradeImgData":{
 				"baseurl":"buildingbuttons/",
 				"1":{
-					"img":"115.jpg",
-					"silhouette_img":"115.silhouette.jpg"
+					"img":"magma_tower.v2.jpg",
+					"silhouette_img":"magma_tower.v2.silhouette.jpg"
 				}
 			},
 			"fortImgData":{
@@ -406,724 +545,9 @@ package {
 					"back":["fort70_B4.png",new Point(-61,-36)]
 				}
 			},
-			"quantity":[0,0,0,0,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],
-			"hp":[15000,22000,30000,48000,60000,72000,82000,90000,90000,99000,110000],
-			"repairTime":[1920,3840,7680,9260,12000,18000,24000,30000,30000,30000]
-		},
-		{
-		"id":116,
-		"group":2,
-		"order":12,
-		"buildStatus":0,
-		"type":"special",
-		"name":"#b_monsterlab#",
-		"attackgroup":1,
-		"tutstage":200,
-		"sale":0,
-		"description":"monsterlab_desc",
-		"cls":MONSTERLAB,
-		"costs":[
-			{"r1":new SecNum(100000), "r2":new SecNum(100000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(10800), "re":[[14,1,5],[8,1,3],[26,1,2]]},
-			{"r1":new SecNum(300000), "r2":new SecNum(300000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(43200), "re":[[14,1,6],[8,1,4],[26,1,3]]},
-			{"r1":new SecNum(600000), "r2":new SecNum(600000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,7],[8,1,4],[26,1,4]]}
-		],
-		"imageData":{
-			"baseurl":"buildings/monsterlab/",
-			"1":{
-				"anim":["anim.1.png",new Rectangle(-28,-30,54,48),32],
-				"anim2":["anim.2.png",new Rectangle(-66,26,33,31),5],
-				"anim3":["anim.3.png",new Rectangle(32,26,33,31),5],
-				"top":["top.1.v2.png",new Point(-74,-96)],
-				"shadow":["shadow.1.jpg",new Point(-73,-6)],
-				"topdamaged":["top.1.damaged.png",new Point(-73,-80)],
-				"shadowdamaged":["shadow.1.jpg",new Point(-72,-6)],
-				"topdestroyed":["top.1.destroyed.png",new Point(-80,-10)],
-				"shadowdestroyed":["shadow.1.destroyed.jpg",new Point(-77,2)]
-			}
-		},
-		"upgradeImgData":{
-			"baseurl":"buildingbuttons/",
-			"1":{
-				"img":"116.jpg",
-				"silhouette_img":"116.silhouette.jpg"
-			}
-		},
-		"quantity":[0,0,0,0,0,1,1,1,1,1,1],
-		"hp":[9000,16000,24000,32000],
-		"repairTime":[3800,7680,10640,15600]
-		},{
-		"id":117,
-		"group":3,
-		"order":10,
-		"buildStatus":0,
-		"type":"trap",
-		"name":"#b_heavytrap#",
-		"size":90,
-		"attackgroup":4,
-		"tutstage":200,
-		"sale":0,
-		"description":"heavytrap_desc",
-		"cls":BUILDING117,
-		"costs":[
-			{"r1":new SecNum(50000), "r2":new SecNum(50000), "r3":new SecNum(50000), "r4":new SecNum(0), "time":new SecNum(5), "re":[[14,1,4]]}
-		],
-		"imageData":{
-			"baseurl":"buildings/heavytrap/",
-			"1":{
-				"top":["top.1.png",new Point(-16,-5)],
-				"shadow":["shadow.1.jpg",new Point(-18,1)],
-				"topdestroyed":["top.1.destroyed.png",new Point(-16,5)],
-				"shadowdestroyed":["shadow.1.jpg",new Point(-18,1)]
-			}
-		},
-		"upgradeImgData":{
-			"baseurl":"buildingbuttons/",
-			"1":{
-				"img":"117.jpg",
-				"silhouette_img":"117.silhouette.jpg"
-			}
-		},
-		"quantity":[0,0,0,0,4,6,8,10,12,15,18],
-		"damage":[10000],
-		"hp":[10],
-		"repairTime":[1]
-		},
-		{
-			"id":118,
-			"group":3,
-			"order":5,
-			"buildStatus":0,
-			"type":"tower",
-			"name":"#b_railguntower#",
-			"attackType":1,
-			"size":64,
-			"attackgroup":3,
-			"tutstage":28,
-			"sale":0,
-			"description":"railguntower_desc",
-			"cls":BUILDING118,
-			"stats":[
-				{"range":300, "damage":400, "rate":160, "speed":20, "splash":0}, // Level 1
-				{"range":315, "damage":600, "rate":160, "speed":20, "splash":0}, // Level 2
-				{"range":330, "damage":900, "rate":160, "speed":20, "splash":0}, // Level 3
-				{"range":345, "damage":1200, "rate":160, "speed":20, "splash":0}, // Level 4
-				{"range":360, "damage":1600, "rate":160, "speed":20, "splash":0}, // Level 5
-				{"range":380, "damage":2000, "rate":160, "speed":20, "splash":0}, // Level 6
-				{"range":390, "damage":2200, "rate":160, "speed":20, "splash":0}, // Level 7
-				{"range":400, "damage":2500, "rate":160, "speed":20, "splash":0}, // Level 8
-				{"range":410, "damage":2750, "rate":160, "speed":20, "splash":0}, // Level 9
-				{"range":420, "damage":3000, "rate":160, "speed":20, "splash":0} // Level 10
-			],
-			"costs":[
-				{"r1":new SecNum(2000000), "r2":new SecNum(2400000), "r3":new SecNum(1600000), "r4":new SecNum(0), "time":new SecNum(43200), "re":[[14,1,5]]}, // Level 1
-				{"r1":new SecNum(3600000), "r2":new SecNum(4320000), "r3":new SecNum(2880000), "r4":new SecNum(0), "time":new SecNum(86400 * 2), "re":[[14,1,6]]}, // Level 2
-				{"r1":new SecNum(6480000), "r2":new SecNum(7776000), "r3":new SecNum(5184000), "r4":new SecNum(0), "time":new SecNum(86400 * 3), "re":[[14,1,7]]}, // Level 3
-				{"r1":new SecNum(11664000), "r2":new SecNum(13996800), "r3":new SecNum(9331200), "r4":new SecNum(0), "time":new SecNum(86400 * 4), "re":[[14,1,7]]}, // Level 4
-				{"r1":new SecNum(16995200), "r2":new SecNum(18194240), "r3":new SecNum(16796160), "r4":new SecNum(0), "time":new SecNum(86400 * 5), "re":[[14,1,8]]}, // Level 5
-				{"r1":new SecNum(20220000), "r2":new SecNum(24202000), "r3":new SecNum(19000000), "r4":new SecNum(0), "time":new SecNum(86400 * 6), "re":[[14,1,9]]}, // Level 6
-				{"r1":new SecNum(25000000), "r2":new SecNum(25000000), "r3":new SecNum(22000000), "r4":new SecNum(0), "time":new SecNum(86400 * 7), "re":[[14,1,10]]}, // Level 7
-				{"r1":new SecNum(27000000), "r2":new SecNum(27000000), "r3":new SecNum(26500000), "r4":new SecNum(0), "time":new SecNum(86400 * 8), "re":[[14,1,10]]}, // Level 8
-				{"r1":new SecNum(54000000), "r2":new SecNum(54000000), "r3":new SecNum(53000000), "r4":new SecNum(0), "time":new SecNum(86400 * 9), "re":[[14,1,12],[12,1,2]]}, // Level 9
-				{"r1":new SecNum(108000000), "r2":new SecNum(108000000), "r3":new SecNum(106000000), "r4":new SecNum(0), "time":new SecNum(86400 * 10), "re":[[14,1,15],[12,1,2]]} // Level 10
-			],
-			"can_fortify":true,
-			"fortify_costs":[
-				{"r1":new SecNum(2000000), "r2":new SecNum(2400000), "r3":new SecNum(1600000), "r4":new SecNum(0), "time":new SecNum(43200), "re":[[14,1,5]]},
-				{"r1":new SecNum(2600000), "r2":new SecNum(3320000), "r3":new SecNum(1880000), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,6]]},
-				{"r1":new SecNum(4480000), "r2":new SecNum(4776000), "r3":new SecNum(2184000), "r4":new SecNum(0), "time":new SecNum(172800), "re":[[14,1,7]]},
-				{"r1":new SecNum(9664000), "r2":new SecNum(9996800), "r3":new SecNum(4331200), "r4":new SecNum(0), "time":new SecNum(345600), "re":[[14,1,8]]}
-			],
-			"imageData":{
-				"baseurl":"buildings/railguntower/",
-				"1":{
-					"anim":["anim.3.loaded.png",new Rectangle(-49,-9,96,56),32],
-					"top":["top.3.png",new Point(-39,7)],
-					"shadow":["shadow.3.jpg",new Point(-40,20)],
-					"animdamaged":["anim.3.damaged.png",new Rectangle(-49,-9,97,56),32],
-					"topdamaged":["top.3.damaged.png",new Point(-39,7)],
-					"shadowdamaged":["shadow.3.jpg",new Point(-40,20)],
-					"topdestroyed":["top.3.destroyed.png",new Point(-34,-5)],
-					"shadowdestroyed":["shadow.3.destroyed.jpg",new Point(-36,23)],
-					"topdestroyedfire":["top.3.destroyed.fire.png",new Point(-45,-13)]
-				}
-			},
-			"upgradeImgData":{
-				"baseurl":"buildingbuttons/",
-				"1":{
-					"img":"118.jpg",
-					"silhouette_img":"118.silhouette.jpg"
-				}
-			},
-			"thumbImgData":{
-				"baseurl":"buildingthumbs/",
-				"1":{"img":"118.png"}
-			},
-			"fortImgData":{
-				"baseurl":"buildings/fortifications/",
-				"1":{
-					"front":["fort70_F1.png",new Point(-73,21)],
-					"back":["fort70_B1.png",new Point(-70,-10)]
-				},
-				"2":{
-					"front":["fort70_F2.png",new Point(-69,22)],
-					"back":["fort70_B2.png",new Point(-65,-12)]
-				},
-				"3":{
-					"front":["fort70_F3.png",new Point(-72,10)],
-					"back":["fort70_B3.png",new Point(-68,-12)]
-				},
-				"4":{
-					"front":["fort70_F4.png",new Point(-70,-11)],
-					"back":["fort70_B4.png",new Point(-61,-36)]
-				}
-			},
-			"quantity":[0,0,0,0,0,2,3,3,3,3,3,3,3,3,3,3,3,3,4,4,4],
-			"hp":[17640,34400,45000,58000,75500,90000,100000,110000,120000,130000],
-			"repairTime":[2880,5760,11520,23000,46000,69000,103500,155250,155250,155250]
-		},
-		{
-			"id":119,
-			"group":3,
-			"order":10,
-			"buildStatus":0,
-			"type":"special",
-			"name":"#b_championchamber#",
-			"size":64,
-			"attackgroup":3,
-			"tutstage":28,
-			"sale":0,
-			"description":"championchamber_desc",
-			"cls":CHAMPIONCHAMBER,
-			"costs":[
-				{"r1":new SecNum(500000), "r2":new SecNum(500000), "r3":new SecNum(250000), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,4],[114,1,1]]}
-			],
-			"imageData":{
-				"baseurl":"buildings/champchamber/",
-				"1":{
-					"top":["top.3.png",new Point(-66,-62)],
-					"shadow":["shadow.3.jpg",new Point(-66,10)],
-					"topdamaged":["top.3.damaged.png",new Point(-66,-54)],
-					"shadowdamaged":["shadow.3.jpg",new Point(-66,4)],
-					"topdestroyed":["top.3.destroyed.png",new Point(-73,-32)],
-					"shadowdestroyed":["shadow.3.destroyed.jpg",new Point(-67,14)]
-				}
-			},
-			"upgradeImgData":{
-				"baseurl":"buildingbuttons/",
-				"1":{
-					"img":"119.jpg",
-					"silhouette_img":"119.silhouette.jpg"
-				}
-			},
-			"quantity":[0,0,0,0,1,1,1,1,1,1,1],
-			"hp":[16000],
-			"repairTime":[3600]
-		},
-		{
-			"id":120,
-			"group":4,
-			"subgroup":4,
-			"order":1,
-			"buildStatus":0,
-			"type":"decoration",
-			"name":"bdg_biggulp",
-			"size":70,
-			"attackgroup":999,
-			"tutstage":200,
-			"sale":0,
-			"description":"bdg_biggulp_desc",
-			"block":true,
-			"cls":BDECORATION,
-			"costs":[
-				{"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]}
-			],
-			"imageData":{
-				"baseurl":"buildings/decorations/biggulp/",
-				"1":{
-					"top":["top.png",new Point(-27,-36)],
-					"shadow":["shadow.jpg",new Point(-35,16)]
-				}
-			},
-			"quantity":[0],
-			"hp":[100],
-			"repairTime":[1]
-		},
-		{
-		"id":121,
-		"group":4,
-		"subgroup":4,
-		"order":7,
-		"buildStatus":0,
-		"type":"decoration",
-		"name":"bdg_wmitotem1",
-		"size":40,
-		"attackgroup":999,
-		"tutstage":200,
-		"sale":0,
-		"description":"bdg_wmitotem1_desc",
-		"block":true,
-		"cls":BTOTEM,
-		"costs":[
-			{"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":0, "time":new SecNum(0), "re":[]},
-			{"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":0, "time":new SecNum(0), "re":[]},
-			{"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":0, "time":new SecNum(0), "re":[]},
-			{"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":0, "time":new SecNum(0), "re":[]},
-			{"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":0, "time":new SecNum(0), "re":[]},
-			{"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":0, "time":new SecNum(0), "re":[]}
-		],
-		"names":["bdg_wmitotem1","bdg_wmitotem2","bdg_wmitotem3","bdg_wmitotem4","bdg_wmitotem5","bdg_wmitotem6"],
-		"descriptions":["bdg_wmitotem1_desc","bdg_wmitotem2_desc","bdg_wmitotem3_desc","bdg_wmitotem4_desc","bdg_wmitotem5_desc","bdg_wmitotem6_desc"],
-		"buildingbuttons":["121.bb1","121.bb2","121.bb3","121.bb4","121.bb5","121.bb6"],
-		"imageData":{
-			"baseurl":"buildings/decorations/wmitotem/",
-			"1":{
-				"top":["top1.png",new Point(-31,-23)],
-				"shadow":["shadow1.jpg",new Point(-60,-18)]
-			},
-			"2":{
-				"top":["top2.png",new Point(-30,-60)],
-				"shadow":["shadow2.jpg",new Point(-71,-44)]
-			},
-			"3":{
-				"top":["top3.png",new Point(-30,-90)],
-				"shadow":["shadow3.jpg",new Point(-64,-61)]
-			},
-			"4":{
-				"top":["top4.png",new Point(-30,-110)],
-				"shadow":["shadow4.jpg",new Point(-67,-82)]
-			},
-			"5":{
-				"top":["top5.v2.png",new Point(-30,-110)],
-				"shadow":["shadow4.jpg",new Point(-67,-82)]
-			},
-			"6":{
-				"top":["top6.png",new Point(-30,-110)],
-				"shadow":["shadow4.jpg",new Point(-67,-82)]
-			}
-		},
-		"quantity":[0],
-		"hp":[100,100,100,100,100,100],
-		"repairTime":[1,1,1,1,1,1]
-		},{
-		"id":122,
-		"group":999,
-		"order":0,
-		"buildStatus":0,
-		"type":"placeholder",
-		"name":"placeholder",
-		"size":1,
-		"attackgroup":999,
-		"tutstage":200,
-		"sale":0,
-		"description":"placeholder",
-		"cls":null,
-		"costs":[
-			{"r1":new SecNum(0),"r2":new SecNum(0),"r3":new SecNum(0),"r4":new SecNum(0),"time":new SecNum(0),"re":[]}],
-		"quantity":[0],
-		"hp":[1],
-		"repairTime":[1]
-		},{
-		"id":123,
-		"group":999,
-		"order":0,
-		"buildStatus":0,
-		"type":"placeholder",
-		"name":"placeholder",
-		"size":1,
-		"attackgroup":999,
-		"tutstage":200,
-		"sale":0,
-		"description":"placeholder",
-		"cls":null,
-		"costs":[
-			{"r1":new SecNum(0),"r2":new SecNum(0),"r3":new SecNum(0),"r4":new SecNum(0),"time":new SecNum(0),"re":[]}],
-		"quantity":[0],
-		"hp":[1],
-		"repairTime":[1]
-		},{
-		"id":124,
-		"group":999,
-		"order":0,
-		"buildStatus":0,
-		"type":"placeholder",
-		"name":"placeholder",
-		"size":1,
-		"attackgroup":999,
-		"tutstage":200,
-		"sale":0,
-		"description":"placeholder",
-		"cls":null,
-		"costs":[
-			{"r1":new SecNum(0),"r2":new SecNum(0),"r3":new SecNum(0),"r4":new SecNum(0),"time":new SecNum(0),"re":[]}],
-		"quantity":[0],
-		"hp":[1],
-		"repairTime":[1]
-		},{
-		"id":125,
-		"group":999,
-		"order":0,
-		"buildStatus":0,
-		"type":"placeholder",
-		"name":"placeholder",
-		"size":1,
-		"attackgroup":999,
-		"tutstage":200,
-		"sale":0,
-		"description":"placeholder",
-		"cls":null,
-		"costs":[
-			{"r1":new SecNum(0),"r2":new SecNum(0),"r3":new SecNum(0),"r4":new SecNum(0),"time":new SecNum(0),"re":[]}],
-		"quantity":[0],
-		"hp":[1],
-		"repairTime":[1]
-		},{
-		"id":126,
-		"group":999,
-		"order":0,
-		"buildStatus":0,
-		"type":"placeholder",
-		"name":"placeholder",
-		"size":1,
-		"attackgroup":999,
-		"tutstage":200,
-		"sale":0,
-		"description":"placeholder",
-		"cls":null,
-		"costs":[
-			{"r1":new SecNum(0),"r2":new SecNum(0),"r3":new SecNum(0),"r4":new SecNum(0),"time":new SecNum(0),"re":[]}],
-		"quantity":[0],
-		"hp":[1],
-		"repairTime":[1]
-		},{
-		"id":127,
-		"group":999,
-		"order":0,
-		"buildStatus":0,
-		"type":"enemy",
-		"name":"#b_infernoentrance#",
-		"size":100,
-		"attackgroup":999,
-		"tutstage":200,
-		"sale":0,
-		"description":"trojanhorse_desc",
-		"cls":INFERNOPORTAL,
-		"isImmobile":true,
-		"isUntargetable":true,
-		"costs":[
-			{"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(5), "re":[[14,1,1]]},
-			{"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(5), "re":[[14,1,1]]},
-			{"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(5), "re":[[14,1,1]]},
-			{"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(5), "re":[[14,1,1]]},
-			{"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(5), "re":[[14,1,1]]}
-		],
-		"imageData":{
-			"baseurl":"buildings/iportal/",
-			1:{
-				"top":["top.1.v2.png",new Point(-85,-5)]
-				//"shadow":["shadow.1.v2.jpg",new Point(-43,47)]
-			},
-			2:{
-				"top":["top.2.v2.png",new Point(-105,-29)]
-				//"shadow":["shadow.2.v2.jpg",new Point(-87,52)]
-			},
-			3:{
-				"top":["top.3.v2.png",new Point(-136,-64)]
-				//"shadow":["shadow.3.v2.jpg",new Point(-110,47)]
-			},
-			4:{
-				"top":["top.4.v2.png",new Point(-140,-114)]
-				//"shadow":["shadow.4.v2.jpg",new Point(-140,11)]
-			},
-			5:{
-				"top":["top.5.v2.png",new Point(-160,-172)],
-				"shadow":["shadow.5.v2.jpg",new Point(-169,0)]
-			}
-		},
-		"quantity":[1,1,1,1,1],
-		"damage":[1,1,1,1,1],
-		"hp":[1,1,1,1,1],
-		"repairTime":[1,1,1,1,1]
-		},{
-		"id":128,
-		"group":2,
-		"order":6,
-		"buildStatus":0,
-		"type":"tower",
-		"name":"#b_housingbunker#",
-		"size":200,
-		"attackgroup":2,
-		"tutstage":50,
-		"sale":0,
-		"description":"housing_desc",
-		"block":true,
-		"cls":HOUSINGBUNKER,
-		"quantity":[0]
-		},{
-		"id":129,
-		"group":3,
-		"order":2,
-		"buildStatus":0,
-		"type":"tower",
-		"name":"#bi_quaketower#",
-		"attackType":1,
-		"size":64,
-		"attackgroup":1,
-		"tutstage":200,
-		"sale":0,
-		"description":"bi_quaketower_desc",
-		"block":true,
-		"cls":INFERNOQUAKETOWER,
-		"stats":[
-			{"range":160, "damage":1100, "rate":15},
-			{"range":170, "damage":1680, "rate":15},
-			{"range":180, "damage":2220, "rate":15},
-			{"range":190, "damage":2880, "rate":15},
-			{"range":200, "damage":3640, "rate":15},
-			{"range":210, "damage":4400, "rate":15}
-		],
-		"costs":[
-			{"r1":new SecNum(312500), "r2":new SecNum(187500), "r3":new SecNum(125000), "r4":new SecNum(0), "time":new SecNum(18000), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]},
-			{"r1":new SecNum(1250000), "r2":new SecNum(750000), "r3":new SecNum(500000), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]},
-			{"r1":new SecNum(3750000), "r2":new SecNum(2250000), "r3":new SecNum(1500000), "r4":new SecNum(0), "time":new SecNum(172800), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]},
-			{"r1":new SecNum(7187500), "r2":new SecNum(4312500), "r3":new SecNum(2875000), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]},
-			{"r1":new SecNum(12000000), "r2":new SecNum(9000000), "r3":new SecNum(6000000), "r4":new SecNum(0), "time":new SecNum(388800), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]},
-			{"r1":new SecNum(16500000), "r2":new SecNum(12687500), "r3":new SecNum(7562500), "r4":new SecNum(0), "time":new SecNum(475200), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]}
-		],
-		"fortify_costs":[
-			{"r1":new SecNum(50000), "r2":new SecNum(37500), "r3":new SecNum(12500), "r4":new SecNum(0), "time":new SecNum(8100), "re":[[14,1,5]]},
-			{"r1":new SecNum(250000), "r2":new SecNum(187500), "r3":new SecNum(62500), "r4":new SecNum(0), "time":new SecNum(24300), "re":[[14,1,6]]},
-			{"r1":new SecNum(1250000), "r2":new SecNum(937500), "r3":new SecNum(312500), "r4":new SecNum(0), "time":new SecNum(72900), "re":[[14,1,7]]},
-			{"r1":new SecNum(6250000), "r2":new SecNum(4687500), "r3":new SecNum(1562500), "r4":new SecNum(0), "time":new SecNum(172800), "re":[[14,1,8]]}
-		],
-		"imageData":{
-			"baseurl":"buildings/iquaketower/",
-			"1":{
-				"anim":["anim.1.png",new Rectangle(-37,-75,75,132),33],
-				"shadow":["shadow.1.v2.jpg",new Point(-37,17)],
-				"topdamaged":["top.1.damaged.png",new Point(-40,-75)],
-				"animdamaged":["anim.1.damaged.png",new Rectangle(-40,-75,84,133),33],
-				"shadowdamaged":["shadow.1.v2.jpg",new Point(-40,16)],
-				"topdestroyed":["top.1.destroyed.png",new Point(-42,-8)]
-				// "shadowdestroyed":["shadow.1.v2.jpg",new Point(-44,10)]
-			}
-		},
-		"buildingbuttons":["quake_tower.v2"],
-		"upgradeImgData":{
-			"baseurl":"buildingbuttons/",
-			"1":{
-				"img":"quake_tower.v2.jpg",
-				"silhouette_img":"quake_tower.v2.silhouette.jpg"
-			}
-		},
-		"thumbImgData":{
-			"baseurl":"buildingthumbs/",
-			"1":{"img":"20.png"}
-		},
-		"fortImgData":{
-			"baseurl":"buildings/fortifications/",
-			"1":{
-				"front":["fort70_F1.png",new Point(-73,21)],
-				"back":["fort70_B1.png",new Point(-70,-10)]
-			},
-			"2":{
-				"front":["fort70_F2.png",new Point(-69,22)],
-				"back":["fort70_B2.png",new Point(-65,-12)]
-			},
-			"3":{
-				"front":["fort70_F3.png",new Point(-72,10)],
-				"back":["fort70_B3.png",new Point(-68,-12)]
-			},
-			"4":{
-				"front":["fort70_F4.png",new Point(-70,-11)],
-				"back":["fort70_B4.png",new Point(-61,-36)]
-			}
-		},
-		"quantity":[0,1,1,2,2,4,4,4,4,4,4],
-		"hp":[10000,16000,22000,28000,34000,34000,34000,34000],
-		"repairTime":[1440,2880,5760,11520,23000,23000,23000,23000]
-		},{
-		"id":130,
-		"group":3,
-		"order":2,
-		"buildStatus":0,
-		"type":"tower",
-		"name":"#b_icannontower#",
-		"size":64,
-		"attackgroup":1,
-		"tutstage":200,
-		"sale":0,
-		"description":"icannontower_desc",
-		"block":true,
-		"cls":INFERNO_CANNON_TOWER,
-		"quantity":[0]
-		},{
-		"id":131,
-		"group":4,
-		"subgroup":4,
-		"order":8,
-		"buildStatus":0,
-		"type":"decoration",
-		"name":"bdg_wmi2totem",
-		"size":40,
-		"attackgroup":999,
-		"tutstage":200,
-		"sale":0,
-		"description":"bdg_wmi2totem_desc",
-		"block":true,
-		"cls":BTOTEM,
-		"costs":[
-			{"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":0, "time":new SecNum(0), "re":[]},
-			{"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":0, "time":new SecNum(0), "re":[]},
-			{"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":0, "time":new SecNum(0), "re":[]},
-			{"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":0, "time":new SecNum(0), "re":[]},
-			{"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":0, "time":new SecNum(0), "re":[]},
-			{"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":0, "time":new SecNum(0), "re":[]}
-		],
-		"names":["bdg_wmi2totem1","bdg_wmi2totem2","bdg_wmi2totem3","bdg_wmi2totem4","bdg_wmi2totem5","bdg_wmi2totem6"],
-		"descriptions":["bdg_wmi2totem1_desc","bdg_wmi2totem2_desc","bdg_wmi2totem3_desc","bdg_wmi2totem4_desc","bdg_wmi2totem5_desc","bdg_wmi2totem6_desc"],
-		"buildingbuttons":["131.bb1","131.bb2","131.bb3","131.bb4","131.bb5.v2","131.bb6"],
-		"imageData":{
-			"baseurl":"buildings/decorations/wmitotem2/",
-			"1":{
-				"top":["top1.png",new Point(-31,-25)],
-				"shadow":["shadow1.jpg",new Point(-55,-20)]
-			},
-			"2":{
-				"top":["top2.png",new Point(-31,-60)],
-				"shadow":["shadow2.jpg",new Point(-64,-44)]
-			},
-			"3":{
-				"top":["top3.png",new Point(-31,-86)],
-				"shadow":["shadow3.jpg",new Point(-66,-61)]
-			},
-			"4":{
-				"top":["top4.png",new Point(-31,-122)],
-				"shadow":["shadow4.jpg",new Point(-66,-83)]
-			},
-			"5":{
-				"top":["top5.v2.png",new Point(-30,-125)],
-				"shadow":["shadow4.jpg",new Point(-66,-83)]
-			},
-			"6":{
-				"top":["top6.png",new Point(-31,-128)],
-				"shadow":["shadow4.jpg",new Point(-66,-83)]
-			}
-		},
-		"quantity":[0],
-		"hp":[100,100,100,100,100,100],
-		"repairTime":[1,1,1,1,1,1,1]
-		},{
-		"id":132,
-		"group":3,
-		"order":5,
-		"buildStatus":0,
-		"type":"tower",
-		"name":"#bi_magmatower#",
-		"attackType":1,
-		"size":64,
-		"attackgroup":1,
-		"tutstage":200,
-		"sale":0,
-		"description":"bi_magmatower_desc",
-		"block":true,
-		"cls":INFERNO_MAGMA_TOWER,
-		"rewarded":false,
-		"stats":[{
-			"range":180,
-			"damage":180,
-			"rate":20,
-			"speed":14,
-			"splash":0},
-			{
-			"range":190,
-			"damage":240,
-			"rate":20,
-			"speed":15,
-			"splash":0},
-			{
-			"range":200,
-			"damage":300,
-			"rate":20,
-			"speed":16,
-			"splash":0},
-			{
-			"range":210,
-			"damage":360,
-			"rate":20,
-			"speed":17,
-			"splash":0},
-			{
-			"range":220,
-			"damage":420,
-			"rate":20,
-			"speed":18,
-			"splash":0},
-			{
-			"range":230,
-			"damage":480,
-			"rate":20,
-			"speed":19,
-			"splash":0}
-		],
-		"costs":[
-			{"r1":new SecNum(187500), "r2":new SecNum(250000), "r3":new SecNum(62500), "r4":new SecNum(0), "time":new SecNum(18000), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]},
-			{"r1":new SecNum(750000), "r2":new SecNum(1000000), "r3":new SecNum(250000), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]},
-			{"r1":new SecNum(2250000), "r2":new SecNum(3000000), "r3":new SecNum(750000), "r4":new SecNum(0), "time":new SecNum(172800), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]},
-			{"r1":new SecNum(5250000), "r2":new SecNum(5000000), "r3":new SecNum(1250000), "r4":new SecNum(0), "time":new SecNum(345600), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]},
-			{"r1":new SecNum(12000000), "r2":new SecNum(10000000), "r3":new SecNum(2000000), "r4":new SecNum(0), "time":new SecNum(518400), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]},
-			{"r1":new SecNum(16000000), "r2":new SecNum(15000000), "r3":new SecNum(3000000), "r4":new SecNum(0), "time":new SecNum(791200), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]}
-		],
-		"fortify_costs":[
-			{"r1":new SecNum(215000), "r2":new SecNum(280000), "r3":new SecNum(62500), "r4":new SecNum(0), "time":new SecNum(18000), "re":[[14,1,5]]},
-			{"r1":new SecNum(850000), "r2":new SecNum(1200000), "r3":new SecNum(250000), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,6]]},
-			{"r1":new SecNum(2750000), "r2":new SecNum(3400000), "r3":new SecNum(750000), "r4":new SecNum(0), "time":new SecNum(172800), "re":[[14,1,7]]},
-			{"r1":new SecNum(5750000), "r2":new SecNum(5200000), "r3":new SecNum(1250000), "r4":new SecNum(0), "time":new SecNum(345600), "re":[[14,1,8]]}
-		],
-		"imageData":{
-			"baseurl":"buildings/imagmatower/",
-			"1":{
-				"anim":["anim.1.v2.png",new Rectangle(-26,-50,54,42),31],
-				"anim2":["anim.2.v2.png",new Rectangle(-17,26,38,19),31],
-				"top":["top.1.v2.png",new Point(-34,-9)],
-				"shadow":["shadow.1.v2.jpg",new Point(-31,10)],
-				//"animdamaged":["anim.1.damaged.v2.png",new Rectangle(-28.6,-47.6,52,43),31],
-				//"animdamaged2":["anim.2.damaged.v2.png",new Rectangle(-21,28,38,19),31],
-				"topdamaged":["top.1.damaged.v2.png",new Point(-38,-4)],
-				"shadowdamaged":["shadow.1.v2.jpg",new Point(-38,16)],
-				"topdestroyed":["top.1.destroyed.v2.png",new Point(-36,6)]
-				//"shadowdestroyed":["shadow.1.destroyed.v2.jpg",new Point(-36,22)]
-			}
-		},
-		"buildingbuttons":["magma_tower.v2"],
-		"upgradeImgData":{
-			"baseurl":"buildingbuttons/",
-			"1":{
-				"img":"magma_tower.v2.jpg",
-				"silhouette_img":"magma_tower.v2.silhouette.jpg"
-			}
-		},
-		"fortImgData":{
-			"baseurl":"buildings/fortifications/",
-			"1":{
-				"front":["fort70_F1.png",new Point(-73,21)],
-				"back":["fort70_B1.png",new Point(-70,-10)]
-			},
-			"2":{
-				"front":["fort70_F2.png",new Point(-69,22)],
-				"back":["fort70_B2.png",new Point(-65,-12)]
-			},
-			"3":{
-				"front":["fort70_F3.png",new Point(-72,10)],
-				"back":["fort70_B3.png",new Point(-68,-12)]
-			},
-			"4":{
-				"front":["fort70_F4.png",new Point(-70,-11)],
-				"back":["fort70_B4.png",new Point(-61,-36)]
-			}
-		},
-		"quantity":[0,1,1,1,2,2,2,2,2,2,2],
-		"hp":[15000,22000,30000,49000,59000,70000],
-		"repairTime":[1440,2880,5760,11520,23000,46000,92000]
+			"quantity":[0,1,1,1,2,2,2,2,2,2,2],
+			"hp":[15000,22000,30000,49000,59000,70000],
+			"repairTime":[1440,2880,5760,11520,23000,46000,92000]
 		},{
 		"id":133,
 		"group":2,

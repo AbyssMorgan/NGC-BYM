@@ -81,7 +81,7 @@ export const TRIBE_OUTPOST_SEED = "maproom3-tribes";
 /** Available levels per structure type. */
 export const STRUCTURE_LEVELS: Record<number, number[]> = {
 	[EnumYardType.STRONGHOLD]: [30, 40, 50], // TODO MR3 HIGH END
-	[EnumYardType.RESOURCE]: [10, 20, 30, 40, 50], // TODO MR3 HIGH END
+	[EnumYardType.RESOURCE]: [20, 30, 40, 50, 60], // TODO MR3 HIGH END
 	[EnumYardType.OUTPOST]: [45, 50],
 };
 
@@ -98,20 +98,21 @@ export const STRUCTURE_RANGE: Record<number, Record<number, number>> = {
 		40: 15, 
 		50: 20,
 		// 70: 10, // TODO MR3 HIGH END
-		// 80: 15,
-		// 90: 20,
+		// 80: 15, // TODO MR3 HIGH END
+		// 90: 20, // TODO MR3 HIGH END
 	},
 	[EnumYardType.RESOURCE]: {
-		10: 2,
-		20: 3,
-		30: 4,
-		40: 5,
-		50: 6,
+		10: 1, // TODO Remove
+		20: 2,
+		30: 3,
+		40: 4,
+		50: 5,
+		60: 6,
 		// 50: 2, // TODO MR3 HIGH END
-		// 60: 3,
-		// 70: 4,
-		// 80: 5,
-		// 90: 6,
+		// 60: 3, // TODO MR3 HIGH END
+		// 70: 4, // TODO MR3 HIGH END
+		// 80: 5, // TODO MR3 HIGH END
+		// 90: 6, // TODO MR3 HIGH END
 	},
 };
 
@@ -122,23 +123,23 @@ export const RESOURCE_PRODUCTION_RATES: Record<number, number> = {
 	30: 5,
 	40: 11,
 	50: 25,
-	// 60: 30, // TODO MR3 HIGH END
-	// 70: 35,
-	// 80: 40,
-	// 90: 45,
+	60: 50,
+	// 70: 75, // TODO MR3 HIGH END
+	// 80: 100, // TODO MR3 HIGH END
+	// 90: 125, // TODO MR3 HIGH END
 };
 
 /** Additional resource storage capacity granted by a RESOURCE outpost per level. */
 export const RESOURCE_CAPACITIES: Record<number, number> = {
-	10: 175000,
+	10: 175000, // TODO Remove
 	20: 350000,
 	30: 750000,
 	40: 2000000,
 	50: 4000000,
-	// 60: 5000000, // TODO MR3 HIGH END
-	// 70: 6000000,
-	// 80: 7000000,
-	// 90: 8000000,
+	60: 5000000, // TODO MR3 HIGH END
+	// 70: 6000000, // TODO MR3 HIGH END
+	// 80: 7000000, // TODO MR3 HIGH END
+	// 90: 8000000, // TODO MR3 HIGH END
 };
 
 /** Monster and tower damage bonus (%) granted by a STRONGHOLD per level. */
@@ -147,8 +148,8 @@ export const STRONGHOLD_BONUSES: Record<number, number> = {
 	40: 20,
 	50: 30,
 	// 70: 10, // TODO MR3 HIGH END
-	// 80: 20,
-	// 90: 30,
+	// 80: 20, // TODO MR3 HIGH END
+	// 90: 30, // TODO MR3 HIGH END
 };
 
 /** Save data templates per structure type and level. */
@@ -177,16 +178,21 @@ export const DEFENDER_LEVELS = {
 	[EnumYardType.PLAYER]: { 0: [5, 5, 10, 10, 15, 20] },
 
 	[EnumYardType.RESOURCE]: { // TODO MR3 HIGH END
-		10: [5, 5, 10, 10, 15, 20],
+		10: [5, 5, 10, 10, 15, 20], // TODO Remove
 		20: [10, 10, 15, 15, 20, 25],
 		30: [20, 20, 25, 25, 30, 35],
 		40: [30, 30, 35, 35, 40, 45],
 		50: [40, 40, 45, 45, 50, 50],
+		60: [50, 50, 50, 50, 50, 50],
+		// 70: [50, 50, 50, 50, 50, 50], // TODO MR3 HIGH END
+		// 80: [50, 50, 50, 50, 50, 50], // TODO MR3 HIGH END
+		// 90: [50, 50, 50, 50, 50, 50], // TODO MR3 HIGH END
 	},
 
-	[EnumYardType.STRONGHOLD]: { // TODO MR3 HIGH END
+	[EnumYardType.STRONGHOLD]: {
 		30: [20, 20, 25, 25, 30, 35],
 		40: [30, 30, 35, 35, 40, 45],
 		50: [40, 40, 45, 45, 50, 50],
+		// TODO MR3 HIGH END
 	},
 };

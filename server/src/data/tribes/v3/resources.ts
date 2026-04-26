@@ -10120,7 +10120,7 @@ export const resources: Record<number, SaveData> = {
 			"0": {
 				X: -65,
 				Y: -65,
-				l: 10,
+				l: 1,
 				t: 139,
 				id: 0,
 			},

@@ -80,9 +80,9 @@ export const TRIBE_OUTPOST_SEED = "maproom3-tribes";
 
 /** Available levels per structure type. */
 export const STRUCTURE_LEVELS: Record<number, number[]> = {
-  [EnumYardType.STRONGHOLD]: [30, 40, 50],
-  [EnumYardType.RESOURCE]: [10, 20, 30, 40, 50],
-  [EnumYardType.OUTPOST]: [45, 50],
+	[EnumYardType.STRONGHOLD]: [30, 40, 50], // TODO MR3 HIGH END
+	[EnumYardType.RESOURCE]: [10, 20, 30, 40, 50], // TODO MR3 HIGH END
+	[EnumYardType.OUTPOST]: [45, 50],
 };
 
 /** Attack range in cells for a player's main yard. */
@@ -93,48 +93,77 @@ export const MIN_PLAYER_DISTANCE = 7;
 
 /** Attack range in cells per structure type and level. */
 export const STRUCTURE_RANGE: Record<number, Record<number, number>> = {
-  [EnumYardType.STRONGHOLD]: { 30: 10, 40: 15, 50: 20 },
-  [EnumYardType.RESOURCE]: { 10: 2, 20: 3, 30: 4, 40: 5, 50: 6 },
+	[EnumYardType.STRONGHOLD]: {
+		30: 10,
+		40: 15, 
+		50: 20,
+		// 70: 10, // TODO MR3 HIGH END
+		// 80: 15,
+		// 90: 20,
+	},
+	[EnumYardType.RESOURCE]: {
+		10: 2,
+		20: 3,
+		30: 4,
+		40: 5,
+		50: 6,
+		// 50: 2, // TODO MR3 HIGH END
+		// 60: 3,
+		// 70: 4,
+		// 80: 5,
+		// 90: 6,
+	},
 };
 
 /** Resource production rate in units per second per level (client displays as ×60/min). */
 export const RESOURCE_PRODUCTION_RATES: Record<number, number> = {
-  10: 1,
-  20: 2,
-  30: 5,
-  40: 11,
-  50: 23,
+	10: 1,
+	20: 2,
+	30: 5,
+	40: 11,
+	50: 25,
+	// 60: 30, // TODO MR3 HIGH END
+	// 70: 35,
+	// 80: 40,
+	// 90: 45,
 };
 
 /** Additional resource storage capacity granted by a RESOURCE outpost per level. */
 export const RESOURCE_CAPACITIES: Record<number, number> = {
-  10: 175000,
-  20: 350000,
-  30: 750000,
-  40: 2000000,
-  50: 4000000,
+	10: 175000,
+	20: 350000,
+	30: 750000,
+	40: 2000000,
+	50: 4000000,
+	// 60: 5000000, // TODO MR3 HIGH END
+	// 70: 6000000,
+	// 80: 7000000,
+	// 90: 8000000,
 };
 
 /** Monster and tower damage bonus (%) granted by a STRONGHOLD per level. */
 export const STRONGHOLD_BONUSES: Record<number, number> = {
-  30: 10,
-  40: 20,
-  50: 30,
+	30: 10,
+	40: 20,
+	50: 30,
+	// 70: 10, // TODO MR3 HIGH END
+	// 80: 20,
+	// 90: 30,
 };
 
 /** Save data templates per structure type and level. */
 export const STRUCTURE_SAVES: Record<number, Record<number, SaveData>> = {
-  [EnumYardType.STRONGHOLD]: strongholds,
-  [EnumYardType.RESOURCE]: resources,
-  [EnumYardType.FORTIFICATION]: defenders,
+	[EnumYardType.STRONGHOLD]: strongholds,
+	[EnumYardType.RESOURCE]: resources,
+	[EnumYardType.FORTIFICATION]: defenders,
 };
 
 /** Save data templates for tribe outposts, keyed by tribe index then level. */
 export const OUTPOST_SAVES: Record<number, Record<number, SaveData>> = {
-  0: legionnaire,
-  1: kozu,
-  2: abunakki,
-  3: dreadnaught,
+	0: legionnaire,
+	1: kozu,
+	2: abunakki,
+	3: dreadnaught,
 };
 
 /** Time in milliseconds before a destroyed tribe outpost regenerates. (3 days) */
@@ -145,19 +174,19 @@ export const DEFENDER_DAMAGE_REDUCTION = [0, 7, 13, 23, 35, 50, 75];
 
 /** Defender levels per parent structure type and level. */
 export const DEFENDER_LEVELS = {
-  [EnumYardType.PLAYER]: { 0: [5, 5, 10, 10, 15, 20] },
+	[EnumYardType.PLAYER]: { 0: [5, 5, 10, 10, 15, 20] },
 
-  [EnumYardType.RESOURCE]: {
-    10: [5, 5, 10, 10, 15, 20],
-    20: [10, 10, 15, 15, 20, 25],
-    30: [20, 20, 25, 25, 30, 35],
-    40: [30, 30, 35, 35, 40, 45],
-    50: [40, 40, 45, 45, 50, 50],
-  },
+	[EnumYardType.RESOURCE]: { // TODO MR3 HIGH END
+		10: [5, 5, 10, 10, 15, 20],
+		20: [10, 10, 15, 15, 20, 25],
+		30: [20, 20, 25, 25, 30, 35],
+		40: [30, 30, 35, 35, 40, 45],
+		50: [40, 40, 45, 45, 50, 50],
+	},
 
-  [EnumYardType.STRONGHOLD]: {
-    30: [20, 20, 25, 25, 30, 35],
-    40: [30, 30, 35, 35, 40, 45],
-    50: [40, 40, 45, 45, 50, 50],
-  },
+	[EnumYardType.STRONGHOLD]: { // TODO MR3 HIGH END
+		30: [20, 20, 25, 25, 30, 35],
+		40: [30, 30, 35, 35, 40, 45],
+		50: [40, 40, 45, 45, 50, 50],
+	},
 };

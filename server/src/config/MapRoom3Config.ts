@@ -123,9 +123,9 @@ export const RESOURCE_PRODUCTION_RATES: Record<number, number> = {
 	40: 11,
 	50: 25,
 	60: 50,
-	// 70: 75, // TODO MR3 HIGH END
-	// 80: 100, // TODO MR3 HIGH END
-	// 90: 125, // TODO MR3 HIGH END
+	// 70: 100, // TODO MR3 HIGH END
+	// 80: 200, // TODO MR3 HIGH END
+	// 90: 400, // TODO MR3 HIGH END
 };
 
 /** Additional resource storage capacity granted by a RESOURCE outpost per level. */
@@ -173,7 +173,7 @@ export const DEFENDER_DAMAGE_REDUCTION = [0, 7, 13, 23, 35, 50, 75];
 
 /** Defender levels per parent structure type and level. */
 export const DEFENDER_LEVELS = {
-	[EnumYardType.PLAYER]: { 0: [5, 5, 10, 10, 15, 20] },
+	[EnumYardType.PLAYER]: { 0: [50, 50, 50, 50, 50, 50] },
 
 	[EnumYardType.RESOURCE]: { // TODO MR3 HIGH END
 		20: [10, 10, 15, 15, 20, 25],
@@ -181,9 +181,9 @@ export const DEFENDER_LEVELS = {
 		40: [30, 30, 35, 35, 40, 45],
 		50: [40, 40, 45, 45, 50, 50],
 		60: [50, 50, 50, 50, 50, 50],
-		// 70: [50, 50, 50, 50, 50, 50], // TODO MR3 HIGH END
-		// 80: [50, 50, 50, 50, 50, 50], // TODO MR3 HIGH END
-		// 90: [50, 50, 50, 50, 50, 50], // TODO MR3 HIGH END
+		// 70: [60, 60, 60, 60, 60, 60], // TODO MR3 HIGH END
+		// 80: [70, 70, 70, 70, 70, 70], // TODO MR3 HIGH END
+		// 90: [80, 80, 80, 80, 80, 80], // TODO MR3 HIGH END
 	},
 
 	[EnumYardType.STRONGHOLD]: {

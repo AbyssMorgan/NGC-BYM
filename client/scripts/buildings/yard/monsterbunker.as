@@ -26,7 +26,7 @@ package buildings.yard {
 				{"range":400}, // Level 3
 				{"range":450}, // Level 4
 				{"range":500}, // Level 5
-				{"range":500} // Level 6
+				{"range":500}, // Level 6
 			],
 			"costs":[
 				{"r1":new SecNum(250000), "r2":new SecNum(187500), "r3":new SecNum(62500), "r4":new SecNum(0), "time":new SecNum(21600), "re":[[14,1,3],[15,1,1]]}, // Level 1

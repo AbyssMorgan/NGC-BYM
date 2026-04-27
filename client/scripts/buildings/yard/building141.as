@@ -29,16 +29,16 @@ package buildings.yard {
 			"imageData":{
 				"baseurl":"buildings/guardtower/",
 				"1":{
-					"top":["top.v2.5.png",new Point(-98,-100)],
+					"top":["top.v2.heat.png",new Point(-98,-100)],
 					// MISSING ASSETS TO RECREATE OR FIND:
 					// "top":["top.v2.1.png",new Point(-98,-75)],
 					// "shadow":["shadow.v2.1.png",new Point(-78,9)],
 					// "anim":["anim.v2.1.png",new Rectangle(-47,-231,95,212),32],
 					// "anim2":["anim.v2.2.png",new Rectangle(-79,-75,168,102),32],
 					// "anim2damaged":["anim.v2.2.damaged.png",new Rectangle(-88,-72,163,103),32],
-					"topdamaged":["top.v2.5.damaged.png",new Point(-98,-95)],
+					"topdamaged":["top.v2.heat.damaged.png",new Point(-98,-95)],
 					// "shadowdamaged":["shadow.v2.1.damaged.png",new Point(-81,5)],
-					"topdestroyed":["top.v2.5.destroyed.png",new Point(-102,-65)]
+					"topdestroyed":["top.v2.heat.destroyed.png",new Point(-102,-65)]
 					// "shadowdestroyed":["shadow.v2.1.destroyed.png",new Point(-98,4)]
 				}
 			},

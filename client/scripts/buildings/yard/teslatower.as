@@ -69,6 +69,17 @@ package buildings.yard {
 					"topdestroyed":["top.3.destroyed.png",new Point(-46,6)],
 					"shadowdestroyed":["shadow.3.jpg",new Point(-44,17)],
 					"topdestroyedfire":["top.3.destroyed.fire.png",new Point(-46,6)]
+				},
+				"14":{
+					"anim":["anim.heat.png",new Rectangle(-25,-15,27,53),55],
+					"top":["top.heat.png",new Point(-33,-57)],
+					"shadow":["shadow.3.jpg",new Point(-38,18)],
+					"animdamaged":["anim.heat.damaged.png",new Rectangle(-26,-19,30,57),55],
+					"topdamaged":["top.heat.damaged.png",new Point(-46,-58)],
+					"shadowdamaged":["shadow.3.jpg",new Point(-44,21)],
+					"topdestroyed":["top.heat.destroyed.png",new Point(-46,6)],
+					"shadowdestroyed":["shadow.3.jpg",new Point(-44,17)],
+					"topdestroyedfire":["top.3.destroyed.fire.png",new Point(-46,6)]
 				}
 			},
 			"upgradeImgData":{

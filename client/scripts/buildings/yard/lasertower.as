@@ -70,14 +70,14 @@ package buildings.yard {
 					"shadowdestroyed":["shadow.1.jpg",new Point(-37,14)],
 					"topdestroyedfire":["top.1.destroyed.fire.png",new Point(-39,-3)]
 				},
-				"12":{
-					"anim":["anim.10.png",new Rectangle(-13,-50,29,32),54],
-					"top":["top.10.png",new Point(-33,-29)],
+				"14":{
+					"anim":["anim.heat.png",new Rectangle(-13,-50,29,32),54],
+					"top":["top.heat.png",new Point(-33,-29)],
 					"shadow":["shadow.1.jpg",new Point(-36,15)],
-					"animdamaged":["anim.10.damaged.png",new Rectangle(-22,-46,52,44),54],
-					"topdamaged":["top.10.damaged.png",new Point(-40,-28)],
+					"animdamaged":["anim.heat.damaged.png",new Rectangle(-22,-46,52,44),54],
+					"topdamaged":["top.heat.damaged.png",new Point(-40,-28)],
 					"shadowdamaged":["shadow.1.jpg",new Point(-37,-17)],
-					"topdestroyed":["top.10.destroyed.png",new Point(-39,-3)],
+					"topdestroyed":["top.heat.destroyed.png",new Point(-39,-3)],
 					"shadowdestroyed":["shadow.1.jpg",new Point(-37,14)],
 					"topdestroyedfire":["top.1.destroyed.fire.png",new Point(-39,-3)]
 				}

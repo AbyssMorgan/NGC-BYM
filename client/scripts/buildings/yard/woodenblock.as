@@ -24,7 +24,9 @@ package buildings.yard {
 				{"r1":new SecNum(100000), "r2":new SecNum(100000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(5), "re":[[14,1,4]]}, // Level 3
 				{"r1":new SecNum(200000), "r2":new SecNum(200000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(5), "re":[[14,1,5]]}, // Level 4
 				{"r1":new SecNum(400000), "r2":new SecNum(400000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(5), "re":[[14,1,6]]}, // Level 5
-				{"r1":new SecNum(1000000), "r2":new SecNum(1000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(5), "re":[[14,1,16]]} // Level 6
+				{"r1":new SecNum(1000000), "r2":new SecNum(1000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(5), "re":[[14,1,16]]}, // Level 6
+				{"r1":new SecNum(2500000), "r2":new SecNum(2500000), "r3":new SecNum(2500000), "r4":new SecNum(0), "time":new SecNum(5), "re":[[14,1,18]]}, // Level 7
+				{"r1":new SecNum(6250000), "r2":new SecNum(6250000), "r3":new SecNum(6250000), "r4":new SecNum(0), "time":new SecNum(5), "re":[[14,1,20]]}, // Level 8
 			],
 			"buildingbuttons":["17.1"],
 			"imageData":{
@@ -76,6 +78,22 @@ package buildings.yard {
 					"shadowdamaged":["shadow.jpg",new Point(-28,-7)],
 					"topdestroyed":["top.6.destroyed.png",new Point(-20,-3)],
 					"shadowdestroyed":["shadow.jpg",new Point(-28,-7)]
+				},
+				"7":{
+					"top":["top.7.png",new Point(-20,-22)],
+					"shadow":["shadow.jpg",new Point(-28,-7)],
+					"topdamaged":["top.7.damaged.png",new Point(-20,-19)],
+					"shadowdamaged":["shadow.jpg",new Point(-28,-7)],
+					"topdestroyed":["top.7.destroyed.png",new Point(-20,-3)],
+					"shadowdestroyed":["shadow.jpg",new Point(-28,-7)]
+				},
+				"8":{
+					"top":["top.8.png",new Point(-20,-22)],
+					"shadow":["shadow.jpg",new Point(-28,-7)],
+					"topdamaged":["top.8.damaged.png",new Point(-20,-19)],
+					"shadowdamaged":["shadow.jpg",new Point(-28,-7)],
+					"topdestroyed":["top.8.destroyed.png",new Point(-20,-3)],
+					"shadowdestroyed":["shadow.jpg",new Point(-28,-7)]
 				}
 			},
 			"upgradeImgData":{
@@ -100,6 +118,12 @@ package buildings.yard {
 				},
 				"6":{
 					"img":"17.6.jpg"
+				},
+				"7":{
+					"img":"17.7.jpg"
+				},
+				"8":{
+					"img":"17.8.jpg"
 				}
 			},
 			"thumbImgData":{
@@ -109,7 +133,9 @@ package buildings.yard {
 				"3":{"img":"17.3.png"},
 				"4":{"img":"17.4.png"},
 				"5":{"img":"17.5.png"},
-				"6":{"img":"17.6.png"}
+				"6":{"img":"17.6.png"},
+				"7":{"img":"17.7.png"},
+				"8":{"img":"17.8.png"}
 			},
 			"quantity":[
 				0, // Level 0
@@ -141,6 +167,8 @@ package buildings.yard {
 				18000, // Level 4
 				27000, // Level 5
 				40000, // Level 6
+				56000, // Level 7
+				80000, // Level 8
 			],
 			"repairTime":[
 				5, // Level 1
@@ -149,6 +177,8 @@ package buildings.yard {
 				5, // Level 4
 				5, // Level 5
 				5, // Level 6
+				5, // Level 7
+				5, // Level 8
 			]
 		};
 		

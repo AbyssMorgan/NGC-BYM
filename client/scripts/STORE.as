@@ -221,17 +221,32 @@ package
          var _loc23_:String = null;
          if(BASE.isOutpost)
          {
-            _grouping = [[MapRoomManager.instance.isInMapRoom3 ? [] : ["BST","BLK2","BLK3","BLK4","BLK5","BLK6","EXR1","EXR2","EXR3","EXR4"]],[MapRoomManager.instance.isInMapRoom3 ? [] : ["BR11","BR12","BR13","BR21","BR22","BR23","BR31","BR32","BR33","BR41","BR42","BR43"]],[MapRoomManager.instance.isInMapRoom3 ? ["SP1","SP2","SP3","SP4","FIX"] : ["SP1","SP2","SP3","SP4","POD","FIX","HOD","HOD2","HOD3"]],[MapRoomManager.instance.isInMapRoom3 ? [] : ["PRO1","PRO2","PRO3","TOD","EXH"]]];
+            _grouping = [
+				[MapRoomManager.instance.isInMapRoom3 ? [] : ["BST","BLK2","BLK3","BLK4","BLK5","BLK6","EXR1","EXR2","EXR3","EXR4"]],
+				[MapRoomManager.instance.isInMapRoom3 ? [] : ["BR11","BR12","BR13","BR21","BR22","BR23","BR31","BR32","BR33","BR41","BR42","BR43"]],
+				[MapRoomManager.instance.isInMapRoom3 ? ["SP1","SP2","SP3","SP4","FIX"] : ["SP1","SP2","SP3","SP4","POD","FIX","HOD","HOD2","HOD3"]],
+				[MapRoomManager.instance.isInMapRoom3 ? [] : ["PRO1","PRO2","PRO3","TOD","EXH"]]
+			];
          }
          else if(BASE.isMainYard)
          {
             if(MAPROOM_DESCENT.DescentPassed)
             {
-               _grouping = [[["BEW","BST","ENL","BLK2","BLK3","BLK4","BLK5","BLK6","EXR1","EXR2","EXR3","EXR4"]],[["BR11","BR12","BR13","BR21","BR22","BR23","BR31","BR32","BR33","BR41","BR42","BR43","BR11I","BR12I","BR13I","BR21I","BR22I","BR23I","BR31I","BR32I","BR33I","BR41I","BR42I","BR43I","BIP"]],[["SP1","SP2","SP3","SP4","POD","FIX","HOD","HOD2","HOD3"]],[MapRoomManager.instance.isInMapRoom3 ? ["PRO1","PRO2","PRO3","MOD","MDOD","MSOD","TOD"] : ["PRO1","PRO2","PRO3","MOD","MDOD","MSOD","EXH","TOD"]]];
+               _grouping = [
+					[["BEW","BST","ENL","BLK2","BLK3","BLK4","BLK5","BLK6","EXR1","EXR2","EXR3","EXR4"]],
+					[["BR11","BR12","BR13","BR21","BR22","BR23","BR31","BR32","BR33","BR41","BR42","BR43","BR11I","BR12I","BR13I","BR21I","BR22I","BR23I","BR31I","BR32I","BR33I","BR41I","BR42I","BR43I","BIP"]],
+					[["SP1","SP2","SP3","SP4","POD","FIX","HOD","HOD2","HOD3"]],
+					[MapRoomManager.instance.isInMapRoom3 ? ["PRO1","PRO2","PRO3","MOD","MDOD","MSOD","TOD"] : ["PRO1","PRO2","PRO3","MOD","MDOD","MSOD","EXH","TOD"]]
+				];
             }
             else
             {
-               _grouping = [[["BEW","BST","ENL","BLK2","BLK3","BLK4","BLK5","BLK6","EXR1","EXR2","EXR3","EXR4"]],[["BR11","BR12","BR13","BR21","BR22","BR23","BR31","BR32","BR33","BR41","BR42","BR43","BIP"]],[["SP1","SP2","SP3","SP4","POD","FIX","HOD","HOD2","HOD3"]],[MapRoomManager.instance.isInMapRoom3 ? ["PRO1","PRO2","PRO3","MOD","MDOD","MSOD","TOD"] : ["PRO1","PRO2","PRO3","MOD","MDOD","MSOD","EXH","TOD"]]];
+               _grouping = [
+					[["BEW","BST","ENL","BLK2","BLK3","BLK4","BLK5","BLK6","EXR1","EXR2","EXR3","EXR4"]],
+					[["BR11","BR12","BR13","BR21","BR22","BR23","BR31","BR32","BR33","BR41","BR42","BR43","BIP"]],
+					[["SP1","SP2","SP3","SP4","POD","FIX","HOD","HOD2","HOD3"]],
+					[MapRoomManager.instance.isInMapRoom3 ? ["PRO1","PRO2","PRO3","MOD","MDOD","MSOD","TOD"] : ["PRO1","PRO2","PRO3","MOD","MDOD","MSOD","EXH","TOD"]]
+				];
             }
          }
          else
@@ -476,6 +491,8 @@ package
          var resources_blk4:uint = 200000 * 2;
          var resources_blk5:uint = 400000 * 2;
          var resources_blk6:uint = 1000000 * 2;
+         var resources_blk7:uint = 2500000 * 3;
+         var resources_blk8:uint = 6250000 * 3;
          var _loc18_:Vector.<Object> = InstanceManager.getInstancesByClass(BWALL);
          for each(_loc13_ in _loc18_)
          {

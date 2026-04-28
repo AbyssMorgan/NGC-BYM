@@ -25,8 +25,8 @@ package buildings.yard {
 				{"r1":new SecNum(200000), "r2":new SecNum(200000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(5), "re":[[14,1,5]]}, // Level 4
 				{"r1":new SecNum(400000), "r2":new SecNum(400000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(5), "re":[[14,1,6]]}, // Level 5
 				{"r1":new SecNum(1000000), "r2":new SecNum(1000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(5), "re":[[14,1,16]]}, // Level 6
-				{"r1":new SecNum(2500000), "r2":new SecNum(2500000), "r3":new SecNum(2500000), "r4":new SecNum(0), "time":new SecNum(5), "re":[[14,1,18]]}, // Level 7
-				{"r1":new SecNum(6250000), "r2":new SecNum(6250000), "r3":new SecNum(6250000), "r4":new SecNum(0), "time":new SecNum(5), "re":[[14,1,20]]}, // Level 8
+				{"r1":new SecNum(5000000), "r2":new SecNum(5000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(5), "re":[[14,1,18]]}, // Level 7
+				{"r1":new SecNum(10000000), "r2":new SecNum(10000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(5), "re":[[14,1,20]]}, // Level 8
 			],
 			"buildingbuttons":["17.1"],
 			"imageData":{

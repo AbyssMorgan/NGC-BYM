@@ -1699,20 +1699,43 @@ package
          (_loc6_ = new MESSAGE()).Show(param1, param2, param3, param4, param5.toString());
       }
 
-      public static function FormatNumber(param1:Number):String
-      {
-         var _loc4_:Number = NaN;
-         param1 = Math.floor(param1);
-         var _loc2_:String = param1.toString();
-         var _loc3_:Array = new Array();
-         var _loc5_:int = _loc2_.length;
-         while (_loc5_ > 0)
-         {
-            _loc4_ = Math.max(_loc5_ - 3, 0);
-            _loc3_.unshift(_loc2_.slice(_loc4_, _loc5_));
-            _loc5_ = _loc4_;
-         }
-         return _loc3_.join(",");
+      public static function FormatNumber(value:Number):String {
+		// Zaokrąglamy w dół zgodnie z oryginałem
+		var baseValue:Number = Math.floor(value);
+		
+		// Obsługa wartości od 500 milionów w górę
+		if (baseValue >= 50000000) {
+			var formatted:String = "";
+			
+			if (baseValue >= 1000000000000) {
+				// Triliony (T)
+				formatted = (baseValue / 1000000000000).toFixed(2);
+				return formatted.replace(".", ",") + " T";
+			} 
+			else if (baseValue >= 1000000000) {
+				// Biliony (B)
+				formatted = (baseValue / 1000000000).toFixed(2);
+				return formatted.replace(".", ",") + " B";
+			} 
+			else {
+				// Miliony (M) - dla zakresu [500M - 1B)
+				formatted = (baseValue / 1000000).toFixed(2);
+				return formatted.replace(".", ",") + " M";
+			}
+		}
+
+		// Standardowe formatowanie z przecinkami dla liczb poniżej 500 mln
+		var valueString:String = baseValue.toString();
+		var segments:Array = new Array();
+		var currentIndex:int = valueString.length;
+		
+		while (currentIndex > 0) {
+			var nextIndex:int = Math.max(currentIndex - 3, 0);
+			segments.unshift(valueString.slice(nextIndex, currentIndex));
+			currentIndex = nextIndex;
+		}
+		
+		return segments.join(",");
       }
 
       public static function DoubleDigit(param1:int):String

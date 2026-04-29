@@ -4,20 +4,20 @@ package buildings.yard {
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
 
-    public class peaceflag {
+    public class bdg_singaporeanflag {
 
         public static const DATA:Object = {
-			"id":50,
+			"id":47,
 			"group":4,
 			"subgroup":3,
-			"order":0,
+			"order":23,
 			"buildStatus":0,
 			"type":"decoration",
-			"name":"#b_peaceflag#",
+			"name":"#b_singaporeanflag#",
 			"size":20,
 			"attackgroup":999,
 			"tutstage":200,
-			"sale":1,
+			"sale":0,
 			"description":"flag_desc",
 			"cls":BDECORATION,
 			"costs":[
@@ -26,7 +26,7 @@ package buildings.yard {
 			"imageData":{
 				"baseurl":"buildings/decorations/flags/",
 				"1":{
-					"anim":["flag-peace.png",new Rectangle(1,-35,24,30),21],
+					"anim":["flag-singapore.png",new Rectangle(1,-35,24,30),21],
 					"top":["flagpole.png",new Point(-5,-43)],
 					"shadow":["shadow.jpg",new Point(-3,5)]
 				}

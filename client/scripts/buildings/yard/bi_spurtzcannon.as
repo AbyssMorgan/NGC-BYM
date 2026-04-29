@@ -36,6 +36,13 @@ package buildings.yard {
 				{"r1":new SecNum(3000000), "r2":new SecNum(2250000), "r3":new SecNum(1500000), "r4":new SecNum(0), "time":new SecNum(864000), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1],[14,1,9]]},
 				{"r1":new SecNum(12000000), "r2":new SecNum(9000000), "r3":new SecNum(6000000), "r4":new SecNum(0), "time":new SecNum(1209600), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1],[14,1,10]]}
 			],
+			"can_fortify":true,
+			"fortify_costs":[
+				{"r1":new SecNum(50000), "r2":new SecNum(37500), "r3":new SecNum(12500), "r4":new SecNum(0), "time":new SecNum(8100), "re":[[14,1,5]]},
+				{"r1":new SecNum(250000), "r2":new SecNum(187500), "r3":new SecNum(62500), "r4":new SecNum(0), "time":new SecNum(24300), "re":[[14,1,6]]},
+				{"r1":new SecNum(1250000), "r2":new SecNum(937500), "r3":new SecNum(312500), "r4":new SecNum(0), "time":new SecNum(72900), "re":[[14,1,7]]},
+				{"r1":new SecNum(6250000), "r2":new SecNum(4687500), "r3":new SecNum(1562500), "r4":new SecNum(0), "time":new SecNum(172800), "re":[[14,1,8]]}
+			],
 			"imageData":{
 				"baseurl":"buildings/spurtztower/",
 				"1":{
@@ -55,6 +62,25 @@ package buildings.yard {
 				"1":{
 					"img":"spurtz_tower_button.jpg",
 					"silhouette_img":"spurtz_tower_silhouette.jpg"
+				}
+			},
+			"fortImgData":{
+				"baseurl":"buildings/fortifications/",
+				"1":{
+					"front":["fort70_F1.png",new Point(-73,21)],
+					"back":["fort70_B1.png",new Point(-70,-10)]
+				},
+				"2":{
+					"front":["fort70_F2.png",new Point(-69,22)],
+					"back":["fort70_B2.png",new Point(-65,-12)]
+				},
+				"3":{
+					"front":["fort70_F3.png",new Point(-72,10)],
+					"back":["fort70_B3.png",new Point(-68,-12)]
+				},
+				"4":{
+					"front":["fort70_F4.png",new Point(-70,-11)],
+					"back":["fort70_B4.png",new Point(-61,-36)]
 				}
 			},
 			"quantity":[0,2],

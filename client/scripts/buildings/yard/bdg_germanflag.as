@@ -4,16 +4,16 @@ package buildings.yard {
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
 
-    public class britishflag {
+    public class bdg_germanflag {
 
         public static const DATA:Object = {
-			"id":29,
+			"id":45,
 			"group":4,
 			"subgroup":3,
-			"order":6,
+			"order":21,
 			"buildStatus":0,
 			"type":"decoration",
-			"name":"#b_britishflag#",
+			"name":"#b_germanflag#",
 			"size":20,
 			"attackgroup":999,
 			"tutstage":200,
@@ -26,7 +26,7 @@ package buildings.yard {
 			"imageData":{
 				"baseurl":"buildings/decorations/flags/",
 				"1":{
-					"anim":["flag-britain.png",new Rectangle(1,-35,24,30),21],
+					"anim":["flag-germany.png",new Rectangle(1,-35,24,30),21],
 					"top":["flagpole.png",new Point(-5,-43)],
 					"shadow":["shadow.jpg",new Point(-3,5)]
 				}

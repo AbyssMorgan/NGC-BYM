@@ -4,7 +4,7 @@ package buildings.yard {
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
 
-    public class turkishflag {
+    public class bdg_turkishflag {
 
         public static const DATA:Object = {
 			"id":42,

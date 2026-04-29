@@ -27,29 +27,29 @@ package {
 	import buildings.yard.teslatower;
 	import buildings.yard.monsteracademy;
 	import buildings.yard.trojanhorse;
-	import buildings.yard.americanflag;
-	import buildings.yard.britishflag;
-	import buildings.yard.australianflag;
-	import buildings.yard.brazilianflag;
-	import buildings.yard.europeanflag;
-	import buildings.yard.frenchflag;
-	import buildings.yard.indonesianflag;
-	import buildings.yard.italianflag;
-	import buildings.yard.malaysianflag;
-	import buildings.yard.dutchflag;
-	import buildings.yard.newzealandflag;
-	import buildings.yard.norwegianflag;
-	import buildings.yard.polishflag;
-	import buildings.yard.swedishflag;
-	import buildings.yard.turkishflag;
-	import buildings.yard.canadianflag;
-	import buildings.yard.danishflag;
-	import buildings.yard.germanflag;
-	import buildings.yard.filipinoflag;
-	import buildings.yard.singaporeanflag;
-	import buildings.yard.austrianflag;
-	import buildings.yard.pirateflag;
-	import buildings.yard.peaceflag;
+	import buildings.yard.bdg_americanflag;
+	import buildings.yard.bdg_britishflag;
+	import buildings.yard.bdg_australianflag;
+	import buildings.yard.bdg_brazilianflag;
+	import buildings.yard.bdg_europeanflag;
+	import buildings.yard.bdg_frenchflag;
+	import buildings.yard.bdg_indonesianflag;
+	import buildings.yard.bdg_italianflag;
+	import buildings.yard.bdg_malaysianflag;
+	import buildings.yard.bdg_dutchflag;
+	import buildings.yard.bdg_newzealandflag;
+	import buildings.yard.bdg_norwegianflag;
+	import buildings.yard.bdg_polishflag;
+	import buildings.yard.bdg_swedishflag;
+	import buildings.yard.bdg_turkishflag;
+	import buildings.yard.bdg_canadianflag;
+	import buildings.yard.bdg_danishflag;
+	import buildings.yard.bdg_germanflag;
+	import buildings.yard.bdg_filipinoflag;
+	import buildings.yard.bdg_singaporeanflag;
+	import buildings.yard.bdg_austrianflag;
+	import buildings.yard.bdg_pirateflag;
+	import buildings.yard.bdg_peaceflag;
 	import buildings.yard.catapult;
 	import buildings.yard.simplesign;
 	import buildings.yard.hwn_pumpkin;
@@ -172,29 +172,29 @@ package {
 			teslatower.DATA,           // ID 25
 			monsteracademy.DATA,       // ID 26
 			trojanhorse.DATA,          // ID 27
-			americanflag.DATA,         // ID 28
-			britishflag.DATA,          // ID 29
-			australianflag.DATA,       // ID 30
-			brazilianflag.DATA,        // ID 31
-			europeanflag.DATA,         // ID 32
-			frenchflag.DATA,           // ID 33
-			indonesianflag.DATA,       // ID 34
-			italianflag.DATA,          // ID 35
-			malaysianflag.DATA,        // ID 36
-			dutchflag.DATA,            // ID 37
-			newzealandflag.DATA,       // ID 38
-			norwegianflag.DATA,        // ID 39
-			polishflag.DATA,           // ID 40
-			swedishflag.DATA,          // ID 41
-			turkishflag.DATA,          // ID 42
-			canadianflag.DATA,         // ID 43
-			danishflag.DATA,           // ID 44
-			germanflag.DATA,           // ID 45
-			filipinoflag.DATA,         // ID 46
-			singaporeanflag.DATA,      // ID 47
-			austrianflag.DATA,         // ID 48
-			pirateflag.DATA,           // ID 49
-			peaceflag.DATA,            // ID 50
+			bdg_americanflag.DATA,     // ID 28
+			bdg_britishflag.DATA,      // ID 29
+			bdg_australianflag.DATA,   // ID 30
+			bdg_brazilianflag.DATA,    // ID 31
+			bdg_europeanflag.DATA,     // ID 32
+			bdg_frenchflag.DATA,       // ID 33
+			bdg_indonesianflag.DATA,   // ID 34
+			bdg_italianflag.DATA,      // ID 35
+			bdg_malaysianflag.DATA,    // ID 36
+			bdg_dutchflag.DATA,        // ID 37
+			bdg_newzealandflag.DATA,   // ID 38
+			bdg_norwegianflag.DATA,    // ID 39
+			bdg_polishflag.DATA,       // ID 40
+			bdg_swedishflag.DATA,      // ID 41
+			bdg_turkishflag.DATA,      // ID 42
+			bdg_canadianflag.DATA,     // ID 43
+			bdg_danishflag.DATA,       // ID 44
+			bdg_germanflag.DATA,       // ID 45
+			bdg_filipinoflag.DATA,     // ID 46
+			bdg_singaporeanflag.DATA,  // ID 47
+			bdg_austrianflag.DATA,     // ID 48
+			bdg_pirateflag.DATA,       // ID 49
+			bdg_peaceflag.DATA,        // ID 50
 			catapult.DATA,             // ID 51
 			simplesign.DATA,           // ID 52 (Locked)
 			hwn_pumpkin.DATA,          // ID 53 (Missing in storeItems)
@@ -211,10 +211,10 @@ package {
 			bdg_lawnchair.DATA,        // ID 64
 			bdg_outhouse.DATA,         // ID 65
 			bdg_pinecone.DATA,         // ID 66
-			bdg_rock.DATA,             // ID 67 (Test)
+			bdg_rock.DATA,             // ID 67
 			bdg_scaleelectric.DATA,    // ID 68
-			bdg_scarecrow.DATA,        // ID 69 (Test)
-			bdg_sundial.DATA,          // ID 70 (Test)
+			bdg_scarecrow.DATA,        // ID 69
+			bdg_sundial.DATA,          // ID 70
 			bdg_tikitorch.DATA,        // ID 71
 			bdg_walnut.DATA,           // ID 72
 			bdg_tombstone.DATA,        // ID 73

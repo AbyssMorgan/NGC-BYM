@@ -4,16 +4,16 @@ package buildings.yard {
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
 
-    public class europeanflag {
+    public class bdg_brazilianflag {
 
         public static const DATA:Object = {
-			"id":32,
+			"id":31,
 			"group":4,
 			"subgroup":3,
-			"order":25,
+			"order":8,
 			"buildStatus":0,
 			"type":"decoration",
-			"name":"#b_europeanflag#",
+			"name":"#b_brazilianflag#",
 			"size":20,
 			"attackgroup":999,
 			"tutstage":200,
@@ -21,12 +21,12 @@ package buildings.yard {
 			"description":"flag_desc",
 			"cls":BDECORATION,
 			"costs":[
-				{"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "r4":new SecNum(0), "time":new SecNum(0), "re":[]}
+				{"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":100, "time":new SecNum(0), "re":[]}
 			],
 			"imageData":{
 				"baseurl":"buildings/decorations/flags/",
 				"1":{
-					"anim":["flag-europe.png",new Rectangle(1,-35,24,30),21],
+					"anim":["flag-brazil.png",new Rectangle(1,-35,24,30),21],
 					"top":["flagpole.png",new Point(-5,-43)],
 					"shadow":["shadow.jpg",new Point(-3,5)]
 				}

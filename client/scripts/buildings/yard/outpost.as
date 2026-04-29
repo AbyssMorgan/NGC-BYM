@@ -1,8 +1,8 @@
 package buildings.yard {
 
-    public class outpost {
+	public class outpost {
 
-        public static const DATA:Object = {
+		public static const DATA:Object = {
 			"id":112,
 			"group":2,
 			"order":1,
@@ -19,5 +19,5 @@ package buildings.yard {
 			"quantity":[0]
 		};
 		
-    }
+	}
 }

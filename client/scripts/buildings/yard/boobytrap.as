@@ -3,9 +3,9 @@ package buildings.yard {
 	import com.cc.utils.SecNum;
 	import flash.geom.Point;
 
-    public class boobytrap {
+	public class boobytrap {
 
-        public static const DATA:Object = {
+		public static const DATA:Object = {
 			"id":24,
 			"group":3,
 			"order":6,
@@ -48,5 +48,5 @@ package buildings.yard {
 			"repairTime":[1]
 		};
 		
-    }
+	}
 }

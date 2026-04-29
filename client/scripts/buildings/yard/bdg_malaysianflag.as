@@ -4,9 +4,9 @@ package buildings.yard {
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
 
-    public class bdg_malaysianflag {
+	public class bdg_malaysianflag {
 
-        public static const DATA:Object = {
+		public static const DATA:Object = {
 			"id":36,
 			"group":4,
 			"subgroup":3,
@@ -36,5 +36,5 @@ package buildings.yard {
 			"repairTime":[1]
 		};
 		
-    }
+	}
 }

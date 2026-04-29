@@ -4,9 +4,9 @@ package buildings.yard {
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
 
-    public class pebbleshiner {
+	public class pebbleshiner {
 
-        public static const DATA:Object = {
+		public static const DATA:Object = {
 			"id":2,
 			"group":1,
 			"order":2,
@@ -233,5 +233,5 @@ package buildings.yard {
 			]
 		};
 		
-    }
+	}
 }

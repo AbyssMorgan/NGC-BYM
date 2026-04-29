@@ -6,9 +6,9 @@ package buildings.yard {
 	import com.monsters.siege.SiegeFactory;
 	import com.monsters.siege.SiegeLab;
 
-    public class siegefactory {
+	public class siegefactory {
 
-        public static const DATA:Object = {
+		public static const DATA:Object = {
 			"id":133,
 			"group":2,
 			"order":8,
@@ -51,5 +51,5 @@ package buildings.yard {
 			"repairTime":[3600]
 		};
 		
-    }
+	}
 }

@@ -3,9 +3,9 @@ package buildings.yard {
 	import com.cc.utils.SecNum;
 	import flash.geom.Point;
 
-    public class bdg_walnut {
+	public class bdg_walnut {
 
-        public static const DATA:Object = {
+		public static const DATA:Object = {
 			"id":72,
 			"group":4,
 			"subgroup":1,
@@ -34,5 +34,5 @@ package buildings.yard {
 			"repairTime":[1]
 		};
 		
-    }
+	}
 }

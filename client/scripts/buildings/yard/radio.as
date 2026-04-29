@@ -3,9 +3,9 @@ package buildings.yard {
 	import com.cc.utils.SecNum;
 	import flash.geom.Point;
 
-    public class radio {
+	public class radio {
 
-        public static const DATA:Object = {
+		public static const DATA:Object = {
 			"id":113,
 			"group":2,
 			"order":15,
@@ -46,5 +46,5 @@ package buildings.yard {
 			"repairTime":[240]
 		};
 		
-    }
+	}
 }

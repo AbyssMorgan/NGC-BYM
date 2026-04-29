@@ -5,9 +5,9 @@ package buildings.yard {
 	import flash.geom.Rectangle;
 	import com.monsters.siege.SiegeLab;
 
-    public class siegeworks {
+	public class siegeworks {
 
-        public static const DATA:Object = {
+		public static const DATA:Object = {
 			"id":134,
 			"group":2,
 			"order":8,
@@ -73,5 +73,5 @@ package buildings.yard {
 			"repairTime":[3600,3600,3600,3600,3600,3600,3600,3600,3600,3600]
 		};
 		
-    }
+	}
 }

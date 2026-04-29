@@ -4,9 +4,9 @@ package buildings.yard {
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
 
-    public class railguntower {
+	public class railguntower {
 
-        public static const DATA:Object = {
+		public static const DATA:Object = {
 			"id":118,
 			"group":3,
 			"order":5,
@@ -171,5 +171,5 @@ package buildings.yard {
 			]
 		};
 		
-    }
+	}
 }

@@ -4,9 +4,9 @@ package buildings.yard {
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
 
-    public class wildmonsterbaiter {
+	public class wildmonsterbaiter {
 
-        public static const DATA:Object = {
+		public static const DATA:Object = {
 			"id":19,
 			"group":2,
 			"order":12,
@@ -137,5 +137,5 @@ package buildings.yard {
 			]
 		};
 		
-    }
+	}
 }

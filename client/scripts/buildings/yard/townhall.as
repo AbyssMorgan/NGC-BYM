@@ -3,9 +3,9 @@ package buildings.yard {
 	import com.cc.utils.SecNum;
 	import flash.geom.Point;
 
-    public class townhall {
+	public class townhall {
 
-        public static const DATA:Object = {
+		public static const DATA:Object = {
 			"id":14,
 			"group":2,
 			"order":1,
@@ -282,5 +282,5 @@ package buildings.yard {
 			]
 		};
 		
-    }
+	}
 }

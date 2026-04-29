@@ -1,8 +1,8 @@
 package buildings.yard {
 
-    public class icannontower {
+	public class icannontower {
 
-        public static const DATA:Object = {
+		public static const DATA:Object = {
 			"id":130,
 			"group":3,
 			"order":2,
@@ -19,5 +19,5 @@ package buildings.yard {
 			"quantity":[0]
 		};
 		
-    }
+	}
 }

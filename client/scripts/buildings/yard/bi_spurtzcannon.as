@@ -4,9 +4,9 @@ package buildings.yard {
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
 
-    public class bi_spurtzcannon {
+	public class bi_spurtzcannon {
 
-        public static const DATA:Object = {
+		public static const DATA:Object = {
 			"id":136,
 			"group":3,
 			"order":5,
@@ -88,5 +88,5 @@ package buildings.yard {
 			"repairTime":[1920,3840,7680,9260,12000]
 		};
 		
-    }
+	}
 }

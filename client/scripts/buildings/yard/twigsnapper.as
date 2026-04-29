@@ -4,9 +4,9 @@ package buildings.yard {
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
 
-    public class twigsnapper {
+	public class twigsnapper {
 
-        public static const DATA:Object = {
+		public static const DATA:Object = {
 			"id":1,
 			"group":1,
 			"order":1,
@@ -233,5 +233,5 @@ package buildings.yard {
 			]
 		};
 		
-    }
+	}
 }

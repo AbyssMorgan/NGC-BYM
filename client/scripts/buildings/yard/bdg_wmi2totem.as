@@ -3,9 +3,9 @@ package buildings.yard {
 	import com.cc.utils.SecNum;
 	import flash.geom.Point;
 
-    public class bdg_wmi2totem {
+	public class bdg_wmi2totem {
 
-        public static const DATA:Object = {
+		public static const DATA:Object = {
 			"id":131,
 			"group":4,
 			"subgroup":4,
@@ -63,5 +63,5 @@ package buildings.yard {
 			"repairTime":[1,1,1,1,1,1,1]
 		};
 		
-    }
+	}
 }

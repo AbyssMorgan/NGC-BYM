@@ -4,9 +4,9 @@ package buildings.yard {
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
 
-    public class storagesilo {
+	public class storagesilo {
 
-        public static const DATA:Object = {
+		public static const DATA:Object = {
 			"id":6,
 			"group":1,
 			"order":5,
@@ -181,5 +181,5 @@ package buildings.yard {
 			]
 		};
 		
-    }
+	}
 }

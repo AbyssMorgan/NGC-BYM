@@ -3,9 +3,9 @@ package buildings.yard {
 	import com.cc.utils.SecNum;
 	import flash.geom.Point;
 
-    public class stronghold {
+	public class stronghold {
 
-        public static const DATA:Object = {
+		public static const DATA:Object = {
 			"id":138,
 			"group":3,
 			"order":3,
@@ -90,5 +90,5 @@ package buildings.yard {
 			]
 		};
 		
-    }
+	}
 }

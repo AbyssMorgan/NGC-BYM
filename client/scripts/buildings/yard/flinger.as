@@ -3,9 +3,9 @@ package buildings.yard {
 	import com.cc.utils.SecNum;
 	import flash.geom.Point;
 
-    public class flinger {
+	public class flinger {
 
-        public static const DATA:Object = {
+		public static const DATA:Object = {
 			"id":5,
 			"group":2,
 			"order":9,
@@ -153,5 +153,5 @@ package buildings.yard {
 			]
 		};
 		
-    }
+	}
 }

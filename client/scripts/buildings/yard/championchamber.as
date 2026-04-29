@@ -3,9 +3,9 @@ package buildings.yard {
 	import com.cc.utils.SecNum;
 	import flash.geom.Point;
 
-    public class championchamber {
+	public class championchamber {
 
-        public static const DATA:Object = {
+		public static const DATA:Object = {
 			"id":119,
 			"group":3,
 			"order":10,
@@ -44,5 +44,5 @@ package buildings.yard {
 			"repairTime":[3600]
 		};
 		
-    }
+	}
 }

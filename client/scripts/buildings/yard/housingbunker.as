@@ -1,8 +1,8 @@
 package buildings.yard {
 
-    public class housingbunker {
+	public class housingbunker {
 
-        public static const DATA:Object = {
+		public static const DATA:Object = {
 			"id":128,
 			"group":2,
 			"order":6,
@@ -19,5 +19,5 @@ package buildings.yard {
 			"quantity":[0]
 		};
 		
-    }
+	}
 }

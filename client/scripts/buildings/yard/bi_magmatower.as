@@ -4,9 +4,9 @@ package buildings.yard {
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
 
-    public class bi_magmatower {
+	public class bi_magmatower {
 
-        public static const DATA:Object = {
+		public static const DATA:Object = {
 			"id":132,
 			"group":3,
 			"order":5,
@@ -92,5 +92,5 @@ package buildings.yard {
 			"repairTime":[1440,2880,5760,11520,23000,46000,92000]
 		};
 		
-    }
+	}
 }

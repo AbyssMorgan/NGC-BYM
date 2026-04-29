@@ -3,9 +3,9 @@ package buildings.yard {
 	import com.cc.utils.SecNum;
 	import flash.geom.Point;
 
-    public class bdg_brainhead {
+	public class bdg_brainhead {
 
-        public static const DATA:Object = {
+		public static const DATA:Object = {
 			"id":78,
 			"group":4,
 			"subgroup":0,
@@ -34,5 +34,5 @@ package buildings.yard {
 			"repairTime":[1]
 		};
 		
-    }
+	}
 }

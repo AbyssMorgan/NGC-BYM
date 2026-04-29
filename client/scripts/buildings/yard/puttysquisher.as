@@ -4,9 +4,9 @@ package buildings.yard {
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
 
-    public class puttysquisher {
+	public class puttysquisher {
 
-        public static const DATA:Object = {
+		public static const DATA:Object = {
 			"id":3,
 			"group":1,
 			"order":3,
@@ -233,5 +233,5 @@ package buildings.yard {
 			]
 		};
 		
-    }
+	}
 }

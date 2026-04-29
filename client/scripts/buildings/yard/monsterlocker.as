@@ -4,9 +4,9 @@ package buildings.yard {
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
 
-    public class monsterlocker {
+	public class monsterlocker {
 
-        public static const DATA:Object = {
+		public static const DATA:Object = {
 			"id":8,
 			"group":2,
 			"order":3,
@@ -118,5 +118,5 @@ package buildings.yard {
 			]
 		};
 		
-    }
+	}
 }

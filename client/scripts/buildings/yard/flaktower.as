@@ -4,9 +4,9 @@ package buildings.yard {
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
 
-    public class flaktower {
+	public class flaktower {
 
-        public static const DATA:Object = {
+		public static const DATA:Object = {
 			"id":115,
 			"group":3,
 			"order":5,
@@ -162,5 +162,5 @@ package buildings.yard {
 			]
 		};
 		
-    }
+	}
 }

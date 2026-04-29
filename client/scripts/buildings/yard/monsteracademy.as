@@ -4,9 +4,9 @@ package buildings.yard {
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
 
-    public class monsteracademy {
+	public class monsteracademy {
 
-        public static const DATA:Object = {
+		public static const DATA:Object = {
 			"id":26,
 			"group":2,
 			"order":5,
@@ -137,5 +137,5 @@ package buildings.yard {
 			]
 		};
 		
-    }
+	}
 }

@@ -4,9 +4,9 @@ package buildings.yard {
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
 
-    public class simplesign {
+	public class simplesign {
 
-        public static const DATA:Object = {
+		public static const DATA:Object = {
 			"id":52,
 			"group":999,
 			"subgroup":5,
@@ -38,5 +38,5 @@ package buildings.yard {
 			"repairTime":[1]
 		};
 		
-    }
+	}
 }

@@ -3,9 +3,9 @@ package buildings.yard {
 	import com.cc.utils.SecNum;
 	import flash.geom.Point;
 
-    public class cannontower {
+	public class cannontower {
 
-        public static const DATA:Object = {
+		public static const DATA:Object = {
 			"id":20,
 			"group":3,
 			"order":2,
@@ -174,5 +174,5 @@ package buildings.yard {
 			]
 		};
 		
-    }
+	}
 }

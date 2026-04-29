@@ -4,9 +4,9 @@ package buildings.yard {
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
 
-    public class snipertower {
+	public class snipertower {
 
-        public static const DATA:Object = {
+		public static const DATA:Object = {
 			"id":21,
 			"group":3,
 			"order":1,
@@ -180,5 +180,5 @@ package buildings.yard {
 			]
 		};
 		
-    }
+	}
 }

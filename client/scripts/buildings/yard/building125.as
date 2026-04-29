@@ -2,9 +2,9 @@ package buildings.yard {
 
 	import com.cc.utils.SecNum;
 
-    public class building125 {
+	public class building125 {
 
-        public static const DATA:Object = {
+		public static const DATA:Object = {
 			"id":125,
 			"group":999,
 			"order":0,
@@ -25,5 +25,5 @@ package buildings.yard {
 			"repairTime":[1]
 		};
 		
-    }
+	}
 }

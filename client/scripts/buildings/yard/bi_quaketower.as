@@ -4,9 +4,9 @@ package buildings.yard {
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
 
-    public class bi_quaketower {
+	public class bi_quaketower {
 
-        public static const DATA:Object = {
+		public static const DATA:Object = {
 			"id":129,
 			"group":3,
 			"order":2,
@@ -22,20 +22,20 @@ package buildings.yard {
 			"block":true,
 			"cls":INFERNOQUAKETOWER,
 			"stats":[
-				{"range":160, "damage":1100, "rate":15},
-				{"range":170, "damage":1680, "rate":15},
-				{"range":180, "damage":2220, "rate":15},
-				{"range":190, "damage":2880, "rate":15},
-				{"range":200, "damage":3640, "rate":15},
-				{"range":210, "damage":4400, "rate":15}
+				{"range":160, "damage":1100, "rate":15}, // Level 1
+				{"range":170, "damage":1680, "rate":15}, // Level 2
+				{"range":180, "damage":2220, "rate":15}, // Level 3
+				{"range":190, "damage":2880, "rate":15}, // Level 4
+				{"range":200, "damage":3640, "rate":15}, // Level 5
+				{"range":210, "damage":4400, "rate":15}, // Level 6
 			],
 			"costs":[
-				{"r1":new SecNum(312500), "r2":new SecNum(187500), "r3":new SecNum(125000), "r4":new SecNum(0), "time":new SecNum(18000), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]},
-				{"r1":new SecNum(1250000), "r2":new SecNum(750000), "r3":new SecNum(500000), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]},
-				{"r1":new SecNum(3750000), "r2":new SecNum(2250000), "r3":new SecNum(1500000), "r4":new SecNum(0), "time":new SecNum(172800), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]},
-				{"r1":new SecNum(7187500), "r2":new SecNum(4312500), "r3":new SecNum(2875000), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]},
-				{"r1":new SecNum(12000000), "r2":new SecNum(9000000), "r3":new SecNum(6000000), "r4":new SecNum(0), "time":new SecNum(388800), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]},
-				{"r1":new SecNum(16500000), "r2":new SecNum(12687500), "r3":new SecNum(7562500), "r4":new SecNum(0), "time":new SecNum(475200), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]}
+				{"r1":new SecNum(312500), "r2":new SecNum(187500), "r3":new SecNum(125000), "r4":new SecNum(0), "time":new SecNum(18000), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]}, // Level 1
+				{"r1":new SecNum(1250000), "r2":new SecNum(750000), "r3":new SecNum(500000), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]}, // Level 2
+				{"r1":new SecNum(3750000), "r2":new SecNum(2250000), "r3":new SecNum(1500000), "r4":new SecNum(0), "time":new SecNum(172800), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]}, // Level 3
+				{"r1":new SecNum(7187500), "r2":new SecNum(4312500), "r3":new SecNum(2875000), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]}, // Level 4
+				{"r1":new SecNum(12000000), "r2":new SecNum(9000000), "r3":new SecNum(6000000), "r4":new SecNum(0), "time":new SecNum(388800), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]}, // Level 5
+				{"r1":new SecNum(16500000), "r2":new SecNum(12687500), "r3":new SecNum(7562500), "r4":new SecNum(0), "time":new SecNum(475200), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]}, // Level 6
 			],
 			"can_fortify":true,
 			"fortify_costs":[
@@ -88,9 +88,27 @@ package buildings.yard {
 				}
 			},
 			"quantity":[0,1,1,2,2,4,4,4,4,4,4],
-			"hp":[10000,16000,22000,28000,34000,34000,34000,34000],
-			"repairTime":[1440,2880,5760,11520,23000,23000,23000,23000]
+			"hp":[
+				10000, // Level 1
+				16000, // Level 2
+				22000, // Level 3
+				28000, // Level 4
+				34000, // Level 5
+				34000, // Level 6
+				34000, // Level 7
+				34000, // Level 8
+			],
+			"repairTime":[
+				1440, // Level 1
+				2880, // Level 2
+				5760, // Level 3
+				11520, // Level 4
+				23000, // Level 5
+				23000, // Level 6
+				23000, // Level 7
+				23000, // Level 8
+			]
 		};
 		
-    }
+	}
 }

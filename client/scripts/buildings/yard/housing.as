@@ -3,9 +3,9 @@ package buildings.yard {
 	import com.cc.utils.SecNum;
 	import flash.geom.Point;
 
-    public class housing {
+	public class housing {
 
-        public static const DATA:Object = {
+		public static const DATA:Object = {
 			"id":15,
 			"group":2,
 			"order":6,
@@ -133,5 +133,5 @@ package buildings.yard {
 			]
 		};
 		
-    }
+	}
 }

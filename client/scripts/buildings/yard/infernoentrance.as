@@ -3,9 +3,9 @@ package buildings.yard {
 	import com.cc.utils.SecNum;
 	import flash.geom.Point;
 
-    public class infernoentrance {
+	public class infernoentrance {
 
-        public static const DATA:Object = {
+		public static const DATA:Object = {
 			"id":127,
 			"group":999,
 			"order":0,
@@ -56,5 +56,5 @@ package buildings.yard {
 			"repairTime":[1,1,1,1,1]
 		};
 		
-    }
+	}
 }

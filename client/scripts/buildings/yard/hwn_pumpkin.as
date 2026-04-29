@@ -3,9 +3,9 @@ package buildings.yard {
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
 
-    public class hwn_pumpkin {
+	public class hwn_pumpkin {
 
-        public static const DATA:Object = {
+		public static const DATA:Object = {
 			"id":53,
 			"group":999,
 			"order":1,
@@ -31,5 +31,5 @@ package buildings.yard {
 			}
 		};
 		
-    }
+	}
 }

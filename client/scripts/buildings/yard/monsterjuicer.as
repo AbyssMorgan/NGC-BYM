@@ -4,9 +4,9 @@ package buildings.yard {
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
 
-    public class monsterjuicer {
+	public class monsterjuicer {
 
-        public static const DATA:Object = {
+		public static const DATA:Object = {
 			"id":9,
 			"group":2,
 			"order":14,
@@ -52,5 +52,5 @@ package buildings.yard {
 			"repairTime":[480,1920,7680]
 		};
 		
-    }
+	}
 }

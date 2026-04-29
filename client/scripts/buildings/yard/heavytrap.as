@@ -3,9 +3,9 @@ package buildings.yard {
 	import com.cc.utils.SecNum;
 	import flash.geom.Point;
 
-    public class heavytrap {
+	public class heavytrap {
 
-        public static const DATA:Object = {
+		public static const DATA:Object = {
 			"id":117,
 			"group":3,
 			"order":10,
@@ -43,5 +43,5 @@ package buildings.yard {
 			"repairTime":[1]
 		};
 		
-    }
+	}
 }

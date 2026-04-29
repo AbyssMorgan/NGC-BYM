@@ -3,9 +3,9 @@ package buildings.yard {
 	import com.cc.utils.SecNum;
 	import flash.geom.Point;
 
-    public class woodenblock {
+	public class woodenblock {
 
-        public static const DATA:Object = {
+		public static const DATA:Object = {
 			"id":17,
 			"group":3,
 			"order":7,
@@ -182,5 +182,5 @@ package buildings.yard {
 			]
 		};
 		
-    }
+	}
 }

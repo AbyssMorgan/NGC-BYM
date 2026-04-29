@@ -3,9 +3,9 @@ package buildings.yard {
 	import com.cc.utils.SecNum;
 	import flash.geom.Point;
 
-    public class bdg_scaleelectric {
+	public class bdg_scaleelectric {
 
-        public static const DATA:Object = {
+		public static const DATA:Object = {
 			"id":68,
 			"group":4,
 			"subgroup":2,
@@ -34,5 +34,5 @@ package buildings.yard {
 			"repairTime":[1]
 		};
 		
-    }
+	}
 }

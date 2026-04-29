@@ -4,9 +4,9 @@ package buildings.yard {
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
 
-    public class trojanhorse {
+	public class trojanhorse {
 
-        public static const DATA:Object = {
+		public static const DATA:Object = {
 			"id":27,
 			"group":999,
 			"order":0,
@@ -38,5 +38,5 @@ package buildings.yard {
 			"repairTime":[1]
 		};
 		
-    }
+	}
 }

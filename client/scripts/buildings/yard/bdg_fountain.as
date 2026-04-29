@@ -4,9 +4,9 @@ package buildings.yard {
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
 
-    public class bdg_fountain {
+	public class bdg_fountain {
 
-        public static const DATA:Object = {
+		public static const DATA:Object = {
 			"id":105,
 			"group":4,
 			"subgroup":2,
@@ -35,5 +35,5 @@ package buildings.yard {
 			"repairTime":[1]
 		};
 		
-    }
+	}
 }

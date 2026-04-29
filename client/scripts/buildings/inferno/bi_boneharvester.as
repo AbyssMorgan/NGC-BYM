@@ -1,10 +1,10 @@
-package buildings.yard {
+package buildings.inferno {
 
 	import com.cc.utils.SecNum;
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
 
-	public class twigsnapper {
+	public class bi_boneharvester {
 
 		public static const DATA:Object = {
 			"id":1,
@@ -12,14 +12,13 @@ package buildings.yard {
 			"order":1,
 			"buildStatus":0,
 			"type":"resource",
-			"name":"#b_twigsnapper#",
+			"name":"#bi_boneharvester#",
 			"size":100,
 			"cycle":30,
 			"attackgroup":1,
 			"tutstage":0,
 			"sale":0,
-			"description":"twigsnapper_desc",
-			"cls":BUILDING1,
+			"description":"bi_boneharvester_desc",
 			"costs":[
 				{"r1":new SecNum(0), "r2":new SecNum(750), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(15), "re":[[14,1,1]]}, // Level 1
 				{"r1":new SecNum(0), "r2":new SecNum(1575), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(300), "re":[[14,1,1]]}, // Level 2
@@ -34,69 +33,46 @@ package buildings.yard {
 				{"r1":new SecNum(35000000), "r2":new SecNum(35000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 4), "re":[[14,1,6]]}, // Level 11
 				{"r1":new SecNum(40000000), "r2":new SecNum(40000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 5), "re":[[14,1,8]]}, // Level 12
 				{"r1":new SecNum(50000000), "r2":new SecNum(50000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 6), "re":[[14,1,10],[12,1,2]]}, // Level 13
-				{"r1":new SecNum(100000000), "r2":new SecNum(100000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 7), "re":[[14,1,12],[12,1,2]]}, // Level 14
-				{"r1":new SecNum(150000000), "r2":new SecNum(150000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 8), "re":[[14,1,14],[12,1,2]]}, // Level 15
-				{"r1":new SecNum(200000000), "r2":new SecNum(200000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 9), "re":[[14,1,15],[12,1,2]]}, // Level 16
-				{"r1":new SecNum(250000000), "r2":new SecNum(250000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 10), "re":[[14,1,16],[12,1,2]]}, // Level 17
-				{"r1":new SecNum(500000000), "r2":new SecNum(500000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 11), "re":[[14,1,18],[12,1,2]]}, // Level 18
-				{"r1":new SecNum(1250000000), "r2":new SecNum(1250000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 12), "re":[[14,1,19],[12,1,2]]}, // Level 19
-				{"r1":new SecNum(2500000000), "r2":new SecNum(2500000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 14), "re":[[14,1,20],[12,1,2]]} // Level 20
+				// {"r1":new SecNum(100000000), "r2":new SecNum(100000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 7), "re":[[14,1,12],[12,1,2]]}, // Level 14
+				// {"r1":new SecNum(150000000), "r2":new SecNum(150000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 8), "re":[[14,1,14],[12,1,2]]}, // Level 15
+				// {"r1":new SecNum(200000000), "r2":new SecNum(200000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 9), "re":[[14,1,15],[12,1,2]]}, // Level 16
+				// {"r1":new SecNum(250000000), "r2":new SecNum(250000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 10), "re":[[14,1,16],[12,1,2]]}, // Level 17
+				// {"r1":new SecNum(500000000), "r2":new SecNum(500000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 11), "re":[[14,1,18],[12,1,2]]}, // Level 18
+				// {"r1":new SecNum(1250000000), "r2":new SecNum(1250000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 12), "re":[[14,1,19],[12,1,2]]}, // Level 19
+				// {"r1":new SecNum(2500000000), "r2":new SecNum(2500000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 14), "re":[[14,1,20],[12,1,2]]} // Level 20
 			],
 			"imageData":{
-				"baseurl":"buildings/twigsnapper.v2/",
-				"1":{
-					"anim":["anim.1.png",new Rectangle(-4,10,23,33),34],
-					"top":["top.1.png",new Point(-30,-19)],
-					"shadow":["shadow.1.jpg",new Point(-23,29)],
-					"topdamaged":["top.1.damaged.png",new Point(-30,-19)],
-					"shadowdamaged":["shadow.1.damaged.jpg",new Point(-28,28)],
-					"topdestroyed":["top.destroyed.png",new Point(-34,2)],
-					"shadowdestroyed":["shadow.destroyed.jpg",new Point(-31,20)]
+				"baseurl":"buildings/iboneharvester/",
+				1:{
+					"anim":["anim.1.v2.png",new Rectangle(-32,-33,65,80),47],
+					"top":["top.1.v2.png",new Point(-48,-33)],
+					"shadow":["shadow.1.v4.jpg",new Point(-53,-1)],
+					//"shadow":["shadow.1.v4.jpg",new Point(-53,11)],
+					"topdamaged":["top.1.damaged.v2.png",new Point(-41,-26)],
+					"shadowdamaged":["shadow.1.damaged.v2.jpg",new Point(-51,-2)],
+					//"shadowdamaged":["shadow.1.damaged.v2.jpg",new Point(-51,5)],
+					"topdestroyed":["top.1.destroyed.v2.png",new Point(-45,0)],
+					"shadowdestroyed":["shadow.1.destroyed.v4.jpg",new Point(-46,-2)]
+					// "shadowdestroyed":["shadow.1.destroyed.v4.jpg",new Point(-46,4)]
 				},
-				"3":{
-					"anim":["anim.3.png",new Rectangle(0,6,23,30),34],
-					"top":["top.3.png",new Point(-32,-40)],
-					"shadow":["shadow.3.jpg",new Point(-38,11)],
-					"topdamaged":["top.3.damaged.png",new Point(-33,-37)],
-					"shadowdamaged":["shadow.3.damaged.jpg",new Point(-27,25)],
-					"topdestroyed":["top.destroyed.png",new Point(-34,2)],
-					"shadowdestroyed":["shadow.destroyed.jpg",new Point(-31,20)]
-				},
-				"6":{
-					"anim":["anim.6.png",new Rectangle(-1,1,34,34),34],
-					"top":["top.6.png",new Point(-34,-42)],
-					"shadow":["shadow.6.jpg",new Point(-25,26)],
-					"topdamaged":["top.6.damaged.png",new Point(-35,-42)],
-					"shadowdamaged":["shadow.6.damaged.jpg",new Point(-28,25)],
-					"topdestroyed":["top.destroyed.png",new Point(-34,2)],
-					"shadowdestroyed":["shadow.destroyed.jpg",new Point(-31,20)]
-				},
-				"10":{
-					"anim":["anim.10.png",new Rectangle(-2,3,35,33),34],
-					"top":["top.10.png",new Point(-34,-54)],
-					"shadow":["shadow.10.jpg",new Point(-26,26)],
-					"topdamaged":["top.10.damaged.png",new Point(-35,-41)],
-					"shadowdamaged":["shadow.10.damaged.jpg",new Point(-28,22)],
-					"topdestroyed":["top.destroyed.png",new Point(-34,2)],
-					"shadowdestroyed":["shadow.destroyed.jpg",new Point(-31,20)]
+				3:{
+					"anim":["anim.2.png",new Rectangle(-44,-38,90,97),50],
+					"top":["top.2.png",new Point(-44,25)],
+					// "shadow":["shadow.2.jpg",new Point(-39,16)], // original
+					"shadow":["shadow.2.jpg",new Point(-39,7)],
+					"topdamaged":["top.2.damaged.png",new Point(-37,-27)],
+					//"shadowdamaged":["shadow.2.damaged.jpg",new Point(-39,19)],
+					"topdestroyed":["top.2.destroyed.png",new Point(-57,8)]
+					//"shadowdestroyed":["shadow.2.destroyed.jpg",new Point(-60,19)]
 				}
 			},
+			"buildingbuttons":["bone_crusher.v2"],
 			"upgradeImgData":{
 				"baseurl":"buildingbuttons/",
-				"1":{
-					"img":"1.1.jpg",
-					"silhouette_img":"1.3.silhouette.jpg"
-				},
-				"3":{"img":"1.3.jpg"},
-				"6":{"img":"1.6.jpg"},
-				"10":{"img":"1.10.jpg"}
-			},
-			"thumbImgData":{
-				"baseurl":"buildingthumbs/",
-				"1":{"img":"1.1.png"},
-				"3":{"img":"1.3.png"},
-				"6":{"img":"1.6.png"},
-				"10":{"img":"1.10.png"}
+				1:{
+					"img":"bone_crusher.v2.jpg",
+					"silhouette_img":"bone_crusher.v2.silhouette.jpg"
+				}
 			},
 			"quantity":[
 				0, // Level 0

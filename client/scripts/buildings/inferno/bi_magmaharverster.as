@@ -1,10 +1,10 @@
-package buildings.yard {
+package buildings.inferno {
 
 	import com.cc.utils.SecNum;
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
 
-	public class goofactory {
+	public class bi_magmaharverster {
 
 		public static const DATA:Object = {
 			"id":4,
@@ -12,14 +12,13 @@ package buildings.yard {
 			"order":4,
 			"buildStatus":0,
 			"type":"resource",
-			"name":"#b_goofactory#",
+			"name":"#bi_magmaharverster#",
 			"size":100,
 			"cycle":30,
 			"attackgroup":1,
 			"tutstage":80,
 			"sale":0,
-			"description":"goofactory_desc",
-			"cls":BUILDING4,
+			"description":"bi_magmaharverster_desc",
 			"costs":[
 				{"r1":new SecNum(247), "r2":new SecNum(577), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(20), "re":[[14,1,1]]}, // Level 1
 				{"r1":new SecNum(520), "r2":new SecNum(1212), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(300), "re":[[14,1,1]]}, // Level 2
@@ -34,69 +33,54 @@ package buildings.yard {
 				{"r1":new SecNum(35000000), "r2":new SecNum(35000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 4), "re":[[14,1,6]]}, // Level 11
 				{"r1":new SecNum(40000000), "r2":new SecNum(40000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 5), "re":[[14,1,8]]}, // Level 12
 				{"r1":new SecNum(50000000), "r2":new SecNum(50000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 6), "re":[[14,1,10],[12,1,2]]}, // Level 13
-				{"r1":new SecNum(100000000), "r2":new SecNum(100000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 7), "re":[[14,1,12],[12,1,2]]}, // Level 14
-				{"r1":new SecNum(150000000), "r2":new SecNum(150000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 8), "re":[[14,1,14],[12,1,2]]}, // Level 15
-				{"r1":new SecNum(200000000), "r2":new SecNum(200000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 9), "re":[[14,1,15],[12,1,2]]}, // Level 16
-				{"r1":new SecNum(250000000), "r2":new SecNum(250000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 10), "re":[[14,1,16],[12,1,2]]}, // Level 17
-				{"r1":new SecNum(500000000), "r2":new SecNum(500000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 11), "re":[[14,1,18],[12,1,2]]}, // Level 18
-				{"r1":new SecNum(1250000000), "r2":new SecNum(1250000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 12), "re":[[14,1,19],[12,1,2]]}, // Level 19
-				{"r1":new SecNum(2500000000), "r2":new SecNum(2500000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 14), "re":[[14,1,20],[12,1,2]]} // Level 20
+				// {"r1":new SecNum(100000000), "r2":new SecNum(100000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 7), "re":[[14,1,12],[12,1,2]]}, // Level 14
+				// {"r1":new SecNum(150000000), "r2":new SecNum(150000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 8), "re":[[14,1,14],[12,1,2]]}, // Level 15
+				// {"r1":new SecNum(200000000), "r2":new SecNum(200000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 9), "re":[[14,1,15],[12,1,2]]}, // Level 16
+				// {"r1":new SecNum(250000000), "r2":new SecNum(250000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 10), "re":[[14,1,16],[12,1,2]]}, // Level 17
+				// {"r1":new SecNum(500000000), "r2":new SecNum(500000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 11), "re":[[14,1,18],[12,1,2]]}, // Level 18
+				// {"r1":new SecNum(1250000000), "r2":new SecNum(1250000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 12), "re":[[14,1,19],[12,1,2]]}, // Level 19
+				// {"r1":new SecNum(2500000000), "r2":new SecNum(2500000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 14), "re":[[14,1,20],[12,1,2]]} // Level 20
 			],
 			"imageData":{
-				"baseurl":"buildings/goofactory.v2/",
-				"1":{
-					"anim":["anim.1.png",new Rectangle(3,14,22,40),26],
-					"top":["top.1.png",new Point(-26,-33)],
-					"shadow":["shadow.1.jpg",new Point(-25,29)],
-					"topdamaged":["top.1.damaged.png",new Point(-32,-15)],
-					"shadowdamaged":["shadow.1.damaged.jpg",new Point(-30,27)],
-					"topdestroyed":["top.destroyed.png",new Point(-31,0)],
-					"shadowdestroyed":["shadow.destroyed.jpg",new Point(-35,24)]
+				"baseurl":"buildings/imagmaproducer/",
+				1:{
+					"anim":["anim.1.v2.png",new Rectangle(9.2,12.6,25,31),49],
+					"anim2":["anim.2.v2.png",new Rectangle(-32,9,36,26),49],
+					"anim3":["anim.3.v2.png",new Rectangle(-18,-60,34,58),49],
+					"top":["top.1.v2.png",new Point(-35,-15)],
+					"shadow":["shadow.1.v2.jpg",new Point(-36,4)],
+					"topdamaged":["top.1.damaged.v2.png",new Point(-39,-36)],
+					"shadowdamaged":["shadow.1.damaged.v2.jpg",new Point(-49,2)],
+					"topdestroyed":["top.1.destroyed.v2.png",new Point(-37,-2)],
+					"shadowdestroyed":["shadow.1.destroyed.v2.jpg",new Point(-41,6)]
 				},
-				"3":{
-					"anim":["anim.3.png",new Rectangle(4,12,25,45),26],
-					"top":["top.3.png",new Point(-27,-33)],
-					"shadow":["shadow.3.jpg",new Point(-31,21)],
-					"topdamaged":["top.3.damaged.png",new Point(-28,-31)],
-					"shadowdamaged":["shadow.3.damaged.jpg",new Point(-31,20)],
-					"topdestroyed":["top.destroyed.png",new Point(-31,0)],
-					"shadowdestroyed":["shadow.destroyed.jpg",new Point(-35,24)]
-				},
-				"6":{
-					"anim":["anim.6.png",new Rectangle(-21,12,51,48),26],
-					"top":["top.6.png",new Point(-33,-33)],
-					"shadow":["shadow.6.jpg",new Point(-26,27)],
-					"topdamaged":["top.6.damaged.png",new Point(-37,-29)],
-					"shadowdamaged":["shadow.6.damaged.jpg",new Point(-36,25)],
-					"topdestroyed":["top.destroyed.png",new Point(-31,0)],
-					"shadowdestroyed":["shadow.destroyed.jpg",new Point(-35,24)]
-				},
-				"10":{
-					"anim":["anim.10.png",new Rectangle(-21,11,51,47),26],
-					"top":["top.10.png",new Point(-40,-48)],
-					"shadow":["shadow.10.jpg",new Point(-35,28)],
-					"topdamaged":["top.10.damaged.png",new Point(-45,-42)],
-					"shadowdamaged":["shadow.10.damaged.jpg",new Point(-37,25)],
-					"topdestroyed":["top.destroyed.png",new Point(-31,0)],
-					"shadowdestroyed":["shadow.destroyed.jpg",new Point(-35,24)]
+				3:{
+					//"anim":["anim.1.2.png",new Rectangle(-37,-66,59,52),49],
+					//"anim2":["anim.2.2.png",new Rectangle(-1,-4,40,63),49],
+					//"top":["top.2.png",new Point(-40,-15)],
+					//"shadow":["shadow.2.jpg",new Point(-36,4)],
+					//"topdamaged":["top.2.damaged.png",new Point(-48,-35)],
+					//"shadowdamaged":["shadow.2.damaged.jpg",new Point(-38,23)],
+					//"topdestroyed":["top.2.destroyed.png",new Point(-67,-8)]
+					//"shadowdestroyed":["shadow.2.destroyed.jpg",new Point(-70,18)]
+					"anim":["anim.1.v2.png",new Rectangle(9.2,12.6,25,31),49],
+					"anim2":["anim.2.v2.png",new Rectangle(-32,9,36,26),49],
+					"anim3":["anim.3.v2.png",new Rectangle(-18,-60,34,58),49],
+					"top":["top.1.v2.png",new Point(-35,-15)],
+					"shadow":["shadow.1.v2.jpg",new Point(-36,4)],
+					"topdamaged":["top.1.damaged.v2.png",new Point(-39,-36)],
+					"shadowdamaged":["shadow.1.damaged.v2.jpg",new Point(-49,2)],
+					"topdestroyed":["top.1.destroyed.v2.png",new Point(-37,-2)],
+					"shadowdestroyed":["shadow.1.destroyed.v2.jpg",new Point(-41,6)]
 				}
 			},
+			"buildingbuttons":["magma_producer.v2"],
 			"upgradeImgData":{
 				"baseurl":"buildingbuttons/",
-				"1":{
-					"img":"4.1.jpg",
-					"silhouette_img":"4.3.silhouette.jpg"
-				},
-				"3":{"img":"4.3.jpg"},
-				"6":{"img":"4.6.jpg"},
-				"10":{"img":"4.10.jpg"}
-			},
-			"thumbImgData":{
-				"baseurl":"buildingthumbs/",
-				"1":{"img":"4.1.png"},
-				"3":{"img":"4.3.png"},
-				"6":{"img":"4.6.png"},
-				"10":{"img":"4.10.png"}
+				1:{
+					"img":"magma_producer.v2.jpg",
+					"silhouette_img":"magma_producer.v2.silhouette.jpg"
+				}
 			},
 			"quantity":[
 				0, // Level 0

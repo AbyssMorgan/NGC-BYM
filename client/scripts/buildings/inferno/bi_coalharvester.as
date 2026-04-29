@@ -1,10 +1,10 @@
-package buildings.yard {
+package buildings.inferno {
 
 	import com.cc.utils.SecNum;
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
 
-	public class pebbleshiner {
+	public class bi_coalharvester {
 
 		public static const DATA:Object = {
 			"id":2,
@@ -12,14 +12,13 @@ package buildings.yard {
 			"order":2,
 			"buildStatus":0,
 			"type":"resource",
-			"name":"#b_pebbleshiner#",
+			"name":"#bi_coalharvester#",
 			"size":100,
 			"cycle":30,
 			"attackgroup":1,
 			"tutstage":0,
 			"sale":0,
-			"description":"pebbleshiner_desc",
-			"cls":BUILDING2,
+			"description":"bi_coalharvester_desc",
 			"costs":[
 				{"r1":new SecNum(750), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(15), "re":[[14,1,1]]}, // Level 1
 				{"r1":new SecNum(1575), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(300), "re":[[14,1,1]]}, // Level 2
@@ -34,69 +33,44 @@ package buildings.yard {
 				{"r1":new SecNum(35000000), "r2":new SecNum(35000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 4), "re":[[14,1,6]]}, // Level 11
 				{"r1":new SecNum(40000000), "r2":new SecNum(40000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 5), "re":[[14,1,8]]}, // Level 12
 				{"r1":new SecNum(50000000), "r2":new SecNum(50000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 6), "re":[[14,1,10],[12,1,2]]}, // Level 13
-				{"r1":new SecNum(100000000), "r2":new SecNum(100000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 7), "re":[[14,1,12],[12,1,2]]}, // Level 14
-				{"r1":new SecNum(150000000), "r2":new SecNum(150000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 8), "re":[[14,1,14],[12,1,2]]}, // Level 15
-				{"r1":new SecNum(200000000), "r2":new SecNum(200000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 9), "re":[[14,1,15],[12,1,2]]}, // Level 16
-				{"r1":new SecNum(250000000), "r2":new SecNum(250000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 10), "re":[[14,1,16],[12,1,2]]}, // Level 17
-				{"r1":new SecNum(500000000), "r2":new SecNum(500000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 11), "re":[[14,1,18],[12,1,2]]}, // Level 18
-				{"r1":new SecNum(1250000000), "r2":new SecNum(1250000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 12), "re":[[14,1,19],[12,1,2]]}, // Level 19
-				{"r1":new SecNum(2500000000), "r2":new SecNum(2500000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 14), "re":[[14,1,20],[12,1,2]]} // Level 20
+				// {"r1":new SecNum(100000000), "r2":new SecNum(100000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 7), "re":[[14,1,12],[12,1,2]]}, // Level 14
+				// {"r1":new SecNum(150000000), "r2":new SecNum(150000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 8), "re":[[14,1,14],[12,1,2]]}, // Level 15
+				// {"r1":new SecNum(200000000), "r2":new SecNum(200000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 9), "re":[[14,1,15],[12,1,2]]}, // Level 16
+				// {"r1":new SecNum(250000000), "r2":new SecNum(250000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 10), "re":[[14,1,16],[12,1,2]]}, // Level 17
+				// {"r1":new SecNum(500000000), "r2":new SecNum(500000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 11), "re":[[14,1,18],[12,1,2]]}, // Level 18
+				// {"r1":new SecNum(1250000000), "r2":new SecNum(1250000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 12), "re":[[14,1,19],[12,1,2]]}, // Level 19
+				// {"r1":new SecNum(2500000000), "r2":new SecNum(2500000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 14), "re":[[14,1,20],[12,1,2]]} // Level 20
 			],
 			"imageData":{
-				"baseurl":"buildings/pebbleshiner.v2/",
-				"1":{
-					"anim":["anim.1.png",new Rectangle(-21,8,42,24),26],
-					"top":["top.1.png",new Point(-34,-12)],
-					"shadow":["shadow.1.jpg",new Point(-33,27)],
-					"topdamaged":["top.1.damaged.png",new Point(-34,-6)],
-					"shadowdamaged":["shadow.1.damaged.jpg",new Point(-31,27)],
-					"topdestroyed":["top.destroyed.png",new Point(-35,-2)],
-					"shadowdestroyed":["shadow.destroyed.jpg",new Point(-33,22)]
+				"baseurl":"buildings/icoalproducer/",
+				1:{
+					"anim":["anim.1.v2.png",new Rectangle(-21,-45,40,18),47],
+					"anim2":["anim.2.v2.png",new Rectangle(-39,-9,39,63),47],
+					"anim3":["anim.3.v2.png",new Rectangle(-3,8.9,31,18),47],
+					"top":["top.1.v2.png",new Point(-32,-40)],
+					"shadow":["shadow.1.jpg",new Point(-40,14)],
+					"topdamaged":["top.1.damaged.v2.png",new Point(-34,-42)],
+					"shadowdamaged":["shadow.1.damaged.v2.jpg",new Point(-64,4)],
+					"topdestroyed":["top.1.destroyed.v2.png",new Point(-44,-4)],
+					"shadowdestroyed":["shadow.1.destroyed.v2.jpg",new Point(-50,-2)]
 				},
-				"3":{
-					"anim":["anim.3.png",new Rectangle(-29,3,58,31),26],
-					"top":["top.3.png",new Point(-34,-27)],
-					"shadow":["shadow.3.jpg",new Point(-33,27)],
-					"topdamaged":["top.3.damaged.png",new Point(-33,-26)],
-					"shadowdamaged":["shadow.3.damaged.jpg",new Point(-31,22)],
-					"topdestroyed":["top.destroyed.png",new Point(-35,-2)],
-					"shadowdestroyed":["shadow.destroyed.jpg",new Point(-32,22)]
-				},
-				"6":{
-					"anim":["anim.6.png",new Rectangle(-29,-5,58,41),26],
-					"top":["top.6.png",new Point(-34,-34)],
-					"shadow":["shadow.6.jpg",new Point(-34,20)],
-					"topdamaged":["top.6.damaged.png",new Point(-45,-32)],
-					"shadowdamaged":["shadow.6.damaged.jpg",new Point(-34,20)],
-					"topdestroyed":["top.destroyed.png",new Point(-35,-2)],
-					"shadowdestroyed":["shadow.destroyed.jpg",new Point(-33,22)]
-				},
-				"10":{
-					"anim":["anim.10.png",new Rectangle(-29,-37,62,72),24],
-					"top":["top.10.png",new Point(-34,-32)],
-					"shadow":["shadow.10.jpg",new Point(-34,22)],
-					"topdamaged":["top.10.damaged.png",new Point(-34,-36)],
-					"shadowdamaged":["shadow.10.damaged.jpg",new Point(-34,15)],
-					"topdestroyed":["top.destroyed.png",new Point(-35,-2)],
-					"shadowdestroyed":["shadow.destroyed.jpg",new Point(-33,22)]
+				3:{
+					"anim":["anim.1.2.png",new Rectangle(-40,-52,74,105),45],
+					"top":["top.2.png",new Point(-40,-50)],
+					"shadow":["shadow.2.jpg",new Point(-42,7)],
+					"topdamaged":["top.2.damaged.png",new Point(-39,-52)],
+					"shadowdamaged":["shadow.2.damaged.jpg",new Point(-43,5)],
+					"topdestroyed":["top.2.destroyed.png",new Point(-43,-9)],
+					"shadowdestroyed":["shadow.2.destroyed.jpg",new Point(-46,17)]
 				}
 			},
+			"buildingbuttons":["coal_producer.v2"],
 			"upgradeImgData":{
 				"baseurl":"buildingbuttons/",
-				"1":{
-					"img":"2.1.jpg",
-					"silhouette_img":"2.1.silhouette.jpg"
-				},
-				"3":{"img":"2.3.jpg"},
-				"6":{"img":"2.6.jpg"},
-				"10":{"img":"2.10.jpg"}
-			},
-			"thumbImgData":{
-				"baseurl":"buildingthumbs/",
-				"1":{"img":"2.1.png"},
-				"3":{"img":"2.3.png"},
-				"6":{"img":"2.6.png"},
-				"10":{"img":"2.10.png"}
+				1:{
+					"img":"coal_producer.v2.jpg",
+					"silhouette_img":"coal_producer.v2.silhouette.jpg"
+				}
 			},
 			"quantity":[
 				0, // Level 0

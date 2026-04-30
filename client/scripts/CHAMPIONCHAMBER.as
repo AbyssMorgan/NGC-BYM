@@ -154,7 +154,6 @@ package
             CREATURES._guardian.export();
             BASE._guardianData[_loc1_].ft -= GLOBAL.Timestamp();
             CREATURES._guardian.changeModeFreeze();
-            BASE._guardianData[_loc1_].ft -= GLOBAL.Timestamp();
             this._frozen.push(BASE._guardianData[_loc1_]);
             BASE._guardianData[_loc1_].status = ChampionBase.k_CHAMPION_STATUS_FROZEN;
             if(GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD)

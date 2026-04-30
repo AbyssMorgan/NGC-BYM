@@ -442,7 +442,7 @@ package {
 				_storeItems.HAMS.c = [GetHealAllShinyCost()];
 			}
 			var _loc9_: int = 0;
-			var _loc11_: int = 0;
+			var _loc11_: Number = 0;
 			var _loc12_: int = 0;
 			var resources_blk2: uint = 10000;
 			var resources_blk3: uint = 100000 * 2;
@@ -1307,9 +1307,9 @@ package {
 				}
 			}
 			if (_loc20_ == "" && _loc9_.substr(0, 3) == "BLK" && _loc10_.resourceCost != undefined) {
-				var _locRcost: int = int(_loc10_.resourceCost);
-				var _locR1: int = Math.ceil(_locRcost / 2);
-				var _locR2: int = _locRcost - _locR1;
+				var _locRcost: Number = Number(_loc10_.resourceCost);
+				var _locR1: Number = Math.ceil(_locRcost / 2);
+				var _locR2: Number = _locRcost - _locR1;
 				if (BASE._resources.r1.Get() < _locR1 || BASE._resources.r2.Get() < _locR2) {
 					_loc20_ = "Not enough resources";
 				}
@@ -1321,9 +1321,9 @@ package {
 				_loc22_ = Number(_loc10_.fbc_cost[_loc4_]);
 			} else {
 				if (_loc9_.substr(0, 3) == "BLK" && _loc10_.resourceCost != undefined) {
-					var _rCost: int = int(_loc10_.resourceCost);
-					var _r1: int = Math.ceil(_rCost / 2);
-					var _r2: int = _rCost - _r1;
+					var _rCost: Number = Number(_loc10_.resourceCost);
+					var _r1: Number = Math.ceil(_rCost / 2);
+					var _r2: Number = _rCost - _r1;
 					_loc21_ = "<b>0</b>";
 					_loc22_ = Number(_rCost);
 				} else {
@@ -1931,12 +1931,18 @@ package {
 						if (item.substr(3, 1) == "6" && !block_level_6) {
 							_loc32_ = KEYS.Get("str_prob_notneeded");
 						}
+						if (item.substr(3, 1) == "7" && !block_level_7) {
+							_loc32_ = KEYS.Get("str_prob_notneeded");
+						}
+						if (item.substr(3, 1) == "8" && !block_level_8) {
+							_loc32_ = KEYS.Get("str_prob_notneeded");
+						}
 					}
 				}
 				if (_loc32_ == "" && item.substr(0, 3) == "BLK" && storeItemObject.resourceCost != undefined) {
-					var _resourceTotal: int = int(storeItemObject.resourceCost);
-					var _resourceR1: int = Math.ceil(_resourceTotal / 2);
-					var _resourceR2: int = _resourceTotal - _resourceR1;
+					var _resourceTotal: Number = Number(storeItemObject.resourceCost);
+					var _resourceR1: Number = Math.ceil(_resourceTotal / 2);
+					var _resourceR2: Number = _resourceTotal - _resourceR1;
 					if (BASE._resources.r1.Get() < _resourceR1 || BASE._resources.r2.Get() < _resourceR2) {
 						_loc32_ = "Not enough resources";
 					}
@@ -1960,9 +1966,9 @@ package {
 				if (_loc29_) {
 					_loc33_ = "<b><font color=\"#335280\">" + GLOBAL.FormatNumber(storeItemObject.fbc_cost[_loc6_]) + "</font></b>";
 				} else if (item.substr(0, 3) == "BLK" && storeItemObject.resourceCost != undefined) {
-					var _blkTotal: int = int(storeItemObject.resourceCost);
-					var _blkR1: int = Math.ceil(_blkTotal / 2);
-					var _blkR2: int = _blkTotal - _blkR1;
+					var _blkTotal: Number = Number(storeItemObject.resourceCost);
+					var _blkR1: Number = Math.ceil(_blkTotal / 2);
+					var _blkR2: Number = _blkTotal - _blkR1;
 					_loc33_ = "<b>0</b>";
 				} else {
 					_loc33_ = "<b>" + GLOBAL.FormatNumber(storeItemObject.c[_loc6_]) + "</b>";
@@ -2154,9 +2160,9 @@ package {
 							}
 							BuyB(itemCode, true);
 						} else if (itemCode.substr(0, 3) == "BLK" && _loc2_.resourceCost != undefined) {
-							var blkCost: int = int(_loc2_.resourceCost);
-							var r1cost: int = Math.ceil(blkCost / 2);
-							var r2cost: int = blkCost - r1cost;
+							var blkCost: Number = Number(_loc2_.resourceCost);
+							var r1cost: Number = Math.ceil(blkCost / 2);
+							var r2cost: Number = blkCost - r1cost;
 							if (BASE._resources.r1.Get() >= r1cost && BASE._resources.r2.Get() >= r2cost) {
 								BuyB(itemCode);
 							} else {
@@ -2217,14 +2223,14 @@ package {
 			}
 			var _loc11_: int = _loc10_;
 			if (param1.substr(0, 3) == "BLK" && !_loc7_ && !param2 && _loc3_.resourceCost != undefined) {
-				var blkCost: int = int(_loc3_.resourceCost);
-				var r1cost: int = Math.ceil(blkCost / 2);
-				var r2cost: int = blkCost - r1cost;
+				var blkCost: Number = Number(_loc3_.resourceCost);
+				var r1cost: Number = Math.ceil(blkCost / 2);
+				var r2cost: Number = blkCost - r1cost;
 				BASE.Charge(1, r1cost, false, false);
 				BASE.Charge(2, r2cost, false, false);
 			} else if (param1.substr(0, 3) == "EXR" && !_loc7_ && !param2 && _loc3_.resourceCost != undefined) {
 				var resIndex: int = int(param1.substr(3, 1));
-				BASE.Charge(resIndex, int(_loc3_.resourceCost), false, false);
+				BASE.Charge(resIndex, Number(_loc3_.resourceCost), false, false);
 				BASE._credits.Add(-_loc4_);
 				BASE._hpCredits -= _loc4_;
 				BASE.Purchase(param1, _loc11_, "store");

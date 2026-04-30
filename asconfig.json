@@ -27,11 +27,11 @@
 		"define": [
 			{
 				"name": "CONFIG::SERVER_URL",
-				"value": "'http://93.95.92.35:60200/'"
+				"value": "'http://localhost:3001/'"
 			},
 			{
 				"name": "CONFIG::CDN_URL",
-				"value": "'http://93.95.92.35:60200/'"
+				"value": "'http://localhost:3001/'"
 			}
 		]
 	}

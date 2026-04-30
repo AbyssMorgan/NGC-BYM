@@ -1,6 +1,7 @@
 import path from "path";
 
-import { MikroORM } from "@mikro-orm/core";
+import { defineConfig } from "@mikro-orm/postgresql";
+import { Migrator } from "@mikro-orm/migrations";
 import { Save } from "./models/save.model.js";
 import { User } from "./models/user.model.js";
 import { WorldMapCell } from "./models/worldmapcell.model.js";
@@ -8,10 +9,11 @@ import { World } from "./models/world.model.js";
 import { Env } from "./enums/Env.js";
 import { Report } from "./models/report.model.js";
 import { InfernoMaproom } from "./models/infernomaproom.model.js";
+import { Maproom } from "./models/maproom.model.js";
 import { Message } from "./models/message.model.js";
 import { Thread } from "./models/thread.model.js";
 import { AttackLogs } from "./models/attacklogs.model.js";
-import { PostgreSqlDriver } from "@mikro-orm/postgresql";
+import { Truce } from "./models/truce.model.js";
 
 /**
  * List of entities to be used with MikroORM.
@@ -24,24 +26,25 @@ const entities = [
   WorldMapCell,
   Report,
   InfernoMaproom,
+  Maproom,
   Message,
   Thread,
-  AttackLogs
+  AttackLogs,
+  Truce,
 ];
 
 /**
  * Configuration for MikroORM.
  *
- * This configuration sets up the ORM to use PostgreSql as the database driver.
- * Additional Entities must be added to the `entities` array.
- *
- * @type {Options<PostgreSqlDriver> | Configuration<PostgreSqlDriver>}
+ * Uses defineConfig from the PostgreSQL driver package for type-safe config.
+ * ES stage 3 decorators are used; explicit types are provided on each @Property decorator instead.
+ * Migrator is registered as an extension to enable orm.migrator usage.
  */
-const mikroOrmConfig = {
-  type: "postgresql",
+export default defineConfig({
   schema: "bym",
   allowGlobalContext: false,
   entities,
+  extensions: [Migrator],
   debug: process.env.ENV !== Env.PROD,
   dbName: process.env.DB_NAME,
   port: Number(process.env.DB_PORT),
@@ -51,8 +54,6 @@ const mikroOrmConfig = {
   migrations: {
     path: path.join(import.meta.dirname, "./database/migrations"),
     pathTs: path.join(import.meta.dirname, "./database/migrations"),
-    pattern: /^\d{8}_[\w]+\.ts$/,
+    glob: "*.ts",
   },
-} as Parameters<typeof MikroORM.init<PostgreSqlDriver>>[0];
-
-export default mikroOrmConfig;
+});

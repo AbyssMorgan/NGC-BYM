@@ -1,10 +1,9 @@
-import "dotenv/config";
 import bcrypt from "bcrypt";
 import ormConfig from "../../mikro-orm.config.js";
 
 import { v4 as uuidv4 } from "uuid";
 import { MikroORM, type RequiredEntityData } from "@mikro-orm/core";
-import { getDefaultBaseData } from "../../data/getDefaultBaseData.js";
+import { getDefaultBaseData } from "../../game-data/getDefaultBaseData.js";
 import { BaseType } from "../../enums/Base.js";
 import { MapRoom2 } from "../../enums/MapRoom.js";
 import { Save } from "../../models/save.model.js";
@@ -57,7 +56,8 @@ const NEXT_USER_BASEID = `SELECT nextval('bym.user_baseid_seq') AS baseid`;
         } as unknown as UserData
       );
 
-      await em.persistAndFlush(user);
+      em.persist(user);
+      await em.flush();
 
       // Create a default save for the user with proper baseid generation
       const saveData = getDefaultBaseData(user, BaseType.MAIN);
@@ -76,7 +76,8 @@ const NEXT_USER_BASEID = `SELECT nextval('bym.user_baseid_seq') AS baseid`;
       save.homebaseid = parseInt(baseid, 10);
 
       user.save = save;
-      await em.persistAndFlush(save);
+      em.persist(save);
+      await em.flush();
 
       // Join user to a world and assign them a cell
       await joinOrCreateWorld(user, save, em);

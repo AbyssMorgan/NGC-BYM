@@ -8,6 +8,13 @@
 			"problemMatcher": []
 		},
 		{
+			"label": "compile-local",
+			"type": "actionscript",
+			"debug": false,
+			"asconfig": "asconfig.local.json",
+			"problemMatcher": []
+		},
+		{
 			"label": "compile-stable",
 			"type": "actionscript",
 			"debug": false,
@@ -23,6 +30,16 @@
 			"args": ["", "bin/bymr-debug.swf"],
 			"group": { "kind": "build", "isDefault": true },
 			"dependsOn": "compile-debug"
+		},
+		{
+			// Local build is used for releasing optimized local .swfs
+			"label": "BYMR - Local",
+			"detail": "Optimized local release build",
+			"type": "shell",
+			"command": "${workspaceFolder}/archived/flashplayers/flashplayer.exe",
+			"args": ["", "bin/bymr-local.swf"],
+			"group": { "kind": "build", "isDefault": true },
+			"dependsOn": "compile-local"
 		},
 		{
 			// Stable build is used for releasing optimized production-ready .swfs

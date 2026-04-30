@@ -41,6 +41,7 @@ export const damageProtection = async (save: Save, mode?: BaseMode) => {
         const attacksInLastHour = attacks.filter(
           (attack) => attack.starttime > oneHourAgo
         );
+
         // Filter attacks after the 36-hour protection period
         const attacksInLast36Hours = attacks.filter(
           (attack) => attack.starttime > thirtySixHoursAgo
@@ -89,6 +90,11 @@ export const damageProtection = async (save: Save, mode?: BaseMode) => {
         break;
 
       case BaseType.INFERNO:
+        // Filter attacks after the 1-hour protection period
+        const infernoAttacksInLastHour = attacks.filter(
+          (attack) => attack.starttime > oneHourAgo
+        );
+        
         // Filter attacks after the 36-hour protection period
         const infernoAttacksInLast36Hours = attacks.filter(
           (attack) => attack.starttime > thirtySixHoursAgo
@@ -103,6 +109,9 @@ export const damageProtection = async (save: Save, mode?: BaseMode) => {
             persist = true;
           }
 
+          // 4 attacks in 1 hour = 1 HOUR
+          if (infernoAttacksInLastHour.length >= 4) setProtection(oneHour);
+
           // 50% or more damage = 36 HOURS
           if (damage >= 50 && infernoAttacksInLast36Hours.length !== 0) {
             setProtection(thirtySixHours);
@@ -116,6 +125,8 @@ export const damageProtection = async (save: Save, mode?: BaseMode) => {
 
   if (persist) {
     save.protected = protection;
-    await postgres.em.persistAndFlush(save);
+    postgres.em.persist(save);
   }
+
+  return persist;
 };

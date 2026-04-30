@@ -2,10 +2,10 @@ import { Save } from "../../../models/save.model.js";
 import { postgres } from "../../../server.js";
 import { Tribe, Tribes } from "../../../enums/Tribes.js";
 import { calculateTribeLevel, minimumTribeLevels } from "./calculateTribeLevel.js";
-import { abunaki } from "../../../data/tribes/v2/abunaki.js";
-import { dreadnaught } from "../../../data/tribes/v2/dreadnaught.js";
-import { kozu } from "../../../data/tribes/v2/kozu.js";
-import { legionnaire } from "../../../data/tribes/v2/legionnaire.js";
+import { abunaki } from "../../../game-data/tribes/v2/abunaki.js";
+import { dreadnaught } from "../../../game-data/tribes/v2/dreadnaught.js";
+import { kozu } from "../../../game-data/tribes/v2/kozu.js";
+import { legionnaire } from "../../../game-data/tribes/v2/legionnaire.js";
 import type { RequiredEntityData } from "@mikro-orm/core";
 
 /**
@@ -18,7 +18,7 @@ import type { RequiredEntityData } from "@mikro-orm/core";
  * @param {string} baseid - The base ID as a string, which will be converted to an integer.
  * @returns {Save} - A new `Save` object for the wild monster, with tribe-specific data.
  */
-export const tribeSaveV2 = (baseid: string) => {
+export const tribeSaveV2 = (baseid: string, worldid: string | null | undefined) => {
   const cellX = parseInt(baseid.slice(-6, -3));
   const cellY = parseInt(baseid.slice(-3));
 
@@ -35,7 +35,8 @@ export const tribeSaveV2 = (baseid: string) => {
     ...tribeSave,
     baseid,
     level,
-    wmid
+    wmid,
+    worldid,
   } as unknown as RequiredEntityData<Save>);
 };
 

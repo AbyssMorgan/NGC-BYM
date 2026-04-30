@@ -1,7 +1,4 @@
-import "reflect-metadata";
-
-import Koa, { type Context, type Next } from "koa";
-import Router from "@koa/router";
+import Koa, { type Next } from "koa";
 import bodyParser from "koa-bodyparser";
 import serve from "koa-static";
 import ormConfig from "./mikro-orm.config.js";
@@ -18,6 +15,7 @@ import { logMissingAssets, morganLogging } from "./middleware/morganLogging.js";
 import { corsCacheControl } from "./middleware/corsCacheControlSetup.js";
 import { Env } from "./enums/Env.js";
 import { initAnticheat } from "./scripts/anticheat/anticheat.js";
+import { initialize as initVersionManifest } from "./config/VersionManifestConfig.js";
 
 export const app = new Koa();
 app.proxy = true;
@@ -25,7 +23,6 @@ app.proxy = true;
 export const PORT = process.env.PORT || 3001;
 export const BASE_URL = process.env.BASE_URL;
 
-export const getApiVersion = () => "v1.5.5-ngc-1.0.3";
 
 export const postgres = {} as {
   orm: MikroORM<PostgreSqlDriver>;
@@ -37,26 +34,23 @@ export const redis = new RedisClient(process.env.REDIS_URL);
 redis.onconnect = () => logger.info(`Connected to Redis server`);
 redis.onclose = (err) => logger.error(`Redis disconnected: ${err.message}`);
 
-// CORS & Cache Control
-app.use(corsCacheControl);
-
-// Entry point for all modules.
-const api = new Router();
-api.get("/", (ctx: Context) => (ctx.body = {}));
-
+// Initialize MikroORM, Redis, and start the Koa server
 (async () => {
   postgres.orm = await MikroORM.init<PostgreSqlDriver>(ormConfig);
   postgres.em = postgres.orm.em;
 
-  try {
-    await postgres.orm.getMigrator().up();
-    logger.info("Database migrations applied");
-  } catch (err) {
-    logger.error(`Database migration failure: ${err?.message ?? err}`);
-    // continue startup anyway; runtime has safe guarding for outdated schema in routes
+  if (process.env.ENV !== Env.PROD) {
+    try {
+      await postgres.orm.migrator.up();
+      logger.info("Database migrations applied");
+    } catch (err) {
+      logger.error(`Database migration failure: ${err}`);
+    }
   }
 
   await redis.connect();
+
+  app.use(corsCacheControl);
 
   app.use(
     bodyParser({
@@ -66,18 +60,14 @@ api.get("/", (ctx: Context) => (ctx.body = {}));
     }),
   );
 
-  app.use((_, next: Next) => RequestContext.createAsync(postgres.orm.em, next));
+  app.use((_, next: Next) => RequestContext.create(postgres.orm.em, next));
 
   // Logs
   app.use(logMissingAssets);
-
-  if (process.env.ENV !== Env.LOCAL) {
-    app.use(morganLogging);
-  }
-
-  app.use(processLanguagesFile);
+  if (process.env.ENV !== Env.LOCAL) app.use(morganLogging);
 
   // Serve static files
+  app.use(processLanguagesFile);
   app.use(serve("public/"));
 
   process.on("unhandledRejection", (reason, promise) => {
@@ -90,6 +80,7 @@ api.get("/", (ctx: Context) => (ctx.body = {}));
   app.use(router.routes());
   app.use(router.allowedMethods());
 
+  await initVersionManifest();
   await initAnticheat();
 
   app.listen(PORT, () => {
@@ -98,4 +89,4 @@ ${ascii_node}
 Server running on: ${BASE_URL}:${PORT}
     `);
   });
-})().catch((e) => logger.error(e));
+})().catch((e) => logger.error(`Startup failed: ${e}`));

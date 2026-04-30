@@ -67,7 +67,7 @@ export const getGeneratedCells = (): Map<number, GeneratedCell> => {
       const x = centerX + jitterX;
       const y = centerY + jitterY;
 
-      const key = (x << 16) | y;
+      const key = cellKey(x, y);
 
       if (!isValidPosition(x, y) || occupiedCells.has(key)) continue;
 
@@ -100,13 +100,13 @@ export const getGeneratedCells = (): Map<number, GeneratedCell> => {
   // PHASE 2: Resource Outposts
   // ============================================================================
   const resourceRng = alea(RESOURCE_SEED);
-  const maxResourceAttempts = (WIDTH - 2 * CELL_EDGE) * (HEIGHT - 2 * CELL_EDGE) * 0.06;
+  const maxResourceAttempts = (WIDTH - 2 * CELL_EDGE) * (HEIGHT - 2 * CELL_EDGE) * 0.08;
 
   for (let attempt = 0; attempt < maxResourceAttempts; attempt++) {
     const x = CELL_EDGE + Math.floor(resourceRng() * (WIDTH - 2 * CELL_EDGE));
     const y = CELL_EDGE + Math.floor(resourceRng() * (HEIGHT - 2 * CELL_EDGE));
     
-    const key = (x << 16) | y;
+    const key = cellKey(x, y);
     
     if (occupiedCells.has(key)) continue;
 
@@ -139,13 +139,13 @@ export const getGeneratedCells = (): Map<number, GeneratedCell> => {
   // PHASE 3: Tribe Outposts
   // ============================================================================
   const tribeRng = alea(TRIBE_OUTPOST_SEED);
-  const maxAttempts = (WIDTH - 2 * CELL_EDGE) * (HEIGHT - 2 * CELL_EDGE) * 0.12;
+  const maxAttempts = (WIDTH - 2 * CELL_EDGE) * (HEIGHT - 2 * CELL_EDGE) * 0.15;
 
   for (let attempt = 0; attempt < maxAttempts; attempt++) {
     const x = CELL_EDGE + Math.floor(tribeRng() * (WIDTH - 2 * CELL_EDGE));
     const y = CELL_EDGE + Math.floor(tribeRng() * (HEIGHT - 2 * CELL_EDGE));
 
-    const key = (x << 16) | y;
+    const key = cellKey(x, y);
     
     if (!occupiedCells.has(key)) {
       const outpostLevels = STRUCTURE_LEVELS[EnumYardType.OUTPOST];
@@ -164,7 +164,7 @@ export const getGeneratedCells = (): Map<number, GeneratedCell> => {
 
   for (let y = CELL_EDGE; y < MapRoom3.HEIGHT - CELL_EDGE; y++) {
     for (let x = CELL_EDGE; x < MapRoom3.WIDTH - CELL_EDGE; x++) {
-      const key = (x << 16) | y;
+      const key = cellKey(x, y);
 
       if (occupiedCells.has(key)) continue;
 

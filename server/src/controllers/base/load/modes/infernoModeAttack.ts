@@ -1,16 +1,20 @@
-import { molochTribes } from "../../../../data/tribes/inferno/molochTribes.js";
-import { BaseType } from "../../../../enums/Base.js";
+import { molochTribes } from "../../../../game-data/tribes/inferno/molochTribes.js";
+import { BaseMode, BaseType } from "../../../../enums/Base.js";
 import { Save } from "../../../../models/save.model.js";
 import { User } from "../../../../models/user.model.js";
 import { postgres } from "../../../../server.js";
 import { createAttackLog } from "../../../../services/base/createAttackLog.js";
 import { getCurrentDateTime } from "../../../../utils/getCurrentDateTime.js";
 import type { AttackDetails } from "./baseModeAttack.js";
-import { addAttackerAsNeighbour } from "../../../../services/maproom/inferno/addAttackerAsNeighbour.js";
+import { registerInfernoAttacker } from "../../../../services/maproom/inferno/registerInfernoAttacker.js";
 import {
   InfernoMaproom,
   type TribeData,
 } from "../../../../models/infernomaproom.model.js";
+import { damageProtection } from "../../../../services/maproom/v2/damageProtection.js";
+import { isAttackActive } from "../../../../services/base/isAttackActive.js";
+import { baseUnderAttackErr, baseProtectedErr, userOnlineErr } from "../../../../errors/errors.js";
+import { redis } from "../../../../server.js";
 
 /**
  * Handles Inferno mode attacks for both real players and AI tribes
@@ -29,17 +33,30 @@ export const infernoModeAttack = async (user: User, baseid: string) => {
     baseid,
   });
 
+  if (user.infernosave) {
+    await damageProtection(user.infernosave, BaseMode.IATTACK);
+  }
 
-  if (!save) return infernoTribeSave(user, baseid);
+  if (!save) {
+    return infernoTribeSave(user, baseid);
+  }
 
-  if (save.attacks.length > 3) {
-    save.attacks = save.attacks.slice(-2);
+  if (save.protected > getCurrentDateTime()) throw baseProtectedErr();
+
+  const lastSeen = await redis.get(`last-seen:${BaseType.INFERNO}:${save.userid}`);
+  
+  if (lastSeen && parseInt(lastSeen) >= getCurrentDateTime() - 60) throw userOnlineErr();
+
+  if (isAttackActive(save)) throw baseUnderAttackErr();
+
+  if (save.attacks.length > 3) { 
+    save.attacks = save.attacks.slice(-2); 
   }
 
   const attackDetails: AttackDetails = {
     fbid: "",
     name: user.username,
-    pic_square: user.pic_square,
+    pic_square: user.pic_square ?? undefined,
     friend: 0,
     count: 1,
     starttime: getCurrentDateTime(),
@@ -57,11 +74,12 @@ export const infernoModeAttack = async (user: User, baseid: string) => {
 
 
   await Promise.all([
-    addAttackerAsNeighbour(user, defender),
+    registerInfernoAttacker(user, defender),
     createAttackLog(user, defender, save),
   ]);
 
-  await postgres.em.persistAndFlush(save);
+  postgres.em.persist(save);
+  await postgres.em.flush();
   return save;
 };
 
@@ -79,19 +97,20 @@ export const infernoModeAttack = async (user: User, baseid: string) => {
  * @throws {Error} When no tribe data is found for the given baseid
  */
 const infernoTribeSave = async (user: User, baseid: string): Promise<Save> => {
-  const maproom1 = await postgres.em.findOne(InfernoMaproom, { userid: user.userid });
+  const maproomInferno = await postgres.em.findOne(InfernoMaproom, { userid: user.userid });
 
-  if (!maproom1) throw new Error(`Inferno maproom not found for user: ${user.username}`);
+  if (!maproomInferno) throw new Error(`Inferno maproom not found for user: ${user.username}`);
 
-  let existingTribe = maproom1.tribedata.find(
+  let existingTribe = maproomInferno.tribedata.find(
     (tribe) => tribe.baseid === baseid
   );
 
   if (!existingTribe) {
     const newTribe: TribeData = { baseid, tribeHealthData: {} };
 
-    maproom1.tribedata.push(newTribe);
-    await postgres.em.persistAndFlush(maproom1);
+    maproomInferno.tribedata.push(newTribe);
+    postgres.em.persist(maproomInferno);
+    await postgres.em.flush();
     existingTribe = newTribe;
   }
 

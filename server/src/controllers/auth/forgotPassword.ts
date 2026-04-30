@@ -8,7 +8,7 @@ import { promises as fs } from "fs";
 import { postgres } from "../../server.js";
 import { User } from "../../models/user.model.js";
 import { authFailureErr } from "../../errors/errors.js";
-import { ForgotPasswordSchema } from "../../zod/AuthSchemas.js";
+import { ForgotPasswordSchema } from "../../schemas/AuthSchemas.js";
 import { transporter } from "../../config/MailConfig.js";
 /**
  * Controller to handle forgot password functionality.
@@ -40,7 +40,8 @@ export const forgotPassword: KoaController = async (ctx) => {
     }
 
     user.resetToken = token;
-    await postgres.em.persistAndFlush(user);
+    postgres.em.persist(user);
+    await postgres.em.flush();
 
     // Read the HTML template
     const templatePath = path.resolve(

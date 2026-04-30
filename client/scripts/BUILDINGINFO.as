@@ -209,12 +209,16 @@ package
                      }
                      else if(_props.id == 11 || _props.id == 5 || _props.id == 51)
                      {
-                        if(MapRoomManager.instance.isInMapRoom3 === false)
+                        if(MapRoomManager.instance.isInMapRoom3 === false && Boolean(GLOBAL._flags.maproom2))
                         {
                            _loc1_.push(["btn_joinnwm",30,_loc12_]);
                            _loc12_ = false;
                         }
                         _loc1_.push(["btn_viewmap",30,_loc12_]);
+                        if(!MapRoomManager.instance.isInMapRoom2or3 && Boolean(GLOBAL._flags.maproom2))
+                        {
+                           _loc1_.push(["btn_upgrade",30]);
+                        }
                      }
                      else if(_props.id == 12)
                      {
@@ -713,7 +717,7 @@ package
             }
             else
             {
-               STORE.ShowB(1,0,["BLK2","BLK3","BLK4","BLK5","BLK6"]);
+               STORE.ShowB(1,0,["BLK2","BLK3","BLK4","BLK5"]);
             }
          }
          if(param1.target.labelKey == "btn_more")

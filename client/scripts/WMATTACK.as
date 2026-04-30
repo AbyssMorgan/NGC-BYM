@@ -6,6 +6,8 @@ package
    import com.monsters.display.ImageCache;
    import com.monsters.managers.InstanceManager;
    import com.monsters.monsters.MonsterBase;
+   import com.monsters.maproom_manager.MapRoomManager;
+   import com.monsters.monsters.components.abilities.AOEDamageOnAttackOncePerTarget;
    import com.monsters.monsters.components.abilities.Enrage;
    import com.monsters.monsters.components.abilities.TemporaryComponent;
    import com.monsters.pathing.PATHING;
@@ -321,6 +323,21 @@ package
                }
             }
             t += 1;
+            
+            var isCheckTick:Boolean = t == 100;
+            var noTrojanHistory:Boolean = !_history["s1"];
+            var trojanNotPlaced:Boolean = !BUILDING27._exists;
+            var meetsLevelReq:Boolean = BASE._baseLevel >= 9;
+            var meetsPointsReq:Boolean = int(BASE._basePoints) + int(BASE._baseValue) > _trojanThreshold;
+
+            if (isCheckTick && BASE.isMainYard && noTrojanHistory && trojanNotPlaced && meetsLevelReq && meetsPointsReq) {
+               CUSTOMATTACKS.TrojanHorse();
+               if (BUILDING27._exists)
+               {
+                  _history["s1"] = [2,GLOBAL.Timestamp()];
+                  BASE.Save();
+               }
+            }
             if(_queued != null && !_inProgress)
             {
                if(!GLOBAL._catchup && !warningPopup && !_trojan && _queued.warned == 0 && !baseIsRepairing && BASE._isSanctuary <= GLOBAL.Timestamp() && _enabled && !activeEvent.EventActive() && !INFERNO_EMERGENCE_EVENT.ShouldRunEvent() && !PLANNER.isOpen())
@@ -696,8 +713,8 @@ package
          var _loc8_:int = 3;
          var _loc9_:int = param1.direction + param2;
          var _loc10_:int = 250;
-         _loc5_ = GRID.ToISO(Math.cos(_loc9_ * 0.0174532925) * (1000 + _loc10_ / 2),Math.sin(_loc9_ * 0.0174532925) * (1000 + _loc10_ / 2),0);
-         _loc6_ = GRID.ToISO(Math.cos(_loc9_ * 0.0174532925) * 1000,Math.sin(_loc9_ * 0.0174532925) * 1000,0);
+         _loc5_ = GRID.ToISO(Math.cos(_loc9_ * 0.0174532925) * (800 + _loc10_ / 2),Math.sin(_loc9_ * 0.0174532925) * (800 + _loc10_ / 2),0);
+         _loc6_ = GRID.ToISO(Math.cos(_loc9_ * 0.0174532925) * 900,Math.sin(_loc9_ * 0.0174532925) * 900,0);
          if(param1.powerLevel)
          {
             GLOBAL._wmCreaturePowerups[param1.creatureID] = param1.powerLevel;
@@ -786,24 +803,24 @@ package
                while(_loc10_ < param1[_loc8_][2])
                {
                   _loc9_ += 8;
-                  _loc4_ = GRID.ToISO(Math.cos(_loc9_ * 0.0174532925) * (1000 + param1[_loc8_][3] / 2),Math.sin(_loc9_ * 0.0174532925) * (1000 + param1[_loc8_][3] / 2),0);
-                  _loc5_ = GRID.ToISO(Math.cos(_loc9_ * 0.0174532925) * 1000,Math.sin(_loc9_ * 0.0174532925) * 1000,0);
+                  _loc4_ = GRID.ToISO(Math.cos(_loc9_ * 0.0174532925) * (800 + param1[_loc8_][3] / 2),Math.sin(_loc9_ * 0.0174532925) * (800 + param1[_loc8_][3] / 2),0);
+                  _loc5_ = GRID.ToISO(Math.cos(_loc9_ * 0.0174532925) * 900,Math.sin(_loc9_ * 0.0174532925) * 900,0);
                   _loc6_ = SpawnB(_loc4_,param1[_loc8_][3],param1[_loc8_][0],_loc7_,param1[_loc8_][1]);
                   _loc3_.push(_loc6_);
                   _loc10_ += _loc7_;
                }
                if(param1[_loc8_][2] % _loc7_ != 0)
                {
-                  _loc4_ = GRID.ToISO(Math.cos(_loc9_ * 0.0174532925) * (1000 + param1[_loc8_][3] / 2),Math.sin(_loc9_ * 0.0174532925) * (1000 + param1[_loc8_][3] / 2),0);
-                  _loc5_ = GRID.ToISO(Math.cos(_loc9_ * 0.0174532925) * 1000,Math.sin(_loc9_ * 0.0174532925) * 1000,0);
+                  _loc4_ = GRID.ToISO(Math.cos(_loc9_ * 0.0174532925) * (800 + param1[_loc8_][3] / 2),Math.sin(_loc9_ * 0.0174532925) * (800 + param1[_loc8_][3] / 2),0);
+                  _loc5_ = GRID.ToISO(Math.cos(_loc9_ * 0.0174532925) * 900,Math.sin(_loc9_ * 0.0174532925) * 900,0);
                   _loc6_ = SpawnB(_loc4_,param1[_loc8_][3],param1[_loc8_][0],param1[_loc8_][2] % _loc7_,param1[_loc8_][1]);
                   _loc3_.push(_loc6_);
                }
             }
             else
             {
-               _loc4_ = GRID.ToISO(Math.cos(_loc9_ * 0.0174532925) * (1000 + param1[_loc8_][3] / 2),Math.sin(_loc9_ * 0.0174532925) * (1000 + param1[_loc8_][3] / 2),0);
-               _loc5_ = GRID.ToISO(Math.cos(_loc9_ * 0.0174532925) * 1000,Math.sin(_loc9_ * 0.0174532925) * 1000,0);
+               _loc4_ = GRID.ToISO(Math.cos(_loc9_ * 0.0174532925) * (800 + param1[_loc8_][3] / 2),Math.sin(_loc9_ * 0.0174532925) * (800 + param1[_loc8_][3] / 2),0);
+               _loc5_ = GRID.ToISO(Math.cos(_loc9_ * 0.0174532925) * 900,Math.sin(_loc9_ * 0.0174532925) * 900,0);
                _loc6_ = SpawnB(_loc4_,param1[_loc8_][3],param1[_loc8_][0],param1[_loc8_][2],param1[_loc8_][1]);
                _loc3_.push(_loc6_);
             }
@@ -821,7 +838,7 @@ package
          var _loc6_:Number = NaN;
          var _loc7_:int = 0;
          var _loc8_:Point = null;
-         var _loc9_:MonsterBase = null;
+         var monster:MonsterBase = null;
          var _loc10_:uint = uint(BASE._basePoints) + uint(BASE._baseValue);
          var _loc11_:Number = 0.4;
 
@@ -862,12 +879,17 @@ package
             var offsetPoint:Point = getPooledPoint(Math.cos(_loc6_) * _loc7_, Math.sin(_loc6_) * _loc7_);
             _loc8_ = param1.add(offsetPoint);
 
-            _loc9_ = CREEPS.Spawn(param3,MAP._BUILDINGTOPS,"bounce",GRID.ToISO(_loc8_.x,_loc8_.y,0),_loc12_.random() * 360,_loc11_,true);
+            monster = CREEPS.Spawn(param3,MAP._BUILDINGTOPS,"bounce",GRID.ToISO(_loc8_.x,_loc8_.y,0),_loc12_.random() * 360,_loc11_,true);
             if(_rage)
             {
-               _loc9_.addComponent(new TemporaryComponent(new Enrage(2,0),_rage));
+               monster.addComponent(new TemporaryComponent(new Enrage(2,0),_rage));
             }
-            _loc13_.push(_loc9_);
+            if(param3 == "IC8" && MapRoomManager.instance.isInMapRoom3)
+            {
+               var targetFlags:int = Targeting.k_TARGETS_BUILDINGS | Targeting.k_TARGETS_GROUND;
+               monster.addComponent(new AOEDamageOnAttackOncePerTarget(100, targetFlags, 4));
+            }
+            _loc13_.push(monster);
             _loc14_++;
          }
          return _loc13_;

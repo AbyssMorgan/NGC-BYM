@@ -45,7 +45,7 @@ package
 
       public static var cdnUrl:String = CONFIG::CDN_URL;
 
-      public static var apiVersionSuffix:String = "v1.5.5-ngc-1.0.3";
+      public static var apiVersionSuffix:String = "v1.6.2-beta";
 
       public static var connectionCounter:int;
 
@@ -1928,22 +1928,22 @@ package
 
       public static function AFK():void
       {
-         // if (!_catchup)
-         // {
-         //    if (Math.abs(_ROOT.mouseX - _oldMousePoint.x) > 50 || _afktimer.Get() == 0)
-         //    {
-         //       _oldMousePoint = new Point(_ROOT.mouseX, _ROOT.mouseY);
-         //       UpdateAFKTimer();
-         //    }
-         //    if (Timestamp() - _afktimer.Get() == 60 * 6 && !MapRoomManager.instance.isOpen)
-         //    {
-         //       POPUPS.AFK();
-         //    }
-         //    else if (Timestamp() - _afktimer.Get() > 60 * 10)
-         //    {
-         //       POPUPS.Timeout();
-         //    }
-         // }
+         if (!_catchup)
+         {
+            if (Math.abs(_ROOT.mouseX - _oldMousePoint.x) > 50 || _afktimer.Get() == 0)
+            {
+               _oldMousePoint = new Point(_ROOT.mouseX, _ROOT.mouseY);
+               UpdateAFKTimer();
+            }
+            if (Timestamp() - _afktimer.Get() == 60 * 6 && !MapRoomManager.instance.isOpen)
+            {
+               POPUPS.AFK();
+            }
+            else if (Timestamp() - _afktimer.Get() > 60 * 10)
+            {
+               POPUPS.Timeout();
+            }
+         }
       }
 
       public static function StatGet(param1:String):int

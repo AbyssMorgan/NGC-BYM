@@ -36,34 +36,34 @@ package
       public static function Spawn(param1:int = 0) : void
       {
          var _loc3_:int = 0;
-         // if(!BASE.isMainYard)
-         // {
-         //    if(_workerCount > 0)
-         //    {
-         //       _workerCount = WORKERS._workers.length;
-         //       return;
-         //    }
-         //    if(param1 > 1)
-         //    {
-         //       param1 = 1;
-         //    }
-         // }
+         if(!BASE.isMainYard)
+         {
+            if(_workerCount > 0)
+            {
+               _workerCount = WORKERS._workers.length;
+               return;
+            }
+            if(param1 > 1)
+            {
+               param1 = 1;
+            }
+         }
          if(param1 == 0)
          {
             param1 = 1;
             if(STORE._storeData.BEW)
             {
-               // if(!BASE.isMainYard)
-               // {
-                  // if(STORE._storeData.BEW.q > 0)
-                  // {
-                  //    LOGGER.Log("log","QUEUE.Spawn Outpost " + BASE._loadedBaseID + "  has store data for " + STORE._storeData.BEW.q + " extra worker(s)");
-                  // }
-               // }
-               // else
-               // {
+               if(!BASE.isMainYard)
+               {
+                  if(STORE._storeData.BEW.q > 0)
+                  {
+                     LOGGER.Log("log","QUEUE.Spawn Outpost " + BASE._loadedBaseID + "  has store data for " + STORE._storeData.BEW.q + " extra worker(s)");
+                  }
+               }
+               else
+               {
                   param1 += STORE._storeData.BEW.q;
-               // }
+               }
             }
          }
          _workerCount += param1;
@@ -124,7 +124,7 @@ package
                }
             }
          }
-         else if(STORE.CheckUpgrade("BEW").q + 1 == 8)
+         else if(STORE.CheckUpgrade("BEW").q + 1 == 5)
          {
             errorName = KEYS.Get("ui_worker_5busy");
          }

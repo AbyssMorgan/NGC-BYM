@@ -7,7 +7,7 @@ import { authFailureErr } from "../../errors/errors.js";
 import { postgres } from "../../server.js";
 import { User } from "../../models/user.model.js";
 import { logger } from "../../utils/logger.js";
-import { ResetPasswordSchema } from "../../zod/AuthSchemas.js";
+import { ResetPasswordSchema } from "../../schemas/AuthSchemas.js";
 import { verifyJwtToken } from "../../middleware/auth.js";
 
 const { JsonWebTokenError, TokenExpiredError } = jwt;
@@ -39,7 +39,8 @@ export const resetPassword: KoaController = async (ctx) => {
     // Update the user's password
     user.password = hashedPassword;
     user.resetToken = "";
-    await postgres.em.persistAndFlush(user);
+    postgres.em.persist(user);
+    await postgres.em.flush();
 
     ctx.status = Status.OK;
     ctx.body = {

@@ -6,8 +6,9 @@ import { FilterFrontendKeys } from "../../utils/FrontendKey.js";
 import { emailUniqueErr, usernameUniqueErr } from "../../errors/errors.js";
 import { logger } from "../../utils/logger.js";
 import { Status } from "../../enums/StatusCodes.js";
-import { UserRegistrationSchema } from "../../zod/AuthSchemas.js";
+import { UserRegistrationSchema } from "../../schemas/AuthSchemas.js";
 import type { UserData } from "../../types/EntityData.js";
+import { BYMR_CDN } from "../../services/discord/fetchDiscordAvatar.js";
 
 /**
  * Controller to handle user registration.
@@ -45,11 +46,12 @@ export const register: KoaController = async (ctx) => {
   // Create new user record
   const user = postgres.em.create(User, {
     ...registeredUser,
-    pic_square: `${process.env.AVATAR_URL}?seed=${registeredUser.username}&size=50`,
+    pic_square: `${BYMR_CDN}/assets/bym-refitted-assets/placeholder.jpg`,
     password: hash,
   } as unknown as UserData);
 
-  await postgres.em.persistAndFlush(user);
+  postgres.em.persist(user);
+  await postgres.em.flush();
   const filteredUser = FilterFrontendKeys(user);
   logger.info(
     `User ${filteredUser.username} registered successfully | ID: ${filteredUser.userid} | Email: ${filteredUser.email} | IP Address: ${ctx.ip}`

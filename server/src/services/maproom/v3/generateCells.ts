@@ -3,6 +3,7 @@ import alea from "alea";
 import { createNoise2D } from "simplex-noise";
 import { MapRoom3 } from "../../../enums/MapRoom.js";
 import { EnumYardType } from "../../../enums/EnumYardType.js";
+import { Tribes } from "../../../enums/Tribes.js";
 import { getDefenderCoords } from "./getDefenderCoords.js";
 import { getDefenderLevels } from "./getDefenderLevels.js";
 import { calculateStructureLevel } from "./calculateStructureLevel.js";
@@ -29,6 +30,7 @@ export interface GeneratedCell {
   altitude?: number;
   type?: number;
   level?: number;
+  tribe?: number;
 }
 
 let cachedCells: Map<number, GeneratedCell> | null = null;
@@ -71,7 +73,8 @@ export const getGeneratedCells = (): Map<number, GeneratedCell> => {
 
       if (!isValidPosition(x, y) || occupiedCells.has(key)) continue;
 
-      cells.push({ x, y, type: EnumYardType.STRONGHOLD });
+      const tribeIndex = (x + y) % Tribes.length;
+      cells.push({ x, y, type: EnumYardType.STRONGHOLD, tribe: tribeIndex });
       occupiedCells.add(key);
 
       const defenders = getDefenderCoords(x, y);
@@ -88,7 +91,8 @@ export const getGeneratedCells = (): Map<number, GeneratedCell> => {
           x: fortX, 
           y: fortY, 
           type: EnumYardType.FORTIFICATION, 
-          level: defenderLevels[i]
+          level: defenderLevels[i],
+          ...(strongholdLevel >= 70 && { tribe: tribeIndex })
         });
 
         occupiedCells.add((fortX << 16) | fortY);
@@ -113,7 +117,8 @@ export const getGeneratedCells = (): Map<number, GeneratedCell> => {
     const defenders = getDefenderCoords(x, y);
     if (defenders.some(([dx, dy]) => occupiedCells.has((dx << 16) | dy  ))) continue;
 
-    cells.push({ x, y, type: EnumYardType.RESOURCE });
+    const tribeIndex = (x + y) % Tribes.length;
+    cells.push({ x, y, type: EnumYardType.RESOURCE, tribe: tribeIndex });
     occupiedCells.add(key);
 
     const resourceLevel = calculateStructureLevel(x, y, EnumYardType.RESOURCE);
@@ -128,7 +133,8 @@ export const getGeneratedCells = (): Map<number, GeneratedCell> => {
          x: fortX, 
          y: fortY, 
          type: EnumYardType.FORTIFICATION, 
-         level: defenderLevels[i]
+         level: defenderLevels[i],
+         ...(resourceLevel >= 70 && { tribe: tribeIndex })
         });
 
       occupiedCells.add((fortX << 16) | fortY);

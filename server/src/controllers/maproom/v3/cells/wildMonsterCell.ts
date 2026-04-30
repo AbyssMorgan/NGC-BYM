@@ -4,6 +4,7 @@ import { Tribes } from "../../../../enums/Tribes.js";
 import { WorldMapCell } from "../../../../models/worldmapcell.model.js";
 import { generateBaseId } from "../../../../utils/generateBaseId.js";
 import { calculateStructureLevel } from "../../../../services/maproom/v3/calculateStructureLevel.js";
+import { getGeneratedCells, cellKey } from "../../../../services/maproom/v3/generateCells.js";
 import type { CellData } from "../../../../types/CellData.js";
 import { MapRoomVersion } from "../../../../enums/MapRoom.js";
 
@@ -18,7 +19,8 @@ import { MapRoomVersion } from "../../../../enums/MapRoom.js";
 export const wildMonsterCell = async (cell: WorldMapCell, worldId: string): Promise<CellData> => {
   const [cellX, cellY] = [cell.x, cell.y];
 
-  const tribeIndex = (cellX + cellY) % Tribes.length;
+  const genCell = getGeneratedCells().get(cellKey(cellX, cellY));
+  const tribeIndex = genCell?.tribe ?? ((cellX + cellY) % Tribes.length);
 
   const level = calculateStructureLevel(cellX, cellY, cell.base_type);
   const baseid = generateBaseId(worldId, cellX, cellY, MapRoomVersion.V3);

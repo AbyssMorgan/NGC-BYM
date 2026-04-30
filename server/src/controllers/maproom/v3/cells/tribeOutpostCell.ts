@@ -10,8 +10,8 @@ import { MapRoomVersion } from "../../../../enums/MapRoom.js";
 export const tribeOutpostCell = async (cell: WorldMapCell, worldId: string): Promise<CellData> => {
   const [cellX, cellY] = [cell.x, cell.y];
 
-  const tribeIndex = (cellX + cellY) % Tribes.length;
   const genCell = getGeneratedCells().get(cellKey(cellX, cellY));
+  const tribeIndex = genCell?.tribe ?? ((cellX + cellY) % Tribes.length);
   const baseid = generateBaseId(worldId, cellX, cellY, MapRoomVersion.V3);
 
   const altitude = 5 + (cellX * 73 + cellY * 31) % 45;

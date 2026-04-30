@@ -23,20 +23,32 @@ package buildings.yard {
 			"cls":INFERNO_MAGMA_TOWER,
 			"rewarded":false,
 			"stats":[
-				{"range":180, "damage":180, "rate":20, "speed":14, "splash":0},
-				{"range":190, "damage":240, "rate":20, "speed":15, "splash":0},
-				{"range":200, "damage":300, "rate":20, "speed":16, "splash":0},
-				{"range":210, "damage":360, "rate":20, "speed":17, "splash":0},
-				{"range":220, "damage":420, "rate":20, "speed":18, "splash":0},
-				{"range":230, "damage":480, "rate":20, "speed":19, "splash":0},
+				{"range":180, "damage":180, "rate":20, "speed":14, "splash":0}, // Level 1
+				{"range":190, "damage":240, "rate":20, "speed":15, "splash":0}, // Level 2
+				{"range":200, "damage":300, "rate":20, "speed":16, "splash":0}, // Level 3
+				{"range":210, "damage":360, "rate":20, "speed":17, "splash":0}, // Level 4
+				{"range":220, "damage":420, "rate":20, "speed":18, "splash":0}, // Level 5
+				{"range":230, "damage":480, "rate":20, "speed":19, "splash":0}, // Level 6
+				{"range":240, "damage":540, "rate":20, "speed":20, "splash":0}, // Level 7
+				{"range":250, "damage":600, "rate":20, "speed":21, "splash":0}, // Level 8
+				{"range":260, "damage":660, "rate":20, "speed":22, "splash":0}, // Level 9
+				{"range":270, "damage":720, "rate":20, "speed":23, "splash":0}, // Level 10
+				{"range":280, "damage":780, "rate":20, "speed":24, "splash":0}, // Level 11
+				{"range":290, "damage":840, "rate":20, "speed":25, "splash":0}, // Level 12
 			],
 			"costs":[
-				{"r1":new SecNum(187500), "r2":new SecNum(250000), "r3":new SecNum(62500), "r4":new SecNum(0), "time":new SecNum(18000), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]},
-				{"r1":new SecNum(750000), "r2":new SecNum(1000000), "r3":new SecNum(250000), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]},
-				{"r1":new SecNum(2250000), "r2":new SecNum(3000000), "r3":new SecNum(750000), "r4":new SecNum(0), "time":new SecNum(172800), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]},
-				{"r1":new SecNum(5250000), "r2":new SecNum(5000000), "r3":new SecNum(1250000), "r4":new SecNum(0), "time":new SecNum(345600), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]},
-				{"r1":new SecNum(12000000), "r2":new SecNum(10000000), "r3":new SecNum(2000000), "r4":new SecNum(0), "time":new SecNum(518400), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]},
-				{"r1":new SecNum(16000000), "r2":new SecNum(15000000), "r3":new SecNum(3000000), "r4":new SecNum(0), "time":new SecNum(791200), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]}
+				{"r1":new SecNum(187500), "r2":new SecNum(250000), "r3":new SecNum(62500), "r4":new SecNum(0), "time":new SecNum(86400 * 1), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]}, // Level 1
+				{"r1":new SecNum(750000), "r2":new SecNum(1000000), "r3":new SecNum(250000), "r4":new SecNum(0), "time":new SecNum(86400 * 2), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]}, // Level 2
+				{"r1":new SecNum(2250000), "r2":new SecNum(3000000), "r3":new SecNum(750000), "r4":new SecNum(0), "time":new SecNum(86400 * 3), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]}, // Level 3
+				{"r1":new SecNum(5250000), "r2":new SecNum(5000000), "r3":new SecNum(1250000), "r4":new SecNum(0), "time":new SecNum(86400 * 4), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]}, // Level 4
+				{"r1":new SecNum(12000000), "r2":new SecNum(10000000), "r3":new SecNum(2000000), "r4":new SecNum(0), "time":new SecNum(86400 * 5), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]}, // Level 5
+				{"r1":new SecNum(16000000), "r2":new SecNum(15000000), "r3":new SecNum(3000000), "r4":new SecNum(0), "time":new SecNum(86400 * 6), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]}, // Level 6
+				{"r1":new SecNum(24000000), "r2":new SecNum(16000000), "r3":new SecNum(6400000), "r4":new SecNum(0), "time":new SecNum(86400 * 7), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1],[14,1,10],[12,1,2]]}, // Level 7
+				{"r1":new SecNum(27000000), "r2":new SecNum(25000000), "r3":new SecNum(12800000), "r4":new SecNum(0), "time":new SecNum(86400 * 8), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1],[14,1,12],[12,1,2]]}, // Level 8
+				{"r1":new SecNum(400000000), "r2":new SecNum(400000000), "r3":new SecNum(400000000), "r4":new SecNum(0), "time":new SecNum(86400 * 9), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1],[14,1,14],[12,1,2]]}, // Level 9
+				{"r1":new SecNum(800000000), "r2":new SecNum(800000000), "r3":new SecNum(800000000), "r4":new SecNum(0), "time":new SecNum(86400 * 10), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1],[14,1,16],[12,1,2]]}, // Level 10
+				{"r1":new SecNum(1200000000), "r2":new SecNum(1200000000), "r3":new SecNum(1200000000), "r4":new SecNum(0), "time":new SecNum(86400 * 11), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1],[14,1,18],[12,1,2]]}, // Level 11
+				{"r1":new SecNum(1600000000), "r2":new SecNum(1600000000), "r3":new SecNum(1600000000), "r4":new SecNum(0), "time":new SecNum(86400 * 12), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1],[14,1,20],[12,1,2]]}, // Level 12
 			],
 			"can_fortify":true,
 			"fortify_costs":[
@@ -87,9 +99,57 @@ package buildings.yard {
 					"back":["fort70_B4.png",new Point(-61,-36)]
 				}
 			},
-			"quantity":[0,1,1,1,2,2,2,2,2,2,2],
-			"hp":[15000,22000,30000,49000,59000,70000],
-			"repairTime":[1440,2880,5760,11520,23000,46000,92000]
+			"quantity":[
+				0, // Level 0
+				0, // Level 1
+				0, // Level 2
+				0, // Level 3
+				1, // Level 4
+				1, // Level 5
+				1, // Level 6
+				2, // Level 7
+				2, // Level 8
+				2, // Level 9
+				2, // Level 10
+				2, // Level 11
+				2, // Level 12
+				3, // Level 13
+				3, // Level 14
+				3, // Level 15
+				3, // Level 16
+				3, // Level 17
+				4, // Level 18
+				4, // Level 19
+				4, // Level 20
+			],
+			"hp":[
+				15000, // Level 1
+				22000, // Level 2
+				30000, // Level 3
+				49000, // Level 4
+				59000, // Level 5
+				70000, // Level 6
+				80000, // Level 7
+				90000, // Level 8
+				100000, // Level 9
+				110000, // Level 10
+				120000, // Level 11
+				130000, // Level 12
+			],
+			"repairTime":[
+				1920, // Level 1
+				3840, // Level 2
+				7680, // Level 3
+				9260, // Level 4
+				12000, // Level 5
+				18000, // Level 6
+				24000, // Level 7
+				30000, // Level 8
+				43200, // Level 9
+				86400, // Level 10
+				172800, // Level 11
+				259200, // Level 12
+			]
 		};
 		
 	}

@@ -81,7 +81,7 @@ export const TRIBE_OUTPOST_SEED = "maproom3-tribes";
 /** Available levels per structure type. */
 export const STRUCTURE_LEVELS: Record<number, number[]> = {
 	[EnumYardType.STRONGHOLD]: [30, 40, 50], // TODO MR3 HIGH END
-	[EnumYardType.RESOURCE]: [20, 30, 40, 50, 60], // TODO MR3 HIGH END
+	[EnumYardType.RESOURCE]: [30, 40, 50, 60, 70], // TODO MR3 HIGH END
 	[EnumYardType.OUTPOST]: [45, 50],
 };
 
@@ -102,11 +102,12 @@ export const STRUCTURE_RANGE: Record<number, Record<number, number>> = {
 		// 90: 20, // TODO MR3 HIGH END
 	},
 	[EnumYardType.RESOURCE]: {
-		20: 2,
-		30: 3,
-		40: 4,
-		50: 5,
-		60: 6,
+		20: 1, // TODO remove
+		30: 2,
+		40: 3,
+		50: 4,
+		60: 5,
+		70: 6,
 		// 50: 2, // TODO MR3 HIGH END
 		// 60: 3, // TODO MR3 HIGH END
 		// 70: 4, // TODO MR3 HIGH END
@@ -117,24 +118,24 @@ export const STRUCTURE_RANGE: Record<number, Record<number, number>> = {
 
 /** Resource production rate in units per second per level (client displays as ×60/min). */
 export const RESOURCE_PRODUCTION_RATES: Record<number, number> = {
-	20: 2,
+	20: 2, // TODO remove
 	30: 5,
 	40: 11,
 	50: 25,
 	60: 50,
-	// 70: 100, // TODO MR3 HIGH END
+	70: 100,
 	// 80: 200, // TODO MR3 HIGH END
 	// 90: 400, // TODO MR3 HIGH END
 };
 
 /** Additional resource storage capacity granted by a RESOURCE outpost per level. */
 export const RESOURCE_CAPACITIES: Record<number, number> = {
-	20: 350000,
+	20: 350000, // TODO remove
 	30: 750000,
 	40: 2000000,
 	50: 4000000,
-	60: 5000000, // TODO MR3 HIGH END
-	// 70: 6000000, // TODO MR3 HIGH END
+	60: 5000000,
+	70: 6000000,
 	// 80: 7000000, // TODO MR3 HIGH END
 	// 90: 8000000, // TODO MR3 HIGH END
 };
@@ -144,9 +145,8 @@ export const STRONGHOLD_BONUSES: Record<number, number> = {
 	30: 10,
 	40: 20,
 	50: 30,
-	// 70: 10, // TODO MR3 HIGH END
-	// 80: 20, // TODO MR3 HIGH END
-	// 90: 30, // TODO MR3 HIGH END
+	// 75: 10, // TODO MR3 HIGH END
+	// 100: 20, // TODO MR3 HIGH END
 };
 
 /** Save data templates per structure type and level. */
@@ -174,12 +174,13 @@ export const DEFENDER_DAMAGE_REDUCTION = [0, 7, 13, 23, 35, 50, 75];
 export const DEFENDER_LEVELS = {
 	[EnumYardType.PLAYER]: { 0: [50, 50, 50, 50, 50, 50] },
 
-	[EnumYardType.RESOURCE]: { // TODO MR3 HIGH END
-		20: [10, 10, 15, 15, 20, 25],
+	[EnumYardType.RESOURCE]: {
+		20: [10, 10, 15, 15, 20, 25], // TODO remove
 		30: [20, 20, 25, 25, 30, 35],
 		40: [30, 30, 35, 35, 40, 45],
 		50: [40, 40, 45, 45, 50, 50],
 		60: [50, 50, 50, 50, 50, 50],
+		70: [50, 50, 50, 50, 50, 50],
 		// 70: [60, 60, 60, 60, 60, 60], // TODO MR3 HIGH END
 		// 80: [70, 70, 70, 70, 70, 70], // TODO MR3 HIGH END
 		// 90: [80, 80, 80, 80, 80, 80], // TODO MR3 HIGH END

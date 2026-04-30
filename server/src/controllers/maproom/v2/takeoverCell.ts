@@ -4,7 +4,7 @@ import { postgres } from "../../../server.js";
 import { WorldMapCell } from "../../../models/worldmapcell.model.js";
 import { Status } from "../../../enums/StatusCodes.js";
 import { BaseType } from "../../../enums/Base.js";
-import { MapRoomCell } from "../../../enums/MapRoom.js";
+import { MapRoomCell, MapRoomVersion } from "../../../enums/MapRoom.js";
 import {
   Operation,
   updateResources,
@@ -33,7 +33,7 @@ export const takeoverCell: KoaController = async (ctx) => {
     const currentUser: User = ctx.authUser;
     await postgres.em.populate(currentUser, ["save"]);
 
-    const userSave = currentUser.save;
+    const userSave = currentUser.save!;
 
     const cell = await postgres.em.findOne(
       WorldMapCell,
@@ -52,17 +52,19 @@ export const takeoverCell: KoaController = async (ctx) => {
     if (cellSave.damage < 90)
       throw new Error("Cell is not damaged enough to be taken over.");
 
-    await validateRange(currentUser, userSave, { attackCell: cell });
+    const mapversion: MapRoomVersion = cell.map_version;
+
+    await validateRange(currentUser, userSave, mapversion, { attackCell: cell });
 
     if (shiny) userSave.credits = userSave.credits - shiny;
     if (resources)
       userSave.resources = updateResources(
         resources,
-        userSave.resources,
+        userSave.resources ?? {},
         Operation.SUBTRACT
       );
 
-    // Find the previous owner
+    // Clean up previous owner's save if the cell was player-owned
     const previousOwner = await postgres.em.findOne(
       User,
       { userid: cellSave.userid },
@@ -72,17 +74,12 @@ export const takeoverCell: KoaController = async (ctx) => {
     if (previousOwner?.save) {
       const { outposts } = previousOwner.save;
 
-      // Filter out the outpost that matches the specified cell
       previousOwner.save.outposts = outposts.filter(
         ([x, y, id]) => !(x === cell.x && y === cell.y && id === baseid)
       );
 
-      // Remove the `buildingresources` entry for this outpost
-      const buildingresources = previousOwner.save.buildingresources;
-
-      if (buildingresources && buildingresources[`b${baseid}`]) {
-        delete buildingresources[`b${baseid}`];
-      }
+      if (previousOwner.save.buildingresources)
+        delete previousOwner.save.buildingresources[`b${baseid}`];
 
       await postgres.em.persistAndFlush(previousOwner);
     }
@@ -121,8 +118,8 @@ export const takeoverCell: KoaController = async (ctx) => {
     ctx.status = Status.OK;
     ctx.body = { error: 0 };
   } catch (error) {
+    logger.error(`Error taking over cell: ${error}`);
     ctx.status = Status.BAD_REQUEST;
     ctx.body = { error: "The server attempted to take over this cell but failed unexpectedly." };
-    logger.error("Error taking over cell:", error);
   }
 };

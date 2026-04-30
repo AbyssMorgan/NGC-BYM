@@ -4,11 +4,11 @@ import type { KoaController } from "../../../utils/KoaController.js";
 import { User } from "../../../models/user.model.js";
 import { WorldMapCell } from "../../../models/worldmapcell.model.js";
 import { postgres } from "../../../server.js";
-import { devConfig } from "../../../config/DevSettings.js";
+import { devConfig } from "../../../config/GameConfig.js";
 import { Status } from "../../../enums/StatusCodes.js";
 import { createCellData } from "../../../services/maproom/v2/createCellData.js";
-import type { Save } from "../../../models/save.model.js";
 import { generateNoise, getTerrainHeight } from "../../../services/maproom/v2/generateMap.js";
+import { MapRoomVersion } from "../../../enums/MapRoom.js";
 
 /**
  * Schema for validating the request body when getting area data.
@@ -16,8 +16,29 @@ import { generateNoise, getTerrainHeight } from "../../../services/maproom/v2/ge
 const getAreaSchema = z.object({
   x: z.string().transform(x => parseInt(x, 10)),
   y: z.string().transform(y => parseInt(y, 10)),
-  sendresources: z.string().optional().transform(res => parseInt(res, 10) || 0),
+  sendresources: z.string().optional().transform(res => res ? parseInt(res, 10) : 0),
 });
+
+/**
+ * Save fields fetched alongside each WorldMapCell in the DB query.
+ * Restricted to only what the cell handlers need.
+ */
+const CELL_SAVE_FIELDS = [
+  "*",
+  "save.basesaveid",
+  "save.savetime",
+  "save.locked",
+  "save.empirevalue",
+  "save.flinger",
+  "save.catapult",
+  "save.protected",
+  "save.resources",
+  "save.monsters",
+  "save.damage",
+  "save.destroyed",
+  "save.points",
+  "save.basevalue",
+] as const;
 
 /**
  * Controller for generating cells on the World Map.
@@ -36,8 +57,10 @@ export const getArea: KoaController = async (ctx) => {
   const user: User = ctx.authUser;
   await postgres.em.populate(user, ["save"]);
 
-  const save: Save = user.save;
+  const save = user.save!;
   const worldid = save.worldid;
+
+  if (!worldid) throw new Error(`${user.username} has no world ID.`);
 
   // We ignore width & height sent by the client as it's already hardcoded to 10 x 10
   const width = 10;
@@ -50,6 +73,8 @@ export const getArea: KoaController = async (ctx) => {
   const dbCells = await postgres.em.find(
     WorldMapCell,
     {
+      world_id: worldid,
+      map_version: MapRoomVersion.V2,
       x: {
         $gte: currentX,
         $lte: currentX + width,
@@ -58,13 +83,12 @@ export const getArea: KoaController = async (ctx) => {
         $gte: currentY,
         $lte: currentY + height,
       },
-      world_id: worldid,
     },
-    { populate: ["save"] }
+    { populate: ["save"], fields: CELL_SAVE_FIELDS }
   );
 
   // Batch load all unique cell owners in a single query
-  const ownerIds = [...new Set(dbCells.map(cell => cell.uid).filter(Boolean))];
+  const ownerIds = [...new Set(dbCells.map(cell => cell.uid).filter(Boolean))] as number[];
 
   const ownersList = await postgres.em.find(
     User,
@@ -74,14 +98,14 @@ export const getArea: KoaController = async (ctx) => {
 
   const cellOwners = new Map<number, User>(ownersList.map(u => [u.userid, u]));
 
-  const cells = {};
+  const cells: Record<number, Record<number, unknown>> = {};
   for (const cell of dbCells) {
     if (!cells[cell.x]) cells[cell.x] = {};
     cells[cell.x][cell.y] = await createCellData(cell, worldid, ctx, cellOwners);
   }
 
   // Then, fill the remaining cells in-memory
-  const noise = generateNoise(save.worldid);
+  const noise = generateNoise(worldid);
   for (let cellX = currentX; cellX <= currentX + width; cellX++) {
     // Ensure the cellX object exists in the cells map to append the cellY object to it
     if (!cells[cellX]) cells[cellX] = {};

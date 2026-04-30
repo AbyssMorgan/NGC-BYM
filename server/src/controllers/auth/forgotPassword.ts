@@ -9,7 +9,7 @@ import { postgres } from "../../server.js";
 import { User } from "../../models/user.model.js";
 import { authFailureErr } from "../../errors/errors.js";
 import { ForgotPasswordSchema } from "../../zod/AuthSchemas.js";
-import { transporter } from "../../config/MailSettings.js";
+import { transporter } from "../../config/MailConfig.js";
 /**
  * Controller to handle forgot password functionality.
  *
@@ -27,7 +27,7 @@ export const forgotPassword: KoaController = async (ctx) => {
     const { email } = ForgotPasswordSchema.parse(ctx.request.body);
 
     // Generate a short-lived JWT token
-    const token = JWT.sign({ user: { email } }, process.env.SECRET_KEY, {
+    const token = JWT.sign({ user: { email } }, process.env.SECRET_KEY!, {
       expiresIn: "20m",
     });
 

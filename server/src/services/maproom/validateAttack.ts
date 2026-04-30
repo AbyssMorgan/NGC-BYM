@@ -1,9 +1,10 @@
 import { User } from "../../models/user.model.js";
 import { loadFailureErr } from "../../errors/errors.js";
 import { logAttackViolation } from "../base/reportManager.js";
-import { type MonsterProps, monsterStats } from "../../data/monsterStats.js";
+import { monsterStats, mr3MonsterStats } from "../../data/stats/monsterStats.js";
 import type { AttackData } from "../../zod/AttackSchema.js";
-import { type ChampionProps, championStats } from "../../data/championStats.js";
+import { type ChampionProps, championStats } from "../../data/stats/championStats.js";
+import { MapRoomVersion } from "../../enums/MapRoom.js";
 
 // TODO:
 // Validate monster count from flinger
@@ -16,9 +17,10 @@ type StatValue = number[] | string[];
  * 
  * @param {User} user - The user initiating the attack.
  * @param {AttackData} attackData - The payload sent from the client for an attack.
+ * @param {MapRoomVersion} [mapVersion] - The map version of the attack, if applicable.
  * @throws Will throw an error if the data is missing, malformed, or tampered with.
  */
-export const validateAttack = async (user: User, attackData: AttackData) => {
+export const validateAttack = async (user: User, attackData: AttackData, mapVersion?: MapRoomVersion) => {
   if (!attackData || Object.keys(attackData).length === 0) {
     const message = "Attack payload was missing. Client modified.";
     await logAttackViolation(user, message);
@@ -31,6 +33,8 @@ export const validateAttack = async (user: User, attackData: AttackData) => {
     throw loadFailureErr();
   }
 
+  const isInMaproom3 = mapVersion === MapRoomVersion.V3;
+
   if (attackData.monsters.length > 0) {
     for (const monster of attackData.monsters) {
       const { id, stats } = monster;
@@ -41,15 +45,15 @@ export const validateAttack = async (user: User, attackData: AttackData) => {
         throw loadFailureErr();
       }
 
-      const monsterProps: MonsterProps = monsterStats[id].props;
-      const monsterPropsKeys = Object.keys(monsterProps) as Array<keyof typeof monsterProps>;
+      const expectedProps = isInMaproom3 ? mr3MonsterStats[id]?.props : monsterStats[id].props;
+      const monsterPropsKeys = Object.keys(expectedProps) as Array<keyof typeof expectedProps>;
 
       for (const key of monsterPropsKeys) {
         const received = stats[key];
-        const expected = monsterProps[key];
+        const expected = expectedProps[key];
 
         if (!isMonsterStatsEqual(received, expected)) {
-          const message = `${id}'s stat '${key}' was modified. Received: ${stats[key]} but expected ${monsterProps[key]}`;
+          const message = `${id}'s stat '${key}' was modified. Received: ${stats[key]} but expected ${expected}`;
           await logAttackViolation(user, message);
           throw loadFailureErr();
         }
@@ -92,7 +96,7 @@ export const validateAttack = async (user: User, attackData: AttackData) => {
  * @param {number[]} arr2 - Second array of numeric stats.
  * @returns {boolean} - True if arrays are equal within 2 decimal places, otherwise false.
  */
-const isMonsterStatsEqual = (arr1: number[], arr2: number[]) => {
+const isMonsterStatsEqual = (arr1: number[], arr2: number[] | undefined) => {
   if (!Array.isArray(arr1) || !Array.isArray(arr2) || arr1.length !== arr2.length)
     return false;
 
@@ -109,7 +113,7 @@ const isMonsterStatsEqual = (arr1: number[], arr2: number[]) => {
  * @param {StatValue} val2 - Second stat value.
  * @returns {boolean} - True if values are considered equal, false otherwise.
  */
-const isChampionStatsEqual = (val1: StatValue, val2: StatValue) => {
+const isChampionStatsEqual = (val1: StatValue, val2: StatValue | undefined) => {
   if (!Array.isArray(val1) || !Array.isArray(val2) || val1.length !== val2.length) 
     return false;
 

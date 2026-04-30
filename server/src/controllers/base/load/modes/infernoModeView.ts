@@ -1,4 +1,4 @@
-import { molochTribes } from "../../../../data/tribes/molochTribes.js";
+import { molochTribes } from "../../../../data/tribes/inferno/molochTribes.js";
 import { InfernoMaproom, type TribeData } from "../../../../models/infernomaproom.model.js";
 import { Save } from "../../../../models/save.model.js";
 import { User } from "../../../../models/user.model.js";
@@ -13,6 +13,8 @@ export const infernoModeView = async (user: User, baseid: string) => {
     userid: user.userid,
   });
 
+  if (!maproom1) throw new Error(`Inferno maproom not found for user: ${user.username}`);
+
   let existingTribe = maproom1.tribedata.find(
     (tribe) => tribe.baseid === baseid
   );
@@ -24,7 +26,7 @@ export const infernoModeView = async (user: User, baseid: string) => {
     await postgres.em.persistAndFlush(maproom1);
   }
 
-  const tribeData = molochTribes.find((tribe) => tribe.baseid === baseid);
+  const tribeData = molochTribes.find((tribe) => tribe.baseid === baseid)!;
 
   return Object.assign(new Save(), {
     ...tribeData,

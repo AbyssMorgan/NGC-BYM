@@ -9,17 +9,16 @@ import {
 import { FrontendKey } from "../utils/FrontendKey.js";
 import { World } from "./world.model.js";
 
-// Composite index on world_id, x, and y
-@Index({ properties: ["world_id", "x", "y"] })
+@Index({ properties: ["world_id", "map_version", "x", "y"] })
 @Entity({ tableName: "world_map_cell" })
 export class WorldMapCell {
   
-  constructor(world?: World, x?: number, y?: number, terrainHeight?: number) {
-    this.world = world;
-    this.world_id = world?.uuid;
+  constructor(world: World | undefined, x: number, y: number, terrainHeight: number | undefined) {
+    this.world = world!;
+    this.world_id = world?.uuid ?? "";
     this.x = x;
     this.y = y;
-    this.terrainHeight = terrainHeight;
+    this.terrainHeight = terrainHeight ?? 0;
   }
 
   @FrontendKey
@@ -31,10 +30,14 @@ export class WorldMapCell {
   @Property()
   baseid!: string;
 
+  @Property({ default: 2 })
+  map_version!: number;
+
   @FrontendKey
   @Property()
   world_id!: string;
 
+  @Index()
   @FrontendKey
   @Property()
   uid!: number;
@@ -54,6 +57,9 @@ export class WorldMapCell {
   @FrontendKey
   @Property()
   terrainHeight!: number;
+
+  @Property({ nullable: true })
+  destroyed_at?: Date | null;
 
   @ManyToOne(() => World)
   world!: World;

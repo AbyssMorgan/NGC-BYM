@@ -339,12 +339,12 @@ package com.monsters.autobanking
          }
          else if(MapRoomManager.instance.isInMapRoom3)
          {
-            _loc8_ = new Vector.<String>();
-            _loc13_ = 0;
+            _loc5_ = new SecNum(0);
             _loc14_ = BaseBuffHandler.instance.getBuffByName(AutoBankBaseBuff.k_NAME) as AutoBankBaseBuff;
             if(_loc14_)
             {
-               fundAllResources(_loc14_.value * Math.max(0,param1),param2 || s_logCounter == 0);
+               _loc5_ = fundAllResources(_loc14_.value * Math.max(0,param1),param2 || s_logCounter == 0);
+               BASE.PointsAdd(Math.ceil(_loc5_.Get() * 2.0));
             }
          }
          --s_logCounter;
@@ -355,13 +355,14 @@ package com.monsters.autobanking
          return int(param1) - int(param2);
       }
       
-      private static function fundAllResources(param1:Number, param2:Boolean) : void
+      private static function fundAllResources(param1:Number, param2:Boolean) : SecNum
       {
          var _loc3_:uint = 0;
+         var _loc4_:SecNum = new SecNum(0);
          _loc3_ = 1;
          while(_loc3_ < k_MAX_RESOURCES)
          {
-            BASE.Fund(_loc3_,param1,false,null,false,false);
+            _loc4_.Add(BASE.Fund(_loc3_,param1,false,null,false,false));
             if(param2 && Boolean(param1))
             {
                LOGGER.Stat([96,_loc3_,param1]);
@@ -372,6 +373,7 @@ package com.monsters.autobanking
          {
             s_logCounter = 10;
          }
+         return _loc4_;
       }
    }
 }

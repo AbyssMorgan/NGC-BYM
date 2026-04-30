@@ -1,4 +1,4 @@
-import { devConfig } from "../config/DevSettings.js";
+import { devConfig } from "../config/GameConfig.js";
 import { logger } from "../utils/logger.js";
 import morgan from "koa-morgan";
 import type { Context, Next } from "koa";
@@ -34,5 +34,5 @@ const logFormat = "Server: :method :status :url";
  * @type {Function}
  */
 export const morganLogging = morgan(logFormat, {
-  skip: (ctx) => ctx.url.startsWith("/assets"),
+  skip: (ctx) => ctx.url?.startsWith("/assets") ?? false,
 });

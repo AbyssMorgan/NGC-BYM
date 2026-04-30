@@ -29,4 +29,3 @@ server/src/database/migrations/.snapshot*
 
 # Private scripts / sensitive
 server/src/scripts/anticheat/priv/*
-.vscode/settings.json

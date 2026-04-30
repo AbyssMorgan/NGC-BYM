@@ -2,7 +2,6 @@ import type { Context } from "koa";
 import type { User } from "../../../../models/user.model.js";
 import type { WorldMapCell } from "../../../../models/worldmapcell.model.js";
 import { calculateBaseLevel } from "../../../../services/base/calculateBaseLevel.js";
-import { damageProtection } from "../../../../services/maproom/v2/damageProtection.js";
 import { logger } from "../../../../utils/logger.js";
 import { getCurrentDateTime } from "../../../../utils/getCurrentDateTime.js";
 
@@ -27,7 +26,10 @@ export const userCell = async (ctx: Context, cell: WorldMapCell, cellOwners: Map
     // Get the cell owner, either the current user or another user
     const cellOwner = mine ? currentUser : cellOwners.get(cell.uid);
 
-    if (!cellOwner) logger.error(`Cell owner save data is missing.`);
+    if (!cellOwner?.save) { 
+      logger.error(`Cell owner save data is missing.`); 
+      return; 
+    }
 
     const online = getCurrentDateTime() - cellSave.savetime <= 60;
 
@@ -39,10 +41,11 @@ export const userCell = async (ctx: Context, cell: WorldMapCell, cellOwners: Map
     const basevalue = cellOwner.save.basevalue;
     const baseLevel = calculateBaseLevel(points, basevalue);
 
-    await damageProtection(cellSave);
-
     const currentTime = getCurrentDateTime();
     const isProtected = cellSave.protected > 0 && cellSave.protected > currentTime;
+    const protectionExpired = cellSave.protected > 0 && cellSave.protected <= currentTime;
+    
+    const damage = protectionExpired ? 0 : cellSave.damage;
 
     return {
       uid: cellOwner.userid,
@@ -63,13 +66,13 @@ export const userCell = async (ctx: Context, cell: WorldMapCell, cellOwners: Map
       r: cellSave.resources,
       m: cellSave.monsters || {},
       l: baseLevel,
-      d: cellSave.damage >= 90 ? 1 : 0,
+      d: damage >= 90 ? 1 : 0,
       lo: locked,
-      dm: cellSave.damage,
+      dm: damage,
       pic_square: cellOwner.pic_square,
       im: cellOwner.pic_square
     };
   } catch (error) {
-    logger.error("Error fetching user cell data", error);
+    logger.error(`Error fetching user cell data: ${error}`);
   }
 };

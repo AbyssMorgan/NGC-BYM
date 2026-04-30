@@ -1,6 +1,5 @@
 import type { TypeOf } from "zod";
 import { resourcesHandler } from "../../../controllers/base/save/handlers/resourceHandler.js";
-import { molochTribes } from "../../../data/tribes/molochTribes.js";
 import { SaveKeys } from "../../../enums/SaveKeys.js";
 import { saveFailureErr } from "../../../errors/errors.js";
 import { InfernoMaproom } from "../../../models/infernomaproom.model.js";
@@ -9,17 +8,20 @@ import { User } from "../../../models/user.model.js";
 import { postgres } from "../../../server.js";
 import { getCurrentDateTime } from "../../../utils/getCurrentDateTime.js";
 import { BaseSaveSchema } from "../../../zod/BaseSaveSchema.js";
+import { molochTribes } from "../../../data/tribes/inferno/molochTribes.js";
 
 type BaseSaveData = TypeOf<typeof BaseSaveSchema>;
 
 export const scaledTribes = async (user: User, saveData: BaseSaveData) => {
-  const userSave = user.save;
+  const userSave = user.save!;
   const userInfernoSave = user.infernosave;
-  const currentSave = userInfernoSave || userSave;
+  const currentSave = userInfernoSave || userSave!;
 
   const maproom1 = await postgres.em.findOne(InfernoMaproom, {
     userid: user.userid,
   });
+
+  if (!maproom1) throw new Error(`Maproom not found for userid: ${user.username}`);
 
   let existingTribe = maproom1.tribedata.find(
     (tribe) => tribe.baseid === saveData.baseid
@@ -34,7 +36,7 @@ export const scaledTribes = async (user: User, saveData: BaseSaveData) => {
   
   // Update the wild monster status on the user save
   currentSave.wmstatus.forEach((tribe) => {
-    if (tribe[0] === Number(saveData.baseid)) tribe[2] = saveData.destroyed;
+    if (tribe[0] === Number(saveData.baseid)) tribe[2] = saveData.destroyed ?? 0;
   });
 
   const tribeData = molochTribes.find(
@@ -45,12 +47,12 @@ export const scaledTribes = async (user: User, saveData: BaseSaveData) => {
     ...tribeData,
     baseid: saveData.baseid,
     buildinghealthdata: existingTribe?.tribeHealthData || {},
-    monsters: existingTribe.monsters ?? tribeData.monsters,
+    monsters: existingTribe.monsters ?? tribeData?.monsters,
   });
 
   await postgres.em.persistAndFlush(maproom1);
 
-  for (const key of Object.keys(saveData)) {
+  for (const key of Object.keys(saveData) as (keyof typeof saveData)[]) {
     const value = saveData[key];
 
     switch (key) {

@@ -31,7 +31,7 @@ export const damageProtection = async (save: Save, mode?: BaseMode) => {
     persist = true;
   };
 
-  if (mode === BaseMode.ATTACK || mode === BaseMode.IATTACK) {
+  if (mode === BaseMode.ATTACK || mode === BaseMode.IATTACK || mode === BaseMode.WMATTACK || mode === BaseMode.IWMATTACK) {
     protection = 0;
     persist = true;
   } else {
@@ -78,7 +78,6 @@ export const damageProtection = async (save: Save, mode?: BaseMode) => {
           // Clear expired protection timestamp
           if (protection > 0 && protection <= currentTime) {
             protection = 0;
-            save.damage = 0; 
             persist = true;
           }
 

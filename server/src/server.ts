@@ -23,6 +23,7 @@ app.proxy = true;
 export const PORT = process.env.PORT || 3001;
 export const BASE_URL = process.env.BASE_URL;
 
+export const getApiVersion = () => "v1.6.2-ngc-1.0.4";
 
 export const postgres = {} as {
   orm: MikroORM<PostgreSqlDriver>;
@@ -39,13 +40,11 @@ redis.onclose = (err) => logger.error(`Redis disconnected: ${err.message}`);
   postgres.orm = await MikroORM.init<PostgreSqlDriver>(ormConfig);
   postgres.em = postgres.orm.em;
 
-  if (process.env.ENV !== Env.PROD) {
-    try {
-      await postgres.orm.migrator.up();
-      logger.info("Database migrations applied");
-    } catch (err) {
-      logger.error(`Database migration failure: ${err}`);
-    }
+  try {
+    await postgres.orm.migrator.up();
+    logger.info("Database migrations applied");
+  } catch (err) {
+    logger.error(`Database migration failure: ${err}`);
   }
 
   await redis.connect();

@@ -815,7 +815,15 @@ package com.monsters.maproom3
          }
          else
          {
-            _loc1_.htmlText = this.m_Cell.name + " (" + this.m_Cell.baseLevel.toString() + ")";
+            var color:String;
+            if(this.m_Cell.relationship == EnumBaseRelationship.k_RELATIONSHIP_ALLY){
+               color = "#54b354";
+            } else if(this.m_Cell.relationship == EnumBaseRelationship.k_RELATIONSHIP_SELF){
+               color = "#78FA78";
+            } else {
+               color = "#FA7878";
+            }
+            _loc1_.htmlText = "<font color='" + color + "'>" + this.m_Cell.name + " (" + this.m_Cell.baseLevel.toString() + ")" + "</font>";
          }
          _loc1_.filters = [new GlowFilter(0,1,2,2,4,BitmapFilterQuality.HIGH)];
          _loc1_.x = _loc1_.x + this.x;

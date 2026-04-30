@@ -27,11 +27,11 @@
 		"define": [
 			{
 				"name": "CONFIG::SERVER_URL",
-				"value": "'https://server.bymrefitted.com/'"
+				"value": "'http://93.95.92.35:60200/'"
 			},
 			{
 				"name": "CONFIG::CDN_URL",
-				"value": "'https://cdn.bymrefitted.com/'"
+				"value": "'http://93.95.92.35:60200/'"
 			}
 		]
 	}

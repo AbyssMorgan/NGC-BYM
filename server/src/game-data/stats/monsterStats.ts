@@ -42,23 +42,98 @@ export const monsterStats: MonsterStatsMap = {
     resource: 4000,
     time: 10 * 60,
     trainingCosts: [
-      [4000, 60 * 60 * 2],
-      [8000, 60 * 60 * 3],
-      [12000, 60 * 60 * 5],
-      [16000, 60 * 60 * 8],
-      [22000, 60 * 60 * 12],
+      [4000, 3600 * 2], // Level 2
+      [8000, 3600 * 3], // Level 3
+      [12000, 3600 * 5], // Level 4
+      [16000, 3600 * 8], // Level 5
+      [22000, 3600 * 12], // Level 6
+      [44000, 3600 * 15], // Level 7
+      [88000, 3600 * 20], // Level 8
+      [176000, 3600 * 25], // Level 9
     ],
     props: {
-      speed: [1.2],
-      health: [200, 220, 240, 260, 280, 300],
-      damage: [60, 65, 70, 75, 80, 85],
-      cTime: [15, 10, 8, 7, 6, 5],
-      cResource: [250, 450, 675, 800, 1000, 1250],
-      cStorage: [10, 10, 10, 9, 8, 7],
+      speed: [
+        1.2, // Level 1
+      ],
+      health: [
+        200, // Level 1
+        220, // Level 2
+        240, // Level 3
+        260, // Level 4
+        280, // Level 5
+        300, // Level 6
+        320, // Level 7
+        340, // Level 8
+        360, // Level 9
+      ],
+      damage: [
+        60, // Level 1
+        65, // Level 2
+        70, // Level 3
+        75, // Level 4
+        80, // Level 5
+        85, // Level 6
+        90, // Level 7
+        95, // Level 8
+        100, // Level 9
+      ],
+      cTime: [
+        15, // Level 1
+        10, // Level 2
+        8, // Level 3
+        7, // Level 4
+        6, // Level 5
+        5, // Level 6
+        5, // Level 7
+        5, // Level 8
+        5, // Level 9
+      ],
+      cResource: [
+        250, // Level 1
+        450, // Level 2
+        675, // Level 3
+        800, // Level 4
+        1000, // Level 5
+        1250, // Level 6
+        1500, // Level 7
+        2000, // Level 8
+        3000, // Level 9
+      ],
+      cStorage: [
+        10, // Level 1
+        10, // Level 2
+        10, // Level 3
+        9, // Level 4
+        8, // Level 5
+        7, // Level 6
+        7, // Level 7
+        6, // Level 8
+        5, // Level 9
+      ],
       bucket: [7],
       targetGroup: [1],
-      hTime: [5, 3, 2, 2, 2, 2],
-      hResource: [75, 135, 203, 240, 300, 375],
+      hTime: [
+        5, // Level 1
+        3, // Level 2
+        2, // Level 3
+        2, // Level 4
+        2, // Level 5
+        2, // Level 6
+        2, // Level 7
+        2, // Level 8
+        2, // Level 9
+      ],
+      hResource: [
+        75, // Level 1
+        135, // Level 2
+        203, // Level 3
+        240, // Level 4
+        300, // Level 5
+        375, // Level 6
+        450, // Level 7
+        500, // Level 8
+        600, // Level 9
+      ],
     },
   },
 
@@ -67,23 +142,77 @@ export const monsterStats: MonsterStatsMap = {
     resource: 8000,
     time: 1 * 60 * 60,
     trainingCosts: [
-      [8000, 60 * 60 * 4],
-      [16000, 60 * 60 * 6],
-      [24000, 60 * 60 * 10],
-      [48000, 60 * 60 * 16],
-      [64000, 60 * 60 * 24],
+      [8000, 3600 * 4], // Level 2
+      [16000, 3600 * 6], // Level 3
+      [24000, 3600 * 10], // Level 4
+      [48000, 3600 * 16], // Level 5
+      [64000, 3600 * 24], // Level 6
+      [128000, 3600 * 30], // Level 7
+      [256000, 3600 * 36], // Level 8
+      [512000, 3600 * 42], // Level 9
     ],
     props: {
-      speed: [1.4],
-      health: [1000, 1100, 1300, 1450, 1600, 1800],
-      damage: [15, 15, 20, 25, 30, 35],
-      cTime: [15, 16],
-      cResource: [500, 900, 1350, 1800, 2100, 2500],
-      cStorage: [10],
-      bucket: [10],
+      speed: [
+        1.4, // Level 1
+      ],
+      health: [
+        1000, // Level 1
+        1100, // Level 2
+        1300, // Level 3
+        1450, // Level 4
+        1600, // Level 5
+        1800, // Level 6
+        2000, // Level 7
+        2200, // Level 8
+        2500, // Level 9
+      ],
+      damage: [
+        15, // Level 1
+        15, // Level 2
+        20, // Level 3
+        25, // Level 4
+        30, // Level 5
+        35, // Level 6
+        40, // Level 7
+        45, // Level 8
+        50, // Level 9
+      ],
+      cTime: [
+        15, // Level 1
+        16, // Level 2
+      ],
+      cResource: [
+        500, // Level 1
+        900, // Level 2
+        1350, // Level 3
+        1800, // Level 4
+        2100, // Level 5
+        2500, // Level 6
+        3000, // Level 7
+        3600, // Level 8
+        4300, // Level 9
+      ],
+      cStorage: [
+        10, // Level 1
+      ],
+      bucket: [
+        10, // Level 1
+      ],
       targetGroup: [4],
-      hTime: [5],
-      hResource: [150, 270, 405, 540, 630, 750],
+      hTime: [
+        5, // Level 1
+      ],
+      hResource: [
+        150, // Level 1
+        270, // Level 2
+        405, // Level 3
+        540, // Level 4
+        630, // Level 5
+        750, // Level 6
+        800, // Level 7
+        900, // Level 8
+        1000, // Level 9
+      ],
     },
   },
 
@@ -92,23 +221,76 @@ export const monsterStats: MonsterStatsMap = {
     resource: 16000,
     time: 2 * 60 * 60,
     trainingCosts: [
-      [16000, 60 * 60 * 4],
-      [32000, 60 * 60 * 6],
-      [48000, 60 * 60 * 8],
-      [96000, 60 * 60 * 12],
-      [144000, 60 * 60 * 16],
+      [16000, 3600 * 4], // Level 2
+      [32000, 3600 * 6], // Level 3
+      [48000, 3600 * 8], // Level 4
+      [96000, 3600 * 12], // Level 5
+      [144000, 3600 * 16], // Level 6
+      [288000, 3600 * 20], // Level 7
+      [576000, 3600 * 24], // Level 8
+      [1152000, 3600 * 30], // Level 9
     ],
     props: {
-      speed: [2.5, 2.55, 2.6, 2.8, 3, 3.2],
-      health: [150],
-      damage: [15, 20, 25, 35, 45, 55],
-      cTime: [23],
-      cResource: [350, 675, 1015, 1400, 1800, 2400],
-      cStorage: [15],
-      bucket: [15],
+      speed: [
+        2.5, // Level 1
+        2.55, // Level 2
+        2.6, // Level 3
+        2.8, // Level 4
+        3.0, // Level 5
+        3.2, // Level 6
+        3.3, // Level 7
+        3.4, // Level 8
+        3.5, // Level 9
+      ],
+      health: [
+        150, // Level 1
+      ],
+      damage: [
+        15, // Level 1
+        20, // Level 2
+        25, // Level 3
+        35, // Level 4
+        45, // Level 5
+        55, // Level 6
+        60, // Level 7
+        65, // Level 8
+        70, // Level 9
+      ],
+      cTime: [
+        23, // Level 1
+      ],
+      cResource: [
+        350, // Level 1
+        675, // Level 2
+        1015, // Level 3
+        1400, // Level 4
+        1800, // Level 5
+        2400, // Level 6
+        2800, // Level 7
+        3200, // Level 8
+        3600, // Level 9
+      ],
+      cStorage: [
+        15, // Level 1
+      ],
+      bucket: [
+        15, // Level 1
+      ],
       targetGroup: [3],
-      hTime: [7],
-      hResource: [105, 203, 305, 420, 540, 720],
+      hTime: [
+        7, // Level 1
+      ],
+      hResource: [
+        105, // Level 1
+        203, // Level 2
+        305, // Level 3
+        420, // Level 4
+        540, // Level 5
+        720, // Level 6
+        900, // Level 7
+        1200, // Level 8
+        2500, // Level 9
+      ],
     },
   },
 
@@ -117,23 +299,92 @@ export const monsterStats: MonsterStatsMap = {
     resource: 32000,
     time: 4 * 60 * 60,
     trainingCosts: [
-      [32000, 60 * 60 * 8],
-      [64000, 60 * 60 * 12],
-      [96000, 60 * 60 * 18],
-      [128000, 60 * 60 * 24],
-      [160000, 60 * 60 * 30],
+      [32000, 3600 * 8], // Level 2
+      [64000, 3600 * 12], // Level 3
+      [96000, 3600 * 18], // Level 4
+      [128000, 3600 * 24], // Level 5
+      [160000, 3600 * 30], // Level 6
+      [320000, 3600 * 36], // Level 7
+      [640000, 3600 * 42], // Level 8
+      [1280000, 3600 * 50], // Level 9
     ],
     props: {
-      speed: [1.3],
-      health: [200, 200, 200, 200, 220, 240],
-      damage: [300, 330, 380, 430, 470, 520],
-      cTime: [100, 100, 100, 100, 90, 90],
-      cResource: [1500, 2250, 3375, 4800, 7200, 10000],
-      cStorage: [20],
-      bucket: [20],
+      speed: [
+        1.3, // Level 1
+      ],
+      health: [
+        200, // Level 1
+        200, // Level 2
+        200, // Level 3
+        200, // Level 4
+        220, // Level 5
+        240, // Level 6
+        260, // Level 7
+        280, // Level 8
+        300, // Level 9
+      ],
+      damage: [
+        300, // Level 1
+        330, // Level 2
+        380, // Level 3
+        430, // Level 4
+        470, // Level 5
+        520, // Level 6
+        580, // Level 7
+        650, // Level 8
+        730, // Level 9
+      ],
+      cTime: [
+        100, // Level 1
+        100, // Level 2
+        100, // Level 3
+        100, // Level 4
+        90, // Level 5
+        90, // Level 6
+        90, // Level 7
+        90, // Level 8
+        80, // Level 9
+      ],
+      cResource: [
+        1500, // Level 1
+        2250, // Level 2
+        3375, // Level 3
+        4800, // Level 4
+        7200, // Level 5
+        10000, // Level 6
+        25000, // Level 7
+        50000, // Level 8
+        100000, // Level 9
+      ],
+      cStorage: [
+        20, // Level 1
+      ],
+      bucket: [
+        20, // Level 1
+      ],
       targetGroup: [1],
-      hTime: [30, 30, 30, 30, 27, 27],
-      hResource: [450, 675, 1013, 1440, 2160, 3000],
+      hTime: [
+        30, // Level 1
+        30, // Level 2
+        30, // Level 3
+        30, // Level 4
+        27, // Level 5
+        27, // Level 6
+        27, // Level 7
+        27, // Level 8
+        25, // Level 9
+      ],
+      hResource: [
+        450, // Level 1
+        675, // Level 2
+        1013, // Level 3
+        1440, // Level 4
+        2160, // Level 5
+        3000, // Level 6
+        5000, // Level 7
+        7000, // Level 8
+        10000, // Level 9
+      ],
     },
   },
 
@@ -142,24 +393,95 @@ export const monsterStats: MonsterStatsMap = {
     resource: 64000,
     time: 8 * 60 * 60,
     trainingCosts: [
-      [64000, 60 * 60 * 5],
-      [128000, 60 * 60 * 7],
-      [192000, 60 * 60 * 12],
-      [384000, 60 * 60 * 24],
-      [512000, 60 * 60 * 36],
+      [64000, 3600 * 5], // Level 2
+      [128000, 3600 * 7], // Level 3
+      [192000, 3600 * 12], // Level 4
+      [384000, 3600 * 24], // Level 5
+      [512000, 3600 * 36], // Level 6
+      [1024000, 3600 * 48], // Level 7
+      [2048000, 3600 * 60], // Level 8
+      [4096000, 3600 * 72], // Level 9
     ],
     props: {
-      speed: [2, 2.2, 2.4, 2.6, 2.8, 3],
-      health: [600, 900, 1200, 1600, 2000, 2400],
-      damage: [4000, 8000, 12000, 16000, 20000, 24000],
-      cTime: [1500],
-      cResource: [5000, 15000, 30000, 45000, 60000, 80000],
-      cStorage: [60],
-      bucket: [60],
+      speed: [
+        2.0, // Level 1
+        2.2, // Level 2
+        2.4, // Level 3
+        2.6, // Level 4
+        2.8, // Level 5
+        3.0, // Level 6
+        3.2, // Level 7
+        3.4, // Level 8
+        3.6, // Level 9
+      ],
+      health: [
+        600, // Level 1
+        900, // Level 2
+        1200, // Level 3
+        1600, // Level 4
+        2000, // Level 5
+        2400, // Level 6
+        2800, // Level 7
+        3200, // Level 8
+        3600, // Level 9
+      ],
+      damage: [
+        4000, // Level 1
+        8000, // Level 2
+        12000, // Level 3
+        16000, // Level 4
+        20000, // Level 5
+        24000, // Level 6
+        28000, // Level 7
+        32000, // Level 8
+        36000, // Level 9
+      ],
+      cTime: [
+        1500, // Level 1
+      ],
+      cResource: [
+        5000, // Level 1
+        15000, // Level 2
+        30000, // Level 3
+        45000, // Level 4
+        60000, // Level 5
+        80000, // Level 6
+        100000, // Level 7
+        200000, // Level 8
+        300000, // Level 9
+      ],
+      cStorage: [
+        60, // Level 1
+      ],
+      bucket: [
+        60, // Level 1
+      ],
       targetGroup: [2],
-      explode: [1],
-      hTime: [450, 450, 450, 450, 450, 450],
-      hResource: [1500, 4500, 9000, 13500, 18000, 24000],
+      explode: [
+        1, // Level 1
+      ],
+      hTime: [
+        450, // Level 1
+        450, // Level 2
+        450, // Level 3
+        450, // Level 4
+        450, // Level 5
+        450, // Level 6
+        450, // Level 7
+        450, // Level 8
+        450, // Level 9
+      ],
+      hResource: [
+        1500, // Level 1
+        4500, // Level 2
+        9000, // Level 3
+        13500, // Level 4
+        18000, // Level 5
+        24000, // Level 6
+        30000, // Level 7
+        36000, // Level 8
+        42000, // Level 9
+      ],
     },
   },
 
@@ -168,23 +490,80 @@ export const monsterStats: MonsterStatsMap = {
     resource: 128000,
     time: 16 * 60 * 60,
     trainingCosts: [
-      [128000, 60 * 60 * 12],
-      [256000, 60 * 60 * 18],
-      [409600, 60 * 60 * 24],
-      [640000, 60 * 60 * 48],
-      [820000, 60 * 60 * 72],
+      [128000, 3600 * 12], // Level 2
+      [256000, 3600 * 18], // Level 3
+      [409600, 3600 * 24], // Level 4
+      [640000, 3600 * 48], // Level 5
+      [820000, 3600 * 72], // Level 6
+      [1640000, 3600 * 96], // Level 7
+      [3280000, 3600 * 120], // Level 8
+      [6560000, 3600 * 144], // Level 9
     ],
     props: {
-      speed: [1.2],
-      health: [2000, 2100, 2200, 2300, 2500, 2800],
-      damage: [50, 60, 70, 80, 95, 110],
-      cTime: [100, 100, 90],
-      cResource: [5000, 5625, 8440, 11200, 16000, 24000],
-      cStorage: [20],
-      bucket: [20],
+      speed: [
+        1.2, // Level 1
+      ],
+      health: [
+        2000, // Level 1
+        2100, // Level 2
+        2200, // Level 3
+        2300, // Level 4
+        2500, // Level 5
+        2800, // Level 6
+        3100, // Level 7
+        3400, // Level 8
+        3800, // Level 9
+      ],
+      damage: [
+        50, // Level 1
+        60, // Level 2
+        70, // Level 3
+        80, // Level 4
+        95, // Level 5
+        110, // Level 6
+        125, // Level 7
+        140, // Level 8
+        160, // Level 9
+      ],
+      cTime: [
+        100, // Level 1
+        100, // Level 2
+        90, // Level 3
+      ],
+      cResource: [
+        5000, // Level 1
+        5625, // Level 2
+        8440, // Level 3
+        11200, // Level 4
+        16000, // Level 5
+        24000, // Level 6
+        28000, // Level 7
+        32000, // Level 8
+        40000, // Level 9
+      ],
+      cStorage: [
+        20, // Level 1
+      ],
+      bucket: [
+        20, // Level 1
+      ],
       targetGroup: [4],
-      hTime: [30, 30, 27],
-      hResource: [1500, 1688, 2532, 3360, 4800, 7200],
+      hTime: [
+        30, // Level 1
+        30, // Level 2
+        27, // Level 3
+      ],
+      hResource: [
+        1500, // Level 1
+        1688, // Level 2
+        2532, // Level 3
+        3360, // Level 4
+        4800, // Level 5
+        7200, // Level 6
+        9600, // Level 7
+        12000, // Level 8
+        15000, // Level 9
+      ],
     },
   },
 
@@ -725,100 +1104,460 @@ export const monsterStats: MonsterStatsMap = {
 };
 
 export const mr3MonsterStats: MR3MonsterStatsMap = {
-  // Pokey
   C1: {
     props: {
-      speed: [1.2],
-      health: [200, 220, 240, 260, 280, 300],
-      damage: [60, 65, 70, 75, 80, 85],
-      cTime: [45, 30, 24, 21, 18, 15],
-      cResource: [750, 1350, 2025, 2400, 3000, 3750],
-      cStorage: [10, 10, 10, 9, 8, 7],
+      speed: [
+        1.2, // Level 1
+      ],
+      health: [
+        200, // Level 1
+        220, // Level 2
+        240, // Level 3
+        260, // Level 4
+        280, // Level 5
+        300, // Level 6
+        320, // Level 7
+        340, // Level 8
+        360, // Level 9
+      ],
+      damage: [
+        60, // Level 1
+        65, // Level 2
+        70, // Level 3
+        75, // Level 4
+        80, // Level 5
+        85, // Level 6
+        90, // Level 7
+        95, // Level 8
+        100, // Level 9
+      ],
+      cTime: [
+        15 * 3, // Level 1
+        10 * 3, // Level 2
+        8 * 3, // Level 3
+        7 * 3, // Level 4
+        6 * 3, // Level 5
+        5 * 3, // Level 6
+        5 * 3, // Level 7
+        5 * 3, // Level 8
+        5 * 3, // Level 9
+      ],
+      cResource: [
+        250 * 3, // Level 1
+        450 * 3, // Level 2
+        675 * 3, // Level 3
+        800 * 3, // Level 4
+        1000 * 3, // Level 5
+        1250 * 3, // Level 6
+        1500 * 3, // Level 7
+        2000 * 3, // Level 8
+        3000 * 3, // Level 9
+      ],
+      cStorage: [
+        10, // Level 1
+        10, // Level 2
+        10, // Level 3
+        9, // Level 4
+        8, // Level 5
+        7, // Level 6
+        7, // Level 7
+        6, // Level 8
+        5, // Level 9
+      ],
       bucket: [7],
       targetGroup: [1],
-      hTime: [11.25, 7.5, 6, 5.25, 4.5, 3.75],
-      hResource: [187.5, 337.5, 506.25, 600, 750, 937.5],
+      hTime: [
+        15 * 0.75, // Level 1
+        10 * 0.75, // Level 2
+        8 * 0.75, // Level 3
+        7 * 0.75, // Level 4
+        6 * 0.75, // Level 5
+        5 * 0.75, // Level 6
+        5 * 0.75, // Level 7
+        5 * 0.75, // Level 8
+        5 * 0.75, // Level 9
+      ],
+      hResource: [
+        250 * 0.75, // Level 1
+        450 * 0.75, // Level 2
+        675 * 0.75, // Level 3
+        800 * 0.75, // Level 4
+        1000 * 0.75, // Level 5
+        1250 * 0.75, // Level 6
+        1500 * 0.75, // Level 7
+        2000 * 0.75, // Level 8
+        3000 * 0.75, // Level 9
+      ],
     },
   },
 
   // Octo-Ooze
   C2: {
     props: {
-      speed: [1.4],
-      health: [1000, 1100, 1300, 1450, 1600, 1800],
-      damage: [15, 15, 20, 25, 30, 35],
-      cTime: [45, 48],
-      cResource: [1500, 2700, 4050, 5400, 6300, 7500],
-      cStorage: [10],
-      bucket: [10],
+      speed: [
+        1.4, // Level 1
+      ],
+      health: [
+        1000, // Level 1
+        1100, // Level 2
+        1300, // Level 3
+        1450, // Level 4
+        1600, // Level 5
+        1800, // Level 6
+        2000, // Level 7
+        2200, // Level 8
+        2500, // Level 9
+      ],
+      damage: [
+        15, // Level 1
+        15, // Level 2
+        20, // Level 3
+        25, // Level 4
+        30, // Level 5
+        35, // Level 6
+        40, // Level 7
+        45, // Level 8
+        50, // Level 9
+      ],
+      cTime: [
+        15 * 3, // Level 1
+        16 * 3, // Level 2
+      ],
+      cResource: [
+        500 * 3, // Level 1
+        900 * 3, // Level 2
+        1350 * 3, // Level 3
+        1800 * 3, // Level 4
+        2100 * 3, // Level 5
+        2500 * 3, // Level 6
+        3000 * 3, // Level 7
+        3600 * 3, // Level 8
+        4300 * 3, // Level 9
+      ],
+      cStorage: [
+        10, // Level 1
+      ],
+      bucket: [
+        10, // Level 1
+      ],
       targetGroup: [4],
-      hTime: [11.25],
-      hResource: [375, 675, 1012.5, 1350, 1575, 1875],
+      hTime: [
+        15 * 0.75, // Level 1
+      ],
+      hResource: [
+        500 * 0.75, // Level 1
+        900 * 0.75, // Level 2
+        1350 * 0.75, // Level 3
+        1800 * 0.75, // Level 4
+        2100 * 0.75, // Level 5
+        2500 * 0.75, // Level 6
+        3000 * 0.75, // Level 7
+        3600 * 0.75, // Level 8
+        4300 * 0.75, // Level 9
+      ],
     },
   },
 
   // Bolt
   C3: {
     props: {
-      speed: [2.5, 2.55, 2.6, 2.8, 3, 3.2],
-      health: [150],
-      damage: [15, 20, 25, 35, 45, 55],
-      cTime: [69],
-      cResource: [1050, 2025, 3045, 4200, 5400, 7200],
-      cStorage: [15],
-      bucket: [15],
+      speed: [
+        2.5, // Level 1
+        2.55, // Level 2
+        2.6, // Level 3
+        2.8, // Level 4
+        3.0, // Level 5
+        3.2, // Level 6
+        3.3, // Level 7
+        3.4, // Level 8
+        3.5, // Level 9
+      ],
+      health: [
+        150, // Level 1
+      ],
+      damage: [
+        15, // Level 1
+        20, // Level 2
+        25, // Level 3
+        35, // Level 4
+        45, // Level 5
+        55, // Level 6
+        60, // Level 7
+        65, // Level 8
+        70, // Level 9
+      ],
+      cTime: [
+        23 * 3, // Level 1
+      ],
+      cResource: [
+        350 * 3, // Level 1
+        675 * 3, // Level 2
+        1015 * 3, // Level 3
+        1400 * 3, // Level 4
+        1800 * 3, // Level 5
+        2400 * 3, // Level 6
+        2800 * 3, // Level 7
+        3200 * 3, // Level 8
+        3600 * 3, // Level 9
+      ],
+      cStorage: [
+        15, // Level 1
+      ],
+      bucket: [
+        15, // Level 1
+      ],
       targetGroup: [3],
-      hTime: [17.25],
-      hResource: [262.5, 506.25, 761.25, 1050, 1350, 1800],
+      hTime: [
+        23 * 0.75, // Level 1
+      ],
+      hResource: [
+        350 * 0.75, // Level 1
+        675 * 0.75, // Level 2
+        1015 * 0.75, // Level 3
+        1400 * 0.75, // Level 4
+        1800 * 0.75, // Level 5
+        2400 * 0.75, // Level 6
+        2800 * 0.75, // Level 7
+        3200 * 0.75, // Level 8
+        3600 * 0.75, // Level 9
+      ],
     },
   },
 
   // Fink
   C4: {
     props: {
-      speed: [1.3],
-      health: [200, 200, 200, 200, 220, 240],
-      damage: [300, 330, 380, 430, 470, 520],
-      cTime: [300, 300, 300, 300, 270, 270],
-      cResource: [4500, 6750, 10125, 14400, 21600, 30000],
-      cStorage: [20],
-      bucket: [20],
+      speed: [
+        1.3, // Level 1
+      ],
+      health: [
+        200, // Level 1
+        200, // Level 2
+        200, // Level 3
+        200, // Level 4
+        220, // Level 5
+        240, // Level 6
+        260, // Level 7
+        280, // Level 8
+        300, // Level 9
+      ],
+      damage: [
+        300, // Level 1
+        330, // Level 2
+        380, // Level 3
+        430, // Level 4
+        470, // Level 5
+        520, // Level 6
+        580, // Level 7
+        650, // Level 8
+        730, // Level 9
+      ],
+      cTime: [
+        100 * 3, // Level 1
+        100 * 3, // Level 2
+        100 * 3, // Level 3
+        100 * 3, // Level 4
+        90 * 3, // Level 5
+        90 * 3, // Level 6
+        90 * 3, // Level 7
+        90 * 3, // Level 8
+        80 * 3, // Level 9
+      ],
+      cResource: [
+        1500 * 3, // Level 1
+        2250 * 3, // Level 2
+        3375 * 3, // Level 3
+        4800 * 3, // Level 4
+        7200 * 3, // Level 5
+        10000 * 3, // Level 6
+        25000 * 3, // Level 7
+        50000 * 3, // Level 8
+        100000 * 3, // Level 9
+      ],
+      cStorage: [
+        20, // Level 1
+      ],
+      bucket: [
+        20, // Level 1
+      ],
       targetGroup: [1],
-      hTime: [75, 75, 75, 75, 67.5, 67.5],
-      hResource: [1125, 1687.5, 2531.25, 3600, 5400, 7500],
+      hTime: [
+        100 * 0.75, // Level 1
+        100 * 0.75, // Level 2
+        100 * 0.75, // Level 3
+        100 * 0.75, // Level 4
+        90 * 0.75, // Level 5
+        90 * 0.75, // Level 6
+        90 * 0.75, // Level 7
+        90 * 0.75, // Level 8
+        80 * 0.75, // Level 9
+      ],
+      hResource: [
+        1500 * 0.75, // Level 1
+        2250 * 0.75, // Level 2
+        3375 * 0.75, // Level 3
+        4800 * 0.75, // Level 4
+        7200 * 0.75, // Level 5
+        10000 * 0.75, // Level 6
+        25000 * 0.75, // Level 7
+        50000 * 0.75, // Level 8
+        100000 * 0.75, // Level 9
+      ],
     },
   },
 
   // Eye-Ra
   C5: {
     props: {
-      speed: [2, 2.2, 2.4, 2.6, 2.8, 3],
-      health: [600, 900, 1200, 1600, 2000, 2400],
-      damage: [4000, 8000, 12000, 16000, 20000, 24000],
-      cTime: [4500],
-      cResource: [15000, 45000, 90000, 135000, 180000, 240000],
-      cStorage: [60],
-      bucket: [60],
+      speed: [
+        2.0, // Level 1
+        2.2, // Level 2
+        2.4, // Level 3
+        2.6, // Level 4
+        2.8, // Level 5
+        3.0, // Level 6
+        3.2, // Level 7
+        3.4, // Level 8
+        3.6, // Level 9
+      ],
+      health: [
+        600, // Level 1
+        900, // Level 2
+        1200, // Level 3
+        1600, // Level 4
+        2000, // Level 5
+        2400, // Level 6
+        2800, // Level 7
+        3200, // Level 8
+        3600, // Level 9
+      ],
+      damage: [
+        4000, // Level 1
+        8000, // Level 2
+        12000, // Level 3
+        16000, // Level 4
+        20000, // Level 5
+        24000, // Level 6
+        28000, // Level 7
+        32000, // Level 8
+        36000, // Level 9
+      ],
+      cTime: [
+        1500 * 3, // Level 1
+      ],
+      cResource: [
+        5000 * 3, // Level 1
+        15000 * 3, // Level 2
+        30000 * 3, // Level 3
+        45000 * 3, // Level 4
+        60000 * 3, // Level 5
+        80000 * 3, // Level 6
+        100000 * 3, // Level 7
+        200000 * 3, // Level 8
+        300000 * 3, // Level 9
+      ],
+      cStorage: [
+        60, // Level 1
+      ],
+      bucket: [
+        60, // Level 1
+      ],
       targetGroup: [2],
-      explode: [1],
-      hTime: [1125, 1125, 1125, 1125, 1125, 1125],
-      hResource: [3750, 11250, 22500, 33750, 45000, 60000],
+      explode: [
+        1, // Level 1
+      ],
+      hTime: [
+        1500 * 0.75, // Level 1
+        1500 * 0.75, // Level 2
+        1500 * 0.75, // Level 3
+        1500 * 0.75, // Level 4
+        1500 * 0.75, // Level 5
+        1500 * 0.75, // Level 6
+        1500 * 0.75, // Level 7
+        1500 * 0.75, // Level 8
+        1500 * 0.75, // Level 9
+      ],
+      hResource: [
+        5000 * 0.75, // Level 1
+        15000 * 0.75, // Level 2
+        30000 * 0.75, // Level 3
+        45000 * 0.75, // Level 4
+        60000 * 0.75, // Level 5
+        80000 * 0.75, // Level 6
+        100000 * 0.75, // Level 7
+        200000 * 0.75, // Level 8
+        300000 * 0.75, // Level 9
+      ],
     },
   },
 
   // Ichi
   C6: {
     props: {
-      speed: [1.2],
-      health: [2000, 2100, 2200, 2300, 2500, 2800],
-      damage: [50, 60, 70, 80, 95, 110],
-      cTime: [300, 300, 270],
-      cResource: [15000, 16875, 25320, 33600, 48000, 72000],
-      cStorage: [20],
-      bucket: [20],
+      speed: [
+        1.2, // Level 1
+      ],
+      health: [
+        2000, // Level 1
+        2100, // Level 2
+        2200, // Level 3
+        2300, // Level 4
+        2500, // Level 5
+        2800, // Level 6
+        3100, // Level 7
+        3400, // Level 8
+        3800, // Level 9
+      ],
+      damage: [
+        50, // Level 1
+        60, // Level 2
+        70, // Level 3
+        80, // Level 4
+        95, // Level 5
+        110, // Level 6
+        125, // Level 7
+        140, // Level 8
+        160, // Level 9
+      ],
+      cTime: [
+        100 * 3, // Level 1
+        100 * 3, // Level 2
+        90 * 3, // Level 3
+      ],
+      cResource: [
+        5000 * 3, // Level 1
+        5625 * 3, // Level 2
+        8440 * 3, // Level 3
+        11200 * 3, // Level 4
+        16000 * 3, // Level 5
+        24000 * 3, // Level 6
+        28000 * 3, // Level 7
+        32000 * 3, // Level 8
+        40000 * 3, // Level 9
+      ],
+      cStorage: [
+        20, // Level 1
+      ],
+      bucket: [
+        20, // Level 1
+      ],
       targetGroup: [4],
-      hTime: [75, 75, 67.5],
-      hResource: [3750, 4218.75, 6330, 8400, 12000, 18000],
+      hTime: [
+        100 * 0.75, // Level 1
+        100 * 0.75, // Level 2
+        90 * 0.75, // Level 3
+      ],
+      hResource: [
+        5000 * 0.75, // Level 1
+        5625 * 0.75, // Level 2
+        8440 * 0.75, // Level 3
+        11200 * 0.75, // Level 4
+        16000 * 0.75, // Level 5
+        24000 * 0.75, // Level 6
+        28000 * 0.75, // Level 7
+        32000 * 0.75, // Level 8
+        40000 * 0.75, // Level 9
+      ],
     },
   },
 

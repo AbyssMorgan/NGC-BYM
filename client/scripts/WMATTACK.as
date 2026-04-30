@@ -713,8 +713,8 @@ package
          var _loc8_:int = 3;
          var _loc9_:int = param1.direction + param2;
          var _loc10_:int = 250;
-         _loc5_ = GRID.ToISO(Math.cos(_loc9_ * 0.0174532925) * (800 + _loc10_ / 2),Math.sin(_loc9_ * 0.0174532925) * (800 + _loc10_ / 2),0);
-         _loc6_ = GRID.ToISO(Math.cos(_loc9_ * 0.0174532925) * 900,Math.sin(_loc9_ * 0.0174532925) * 900,0);
+         _loc5_ = GRID.ToISO(Math.cos(_loc9_ * 0.0174532925) * (1000 + _loc10_ / 2),Math.sin(_loc9_ * 0.0174532925) * (1000 + _loc10_ / 2),0);
+         _loc6_ = GRID.ToISO(Math.cos(_loc9_ * 0.0174532925) * 1000,Math.sin(_loc9_ * 0.0174532925) * 1000,0);
          if(param1.powerLevel)
          {
             GLOBAL._wmCreaturePowerups[param1.creatureID] = param1.powerLevel;
@@ -803,24 +803,24 @@ package
                while(_loc10_ < param1[_loc8_][2])
                {
                   _loc9_ += 8;
-                  _loc4_ = GRID.ToISO(Math.cos(_loc9_ * 0.0174532925) * (800 + param1[_loc8_][3] / 2),Math.sin(_loc9_ * 0.0174532925) * (800 + param1[_loc8_][3] / 2),0);
-                  _loc5_ = GRID.ToISO(Math.cos(_loc9_ * 0.0174532925) * 900,Math.sin(_loc9_ * 0.0174532925) * 900,0);
+                  _loc4_ = GRID.ToISO(Math.cos(_loc9_ * 0.0174532925) * (1000 + param1[_loc8_][3] / 2),Math.sin(_loc9_ * 0.0174532925) * (1000 + param1[_loc8_][3] / 2),0);
+                  _loc5_ = GRID.ToISO(Math.cos(_loc9_ * 0.0174532925) * 1000,Math.sin(_loc9_ * 0.0174532925) * 1000,0);
                   _loc6_ = SpawnB(_loc4_,param1[_loc8_][3],param1[_loc8_][0],_loc7_,param1[_loc8_][1]);
                   _loc3_.push(_loc6_);
                   _loc10_ += _loc7_;
                }
                if(param1[_loc8_][2] % _loc7_ != 0)
                {
-                  _loc4_ = GRID.ToISO(Math.cos(_loc9_ * 0.0174532925) * (800 + param1[_loc8_][3] / 2),Math.sin(_loc9_ * 0.0174532925) * (800 + param1[_loc8_][3] / 2),0);
-                  _loc5_ = GRID.ToISO(Math.cos(_loc9_ * 0.0174532925) * 900,Math.sin(_loc9_ * 0.0174532925) * 900,0);
+                  _loc4_ = GRID.ToISO(Math.cos(_loc9_ * 0.0174532925) * (1000 + param1[_loc8_][3] / 2),Math.sin(_loc9_ * 0.0174532925) * (1000 + param1[_loc8_][3] / 2),0);
+                  _loc5_ = GRID.ToISO(Math.cos(_loc9_ * 0.0174532925) * 1000,Math.sin(_loc9_ * 0.0174532925) * 1000,0);
                   _loc6_ = SpawnB(_loc4_,param1[_loc8_][3],param1[_loc8_][0],param1[_loc8_][2] % _loc7_,param1[_loc8_][1]);
                   _loc3_.push(_loc6_);
                }
             }
             else
             {
-               _loc4_ = GRID.ToISO(Math.cos(_loc9_ * 0.0174532925) * (800 + param1[_loc8_][3] / 2),Math.sin(_loc9_ * 0.0174532925) * (800 + param1[_loc8_][3] / 2),0);
-               _loc5_ = GRID.ToISO(Math.cos(_loc9_ * 0.0174532925) * 900,Math.sin(_loc9_ * 0.0174532925) * 900,0);
+               _loc4_ = GRID.ToISO(Math.cos(_loc9_ * 0.0174532925) * (1000 + param1[_loc8_][3] / 2),Math.sin(_loc9_ * 0.0174532925) * (1000 + param1[_loc8_][3] / 2),0);
+               _loc5_ = GRID.ToISO(Math.cos(_loc9_ * 0.0174532925) * 1000,Math.sin(_loc9_ * 0.0174532925) * 1000,0);
                _loc6_ = SpawnB(_loc4_,param1[_loc8_][3],param1[_loc8_][0],param1[_loc8_][2],param1[_loc8_][1]);
                _loc3_.push(_loc6_);
             }

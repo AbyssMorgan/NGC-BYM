@@ -241,7 +241,7 @@ package
       
       public static function AddPortal(param1:uint = 0) : INFERNOPORTAL
       {
-         var _loc2_:Point = new Point(-1200,-150);
+         var _loc2_:Point = new Point(-1500,-80);
          var _loc3_:Point = GRID.ToISO(_loc2_.x,_loc2_.y,0);
          var _loc4_:INFERNOPORTAL = BASE.addBuildingC(127) as INFERNOPORTAL;
          building = _loc4_;

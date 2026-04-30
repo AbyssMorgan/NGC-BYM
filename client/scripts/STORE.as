@@ -491,8 +491,8 @@ package
          var resources_blk4:uint = 200000 * 2;
          var resources_blk5:uint = 400000 * 2;
          var resources_blk6:uint = 1000000 * 2;
-         var resources_blk7:uint = 2500000 * 3;
-         var resources_blk8:uint = 6250000 * 3;
+         var resources_blk7:uint = 5000000 * 2;
+         var resources_blk8:uint = 10000000 * 2;
          var _loc18_:Vector.<Object> = InstanceManager.getInstancesByClass(BWALL);
          for each(_loc13_ in _loc18_)
          {

@@ -22,8 +22,6 @@ type StatValue = number[] | string[];
  * @throws Will throw an error if the data is missing, malformed, or tampered with.
  */
 export const validateAttack = async (user: User, attackData: AttackData, mapVersion?: MapRoomVersion) => {
-  if (process.env.ENV === Env.LOCAL) return;
-
   if (!attackData || Object.keys(attackData).length === 0) {
     const message = "Attack payload was missing. Client modified.";
     await logAttackViolation(user, message);

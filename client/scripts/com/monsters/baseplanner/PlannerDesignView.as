@@ -105,7 +105,7 @@ package com.monsters.baseplanner
 
       private const MAX_YARD_DIMENSIONS:Point = new Point(3240, 2600);
 
-      private const YARD_EXPANSIONS:Array = [new Point(1000, 800), new Point(1100, 880), new Point(1220, 980), new Point(1340, 1080), new Point(1480, 1180), new Point(1620, 1300), new Point(1780, 1420)];
+      private const YARD_EXPANSIONS:Array = [new Point(1000, 1000), new Point(1100, 1100), new Point(1220, 1220), new Point(1340, 1340), new Point(1480, 1480), new Point(1620, 1620), new Point(1780, 1780)];
 
       public var currentTool:String = "selectmove";
 
@@ -183,15 +183,21 @@ package com.monsters.baseplanner
          var _loc8_:Sprite = null;
          var _loc9_:DashedLine = null;
          var _loc1_:int = 1;
-         if (STORE._storeData.ENL)
-         {
-            _loc1_ = STORE._storeData.ENL.q + 1;
-         }
          var _loc2_:int = 0;
-         if (STORE._storeData.ENL)
-         {
-            _loc2_ = int(STORE._storeData.ENL.q);
+         if(BASE.isMainYard){
+            if (STORE._storeData.ENL)
+            {
+               _loc1_ = STORE._storeData.ENL.q + 1;
+               _loc2_ = int(STORE._storeData.ENL.q);
+            }
+         } else {
+            if (STORE._storeData.ENLI)
+            {
+               _loc1_ = STORE._storeData.ENLI.q + 1;
+               _loc2_ = int(STORE._storeData.ENLI.q);
+            }
          }
+         
          var _loc3_:Point = new Point();
          var _loc4_:Point = new Point();
          _loc3_ = this.YARD_EXPANSIONS[_loc2_];
@@ -657,10 +663,19 @@ package com.monsters.baseplanner
             _loc2_++;
          }
          var _loc3_:int = 0;
-         if (STORE._storeData.ENL)
-         {
-            _loc3_ = int(STORE._storeData.ENL.q);
+         
+         if(BASE.isMainYard){
+            if (STORE._storeData.ENL)
+            {
+               _loc3_ = int(STORE._storeData.ENL.q);
+            }
+         } else {
+            if (STORE._storeData.ENLI)
+            {
+               _loc3_ = int(STORE._storeData.ENLI.q);
+            }
          }
+
          var _loc4_:Point = this.YARD_EXPANSIONS[_loc3_];
          if (param1.category != BuildingItem.TYPE_DECORATION)
          {

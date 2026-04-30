@@ -11,7 +11,7 @@ import {
 } from "../../../services/base/updateResources.js";
 import { getCurrentDateTime } from "../../../utils/getCurrentDateTime.js";
 import { validateRange } from "../../../services/maproom/v2/validateRange.js";
-import { TakeoverCellSchema } from "../../../zod/TakeoverCellSchema.js";
+import { TakeoverCellSchema } from "../../../schemas/TakeoverCellSchema.js";
 import { takeoverCellErr } from "../../../errors/errors.js";
 
 /**
@@ -86,6 +86,7 @@ export const takeoverCell: KoaController = async (ctx) => {
   cellSave.userid = userSave.userid;
   cellSave.homebaseid = userSave.homebaseid;
   cellSave.name = userSave.name;
+  cellSave.worldid = userSave.worldid;
   cellSave.createtime = currentTime;
   cellSave.protected = currentTime + twelveHours;
   cellSave.attacks = [];

@@ -1,4 +1,5 @@
 import { Env } from "../enums/Env.js";
+import { MessageType } from "../enums/MessageType.js";
 
 /** Visit our Wiki to get more information on each flag.
  * Wiki: https://github.com/bym-refitted/backyard-monsters-refitted/wiki/Dev-Settings-%E2%80%90-Configuration
@@ -23,7 +24,7 @@ export const devConfig = {
    * Set the default amount of shiny on the user's account.
    * Must be set before creating a new record.
    */
-  shiny: 5000,
+  shiny: 1500,
 
   /*
    * Enable or disable the debug console. Requires a client restart.
@@ -82,10 +83,10 @@ export const devConfig = {
    * Sets the type of messages that are allowed to be sent by the client.
    */
   allowedMessageType: {
-    message: true,
-    trucerequest: false,
-    truceaccept: false,
-    trucereject: false,
-    migraterequest: false,
+    [MessageType.MESSAGE]: true,
+    [MessageType.TRUCE_REQUEST]: true,
+    [MessageType.TRUCE_ACCEPT]: true,
+    [MessageType.TRUCE_REJECT]: true,
+    [MessageType.MIGRATE_REQUEST]: false,
   },
 };

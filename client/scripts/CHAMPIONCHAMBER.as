@@ -152,6 +152,7 @@ package
             }
             LOGGER.Stat([69,BASE._guardianData[_loc1_].t,BASE._guardianData[_loc1_].l.Get()]);
             CREATURES._guardian.export();
+            BASE._guardianData[_loc1_].ft -= GLOBAL.Timestamp();
             CREATURES._guardian.changeModeFreeze();
             BASE._guardianData[_loc1_].ft -= GLOBAL.Timestamp();
             this._frozen.push(BASE._guardianData[_loc1_]);

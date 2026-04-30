@@ -35,7 +35,7 @@ export const canAttack = (attackerSave: Save, defenderSave: Save, mapversion?: M
    */
   if (defenderSave.type === BaseType.MAIN && !isOwner) {
     const defenderLevel = calculateBaseLevel(defenderSave.points, defenderSave.basevalue);
-    const inSafeZone = attackerLevel >= 40 && attackerLevel <= 120 && defenderLevel >= 40 && defenderLevel <= 120;
+    const inSafeZone = attackerLevel >= 40 && attackerLevel <= 80 && defenderLevel >= 40 && defenderLevel <= 80;
 
     if (attackerLevel - defenderLevel >= 12 && !inSafeZone) return false;
   }

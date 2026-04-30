@@ -22,7 +22,7 @@ package
       
       private static var _popupmc2:bubblepopup;
       
-      public static var _maxWorkers:int;
+      private static var _maxWorkers:int;
       
       private static var _workerMCOffset:int = 45;
       
@@ -47,10 +47,10 @@ package
          _workers = [];
          if(GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD)
          {
-            _maxWorkers = 8;
+            _maxWorkers = 5;
             if(!BASE.isMainYard)
             {
-               _maxWorkers = 3;
+               _maxWorkers = 1;
             }
             _loc1_ = 0;
             while(_loc1_ < _maxWorkers)

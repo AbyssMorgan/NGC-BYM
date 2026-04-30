@@ -1,11 +1,11 @@
 import { devConfig } from "../../../config/GameConfig.js";
 import { Save } from "../../../models/save.model.js";
-import { postgres } from "../../../server.js";
+import { postgres, redis } from "../../../server.js";
 import type { KoaController } from "../../../utils/KoaController.js";
-import { storeItems } from "../../../data/store/storeItems.js";
+import { storeItems } from "../../../game-data/store/storeItems.js";
 import { User } from "../../../models/user.model.js";
 import { FilterFrontendKeys } from "../../../utils/FrontendKey.js";
-import { getFlags } from "../../../data/flags.js";
+import { getFlags } from "../../../game-data/flags.js";
 import { getCurrentDateTime } from "../../../utils/getCurrentDateTime.js";
 import { BaseMode, BaseType } from "../../../enums/Base.js";
 import { EnumYardType } from "../../../enums/EnumYardType.js";
@@ -25,12 +25,13 @@ import { infernoModeView } from "./modes/infernoModeView.js";
 import { infernoModeAttack } from "./modes/infernoModeAttack.js";
 import { infernoModeBuild } from "./modes/infernoModeBuild.js";
 import { validateAttack } from "../../../services/maproom/validateAttack.js";
-import { BaseLoadSchema } from "../../../zod/BaseLoadSchema.js";
+import { BaseLoadSchema } from "../../../schemas/BaseLoadSchema.js";
 import { discordAgeErr } from "../../../errors/errors.js";
 import { EnumBaseRelationship } from "../../../enums/EnumBaseRelationship.js";
 import { canAttack } from "../../../services/base/canAttack.js";
 import { createMR1Tribes } from "../../../services/maproom/v1/createMR1Tribes.js";
 import { MR1_TRIBES } from "../../../enums/Tribes.js";
+import { tutorial } from "../../../game-data/tribes/v1/index.js";
 import { calculateBaseLevel } from "../../../services/base/calculateBaseLevel.js";
 import { extractTownHall } from "../../../utils/extractTownHall.js";
 
@@ -52,6 +53,7 @@ export const baseLoad: KoaController = async (ctx) => {
   switch (type) {
     case BaseMode.BUILD:
       baseSave = await baseModeBuild(user, baseid);
+      redis.setex(`last-seen:main:${user.userid}`, 120, getCurrentDateTime().toString());
       break;
 
     case BaseMode.VIEW:
@@ -86,6 +88,8 @@ export const baseLoad: KoaController = async (ctx) => {
       break;
 
     case BaseMode.IWMATTACK:
+      if (!ctx.meetsDiscordAgeCheck) throw discordAgeErr();
+      
       await validateAttack(user, attackData, mapversion);
       baseSave = await infernoModeAttack(user, baseid);
       break;
@@ -95,7 +99,8 @@ export const baseLoad: KoaController = async (ctx) => {
       break;
 
     case BaseMode.WMATTACK:
-      if (!ctx.meetsDiscordAgeCheck) throw discordAgeErr();
+      if (!ctx.meetsDiscordAgeCheck && baseid !== tutorial.baseid) throw discordAgeErr();
+      
       await validateAttack(user, attackData, mapversion);
       baseSave = await baseModeAttack({ user, baseid, mapversion, attackCost: attackcost });
       break;
@@ -128,7 +133,7 @@ export const baseLoad: KoaController = async (ctx) => {
 
   const townHall = extractTownHall(userSave.buildingdata || {});
 
-  flags.maproom2 = townHall && townHall.l >= 6 ? 1 : 0;
+  flags.maproom2 = userSave.mr2upgraded || (townHall && townHall.l >= 6) ? 1 : 0;
   flags.mr2upgraded = userSave.mr2upgraded ? 1 : 0;
 
   const isOwner = baseSave.type !== BaseType.INFERNO && user.userid === filteredSave.userid;
@@ -281,6 +286,10 @@ export const baseLoad: KoaController = async (ctx) => {
   if (type === BaseMode.ATTACK && mapversion === MapRoomVersion.V3) {
     if (totalStrongholdBonus > 0) response.attackingplayer = { buffs: { 5: totalStrongholdBonus } };
     if (totalDefenderStrongholdBonus > 0) response.defendingplayer = { buffs: { 6: totalDefenderStrongholdBonus } };
+  }
+
+  if (type === BaseMode.IDESCENT) {
+    response.resources = filteredSave.iresources;
   }
 
   ctx.status = Status.OK;

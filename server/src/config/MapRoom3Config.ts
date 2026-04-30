@@ -102,7 +102,6 @@ export const STRUCTURE_RANGE: Record<number, Record<number, number>> = {
 		// 90: 20, // TODO MR3 HIGH END
 	},
 	[EnumYardType.RESOURCE]: {
-		20: 1, // TODO remove
 		30: 2,
 		40: 3,
 		50: 4,
@@ -118,7 +117,6 @@ export const STRUCTURE_RANGE: Record<number, Record<number, number>> = {
 
 /** Resource production rate in units per second per level (client displays as ×60/min). */
 export const RESOURCE_PRODUCTION_RATES: Record<number, number> = {
-	20: 2, // TODO remove
 	30: 5,
 	40: 11,
 	50: 25,
@@ -130,7 +128,6 @@ export const RESOURCE_PRODUCTION_RATES: Record<number, number> = {
 
 /** Additional resource storage capacity granted by a RESOURCE outpost per level. */
 export const RESOURCE_CAPACITIES: Record<number, number> = {
-	20: 350000, // TODO remove
 	30: 750000,
 	40: 2000000,
 	50: 4000000,
@@ -175,7 +172,6 @@ export const DEFENDER_LEVELS = {
 	[EnumYardType.PLAYER]: { 0: [50, 50, 50, 50, 50, 50] },
 
 	[EnumYardType.RESOURCE]: {
-		20: [10, 10, 15, 15, 20, 25], // TODO remove
 		30: [20, 20, 25, 25, 30, 35],
 		40: [30, 30, 35, 35, 40, 45],
 		50: [40, 40, 45, 45, 50, 50],

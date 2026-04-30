@@ -134,7 +134,7 @@ package
          else
          {
             this.callPending = true;
-            GLOBAL._flags.discordOldEnough = false;
+            GLOBAL._flags.discordOldEnough = true;
             //LOGGER.Log("err",param1.error);
             //GLOBAL.ErrorMessage("BUILDING11 2");
          }

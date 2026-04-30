@@ -117,7 +117,6 @@ export const STRUCTURE_RANGE: Record<number, Record<number, number>> = {
 
 /** Resource production rate in units per second per level (client displays as ×60/min). */
 export const RESOURCE_PRODUCTION_RATES: Record<number, number> = {
-	10: 1,
 	20: 2,
 	30: 5,
 	40: 11,

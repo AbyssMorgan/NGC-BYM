@@ -127,8 +127,6 @@ package
                      {
                         ShowB();
                      }
-                  } else if(!GLOBAL._flags.discordOldEnough) {
-                     GLOBAL.Message(KEYS.Get("newmap_discord_age"));
                   }
                   else if(!initMaproomSetup)
                   {

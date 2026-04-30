@@ -20,7 +20,7 @@ export const getFlags = () => ({
   // Platforms:
   viximo: 0,
   kongregate: 0,
-  discordOldEnough: 0,
+  discordOldEnough: 1,
 
   // Settings:
   maproom: 1,

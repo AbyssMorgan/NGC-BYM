@@ -70,7 +70,7 @@ export const updateSaved: KoaController = async (ctx) => {
   const filteredSave = FilterFrontendKeys(baseSave);
 
   const flags = getFlags();
-  flags.discordOldEnough = Number(ctx.meetsDiscordAgeCheck);
+//   flags.discordOldEnough = Number(ctx.meetsDiscordAgeCheck);
 
   const townHall = extractTownHall(userSave.buildingdata || {});
   flags.maproom2 = userSave.mr2upgraded || (townHall && townHall.l >= 6) ? 1 : 0;

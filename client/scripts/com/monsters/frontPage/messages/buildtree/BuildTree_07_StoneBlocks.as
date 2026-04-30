@@ -30,7 +30,7 @@ package com.monsters.frontPage.messages.buildtree
          }
          else
          {
-            STORE.ShowB(1,0,["BLK2","BLK3","BLK4","BLK5","BLK6"]);
+            STORE.ShowB(1,0,["BLK2","BLK3","BLK4","BLK5","BLK6","BLK7","BLK8"]);
          }
       }
    }

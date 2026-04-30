@@ -129,7 +129,7 @@ export const baseLoad: KoaController = async (ctx) => {
   const isTutorialEnabled = devConfig.skipTutorial ? 205 : filteredSave.tutorialstage;
 
   const flags = getFlags();
-  flags.discordOldEnough = Number(ctx.meetsDiscordAgeCheck);
+//   flags.discordOldEnough = Number(ctx.meetsDiscordAgeCheck);
 
   const townHall = extractTownHall(userSave.buildingdata || {});
 

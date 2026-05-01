@@ -144,14 +144,14 @@ package buildings.yard {
 				58000, // Level 4
 				75500, // Level 5
 				90000, // Level 6
-				100000, // Level 7
-				110000, // Level 8
-				120000, // Level 9
-				130000, // Level 10
-				140000, // Level 11
-				150000, // Level 12
-				160000, // Level 13
-				170000, // Level 14
+				110000, // Level 7
+				130000, // Level 8
+				150000, // Level 9
+				170000, // Level 10
+				190000, // Level 11
+				210000, // Level 12
+				230000, // Level 13
+				250000, // Level 14
 			],
 			"repairTime":[
 				1920, // Level 1

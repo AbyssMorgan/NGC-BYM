@@ -81,7 +81,7 @@ export const TRIBE_OUTPOST_SEED = "maproom3-tribes";
 /** Available levels per structure type. */
 export const STRUCTURE_LEVELS: Record<number, number[]> = {
 	[EnumYardType.STRONGHOLD]: [30, 40, 50], // TODO MR3 HIGH END
-	[EnumYardType.RESOURCE]: [30, 40, 50, 60, 70], // TODO MR3 HIGH END
+	[EnumYardType.RESOURCE]: [50, 60, 70, 80], // TODO MR3 HIGH END
 	[EnumYardType.OUTPOST]: [45, 50],
 };
 
@@ -99,12 +99,10 @@ export const STRUCTURE_RANGE: Record<number, Record<number, number>> = {
 		50: 20, // TODO MR3 HIGH END
 	},
 	[EnumYardType.RESOURCE]: {
-		30: 2,
-		40: 3,
-		50: 4, // Final 2
-		60: 5, // Final 3
-		70: 6, // Final 4
-		// 80: 5, // TODO MR3 HIGH END
+		50: 2,
+		60: 3,
+		70: 4,
+		80: 5,
 		// 90: 6, // TODO MR3 HIGH END
 	},
 };
@@ -166,9 +164,7 @@ export const DEFENDER_LEVELS = {
 	},
 
 	[EnumYardType.RESOURCE]: {
-		30: [20, 20, 25, 25, 30, 35],
-		40: [30, 30, 35, 35, 40, 45],
-		50: [40, 40, 45, 45, 50, 50],
+		50: [45, 45, 45, 45, 45, 45],
 		60: [50, 50, 50, 50, 50, 50],
 		70: [60, 60, 60, 60, 60, 60],
 		80: [70, 70, 70, 70, 70, 70],

@@ -14,7 +14,6 @@ import { WORLD_SIZE } from "../../../config/MapRoom2Config.js";
 import { RESOURCE_PRODUCTION_RATES, RESOURCE_CAPACITIES, DEFENDER_DAMAGE_REDUCTION, STRONGHOLD_BONUSES, STRUCTURE_RANGE } from "../../../config/MapRoom3Config.js";
 import { WorldMapCell } from "../../../models/worldmapcell.model.js";
 import { getDefenderCoords, isDefensiveStructure } from "../../../services/maproom/v3/getDefenderCoords.js";
-import { getGeneratedCells, cellKey } from "../../../services/maproom/v3/generateCells.js";
 import { getHexDistance } from "../../../services/maproom/v3/getHexNeighborOffsets.js";
 import { Status } from "../../../enums/StatusCodes.js";
 import { baseModeView } from "./modes/baseModeView.js";
@@ -230,31 +229,30 @@ export const baseLoad: KoaController = async (ctx) => {
 
 		if (attackedCell && isDefensiveStructure(attackedCell.base_type)) {
 			const defenderCoords = getDefenderCoords(attackedCell.x, attackedCell.y, attackedCell.base_type);
-
-			let defenderCount = 0;
-
-			if (attackedCell.uid === 0) {
-				// For neutral structures, count defenders from generated cells
-				const generatedCells = getGeneratedCells();
-				defenderCount = defenderCoords.filter(([x, y]) => {
-					const cell = generatedCells.get(cellKey(x, y));
-					return cell?.type === EnumYardType.FORTIFICATION;
-				}).length;
-			} else {
-				// For player-owned structures, count defenders from database
+			if(attackedCell?.uid){
+				// Count only base owner defenders
 				const defenderCells = await postgres.em.find(WorldMapCell, {
+					$and: [
+					{ $or: defenderCoords.map(([x, y]) => ({ x, y })) },
+					{ base_type: EnumYardType.FORTIFICATION },
+					{ uid: attackedCell.uid },
+					{ map_version: MapRoomVersion.V3 },
+					{ world: user.save!.worldid },
+					],
+				});
+				defenderReduction = DEFENDER_DAMAGE_REDUCTION[defenderCells.length];
+			} else {
+				// Count all not owned by players defenders
+				const defendersGetByPlayers = await postgres.em.find(WorldMapCell, {
 					$and: [
 						{ $or: defenderCoords.map(([x, y]) => ({ x, y })) },
 						{ base_type: EnumYardType.FORTIFICATION },
-						{ uid: attackedCell.uid },
 						{ map_version: MapRoomVersion.V3 },
 						{ world: user.save!.worldid },
 					],
 				});
-				defenderCount = defenderCells.length;
+				defenderReduction = DEFENDER_DAMAGE_REDUCTION[6 - defendersGetByPlayers.length];
 			}
-
-			defenderReduction = DEFENDER_DAMAGE_REDUCTION[defenderCount];
 		}
 	}
 

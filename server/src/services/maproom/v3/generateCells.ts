@@ -92,7 +92,7 @@ export const getGeneratedCells = (): Map<number, GeneratedCell> => {
           y: fortY, 
           type: EnumYardType.FORTIFICATION, 
           level: defenderLevels[i],
-          ...(strongholdLevel >= 70 && { tribe: tribeIndex })
+          ...(strongholdLevel >= 60 && { tribe: tribeIndex })
         });
 
         occupiedCells.add((fortX << 16) | fortY);
@@ -134,7 +134,7 @@ export const getGeneratedCells = (): Map<number, GeneratedCell> => {
          y: fortY, 
          type: EnumYardType.FORTIFICATION, 
          level: defenderLevels[i],
-         ...(resourceLevel >= 70 && { tribe: tribeIndex })
+         ...(resourceLevel >= 60 && { tribe: tribeIndex })
         });
 
       occupiedCells.add((fortX << 16) | fortY);

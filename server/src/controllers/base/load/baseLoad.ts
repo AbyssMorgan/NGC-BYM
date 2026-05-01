@@ -227,20 +227,33 @@ export const baseLoad: KoaController = async (ctx) => {
   if (mapversion === MapRoomVersion.V3 && !isOwner && type === BaseMode.ATTACK) {
     const attackedCell = baseSave.cell;
 
-    if (attackedCell?.uid && isDefensiveStructure(attackedCell.base_type)) {
+    if (attackedCell && isDefensiveStructure(attackedCell.base_type)) {
       const defenderCoords = getDefenderCoords(attackedCell.x, attackedCell.y, attackedCell.base_type);
 
-      const defenderCells = await postgres.em.find(WorldMapCell, {
-        $and: [
-          { $or: defenderCoords.map(([x, y]) => ({ x, y })) },
-          { base_type: EnumYardType.FORTIFICATION },
-          { uid: attackedCell.uid },
-          { map_version: MapRoomVersion.V3 },
-          { world: user.save!.worldid },
-        ],
-      });
+      let defenderCount = 0;
 
-      defenderReduction = DEFENDER_DAMAGE_REDUCTION[defenderCells.length];
+      if (attackedCell.uid === 0) {
+        // For neutral structures, count defenders from generated cells
+        const generatedCells = getGeneratedCells();
+        defenderCount = defenderCoords.filter(([x, y]) => {
+          const cell = generatedCells.get(cellKey(x, y));
+          return cell?.type === EnumYardType.FORTIFICATION;
+        }).length;
+      } else {
+        // For player-owned structures, count defenders from database
+        const defenderCells = await postgres.em.find(WorldMapCell, {
+          $and: [
+            { $or: defenderCoords.map(([x, y]) => ({ x, y })) },
+            { base_type: EnumYardType.FORTIFICATION },
+            { uid: attackedCell.uid },
+            { map_version: MapRoomVersion.V3 },
+            { world: user.save!.worldid },
+          ],
+        });
+        defenderCount = defenderCells.length;
+      }
+
+      defenderReduction = DEFENDER_DAMAGE_REDUCTION[defenderCount];
     }
   }
 

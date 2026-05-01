@@ -24,11 +24,15 @@ package buildings.yard {
 			"isUntargetable":false,
 			"isNoMoreInfoButton":true,
 			"costs":[
-				{"r1":new SecNum(5), "r2":new SecNum(5), "r3":new SecNum(5), "r4":new SecNum(5), "time":new SecNum(1), "re":[]},
-				{"r1":new SecNum(5), "r2":new SecNum(5), "r3":new SecNum(5), "r4":new SecNum(5), "time":new SecNum(1), "re":[]},
-				{"r1":new SecNum(5), "r2":new SecNum(5), "r3":new SecNum(5), "r4":new SecNum(5), "time":new SecNum(1), "re":[]},
-				{"r1":new SecNum(5), "r2":new SecNum(5), "r3":new SecNum(5), "r4":new SecNum(5), "time":new SecNum(1), "re":[]},
-				{"r1":new SecNum(5), "r2":new SecNum(5), "r3":new SecNum(5), "r4":new SecNum(5), "time":new SecNum(1), "re":[]}
+				{"r1":new SecNum(5), "r2":new SecNum(5), "r3":new SecNum(5), "r4":new SecNum(5), "time":new SecNum(1), "re":[]}, // Level 1
+				{"r1":new SecNum(5), "r2":new SecNum(5), "r3":new SecNum(5), "r4":new SecNum(5), "time":new SecNum(1), "re":[]}, // Level 2
+				{"r1":new SecNum(5), "r2":new SecNum(5), "r3":new SecNum(5), "r4":new SecNum(5), "time":new SecNum(1), "re":[]}, // Level 3
+				{"r1":new SecNum(5), "r2":new SecNum(5), "r3":new SecNum(5), "r4":new SecNum(5), "time":new SecNum(1), "re":[]}, // Level 4
+				{"r1":new SecNum(5), "r2":new SecNum(5), "r3":new SecNum(5), "r4":new SecNum(5), "time":new SecNum(1), "re":[]}, // Level 5
+				{"r1":new SecNum(5), "r2":new SecNum(5), "r3":new SecNum(5), "r4":new SecNum(5), "time":new SecNum(1), "re":[]}, // Level 6
+				{"r1":new SecNum(5), "r2":new SecNum(5), "r3":new SecNum(5), "r4":new SecNum(5), "time":new SecNum(1), "re":[]}, // Level 7
+				{"r1":new SecNum(5), "r2":new SecNum(5), "r3":new SecNum(5), "r4":new SecNum(5), "time":new SecNum(1), "re":[]}, // Level 8
+				{"r1":new SecNum(5), "r2":new SecNum(5), "r3":new SecNum(5), "r4":new SecNum(5), "time":new SecNum(1), "re":[]}, // Level 9
 			],
 			"imageData":{
 				"baseurl":"buildings/outpostdefender/",
@@ -46,9 +50,40 @@ package buildings.yard {
 				"baseurl":"buildingbuttons/",
 				"1":{"img":"guard_tower.jpg"}
 			},
-			"quantity":[0,1,1,1,1,1],
-			"hp":[8800,42000,200000,400000,600000],
-			"repairTime":[1920,7680,30720,86400,345600]
+			"quantity":[
+				0, // Level 0
+				1, // Level 1
+				1, // Level 2
+				1, // Level 3
+				1, // Level 4
+				1, // Level 5
+				1, // Level 6
+				1, // Level 7
+				1, // Level 8
+				1, // Level 9
+			],
+			"hp":[
+				8800, // Level 1
+				42000, // Level 2
+				200000, // Level 3
+				400000, // Level 4
+				600000, // Level 5
+				800000, // Level 6
+				1000000, // Level 7
+				1200000, // Level 8
+				1500000, // Level 9
+			],
+			"repairTime":[
+				1920, // Level 1
+				7680, // Level 2
+				30720, // Level 3
+				86400, // Level 4
+				216000, // Level 5
+				259200, // Level 6
+				302400, // Level 7
+				345600, // Level 8
+				388800, // Level 9
+			]
 		};
 		
 	}

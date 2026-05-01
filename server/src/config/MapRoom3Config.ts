@@ -94,22 +94,16 @@ export const MIN_PLAYER_DISTANCE = 7;
 /** Attack range in cells per structure type and level. */
 export const STRUCTURE_RANGE: Record<number, Record<number, number>> = {
 	[EnumYardType.STRONGHOLD]: {
-		30: 10,
-		40: 15, 
-		50: 20,
-		// 70: 10, // TODO MR3 HIGH END
-		// 80: 15, // TODO MR3 HIGH END
-		// 90: 20, // TODO MR3 HIGH END
+		30: 10, // TODO MR3 HIGH END
+		40: 15, // TODO MR3 HIGH END
+		50: 20, // TODO MR3 HIGH END
 	},
 	[EnumYardType.RESOURCE]: {
 		30: 2,
 		40: 3,
-		50: 4,
-		60: 5,
-		70: 6,
-		// 50: 2, // TODO MR3 HIGH END
-		// 60: 3, // TODO MR3 HIGH END
-		// 70: 4, // TODO MR3 HIGH END
+		50: 4, // Final 2
+		60: 5, // Final 3
+		70: 6, // Final 4
 		// 80: 5, // TODO MR3 HIGH END
 		// 90: 6, // TODO MR3 HIGH END
 	},
@@ -122,28 +116,26 @@ export const RESOURCE_PRODUCTION_RATES: Record<number, number> = {
 	50: 25,
 	60: 50,
 	70: 100,
-	// 80: 200, // TODO MR3 HIGH END
-	// 90: 400, // TODO MR3 HIGH END
+	80: 200,
+	90: 400,
 };
 
 /** Additional resource storage capacity granted by a RESOURCE outpost per level. */
 export const RESOURCE_CAPACITIES: Record<number, number> = {
 	30: 750000,
 	40: 2000000,
-	50: 4000000,
-	60: 5000000,
-	70: 6000000,
-	// 80: 7000000, // TODO MR3 HIGH END
-	// 90: 8000000, // TODO MR3 HIGH END
+	50: 5000000,
+	60: 6000000,
+	70: 7000000,
+	80: 8000000,
+	90: 9000000,
 };
 
 /** Monster and tower damage bonus (%) granted by a STRONGHOLD per level. */
 export const STRONGHOLD_BONUSES: Record<number, number> = {
-	30: 10,
-	40: 20,
-	50: 30,
-	// 75: 10, // TODO MR3 HIGH END
-	// 100: 20, // TODO MR3 HIGH END
+	30: 10, // TODO MR3 HIGH END
+	40: 20, // TODO MR3 HIGH END
+	50: 30, // TODO MR3 HIGH END
 };
 
 /** Save data templates per structure type and level. */
@@ -169,23 +161,23 @@ export const DEFENDER_DAMAGE_REDUCTION = [0, 7, 13, 23, 35, 50, 75];
 
 /** Defender levels per parent structure type and level. */
 export const DEFENDER_LEVELS = {
-	[EnumYardType.PLAYER]: { 0: [50, 50, 50, 50, 50, 50] },
+	[EnumYardType.PLAYER]: {
+		0: [50, 50, 50, 50, 50, 50],
+	},
 
 	[EnumYardType.RESOURCE]: {
 		30: [20, 20, 25, 25, 30, 35],
 		40: [30, 30, 35, 35, 40, 45],
 		50: [40, 40, 45, 45, 50, 50],
 		60: [50, 50, 50, 50, 50, 50],
-		70: [50, 50, 50, 50, 50, 50],
-		// 70: [60, 60, 60, 60, 60, 60], // TODO MR3 HIGH END
-		// 80: [70, 70, 70, 70, 70, 70], // TODO MR3 HIGH END
-		// 90: [80, 80, 80, 80, 80, 80], // TODO MR3 HIGH END
+		70: [60, 60, 60, 60, 60, 60],
+		80: [70, 70, 70, 70, 70, 70],
+		90: [80, 80, 80, 80, 80, 80],
 	},
 
 	[EnumYardType.STRONGHOLD]: {
-		30: [20, 20, 25, 25, 30, 35],
-		40: [30, 30, 35, 35, 40, 45],
-		50: [40, 40, 45, 45, 50, 50],
-		// TODO MR3 HIGH END
+		30: [20, 20, 25, 25, 30, 35], // TODO MR3 HIGH END
+		40: [30, 30, 35, 35, 40, 45], // TODO MR3 HIGH END
+		50: [40, 40, 45, 45, 50, 50], // TODO MR3 HIGH END
 	},
 };

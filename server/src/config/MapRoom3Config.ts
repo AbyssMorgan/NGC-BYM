@@ -81,7 +81,7 @@ export const TRIBE_OUTPOST_SEED = "maproom3-tribes";
 /** Available levels per structure type. */
 export const STRUCTURE_LEVELS: Record<number, number[]> = {
 	[EnumYardType.STRONGHOLD]: [30, 40, 50], // TODO MR3 HIGH END
-	[EnumYardType.RESOURCE]: [50, 60, 70, 80], // TODO MR3 HIGH END
+	[EnumYardType.RESOURCE]: [50, 60, 70, 80, 90], // TODO MR3 HIGH END
 	[EnumYardType.OUTPOST]: [45, 50],
 };
 

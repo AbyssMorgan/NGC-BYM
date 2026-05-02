@@ -881,11 +881,11 @@ package
             {
                _attackersFlinger = GLOBAL._bHousing._lvl.Get();
             }
-            ATTACK._countdown = 60 * 5;
-            if (MapRoomManager.instance.isInMapRoom2or3 && Boolean(POWERUPS.CheckPowers(POWERUPS.ALLIANCE_DECLAREWAR, "NORMAL")))
-            {
-               ATTACK._countdown = 60 * 7;
-            }
+            ATTACK._countdown = 60 * 10;
+            // if (MapRoomManager.instance.isInMapRoom2or3 && Boolean(POWERUPS.CheckPowers(POWERUPS.ALLIANCE_DECLAREWAR, "NORMAL")))
+            // {
+            //    ATTACK._countdown = 60 * 7;
+            // }
             if (MapRoomManager.instance.isInMapRoom3 && (baseMode == GLOBAL.e_BASE_MODE.ATTACK || baseMode == GLOBAL.e_BASE_MODE.WMATTACK || baseMode == GLOBAL.e_BASE_MODE.VIEW || baseMode == GLOBAL.e_BASE_MODE.WMVIEW))
             {
                GLOBAL._attackersResources = {

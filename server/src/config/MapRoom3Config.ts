@@ -81,7 +81,7 @@ export const TRIBE_OUTPOST_SEED = "maproom3-tribes";
 /** Available levels per structure type. */
 export const STRUCTURE_LEVELS: Record<number, number[]> = {
 	[EnumYardType.STRONGHOLD]: [30, 40, 50], // TODO MR3 HIGH END
-	[EnumYardType.RESOURCE]: [50, 60, 70, 80, 90], // TODO MR3 HIGH END
+	[EnumYardType.RESOURCE]: [50, 60, 70, 80, 90],
 	[EnumYardType.OUTPOST]: [45, 50],
 };
 
@@ -103,14 +103,12 @@ export const STRUCTURE_RANGE: Record<number, Record<number, number>> = {
 		60: 3,
 		70: 4,
 		80: 5,
-		// 90: 6, // TODO MR3 HIGH END
+		90: 6,
 	},
 };
 
 /** Resource production rate in units per second per level (client displays as ×60/min). */
 export const RESOURCE_PRODUCTION_RATES: Record<number, number> = {
-	30: 5,
-	40: 11,
 	50: 25,
 	60: 50,
 	70: 100,
@@ -120,8 +118,6 @@ export const RESOURCE_PRODUCTION_RATES: Record<number, number> = {
 
 /** Additional resource storage capacity granted by a RESOURCE outpost per level. */
 export const RESOURCE_CAPACITIES: Record<number, number> = {
-	30: 750000,
-	40: 2000000,
 	50: 5000000,
 	60: 6000000,
 	70: 7000000,

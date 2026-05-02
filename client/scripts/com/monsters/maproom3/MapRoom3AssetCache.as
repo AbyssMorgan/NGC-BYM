@@ -273,7 +273,11 @@ package com.monsters.maproom3
             return null;
          }
          param1 = Math.min(Math.max(0,param1),0.99);
-         var _loc2_:int = Math.min(Math.floor(DAMAGE_BAR_NUM_SEGMENTS * param1),this.m_DamageBarSegments.length - 1);
+         if(param1 <= 0)
+         {
+            return this.m_DamageBarSegments[0];
+         }
+         var _loc2_:int = Math.min(Math.max(1, Math.ceil(DAMAGE_BAR_NUM_SEGMENTS * param1)), this.m_DamageBarSegments.length - 1);
          return this.m_DamageBarSegments[_loc2_];
       }
    }

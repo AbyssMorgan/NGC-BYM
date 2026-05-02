@@ -492,7 +492,7 @@ package
             LOGGER.Log("err","User missing TownHall upon save");
             Console.warning("BFOUNDATION::getBuildingSaveData(TownHall missing upon save)");
          }
-         BASE._percentDamaged = 100 - 100 / s_totalBuildingMaxHP * s_totalBuildingHP;
+         BASE._percentDamaged = Math.max(0, Math.ceil(100.0 - 100.0 / s_totalBuildingMaxHP * s_totalBuildingHP));
          // Comment: This gives an out-of-range index error. The md5.as class is malformed
          //saveData[2] = md5(hashString);
          saveData[2] = hashString;

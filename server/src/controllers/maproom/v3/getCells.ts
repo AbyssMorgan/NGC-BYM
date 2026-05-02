@@ -237,8 +237,9 @@ export const getMapRoomCells: KoaController = async (ctx) => {
 
       const isBorder = x < 0 || x >= MapRoom3.WIDTH || y < 0 || y >= MapRoom3.HEIGHT;
 
-      if (!isBorder && defenderPositions.has(key) && !dbCell?.uid) {
-        // Tribe outpost at a fortification position - defender wins
+      if (!isBorder && defenderPositions.has(key) && (!dbCell || dbCell.base_type !== EnumYardType.FORTIFICATION)) {
+        // Tribe outpost at a fortification position - defender wins.
+        // Preserve existing fortification cells in DB so damage/save state is not discarded.
         cell = new WorldMapCell(undefined, x, y, 0);
         cell.base_type = EnumYardType.FORTIFICATION;
       } else if (dbCell) {

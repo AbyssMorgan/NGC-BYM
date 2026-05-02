@@ -170,6 +170,6 @@ export const DEFENDER_LEVELS = {
 	[EnumYardType.STRONGHOLD]: {
 		30: [20, 20, 25, 25, 30, 35], // TODO MR3 HIGH END
 		40: [30, 30, 35, 35, 40, 45], // TODO MR3 HIGH END
-		50: [40, 40, 45, 45, 50, 50], // TODO MR3 HIGH END
+		50: [45, 45, 45, 45, 45, 45], // TODO MR3 HIGH END
 	},
 };

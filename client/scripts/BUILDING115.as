@@ -28,7 +28,22 @@ package
       
       public function BUILDING115()
       {
-         this._targetArray = [4,4,6,8,10,12,14,16];
+         this._targetArray = [
+			4, // Level 1
+			4, // Level 2
+			6, // Level 3
+			8, // Level 4
+			10, // Level 5
+			12, // Level 6
+			14, // Level 7
+			16, // Level 8
+			17, // Level 9
+			18, // Level 10
+			19, // Level 11
+			20, // Level 12
+			21, // Level 13
+			22, // Level 14
+		];
          super();
          _frameNumber = 0;
          _type = 115;

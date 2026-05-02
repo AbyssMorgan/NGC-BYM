@@ -171,10 +171,10 @@ package
          }
          setHealth(0);
          SOUNDS.Play("trap");
-         if(GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD)
-         {
-            RecycleC();
-         }
+        //  if(GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD)
+        //  {
+        //     RecycleC();
+        //  }
       }
    }
 }

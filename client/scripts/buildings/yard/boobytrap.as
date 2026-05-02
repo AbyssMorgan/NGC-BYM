@@ -20,7 +20,7 @@ package buildings.yard {
 			"description":"boobytrap_desc",
 			"cls":BUILDING24,
 			"costs":[
-				{"r1":new SecNum(1000), "r2":new SecNum(1000), "r3":new SecNum(1000), "r4":new SecNum(0), "time":new SecNum(5), "re":[[14,1,2]]}
+				{"r1":new SecNum(100000), "r2":new SecNum(100000), "r3":new SecNum(100000), "r4":new SecNum(0), "time":new SecNum(5), "re":[[14,1,2]]}
 			],
 			"imageData":{
 				"baseurl":"buildings/boobytrap/",
@@ -45,7 +45,7 @@ package buildings.yard {
 			"quantity":[0,0,8,15,20,28,35,42,50,60,75,75,75,75,75,75,75,75,75,75,75],
 			"damage":[1000],
 			"hp":[10],
-			"repairTime":[1]
+			"repairTime":[3600]
 		};
 		
 	}

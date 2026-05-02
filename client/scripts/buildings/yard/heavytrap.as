@@ -19,7 +19,7 @@ package buildings.yard {
 			"description":"heavytrap_desc",
 			"cls":BUILDING117,
 			"costs":[
-				{"r1":new SecNum(50000), "r2":new SecNum(50000), "r3":new SecNum(50000), "r4":new SecNum(0), "time":new SecNum(5), "re":[[14,1,4]]}
+				{"r1":new SecNum(5000000), "r2":new SecNum(5000000), "r3":new SecNum(5000000), "r4":new SecNum(0), "time":new SecNum(5), "re":[[14,1,4]]}
 			],
 			"imageData":{
 				"baseurl":"buildings/heavytrap/",
@@ -40,7 +40,7 @@ package buildings.yard {
 			"quantity":[0,0,0,0,4,6,8,10,12,15,18],
 			"damage":[10000],
 			"hp":[10],
-			"repairTime":[1]
+			"repairTime":[3600]
 		};
 		
 	}

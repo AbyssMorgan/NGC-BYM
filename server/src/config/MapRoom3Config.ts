@@ -105,6 +105,18 @@ export const STRUCTURE_RANGE: Record<number, Record<number, number>> = {
 		80: 5,
 		90: 6,
 	},
+	[EnumYardType.FORTIFICATION]: {
+		20: 0,
+		25: 0,
+		30: 0,
+		35: 0,
+		45: 0,
+		50: 0,
+		60: 0,
+		70: 0,
+		80: 0,
+		90: 0,
+	},
 };
 
 /** Resource production rate in units per second per level (client displays as ×60/min). */

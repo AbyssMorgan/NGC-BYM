@@ -21077,7 +21077,7 @@ export const resources: Record<number, SaveData> = {
 			"7120": {
 				X: -35,
 				Y: -175,
-				l: 12,
+				l: 9,
 				t: 137,
 				id: 7120,
 				fort: 4
@@ -21085,7 +21085,7 @@ export const resources: Record<number, SaveData> = {
 			"7121": {
 				X: 105,
 				Y: -35,
-				l: 12,
+				l: 9,
 				t: 137,
 				id: 7121,
 				fort: 4

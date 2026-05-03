@@ -15631,7 +15631,7 @@ export const resources: Record<number, SaveData> = {
 			"63": {
 				X: -450,
 				Y: -160,
-				l: 14,
+				l: 16,
 				t: 4,
 				cP: 9,
 				id: 63,
@@ -15642,7 +15642,7 @@ export const resources: Record<number, SaveData> = {
 			"70": {
 				X: 200,
 				Y: 270,
-				l: 14,
+				l: 16,
 				t: 3,
 				cP: 9,
 				id: 70,
@@ -15794,7 +15794,7 @@ export const resources: Record<number, SaveData> = {
 			"122": {
 				X: -270,
 				Y: 270,
-				l: 14,
+				l: 16,
 				t: 2,
 				cP: 9,
 				id: 122,
@@ -15988,7 +15988,7 @@ export const resources: Record<number, SaveData> = {
 			"150": {
 				X: 20,
 				Y: -520,
-				l: 14,
+				l: 16,
 				t: 1,
 				cP: 9,
 				id: 150,
@@ -16062,7 +16062,7 @@ export const resources: Record<number, SaveData> = {
 			"220": {
 				X: -520,
 				Y: -90,
-				l: 14,
+				l: 16,
 				t: 4,
 				cP: 9,
 				id: 220,
@@ -16123,7 +16123,7 @@ export const resources: Record<number, SaveData> = {
 			"261": {
 				X: 270,
 				Y: 200,
-				l: 14,
+				l: 16,
 				t: 3,
 				cP: 9,
 				id: 261,
@@ -16275,7 +16275,7 @@ export const resources: Record<number, SaveData> = {
 			"339": {
 				X: -520,
 				Y: 20,
-				l: 14,
+				l: 16,
 				t: 2,
 				cP: 9,
 				id: 339,
@@ -16434,7 +16434,7 @@ export const resources: Record<number, SaveData> = {
 			"429": {
 				X: 200,
 				Y: -340,
-				l: 14,
+				l: 16,
 				t: 1,
 				cP: 9,
 				id: 429,
@@ -16741,7 +16741,7 @@ export const resources: Record<number, SaveData> = {
 			"734": {
 				X: -160,
 				Y: 380,
-				l: 14,
+				l: 16,
 				t: 2,
 				cP: 9,
 				id: 734,
@@ -16752,7 +16752,7 @@ export const resources: Record<number, SaveData> = {
 			"735": {
 				X: 90,
 				Y: -450,
-				l: 14,
+				l: 16,
 				t: 1,
 				cP: 9,
 				id: 735,
@@ -16763,7 +16763,7 @@ export const resources: Record<number, SaveData> = {
 			"908": {
 				X: 450,
 				Y: 20,
-				l: 14,
+				l: 16,
 				t: 3,
 				cP: 9,
 				id: 908,
@@ -16774,7 +16774,7 @@ export const resources: Record<number, SaveData> = {
 			"909": {
 				X: -90,
 				Y: -520,
-				l: 14,
+				l: 16,
 				t: 4,
 				cP: 9,
 				id: 909,
@@ -16785,7 +16785,7 @@ export const resources: Record<number, SaveData> = {
 			"965": {
 				X: -90,
 				Y: 450,
-				l: 14,
+				l: 16,
 				t: 2,
 				cP: 9,
 				id: 965,
@@ -16796,7 +16796,7 @@ export const resources: Record<number, SaveData> = {
 			"966": {
 				X: 270,
 				Y: -270,
-				l: 14,
+				l: 16,
 				t: 1,
 				cP: 9,
 				id: 966,
@@ -16807,7 +16807,7 @@ export const resources: Record<number, SaveData> = {
 			"1019": {
 				X: -340,
 				Y: -270,
-				l: 14,
+				l: 16,
 				t: 4,
 				cP: 9,
 				id: 1019,
@@ -16818,7 +16818,7 @@ export const resources: Record<number, SaveData> = {
 			"1020": {
 				X: 380,
 				Y: 90,
-				l: 14,
+				l: 16,
 				t: 3,
 				cP: 9,
 				id: 1020,
@@ -17269,7 +17269,7 @@ export const resources: Record<number, SaveData> = {
 			"1473": {
 				X: -340,
 				Y: 200,
-				l: 14,
+				l: 16,
 				t: 2,
 				cP: 9,
 				id: 1473,
@@ -17280,7 +17280,7 @@ export const resources: Record<number, SaveData> = {
 			"1474": {
 				X: -450,
 				Y: 90,
-				l: 14,
+				l: 16,
 				t: 2,
 				cP: 9,
 				id: 1474,
@@ -17299,7 +17299,7 @@ export const resources: Record<number, SaveData> = {
 			"1524": {
 				X: -270,
 				Y: -340,
-				l: 14,
+				l: 16,
 				t: 4,
 				cP: 9,
 				id: 1524,
@@ -17310,7 +17310,7 @@ export const resources: Record<number, SaveData> = {
 			"1525": {
 				X: -160,
 				Y: -450,
-				l: 14,
+				l: 16,
 				t: 4,
 				cP: 9,
 				id: 1525,
@@ -17329,7 +17329,7 @@ export const resources: Record<number, SaveData> = {
 			"1784": {
 				X: 450,
 				Y: -90,
-				l: 14,
+				l: 16,
 				t: 1,
 				cP: 9,
 				id: 1784,
@@ -17340,7 +17340,7 @@ export const resources: Record<number, SaveData> = {
 			"1785": {
 				X: 380,
 				Y: -160,
-				l: 14,
+				l: 16,
 				t: 1,
 				cP: 9,
 				id: 1785,
@@ -17351,7 +17351,7 @@ export const resources: Record<number, SaveData> = {
 			"1933": {
 				X: 90,
 				Y: 380,
-				l: 14,
+				l: 16,
 				t: 3,
 				cP: 9,
 				id: 1933,
@@ -17362,7 +17362,7 @@ export const resources: Record<number, SaveData> = {
 			"1934": {
 				X: 20,
 				Y: 450,
-				l: 14,
+				l: 16,
 				t: 3,
 				cP: 9,
 				id: 1934,
@@ -21061,7 +21061,7 @@ export const resources: Record<number, SaveData> = {
 			"7118": {
 				X: -175,
 				Y: -35,
-				l: 12,
+				l: 9,
 				t: 137,
 				id: 7118,
 				fort: 4
@@ -21069,7 +21069,7 @@ export const resources: Record<number, SaveData> = {
 			"7119": {
 				X: -35,
 				Y: 105,
-				l: 12,
+				l: 9,
 				t: 137,
 				id: 7119,
 				fort: 4

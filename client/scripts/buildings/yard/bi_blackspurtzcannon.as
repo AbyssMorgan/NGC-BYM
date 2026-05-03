@@ -24,17 +24,17 @@ package buildings.yard {
 			"hitCls":SpurtzCannonHit,
 			"stats":[
 				{"range":300, "damage":330, "rate":72, "speed":11, "splash":35, "shots":15}, // Level 1
-				{"range":350, "damage":350, "rate":96, "speed":12, "splash":45, "shots":25}, // Level 2
-				{"range":400, "damage":370, "rate":120, "speed":13, "splash":55, "shots":35}, // Level 3
-				{"range":450, "damage":390, "rate":144, "speed":14, "splash":65, "shots":45}, // Level 4
-				{"range":500, "damage":410, "rate":170, "speed":15, "splash":75, "shots":55}, // Level 5
-				{"range":550, "damage":430, "rate":196, "speed":16, "splash":80, "shots":65}, // Level 6
-				{"range":600, "damage":450, "rate":220, "speed":17, "splash":85, "shots":75}, // Level 7
-				{"range":650, "damage":470, "rate":230, "speed":18, "splash":90, "shots":85}, // Level 8
-				{"range":700, "damage":490, "rate":240, "speed":19, "splash":95, "shots":95}, // Level 9
-				{"range":750, "damage":510, "rate":250, "speed":20, "splash":100, "shots":105}, // Level 10
-				{"range":800, "damage":530, "rate":260, "speed":21, "splash":105, "shots":115}, // Level 11
-				{"range":850, "damage":550, "rate":270, "speed":22, "splash":110, "shots":125}, // Level 12
+				{"range":350, "damage":350, "rate":96, "speed":12, "splash":45, "shots":20}, // Level 2
+				{"range":400, "damage":370, "rate":120, "speed":13, "splash":55, "shots":25}, // Level 3
+				{"range":450, "damage":390, "rate":144, "speed":14, "splash":65, "shots":30}, // Level 4
+				{"range":500, "damage":410, "rate":170, "speed":15, "splash":75, "shots":35}, // Level 5
+				{"range":550, "damage":430, "rate":196, "speed":16, "splash":80, "shots":40}, // Level 6
+				{"range":600, "damage":450, "rate":220, "speed":17, "splash":85, "shots":45}, // Level 7
+				{"range":650, "damage":470, "rate":230, "speed":18, "splash":90, "shots":50}, // Level 8
+				{"range":700, "damage":490, "rate":240, "speed":19, "splash":95, "shots":55}, // Level 9
+				// {"range":750, "damage":510, "rate":250, "speed":20, "splash":100, "shots":85}, // Level 10
+				// {"range":800, "damage":530, "rate":260, "speed":21, "splash":105, "shots":90}, // Level 11
+				// {"range":850, "damage":550, "rate":270, "speed":22, "splash":110, "shots":95}, // Level 12
 			],
 			"costs":[
 				{"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(0), "re":[]}, // Level 1
@@ -46,9 +46,9 @@ package buildings.yard {
 				{"r1":new SecNum(24000000), "r2":new SecNum(16000000), "r3":new SecNum(6400000), "r4":new SecNum(0), "time":new SecNum(86400 * 7), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1],[14,1,10],[12,1,2]]}, // Level 7
 				{"r1":new SecNum(27000000), "r2":new SecNum(25000000), "r3":new SecNum(12800000), "r4":new SecNum(0), "time":new SecNum(86400 * 8), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1],[14,1,12],[12,1,2]]}, // Level 8
 				{"r1":new SecNum(400000000), "r2":new SecNum(400000000), "r3":new SecNum(400000000), "r4":new SecNum(0), "time":new SecNum(86400 * 9), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1],[14,1,14],[12,1,2]]}, // Level 9
-				{"r1":new SecNum(800000000), "r2":new SecNum(800000000), "r3":new SecNum(800000000), "r4":new SecNum(0), "time":new SecNum(86400 * 10), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1],[14,1,16],[12,1,2]]}, // Level 10
-				{"r1":new SecNum(1200000000), "r2":new SecNum(1200000000), "r3":new SecNum(1200000000), "r4":new SecNum(0), "time":new SecNum(86400 * 11), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1],[14,1,18],[12,1,2]]}, // Level 11
-				{"r1":new SecNum(1600000000), "r2":new SecNum(1600000000), "r3":new SecNum(1600000000), "r4":new SecNum(0), "time":new SecNum(86400 * 12), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1],[14,1,20],[12,1,2]]}, // Level 12
+				// {"r1":new SecNum(800000000), "r2":new SecNum(800000000), "r3":new SecNum(800000000), "r4":new SecNum(0), "time":new SecNum(86400 * 10), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1],[14,1,16],[12,1,2]]}, // Level 10
+				// {"r1":new SecNum(1200000000), "r2":new SecNum(1200000000), "r3":new SecNum(1200000000), "r4":new SecNum(0), "time":new SecNum(86400 * 11), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1],[14,1,18],[12,1,2]]}, // Level 11
+				// {"r1":new SecNum(1600000000), "r2":new SecNum(1600000000), "r3":new SecNum(1600000000), "r4":new SecNum(0), "time":new SecNum(86400 * 12), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1],[14,1,20],[12,1,2]]}, // Level 12
 			],
 			"can_fortify":true,
 			"fortify_costs":[
@@ -111,9 +111,9 @@ package buildings.yard {
 				99000, // Level 7
 				118000, // Level 8
 				140000, // Level 9
-				160000, // Level 10
-				180000, // Level 11
-				200000, // Level 12
+				// 160000, // Level 10
+				// 180000, // Level 11
+				// 200000, // Level 12
 			],
 			"repairTime":[
 				1920, // Level 1
@@ -125,9 +125,9 @@ package buildings.yard {
 				24000, // Level 7
 				30000, // Level 8
 				43200, // Level 9
-				86400, // Level 10
-				172800, // Level 11
-				259200, // Level 12
+				// 86400, // Level 10
+				// 172800, // Level 11
+				// 259200, // Level 12
 			]
 		};
 		

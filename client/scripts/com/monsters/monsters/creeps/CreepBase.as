@@ -58,29 +58,29 @@ package com.monsters.monsters.creeps
       protected var _gridMoveCounter:int = 0;
       protected static const GRID_UPDATE_INTERVAL:int = 5; // Only check for grid changes every 5 frames
       
-      public function CreepBase(param1:String, param2:String, param3:Point, param4:Number, param5:int = 0, param6:int = 2147483647, param7:Point = null, param8:Boolean = false, param9:BFOUNDATION = null, param10:Number = 1, param11:Boolean = false, param12:MonsterBase = null)
+      public function CreepBase(id:String, behaviour:String, param3:Point, targetRotation:Number, level:int = 0, customHealth:int = 2147483647, targetCenter:Point = null, param8:Boolean = false, param9:BFOUNDATION = null, param10:Number = 1, param11:Boolean = false, param12:MonsterBase = null)
       {
          var _loc13_:Point = null;
          var activeEvent:* = SPECIALEVENT.getActiveSpecialEvent();
          super();
          _friendly = param8;
          setInitialFriendlyFlags(_friendly);
-         _creatureID = param1;
+         _creatureID = id;
          _middle = 5;
          _house = param9;
          _hits = 0;
          _spawnPoint = new Point(int(param3.x / 100) * 100,int(param3.y / 100) * 100);
          _goeasy = activeEvent.active ? false : param9;
-         _movement = CREATURELOCKER._creatures[param1].movement;
+         _movement = CREATURELOCKER._creatures[id].movement;
          this.m_bInfernoCreep = BASE.isInfernoCreep(_creatureID);
-         _pathing = CREATURELOCKER._creatures[param1].pathing;
+         _pathing = CREATURELOCKER._creatures[id].pathing;
          if(_house)
          {
             _house._creatures.push(this);
          }
-         _behaviour = param2;
-         _targetGroup = CREATURES.GetProperty(param1,"targetGroup");
-         _explode = CREATURES.GetProperty(param1,"explode");
+         _behaviour = behaviour;
+         _targetGroup = CREATURES.GetProperty(id,"targetGroup");
+         _explode = CREATURES.GetProperty(id,"explode");
          _spawnTime = GLOBAL.Timestamp();
          _waypoints = [];
          _targetCreeps = [];
@@ -93,40 +93,40 @@ package com.monsters.monsters.creeps
          // Performance optimization counters
          this.m_findTargetsCounter = int(Math.random() * 200); // Randomize initial counter to spread load
          
-         moveSpeedProperty.value = CREATURES.GetProperty(_creatureID,"speed",param5,_friendly) / 2;
+         moveSpeedProperty.value = CREATURES.GetProperty(_creatureID,"speed",level,_friendly) / 2;
          if(TUTORIAL._stage < 200)
          {
             moveSpeedProperty.value *= 2;
          }
-         setHealth(int(CREATURES.GetProperty(_creatureID,"health",param5,_friendly) * param10));
+         setHealth(int(CREATURES.GetProperty(_creatureID,"health",level,_friendly) * param10));
          maxHealthProperty.value = health;
-         if(health > param6)
+         if(health > customHealth)
          {
-            setHealth(param6);
+            setHealth(customHealth);
          }
-         damageProperty.set(int(CREATURES.GetProperty(_creatureID,"damage",param5,_friendly) * param10));
-         _goo = CREATURES.GetProperty(_creatureID,"cResource",param5,_friendly);
+         damageProperty.set(int(CREATURES.GetProperty(_creatureID,"damage",level,_friendly) * param10));
+         _goo = CREATURES.GetProperty(_creatureID,"cResource",level,_friendly);
          _targetPosition = param3;
-         _targetCenter = param7;
+         _targetCenter = targetCenter;
          graphic.x = _targetPosition.x;
          graphic.y = _targetPosition.y;
          _tmpPoint.x = x;
          _tmpPoint.y = y;
-         if(param4)
+         if(targetRotation)
          {
-            _targetRotation = param4;
+            _targetRotation = targetRotation;
          }
          else
          {
             _targetRotation = 0;
          }
          m_rotation = _targetRotation;
-         attackDelayProperty.value = CREATURES.GetProperty(_creatureID,"attackDelay",param5,_friendly);
+         attackDelayProperty.value = CREATURES.GetProperty(_creatureID,"attackDelay",level,_friendly);
          if(!attackDelay)
          {
             attackDelayProperty.value = 60;
          }
-         m_range = CREATURES.GetProperty(_creatureID,"range",param5,_friendly);
+         m_range = CREATURES.GetProperty(_creatureID,"range",level,_friendly);
          if(!m_range)
          {
             m_range = 1;
@@ -171,10 +171,10 @@ package com.monsters.monsters.creeps
          }
          else
          {
-            this.m_altitudeMax = !!CREATURES.GetProperty(_creatureID,"altitude",param5,_friendly) ? int(CREATURES.GetProperty(_creatureID,"altitude",param5,_friendly)) : 108;
+            this.m_altitudeMax = !!CREATURES.GetProperty(_creatureID,"altitude",level,_friendly) ? int(CREATURES.GetProperty(_creatureID,"altitude",level,_friendly)) : 108;
             this.m_altitudeMin = 60;
          }
-         if(param2 == k_sBHVR_HOUSING)
+         if(behaviour == k_sBHVR_HOUSING)
          {
             _loc13_ = GRID.ToISO(_targetCenter.x + 100,_targetCenter.y + 100,0);
             if(_movement == "fly")

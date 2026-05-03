@@ -181,7 +181,7 @@ package {
 		}
 
 		public static function GetShinyCostFromTotalResources(param1: Number): int {
-			return Math.ceil(Math.pow(Math.sqrt(param1 / 2), 0.75));
+			return Math.ceil(Math.pow(Math.sqrt(param1 / 16), 0.75));
 		}
 
 		public static function Variables(): void {
@@ -259,7 +259,7 @@ package {
 					"v2": KEYS.Get(GLOBAL._resourceNames[resourceIndex - 1])
 				});
 				if (BASE._resources["r" + resourceIndex].Get() + BASE._resources["r" + resourceIndex + "max"] * 0.1 < BASE._resources["r" + resourceIndex + "max"]) {
-					mainStoreItems.c = [Math.ceil(Math.pow(Math.sqrt(reourceMax / 2), 0.75))];
+					mainStoreItems.c = [Math.ceil(Math.pow(Math.sqrt(reourceMax / 16), 0.75))];
 					mainStoreItems.d = KEYS.Get("str_top_10pct", {
 						"v1": KEYS.Get(GLOBAL._resourceNames[resourceIndex - 1]),
 						"v2": KEYS.Get(GLOBAL._resourceNames[resourceIndex - 1]),
@@ -309,7 +309,7 @@ package {
 					"v2": KEYS.Get(GLOBAL._resourceNames[resourceIndex - 1])
 				});
 				if (BASE._resources["r" + resourceIndex].Get() + BASE._resources["r" + resourceIndex + "max"] * 0.5 < BASE._resources["r" + resourceIndex + "max"]) {
-					mainStoreItems.c = [Math.ceil(Math.pow(Math.sqrt(reourceMax / 2), 0.75))];
+					mainStoreItems.c = [Math.ceil(Math.pow(Math.sqrt(reourceMax / 16), 0.75))];
 					mainStoreItems.d = KEYS.Get("str_top_50pct", {
 						"v1": KEYS.Get(GLOBAL._resourceNames[resourceIndex - 1]),
 						"v2": KEYS.Get(GLOBAL._resourceNames[resourceIndex - 1]),
@@ -329,7 +329,7 @@ package {
 						"v2": KEYS.Get(GLOBAL.iresourceNames[resourceIndex - 1])
 					});
 					if (BASE._iresources["r" + resourceIndex].Get() + BASE._iresources["r" + resourceIndex + "max"] * 0.5 < BASE._iresources["r" + resourceIndex + "max"]) {
-						infernoStoreItems.c = [Math.ceil(Math.pow(Math.sqrt(iResourceMax / 2), 0.75))];
+						infernoStoreItems.c = [Math.ceil(Math.pow(Math.sqrt(iResourceMax / 16), 0.75))];
 						infernoStoreItems.d = KEYS.Get("str_top_50pct", {
 							"v1": GLOBAL.iresourceNames[resourceIndex - 1],
 							"v2": GLOBAL.iresourceNames[resourceIndex - 1],
@@ -355,7 +355,7 @@ package {
 				});
 				if (BASE._resources["r" + resourceIndex + "max"] > BASE._resources["r" + resourceIndex].Get()) {
 					reourceMax = BASE._resources["r" + resourceIndex + "max"] - BASE._resources["r" + resourceIndex].Get();
-					mainStoreItems.c = [Math.ceil(Math.pow(Math.sqrt(reourceMax / 2), 0.75))];
+					mainStoreItems.c = [Math.ceil(Math.pow(Math.sqrt(reourceMax / 16), 0.75))];
 					mainStoreItems.d = KEYS.Get("str_top_fill", {
 						"v1": GLOBAL.FormatNumber(reourceMax),
 						"v2": KEYS.Get(GLOBAL._resourceNames[resourceIndex - 1])
@@ -376,7 +376,7 @@ package {
 				if (BASE._iresources["r" + resourceIndex + "max"] > BASE._iresources["r" + resourceIndex].Get()) {
 					if (infernoStoreItems) {
 						iResourceMax = BASE._iresources["r" + resourceIndex + "max"] - BASE._iresources["r" + resourceIndex].Get();
-						infernoStoreItems.c = [Math.ceil(Math.pow(Math.sqrt(iResourceMax / 2), 0.75))];
+						infernoStoreItems.c = [Math.ceil(Math.pow(Math.sqrt(iResourceMax / 16), 0.75))];
 						infernoStoreItems.d = KEYS.Get("str_top_fill", {
 							"v1": GLOBAL.FormatNumber(iResourceMax),
 							"v2": GLOBAL.iresourceNames[resourceIndex - 1]

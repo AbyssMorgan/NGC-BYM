@@ -67,6 +67,7 @@ export const takeoverCellMR3 = async (baseSave: Save, user: User, userSave: Save
   }
 
   const previousSaveUserId = baseSave.saveuserid;
+  const currentTime = getCurrentDateTime();
 
   // Transfer ownership of the save
   baseSave.saveuserid = user.userid;
@@ -79,7 +80,10 @@ export const takeoverCellMR3 = async (baseSave: Save, user: User, userSave: Save
   baseSave.monsters = {};
   baseSave.attacks = [];
   baseSave.tutorialstage = 205;
-  baseSave.createtime = getCurrentDateTime();
+  baseSave.createtime = currentTime;
+  if(wmid == EnumYardType.RESOURCE){
+	  baseSave.protected = currentTime + (3 * 24 * 60 * 60);
+  }
   baseSave.takeoverDate = new Date();
 
   // Clean up previous owner's save if the cell was player-owned

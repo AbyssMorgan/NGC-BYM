@@ -26,7 +26,7 @@ package monsters {
 			"pathing":"direct",
 			"props":{
 				"range":[
-					150
+					150, // Level 1
 				],
 				"attackDelay":[90],
 				"speed":[
@@ -69,8 +69,12 @@ package monsters {
 					300000, // Level 5
 					400000, // Level 6
 				],
-				"cStorage":[70],
-				"bucket":[70],
+				"cStorage":[
+					70, // Level 1
+				],
+				"bucket":[
+					70, // Level 1
+				],
 				"targetGroup":[1],
 				"hTime":[
 					540, // Level 1

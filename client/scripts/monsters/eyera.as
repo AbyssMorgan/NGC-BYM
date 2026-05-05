@@ -27,15 +27,15 @@ package monsters {
 			],
 			"props":{
 				"speed":[
-					2.0, // Level 1
-					2.2, // Level 2
-					2.4, // Level 3
-					2.6, // Level 4
-					2.8, // Level 5
-					3.0, // Level 6
-					3.2, // Level 7
-					3.4, // Level 8
-					3.6, // Level 9
+					2.00, // Level 1
+					2.20, // Level 2
+					2.40, // Level 3
+					2.60, // Level 4
+					2.80, // Level 5
+					3.00, // Level 6
+					3.20, // Level 7
+					3.40, // Level 8
+					3.60, // Level 9
 				],
 				"health":[
 					600, // Level 1
@@ -60,7 +60,7 @@ package monsters {
 					36000, // Level 9
 				],
 				"cTime":[
-					1500 // Level 1
+					1500, // Level 1
 				],
 				"cResource":[
 					5000, // Level 1
@@ -74,15 +74,13 @@ package monsters {
 					300000, // Level 9
 				],
 				"cStorage":[
-					60 // Level 1
+					60, // Level 1
 				],
 				"bucket":[
-					60 // Level 1
+					60, // Level 1
 				],
 				"targetGroup":[2],
-				"explode":[
-					1 // Level 1
-				],
+				"explode":[1],
 				"hTime":[
 					450, // Level 1
 					450, // Level 2

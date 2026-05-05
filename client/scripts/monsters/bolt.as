@@ -38,7 +38,7 @@ package monsters {
 					3.50, // Level 9
 				],
 				"health":[
-					150 // Level 1
+					150, // Level 1
 				],
 				"damage":[
 					15, // Level 1
@@ -52,7 +52,7 @@ package monsters {
 					70, // Level 9
 				],
 				"cTime":[
-					23 // Level 1
+					23, // Level 1
 				],
 				"cResource":[
 					350, // Level 1
@@ -66,14 +66,14 @@ package monsters {
 					3600, // Level 9
 				],
 				"cStorage":[
-					15 // Level 1
+					15, // Level 1
 				],
 				"bucket":[
-					15 // Level 1
+					15, // Level 1
 				],
 				"targetGroup":[3],
 				"hTime":[
-					7 // Level 1
+					7, // Level 1
 				],
 				"hResource":[
 					105, // Level 1

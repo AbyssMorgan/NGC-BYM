@@ -24,7 +24,7 @@ package monsters {
 			],
 			"props":{
 				"speed":[
-					1.4 // Level 1
+					1.4, // Level 1
 				],
 				"health":[
 					1000, // Level 1
@@ -64,14 +64,14 @@ package monsters {
 					4300, // Level 9
 				],
 				"cStorage":[
-					10 // Level 1
+					10, // Level 1
 				],
 				"bucket":[
-					10 // Level 1
+					10, // Level 1
 				],
 				"targetGroup":[4],
 				"hTime":[
-					5 // Level 1
+					5, // Level 1
 				],
 				"hResource":[
 					150, // Level 1

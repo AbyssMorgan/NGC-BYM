@@ -4193,7 +4193,7 @@ package
                _isFan = int(serverData.fan);
                _isBookmarked = int(serverData.bookmarked);
                _installsGenerated = int(serverData.installsgenerated);
-               if ((GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD || GLOBAL.mode == GLOBAL.e_BASE_MODE.IBUILD) && serverData.resources && _saveCounterA == _saveCounterB)
+               if (((GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD || GLOBAL.mode == GLOBAL.e_BASE_MODE.IBUILD) || (GLOBAL.mode == GLOBAL.e_BASE_MODE.ATTACK || GLOBAL.mode == GLOBAL.e_BASE_MODE.IATTACK) || (GLOBAL.mode == GLOBAL.e_BASE_MODE.WMATTACK || GLOBAL.mode == GLOBAL.e_BASE_MODE.IWMATTACK)) && serverData.resources && _saveCounterA == _saveCounterB)
                {
                   if (serverData.resources.r1 != _resources.r1.Get() || serverData.resources.r2 != _resources.r2.Get() || serverData.resources.r3 != _resources.r3.Get() || serverData.resources.r4 != _resources.r4.Get())
                   {
@@ -4201,12 +4201,12 @@ package
                   resourceIndex = 1;
                   while (resourceIndex < 5)
                   {
-                     if (serverData.resources["r" + resourceIndex])
+                     if (serverData.resources.hasOwnProperty("r" + resourceIndex))
                      {
                         resourceDelta = 0;
-                        if (BASE._deltaResources && BASE._deltaResources["r" + resourceIndex] && BASE._deltaResources["r" + resourceIndex].Get() > 0)
+                        if (_savedDeltaResources && _savedDeltaResources["r" + resourceIndex])
                         {
-                           resourceDelta = int(BASE._deltaResources["r" + resourceIndex].Get());
+                           resourceDelta = int(_savedDeltaResources["r" + resourceIndex].Get());
                         }
                         _resources["r" + resourceIndex].Set(serverData.resources["r" + resourceIndex] + resourceDelta);
                         _hpResources["r" + resourceIndex] = _resources["r" + resourceIndex].Get();

@@ -514,6 +514,7 @@ export class Save {
     "monsters",
     "champion",
     "over",
+	"resources",
     "buildingdata",
     "buildinghealthdata",
     "buildingresources",

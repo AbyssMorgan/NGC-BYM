@@ -27,7 +27,7 @@ package monsters {
 			],
 			"props":{
 				"speed":[
-					1.3, // Level 1
+					1.30, // Level 1
 				],
 				"health":[
 					200, // Level 1

@@ -9,7 +9,7 @@ package monsters {
 			"page":1,
 			"order":3,
 			"resource":16000,
-			"time":2 * 60 * 60,
+			"time":3600 * 2,
 			"level":1,
 			"name":"#m_bolt#",
 			"classType":Bolt,
@@ -24,6 +24,7 @@ package monsters {
 				[288000, 3600 * 20], // Level 7
 				[576000, 3600 * 24], // Level 8
 				[1152000, 3600 * 30], // Level 9
+				[2304000, 3600 * 34], // Level 10
 			],
 			"props":{
 				"speed":[
@@ -36,6 +37,7 @@ package monsters {
 					3.30, // Level 7
 					3.40, // Level 8
 					3.50, // Level 9
+					3.60, // Level 10
 				],
 				"health":[
 					150, // Level 1
@@ -47,9 +49,10 @@ package monsters {
 					35, // Level 4
 					45, // Level 5
 					55, // Level 6
-					60, // Level 7
-					65, // Level 8
-					70, // Level 9
+					70, // Level 7
+					90, // Level 8
+					120, // Level 9
+					150, // Level 10
 				],
 				"cTime":[
 					23, // Level 1
@@ -64,6 +67,7 @@ package monsters {
 					2800, // Level 7
 					3200, // Level 8
 					3600, // Level 9
+					4000, // Level 10
 				],
 				"cStorage":[
 					15, // Level 1
@@ -85,6 +89,7 @@ package monsters {
 					900, // Level 7
 					1200, // Level 8
 					2500, // Level 9
+					3500, // Level 10
 				]
 			}
 		};

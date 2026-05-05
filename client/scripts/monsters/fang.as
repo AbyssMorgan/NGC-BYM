@@ -9,7 +9,7 @@ package monsters {
 			"page":2,
 			"order":4,
 			"resource":512000,
-			"time":40 * 60 * 60,
+			"time":3600 * 40,
 			"level":2,
 			"name":"#m_fang#",
 			"classType":Fang,
@@ -21,6 +21,10 @@ package monsters {
 				[756000, 3600 * 24], // Level 4
 				[1024000, 3600 * 36], // Level 5
 				[1440000, 3600 * 48], // Level 6
+				[2880000, 3600 * 60], // Level 7
+				[5760000, 3600 * 72], // Level 8
+				[11520000, 3600 * 84], // Level 9
+				[23040000, 3600 * 96], // Level 10
 			],
 			"props":{
 				"speed":[
@@ -30,6 +34,10 @@ package monsters {
 					1.40, // Level 4
 					1.50, // Level 5
 					1.60, // Level 6
+					1.70, // Level 7
+					1.80, // Level 8
+					1.90, // Level 9
+					2.00, // Level 10
 				],
 				"health":[
 					400, // Level 1
@@ -41,6 +49,10 @@ package monsters {
 					660, // Level 4
 					720, // Level 5
 					800, // Level 6
+					880, // Level 7
+					960, // Level 8
+					1040, // Level 9
+					1120, // Level 10
 				],
 				"cTime":[
 					450, // Level 1
@@ -49,6 +61,10 @@ package monsters {
 					225, // Level 4
 					195, // Level 5
 					195, // Level 6
+					175, // Level 7
+					160, // Level 8
+					145, // Level 9
+					130, // Level 10
 				],
 				"cResource":[
 					18000, // Level 1
@@ -57,6 +73,10 @@ package monsters {
 					60500, // Level 4
 					80000, // Level 5
 					100000, // Level 6
+					125000, // Level 7
+					156250, // Level 8
+					195313, // Level 9
+					244141, // Level 10
 				],
 				"cStorage":[
 					30, // Level 1
@@ -72,6 +92,10 @@ package monsters {
 					68, // Level 4
 					59, // Level 5
 					59, // Level 6
+					53, // Level 7
+					50, // Level 8
+					48, // Level 9
+					46, // Level 10
 				],
 				"hResource":[
 					5400, // Level 1
@@ -80,6 +104,10 @@ package monsters {
 					18150, // Level 4
 					24000, // Level 5
 					30000, // Level 6
+					37500, // Level 7
+					46875, // Level 8
+					58594, // Level 9
+					73242, // Level 10
 				]
 			}
 		};

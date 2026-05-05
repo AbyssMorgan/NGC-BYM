@@ -22,6 +22,7 @@ package monsters {
 				[44000, 3600 * 15], // Level 7
 				[88000, 3600 * 20], // Level 8
 				[176000, 3600 * 25], // Level 9
+				[352000, 3600 * 30], // Level 10
 			],
 			"props":{
 				"speed":[
@@ -37,6 +38,7 @@ package monsters {
 					320, // Level 7
 					340, // Level 8
 					360, // Level 9
+					380, // Level 10
 				],
 				"damage":[
 					60, // Level 1
@@ -48,6 +50,7 @@ package monsters {
 					90, // Level 7
 					95, // Level 8
 					100, // Level 9
+					110, // Level 10
 				],
 				"cTime":[
 					15, // Level 1
@@ -59,6 +62,7 @@ package monsters {
 					5, // Level 7
 					5, // Level 8
 					5, // Level 9
+					5, // Level 10
 				],
 				"cResource":[
 					250, // Level 1
@@ -70,6 +74,7 @@ package monsters {
 					1500, // Level 7
 					2000, // Level 8
 					3000, // Level 9
+					4000, // Level 10
 				],
 				"cStorage":[
 					10, // Level 1
@@ -81,6 +86,7 @@ package monsters {
 					7, // Level 7
 					6, // Level 8
 					5, // Level 9
+					5, // Level 10
 				],
 				"bucket":[7],
 				"targetGroup":[1],
@@ -94,6 +100,7 @@ package monsters {
 					2, // Level 7
 					2, // Level 8
 					2, // Level 9
+					2, // Level 10
 				],
 				"hResource":[
 					75, // Level 1
@@ -105,6 +112,7 @@ package monsters {
 					450, // Level 7
 					500, // Level 8
 					600, // Level 9
+					700, // Level 10
 				]
 			}
 		};

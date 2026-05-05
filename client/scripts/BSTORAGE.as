@@ -112,8 +112,8 @@ package
       override public function Destroyed(param1:Boolean = true) : void
       {
          var _loc2_:Number = NaN;
-         var _loc3_:int = 0;
-         var _loc4_:int = 0;
+         var building_id:int = 0;
+         var loot_value:int = 0;
          if(param1 && !_destroyed)
          {
             _loc2_ = _LOOT_PCT_BASE;
@@ -125,53 +125,53 @@ package
             {
                _loc2_ = _LOOT_PCT_OUTPOST;
             }
-            _loc3_ = 1;
-            while(_loc3_ < 5)
+            building_id = 1;
+            while(building_id < 5)
             {
-               _loc4_ = int(BASE._resources["r" + _loc3_].Get() * _loc2_);
+               loot_value = int(BASE._resources["r" + building_id].Get() * _loc2_);
                if(_type == 6)
                {
-                  _loc4_ = Math.min(_loc4_,_LOOT_MAX_SILO);
+                  loot_value = Math.min(loot_value,_LOOT_MAX_SILO);
                   if(MapRoomManager.instance.isInMapRoom2 && GLOBAL._currentCell && GLOBAL._currentCell.baseType == EnumYardType.OUTPOST)
                   {
-                     _loc4_ = Math.min(_loc4_,_LOOT_MAX_WM_SILO);
+                     loot_value = Math.min(loot_value,_LOOT_MAX_WM_SILO);
                   }
                }
                if(_type == 14)
                {
-                  _loc4_ = Math.min(_loc4_,_LOOT_MAX_TH);
+                  loot_value = Math.min(loot_value,_LOOT_MAX_TH);
                   if(MapRoomManager.instance.isInMapRoom2 && GLOBAL._currentCell && GLOBAL._currentCell.baseType == EnumYardType.OUTPOST)
                   {
-                     _loc4_ = Math.min(_loc4_,_LOOT_MAX_WM_TH);
+                     loot_value = Math.min(loot_value,_LOOT_MAX_WM_TH);
                   }
                }
                if(_type == 112)
                {
-                  _loc4_ = Math.min(_loc4_,_LOOT_MAX_OUTPOST);
+                  loot_value = Math.min(loot_value,_LOOT_MAX_OUTPOST);
                }
-               if(_loc3_ == 4 && !MapRoomManager.instance.isInMapRoom3)
+               if(building_id == 4 && !MapRoomManager.instance.isInMapRoom3)
                {
-                  _loc4_ = Math.ceil(_loc4_ * _LOOT_GOO_LIMITER);
+                  loot_value = Math.ceil(loot_value * _LOOT_GOO_LIMITER);
                }
-               if(_loc4_ > 0)
+               if(loot_value > 0)
                {
-                  BASE._resources["r" + _loc3_].Add(-_loc4_);
-                  BASE._hpResources["r" + _loc3_] -= _loc4_;
-                  if(BASE._deltaResources["r" + _loc3_])
+                  BASE._resources["r" + building_id].Add(-loot_value);
+                  BASE._hpResources["r" + building_id] -= loot_value;
+                  if(BASE._deltaResources["r" + building_id])
                   {
-                     BASE._deltaResources["r" + _loc3_].Add(-_loc4_);
-                     BASE._hpDeltaResources["r" + _loc3_] -= _loc4_;
+                     BASE._deltaResources["r" + building_id].Add(-loot_value);
+                     BASE._hpDeltaResources["r" + building_id] -= loot_value;
                   }
                   else
                   {
-                     BASE._deltaResources["r" + _loc3_] = new SecNum(-_loc4_);
-                     BASE._hpDeltaResources["r" + _loc3_] = -_loc4_;
+                     BASE._deltaResources["r" + building_id] = new SecNum(-loot_value);
+                     BASE._hpDeltaResources["r" + building_id] = -loot_value;
                   }
                   BASE._deltaResources.dirty = true;
                   BASE._hpDeltaResources.dirty = true;
-                  ATTACK.Loot(_loc3_,_loc4_,_mc.x,int(_mc.y + 20 - _loc3_ * 10),12);
+                  ATTACK.Loot(building_id,loot_value,_mc.x,int(_mc.y + 20 - building_id * 10),12);
                }
-               _loc3_++;
+               building_id++;
             }
             ATTACK.Log("b" + _id,"<font color=\"#FF0000\">" + KEYS.Get("attack_log_downedlooted",{
                "v1":_lvl.Get(),

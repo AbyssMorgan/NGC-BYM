@@ -11,19 +11,59 @@ package monsters {
 			"level":3,
 			"name":"#m_slimeattikusmini#",
 			"description":"mon_slimeattikusminidesc",
-			"trainingCosts":[[2560000, 3600 * 24],[3840000, 3600 * 36],[4096000, 3600 * 48],[6250000, 3600 * 60],[8500000, 3600 * 80]],
+			"trainingCosts":[
+				[2560000, 3600 * 24], // Level 2
+				[3840000, 3600 * 36], // Level 3
+				[4096000, 3600 * 48], // Level 4
+				[6250000, 3600 * 60], // Level 5
+				[8500000, 3600 * 80], // Level 6
+			],
 			"stream":["","",""],
 			"blocked":true,
 			"fake":true,
 			"dependent":"C17",
 			"props":{
-				"speed":[1.5,1.6,1.7,1.8,1.9,2],
-				"health":[250],
-				"damage":[310,320,330,340,350],
-				"cTime":[500,450,400,350,300,250],
-				"cResource":[27000,40500,60750,90000,125000,150000],
-				"cStorage":[40],
-				"bucket":[40],
+				"speed":[
+					1.50, // Level 1
+					1.60, // Level 2
+					1.70, // Level 3
+					1.80, // Level 4
+					1.90, // Level 5
+					2.00, // Level 6
+				],
+				"health":[
+					250, // Level 1
+				],
+				"damage":[
+					310, // Level 1
+					320, // Level 2
+					330, // Level 3
+					340, // Level 4
+					350, // Level 5
+					360, // Level 6
+				],
+				"cTime":[
+					500, // Level 1
+					450, // Level 2
+					400, // Level 3
+					350, // Level 4
+					300, // Level 5
+					250, // Level 6
+				],
+				"cResource":[
+					27000, // Level 1
+					40500, // Level 2
+					60750, // Level 3
+					90000, // Level 4
+					125000, // Level 5
+					150000, // Level 6
+				],
+				"cStorage":[
+					40, // Level 1
+				],
+				"bucket":[
+					40, // Level 1
+				],
 				"targetGroup":[1]
 			}
 		};

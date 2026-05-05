@@ -4,7 +4,7 @@ package monsters {
 
 	public class eyera {
 
-		public static const DATA:Object = {
+		public const DATA:Object = {
 			"index":5,
 			"page":2,
 			"order":1,

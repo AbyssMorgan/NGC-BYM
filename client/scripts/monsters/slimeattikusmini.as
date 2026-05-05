@@ -2,7 +2,7 @@ package monsters {
 
 	public class slimeattikusmini {
 
-		public static const DATA:Object = {
+		public const DATA:Object = {
 			"index":0,
 			"page":0,
 			"order":0,

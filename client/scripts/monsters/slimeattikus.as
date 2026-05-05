@@ -4,7 +4,7 @@ package monsters {
 
 	public class slimeattikus {
 
-		public static const DATA:Object = {
+		public const DATA:Object = {
 			"index":10,
 			"page":3,
 			"order":2,

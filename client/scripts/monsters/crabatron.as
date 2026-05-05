@@ -2,7 +2,7 @@ package monsters {
 
 	public class crabatron {
 
-		public static const DATA:Object = {
+		public const DATA:Object = {
 			"index":11,
 			"page":3,
 			"order":3,

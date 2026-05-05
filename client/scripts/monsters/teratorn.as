@@ -4,7 +4,7 @@ package monsters {
 
 	public class teratorn {
 
-		public static const DATA:Object = {
+		public const DATA:Object = {
 			"index":14,
 			"page":4,
 			"order":1,

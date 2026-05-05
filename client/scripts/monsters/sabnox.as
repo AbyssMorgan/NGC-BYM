@@ -4,7 +4,7 @@ package monsters {
 
 	public class sabnox {
 
-		public static const DATA:Object = {
+		public const DATA:Object = {
 			"index":7,
 			"page":3,
 			"order":3,

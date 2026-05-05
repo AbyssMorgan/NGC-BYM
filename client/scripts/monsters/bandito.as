@@ -4,7 +4,7 @@ package monsters {
 
 	public class bandito {
 
-		public static const DATA:Object = {
+		public const DATA:Object = {
 			"index":7,
 			"page":2,
 			"order":3,

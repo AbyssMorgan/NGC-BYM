@@ -4,7 +4,7 @@ package monsters {
 
 	public class fang {
 
-		public static const DATA:Object = {
+		public const DATA:Object = {
 			"index":8,
 			"page":2,
 			"order":4,

@@ -2,7 +2,7 @@ package monsters {
 
 	public class ichi {
 
-		public static const DATA:Object = {
+		public const DATA:Object = {
 			"index":6,
 			"page":2,
 			"order":2,

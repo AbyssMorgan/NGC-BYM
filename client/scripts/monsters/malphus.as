@@ -2,7 +2,7 @@ package monsters {
 
 	public class malphus {
 
-		public static const DATA:Object = {
+		public const DATA:Object = {
 			"index":4,
 			"page":2,
 			"order":2,

@@ -4,7 +4,7 @@ package monsters {
 
 	public class zafreeti {
 
-		public static const DATA:Object = {
+		public const DATA:Object = {
 			"index":13,
 			"page":3,
 			"order":5,

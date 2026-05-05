@@ -4,7 +4,7 @@ package monsters {
 
 	public class brain {
 
-		public static const DATA:Object = {
+		public const DATA:Object = {
 			"index":10,
 			"page":3,
 			"order":1,

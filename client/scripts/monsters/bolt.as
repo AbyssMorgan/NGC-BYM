@@ -4,7 +4,7 @@ package monsters {
 
 	public class bolt {
 
-		public static const DATA:Object = {
+		public const DATA:Object = {
 			"index":3,
 			"page":1,
 			"order":3,

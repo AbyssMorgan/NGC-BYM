@@ -4,7 +4,7 @@ package monsters {
 
 	public class dave {
 
-		public static const DATA:Object = {
+		public const DATA:Object = {
 			"index":16,
 			"page":4,
 			"order":3,

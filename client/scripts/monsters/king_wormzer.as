@@ -4,7 +4,7 @@ package monsters {
 
 	public class king_wormzer {
 
-		public static const DATA:Object = {
+		public const DATA:Object = {
 			"index":8,
 			"page":4,
 			"order":1,

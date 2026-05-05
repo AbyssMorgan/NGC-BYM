@@ -2,7 +2,7 @@ package monsters {
 
 	public class grokus {
 
-		public static const DATA:Object = {
+		public const DATA:Object = {
 			"index":6,
 			"page":3,
 			"order":2,

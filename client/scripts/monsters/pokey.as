@@ -2,7 +2,7 @@ package monsters {
 
 	public class pokey {
 
-		public static const DATA:Object = {
+		public const DATA:Object = {
 			"index":1,
 			"page":1,
 			"order":1,

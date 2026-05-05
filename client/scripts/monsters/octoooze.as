@@ -2,7 +2,7 @@ package monsters {
 
 	public class octoooze {
 
-		public static const DATA:Object = {
+		public const DATA:Object = {
 			"index":2,
 			"page":1,
 			"order":2,

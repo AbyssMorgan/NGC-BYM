@@ -2,11 +2,6 @@ package {
 	
 	import com.monsters.creep_types.CreepTypeManager;
 	import com.monsters.maproom_manager.MapRoomManager;
-	import com.monsters.monsters.creeps.inferno.Balthazar;
-	import com.monsters.monsters.creeps.inferno.KingWormzer;
-	import com.monsters.monsters.creeps.inferno.Sabnox;
-	import com.monsters.monsters.creeps.inferno.Spurtz;
-	import com.monsters.monsters.creeps.rebalance.RebalancedCreatures;
 	import com.monsters.subscriptions.SubscriptionHandler;
 	import flash.display.MovieClip;
 	import flash.events.MouseEvent;
@@ -29,6 +24,15 @@ package {
 	import monsters.slimeattikus;
 	import monsters.slimeattikusmini;
 	import monsters.rezghul;
+	import monsters.spurtz;
+	import monsters.zagnoid;
+	import monsters.valgos;
+	import monsters.malphus;
+	import monsters.balthazar;
+	import monsters.grokus;
+	import monsters.sabnox;
+	import monsters.king_wormzer;
+	import monsters.ailooter1;
 	
 	public class CREATURELOCKER
 	{
@@ -42,6 +46,8 @@ package {
 		public static var _mc:CREATURELOCKERPOPUP;
 		
 		public static var _mainCreatures:Object;
+
+		public static var _originalCreatures:Object;
 		
 		public static var _page:int;
 		
@@ -109,7 +115,22 @@ package {
 				}
 			}
 		}
-		
+
+		public static function clone_data(src:Object):Object {
+			var out:Object = {};
+			for (var key:String in src) {
+				var value:* = src[key];
+				if (value is Array) {
+					out[key] = value.concat(); // shallow copy array
+				} else if (value is Object && !(value is Class)) {
+					out[key] = clone_data(value); // rekurencja
+				} else {
+					out[key] = value; // number, string, class, etc.
+				}
+			}
+			return out;
+		}
+
 		public static function Setup() : void
 		{
 			var _loc1_:String = null;
@@ -117,315 +138,125 @@ package {
 			_popupCreatureID = getFirstCreatureID();
 			_lockerData = {};
 			_open = false;
-			_mainCreatures = {
-				"C1": pokey.DATA,             // Level 9
-				"C2": octoooze.DATA,          // Level 9
-				"C3": bolt.DATA,              // Level 9
-				"C4": fink.DATA,              // Level 9
-				"C5": eyera.DATA,             // Level 9
-				"C6": ichi.DATA,              // Level 9
-				"C7": bandito.DATA,           // Level 6
-				"C8": fang.DATA,              // Level 6
-				"C9": brain.DATA,             // Level 6
-				"C10": crabatron.DATA,        // Level 6
-				"C11": projectx.DATA,         // Level 6
-				"C12": dave.DATA,             // Level 6
-				"C13": wormzer.DATA,          // Level 6
-				"C14": teratorn.DATA,         // Level 6
-				"C15": zafreeti.DATA,
-				"C16": vorg.DATA,
-				"C17": slimeattikus.DATA,     // Level 6
-				"C18": slimeattikusmini.DATA,
-				"C19": rezghul.DATA,          // Level 6
-				"IC1":{
-					"index":1,
-					"page":1,
-					"order":1,
-					"resource":2400,
-					"time":3600,
-					"level":1,
-					"name":"#m_spurtz#",
-					"classType":Spurtz,
-					"description":"mi_Spurtz_desc",
-					"stream":["mi_Spurtz_stream","mi_Spurtz_streambody","quests/inferno_monster1.png"],
-					"trainingCosts":[[2400,3600],[4800,7200],[7200,10800],[9600,14400],[14400,21600]],
-					"props":{
-						"speed":[1.2],
-						"health":[400,425,450,475,510,550],
-						"damage":[160,200,200,250,300,350],
-						"cTime":[15,10,8,7,6,5],
-						"cResource":[500,1000,2000,4000,6000,10000],
-						"cStorage":[15],
-						"bucket":[15],
-						"targetGroup":[1],
-						"hTime":[5,3,2],
-						"hResource":[150,300,600,1200,1800,3000]
-					}
-				},
-				"IC2":{
-					"index":2,
-					"page":1,
-					"order":2,
-					"resource":4800,
-					"time":14400,
-					"level":1,
-					"name":"#m_zagnoid#",
-					"description":"mi_Zagnoid_desc",
-					"stream":["mi_Zagnoid_stream","mi_Zagnoid_streambody","quests/zagnoid.v3.png"],
-					"trainingCosts":[[4800,14400],[9600,28800],[14400,43200],[19200,57600],[28800,86400]],
-					"props":{
-						"speed":[1.8],
-						"health":[1500,1820,2300,2800,3350,3600],
-						"damage":[80,85,90,95,100,110],
-						"cTime":[15,16,16,16,16,16],
-						"cResource":[2500,4000,8000,12000,16000,20000],
-						"cStorage":[15],
-						"bucket":[15],
-						"targetGroup":[4],
-						"hTime":[5],
-						"hResource":[750,1200,2400,3600,4800,6000]
-					}
-				},
-				"IC4":{
-					"index":3,
-					"page":2,
-					"order":1,
-					"resource":38400,
-					"time":64800,
-					"level":2,
-					"name":"#m_valgos#",
-					"description":"mi_Valgos_desc",
-					"stream":["mi_Valgos_stream","mi_Valgos_streambody","quests/valgos.png"],
-					"trainingCosts":[[38400,64800],[76800,129600],[115200,194400],[153600,259200],[230400,388800]],
-					"movement":"burrow",
-					"pathing":"direct",
-					"props":{
-						"speed":[2,2,2,2,2,2],
-						"health":[2000,2400,2800,3200,3600,4000],
-						"damage":[490,530,580,645,700,775],
-						"cTime":[450,350,250,225,195,195],
-						"cResource":[31000,35000,39000,44000,50000,55000],
-						"cStorage":[30],
-						"bucket":[30],
-						"targetGroup":[2],
-						"hTime":[135,105,75,68,59,59],
-						"hResource":[9300,10500,11700,13200,15000,16500]
-					}
-				},
-				"IC3":{
-					"index":4,
-					"page":2,
-					"order":2,
-					"resource":76800,
-					"time":64800,
-					"level":2,
-					"name":"#m_malphus#",
-					"description":"mi_Malphus_desc",
-					"stream":["mi_Malphus_stream","mi_Malphus_streambody","quests/malphus.png"],
-					"trainingCosts":[[76800,64800],[153600,129600],[230400,194400],[307200,259200],[460800,388800]],
-					"movement":"jump",
-					"props":{
-						"speed":[3.2],
-						"health":[450,470,500,540,580,620],
-						"damage":[100,105,110,120,130,140],
-						"cTime":[100,100,90,90,90,90],
-						"cResource":[3000,3500,4100,4800,5500,7000],
-						"cStorage":[15],
-						"bucket":[15],
-						"targetGroup":[3],
-						"hTime":[30,30,27],
-						"hResource":[900,1050,1230,1440,1650,2100]
-					}
-				},
-				"IC5":{
-					"index":5,
-					"page":3,
-					"order":1,
-					"resource":614400,
-					"time":86400,
-					"level":3,
-					"name":"#m_balthazar#",
-					"classType":Balthazar,
-					"description":"mi_Balthazar_desc",
-					"stream":["mi_Balthazar_stream","mi_Balthazar_streambody","quests/balthazar.png"],
-					"trainingCosts":[[614400,86400],[1228800,172800],[1843200,259200],[2457600,345600],[3686400,518400]],
-					"movement":"fly",
-					"pathing":"direct",
-					"props":{
-						"speed":[4.5],
-						"health":[3200,3600,4000,4500,5000,5600],
-						"damage":[600,665,730,795,860,930],
-						"cTime":[1800,1920,2040,2160,2280,2400],
-						"cResource":[88000,104000,161000,249000,327000,487000],
-						"cStorage":[40],
-						"bucket":[40],
-						"targetGroup":[6],
-						"hTime":[540,576,612,648,684,720],
-						"hResource":[26400,31200,48300,74700,98100,146100]
-					}
-				},
-				"IC6":{
-					"index":6,
-					"page":3,
-					"order":2,
-					"resource":1228800,
-					"time":86400,
-					"level":3,
-					"name":"#m_grokus#",
-					"description":"mi_Grokus_desc",
-					"stream":["mi_Grokus_stream","mi_Grokus_streambody","quests/grokus.png"],
-					"trainingCosts":[[1228800,86400],[2457600,172800],[3686400,259200],[4915200,345600],[7372800,518400]],
-					"props":{
-						"speed":[1.3,1.3,1.4,1.4,1.5,1.6],
-						"health":[7600,8750,9900,10100,11300,12500],
-						"damage":[400,425,450,475,500,550],
-						"cTime":[1800,1800,1800,1800,1800,1800],
-						"cResource":[80000,105000,135000,175000,210000,325000],
-						"cStorage":[50],
-						"bucket":[50],
-						"targetGroup":[3],
-						"hTime":[540],
-						"hResource":[24000,31500,40500,52500,63000,97500]
-					}
-				},
-				"IC7":{
-					"index":7,
-					"page":3,
-					"order":3,
-					"resource":2457600,
-					"time":172800,
-					"level":3,
-					"name":"#m_sabnox#",
-					"classType":Sabnox,
-					"description":"mi_Sabnox_desc",
-					"stream":["mi_Sabnox_stream","mi_Sabnox_streambody","quests/sabnox.png"],
-					"trainingCosts":[[2457600,172800],[4915200,345600],[7372800,518400],[9830400,691200],[14745600,1036800]],
-					"props":{
-						"range":[240],
-						"speed":[1.7,1.8,1.9,2,2.1,2.2],
-						"health":[1120,1260,1400,1650,1900,2200],
-						"damage":[700,825,950,1075,1200,1350],
-						"cTime":[1384,1384,1384,1384,1384,1384],
-						"cResource":[60000,90000,145000,200000,330000,450000],
-						"cStorage":[80],
-						"bucket":[80],
-						"targetGroup":[4],
-						"hTime":[415],
-						"hResource":[18000,27000,43500,60000,99000,135000]
-					}
-				},
-				"IC8":{
-					"index":8,
-					"page":4,
-					"order":1,
-					"resource":4915200,
-					"time":259200,
-					"level":4,
-					"name":"#m_king_wormzer#",
-					"shortName":"#m_k_wormzer#",
-					"classType":KingWormzer,
-					"description":"mi_King_Wormzer_desc",
-					"stream":["mi_King_Wormzer_stream","mi_King_Wormzer_streambody","quests/king_wormzer.png"],
-					"trainingCosts":[[4915200,259200],[7268000,518400],[9296000,777600],[13624000,1036800],[19248000,1555200]],
-					"movement":"burrow",
-					"pathing":"direct",
-					"props":{
-						"speed":[2.5,2.6,2.7,2.8,2.9,3],
-						"health":[6200,7600,8700,10900,13100,16000],
-						"damage":[1200,1360,1630,1920,2220,2500],
-						"cTime":[2700],
-						"cResource":[425000,476000,580000,700000,910000,1204000],
-						"cStorage":[100],
-						"bucket":[100],
-						"targetGroup":[1],
-						"hTime":[810],
-						"hResource":[127500,142800,174000,210000,273000,361200]
-					}
-				},
-				"C200":{
-					"name":"AILooter1",
-					"blocked":true,
-					"props":{
-						"speed":[3],
-						"health":[200],
-						"damage":[20],
-						"cTime":[10],
-						"cResource":[10],
-						"cStorage":[10],
-						"bucket":[50],
-						"size":[32],
-						"targetGroup":[3]
-					}
-				}
+
+			_originalCreatures = {
+				"C1": (new pokey()).DATA,
+				"C2": (new octoooze()).DATA,
+				"C3": (new bolt()).DATA,
+				"C4": (new fink()).DATA,
+				"C5": (new eyera()).DATA,
+				"C6": (new ichi()).DATA,
+				"C7": (new bandito()).DATA,           // Level 6
+				"C8": (new fang()).DATA,              // Level 6
+				"C9": (new brain()).DATA,             // Level 6
+				"C10": (new crabatron()).DATA,        // Level 6
+				"C11": (new projectx()).DATA,         // Level 6
+				"C12": (new dave()).DATA,             // Level 6
+				"C13": (new wormzer()).DATA,          // Level 6
+				"C14": (new teratorn()).DATA,         // Level 6
+				"C15": (new zafreeti()).DATA,
+				"C16": (new vorg()).DATA,
+				"C17": (new slimeattikus()).DATA,     // Level 6
+				"C18": (new slimeattikusmini()).DATA, // Level 6
+				"C19": (new rezghul()).DATA,          // Level 6
+				"IC1": (new spurtz()).DATA,           // Level 6
+				"IC2": (new zagnoid()).DATA,          // Level 6
+				"IC4": (new valgos()).DATA,           // Level 6
+				"IC3": (new malphus()).DATA,          // Level 6
+				"IC5": (new balthazar()).DATA,        // Level 6
+				"IC6": (new grokus()).DATA,           // Level 6
+				"IC7": (new sabnox()).DATA,           // Level 6
+				"IC8": (new king_wormzer()).DATA,     // Level 6
+				"C200": (new ailooter1()).DATA        // Level 6
 			};
-			if(k_USE_REBALANCED_MONSTERS)
-			{
-				_mainCreatures = RebalancedCreatures.REBALANCED_CREATURES;
-				for(_loc1_ in _mainCreatures)
-				{
-				_mainCreatures[_loc1_].props.hResource = [10];
-				_mainCreatures[_loc1_].props.hTime = [2];
-				}
-			}
+
+			_mainCreatures = {
+				"C1": (new pokey()).DATA,
+				"C2": (new octoooze()).DATA,
+				"C3": (new bolt()).DATA,
+				"C4": (new fink()).DATA,
+				"C5": (new eyera()).DATA,
+				"C6": (new ichi()).DATA,
+				"C7": (new bandito()).DATA,
+				"C8": (new fang()).DATA,
+				"C9": (new brain()).DATA,
+				"C10": (new crabatron()).DATA,
+				"C11": (new projectx()).DATA,
+				"C12": (new dave()).DATA,
+				"C13": (new wormzer()).DATA,
+				"C14": (new teratorn()).DATA,
+				"C15": (new zafreeti()).DATA,
+				"C16": (new vorg()).DATA,
+				"C17": (new slimeattikus()).DATA,
+				"C18": (new slimeattikusmini()).DATA,
+				"C19": (new rezghul()).DATA,
+				"IC1": (new spurtz()).DATA,
+				"IC2": (new zagnoid()).DATA,
+				"IC4": (new valgos()).DATA,
+				"IC3": (new malphus()).DATA,
+				"IC5": (new balthazar()).DATA,
+				"IC6": (new grokus()).DATA,
+				"IC7": (new sabnox()).DATA,
+				"IC8": (new king_wormzer()).DATA,
+				"C200": (new ailooter1()).DATA
+			};
+			
 			modifyCreepData();
 			CreepTypeManager.instance.AddExposedCreepTypes(_mainCreatures);
 		}
 		
-		private static function modifyCreepData() : void
-		{
+		private static function modifyCreepData() : void {
 			var _loc1_:int = 0;
 			var _loc2_:String = null;
 			var _loc3_:int = 0;
-			var _loc4_:int = 0;
-			var _loc5_:int = 0;
 			var _loc6_:int = 0;
-			if(MapRoomManager.instance.isInMapRoom3)
-			{
-				_loc1_ = 0;
-				for(_loc2_ in _mainCreatures)
-				{
-				_loc1_ = int(_mainCreatures[_loc2_].props.cResource.length);
-				_loc3_ = 0;
-				while(_loc3_ < _loc1_)
-				{
-					_mainCreatures[_loc2_].props.cResource[_loc3_] *= 3;
-					_loc3_++;
-				}
-				_loc1_ = int(_mainCreatures[_loc2_].props.cTime.length);
-				_loc3_ = 0;
-				while(_loc3_ < _loc1_)
-				{
-					_mainCreatures[_loc2_].props.cTime[_loc3_] *= 3;
-					_loc3_++;
-				}
-				}
-			}
-			if(MapRoomManager.instance.isInMapRoom3)
-			{
-				_loc4_ = 15;
-				_loc5_ = 35;
-				_loc6_ = 0;
-				for(_loc2_ in _mainCreatures)
-				{
-				if(_mainCreatures[_loc2_].props.hResource)
-				{
-					_loc1_ = int(_mainCreatures[_loc2_].props.hResource.length);
-					_loc6_ = _mainCreatures[_loc2_].props.cResource.length - 1;
+
+			if (MapRoomManager.instance.isInMapRoom3) {
+
+				for (_loc2_ in _mainCreatures) {
+
+					var base:Object = _originalCreatures[_loc2_];
+					var target:Object = _mainCreatures[_loc2_];
+
+					// --- cResource ---
+					_loc1_ = int(base.props.cResource.length);
 					_loc3_ = 0;
-					while(_loc3_ < _loc1_)
-					{
-						_mainCreatures[_loc2_].props.hResource[_loc3_] = 0.25 * _mainCreatures[_loc2_].props.cResource[_loc3_ < _loc6_ ? _loc3_ : _loc6_];
+					while (_loc3_ < _loc1_) {
+						target.props.cResource[_loc3_] = base.props.cResource[_loc3_] * 3;
 						_loc3_++;
 					}
-					_loc1_ = int(_mainCreatures[_loc2_].props.hTime.length);
-					_loc6_ = _mainCreatures[_loc2_].props.cTime.length - 1;
+
+					// --- cTime ---
+					_loc1_ = int(base.props.cTime.length);
 					_loc3_ = 0;
-					while(_loc3_ < _loc1_)
-					{
-						_mainCreatures[_loc2_].props.hTime[_loc3_] = 0.25 * _mainCreatures[_loc2_].props.cTime[_loc3_ < _loc6_ ? _loc3_ : _loc6_];
+					while (_loc3_ < _loc1_) {
+						target.props.cTime[_loc3_] = base.props.cTime[_loc3_] * 3;
 						_loc3_++;
 					}
-				}
+
+					// --- hResource ---
+					if (target.props.hResource) {
+						_loc1_ = int(target.props.hResource.length);
+						_loc6_ = base.props.cResource.length - 1;
+
+						_loc3_ = 0;
+						while (_loc3_ < _loc1_) {
+							var idx:int = _loc3_ < _loc6_ ? _loc3_ : _loc6_;
+							target.props.hResource[_loc3_] = base.props.cResource[idx] * 0.75;
+							_loc3_++;
+						}
+
+						// --- hTime ---
+						_loc1_ = int(target.props.hTime.length);
+						_loc6_ = base.props.cTime.length - 1;
+
+						_loc3_ = 0;
+						while (_loc3_ < _loc1_) {
+							idx = _loc3_ < _loc6_ ? _loc3_ : _loc6_;
+							target.props.hTime[_loc3_] = base.props.cTime[idx] * 0.75;
+							_loc3_++;
+						}
+					}
 				}
 			}
 		}

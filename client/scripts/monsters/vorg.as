@@ -4,7 +4,7 @@ package monsters {
 
 	public class vorg {
 
-		public static const DATA:Object = {
+		public const DATA:Object = {
 			"index":9,
 			"page":2,
 			"order":5,

@@ -32,7 +32,7 @@ package monsters {
 					600, // Level 3
 					650, // Level 4
 					750, // Level 5
-					900 // Level 6
+					900, // Level 6
 				],
 				"damage":[
 					200, // Level 1
@@ -40,7 +40,7 @@ package monsters {
 					300, // Level 3
 					350, // Level 4
 					400, // Level 5
-					450 // Level 6
+					450, // Level 6
 				],
 				"cTime":[
 					225, // Level 1
@@ -48,7 +48,7 @@ package monsters {
 					225, // Level 3
 					225, // Level 4
 					180, // Level 5
-					180 // Level 6
+					180, // Level 6
 				],
 				"cResource":[
 					2500, // Level 1
@@ -56,7 +56,7 @@ package monsters {
 					6750, // Level 3
 					8750, // Level 4
 					11200, // Level 5
-					14400 // Level 6
+					14400, // Level 6
 				],
 				"cStorage":[
 					20 // Level 1

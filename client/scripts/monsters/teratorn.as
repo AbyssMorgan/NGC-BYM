@@ -45,14 +45,49 @@ package monsters {
 					3600, // Level 5
 					4200, // Level 6
 				],
-				"damage":[300,350,400,500,600,700],
-				"cTime":[1800,1920,2040,2160,2280,2400],
-				"cResource":[70000,95000,145000,200000,300000,400000],
+				"damage":[
+					300, // Level 1
+					350, // Level 2
+					400, // Level 3
+					500, // Level 4
+					600, // Level 5
+					700, // Level 6
+				],
+				"cTime":[
+					1800, // Level 1
+					1920, // Level 2
+					2040, // Level 3
+					2160, // Level 4
+					2280, // Level 5
+					2400, // Level 6
+				],
+				"cResource":[
+					70000, // Level 1
+					95000, // Level 2
+					145000, // Level 3
+					200000, // Level 4
+					300000, // Level 5
+					400000, // Level 6
+				],
 				"cStorage":[70],
 				"bucket":[70],
 				"targetGroup":[1],
-				"hTime":[540,576,612,648,684,720],
-				"hResource":[21000,28500,43500,60000,90000,120000]
+				"hTime":[
+					540, // Level 1
+					576, // Level 2
+					612, // Level 3
+					648, // Level 4
+					684, // Level 5
+					720, // Level 6
+				],
+				"hResource":[
+					21000, // Level 1
+					28500, // Level 2
+					43500, // Level 3
+					60000, // Level 4
+					90000, // Level 5
+					120000, // Level 6
+				]
 			}
 		};
 		

@@ -154,12 +154,12 @@ package {
 				"C12": (new dave()).DATA,             // Level 10
 				"C13": (new wormzer()).DATA,          // Level 10
 				"C14": (new teratorn()).DATA,         // Level 10
-				"C15": (new zafreeti()).DATA,         // Level 5
+				"C15": (new zafreeti()).DATA,         // Level 10
 				"C16": (new vorg()).DATA,             // Level 10
-				"C17": (new slimeattikus()).DATA,     // Level 6
-				"C18": (new slimeattikusmini()).DATA, // Level 6
+				"C17": (new slimeattikus()).DATA,     // Level 10
+				"C18": (new slimeattikusmini()).DATA, // Level 10
 				"C19": (new rezghul()).DATA,          // Level 10
-				"IC1": (new spurtz()).DATA,           // Level 6
+				"IC1": (new spurtz()).DATA,           // Level 10
 				"IC2": (new zagnoid()).DATA,          // Level 6
 				"IC4": (new valgos()).DATA,           // Level 6
 				"IC3": (new malphus()).DATA,          // Level 6

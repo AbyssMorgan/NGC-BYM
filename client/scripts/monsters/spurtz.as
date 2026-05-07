@@ -16,66 +16,91 @@ package monsters {
 			"description":"mi_Spurtz_desc",
 			"stream":["mi_Spurtz_stream","mi_Spurtz_streambody","quests/inferno_monster1.png"],
 			"trainingCosts":[
-				[2400, 3600 * 1],
-				[4800, 3600 * 2],
-				[7200, 3600 * 3],
-				[9600, 3600 * 4],
-				[14400, 3600 * 6],
+				[2400, 3600 * 1], // Level 2
+				[4800, 3600 * 2], // Level 3
+				[7200, 3600 * 3], // Level 4
+				[9600, 3600 * 4], // Level 5
+				[14400, 3600 * 6], // Level 6
+				[28800, 3600 * 8], // Level 7
+				[57600, 3600 * 12], // Level 8
+				[115200, 3600 * 14], // Level 9
+				[230400, 3600 * 16], // Level 10
 			],
 			"props":{
 				"speed":[
-					1.20,
+					1.20, // Level 1
 				],
 				"health":[
-					400,
-					425,
-					450,
-					475,
-					510,
-					550,
+					400, // Level 1
+					425, // Level 2
+					450, // Level 3
+					475, // Level 4
+					510, // Level 5
+					550, // Level 6
+					590, // Level 7
+					630, // Level 8
+					670, // Level 9
+					720, // Level 10
 				],
 				"damage":[
-					160,
-					200,
-					200,
-					250,
-					300,
-					350,
+					160, // Level 1
+					200, // Level 2
+					200, // Level 3
+					250, // Level 4
+					300, // Level 5
+					350, // Level 6
+					400, // Level 7
+					450, // Level 8
+					500, // Level 9
+					550, // Level 10
 				],
 				"cTime":[
-					15,
-					10,
-					8,
-					7,
-					6,
-					5,
+					15, // Level 1
+					10, // Level 2
+					8, // Level 3
+					7, // Level 4
+					6, // Level 5
+					5, // Level 6
+					5, // Level 7
+					5, // Level 8
+					5, // Level 9
+					5, // Level 10
 				],
 				"cResource":[
-					500,
-					1000,
-					2000,
-					4000,
-					6000,
-					10000,
+					500, // Level 1
+					1000, // Level 2
+					2000, // Level 3
+					4000, // Level 4
+					6000, // Level 5
+					10000, // Level 6
+					20000, // Level 7
+					40000, // Level 8
+					80000, // Level 9
+					160000, // Level 10
 				],
 				"cStorage":[
-					15,
+					15, // Level 1
 				],
 				"bucket":[
-					15,
+					15, // Level 1
 				],
 				"targetGroup":[1],
 				"hTime":[
-					5,
-					3,
-					2,
+					5, // Level 1
+					3, // Level 2
+					2, // Level 3
 				],
-				"hResource":[150,
-					300,
-					600,
-					1200,
-					1800,
-					3000,
+				"hResource":[
+					150, // Level 1
+					300, // Level 2
+					600, // Level 3
+					1200, // Level 4
+					1800, // Level 5
+					3000, // Level 6
+					6000, // Level 7
+					12000, // Level 8
+					24000, // Level 9
+					48000, // Level 10
 				]
 			}
 		};

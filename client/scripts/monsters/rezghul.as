@@ -72,6 +72,15 @@ package monsters {
 				],
 				"cResource":[
 					1000000, // Level 1
+					1100000, // Level 2
+					1200000, // Level 3
+					1300000, // Level 4
+					1400000, // Level 5
+					1500000, // Level 6
+					3000000, // Level 7
+					6000000, // Level 8
+					12000000, // Level 9
+					24000000, // Level 10
 				],
 				"cStorage":[
 					250, // Level 1
@@ -113,17 +122,26 @@ package monsters {
 					6, // Level 3
 					6, // Level 4
 					5, // Level 5
-					4, // Level 6
-					3, // Level 7
-					3, // Level 8
-					2, // Level 9
-					2, // Level 10
+					5, // Level 6
+					5, // Level 7
+					5, // Level 8
+					5, // Level 9
+					5, // Level 10
 				],
 				"hTime":[
 					1125, // Level 1
 				],
 				"hResource":[
 					250000, // Level 1
+					300000, // Level 2
+					350000, // Level 3
+					400000, // Level 4
+					450000, // Level 5
+					500000, // Level 6
+					1000000, // Level 7
+					2000000, // Level 8
+					4000000, // Level 9
+					8000000, // Level 10
 				]
 			}
 		};

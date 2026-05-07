@@ -20,6 +20,10 @@ package monsters {
 				[4096000, 3600 * 48], // Level 4
 				[6250000, 3600 * 60], // Level 5
 				[8500000, 3600 * 80], // Level 6
+				[17000000, 3600 * 100], // Level 7
+				[34000000, 3600 * 120], // Level 8
+				[68000000, 3600 * 140], // Level 9
+				[136000000, 3600 * 160], // Level 10
 			],
 			"stream":["","","quests/monster17.png"],
 			"blocked":true,
@@ -31,6 +35,10 @@ package monsters {
 					1.30, // Level 4
 					1.40, // Level 5
 					1.50, // Level 6
+					1.60, // Level 7
+					1.70, // Level 8
+					1.80, // Level 9
+					1.90, // Level 10
 				],
 				"health":[
 					700, // Level 1
@@ -39,6 +47,10 @@ package monsters {
 					800, // Level 4
 					900, // Level 5
 					1000, // Level 6
+					1100, // Level 7
+					1200, // Level 8
+					1300, // Level 9
+					1400, // Level 10
 				],
 				"damage":[
 					850, // Level 1
@@ -47,6 +59,10 @@ package monsters {
 					1000, // Level 4
 					1200, // Level 5
 					1400, // Level 6
+					1600, // Level 7
+					1800, // Level 8
+					2000, // Level 9
+					2200, // Level 10
 				],
 				"cTime":[
 					500, // Level 1
@@ -55,6 +71,10 @@ package monsters {
 					350, // Level 4
 					300, // Level 5
 					250, // Level 6
+					300, // Level 7
+					350, // Level 8
+					400, // Level 9
+					450, // Level 10
 				],
 				"cResource":[
 					27000, // Level 1
@@ -63,6 +83,10 @@ package monsters {
 					90000, // Level 4
 					125000, // Level 5
 					150000, // Level 6
+					300000, // Level 7
+					600000, // Level 8
+					1200000, // Level 9
+					2400000, // Level 10
 				],
 				"cStorage":[
 					40, // Level 1
@@ -78,6 +102,10 @@ package monsters {
 					3, // Level 4
 					4, // Level 5
 					5, // Level 6
+					5, // Level 7
+					5, // Level 8
+					5, // Level 9
+					6, // Level 10
 				],
 				"hTime":[
 					150, // Level 1
@@ -86,6 +114,10 @@ package monsters {
 					105, // Level 4
 					90, // Level 5
 					75, // Level 6
+					75, // Level 7
+					75, // Level 8
+					75, // Level 9
+					75, // Level 10
 				],
 				"hResource":[
 					8100, // Level 1
@@ -94,6 +126,10 @@ package monsters {
 					27000, // Level 4
 					37500, // Level 5
 					45000, // Level 6
+					90000, // Level 7
+					180000, // Level 8
+					360000, // Level 9
+					720000, // Level 10
 				]
 			}
 		};

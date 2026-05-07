@@ -1703,8 +1703,8 @@ package
 		// Zaokrąglamy w dół zgodnie z oryginałem
 		var baseValue:Number = Math.floor(value);
 		
-		// Obsługa wartości od 50 milionów w górę
-		if (baseValue >= 50000000) {
+		// Obsługa wartości od 10 milionów w górę
+		if (baseValue >= 10000000) {
 			var formatted:String = "";
 			
 			if (baseValue >= 1000000000000) {

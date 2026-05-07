@@ -79,8 +79,8 @@ package monsters {
 					1500000, // Level 6
 					3000000, // Level 7
 					6000000, // Level 8
-					12000000, // Level 9
-					24000000, // Level 10
+					9000000, // Level 9
+					12000000, // Level 10
 				],
 				"cStorage":[
 					250, // Level 1

@@ -160,9 +160,9 @@ package {
 				"C18": (new slimeattikusmini()).DATA, // Level 10
 				"C19": (new rezghul()).DATA,          // Level 10
 				"IC1": (new spurtz()).DATA,           // Level 10
-				"IC2": (new zagnoid()).DATA,          // Level 6
-				"IC4": (new valgos()).DATA,           // Level 6
-				"IC3": (new malphus()).DATA,          // Level 6
+				"IC2": (new zagnoid()).DATA,          // Level 10
+				"IC4": (new valgos()).DATA,           // Level 10
+				"IC3": (new malphus()).DATA,          // Level 10
 				"IC5": (new balthazar()).DATA,        // Level 10
 				"IC6": (new grokus()).DATA,           // Level 6
 				"IC7": (new sabnox()).DATA,           // Level 6
@@ -204,57 +204,43 @@ package {
 			modifyCreepData();
 			CreepTypeManager.instance.AddExposedCreepTypes(_mainCreatures);
 		}
-		
+
 		private static function modifyCreepData() : void {
-			var _loc1_:int = 0;
-			var _loc2_:String = null;
-			var _loc3_:int = 0;
-			var _loc6_:int = 0;
-
-			if (MapRoomManager.instance.isInMapRoom3) {
-
-				for (_loc2_ in _mainCreatures) {
-
-					var base:Object = _originalCreatures[_loc2_];
-					var target:Object = _mainCreatures[_loc2_];
-
-					// --- cResource ---
-					_loc1_ = int(base.props.cResource.length);
-					_loc3_ = 0;
-					while (_loc3_ < _loc1_) {
-						target.props.cResource[_loc3_] = base.props.cResource[_loc3_] * 3;
-						_loc3_++;
+			var level_max:int = 0;
+			var monster_code:String = null;
+			var level_index:int = 0;
+			var max_stat_index:int = 0;
+			if(MapRoomManager.instance.isInMapRoom3) {
+				for(monster_code in _originalCreatures) {
+					level_max = int(_originalCreatures[monster_code].props.cResource.length);
+					level_index = 0;
+					while(level_index < level_max) {
+						_mainCreatures[monster_code].props.cResource[level_index] = _originalCreatures[monster_code].props.cResource[level_index] * 3;
+						level_index++;
 					}
 
-					// --- cTime ---
-					_loc1_ = int(base.props.cTime.length);
-					_loc3_ = 0;
-					while (_loc3_ < _loc1_) {
-						target.props.cTime[_loc3_] = base.props.cTime[_loc3_] * 3;
-						_loc3_++;
+					level_max = int(_originalCreatures[monster_code].props.cTime.length);
+					level_index = 0;
+					while(level_index < level_max) {
+						_mainCreatures[monster_code].props.cTime[level_index] = _originalCreatures[monster_code].props.cTime[level_index] * 3;
+						level_index++;
 					}
 
-					// --- hResource ---
-					if (target.props.hResource) {
-						_loc1_ = int(target.props.hResource.length);
-						_loc6_ = base.props.cResource.length - 1;
-
-						_loc3_ = 0;
-						while (_loc3_ < _loc1_) {
-							var idx:int = _loc3_ < _loc6_ ? _loc3_ : _loc6_;
-							target.props.hResource[_loc3_] = base.props.cResource[idx] * 0.75;
-							_loc3_++;
+					if(_originalCreatures[monster_code].props.hResource){
+						level_max = int(_originalCreatures[monster_code].props.hResource.length);
+						max_stat_index = _originalCreatures[monster_code].props.cResource.length - 1;
+						level_index = 0;
+						while(level_index < level_max){
+							_mainCreatures[monster_code].props.hResource[level_index] = 0.25 * _mainCreatures[monster_code].props.cResource[level_index < max_stat_index ? level_index : max_stat_index];
+							level_index++;
 						}
 
-						// --- hTime ---
-						_loc1_ = int(target.props.hTime.length);
-						_loc6_ = base.props.cTime.length - 1;
-
-						_loc3_ = 0;
-						while (_loc3_ < _loc1_) {
-							idx = _loc3_ < _loc6_ ? _loc3_ : _loc6_;
-							target.props.hTime[_loc3_] = base.props.cTime[idx] * 0.75;
-							_loc3_++;
+						level_max = int(_originalCreatures[monster_code].props.hTime.length);
+						max_stat_index = _originalCreatures[monster_code].props.cTime.length - 1;
+						level_index = 0;
+						while(level_index < level_max){
+							_mainCreatures[monster_code].props.hTime[level_index] = 0.25 * _mainCreatures[monster_code].props.cTime[level_index < max_stat_index ? level_index : max_stat_index];
+							level_index++;
 						}
 					}
 				}

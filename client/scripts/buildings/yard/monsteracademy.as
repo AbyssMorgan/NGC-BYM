@@ -26,7 +26,7 @@ package buildings.yard {
 				{"r1":new SecNum(50000000), "r2":new SecNum(50000000), "r3":new SecNum(50000000), "r4":new SecNum(0), "time":new SecNum(86400 * 3), "re":[[14,1,12],[8,1,4],[12,1,2]]}, // Level 6
 				{"r1":new SecNum(100000000), "r2":new SecNum(100000000), "r3":new SecNum(100000000), "r4":new SecNum(0), "time":new SecNum(86400 * 4), "re":[[14,1,14],[8,1,4],[12,1,2]]}, // Level 7
 				{"r1":new SecNum(250000000), "r2":new SecNum(250000000), "r3":new SecNum(250000000), "r4":new SecNum(0), "time":new SecNum(86400 * 5), "re":[[14,1,16],[8,1,4],[12,1,2]]}, // Level 8
-				{"r1":new SecNum(500000000), "r2":new SecNum(500000000), "r3":new SecNum(500000000), "r4":new SecNum(0), "time":new SecNum(86400 * 6), "re":[[14,1,16],[8,1,4],[12,1,2]]}, // Level 9
+				{"r1":new SecNum(500000000), "r2":new SecNum(500000000), "r3":new SecNum(500000000), "r4":new SecNum(0), "time":new SecNum(86400 * 6), "re":[[14,1,18],[8,1,4],[12,1,2]]}, // Level 9
 			],
 			"imageData":{
 				"baseurl":"buildings/academy/",

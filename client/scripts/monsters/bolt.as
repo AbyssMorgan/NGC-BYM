@@ -41,6 +41,15 @@ package monsters {
 				],
 				"health":[
 					150, // Level 1
+					160, // Level 2
+					170, // Level 3
+					180, // Level 4
+					190, // Level 5
+					200, // Level 6
+					210, // Level 7
+					220, // Level 8
+					230, // Level 9
+					250, // Level 10
 				],
 				"damage":[
 					15, // Level 1

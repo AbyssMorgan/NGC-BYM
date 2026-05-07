@@ -106,25 +106,25 @@ package buildings.inferno {
 				6, // Level 20
 			],
 			"produce":[
-				2, // Level 1
-				4, // Level 2
-				7, // Level 3
-				11, // Level 4
-				16, // Level 5
-				22, // Level 6
-				29, // Level 7
-				37, // Level 8
-				46, // Level 9
-				56, // Level 10
-				100, // Level 11
-				200, // Level 12
-				360, // Level 13
-				720, // Level 14
-				1450, // Level 15
-				2200, // Level 16
-				2900, // Level 17
-				4500, // Level 18
-				9000, // Level 19
+				20, // Level 1
+				44, // Level 2
+				70, // Level 3
+				110, // Level 4
+				160, // Level 5
+				220, // Level 6
+				290, // Level 7
+				370, // Level 8
+				460, // Level 9
+				560, // Level 10
+				1000, // Level 11
+				2000, // Level 12
+				3000, // Level 13
+				4000, // Level 14
+				5000, // Level 15
+				7000, // Level 16
+				9000, // Level 17
+				11000, // Level 18
+				13000, // Level 19
 				15000, // Level 20
 			],
 			"cycleTime":[

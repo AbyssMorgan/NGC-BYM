@@ -152,10 +152,10 @@ package {
 				"C10": (new crabatron()).DATA,        // Level 10
 				"C11": (new projectx()).DATA,         // Level 10
 				"C12": (new dave()).DATA,             // Level 10
-				"C13": (new wormzer()).DATA,          // Level 6
-				"C14": (new teratorn()).DATA,         // Level 6
+				"C13": (new wormzer()).DATA,          // Level 10
+				"C14": (new teratorn()).DATA,         // Level 10
 				"C15": (new zafreeti()).DATA,         // Level 5
-				"C16": (new vorg()).DATA,             // Level 5
+				"C16": (new vorg()).DATA,             // Level 10
 				"C17": (new slimeattikus()).DATA,     // Level 6
 				"C18": (new slimeattikusmini()).DATA, // Level 6
 				"C19": (new rezghul()).DATA,          // Level 10

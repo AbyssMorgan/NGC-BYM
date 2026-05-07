@@ -9,7 +9,7 @@ package monsters {
 			"page":4,
 			"order":2,
 			"resource":4096000,
-			"time":62 * 60 * 60,
+			"time":3600 * 62,
 			"level":4,
 			"name":"#m_wormzer#",
 			"classType":Wormzer,
@@ -21,13 +21,17 @@ package monsters {
 				[8192000, 3600 * 72], // Level 4
 				[8192000, 3600 * 96], // Level 5
 				[12800000, 3600 * 128], // Level 6
+				[25600000, 3600 * 160], // Level 7
+				[51200000, 3600 * 192], // Level 8
+				[102400000, 3600 * 224], // Level 9
+				[204800000, 3600 * 256], // Level 10
 			],
 			"movement":"burrow",
 			"pathing":"direct",
 			"props":{
 				"speed":[
-					3, // Level 1
-					4, // Level 2
+					3.00, // Level 1
+					4.00, // Level 2
 				],
 				"health":[
 					600, // Level 1
@@ -36,6 +40,10 @@ package monsters {
 					1300, // Level 4
 					1500, // Level 5
 					1700, // Level 6
+					1900, // Level 7
+					2100, // Level 8
+					2300, // Level 9
+					2500, // Level 10
 				],
 				"damage":[
 					300, // Level 1
@@ -44,6 +52,10 @@ package monsters {
 					600, // Level 4
 					650, // Level 5
 					700, // Level 6
+					750, // Level 7
+					800, // Level 8
+					850, // Level 9
+					900, // Level 10
 				],
 				"cTime":[
 					1384, // Level 1
@@ -55,6 +67,10 @@ package monsters {
 					35000, // Level 4
 					40000, // Level 5
 					47500, // Level 6
+					95000, // Level 7
+					190000, // Level 8
+					380000, // Level 9
+					760000, // Level 10
 				],
 				"cStorage":[
 					70, // Level 1
@@ -73,6 +89,10 @@ package monsters {
 					10500, // Level 4
 					12000, // Level 5
 					14250, // Level 6
+					28500, // Level 7
+					57000, // Level 8
+					114000, // Level 9
+					228000, // Level 10
 				]
 			}
 		};

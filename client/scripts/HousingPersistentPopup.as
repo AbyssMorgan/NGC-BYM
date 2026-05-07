@@ -550,15 +550,7 @@ package
             for(_loc2_ in this._juiceList)
             {
                _loc3_ += this._juiceList[_loc2_];
-               _loc7_ = 0.6;
-               if(GLOBAL._bJuicer._lvl.Get() == 2)
-               {
-                  _loc7_ = 0.8;
-               }
-               if(GLOBAL._bJuicer._lvl.Get() == 3)
-               {
-                  _loc7_ = 1;
-               }
+               _loc7_ = 0.2;
                _loc4_ += Math.ceil(CREATURES.GetProperty(_loc2_,"cResource") * _loc7_) * this._juiceList[_loc2_];
             }
             if(_loc3_ > 0)
@@ -707,15 +699,7 @@ package
                _loc13_++;
             }
          }
-         _loc11_ = 0.6;
-         if(GLOBAL._bJuicer._lvl.Get() == 2)
-         {
-            _loc11_ = 0.8;
-         }
-         else if(GLOBAL._bJuicer._lvl.Get() == 3)
-         {
-            _loc11_ = 1;
-         }
+         _loc11_ = 0.2;
          _loc6_ = Math.floor(_loc11_ * _loc6_);
          if((Boolean(_loc5_ = Math.floor(_loc11_ * _loc5_))) && Boolean(_loc6_))
          {

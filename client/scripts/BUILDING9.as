@@ -61,15 +61,7 @@ package
       {
          var _loc4_:* = param2.substr(0,2) == "IC";
          this._blend += param1;
-         var _loc5_:Number = 0.6;
-         if(_lvl.Get() == 2)
-         {
-            _loc5_ = 0.8;
-         }
-         else if(_lvl.Get() == 3)
-         {
-            _loc5_ = 1;
-         }
+         var _loc5_:Number = 0.2;
          this._guardian = 0;
          BASE.Fund(4,Math.ceil(CREATURES.GetProperty(param2,"cResource") * _loc5_ * param3),false,null,param2.substr(0,1) == "I" && !BASE.isInfernoMainYardOrOutpost);
          this._lastType = _loc4_ ? 8 : 4;

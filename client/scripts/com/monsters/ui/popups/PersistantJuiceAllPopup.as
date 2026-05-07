@@ -25,16 +25,8 @@ package com.monsters.ui.popups
          this.m_fpCloseCallback = param3;
          this.m_strCreepId = param1;
          this.m_nTotalCreeps = GLOBAL.player.monsterListByID(this.m_strCreepId).numHousedCreeps;
-         var _loc4_:Number = 0.6;
+         var _loc4_:Number = 0.2;
          var _loc5_:int = 0;
-         if(GLOBAL._bJuicer._lvl.Get() == 2)
-         {
-            _loc4_ = 0.8;
-         }
-         else if(GLOBAL._bJuicer._lvl.Get() == 3)
-         {
-            _loc4_ = 1;
-         }
          _loc5_ += Math.ceil(CREATURES.GetProperty(this.m_strCreepId,"cResource") * _loc4_) * this.m_nTotalCreeps;
          mcFrame.Setup(true,this.cancelCallback);
          btnCancel.Setup(KEYS.Get("mh_cancel_btn"));

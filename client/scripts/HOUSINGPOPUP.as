@@ -303,15 +303,7 @@ package
                if(!_loc6_)
                {
                   _loc3_ += this._juiceList[_loc2_];
-                  _loc14_ = 0.6;
-                  if(GLOBAL._bJuicer._lvl.Get() == 2)
-                  {
-                     _loc14_ = 0.8;
-                  }
-                  if(GLOBAL._bJuicer._lvl.Get() == 3)
-                  {
-                     _loc14_ = 1;
-                  }
+                  _loc14_ = 0.2;
                   _loc4_ += Math.ceil(CREATURES.GetProperty(_loc2_,"cResource") * _loc14_) * this._juiceList[_loc2_];
                }
             }

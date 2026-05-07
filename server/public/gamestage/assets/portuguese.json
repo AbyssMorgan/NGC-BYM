@@ -1535,7 +1535,7 @@
     "bomb_million_long": "Milhões",
     "bomb_target_buildings": "Selecione as construções alvo",
     "bomb_target_monsters": "Selecione monstros alvo",
-    "bomb_pu_description": "Enfurece seus monstros. <b>Velocidade: <\/b>#v1#<br><b>Armadura: <\/b>#v2#<br><b>Tempo: <\/b>#v3# segundos",
+    "bomb_pu_description": "Enfurece seus monstros. <b>Velocidade: <\/b>#v1#<br><b>Redução de danos: <\/b>#v2#<br><b>Tempo: <\/b>#v3# segundos",
     "bomb_catapult_level": "Requer nível #v1# da Catapulta",
     "bomb_need_resources": "Não há #v1# suficientes",
     "bomb_cost_resources": "<b>Custo:<\/b>#v1# #v2#",

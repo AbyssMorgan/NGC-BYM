@@ -1535,7 +1535,7 @@
     "bomb_million_long": "Million",
     "bomb_target_buildings": "Sélectionner les bâtiments à cibler",
     "bomb_target_monsters": "Sélectionnez les monstres à cibler",
-    "bomb_pu_description": "Enrage tes monstres. <b>Vitesse : <\/b>#v1#<br><b>Armure : <\/b>#v2#<br><b>Temps : <\/b>#v3# secondes",
+    "bomb_pu_description": "Enrage tes monstres. <b>Vitesse : <\/b>#v1#<br><b>Réduction des dommages : <\/b>#v2#<br><b>Temps : <\/b>#v3# secondes",
     "bomb_catapult_level": "Nécessite une catapulte de niveau #v1#",
     "bomb_need_resources": "Pas assez de #v1#",
     "bomb_cost_resources": "<b>Coût :<\/b>#v1# #v2#",

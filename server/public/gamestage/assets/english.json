@@ -1544,7 +1544,7 @@
     "bomb_million_long": "Million",
     "bomb_target_buildings": "Select target buildings",
     "bomb_target_monsters": "Select target monsters",
-    "bomb_pu_description": "Enrages your monsters. <b>Speed: <\/b>#v1#<br><b>Armor: <\/b>#v2#<br><b>Time: <\/b>#v3# seconds",
+    "bomb_pu_description": "Enrages your monsters. <b>Speed: <\/b>#v1#<br><b>Damage reduction: <\/b>#v2#<br><b>Time: <\/b>#v3# seconds",
     "bomb_catapult_level": "Requires a level #v1# Catapult",
     "bomb_need_resources": "Not enough #v1#",
     "bomb_cost_resources": "<b>Cost:<\/b>#v1# #v2#",

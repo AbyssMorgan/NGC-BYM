@@ -22,13 +22,13 @@ package com.monsters.monsters.components.abilities
       
       private var m_sourceCreatureID:String;
       
-      public function Enrage(param1:Number, param2:Number, param3:String = null)
+      public function Enrage(speed:Number, armor:Number, creature_id:String = null)
       {
          super();
-         this.m_moveSpeedModifier = new MultiplicationPropertyModifier(param1);
-         this.m_attackSpeedModifier = new DivisionModifier(param1);
-         this.m_armorModifier = new ArmorPropertyModifier(param2);
-         this.m_sourceCreatureID = param3;
+         this.m_moveSpeedModifier = new MultiplicationPropertyModifier(speed);
+         this.m_attackSpeedModifier = new DivisionModifier(speed);
+         this.m_armorModifier = new ArmorPropertyModifier(armor);
+         this.m_sourceCreatureID = creature_id;
 
          var activeEvent:* = SPECIALEVENT.getActiveSpecialEvent();
          if (activeEvent.active && this.m_sourceCreatureID != "G3") {

@@ -58,32 +58,32 @@ package com.monsters.frontPage
          NEWS.addMessage(new News05YardPlanner2());
          NEWS.addMessage(new News06TownHallLevel10());
          // PROMOTIONS.addMessage(new Maproom3OptInPopup()); Disable Map Room 3 popups
-         PROMOTIONS.addMessage(new Promo01DaveClub());
-         PROMOTIONS.addMessage(new Promo02DaveClub());
-         PROMOTIONS.addMessage(new Promo03RecapturedGorgo());
-         PROMOTIONS.addMessage(new Promo04RecapturedDrull());
-         PROMOTIONS.addMessage(new Promo05RecapturedFomor());
-         PROMOTIONS.addMessage(new Promo06RecapturedKorath());
+        //  PROMOTIONS.addMessage(new Promo01DaveClub());
+        //  PROMOTIONS.addMessage(new Promo02DaveClub());
+        //  PROMOTIONS.addMessage(new Promo03RecapturedGorgo());
+        //  PROMOTIONS.addMessage(new Promo04RecapturedDrull());
+        //  PROMOTIONS.addMessage(new Promo05RecapturedFomor());
+        //  PROMOTIONS.addMessage(new Promo06RecapturedKorath());
          UNDERUSED_FEATURES.addMessage(new Underused01MonsterLocker());
          UNDERUSED_FEATURES.addMessage(new Underused02Academy());
-         WHATS_AVAILABLE.addMessage(new BuildTree_01_SniperCannonTowers());
-         WHATS_AVAILABLE.addMessage(new BuildTree_02_RadioTower());
-         WHATS_AVAILABLE.addMessage(new BuildTree_03_MonsterLocker());
-         WHATS_AVAILABLE.addMessage(new BuildTree_04_BoobyTraps());
-         WHATS_AVAILABLE.addMessage(new BuildTree_05_Blocks());
-         WHATS_AVAILABLE.addMessage(new BuildTree_06_Catapult());
-         WHATS_AVAILABLE.addMessage(new BuildTree_07_StoneBlocks());
-         WHATS_AVAILABLE.addMessage(new BuildTree_08_MonsterAcademy());
-         WHATS_AVAILABLE.addMessage(new BuildTree_09_HCC());
-         WHATS_AVAILABLE.addMessage(new BuildTree_10_YardPlanner());
-         WHATS_AVAILABLE.addMessage(new BuildTree_11_MonsterJuicer());
-         WHATS_AVAILABLE.addMessage(new BuildTree_12_MonsterBunker());
-         WHATS_AVAILABLE.addMessage(new BuildTree_13_MonsterBaiter());
-         WHATS_AVAILABLE.addMessage(new BuildTree_14_TeslaTower());
-         WHATS_AVAILABLE.addMessage(new BuildTree_15_LaserTower());
-         WHATS_AVAILABLE.addMessage(new BuildTree_16_AerialTower());
-         WHATS_AVAILABLE.addMessage(new BuildTree_18_MetalBlocks());
-         WHATS_AVAILABLE.addMessage(new BuildTree_19_ChampionChamber());
+        //  WHATS_AVAILABLE.addMessage(new BuildTree_01_SniperCannonTowers());
+        //  WHATS_AVAILABLE.addMessage(new BuildTree_02_RadioTower());
+        //  WHATS_AVAILABLE.addMessage(new BuildTree_03_MonsterLocker());
+        //  WHATS_AVAILABLE.addMessage(new BuildTree_04_BoobyTraps());
+        //  WHATS_AVAILABLE.addMessage(new BuildTree_05_Blocks());
+        //  WHATS_AVAILABLE.addMessage(new BuildTree_06_Catapult());
+        //  WHATS_AVAILABLE.addMessage(new BuildTree_07_StoneBlocks());
+        //  WHATS_AVAILABLE.addMessage(new BuildTree_08_MonsterAcademy());
+        //  WHATS_AVAILABLE.addMessage(new BuildTree_09_HCC());
+        //  WHATS_AVAILABLE.addMessage(new BuildTree_10_YardPlanner());
+        //  WHATS_AVAILABLE.addMessage(new BuildTree_11_MonsterJuicer());
+        //  WHATS_AVAILABLE.addMessage(new BuildTree_12_MonsterBunker());
+        //  WHATS_AVAILABLE.addMessage(new BuildTree_13_MonsterBaiter());
+        //  WHATS_AVAILABLE.addMessage(new BuildTree_14_TeslaTower());
+        //  WHATS_AVAILABLE.addMessage(new BuildTree_15_LaserTower());
+        //  WHATS_AVAILABLE.addMessage(new BuildTree_16_AerialTower());
+        //  WHATS_AVAILABLE.addMessage(new BuildTree_18_MetalBlocks());
+        //  WHATS_AVAILABLE.addMessage(new BuildTree_19_ChampionChamber());
       }
       
       public static function addCategories() : void

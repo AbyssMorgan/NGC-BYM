@@ -7,17 +7,17 @@ package monsters {
 			"page":1,
 			"order":2,
 			"resource":4800,
-			"time":14400,
+			"time":3600 * 4,
 			"level":1,
 			"name":"#m_zagnoid#",
 			"description":"mi_Zagnoid_desc",
 			"stream":["mi_Zagnoid_stream","mi_Zagnoid_streambody","quests/zagnoid.v3.png"],
 			"trainingCosts":[
-				[4800, 14400], // Level 2
-				[9600, 28800], // Level 3
-				[14400, 43200], // Level 4
-				[19200, 57600], // Level 5
-				[28800, 86400], // Level 6
+				[4800, 3600 * 4], // Level 2
+				[9600, 3600 * 8], // Level 3
+				[14400, 3600 * 12], // Level 4
+				[19200, 3600 * 16], // Level 5
+				[28800, 3600 * 24], // Level 6
 			],
 			"props":{
 				"speed":[

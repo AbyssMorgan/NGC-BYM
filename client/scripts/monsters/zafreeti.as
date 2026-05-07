@@ -25,18 +25,56 @@ package monsters {
 			"pathing":"direct",
 			"antiHeal":true,
 			"props":{
-				"range":[150],
-				"attackDelay":[20],
-				"speed":[0.75,0.8,0.85,0.9,0.95],
-				"health":[8000],
-				"damage":[-400,-550,-700,-850,-1000],
-				"cTime":[2400],
-				"cResource":[120000,180000,256000,324000,468000],
-				"cStorage":[200],
-				"bucket":[200],
+				"range":[
+					150, // Level 1
+				],
+				"attackDelay":[
+					20, // Level 1
+				],
+				"speed":[
+					0.75, // Level 1
+					0.80, // Level 2
+					0.85, // Level 3
+					0.90, // Level 4
+					0.95, // Level 5
+				],
+				"health":[
+					8000, // Level 1
+				],
+				"damage":[
+					-400, // Level 1
+					-550, // Level 2
+					-700, // Level 3
+					-850, // Level 4
+					-1000, // Level 5
+				],
+				"cTime":[
+					2400,
+				],
+				"cResource":[
+					120000, // Level 1
+					180000, // Level 2
+					256000, // Level 3
+					324000, // Level 4
+					468000, // Level 5
+				],
+				"cStorage":[
+					200, // Level 1
+				],
+				"bucket":[
+					200, // Level 1
+				],
 				"targetGroup":[5],
-				"hTime":[720],
-				"hResource":[36000,54000,76800,97200,140400]
+				"hTime":[
+					720, // Level 1
+				],
+				"hResource":[
+					36000, // Level 1
+					54000, // Level 2
+					76800, // Level 3
+					97200, // Level 4
+					140400, // Level 5
+				]
 			}
 		};
 		

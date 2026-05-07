@@ -7,17 +7,17 @@ package monsters {
 			"page":3,
 			"order":2,
 			"resource":1228800,
-			"time":86400,
+			"time":3600 * 24,
 			"level":3,
 			"name":"#m_grokus#",
 			"description":"mi_Grokus_desc",
 			"stream":["mi_Grokus_stream","mi_Grokus_streambody","quests/grokus.png"],
 			"trainingCosts":[
-				[1228800, 86400], // Level 2
-				[2457600, 172800], // Level 3
-				[3686400, 259200], // Level 4
-				[4915200, 345600], // Level 5
-				[7372800, 518400], // Level 6
+				[1228800, 3600 * 24], // Level 2
+				[2457600, 3600 * 48], // Level 3
+				[3686400, 3600 * 72], // Level 4
+				[4915200, 3600 * 96], // Level 5
+				[7372800, 3600 * 144], // Level 6
 			],
 			"props":{
 				"speed":[

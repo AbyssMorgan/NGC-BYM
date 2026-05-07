@@ -7,7 +7,7 @@ package monsters {
 			"page":0,
 			"order":0,
 			"resource":2048000,
-			"time":36 * 60 * 60,
+			"time":3600 * 36,
 			"level":3,
 			"name":"#m_slimeattikusmini#",
 			"description":"mon_slimeattikusminidesc",

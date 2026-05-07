@@ -9,18 +9,18 @@ package monsters {
 			"page":3,
 			"order":3,
 			"resource":2457600,
-			"time":172800,
+			"time":3600 * 48,
 			"level":3,
 			"name":"#m_sabnox#",
 			"classType":Sabnox,
 			"description":"mi_Sabnox_desc",
 			"stream":["mi_Sabnox_stream","mi_Sabnox_streambody","quests/sabnox.png"],
 			"trainingCosts":[
-				[2457600, 172800], // Level 2
-				[4915200, 345600], // Level 3
-				[7372800, 518400], // Level 4
-				[9830400, 691200], // Level 5
-				[14745600, 1036800], // Level 6
+				[2457600, 3600 * 48], // Level 2
+				[4915200, 3600 * 96], // Level 3
+				[7372800, 3600 * 144], // Level 4
+				[9830400, 3600 * 192], // Level 5
+				[14745600, 3600 * 288], // Level 6
 			],
 			"props":{
 				"range":[

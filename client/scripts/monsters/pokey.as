@@ -7,7 +7,7 @@ package monsters {
 			"page":1,
 			"order":1,
 			"resource":4000,
-			"time":10 * 60,
+			"time":60 * 10,
 			"level":1,
 			"name":"#m_pokey#",
 			"description":"mon_pokeydesc",

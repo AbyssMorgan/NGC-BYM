@@ -7,17 +7,17 @@ package monsters {
 			"page":2,
 			"order":2,
 			"resource":76800,
-			"time":64800,
+			"time":3600 * 18,
 			"level":2,
 			"name":"#m_malphus#",
 			"description":"mi_Malphus_desc",
 			"stream":["mi_Malphus_stream","mi_Malphus_streambody","quests/malphus.png"],
 			"trainingCosts":[
-				[76800, 64800], // Level 2
-				[153600, 129600], // Level 3
-				[230400, 194400], // Level 4
-				[307200, 259200], // Level 5
-				[460800, 388800], // Level 6
+				[76800, 3600 * 18], // Level 2
+				[153600, 3600 * 36], // Level 3
+				[230400, 3600 * 54], // Level 4
+				[307200, 3600 * 72], // Level 5
+				[460800, 3600 * 108], // Level 6
 			],
 			"movement":"jump",
 			"props":{

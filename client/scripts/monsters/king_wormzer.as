@@ -9,7 +9,7 @@ package monsters {
 			"page":4,
 			"order":1,
 			"resource":4915200,
-			"time":259200,
+			"time":3600 * 72,
 			"level":4,
 			"name":"#m_king_wormzer#",
 			"shortName":"#m_k_wormzer#",
@@ -17,11 +17,11 @@ package monsters {
 			"description":"mi_King_Wormzer_desc",
 			"stream":["mi_King_Wormzer_stream","mi_King_Wormzer_streambody","quests/king_wormzer.png"],
 			"trainingCosts":[
-				[4915200, 259200], // Level 2
-				[7268000, 518400], // Level 3
-				[9296000, 777600], // Level 4
-				[13624000, 1036800], // Level 5
-				[19248000, 1555200], // Level 6
+				[4915200, 3600 * 72], // Level 2
+				[7268000, 3600 * 144], // Level 3
+				[9296000, 3600 * 216], // Level 4
+				[13624000, 3600 * 288], // Level 5
+				[19248000, 3600 * 432], // Level 6
 			],
 			"movement":"burrow",
 			"pathing":"direct",

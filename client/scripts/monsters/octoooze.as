@@ -7,7 +7,7 @@ package monsters {
 			"page":1,
 			"order":2,
 			"resource":8000,
-			"time":1 * 60 * 60,
+			"time":3600 * 1,
 			"level":1,
 			"name":"#m_octoooze#",
 			"description":"mon_octooozedesc",
@@ -21,6 +21,7 @@ package monsters {
 				[128000, 3600 * 30], // Level 7
 				[256000, 3600 * 36], // Level 8
 				[512000, 3600 * 42], // Level 9
+				[1024000, 3600 * 48], // Level 10
 			],
 			"props":{
 				"speed":[
@@ -35,7 +36,8 @@ package monsters {
 					1800, // Level 6
 					2000, // Level 7
 					2200, // Level 8
-					2500, // Level 9
+					2400, // Level 9
+					2600, // Level 10
 				],
 				"damage":[
 					15, // Level 1
@@ -44,9 +46,10 @@ package monsters {
 					25, // Level 4
 					30, // Level 5
 					35, // Level 6
-					40, // Level 7
-					45, // Level 8
-					50, // Level 9
+					45, // Level 7
+					55, // Level 8
+					65, // Level 9
+					80, // Level 10
 				],
 				"cTime":[
 					15, // Level 1
@@ -59,9 +62,10 @@ package monsters {
 					1800, // Level 4
 					2100, // Level 5
 					2500, // Level 6
-					3000, // Level 7
-					3600, // Level 8
-					4300, // Level 9
+					5000, // Level 7
+					10000, // Level 8
+					20000, // Level 9
+					40000, // Level 10
 				],
 				"cStorage":[
 					10, // Level 1
@@ -80,9 +84,10 @@ package monsters {
 					540, // Level 4
 					630, // Level 5
 					750, // Level 6
-					800, // Level 7
-					900, // Level 8
-					1000, // Level 9
+					1500, // Level 7
+					3000, // Level 8
+					6000, // Level 9
+					12000, // Level 10
 				]
 			}
 		};

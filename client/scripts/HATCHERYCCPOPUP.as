@@ -116,7 +116,11 @@ package
                if(Boolean(GLOBAL.player.m_upgrades[_loc1_]) && GLOBAL.player.m_upgrades[_loc1_].level > 1)
                {
                   _loc12_.visible = true;
-                  _loc12_.tLevel.htmlText = "<b>" + GLOBAL.player.m_upgrades[_loc1_].level + "</b>";
+				  if(GLOBAL.player.m_upgrades[_loc1_].level < 10){
+					_loc12_.tLevel.htmlText = "<b>" + GLOBAL.player.m_upgrades[_loc1_].level + "</b>";
+				  } else {
+					_loc12_.tLevel.htmlText = "<b>X</b>";
+				  }
                }
                else
                {

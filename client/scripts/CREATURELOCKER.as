@@ -140,34 +140,34 @@ package {
 			_open = false;
 
 			_originalCreatures = {
-				"C1": (new pokey()).DATA,
-				"C2": (new octoooze()).DATA,
-				"C3": (new bolt()).DATA,
-				"C4": (new fink()).DATA,
-				"C5": (new eyera()).DATA,
-				"C6": (new ichi()).DATA,
-				"C7": (new bandito()).DATA,           // Level 6
-				"C8": (new fang()).DATA,              // Level 6
-				"C9": (new brain()).DATA,             // Level 6
-				"C10": (new crabatron()).DATA,        // Level 6
-				"C11": (new projectx()).DATA,         // Level 6
-				"C12": (new dave()).DATA,             // Level 6
+				"C1": (new pokey()).DATA,             // Level 10
+				"C2": (new octoooze()).DATA,          // Level 10
+				"C3": (new bolt()).DATA,              // Level 10
+				"C4": (new fink()).DATA,              // Level 10
+				"C5": (new eyera()).DATA,             // Level 10
+				"C6": (new ichi()).DATA,              // Level 10
+				"C7": (new bandito()).DATA,           // Level 10
+				"C8": (new fang()).DATA,              // Level 10
+				"C9": (new brain()).DATA,             // Level 10
+				"C10": (new crabatron()).DATA,        // Level 10
+				"C11": (new projectx()).DATA,         // Level 10
+				"C12": (new dave()).DATA,             // Level 10
 				"C13": (new wormzer()).DATA,          // Level 6
 				"C14": (new teratorn()).DATA,         // Level 6
-				"C15": (new zafreeti()).DATA,
-				"C16": (new vorg()).DATA,
+				"C15": (new zafreeti()).DATA,         // Level 5
+				"C16": (new vorg()).DATA,             // Level 5
 				"C17": (new slimeattikus()).DATA,     // Level 6
 				"C18": (new slimeattikusmini()).DATA, // Level 6
-				"C19": (new rezghul()).DATA,          // Level 6
+				"C19": (new rezghul()).DATA,          // Level 10
 				"IC1": (new spurtz()).DATA,           // Level 6
 				"IC2": (new zagnoid()).DATA,          // Level 6
 				"IC4": (new valgos()).DATA,           // Level 6
 				"IC3": (new malphus()).DATA,          // Level 6
-				"IC5": (new balthazar()).DATA,        // Level 6
+				"IC5": (new balthazar()).DATA,        // Level 10
 				"IC6": (new grokus()).DATA,           // Level 6
 				"IC7": (new sabnox()).DATA,           // Level 6
 				"IC8": (new king_wormzer()).DATA,     // Level 6
-				"C200": (new ailooter1()).DATA        // Level 6
+				"C200": (new ailooter1()).DATA        // Level 1
 			};
 
 			_mainCreatures = {

@@ -9,7 +9,7 @@ package monsters {
 			"page":3,
 			"order":1,
 			"resource":1024000,
-			"time":52 * 60 * 60,
+			"time":3600 * 52,
 			"level":3,
 			"name":"#m_brain#",
 			"classType":Brain,
@@ -21,6 +21,10 @@ package monsters {
 				[2870000, 3600 * 20], // Level 4
 				[4500000, 3600 * 40], // Level 5
 				[6000000, 3600 * 60], // Level 6
+				[12000000, 3600 * 80], // Level 7
+				[24000000, 3600 * 100], // Level 8
+				[48000000, 3600 * 120], // Level 9
+				[96000000, 3600 * 140], // Level 10
 			],
 			"props":{
 				"speed":[
@@ -30,6 +34,10 @@ package monsters {
 					2.00, // Level 4
 					2.10, // Level 5
 					2.20, // Level 6
+					2.25, // Level 7
+					2.30, // Level 8
+					2.35, // Level 9
+					2.40, // Level 10
 				],
 				"health":[
 					600, // Level 1
@@ -38,6 +46,10 @@ package monsters {
 					800, // Level 4
 					1100, // Level 5
 					1400, // Level 6
+					1700, // Level 7
+					2000, // Level 8
+					2300, // Level 9
+					2600, // Level 10
 				],
 				"damage":[
 					100, // Level 1
@@ -46,6 +58,10 @@ package monsters {
 					250, // Level 4
 					300, // Level 5
 					350, // Level 6
+					400, // Level 7
+					450, // Level 8
+					500, // Level 9
+					550, // Level 10
 				],
 				"cTime":[
 					342, // Level 1
@@ -57,6 +73,10 @@ package monsters {
 					35000, // Level 4
 					50000, // Level 5
 					75000, // Level 6
+					150000, // Level 7
+					300000, // Level 8
+					600000, // Level 9
+					1200000, // Level 10
 				],
 				"cStorage":[
 					30, // Level 1
@@ -75,6 +95,10 @@ package monsters {
 					10500, // Level 4
 					15000, // Level 5
 					22500, // Level 6
+					45000, // Level 7
+					90000, // Level 8
+					180000, // Level 9
+					360000, // Level 10
 				]
 			}
 		};

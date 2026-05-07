@@ -9,7 +9,7 @@ package monsters {
 			"page":2,
 			"order":1,
 			"resource":64000,
-			"time":8 * 60 * 60,
+			"time":3600 * 8,
 			"level":2,
 			"name":"#m_eyera#",
 			"classType":Eyera,
@@ -24,6 +24,7 @@ package monsters {
 				[1024000, 3600 * 48], // Level 7
 				[2048000, 3600 * 60], // Level 8
 				[4096000, 3600 * 72], // Level 9
+				[8192000, 3600 * 84], // Level 10
 			],
 			"props":{
 				"speed":[
@@ -36,6 +37,7 @@ package monsters {
 					3.20, // Level 7
 					3.40, // Level 8
 					3.60, // Level 9
+					3.70, // Level 10
 				],
 				"health":[
 					600, // Level 1
@@ -47,6 +49,7 @@ package monsters {
 					2800, // Level 7
 					3200, // Level 8
 					3600, // Level 9
+					3800, // Level 10
 				],
 				"damage":[
 					4000, // Level 1
@@ -58,6 +61,7 @@ package monsters {
 					28000, // Level 7
 					32000, // Level 8
 					36000, // Level 9
+					40000, // Level 10
 				],
 				"cTime":[
 					1500, // Level 1
@@ -69,9 +73,10 @@ package monsters {
 					45000, // Level 4
 					60000, // Level 5
 					80000, // Level 6
-					100000, // Level 7
-					200000, // Level 8
-					300000, // Level 9
+					160000, // Level 7
+					320000, // Level 8
+					640000, // Level 9
+					1280000, // Level 10
 				],
 				"cStorage":[
 					60, // Level 1
@@ -83,14 +88,6 @@ package monsters {
 				"explode":[1],
 				"hTime":[
 					450, // Level 1
-					450, // Level 2
-					450, // Level 3
-					450, // Level 4
-					450, // Level 5
-					450, // Level 6
-					450, // Level 7
-					450, // Level 8
-					450, // Level 9
 				],
 				"hResource":[
 					1500, // Level 1
@@ -99,9 +96,10 @@ package monsters {
 					13500, // Level 4
 					18000, // Level 5
 					24000, // Level 6
-					30000, // Level 7
-					36000, // Level 8
-					42000, // Level 9
+					48000, // Level 7
+					96000, // Level 8
+					192000, // Level 9
+					384000, // Level 10
 				]
 			}
 		};

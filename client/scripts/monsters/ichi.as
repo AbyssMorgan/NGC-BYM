@@ -7,7 +7,7 @@ package monsters {
 			"page":2,
 			"order":2,
 			"resource":128000,
-			"time":16 * 60 * 60,
+			"time":3600 * 16,
 			"level":2,
 			"name":"#m_ichi#",
 			"description":"mon_ichidesc",
@@ -21,6 +21,7 @@ package monsters {
 				[1640000, 3600 * 96], // Level 7
 				[3280000, 3600 * 120], // Level 8
 				[6560000, 3600 * 144], // Level 9
+				[13120000, 3600 * 168], // Level 10
 			],
 			"props":{
 				"speed":[
@@ -35,7 +36,8 @@ package monsters {
 					2800, // Level 6
 					3100, // Level 7
 					3400, // Level 8
-					3800, // Level 9
+					3700, // Level 9
+					4000, // Level 10
 				],
 				"damage":[
 					50, // Level 1
@@ -47,6 +49,7 @@ package monsters {
 					125, // Level 7
 					140, // Level 8
 					160, // Level 9
+					180, // Level 10
 				],
 				"cTime":[
 					100, // Level 1
@@ -60,9 +63,10 @@ package monsters {
 					11200, // Level 4
 					16000, // Level 5
 					24000, // Level 6
-					28000, // Level 7
-					32000, // Level 8
-					40000, // Level 9
+					48000, // Level 7
+					96000, // Level 8
+					192000, // Level 9
+					384000, // Level 10
 				],
 				"cStorage":[
 					20, // Level 1
@@ -83,9 +87,10 @@ package monsters {
 					3360, // Level 4
 					4800, // Level 5
 					7200, // Level 6
-					9600, // Level 7
-					12000, // Level 8
-					15000, // Level 9
+					14400, // Level 7
+					28800, // Level 8
+					57600, // Level 9
+					115200, // Level 10
 				]
 			}
 		};

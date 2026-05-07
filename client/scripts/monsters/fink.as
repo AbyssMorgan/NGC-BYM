@@ -9,7 +9,7 @@ package monsters {
 			"page":1,
 			"order":4,
 			"resource":32000,
-			"time":4 * 60 * 60,
+			"time":3600 * 4,
 			"level":1,
 			"name":"#m_fink#",
 			"classType":Fink,
@@ -24,6 +24,7 @@ package monsters {
 				[320000, 3600 * 36], // Level 7
 				[640000, 3600 * 42], // Level 8
 				[1280000, 3600 * 50], // Level 9
+				[2560000, 3600 * 58], // Level 10
 			],
 			"props":{
 				"speed":[
@@ -39,6 +40,7 @@ package monsters {
 					260, // Level 7
 					280, // Level 8
 					300, // Level 9
+					320, // Level 10
 				],
 				"damage":[
 					300, // Level 1
@@ -50,6 +52,7 @@ package monsters {
 					580, // Level 7
 					650, // Level 8
 					730, // Level 9
+					800, // Level 10
 				],
 				"cTime":[
 					100, // Level 1
@@ -61,6 +64,7 @@ package monsters {
 					90, // Level 7
 					90, // Level 8
 					80, // Level 9
+					70, // Level 10
 				],
 				"cResource":[
 					1500, // Level 1
@@ -72,6 +76,7 @@ package monsters {
 					25000, // Level 7
 					50000, // Level 8
 					100000, // Level 9
+					200000, // Level 10
 				],
 				"cStorage":[
 					20, // Level 1
@@ -90,6 +95,7 @@ package monsters {
 					27, // Level 7
 					27, // Level 8
 					25, // Level 9
+					25, // Level 10
 				],
 				"hResource":[
 					450, // Level 1
@@ -101,6 +107,7 @@ package monsters {
 					5000, // Level 7
 					7000, // Level 8
 					10000, // Level 9
+					20000, // Level 10
 				]
 			}
 		};

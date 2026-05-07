@@ -32,6 +32,14 @@ package monsters {
 				"speed":[
 					3.00, // Level 1
 					4.00, // Level 2
+					4.00, // Level 3
+					4.00, // Level 4
+					4.00, // Level 5
+					4.00, // Level 6
+					4.25, // Level 7
+					4.50, // Level 8
+					4.75, // Level 9
+					5.00, // Level 10
 				],
 				"health":[
 					600, // Level 1

@@ -76,11 +76,6 @@ package
             }
             BASE._resources["r" + _loc4_.id].Add(-_loc2_);
             BASE._hpResources["r" + _loc4_.id] -= _loc2_;
-            if (GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD || GLOBAL.mode == GLOBAL.e_BASE_MODE.IBUILD)
-            {
-               GLOBAL._resources["r" + _loc4_.id].Add(-_loc2_);
-               GLOBAL._hpResources["r" + _loc4_.id] = GLOBAL._resources["r" + _loc4_.id].Get();
-            }
             if(BASE._deltaResources["r" + _loc4_.id])
             {
                BASE._deltaResources["r" + _loc4_.id].Add(-_loc2_);
@@ -163,11 +158,6 @@ package
                   var attackerLoot:int = loot_value;
                   BASE._resources["r" + building_id].Add(-loot_value);
                   BASE._hpResources["r" + building_id] -= loot_value;
-                  if (GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD || GLOBAL.mode == GLOBAL.e_BASE_MODE.IBUILD)
-                  {
-                     GLOBAL._resources["r" + building_id].Add(-loot_value);
-                     GLOBAL._hpResources["r" + building_id] = GLOBAL._resources["r" + building_id].Get();
-                  }
                   if(BASE._deltaResources["r" + building_id])
                   {
                      BASE._deltaResources["r" + building_id].Add(-loot_value);
@@ -180,18 +170,6 @@ package
                   }
                   BASE._deltaResources.dirty = true;
                   BASE._hpDeltaResources.dirty = true;
-                  if(MapRoomManager.instance.isInMapRoom2 && GLOBAL._currentCell && GLOBAL._currentCell.baseType == EnumYardType.OUTPOST)
-                  {
-                     attackerLoot = int(attackerLoot * 0.5);
-                  }
-                  else
-                  {
-                     attackerLoot = int(attackerLoot * 0.9);
-                  }
-                  if(GLOBAL.mode == GLOBAL.e_BASE_MODE.WMATTACK || GLOBAL.mode == GLOBAL.e_BASE_MODE.IWMATTACK || GLOBAL.mode == "wmattack")
-                  {
-                     attackerLoot = int(attackerLoot / 5);
-                  }
                   ATTACK.Loot(building_id,attackerLoot,_mc.x,int(_mc.y + 20 - building_id * 10),12);
                }
                building_id++;

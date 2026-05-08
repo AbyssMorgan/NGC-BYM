@@ -40,7 +40,7 @@ export const logAttackViolation = async (user: User, message: string) => {
   const incident = await getOrCreateReport(user);
 
   incident.attackViolations += 1;
-  user.banned = true;
+//   user.banned = true;
 
   const newReport: ReportEntry = {
     message: `ATTACK VIOLATION: ${message}`,

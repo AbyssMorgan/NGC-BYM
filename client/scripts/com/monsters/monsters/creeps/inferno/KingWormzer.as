@@ -24,10 +24,10 @@ package com.monsters.monsters.creeps.inferno
          //{
          //   _loc13_ |= Targeting.k_TARGETS_DEFENDERS;
          //}
-         if(!MapRoomManager.instance.isInMapRoom3)
-         {
+        //  if(!MapRoomManager.instance.isInMapRoom3)
+        //  {
             addComponent(new AOEDamageOnAttackOncePerTarget(100,_loc13_,4));
-         }
+        //  }
       }
    }
 }

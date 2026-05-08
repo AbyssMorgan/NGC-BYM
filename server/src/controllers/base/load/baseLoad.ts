@@ -208,14 +208,13 @@ export const baseLoad: KoaController = async (ctx) => {
 
 			const strongholdBonus = (strongholds: Save[]) => {
 				let bonus = 0;
-
-				for (const { level, cell } of strongholds) {
+				for(const { level, cell } of strongholds){
 					const distance = cell && getHexDistance(cell.x, cell.y, targetCell.x, targetCell.y);
-						
-					if (distance && distance <= STRUCTURE_RANGE[EnumYardType.STRONGHOLD][level])
+					if(distance && distance <= STRUCTURE_RANGE[EnumYardType.STRONGHOLD][level]){
 						bonus += STRONGHOLD_BONUSES[level];
+					}
 				}
-				return bonus;
+				return Math.min(bonus, 30);
 			};
 
 			totalStrongholdBonus = strongholdBonus(attackerStrongholds);

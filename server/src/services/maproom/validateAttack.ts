@@ -5,7 +5,6 @@ import { monsterStats, mr3MonsterStats } from "../../game-data/stats/monsterStat
 import type { AttackData } from "../../schemas/AttackSchema.js";
 import { type ChampionProps, championStats } from "../../game-data/stats/championStats.js";
 import { MapRoomVersion } from "../../enums/MapRoom.js";
-import { Env } from "../../enums/Env.js";
 
 // TODO:
 // Validate monster count from flinger
@@ -50,14 +49,11 @@ export const validateAttack = async (user: User, attackData: AttackData, mapVers
       const monsterPropsKeys = Object.keys(expectedProps) as Array<keyof typeof expectedProps>;
 
       for (const key of monsterPropsKeys) {
-        const received = stats[key];
-        const expected = expectedProps[key];
-
-        if (!isMonsterStatsEqual(received, expected)) {
-          const receivedStr = JSON.stringify(received);
-          const expectedStr = JSON.stringify(expected);
+        if (!isMonsterStatsEqual(stats[key], expectedProps[key])) {
+          var receivedStr = JSON.stringify(stats[key]);
+          var expectedStr = JSON.stringify(expectedProps[key]);
           
-          const message = `${id} stat '${key}' error. Client sent: ${receivedStr} | Server has: ${expectedStr}`;
+          var message = `${id} stat '${key}' error. Client sent: ${receivedStr} | Server has: ${expectedStr}`;
           await logAttackViolation(user, message);
           throw loadFailureErr();
         }

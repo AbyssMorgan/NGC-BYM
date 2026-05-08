@@ -3878,10 +3878,10 @@ package
             _attacksModified = false;
          }
          saveData["effects"] = EFFECTS._effectsJSON;
-         saveData["empirevalue"] = Number(0);
+         saveData["empirevalue"] = 0;
+		 CalcBaseValue();
          saveData["inventory"] = STORE.InventoryExport();
          saveData["achieved"] = JSON.stringify(ACHIEVEMENTS.Report());
-         CalcBaseValue();
          var frontpageData:Object = FrontPageHandler.export();
          if (frontpageData)
          {

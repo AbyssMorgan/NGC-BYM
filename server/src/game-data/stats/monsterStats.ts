@@ -2650,29 +2650,61 @@ export const monsterStats: MonsterStatsMap = {
 export const mr3MonsterStats = generateMr3MonsterStats(monsterStats);
 
 function cloneMonsterProps(props: MonsterProps): MonsterProps {
-	return {
+
+	const cloned: MonsterProps = {
 		speed: props.speed.slice(),
 		health: props.health.slice(),
 		damage: props.damage.slice(),
-
-		range: props.range?.slice(),
-		zombieHealthMultiplier: props.zombieHealthMultiplier?.slice(),
-		zombieSpeedMultiplier: props.zombieSpeedMultiplier?.slice(),
-		zombieDamageMultiplier: props.zombieDamageMultiplier?.slice(),
-		resurrectCooldown: props.resurrectCooldown?.slice(),
-		splits: props.splits?.slice(),
-		explode: props.explode?.slice(),
-		attackDelay: props.attackDelay?.slice(),
-
 		cTime: props.cTime.slice(),
 		cResource: props.cResource.slice(),
 		cStorage: props.cStorage.slice(),
 		bucket: props.bucket.slice(),
 		targetGroup: props.targetGroup.slice(),
-
-		hTime: props.hTime?.slice(),
-		hResource: props.hResource?.slice(),
 	};
+
+	// optional props
+
+	if (props.range) {
+		cloned.range = props.range.slice();
+	}
+
+	if (props.zombieHealthMultiplier) {
+		cloned.zombieHealthMultiplier = props.zombieHealthMultiplier.slice();
+	}
+
+	if (props.zombieSpeedMultiplier) {
+		cloned.zombieSpeedMultiplier = props.zombieSpeedMultiplier.slice();
+	}
+
+	if (props.zombieDamageMultiplier) {
+		cloned.zombieDamageMultiplier = props.zombieDamageMultiplier.slice();
+	}
+
+	if (props.resurrectCooldown) {
+		cloned.resurrectCooldown = props.resurrectCooldown.slice();
+	}
+
+	if (props.splits) {
+		cloned.splits = props.splits.slice();
+	}
+
+	if (props.explode) {
+		cloned.explode = props.explode.slice();
+	}
+
+	if (props.attackDelay) {
+		cloned.attackDelay = props.attackDelay.slice();
+	}
+
+	if (props.hTime) {
+		cloned.hTime = props.hTime.slice();
+	}
+
+	if (props.hResource) {
+		cloned.hResource = props.hResource.slice();
+	}
+
+	return cloned;
 }
 
 export function generateMr3MonsterStats(monster_stats: MonsterStatsMap): MR3MonsterStatsMap {

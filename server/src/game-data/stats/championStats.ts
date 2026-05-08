@@ -44,6 +44,7 @@ export const championStats: ChampionStatsMap = {
 			speed: [1, 1.2, 1.4, 1.6, 1.8, 2],
 			health: [40000, 80000, 120000, 140000, 160000, 200000],
 			healtime:[
+				3600 / 2,
 				7200 / 2,
 				14400 / 2,
 				28800 / 2,
@@ -79,6 +80,7 @@ export const championStats: ChampionStatsMap = {
 			speed: [2, 2.2, 2.5, 2.8, 3.2, 3.6],
 			health: [12000, 20000, 36000, 42000, 52000, 60000],
 			healtime:[
+				3600 / 2,
 				7200 / 2,
 				14400 / 2,
 				28800 / 2,
@@ -114,6 +116,7 @@ export const championStats: ChampionStatsMap = {
 			speed: [1.2, 1.4, 2, 2.1, 2.2, 2.3],
 			health: [15000, 17500, 20000, 22500, 25000, 40000],
 			healtime:[
+				3600 / 2,
 				7200 / 2,
 				14400 / 2,
 				28800 / 2,
@@ -149,6 +152,7 @@ export const championStats: ChampionStatsMap = {
 			speed: [1.4, 1.6, 1.8, 2, 2.3, 2.5],
 			health: [28000, 62000, 96000, 120000, 144000, 175000],
 			healtime:[
+				3600 / 2,
 				7200 / 2,
 				14400 / 2,
 				28800 / 2,

@@ -4204,9 +4204,9 @@ package
                      if (serverData.resources.hasOwnProperty("r" + resourceIndex))
                      {
                         resourceDelta = 0;
-                        if (_savedDeltaResources && _savedDeltaResources["r" + resourceIndex])
+                        if (BASE._deltaResources && BASE._deltaResources["r" + resourceIndex])
                         {
-                           resourceDelta = int(_savedDeltaResources["r" + resourceIndex].Get());
+                           resourceDelta = int(BASE._deltaResources["r" + resourceIndex].Get());
                         }
                         _resources["r" + resourceIndex].Set(serverData.resources["r" + resourceIndex] + resourceDelta);
                         _hpResources["r" + resourceIndex] = _resources["r" + resourceIndex].Get();

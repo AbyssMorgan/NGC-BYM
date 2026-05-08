@@ -168,8 +168,9 @@ export const baseLoad: KoaController = async (ctx) => {
 					const accumulated = Math.floor(totalResourceRate * elapsed);
 
 					if (accumulated > 0 && userSave.resources) {
-						for (const resource of ["r1", "r2", "r3", "r4"])
+						for (const resource of ["r1", "r2", "r3", "r4"]){
 							userSave.resources[resource] += accumulated;
+						}
 					}
 				}
 

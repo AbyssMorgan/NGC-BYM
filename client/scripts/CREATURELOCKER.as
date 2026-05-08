@@ -164,9 +164,9 @@ package {
 				"IC4": (new valgos()).DATA,           // Level 10
 				"IC3": (new malphus()).DATA,          // Level 10
 				"IC5": (new balthazar()).DATA,        // Level 10
-				"IC6": (new grokus()).DATA,           // Level 6
-				"IC7": (new sabnox()).DATA,           // Level 6
-				"IC8": (new king_wormzer()).DATA,     // Level 6
+				"IC6": (new grokus()).DATA,           // Level 10
+				"IC7": (new sabnox()).DATA,           // Level 10
+				"IC8": (new king_wormzer()).DATA,     // Level 10
 				"C200": (new ailooter1()).DATA        // Level 1
 			};
 

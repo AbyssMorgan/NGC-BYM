@@ -21,6 +21,10 @@ package monsters {
 				[7372800, 3600 * 144], // Level 4
 				[9830400, 3600 * 192], // Level 5
 				[14745600, 3600 * 288], // Level 6
+				[29491200, 3600 * 336], // Level 7
+				[58982400, 3600 * 384], // Level 8
+				[117964800, 3600 * 432], // Level 9
+				[235929600, 3600 * 480], // Level 10
 			],
 			"props":{
 				"range":[
@@ -33,6 +37,10 @@ package monsters {
 					2.00, // Level 4
 					2.10, // Level 5
 					2.20, // Level 6
+					2.30, // Level 7
+					2.40, // Level 8
+					2.50, // Level 9
+					2.60, // Level 10
 				],
 				"health":[
 					1120, // Level 1
@@ -41,6 +49,10 @@ package monsters {
 					1650, // Level 4
 					1900, // Level 5
 					2200, // Level 6
+					2500, // Level 7
+					2800, // Level 8
+					3100, // Level 9
+					3500, // Level 10
 				],
 				"damage":[
 					700, // Level 1
@@ -49,6 +61,10 @@ package monsters {
 					1075, // Level 4
 					1200, // Level 5
 					1350, // Level 6
+					1500, // Level 7
+					1650, // Level 8
+					1800, // Level 9
+					2000, // Level 10
 				],
 				"cTime":[
 					1384, // Level 1
@@ -57,6 +73,10 @@ package monsters {
 					1384, // Level 4
 					1384, // Level 5
 					1384, // Level 6
+					1384, // Level 7
+					1384, // Level 8
+					1384, // Level 9
+					1384, // Level 10
 				],
 				"cResource":[
 					60000, // Level 1
@@ -65,6 +85,10 @@ package monsters {
 					200000, // Level 4
 					330000, // Level 5
 					450000, // Level 6
+					900000, // Level 7
+					1800000, // Level 8
+					3600000, // Level 9
+					7200000, // Level 10
 				],
 				"cStorage":[
 					80, // Level 1
@@ -83,6 +107,10 @@ package monsters {
 					60000, // Level 4
 					99000, // Level 5
 					135000, // Level 6
+					270000, // Level 7
+					540000, // Level 8
+					1080000, // Level 9
+					2160000, // Level 10
 				]
 			}
 		};

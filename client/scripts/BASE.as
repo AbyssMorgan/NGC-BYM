@@ -688,7 +688,7 @@ package
          var baseType:int = int(_loadBase[4]);
          var cellId:int = int(_loadBase[5]);
          _loadBase = [];
-         GLOBAL.Setup(baseMode);
+         GLOBAL.Setup(baseMode, baseType, _baseLevel);
          Load(GLOBAL._baseURL2, userId, baseId, baseType, cellId);
       }
 

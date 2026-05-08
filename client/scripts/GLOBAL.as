@@ -815,7 +815,7 @@ package
          }
       }
 
-      public static function Setup(baseMode:String = "build"):void
+      public static function Setup(baseMode:String = "build", baseType:int = 0, baseLevel:int = 0):void
       {
          player = new Player();
          _loadmode = baseMode;
@@ -916,23 +916,56 @@ package
          switch (_loadmode)
          {
             case e_BASE_MODE.IATTACK:
-            case e_BASE_MODE.IWMATTACK:
-               SOUNDS.PlayMusic("musiciattack");
-               break;
+            case e_BASE_MODE.IWMATTACK: {
+				SOUNDS.PlayMusic("musiciattack");
+				break;
+			}
             case e_BASE_MODE.IBUILD:
             case e_BASE_MODE.IHELP:
-            case e_BASE_MODE.IVIEW:
-               SOUNDS.PlayMusic("musicibuild");
-               break;
+            case e_BASE_MODE.IVIEW: {
+				SOUNDS.PlayMusic("musicibuild");
+				break;
+			}
             case e_BASE_MODE.ATTACK:
-            case e_BASE_MODE.WMATTACK:
-               SOUNDS.PlayMusic("musicattack");
-               break;
+            case e_BASE_MODE.WMATTACK: {
+				// if(baseType == EnumYardType.RESOURCE || baseType == EnumYardType.STRONGHOLD || baseType == EnumYardType.FORTIFICATION){
+				// 	switch(baseLevel){
+				// 		case 50: {
+				// 			SOUNDS.PlayMusic("op_50");
+				// 			break;
+				// 		}
+				// 		case 60: {
+				// 			SOUNDS.PlayMusic("op_60");
+				// 			break;
+				// 		}
+				// 		case 70: {
+				// 			SOUNDS.PlayMusic("op_70");
+				// 			break;
+				// 		}
+				// 		case 80: {
+				// 			SOUNDS.PlayMusic("op_80");
+				// 			break;
+				// 		}
+				// 		case 90: {
+				// 			SOUNDS.PlayMusic("op_90");
+				// 			break;
+				// 		}
+				// 		case 100: {
+				// 			SOUNDS.PlayMusic("op_100");
+				// 			break;
+				// 		}
+				// 	}
+				// }
+				SOUNDS.PlayMusic("musicattack");
+            	break;
+			}
             case e_BASE_MODE.BUILD:
             case e_BASE_MODE.HELP:
             case e_BASE_MODE.VIEW:
-            default:
-               SOUNDS.PlayMusic("musicbuild");
+            default: {
+				SOUNDS.PlayMusic("musicbuild");
+				break;
+			} 
          }
          _render = false;
          _creepCount = 0;

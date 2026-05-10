@@ -96,7 +96,7 @@ package
             {
                _loc2_ *= 0.9;
             }
-            if(GLOBAL.mode == GLOBAL.e_BASE_MODE.WMATTACK || GLOBAL.mode == GLOBAL.e_BASE_MODE.IWMATTACK || GLOBAL.mode == "wmattack")
+            if(GLOBAL.mode == "wmattack")
             {
                _loc2_ = int(_loc2_ / 5);
             }
@@ -155,7 +155,6 @@ package
                }
                if(loot_value > 0)
                {
-                  var attackerLoot:int = loot_value;
                   BASE._resources["r" + building_id].Add(-loot_value);
                   BASE._hpResources["r" + building_id] -= loot_value;
                   if(BASE._deltaResources["r" + building_id])
@@ -170,7 +169,7 @@ package
                   }
                   BASE._deltaResources.dirty = true;
                   BASE._hpDeltaResources.dirty = true;
-                  ATTACK.Loot(building_id,attackerLoot,_mc.x,int(_mc.y + 20 - building_id * 10),12);
+                  ATTACK.Loot(building_id,loot_value,_mc.x,int(_mc.y + 20 - building_id * 10),12);
                }
                building_id++;
             }

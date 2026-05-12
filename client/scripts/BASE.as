@@ -50,6 +50,7 @@ package
    import flash.system.System;
    import flash.text.TextField;
    import flash.utils.Dictionary;
+   import flash.utils.Timer;
    import flash.utils.getTimer;
    import gs.*;
    import gs.easing.*;
@@ -125,6 +126,8 @@ package
       public static var _pageErrors:int;
 
       public static var _loadTime:int;
+      
+      private static var _processingTimer:Timer;
 
       public static var _loading:Boolean;
 
@@ -2265,10 +2268,34 @@ package
          }
          _timer = getTimer();
          HideFootprints();
-         GLOBAL._ROOT.addEventListener(Event.ENTER_FRAME, ProcessB);
+         startProcessingTimer();
+      }
+      
+      private static function startProcessingTimer():void
+      {
+         if(_processingTimer)
+         {
+            _processingTimer.stop();
+            _processingTimer.removeEventListener(TimerEvent.TIMER,ProcessB);
+            _processingTimer = null;
+         }
+         _processingTimer = new Timer(1);
+         _processingTimer.addEventListener(TimerEvent.TIMER,ProcessB,false,0,true);
+         _processingTimer.start();
+      }
+      
+      private static function stopProcessingTimer():void
+      {
+         if(!_processingTimer)
+         {
+            return;
+         }
+         _processingTimer.stop();
+         _processingTimer.removeEventListener(TimerEvent.TIMER,ProcessB);
+         _processingTimer = null;
       }
 
-      public static function ProcessB(param1:Event):void
+      public static function ProcessB(param1:TimerEvent):void
       {
          var _loc2_:int = getTimer();
          while (getTimer() - _loc2_ < 10)
@@ -2278,7 +2305,7 @@ package
          if (_lastProcessed >= _currentTime)
          {
             _currentTime += (getTimer() - _timer) / 1000;
-            GLOBAL._ROOT.removeEventListener(Event.ENTER_FRAME, ProcessB);
+            stopProcessingTimer();
             GLOBAL.t = _currentTime;
             ProcessD();
          }

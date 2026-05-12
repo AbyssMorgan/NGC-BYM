@@ -7,8 +7,10 @@ package com.monsters.effects
    import flash.display.DisplayObject;
    import flash.display.MovieClip;
    import flash.events.Event;
+   import flash.events.TimerEvent;
    import flash.geom.Point;
    import flash.geom.Rectangle;
+   import flash.utils.Timer;
    import gs.TweenLite;
    import gs.easing.Sine;
    
@@ -45,6 +47,7 @@ package com.monsters.effects
       private var m_resourceId:int;
       
       private var m_rasterData:RasterData;
+      private var _animTimer:Timer;
       
       private var m_rasterPt:Point;
       
@@ -226,7 +229,7 @@ package com.monsters.effects
                }
                _loc1_.x = -40;
                _loc1_.y = -50;
-               this.mc.addEventListener(Event.ENTER_FRAME,this.Anim);
+               this.startAnimTimer();
                break;
             default:
                this.variation = int(Math.random() * 4);
@@ -242,7 +245,7 @@ package com.monsters.effects
                }
                _loc1_.x = -40;
                _loc1_.y = -26;
-               this.mc.addEventListener(Event.ENTER_FRAME,this.Anim);
+               this.startAnimTimer();
          }
          if(!this.m_cleared)
          {
@@ -268,7 +271,7 @@ package com.monsters.effects
          {
             if(this.animframe == 20)
             {
-               this.mc.removeEventListener(Event.ENTER_FRAME,this.Anim);
+               this.stopAnimTimer();
                this.m_bomb.RemoveParticle(this.m_id);
             }
             else
@@ -284,7 +287,7 @@ package com.monsters.effects
          }
          else if(this.animframe == 14)
          {
-            this.mc.removeEventListener(Event.ENTER_FRAME,this.Anim);
+            this.stopAnimTimer();
             this.m_bomb.RemoveParticle(this.m_id);
          }
          else
@@ -318,9 +321,9 @@ package com.monsters.effects
             this.m_rasterData = null;
             this.m_rasterPt = null;
          }
-         if(this.mc)
+         if(this._animTimer)
          {
-            this.mc.removeEventListener(Event.ENTER_FRAME, this.Anim);
+            this.stopAnimTimer();
          }
          if(this.bmd_frame)
          {
@@ -334,6 +337,28 @@ package com.monsters.effects
          this.m_position = null;
          this.m_bomb = null;
          this.m_cleared = true;
+      }
+      
+      private function startAnimTimer() : void
+      {
+         if(this._animTimer)
+         {
+            this.stopAnimTimer();
+         }
+         this._animTimer = new Timer(GLOBAL.tickFastInterval);
+         this._animTimer.addEventListener(TimerEvent.TIMER,this.Anim,false,0,true);
+         this._animTimer.start();
+      }
+      
+      private function stopAnimTimer() : void
+      {
+         if(!this._animTimer)
+         {
+            return;
+         }
+         this._animTimer.stop();
+         this._animTimer.removeEventListener(TimerEvent.TIMER,this.Anim);
+         this._animTimer = null;
       }
    }
 }

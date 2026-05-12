@@ -3,14 +3,18 @@ package
    import flash.display.MovieClip;
    import flash.events.Event;
    import flash.events.MouseEvent;
+   import flash.events.TimerEvent;
    import flash.geom.Point;
    import flash.geom.Rectangle;
+   import flash.utils.Timer;
    
    public class BUILDING27 extends BFOUNDATION
    {
       
       public static var _exists:Boolean = false;
        
+      private var _catchupTimer:Timer;
+      private var _spewTimer:Timer;
       
       public var _spewNumber:int = 0;
       
@@ -32,7 +36,7 @@ package
          {
             if (GLOBAL._catchup)
             {
-               GLOBAL._ROOT.addEventListener(Event.ENTER_FRAME, onCatchupEnd);
+               this.startCatchupTimer();
             }
             else
             {
@@ -40,12 +44,35 @@ package
             }
          }
       }
-
-      private function onCatchupEnd(e:Event) : void
+      
+      private function startCatchupTimer():void
+      {
+         if(this._catchupTimer)
+         {
+            this._catchupTimer.stop();
+            this._catchupTimer = null;
+         }
+         this._catchupTimer = new Timer(GLOBAL.tickFastInterval);
+         this._catchupTimer.addEventListener(TimerEvent.TIMER,this.onCatchupTimer,false,0,true);
+         this._catchupTimer.start();
+      }
+      
+      private function stopCatchupTimer():void
+      {
+         if(!this._catchupTimer)
+         {
+            return;
+         }
+         this._catchupTimer.stop();
+         this._catchupTimer.removeEventListener(TimerEvent.TIMER,this.onCatchupTimer);
+         this._catchupTimer = null;
+      }
+      
+      private function onCatchupTimer(param1:TimerEvent):void
       {
          if (!GLOBAL._catchup)
          {
-            GLOBAL._ROOT.removeEventListener(Event.ENTER_FRAME, onCatchupEnd);
+            this.stopCatchupTimer();
             Render();
          }
       }
@@ -59,7 +86,7 @@ package
          this._clicked = false;
       }
       
-      public function Spew(param1:Event = null) : void
+      public function Spew(param1:TimerEvent = null) : void
       {
          var _loc4_:int = 0;
          ++this._spewNumber;
@@ -95,8 +122,31 @@ package
          }
          if(this._spewNumber >= 1110)
          {
-            _mc.removeEventListener(Event.ENTER_FRAME,this.Spew);
+            this.stopSpewTimer();
          }
+      }
+      
+      private function startSpewTimer():void
+      {
+         if(this._spewTimer)
+         {
+            this._spewTimer.stop();
+            this._spewTimer = null;
+         }
+         this._spewTimer = new Timer(GLOBAL.tickFastInterval);
+         this._spewTimer.addEventListener(TimerEvent.TIMER,this.Spew,false,0,true);
+         this._spewTimer.start();
+      }
+      
+      private function stopSpewTimer():void
+      {
+         if(!this._spewTimer)
+         {
+            return;
+         }
+         this._spewTimer.stop();
+         this._spewTimer.removeEventListener(TimerEvent.TIMER,this.Spew);
+         this._spewTimer = null;
       }
       
       public function StartAttack(param1:MouseEvent = null) : void
@@ -117,8 +167,8 @@ package
                POPUPS.Next();
                UI2.Show("warning");
                UI2._warning.Update(KEYS.Get("ai_trojan_trap"));
-               _mc.addEventListener(Event.ENTER_FRAME,this.Spew);
-               this.Spew();
+               this.startSpewTimer();
+               this.Spew(null);
                CUSTOMATTACKS._started = true;
                WMATTACK._isAI = false;
                WMATTACK._inProgress = true;

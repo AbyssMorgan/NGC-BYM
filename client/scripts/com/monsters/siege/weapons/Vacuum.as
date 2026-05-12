@@ -3,6 +3,8 @@ package com.monsters.siege.weapons
    import com.monsters.siege.SiegeWeaponProperty;
    import com.monsters.siege.SiegeWeapons;
    import flash.events.Event;
+   import flash.events.TimerEvent;
+   import flash.utils.Timer;
    import flash.utils.getQualifiedClassName;
    
    public class Vacuum extends SiegeWeapon implements IDurable
@@ -18,6 +20,7 @@ package com.monsters.siege.weapons
        
       
       public var hose:VacuumHose;
+      private var _vacuumTimer:Timer;
       
       public function Vacuum()
       {
@@ -217,11 +220,19 @@ package com.monsters.siege.weapons
             return;
          }
          this.hose = new VacuumHose(_loc3_,this.durability,this.lootBonus);
-         this.hose._vacuum.addEventListener(Event.ENTER_FRAME,this.onEnterFrame);
+         if(this._vacuumTimer)
+         {
+            this._vacuumTimer.stop();
+            this._vacuumTimer.removeEventListener(TimerEvent.TIMER,this.onTimer);
+            this._vacuumTimer = null;
+         }
+         this._vacuumTimer = new Timer(GLOBAL.tickFastInterval);
+         this._vacuumTimer.addEventListener(TimerEvent.TIMER,this.onTimer,false,0,true);
+         this._vacuumTimer.start();
          Vacuum.target;
       }
       
-      protected function onEnterFrame(param1:Event) : void
+      protected function onTimer(param1:TimerEvent) : void
       {
          if(this.hose)
          {
@@ -231,9 +242,14 @@ package com.monsters.siege.weapons
       
       override public function onDeactivation() : void
       {
+         if(this._vacuumTimer)
+         {
+            this._vacuumTimer.stop();
+            this._vacuumTimer.removeEventListener(TimerEvent.TIMER,this.onTimer);
+            this._vacuumTimer = null;
+         }
          if(this.hose)
          {
-            this.hose._vacuum.removeEventListener(Event.ENTER_FRAME,this.onEnterFrame);
             this.hose.RemoveVacuum();
          }
          this.hose = null;

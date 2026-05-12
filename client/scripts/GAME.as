@@ -118,7 +118,7 @@ package
          loaderInfo.uncaughtErrorEvents.addEventListener(UncaughtErrorEvent.UNCAUGHT_ERROR, this.uncaughtErrorThrown);
          setLauncherVars(loaderParams);
          SWFProfiler.init(stage, this);
-         Security.allowDomain("*");
+        //  Security.allowDomain("*");
          GLOBAL.init();
          GLOBAL._baseURL = urls._baseURL;
          GLOBAL._infBaseURL = urls.infbaseurl;
@@ -162,7 +162,7 @@ package
          {
             GLOBAL._openBase = null;
          }
-         addEventListener(Event.ENTER_FRAME, GLOBAL.TickFast);
+         GLOBAL.StartTickFastTimer();
 
          LOGIN.Login();
          stage.scaleMode = StageScaleMode.NO_SCALE;

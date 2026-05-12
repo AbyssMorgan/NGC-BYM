@@ -45,9 +45,9 @@ package com.monsters.dealspot
       public function DealSpot(param1:UI_TOP)
       {
          super();
-         var _loc2_:LoaderContext = new LoaderContext();
-         _loc2_.checkPolicyFile = true;
-         Security.allowDomain("*");
+        //  var _loc2_:LoaderContext = new LoaderContext();
+        //  _loc2_.checkPolicyFile = true;
+        //  Security.allowDomain("*");
          this._appIDVal = GLOBAL._appid;
          this._sidVal = GLOBAL._tpid;
          this._currIDVal = GLOBAL._currencyURL;

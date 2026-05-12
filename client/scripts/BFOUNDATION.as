@@ -1258,9 +1258,9 @@ package
                }
             }
             this._lastLoadedState = state;
-            if(Boolean(_mc) && _mc.hasEventListener(Event.ENTER_FRAME))
+            if(Boolean(_mc))
             {
-               _mc.removeEventListener(Event.ENTER_FRAME,this.TickFast);
+               GLOBAL.UnregisterTickFastTarget(this);
             }
             if(BYMConfig.instance.RENDERER_ON)
             {
@@ -1321,10 +1321,7 @@ package
                   this._animContainerBMD = new BitmapData(_loc16_.width,_loc16_.height,true,16777215);
                   this.setupImage(_RASTERDATA_ANIM,state,this.animContainer,imageDataB,this._animContainerBMD,int.MAX_VALUE);
                   this.AnimFrame(false);
-                  if(!_mc.hasEventListener(Event.ENTER_FRAME))
-                  {
-                     _mc.addEventListener(Event.ENTER_FRAME,this.TickFast);
-                  }
+                  GLOBAL.RegisterTickFastTarget(this);
                   if(!imageDataB[_IMAGE_NAMES[_RASTERDATA_TOP] + state])
                   {
                      this.setupHit(_RASTERDATA_ANIM,_loc9_,state);
@@ -1350,10 +1347,7 @@ package
                   if(this._animLoaded && this._anim2Loaded && this._anim3Loaded)
                   {
                      this.AnimFrame(false);
-                     if(!_mc.hasEventListener(Event.ENTER_FRAME))
-                     {
-                        _mc.addEventListener(Event.ENTER_FRAME,this.TickFast);
-                     }
+                     GLOBAL.RegisterTickFastTarget(this);
                   }
                   if(!imageDataB[_IMAGE_NAMES[_RASTERDATA_TOP] + state])
                   {
@@ -1380,10 +1374,7 @@ package
                   if(this._animLoaded && this._anim2Loaded && this._anim3Loaded)
                   {
                      this.AnimFrame(false);
-                     if(!_mc.hasEventListener(Event.ENTER_FRAME))
-                     {
-                        _mc.addEventListener(Event.ENTER_FRAME,this.TickFast);
-                     }
+                     GLOBAL.RegisterTickFastTarget(this);
                   }
                   if(!imageDataB[_IMAGE_NAMES[_RASTERDATA_TOP] + state])
                   {
@@ -1412,10 +1403,7 @@ package
                   this._animContainerBMD = new BitmapData(_loc16_.width,_loc16_.height,true,16777215);
                   this.setupImage(_RASTERDATA_ANIM,state,this.animContainer,imageDataB,this._animContainerBMD,int.MAX_VALUE);
                   this.AnimFrame(false);
-                  if(!_mc.hasEventListener(Event.ENTER_FRAME))
-                  {
-                     _mc.addEventListener(Event.ENTER_FRAME,this.TickFast);
-                  }
+                  GLOBAL.RegisterTickFastTarget(this);
                   if(!imageDataB[_IMAGE_NAMES[_RASTERDATA_TOP] + state])
                   {
                      this.setupHit(_RASTERDATA_ANIM,_loc9_,state);
@@ -3861,10 +3849,7 @@ package
          {
             _mc.removeEventListener(MouseEvent.MOUSE_DOWN,MAP.Click);
          }
-         if(_mc.hasEventListener(Event.ENTER_FRAME))
-         {
-            _mc.removeEventListener(Event.ENTER_FRAME,this.TickFast);
-         }
+         GLOBAL.UnregisterTickFastTarget(this);
          this.removeListeners();
          if(this._mcHit)
          {

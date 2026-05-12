@@ -129,7 +129,7 @@ package
          this._req.addEventListener(HTTPStatusEvent.HTTP_STATUS, this.setStatus);
          this._req.addEventListener(SecurityErrorEvent.SECURITY_ERROR, function(event:SecurityErrorEvent):*
             {
-               GLOBAL.initError = "Failed to connect to the server.";
+               GLOBAL.initError = "Failed to connect to the server." + event.text;
                GLOBAL.eventDispatcher.dispatchEvent(new Event("initError"));
                return;
             });

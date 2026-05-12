@@ -295,6 +295,12 @@ package
 
       public static const k_STAGE_FPS:uint = 24;
 
+      public static var tickFastInterval:int = int(1000 / k_STAGE_FPS);
+
+      private static var _tickFastTimer:Timer;
+	  
+      private static var _tickFastTargets:Array = [];
+
       public static var _fps:int;
 
       public static var _FPSframecount:int = 0;
@@ -484,7 +490,7 @@ package
                }
             }, function(error:IOErrorEvent):void
             {
-               GLOBAL.initError = "Failed to connect to the server.";
+               GLOBAL.initError = "Failed to connect to the server." + error.text;
                GLOBAL.eventDispatcher.dispatchEvent(new Event("initError"));
                return;
             });
@@ -1343,7 +1349,66 @@ package
          }
       }
 
-      public static function TickFast(param1:Event):void
+      public static function StartTickFastTimer():void
+      {
+         if (!_tickFastTimer)
+         {
+            _tickFastTimer = new Timer(tickFastInterval);
+            _tickFastTimer.addEventListener(TimerEvent.TIMER, OnTickFastTimer);
+         }
+         if (!_tickFastTimer.running)
+         {
+            _tickFastTimer.start();
+         }
+      }
+
+      public static function StopTickFastTimer():void
+      {
+         if (_tickFastTimer && _tickFastTimer.running)
+         {
+            _tickFastTimer.stop();
+         }
+      }
+
+      public static function RegisterTickFastTarget(param1:Object):void
+      {
+         if (_tickFastTargets.indexOf(param1) < 0)
+         {
+            _tickFastTargets.push(param1);
+         }
+      }
+
+      public static function UnregisterTickFastTarget(param1:Object):void
+      {
+         var _loc2_:int = _tickFastTargets.indexOf(param1);
+         if (_loc2_ >= 0)
+         {
+            _tickFastTargets.splice(_loc2_, 1);
+         }
+      }
+
+      private static function OnTickFastTimer(param1:TimerEvent):void
+      {
+         TickFast(param1);
+         var _loc2_:int = int(_tickFastTargets.length - 1);
+         while (_loc2_ >= 0)
+         {
+            var target:Object = _tickFastTargets[_loc2_];
+            if (target && target.TickFast != null)
+            {
+               try
+               {
+                  target.TickFast(param1);
+               }
+               catch (error:Error)
+               {
+               }
+            }
+            _loc2_--;
+         }
+      }
+
+      public static function TickFast(param1:Event = null):void
       {
          var _loc2_:int = 0;
          var _loc3_:Number = NaN;

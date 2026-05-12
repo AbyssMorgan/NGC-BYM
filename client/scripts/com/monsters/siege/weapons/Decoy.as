@@ -231,7 +231,7 @@ package com.monsters.siege.weapons
          this._loopingChannel = SOUNDS.Play(LOOPING_SOUND,0.8,0,int.MAX_VALUE);
          this.decoyGraphic.play();
          this.decoyGraphic.doesRepeat = true;
-         this._container.addEventListener(Event.ENTER_FRAME,this.onEnterFrame);
+         GLOBAL.RegisterTickFastTarget(this);
          this.ejectDefendersFromBunkers();
       }
       
@@ -327,6 +327,7 @@ package com.monsters.siege.weapons
          this.setDecoyGraphic(new SpriteSheetAnimation(SPRITES.GetSpriteDescriptor(DECOY_EXPLOSION) as SpriteData,33));
          this.decoyGraphic.play();
          this._isActive = false;
+         GLOBAL.UnregisterTickFastTarget(this);
       }
       
       private function setDecoyGraphic(param1:SpriteSheetAnimation) : void
@@ -342,7 +343,7 @@ package com.monsters.siege.weapons
          this._container.addChild(this.decoyGraphic);
       }
       
-      private function onEnterFrame(param1:Event) : void
+      public function TickFast(param1:Event = null) : void
       {
          this.decoyGraphic.update();
          if(this._isActive)
@@ -352,7 +353,7 @@ package com.monsters.siege.weapons
          }
          else if(this.decoyGraphic.currentFrame >= this.decoyGraphic.totalFrames)
          {
-            this._container.removeEventListener(Event.ENTER_FRAME,this.onEnterFrame);
+            GLOBAL.UnregisterTickFastTarget(this);
             if(this._container.parent)
             {
                this._container.parent.removeChild(this._container);

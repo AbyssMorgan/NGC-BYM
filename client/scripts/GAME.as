@@ -10,9 +10,13 @@ package
    import flash.events.UncaughtErrorEvent;
    import flash.external.ExternalInterface;
    import flash.geom.Rectangle;
-   import flash.system.Security;
    import flash.net.SharedObject;
    import com.monsters.external_interface.ExternalInterfaceManager;
+   import flash.display.Sprite;
+   import flash.events.Event;
+   import flash.utils.getTimer;
+
+
    public class GAME extends Sprite
    {
 
@@ -33,6 +37,12 @@ package
       private var _previousDistance:Number = 0;
 
       private var _scaleFactor:Number = 1;
+
+	  private var fpsCounter:int = 0;
+
+	  public static var clientFPS:int = 24;
+
+	  private var lastTime:int = 0;
 
       public function GAME()
       {
@@ -182,7 +192,26 @@ package
                GLOBAL._SCREENINIT = new Rectangle(0, 0, 760, 750);
             }
          }
+		 initFPSCounter();
       }
+
+	  public function initFPSCounter():void
+	  {
+	  	lastTime = getTimer();
+	  	addEventListener(Event.ENTER_FRAME, onEnterFrame);
+	  }
+
+	  private function onEnterFrame(event:Event):void
+	  {
+		fpsCounter++;
+		var currentTime:int = getTimer();
+		if (currentTime - lastTime >= 1000)
+		{
+			clientFPS = fpsCounter;
+			fpsCounter = 0;
+			lastTime = currentTime;
+		}
+	  }
 
       protected function uncaughtErrorThrown(param1:UncaughtErrorEvent):void
       {

@@ -2691,25 +2691,5 @@ package
          return _ROOT.stage.stageHeight;
       }
 
-      /**
-       * Configure animation FPS for specific sprite ID
-       * @param spriteID The sprite identifier (e.g., "C16", "C17", "C18")
-       * @param fps Target frames per second (default: 24, which matches k_STAGE_FPS)
-       * Example: GLOBAL.SetAnimationFPS("C16", 30); // Make Vorg wing flutter at 30 FPS
-       */
-      public static function SetAnimationFPS(spriteID:String, fps:int) : void
-      {
-         SPRITES.SetAnimationFPS(spriteID, fps);
-      }
-
-      /**
-       * Get current animation FPS for specific sprite ID
-       * @param spriteID The sprite identifier
-       * @return FPS value for the sprite
-       */
-      public static function GetAnimationFPS(spriteID:String) : int
-      {
-         return SPRITES.GetAnimationFPS(spriteID);
-      }
    }
 }

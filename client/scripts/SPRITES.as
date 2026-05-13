@@ -16,32 +16,6 @@ package {
 		public static var _sprites:Object;
 			
 		private static const DEFAULT_ANIMATION_FPS:int = 24;
-		
-		// Animation FPS configuration - controls speed of animated sprites
-		// Default: 24 FPS (game tick rate), override for specific sprites
-		private static var _animationFPS:Object = {
-			"C16": 30,	// vorg_anim - wing flutter animation
-			"C17": 30,	// slimeattikus_anim - animation speed
-			"C18": 30	// slimeattikusmini_anim - mini animation speed
-		};
-		
-		/**
-		 * Set animation FPS for specific sprite ID
-		 * @param spriteID The sprite identifier (e.g., "C16", "C17")
-		 * @param fps Target frames per second for this sprite's animation
-		 */
-		public static function SetAnimationFPS(spriteID:String, fps:int) : void {
-			_animationFPS[spriteID] = fps;
-		}
-		
-		/**
-		 * Get animation FPS for specific sprite ID
-		 * @param spriteID The sprite identifier
-		 * @return FPS value, or DEFAULT_ANIMATION_FPS if not configured
-		 */
-		public static function GetAnimationFPS(spriteID:String) : int {
-			return _animationFPS[spriteID] !== undefined ? int(_animationFPS[spriteID]) : DEFAULT_ANIMATION_FPS;
-		}
 
 		public static function Setup() : void {
 			_sprites = {};
@@ -154,6 +128,8 @@ package {
 			var _loc8_:int = 0;
 			var _loc9_:int = 0;
 			var _loc10_:int = 0;
+			var animation_speed:Number = DEFAULT_ANIMATION_FPS / GAME.clientFPS;
+			var scaled_param5:Number = param5 * animation_speed;
 			if(!GLOBAL._render)
 			{
 				return -1;
@@ -168,13 +144,13 @@ package {
 				{
 					if(param6 != param4 / 12)
 					{
-						GetFrame(param1,_sprites.worker,param4 / 12,1);
+						GetFrame(param1, _sprites.worker, param4 / 12, 1);
 					}
 					return param4 / 12 + 30;
 				}
 				if(param6 != param4 / 12)
 				{
-					GetFrame(param1,_sprites.worker,param4 / 12,0);
+					GetFrame(param1, _sprites.worker, param4 / 12, 0);
 				}
 				return param4 / 12;
 			}
@@ -184,13 +160,13 @@ package {
 				{
 					if(param6 != param4 / 12 + 30)
 					{
-						GetFrame(param1,_sprites.C9,param4 / 12,1);
+						GetFrame(param1, _sprites.C9, param4 / 12, 1);
 					}
 					return param4 / 12 + 30;
 				}
 				if(param6 != param4 / 12)
 				{
-					GetFrame(param1,_sprites.C9,param4 / 12,0);
+					GetFrame(param1, _sprites.C9, param4 / 12, 0);
 				}
 				return param4 / 12;
 			}
@@ -198,7 +174,7 @@ package {
 			{
 				if(param6 != param4 * 0.083333333)
 				{
-					GetFrame(param1,_sprites.C12,param4 * 0.083333333);
+					GetFrame(param1, _sprites.C12, param4 * 0.083333333);
 				}
 				return param4 * 0.083333333;
 			}
@@ -206,9 +182,10 @@ package {
 			{
 				if(param3 == "walking")
 				{
+
 					if(param6 != param4 / 12)
 					{
-						GetFrame(param1,_sprites.C13,param4 / 12);
+						GetFrame(param1, _sprites.C13, param4 / 12);
 					}
 					return param4 / 12;
 				}
@@ -216,7 +193,7 @@ package {
 				{
 					if(param6 != 33)
 					{
-						GetFrame(param1,_sprites.C13,param4 / 12,4);
+						GetFrame(param1, _sprites.C13, param4 / 12, 4);
 					}
 					return 33;
 				}
@@ -224,28 +201,26 @@ package {
 				{
 					if(param6 != 34)
 					{
-						GetFrame(param1,_sprites.C13,param4 / 12,param5);
+						GetFrame(param1, _sprites.C13, param4 / 12, scaled_param5);
 					}
 					return 34;
 				}
 			}
 			if(param2 == "C14")
 			{
-				if(param6 != param4 / 11.25 + param5 % 9 / 3 * 32)
+				if(param6 != param4 / 11.25 + scaled_param5 % 9 / 3 * 32)
 				{
-					GetFrame(param1,_sprites.C14,int(param4 / 11.25),param5 % 9 / 3);
+					GetFrame(param1, _sprites.C14, int(param4 / 11.25), scaled_param5 % 9 / 3);
 				}
-				return param4 / 11.25 + param5 % 9 / 3 * 32;
+				return param4 / 11.25 + scaled_param5 % 9 / 3 * 32;
 			}
 			if(param2 == "C16")
 			{
-				var _c16Speed:Number = DEFAULT_ANIMATION_FPS / GetAnimationFPS("C16");
-				var _c16ScaledParam5:int = int(param5 * _c16Speed);
-				if(param6 != param4 / 11.25 + _c16ScaledParam5 % 9 / 3 * 32)
+				if(param6 != param4 / 11.25 + scaled_param5 % 9 / 3 * 32)
 				{
-					GetFrame(param1,_sprites.C16,int(param4 / 11.25),_c16ScaledParam5 % 9 / 3);
+					GetFrame(param1, _sprites.C16, int(param4 / 11.25), scaled_param5 % 9 / 3);
 				}
-				return param4 / 11.25 + _c16ScaledParam5 % 9 / 3 * 32;
+				return param4 / 11.25 + scaled_param5 % 9 / 3 * 32;
 			}
 			if(param2 == "C19")
 			{
@@ -253,14 +228,14 @@ package {
 				{
 					if(param6 != param4 / 12)
 					{
-						GetFrame(param1,_sprites.C19,param4 / 12,1);
+						GetFrame(param1, _sprites.C19, param4 / 12, 1);
 					}
 				}
 				else if(param3 == "moving")
 				{
 					if(param6 != param4 / 12)
 					{
-						GetFrame(param1,_sprites.C19,param4 / 12,param5 / 8 % 5 + 1);
+						GetFrame(param1, _sprites.C19, param4 / 12, scaled_param5 / 8 % 5 + 1);
 					}
 				}
 				return param4 / 12;
@@ -269,7 +244,7 @@ package {
 			{
 				if(param6 != param4 / 11.25)
 				{
-					GetFrame(param1,_sprites.C15,int(param4 / 11.25));
+					GetFrame(param1, _sprites.C15, int(param4 / 11.25));
 				}
 				return param4 / 11.25;
 			}
@@ -277,7 +252,7 @@ package {
 			{
 				if(param6 != param4 / 11.25)
 				{
-					GetFrame(param1,_sprites.IC1,param4 / 11.25,param5 / 8 % 2 + 1);
+					GetFrame(param1, _sprites.IC1, param4 / 11.25, scaled_param5 / 8 % 2 + 1);
 				}
 				return param4 / 11.25;
 			}
@@ -285,7 +260,7 @@ package {
 			{
 				if(param6 != param4 / 12)
 				{
-					GetFrame(param1,_sprites.IC3,param4 / 12,param5 / 8 % 8 + 1);
+					GetFrame(param1, _sprites.IC3, param4 / 12, scaled_param5 / 8 % 8 + 1);
 				}
 				return param4 / 12;
 			}
@@ -293,68 +268,68 @@ package {
 			{
 				if(param6 != param4 / 12)
 				{
-					GetFrame(param1,_sprites.IC5,param4 / 12,param5 / 8 % 6 + 1);
+					GetFrame(param1, _sprites.IC5, param4 / 12, scaled_param5 / 8 % 6 + 1);
 				}
 				return param4 / 12;
 			}
-			if(param2.substr(0,2) == "G1" || param2.substr(0,2) == "G2")
+			if(param2.substr(0, 2) == "G1" || param2.substr(0, 2) == "G2")
 			{
 				if(_sprites[param2])
 				{
 					if(param3 == "idle")
 					{
-						GetFrame(param1,_sprites[param2],int(param4 / 22.5));
+						GetFrame(param1, _sprites[param2], int(param4 / 22.5));
 					}
 					else if(param3 == "walking")
 					{
-						GetFrame(param1,_sprites[param2],int(param4 / 22.5),param5 / 8 % 7 + 1);
+						GetFrame(param1, _sprites[param2], int(param4 / 22.5), param5 / 8 % 7 + 1);
 					}
 					else if(param3 == GLOBAL.e_BASE_MODE.ATTACK)
 					{
-						if((_loc7_ = param2.substr(3,1)) == "4" || _loc7_ == "5" || _loc7_ == "6")
+						if((_loc7_ = param2.substr(3, 1)) == "4" || _loc7_ == "5" || _loc7_ == "6")
 						{
-						GetFrame(param1,_sprites[param2],int(param4 / 22.5),param5 / 8 % 8 + 8);
+						GetFrame(param1, _sprites[param2], int(param4 / 22.5), param5 / 8 % 8 + 8);
 						}
 						else
 						{
-						GetFrame(param1,_sprites[param2],int(param4 / 22.5),param5 / 8 % 7 + 8);
+						GetFrame(param1, _sprites[param2], int(param4 / 22.5), param5 / 8 % 7 + 8);
 						}
 					}
 					return param4 / 22.5;
 				}
 			}
-			if(param2.substr(0,2) == "G3")
+			if(param2.substr(0, 2) == "G3")
 			{
 				if(_sprites[param2])
 				{
 					if(param3 == "idle")
 					{
-						GetFrame(param1,_sprites[param2],int(param4 / 22.5));
+						GetFrame(param1, _sprites[param2], int(param4 / 22.5));
 					}
-					else if((_loc7_ = param2.substr(3,1)) == "1")
+					else if((_loc7_ = param2.substr(3, 1)) == "1")
 					{
-						GetFrame(param1,_sprites[param2],int(param4 / 22.5),param5 / 8 % 7 + 1);
+						GetFrame(param1, _sprites[param2], int(param4 / 22.5), param5 / 8 % 7 + 1);
 					}
 					else if(_loc7_ == "2")
 					{
-						GetFrame(param1,_sprites[param2],int(param4 / 22.5),param5 / 8 % 8 + 1);
+						GetFrame(param1, _sprites[param2], int(param4 / 22.5), param5 / 8 % 8 + 1);
 					}
 					else
 					{
-						GetFrame(param1,_sprites[param2],int(param4 / 22.5),param5 / 8 % 6 + 1);
+						GetFrame(param1, _sprites[param2], int(param4 / 22.5), param5 / 8 % 6 + 1);
 					}
 					return param4 / 22.5;
 				}
 			}
-			if(param2.substr(0,2) == "G4" && Boolean(_sprites[param2]))
+			if(param2.substr(0, 2) == "G4" && Boolean(_sprites[param2]))
 			{
 				if(param3 == "idle")
 				{
-					GetFrame(param1,_sprites[param2],int(param4 / 22.5));
+					GetFrame(param1, _sprites[param2], int(param4 / 22.5));
 				}
 				else if(param3 == "walking")
 				{
-					_loc8_ = int(param2.substr(3,1));
+					_loc8_ = int(param2.substr(3, 1));
 					_loc9_ = 8;
 					if(_loc8_ == 3)
 					{
@@ -364,11 +339,11 @@ package {
 					{
 						_loc9_ = 10;
 					}
-					GetFrame(param1,_sprites[param2],int(param4 / 22.5),param5 / 8 % _loc9_ + 0);
+					GetFrame(param1, _sprites[param2], int(param4 / 22.5), param5 / 8 % _loc9_ + 0);
 				}
 				else if(param3 == GLOBAL.e_BASE_MODE.ATTACK)
 				{
-					_loc8_ = int(param2.substr(3,1));
+					_loc8_ = int(param2.substr(3, 1));
 					switch(_loc8_)
 					{
 						case 1: {
@@ -401,24 +376,24 @@ package {
 							_loc10_ = 10;
 						}
 					}
-					GetFrame(param1,_sprites[param2],int(param4 / 22.5),param5 / 8 % _loc9_ + _loc10_);
+					GetFrame(param1, _sprites[param2], int(param4 / 22.5), param5 / 8 % _loc9_ + _loc10_);
 				}
 				else if(param3 == "stomp")
 				{
-					GetFrame(param1,_sprites[param2],int(param4 / 22.5),param5 / 8 % 10 + 20);
+					GetFrame(param1, _sprites[param2], int(param4 / 22.5), param5 / 8 % 10 + 20);
 				}
 				return param4 / 22.5;
 			}
-			if(param2.substr(0,2) == "G5" && Boolean(_sprites[param2]))
+			if(param2.substr(0, 2) == "G5" && Boolean(_sprites[param2]))
 			{
 				if(param3 == "walking" || param3 == "idle")
 				{
 					_loc9_ = 10;
-					GetFrame(param1,_sprites[param2],int(param4 / 22.5),param5 / 8 % _loc9_ + 0);
+					GetFrame(param1, _sprites[param2], int(param4 / 22.5), param5 / 8 % _loc9_ + 0);
 				}
 				else if(param3 == GLOBAL.e_BASE_MODE.ATTACK)
 				{
-					_loc8_ = int(param2.substr(3,1));
+					_loc8_ = int(param2.substr(3, 1));
 					switch(_loc8_)
 					{
 						case 1:
@@ -433,29 +408,29 @@ package {
 						_loc9_ = 6;
 						_loc10_ = 10;
 					}
-					GetFrame(param1,_sprites[param2],int(param4 / 22.5),param5 / 8 % _loc9_ + _loc10_);
+					GetFrame(param1, _sprites[param2], int(param4 / 22.5), param5 / 8 % _loc9_ + _loc10_);
 				}
 				return param4 / 22.5;
 			}
 			if(param2 == "shadow")
 			{
-				GetFrame(param1,_sprites.shadow,0);
+				GetFrame(param1, _sprites.shadow, 0);
 				return 0;
 			}
 			if(param2 == "bigshadow")
 			{
-				GetFrame(param1,_sprites.bigshadow,0);
+				GetFrame(param1, _sprites.bigshadow, 0);
 				return 0;
 			}
 			if(param2 == "C200")
 			{
 				if(param3 == "empty")
 				{
-					GetFrame(param1,_sprites.C200,param4 / 12);
+					GetFrame(param1, _sprites.C200, param4 / 12);
 				}
 				else
 				{
-					GetFrame(param1,_sprites.C200,param4 / 12,1);
+					GetFrame(param1, _sprites.C200, param4 / 12, 1);
 				}
 				return param4 / 12;
 			}
@@ -463,36 +438,15 @@ package {
 			{
 				if(param6 != param4 / 11.25)
 				{
-					GetFrame(param1,_sprites.rocket,param4 / 11.25);
+					GetFrame(param1, _sprites.rocket, param4 / 11.25);
 				}
 				return param4 / 11.25;
-			}
-			// Handle animated sprites with FPS configuration
-			if(param2 == "C17")
-			{
-				var _c17Speed:Number = DEFAULT_ANIMATION_FPS / GetAnimationFPS("C17");
-				var _c17ScaledParam5:int = int(param5 * _c17Speed);
-				if(param6 != param4 / 11.25 + _c17ScaledParam5 % 9 / 3 * 32)
-				{
-					GetFrame(param1,_sprites.C17,int(param4 / 11.25),_c17ScaledParam5 % 9 / 3);
-				}
-				return param4 / 11.25 + _c17ScaledParam5 % 9 / 3 * 32;
-			}
-			if(param2 == "C18")
-			{
-				var _c18Speed:Number = DEFAULT_ANIMATION_FPS / GetAnimationFPS("C18");
-				var _c18ScaledParam5:int = int(param5 * _c18Speed);
-				if(param6 != param4 / 11.25 + _c18ScaledParam5 % 9 / 3 * 32)
-				{
-					GetFrame(param1,_sprites.C18,int(param4 / 11.25),_c18ScaledParam5 % 9 / 3);
-				}
-				return param4 / 11.25 + _c18ScaledParam5 % 9 / 3 * 32;
 			}
 			if(param2 == SpurtzCannon.SPURTZ_PROJECTILE)
 			{
 				if(param6 != param4 / 11.25)
 				{
-					GetFrame(param1,_sprites[SpurtzCannon.SPURTZ_PROJECTILE],param4 / 11.25,param5 / 8 % 2 + 1);
+					GetFrame(param1, _sprites[SpurtzCannon.SPURTZ_PROJECTILE], param4 / 11.25, param5 / 8 % 2 + 1);
 				}
 				return param4 / 11.25;
 			}
@@ -500,7 +454,7 @@ package {
 			{
 				if(param6 != param4 / 12)
 				{
-					GetFrame(param1,_sprites[param2],param4 / 12);
+					GetFrame(param1, _sprites[param2], param4 / 12);
 				}
 				return param4 / 12;
 			}

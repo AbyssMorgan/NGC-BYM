@@ -2457,10 +2457,10 @@ package
          {
             _loc2_ = 0;
          }
-         var _loc3_:int = _loc1_.r1.Get() + _loc1_.r2.Get() + _loc1_.r3.Get();
-         var _loc4_:int = Math.ceil(Math.pow(Math.sqrt(_loc3_ / 2),0.75));
+         var _loc3_:Number = _loc1_.r1.Get() + _loc1_.r2.Get() + _loc1_.r3.Get();
+         var _loc4_:Number = Math.ceil(Math.pow(Math.sqrt(_loc3_ / 2),0.75));
          var _loc5_:int = STORE.GetTimeCost(_loc2_);
-         var _loc6_:int = _loc4_ + _loc5_;
+         var _loc6_:Number = _loc4_ + _loc5_;
          return int(_loc6_ * 0.95);
       }
       
@@ -2476,10 +2476,10 @@ package
          {
             _loc2_ = 0;
          }
-         var _loc3_:int = _loc1_.r1.Get() + _loc1_.r2.Get() + _loc1_.r3.Get();
-         var _loc4_:int = Math.ceil(Math.pow(Math.sqrt(_loc3_ / 2),0.75));
+         var _loc3_:Number = _loc1_.r1.Get() + _loc1_.r2.Get() + _loc1_.r3.Get();
+         var _loc4_:Number = Math.ceil(Math.pow(Math.sqrt(_loc3_ / 2),0.75));
          var _loc5_:int = STORE.GetTimeCost(_loc2_);
-         var _loc6_:int = _loc4_ + _loc5_;
+         var _loc6_:Number = _loc4_ + _loc5_;
          return int(_loc6_ * 0.95);
       }
       
@@ -2495,10 +2495,10 @@ package
          {
             _loc2_ = 0;
          }
-         var _loc3_:int = _loc1_.r1.Get() + _loc1_.r2.Get() + _loc1_.r3.Get();
-         var _loc4_:int = Math.ceil(Math.pow(Math.sqrt(_loc3_ / 2),0.75));
+         var _loc3_:Number = _loc1_.r1.Get() + _loc1_.r2.Get() + _loc1_.r3.Get();
+         var _loc4_:Number = Math.ceil(Math.pow(Math.sqrt(_loc3_ / 2),0.75));
          var _loc5_:int = STORE.GetTimeCost(_loc2_);
-         var _loc6_:int = _loc4_ + _loc5_;
+         var _loc6_:Number = _loc4_ + _loc5_;
          return int(_loc6_ * 0.95);
       }
       
@@ -2631,19 +2631,19 @@ package
             _loc1_ = this.FortifyCost();
             if(_loc1_.r1.Get() > 0)
             {
-               BASE.Fund(1,int(_loc1_.r1.Get()));
+               BASE.Fund(1,_loc1_.r1.Get());
             }
             if(_loc1_.r2.Get() > 0)
             {
-               BASE.Fund(2,int(_loc1_.r2.Get()));
+               BASE.Fund(2,_loc1_.r2.Get());
             }
             if(_loc1_.r3.Get() > 0)
             {
-               BASE.Fund(3,int(_loc1_.r3.Get()));
+               BASE.Fund(3,_loc1_.r3.Get());
             }
             if(_loc1_.r4.Get() > 0)
             {
-               BASE.Fund(4,int(_loc1_.r4.Get()));
+               BASE.Fund(4,_loc1_.r4.Get());
             }
             BASE.Save();
          }
@@ -2857,19 +2857,19 @@ package
             _loc2_ = BASE.isInfernoBuilding(this._type);
             if(_loc1_.r1.Get())
             {
-               BASE.Fund(1,int(_loc1_.r1.Get()),false,null,_loc2_);
+               BASE.Fund(1,_loc1_.r1.Get(),false,null,_loc2_);
             }
             if(_loc1_.r2.Get())
             {
-               BASE.Fund(2,int(_loc1_.r2.Get()),false,null,_loc2_);
+               BASE.Fund(2,_loc1_.r2.Get(),false,null,_loc2_);
             }
             if(_loc1_.r3.Get())
             {
-               BASE.Fund(3,int(_loc1_.r3.Get()),false,null,_loc2_);
+               BASE.Fund(3,_loc1_.r3.Get(),false,null,_loc2_);
             }
             if(_loc1_.r4.Get())
             {
-               BASE.Fund(4,int(_loc1_.r4.Get()),false,null,_loc2_);
+               BASE.Fund(4,_loc1_.r4.Get(),false,null,_loc2_);
             }
             BASE.Save();
          }
@@ -2878,7 +2878,7 @@ package
       public function Upgraded() : void
       {
          var c:Object;
-         var a:int;
+         var a:Number;
          try
          {
             if(Math.max(this._countdownUpgrade.Get(),0))
@@ -2902,7 +2902,7 @@ package
          QUESTS.Check("b" + this._type + "lvl",this._lvl.Get());
          BASE.CalcResources();
          c = this._buildingProps.costs[this._lvl.Get() - 2];
-         a = Math.floor((int(c.time.Get()) + int(c.r1.Get()) + int(c.r2.Get()) + int(c.r3.Get()) + int(c.r4.Get())) / 3);
+         a = Math.floor((c.time.Get() + c.r1.Get() + c.r2.Get() + c.r3.Get() + c.r4.Get()) / 3);
          BASE.PointsAdd(a);
          this.Description();
          QUEUE.Remove("building" + this._id,true,this);
@@ -2940,7 +2940,7 @@ package
       public function Fortified() : void
       {
          var c:Object;
-         var a:int;
+         var a:Number;
          try
          {
             if(Math.max(this._countdownFortify.Get(),0))
@@ -2958,7 +2958,7 @@ package
          }
          BASE.CalcResources();
          c = this._buildingProps.fortify_costs[this._fortification.Get() - 1];
-         a = Math.floor((int(c.time.Get()) + int(c.r1.Get()) + int(c.r2.Get()) + int(c.r3.Get()) + int(c.r4.Get())) / 3);
+         a = Math.floor((c.time.Get() + c.r1.Get() + c.r2.Get() + c.r3.Get() + c.r4.Get()) / 3);
          BASE.PointsAdd(a);
          this.Description();
          QUEUE.Remove("building" + this._id,true,this);
@@ -3032,19 +3032,19 @@ package
                _loc3_ = BASE.isInfernoBuilding(this._type);
                if(_loc2_.r1.Get())
                {
-                  BASE.Fund(1,int(_loc2_.r1.Get()),false,null,_loc3_);
+                  BASE.Fund(1,_loc2_.r1.Get(),false,null,_loc3_);
                }
                if(_loc2_.r2.Get())
                {
-                  BASE.Fund(2,int(_loc2_.r2.Get()),false,null,_loc3_);
+                  BASE.Fund(2,_loc2_.r2.Get(),false,null,_loc3_);
                }
                if(_loc2_.r3.Get())
                {
-                  BASE.Fund(3,int(_loc2_.r3.Get()),false,null,_loc3_);
+                  BASE.Fund(3,_loc2_.r3.Get(),false,null,_loc3_);
                }
                if(_loc2_.r4.Get())
                {
-                  BASE.Fund(4,int(_loc2_.r4.Get()),false,null,_loc3_);
+                  BASE.Fund(4,_loc2_.r4.Get(),false,null,_loc3_);
                }
                this.RecycleC();
                LOGGER.Stat([40,this._type,this._lvl.Get()]);
@@ -3159,11 +3159,11 @@ package
                }
                _loc2_++;
             }
-            _loc1_.r1.Set(int(_loc1_.r1.Get() * 0.5));
-            _loc1_.r2.Set(int(_loc1_.r2.Get() * 0.5));
-            _loc1_.r3.Set(int(_loc1_.r3.Get() * 0.5));
-            _loc1_.r4.Set(int(_loc1_.r4.Get() * 0.5));
-            _loc1_.r5 = int(_loc1_.r5 * 0.5);
+            _loc1_.r1.Set(_loc1_.r1.Get() * 0.5);
+            _loc1_.r2.Set(_loc1_.r2.Get() * 0.5);
+            _loc1_.r3.Set(_loc1_.r3.Get() * 0.5);
+            _loc1_.r4.Set(_loc1_.r4.Get() * 0.5);
+            _loc1_.r5 = _loc1_.r5 * 0.5;
          }
          return _loc1_;
       }
@@ -3468,7 +3468,7 @@ package
             QUESTS.Check("brlvl",this._lvl.Get());
          }
          var _loc1_:Object = this._buildingProps.costs[0];
-         var _loc2_:int = Math.floor(_loc1_.time.Get() / 2 + (int(_loc1_.r1.Get()) + int(_loc1_.r2.Get()) + int(_loc1_.r3.Get()) + int(_loc1_.r4.Get())) / 10);
+         var _loc2_:Number = Math.floor(_loc1_.time.Get() / 2 + (_loc1_.r1.Get() + _loc1_.r2.Get() + _loc1_.r3.Get() + _loc1_.r4.Get()) / 10);
          if(this._type == 14)
          {
             _loc2_ += 100;

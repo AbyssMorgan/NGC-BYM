@@ -1,4 +1,3 @@
-      {
 package {
 
 	import com.monsters.display.ImageCache;

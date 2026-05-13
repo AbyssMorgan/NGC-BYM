@@ -716,10 +716,10 @@ package
       private function ActionInstantBuild(param1:MouseEvent) : void
       {
          var _loc7_:int = 0;
-         var _loc8_:int = 0;
-         var _loc9_:int = 0;
-         var _loc10_:int = 0;
-         var _loc11_:int = 0;
+         var _loc8_:Number = 0;
+         var _loc9_:Number = 0;
+         var _loc10_:Number = 0;
+         var _loc11_:Number = 0;
          var _loc2_:Boolean = false;
          var _loc3_:int = 0;
          var _loc4_:int = 0;

@@ -782,7 +782,7 @@ package
          }
          else
          {
-            _loc1_ /= 4;
+            _loc1_ /= 8;
             if(_loc1_ < 200)
             {
                _loc1_ = 200;

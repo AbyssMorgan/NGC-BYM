@@ -9,11 +9,11 @@ package SWC_ALL_fla
       public function button_spinner_235()
       {
          super();
-         addEventListener(Event.ENTER_FRAME, this.Tick);
+         addEventListener(Event.ADDED_TO_STAGE, onAdded);
          addEventListener(Event.REMOVED_FROM_STAGE, onRemoved);
       }
 
-      public function Tick(e:Event):void
+      public function TickFast(e:Event = null):void
       {
          if (visible)
          {
@@ -21,9 +21,15 @@ package SWC_ALL_fla
          }
       }
 
+      private function onAdded(e:Event):void
+      {
+         GLOBAL.RegisterTickFastTarget(this);
+      }
+
       private function onRemoved(e:Event):void
       {
-         removeEventListener(Event.ENTER_FRAME, Tick);
+         GLOBAL.UnregisterTickFastTarget(this);
+         removeEventListener(Event.ADDED_TO_STAGE, onAdded);
          removeEventListener(Event.REMOVED_FROM_STAGE, onRemoved);
       }
    }

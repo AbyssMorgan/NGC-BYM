@@ -201,7 +201,7 @@ package
          mc.bAlert.addEventListener(MouseEvent.MOUSE_OUT,this.ButtonInfoHide);
          this._buttonIcons = [];
          this._buttonIcons = [mc.bInvite,mc.bGift,mc.bInbox,mc.bAlert];
-         addEventListener(Event.ENTER_FRAME, onSpinnerTick);
+         GLOBAL.RegisterTickFastTarget(this);
          mc.bEarn.bAction.tLabel.htmlText = KEYS.Get("btn_earn");
          if(GLOBAL._flags.showFBCEarn == 1)
          {
@@ -247,6 +247,11 @@ package
                btn.mcSpinner.rotation += 4;
             }
          }
+      }
+
+      public function TickFast(param1:Event = null):void
+      {
+         this.onSpinnerTick(param1);
       }
 
       private function setupScoutMode() : void
@@ -582,7 +587,7 @@ package
                mc.bDailyDeal.removeEventListener(MouseEvent.MOUSE_OVER,this.ButtonInfoShow);
                mc.bDailyDeal.removeEventListener(MouseEvent.MOUSE_OUT,this.ButtonInfoHide);
             }
-            removeEventListener(Event.ENTER_FRAME, onSpinnerTick);
+            GLOBAL.UnregisterTickFastTarget(this);
          }
          else if(GLOBAL.mode == GLOBAL.e_BASE_MODE.ATTACK)
          {

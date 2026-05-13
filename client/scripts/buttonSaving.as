@@ -14,9 +14,10 @@ package
       public function buttonSaving()
       {
          super();
+         addEventListener(Event.ADDED_TO_STAGE,this.onAdded);
+         addEventListener(Event.REMOVED_FROM_STAGE,this.onRemoved);
          addEventListener(MouseEvent.MOUSE_OVER,this.Over);
          addEventListener(MouseEvent.MOUSE_OUT,this.Out);
-         addEventListener(Event.ENTER_FRAME,this.Tick);
          buttonMode = true;
       }
       
@@ -55,6 +56,21 @@ package
                this._bubble.mcText.htmlText = "<b>" + KEYS.Get("settings_saved") + "</b>";
             }
          }
+      }
+      
+      public function TickFast(param1:Event = null) : void
+      {
+         this.Tick(param1);
+      }
+      
+      private function onAdded(param1:Event) : void
+      {
+         GLOBAL.RegisterTickFastTarget(this);
+      }
+      
+      private function onRemoved(param1:Event) : void
+      {
+         GLOBAL.UnregisterTickFastTarget(this);
       }
       
       private function Out(param1:MouseEvent = null) : void

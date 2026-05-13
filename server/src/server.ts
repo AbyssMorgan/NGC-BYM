@@ -15,7 +15,6 @@ import { logMissingAssets, morganLogging } from "./middleware/morganLogging.js";
 import { corsCacheControl } from "./middleware/corsCacheControlSetup.js";
 import { Env } from "./enums/Env.js";
 import { initAnticheat } from "./scripts/anticheat/anticheat.js";
-import { initialize as initVersionManifest } from "./config/VersionManifestConfig.js";
 
 export const app = new Koa();
 app.proxy = true;
@@ -79,7 +78,6 @@ redis.onclose = (err) => logger.error(`Redis disconnected: ${err.message}`);
   app.use(router.routes());
   app.use(router.allowedMethods());
 
-  await initVersionManifest();
   await initAnticheat();
 
   app.listen(PORT, () => {

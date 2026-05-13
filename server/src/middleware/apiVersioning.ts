@@ -1,5 +1,5 @@
 import type { Context, Next } from "koa";
-import { getGameVersion } from "../config/VersionManifestConfig.js";
+import { getApiVersion } from "../server.js";
 import { Status } from "../enums/StatusCodes.js";
 
 /**
@@ -15,7 +15,7 @@ import { Status } from "../enums/StatusCodes.js";
  */
 export const apiVersion = async (ctx: Context, next: Next) => {
   const apiVersion: string = ctx.params.apiVersion;
-  const expectedApiVersion = getGameVersion();
+  const expectedApiVersion = getApiVersion();
 
   if (expectedApiVersion && apiVersion !== expectedApiVersion) {
     ctx.status = Status.BAD_REQUEST;

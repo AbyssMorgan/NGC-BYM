@@ -30,6 +30,7 @@ package buildings.yard {
 				{"range":440, "damage":1300, "rate":1}, // Level 5
 				{"range":460, "damage":1400, "rate":1}, // Level 6
 				{"range":480, "damage":1500, "rate":1}, // Level 7
+				{"range":500, "damage":1600, "rate":1}, // Level 8
 			],
 			"costs":[
 				{"r1":new SecNum(5), "r2":new SecNum(5), "r3":new SecNum(5), "r4":new SecNum(5), "time":new SecNum(1), "re":[]}, // Level 1 (Stronghold 30)
@@ -39,6 +40,7 @@ package buildings.yard {
 				{"r1":new SecNum(5), "r2":new SecNum(5), "r3":new SecNum(5), "r4":new SecNum(5), "time":new SecNum(1), "re":[]}, // Level 5 (Stronghold 70)
 				{"r1":new SecNum(5), "r2":new SecNum(5), "r3":new SecNum(5), "r4":new SecNum(5), "time":new SecNum(1), "re":[]}, // Level 6 (Stronghold 80)
 				{"r1":new SecNum(5), "r2":new SecNum(5), "r3":new SecNum(5), "r4":new SecNum(5), "time":new SecNum(1), "re":[]}, // Level 7 (Stronghold 90)
+				{"r1":new SecNum(5), "r2":new SecNum(5), "r3":new SecNum(5), "r4":new SecNum(5), "time":new SecNum(1), "re":[]}, // Level 8 (Stronghold 100)
 			],
 			"imageData":{
 				"baseurl":"buildings/guardtower/",
@@ -69,24 +71,27 @@ package buildings.yard {
 				1, // Level 5
 				1, // Level 6
 				1, // Level 7
+				1, // Level 8
 			],
 			"hp":[
 				400000, // Level 1
 				500000, // Level 2
 				600000, // Level 3
-				600000, // Level 4
-				600000, // Level 5
-				600000, // Level 6
-				600000, // Level 7
+				700000, // Level 4
+				800000, // Level 5
+				1000000, // Level 6
+				1200000, // Level 7
+				1400000, // Level 8
 			],
 			"repairTime":[
 				86400, // Level 1
-				129600, // Level 2
-				172800, // Level 3
-				216000, // Level 4
-				259200, // Level 5
-				302400, // Level 6
-				345600, // Level 7
+				103680, // Level 2
+				120960, // Level 3
+				138240, // Level 4
+				155520, // Level 5
+				172800, // Level 6
+				216000, // Level 7
+				259200, // Level 8
 			]
 		};
 		

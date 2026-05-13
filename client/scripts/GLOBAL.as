@@ -45,7 +45,7 @@ package
 
       public static var cdnUrl:String = CONFIG::CDN_URL;
 
-      public static var apiVersionSuffix:String = "v1.6.2-ngc-1.0.5";
+      public static var apiVersionSuffix:String = "ngc-v1.1.0";
 
       public static var connectionCounter:int;
 

@@ -4,8 +4,9 @@ package
    import flash.display.Bitmap;
    import flash.display.BitmapData;
    import flash.display.DisplayObjectContainer;
-   import flash.events.Event;
    import flash.events.MouseEvent;
+   import flash.events.TimerEvent;
+   import flash.utils.Timer;
    
    public class CREATUREBUTTON extends CREATUREBUTTON_CLIP
    {
@@ -20,6 +21,10 @@ package
       public var _description:bubblepopup3;
       
       protected var m_index:int;
+
+	  private var _moreTimer:Timer;
+
+	  private var _lessTimer:Timer;
       
       public function CREATUREBUTTON(param1:String, param2:int, param3:DisplayObjectContainer)
       {
@@ -68,6 +73,11 @@ package
          }
          this._tick = 0;
          this.Update();
+		 this._moreTimer = new Timer(GLOBAL.tickFastInterval);
+		 this._moreTimer.addEventListener(TimerEvent.TIMER,this.MoreTick);
+
+		 this._lessTimer = new Timer(GLOBAL.tickFastInterval);
+		 this._lessTimer.addEventListener(TimerEvent.TIMER,this.LessTick);
       }
       
       public function IconLoaded(param1:String, param2:BitmapData) : void
@@ -111,14 +121,8 @@ package
       
       public function Clear(param1:MouseEvent = null) : void
       {
-         if(hasEventListener(Event.ENTER_FRAME))
-         {
-            removeEventListener(Event.ENTER_FRAME,this.MoreTick);
-         }
-         if(hasEventListener(Event.ENTER_FRAME))
-         {
-            removeEventListener(Event.ENTER_FRAME,this.LessTick);
-         }
+        this._moreTimer.stop();
+        this._lessTimer.stop();
       }
       
       public function More(param1:MouseEvent) : void
@@ -126,10 +130,10 @@ package
          UI2._top.BombDeselect();
          this.MoreTickB();
          this._tick = 0;
-         addEventListener(Event.ENTER_FRAME,this.MoreTick);
+		 this._moreTimer.start();
       }
       
-      public function MoreTick(param1:Event = null) : void
+      public function MoreTick(param1:TimerEvent = null) : void
       {
          if(this._tick > 10 && this._tick % 2 == 0)
          {
@@ -151,10 +155,10 @@ package
          UI2._top.BombDeselect();
          this.LessTickB();
          this._tick = 0;
-         addEventListener(Event.ENTER_FRAME,this.LessTick);
+         this._lessTimer.start();
       }
       
-      public function LessTick(param1:Event = null) : void
+      public function LessTick(param1:TimerEvent = null) : void
       {
          if(this._tick > 10 && this._tick % 2 == 0)
          {

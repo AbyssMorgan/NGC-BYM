@@ -3,8 +3,9 @@ package com.monsters.maproom_advanced
    import com.cc.utils.SecNum;
    import com.monsters.display.ScrollSet;
    import flash.display.MovieClip;
-   import flash.events.Event;
    import flash.events.MouseEvent;
+   import flash.events.TimerEvent;
+   import flash.utils.Timer;
    
    internal class PopupMonstersA extends PopupMonstersA_CLIP
    {
@@ -21,6 +22,10 @@ package com.monsters.maproom_advanced
       private var _tempMonsterID:String;
       
       private var _tickDelay:int;
+
+	  private var _addTimer:Timer;
+
+	  private var _subtractTimer:Timer;
       
       private var _transferMonsters:Object;
       
@@ -126,6 +131,11 @@ package com.monsters.maproom_advanced
             }
          }
          this.Update();
+		 this._addTimer = new Timer(GLOBAL.tickFastInterval);
+		 this._addTimer.addEventListener(TimerEvent.TIMER,this.AddTick);
+
+		 this._subtractTimer = new Timer(GLOBAL.tickFastInterval);
+		 this._subtractTimer.addEventListener(TimerEvent.TIMER,this.SubtractTick);
       }
       
       public function Hide(param1:MouseEvent = null) : void
@@ -147,15 +157,15 @@ package com.monsters.maproom_advanced
          MapRoom._mc.HideMonstersA();
          MapRoom._mc.ShowInfoMine(this._cell);
          MapRoom._monsterTransferInProgress = false;
-         this._mc.removeEventListener(Event.ENTER_FRAME,this.AddTick);
-         this._mc.removeEventListener(Event.ENTER_FRAME,this.SubtractTick);
+		 this._addTimer.stop();
+		 this._subtractTimer.stop();
          this._mc.removeEventListener(MouseEvent.MOUSE_UP,this.TickRemove);
       }
       
       public function Cleanup() : void
       {
-         removeEventListener(Event.ENTER_FRAME,this.AddTick);
-         removeEventListener(Event.ENTER_FRAME,this.SubtractTick);
+		 this._addTimer.stop();
+		 this._subtractTimer.stop();
          removeEventListener(MouseEvent.MOUSE_UP,this.TickRemove);
          this.bCancel.removeEventListener(MouseEvent.CLICK,this.Hide);
          this.bTransfer.removeEventListener(MouseEvent.CLICK,this.Transfer);
@@ -194,13 +204,13 @@ package com.monsters.maproom_advanced
                _tickDelay = 0;
                AddTick();
                _tickDelay = 10;
-               _mc.addEventListener(Event.ENTER_FRAME,AddTick);
+               _addTimer.start();
                _mc.addEventListener(MouseEvent.MOUSE_UP,TickRemove);
             }
          };
       }
       
-      private function AddTick(param1:Event = null) : void
+      private function AddTick(param1:TimerEvent = null) : void
       {
          if(this._monstersLeft[this._tempMonsterID].Get() > 0 && this._cell._monsters[this._tempMonsterID].Get() - this._transferMonsters[this._tempMonsterID].Get() > 0 && this._tickDelay <= 0)
          {
@@ -222,13 +232,13 @@ package com.monsters.maproom_advanced
                _tickDelay = 0;
                SubtractTick();
                _tickDelay = 10;
-               _mc.addEventListener(Event.ENTER_FRAME,SubtractTick);
+               _subtractTimer.start();
                _mc.addEventListener(MouseEvent.MOUSE_UP,TickRemove);
             }
          };
       }
       
-      private function SubtractTick(param1:Event = null) : void
+      private function SubtractTick(param1:TimerEvent = null) : void
       {
          if(this._transferMonsters[this._tempMonsterID].Get() >= 1 && this._tickDelay <= 0)
          {
@@ -240,11 +250,11 @@ package com.monsters.maproom_advanced
       }
       
       private function TickRemove(param1:MouseEvent) : void
-      {
-         this._mc.removeEventListener(Event.ENTER_FRAME,this.AddTick);
-         this._mc.removeEventListener(Event.ENTER_FRAME,this.SubtractTick);
-         this._mc.removeEventListener(MouseEvent.MOUSE_UP,this.TickRemove);
-      }
+	  {
+		this._addTimer.stop();
+		this._subtractTimer.stop();
+		this._mc.removeEventListener(MouseEvent.MOUSE_UP,this.TickRemove);
+	  }
       
       private function Transfer(param1:MouseEvent) : void
       {
@@ -264,8 +274,8 @@ package com.monsters.maproom_advanced
             }
          }
          MapRoom._mc.HideMonstersA();
-         this._mc.removeEventListener(Event.ENTER_FRAME,this.AddTick);
-         this._mc.removeEventListener(Event.ENTER_FRAME,this.SubtractTick);
+		 this._addTimer.stop();
+		 this._subtractTimer.stop();
          this._mc.removeEventListener(MouseEvent.MOUSE_UP,this.TickRemove);
       }
    }

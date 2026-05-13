@@ -301,7 +301,9 @@ export const baseLoad: KoaController = async (ctx) => {
 	}
 
 	if (type === BaseMode.IDESCENT) {
+		const wmstatus = (filteredSave.wmstatus ?? []).filter(baseid => baseid[0] >= 201 && baseid[0] <= 213);
 		response.resources = filteredSave.iresources;
+		response.wmstatus = wmstatus;
 	}
 
 	ctx.status = Status.OK;

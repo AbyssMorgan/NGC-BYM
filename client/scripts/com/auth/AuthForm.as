@@ -298,7 +298,7 @@ package com.auth
                 descFormat.color = LIGHT_GRAY;
                 descFormat.align = TextFormatAlign.CENTER;
                 loadingDesc.defaultTextFormat = descFormat;
-                loadingDesc.htmlText = "<font color='#ffffff'>Taking a while? Check our </font><font color='#00CDB8'><u>#server-status</u></font><font color='#ffffff'> on Discord.</font>";
+                loadingDesc.htmlText = "<font color='#ffffff'>Taking a while? Check our </font><font color='#00CDB8'><u>#general</u></font><font color='#ffffff'> on Discord.</font>";
                 loadingDesc.width = contentWidth;
                 loadingDesc.height = 28;
                 loadingDesc.x = 0;
@@ -364,7 +364,7 @@ package com.auth
 
         public static function DiscordLink(param1:Event = null):void
         {
-            GLOBAL.gotoURL("https://discord.gg/bymrefitted");
+            GLOBAL.gotoURL("https://discord.gg/7pGmvrNK6g");
         }
 
         private function HeaderTitle():void

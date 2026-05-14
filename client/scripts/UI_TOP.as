@@ -997,18 +997,11 @@ package
          }
          else
          {
-            if(GLOBAL._flags.sroverlay)
-            {
-               mc.mcR5.bAdd.visible = true;
-            }
-            else
-            {
-               mc.mcR5.bAdd.visible = true;
-            }
+            mc.mcR5.bAdd.visible = false;
             mc.bEarn.visible = GLOBAL._flags.showFBCEarn == 1;
             mc.bDailyDeal.visible = GLOBAL._flags.showFBCDaily == 1;
             _loc1_ = 1;
-            while(_loc1_ < 6)
+            while(_loc1_ < 5)
             {
                if(!mc["mcR" + _loc1_].bAdd.visible)
                {
@@ -1027,7 +1020,7 @@ package
                {
                   mc.bInvite.mcSpinner.visible = false;
                }
-               mc.bInvite.visible = true;
+               mc.bInvite.visible = false;
             }
             else
             {
@@ -1039,7 +1032,7 @@ package
             }
             _loc8_ = this.extraResourceRows * this._RESOURCEBAR_HEIGHT;
             this.SortButtonIcons(2,4,_loc8_);
-            mc.bGift.visible = true;
+            mc.bGift.visible = false;
             if((_loc7_ = POPUPS.QueueCount("gifts")) > 0)
             {
                mc.bGift.mcSpinner.visible = true;

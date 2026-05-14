@@ -69,7 +69,7 @@ export const getFlags = () => ({
   radio: 1,
   plinko: 0,
   midgameIncentive: 0,
-  showFBCEarn: 1,
+  showFBCEarn: 0,
   trialpayDealspot: 1,
   showFBCDaily: 0,
   validate_percent: 0,

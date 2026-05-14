@@ -154,11 +154,11 @@ package
          _bCage = GLOBAL._bCage as CHAMPIONCAGE;
          page1Assets = [mcImage,tEvoStage,damage_txt,tDamage,bDamage,health_txt,tHealth,bHealth,speed_txt,tSpeed,bSpeed,buff_txt,tBuff,bBuff,tEvoDesc,tHP,barHP,bHeal];
          page2Assets = [barDNA,barDNA_bg,barDNA_mask,mcCurrGuardian,mcNextGuardian,tNextFeed,tFeedsFrom,mcInstant,mcFeed1,mcFeed2,gFeedBG,bEvolve,bFeedTimer,tNextFeedTitle];
-         page3Assets = [p3_mcImage,p3_tDescription,p3_tDescription2,p3_tKothLevel,p3_gRankBG,p3_damage_txt,p3_health_txt,p3_speed_txt,p3_buff_txt,p3_abilities_txt,p3_tDamage,p3_tHealth,p3_tSpeed,p3_tBuff,p3_bDamage,p3_bHealth,p3_bSpeed,p3_bBuff,p3_mcAbility1,p3_bTimeleft,p3_tTimeleft,p3_tLootLeft,p3_bLootLeft,p3_bHP,p3_tHP,p3_bHeal,p3_mcLootMark1,p3_mcLootMark2,p3_timeleft_txt,p3_looted_txt];
+         page3Assets = [p3_mcImage,p3_tDescription,p3_tDescription2,p3_tKothLevel,p3_gRankBG,p3_damage_txt,p3_health_txt,p3_speed_txt,p3_buff_txt,p3_abilities_txt,p3_tDamage,p3_tHealth,p3_tSpeed,p3_tBuff,p3_bDamage,p3_bHealth,p3_bSpeed,p3_bBuff,p3_mcAbility1,p3_bHP,p3_tHP,p3_bHeal];
          pagesArr = [page1Assets,page2Assets,page3Assets];
          statsArr = [damage_txt,tDamage,bDamage,health_txt,tHealth,bHealth,speed_txt,tSpeed,bSpeed,buff_txt,tBuff,bBuff];
          buffsArr = [damage_txt2,tDamage2,bDamage2,health_txt2,tHealth2,bHealth2,speed_txt2,tSpeed2,bSpeed2,buff_txt2,tBuff2,bBuff2,tBuffDesc,day1,day2,day3];
-         kothArr0 = [p3_mcImage,p3_tDescription,p3_gRankBG,p3_bTimeleft,p3_tTimeleft,p3_tLootLeft,p3_bLootLeft,p3_mcLootMark1,p3_mcLootMark2,p3_timeleft_txt,p3_looted_txt];
+         kothArr0 = [p3_mcImage,p3_tDescription,p3_gRankBG];
          kothArr1 = [p3_tDescription2];
          kothArr2 = [p3_tKothLevel,p3_damage_txt,p3_health_txt,p3_speed_txt,p3_buff_txt,p3_abilities_txt,p3_tDamage,p3_tHealth,p3_tSpeed,p3_tBuff,p3_bDamage,p3_bHealth,p3_bSpeed,p3_bBuff,p3_mcAbility1,p3_bHP,p3_tHP,p3_bHeal];
          feedIcons = [mcFeed1,mcFeed2];
@@ -666,6 +666,8 @@ package
                   _loc11_++;
                }
             }
+			p3_looted_txt.visible = false;
+			p3_timeleft_txt.visible = false;
             p3_looted_txt.htmlText = "<b>" + KEYS.Get("krallen_looted") + "</b>";
             p3_timeleft_txt.htmlText = "<b>" + KEYS.Get("krallen_remaining") + "</b>";
             p3_tDescription.htmlText = KEYS.Get("mon_krallendesc");
@@ -1174,32 +1176,40 @@ package
             this.kothLootCurrent = KOTHHandler.instance.totalLoot;
             this.kothTimeCurrent = ReplayableEventHandler.currentTime - this.kothTimeStart;
             this.kothTimeLeft = this.kothTimeEnd - ReplayableEventHandler.currentTime;
-            p3_bTimeleft.mcFill.width = 400 / KOTHHandler.instance.timePerRound * this.kothTimeCurrent;
-            p3_bLootLeft.mcFill.width = 400 / this.kothLootMax * KOTHHandler.instance.totalLoot;
-            _loc17_ = GLOBAL.ToTime(this.kothTimeLeft);
-            _loc18_ = GLOBAL.FormatNumber(KOTHHandler.instance.totalLoot);
-            p3_tTimeleft.htmlText = "<b>" + _loc17_ + " " + KEYS.Get("koth_bardesc_time") + "</b>";
-            p3_tLootLeft.htmlText = "<b>" + _loc18_ + " " + KEYS.Get("koth_bardesc_loot") + "</b>";
-            p3_mcLootMark1.visible = !KOTHHandler.instance.hasWonPermanantly;
-            p3_mcLootMark1.check.visible = KOTHHandler.instance.totalLoot >= this.kothLootThresholds[0];
-            p3_mcLootMark2.check.visible = KOTHHandler.instance.totalLoot >= this.kothLootThresholds[1];
-            p3_mcLootMark1.x = p3_bLootLeft.x + p3_bLootLeft.mcBG.width / this.kothLootMax * this.kothLootThresholds[0] - p3_mcLootMark1.width / 2;
-            p3_mcLootMark2.x = p3_bLootLeft.x + p3_bLootLeft.mcBG.width / this.kothLootMax * this.kothLootThresholds[1] - p3_mcLootMark2.width;
-            if(p3_mcLootMark1.check.visible && !p3_mcLootMark2.check.visible)
-            {
-               this.addKothTooltip(p3_mcLootMark2);
-            }
-            else if(!p3_mcLootMark1.check.visible && !p3_mcLootMark2.check.visible)
-            {
-               if(p3_mcLootMark1.visible)
-               {
-                  this.addKothTooltip(p3_mcLootMark1);
-               }
-               else
-               {
-                  this.addKothTooltip(p3_mcLootMark2);
-               }
-            }
+			p3_bTimeleft.visible = false;
+			p3_bLootLeft.visible = false;
+			p3_tTimeleft.visible = false;
+			p3_tLootLeft.visible = false;
+			p3_mcLootMark1.visible = false;
+            p3_mcLootMark2.visible = false;
+            p3_mcLootMark1.check.visible = false;
+            p3_mcLootMark2.check.visible = false;
+            // p3_bTimeleft.mcFill.width = 400 / KOTHHandler.instance.timePerRound * this.kothTimeCurrent;
+            // p3_bLootLeft.mcFill.width = 400 / this.kothLootMax * KOTHHandler.instance.totalLoot;
+            // _loc17_ = GLOBAL.ToTime(this.kothTimeLeft);
+            // _loc18_ = GLOBAL.FormatNumber(KOTHHandler.instance.totalLoot);
+            // p3_tTimeleft.htmlText = "<b>" + _loc17_ + " " + KEYS.Get("koth_bardesc_time") + "</b>";
+            // p3_tLootLeft.htmlText = "<b>" + _loc18_ + " " + KEYS.Get("koth_bardesc_loot") + "</b>";
+            // p3_mcLootMark1.visible = !KOTHHandler.instance.hasWonPermanantly;
+			// p3_mcLootMark1.check.visible = KOTHHandler.instance.totalLoot >= this.kothLootThresholds[0];
+            // p3_mcLootMark2.check.visible = KOTHHandler.instance.totalLoot >= this.kothLootThresholds[1];
+            // p3_mcLootMark1.x = p3_bLootLeft.x + p3_bLootLeft.mcBG.width / this.kothLootMax * this.kothLootThresholds[0] - p3_mcLootMark1.width / 2;
+            // p3_mcLootMark2.x = p3_bLootLeft.x + p3_bLootLeft.mcBG.width / this.kothLootMax * this.kothLootThresholds[1] - p3_mcLootMark2.width;
+            // if(p3_mcLootMark1.check.visible && !p3_mcLootMark2.check.visible)
+            // {
+            //    this.addKothTooltip(p3_mcLootMark2);
+            // }
+            // else if(!p3_mcLootMark1.check.visible && !p3_mcLootMark2.check.visible)
+            // {
+            //    if(p3_mcLootMark1.visible)
+            //    {
+            //       this.addKothTooltip(p3_mcLootMark1);
+            //    }
+            //    else
+            //    {
+            //       this.addKothTooltip(p3_mcLootMark2);
+            //    }
+            // }
             if(CREATURES._krallen)
             {
                p3_damage_txt.htmlText = "<b>" + KEYS.Get("gcage_labelDamage") + "</b>";

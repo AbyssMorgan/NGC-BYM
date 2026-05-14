@@ -978,37 +978,23 @@ package
          {
             mc.mcOutposts.visible = false;
          }
+		 mc.mcR1.bAdd.visible = false;
+		 mc.mcR2.bAdd.visible = false;
+		 mc.mcR3.bAdd.visible = false;
+		 mc.mcR4.bAdd.visible = false;
+		 mc.mcR5.bAdd.visible = false;
+		 mc.bEarn.visible = false;
+         mc.bDailyDeal.visible = false;
+	     mc.bInvite.visible = false;
+         mc.bGift.visible = false;
          if(TUTORIAL._stage < 200)
          {
-            mc.bInvite.visible = false;
-            mc.bGift.visible = false;
             mc.bInbox.visible = false;
             mc.bAlert.visible = false;
-            mc.mcR5.bAdd.visible = false;
-            mc.bEarn.visible = false;
-            mc.bDailyDeal.visible = false;
-            _loc1_ = 1;
-            while(_loc1_ < 6)
-            {
-               mc["mcR" + _loc1_].bAdd.visible = false;
-               _loc1_++;
-            }
             this.SortButtonIcons();
          }
          else
          {
-            mc.mcR5.bAdd.visible = false;
-            mc.bEarn.visible = GLOBAL._flags.showFBCEarn == 1;
-            mc.bDailyDeal.visible = GLOBAL._flags.showFBCDaily == 1;
-            _loc1_ = 1;
-            while(_loc1_ < 5)
-            {
-               if(!mc["mcR" + _loc1_].bAdd.visible)
-               {
-                  mc["mcR" + _loc1_].bAdd.visible = true;
-               }
-               _loc1_++;
-            }
             _loc7_ = 0;
             if(GLOBAL._canInvite && !GLOBAL._flags.kongregate)
             {
@@ -1020,15 +1006,6 @@ package
                {
                   mc.bInvite.mcSpinner.visible = false;
                }
-               mc.bInvite.visible = false;
-            }
-            else
-            {
-               mc.bInvite.visible = false;
-            }
-            if(mc.bInvite.visible)
-            {
-               mc.bInvite.visible = BYMConfig.instance.INVITE_BUTTON;
             }
             _loc8_ = this.extraResourceRows * this._RESOURCEBAR_HEIGHT;
             this.SortButtonIcons(2,4,_loc8_);

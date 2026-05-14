@@ -324,9 +324,9 @@ package com.monsters.maproom3
       {
          var _loc6_:DisplayObject = null;
          var _loc11_:* = null;
-         var _loc12_:Number = NaN;
-         var _loc13_:Number = NaN;
-         var _loc14_:Number = NaN;
+         var buff_monster:Number = NaN;
+         var buff_tower:Number = NaN;
+         var buff_tower_wild:Number = NaN;
          var _loc15_:uint = 0;
          var _loc16_:uint = 0;
          var _loc17_:MapRoom3Cell = null;
@@ -366,9 +366,9 @@ package com.monsters.maproom3
          this.m_TextDisplay.addChild(this.m_InfoTextCellType);
          if(param1.isInRangeOfStronghold)
          {
-            _loc12_ = 0;
-            _loc13_ = 0;
-            _loc14_ = 0;
+            buff_monster = 0;
+            buff_tower = 0;
+            buff_tower_wild = 0;
             _loc15_ = param1.inRangeOfStrongholds.length;
             _loc16_ = 0;
             while(_loc16_ < _loc15_)
@@ -377,36 +377,39 @@ package com.monsters.maproom3
                _loc18_ = this.GetPercentageBuffFromStrongholdLevel(_loc17_.baseLevel);
                if(_loc17_.isOwnedByPlayer)
                {
-                  _loc12_ += _loc18_;
+                  buff_monster += _loc18_;
                   if(param1.isOwnedByPlayer)
                   {
-                     _loc13_ += _loc18_;
+                     buff_tower += _loc18_;
                   }
                }
                else if(_loc17_.userID == param1.userID && _loc17_.wildMonsterTribeId == param1.wildMonsterTribeId)
                {
-                  _loc14_ += _loc18_;
+                  buff_tower_wild += _loc18_;
                }
                _loc16_++;
             }
-            if(_loc12_ > 0 && _loc13_ > 0 && _loc12_ == _loc13_)
+			buff_monster = Math.min(buff_monster, 30);
+			buff_tower = Math.min(buff_tower, 30);
+			buff_tower_wild = Math.min(buff_tower_wild, 30);
+            if(buff_monster > 0 && buff_tower > 0 && buff_monster == buff_tower)
             {
-               this.m_InfoTextBuff1.htmlText = KEYS.Get("mr3_shbuff_towermonster",{"v1":_loc12_});
+               this.m_InfoTextBuff1.htmlText = KEYS.Get("mr3_shbuff_towermonster",{"v1":buff_monster});
                this.m_TextDisplay.addChild(this.m_InfoTextBuff1);
             }
-            else if(_loc12_ > 0)
+            else if(buff_monster > 0)
             {
-               this.m_InfoTextBuff1.htmlText = KEYS.Get("mr3_shbuff_monster",{"v1":_loc12_});
+               this.m_InfoTextBuff1.htmlText = KEYS.Get("mr3_shbuff_monster",{"v1":buff_monster});
                this.m_TextDisplay.addChild(this.m_InfoTextBuff1);
             }
-            else if(_loc13_ > 0)
+            else if(buff_tower > 0)
             {
-               this.m_InfoTextBuff1.htmlText = KEYS.Get("mr3_shbuff_tower",{"v1":_loc13_});
+               this.m_InfoTextBuff1.htmlText = KEYS.Get("mr3_shbuff_tower",{"v1":buff_tower});
                this.m_TextDisplay.addChild(this.m_InfoTextBuff1);
             }
-            if(_loc14_ > 0)
+            if(buff_tower_wild > 0)
             {
-               this.m_InfoTextBuff2.htmlText = KEYS.Get("mr3_shbuff_tower",{"v1":_loc14_});
+               this.m_InfoTextBuff2.htmlText = KEYS.Get("mr3_shbuff_tower",{"v1":buff_tower_wild});
                this.m_TextDisplay.addChild(this.m_InfoTextBuff2);
             }
          }

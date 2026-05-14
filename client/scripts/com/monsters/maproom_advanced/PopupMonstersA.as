@@ -57,6 +57,10 @@ package com.monsters.maproom_advanced
          this.bCancel.addEventListener(MouseEvent.CLICK,this.Hide);
          this.bTransfer.SetupKey("btn_transfer");
          this.bTransfer.addEventListener(MouseEvent.CLICK,this.Transfer);
+		 this._addTimer = new Timer(GLOBAL.tickFastInterval);
+		 this._addTimer.addEventListener(TimerEvent.TIMER,this.AddTick);
+		 this._subtractTimer = new Timer(GLOBAL.tickFastInterval);
+		 this._subtractTimer.addEventListener(TimerEvent.TIMER,this.SubtractTick);
       }
       
       public function Setup(param1:MapRoomCell, param2:Boolean = false) : void
@@ -131,11 +135,6 @@ package com.monsters.maproom_advanced
             }
          }
          this.Update();
-		 this._addTimer = new Timer(GLOBAL.tickFastInterval);
-		 this._addTimer.addEventListener(TimerEvent.TIMER,this.AddTick);
-
-		 this._subtractTimer = new Timer(GLOBAL.tickFastInterval);
-		 this._subtractTimer.addEventListener(TimerEvent.TIMER,this.SubtractTick);
       }
       
       public function Hide(param1:MouseEvent = null) : void

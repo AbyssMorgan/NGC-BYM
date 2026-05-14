@@ -215,7 +215,8 @@ export const baseLoad: KoaController = async (ctx) => {
 						bonus += STRONGHOLD_BONUSES[level];
 					}
 				}
-				return Math.min(bonus, 30);
+				if(bonus > 30) bonus = 30;
+				return bonus;
 			};
 
 			totalStrongholdBonus = strongholdBonus(attackerStrongholds);

@@ -174,6 +174,18 @@ package
          this.kothTimeEnd = KOTHHandler.instance.timeToReset + ReplayableEventHandler.currentTime;
          this.kothTimeStart = this.kothTimeEnd - KOTHHandler.instance.timePerRound;
          this.kothTimeLeft = this.kothTimeEnd - ReplayableEventHandler.currentTime;
+
+		 
+		p3_looted_txt.visible = false;
+		p3_timeleft_txt.visible = false;
+		p3_bTimeleft.visible = false;
+		p3_bLootLeft.visible = false;
+		p3_tTimeleft.visible = false;
+		p3_tLootLeft.visible = false;
+		p3_mcLootMark1.visible = false;
+		p3_mcLootMark2.visible = false;
+		p3_mcLootMark1.check.visible = false;
+		p3_mcLootMark2.check.visible = false;
       }
       
       public static function FeedClick(param1:MouseEvent) : void
@@ -233,10 +245,10 @@ package
       
       public function removeKothListeners() : void
       {
-         p3_mcLootMark1.removeEventListener(MouseEvent.ROLL_OVER,this.onOverKothTooltip);
-         p3_mcLootMark2.removeEventListener(MouseEvent.ROLL_OVER,this.onOverKothTooltip);
-         p3_mcLootMark1.removeEventListener(MouseEvent.ROLL_OUT,this.onOutKothTooltip);
-         p3_mcLootMark2.removeEventListener(MouseEvent.ROLL_OUT,this.onOutKothTooltip);
+        //  p3_mcLootMark1.removeEventListener(MouseEvent.ROLL_OVER,this.onOverKothTooltip);
+        //  p3_mcLootMark2.removeEventListener(MouseEvent.ROLL_OVER,this.onOverKothTooltip);
+        //  p3_mcLootMark1.removeEventListener(MouseEvent.ROLL_OUT,this.onOutKothTooltip);
+        //  p3_mcLootMark2.removeEventListener(MouseEvent.ROLL_OUT,this.onOutKothTooltip);
          p3_bHeal.removeEventListener(MouseEvent.CLICK,this.kothHealClick);
          p3_mcAbility1.removeEventListener(MouseEvent.ROLL_OVER,this.onKothAbilityOver);
          p3_mcAbility1.removeEventListener(MouseEvent.ROLL_OUT,this.onKothAbilityOut);
@@ -666,13 +678,10 @@ package
                   _loc11_++;
                }
             }
-			p3_looted_txt.visible = false;
-			p3_timeleft_txt.visible = false;
             p3_looted_txt.htmlText = "<b>" + KEYS.Get("krallen_looted") + "</b>";
             p3_timeleft_txt.htmlText = "<b>" + KEYS.Get("krallen_remaining") + "</b>";
             p3_tDescription.htmlText = KEYS.Get("mon_krallendesc");
             p3_tDescription2.htmlText = KEYS.Get("krallen_desc");
-            p3_mcLootMark1.visible = !KOTHHandler.instance.hasWonPermanantly;
             if(this.kothPowerLevel >= 2)
             {
                p3_mcAbility1.gotoAndStop("loot_on");
@@ -1176,40 +1185,6 @@ package
             this.kothLootCurrent = KOTHHandler.instance.totalLoot;
             this.kothTimeCurrent = ReplayableEventHandler.currentTime - this.kothTimeStart;
             this.kothTimeLeft = this.kothTimeEnd - ReplayableEventHandler.currentTime;
-			p3_bTimeleft.visible = false;
-			p3_bLootLeft.visible = false;
-			p3_tTimeleft.visible = false;
-			p3_tLootLeft.visible = false;
-			p3_mcLootMark1.visible = false;
-            p3_mcLootMark2.visible = false;
-            p3_mcLootMark1.check.visible = false;
-            p3_mcLootMark2.check.visible = false;
-            // p3_bTimeleft.mcFill.width = 400 / KOTHHandler.instance.timePerRound * this.kothTimeCurrent;
-            // p3_bLootLeft.mcFill.width = 400 / this.kothLootMax * KOTHHandler.instance.totalLoot;
-            // _loc17_ = GLOBAL.ToTime(this.kothTimeLeft);
-            // _loc18_ = GLOBAL.FormatNumber(KOTHHandler.instance.totalLoot);
-            // p3_tTimeleft.htmlText = "<b>" + _loc17_ + " " + KEYS.Get("koth_bardesc_time") + "</b>";
-            // p3_tLootLeft.htmlText = "<b>" + _loc18_ + " " + KEYS.Get("koth_bardesc_loot") + "</b>";
-            // p3_mcLootMark1.visible = !KOTHHandler.instance.hasWonPermanantly;
-			// p3_mcLootMark1.check.visible = KOTHHandler.instance.totalLoot >= this.kothLootThresholds[0];
-            // p3_mcLootMark2.check.visible = KOTHHandler.instance.totalLoot >= this.kothLootThresholds[1];
-            // p3_mcLootMark1.x = p3_bLootLeft.x + p3_bLootLeft.mcBG.width / this.kothLootMax * this.kothLootThresholds[0] - p3_mcLootMark1.width / 2;
-            // p3_mcLootMark2.x = p3_bLootLeft.x + p3_bLootLeft.mcBG.width / this.kothLootMax * this.kothLootThresholds[1] - p3_mcLootMark2.width;
-            // if(p3_mcLootMark1.check.visible && !p3_mcLootMark2.check.visible)
-            // {
-            //    this.addKothTooltip(p3_mcLootMark2);
-            // }
-            // else if(!p3_mcLootMark1.check.visible && !p3_mcLootMark2.check.visible)
-            // {
-            //    if(p3_mcLootMark1.visible)
-            //    {
-            //       this.addKothTooltip(p3_mcLootMark1);
-            //    }
-            //    else
-            //    {
-            //       this.addKothTooltip(p3_mcLootMark2);
-            //    }
-            // }
             if(CREATURES._krallen)
             {
                p3_damage_txt.htmlText = "<b>" + KEYS.Get("gcage_labelDamage") + "</b>";

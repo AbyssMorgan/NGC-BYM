@@ -91,7 +91,7 @@ package
        * @param {Function} onFail - a callback function to be called on failure of the request.
        * @return {void}
        */
-      public function load(baseUrl:String, keyValuePairs:Array = null, onComplete:Function = null, onFail:Function = null):void
+      public function load(baseUrl:String, keyValuePairs:Array = null, onComplete:Function = null, onFail:Function = null, method:String = "POST"):void
       {
          var urlBuilder:URLRequest;
          var urlVariables:URLVariables;
@@ -122,7 +122,7 @@ package
             urlBuilder.requestHeaders.push(authHeader);
          }
          urlBuilder.data = urlVariables;
-         urlBuilder.method = URLRequestMethod.POST;
+         urlBuilder.method = method;
          this._req = new URLLoader(urlBuilder);
          this._req.addEventListener(Event.COMPLETE, this.fireComplete);
          this._req.addEventListener(IOErrorEvent.IO_ERROR, this.loadError);

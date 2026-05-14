@@ -23,6 +23,7 @@ package
       
       public static function Log(logType:String, message:String, param3:Boolean = false) : void
       {
+		trace("[" + logType + "] " + message);
          var _loc4_:Array = null;
          if(message.search("recorddebugdata") != -1)
          {

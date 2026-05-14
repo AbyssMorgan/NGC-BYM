@@ -62,19 +62,11 @@ package com.monsters.mailbox
       public function Setup() : void
       {
          contacts = [];
-         var _loc1_:Contact = new Contact(String(LOGIN._playerID),{
-            "first_name":"Me",
-            "last_name":"",
-            "pic_square":LOGIN._playerPic
-         },true);
-         var _loc2_:Contact = new Contact("0",{
-            "first_name":"D.A.V.E.",
-            "last_name":"",
-            "pic_square":""
-         },true);
+         var _loc1_:Contact = new Contact(String(LOGIN._playerID), {"first_name" : "Me", "last_name" : "", "pic_square" : LOGIN._playerPic}, true);
+         var _loc2_:Contact = new Contact("0", {"first_name" : "D.A.V.E.", "last_name" : "", "pic_square" : ""}, true);
          _loc2_.picClass = system_message;
          var _loc3_:URLLoaderApi = new URLLoaderApi();
-         _loc3_.load(GLOBAL._apiURL + "player/getmessagetargets",null,this.onTargetsSuccess,this.onTargetsFail);
+         _loc3_.load(GLOBAL._apiURL + "player/getmessagetargets", null, this.onTargetsSuccess, this.onTargetsFail, "GET");
       }
       
       public function Tick() : void

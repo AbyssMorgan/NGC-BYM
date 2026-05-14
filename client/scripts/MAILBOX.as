@@ -18,7 +18,8 @@ package
       public static var _threadidToOpen:int = -1;
       
       public static var _mc:MailBox;
-       
+
+	  private static var _last_tick:int = 0;
       
       public function MAILBOX()
       {
@@ -39,12 +40,17 @@ package
          _mc.Setup();
       }
       
-      public static function Tick() : void
-      {
-         if(Boolean(_mc) && GLOBAL.Timestamp() % 15 == 0)
-         {
-            _mc.Tick();
-         }
+      public static function Tick():void {
+		if (!_mc) {
+			return;
+		}
+
+		var now:int = GLOBAL.Timestamp();
+
+		if (now - _last_tick >= 15) {
+			_last_tick = now;
+			_mc.Tick();
+		}
       }
       
       public static function Hide(param1:MouseEvent = null) : void

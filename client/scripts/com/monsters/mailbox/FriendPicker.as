@@ -142,7 +142,7 @@ package com.monsters.mailbox
                "pic_square":""
             },true);
             _loc3_.picClass = system_message;
-            (_loc4_ = new URLLoaderApi()).load(GLOBAL._apiURL + "player/getmessagetargets",null,this.onTargetsSuccess);
+            (_loc4_ = new URLLoaderApi()).load(GLOBAL._apiURL + "player/getmessagetargets",null, this.onTargetsSuccess, null, "GET");
          }
          else
          {

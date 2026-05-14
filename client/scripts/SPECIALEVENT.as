@@ -1455,7 +1455,9 @@ package
                      _eventStartTime = new SecNum(serverData.start);
                      _eventEndTime = new SecNum(_eventStartTime.Get() + 60 * 60 * 24 * 7);
                   }
-               }
+               },
+			   null,
+			   "GET"
             );
       }
 

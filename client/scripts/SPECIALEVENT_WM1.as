@@ -861,7 +861,9 @@ package
                      _eventEndTime = Number(serverData.end);
                      _eventExtensionTime = Number(serverData.extension);
                   }
-               }
+               },
+			   null,
+			   "GET"
             );
       }
 

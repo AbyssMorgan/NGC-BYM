@@ -187,7 +187,7 @@ package com.monsters.mailbox
       public function Tick(... rest) : void
       {
          var _loc2_:URLLoaderApi = new URLLoaderApi();
-         _loc2_.load(GLOBAL._apiURL + "player/getmessagethreads",[],this.handleLoadSuccessful,this.handleLoadError);
+         _loc2_.load(GLOBAL._apiURL + "player/getmessagethreads",[],this.handleLoadSuccessful,this.handleLoadError, "GET");
       }
       
       private function handleLoadSuccessful(param1:Object) : void

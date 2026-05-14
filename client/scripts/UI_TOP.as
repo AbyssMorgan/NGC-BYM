@@ -649,11 +649,11 @@ package
             }
             else if(GLOBAL.mode == GLOBAL._loadmode)
             {
-               mc.mcPoints.tName.htmlText = KEYS.Get("uitop_backyardmonsters");
+               mc.mcPoints.tName.htmlText = BASE._ownerName;
             }
             else
             {
-               mc.mcPoints.tName.htmlText = KEYS.Get("uitop_backyardmonstersinferno");
+               mc.mcPoints.tName.htmlText = BASE._ownerName;
             }
             loader = new Loader();
             loader.contentLoaderInfo.addEventListener(IOErrorEvent.IO_ERROR,LoadImageError,false,0,true);
@@ -673,11 +673,11 @@ package
          }
          else if(GLOBAL.mode == GLOBAL._loadmode)
          {
-            mc.mcPoints.tName.htmlText = KEYS.Get("uitop_backyardmonsters");
+            mc.mcPoints.tName.htmlText = BASE._ownerName;
          }
          else
          {
-            mc.mcPoints.tName.htmlText = KEYS.Get("uitop_backyardmonstersinferno");
+            mc.mcPoints.tName.htmlText = BASE._ownerName;
          }
          if((GLOBAL._loadmode == GLOBAL.e_BASE_MODE.IWMATTACK || GLOBAL._loadmode == GLOBAL.e_BASE_MODE.IATTACK) && !MAPROOM_DESCENT.DescentPassed)
          {
@@ -896,10 +896,10 @@ package
          var _loc2_:int = param1;
          _loc5_ = Number((_loc4_ = mc["mcR" + _loc2_])._resource);
          _loc4_.tR.htmlText = "<b>" + GLOBAL.FormatNumber(_loc5_) + "</b>";
-         _loc3_ = 90 / BASE._resources["r" + _loc2_ + "max"] * _loc5_;
-         if(_loc3_ > 90)
+         _loc3_ = 117 / BASE._resources["r" + _loc2_ + "max"] * _loc5_;
+         if(_loc3_ > 117)
          {
-            _loc3_ = 90;
+            _loc3_ = 117;
          }
          _loc4_.mcBar.width = _loc3_;
       }

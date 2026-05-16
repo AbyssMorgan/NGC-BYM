@@ -286,7 +286,7 @@ package
       private function spawnSpurtzAt(param1:int, param2:int, param3:Number, param4:Number) : void
       {
          var _loc5_:Spurtz;
-         (_loc5_ = CREATURES.Spawn("IC1",MAP._BUILDINGTOPS,"defend",new Point(param1,param2),param3) as Spurtz).isDisposable = true;
+         (_loc5_ = CREATURES.Spawn("IC1", MAP._BUILDINGTOPS, "defend", new Point(param1,param2), param3, null, null, 1) as Spurtz).isDisposable = true;
          _loc5_.findDefenseTargets();
          _loc5_.graphic.scaleX = param4;
          _loc5_.graphic.scaleY = param4;

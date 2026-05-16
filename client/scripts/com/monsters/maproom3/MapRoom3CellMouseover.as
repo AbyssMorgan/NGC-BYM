@@ -468,12 +468,9 @@ package com.monsters.maproom3
       {
          switch(param1)
          {
-			case 30: return 10;
-			case 40: return 20;
-			case 50: return 30;
-			// case 70: return 10; // TODO MR3 HIGH END
-			// case 80: return 20;
-			// case 90: return 30;
+			case 60: return 10;
+			case 80: return 20;
+			case 100: return 30;
 			default: return 0;
          }
       }

@@ -513,6 +513,10 @@ package com.monsters.maproom3
             case EnumYardType.STRONGHOLD:
                _loc1_ = new Bitmap(MapRoom3AssetCache.instance.GetAsset(this.m_Cell.isDestroyed ? MapRoom3AssetCache.CELL_ICON_STRONGHOLD : MapRoom3AssetCache.CELL_ICON_STRONGHOLD));
                _loc2_ = this.IsFullyFortified();
+			   if(this.m_Cell.hasDamageProtection)
+				{
+					this.DrawDamageProtectionIcon();
+				}
                break;
             case EnumYardType.FORTIFICATION:
                if(this.m_Cell.isDestroyed)

@@ -55,10 +55,7 @@ export const playerCell = async (ctx: Context, cell: WorldMapCell, cellOwners: M
   const currentTime = getCurrentDateTime();
   const homeCell = cell.base_type === EnumYardType.PLAYER;
 
-  let isProtected = false;
-
-  if (homeCell) 
-    isProtected = cellSave.protected > 0 && cellSave.protected > currentTime;
+  let isProtected = cellSave.protected > 0 && cellSave.protected > currentTime;
 
   const online = homeCell && (lastSeen.get(cell.uid) ?? 0) >= currentTime - 60;
   const isUnderAttack = homeCell && isAttackActive(cellSave);

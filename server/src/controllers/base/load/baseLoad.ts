@@ -248,6 +248,7 @@ export const baseLoad: KoaController = async (ctx) => {
 					$and: [
 						{ $or: defenderCoords.map(([x, y]) => ({ x, y })) },
 						{ base_type: EnumYardType.FORTIFICATION },
+						{ uid: { $gt: 0 } },
 						{ map_version: MapRoomVersion.V3 },
 						{ world: user.save!.worldid },
 					],

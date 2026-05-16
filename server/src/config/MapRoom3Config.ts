@@ -80,7 +80,7 @@ export const TRIBE_OUTPOST_SEED = "maproom3-tribes";
 
 /** Available levels per structure type. */
 export const STRUCTURE_LEVELS: Record<number, number[]> = {
-	[EnumYardType.STRONGHOLD]: [30, 40, 50], // TODO MR3 HIGH END
+	[EnumYardType.STRONGHOLD]: [60, 80, 100],
 	[EnumYardType.RESOURCE]: [50, 60, 70, 80, 90],
 	[EnumYardType.OUTPOST]: [45, 50],
 };
@@ -94,9 +94,9 @@ export const MIN_PLAYER_DISTANCE = 7;
 /** Attack range in cells per structure type and level. */
 export const STRUCTURE_RANGE: Record<number, Record<number, number>> = {
 	[EnumYardType.STRONGHOLD]: {
-		30: 10, // TODO MR3 HIGH END
-		40: 15, // TODO MR3 HIGH END
-		50: 20, // TODO MR3 HIGH END
+		60: 10,
+		80: 15,
+		100: 20,
 	},
 	[EnumYardType.RESOURCE]: {
 		50: 2,
@@ -127,9 +127,9 @@ export const RESOURCE_CAPACITIES: Record<number, number> = {
 
 /** Monster and tower damage bonus (%) granted by a STRONGHOLD per level. */
 export const STRONGHOLD_BONUSES: Record<number, number> = {
-	30: 10, // TODO MR3 HIGH END
-	40: 20, // TODO MR3 HIGH END
-	50: 30, // TODO MR3 HIGH END
+	60: 10,
+	80: 20,
+	100: 30,
 };
 
 /** Save data templates per structure type and level. */
@@ -168,8 +168,8 @@ export const DEFENDER_LEVELS = {
 	},
 
 	[EnumYardType.STRONGHOLD]: {
-		30: [20, 20, 25, 25, 30, 35], // TODO MR3 HIGH END
-		40: [30, 30, 35, 35, 40, 45], // TODO MR3 HIGH END
-		50: [45, 45, 45, 45, 45, 45], // TODO MR3 HIGH END
+		60: [50, 50, 50, 50, 50, 50],
+		80: [70, 70, 70, 70, 70, 70],
+		100: [90, 90, 90, 90, 90, 90],
 	},
 };

@@ -83,7 +83,7 @@ export const takeoverCellMR3 = async (baseSave: Save, user: User, userSave: Save
   baseSave.attacks = [];
   baseSave.tutorialstage = 205;
   baseSave.createtime = currentTime;
-  if(wmid == EnumYardType.RESOURCE){
+  if(wmid == EnumYardType.RESOURCE || wmid == EnumYardType.STRONGHOLD){
 	  baseSave.protected = currentTime + (3 * 24 * 60 * 60);
   }
   baseSave.takeoverDate = new Date();

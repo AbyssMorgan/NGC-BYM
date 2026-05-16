@@ -15,7 +15,6 @@ import { EnumYardType } from "../../enums/EnumYardType.js";
  */
 export const canAttack = (attackerSave: Save, defenderSave: Save, mapversion?: MapRoomVersion): boolean => {
 	if(attackerSave.name == 'sandbox') return false;
-	if(defenderSave.wmid == EnumYardType.STRONGHOLD) return false;
 	const isOwner = defenderSave.type !== BaseType.INFERNO && attackerSave.saveuserid === defenderSave.saveuserid;
 	const attackerLevel = calculateBaseLevel(attackerSave.points, attackerSave.basevalue);
 
@@ -27,7 +26,7 @@ export const canAttack = (attackerSave: Save, defenderSave: Save, mapversion?: M
 	if (defenderSave.type === BaseType.MAIN && !isOwner) {
 		const defenderLevel = calculateBaseLevel(defenderSave.points, defenderSave.basevalue);
 		const inSafeZone = attackerLevel >= 40 && attackerLevel <= 120 && defenderLevel >= 40 && defenderLevel <= 120;
-		if (attackerLevel - defenderLevel >= 12 && !inSafeZone) return false;
+		if (attackerLevel - defenderLevel >= 10 && !inSafeZone) return false;
 	}
 
 	return true;

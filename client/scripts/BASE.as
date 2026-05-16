@@ -2782,7 +2782,7 @@ package
          QUESTS.Check();
          PATHING.ResetCosts();
          TUTORIAL.Process();
-         MUSHROOMS.Setup();
+        //  MUSHROOMS.Setup();
          NewPopupSystem.instance.CheckAll(true);
          if (GLOBAL.mode == "help" && !(MapRoomManager.instance.isInMapRoom3 && BASE.isOutpost))
          {

@@ -24,6 +24,7 @@ import { damageProtection } from "../../../services/maproom/v2/damageProtection.
 import { isMR3Structure } from "../../../services/maproom/v3/utils/isMR3Structure.js";
 import { WorldMapCell } from "../../../models/worldmapcell.model.js";
 import { MapRoomVersion } from "../../../enums/MapRoom.js";
+import { EnumYardType } from "../../../enums/EnumYardType.js";
 import { MR1_TRIBE_IDS } from "../../../game-data/tribes/v1/index.js";
 import { scaledMR1Tribes } from "../../../services/maproom/v1/scaledMR1Tribes.js";
 import { getConquerorPointsByLevel } from "../../../utils/getConquerorPointsByLevel.js";
@@ -182,9 +183,11 @@ export const baseSave: KoaController = async (ctx) => {
 					break;
 				}
 				case BaseType.TRIBE: {
-					userSave.empirevalue += conquerorPoints;
-					postgres.em.persist(userSave);
-					await postgres.em.flush();
+					if(baseSave.wmid == EnumYardType.OUTPOST){
+						userSave.empirevalue += conquerorPoints;
+						postgres.em.persist(userSave);
+						await postgres.em.flush();
+					}
 					break;
 				}
 			}

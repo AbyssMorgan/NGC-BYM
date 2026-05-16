@@ -12,16 +12,16 @@ package com.monsters.baseplanner
          super();
       }
       
-      public function callServerMethod(url:String, keyValue:Array, onComplete:Function = null) : void
+      public function callServerMethod(url:String, keyValue:Array, onComplete:Function = null, method:String = "POST") : void
       {
          var urlLoader:URLLoaderApi;
-         (urlLoader = new URLLoaderApi()).load(GLOBAL._apiURL + "bm/yardplanner/" + url,keyValue,onComplete);
+         (urlLoader = new URLLoaderApi()).load(GLOBAL._apiURL + "bm/yardplanner/" + url,keyValue, onComplete, null, method);
       }
       
       public function saveTemplate(baseTemplate:BaseTemplate, slotId:uint) : void
       {
          var _loc3_:Object = JSON.stringify(baseTemplate.exportData());
-         this.callServerMethod("savetemplate",[["slotid",slotId],["name",baseTemplate.name],["data",_loc3_]],this.savedTemplate);
+         this.callServerMethod("savetemplate",[["slotid",slotId],["name",baseTemplate.name],["data",_loc3_]],this.savedTemplate, "POST");
          print("saving \'" + baseTemplate.name + "\' in slot " + slotId);
       }
       
@@ -37,7 +37,7 @@ package com.monsters.baseplanner
       
       public function loadTemplates() : void
       {
-         this.callServerMethod("gettemplates",null,this.loadedTemplates);
+         this.callServerMethod("gettemplates",null,this.loadedTemplates, "GET");
          print("loading template list from the server");
       }
       
@@ -78,7 +78,7 @@ package com.monsters.baseplanner
       
       public function clearSlot(slotIndex:uint) : void
       {
-         this.callServerMethod("deletetemplate",[["slotid",slotIndex]]);
+         this.callServerMethod("deletetemplate",[["slotid",slotIndex]], null, "POST");
          print("deleting \'blah\' at slot index of " + slotIndex);
       }
    }

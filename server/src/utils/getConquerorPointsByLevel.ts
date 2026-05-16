@@ -15,8 +15,6 @@ export const getConquerorPointsByLevel = (level:number) => {
 		return 4;
 	} else if(level >= 50){
 		return 2;
-	} else if(level >= 45){
-		return 1;
 	}
-	return 0;
+	return 1;
 };

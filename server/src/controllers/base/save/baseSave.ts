@@ -165,28 +165,31 @@ export const baseSave: KoaController = async (ctx) => {
     // MR3 capturable structures (RESOURCE, STRONGHOLD, FORTIFICATION) allow re-capture
     // from OUTPOST type (player-owned) in addition to first capture from TRIBE type.
     if (saveData.over && baseSave.damage >= 90) {
-		switch(baseSave.type){
-			case BaseType.MAIN: {
-				const points_take = Math.min(baseSave.empirevalue, conquerorPoints * 2);
-				const points_give = Math.round(points_take / 2);
+		if(userSave.mapversion == MapRoomVersion.V3){
+			switch(baseSave.type){
+				case BaseType.MAIN: {
+					const points_take = Math.min(baseSave.empirevalue, conquerorPoints * 20);
+					const points_give = Math.round(points_take / 2);
 
-				baseSave.empirevalue -= points_take;
-				userSave.empirevalue += points_give;
+					baseSave.empirevalue -= points_take;
+					userSave.empirevalue += points_give;
 
-				postgres.em.persist(userSave);
-    			await postgres.em.flush();
+					postgres.em.persist(userSave);
+					await postgres.em.flush();
 
-				postgres.em.persist(baseSave);
-    			await postgres.em.flush();
-				break;
-			}
-			case BaseType.TRIBE: {
-				userSave.empirevalue += conquerorPoints;
-				postgres.em.persist(userSave);
-    			await postgres.em.flush();
-				break;
+					postgres.em.persist(baseSave);
+					await postgres.em.flush();
+					break;
+				}
+				case BaseType.TRIBE: {
+					userSave.empirevalue += conquerorPoints;
+					postgres.em.persist(userSave);
+					await postgres.em.flush();
+					break;
+				}
 			}
 		}
+		
       if (isMR3Structure(baseSave.wmid)) {
         if (baseSave.type === BaseType.TRIBE || baseSave.type === BaseType.OUTPOST) {
           takeoverData = await takeoverCellMR3(baseSave, user, userSave);

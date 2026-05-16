@@ -5948,6 +5948,9 @@ package
 
       public static function PointsAdd(param1:uint):void
       {
+		 if(MapRoomManager.instance.isInMapRoom3){
+			param1 *= (1.0 + (BASE._conquerorPoints.Get() * 0.001));
+		 }
          _basePoints = Math.floor(_basePoints + param1);
       }
 

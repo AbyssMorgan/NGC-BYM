@@ -1,6 +1,7 @@
 package
 {
    import com.cc.utils.SecNum;
+   import com.monsters.enums.EnumYardType;
    import com.monsters.interfaces.ILootable;
    import com.monsters.maproom_manager.IMapRoomCell;
    import com.monsters.maproom_manager.MapRoomManager;
@@ -104,6 +105,9 @@ package
       
       override public function Loot(param1:int) : uint
       {
+		if(MapRoomManager.instance.isInMapRoom3 && GLOBAL._currentCell.baseType == EnumYardType.PLAYER){
+			return 0;
+		}
          var _loc2_:int = 0;
          if(_stored.Get() >= param1)
          {

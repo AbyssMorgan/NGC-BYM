@@ -553,6 +553,7 @@ export class Save {
     infernoSave.stats = save.stats;
     infernoSave.worldid = save.worldid;
     infernoSave.credits = 0;
+    infernoSave.empirevalue = 0;
     save.iresources = {
       r1: 59168,
       r2: 60090,

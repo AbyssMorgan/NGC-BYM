@@ -159,6 +159,7 @@ export const getArea: KoaController = async (ctx) => {
     ...(sendresources === 1 && {
       resources: save.resources,
       credits: save.credits,
+      empirevalue: save.empirevalue,
     }),
   };
 };

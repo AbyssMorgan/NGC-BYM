@@ -302,7 +302,11 @@ package com.monsters.maproom_advanced
          }
          mcOutposts.x = mcFrame2.x + 20;
          mcOutposts.y = mcFrame2.y + 162;
-         mcOutposts.tR.htmlText = GLOBAL._mapOutpost.length + " " + KEYS.Get("newmap_outposts");
+		 if(MapRoomManager.instance.isInMapRoom2){
+         	mcOutposts.tR.htmlText = GLOBAL._mapOutpost.length + " " + KEYS.Get("newmap_outposts");
+		 } else {
+			mcOutposts.tR.htmlText = BASE._conquerorPoints.Get() + ' CQ';
+		 }
       }
       
       public function ShowInfo(param1:MapRoomCell) : void

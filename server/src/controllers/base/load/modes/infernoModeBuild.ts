@@ -41,6 +41,7 @@ export const infernoModeBuild = async (user: User) => {
   infernoSave.wmstatus = await createInfernoTribes(infernoSave, INFERNO_TRIBES);
 
   infernoSave.credits = userSave.credits;
+  infernoSave.empirevalue = userSave.empirevalue;
   infernoSave.resources = userSave.iresources;
 
   if (userSave.stats?.["other"] && stats?.["other"])

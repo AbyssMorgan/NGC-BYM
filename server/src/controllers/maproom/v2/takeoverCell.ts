@@ -50,13 +50,16 @@ export const takeoverCell: KoaController = async (ctx) => {
 
   await validateRange(currentUser, userSave, mapversion, { attackCell: cell });
 
-  if (shiny) userSave.credits = userSave.credits - shiny;
-  if (resources)
+  if (shiny){
+	userSave.credits = userSave.credits - shiny;
+  }
+  if (resources){
     userSave.resources = updateResources(
       resources,
       userSave.resources ?? {},
       Operation.SUBTRACT
     );
+  }
 
   // Clean up previous owner's save if the cell was player-owned
   const previousOwner = await postgres.em.findOne(

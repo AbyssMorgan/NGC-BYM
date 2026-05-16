@@ -115,9 +115,12 @@ export const migrateBase: KoaController = async (ctx) => {
     delete userSave.buildingresources[`b${outpostBaseId}`];
   }
 
-  if (shiny) userSave.credits = userSave.credits - shiny;
-  if (resources)
+  if (shiny){
+	userSave.credits = userSave.credits - shiny;
+  }
+  if (resources){
     userSave.resources = updateResources(resources, userSave.resources ?? {}, Operation.SUBTRACT);
+  }
 
   await postgres.em.transactional(async (em) => {
     em.persist([homeCell, userSave]);

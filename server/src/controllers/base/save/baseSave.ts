@@ -26,6 +26,7 @@ import { WorldMapCell } from "../../../models/worldmapcell.model.js";
 import { MapRoomVersion } from "../../../enums/MapRoom.js";
 import { MR1_TRIBE_IDS } from "../../../game-data/tribes/v1/index.js";
 import { scaledMR1Tribes } from "../../../services/maproom/v1/scaledMR1Tribes.js";
+import { getConquerorPointsByLevel } from "../../../utils/getConquerorPointsByLevel.js";
 
 /**
  * Controller responsible for saving the user's base data.
@@ -60,6 +61,7 @@ export const baseSave: KoaController = async (ctx) => {
   const isOwner = baseSave.saveuserid === user.userid;
   const isOutpostOwner = isOwner && baseSave.type === BaseType.OUTPOST;
   const isAttack = !isOwner && baseSave.attackid !== 0;
+  const conquerorPoints = getConquerorPointsByLevel(baseSave.level);
 
   // Not the owner and not in an attack
   if (!isOwner && baseSave.attackid === 0) throw permissionErr();
@@ -142,6 +144,7 @@ export const baseSave: KoaController = async (ctx) => {
   let takeoverData: TakeoverData | null = null;
 
   if (isAttack) {
+	
     if (saveData.monsterupdate) {
       await monsterUpdateHandler(saveData.monsterupdate, userSave);
     }
@@ -162,6 +165,28 @@ export const baseSave: KoaController = async (ctx) => {
     // MR3 capturable structures (RESOURCE, STRONGHOLD, FORTIFICATION) allow re-capture
     // from OUTPOST type (player-owned) in addition to first capture from TRIBE type.
     if (saveData.over && baseSave.damage >= 90) {
+		switch(baseSave.type){
+			case BaseType.MAIN: {
+				const points_take = Math.min(baseSave.empirevalue, conquerorPoints * 2);
+				const points_give = Math.round(points_take / 2);
+
+				baseSave.empirevalue -= points_take;
+				userSave.empirevalue += points_give;
+
+				postgres.em.persist(userSave);
+    			await postgres.em.flush();
+
+				postgres.em.persist(baseSave);
+    			await postgres.em.flush();
+				break;
+			}
+			case BaseType.TRIBE: {
+				userSave.empirevalue += conquerorPoints;
+				postgres.em.persist(userSave);
+    			await postgres.em.flush();
+				break;
+			}
+		}
       if (isMR3Structure(baseSave.wmid)) {
         if (baseSave.type === BaseType.TRIBE || baseSave.type === BaseType.OUTPOST) {
           takeoverData = await takeoverCellMR3(baseSave, user, userSave);

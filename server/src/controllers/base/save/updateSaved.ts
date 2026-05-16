@@ -80,7 +80,8 @@ export const updateSaved: KoaController = async (ctx) => {
     error: 0,
     flags,
     ...filteredSave,
-    credits: userSave.credits
+    credits: userSave.credits,
+    empirevalue: userSave.empirevalue,
   };
 
   if (baseSave.type !== BaseType.INFERNO && user.userid === filteredSave.userid) {

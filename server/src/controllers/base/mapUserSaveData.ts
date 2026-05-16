@@ -13,6 +13,7 @@ export const mapUserSaveData = (user: User) => {
 
   return {
     credits: userSave.credits,
+    empirevalue: userSave.empirevalue,
     resources: userSave.resources,
     lockerdata: userSave.lockerdata,
     academy: userSave.academy,

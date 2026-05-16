@@ -47,7 +47,7 @@ export const overworldYardSandbox = (user?: User) => {
     clienttime: 1703682749,
     baseseed: 4520,
     healtime: 0,
-    empirevalue: 9454088,
+    empirevalue: 0,
     basename: "basename",
     attackreport: "",
     over: 1,

@@ -291,6 +291,8 @@ package
 
       public static var _currentCellLoc:Point = null;
 
+	  public static var _conquerorPoints:SecNum = new SecNum(0);
+
       private static const s_levels:Array = [
          0,                 // Level 1
          900,               // Level 2
@@ -1194,6 +1196,7 @@ package
                {
                   _basePoints = 0;
                }
+               _conquerorPoints = new SecNum(int(serverData.empirevalue));
                _credits = new SecNum(int(serverData.credits));
                GLOBAL._credits = new SecNum(int(serverData.credits));
                _hpCredits = int(serverData.credits);
@@ -3905,7 +3908,6 @@ package
             _attacksModified = false;
          }
          saveData["effects"] = EFFECTS._effectsJSON;
-         saveData["empirevalue"] = 0;
 		 CalcBaseValue();
          saveData["inventory"] = STORE.InventoryExport();
          saveData["achieved"] = JSON.stringify(ACHIEVEMENTS.Report());
@@ -4100,6 +4102,7 @@ package
             _saveErrors = 0;
             _lastSaved = GLOBAL.Timestamp();
             _lastSaveID = serverData.basesaveid;
+            _conquerorPoints.Set(int(serverData.empirevalue));
             _credits.Set(int(serverData.credits));
             _hpCredits = int(serverData.credits);
             GLOBAL._credits.Set(int(serverData.credits));
@@ -4213,6 +4216,7 @@ package
                GLOBAL.SetFlags(serverData.flags);
                GLOBAL._unreadMessages = !!serverData.unreadmessages ? int(serverData.unreadmessages) : 0;
                _pageErrors = 0;
+               _conquerorPoints.Set(int(serverData.empirevalue));
                _credits.Set(int(serverData.credits));
                _hpCredits = int(serverData.credits);
                GLOBAL._credits.Set(int(serverData.credits));

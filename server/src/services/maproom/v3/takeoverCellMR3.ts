@@ -83,8 +83,50 @@ export const takeoverCellMR3 = async (baseSave: Save, user: User, userSave: Save
   baseSave.attacks = [];
   baseSave.tutorialstage = 205;
   baseSave.createtime = currentTime;
-  if(wmid == EnumYardType.RESOURCE || wmid == EnumYardType.STRONGHOLD){
-	  baseSave.protected = currentTime + (3 * 24 * 60 * 60);
+
+  switch(wmid){
+	case EnumYardType.RESOURCE: {
+		switch(level){
+			case 50: {
+				baseSave.protected = currentTime + (3 * 24 * 60 * 60);
+				break;
+			}
+			case 60: {
+				baseSave.protected = currentTime + (4 * 24 * 60 * 60);
+				break;
+			}
+			case 70: {
+				baseSave.protected = currentTime + (5 * 24 * 60 * 60);
+				break;
+			}
+			case 80: {
+				baseSave.protected = currentTime + (6 * 24 * 60 * 60);
+				break;
+			}
+			case 90: {
+				baseSave.protected = currentTime + (7 * 24 * 60 * 60);
+				break;
+			}
+		}
+		break;
+	}
+	case EnumYardType.STRONGHOLD: {
+		switch(level){
+			case 60: {
+				baseSave.protected = currentTime + (4 * 24 * 60 * 60);
+				break;
+			}
+			case 80: {
+				baseSave.protected = currentTime + (6 * 24 * 60 * 60);
+				break;
+			}
+			case 100: {
+				baseSave.protected = currentTime + (8 * 24 * 60 * 60);
+				break;
+			}
+		}
+		break;
+	}
   }
   baseSave.takeoverDate = new Date();
 

@@ -173,12 +173,16 @@ package
          });
          mc.mcR5.bAdd.buttonMode = true;
          mc.mcR5.bAdd.mouseChildren = false;
-         mc.mcOutposts.mcHit.addEventListener(MouseEvent.MOUSE_OVER,this.ButtonInfoShow);
-         mc.mcOutposts.mcHit.addEventListener(MouseEvent.MOUSE_OUT,this.ButtonInfoHide);
-         mc.mcOutposts.bNext.addEventListener(MouseEvent.CLICK,BASE.LoadNext);
-         mc.mcOutposts.bNext.buttonMode = true;
-         mc.mcOutposts.bNext.mouseEnabled = true;
-         mc.mcOutposts.bNext.mouseChildren = false;
+		 if(MapRoomManager.instance.isInMapRoom2){
+			mc.mcOutposts.mcHit.addEventListener(MouseEvent.MOUSE_OVER,this.ButtonInfoShow);
+			mc.mcOutposts.mcHit.addEventListener(MouseEvent.MOUSE_OUT,this.ButtonInfoHide);
+			mc.mcOutposts.bNext.addEventListener(MouseEvent.CLICK,BASE.LoadNext);
+			mc.mcOutposts.bNext.buttonMode = true;
+			mc.mcOutposts.bNext.mouseEnabled = true;
+			mc.mcOutposts.bNext.mouseChildren = false;
+		 } else {
+			mc.mcOutposts.bNext.visible = false;
+		 }
          mc.bInvite.buttonMode = true;
          mc.bInvite.mouseChildren = false;
          mc.bInvite.addEventListener(MouseEvent.CLICK,this.ButtonClick("invite"));
@@ -545,12 +549,13 @@ package
             {
                mc.mcR5.bAdd.removeEventListener(MouseEvent.CLICK,BUY.Show);
             }
-            if(Boolean(mc.mcOutposts) && Boolean(mc.mcOutposts.mcHit) && Boolean(mc.mcOutposts.bNext))
-            {
-               mc.mcOutposts.mcHit.removeEventListener(MouseEvent.MOUSE_OVER,this.ButtonInfoShow);
-               mc.mcOutposts.mcHit.removeEventListener(MouseEvent.MOUSE_OUT,this.ButtonInfoHide);
-               mc.mcOutposts.bNext.removeEventListener(MouseEvent.CLICK,BASE.LoadNext);
-            }
+			if(MapRoomManager.instance.isInMapRoom2){
+				if(Boolean(mc.mcOutposts) && Boolean(mc.mcOutposts.mcHit) && Boolean(mc.mcOutposts.bNext)){
+					mc.mcOutposts.mcHit.removeEventListener(MouseEvent.MOUSE_OVER,this.ButtonInfoShow);
+					mc.mcOutposts.mcHit.removeEventListener(MouseEvent.MOUSE_OUT,this.ButtonInfoHide);
+					mc.mcOutposts.bNext.removeEventListener(MouseEvent.CLICK,BASE.LoadNext);
+				}
+			}
             if(mc.bInvite)
             {
                mc.bInvite.removeEventListener(MouseEvent.CLICK,this.ButtonClick("invite"));
@@ -734,14 +739,7 @@ package
          var _loc2_:MovieClip = null;
          if(Boolean(mc) && GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD && !BASE.isInfernoMainYardOrOutpost)
          {
-            if(MapRoomManager.instance.isInMapRoom2)
-            {
-               _loc2_ = mc.mcOutposts;
-            }
-            else
-            {
-               _loc2_ = mc.mcR4;
-            }
+            _loc2_ = mc.mcOutposts;
             param1.x = -4;
             param1.y = _loc2_.y + 37;
             this._daveClub = mc.addChild(param1);
@@ -969,14 +967,14 @@ package
             "overwrite":1
          });
          mc["mcR" + 5].tR.htmlText = "<b>" + GLOBAL.FormatNumber(BASE._credits.Get()) + "</b>";
+		 mc.mcOutposts.visible = true;
          if(MapRoomManager.instance.isInMapRoom2)
          {
-            mc.mcOutposts.visible = true;
             mc.mcOutposts.tR.htmlText = GLOBAL._mapOutpost.length;
          }
          else
          {
-            mc.mcOutposts.visible = false;
+			mc.mcOutposts.tR.htmlText = BASE._conquerorPoints.Get() + ' CQ';
          }
 		 mc.mcR1.bAdd.visible = false;
 		 mc.mcR2.bAdd.visible = false;
@@ -1073,14 +1071,7 @@ package
             {
                _loc11_ = SubscriptionHandler.instance.isSubscriptionActive;
                (this._daveClub as MovieClip).gotoAndStop(_loc11_ ? "on" : "off");
-               if(MapRoomManager.instance.isInMapRoom2)
-               {
-                  _loc12_ = mc.mcOutposts;
-               }
-               else
-               {
-                  _loc12_ = mc.mcR4;
-               }
+               _loc12_ = mc.mcOutposts;
                this._daveClub.x = -4;
                this._daveClub.y = _loc12_.y + 37;
             }
@@ -1261,10 +1252,10 @@ package
          var _loc11_:int = 0;
          var _loc12_:int = 0;
          var _loc13_:int = 0;
-         if(MapRoomManager.instance.isInMapRoom2)
-         {
+        //  if(MapRoomManager.instance.isInMapRoom2)
+        //  {
             _loc10_ += 35;
-         }
+        //  }
          var _loc14_:int = 0;
          while(_loc14_ < this._buttonIcons.length)
          {

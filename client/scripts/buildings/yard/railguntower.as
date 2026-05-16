@@ -29,12 +29,12 @@ package buildings.yard {
 				{"range":380, "damage":2000, "rate":160, "speed":20, "splash":0}, // Level 6
 				{"range":390, "damage":2200, "rate":160, "speed":20, "splash":0}, // Level 7
 				{"range":400, "damage":2500, "rate":160, "speed":20, "splash":0}, // Level 8
-				{"range":410, "damage":3000, "rate":160, "speed":20, "splash":0}, // Level 9
-				{"range":420, "damage":3500, "rate":160, "speed":20, "splash":0}, // Level 10
-				{"range":430, "damage":4000, "rate":150, "speed":20, "splash":0}, // Level 11
-				{"range":440, "damage":4500, "rate":140, "speed":20, "splash":0}, // Level 12
-				{"range":450, "damage":5000, "rate":130, "speed":20, "splash":0}, // Level 13
-				{"range":460, "damage":6000, "rate":120, "speed":20, "splash":0}, // Level 14
+				{"range":410, "damage":2750, "rate":160, "speed":20, "splash":0}, // Level 9
+				{"range":420, "damage":3000, "rate":160, "speed":20, "splash":0}, // Level 10
+				{"range":430, "damage":3250, "rate":160, "speed":20, "splash":0}, // Level 11
+				{"range":440, "damage":3500, "rate":160, "speed":20, "splash":0}, // Level 12
+				{"range":450, "damage":3750, "rate":160, "speed":20, "splash":0}, // Level 13
+				{"range":460, "damage":4000, "rate":160, "speed":20, "splash":0}, // Level 14
 			],
 			"costs":[
 				{"r1":new SecNum(2000000), "r2":new SecNum(2400000), "r3":new SecNum(1600000), "r4":new SecNum(0), "time":new SecNum(86400 * 1), "re":[[14,1,5]]}, // Level 1

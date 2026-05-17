@@ -33,8 +33,10 @@ package
       
       override public function Loot(param1:int) : uint
       {
-		if(MapRoomManager.instance.isInMapRoom3 && GLOBAL._currentCell.baseType == EnumYardType.PLAYER){
-			return 0;
+		if(!BASE.isInfernoMainYardOrOutpost){
+			if(MapRoomManager.instance.isInMapRoom3 && GLOBAL._currentCell.baseType == EnumYardType.PLAYER){
+				return 0;
+			}
 		}
          var _loc4_:Object = null;
          var _loc2_:int = 0;
@@ -156,9 +158,12 @@ package
                {
                   loot_value = Math.ceil(loot_value * _LOOT_GOO_LIMITER);
                }
-			   if(MapRoomManager.instance.isInMapRoom3 && GLOBAL._currentCell.baseType == EnumYardType.PLAYER){
-					loot_value = 0;
-			   }
+				if(!BASE.isInfernoMainYardOrOutpost){
+					if(MapRoomManager.instance.isInMapRoom3 && GLOBAL._currentCell.baseType == EnumYardType.PLAYER){
+						loot_value = 0;
+					}
+				}
+			   
                if(loot_value > 0)
                {
                   BASE._resources["r" + building_id].Add(-loot_value);

@@ -139,7 +139,8 @@ package com.monsters.player
       {
          var _loc3_:Number = CREATURES.GetProperty(this.m_creatureID,"hTime",this.m_level);
          var _loc4_:int = CREATURES.GetProperty(this.m_creatureID,"hResource",this.m_level);
-         var _loc5_:int = Math.ceil(this.m_maxHealth / _loc3_);
+		 var healing_multiplier:int = 1.0 - Math.min((BASE._conquerorPoints.Get() * 0.00001), 0.75);
+         var _loc5_:int = Math.ceil(this.m_maxHealth / (_loc3_ * healing_multiplier));
          CREATURES.GetProperty(this.m_creatureID,"health",this.m_level);
          var _loc6_:int = 0;
          var _loc7_:int = 0;
@@ -197,7 +198,8 @@ package com.monsters.player
       private function timeLeftToHealCreep(param1:CreepInfo) : int
       {
          var _loc2_:Number = CREATURES.GetProperty(this.m_creatureID,"hTime",this.m_level);
-         return (this.m_maxHealth - param1.health) / (this.m_maxHealth / _loc2_);
+		 var healing_multiplier:int = 1.0 - Math.min((BASE._conquerorPoints.Get() * 0.00001), 0.75);
+         return (this.m_maxHealth - param1.health) / (this.m_maxHealth / (_loc2_ * healing_multiplier));
       }
       
       private function healthSort(param1:CreepInfo, param2:CreepInfo) : Number
@@ -279,8 +281,9 @@ package com.monsters.player
          var _loc12_:int = 0;
          var _loc13_:int = 0;
          var _loc14_:int = 0;
+		 var healing_multiplier:int = 1.0 - Math.min((BASE._conquerorPoints.Get() * 0.00001), 0.75);
          var _loc2_:Number = CREATURES.GetProperty(this.m_creatureID,"hTime",this.m_level);
-         var _loc3_:Number = this.m_maxHealth / _loc2_;
+         var _loc3_:Number = this.m_maxHealth / (_loc2_ * healing_multiplier);
          var _loc4_:int = int(this.m_creeps.length);
          var _loc5_:Boolean = true;
          var _loc7_:CreepInfo = null;

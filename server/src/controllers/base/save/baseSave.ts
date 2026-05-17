@@ -24,10 +24,10 @@ import { damageProtection } from "../../../services/maproom/v2/damageProtection.
 import { isMR3Structure } from "../../../services/maproom/v3/utils/isMR3Structure.js";
 import { WorldMapCell } from "../../../models/worldmapcell.model.js";
 import { MapRoomVersion } from "../../../enums/MapRoom.js";
-import { EnumYardType } from "../../../enums/EnumYardType.js";
 import { MR1_TRIBE_IDS } from "../../../game-data/tribes/v1/index.js";
 import { scaledMR1Tribes } from "../../../services/maproom/v1/scaledMR1Tribes.js";
 import { getConquerorPointsByLevel } from "../../../utils/getConquerorPointsByLevel.js";
+import { getPlayerConquerorPointsByLevel } from "../../../utils/getPlayerConquerorPointsByLevel.js";
 
 /**
  * Controller responsible for saving the user's base data.
@@ -62,7 +62,6 @@ export const baseSave: KoaController = async (ctx) => {
   const isOwner = baseSave.saveuserid === user.userid;
   const isOutpostOwner = isOwner && baseSave.type === BaseType.OUTPOST;
   const isAttack = !isOwner && baseSave.attackid !== 0;
-  const conquerorPoints = getConquerorPointsByLevel(baseSave.level);
 
   // Not the owner and not in an attack
   if (!isOwner && baseSave.attackid === 0) throw permissionErr();
@@ -169,7 +168,7 @@ export const baseSave: KoaController = async (ctx) => {
 		if(userSave.mapversion == MapRoomVersion.V3){
 			switch(baseSave.type){
 				case BaseType.MAIN: {
-					const points_take = Math.min(baseSave.empirevalue, conquerorPoints * 20);
+					const points_take = Math.min(baseSave.empirevalue, getPlayerConquerorPointsByLevel(baseSave.level));
 					const points_give = Math.round(points_take / 2);
 
 					baseSave.empirevalue -= points_take;
@@ -183,8 +182,8 @@ export const baseSave: KoaController = async (ctx) => {
 					break;
 				}
 				case BaseType.TRIBE: {
-					if(baseSave.wmid == EnumYardType.OUTPOST){
-						userSave.empirevalue += conquerorPoints;
+					if(baseSave.wmid == 31 || baseSave.wmid == 21 || baseSave.wmid == 11 || baseSave.wmid == 1){
+						userSave.empirevalue += getConquerorPointsByLevel(baseSave.level);
 						postgres.em.persist(userSave);
 						await postgres.em.flush();
 					}

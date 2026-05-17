@@ -105,9 +105,12 @@ package
       
       override public function Loot(param1:int) : uint
       {
-		if(MapRoomManager.instance.isInMapRoom3 && GLOBAL._currentCell.baseType == EnumYardType.PLAYER){
-			return 0;
+		if(!BASE.isInfernoMainYardOrOutpost){
+			if(MapRoomManager.instance.isInMapRoom3 && GLOBAL._currentCell.baseType == EnumYardType.PLAYER){
+				return 0;
+			}
 		}
+		
          var _loc2_:int = 0;
          if(_stored.Get() >= param1)
          {

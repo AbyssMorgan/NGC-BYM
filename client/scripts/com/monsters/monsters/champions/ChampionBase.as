@@ -1264,7 +1264,7 @@ package com.monsters.monsters.champions
          {
             if(this._lastHeal <= GLOBAL.Timestamp() - 5 || GLOBAL._catchup && BASE.firstBaseLoaded)
             {
-		       var healing_multiplier:int = 1.0 - Math.min((BASE._conquerorPoints.Get() * 0.00001), 0.75);
+		       var healing_multiplier:Number = 1.0 - Math.min((BASE._conquerorPoints.Get() * 0.00001), 0.75);
                this.modifyHealth(int(maxHealth * 5 / (this._regen * healing_multiplier)) * param1);
                setHealth(Math.min(health,maxHealth));
                this._lastHeal = GLOBAL.Timestamp();

@@ -105,7 +105,7 @@ package
       
       override public function Loot(param1:int) : uint
       {
-		if(!BASE.isInfernoMainYardOrOutpost){
+		if(!BASE.isInfernoMainYardOrOutpost && GLOBAL._currentCell){
 			if(MapRoomManager.instance.isInMapRoom3 && GLOBAL._currentCell.baseType == EnumYardType.PLAYER){
 				return 0;
 			}

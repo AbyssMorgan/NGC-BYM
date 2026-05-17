@@ -100,18 +100,16 @@ router.post("/api/:apiVersion/player/savebookmarks", apiVersion, verifyUserAuth,
 * 📦 Map Room 3
 * ──────────────────────────────────────────────── */
 router.post("/worldmapv3/initworldmap", verifyUserAuth, verifyAccountStatus, logRequest, initialPlayerCellData);
-router.get("/worldmapv3/initworldmap", verifyUserAuth, verifyAccountStatus, logRequest, initialPlayerCellData);
 router.post("/worldmapv3/getcells", verifyUserAuth, verifyAccountStatus, getCellsLimiter, logRequest, getMapRoomCells);
-router.get("/worldmapv3/relocate", verifyUserAuth, verifyAccountStatus, logRequest, relocate);
-router.get("/worldmapv3/getfriendinfo", verifyUserAuth, verifyAccountStatus, getFriendInfo);
-router.get("/worldmapv3/setmapversion", verifyUserAuth, verifyAccountStatus, logRequest, setMapVersion);
+router.post("/worldmapv3/relocate", verifyUserAuth, verifyAccountStatus, logRequest, relocate);
+router.post("/worldmapv3/getfriendinfo", verifyUserAuth, verifyAccountStatus, getFriendInfo);
 router.post("/worldmapv3/setmapversion", verifyUserAuth, verifyAccountStatus, logRequest, setMapVersion);
 
 /**  ────────────────────────────────────────────────
 * 📦 Mail
 * ──────────────────────────────────────────────── */
-router.get("/api/:apiVersion/player/getmessagetargets", apiVersion, verifyUserAuth, logRequest, getMessageTargets);
-router.get("/api/:apiVersion/player/getmessagethreads", apiVersion, verifyUserAuth, logRequest, getMessageThreads);
+router.get("/api/:apiVersion/player/getmessagetargets", apiVersion, verifyUserAuth, logRequest, getMessageTargets); // TODO Swap to POST
+router.get("/api/:apiVersion/player/getmessagethreads", apiVersion, verifyUserAuth, logRequest, getMessageThreads); // TODO Swap to POST
 router.post("/api/:apiVersion/player/getmessagethread", apiVersion, verifyUserAuth, logRequest, getMessageThread);
 router.post("/api/:apiVersion/player/sendmessage", apiVersion, verifyUserAuth, logRequest, sendMessage);
 router.post("/api/:apiVersion/player/requesttruce", apiVersion, verifyUserAuth, logRequest, requestTruce);
@@ -120,7 +118,7 @@ router.post("/api/:apiVersion/player/reportmessagethread", apiVersion, verifyUse
 /**  ────────────────────────────────────────────────
 * 📦 Yard Planner
 * ──────────────────────────────────────────────── */
-router.get("/api/:apiVersion/bm/yardplanner/gettemplates", apiVersion, verifyUserAuth, logRequest, getTemplates);
+router.get("/api/:apiVersion/bm/yardplanner/gettemplates", apiVersion, verifyUserAuth, logRequest, getTemplates); // TODO Swap to POST
 router.post("/api/:apiVersion/bm/yardplanner/savetemplate", apiVersion, verifyUserAuth, logRequest, saveTemplate);
 
 /**  ────────────────────────────────────────────────

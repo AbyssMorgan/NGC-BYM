@@ -87,11 +87,8 @@ export const setMapVersion: KoaController = async (ctx) => {
 
   const filteredSave = FilterFrontendKeys(save);
 
-  const baseurl =
-    process.env.ENV === Env.PROD
-      ? `${process.env.BASE_URL}/base/`
-      : `${process.env.BASE_URL}:${process.env.PORT}/base/`;
-
+  const baseurl = `${process.env.BASE_URL}:${process.env.PORT}/base/`;
+  
   ctx.status = Status.OK;
   ctx.body = {
     error: 0,

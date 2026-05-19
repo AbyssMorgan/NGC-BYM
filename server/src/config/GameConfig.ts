@@ -36,18 +36,18 @@ export const devConfig = {
    * Inserts a sandbox test base into the database, with all buildings placed.
    * Must be set before creating a new record.
    */
-  devSandbox: process.env.ENV === Env.PROD ? false : false,
+  devSandbox: false,
 
   /*
    * Inserts an Inferno sandbox test base into the database, with all buildings placed.
    * Must be set before creating a new record.
    */
-  infernoSandbox: process.env.ENV === Env.PROD ? false : false,
+  infernoSandbox: false,
 
   /*
    * Logs all missing assets and their paths to the server console.
    */
-  logMissingAssets: process.env.ENV === Env.PROD ? false : true,
+  logMissingAssets: false,
 
   /*
    * Sets whether the user's account should receive all unlockable event rewards.
@@ -77,7 +77,7 @@ export const devConfig = {
   /*
    * Sets whether the tutorial phase of the game is enabled or disabled.
    */
-  skipTutorial: process.env.ENV !== Env.PROD,
+  skipTutorial: true,
 
   /**
    * Sets the type of messages that are allowed to be sent by the client.

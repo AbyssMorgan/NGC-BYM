@@ -72,12 +72,12 @@ export const login: KoaController = async (ctx) => {
   let discordId: string | null | undefined;
 
   // Check if the user has verified their Discord account
-  if (process.env.ENV === Env.PROD) {
-    if (!user.discord_verified) throw discordVerifyErr();
-    discordId = user.discord_id;
+//   if (process.env.ENV === Env.PROD) {
+//     if (!user.discord_verified) throw discordVerifyErr();
+//     discordId = user.discord_id;
 
-    if (discordId) fetchDiscordAvatar(user.userid, discordId);
-  }
+//     if (discordId) fetchDiscordAvatar(user.userid, discordId);
+//   }
 
   const newToken = JWT.sign(
     {

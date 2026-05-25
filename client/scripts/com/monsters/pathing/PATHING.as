@@ -33,9 +33,9 @@ package com.monsters.pathing
 
       private static const cPI180:Number = PI / 180;
 
-      private static var _gridWidth:int = 164;
+      private static var _gridWidth:int = 200;
 
-      private static var _gridHeight:int = 132;
+      private static var _gridHeight:int = 200;
 
       private static var _floods:Object = {};
 

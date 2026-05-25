@@ -197,7 +197,7 @@ package com.monsters.monsters.creeps
                   TweenLite.to(_graphicMC,0.6,{
                      "y":_graphicMC.y + 90,
                      "ease":Bounce.easeOut,
-                     "onComplete":changeModeAttack
+                     "onComplete": _targetGroup == 5 ? changeModeHeal : changeModeAttack
                   });
                }
                else
@@ -213,7 +213,7 @@ package com.monsters.monsters.creeps
                      "ease":Bounce.easeOut,
                      "overwrite":false,
                      "delay":0.4,
-                     "onComplete":changeModeAttack
+                     "onComplete": _targetGroup == 5 ? changeModeHeal : changeModeAttack
                   });
                }
             }

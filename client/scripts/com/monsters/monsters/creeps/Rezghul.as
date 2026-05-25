@@ -53,6 +53,7 @@ package com.monsters.monsters.creeps
          _loc14_ = new ResurrectProjectile();
          var _loc15_:RezghulResurrectAttack = new RezghulResurrectAttack(300,CREATURES.GetProperty(_creatureID,k_RESSURECT_COOLDOWN,param5,_friendly),Targeting.getFriendlyFlag(this) | Targeting.k_TARGETS_GROUND,50,_loc14_,_loc13_);
          addComponent(_loc15_);
+		 attackFlags = Targeting.getOldStyleTargets(1);
       }
       
       override protected function rangedAttack(param1:ITargetable) : ITargetable

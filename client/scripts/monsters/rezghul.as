@@ -26,46 +26,50 @@ package monsters {
 				[448000000, 3600 * 120], // Level 10
 			],
 			"stream":["","","quests/monster19.png"],
+			"antiHeal":true,
 			"blocked":true,
 			"props":{
 				"range":[
-					200, // Level 1
+					250, // Level 1
+				],
+				"attackDelay":[
+					10, // Level 1
 				],
 				"speed":[
-					0.80, // Level 1
-					0.90, // Level 2
-					1.00, // Level 3
-					1.10, // Level 4
-					1.20, // Level 5
-					1.30, // Level 6
-					1.40, // Level 7
-					1.50, // Level 8
-					1.60, // Level 9
-					1.70, // Level 10
+					1.60, // Level 1
+					1.80, // Level 2
+					2.00, // Level 3
+					2.20, // Level 4
+					2.40, // Level 5
+					2.60, // Level 6
+					2.80, // Level 7
+					3.00, // Level 8
+					3.20, // Level 9
+					3.50, // Level 10
 				],
 				"health":[
-					7000, // Level 1
-					7500, // Level 2
-					8000, // Level 3
-					8500, // Level 4
-					9000, // Level 5
-					10000, // Level 6
-					10600, // Level 7
-					11200, // Level 8
-					11800, // Level 9
-					12400, // Level 10
+					28000, // Level 1
+					30000, // Level 2
+					32000, // Level 3
+					34000, // Level 4
+					36000, // Level 5
+					38000, // Level 6
+					40000, // Level 7
+					44000, // Level 8
+					48000, // Level 9
+					52000, // Level 10
 				],
 				"damage":[
-					700, // Level 1
-					800, // Level 2
-					900, // Level 3
-					1000, // Level 4
-					1100, // Level 5
-					1200, // Level 6
-					1300, // Level 7
-					1400, // Level 8
-					1500, // Level 9
-					1600, // Level 10
+					-60, // Level 1
+					-70, // Level 2
+					-80, // Level 3
+					-90, // Level 4
+					-100, // Level 5
+					-110, // Level 6
+					-120, // Level 7
+					-130, // Level 8
+					-140, // Level 9
+					-150, // Level 10
 				],
 				"cTime":[
 					4500, // Level 1
@@ -83,12 +87,12 @@ package monsters {
 					12000000, // Level 10
 				],
 				"cStorage":[
-					250, // Level 1
+					60, // Level 1
 				],
 				"bucket":[
-					250, // Level 1
+					60, // Level 1
 				],
-				"targetGroup":[4],
+				"targetGroup":[5],
 				"zombieSpeedMultiplier":[
 					0.75, // Level 1
 				],

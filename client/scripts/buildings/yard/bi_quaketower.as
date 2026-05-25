@@ -66,6 +66,15 @@ package buildings.yard {
 					"shadowdamaged":["shadow.1.v2.jpg",new Point(-40,16)],
 					"topdestroyed":["top.1.destroyed.png",new Point(-42,-8)]
 					// "shadowdestroyed":["shadow.1.v2.jpg",new Point(-44,10)]
+				},
+				"12":{
+					"anim":["anim.heat.png",new Rectangle(-37,-75,75,132),33],
+					"shadow":["shadow.1.v2.jpg",new Point(-37,17)],
+					"topdamaged":["top.heat.damaged.png",new Point(-40,-75)],
+					"animdamaged":["anim.heat.damaged.png",new Rectangle(-40,-75,84,133),33],
+					"shadowdamaged":["shadow.1.v2.jpg",new Point(-40,16)],
+					"topdestroyed":["top.heat.destroyed.png",new Point(-42,-8)]
+					// "shadowdestroyed":["shadow.1.v2.jpg",new Point(-44,10)]
 				}
 			},
 			"buildingbuttons":["quake_tower.v2"],

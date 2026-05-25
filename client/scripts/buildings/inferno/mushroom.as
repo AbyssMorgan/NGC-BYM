@@ -1,8 +1,8 @@
 package buildings.inferno {
 
-    public class mushroom {
+	public class mushroom {
 
-        public static const DATA:Object = {
+		public static const DATA:Object = {
 			"id":7,
 			"group":999,
 			"order":1,
@@ -24,5 +24,5 @@ package buildings.inferno {
 			"repairTime":[10]
 		};
 		
-    }
+	}
 }

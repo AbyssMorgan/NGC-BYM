@@ -12,16 +12,16 @@ package {
 	import buildings.inferno.flinger;
 	import buildings.inferno.bi_storagesilo;
 	import buildings.inferno.mushroom;
-	// import buildings.inferno.monsterlocker;
-	// import buildings.inferno.monsterjuicer;
+	import buildings.inferno.bi_monsterlocker;
+	import buildings.inferno.monsterjuicer;
 	import buildings.yard.yardplanner;
-	// import buildings.inferno.maproom;
+	import buildings.inferno.maproom;
 	import buildings.inferno.generalstore;
 	import buildings.inferno.bi_hatchery;
-	// import buildings.inferno.townhall;
-	// import buildings.inferno.housing;
-	// import buildings.inferno.hcc;
-	// import buildings.inferno.woodenblock;
+	import buildings.inferno.bi_townhall;
+	import buildings.inferno.bi_housing;
+	import buildings.inferno.hcc;
+	import buildings.inferno.woodenblock;
 	// import buildings.inferno.stoneblock;
 	// import buildings.inferno.wildmonsterbaiter;
 	// import buildings.inferno.cannontower;
@@ -55,7 +55,7 @@ package {
 	import buildings.yard.bdg_austrianflag;
 	import buildings.yard.bdg_pirateflag;
 	import buildings.yard.bdg_peaceflag;
-	// import buildings.inferno.catapult;
+	import buildings.inferno.catapult;
 	import buildings.yard.simplesign;
 	import buildings.yard.hwn_pumpkin;
 	import buildings.yard.hwn_massivepumpkin;
@@ -116,7 +116,6 @@ package {
 	import buildings.yard.bdg_rubiksolved;
 	import buildings.yard.bdg_halloween;
 	import buildings.yard.bdg_halloween_small;
-	import buildings.inferno.bi_townhall;
 	// import buildings.inferno.outpost;
 	// import buildings.inferno.radio;
 	// import buildings.inferno.monstercage;
@@ -158,332 +157,17 @@ package {
 			flinger.DATA,            // ID 5 (Locked)
 			bi_storagesilo.DATA,     // ID 6
 			mushroom.DATA,           // ID 7
+			bi_monsterlocker.DATA,   // ID 8
+			monsterjuicer.DATA,      // ID 9
+			yardplanner.DATA,        // ID 10
+			maproom.DATA,            // ID 11 (Locked)
+			generalstore.DATA,       // ID 12
+			bi_hatchery.DATA,        // ID 13
+			bi_townhall.DATA,        // ID 14
+			bi_housing.DATA,         // ID 15 (Locked)
+			hcc.DATA,                // ID 16 (Locked)
+			woodenblock.DATA,        // ID 17
 		{
-			"id":8,
-			"group":2,
-			"order":3,
-			"buildStatus":0,
-			"type":"special",
-			"name":"#bi_monsterlocker#",
-			"size":120,
-			"attackgroup":2,
-			"tutstage":200,
-			"sale":0,
-			"description":"bi_monsterlocker_desc",
-			"block":false,
-			"costs":[
-				{"r1":new SecNum(1800), "r2":new SecNum(2300), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(600), "re":[[14,1,1],[13,1,1]]},
-				{"r1":new SecNum(28800), "r2":new SecNum(18400), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(18000), "re":[[14,1,2]]},
-				{"r1":new SecNum(115200), "r2":new SecNum(147200), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(72000), "re":[[14,1,3]]},
-				{"r1":new SecNum(460800), "r2":new SecNum(588800), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(129600), "re":[[14,1,4]]}
-			],
-			"imageData":{
-				"baseurl":"buildings/imonsterlab/",
-				1:{
-					"anim":["anim.1.v2.png",new Rectangle(-42,-41,86,88),31],
-					"top":["top.1.v2.png",new Point(-56,8)],
-					//"shadow":["shadow.1.v2.jpg",new Point(-81,10)],
-					"topdamaged":["top.1.damaged.v2.png",new Point(-56,-31)],
-					//"shadowdamaged":["shadow.1.damaged.v2.jpg",new Point(-76,8)],
-					"topdestroyed":["top.1.destroyed.v2.png",new Point(-53,10)]
-					//"shadowdestroyed":["shadow.1.destroyed.v2.jpg",new Point(-83,13)]
-				}
-			},
-			"buildingbuttons":["monster_locker.v2"],
-			"upgradeImgData":{
-				"baseurl":"buildingbuttons/",
-				1:{
-					"img":"monster_locker.v2.jpg",
-					"silhouette_img":"monster_locker.v2.jpg"
-				}
-			},
-			"quantity":[0,1,1,1,1,1,1,1,1,1],
-			"hp":[4000,16000,32000,64000],
-			"repairTime":[480,1920,3840,15360]
-		},
-		
-		{
-			"id":9,
-			"group":2,
-			"order":14,
-			"buildStatus":0,
-			"type":"special",
-			"name":"#b_monsterjuicer#",
-			"size":120,
-			"attackgroup":2,
-			"tutstage":200,
-			"sale":0,
-			"description":"monsterjuicer_desc",
-			"cls":BUILDING9,
-			"costs":[
-				{"r1":new SecNum(1000000), "r2":new SecNum(1000000), "r3":new SecNum(1000000), "r4":new SecNum(0), "time":new SecNum(43200), "re":[[14,1,1],[128,1,1]]},
-				{"r1":new SecNum(250000), "r2":new SecNum(250000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(21600), "re":[[14,1,1],[128,1,1]]},
-				{"r1":new SecNum(500000), "r2":new SecNum(500000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(43200), "re":[[14,1,1],[128,1,1]]}
-			],
-			"imageData":{
-				"baseurl":"buildings/monsterjuiceloosener/",
-				1:{
-					"anim":["anim.2.png",new Rectangle(-30,-17,60,39),51],
-					"top":["top.2.png",new Point(-44,-8)],
-					"shadow":["shadow.2.jpg",new Point(-44,16)],
-					"topdamaged":["top.2.damaged.png",new Point(-59,-8)],
-					"shadowdamaged":["shadow.2.damaged.jpg",new Point(-59,21)],
-					"topdestroyed":["top.2.destroyed.png",new Point(-55,0)],
-					"shadowdestroyed":["shadow.2.destroyed.jpg",new Point(-49,17)]
-				}
-			},
-			"upgradeImgData":{
-				"baseurl":"buildingbuttons/",
-				1:{"img":"9.jpg"}
-			},
-			"thumbImgData":{
-				"baseurl":"buildingthumbs/",
-				1:{"img":"9.png"}
-			},
-			"quantity":[0,0,0,1,1,1,1,1,1,1],
-			"hp":[16000,32000,64000],
-			"repairTime":[480,1920,7680]
-		},
-
-		yardplanner.DATA,
-		{
-			"id":11,
-			"group":2,
-			"order":11,
-			"buildStatus":0,
-			"type":"special",
-			"name":"#b_maproom#",
-			"size":120,
-			"attackgroup":1,
-			"tutstage":80,
-			"sale":0,
-			"description":"maproom_desc",
-			"block":true,
-			"costs":[
-				{"r1":new SecNum(2000), "r2":new SecNum(2000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(900), "re":[[14,1,1]]}
-			],
-			"imageData":{
-				"baseurl":"buildings/maproom/",
-				1:{
-					"top":["top.1.png",new Point(-58,-67)],
-					"shadow":["shadow.1.jpg",new Point(-68,15)],
-					"topdamaged":["top.1.damaged.png",new Point(-73,-44)],
-					"shadowdamaged":["shadow.1.damaged.jpg",new Point(-67,23)],
-					"topdestroyed":["top.1.destroyed.png",new Point(-70,0)],
-					"shadowdestroyed":["shadow.1.destroyed.jpg",new Point(-67,27)]
-				}
-			},
-			"upgradeImgData":{
-				"baseurl":"buildingbuttons/",
-				1:{"img":"11.jpg"}
-			},
-			"thumbImgData":{
-				"baseurl":"buildingthumbs/",
-				1:{"img":"11.png"}
-			},
-			"quantity":[0,1,1,1,1,1,1,1,1,1],
-			"hp":[5000,10000],
-			"repairTime":[300,600]
-		},
-		generalstore.DATA, // ID 12
-		bi_hatchery.DATA,  // ID 13
-		bi_townhall.DATA,  // ID 14
-		{
-		 "id":15,
-		 "group":2,
-		 "order":6,
-		 "buildStatus":0,
-		 "type":"special",
-		 "name":"#bi_housing#",
-		 "size":200,
-		 "attackgroup":2,
-		 "tutstage":50,
-		 "sale":0,
-		 "description":"bi_housing_desc",
-		 "block":true,
-		 "costs":[{
-			"r1":new SecNum(2160),
-			"r2":new SecNum(2160),
-			"r3":new SecNum(0),
-			"r4":new SecNum(0),
-			"time":new SecNum(300),
-			"re":[[14,1,1]]
-		 },{
-			"r1":new SecNum(8640),
-			"r2":new SecNum(8640),
-			"r3":new SecNum(0),
-			"r4":new SecNum(0),
-			"time":new SecNum(4500),
-			"re":[[14,1,3],[8,1,1]]
-		 },{
-			"r1":new SecNum(34560),
-			"r2":new SecNum(34560),
-			"r3":new SecNum(0),
-			"r4":new SecNum(0),
-			"time":new SecNum(10800),
-			"re":[[14,1,4],[8,1,1]]
-		 },{
-			"r1":new SecNum(138240),
-			"r2":new SecNum(138240),
-			"r3":new SecNum(0),
-			"r4":new SecNum(0),
-			"time":new SecNum(28800),
-			"re":[[14,1,5],[8,1,1]]
-		 },{
-			"r1":new SecNum(552960),
-			"r2":new SecNum(552960),
-			"r3":new SecNum(0),
-			"r4":new SecNum(0),
-			"time":new SecNum(72000),
-			"re":[[14,1,6],[8,1,1]]
-		 },{
-			"r1":new SecNum(2211840),
-			"r2":new SecNum(2211840),
-			"r3":new SecNum(0),
-			"r4":new SecNum(0),
-			"time":new SecNum(144000),
-			"re":[[14,1,6],[8,1,1]]
-		 }],
-		 "imageData":{
-			"baseurl":"buildings/monsterhousing/",
-			1:{
-				"top":["top.3.v2.png",new Point(-109,11)],
-				"shadow":["shadow.3.v2.jpg",new Point(-112,23)],
-				"topdamaged":["top.3.damaged.v2.png",new Point(-107,12)],
-				"shadowdamaged":["shadow.3.damaged.v2.jpg",new Point(-110,25)],
-				"topdestroyed":["top.3.destroyed.v2.png",new Point(-108,21)],
-				"shadowdestroyed":["shadow.3.destroyed.v2.jpg",new Point(-109,25)]
-			}
-		 },
-		 "upgradeImgData":{
-			"baseurl":"buildingbuttons/",
-			1:{
-				"img":"monster_housing.v2.jpg",
-				"silhouette_img":"monster_housing.v2.silhouette.jpg"
-			}
-		 },
-		 "quantity":[0,0,0,0,0,0],
-		 "capacity":[200,260,320,380,450,540],
-		 "hp":[4000,14000,25000,43000,75000,130000],
-		 "repairTime":[100,200,300,400,500,600]
-		},{
-		 "id":16,
-		 "group":2,
-		 "order":8,
-		 "buildStatus":0,
-		 "type":"special",
-		 "name":"#b_hcc#",
-		 "size":120,
-		 "attackgroup":2,
-		 "tutstage":200,
-		 "sale":0,
-		 "description":"hcc_desc",
-		 "block":true,
-		 "costs":[{
-			"r1":new SecNum(4000000),
-			"r2":new SecNum(4000000),
-			"r3":new SecNum(4000000),
-			"r4":new SecNum(0),
-			"time":new SecNum(90000),
-			"re":[[14,1,3],[13,3,2]]
-		 }],
-		 "imageData":{
-			"baseurl":"buildings/hatcherycontrolcenter/",
-			1:{
-				"top":["top.1.png",new Point(-40,-58)],
-				"shadow":["shadow.1.jpg",new Point(-51,20)],
-				"topdamaged":["top.1.damaged.png",new Point(-51,-59)],
-				"shadowdamaged":["shadow.1.damaged.jpg",new Point(-50,25)],
-				"topdestroyed":["top.1.destroyed.png",new Point(-53,-7)],
-				"shadowdestroyed":["shadow.1.destroyed.jpg",new Point(-57,24)]
-			}
-		 },
-		 "upgradeImgData":{
-			"baseurl":"buildingbuttons/",
-			1:{"img":"16.jpg"}
-		 },
-		 "thumbImgData":{
-			"baseurl":"buildingthumbs/",
-			1:{"img":"16.png"}
-		 },
-		 "quantity":[0,0,0,0,0,0],
-		 "hp":[64000],
-		 "repairTime":[300]
-		},{
-		 "id":17,
-		 "group":3,
-		 "order":7,
-		 "buildStatus":0,
-		 "type":"wall",
-		 "name":"#b_woodenblock#",
-		 "size":50,
-		 "attackgroup":1,
-		 "tutstage":200,
-		 "sale":0,
-		 "description":"infernoblock_desc",
-		 "costs":[{
-			"r1":new SecNum(1000),
-			"r2":new SecNum(0),
-			"r3":new SecNum(0),
-			"r4":new SecNum(0),
-			"time":new SecNum(5),
-			"re":[[14,1,2]]
-		 },{
-			"r1":new SecNum(0),
-			"r2":new SecNum(10000),
-			"r3":new SecNum(0),
-			"r4":new SecNum(0),
-			"time":new SecNum(5),
-			"re":[[14,1,3]]
-		 },{
-			"r1":new SecNum(100000),
-			"r2":new SecNum(100000),
-			"r3":new SecNum(0),
-			"r4":new SecNum(0),
-			"time":new SecNum(5),
-			"re":[[14,1,4]]
-		 }],
-		 "imageData":{
-			"baseurl":"buildings/iwalls/",
-			1:{
-				"top":["top.1.v2.png",new Point(-24,-5)],
-				"shadow":["shadow.1.v2.jpg",new Point(-20,0.8)],
-				"topdamaged":["top.1.damaged.v2.png",new Point(-24,-5)],
-				"shadowdamaged":["shadow.1.damaged.v2.jpg",new Point(-20,0.8)],
-				"topdestroyed":["top.1.destroyed.v2.png",new Point(-24,-5)],
-				"shadowdestroyed":["shadow.1.destroyed.v2.jpg",new Point(-20,0.8)]
-			},
-			2:{
-				"top":["top.2.v2.png",new Point(-20,-9)],
-				"shadow":["shadow.2.v2.jpg",new Point(-20,-0.9)],
-				"topdamaged":["top.2.damaged.v2.png",new Point(-20,-9)],
-				"shadowdamaged":["shadow.2.v2.jpg",new Point(-20,-0.9)],
-				"topdestroyed":["top.2.destroyed.v2.png",new Point(-20,-9)],
-				"shadowdestroyed":["shadow.2.v2.jpg",new Point(-20,-0.9)]
-			},
-			3:{
-				"top":["top.3.v2.png",new Point(-20,-27)],
-				"shadow":["shadow.3.v2.jpg",new Point(-20,-1)],
-				"topdamaged":["top.3.damaged.v2.png",new Point(-20,-27)],
-				"shadowdamaged":["shadow.3.v2.jpg",new Point(-20,-1)],
-				"topdestroyed":["top.3.destroyed.v2.png",new Point(-18,-8)],
-				"shadowdestroyed":["shadow.3.v2.jpg",new Point(-20,-1)]
-			}
-		 },
-		 "buildingbuttons":["coal_wall.v3","iron_wall.v3","steel_wall.v3"],
-		 "upgradeImgData":{
-			"baseurl":"buildingbuttons/",
-			1:{
-				"img":"coal_wall.v3.jpg",
-				"silhouette_img":"coal_wall.v3.silhouette.jpg"
-			},
-			2:{"img":"iron_wall.v3.jpg"},
-			3:{"img":"steel_wall.v3.jpg"}
-		 },
-		 "quantity":[0,0,30,60,120,200,220],
-		 "hp":[1000,2300,5750,18000,27000],
-		 "repairTime":[5,5,5,5,5]
-		},{
 		 "id":18,
 		 "group":3,
 		 "order":7,
@@ -1533,68 +1217,7 @@ package {
 			bdg_austrianflag.DATA,     // ID 48
 			bdg_pirateflag.DATA,       // ID 49
 			bdg_peaceflag.DATA,        // ID 50
-		 {
-			"id":51,
-			"group":2,
-			"order":10,
-			"buildStatus":0,
-			"type":"special",
-			"name":"#b_catapult#",
-			"size":190,
-			"attackgroup":1,
-			"tutstage":200,
-			"sale":0,
-			"description":"catapult_desc",
-			"block":true,
-			"costs":[
-				{"r1":new SecNum(75000), "r2":new SecNum(75000), "r3":new SecNum(75000), "r4":new SecNum(0), "time":new SecNum(5400), "re":[[14,1,3],[5,1,1]]},
-				{"r1":new SecNum(128600), "r2":new SecNum(128600), "r3":new SecNum(128600), "r4":new SecNum(0), "time":new SecNum(10800), "re":[[14,1,4],[5,1,1]]},
-				{"r1":new SecNum(257200), "r2":new SecNum(257200), "r3":new SecNum(257200), "r4":new SecNum(0), "time":new SecNum(21600), "re":[[14,1,5],[5,1,1]]},
-				{"r1":new SecNum(514400), "r2":new SecNum(514400), "r3":new SecNum(514400), "r4":new SecNum(0), "time":new SecNum(43200), "re":[[14,1,6],[5,1,1],[11,1,2]]}
-			],
-			"imageData":{
-				"baseurl":"buildings/catapult/",
-				1:{
-					"top":["top.1.png",new Point(-43,12)],
-					"shadow":["shadow.1.jpg",new Point(-42,28)],
-					"topdamaged":["top.1.damaged.png",new Point(-40,12)],
-					"shadowdamaged":["shadow.1.damaged.jpg",new Point(-39,28)],
-					"topdestroyed":["top.3.destroyed.png",new Point(-48,9)],
-					"shadowdestroyed":["shadow.3.destroyed.jpg",new Point(-47,23)]
-				},
-				2:{
-					"top":["top.2.png",new Point(-44,-21)],
-					"shadow":["shadow.2.jpg",new Point(-49,19)],
-					"topdamaged":["top.2.damaged.png",new Point(-43,-16)],
-					"shadowdamaged":["shadow.2.damaged.jpg",new Point(-41,29)],
-					"topdestroyed":["top.3.destroyed.png",new Point(-48,9)],
-					"shadowdestroyed":["shadow.3.destroyed.jpg",new Point(-47,23)]
-				},
-				3:{
-					"top":["top.3.png",new Point(-43,-29)],
-					"shadow":["shadow.3.jpg",new Point(-39,27)],
-					"topdamaged":["top.3.damaged.png",new Point(-51,-29)],
-					"shadowdamaged":["shadow.3.damaged.jpg",new Point(-51,30)],
-					"topdestroyed":["top.3.destroyed.png",new Point(-48,9)],
-					"shadowdestroyed":["shadow.3.destroyed.jpg",new Point(-47,23)]
-				}
-			},
-			"upgradeImgData":{
-				"baseurl":"buildingbuttons/",
-				1:{"img":"51.1.jpg"},
-				2:{"img":"51.2.jpg"},
-				3:{"img":"51.3.jpg"}
-			},
-			"thumbImgData":{
-				"baseurl":"buildingthumbs/",
-				1:{"img":"51.1.png"},
-				2:{"img":"51.2.png"},
-				3:{"img":"51.3.png"}
-			},
-			"quantity":[0,0,0,0,0,0],
-			"hp":[4000,8000,16000,32000],
-			"repairTime":[120,240,480,960]
-		 },
+			catapult.DATA,             // ID 51 (Locked)
 			simplesign.DATA,           // ID 52 (Locked)
 			hwn_pumpkin.DATA,          // ID 53 (Missing in storeItems)
 			hwn_massivepumpkin.DATA,   // ID 54 (Missing in storeItems)

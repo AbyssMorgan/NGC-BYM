@@ -4171,7 +4171,7 @@ package
          _saving = false;
       }
 
-      private static function handleLoadError(param1:IOErrorEvent):void
+      private static function handleLoadError(error:IOErrorEvent):void
       {
          ++_saveErrors;
          --_saveCounterB;
@@ -4179,7 +4179,7 @@ package
          if (_saveErrors >= 5)
          {
             LOGGER.Log("err", "Base.Save HTTP");
-            GLOBAL.ErrorMessage("BASE.Save HTTP");
+            GLOBAL.ErrorMessage("BASE.Save HTTP" + error.text);
          }
       }
 

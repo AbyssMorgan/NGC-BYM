@@ -277,11 +277,11 @@ package
                      _loc2_.modifyHealth(-_damage);
                      _loc7_ += _damage;
                   }
-                  else if(_loc2_._creatureID.substr(0,1) == "G")
-                  {
-                     _loc2_.modifyHealth(-_damage / 10);
-                     _loc7_ += _damage / 10;
-                  }
+                //   else if(_loc2_._creatureID.substr(0,1) == "G")
+                //   {
+                //      _loc2_.modifyHealth(-_damage * 0.1);
+                //      _loc7_ += _damage * 0.1;
+                //   }
                   else
                   {
                      _loc2_.modifyHealth(-_damage);

@@ -98,6 +98,7 @@ package
          {
             if(b.Enabled)
             {
+               param1.stopImmediatePropagation();
                Hide();
                ResourceBombs._bombid = b._bombid;
                _imageContainer.txtName.htmlText = "<font color=\"#FF0000\">Cancel</font>";

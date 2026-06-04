@@ -753,8 +753,6 @@ package com.monsters.monsters.creeps
             _targetCreeps.sortOn(["dist"],Array.NUMERIC);
 			var target_stats:Object,
 				target_id:String = _targetCreeps[0].creep._creatureID;
-			trace("_creatureID = " + _creatureID);
-			trace("target_id = " + target_id);
 			if(target_id.substr(0, 1) == "G"){
 				target_stats = CHAMPIONCAGE._guardians[target_id];
 			} else {
@@ -1692,7 +1690,10 @@ package com.monsters.monsters.creeps
             _attacking = false;
             _atTarget = false;
             _hasPath = false;
-            this.findHealingTargets();
+            if(_frameNumber % 120 == 0)
+            {
+               this.findHealingTargets();
+            }
          }
          if(_atTarget)
          {

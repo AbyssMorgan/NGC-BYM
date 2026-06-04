@@ -25,15 +25,20 @@ package buildings.yard {
 				{"r1":new SecNum(138240), "r2":new SecNum(138240), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(28800), "re":[[14,1,5],[8,1,1]]}, // Level 4
 				{"r1":new SecNum(552960), "r2":new SecNum(552960), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(72000), "re":[[14,1,6],[8,1,1]]}, // Level 5
 				{"r1":new SecNum(2211840), "r2":new SecNum(2211840), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,6],[8,1,1]]}, // Level 6
-				{"r1":new SecNum(4000000), "r2":new SecNum(4000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,7],[8,1,1]]}, // Level 7
-				{"r1":new SecNum(8000000), "r2":new SecNum(8000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,8],[8,1,1]]}, // Level 8
-				{"r1":new SecNum(16000000), "r2":new SecNum(16000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,9],[8,1,1]]}, // Level 9
-				{"r1":new SecNum(32000000), "r2":new SecNum(32000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,10],[8,1,1]]}, // Level 10
-				{"r1":new SecNum(64000000), "r2":new SecNum(64000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,12],[8,1,1],[12,1,2]]}, // Level 11
-				{"r1":new SecNum(128000000), "r2":new SecNum(128000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,14],[8,1,1],[12,1,2]]}, // Level 12
-				{"r1":new SecNum(256000000), "r2":new SecNum(256000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,16],[8,1,1],[12,1,2]]}, // Level 13
-				{"r1":new SecNum(512000000), "r2":new SecNum(512000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,18],[8,1,1],[12,1,2]]}, // Level 14
-				{"r1":new SecNum(1240000000), "r2":new SecNum(1240000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,20],[8,1,1],[12,1,2]]}, // Level 15
+				{"r1":new SecNum(4000000), "r2":new SecNum(4000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 2), "re":[[14,1,7],[8,1,1]]}, // Level 7
+				{"r1":new SecNum(8000000), "r2":new SecNum(8000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 3), "re":[[14,1,8],[8,1,1]]}, // Level 8
+				{"r1":new SecNum(16000000), "r2":new SecNum(16000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 4), "re":[[14,1,9],[8,1,1]]}, // Level 9
+				{"r1":new SecNum(32000000), "r2":new SecNum(32000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 5), "re":[[14,1,10],[8,1,1]]}, // Level 10
+				{"r1":new SecNum(64000000), "r2":new SecNum(64000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 6), "re":[[14,1,12],[8,1,1],[12,1,2]]}, // Level 11
+				{"r1":new SecNum(128000000), "r2":new SecNum(128000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 7), "re":[[14,1,14],[8,1,1],[12,1,2]]}, // Level 12
+				{"r1":new SecNum(256000000), "r2":new SecNum(256000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 8), "re":[[14,1,16],[8,1,1],[12,1,2]]}, // Level 13
+				{"r1":new SecNum(512000000), "r2":new SecNum(512000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 9), "re":[[14,1,18],[8,1,1],[12,1,2]]}, // Level 14
+				{"r1":new SecNum(1240000000), "r2":new SecNum(1240000000), "r3":new SecNum(1240000000), "r4":new SecNum(1240000000), "time":new SecNum(86400 * 10), "re":[[14,1,20],[8,1,1],[12,1,2]]}, // Level 15
+				{"r1":new SecNum(5000000000), "r2":new SecNum(5000000000), "r3":new SecNum(5000000000), "r4":new SecNum(5000000000), "time":new SecNum(86400 * 11), "re":[[14,1,21],[8,1,1],[12,1,3]]}, // Level 16
+				{"r1":new SecNum(10000000000), "r2":new SecNum(10000000000), "r3":new SecNum(10000000000), "r4":new SecNum(10000000000), "time":new SecNum(86400 * 12), "re":[[14,1,22],[8,1,1],[12,1,3]]}, // Level 17
+				{"r1":new SecNum(15000000000), "r2":new SecNum(15000000000), "r3":new SecNum(15000000000), "r4":new SecNum(15000000000), "time":new SecNum(86400 * 13), "re":[[14,1,23],[8,1,1],[12,1,3]]}, // Level 18
+				{"r1":new SecNum(20000000000), "r2":new SecNum(20000000000), "r3":new SecNum(20000000000), "r4":new SecNum(20000000000), "time":new SecNum(86400 * 14), "re":[[14,1,24],[8,1,1],[12,1,3]]}, // Level 19
+				{"r1":new SecNum(25000000000), "r2":new SecNum(25000000000), "r3":new SecNum(25000000000), "r4":new SecNum(25000000000), "time":new SecNum(86400 * 15), "re":[[14,1,25],[8,1,1],[12,1,3]]}, // Level 20
 			],
 			"imageData":{
 				"baseurl":"buildings/monsterhousing/",
@@ -96,6 +101,11 @@ package buildings.yard {
 				3000, // Level 13
 				3600, // Level 14
 				4320, // Level 15
+				5000, // Level 16
+				5500, // Level 17
+				6000, // Level 18
+				6500, // Level 19
+				7000, // Level 20
 			],
 			"hp":[
 				4000, // Level 1
@@ -113,6 +123,11 @@ package buildings.yard {
 				226233, // Level 13
 				237544, // Level 14
 				250000, // Level 15
+				260000, // Level 16
+				270000, // Level 17
+				280000, // Level 18
+				300000, // Level 19
+				320000, // Level 20
 			],
 			"repairTime":[
 				100, // Level 1
@@ -130,6 +145,11 @@ package buildings.yard {
 				1300, // Level 13
 				1400, // Level 14
 				1500, // Level 15
+				1600, // Level 16
+				1700, // Level 17
+				1800, // Level 18
+				1900, // Level 19
+				2000, // Level 20
 			]
 		};
 		

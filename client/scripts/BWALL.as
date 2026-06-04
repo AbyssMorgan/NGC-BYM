@@ -1,5 +1,6 @@
 package
 {
+   import com.cc.utils.SecNum;
    import com.monsters.pathing.PATHING;
    import flash.geom.Rectangle;
    
@@ -10,6 +11,8 @@ package
       public function BWALL()
       {
          super();
+		 _buildInstant = true;
+         _buildInstantCost = new SecNum(0);
       }
       
       override public function GridCost(param1:Boolean = true) : void

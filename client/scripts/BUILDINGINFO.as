@@ -320,7 +320,11 @@ package
                            _loc1_.push(["btn_speedup",30,1]);
                         }
                      }
-                     if(TUTORIAL._stage >= 200)
+					 var can_edit:Boolean = true;
+					 if(MapRoomManager.instance.isInMapRoom3 && !BASE.isInfernoMainYardOrOutpost){
+						can_edit = false;
+					 }
+                     if(TUTORIAL._stage >= 200 && can_edit)
                      {
                         if(Boolean(_props.can_fortify) && !_loc3_)
                         {

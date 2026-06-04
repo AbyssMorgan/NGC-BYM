@@ -98,11 +98,18 @@ package
          var _loc1_:* = "<b>" + this._props.name + "</b>";
          if(this._props.description)
          {
-            _loc1_ += "<br>" + KEYS.Get(this._props.description,{
-               "v1":this._props.speed * 100 + "%",
-               "v2":Math.round(this._props.damageMult * 100) + "%",
-               "v3":this._props.speedlength
-            });
+			if(this._props.resource == 3){
+				_loc1_ += "<br>" + KEYS.Get(this._props.description,{
+					"v1":this._props.speed * 100 + "%",
+					"v2":Math.round(this._props.damageMult * 100) + "%",
+					"v3":this._props.speedlength
+				});
+			} else {
+				_loc1_ += "<br>" + KEYS.Get(this._props.description,{
+					"v1":this._props.radius,
+					"v2":this._props.damage
+				});
+			}
          }
          _loc1_ += "<br>" + KEYS.Get("bomb_cost_resources",{
             "v1":CATAPULTPOPUP.Format(this._props.cost),

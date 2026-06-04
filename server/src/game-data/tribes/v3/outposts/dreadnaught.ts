@@ -5946,7 +5946,7 @@ export const dreadnaught: Record<number, SaveData> = {
 				cP: 4,
 				id: 10,
 				pr: 1,
-				st: 5564000,
+				st: 125000000,
 				rCP: 4
 			},
 			50: {
@@ -5957,7 +5957,7 @@ export const dreadnaught: Record<number, SaveData> = {
 				cP: 4,
 				id: 50,
 				pr: 1,
-				st: 5564000,
+				st: 125000000,
 				rCP: 4
 			},
 			70: {
@@ -9192,7 +9192,7 @@ export const dreadnaught: Record<number, SaveData> = {
 				cP: 4,
 				id: 568,
 				pr: 1,
-				st: 5564000,
+				st: 125000000,
 				rCP: 4
 			},
 			569: {
@@ -9203,7 +9203,7 @@ export const dreadnaught: Record<number, SaveData> = {
 				cP: 4,
 				id: 569,
 				pr: 1,
-				st: 5564000,
+				st: 125000000,
 				rCP: 4
 			},
 			572: {
@@ -12150,14 +12150,14 @@ export const dreadnaught: Record<number, SaveData> = {
 		aiattacks: {},
 		monsters: {},
 		resources: {
-			r1: 125000000,
-			r2: 125000000,
-			r3: 125000000,
-			r4: 125000000,
-			r1max: 125000000,
-			r2max: 125000000,
-			r3max: 125000000,
-			r4max: 125000000,
+			r1: 0,
+			r2: 0,
+			r3: 0,
+			r4: 0,
+			r1max: 0,
+			r2max: 0,
+			r3max: 0,
+			r4max: 0,
 		},
 		lockerdata: {},
 		events: {},

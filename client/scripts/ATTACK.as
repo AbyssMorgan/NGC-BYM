@@ -938,7 +938,7 @@ package
             particleSpawn.x -= 10 * amount.toString().length;
          }
          var damageParticle:ParticleDamageItem = ParticleText.Create(particleSpawn,amount,particleType);
-         if(Math.round(amountModified) != 0 && Boolean(damageParticle))
+         if(Math.abs(Math.round(amountModified)) != 0 && Boolean(damageParticle))
          {
             var modifier:String = amountModified < 0 ? "-" : "+";
             damageParticle._mc.tLootA.htmlText += "(" + modifier + Math.abs(Math.round(amountModified)) + ")";

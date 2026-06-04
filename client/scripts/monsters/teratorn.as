@@ -27,6 +27,7 @@ package monsters {
 				[384000000, 3600 * 356], // Level 10
 			],
 			"movement":"fly",
+			"antiGroundHeal":true,
 			"pathing":"direct",
 			"props":{
 				"range":[

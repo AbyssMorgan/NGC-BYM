@@ -29,6 +29,7 @@ package monsters {
 			"stream":["","","quests/monster16.png"],
 			"pathing":"direct",
 			"antiHeal":true,
+			"antiGroundHeal":true,
 			"blocked":true,
 			"props":{
 				"range":[

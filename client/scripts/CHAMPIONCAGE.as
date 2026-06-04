@@ -316,6 +316,7 @@ package
 				"selectGraphic":"popups/guardian_select_fomor.png",
 				"classType":CLASS_TYPE_BASIC,
 				"spawnClass":Fomor,
+				"antiGroundHeal":true,
 				"props":{
 					"speed":[
 						1.2, // Level 1

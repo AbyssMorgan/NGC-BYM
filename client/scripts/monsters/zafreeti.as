@@ -29,6 +29,7 @@ package monsters {
 			"movement":"fly",
 			"pathing":"direct",
 			"antiHeal":true,
+			"antiGroundHeal":true,
 			"props":{
 				"range":[
 					150, // Level 1

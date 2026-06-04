@@ -78,6 +78,45 @@ package com.monsters.monsters.creeps
          SPRITES.GetSprite(_shadow,"shadow","shadow",0);
          _lastFrame = CreepSkinManager.instance.GetSprite(_graphic,_creatureID,spriteAction,m_rotation,_frameNumber,_lastFrame,_currentSkinOverride);
       }
+
+      override protected function tickBHeal() : Boolean
+      {
+         var superResult:Boolean = super.tickBHeal();
+         // Maintain minimum follow distance of 200 while healing allies
+         if(health > 0 && _targetCreep)
+         {
+            var dx:Number = _tmpPoint.x - _targetCreep._tmpPoint.x;
+            var dy:Number = _tmpPoint.y - _targetCreep._tmpPoint.y;
+            var distSq:Number = dx * dx + dy * dy;
+            var minDist:Number = 200;
+            var minDistSq:Number = minDist * minDist;
+            if(distSq < minDistSq)
+            {
+               var dist:Number = Math.sqrt(distSq);
+               var nx:Number = 1;
+               var ny:Number = 0;
+               if(dist > 0)
+               {
+                  nx = dx / dist;
+                  ny = dy / dist;
+               }
+               var desiredX:Number = _targetCreep._tmpPoint.x + nx * minDist;
+               var desiredY:Number = _targetCreep._tmpPoint.y + ny * minDist;
+               _waypoints = [new Point(desiredX,desiredY)];
+               _targetPosition = _waypoints[0];
+               _hasPath = true;
+               _hasTarget = true;
+            }
+            else
+            {
+               // Keep following the ally (but stay at/above minimum distance)
+               _waypoints = [_targetCreep._tmpPoint];
+               _targetPosition = _waypoints[0];
+               _hasPath = true;
+            }
+         }
+         return superResult;
+      }
       
       override public function die() : void
       {

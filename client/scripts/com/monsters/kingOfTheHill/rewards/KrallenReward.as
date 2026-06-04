@@ -1,7 +1,6 @@
 package com.monsters.kingOfTheHill.rewards
 {
    import com.cc.utils.SecNum;
-   import com.monsters.debug.Console;
    import com.monsters.monsters.champions.ChampionBase;
    import com.monsters.monsters.champions.Krallen;
    import com.monsters.rewarding.Reward;
@@ -55,10 +54,6 @@ package com.monsters.kingOfTheHill.rewards
             if(_loc3_)
             {
                _loc3_.SpawnGuardian(1,0,0,Krallen.TYPE,CHAMPIONCAGE.GetGuardianProperty("G" + Krallen.TYPE,1,"health"),"",0,param1);
-            }
-            else
-            {
-               Console.warning("tried to create krallen but you dont have a champion cage");
             }
          }
       }

@@ -1,6 +1,5 @@
 package com.monsters.rewarding
 {
-   import com.monsters.debug.Console;
    import com.monsters.kingOfTheHill.rewards.KrallenBuffReward;
    import com.monsters.kingOfTheHill.rewards.KrallenReward;
    import com.monsters.replayableEvents.attackDefend.brukkargWar.rewards.SpurtzCannonReward1;
@@ -54,10 +53,6 @@ package com.monsters.rewarding
       
       public static function addRewardType(param1:String, param2:Class) : void
       {
-         if(rewardTypes[param1])
-         {
-            Console.warning("You tried to add the reward(" + param1 + ") that already exists");
-         }
          rewardTypes[param1] = param2;
       }
       

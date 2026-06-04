@@ -1,6 +1,5 @@
 package
 {
-   import com.monsters.debug.Console;
    import flash.events.*;
    import flash.text.TextFieldAutoSize;
    
@@ -99,7 +98,7 @@ package
             }
             catch(error:Error)
             {
-               Console.warning(error + "MESSAGE.Action (invalid action and/or arguments)",true);
+               trace(error + "MESSAGE.Action (invalid action and/or arguments)");
             }
          }
       }

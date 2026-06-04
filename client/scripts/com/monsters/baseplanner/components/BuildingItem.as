@@ -3,7 +3,6 @@ package com.monsters.baseplanner.components
    import com.monsters.baseplanner.PlannerDesignView;
    import com.monsters.baseplanner.PlannerNode;
    import com.monsters.baseplanner.events.BasePlannerNodeEvent;
-   import com.monsters.debug.Console;
    import flash.events.MouseEvent;
    import flash.filters.DropShadowFilter;
    import flash.geom.Point;
@@ -106,7 +105,6 @@ package com.monsters.baseplanner.components
          this.props = GLOBAL._buildingProps[param1 - 1];
          if(!this.props)
          {
-            Console.warning("props fail" + param1);
             return null;
          }
          var _loc3_:int = int(this.props.group);

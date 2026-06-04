@@ -1,6 +1,5 @@
 package com.monsters.kingOfTheHill.rewards
 {
-   import com.monsters.debug.Console;
    import com.monsters.monsters.champions.ChampionBase;
    import com.monsters.monsters.champions.Krallen;
    import com.monsters.rewarding.Reward;
@@ -46,10 +45,6 @@ package com.monsters.kingOfTheHill.rewards
          {
             _loc2_.levelSet(param1);
             _loc2_.export();
-         }
-         else
-         {
-            Console.warning("You are trying to setup the Krallen buff but you dont own a Krallen");
          }
       }
    }

@@ -1,7 +1,6 @@
 package com.monsters.replayableEvents
 {
    import com.cc.tests.ABTest;
-   import com.monsters.debug.Console;
    import com.monsters.frontPage.FrontPageGraphic;
    import com.monsters.frontPage.messages.DebugMessage;
    import com.monsters.frontPage.messages.Message;
@@ -382,7 +381,6 @@ package com.monsters.replayableEvents
       {
          if(!activeEvent)
          {
-            Console.warning("You\'re trying to opt-in for an event that isnt currently running, something is fucked");
             return;
          }
          callServerMethod("emailoptin",[["eventid",activeEvent.id]]);

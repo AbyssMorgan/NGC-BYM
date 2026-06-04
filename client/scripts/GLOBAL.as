@@ -7,7 +7,6 @@ package
    import com.monsters.ai.WMBASE;
    import com.monsters.chat.Chat;
    import com.monsters.configs.BYMConfig;
-   import com.monsters.debug.Console;
    import com.monsters.display.ImageCache;
    import com.monsters.effects.fire.Fire;
    import com.monsters.effects.smoke.Smoke;
@@ -486,7 +485,6 @@ package
                if (serverData.hasOwnProperty("debugMode"))
                {
                   _aiDesignMode = serverData.debugMode;
-                  Console.initialize(stage);
                }
             }, function(error:IOErrorEvent):void
             {
@@ -1130,7 +1128,6 @@ package
                UI2._top.mcZoom.gotoAndStop(1);
             }
             _ROOT.stage.displayState = StageDisplayState.NORMAL;
-            print("leaving fullscreen: " + Console.getStackTrace());
          }
          _zoomed = false;
          magnification = 1;
@@ -1777,7 +1774,6 @@ package
          var em:ERRORMESSAGE;
          var err:String = param1;
          var errortype:int = param2;
-         print(err + "@ " + Console.getSource(3));
          em = new ERRORMESSAGE();
          em.Show(err, errortype);
          return function(param1:MouseEvent = null):void
@@ -2668,7 +2664,6 @@ package
          IEventDispatcher(param1.target).removeEventListener(IOErrorEvent.IO_ERROR, GLOBAL.handleLoadError);
          var _loc2_:String = "Error loading: " + param1.text;
          LOGGER.Log("log", _loc2_);
-         Console.warning(_loc2_, true);
       }
 
       public static function get StageX():int

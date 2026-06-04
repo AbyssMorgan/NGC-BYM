@@ -2,7 +2,6 @@ package com.monsters.maproom3
 {
    
    import com.cc.tests.ABTest;
-   import com.monsters.debug.Console;
    import com.monsters.enums.EnumBaseRelationship;
    import com.monsters.enums.EnumYardType;
    import com.monsters.maproom3.data.MapRoom3AllianceData;
@@ -523,7 +522,6 @@ package com.monsters.maproom3
          {
             return 0.5;
          }
-         Console.warning("AB test on attack cost didnt work.");
          return 1;
       }
       

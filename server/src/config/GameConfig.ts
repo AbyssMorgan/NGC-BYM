@@ -28,7 +28,6 @@ export const devConfig = {
 
   /*
    * Enable or disable the debug console. Requires a client restart.
-   * A list of all available commands can be found in `ConsoleCommands.as`
    */
   debugMode: process.env.ENV === Env.PROD ? false : false,
 

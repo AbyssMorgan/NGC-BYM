@@ -37,8 +37,6 @@ package {
 	public class CREATURELOCKER
 	{
 		
-		public static const k_USE_REBALANCED_MONSTERS:Boolean = false;
-		
 		public static var _lockerData:Object;
 		
 		public static var _open:Boolean;

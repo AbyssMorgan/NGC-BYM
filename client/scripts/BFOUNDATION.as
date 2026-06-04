@@ -4,7 +4,6 @@ package
    import com.monsters.GameObject;
    import com.monsters.configs.BYMConfig;
    import com.monsters.configs.BYMDevConfig;
-   import com.monsters.debug.Console;
    import com.monsters.display.BuildingAssetContainer;
    import com.monsters.display.BuildingOverlay;
    import com.monsters.display.ImageCache;
@@ -457,7 +456,6 @@ package
                }
                if(buildingData is BTRAP && buildingData._fired || buildingData._type == 53 && buildingData._expireTime < GLOBAL.Timestamp())
                {
-                  Console.warning("Ignored Building" + buildingData + buildingData._type + buildingData._expireTime + " setting buildinghealthdata to 0");
                   buildingHealthData[buildingData._id] = 0;
                }
                else
@@ -490,7 +488,6 @@ package
          if(!hasTownHall)
          {
             LOGGER.Log("err","User missing TownHall upon save");
-            Console.warning("BFOUNDATION::getBuildingSaveData(TownHall missing upon save)");
          }
          BASE._percentDamaged = Math.max(0, Math.ceil(100.0 - 100.0 / s_totalBuildingMaxHP * s_totalBuildingHP));
          // Comment: This gives an out-of-range index error. The md5.as class is malformed
@@ -535,7 +532,6 @@ package
          var _loc5_:uint = 0;
          if(!isTargetable)
          {
-            Console.warning("you are trying to deal damage to a building that isn\'t targetable.... why you doin that bro?");
             return 0;
          }
          var _loc3_:Number = param1;

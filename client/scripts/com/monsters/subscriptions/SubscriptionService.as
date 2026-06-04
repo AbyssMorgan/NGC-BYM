@@ -1,7 +1,6 @@
 package com.monsters.subscriptions
 {
-   
-   import com.monsters.debug.Console;
+
    import flash.events.EventDispatcher;
    import flash.external.ExternalInterface;
    
@@ -38,14 +37,12 @@ package com.monsters.subscriptions
          var _loc2_:SubscriptionStatusEvent = new SubscriptionStatusEvent(SubscriptionStatusEvent.STATUS_EVENT);
          if(!param1)
          {
-            Console.warning("did not recieve json back from the server");
             dispatchEvent(_loc2_);
             return;
          }
          var _loc3_:Object = JSON.parse(param1)[0];
          if(_loc3_.length == 0)
          {
-            Console.warning("got subscription data but it\'s emtpy, not going to try to parse it");
             dispatchEvent(_loc2_);
             return;
          }
@@ -77,10 +74,6 @@ package com.monsters.subscriptions
       
       private function showSubscriptionDialog(param1:String = null) : void
       {
-         if(!param1)
-         {
-            Console.warning("got a calback @ \'showSubscriptionDialog\' but theres no JSON data!");
-         }
          this.getUserSubscriptions(param1);
       }
       

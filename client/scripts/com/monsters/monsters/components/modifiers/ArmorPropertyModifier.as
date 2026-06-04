@@ -1,6 +1,5 @@
 package com.monsters.monsters.components.modifiers
 {
-	import com.monsters.debug.Console;
 	
 	public class ArmorPropertyModifier extends MultiplicationPropertyModifier
 	{
@@ -9,7 +8,6 @@ package com.monsters.monsters.components.modifiers
 		{
 			if(param1 > 1 || param1 <= 0)
 			{
-				Console.warning("you are trying to add an armor multiplier of an invalid value (" + param1 + ")");
 				param1 = 1;
 			}
 			super(param1);

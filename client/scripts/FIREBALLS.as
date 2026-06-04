@@ -1,6 +1,5 @@
 package
 {
-   import com.monsters.debug.Console;
    import com.monsters.interfaces.IAttackable;
    import com.monsters.monsters.MonsterBase;
    import com.monsters.siege.weapons.VacuumHose;
@@ -57,10 +56,6 @@ package
             MAP._FIREBALLS.addChild(_loc10_._graphic);
          }
          _loc10_._id = _id;
-         if(!param9)
-         {
-            Console.warning("you created a fireball with no source",true);
-         }
          _loc10_._source = param9;
          _loc10_._startPoint = param1;
          _loc10_._targetType = 2;
@@ -106,10 +101,6 @@ package
          }
          _loc10_._type = param7;
          _loc10_._id = _id;
-         if(!param9)
-         {
-            Console.warning("you created a fireball with no source",true);
-         }
          _loc10_._source = param9;
          _loc10_._startPoint = param1;
          _loc10_._targetType = param3 is VacuumHose ? 4 : param8;

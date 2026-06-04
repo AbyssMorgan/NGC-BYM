@@ -6,7 +6,6 @@ package
    import com.monsters.baseBuffs.buffs.AllianceArmamentBuff;
    import com.monsters.baseBuffs.buffs.AllianceConquestBuff;
    import com.monsters.baseBuffs.buffs.AllianceDeclareWarBuff;
-   import com.monsters.debug.Console;
    
    public class POWERUPS
    {
@@ -413,7 +412,6 @@ package
       
       private static function PowArmament(... rest) : Number
       {
-         Console.warning("Alliance Armament shouldnt be called this way, it should be a base buff");
          return 0;
       }
       

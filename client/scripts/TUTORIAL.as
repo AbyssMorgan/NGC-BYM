@@ -1,7 +1,6 @@
 package
 {
    import com.cc.utils.SecNum;
-   import com.monsters.debug.Console;
    import com.monsters.display.ImageCache;
    import com.monsters.managers.InstanceManager;
    import com.monsters.maproom3.MapRoom3Tutorial;
@@ -292,7 +291,6 @@ package
          {
             return;
          }
-         Console.print("TUTORIAL STAGE:" + TUTORIAL._stage + " " + TUTORIAL._currentStage);
          _loc1_ = new Point();
          var _loc4_:MovieClip = new MovieClip();
          if(_stage > 59)

@@ -13,7 +13,6 @@ package
    import com.monsters.baseplanner.PlannerTemplate;
    import com.monsters.chat.Chat;
    import com.monsters.configs.BYMConfig;
-   import com.monsters.debug.Console;
    import com.monsters.display.BuildingOverlay;
    import com.monsters.effects.ResourceBombs;
    import com.monsters.effects.fire.Fire;
@@ -2119,7 +2118,6 @@ package
                         propCount = townHallLevel < props.quantity.length ? int(props.quantity[townHallLevel]) : int(props.quantity[props.quantity.length - 1]);
                         if (buildingTypeCount > propCount)
                         {
-                           Console.print("BASE::Build:too many buildings " + buildingTypeCount + "/" + propCount + " type:" + buildingFoundation._type);
                            LOGGER.Log("log", "Too many buildings of type " + buildingFoundation._type + " th " + townHallLevel + " count " + buildingTypeCount);
                            BASE.BuildingDeselect();
                            buildingFoundation.clear();
@@ -4403,7 +4401,6 @@ package
          {
             ++_pageErrors;
             _paging = false;
-            Console.warning("BASE.Page ERROR", Boolean(_pageErrors));
             _lastPaged = int(10 + int(Math.random() * 5));
             if (_pageErrors >= 6)
             {

@@ -1,7 +1,6 @@
 package com.monsters.replayableEvents.attacking.monsterMadness
 {
    import com.cc.utils.SecNum;
-   import com.monsters.debug.Console;
    import com.monsters.replayableEvents.looting.wotc.rewards.KorathReward;
    import com.monsters.replayableEvents.monsterMadness.popups.MonsterMadnessPopup;
    import com.monsters.rewarding.Reward;
@@ -81,7 +80,6 @@ package com.monsters.replayableEvents.attacking.monsterMadness
             _loc2_ = RewardLibrary.getRewardByID(KorathReward.k_REWARD_ID);
             if(!_loc2_)
             {
-               Console.warning("reward handler isnt working, you cant apply rewards here");
                return;
             }
             _loc2_.value = param1;

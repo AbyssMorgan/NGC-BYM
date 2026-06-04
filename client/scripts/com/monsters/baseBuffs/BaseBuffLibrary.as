@@ -10,7 +10,6 @@ package com.monsters.baseBuffs
    import com.monsters.baseBuffs.buffs.monsterDamageBuffs.MonsterAttackDamageBuff;
    import com.monsters.baseBuffs.buffs.monsterDamageBuffs.MonsterDamageBuff;
    import com.monsters.baseBuffs.buffs.monsterDamageBuffs.MonsterDefenseDamageBuff;
-   import com.monsters.debug.Console;
    
    public class BaseBuffLibrary
    {
@@ -44,7 +43,6 @@ package com.monsters.baseBuffs
          var _loc4_:BuffData = null;
          if(m_buffTypes[param1])
          {
-            Console.print("You tried to add the BaseBuff(" + param1 + ") that already exists");
             return;
          }
          var _loc3_:int = 0;
@@ -75,7 +73,6 @@ package com.monsters.baseBuffs
                return _loc5_;
             }
          }
-         Console.print("There is no BassBuff in the BaseBuffLibrary with an id of " + param1 + " for the state " + param2);
          return null;
       }
    }

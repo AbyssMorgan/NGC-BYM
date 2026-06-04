@@ -324,22 +324,31 @@ package
             this.m_scrollBar.y = 22;
             this._creatureButtonsMC.addChild(this.m_scrollBar);
          }
-         if(SiegeWeapons.availableWeapon != null && !BASE.isInfernoMainYardOrOutpost)
-         {
-            this._siegeweapon = new SIEGEWEAPONPOPUP();
-            mc.addChild(this._siegeweapon);
-            this._siegeweapon.x = 442;
-            this._siegeweapon.y = 20;
-            this._siegeweapon.Setup(!GLOBAL.isInAttackMode);
-         }
-         if(GLOBAL._attackersCatapult > 0 && !BASE.isInfernoMainYardOrOutpost)
-         {
-            this._catapult = new CATAPULTPOPUP();
-            mc.addChild(this._catapult);
-            this._catapult.x = 350;
-            this._catapult.y = 20;
-            this._catapult.Setup(!GLOBAL.isInAttackMode);
-         }
+		var siege_available:Boolean = true;
+		if(BASE._wmID == 31 || BASE._wmID == 21 || BASE._wmID == 11 || BASE._wmID == 1){
+			if(BASE._level >= 90){
+				siege_available = false;
+			}
+		}
+		if(siege_available){
+			if(SiegeWeapons.availableWeapon != null && !BASE.isInfernoMainYardOrOutpost)
+			{
+				this._siegeweapon = new SIEGEWEAPONPOPUP();
+				mc.addChild(this._siegeweapon);
+				this._siegeweapon.x = 442;
+				this._siegeweapon.y = 20;
+				this._siegeweapon.Setup(!GLOBAL.isInAttackMode);
+			}
+			if(GLOBAL._attackersCatapult > 0 && !BASE.isInfernoMainYardOrOutpost)
+			{
+				this._catapult = new CATAPULTPOPUP();
+				mc.addChild(this._catapult);
+				this._catapult.x = 350;
+				this._catapult.y = 20;
+				this._catapult.Setup(!GLOBAL.isInAttackMode);
+			}
+		}
+			
       }
       
       private function setupScrollMenu() : void

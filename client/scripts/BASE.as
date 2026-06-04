@@ -1882,7 +1882,6 @@ package
 			} else if(_wmID == 31 || _wmID == 21 || _wmID == 11 || _wmID == 1){
 				if(_level >= 90){
 					terrainType = "lava";
-					GLOBAL._attackersCatapult = 0;
 				} else if(_level >= 80){
 					terrainType = "crater";
 				} else if(_level >= 70){
@@ -1895,7 +1894,6 @@ package
 			trace("_level = " + _level);
 			trace("_baseLevel = " + _baseLevel);
 			trace("m_yardType = " + m_yardType);
-			// _attackersCatapult = 0;
 		 } else if(!MapRoomManager.instance.isInMapRoom3 && GLOBAL._currentCell && (isOutpostOrInfernoOutpost || GLOBAL.mode == GLOBAL.e_BASE_MODE.WMATTACK || GLOBAL.mode == GLOBAL.e_BASE_MODE.WMVIEW)){
             terrainType = (GLOBAL._currentCell as MapRoomCell).terrain;
          }

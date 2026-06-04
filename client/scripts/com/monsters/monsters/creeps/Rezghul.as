@@ -5,6 +5,7 @@ package com.monsters.monsters.creeps
    import com.monsters.interfaces.ITargetable;
    import com.monsters.monsters.MonsterBase;
    import com.monsters.monsters.components.abilities.RezghulResurrectAttack;
+   import com.monsters.monsters.components.abilities.RezghulTowerDamageReduction;
    import com.monsters.monsters.components.abilities.Zombiefy;
    import com.monsters.projectiles.ProjectileUtils;
    import com.monsters.projectiles.Projectilev2;
@@ -53,6 +54,7 @@ package com.monsters.monsters.creeps
          _loc14_ = new ResurrectProjectile();
          var _loc15_:RezghulResurrectAttack = new RezghulResurrectAttack(300,CREATURES.GetProperty(_creatureID,k_RESSURECT_COOLDOWN,param5,_friendly),Targeting.getFriendlyFlag(this) | Targeting.k_TARGETS_GROUND,50,_loc14_,_loc13_);
          addComponent(_loc15_);
+         addComponent(new RezghulTowerDamageReduction());
 		 attackFlags = Targeting.getOldStyleTargets(1);
       }
       

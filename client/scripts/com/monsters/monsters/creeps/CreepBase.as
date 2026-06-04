@@ -751,28 +751,41 @@ package com.monsters.monsters.creeps
          if(_targetCreeps.length > 0)
          {
             _targetCreeps.sortOn(["dist"],Array.NUMERIC);
-			var target_stats:Object,
-				target_id:String = _targetCreeps[0].creep._creatureID;
-			if(target_id.substr(0, 1) == "G"){
-				target_stats = CHAMPIONCAGE._guardians[target_id];
-			} else {
-				target_stats = CREATURELOCKER._creatures[target_id];
-			}
+			var target_stats:Object, target_id:String;
             if(!(Boolean(_targetCreep) && _targetCreep.health > 0 && _targetCreep.health < _targetCreep.maxHealth))
             {
                _loc4_ = true;
-               while(_targetCreeps.length > 0 && (target_stats.antiHeal || (_creatureID == "C19" && target_stats.antiGroundHeal)))
-               {
-                  _targetCreeps.shift();
-               }
-               if(_targetCreeps.length > 0)
-               {
-                  _targetCreep = _targetCreeps[0].creep;
-                  _waypoints = [_targetCreep._tmpPoint];
-               }
+				while(_targetCreeps.length > 0){
+					target_id = _targetCreeps[0].creep._creatureID;
+					if(target_id.substr(0, 1) == "G"){
+						target_stats = CHAMPIONCAGE._guardians[target_id];
+					} else {
+						target_stats = CREATURELOCKER._creatures[target_id];
+					}
+					if(target_stats.antiHeal || (_creatureID == "C19" && target_stats.antiGroundHeal)){
+						_targetCreeps.shift();
+						continue;
+					}
+					break;
+				}
+				if(_targetCreeps.length > 0)
+				{
+					_targetCreep = _targetCreeps[0].creep;
+					_waypoints = [_targetCreep._tmpPoint];
+				}
             }
-			while(_targetCreeps.length > 0 && (_targetCreeps[0].creep._behaviour == k_sBHVR_RETREAT || target_stats.antiHeal || (_creatureID == "C19" && target_stats.antiGroundHeal) || _targetCreeps[0].creep.health == _targetCreeps[0].creep.maxHealth)){
-				_targetCreeps.shift();
+			while(_targetCreeps.length > 0){
+				target_id = _targetCreeps[0].creep._creatureID;
+				if(target_id.substr(0, 1) == "G"){
+					target_stats = CHAMPIONCAGE._guardians[target_id];
+				} else {
+					target_stats = CREATURELOCKER._creatures[target_id];
+				}
+				if(target_stats.antiHeal || (_creatureID == "C19" && target_stats.antiGroundHeal) || _targetCreeps[0].creep._behaviour == k_sBHVR_RETREAT || _targetCreeps[0].creep.health == _targetCreeps[0].creep.maxHealth){
+					_targetCreeps.shift();
+					continue;
+				}
+				break;
 			}
          }
          if(_targetCreeps.length > 0)

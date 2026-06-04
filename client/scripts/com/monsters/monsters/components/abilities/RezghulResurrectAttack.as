@@ -27,13 +27,17 @@ package com.monsters.monsters.components.abilities
       
       override protected function getValidTargetsInRange(param1:uint, param2:Point, param3:int) : Vector.<ITargetable>
       {
-         if(!owner.inBattleState)
+         if(!owner || !owner.inBattleState)
          {
             return null;
          }
          var targets:Vector.<ITargetable> = null;
          var currentCreep:ITargetable = null;
          var allDeadCreeps:Array = Targeting.getDeadCreeps(param2,param1,param3);
+         if(!allDeadCreeps || allDeadCreeps.length == 0)
+         {
+            return null;
+         }
          var idx:int = 0;
          while(idx < allDeadCreeps.length)
          {
@@ -41,7 +45,8 @@ package com.monsters.monsters.components.abilities
             {
                targets = new Vector.<ITargetable>();
             }
-            if((currentCreep = allDeadCreeps[idx].creep) is CreepBase && k_UNRESURRECTABLE_CREATURES.indexOf(CreepBase(currentCreep)._creatureID) == -1)
+            currentCreep = allDeadCreeps[idx].creep;
+            if(currentCreep is CreepBase && k_UNRESURRECTABLE_CREATURES.indexOf(CreepBase(currentCreep)._creatureID) == -1)
             {
                targets.push(currentCreep);
             }
@@ -60,6 +65,10 @@ package com.monsters.monsters.components.abilities
       protected function onProjectileHit(event:ProjectileEvent) : void
       {
          var proj:Projectilev2 = event.target as Projectilev2;
+         if(!proj)
+         {
+            return;
+         }
          proj.removeEventListener(ProjectileEvent.k_hit,this.onProjectileHit);
          this.resurrectAlliesInArea(proj);
       }

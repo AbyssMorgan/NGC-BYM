@@ -647,7 +647,7 @@ package
          var _loc16_:* = undefined;
          if(_history)
          {
-            if(_history["s1"] && _history["s1"][0] == 1 && _history["s1"][2] == 0 && !BASE.isInfernoMainYardOrOutpost)
+            if(_history["s1"] && _history["s1"][0] == 1 && _history["s1"][2] == 0 && BASE.isMainYard)
             {
                _history["s1"][2] = 1;
                _history.lastattack = GLOBAL.Timestamp();

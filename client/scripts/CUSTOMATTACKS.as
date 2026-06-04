@@ -36,7 +36,7 @@ package
          var _loc2_:int = 0;
          var _loc3_:Point = null;
          var _loc4_:BFOUNDATION = null;
-         if(!BUILDING27._exists && !BASE.isInfernoMainYardOrOutpost)
+         if(!BUILDING27._exists && BASE.isMainYard)
          {
             _loc1_ = GLOBAL._mapHeight;
             _loc2_ = -800 - (GLOBAL._mapHeight - 800) / 2;

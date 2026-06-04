@@ -1950,6 +1950,9 @@ package
                   buildingTypeCounts[building.t] ||= 0;
                   ++buildingTypeCounts[building.t];
                }
+			   if(building.t == 27 && !BASE.isMainYard){
+				continue;
+			   }
                if (!(building.t == 53 || building.t == 54))
                {
                   currentBuilding = building;

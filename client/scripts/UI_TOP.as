@@ -641,25 +641,7 @@ package
             LoadImageError = function(param1:IOErrorEvent):void
             {
             };
-            if(BASE._ownerName)
-            {
-               if(BASE._ownerName.toLowerCase().charAt(BASE._ownerName.length - 1) == "s")
-               {
-                  mc.mcPoints.tName.htmlText = KEYS.Get("uitop_yardownershort",{"v1":BASE._ownerName.toUpperCase()});
-               }
-               else
-               {
-                  mc.mcPoints.tName.htmlText = KEYS.Get("uitop_yardownerlong",{"v1":BASE._ownerName.toUpperCase()});
-               }
-            }
-            else if(GLOBAL.mode == GLOBAL._loadmode)
-            {
-               mc.mcPoints.tName.htmlText = BASE._ownerName;
-            }
-            else
-            {
-               mc.mcPoints.tName.htmlText = BASE._ownerName;
-            }
+			mc.mcPoints.tName.htmlText = BASE._ownerName;
             loader = new Loader();
             loader.contentLoaderInfo.addEventListener(IOErrorEvent.IO_ERROR,LoadImageError,false,0,true);
             loader.contentLoaderInfo.addEventListener(Event.COMPLETE,onImageLoad);

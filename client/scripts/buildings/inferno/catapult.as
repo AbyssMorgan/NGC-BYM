@@ -5,7 +5,7 @@ package buildings.inferno {
 
 	public class catapult {
 
-		public static const DATA:Object =  {
+		public static const DATA:Object = {
 			"id":51,
 			"group":2,
 			"order":10,

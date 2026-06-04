@@ -18,7 +18,6 @@ package buildings.yard {
 			"tutstage":200,
 			"sale":0,
 			"description":"b_stronghold_desc",
-			"cls":BDECORATION,
 			"costs":[
 				{"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":100000, "time":new SecNum(0), "re":[]}
 			],

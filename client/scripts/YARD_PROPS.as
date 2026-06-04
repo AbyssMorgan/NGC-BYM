@@ -121,11 +121,11 @@ package {
 	import buildings.yard.championchamber;
 	import buildings.yard.bdg_biggulp;
 	import buildings.yard.bdg_wmitotem1;
-	import buildings.yard.building122;
-	import buildings.yard.building123;
-	import buildings.yard.building124;
-	import buildings.yard.building125;
-	import buildings.yard.building126;
+	import buildings.yard.bdg_wmitotem2;
+	import buildings.yard.bdg_wmitotem3;
+	import buildings.yard.bdg_wmitotem4;
+	import buildings.yard.bdg_wmitotem5;
+	import buildings.yard.bdg_wmitotem6;
 	import buildings.yard.infernoentrance;
 	import buildings.yard.housingbunker;
 	import buildings.yard.bi_quaketower;
@@ -266,11 +266,11 @@ package {
 			championchamber.DATA,      // ID 119
 			bdg_biggulp.DATA,          // ID 120 (Locked)
 			bdg_wmitotem1.DATA,        // ID 121 (WMI only)
-			building122.DATA,          // ID 122 (Empty building)
-			building123.DATA,          // ID 123 (Empty building)
-			building124.DATA,          // ID 124 (Empty building)
-			building125.DATA,          // ID 125 (Empty building)
-			building126.DATA,          // ID 126 (Empty building)
+			bdg_wmitotem2.DATA,        // ID 122 (WMI only)
+			bdg_wmitotem3.DATA,        // ID 123 (WMI only)
+			bdg_wmitotem4.DATA,        // ID 124 (WMI only)
+			bdg_wmitotem5.DATA,        // ID 125 (WMI only)
+			bdg_wmitotem6.DATA,        // ID 126 (WMI only)
 			infernoentrance.DATA,      // ID 127
 			housingbunker.DATA,        // ID 128
 			bi_quaketower.DATA,        // ID 129

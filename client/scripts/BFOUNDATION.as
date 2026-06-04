@@ -4261,6 +4261,10 @@ package
          {
             return new building135hit();
          }
+		 if(this._type == 141)
+         {
+            return new building112hit();
+         }
          return !!_loc1_.hitCls ? new (_loc1_.hitCls as Class)() : new building1hit();
       }
       

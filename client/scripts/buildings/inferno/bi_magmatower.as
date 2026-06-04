@@ -43,13 +43,13 @@ package buildings.inferno {
 			],
 			"imageData":{
 				"baseurl":"buildings/imagmatower/",
-				1:{
-					"anim":["anim.1.v2.png",new Rectangle(-26,-50,54,42),31],
-					"anim2":["anim.2.v2.png",new Rectangle(-17,26,38,19),31],
+				"1":{
+					"anim":["anim.1.png",new Rectangle(-26,-50,54,42),31],
+					"anim2":["anim2.1.png",new Rectangle(-17,26,38,19),31],
 					"top":["top.1.v2.png",new Point(-34,-9)],
 					"shadow":["shadow.1.v2.jpg",new Point(-31,10)],
-					"animdamaged":["anim.1.damaged.v2.png",new Rectangle(-28.6,-47.6,52,43),31],
-					"animdamaged2":["anim.2.damaged.v2.png",new Rectangle(-21,28,38,19),31],
+					//"animdamaged":["anim.1.damaged.v2.png",new Rectangle(-28.6,-47.6,52,43),31],
+					//"animdamaged2":["anim.2.damaged.v2.png",new Rectangle(-21,28,38,19),31],
 					"topdamaged":["top.1.damaged.v2.png",new Point(-38,-4)],
 					"shadowdamaged":["shadow.1.v2.jpg",new Point(-38,16)],
 					"topdestroyed":["top.1.destroyed.v2.png",new Point(-36,6)]

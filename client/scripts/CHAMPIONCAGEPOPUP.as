@@ -51,11 +51,11 @@ package
       
       private static var buffsStringsArr:Array;
       
-      public static var _maxSpeed:Number = 4;
+      public static var _maxSpeed:Number = 4.5;
       
-      public static var _maxHealth:Number = 410000;
+      public static var _maxHealth:Number = 415000;
       
-      public static var _maxDamage:Number = 14000;
+      public static var _maxDamage:Number = 16000;
       
       public static var _maxBuff:Number = 100;
       

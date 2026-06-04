@@ -255,7 +255,9 @@ package
                   mc.bSpeedup.Highlight = true;
                   mc.bAction.visible = false;
                   mc.tText.htmlText = KEYS.Get("chamber_thawstreamdesc",{"v1":CHAMPIONCAGE._guardians["G" + type].name});
-                  POPUPS.Push(mc,null,null,null,"G" + type + "_L" + level + "-150.png");
+				  var graphic_level:int = level;
+		 		  if(graphic_level > 6) graphic_level = 6;
+                  POPUPS.Push(mc,null,null,null,"G" + type + "_L" + graphic_level + "-150.png");
                }
                LOGGER.Stat([70,CREATURES._guardian._type,CREATURES._guardian._level.Get()]);
                BASE.Save();

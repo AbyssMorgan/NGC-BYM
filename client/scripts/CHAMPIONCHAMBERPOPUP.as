@@ -48,7 +48,7 @@ package
          var _loc3_:int = 0;
          var _loc4_:Object = null;
          var _loc5_:ChampionChamberFrozen = null;
-         var _loc6_:int = 0;
+         var level:int = 0;
          var _loc7_:String = null;
          var _loc8_:Object = null;
          var _loc1_:Sprite = new Sprite();
@@ -59,12 +59,14 @@ package
          for each(_loc4_ in CHAMPIONCAGE.GetAllGuardianData())
          {
             _loc5_ = new ChampionChamberFrozen();
-            _loc6_ = int(_loc4_.l.Get());
+            level = int(_loc4_.l.Get());
             _loc7_ = "G" + _loc4_.t;
             _loc8_ = CHAMPIONCAGE._guardians[_loc7_];
             _loc5_.name = _loc4_.t.toString();
-            _loc5_.tName.htmlText = "<b>" + KEYS.Get(_loc8_.title) + "</b><br>" + KEYS.Get("chamber_level",{"v1":_loc6_});
-            ImageCache.GetImageWithCallBack("monsters/" + _loc7_ + "_L" + _loc6_ + "-150.png",this.onImageLoad,true,4,"",[_loc5_.mcImage]);
+            _loc5_.tName.htmlText = "<b>" + KEYS.Get(_loc8_.title) + "</b><br>" + KEYS.Get("chamber_level",{"v1":level});
+			var graphic_level:int = level;
+		 	if(graphic_level > 6) graphic_level = 6;
+            ImageCache.GetImageWithCallBack("monsters/" + _loc7_ + "_L" + graphic_level + "-150.png",this.onImageLoad,true,4,"",[_loc5_.mcImage]);
             _loc5_.addEventListener(MouseEvent.ROLL_OVER,this.rollOverChampion);
             _loc5_.x = _loc3_;
             _loc1_.addChild(_loc5_);
@@ -145,7 +147,7 @@ package
       private function UpdateStats(param1:Object = null) : void
       {
          var _loc2_:int = 0;
-         var _loc3_:int = 0;
+         var level:int = 0;
          var _loc4_:int = 0;
          var _loc5_:String = null;
          var _loc6_:* = null;
@@ -157,10 +159,12 @@ package
          if(param1)
          {
             _loc2_ = int(param1.t);
-            _loc3_ = int(param1.l.Get());
+            level = int(param1.l.Get());
             _loc4_ = int(param1.fb.Get());
             _loc5_ = "G" + _loc2_;
-            _loc6_ = "monsters/" + "G" + _loc2_ + "_L" + _loc3_ + "-150.png";
+			var graphic_level:int = level;
+		 	if(graphic_level > 6) graphic_level = 6;
+            _loc6_ = "monsters/" + "G" + _loc2_ + "_L" + graphic_level + "-150.png";
             if(_loc6_)
             {
                ImageCache.GetImageWithCallBack(_loc6_,this.UpdateSelectImage);
@@ -169,12 +173,12 @@ package
             health_txt.htmlText = "<b>" + KEYS.Get("gcage_labelHealth") + "</b>";
             speed_txt.htmlText = "<b>" + KEYS.Get("gcage_labelSpeed") + "</b>";
             buff_txt.htmlText = "<b>" + KEYS.Get("gcage_labelBuff") + "</b>";
-            tEvoStage.htmlText = "<b>" + CHAMPIONCAGE._guardians["G" + _loc2_].name + "</b> " + KEYS.Get("chamber_level",{"v1":_loc3_});
+            tEvoStage.htmlText = "<b>" + CHAMPIONCAGE._guardians["G" + _loc2_].name + "</b> " + KEYS.Get("chamber_level",{"v1":level});
             tEvoDesc.htmlText = KEYS.Get(CHAMPIONCAGE._guardians["G" + _loc2_].description);
-            _loc7_ = CHAMPIONCAGE.GetGuardianProperty(_loc5_,_loc3_,"damage");
-            _loc8_ = CHAMPIONCAGE.GetGuardianProperty(_loc5_,_loc3_,"health");
-            _loc9_ = CHAMPIONCAGE.GetGuardianProperty(_loc5_,_loc3_,"speed");
-            _loc10_ = CHAMPIONCAGE.GetGuardianProperty(_loc5_,_loc3_,"buffs") * 100;
+            _loc7_ = CHAMPIONCAGE.GetGuardianProperty(_loc5_,level,"damage");
+            _loc8_ = CHAMPIONCAGE.GetGuardianProperty(_loc5_,level,"health");
+            _loc9_ = CHAMPIONCAGE.GetGuardianProperty(_loc5_,level,"speed");
+            _loc10_ = CHAMPIONCAGE.GetGuardianProperty(_loc5_,level,"buffs") * 100;
             if(_loc4_ > 0)
             {
                _loc7_ += CHAMPIONCAGE.GetGuardianProperty(_loc5_,_loc4_,"bonusDamage");

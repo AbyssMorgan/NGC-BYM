@@ -912,7 +912,7 @@ package com.monsters.monsters.champions
             damageProperty.value = int(CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._level.Get(),"damage"));
             m_range = CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._level.Get(),"range");
             _movement = CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._level.Get(),"movement");
-            if(param1 >= 6)
+            if(param1 >= 10)
             {
                QUESTS.Check("upgrade_champ" + _creatureID.substr(1,1),1);
             }
@@ -1279,7 +1279,7 @@ package com.monsters.monsters.champions
             _targetPosition = CHAMPIONCAGE.PointInCage(_targetCenter);
             _hasPath = true;
          }
-         if(GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD && this._level.Get() < 6)
+         if(GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD && this._level.Get() < 10)
          {
             if(!this._warnStarve)
             {
@@ -1317,7 +1317,7 @@ package com.monsters.monsters.champions
                this.levelSet(this._level.Get() + 1);
             }
          }
-         else if(GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD && this._level.Get() == 6)
+         else if(GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD && this._level.Get() == 10)
          {
             if(GLOBAL.Timestamp() > this._feedTime.Get() + CHAMPIONCAGE.STARVETIMER)
             {

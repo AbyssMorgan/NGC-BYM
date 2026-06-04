@@ -22,15 +22,13 @@ package
       
       private var _index:int = 0;
       
-      private const MAX_ICON_LEVEL:uint = 6;
-      
       public function CHAMPIONBUTTON(param1:String, param2:int, param3:int, param4:int, param5:DisplayObjectContainer)
       {
          super();
          this._index = param3;
          this._creatureID = param1;
          this._creatureData = CHAMPIONCAGE._guardians[param1];
-         this._level = Math.min(this.MAX_ICON_LEVEL,param2);
+         this._level = param2;
          var _loc6_:String = String(CHAMPIONCAGE._guardians[param1].name);
          if(Boolean(GLOBAL._playerGuardianData[this._index]) && Boolean(GLOBAL._playerGuardianData[this._index].l.Get()))
          {
@@ -40,7 +38,9 @@ package
          {
             txtName.htmlText = "<b>" + _loc6_ + " Level 1</b>";
          }
-         ImageCache.GetImageWithCallBack("monsters/" + this._creatureID + "_L" + this._level + "-small.png",this.IconLoaded,true,1);
+		 var graphic_level:int = this._level;
+		 if(graphic_level > 6) graphic_level = 6;
+         ImageCache.GetImageWithCallBack("monsters/" + this._creatureID + "_L" + graphic_level + "-small.png",this.IconLoaded,true,1);
          this._description = new bubblepopup3();
          this._description.Setup(190,26,KEYS.Get(CHAMPIONCAGE._guardians[this._creatureID].description),5);
          param5.addChild(this._description);

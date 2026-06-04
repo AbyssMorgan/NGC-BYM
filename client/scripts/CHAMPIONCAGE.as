@@ -53,28 +53,110 @@ package
 				"classType":CLASS_TYPE_BASIC,
 				"spawnClass":ChampionBase,
 				"props":{
-					"speed":[1,1.2,1.4,1.6,1.8,2],
-					"health":[40000,80000,120000,140000,160000,200000],
+					"speed":[
+						1.0, // Level 1
+						1.2, // Level 2
+						1.4, // Level 3
+						1.6, // Level 4
+						1.8, // Level 5
+						2.0, // Level 6
+						2.1, // Level 7
+						2.2, // Level 8
+						2.3, // Level 9
+						2.4, // Level 10
+					],
+					"health":[
+						40000, // Level 1
+						80000, // Level 2
+						120000, // Level 3
+						140000, // Level 4
+						160000, // Level 5
+						200000, // Level 6
+						240000, // Level 7
+						280000, // Level 8
+						320000, // Level 9
+						360000, // Level 10
+					],
 					"healtime":[
-						3600 / 2,
-						7200 / 2,
-						14400 / 2,
-						28800 / 2,
-						57600 / 2,
-						115200 / 2,
+						40000 / 20, // Level 1
+						80000 / 20, // Level 2
+						120000 / 20, // Level 3
+						140000 / 20, // Level 4
+						160000 / 20, // Level 5
+						200000 / 20, // Level 6
+						240000 / 20, // Level 7
+						280000 / 20, // Level 8
+						320000 / 20, // Level 9
+						360000 / 20, // Level 10
 					],
-					"range":[35,45,55,65,70,70],
-					"damage":[1000,1200,1500,2000,2500,3000],
+					"range":[
+						35, // Level 1
+						45, // Level 2
+						55, // Level 3
+						65, // Level 4
+						70, // Level 5
+						75, // Level 6
+						77, // Level 7
+						79, // Level 8
+						81, // Level 9
+						85, // Level 10
+					],
+					"damage":[
+						1000, // Level 1
+						1200, // Level 2
+						1500, // Level 3
+						2000, // Level 4
+						2500, // Level 5
+						3000, // Level 6
+						3500, // Level 7
+						4000, // Level 8
+						4500, // Level 9
+						5000, // Level 10
+					],
 					"feeds":[
-						{"C2":8},
-						{"C2":5,"C6":3},
-						{"C6":20},
-						{"C6":5,"C10":5},
-						{"C10":10}
+						{"C2":8},         // Level 2
+						{"C2":5,"C6":3},  // Level 3
+						{"C6":20},        // Level 4
+						{"C6":5,"C10":5}, // Level 5
+						{"C10":10},       // Level 6
+						{"C10":11},       // Level 7
+						{"C10":12},       // Level 8
+						{"C10":13},       // Level 9
+						{"C10":15},       // Level 10
 					],
-					"feedShiny":[26,44,75,111,136],
-					"evolveShiny":[158,530,1358,2664,4076],
-					"feedCount":[3,6,9,12,15],
+					"feedShiny":[
+						26,   // Level 2
+						44,   // Level 3
+						75,   // Level 4
+						111,  // Level 5
+						136,  // Level 6
+						150,  // Level 7
+						160,  // Level 8
+						170,  // Level 9
+						180,  // Level 10
+					],
+					"evolveShiny":[
+						78,    // Level 2
+						264,   // Level 3
+						675,   // Level 4
+						1332,  // Level 5
+						2040,  // Level 6
+						2700,  // Level 7
+						3360,  // Level 8
+						4080,  // Level 9
+						5400,  // Level 10
+					],
+					"feedCount":[
+						3,   // Level 2
+						6,   // Level 3
+						9,   // Level 4
+						12,  // Level 5
+						15,  // Level 6
+						18,  // Level 7
+						21,  // Level 8
+						24,  // Level 9
+						30,  // Level 10
+					],
 					"feedTime":[3600 * 23],
 					"buffs":[0],
 					"movement":["ground"],
@@ -103,28 +185,110 @@ package
 				"classType":CLASS_TYPE_BASIC,
 				"spawnClass":ChampionBase,
 				"props":{
-					"speed":[2,2.2,2.5,2.8,3.2,3.6],
-					"health":[12000,20000,36000,42000,52000,60000],
+					"speed":[
+						2.0, // Level 1
+						2.2, // Level 2
+						2.5, // Level 3
+						2.8, // Level 4
+						3.2, // Level 5
+						3.6, // Level 6
+						3.7, // Level 7
+						3.8, // Level 8
+						3.9, // Level 9
+						4.0, // Level 10
+					],
+					"health":[
+						12000, // Level 1
+						20000, // Level 2
+						36000, // Level 3
+						42000, // Level 4
+						52000, // Level 5
+						60000, // Level 6
+						68000, // Level 7
+						76000, // Level 8
+						84000, // Level 9
+						92000, // Level 10
+					],
 					"healtime":[
-						3600 / 2,
-						7200 / 2,
-						14400 / 2,
-						28800 / 2,
-						57600 / 2,
-						115200 / 2,
+						12000 / 20, // Level 1
+						20000 / 20, // Level 2
+						36000 / 20, // Level 3
+						42000 / 20, // Level 4
+						52000 / 20, // Level 5
+						60000 / 20, // Level 6
+						68000 / 20, // Level 7
+						76000 / 20, // Level 8
+						84000 / 20, // Level 9
+						92000 / 20, // Level 10
 					],
-					"range":[35,45,55,65,85,90],
-					"damage":[3000,3600,4200,5500,6500,8000],
+					"range":[
+						35, // Level 1
+						45, // Level 2
+						55, // Level 3
+						65, // Level 4
+						85, // Level 5
+						90, // Level 6
+						95, // Level 7
+						100, // Level 8
+						105, // Level 9
+						110, // Level 10
+					],
+					"damage":[
+						3000, // Level 1
+						3600, // Level 2
+						4200, // Level 3
+						5500, // Level 4
+						6500, // Level 5
+						8000, // Level 6
+						9500, // Level 7
+						11000, // Level 8
+						12500, // Level 9
+						14000, // Level 10
+					],
 					"feeds":[
-						{"C1":15},
-						{"C1":10,"C4":8},
-						{"C7":25},
-						{"C7":5,"C8":18},
-						{"C8":15}
+						{"C1":15},         // Level 2
+						{"C1":10,"C4":8},  // Level 3
+						{"C7":25},         // Level 4
+						{"C7":5,"C8":18},  // Level 5
+						{"C8":15},         // Level 6
+						{"C8":16},         // Level 7
+						{"C8":17},         // Level 8
+						{"C8":18},         // Level 9
+						{"C8":20},         // Level 10
 					],
-					"feedShiny":[26,44,75,105,131],
-					"evolveShiny":[158,530,1358,2530,3918],
-					"feedCount":[3,6,9,12,15],
+					"feedShiny":[
+						26,   // Level 2
+						44,   // Level 3
+						75,   // Level 4
+						111,  // Level 5
+						136,  // Level 6
+						150,  // Level 7
+						160,  // Level 8
+						170,  // Level 9
+						180,  // Level 10
+					],
+					"evolveShiny":[
+						78,    // Level 2
+						264,   // Level 3
+						675,   // Level 4
+						1332,  // Level 5
+						2040,  // Level 6
+						2700,  // Level 7
+						3360,  // Level 8
+						4080,  // Level 9
+						5400,  // Level 10
+					],
+					"feedCount":[
+						3,   // Level 2
+						6,   // Level 3
+						9,   // Level 4
+						12,  // Level 5
+						15,  // Level 6
+						18,  // Level 7
+						21,  // Level 8
+						24,  // Level 9
+						30,  // Level 10
+					],
 					"feedTime":[3600 * 23],
 					"buffs":[0],
 					"movement":["ground"],
@@ -153,30 +317,123 @@ package
 				"classType":CLASS_TYPE_BASIC,
 				"spawnClass":Fomor,
 				"props":{
-					"speed":[1.2,1.4,2,2.1,2.2,2.3],
-					"health":[15000,17500,20000,22500,25000,40000],
+					"speed":[
+						1.2, // Level 1
+						1.4, // Level 2
+						2.0, // Level 3
+						2.1, // Level 4
+						2.2, // Level 5
+						2.3, // Level 6
+						2.4, // Level 7
+						2.5, // Level 8
+						2.6, // Level 9
+						2.8, // Level 10
+					],
+					"health":[
+						15000, // Level 1
+						17500, // Level 2
+						20000, // Level 3
+						22500, // Level 4
+						25000, // Level 5
+						40000, // Level 6
+						55000, // Level 7
+						70000, // Level 8
+						85000, // Level 9
+						100000, // Level 10
+					],
 					"healtime":[
-						3600 / 2,
-						7200 / 2,
-						14400 / 2,
-						28800 / 2,
-						57600 / 2,
-						115200 / 2,
+						15000 / 20, // Level 1
+						17500 / 20, // Level 2
+						20000 / 20, // Level 3
+						22500 / 20, // Level 4
+						25000 / 20, // Level 5
+						40000 / 20, // Level 6
+						55000 / 20, // Level 7
+						70000 / 20, // Level 8
+						85000 / 20, // Level 9
+						100000 / 20, // Level 10
 					],
-					"range":[140,140,180,190,200,210],
-					"damage":[70,80,90,100,110,120],
+					"range":[
+						140, // Level 1
+						140, // Level 2
+						180, // Level 3
+						190, // Level 4
+						200, // Level 5
+						210, // Level 6
+						220, // Level 7
+						230, // Level 8
+						240, // Level 9
+						250, // Level 10
+					],
+					"damage":[
+						70, // Level 1
+						80, // Level 2
+						90, // Level 3
+						100, // Level 4
+						110, // Level 5
+						120, // Level 6
+						160, // Level 7
+						200, // Level 8
+						250, // Level 9
+						300, // Level 10
+					],
 					"feeds":[
-						{"C3":10},
-						{"C3":10,"C9":1},
-						{"C3":20,"C9":3},
-						{"C3":15,"C9":5},
-						{"C9":10}
+						{"C3":10},        // Level 2
+						{"C3":10,"C9":1}, // Level 3
+						{"C3":20,"C9":3}, // Level 4
+						{"C3":15,"C9":5}, // Level 5
+						{"C9":10},        // Level 6
+						{"C9":11},        // Level 7
+						{"C9":12},        // Level 8
+						{"C9":13},        // Level 9
+						{"C9":15},        // Level 10
 					],
-					"feedShiny":[26,45,62,76,96],
-					"evolveShiny":[154,537,1116,1822,2891],
-					"feedCount":[3,6,9,12,15],
+					"feedShiny":[
+						26,   // Level 2
+						44,   // Level 3
+						75,   // Level 4
+						111,  // Level 5
+						136,  // Level 6
+						150,  // Level 7
+						160,  // Level 8
+						170,  // Level 9
+						180,  // Level 10
+					],
+					"evolveShiny":[
+						78,    // Level 2
+						264,   // Level 3
+						675,   // Level 4
+						1332,  // Level 5
+						2040,  // Level 6
+						2700,  // Level 7
+						3360,  // Level 8
+						4080,  // Level 9
+						5400,  // Level 10
+					],
+					"feedCount":[
+						3,   // Level 2
+						6,   // Level 3
+						9,   // Level 4
+						12,  // Level 5
+						15,  // Level 6
+						18,  // Level 7
+						21,  // Level 8
+						24,  // Level 9
+						30,  // Level 10
+					],
 					"feedTime":[3600 * 23],
-					"buffs":[0.1,0.2,0.3,0.4,0.5,0.6],
+					"buffs":[
+						0.10, // Level 1
+						0.20, // Level 2
+						0.30, // Level 3
+						0.40, // Level 4
+						0.50, // Level 5
+						0.60, // Level 6
+						0.65, // Level 7
+						0.70, // Level 8
+						0.75, // Level 9
+						0.80, // Level 10
+					],
 					"movement":["ground","ground","fly"],
 					"attack":["ranged"],
 					"bucket":[200],
@@ -186,7 +443,7 @@ package
 					"bonusHealth":[1000,2200,4000],
 					"bonusRange":[3,6,10],
 					"bonusDamage":[3,6,10],
-					"bonusBuffs":[0.03,0.06,0.15],
+					"bonusBuffs":[0.0,0.0,0.0],
 					"bonusFeeds":[{"C9":10},{"C9":10},{"C9":10}],
 					"powerLevel":1,
 					"bonusFeedShiny":[96,96,96],
@@ -205,28 +462,110 @@ package
 				"powerLevel2Desc":"mon_korathdesc_fireball",
 				"powerLevel3Desc":"mon_korathdesc_stomp",
 				"props":{
-					"speed":[1.4,1.6,1.8,2,2.3,2.5],
-					"health":[28000,62000,96000,120000,144000,175000],
+					"speed":[
+						1.4, // Level 1
+						1.6, // Level 2
+						1.8, // Level 3
+						2.0, // Level 4
+						2.3, // Level 5
+						2.5, // Level 6
+						2.7, // Level 7
+						2.9, // Level 8
+						3.1, // Level 9
+						3.3, // Level 10
+					],
+					"health":[
+						28000, // Level 1
+						62000, // Level 2
+						96000, // Level 3
+						120000, // Level 4
+						144000, // Level 5
+						175000, // Level 6
+						206000, // Level 7
+						237000, // Level 8
+						268000, // Level 9
+						296000, // Level 10
+					],
 					"healtime":[
-						3600 / 2,
-						7200 / 2,
-						14400 / 2,
-						28800 / 2,
-						57600 / 2,
-						115200 / 2,
+						28000 / 20, // Level 1
+						62000 / 20, // Level 2
+						96000 / 20, // Level 3
+						120000 / 20, // Level 4
+						144000 / 20, // Level 5
+						175000 / 20, // Level 6
+						206000 / 20, // Level 7
+						237000 / 20, // Level 8
+						268000 / 20, // Level 9
+						296000 / 20, // Level 10
 					],
-					"range":[35,45,55,60,65,65],
-					"damage":[2000,2400,3000,3800,5000,6500],
+					"range":[
+						35, // Level 1
+						45, // Level 2
+						55, // Level 3
+						60, // Level 4
+						65, // Level 5
+						65, // Level 6
+						70, // Level 7
+						70, // Level 8
+						75, // Level 9
+						75, // Level 10
+					],
+					"damage":[
+						2000, // Level 1
+						2400, // Level 2
+						3000, // Level 3
+						3800, // Level 4
+						5000, // Level 5
+						6500, // Level 6
+						7000, // Level 7
+						7500, // Level 8
+						8000, // Level 9
+						8500, // Level 10
+					],
 					"feeds":[
-						{"IC1":10,"IC2":5},
-						{"IC2":5,"IC7":1},
-						{"IC7":3},
-						{"IC7":5},
-						{"IC8":2}
+						{"IC1":10,"IC2":5}, // Level 2
+						{"IC2":5,"IC7":1},  // Level 3
+						{"IC7":3},          // Level 4
+						{"IC7":5},          // Level 5
+						{"IC8":2},          // Level 6
+						{"IC8":3},          // Level 7
+						{"IC8":4},          // Level 8
+						{"IC8":5},          // Level 9
+						{"IC8":7},          // Level 10
 					],
-					"feedShiny":[26,44,75,111,136],
-					"evolveShiny":[158,530,1358,2664,4076],
-					"feedCount":[3,6,9,12,15],
+					"feedShiny":[
+						26,   // Level 2
+						44,   // Level 3
+						75,   // Level 4
+						111,  // Level 5
+						136,  // Level 6
+						150,  // Level 7
+						160,  // Level 8
+						170,  // Level 9
+						180,  // Level 10
+					],
+					"evolveShiny":[
+						78,    // Level 2
+						264,   // Level 3
+						675,   // Level 4
+						1332,  // Level 5
+						2040,  // Level 6
+						2700,  // Level 7
+						3360,  // Level 8
+						4080,  // Level 9
+						5400,  // Level 10
+					],
+					"feedCount":[
+						3,   // Level 2
+						6,   // Level 3
+						9,   // Level 4
+						12,  // Level 5
+						15,  // Level 6
+						18,  // Level 7
+						21,  // Level 8
+						24,  // Level 9
+						30,  // Level 10
+					],
 					"feedTime":[3600 * 23],
 					"buffs":[0],
 					"movement":["ground"],
@@ -697,7 +1036,7 @@ package
             if(_loc2_[_loc3_] && _loc2_[_loc3_].t && _loc2_[_loc3_].status == ChampionBase.k_CHAMPION_STATUS_NORMAL)
             {
                this.SpawnGuardian(BASE._guardianData[_loc3_].l.Get(),BASE._guardianData[_loc3_].fd,BASE._guardianData[_loc3_].ft,BASE._guardianData[_loc3_].t,BASE._guardianData[_loc3_].hp.Get(),BASE._guardianData[_loc3_].nm,BASE._guardianData[_loc3_].fb.Get(),BASE._guardianData[_loc3_].pl.Get());
-               if(CREATURES._guardian && isBasicGuardian("G" + CREATURES._guardian._type) && BASE._guardianData[_loc3_].l.Get() == 6)
+               if(CREATURES._guardian && isBasicGuardian("G" + CREATURES._guardian._type) && BASE._guardianData[_loc3_].l.Get() == 10)
                {
                   ACHIEVEMENTS.Check("upgrade_champ" + CREATURES._guardian._type,1);
                }
@@ -824,7 +1163,7 @@ package
          }
          var _loc5_:Object = CHAMPIONCAGE.GetGuardianProperty(param1,param2,"feeds");
          var _loc6_:Object = {};
-         if(param2 == 6)
+         if(param2 == 10)
          {
             _loc5_ = _guardians[param1].props.bonusFeeds[CREATURES._guardian._foodBonus.Get()];
             if(CREATURES._guardian._foodBonus.Get() == 3)
@@ -833,7 +1172,7 @@ package
             }
          }
          var _loc9_:Boolean = true;
-         if(param2 == 6)
+         if(param2 == 10)
          {
             if(param3)
             {
@@ -960,7 +1299,7 @@ package
                   GLOBAL.Message(KEYS.Get("msg_champion_fullyevolved",{"v1":param2 + 1}));
                }
                CREATURES._guardian.levelSet(param2 + 1);
-               if(CREATURES._guardian._level.Get() == 6)
+               if(CREATURES._guardian._level.Get() == 10)
                {
                   ACHIEVEMENTS.Check("upgrade_champ" + CREATURES._guardian._type,1);
                }
@@ -1017,7 +1356,7 @@ package
                if(CREATURES._guardian._feeds.Get() >= GetGuardianProperty(param1,param2,"feedCount"))
                {
                   CREATURES._guardian.levelSet(param2 + 1);
-                  if(CREATURES._guardian._level.Get() == 6)
+                  if(CREATURES._guardian._level.Get() == 10)
                   {
                      ACHIEVEMENTS.Check("upgrade_champ" + CREATURES._guardian._type,1);
                   }

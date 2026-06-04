@@ -55,30 +55,51 @@ package {
 			_sprites.IC6 = new SpriteData("monsters/grokus.v2.png",57,39,28,20);
 			_sprites.IC7 = new SpriteData("monsters/sabnox.png",42,34,21,17);
 			_sprites.IC8 = new SpriteData("monsters/wormzer.png",58,42,29,21);
+
 			_sprites.G1_1 = new SpriteData("monsters/ape_1.png",96,69,26,36);
 			_sprites.G1_2 = new SpriteData("monsters/ape_2.png",89,73,26,36);
 			_sprites.G1_3 = new SpriteData("monsters/ape_3.png",103,88,26,36);
 			_sprites.G1_4 = new SpriteData("monsters/ape_4.png",148,127,26,36);
 			_sprites.G1_5 = new SpriteData("monsters/ape_5.png",160,137,26,36);
 			_sprites.G1_6 = new SpriteData("monsters/ape_6.png",140,120,26,36);
+			_sprites.G1_7 = new SpriteData("monsters/ape_6.png",140,120,26,36);
+			_sprites.G1_8 = new SpriteData("monsters/ape_6.png",140,120,26,36);
+			_sprites.G1_9 = new SpriteData("monsters/ape_6.png",140,120,26,36);
+			_sprites.G1_10 = new SpriteData("monsters/ape_6.png",140,120,26,36);
+
 			_sprites.G2_1 = new SpriteData("monsters/dragon_1.png",64,41,26,36);
 			_sprites.G2_2 = new SpriteData("monsters/dragon_2.png",87,58,26,36);
 			_sprites.G2_3 = new SpriteData("monsters/dragon_3.png",114,85,26,36);
 			_sprites.G2_4 = new SpriteData("monsters/dragon_4.png",131,93,26,36);
 			_sprites.G2_5 = new SpriteData("monsters/dragon_5.png",156,117,26,36);
 			_sprites.G2_6 = new SpriteData("monsters/dragon_6.png",171,125,26,36);
+			_sprites.G2_7 = new SpriteData("monsters/dragon_6.png",171,125,26,36);
+			_sprites.G2_8 = new SpriteData("monsters/dragon_6.png",171,125,26,36);
+			_sprites.G2_9 = new SpriteData("monsters/dragon_6.png",171,125,26,36);
+			_sprites.G2_10 = new SpriteData("monsters/dragon_6.png",171,125,26,36);
+
 			_sprites.G3_1 = new SpriteData("monsters/fly_1.png",53,40,26,36);
 			_sprites.G3_2 = new SpriteData("monsters/fly_2.png",63,46,26,36);
 			_sprites.G3_3 = new SpriteData("monsters/fly_3.png",98,81,26,36);
 			_sprites.G3_4 = new SpriteData("monsters/fly_4.png",120,92,26,36);
 			_sprites.G3_5 = new SpriteData("monsters/fly_5.png",133,105,26,36);
 			_sprites.G3_6 = new SpriteData("monsters/fly_6.png",124,105,26,36);
+			_sprites.G3_7 = new SpriteData("monsters/fly_6.png",124,105,26,36);
+			_sprites.G3_8 = new SpriteData("monsters/fly_6.png",124,105,26,36);
+			_sprites.G3_9 = new SpriteData("monsters/fly_6.png",124,105,26,36);
+			_sprites.G3_10 = new SpriteData("monsters/fly_6.png",124,105,26,36);
+
 			_sprites.G4_1 = new SpriteData("monsters/korath_1.png",72,49,26,36);
 			_sprites.G4_2 = new SpriteData("monsters/korath_2.png",119,81,26,36);
 			_sprites.G4_3 = new SpriteData("monsters/korath_3.png",128,102,26,36);
 			_sprites.G4_4 = new SpriteData("monsters/korath_4.png",153,123,26,36);
 			_sprites.G4_5 = new SpriteData("monsters/korath_5.png",199,162,26,36);
 			_sprites.G4_6 = new SpriteData("monsters/korath_6.png",202,167,SpriteData.FUBAR_X,SpriteData.FUBAR_Y);
+			_sprites.G4_7 = new SpriteData("monsters/korath_6.png",202,167,SpriteData.FUBAR_X,SpriteData.FUBAR_Y);
+			_sprites.G4_8 = new SpriteData("monsters/korath_6.png",202,167,SpriteData.FUBAR_X,SpriteData.FUBAR_Y);
+			_sprites.G4_9 = new SpriteData("monsters/korath_6.png",202,167,SpriteData.FUBAR_X,SpriteData.FUBAR_Y);
+			_sprites.G4_10 = new SpriteData("monsters/korath_6.png",202,167,SpriteData.FUBAR_X,SpriteData.FUBAR_Y);
+
 			_sprites.G5_1 = new SpriteData("monsters/krallen_1_rev_65.png",130,80,SpriteData.FUBAR_X,SpriteData.FUBAR_Y);
 			_sprites.G5_2 = new SpriteData("monsters/krallen_2_rev_65.png",131,90,SpriteData.FUBAR_X,SpriteData.FUBAR_Y);
 			_sprites.G5_3 = new SpriteData("monsters/krallen_3_rev_65.png",142,100,SpriteData.FUBAR_X,SpriteData.FUBAR_Y);

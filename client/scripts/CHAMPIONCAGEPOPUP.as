@@ -53,13 +53,13 @@ package
       
       public static var _maxSpeed:Number = 4;
       
-      public static var _maxHealth:Number = 250000;
+      public static var _maxHealth:Number = 410000;
       
-      public static var _maxDamage:Number = 9600;
+      public static var _maxDamage:Number = 14000;
       
       public static var _maxBuff:Number = 100;
       
-      public static var _maxLevel:Number = 6;
+      public static var _maxLevel:Number = 10;
       
       public static var _isFeed:Boolean = false;
       
@@ -204,7 +204,7 @@ package
                b1.SetupKey("btn_champion",false,0,0);
                b1.addEventListener(MouseEvent.CLICK,this.SwitchClick(0));
                b2.SetupKey("btn_evolution",false,0,0);
-               if(this.guardLevel == 6)
+               if(this.guardLevel == _maxLevel)
                {
                   b2.SetupKey("btn_dailyfeed",false,0,0);
                }
@@ -517,7 +517,7 @@ package
                this.UpdateDNA();
                this.UpdateStats();
                _loc6_ = CREATURES._guardian._feedTime.Get() < GLOBAL.Timestamp();
-               if(CREATURES._guardian._level.Get() < 6)
+               if(CREATURES._guardian._level.Get() < _maxLevel)
                {
                   tNextFeedTitle.x = -85;
                   tNextFeedTitle.width = 170;
@@ -822,7 +822,9 @@ package
                   mcImage.removeChildAt(0);
                }
             }
-            ImageCache.GetImageWithCallBack("monsters/" + "G" + CREATURES._guardian._type + "_L" + CREATURES._guardian._level.Get() + "-250.png",UpdatePortraitIcon);
+			var graphic_level:int = CREATURES._guardian._level.Get();
+		 	if(graphic_level > 6) graphic_level = 6;
+            ImageCache.GetImageWithCallBack("monsters/" + "G" + CREATURES._guardian._type + "_L" + graphic_level + "-250.png",UpdatePortraitIcon);
          }
          if(_page == 2 && _kothEnabled)
          {
@@ -888,8 +890,12 @@ package
          {
             if(mcCurrGuardian.numChildren == 0)
             {
-               ImageCache.loadImageAndAddChild("monsters/" + "G" + CREATURES._guardian._type + "_L" + CREATURES._guardian._level.Get() + "-150.png",mcCurrGuardian);
-               ImageCache.loadImageAndAddChild("monsters/" + "G" + CREATURES._guardian._type + "_L" + (CREATURES._guardian._level.Get() + 1) + "-150G.png",mcNextGuardian);
+				var graphic_level:int = CREATURES._guardian._level.Get();
+				var graphic_next_level:int = CREATURES._guardian._level.Get() + 1;
+		 		if(graphic_level > 6) graphic_level = 6;
+		 		if(graphic_next_level > 6) graphic_next_level = 6;
+               ImageCache.loadImageAndAddChild("monsters/" + "G" + CREATURES._guardian._type + "_L" + graphic_level + "-150.png",mcCurrGuardian);
+               ImageCache.loadImageAndAddChild("monsters/" + "G" + CREATURES._guardian._type + "_L" + graphic_next_level + "-150G.png",mcNextGuardian);
             }
             _loc2_ = -517;
             _loc3_ = 222;
@@ -1374,14 +1380,14 @@ package
       public function EvolveClick(param1:MouseEvent) : void
       {
          var _loc2_:int = 0;
-         if(CREATURES._guardian._level.Get() < 6)
+         if(CREATURES._guardian._level.Get() < _maxLevel)
          {
             _loc2_ = CHAMPIONCAGE.GetGuardianProperty(CREATURES._guardian._creatureID,CREATURES._guardian._level.Get(),"feedShiny");
             _loc2_ *= 2;
             _loc2_ *= CHAMPIONCAGE.GetGuardianProperty(CREATURES._guardian._creatureID,CREATURES._guardian._level.Get(),"feedCount") - CREATURES._guardian._feeds.Get();
             this.EvolveClickB();
          }
-         else if(CREATURES._guardian._level.Get() == 6)
+         else if(CREATURES._guardian._level.Get() == _maxLevel)
          {
             _loc2_ = CHAMPIONCAGE.GetGuardianProperty(CREATURES._guardian._creatureID,CREATURES._guardian._foodBonus.Get(),"bonusFeedShiny");
             _loc2_ *= 2;
@@ -1392,7 +1398,7 @@ package
       public function EvolveClickB() : void
       {
          var _loc1_:int = 0;
-         if(CREATURES._guardian._level.Get() < 6)
+         if(CREATURES._guardian._level.Get() < _maxLevel)
          {
             _loc1_ = CHAMPIONCAGE.GetGuardianProperty(CREATURES._guardian._creatureID,CREATURES._guardian._level.Get(),"feedShiny");
             _loc1_ *= 2;
@@ -1412,7 +1418,7 @@ package
       public function InstantClick(param1:MouseEvent) : void
       {
          var _loc2_:* = CREATURES._guardian._feedTime.Get() < GLOBAL.Timestamp();
-         if(CREATURES._guardian._level.Get() <= 6)
+         if(CREATURES._guardian._level.Get() <= _maxLevel)
          {
             _bCage.FeedGuardian(CREATURES._guardian._creatureID,CREATURES._guardian._level.Get(),true,!_loc2_);
             CHAMPIONCAGE.Hide(param1);
@@ -1421,11 +1427,11 @@ package
       
       public function CantFeedClick(param1:MouseEvent) : void
       {
-         if(CREATURES._guardian._level.Get() <= 6 && CREATURES._guardian._foodBonus.Get() < 3)
+         if(CREATURES._guardian._level.Get() <= _maxLevel && CREATURES._guardian._foodBonus.Get() < 3)
          {
             GLOBAL.Message(KEYS.Get("gcage_msgNotHungry"));
          }
-         else if(CREATURES._guardian._level.Get() == 6 && CREATURES._guardian._foodBonus.Get() >= 3)
+         else if(CREATURES._guardian._level.Get() == _maxLevel && CREATURES._guardian._foodBonus.Get() >= 3)
          {
             GLOBAL.Message(KEYS.Get("gcage_msgFullBuff"));
          }

@@ -69,43 +69,42 @@ package
                "quantity":BASE._resources.r4.Get()
             });
          }
+         param1 = Math.max(0,param1);
          if(_loc3_.length > 0)
          {
-            if((_loc4_ = _loc3_[int(Math.random() * _loc3_.length)]).quantity >= Math.ceil(param1))
+            _loc4_ = _loc3_[int(Math.random() * _loc3_.length)];
+            var _loc5_:int = Math.min(int(_loc4_.quantity), Math.ceil(param1));
+            if(_loc5_ > 0)
             {
-               _loc2_ = Math.ceil(param1);
+               BASE._resources["r" + _loc4_.id].Add(-_loc5_);
+               BASE._hpResources["r" + _loc4_.id] -= _loc5_;
+               if(BASE._deltaResources["r" + _loc4_.id])
+               {
+                  BASE._deltaResources["r" + _loc4_.id].Add(-_loc5_);
+                  BASE._hpDeltaResources["r" + _loc4_.id] -= _loc5_;
+               }
+               else
+               {
+                  BASE._deltaResources["r" + _loc4_.id] = new SecNum(-_loc5_);
+                  BASE._hpDeltaResources["r" + _loc4_.id] = -_loc5_;
+               }
+               BASE._deltaResources.dirty = true;
+               BASE._hpDeltaResources.dirty = true;
+               _loc2_ = _loc5_;
+               if(MapRoomManager.instance.isInMapRoom2 && GLOBAL._currentCell && GLOBAL._currentCell.baseType == EnumYardType.OUTPOST)
+               {
+                  _loc2_ = int(_loc2_ * 0.5);
+               }
+               else
+               {
+                  _loc2_ = int(_loc2_ * 0.9);
+               }
+               if(GLOBAL.mode == "wmattack")
+               {
+                  _loc2_ = int(_loc2_ / 5);
+               }
+               ATTACK.Loot(_loc4_.id,_loc2_,_mc.x,_mc.y,9,this);
             }
-            else
-            {
-               _loc2_ = int(_loc4_.quantity);
-            }
-            BASE._resources["r" + _loc4_.id].Add(-_loc2_);
-            BASE._hpResources["r" + _loc4_.id] -= _loc2_;
-            if(BASE._deltaResources["r" + _loc4_.id])
-            {
-               BASE._deltaResources["r" + _loc4_.id].Add(-_loc2_);
-               BASE._hpDeltaResources["r" + _loc4_.id] -= _loc2_;
-            }
-            else
-            {
-               BASE._deltaResources["r" + _loc4_.id] = new SecNum(-_loc2_);
-               BASE._hpDeltaResources["r" + _loc4_.id] = -_loc2_;
-            }
-            BASE._deltaResources.dirty = true;
-            BASE._hpDeltaResources.dirty = true;
-            if(MapRoomManager.instance.isInMapRoom2 && GLOBAL._currentCell && GLOBAL._currentCell.baseType == EnumYardType.OUTPOST)
-            {
-               _loc2_ *= 0.5;
-            }
-            else
-            {
-               _loc2_ *= 0.9;
-            }
-            if(GLOBAL.mode == "wmattack")
-            {
-               _loc2_ = int(_loc2_ / 5);
-            }
-            ATTACK.Loot(_loc4_.id,_loc2_,_mc.x,_mc.y,9,this);
          }
          else
          {

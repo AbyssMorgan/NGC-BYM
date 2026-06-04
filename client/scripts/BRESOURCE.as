@@ -111,38 +111,28 @@ package
 			}
 		}
 		
-         var _loc2_:int = 0;
-         if(_stored.Get() >= param1)
-         {
-            _loc2_ = param1;
-         }
-         else
-         {
-            _loc2_ = _stored.Get();
-         }
+         param1 = Math.max(0,param1);
+         var _loc2_:int = Math.min(_stored.Get(), param1);
          if(_loc2_ > 0)
          {
             _stored.Add(int(-_loc2_));
             ATTACK.Loot(_type,_loc2_,_mc.x,_mc.y,0,this);
             if(BASE.isOutpost)
             {
-               if(_loc2_ > 0)
+               BASE._resources["r" + _type].Add(-_loc2_);
+               BASE._hpResources["r" + _type] -= _loc2_;
+               if(BASE._deltaResources["r" + _type])
                {
-                  BASE._resources["r" + _type].Add(-_loc2_);
-                  BASE._hpResources["r" + _type] -= _loc2_;
-                  if(BASE._deltaResources["r" + _type])
-                  {
-                     BASE._deltaResources["r" + _type].Add(-_loc2_);
-                     BASE._hpDeltaResources["r" + _type] -= _loc2_;
-                  }
-                  else
-                  {
-                     BASE._deltaResources["r" + _type] = new SecNum(-_loc2_);
-                     BASE._hpDeltaResources["r" + _type] = -_loc2_;
-                  }
-                  BASE._deltaResources.dirty = true;
-                  BASE._hpDeltaResources.dirty = true;
+                  BASE._deltaResources["r" + _type].Add(-_loc2_);
+                  BASE._hpDeltaResources["r" + _type] -= _loc2_;
                }
+               else
+               {
+                  BASE._deltaResources["r" + _type] = new SecNum(-_loc2_);
+                  BASE._hpDeltaResources["r" + _type] = -_loc2_;
+               }
+               BASE._deltaResources.dirty = true;
+               BASE._hpDeltaResources.dirty = true;
             }
          }
          if(_stored.Get() <= 0)

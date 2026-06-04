@@ -82,7 +82,7 @@ export const TRIBE_OUTPOST_SEED = "maproom3-tribes";
 export const STRUCTURE_LEVELS: Record<number, number[]> = {
 	[EnumYardType.STRONGHOLD]: [60, 80, 100],
 	[EnumYardType.RESOURCE]: [50, 60, 70, 80, 90],
-	[EnumYardType.OUTPOST]: [45, 50],
+	[EnumYardType.OUTPOST]: [45, 50, 100],
 };
 
 /** Attack range in cells for a player's main yard. */

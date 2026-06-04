@@ -92,6 +92,10 @@ package
 
       public static var _rawGIP:Object;
 
+      public static var _level:int;
+
+      public static var _rewards:Object;
+
       public static var _lastProcessedGIP:int;
 
       public static var _credits:SecNum;
@@ -1175,6 +1179,8 @@ package
                      }
                   }
                }
+			   _level = serverData.level;
+			   _rewards = serverData.rewards;
                _rawGIP = serverData.buildingresources;
                _processedGIP = {};
                _GIP = {
@@ -1836,14 +1842,65 @@ package
          PATHING.Setup();
          var timer:int = getTimer();
          var terrainType:String = "grass";
-         if (!MapRoomManager.instance.isInMapRoom3 && GLOBAL._currentCell && (isOutpostOrInfernoOutpost || GLOBAL.mode == GLOBAL.e_BASE_MODE.WMATTACK || GLOBAL.mode == GLOBAL.e_BASE_MODE.WMVIEW))
-         {
+		 if(BASE.isInfernoMainYardOrOutpost){
+            terrainType = "lava";
+         } else if(MapRoomManager.instance.isInMapRoom3){
+			if(m_yardType == EnumYardType.PLAYER){
+				var extra_tiles:int = 0;
+				if(_rewards.hasOwnProperty("extraTiles") && _rewards.extraTiles != null){
+					extra_tiles = _rewards.extraTiles.value;
+				}
+				terrainType = MAP.getBackgroundName(extra_tiles);
+			} else if(m_yardType == EnumYardType.RESOURCE){
+				if(_level >= 90){
+					terrainType = "lava";
+				} else if(_level >= 80){
+					terrainType = "crater";
+				} else if(_level >= 70){
+					terrainType = "sand";
+				} else if(_level >= 60){
+					terrainType = "rock";
+				}
+			} else if(m_yardType == EnumYardType.STRONGHOLD){
+				if(_level >= 90){
+					terrainType = "lava";
+				} else if(_level >= 80){
+					terrainType = "crater";
+				} else if(_level >= 60){
+					terrainType = "sand";
+				}
+			} else if(m_yardType == EnumYardType.FORTIFICATION){
+				if(_level >= 90){
+					terrainType = "lava";
+				} else if(_level >= 80){
+					terrainType = "crater";
+				} else if(_level >= 70){
+					terrainType = "sand";
+				} else if(_level >= 60){
+					terrainType = "rock";
+				}
+			} else if(_wmID == 31 || _wmID == 21 || _wmID == 11 || _wmID == 1){
+				if(_level >= 90){
+					terrainType = "lava";
+					GLOBAL._attackersCatapult = 0;
+				} else if(_level >= 80){
+					terrainType = "crater";
+				} else if(_level >= 70){
+					terrainType = "sand";
+				} else if(_level >= 60){
+					terrainType = "rock";
+				}
+			}
+			trace("_wmID = " + _wmID);
+			trace("_level = " + _level);
+			trace("_baseLevel = " + _baseLevel);
+			trace("m_yardType = " + m_yardType);
+			// _attackersCatapult = 0;
+		 } else if(!MapRoomManager.instance.isInMapRoom3 && GLOBAL._currentCell && (isOutpostOrInfernoOutpost || GLOBAL.mode == GLOBAL.e_BASE_MODE.WMATTACK || GLOBAL.mode == GLOBAL.e_BASE_MODE.WMVIEW)){
             terrainType = (GLOBAL._currentCell as MapRoomCell).terrain;
          }
-         if (BASE.isInfernoMainYardOrOutpost)
-         {
-            terrainType = "lava";
-         }
+         
+		 trace("init map with: " + terrainType);
          var map:MAP = new MAP(terrainType);
          var targeting:Targeting = new Targeting();
          QUEUE.Spawn(0);

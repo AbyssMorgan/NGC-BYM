@@ -317,29 +317,20 @@ package
             }
          }
       }
+
+	public static function getBackgroundName(param1:int) : String {
+		switch(param1){
+			case MAP_TYPE_ROCK: return "rock";
+			case MAP_TYPE_SAND: return "sand";
+			case MAP_TYPE_CRATER: return "crater";
+			case MAP_TYPE_LAVA: return "lava";
+		}
+		return "grass";
+	}
       
-      public static function swapIntBG(param1:int) : void
+      public static function swapIntBG(id:int) : void
       {
-         var _loc2_:String = null;
-         switch(param1)
-         {
-            case MAP_TYPE_ROCK:
-               _loc2_ = "rock";
-               break;
-            case MAP_TYPE_SAND:
-               _loc2_ = "sand";
-               break;
-            case MAP_TYPE_CRATER:
-               _loc2_ = "crater";
-               break;
-            case MAP_TYPE_LAVA:
-               _loc2_ = "lava";
-               break;
-            case MAP_TYPE_GRASS:
-            default:
-               _loc2_ = "grass";
-         }
-         swapBG(_loc2_);
+         swapBG(getBackgroundName(id));
       }
       
       public static function Clear() : void

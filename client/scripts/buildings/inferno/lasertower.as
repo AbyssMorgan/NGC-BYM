@@ -33,6 +33,7 @@ package buildings.inferno {
 				{"r1":new SecNum(8000000), "r2":new SecNum(4000000), "r3":new SecNum(1600000), "r4":new SecNum(0), "time":new SecNum(388800), "re":[[14,1,8]]},
 				{"r1":new SecNum(16000000), "r2":new SecNum(8000000), "r3":new SecNum(3200000), "r4":new SecNum(0), "time":new SecNum(777600), "re":[[14,1,9]]}
 			],
+			"can_fortify":true,
 			"fortify_costs":[
 				{"r1":new SecNum(500000), "r2":new SecNum(250000), "r3":new SecNum(100000), "r4":new SecNum(0), "time":new SecNum(18000), "re":[[14,1,5]]},
 				{"r1":new SecNum(1000000), "r2":new SecNum(500000), "r3":new SecNum(200000), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,6]]},

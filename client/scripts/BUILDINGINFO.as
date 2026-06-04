@@ -321,7 +321,7 @@ package
                         }
                      }
 					 var can_edit:Boolean = true;
-					 if(MapRoomManager.instance.isInMapRoom3 && !BASE.isInfernoMainYardOrOutpost){
+					 if(MapRoomManager.instance.isInMapRoom3 && !BASE.isMainYardOrInfernoMainYard){
 						can_edit = false;
 					 }
                      if(TUTORIAL._stage >= 200 && can_edit)

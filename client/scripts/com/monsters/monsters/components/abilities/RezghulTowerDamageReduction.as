@@ -7,7 +7,7 @@ package com.monsters.monsters.components.abilities
    
    /**
     * Rezghul's passive ability to reduce damage taken from towers by 95%.
-    * Rezghul takes only 5% of the damage dealt by BTOWER instances.
+    * Rezghul takes only 5% of the damage dealt by PROJECTILE instances.
     */
    public class RezghulTowerDamageReduction extends Component implements IDefendingComponent
    {
@@ -21,7 +21,7 @@ package com.monsters.monsters.components.abilities
       
       /**
        * Called when defending against an attack.
-       * Reduces damage from towers (BTOWER) by 95%.
+       * Reduces damage from towers (PROJECTILE) by 95%.
        * 
        * @param param1 The attacker (IAttackable)
        * @param param2 The damage value
@@ -30,8 +30,8 @@ package com.monsters.monsters.components.abilities
        */
       public function onDefend(param1:IAttackable, param2:Number, param3:ITargetable = null) : Number
       {
-         // Check if the damage source is a BTOWER
-         if(param1 is BTOWER)
+         // Check if the damage source is a PROJECTILE
+         if(param3 is PROJECTILE)
          {
             // Reduce damage by 95% (keep only 5%)
             return param2 * (1 - TOWER_DAMAGE_REDUCTION);

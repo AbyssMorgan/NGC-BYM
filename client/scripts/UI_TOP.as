@@ -326,7 +326,7 @@ package
          }
 		var siege_available:Boolean = true;
 		if(BASE._wmID == 31 || BASE._wmID == 21 || BASE._wmID == 11 || BASE._wmID == 1){
-			if(BASE._level >= 90){
+			if(BASE._level >= 90 && BASE._level < 120){
 				siege_available = false;
 			}
 		}

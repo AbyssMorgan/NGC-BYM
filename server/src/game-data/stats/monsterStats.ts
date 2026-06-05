@@ -1773,16 +1773,16 @@ export const monsterStats: MonsterStatsMap = {
 				52000, // Level 10
 			],
 			damage:[
-				-60, // Level 1
-				-70, // Level 2
-				-80, // Level 3
-				-90, // Level 4
-				-100, // Level 5
-				-110, // Level 6
-				-120, // Level 7
-				-130, // Level 8
-				-140, // Level 9
-				-150, // Level 10
+				-120, // Level 1
+				-140, // Level 2
+				-160, // Level 3
+				-180, // Level 4
+				-200, // Level 5
+				-220, // Level 6
+				-240, // Level 7
+				-260, // Level 8
+				-280, // Level 9
+				-300, // Level 10
 			],
 			cTime:[
 				4500, // Level 1

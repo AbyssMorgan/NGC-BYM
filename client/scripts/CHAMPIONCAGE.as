@@ -432,8 +432,8 @@ package
 						0.60, // Level 6
 						0.65, // Level 7
 						0.70, // Level 8
-						0.75, // Level 9
-						0.80, // Level 10
+						0.73, // Level 9
+						0.75, // Level 10
 					],
 					"movement":["ground","ground","fly"],
 					"attack":["ranged"],

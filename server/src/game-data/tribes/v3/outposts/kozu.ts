@@ -7876,7 +7876,7 @@ export const kozu: Record<number, SaveData> = {
 		chatenabled: 0,
 		relationship: 0,
 		timeplayed: 0,
-		version: 128,
+		version: 129,
 		clienttime: 0,
 		baseseed: 0,
 		healtime: 0,

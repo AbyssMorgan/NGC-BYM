@@ -14,7 +14,7 @@ import { EnumYardType } from "../../enums/EnumYardType.js";
  * @returns {boolean} Whether the attack is permitted.
  */
 export const canAttack = (attackerSave: Save, defenderSave: Save, mapversion?: MapRoomVersion): boolean => {
-	if(attackerSave.name == 'sandbox') return false;
+	if(defenderSave.name == 'sandbox' || attackerSave.name == 'sandbox') return false;
 	const isOwner = defenderSave.type !== BaseType.INFERNO && attackerSave.saveuserid === defenderSave.saveuserid;
 	const attackerLevel = calculateBaseLevel(attackerSave.points, attackerSave.basevalue);
 

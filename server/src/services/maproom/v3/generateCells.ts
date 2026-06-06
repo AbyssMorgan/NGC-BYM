@@ -145,7 +145,7 @@ export const getGeneratedCells = (): Map<number, GeneratedCell> => {
 	// PHASE 3: Tribe Outposts
 	// ============================================================================
 	const tribeRng = alea(TRIBE_OUTPOST_SEED);
-	const maxAttempts = (WIDTH - 2 * CELL_EDGE) * (HEIGHT - 2 * CELL_EDGE) * 0.15;
+	const maxAttempts = (WIDTH - 2 * CELL_EDGE) * (HEIGHT - 2 * CELL_EDGE) * 0.20;
 
 	for (let attempt = 0; attempt < maxAttempts; attempt++) {
 		const x = CELL_EDGE + Math.floor(tribeRng() * (WIDTH - 2 * CELL_EDGE));

@@ -30,15 +30,7 @@ package com.monsters.monsters.components.abilities
        */
       public function onDefend(param1:IAttackable, param2:Number, param3:ITargetable = null) : Number
       {
-         // Check if the damage source is a PROJECTILE
-         if(param3 is PROJECTILE)
-         {
-            // Reduce damage by 95% (keep only 5%)
-            return param2 * (1 - TOWER_DAMAGE_REDUCTION);
-         }
-         
-         // Return unmodified damage for non-tower sources
-         return param2;
+         return param2 * (1 - TOWER_DAMAGE_REDUCTION);
       }
    }
 }

@@ -155,7 +155,7 @@ package com.monsters.effects
                "image":"bombbuttons/pebbles4.png",
                "col":3,
                "dropTarget":2,
-               "catapultLevel":2
+               "catapultLevel":6
             },
             "pu0":{
                "used":false,

@@ -30,7 +30,12 @@ package com.monsters.monsters.components.abilities
        */
       public function onDefend(param1:IAttackable, param2:Number, param3:ITargetable = null) : Number
       {
-         return param2 * (1 - TOWER_DAMAGE_REDUCTION);
+		if(param2 < 0){
+			return param2 * (1 - TOWER_DAMAGE_REDUCTION);
+		} else {
+			return param2;
+		}
+         
       }
    }
 }

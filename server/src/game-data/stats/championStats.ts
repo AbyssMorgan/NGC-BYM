@@ -66,16 +66,16 @@ export const championStats: ChampionStatsMap = {
 				360000, // Level 10
 			],
 			healtime:[
-				40000 / 20, // Level 1
-				80000 / 20, // Level 2
-				120000 / 20, // Level 3
-				140000 / 20, // Level 4
-				160000 / 20, // Level 5
-				200000 / 20, // Level 6
-				240000 / 20, // Level 7
-				280000 / 20, // Level 8
-				320000 / 20, // Level 9
-				360000 / 20, // Level 10
+				1800, // Level 1
+				3600, // Level 2
+				3600 * 2, // Level 3
+				3600 * 3, // Level 4
+				3600 * 4, // Level 5
+				3600 * 5, // Level 6
+				3600 * 6, // Level 7
+				3600 * 7, // Level 8
+				3600 * 8, // Level 9
+				3600 * 10, // Level 10
 			],
 			range:[
 				35, // Level 1
@@ -180,16 +180,16 @@ export const championStats: ChampionStatsMap = {
 				92000, // Level 10
 			],
 			healtime:[
-				12000 / 20, // Level 1
-				20000 / 20, // Level 2
-				36000 / 20, // Level 3
-				42000 / 20, // Level 4
-				52000 / 20, // Level 5
-				60000 / 20, // Level 6
-				68000 / 20, // Level 7
-				76000 / 20, // Level 8
-				84000 / 20, // Level 9
-				92000 / 20, // Level 10
+				1800, // Level 1
+				3600, // Level 2
+				3600 * 2, // Level 3
+				3600 * 3, // Level 4
+				3600 * 4, // Level 5
+				3600 * 5, // Level 6
+				3600 * 6, // Level 7
+				3600 * 7, // Level 8
+				3600 * 8, // Level 9
+				3600 * 10, // Level 10
 			],
 			range:[
 				35, // Level 1
@@ -294,16 +294,16 @@ export const championStats: ChampionStatsMap = {
 				100000, // Level 10
 			],
 			healtime:[
-				15000 / 20, // Level 1
-				17500 / 20, // Level 2
-				20000 / 20, // Level 3
-				22500 / 20, // Level 4
-				25000 / 20, // Level 5
-				40000 / 20, // Level 6
-				55000 / 20, // Level 7
-				70000 / 20, // Level 8
-				85000 / 20, // Level 9
-				100000 / 20, // Level 10
+				1800, // Level 1
+				3600, // Level 2
+				3600 * 2, // Level 3
+				3600 * 3, // Level 4
+				3600 * 4, // Level 5
+				3600 * 5, // Level 6
+				3600 * 6, // Level 7
+				3600 * 7, // Level 8
+				3600 * 8, // Level 9
+				3600 * 10, // Level 10
 			],
 			range:[
 				140, // Level 1
@@ -419,16 +419,16 @@ export const championStats: ChampionStatsMap = {
 				296000, // Level 10
 			],
 			healtime:[
-				28000 / 20, // Level 1
-				62000 / 20, // Level 2
-				96000 / 20, // Level 3
-				120000 / 20, // Level 4
-				144000 / 20, // Level 5
-				175000 / 20, // Level 6
-				206000 / 20, // Level 7
-				237000 / 20, // Level 8
-				268000 / 20, // Level 9
-				296000 / 20, // Level 10
+				1800, // Level 1
+				3600, // Level 2
+				3600 * 2, // Level 3
+				3600 * 3, // Level 4
+				3600 * 4, // Level 5
+				3600 * 5, // Level 6
+				3600 * 6, // Level 7
+				3600 * 7, // Level 8
+				3600 * 8, // Level 9
+				3600 * 10, // Level 10
 			],
 			range:[
 				35, // Level 1
@@ -511,11 +511,11 @@ export const championStats: ChampionStatsMap = {
 			speed: [2.2, 2.3, 2.4, 2.5, 2.6],
 			health: [50000, 52000, 54000, 58000, 62000],
 			healtime:[
-				7200 / 2,
-				14400 / 2,
-				28800 / 2,
-				57600 / 2,
-				115200 / 2,
+				1800, // Level 1
+				3600, // Level 2
+				3600 * 2, // Level 3
+				3600 * 3, // Level 4
+				3600 * 4, // Level 5
 			],
 			range: [35, 45, 55, 60, 65],
 			damage: [800, 850, 900, 1000, 1200],

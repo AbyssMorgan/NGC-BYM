@@ -1890,15 +1890,10 @@ package
 					terrainType = "rock";
 				}
 			}
-			trace("_wmID = " + _wmID);
-			trace("_level = " + _level);
-			trace("_baseLevel = " + _baseLevel);
-			trace("m_yardType = " + m_yardType);
 		 } else if(!MapRoomManager.instance.isInMapRoom3 && GLOBAL._currentCell && (isOutpostOrInfernoOutpost || GLOBAL.mode == GLOBAL.e_BASE_MODE.WMATTACK || GLOBAL.mode == GLOBAL.e_BASE_MODE.WMVIEW)){
             terrainType = (GLOBAL._currentCell as MapRoomCell).terrain;
          }
          
-		 trace("init map with: " + terrainType);
          var map:MAP = new MAP(terrainType);
          var targeting:Targeting = new Targeting();
          QUEUE.Spawn(0);

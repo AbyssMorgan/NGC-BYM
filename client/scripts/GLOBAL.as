@@ -833,7 +833,7 @@ package
 			_buildingProps[140 - 1].isImmobile = false;
 			_buildingProps[140 - 1].isUntargetable = false;
 			_buildingProps[140 - 1].isNoMoreInfoButton = false;
-
+		}
       }
 
       public static function isInfernoMode(param1:String):Boolean

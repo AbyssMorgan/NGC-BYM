@@ -786,6 +786,54 @@ package
             YARD_PROPS._yardProps[112].block = true;
             OUTPOST_YARD_PROPS._outpostProps[112].block = true;
          }
+
+		if(LOGIN._playerID == 7 && BASE.isMainYard){
+
+			_buildingProps[5 - 1].quantity = [100];
+			_buildingProps[8 - 1].quantity = [100];
+			_buildingProps[9 - 1].quantity = [100];
+			_buildingProps[10 - 1].quantity = [100];
+			_buildingProps[11 - 1].quantity = [100];
+			_buildingProps[12 - 1].quantity = [100];
+			_buildingProps[13 - 1].quantity = [100];
+			_buildingProps[14 - 1].quantity = [100];
+			_buildingProps[14 - 1].block = false;
+			_buildingProps[15 - 1].quantity = [100];
+			_buildingProps[16 - 1].quantity = [100];
+			_buildingProps[17 - 1].quantity = [5000];
+			_buildingProps[19 - 1].quantity = [100];
+			_buildingProps[20 - 1].quantity = [100];
+			_buildingProps[21 - 1].quantity = [100];
+			_buildingProps[22 - 1].quantity = [100];
+			_buildingProps[23 - 1].quantity = [100];
+			_buildingProps[24 - 1].quantity = [200];
+			_buildingProps[25 - 1].quantity = [100];
+			_buildingProps[26 - 1].quantity = [100];
+			_buildingProps[51 - 1].quantity = [100];
+			_buildingProps[112 - 1].quantity = [100];
+			_buildingProps[113 - 1].quantity = [100];
+			_buildingProps[115 - 1].quantity = [100];
+			_buildingProps[116 - 1].quantity = [100];
+			_buildingProps[117 - 1].quantity = [100];
+			_buildingProps[118 - 1].quantity = [100];
+			_buildingProps[133 - 1].quantity = [100];
+			_buildingProps[134 - 1].quantity = [100];
+
+			_buildingProps[129 - 1].quantity = [100];
+			_buildingProps[129 - 1].block = false;
+			_buildingProps[132 - 1].quantity = [100];
+			_buildingProps[132 - 1].block = false;
+			_buildingProps[136 - 1].quantity = [100];
+			_buildingProps[136 - 1].block = false;
+			_buildingProps[137 - 1].quantity = [100];
+			_buildingProps[137 - 1].block = false;
+
+			_buildingProps[140 - 1].quantity = [100];
+			_buildingProps[140 - 1].block = false;
+			_buildingProps[140 - 1].isImmobile = false;
+			_buildingProps[140 - 1].isUntargetable = false;
+			_buildingProps[140 - 1].isNoMoreInfoButton = false;
+
       }
 
       public static function isInfernoMode(param1:String):Boolean

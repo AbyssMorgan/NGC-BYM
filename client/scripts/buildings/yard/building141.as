@@ -9,7 +9,7 @@ package buildings.yard {
 			"id":141,
 			"group":4,
 			"subgroup":4,
-			"order":11,
+			"order":12,
 			"buildStatus":0,
 			"type":"decoration",
 			"name":"#b_stronghold#",

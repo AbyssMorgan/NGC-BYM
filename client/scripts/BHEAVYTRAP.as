@@ -124,7 +124,7 @@ package
          }
          _hasTargets = false;
          _mc.visible = true;
-         setHealth(0);
+         modifyHealth(-100);
          SOUNDS.Play("trap");
         //  if(GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD)
         //  {

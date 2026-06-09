@@ -454,7 +454,7 @@ package
                {
                   hasTownHall = true;
                }
-               if(buildingData is BTRAP && buildingData._fired || buildingData._type == 53 && buildingData._expireTime < GLOBAL.Timestamp())
+               if(buildingData._type == 53 && buildingData._expireTime < GLOBAL.Timestamp())
                {
                   buildingHealthData[buildingData._id] = 0;
                }

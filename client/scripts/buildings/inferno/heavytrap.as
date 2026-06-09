@@ -19,7 +19,7 @@ package buildings.inferno {
 			"description":"heavytrap_desc",
 			"block":true,
 			"costs":[
-				{"r1":new SecNum(5000000), "r2":new SecNum(5000000), "r3":new SecNum(5000000), "r4":new SecNum(0), "time":new SecNum(0), "re":[[14,1,4]]}
+				{"r1":new SecNum(5000000), "r2":new SecNum(5000000), "r3":new SecNum(5000000), "r4":new SecNum(0), "time":new SecNum(5), "re":[[14,1,4]]}
 			],
 			"imageData":{
 				"baseurl":"buildings/heavytrap/",

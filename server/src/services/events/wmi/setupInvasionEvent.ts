@@ -31,49 +31,49 @@ type InvasionPop = Pick<InvasionEventDates, "start" | "end" | "extension"> & {
  * @returns {InvasionEventResult} Object containing timestamps for event dates and calculated phase numbers
  */
 export const setupInvasionEvent = (type: Invasion): InvasionEventResult => {
-  const now = new Date();
-  let startDate: Date;
+	const now = new Date();
+	let startDate: Date;
 
-  switch (type) {
-    case Invasion.WMI1:
-      if (devConfig.wmi1StartNowOverride) {
-        startDate = new Date(devConfig.wmi1StartNowOverride * 1000);
-      } else {
-        startDate = getNextInvasionDate(now, 0);
-      }
-      break;
+	switch (type) {
+		case Invasion.WMI1:
+		if (devConfig.wmi1StartNowOverride) {
+			startDate = new Date(devConfig.wmi1StartNowOverride * 1000);
+		} else {
+			startDate = getNextInvasionDate(now, 0);
+		}
+		break;
 
-    case Invasion.WMI2:
-      if (devConfig.wmi2StartNowOverride) {
-        startDate = new Date(devConfig.wmi2StartNowOverride * 1000);
-      } else {
-        startDate = getNextInvasionDate(now, 1);
-      }
-      break;
+		case Invasion.WMI2:
+		if (devConfig.wmi2StartNowOverride) {
+			startDate = new Date(devConfig.wmi2StartNowOverride * 1000);
+		} else {
+			startDate = getNextInvasionDate(now, 1);
+		}
+		break;
 
-    default:
-      startDate = new Date(now.getFullYear(), now.getMonth(), 10);
-      break;
-  }
+		default:
+		startDate = new Date(now.getFullYear(), now.getMonth(), 10);
+		break;
+	}
 
-  const endDate = new Date(startDate);
-  endDate.setDate(startDate.getDate() + 7);
+	const endDate = new Date(startDate);
+	endDate.setDate(startDate.getDate() + 7);
 
-  const extensionDate = new Date(endDate);
-  extensionDate.setDate(endDate.getDate());
+	const extensionDate = new Date(endDate);
+	extensionDate.setDate(endDate.getDate());
 
-  const current = Math.floor(now.getTime() / 1000);
-  const start = Math.floor(startDate.getTime() / 1000);
-  const end = Math.floor(endDate.getTime() / 1000);
-  const extension = Math.floor(extensionDate.getTime() / 1000);
+	const current = Math.floor(now.getTime() / 1000);
+	const start = Math.floor(startDate.getTime() / 1000);
+	const end = Math.floor(endDate.getTime() / 1000);
+	const extension = Math.floor(extensionDate.getTime() / 1000);
 
-  const invasionpop = getInvasionPop({ current, start, end, extension });
-  const invasionpop2 = invasionpop;
+	const invasionpop = getInvasionPop({ current, start, end, extension });
+	const invasionpop2 = invasionpop;
 
-  return {
-    dates: { start, end, extension },
-    phases: { invasionpop, invasionpop2 },
-  };
+	return {
+		dates: { start, end, extension },
+		phases: { invasionpop, invasionpop2 },
+	};
 };
 
 /**

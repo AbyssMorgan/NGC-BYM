@@ -113,14 +113,14 @@ export const baseLoad: KoaController = async (ctx) => {
 
 	const userSave = user.save!;
 
-	if (type === BaseMode.BUILD && mapversion === MapRoomVersion.V1) {
+	if (type === BaseMode.BUILD) {
 		userSave.level = calculateBaseLevel(userSave.points, userSave.basevalue);
-		const mr1Tribes = await createMR1Tribes(userSave, MR1_TRIBES);
-		const wmstatus = new Map(userSave.wmstatus.map((status) => [status[0], status]));
-
-		mr1Tribes.forEach((tribe) => wmstatus.set(tribe[0], tribe));
-		userSave.wmstatus = [...wmstatus.values()];
-		
+		if(mapversion === MapRoomVersion.V1){
+			const mr1Tribes = await createMR1Tribes(userSave, MR1_TRIBES);
+			const wmstatus = new Map(userSave.wmstatus.map((status) => [status[0], status]));
+			mr1Tribes.forEach((tribe) => wmstatus.set(tribe[0], tribe));
+			userSave.wmstatus = [...wmstatus.values()];
+		}
 		postgres.em.persist(userSave);
 		await postgres.em.flush();
 	}

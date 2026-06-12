@@ -37,210 +37,227 @@ import { getPlayerConquerorPointsByLevel } from "../../../utils/getPlayerConquer
  * @throws Will throw an error if the save operation fails.
  */
 export const baseSave: KoaController = async (ctx) => {
-  const user: User = ctx.authUser;
-  await postgres.em.populate(user, ["save"]);
 
-  const userSave = user.save!;
+	try {
+		const user: User = ctx.authUser;
+		await postgres.em.populate(user, ["save"]);
 
-  const body = ctx.request.body as Record<string, unknown>;
-  const saveData = BaseSaveSchema.parse(body);
+		const userSave = user.save!;
 
-  const { basesaveid } = saveData;
-  const baseSave = await postgres.em.findOne(Save, { basesaveid });
+		const body = ctx.request.body as Record<string, unknown>;
+		const saveData = BaseSaveSchema.parse(body);
 
-  if (!baseSave && MR1_TRIBE_IDS.has(saveData.baseid)) {
-    const tribeSave = await scaledMR1Tribes(user, saveData);
-    const filteredSave = FilterFrontendKeys(tribeSave);
+		const { basesaveid } = saveData;
+		const baseSave = await postgres.em.findOne(Save, { basesaveid });
 
-    ctx.status = Status.OK;
-    ctx.body = { error: 0, ...filteredSave };
-    return;
-  }
+		if (!baseSave && MR1_TRIBE_IDS.has(saveData.baseid)) {
+			const tribeSave = await scaledMR1Tribes(user, saveData);
+			const filteredSave = FilterFrontendKeys(tribeSave);
 
-  if (!baseSave) throw saveFailureErr();
+			ctx.status = Status.OK;
+			ctx.body = { error: 0, ...filteredSave };
+			return;
+		}
 
-  const isOwner = baseSave.saveuserid === user.userid;
-  const isOutpostOwner = isOwner && baseSave.type === BaseType.OUTPOST;
-  const isAttack = !isOwner && baseSave.attackid !== 0;
+		if (!baseSave) throw saveFailureErr();
 
-  // Not the owner and not in an attack
-  if (!isOwner && baseSave.attackid === 0) throw permissionErr();
+		const isOwner = baseSave.saveuserid === user.userid;
+		const isOutpostOwner = isOwner && baseSave.type === BaseType.OUTPOST;
+		const isAttack = !isOwner && baseSave.attackid !== 0;
 
-  await validateSave(user, baseSave, body);
+		// Not the owner and not in an attack
+		if (!isOwner && baseSave.attackid === 0) throw permissionErr();
 
-  // Standard save logic
-  for (const key of isAttack ? Save.attackSaveKeys : Save.saveKeys) {
-    const value = body[key] as string;
+		await validateSave(user, baseSave, body);
 
-    switch (key) {
-      case SaveKeys.RESOURCES:
-        resourcesHandler(baseSave, value);
-        if (isOutpostOwner) {
-          const resources = JSON.parse(value);
-          userSave.resources = updateResources(resources, userSave.resources!);
-        }
-        break;
+		// Standard save logic
+		for (const key of isAttack ? Save.attackSaveKeys : Save.saveKeys) {
+			const value = body[key] as string;
 
-      case SaveKeys.POINTS:
-        baseSave.points = value.toString();
-        break;
-
-      case SaveKeys.BASEVALUE:
-        baseSave.basevalue = value.toString();
-        break;
-
-      case SaveKeys.IRESOURCES:
-        resourcesHandler(baseSave, value, SaveKeys.IRESOURCES);
-        break;
-
-      case SaveKeys.ACADEMY:
-        academyHandler(ctx, baseSave);
-        break;
-
-      case SaveKeys.BUILDINGDATA:
-        if (saveData.buildingdata == null) break;
-
-        if (isAttack) {
-          buildingDataHandler(saveData.buildingdata, baseSave);
-        } else {
-          baseSave[SaveKeys.BUILDINGDATA] = saveData.buildingdata;
-        }
-        break;
-
-      case SaveKeys.CHAMPION:
-        if (isAttack) {
-          if (saveData.attackerchampion) {
-            userSave.champion = saveData.attackerchampion;
-          }
-        } else {
-          if (saveData.champion) {
-            baseSave.champion = saveData.champion;
-          }
-        }
-        break;
-
-      case SaveKeys.ATTACKERSIEGE:
-        if (isAttack) {
-          userSave.siege = saveData.attackersiege;
-        }
-        break;
-
-      default:
-        if (value) {
-          const save = baseSave as unknown as Record<string, unknown>;
-          try {
-            save[key] = JSON.parse(value);
-          } catch (_) {
-            save[key] = value;
-          }
-        }
-    }
-
-    if (isOutpostOwner) updateOutposts(userSave, baseSave, key);
-  }
-
-  if (!isAttack && saveData.purchase) purchaseHandler(ctx, saveData.purchase, userSave);
-
-  let takeoverData: TakeoverData | null = null;
-
-  if (isAttack) {
-	
-    if (saveData.monsterupdate) {
-      await monsterUpdateHandler(saveData.monsterupdate, userSave);
-    }
-
-    if (saveData.attackcreatures) {
-      userSave.monsters = saveData.attackcreatures;
-    }
-
-    if (saveData.attackloot) {
-      attackLootHandler(saveData.attackloot, userSave);
-    }
-
-    postgres.em.persist(userSave);
-    await postgres.em.flush();
-
-    // MR3 Takeover Logic:
-    // If the attack is over and damage >= 90, trigger takeover or destroy logic.
-    // MR3 capturable structures (RESOURCE, STRONGHOLD, FORTIFICATION) allow re-capture
-    // from OUTPOST type (player-owned) in addition to first capture from TRIBE type.
-    if (saveData.over && baseSave.damage >= 90) {
-		if(userSave.mapversion == MapRoomVersion.V3){
-			switch(baseSave.type){
-				case BaseType.MAIN: {
-					const points_take = Math.min(baseSave.empirevalue, getPlayerConquerorPointsByLevel(baseSave.level));
-					const points_give = Math.round(points_take / 2);
-
-					baseSave.empirevalue -= points_take;
-					userSave.empirevalue += points_give;
-
-					postgres.em.persist(userSave);
-					await postgres.em.flush();
-
-					postgres.em.persist(baseSave);
-					await postgres.em.flush();
-					break;
+			switch (key) {
+			case SaveKeys.RESOURCES:
+				resourcesHandler(baseSave, value);
+				if (isOutpostOwner) {
+					const resources = JSON.parse(value);
+					userSave.resources = updateResources(resources, userSave.resources!);
 				}
-				case BaseType.TRIBE: {
-					if(baseSave.wmid == 31 || baseSave.wmid == 21 || baseSave.wmid == 11 || baseSave.wmid == 1){
-						userSave.empirevalue += getConquerorPointsByLevel(baseSave.level);
-						postgres.em.persist(userSave);
-						await postgres.em.flush();
-					}
-					break;
+				break;
+
+			case SaveKeys.POINTS:
+				baseSave.points = value.toString();
+				break;
+
+			case SaveKeys.BASEVALUE:
+				baseSave.basevalue = value.toString();
+				break;
+
+			case SaveKeys.IRESOURCES:
+				resourcesHandler(baseSave, value, SaveKeys.IRESOURCES);
+				break;
+
+			case SaveKeys.ACADEMY:
+				academyHandler(ctx, baseSave);
+				break;
+
+			case SaveKeys.BUILDINGDATA:
+				if (saveData.buildingdata == null) break;
+
+				if (isAttack) {
+				buildingDataHandler(saveData.buildingdata, baseSave);
+				} else {
+				baseSave[SaveKeys.BUILDINGDATA] = saveData.buildingdata;
+				}
+				break;
+
+			case SaveKeys.CHAMPION:
+				if (isAttack) {
+				if (saveData.attackerchampion) {
+					userSave.champion = saveData.attackerchampion;
+				}
+				} else {
+				if (saveData.champion) {
+					baseSave.champion = saveData.champion;
+				}
+				}
+				break;
+
+			case SaveKeys.ATTACKERSIEGE:
+				if (isAttack) {
+				userSave.siege = saveData.attackersiege;
+				}
+				break;
+
+			default:
+				if (value) {
+				const save = baseSave as unknown as Record<string, unknown>;
+				try {
+					save[key] = JSON.parse(value);
+				} catch (_) {
+					save[key] = value;
+				}
 				}
 			}
+
+			if (isOutpostOwner) updateOutposts(userSave, baseSave, key);
 		}
-		
-      if (isMR3Structure(baseSave.wmid)) {
-        if (baseSave.type === BaseType.TRIBE || baseSave.type === BaseType.OUTPOST) {
-          takeoverData = await takeoverCellMR3(baseSave, user, userSave);
-        }
-      } else if (baseSave.type === BaseType.TRIBE) {
-        const cell = await postgres.em.findOne(WorldMapCell, {
-          baseid: baseSave.baseid,
-          map_version: MapRoomVersion.V3,
-        });
 
-        if (cell && !cell.destroyed_at) cell.destroyed_at = new Date();
-      }
-    }
-    // Grant damage protection to the defender main yard when the attack ends.
-    const isProtectable = baseSave.type === BaseType.MAIN || baseSave.type === BaseType.OUTPOST;
+		if (!isAttack && saveData.purchase) purchaseHandler(ctx, saveData.purchase, userSave);
 
-    if (saveData.over && isProtectable && !isMR3Structure(baseSave.wmid)) {
-      await damageProtection(baseSave);
-    }
-  }
+		let takeoverData: TakeoverData | null = null;
 
-  baseSave.attackid = saveData.over ? 0 : baseSave.attackid;
+		if (isAttack) {
+			
+			if (saveData.monsterupdate) {
+				await monsterUpdateHandler(saveData.monsterupdate, userSave);
+			}
 
-  baseSave.id = baseSave.savetime;
-  baseSave.savetime = getCurrentDateTime();
+			if (saveData.attackcreatures) {
+				userSave.monsters = saveData.attackcreatures;
+			}
 
-  if (!isAttack) {
-    await redis.setex(`last-seen:main:${user.userid}`, 120, getCurrentDateTime().toString());
-  }
+			if (saveData.attackloot) {
+			attackLootHandler(saveData.attackloot, userSave);
+			}
 
-  postgres.em.persist(baseSave);
-  await postgres.em.flush();
+			postgres.em.persist(userSave);
+			await postgres.em.flush();
 
-  const filteredSave = FilterFrontendKeys(baseSave);
-  logger.info(`Saving ${user.username}'s base | IP: ${ctx.ip}`);
+			// MR3 Takeover Logic:
+			// If the attack is over and damage >= 90, trigger takeover or destroy logic.
+			// MR3 capturable structures (RESOURCE, STRONGHOLD, FORTIFICATION) allow re-capture
+			// from OUTPOST type (player-owned) in addition to first capture from TRIBE type.
+			if (saveData.over && baseSave.damage >= 90) {
+				if(userSave.mapversion == MapRoomVersion.V3){
+					switch(baseSave.type){
+						case BaseType.MAIN: {
+							const points_take = Math.min(baseSave.empirevalue, getPlayerConquerorPointsByLevel(baseSave.level));
+							const points_give = Math.round(points_take / 2);
 
-  const responseBody = {
-    error: 0,
-    basesaveid: baseSave.basesaveid,
-    ...filteredSave,
-    ...(takeoverData && { takeover: takeoverData }),
-  };
+							baseSave.empirevalue -= points_take;
+							userSave.empirevalue += points_give;
 
-  if (user.userid === filteredSave.userid) {
-    Object.assign(responseBody, mapUserSaveData(user));
-  }
+							postgres.em.persist(userSave);
+							await postgres.em.flush();
 
-  ctx.status = Status.OK;
-  ctx.body = responseBody;
+							postgres.em.persist(baseSave);
+							await postgres.em.flush();
+							break;
+						}
+						case BaseType.TRIBE: {
+							if(baseSave.wmid == 31 || baseSave.wmid == 21 || baseSave.wmid == 11 || baseSave.wmid == 1){
+								userSave.empirevalue += getConquerorPointsByLevel(baseSave.level);
+								postgres.em.persist(userSave);
+								await postgres.em.flush();
+							}
+							break;
+						}
+					}
+				}
+				
+			if (isMR3Structure(baseSave.wmid)) {
+				if (baseSave.type === BaseType.TRIBE || baseSave.type === BaseType.OUTPOST) {
+				takeoverData = await takeoverCellMR3(baseSave, user, userSave);
+				}
+			} else if (baseSave.type === BaseType.TRIBE) {
+				const cell = await postgres.em.findOne(WorldMapCell, {
+				baseid: baseSave.baseid,
+				map_version: MapRoomVersion.V3,
+				});
+
+				if (cell && !cell.destroyed_at) cell.destroyed_at = new Date();
+			}
+			}
+			// Grant damage protection to the defender main yard when the attack ends.
+			const isProtectable = baseSave.type === BaseType.MAIN || baseSave.type === BaseType.OUTPOST;
+
+			if (saveData.over && isProtectable && !isMR3Structure(baseSave.wmid)) {
+			await damageProtection(baseSave);
+			}
+		}
+
+		baseSave.attackid = saveData.over ? 0 : baseSave.attackid;
+
+		baseSave.id = baseSave.savetime;
+		baseSave.savetime = getCurrentDateTime();
+
+		if (!isAttack) {
+			await redis.setex(`last-seen:main:${user.userid}`, 120, getCurrentDateTime().toString());
+		}
+
+		postgres.em.persist(baseSave);
+		await postgres.em.flush();
+
+		const filteredSave = FilterFrontendKeys(baseSave);
+		logger.info(`Saving ${user.username}'s base | IP: ${ctx.ip}`);
+
+		const responseBody = {
+			error: 0,
+			basesaveid: baseSave.basesaveid,
+			...filteredSave,
+			...(takeoverData && { takeover: takeoverData }),
+		};
+
+		if (user.userid === filteredSave.userid) {
+			Object.assign(responseBody, mapUserSaveData(user));
+		}
+
+		ctx.status = Status.OK;
+		ctx.body = responseBody;
+	}
+	catch(error){
+		logger.error("BASE_SAVE_ERROR", {
+			user_id: ctx.authUser?.userid,
+			username: ctx.authUser?.username,
+			ip: ctx.ip,
+			body: ctx.request.body,
+			error: error instanceof Error ? {
+				name: error.name,
+				message: error.message,
+				stack: error.stack
+			} : error
+		});
+		throw error;
+	}
 };
 
 const updateOutposts = (

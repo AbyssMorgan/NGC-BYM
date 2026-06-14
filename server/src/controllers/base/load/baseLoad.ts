@@ -26,12 +26,10 @@ import { infernoModeAttack } from "./modes/infernoModeAttack.js";
 import { infernoModeBuild } from "./modes/infernoModeBuild.js";
 import { validateAttack } from "../../../services/maproom/validateAttack.js";
 import { BaseLoadSchema } from "../../../schemas/BaseLoadSchema.js";
-import { discordAgeErr } from "../../../errors/errors.js";
 import { EnumBaseRelationship } from "../../../enums/EnumBaseRelationship.js";
 import { canAttack } from "../../../services/base/canAttack.js";
 import { createMR1Tribes } from "../../../services/maproom/v1/createMR1Tribes.js";
 import { MR1_TRIBES } from "../../../enums/Tribes.js";
-import { tutorial } from "../../../game-data/tribes/v1/index.js";
 import { calculateBaseLevel } from "../../../services/base/calculateBaseLevel.js";
 import { extractTownHall } from "../../../utils/extractTownHall.js";
 
@@ -51,62 +49,55 @@ export const baseLoad: KoaController = async (ctx) => {
 	let baseSave: Save | null = null;
 
 	switch (type) {
-		case BaseMode.BUILD:
+		case BaseMode.BUILD: {
 			baseSave = await baseModeBuild(user, baseid);
 			redis.setex(`last-seen:main:${user.userid}`, 120, getCurrentDateTime().toString());
 			break;
-
+		}
 		case BaseMode.VIEW:
-		case BaseMode.IVIEW:
+		case BaseMode.IVIEW: {
 			baseSave = await baseModeView(baseid, mapversion, user.save!.worldid, user);
 			break;
-
-		case BaseMode.ATTACK:
-			if (!ctx.meetsDiscordAgeCheck) throw discordAgeErr();
-
+		}
+		case BaseMode.ATTACK: {
 			await validateAttack(user, attackData, mapversion);
 			baseSave = await baseModeAttack({ user, baseid, mapversion, attackCost: attackcost });
 			break;
-
-		case BaseMode.IDESCENT:
+		}
+		case BaseMode.IDESCENT: {
 			baseSave = await infernoModeDescent(user);
 			break;
-
-		case BaseMode.IBUILD:
+		}
+		case BaseMode.IBUILD: {
 			baseSave = await infernoModeBuild(user);
 			break;
-
-		case BaseMode.IWMVIEW:
+		}
+		case BaseMode.IWMVIEW: {
 			baseSave = await infernoModeView(user, baseid);
 			break;
-
-		case BaseMode.IATTACK:
-			if (!ctx.meetsDiscordAgeCheck) throw discordAgeErr();
-
+		}
+		case BaseMode.IATTACK: {
 			await validateAttack(user, attackData, mapversion);
 			baseSave = await infernoModeAttack(user, baseid);
 			break;
-
-		case BaseMode.IWMATTACK:
-			if (!ctx.meetsDiscordAgeCheck) throw discordAgeErr();
-			
+		}
+		case BaseMode.IWMATTACK: {
 			await validateAttack(user, attackData, mapversion);
 			baseSave = await infernoModeAttack(user, baseid);
 			break;
-
-		case BaseMode.WMVIEW:
+		}
+		case BaseMode.WMVIEW: {
 			baseSave = await baseModeView(baseid, mapversion, user.save!.worldid, user);
 			break;
-
-		case BaseMode.WMATTACK:
-			if (!ctx.meetsDiscordAgeCheck && baseid !== tutorial.baseid) throw discordAgeErr();
-			
+		}
+		case BaseMode.WMATTACK: {
 			await validateAttack(user, attackData, mapversion);
 			baseSave = await baseModeAttack({ user, baseid, mapversion, attackCost: attackcost });
 			break;
-
-		default:
+		}
+		default: {
 			throw new Error(`Base type not handled, type: ${type}.`);
+		}
 	}
 
 	if (!baseSave) throw new Error("Base save not found.");
@@ -129,7 +120,6 @@ export const baseLoad: KoaController = async (ctx) => {
 	const isTutorialEnabled = devConfig.skipTutorial ? 205 : filteredSave.tutorialstage;
 
 	const flags = getFlags();
-//	 flags.discordOldEnough = Number(ctx.meetsDiscordAgeCheck);
 
 	const townHall = extractTownHall(userSave.buildingdata || {});
 
@@ -234,11 +224,11 @@ export const baseLoad: KoaController = async (ctx) => {
 				// Count only base owner defenders
 				const defenderCells = await postgres.em.find(WorldMapCell, {
 					$and: [
-					{ $or: defenderCoords.map(([x, y]) => ({ x, y })) },
-					{ base_type: EnumYardType.FORTIFICATION },
-					{ uid: attackedCell.uid },
-					{ map_version: MapRoomVersion.V3 },
-					{ world: user.save!.worldid },
+						{ $or: defenderCoords.map(([x, y]) => ({ x, y })) },
+						{ base_type: EnumYardType.FORTIFICATION },
+						{ uid: attackedCell.uid },
+						{ map_version: MapRoomVersion.V3 },
+						{ world: user.save!.worldid },
 					],
 				});
 				defenderReduction = DEFENDER_DAMAGE_REDUCTION[defenderCells.length];

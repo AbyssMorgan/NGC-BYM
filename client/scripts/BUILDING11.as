@@ -39,21 +39,17 @@ package
                MAPROOM.initMaproomSetup = true;
             }
          }
-         if(MapRoomManager.instance.isInMapRoom3)
-         {
-            GLOBAL.StatSet("mrl",3);
-         }
-         else
-         {
-            if(_lvl.Get() < 2 && GLOBAL.StatGet("mrl") == 2)
-            {
-               GLOBAL.StatSet("mrl",2); // Comment: Previously set to 1
-            }
-            if(GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD && _lvl.Get() >= 2 && GLOBAL.StatGet("mrl") != 2 && BASE._saveCounterA == BASE._saveCounterB && !BASE._saving)
-            {
-               this.NewWorld();
-            }
-         }
+		 var previous_mrl:int = GLOBAL.StatGet("mrl");
+         if(MapRoomManager.instance.isInMapRoom3 && previous_mrl != 3){
+            GLOBAL.StatSet("mrl", 3);
+			trace("set mrl 3");
+         } else if(MapRoomManager.instance.isInMapRoom2 && previous_mrl != 2){
+			GLOBAL.StatSet("mrl", 2);
+			trace("set mrl 2");
+		 } else if(!MapRoomManager.instance.isInMapRoom3 && !MapRoomManager.instance.isInMapRoom2 && previous_mrl != 1){
+			GLOBAL.StatSet("mrl", 1);
+			trace("set mrl 1");
+		 }
          if(GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD && !GLOBAL._catchup && GLOBAL._render && _countdownUpgrade.Get() && _countdownUpgrade.Get() < 60 * 60 * 24 * 2)
          {
             this.PopupUpgrade(2);
@@ -88,13 +84,13 @@ package
                return;
             }
             GLOBAL.StatSet(CHANGED_TO_MR2,1);
-            GLOBAL.StatSet("mrl",2,true);
+            GLOBAL.StatSet("mrl", 2, true);
             GLOBAL._flags.mr2upgraded = 1;
             MapRoomManager.instance.mapRoomVersion = MapRoomManager.MAP_ROOM_VERSION_2;
             GLOBAL._baseURL = param1.baseurl;
             GLOBAL._homeBaseID = param1.homebaseid;
             BASE._loadedBaseID = param1.homebaseid;
-            BASE._baseID = 0;
+            BASE._baseID = param1.homebaseid;
             BASE._loadedFriendlyBaseID = GLOBAL._homeBaseID;
             MapRoomManager.instance.BookmarksClear();
             LOGGER.StatB({"st1":"NWM"},"migration");
@@ -140,6 +136,7 @@ package
          }
          this.callPending = false;
          PLEASEWAIT.Hide();
+		 BASE.Save(0, false, true);
       }
       
       private function NewWorldFail(param1:IOErrorEvent) : void
@@ -221,6 +218,7 @@ package
             };
             POPUPS.DisplayGeneric(KEYS.Get("newmap_upgraded1"),KEYS.Get("newmap_upgraded2"),KEYS.Get("btn_brag"),"building-map.png",Brag);
             PLEASEWAIT.Show(KEYS.Get("wait_newworld"));
+			NewWorld();
          }
          super.Upgraded();
       }

@@ -149,7 +149,7 @@ package com.monsters.effects
 					"name":KEYS.Get("bomb_pb3_name"),
 					"description":"bomb_dmg_description",
 					"radius":500,
-					"damage":150000,
+					"damage":225000,
 					"cost":50000000,
 					"resource":2,
 					"image":"bombbuttons/pebbles4.png",

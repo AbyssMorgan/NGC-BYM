@@ -960,11 +960,6 @@ package
        */
       public function getEffectiveLevelMax() : int
       {
-         if(!MapRoomManager.instance.isInMapRoom3)
-         {
-            if(_type == 5)  return 4;   // Flinger: MR2 max 4
-            if(_type == 15) return 6;   // Housing: MR2 max 6
-         }
          return _buildingProps.costs.length;
       }
 

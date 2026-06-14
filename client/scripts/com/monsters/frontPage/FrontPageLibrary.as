@@ -51,12 +51,12 @@ package com.monsters.frontPage
       
       public static function addMessages() : void
       {
-         NEWS.addMessage(new News01MagmaTower());
-         NEWS.addMessage(new News02InfernoYardExpansion());
-         NEWS.addMessage(new News03Vorg());
-         NEWS.addMessage(new News04Slimeattikus());
-         NEWS.addMessage(new News05YardPlanner2());
-         NEWS.addMessage(new News06TownHallLevel10());
+        //  NEWS.addMessage(new News01MagmaTower());
+        //  NEWS.addMessage(new News02InfernoYardExpansion());
+        //  NEWS.addMessage(new News03Vorg());
+        //  NEWS.addMessage(new News04Slimeattikus());
+        //  NEWS.addMessage(new News05YardPlanner2());
+        //  NEWS.addMessage(new News06TownHallLevel10());
          // PROMOTIONS.addMessage(new Maproom3OptInPopup()); Disable Map Room 3 popups
         //  PROMOTIONS.addMessage(new Promo01DaveClub());
         //  PROMOTIONS.addMessage(new Promo02DaveClub());
@@ -64,8 +64,8 @@ package com.monsters.frontPage
         //  PROMOTIONS.addMessage(new Promo04RecapturedDrull());
         //  PROMOTIONS.addMessage(new Promo05RecapturedFomor());
         //  PROMOTIONS.addMessage(new Promo06RecapturedKorath());
-         UNDERUSED_FEATURES.addMessage(new Underused01MonsterLocker());
-         UNDERUSED_FEATURES.addMessage(new Underused02Academy());
+        //  UNDERUSED_FEATURES.addMessage(new Underused01MonsterLocker());
+        //  UNDERUSED_FEATURES.addMessage(new Underused02Academy());
         //  WHATS_AVAILABLE.addMessage(new BuildTree_01_SniperCannonTowers());
         //  WHATS_AVAILABLE.addMessage(new BuildTree_02_RadioTower());
         //  WHATS_AVAILABLE.addMessage(new BuildTree_03_MonsterLocker());

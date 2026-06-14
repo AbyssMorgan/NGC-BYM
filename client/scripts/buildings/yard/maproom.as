@@ -23,6 +23,7 @@ package buildings.yard {
 				{"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(345600), "re":[[14,1,6]]},
 				{"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(345600), "re":[[14,1,6]]}
 			],
+			"isNoMoreInfoButton":true,
 			"imageData":{
 				"baseurl":"buildings/maproom/",
 				"1":{

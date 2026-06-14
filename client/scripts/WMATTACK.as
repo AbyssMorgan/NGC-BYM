@@ -330,14 +330,14 @@ package
             var meetsLevelReq:Boolean = BASE._baseLevel >= 9;
             var meetsPointsReq:Boolean = int(BASE._basePoints) + int(BASE._baseValue) > _trojanThreshold;
 
-            if (isCheckTick && BASE.isMainYard && noTrojanHistory && trojanNotPlaced && meetsLevelReq && meetsPointsReq) {
-               CUSTOMATTACKS.TrojanHorse();
-               if (BUILDING27._exists)
-               {
-                  _history["s1"] = [2,GLOBAL.Timestamp()];
-                  BASE.Save();
-               }
-            }
+            // if (isCheckTick && BASE.isMainYard && noTrojanHistory && trojanNotPlaced && meetsLevelReq && meetsPointsReq) {
+            //    CUSTOMATTACKS.TrojanHorse();
+            //    if (BUILDING27._exists)
+            //    {
+            //       _history["s1"] = [2,GLOBAL.Timestamp()];
+            //       BASE.Save();
+            //    }
+            // }
             if(_queued != null && !_inProgress)
             {
                if(!GLOBAL._catchup && !warningPopup && !_trojan && _queued.warned == 0 && !baseIsRepairing && BASE._isSanctuary <= GLOBAL.Timestamp() && _enabled && !activeEvent.EventActive() && !INFERNO_EMERGENCE_EVENT.ShouldRunEvent() && !PLANNER.isOpen())
@@ -645,19 +645,19 @@ package
          var _loc14_:Array = null;
          var _loc15_:Array = null;
          var _loc16_:* = undefined;
-         if(_history)
-         {
-            if(_history["s1"] && _history["s1"][0] == 1 && _history["s1"][2] == 0 && BASE.isMainYard)
-            {
-               _history["s1"][2] = 1;
-               _history.lastattack = GLOBAL.Timestamp();
-               _trojan = true;
-               _queued = null;
-               delete _history.queued;
-               CUSTOMATTACKS.TrojanHorse();
-               return;
-            }
-         }
+        //  if(_history)
+        //  {
+        //     if(_history["s1"] && _history["s1"][0] == 1 && _history["s1"][2] == 0 && BASE.isMainYard)
+        //     {
+        //        _history["s1"][2] = 1;
+        //        _history.lastattack = GLOBAL.Timestamp();
+        //        _trojan = true;
+        //        _queued = null;
+        //        delete _history.queued;
+        //        CUSTOMATTACKS.TrojanHorse();
+        //        return;
+        //     }
+        //  }
          AttackB();
          AttackC();
          WMATTACK._history.lastattack = GLOBAL.Timestamp();

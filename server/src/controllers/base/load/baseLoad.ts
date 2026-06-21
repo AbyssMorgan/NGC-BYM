@@ -32,6 +32,7 @@ import { createMR1Tribes } from "../../../services/maproom/v1/createMR1Tribes.js
 import { MR1_TRIBES } from "../../../enums/Tribes.js";
 import { calculateBaseLevel } from "../../../services/base/calculateBaseLevel.js";
 import { extractTownHall } from "../../../utils/extractTownHall.js";
+import { STRUCTURE_SAVES } from "../../../config/MapRoom3Config.js";
 
 /**
  * Controller responsible for loading base modes based on the user's request.
@@ -114,6 +115,23 @@ export const baseLoad: KoaController = async (ctx) => {
 		}
 		postgres.em.persist(userSave);
 		await postgres.em.flush();
+	}
+
+	if(baseSave && mapversion == MapRoomVersion.V3 && baseSave.version != 130){
+		if(baseSave.wmid == EnumYardType.RESOURCE || baseSave.wmid == EnumYardType.STRONGHOLD || baseSave.wmid == EnumYardType.FORTIFICATION){
+			const tribeSave = STRUCTURE_SAVES[baseSave.wmid];
+			const original = tribeSave[baseSave.level];
+			if(original){
+				baseSave.buildingdata = original.buildingdata as Save["buildingdata"];
+				baseSave.version = original.version as Save["version"];
+				baseSave.champion = original.champion as Save["champion"];
+				baseSave.resources = original.resources as Save["resources"];
+				baseSave.storedata = original.storedata as Save["storedata"];
+				baseSave.mapversion = MapRoomVersion.V3;
+				postgres.em.persist(baseSave);
+				await postgres.em.flush();
+			}
+		}
 	}
 
 	const filteredSave = FilterFrontendKeys(baseSave);

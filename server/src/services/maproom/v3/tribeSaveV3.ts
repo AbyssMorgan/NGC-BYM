@@ -3,8 +3,8 @@ import { postgres } from "../../../server.js";
 import type { RequiredEntityData } from "@mikro-orm/core";
 import { EnumYardType } from "../../../enums/EnumYardType.js";
 import {
-  STRUCTURE_SAVES,
-  OUTPOST_SAVES,
+	STRUCTURE_SAVES,
+	OUTPOST_SAVES,
 } from "../../../config/MapRoom3Config.js";
 import { Tribes } from "../../../enums/Tribes.js";
 import { getGeneratedCells, cellKey } from "./generateCells.js";
@@ -36,91 +36,89 @@ import { MapRoomVersion } from "../../../enums/MapRoom.js";
  * @returns {Promise<Save | null>} A new Save entity for the structure, or null
  */
 export const tribeSaveV3 = async (baseid: string, worldid: string): Promise<Save | null> => {
-  const cellX = parseInt(baseid.slice(-6, -3));
-  const cellY = parseInt(baseid.slice(-3));
+	const cellX = parseInt(baseid.slice(-6, -3));
+	const cellY = parseInt(baseid.slice(-3));
 
-  // Check player yard defenders first.
-  const neighborCoords = getHexNeighborOffsets(cellY).map(([dx, dy]) => ({
-    x: cellX + dx,
-    y: cellY + dy,
-  }));
+	// Check player yard defenders first.
+	const neighborCoords = getHexNeighborOffsets(cellY).map(([dx, dy]) => ({
+		x: cellX + dx,
+		y: cellY + dy,
+	}));
 
-  const parentCell = await postgres.em.findOne(WorldMapCell, {
-    $and: [
-      { $or: neighborCoords },
-      {
-        world: worldid,
-        base_type: EnumYardType.PLAYER,
-        uid: { $gt: 0 },
-        map_version: MapRoomVersion.V3,
-      },
-    ],
-  });
+	const parentCell = await postgres.em.findOne(WorldMapCell, {
+		$and: [
+			{ $or: neighborCoords },
+			{
+				world: worldid,
+				base_type: EnumYardType.PLAYER,
+				uid: { $gt: 0 },
+				map_version: MapRoomVersion.V3,
+			},
+		],
+	});
 
-  if (parentCell) {
-    const defenderCoords = getDefenderCoords(parentCell.x, parentCell.y);
-    const defenderIndex = defenderCoords.findIndex(([fx, fy]) => fx === cellX && fy === cellY);
+	if (parentCell) {
+		const defenderCoords = getDefenderCoords(parentCell.x, parentCell.y);
+		const defenderIndex = defenderCoords.findIndex(([fx, fy]) => fx === cellX && fy === cellY);
 
-    if (defenderIndex >= 0) {
-      const defenderLevels = getDefenderLevels(EnumYardType.PLAYER);
-      
-      if (!defenderLevels) return null;
+		if (defenderIndex >= 0) {
+			const defenderLevels = getDefenderLevels(EnumYardType.PLAYER);
+			
+			if (!defenderLevels) return null;
 
-      const level = defenderLevels[defenderIndex];
-      const defenderSave = STRUCTURE_SAVES[EnumYardType.FORTIFICATION];
+			const level = defenderLevels[defenderIndex];
+			const defenderSave = STRUCTURE_SAVES[EnumYardType.FORTIFICATION];
 
-      return postgres.em.create(Save, {
-        ...defenderSave[level],
-        baseid,
-        level,
-        wmid: EnumYardType.FORTIFICATION,
-        worldid,
-      } as unknown as RequiredEntityData<Save>);
-    }
-  }
+			return postgres.em.create(Save, {
+				...defenderSave[level],
+				baseid,
+				level,
+				wmid: EnumYardType.FORTIFICATION,
+				worldid,
+			} as unknown as RequiredEntityData<Save>);
+		}
+	}
 
-  const genCell = getGeneratedCells().get(cellKey(cellX, cellY));
-  const structureType = genCell?.type;
+	const genCell = getGeneratedCells().get(cellKey(cellX, cellY));
+	const structureType = genCell?.type;
 
-  if (structureType === EnumYardType.OUTPOST) {
-    const tribeIndex = (cellX + cellY) % Tribes.length;
-    const level = genCell!.level ?? 0;
-    const outpostSave = OUTPOST_SAVES[tribeIndex]?.[level];
+	if (structureType === EnumYardType.OUTPOST) {
+		const tribeIndex = (cellX + cellY) % Tribes.length;
+		const level = genCell!.level ?? 0;
+		const outpostSave = OUTPOST_SAVES[tribeIndex]?.[level];
 
-    if (!outpostSave) return null;
+		if (!outpostSave) return null;
 
-    // Client uses wmid to look up the tribe via TRIBES.TribeForBaseID(_wmID).
-    // L_IDS/K_IDS/A_IDS/D_IDS start at 1/11/21/31, so tribeIndex * 10 + 1
-    // gives the first nid of each tribe's range and resolves correctly.
-    const wmid = tribeIndex * 10 + 1;
+		// Client uses wmid to look up the tribe via TRIBES.TribeForBaseID(_wmID).
+		// L_IDS/K_IDS/A_IDS/D_IDS start at 1/11/21/31, so tribeIndex * 10 + 1
+		// gives the first nid of each tribe's range and resolves correctly.
+		const wmid = tribeIndex * 10 + 1;
 
-    return postgres.em.create(Save, {
-      ...outpostSave,
-      baseid,
-      level,
-      wmid,
-      worldid,
-    } as unknown as RequiredEntityData<Save>);
-  }
+		return postgres.em.create(Save, {
+			...outpostSave,
+			baseid,
+			level,
+			wmid,
+			worldid,
+		} as unknown as RequiredEntityData<Save>);
+	}
 
-  if (structureType !== undefined) {
-    const tribeSave = STRUCTURE_SAVES[structureType];
+	if (structureType !== undefined) {
+		const tribeSave = STRUCTURE_SAVES[structureType];
 
-    if (!tribeSave) return null;
+		if (!tribeSave) return null;
 
-    const isFortification = structureType === EnumYardType.FORTIFICATION;
-    const level = isFortification
-      ? genCell!.level ?? 0
-      : calculateStructureLevel(cellX, cellY, structureType);
+		const isFortification = structureType === EnumYardType.FORTIFICATION;
+		const level = isFortification ? (genCell!.level ?? 0) : calculateStructureLevel(cellX, cellY, structureType);
 
-    return postgres.em.create(Save, {
-      ...tribeSave[level],
-      baseid,
-      level,
-      wmid: structureType,
-      worldid,
-    } as unknown as RequiredEntityData<Save>);
-  }
+		return postgres.em.create(Save, {
+			...tribeSave[level],
+			baseid,
+			level,
+			wmid: structureType,
+			worldid,
+		} as unknown as RequiredEntityData<Save>);
+	}
 
-  return null;
+	return null;
 };

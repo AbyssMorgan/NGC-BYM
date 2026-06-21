@@ -19,37 +19,38 @@ import { baseUnderAttackErr, permissionErr } from "../../../../errors/errors.js"
  * @returns {Promise<Save | null>} The user's save object or null if not found.
  */
 export const baseModeBuild = async (user: User, baseid: string) => {
-  const userSave = user.save;
+	const userSave = user.save;
 
-  // If no user save is found, setup MR1 & create a default save for the user.
-  if (!userSave) {
-    logger.info("User save not found; creating a default save.");
-    return await Save.createMainSave(postgres.em, user);
-  }
+	// If no user save is found, setup MR1 & create a default save for the user.
+	if (!userSave) {
+		logger.info("User save not found; creating a default save.");
+		return await Save.createMainSave(postgres.em, user);
+	}
 
-  // Default mode only runs once on initial base load
-  if (baseid === BaseMode.DEFAULT) {
-    if (isAttackActive(userSave)) throw baseUnderAttackErr();
+	// Default mode only runs once on initial base load
+	if (baseid === BaseMode.DEFAULT) {
+		if (isAttackActive(userSave)) throw baseUnderAttackErr();
 
-    await balancedReward(userSave);
+		await balancedReward(userSave);
 
-    if (userSave.stats?.other) resetInvasionWaves(userSave.stats.other);
+		if (userSave.stats?.other) resetInvasionWaves(userSave.stats.other);
 
-    postgres.em.persist(userSave);
-    await postgres.em.flush();
-    return userSave;
-  }
+		postgres.em.persist(userSave);
+		await postgres.em.flush();
+		return userSave;
+	}
 
-  if (baseid !== userSave.baseid) {
-    const baseSave = await postgres.em.findOne(Save, { baseid });
+	if (baseid !== userSave.baseid) {
+		const baseSave = await postgres.em.findOne(Save, { baseid });
 
-    if (!baseSave) throw new Error(`Base save not found for baseid: ${baseid}`);
-    if (baseSave.userid !== user.userid) throw permissionErr();
-    if (isAttackActive(baseSave)) throw baseUnderAttackErr();
+		if (!baseSave) throw new Error(`Base save not found for baseid: ${baseid}`);
+		if (baseSave.userid !== user.userid) throw permissionErr();
+		if (isAttackActive(baseSave)) throw baseUnderAttackErr();
 
-    return baseSave;
-  }
+		return baseSave;
+	}
 
-  if (isAttackActive(userSave)) throw baseUnderAttackErr();
-  return userSave;
+	if (isAttackActive(userSave)) throw baseUnderAttackErr();
+	
+	return userSave;
 };

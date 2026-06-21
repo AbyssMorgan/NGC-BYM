@@ -25,7 +25,13 @@ package buildings.yard {
 			"costs":[
 				{"r1":new SecNum(5), "r2":new SecNum(5), "r3":new SecNum(5), "r4":new SecNum(5), "time":new SecNum(1), "re":[]}
 			],
-			"rps":[1,2,5,11,23],
+			"rps":[
+				1,
+				2,
+				5,
+				11,
+				23,
+			],
 			"imageData":{
 				"baseurl":"buildings/resourceoutpost/",
 				"1":{

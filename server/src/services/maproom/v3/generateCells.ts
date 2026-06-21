@@ -183,13 +183,10 @@ export const getGeneratedCells = (): Map<number, GeneratedCell> => {
 
 			if (noiseValue > PLACEMENT_THRESHOLD) {
 				// Map noise value to altitude, excluding clover range (32-49)
-				const normalizedValue =
-					(noiseValue - PLACEMENT_THRESHOLD) / (1 - PLACEMENT_THRESHOLD);
-
+				const normalizedValue = (noiseValue - PLACEMENT_THRESHOLD) / (1 - PLACEMENT_THRESHOLD);
 				const lowerRange = 31 - MIN_CELL_ALTITUDE + 1;
 				const upperRange = MAX_CELL_ALTITUDE - 50 + 1;
 				const totalRange = lowerRange + upperRange;
-
 				const scaledValue = normalizedValue * totalRange;
 
 				if (scaledValue < lowerRange) {

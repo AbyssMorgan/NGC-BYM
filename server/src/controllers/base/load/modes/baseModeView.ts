@@ -22,22 +22,20 @@ const WILD_MONSTER_EXPIRATION = 43200;
  * @returns {Promise<Loaded<Save, never>>} The save object or null if no valid save is found.
  */
 export const baseModeView = async (baseid: string, mapversion: MapRoomVersion = MapRoomVersion.V2, worldid: string | null | undefined, user: User) => {
-  if (mapversion === MapRoomVersion.V1 && MR1_TRIBE_IDS.has(baseid))
-    return tribeSaveHandler(baseid, mapversion, worldid, user);
+	if (mapversion === MapRoomVersion.V1 && MR1_TRIBE_IDS.has(baseid)) return tribeSaveHandler(baseid, mapversion, worldid, user);
+	let save = await postgres.em.findOne(Save, { baseid });
+	if(!save){
+		save = await tribeSaveHandler(baseid, mapversion, worldid, user);
+	}
 
-  let save = await postgres.em.findOne(Save, { baseid });
+	if(mapversion !== MapRoomVersion.V3 && save && save.wmid !== 0) {
+		const currentTimestamp = getCurrentDateTime();
+		if (currentTimestamp - save.savetime > WILD_MONSTER_EXPIRATION) {
+			postgres.em.remove(save);
+			await postgres.em.flush();
+			save = await tribeSaveHandler(baseid, mapversion, worldid, user);
+		}
+	}
 
-  if (!save) save = await tribeSaveHandler(baseid, mapversion, worldid, user);
-
-  if (mapversion !== MapRoomVersion.V3 && save && save.wmid !== 0) {
-    const currentTimestamp = getCurrentDateTime();
-
-    if (currentTimestamp - save.savetime > WILD_MONSTER_EXPIRATION) {
-      postgres.em.remove(save);
-      await postgres.em.flush();
-      save = await tribeSaveHandler(baseid, mapversion, worldid, user);
-    }
-  }
-
-  return save;
+	return save;
 };

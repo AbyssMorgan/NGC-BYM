@@ -1777,13 +1777,13 @@ package
 					terrainType = "rock";
 				}
 			} else if(_wmID == 31 || _wmID == 21 || _wmID == 11 || _wmID == 1){
-				if(_level >= 90){
+				if(_level >= 65){
 					terrainType = "lava";
-				} else if(_level >= 80){
-					terrainType = "crater";
-				} else if(_level >= 70){
-					terrainType = "sand";
 				} else if(_level >= 60){
+					terrainType = "crater";
+				} else if(_level >= 55){
+					terrainType = "sand";
+				} else if(_level >= 50){
 					terrainType = "rock";
 				}
 			}

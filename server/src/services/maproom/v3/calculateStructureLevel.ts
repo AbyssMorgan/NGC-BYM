@@ -11,9 +11,8 @@ import { EnumYardType } from "../../../enums/EnumYardType.js";
  * @returns The level for this structure at these coordinates
  */
 export const calculateStructureLevel = (x: number, y: number, type: EnumYardType): number => {
-  const levels = STRUCTURE_LEVELS[type];
-  if (!levels?.length) return 1;
-
-  const index = Math.abs(x * 73 + y * 31) % levels.length; // TODO: better way to generate pseudo-random but deterministic??
-  return levels[index];
+	const levels = STRUCTURE_LEVELS[type];
+	if (!levels?.length) return 1;
+	const index = Math.abs(x * 73 + y * 31) % levels.length; // TODO: better way to generate pseudo-random but deterministic??
+	return levels[index];
 };

@@ -164,7 +164,7 @@ export const baseSave: KoaController = async (ctx) => {
 		// If the attack is over and damage >= 90, trigger takeover or destroy logic.
 		// MR3 capturable structures (RESOURCE, STRONGHOLD, FORTIFICATION) allow re-capture
 		// from OUTPOST type (player-owned) in addition to first capture from TRIBE type.
-		if (saveData.over && baseSave.damage >= 90) {
+		if (saveData.over && baseSave.damage >= 98) {
 			if(userSave.mapversion == MapRoomVersion.V3){
 				switch(baseSave.type){
 					case BaseType.MAIN: {

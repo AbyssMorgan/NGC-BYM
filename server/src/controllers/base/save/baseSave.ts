@@ -154,7 +154,7 @@ export const baseSave: KoaController = async (ctx) => {
 		}
 
 		if (saveData.attackloot) {
-			attackLootHandler(saveData.attackloot, userSave);
+			attackLootHandler(saveData.attackloot, userSave, SaveKeys.RESOURCES, true);
 		}
 
 		postgres.em.persist(userSave);

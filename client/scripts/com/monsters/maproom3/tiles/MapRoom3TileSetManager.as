@@ -41,11 +41,11 @@ package com.monsters.maproom3.tiles
 		// {"src":"worldmap/tiles/spiky05.png","x":0,"y":0,"min_alt":75,"max_alt":77},
 		// {"src":"worldmap/tiles/spiky06.png","x":0,"y":0,"min_alt":77,"max_alt":79},
 		// {"src":"worldmap/tiles/spiky07.png","x":0,"y":0,"min_alt":78,"max_alt":80},
-		{"src":"worldmap/tiles/borderplant01.png","x":0,"y":0,"min_alt":BORDER_CELL_HEIGHT - 1,"max_alt":BORDER_CELL_HEIGHT},
-		{"src":"worldmap/tiles/borderplant02.png","x":0,"y":0,"min_alt":BORDER_CELL_HEIGHT - 1,"max_alt":BORDER_CELL_HEIGHT},
-		{"src":"worldmap/tiles/borderplant03.png","x":0,"y":0,"min_alt":BORDER_CELL_HEIGHT - 1,"max_alt":BORDER_CELL_HEIGHT},
-		{"src":"worldmap/tiles/borderplant04.png","x":0,"y":0,"min_alt":BORDER_CELL_HEIGHT - 1,"max_alt":BORDER_CELL_HEIGHT},
-		{"src":"worldmap/tiles/borderplant05.png","x":0,"y":0,"min_alt":BORDER_CELL_HEIGHT - 1,"max_alt":BORDER_CELL_HEIGHT}
+		// {"src":"worldmap/tiles/borderplant01.png","x":0,"y":0,"min_alt":BORDER_CELL_HEIGHT - 1,"max_alt":BORDER_CELL_HEIGHT},
+		// {"src":"worldmap/tiles/borderplant02.png","x":0,"y":0,"min_alt":BORDER_CELL_HEIGHT - 1,"max_alt":BORDER_CELL_HEIGHT},
+		// {"src":"worldmap/tiles/borderplant03.png","x":0,"y":0,"min_alt":BORDER_CELL_HEIGHT - 1,"max_alt":BORDER_CELL_HEIGHT},
+		// {"src":"worldmap/tiles/borderplant04.png","x":0,"y":0,"min_alt":BORDER_CELL_HEIGHT - 1,"max_alt":BORDER_CELL_HEIGHT},
+		// {"src":"worldmap/tiles/borderplant05.png","x":0,"y":0,"min_alt":BORDER_CELL_HEIGHT - 1,"max_alt":BORDER_CELL_HEIGHT}
 	];
 	
 	public static var INFERNO_TILE_SET:Array = [{

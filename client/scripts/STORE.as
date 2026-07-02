@@ -197,7 +197,7 @@ package {
 			var _loc23_: String = null;
 			if (BASE.isOutpost) {
 				_grouping = [
-					[MapRoomManager.instance.isInMapRoom3 ? [] : ["BST", "BLK2", "BLK3", "BLK4", "BLK5", "BLK6", "BLK7", "BLK8", "EXR1", "EXR2", "EXR3", "EXR4"]],
+					[MapRoomManager.instance.isInMapRoom3 ? [] : ["BST", "BLK2", "BLK3", "BLK4", "BLK5", "BLK6", "BLK7", "BLK8", "EXR1", "EXR2", "EXR3", "EXR4", "EXR10", "EXR20", "EXR30", "EXR40"]],
 					[MapRoomManager.instance.isInMapRoom3 ? [] : ["BR11", "BR12", "BR13", "BR21", "BR22", "BR23", "BR31", "BR32", "BR33", "BR41", "BR42", "BR43"]],
 					[MapRoomManager.instance.isInMapRoom3 ? ["SP1", "SP2", "SP3", "SP4", "FIX"] : ["SP1", "SP2", "SP3", "SP4", "POD", "FIX", "HOD", "HOD2", "HOD3"]],
 					[MapRoomManager.instance.isInMapRoom3 ? [] : ["PRO1", "PRO2", "PRO3", "TOD", "EXH"]]
@@ -206,7 +206,7 @@ package {
 				if (MAPROOM_DESCENT.DescentPassed) {
 					_grouping = [
 						[
-							["BEW", "BST", "ENL", "BLK2", "BLK3", "BLK4", "BLK5", "BLK6", "BLK7", "BLK8", "EXR1", "EXR2", "EXR3", "EXR4"]
+							["BEW", "BST", "ENL", "BLK2", "BLK3", "BLK4", "BLK5", "BLK6", "BLK7", "BLK8", "EXR1", "EXR2", "EXR3", "EXR4", "EXR10", "EXR20", "EXR30", "EXR40"]
 						],
 						[
 							["BR11", "BR12", "BR13", "BR21", "BR22", "BR23", "BR31", "BR32", "BR33", "BR41", "BR42", "BR43", "BR11I", "BR12I", "BR13I", "BR21I", "BR22I", "BR23I", "BR31I", "BR32I", "BR33I", "BR41I", "BR42I", "BR43I", "BIP"]
@@ -219,7 +219,7 @@ package {
 				} else {
 					_grouping = [
 						[
-							["BEW", "BST", "ENL", "BLK2", "BLK3", "BLK4", "BLK5", "BLK6", "BLK7", "BLK8", "EXR1", "EXR2", "EXR3", "EXR4"]
+							["BEW", "BST", "ENL", "BLK2", "BLK3", "BLK4", "BLK5", "BLK6", "BLK7", "BLK8", "EXR1", "EXR2", "EXR3", "EXR4", "EXR10", "EXR20", "EXR30", "EXR40"]
 						],
 						[
 							["BR11", "BR12", "BR13", "BR21", "BR22", "BR23", "BR31", "BR32", "BR33", "BR41", "BR42", "BR43", "BIP"]
@@ -699,6 +699,10 @@ package {
 			_storeItems.EXR2.resourceCost = 250000000;
 			_storeItems.EXR3.resourceCost = 250000000;
 			_storeItems.EXR4.resourceCost = 250000000;
+			_storeItems.EXR10.resourceCost = 2500000000;
+			_storeItems.EXR20.resourceCost = 2500000000;
+			_storeItems.EXR30.resourceCost = 2500000000;
+			_storeItems.EXR40.resourceCost = 2500000000;
 		}
 
 		public static function AddInventory(param1: String): void {
@@ -1946,19 +1950,19 @@ package {
 					if (BASE._resources.r1.Get() < _resourceR1 || BASE._resources.r2.Get() < _resourceR2) {
 						_loc32_ = "Not enough resources";
 					}
-				} else if (_loc32_ == "" && item == "EXR1" && storeItemObject.resourceCost != undefined) {
+				} else if (_loc32_ == "" && (item == "EXR1" || item == "EXR10") && storeItemObject.resourceCost != undefined) {
 					if (BASE._resources.r1.Get() < storeItemObject.resourceCost) {
 						_loc32_ = "Not enough resources";
 					}
-				} else if (_loc32_ == "" && item == "EXR2" && storeItemObject.resourceCost != undefined) {
+				} else if (_loc32_ == "" && (item == "EXR2" || item == "EXR20") && storeItemObject.resourceCost != undefined) {
 					if (BASE._resources.r2.Get() < storeItemObject.resourceCost) {
 						_loc32_ = "Not enough resources";
 					}
-				} else if (_loc32_ == "" && item == "EXR3" && storeItemObject.resourceCost != undefined) {
+				} else if (_loc32_ == "" && (item == "EXR3" || item == "EXR30") && storeItemObject.resourceCost != undefined) {
 					if (BASE._resources.r3.Get() < storeItemObject.resourceCost) {
 						_loc32_ = "Not enough resources";
 					}
-				} else if (_loc32_ == "" && item == "EXR4" && storeItemObject.resourceCost != undefined) {
+				} else if (_loc32_ == "" && (item == "EXR4" || item == "EXR40") && storeItemObject.resourceCost != undefined) {
 					if (BASE._resources.r4.Get() < storeItemObject.resourceCost) {
 						_loc32_ = "Not enough resources";
 					}
@@ -1974,8 +1978,8 @@ package {
 					_loc33_ = "<b>" + GLOBAL.FormatNumber(storeItemObject.c[_loc6_]) + "</b>";
 					if (storeItemObject.c[_loc6_] == 0 && _loc32_ == "") {
 						_loc33_ = "<font color=\"#0000CC\"><b>" + KEYS.Get("str_buy_free") + "</b></font>";
-					} else if (storeItemObject.c[_loc6_] < 0 && _loc32_ == "") {
-						_loc33_ = "<font color=\"#0000CC\"><b>+1</b></font>";
+					} else if (storeItemObject.c[_loc6_] < 0) {
+						_loc33_ = "<font color=\"#0000CC\"><b>+" + (storeItemObject.c[_loc6_] * -1) + "</b></font>";
 					}
 				}
 				if (_loc32_ != "") {

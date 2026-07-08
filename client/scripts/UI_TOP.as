@@ -325,11 +325,11 @@ package
             this._creatureButtonsMC.addChild(this.m_scrollBar);
          }
 		var siege_available:Boolean = true;
-		if(BASE._wmID == 31 || BASE._wmID == 21 || BASE._wmID == 11 || BASE._wmID == 1){
-			if(BASE._level >= 91 && BASE._level <= 109){
-				siege_available = false;
-			}
-		}
+		// if(BASE._wmID == 31 || BASE._wmID == 21 || BASE._wmID == 11 || BASE._wmID == 1){
+		// 	if(BASE._level >= 91 && BASE._level <= 109){
+		// 		siege_available = false;
+		// 	}
+		// }
 		if(siege_available){
 			if(SiegeWeapons.availableWeapon != null && !BASE.isInfernoMainYardOrOutpost)
 			{

@@ -39005,8 +39005,8 @@ export const abunakki: Record<number, SaveData> = {
 		purchasecomplete: 0,
 		buildingdata: {
 			0: {
-				X: -60,
-				Y: -60,
+				X: -65,
+				Y: -65,
 				l: 20,
 				t: 14,
 				id: 0,
@@ -39015,24 +39015,20 @@ export const abunakki: Record<number, SaveData> = {
 			10: {
 				X: -35,
 				Y: 205,
-				l: 19,
+				l: 20,
 				t: 4,
-				cP: 4,
 				id: 10,
-				pr: 1,
-				st: 125000000,
-				rCP: 4
+				pr: 0,
+				st: 250000000
 			},
 			50: {
 				X: -275,
 				Y: -35,
-				l: 19,
+				l: 20,
 				t: 2,
-				cP: 4,
 				id: 50,
-				pr: 1,
-				st: 125000000,
-				rCP: 4
+				pr: 0,
+				st: 250000000
 			},
 			70: {
 				X: 300,
@@ -39056,8 +39052,8 @@ export const abunakki: Record<number, SaveData> = {
 				id: 72
 			},
 			73: {
-				X: 220,
-				Y: -60,
+				X: 300,
+				Y: 200,
 				l: 8,
 				t: 17,
 				id: 73
@@ -39091,15 +39087,15 @@ export const abunakki: Record<number, SaveData> = {
 				id: 77
 			},
 			78: {
-				X: 200,
-				Y: -80,
+				X: 320,
+				Y: 120,
 				l: 8,
 				t: 17,
 				id: 78
 			},
 			79: {
-				X: 260,
-				Y: -60,
+				X: 180,
+				Y: 320,
 				l: 8,
 				t: 17,
 				id: 79
@@ -39112,7 +39108,7 @@ export const abunakki: Record<number, SaveData> = {
 				id: 80
 			},
 			81: {
-				X: -100,
+				X: -260,
 				Y: -280,
 				l: 8,
 				t: 17,
@@ -39217,8 +39213,8 @@ export const abunakki: Record<number, SaveData> = {
 				id: 98
 			},
 			99: {
-				X: 40,
-				Y: -260,
+				X: -280,
+				Y: 240,
 				l: 8,
 				t: 17,
 				id: 99
@@ -39238,8 +39234,8 @@ export const abunakki: Record<number, SaveData> = {
 				id: 101
 			},
 			102: {
-				X: 40,
-				Y: -280,
+				X: -300,
+				Y: 220,
 				l: 8,
 				t: 17,
 				id: 102
@@ -39259,8 +39255,8 @@ export const abunakki: Record<number, SaveData> = {
 				id: 105
 			},
 			106: {
-				X: -260,
-				Y: -100,
+				X: -20,
+				Y: 320,
 				l: 8,
 				t: 17,
 				id: 106
@@ -39294,8 +39290,8 @@ export const abunakki: Record<number, SaveData> = {
 				id: 110
 			},
 			111: {
-				X: 60,
-				Y: -220,
+				X: -220,
+				Y: 300,
 				l: 8,
 				t: 17,
 				id: 111
@@ -39308,8 +39304,8 @@ export const abunakki: Record<number, SaveData> = {
 				id: 112
 			},
 			113: {
-				X: 40,
-				Y: -240,
+				X: -260,
+				Y: 260,
 				l: 8,
 				t: 17,
 				id: 113
@@ -39371,8 +39367,8 @@ export const abunakki: Record<number, SaveData> = {
 				id: 121
 			},
 			122: {
-				X: 40,
-				Y: -220,
+				X: -240,
+				Y: 280,
 				l: 8,
 				t: 17,
 				id: 122
@@ -39385,8 +39381,8 @@ export const abunakki: Record<number, SaveData> = {
 				id: 123
 			},
 			124: {
-				X: -60,
-				Y: -280,
+				X: -220,
+				Y: -320,
 				l: 8,
 				t: 17,
 				id: 124
@@ -39399,36 +39395,36 @@ export const abunakki: Record<number, SaveData> = {
 				id: 125
 			},
 			126: {
-				X: -80,
-				Y: -280,
+				X: -240,
+				Y: -300,
 				l: 8,
 				t: 17,
 				id: 126
 			},
 			127: {
-				X: -60,
-				Y: -260,
+				X: -200,
+				Y: -340,
 				l: 8,
 				t: 17,
 				id: 127
 			},
 			128: {
-				X: -80,
-				Y: -260,
+				X: 200,
+				Y: -320,
 				l: 8,
 				t: 17,
 				id: 128
 			},
 			129: {
-				X: -80,
-				Y: -240,
+				X: 300,
+				Y: -220,
 				l: 8,
 				t: 17,
 				id: 129
 			},
 			130: {
-				X: -60,
-				Y: -240,
+				X: 320,
+				Y: -200,
 				l: 8,
 				t: 17,
 				id: 130
@@ -39476,8 +39472,8 @@ export const abunakki: Record<number, SaveData> = {
 				id: 136
 			},
 			137: {
-				X: 60,
-				Y: -280,
+				X: -320,
+				Y: 200,
 				l: 8,
 				t: 17,
 				id: 137
@@ -39609,15 +39605,15 @@ export const abunakki: Record<number, SaveData> = {
 				id: 155
 			},
 			156: {
-				X: 60,
-				Y: -240,
+				X: -340,
+				Y: -200,
 				l: 8,
 				t: 17,
 				id: 156
 			},
 			157: {
-				X: 60,
-				Y: -260,
+				X: -340,
+				Y: 180,
 				l: 8,
 				t: 17,
 				id: 157
@@ -39945,15 +39941,15 @@ export const abunakki: Record<number, SaveData> = {
 				id: 203
 			},
 			204: {
-				X: -240,
-				Y: 80,
+				X: -340,
+				Y: 140,
 				l: 8,
 				t: 17,
 				id: 204
 			},
 			205: {
-				X: -220,
-				Y: 80,
+				X: -340,
+				Y: -100,
 				l: 8,
 				t: 17,
 				id: 205
@@ -39973,15 +39969,15 @@ export const abunakki: Record<number, SaveData> = {
 				id: 207
 			},
 			208: {
-				X: 80,
-				Y: -260,
+				X: -300,
+				Y: -240,
 				l: 8,
 				t: 17,
 				id: 208
 			},
 			209: {
-				X: 80,
-				Y: -280,
+				X: -280,
+				Y: -260,
 				l: 8,
 				t: 17,
 				id: 209
@@ -40008,8 +40004,8 @@ export const abunakki: Record<number, SaveData> = {
 				id: 212
 			},
 			213: {
-				X: -100,
-				Y: 200,
+				X: 100,
+				Y: -340,
 				l: 8,
 				t: 17,
 				id: 213
@@ -40043,8 +40039,8 @@ export const abunakki: Record<number, SaveData> = {
 				id: 217
 			},
 			218: {
-				X: 200,
-				Y: -100,
+				X: 320,
+				Y: 140,
 				l: 8,
 				t: 17,
 				id: 218
@@ -40092,8 +40088,8 @@ export const abunakki: Record<number, SaveData> = {
 				id: 224
 			},
 			225: {
-				X: -280,
-				Y: 80,
+				X: -340,
+				Y: 0,
 				l: 8,
 				t: 17,
 				id: 225
@@ -40106,8 +40102,8 @@ export const abunakki: Record<number, SaveData> = {
 				id: 226
 			},
 			227: {
-				X: -280,
-				Y: -100,
+				X: 0,
+				Y: 320,
 				l: 8,
 				t: 17,
 				id: 227
@@ -40274,105 +40270,105 @@ export const abunakki: Record<number, SaveData> = {
 				id: 250
 			},
 			251: {
-				X: -280,
-				Y: 60,
+				X: -340,
+				Y: 20,
 				l: 8,
 				t: 17,
 				id: 251
 			},
 			252: {
-				X: -260,
-				Y: 60,
+				X: -340,
+				Y: 100,
 				l: 8,
 				t: 17,
 				id: 252
 			},
 			253: {
-				X: -260,
-				Y: 40,
+				X: -340,
+				Y: 60,
 				l: 8,
 				t: 17,
 				id: 253
 			},
 			254: {
-				X: -280,
+				X: -340,
 				Y: 40,
 				l: 8,
 				t: 17,
 				id: 254
 			},
 			255: {
-				X: 200,
-				Y: 40,
+				X: 320,
+				Y: -100,
 				l: 8,
 				t: 17,
 				id: 255
 			},
 			256: {
-				X: -240,
-				Y: 40,
+				X: -340,
+				Y: -20,
 				l: 8,
 				t: 17,
 				id: 256
 			},
 			257: {
-				X: -220,
-				Y: 40,
+				X: -340,
+				Y: -60,
 				l: 8,
 				t: 17,
 				id: 257
 			},
 			258: {
-				X: 200,
-				Y: 60,
+				X: 320,
+				Y: -120,
 				l: 8,
 				t: 17,
 				id: 258
 			},
 			259: {
-				X: 220,
-				Y: 40,
+				X: 320,
+				Y: -80,
 				l: 8,
 				t: 17,
 				id: 259
 			},
 			260: {
-				X: -220,
-				Y: 60,
+				X: -340,
+				Y: -80,
 				l: 8,
 				t: 17,
 				id: 260
 			},
 			261: {
-				X: 240,
-				Y: 60,
+				X: 320,
+				Y: 0,
 				l: 8,
 				t: 17,
 				id: 261
 			},
 			262: {
-				X: 240,
-				Y: 40,
+				X: 320,
+				Y: 20,
 				l: 8,
 				t: 17,
 				id: 262
 			},
 			263: {
-				X: 260,
+				X: 320,
 				Y: 60,
 				l: 8,
 				t: 17,
 				id: 263
 			},
 			264: {
-				X: 220,
-				Y: 60,
+				X: 320,
+				Y: -60,
 				l: 8,
 				t: 17,
 				id: 264
 			},
 			265: {
-				X: 260,
+				X: 320,
 				Y: 40,
 				l: 8,
 				t: 17,
@@ -40414,22 +40410,22 @@ export const abunakki: Record<number, SaveData> = {
 				id: 270
 			},
 			271: {
-				X: 240,
-				Y: -60,
+				X: 280,
+				Y: 220,
 				l: 8,
 				t: 17,
 				id: 271
 			},
 			272: {
-				X: 220,
-				Y: -80,
+				X: 320,
+				Y: 180,
 				l: 8,
 				t: 17,
 				id: 272
 			},
 			273: {
-				X: 200,
-				Y: -60,
+				X: 320,
+				Y: 100,
 				l: 8,
 				t: 17,
 				id: 273
@@ -40610,8 +40606,8 @@ export const abunakki: Record<number, SaveData> = {
 				id: 298
 			},
 			299: {
-				X: 260,
-				Y: -80,
+				X: 200,
+				Y: 300,
 				l: 8,
 				t: 17,
 				id: 299
@@ -40645,8 +40641,8 @@ export const abunakki: Record<number, SaveData> = {
 				id: 303
 			},
 			304: {
-				X: 240,
-				Y: -80,
+				X: 260,
+				Y: 240,
 				l: 8,
 				t: 17,
 				id: 304
@@ -40736,15 +40732,15 @@ export const abunakki: Record<number, SaveData> = {
 				id: 316
 			},
 			317: {
-				X: -80,
-				Y: -220,
+				X: 280,
+				Y: -240,
 				l: 8,
 				t: 17,
 				id: 317
 			},
 			318: {
-				X: -60,
-				Y: -220,
+				X: 180,
+				Y: -340,
 				l: 8,
 				t: 17,
 				id: 318
@@ -40841,29 +40837,29 @@ export const abunakki: Record<number, SaveData> = {
 				id: 331
 			},
 			332: {
-				X: -260,
-				Y: 80,
+				X: -340,
+				Y: 120,
 				l: 8,
 				t: 17,
 				id: 332
 			},
 			333: {
-				X: 80,
-				Y: 240,
+				X: 320,
+				Y: -180,
 				l: 8,
 				t: 17,
 				id: 333
 			},
 			334: {
-				X: 80,
-				Y: 200,
+				X: -160,
+				Y: -340,
 				l: 8,
 				t: 17,
 				id: 334
 			},
 			335: {
-				X: 80,
-				Y: 220,
+				X: -180,
+				Y: -340,
 				l: 8,
 				t: 17,
 				id: 335
@@ -40890,22 +40886,22 @@ export const abunakki: Record<number, SaveData> = {
 				id: 338
 			},
 			339: {
-				X: 80,
-				Y: -220,
+				X: -200,
+				Y: 320,
 				l: 8,
 				t: 17,
 				id: 339
 			},
 			340: {
-				X: 80,
-				Y: -240,
+				X: -320,
+				Y: -220,
 				l: 8,
 				t: 17,
 				id: 340
 			},
 			341: {
-				X: 80,
-				Y: 260,
+				X: 320,
+				Y: -160,
 				l: 8,
 				t: 17,
 				id: 341
@@ -41086,22 +41082,22 @@ export const abunakki: Record<number, SaveData> = {
 				id: 366
 			},
 			367: {
-				X: -100,
-				Y: -260,
+				X: 220,
+				Y: -300,
 				l: 8,
 				t: 17,
 				id: 367
 			},
 			368: {
-				X: -100,
-				Y: -240,
+				X: 240,
+				Y: -280,
 				l: 8,
 				t: 17,
 				id: 368
 			},
 			369: {
-				X: -100,
-				Y: -220,
+				X: 260,
+				Y: -260,
 				l: 8,
 				t: 17,
 				id: 369
@@ -41114,15 +41110,15 @@ export const abunakki: Record<number, SaveData> = {
 				id: 370
 			},
 			371: {
-				X: -220,
-				Y: -100,
+				X: -60,
+				Y: 320,
 				l: 8,
 				t: 17,
 				id: 371
 			},
 			372: {
-				X: -240,
-				Y: -100,
+				X: -40,
+				Y: 320,
 				l: 8,
 				t: 17,
 				id: 372
@@ -41436,8 +41432,8 @@ export const abunakki: Record<number, SaveData> = {
 				id: 416
 			},
 			417: {
-				X: 200,
-				Y: 80,
+				X: 320,
+				Y: -140,
 				l: 8,
 				t: 17,
 				id: 417
@@ -41569,8 +41565,8 @@ export const abunakki: Record<number, SaveData> = {
 				id: 435
 			},
 			436: {
-				X: -100,
-				Y: 260,
+				X: -340,
+				Y: -160,
 				l: 8,
 				t: 17,
 				id: 436
@@ -41583,8 +41579,8 @@ export const abunakki: Record<number, SaveData> = {
 				id: 437
 			},
 			438: {
-				X: -100,
-				Y: 220,
+				X: -340,
+				Y: -120,
 				l: 8,
 				t: 17,
 				id: 438
@@ -41793,64 +41789,64 @@ export const abunakki: Record<number, SaveData> = {
 				id: 467
 			},
 			468: {
-				X: -280,
-				Y: -80,
+				X: -140,
+				Y: 320,
 				l: 8,
 				t: 17,
 				id: 468
 			},
 			469: {
-				X: -220,
-				Y: -60,
+				X: -340,
+				Y: 80,
 				l: 8,
 				t: 17,
 				id: 469
 			},
 			470: {
-				X: -240,
-				Y: -60,
+				X: -340,
+				Y: -40,
 				l: 8,
 				t: 17,
 				id: 470
 			},
 			471: {
-				X: -220,
-				Y: -80,
+				X: -80,
+				Y: 320,
 				l: 8,
 				t: 17,
 				id: 471
 			},
 			472: {
-				X: -240,
-				Y: -80,
+				X: -100,
+				Y: 320,
 				l: 8,
 				t: 17,
 				id: 472
 			},
 			473: {
-				X: -260,
-				Y: -60,
+				X: -180,
+				Y: 320,
 				l: 8,
 				t: 17,
 				id: 473
 			},
 			474: {
-				X: -280,
-				Y: -60,
+				X: -160,
+				Y: 320,
 				l: 8,
 				t: 17,
 				id: 474
 			},
 			475: {
-				X: -240,
-				Y: 60,
+				X: -340,
+				Y: 160,
 				l: 8,
 				t: 17,
 				id: 475
 			},
 			476: {
-				X: -260,
-				Y: -80,
+				X: -120,
+				Y: 320,
 				l: 8,
 				t: 17,
 				id: 476
@@ -41877,22 +41873,22 @@ export const abunakki: Record<number, SaveData> = {
 				id: 479
 			},
 			480: {
-				X: 260,
+				X: 320,
 				Y: 80,
 				l: 8,
 				t: 17,
 				id: 480
 			},
 			481: {
-				X: 240,
-				Y: 80,
+				X: 320,
+				Y: -20,
 				l: 8,
 				t: 17,
 				id: 481
 			},
 			482: {
-				X: 220,
-				Y: 80,
+				X: 320,
+				Y: -40,
 				l: 8,
 				t: 17,
 				id: 482
@@ -41947,8 +41943,8 @@ export const abunakki: Record<number, SaveData> = {
 				id: 491
 			},
 			492: {
-				X: -100,
-				Y: 240,
+				X: -340,
+				Y: -140,
 				l: 8,
 				t: 17,
 				id: 492
@@ -42003,15 +41999,15 @@ export const abunakki: Record<number, SaveData> = {
 				id: 499
 			},
 			500: {
-				X: 220,
-				Y: -100,
+				X: 320,
+				Y: 160,
 				l: 8,
 				t: 17,
 				id: 500
 			},
 			501: {
-				X: 260,
-				Y: -100,
+				X: 220,
+				Y: 280,
 				l: 8,
 				t: 17,
 				id: 501
@@ -42032,7 +42028,7 @@ export const abunakki: Record<number, SaveData> = {
 			},
 			504: {
 				X: 240,
-				Y: -100,
+				Y: 260,
 				l: 8,
 				t: 17,
 				id: 504
@@ -42261,24 +42257,20 @@ export const abunakki: Record<number, SaveData> = {
 			568: {
 				X: 205,
 				Y: -35,
-				l: 19,
+				l: 20,
 				t: 1,
-				cP: 4,
 				id: 568,
-				pr: 1,
-				st: 125000000,
-				rCP: 4
+				pr: 0,
+				st: 250000000
 			},
 			569: {
 				X: -35,
 				Y: -275,
-				l: 19,
+				l: 20,
 				t: 3,
-				cP: 4,
 				id: 569,
-				pr: 1,
-				st: 125000000,
-				rCP: 4
+				pr: 0,
+				st: 250000000
 			},
 			572: {
 				X: 0,
@@ -43511,8 +43503,8 @@ export const abunakki: Record<number, SaveData> = {
 				id: 754
 			},
 			755: {
-				X: -60,
-				Y: 220,
+				X: 60,
+				Y: -340,
 				l: 8,
 				t: 17,
 				id: 755
@@ -43847,15 +43839,15 @@ export const abunakki: Record<number, SaveData> = {
 				id: 802
 			},
 			803: {
-				X: -60,
-				Y: 200,
+				X: 80,
+				Y: -340,
 				l: 8,
 				t: 17,
 				id: 803
 			},
 			804: {
-				X: -80,
-				Y: 220,
+				X: 140,
+				Y: -340,
 				l: 8,
 				t: 17,
 				id: 804
@@ -43875,22 +43867,22 @@ export const abunakki: Record<number, SaveData> = {
 				id: 806
 			},
 			807: {
-				X: 40,
-				Y: 260,
+				X: 0,
+				Y: -340,
 				l: 8,
 				t: 17,
 				id: 807
 			},
 			808: {
-				X: -80,
-				Y: 240,
+				X: 160,
+				Y: -340,
 				l: 8,
 				t: 17,
 				id: 808
 			},
 			809: {
-				X: -80,
-				Y: 200,
+				X: 120,
+				Y: -340,
 				l: 8,
 				t: 17,
 				id: 809
@@ -43959,8 +43951,8 @@ export const abunakki: Record<number, SaveData> = {
 				id: 818
 			},
 			819: {
-				X: 60,
-				Y: 240,
+				X: -40,
+				Y: -340,
 				l: 8,
 				t: 17,
 				id: 819
@@ -43973,64 +43965,64 @@ export const abunakki: Record<number, SaveData> = {
 				id: 820
 			},
 			821: {
-				X: -80,
-				Y: 260,
+				X: -340,
+				Y: -180,
 				l: 8,
 				t: 17,
 				id: 821
 			},
 			822: {
-				X: 40,
-				Y: 220,
+				X: -80,
+				Y: -340,
 				l: 8,
 				t: 17,
 				id: 822
 			},
 			823: {
-				X: -60,
-				Y: 240,
+				X: 40,
+				Y: -340,
 				l: 8,
 				t: 17,
 				id: 823
 			},
 			824: {
-				X: -60,
-				Y: 260,
+				X: 20,
+				Y: -340,
 				l: 8,
 				t: 17,
 				id: 824
 			},
 			825: {
-				X: 40,
-				Y: 240,
+				X: -60,
+				Y: -340,
 				l: 8,
 				t: 17,
 				id: 825
 			},
 			826: {
-				X: 40,
-				Y: 200,
+				X: -140,
+				Y: -340,
 				l: 8,
 				t: 17,
 				id: 826
 			},
 			827: {
-				X: 60,
-				Y: 220,
+				X: -100,
+				Y: -340,
 				l: 8,
 				t: 17,
 				id: 827
 			},
 			828: {
-				X: 60,
-				Y: 260,
+				X: -20,
+				Y: -340,
 				l: 8,
 				t: 17,
 				id: 828
 			},
 			829: {
-				X: 60,
-				Y: 200,
+				X: -120,
+				Y: -340,
 				l: 8,
 				t: 17,
 				id: 829
@@ -45119,6 +45111,126 @@ export const abunakki: Record<number, SaveData> = {
 				l: 8,
 				t: 17,
 				id: 986
+			},
+			994: {
+				X: 205,
+				Y: 35,
+				l: 10,
+				t: 144,
+				id: 994,
+				fort: 5
+			},
+			995: {
+				X: -275,
+				Y: 35,
+				l: 10,
+				t: 144,
+				id: 995,
+				fort: 5
+			},
+			996: {
+				X: 205,
+				Y: -105,
+				l: 10,
+				t: 144,
+				id: 996,
+				fort: 5
+			},
+			997: {
+				X: 35,
+				Y: -275,
+				l: 10,
+				t: 144,
+				id: 997,
+				fort: 5
+			},
+			1000: {
+				X: -105,
+				Y: 205,
+				l: 10,
+				t: 144,
+				id: 1000,
+				fort: 5
+			},
+			1001: {
+				X: 35,
+				Y: 205,
+				l: 10,
+				t: 144,
+				id: 1001,
+				fort: 5
+			},
+			1002: {
+				X: -105,
+				Y: -275,
+				l: 10,
+				t: 144,
+				id: 1002,
+				fort: 5
+			},
+			1003: {
+				X: -275,
+				Y: -105,
+				l: 10,
+				t: 144,
+				id: 1003,
+				fort: 5
+			},
+			1006: {
+				X: 80,
+				Y: 320,
+				l: 8,
+				t: 17,
+				id: 1006
+			},
+			1007: {
+				X: 60,
+				Y: 320,
+				l: 8,
+				t: 17,
+				id: 1007
+			},
+			1008: {
+				X: 140,
+				Y: 320,
+				l: 8,
+				t: 17,
+				id: 1008
+			},
+			1009: {
+				X: 40,
+				Y: 320,
+				l: 8,
+				t: 17,
+				id: 1009
+			},
+			1010: {
+				X: 160,
+				Y: 320,
+				l: 8,
+				t: 17,
+				id: 1010
+			},
+			1011: {
+				X: 20,
+				Y: 320,
+				l: 8,
+				t: 17,
+				id: 1011
+			},
+			1012: {
+				X: 100,
+				Y: 320,
+				l: 8,
+				t: 17,
+				id: 1012
+			},
+			1013: {
+				X: 120,
+				Y: 320,
+				l: 8,
+				t: 17,
+				id: 1013
 			}
 		},
 		buildingkeydata: {},

@@ -33,9 +33,9 @@ package buildings.inferno {
 				{"r1":new SecNum(25000000), "r2":new SecNum(25000000), "r3":new SecNum(25000000), "r4":new SecNum(0), "time":new SecNum(86400 * 2), "re":[[14,1,12],[12,1,2]]}, // Level 13
 				{"r1":new SecNum(50000000), "r2":new SecNum(50000000), "r3":new SecNum(50000000), "r4":new SecNum(0), "time":new SecNum(86400 * 3), "re":[[14,1,14],[12,1,2]]}, // Level 14
 				{"r1":new SecNum(100000000), "r2":new SecNum(100000000), "r3":new SecNum(100000000), "r4":new SecNum(0), "time":new SecNum(86400 * 4), "re":[[14,1,15],[12,1,2]]}, // Level 15
-				// {"r1":new SecNum(200000000), "r2":new SecNum(200000000), "r3":new SecNum(200000000), "r4":new SecNum(0), "time":new SecNum(86400 * 6), "re":[[14,1,16],[12,1,2]]}, // Level 16
-				// {"r1":new SecNum(400000000), "r2":new SecNum(400000000), "r3":new SecNum(400000000), "r4":new SecNum(0), "time":new SecNum(86400 * 8), "re":[[14,1,17],[12,1,2]]}, // Level 17
-				// {"r1":new SecNum(600000000), "r2":new SecNum(600000000), "r3":new SecNum(600000000), "r4":new SecNum(0), "time":new SecNum(86400 * 10), "re":[[14,1,18],[12,1,2]]}, // Level 18
+				{"r1":new SecNum(200000000), "r2":new SecNum(200000000), "r3":new SecNum(200000000), "r4":new SecNum(0), "time":new SecNum(86400 * 6), "re":[[14,1,16],[12,1,2]]}, // Level 16
+				{"r1":new SecNum(400000000), "r2":new SecNum(400000000), "r3":new SecNum(400000000), "r4":new SecNum(0), "time":new SecNum(86400 * 8), "re":[[14,1,17],[12,1,2]]}, // Level 17
+				{"r1":new SecNum(600000000), "r2":new SecNum(600000000), "r3":new SecNum(600000000), "r4":new SecNum(0), "time":new SecNum(86400 * 10), "re":[[14,1,18],[12,1,2]]}, // Level 18
 				// {"r1":new SecNum(800000000), "r2":new SecNum(800000000), "r3":new SecNum(800000000), "r4":new SecNum(0), "time":new SecNum(86400 * 12), "re":[[14,1,19],[12,1,2]]}, // Level 19
 				// {"r1":new SecNum(1000000000), "r2":new SecNum(1000000000), "r3":new SecNum(1000000000), "r4":new SecNum(0), "time":new SecNum(86400 * 14), "re":[[14,1,20],[12,1,2]]} // Level 20
 			],
@@ -125,9 +125,9 @@ package buildings.inferno {
 				122880000, // Level 15
 				140000000, // Level 16
 				160000000, // Level 17
-				180000000, // Level 18
-				200000000, // Level 19
-				250000000, // Level 20
+				200000000, // Level 18
+				400000000, // Level 19
+				600000000, // Level 20
 			],
 			"hp":[
 				750, // Level 1

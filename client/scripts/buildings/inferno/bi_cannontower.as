@@ -60,8 +60,7 @@ package buildings.inferno {
 			"upgradeImgData":{
 				"baseurl":"buildingbuttons/",
 				1:{
-					"img":"cannon_tower.v2.jpg",
-					"silhouette_img":"cannon_tower.v2.silhouette.jpg"
+					"img":"canon_tower.v2.jpg"
 				}
 			},
 			"fortImgData":{

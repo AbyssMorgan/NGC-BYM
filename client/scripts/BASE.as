@@ -5237,6 +5237,10 @@ package
          {
             buildingFoundation = new BUILDING143();
          }
+		 else if (buildingNum == 144)
+         {
+            buildingFoundation = new BUILDING144();
+         }
          return !!buildingProperties.cls ? new (buildingProperties.cls as Class)() : buildingFoundation;
       }
 
@@ -6021,7 +6025,7 @@ package
          }
       }
 
-      public static function BuildingOverlap(param1:Point, param2:int, param3:Boolean, param4:Boolean = false, param5:Boolean = false, param6:Boolean = false):Boolean
+      public static function BuildingOverlap(param1:Point, param2:int, param3:Boolean, param4:Boolean = false, param5:Boolean = false, param6:Boolean = false, anticatapult:Boolean = false):Boolean
       {
          var _loc7_:Vector.<Object> = null;
          var _loc8_:BFOUNDATION = null;
@@ -6032,6 +6036,24 @@ package
          var _loc13_:Number = NaN;
          var _loc14_:Number = NaN;
          var _loc15_:int = 0;
+         var _antiList:Vector.<Object> = null;
+         var _anti:BFOUNDATION = null;
+
+         // If requested, disallow overlap when the target ellipse intersects any anticatapult (type 144) range.
+         if(anticatapult)
+         {
+            _antiList = InstanceManager.getInstancesByClass(BFOUNDATION);
+            for each (_anti in _antiList)
+            {
+               if(_anti && _anti._type == 144)
+               {
+                  if(IsEllipseInAnticatapultRange(param1, param2, _anti))
+                  {
+                     return false;
+                  }
+               }
+            }
+         }
          _loc7_ = InstanceManager.getInstancesByClass(BFOUNDATION);
          for each (_loc8_ in _loc7_)
          {
@@ -6091,6 +6113,66 @@ package
       {
          return true;
       }
+
+		public static function IsEllipseInAnticatapultRange(point:Point, size:int, anticatapult:BFOUNDATION):Boolean
+		{
+			var lvl:int = 1;
+			var props:Object = null;
+			var stats:Array = null;
+			var range:Number = 0;
+			var antiCenter:Point = null;
+			var dx:Number = NaN;
+			var dy:Number = NaN;
+			var dist:Number = NaN;
+			var angToAnti:Number = NaN;
+			var antiEdge:Number = NaN;
+			var angToPoint:Number = NaN;
+			var buildEdge:Number = NaN;
+
+			if(!point || !anticatapult)
+			{
+				return false;
+			}
+			try
+			{
+				lvl = Math.max(1, int(anticatapult._lvl ? anticatapult._lvl.Get() : 1));
+			}
+			catch(e:Error)
+			{
+				lvl = 1;
+			}
+			props = GLOBAL._buildingProps[anticatapult._type - 1];
+			if(!props)
+			{
+				return false;
+			}
+			stats = props.stats as Array;
+			if(!stats || stats.length == 0)
+			{
+				return false;
+			}
+			if(lvl > stats.length)
+			{
+				lvl = stats.length;
+			}
+			try
+			{
+				range = Number(stats[lvl - 1].range);
+			}
+			catch(e:Error)
+			{
+				return false;
+			}
+			antiCenter = new Point(anticatapult._mc.x, anticatapult._mc.y + anticatapult._middle);
+			dx = antiCenter.x - point.x;
+			dy = antiCenter.y - point.y;
+			dist = Math.sqrt(dx * dx + dy * dy);
+			angToAnti = Math.atan2(antiCenter.y - point.y, antiCenter.x - point.x);
+			antiEdge = EllipseEdgeDistance(angToAnti, range * 2, range * 2 * _angle);
+			angToPoint = Math.atan2(point.y - antiCenter.y, point.x - antiCenter.x);
+			buildEdge = EllipseEdgeDistance(angToPoint, size, size * _angle);
+			return dist < antiEdge + buildEdge;
+		}
 
       public static function applyTemplate(param1:BaseTemplate):void
       {

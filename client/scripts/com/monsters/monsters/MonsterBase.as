@@ -1222,18 +1222,21 @@ package com.monsters.monsters
          {
             for each(building in BASE._buildingsTowers)
             {
-               if(MONSTERBUNKER.isBunkerBuilding(building._type))
-               {
-                  var bunker:* = building;
-                  if(bunker.health > 0 && (bunker._used > 0 || bunker._monstersDispatchedTotal > 0))
-                  {
-                     checkTarget(building);
-                  }
-               }
-               else if(building._class != "trap" && building.health > 0 && !(building as BTOWER).isJard)
-               {
-                  checkTarget(building);
-               }
+				if(building._type == 144 && building.health > 0){
+					checkTarget(building);
+				}
+				else if(MONSTERBUNKER.isBunkerBuilding(building._type))
+				{
+					var bunker:* = building;
+					if(bunker.health > 0 && (bunker._used > 0 || bunker._monstersDispatchedTotal > 0))
+					{
+						checkTarget(building);
+					}
+				}
+				else if(building._class != "trap" && building.health > 0 && !(building as BTOWER).isJard)
+				{
+					checkTarget(building);
+				}
             }
          }
          // Preferred target is other monsters and bunkers

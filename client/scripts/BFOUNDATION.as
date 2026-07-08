@@ -2268,6 +2268,9 @@ package
                   BASE._buildingsBunkers["b" + this._id] = this;
                }
             }
+			else if(this._type == 144){
+				BASE._buildingsTowers["b" + this._id] = this;
+			}
             else if(this._class == "gift" || this._class == "taunt")
             {
                BASE._buildingsGifts["b" + this._id] = this;
@@ -4165,7 +4168,7 @@ package
          {
             return new building112hit();
          }
-         if(this._type == 113)
+         if(this._type == 113 || this._type == 144)
          {
             return new building113hit();
          }

@@ -709,6 +709,10 @@ package
 			_buildingProps[140 - 1].isImmobile = false;
 			_buildingProps[140 - 1].isUntargetable = false;
 			_buildingProps[140 - 1].isNoMoreInfoButton = false;
+			
+			_buildingProps[142 - 1].quantity = [100];
+			_buildingProps[143 - 1].quantity = [100];
+			_buildingProps[144 - 1].quantity = [100];
 		}
       }
 

@@ -35641,7 +35641,7 @@ export const legionnaire: Record<number, SaveData> = {
 				Y: 0,
 				l: 6,
 				m: {
-					IC6: 20
+					IC6: 25
 				},
 				t: 22,
 				id: 530
@@ -35651,7 +35651,7 @@ export const legionnaire: Record<number, SaveData> = {
 				Y: 0,
 				l: 6,
 				m: {
-					IC6: 20
+					IC6: 25
 				},
 				t: 22,
 				id: 531
@@ -35661,7 +35661,7 @@ export const legionnaire: Record<number, SaveData> = {
 				Y: 90,
 				l: 6,
 				m: {
-					IC6: 20
+					IC6: 25
 				},
 				t: 22,
 				id: 532
@@ -35671,7 +35671,7 @@ export const legionnaire: Record<number, SaveData> = {
 				Y: -180,
 				l: 6,
 				m: {
-					IC6: 20
+					IC6: 25
 				},
 				t: 22,
 				id: 533
@@ -35729,7 +35729,7 @@ export const legionnaire: Record<number, SaveData> = {
 				Y: -180,
 				l: 6,
 				m: {
-					IC6: 20
+					IC6: 25
 				},
 				t: 22,
 				id: 564
@@ -35739,7 +35739,7 @@ export const legionnaire: Record<number, SaveData> = {
 				Y: -180,
 				l: 6,
 				m: {
-					IC6: 20
+					IC6: 25
 				},
 				t: 22,
 				id: 565
@@ -35749,7 +35749,7 @@ export const legionnaire: Record<number, SaveData> = {
 				Y: 90,
 				l: 6,
 				m: {
-					IC6: 20
+					IC6: 25
 				},
 				t: 22,
 				id: 566
@@ -35759,7 +35759,7 @@ export const legionnaire: Record<number, SaveData> = {
 				Y: 90,
 				l: 6,
 				m: {
-					IC6: 20
+					IC6: 25
 				},
 				t: 22,
 				id: 567
@@ -35787,7 +35787,7 @@ export const legionnaire: Record<number, SaveData> = {
 				Y: 90,
 				l: 6,
 				m: {
-					IC6: 20
+					IC6: 25
 				},
 				t: 22,
 				id: 572
@@ -35797,7 +35797,7 @@ export const legionnaire: Record<number, SaveData> = {
 				Y: -180,
 				l: 6,
 				m: {
-					IC6: 20
+					IC6: 25
 				},
 				t: 22,
 				id: 573
@@ -35807,7 +35807,7 @@ export const legionnaire: Record<number, SaveData> = {
 				Y: -90,
 				l: 6,
 				m: {
-					IC6: 20
+					IC6: 25
 				},
 				t: 22,
 				id: 574
@@ -35817,7 +35817,7 @@ export const legionnaire: Record<number, SaveData> = {
 				Y: -90,
 				l: 6,
 				m: {
-					IC6: 20
+					IC6: 25
 				},
 				t: 22,
 				id: 575

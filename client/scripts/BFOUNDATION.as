@@ -824,7 +824,7 @@ package
             }
             if(!(this._type == 24 || this._type == 25 || this._type == 26))
             {
-               if(this._type == 20 || this._type == 21)
+               if(this._type == 20 || this._type == 21 || this._type == 142 || this._type == 143)
                {
                   this._buildingStats = KEYS.Get("building_stats_dps",{
                      "v1":this._range,
@@ -833,11 +833,11 @@ package
                      "v4":this._splash,
                      "v5":int(40 / this._rate * 10) / 10
                   });
-                  if(this._type == 20)
+                  if(this._type == 20 || this._type == 142)
                   {
                      this._buildingDescription = KEYS.Get("building_cannon_desc");
                   }
-                  if(this._type == 21)
+                  if(this._type == 21 || this._type == 143)
                   {
                      this._buildingDescription = KEYS.Get("building_sniper_desc");
                   }
@@ -1076,7 +1076,7 @@ package
          }
          if(this._fortification.Get() != this._renderFortLevel)
          {
-            if(this._fortification.Get() > 4)
+            if(this._fortification.Get() > 5)
             {
                LOGGER.Log("err","Illegal fortification level " + this._fortification.Get());
                throw new Error("ILLEGAL FORTIFICATION LEVEL " + this._fortification.Get());
@@ -3977,11 +3977,11 @@ package
          {
             return new building19hit();
          }
-         if(this._type == 20)
+         if(this._type == 20 || this._type == 142)
          {
             return _loc2_ ? new cannonTowerHit() : new building20hit();
          }
-         if(this._type == 21)
+         if(this._type == 21 || this._type == 143)
          {
             return _loc2_ ? new sniperTowerHit() : new building21hit();
          }

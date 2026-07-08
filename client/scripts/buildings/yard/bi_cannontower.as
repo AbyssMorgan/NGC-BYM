@@ -2,23 +2,23 @@ package buildings.yard {
 
 	import com.cc.utils.SecNum;
 	import flash.geom.Point;
+	import flash.geom.Rectangle;
 
-	public class cannontower {
+	public class bi_cannontower {
 
 		public static const DATA:Object = {
-			"id":20,
+			"id":142,
 			"group":3,
 			"order":2,
 			"buildStatus":0,
 			"type":"tower",
-			"name":"#b_cannontower#",
+			"name":"#bi_cannontower#",
 			"size":64,
-			"attackType":1,
 			"attackgroup":1,
 			"tutstage":200,
 			"sale":0,
-			"description":"cannontower_desc",
-			"cls":BUILDING20,
+			"description":"bi_cannontower_desc",
+			"block":true,
 			"stats":[
 				{"range":160, "damage":20, "rate":40, "speed":5, "splash":30}, // Level 1
 				{"range":170, "damage":40, "rate":40, "speed":6, "splash":35}, // Level 2
@@ -64,52 +64,50 @@ package buildings.yard {
 				{"r1":new SecNum(5000000000), "r2":new SecNum(5000000000), "r3":new SecNum(0), "r4":new SecNum(5000000000), "time":new SecNum(604800), "re":[[14,1,20]]},
 			],
 			"imageData":{
-				"baseurl":"buildings/cannontower/",
-				"1":{
-					"top":["top.3.png",new Point(-33,-25)],
-					"shadow":["shadow.3.jpg",new Point(-38,20)],
-					"topdamaged":["top.3.damaged.png",new Point(-48,-25)],
-					"shadowdamaged":["shadow.3.jpg",new Point(-47,20)],
-					"topdestroyed":["top.3.destroyed.png",new Point(-46,8)],
-					"shadowdestroyed":["shadow.3.jpg",new Point(-43,22)],
-					"topdestroyedfire":["top.3.destroyed.fire.png",new Point(-46,8)]
+				"baseurl":"buildings/icannontower/",
+				1:{
+					"anim":["anim.1.v2.png",new Rectangle(-38,-53,74,64),30],
+					"animdamaged":["anim.1.damaged.v2.png",new Rectangle(-38,-53,74,64),30],
+					"top":["top.1.v2.png",new Point(-38,11)],
+					"shadow":["shadow.1.v2.jpg",new Point(-48,11)],
+					"topdamaged":["top.1.damaged.v2.png",new Point(-38,11)],
+					"shadowdamaged":["shadow.1.v2.jpg",new Point(-48,11)],
+					"topdestroyed":["top.1.destroyed.v2.png",new Point(-57,-18)],
+					"shadowdestroyed":["shadow.1.v2.jpg",new Point(-55,8)]
 				},
-				"16":{
-					"top":["top.heat.png",new Point(-33,-25)],
-					"shadow":["shadow.3.jpg",new Point(-38,20)],
-					"topdamaged":["top.heat.damaged.png",new Point(-48,-25)],
-					"shadowdamaged":["shadow.3.jpg",new Point(-47,20)],
-					"topdestroyed":["top.heat.destroyed.png",new Point(-46,8)],
-					"shadowdestroyed":["shadow.3.jpg",new Point(-43,22)],
-					"topdestroyedfire":["top.3.destroyed.fire.png",new Point(-46,8)]
+				16:{
+					"anim":["anim.heat.v2.png",new Rectangle(-38,-53,74,64),30],
+					"animdamaged":["anim.heat.damaged.v2.png",new Rectangle(-38,-53,74,64),30],
+					"top":["top.heat.v2.png",new Point(-38,11)],
+					"shadow":["shadow.1.v2.jpg",new Point(-48,11)],
+					"topdamaged":["top.heat.damaged.v2.png",new Point(-38,11)],
+					"shadowdamaged":["shadow.1.v2.jpg",new Point(-48,11)],
+					"topdestroyed":["top.heat.destroyed.v2.png",new Point(-57,-18)],
+					"shadowdestroyed":["shadow.1.v2.jpg",new Point(-55,8)]
 				}
 			},
+			"buildingbuttons":["canon_tower.v2"],
 			"upgradeImgData":{
 				"baseurl":"buildingbuttons/",
-				"1":{
-					"img":"20.jpg",
-					"silhouette_img":"20.silhouette.jpg"
+				1:{
+					"img":"canon_tower.v2.jpg"
 				}
-			},
-			"thumbImgData":{
-				"baseurl":"buildingthumbs/",
-				"1":{"img":"20.png"}
 			},
 			"fortImgData":{
 				"baseurl":"buildings/fortifications/",
-				"1":{
+				1:{
 					"front":["fort70_F1.png",new Point(-73,21)],
 					"back":["fort70_B1.png",new Point(-70,-10)]
 				},
-				"2":{
+				2:{
 					"front":["fort70_F2.png",new Point(-69,22)],
 					"back":["fort70_B2.png",new Point(-65,-12)]
 				},
-				"3":{
+				3:{
 					"front":["fort70_F3.png",new Point(-72,10)],
 					"back":["fort70_B3.png",new Point(-68,-12)]
 				},
-				"4":{
+				4:{
 					"front":["fort70_F4.png",new Point(-70,-11)],
 					"back":["fort70_B4.png",new Point(-61,-36)]
 				},

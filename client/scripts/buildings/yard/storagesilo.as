@@ -51,7 +51,8 @@ package buildings.yard {
 				{"r1":new SecNum(59375), "r2":new SecNum(29687), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(60750), "re":[[14,1,5]]},
 				{"r1":new SecNum(118750), "r2":new SecNum(59375), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(91120), "re":[[14,1,6]]},
 				{"r1":new SecNum(637500), "r2":new SecNum(518750), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(136680), "re":[[14,1,7]]},
-				{"r1":new SecNum(1475000), "r2":new SecNum(1237500), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(205030), "re":[[14,1,8]]}
+				{"r1":new SecNum(1475000), "r2":new SecNum(1237500), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(205030), "re":[[14,1,8]]},
+				{"r1":new SecNum(5000000000), "r2":new SecNum(5000000000), "r3":new SecNum(0), "r4":new SecNum(5000000000), "time":new SecNum(604800), "re":[[14,1,20]]},
 			],
 			"imageData":{
 				"baseurl":"buildings/storagesilo/",
@@ -93,6 +94,10 @@ package buildings.yard {
 				"4":{
 					"front":["fort70_F4.png",new Point(-70,-3)],
 					"back":["fort70_B4.png",new Point(-62,-31)]
+				},
+				"5":{
+					"front":["fort70_F5.png",new Point(-70,-11)],
+					"back":["fort70_B5.png",new Point(-61,-36)]
 				}
 			},
 			"quantity":[
@@ -141,14 +146,14 @@ package buildings.yard {
 				122880000, // Level 15
 				140000000, // Level 16
 				160000000, // Level 17
-				180000000, // Level 18
-				200000000, // Level 19
-				250000000, // Level 20
-				400000000, // Level 21
-				550000000, // Level 22
-				700000000, // Level 23
-				850000000, // Level 24
-				1000000000, // Level 25
+				200000000, // Level 18
+				400000000, // Level 19
+				600000000, // Level 20
+				800000000, // Level 21
+				1000000000, // Level 22
+				1200000000, // Level 23
+				1300000000, // Level 24
+				1500000000, // Level 25
 			],
 			"hp":[
 				750, // Level 1

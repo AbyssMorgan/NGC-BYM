@@ -36,8 +36,8 @@ package buildings.inferno {
 				{"r1":new SecNum(200000000), "r2":new SecNum(200000000), "r3":new SecNum(200000000), "r4":new SecNum(0), "time":new SecNum(86400 * 6), "re":[[14,1,16],[12,1,2]]}, // Level 16
 				{"r1":new SecNum(400000000), "r2":new SecNum(400000000), "r3":new SecNum(400000000), "r4":new SecNum(0), "time":new SecNum(86400 * 8), "re":[[14,1,17],[12,1,2]]}, // Level 17
 				{"r1":new SecNum(600000000), "r2":new SecNum(600000000), "r3":new SecNum(600000000), "r4":new SecNum(0), "time":new SecNum(86400 * 10), "re":[[14,1,18],[12,1,2]]}, // Level 18
-				// {"r1":new SecNum(800000000), "r2":new SecNum(800000000), "r3":new SecNum(800000000), "r4":new SecNum(0), "time":new SecNum(86400 * 12), "re":[[14,1,19],[12,1,2]]}, // Level 19
-				// {"r1":new SecNum(1000000000), "r2":new SecNum(1000000000), "r3":new SecNum(1000000000), "r4":new SecNum(0), "time":new SecNum(86400 * 14), "re":[[14,1,20],[12,1,2]]} // Level 20
+				{"r1":new SecNum(800000000), "r2":new SecNum(800000000), "r3":new SecNum(800000000), "r4":new SecNum(0), "time":new SecNum(86400 * 12), "re":[[14,1,19],[12,1,2]]}, // Level 19
+				{"r1":new SecNum(1000000000), "r2":new SecNum(1000000000), "r3":new SecNum(1000000000), "r4":new SecNum(0), "time":new SecNum(86400 * 14), "re":[[14,1,20],[12,1,2]]} // Level 20
 			],
 			"can_fortify":true,
 			"fortify_costs":[

@@ -4,22 +4,21 @@ package buildings.yard {
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
 
-	public class snipertower {
+	public class bi_snipertower {
 
 		public static const DATA:Object = {
-			"id":21,
+			"id":143,
 			"group":3,
 			"order":1,
 			"buildStatus":0,
 			"type":"tower",
-			"name":"#b_snipertower#",
+			"name":"#bi_snipertower#",
 			"size":64,
 			"attackgroup":3,
-			"attackType":3,
-			"tutstage":28,
+			"tutstage":200,
 			"sale":0,
-			"description":"snipertower_desc",
-			"cls":BUILDING21,
+			"description":"bi_snipertower_desc",
+			"block":true,
 			"stats":[
 				{"range":300, "damage":100, "rate":80, "speed":10, "splash":0}, // Level 1
 				{"range":308, "damage":210, "rate":80, "speed":10, "splash":0}, // Level 2
@@ -65,56 +64,50 @@ package buildings.yard {
 				{"r1":new SecNum(5000000000), "r2":new SecNum(5000000000), "r3":new SecNum(0), "r4":new SecNum(5000000000), "time":new SecNum(604800), "re":[[14,1,20]]},
 			],
 			"imageData":{
-				"baseurl":"buildings/snipertower/",
-				"1":{
-					"anim":["anim.3.png",new Rectangle(-27,-50,55,47),30],
-					"top":["top.3.png",new Point(-40,-30)],
-					"shadow":["shadow.3.jpg",new Point(-43,12)],
-					"animdamaged":["anim.3.damaged.png",new Rectangle(-28,-49,55,46),30],
-					"topdamaged":["top.3.damaged.png",new Point(-39,-25)],
-					"shadowdamaged":["shadow.3.jpg",new Point(-39,15)],
-					"topdestroyed":["top.3.destroyed.png",new Point(-45,-13)],
-					"shadowdestroyed":["shadow.3.jpg",new Point(-45,-4)],
-					"topdestroyedfire":["top.3.destroyed.fire.png",new Point(-45,-13)]
+				"baseurl":"buildings/isnipertower/",
+				1:{
+					"anim":["anim.1.v2.png",new Rectangle(-56,-86,85,81),30],
+					"top":["top.1.v2.png",new Point(-35,-5)],
+					"shadow":["shadow.1.v2.jpg",new Point(-50,12)],
+					"animdamaged":["anim.1.damaged.v2.png",new Rectangle(-52,-90,85,81),30],
+					"topdamaged":["top.1.damaged.v2.png",new Point(-40,-9)],
+					"shadowdamaged":["shadow.1.v2.jpg",new Point(-50,9)],
+					"topdestroyed":["top.1.destroyed.v2.png",new Point(-43,-8)],
+					"shadowdestroyed":["shadow.1.v2.jpg",new Point(-54,2)]
 				},
-				"16":{
-					"anim":["anim.heat.png",new Rectangle(-27,-50,55,47),30],
-					"top":["top.heat.png",new Point(-40,-30)],
-					"shadow":["shadow.3.jpg",new Point(-43,12)],
-					"animdamaged":["anim.heat.damaged.png",new Rectangle(-28,-49,55,46),30],
-					"topdamaged":["top.heat.damaged.png",new Point(-39,-25)],
-					"shadowdamaged":["shadow.3.jpg",new Point(-39,15)],
-					"topdestroyed":["top.heat.destroyed.png",new Point(-45,-13)],
-					"shadowdestroyed":["shadow.3.jpg",new Point(-45,-4)],
-					"topdestroyedfire":["top.3.destroyed.fire.png",new Point(-45,-13)]
+				16:{
+					"anim":["anim.heat.v2.png",new Rectangle(-56,-86,85,81),30],
+					"top":["top.heat.v2.png",new Point(-35,-5)],
+					"shadow":["shadow.1.v2.jpg",new Point(-50,12)],
+					"animdamaged":["anim.heat.damaged.v2.png",new Rectangle(-52,-90,85,81),30],
+					"topdamaged":["top.heat.damaged.v2.png",new Point(-40,-9)],
+					"shadowdamaged":["shadow.1.v2.jpg",new Point(-50,9)],
+					"topdestroyed":["top.heat.destroyed.v2.png",new Point(-43,-8)],
+					"shadowdestroyed":["shadow.1.v2.jpg",new Point(-54,2)]
 				}
 			},
+			"buildingbuttons":["sniper_tower.v2"],
 			"upgradeImgData":{
 				"baseurl":"buildingbuttons/",
-				"1":{
-					"img":"21.jpg",
-					"silhouette_img":"21.silhouette.jpg"
+				1:{
+					"img":"sniper_tower.v2.jpg"
 				}
-			},
-			"thumbImgData":{
-				"baseurl":"buildingthumbs/",
-				"1":{"img":"21.png"}
 			},
 			"fortImgData":{
 				"baseurl":"buildings/fortifications/",
-				"1":{
+				1:{
 					"front":["fort70_F1.png",new Point(-73,21)],
 					"back":["fort70_B1.png",new Point(-70,-10)]
 				},
-				"2":{
+				2:{
 					"front":["fort70_F2.png",new Point(-69,22)],
 					"back":["fort70_B2.png",new Point(-65,-12)]
 				},
-				"3":{
+				3:{
 					"front":["fort70_F3.png",new Point(-72,10)],
 					"back":["fort70_B3.png",new Point(-68,-12)]
 				},
-				"4":{
+				4:{
 					"front":["fort70_F4.png",new Point(-70,-11)],
 					"back":["fort70_B4.png",new Point(-61,-36)]
 				},
@@ -146,7 +139,6 @@ package buildings.yard {
 				6, // Level 19
 				6, // Level 20
 			],
-
 			"hp":[
 				6000, // Level 1
 				9000, // Level 2

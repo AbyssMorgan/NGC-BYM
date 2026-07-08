@@ -55,7 +55,8 @@ package buildings.yard {
 				{"r1":new SecNum(500000), "r2":new SecNum(250000), "r3":new SecNum(100000), "r4":new SecNum(0), "time":new SecNum(18000), "re":[[14,1,5]]},
 				{"r1":new SecNum(1000000), "r2":new SecNum(500000), "r3":new SecNum(200000), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,6]]},
 				{"r1":new SecNum(2000000), "r2":new SecNum(1000000), "r3":new SecNum(400000), "r4":new SecNum(0), "time":new SecNum(172800), "re":[[14,1,7]]},
-				{"r1":new SecNum(4000000), "r2":new SecNum(2000000), "r3":new SecNum(800000), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,8]]}
+				{"r1":new SecNum(4000000), "r2":new SecNum(2000000), "r3":new SecNum(800000), "r4":new SecNum(0), "time":new SecNum(259200), "re":[[14,1,8]]},
+				{"r1":new SecNum(5000000000), "r2":new SecNum(5000000000), "r3":new SecNum(0), "r4":new SecNum(5000000000), "time":new SecNum(604800), "re":[[14,1,20]]},
 			],
 			"imageData":{
 				"baseurl":"buildings/lasertower/",
@@ -110,6 +111,10 @@ package buildings.yard {
 				"4":{
 					"front":["fort70_F4.png",new Point(-70,-11)],
 					"back":["fort70_B4.png",new Point(-61,-36)]
+				},
+				"5":{
+					"front":["fort70_F5.png",new Point(-70,-11)],
+					"back":["fort70_B5.png",new Point(-61,-36)]
 				}
 			},
 			"quantity":[

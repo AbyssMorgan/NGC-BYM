@@ -31,7 +31,7 @@ package com.monsters.configs
       
       public static const k_sVICTORY_THRESHOLD:Number = 90;
       
-      public static const k_sMAX_FORTIFICATION_LEVEL:int = 4;
+      public static const k_sMAX_FORTIFICATION_LEVEL:int = 5;
       
       protected static var _instance:BYMConfig;
        

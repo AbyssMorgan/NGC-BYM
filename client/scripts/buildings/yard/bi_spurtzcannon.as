@@ -56,7 +56,8 @@ package buildings.yard {
 				{"r1":new SecNum(50000), "r2":new SecNum(37500), "r3":new SecNum(12500), "r4":new SecNum(0), "time":new SecNum(8100), "re":[[14,1,5]]},
 				{"r1":new SecNum(250000), "r2":new SecNum(187500), "r3":new SecNum(62500), "r4":new SecNum(0), "time":new SecNum(24300), "re":[[14,1,6]]},
 				{"r1":new SecNum(1250000), "r2":new SecNum(937500), "r3":new SecNum(312500), "r4":new SecNum(0), "time":new SecNum(72900), "re":[[14,1,7]]},
-				{"r1":new SecNum(6250000), "r2":new SecNum(4687500), "r3":new SecNum(1562500), "r4":new SecNum(0), "time":new SecNum(172800), "re":[[14,1,8]]}
+				{"r1":new SecNum(6250000), "r2":new SecNum(4687500), "r3":new SecNum(1562500), "r4":new SecNum(0), "time":new SecNum(172800), "re":[[14,1,8]]},
+				{"r1":new SecNum(5000000000), "r2":new SecNum(5000000000), "r3":new SecNum(0), "r4":new SecNum(5000000000), "time":new SecNum(604800), "re":[[14,1,20]]},
 			],
 			"imageData":{
 				"baseurl":"buildings/spurtztower/",
@@ -96,6 +97,10 @@ package buildings.yard {
 				"4":{
 					"front":["fort70_F4.png",new Point(-70,-11)],
 					"back":["fort70_B4.png",new Point(-61,-36)]
+				},
+				"5":{
+					"front":["fort70_F5.png",new Point(-70,-11)],
+					"back":["fort70_B5.png",new Point(-61,-36)]
 				}
 			},
 			"quantity":[

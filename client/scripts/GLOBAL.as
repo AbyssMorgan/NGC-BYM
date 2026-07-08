@@ -1727,7 +1727,12 @@ package
 		if (baseValue >= 10000000) {
 			var formatted:String = "";
 			
-			if (baseValue >= 1000000000000) {
+			if (baseValue >= 1000000000000000) {
+				// Quadrillion (Q)
+				formatted = (baseValue / 1000000000000000).toFixed(2);
+				return formatted.replace(".", ",") + " Q";
+			} 
+			else if (baseValue >= 1000000000000) {
 				// Triliony (T)
 				formatted = (baseValue / 1000000000000).toFixed(2);
 				return formatted.replace(".", ",") + " T";

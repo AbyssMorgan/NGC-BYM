@@ -51,7 +51,8 @@ package buildings.yard {
 				{"r1":new SecNum(500000), "r2":new SecNum(100000), "r3":new SecNum(50000), "r4":new SecNum(0), "time":new SecNum(14400), "re":[[14,1,5]]},
 				{"r1":new SecNum(1000000), "r2":new SecNum(1000000), "r3":new SecNum(500000), "r4":new SecNum(0), "time":new SecNum(57600), "re":[[14,1,6]]},
 				{"r1":new SecNum(5000000), "r2":new SecNum(5000000), "r3":new SecNum(2000000), "r4":new SecNum(0), "time":new SecNum(172800), "re":[[14,1,7]]},
-				{"r1":new SecNum(10000000), "r2":new SecNum(10000000), "r3":new SecNum(5000000), "r4":new SecNum(0), "time":new SecNum(345600), "re":[[14,1,8]]}
+				{"r1":new SecNum(10000000), "r2":new SecNum(10000000), "r3":new SecNum(5000000), "r4":new SecNum(0), "time":new SecNum(345600), "re":[[14,1,8]]},
+				{"r1":new SecNum(5000000000), "r2":new SecNum(5000000000), "r3":new SecNum(0), "r4":new SecNum(5000000000), "time":new SecNum(604800), "re":[[14,1,20]]},
 			],
 			"imageData":{
 				"baseurl":"buildings/townhall/",
@@ -194,6 +195,10 @@ package buildings.yard {
 				"4":{
 					"front":["fort130_F4.png",new Point(-124,15)],
 					"back":["fort130_B4.png",new Point(-116,-49)]
+				},
+				"5":{
+					"front":["fort130_F5.png",new Point(-124,15)],
+					"back":["fort130_B5.png",new Point(-116,-49)]
 				}
 			},
 			"quantity":[

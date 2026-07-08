@@ -5229,6 +5229,14 @@ package
          {
             buildingFoundation = new INFERNO_MAGMA_TOWER();
          }
+		 else if (buildingNum == 142)
+         {
+            buildingFoundation = new BUILDING142();
+         }
+		 else if (buildingNum == 143)
+         {
+            buildingFoundation = new BUILDING143();
+         }
          return !!buildingProperties.cls ? new (buildingProperties.cls as Class)() : buildingFoundation;
       }
 
@@ -6316,11 +6324,11 @@ package
          _loc33_ = InstanceManager.getInstancesByClass(BTOWER);
          for each (_loc34_ in _loc33_)
          {
-            if (_loc34_._type == 20)
+            if (_loc34_._type == 20 || _loc34_._type == 142)
             {
                _loc3_++;
             }
-            if (_loc34_._type == 21)
+            if (_loc34_._type == 21 || _loc34_._type == 143)
             {
                _loc2_++;
             }
@@ -6383,11 +6391,11 @@ package
             {
                _loc13_ = _loc7_._hpLvl;
             }
-            else if (_loc7_._type == 20 && _loc24_ < _loc7_._hpLvl)
+            else if ((_loc7_._type == 20 || _loc7_._type == 142) && _loc24_ < _loc7_._hpLvl)
             {
                _loc24_ = _loc7_._hpLvl;
             }
-            else if (_loc7_._type == 21 && _loc18_ < _loc7_._hpLvl)
+            else if ((_loc7_._type == 21 || _loc7_._type == 143) && _loc18_ < _loc7_._hpLvl)
             {
                _loc18_ = _loc7_._hpLvl;
             }
@@ -6621,7 +6629,7 @@ package
 
       public static function isInfernoBuilding(param1:uint):Boolean
       {
-         return (param1 == INFERNOQUAKETOWER.TYPE || param1 == INFERNO_MAGMA_TOWER.ID || param1 == SiegeFactory.ID || param1 == SiegeLab.ID || param1 == SpurtzCannon.TYPE || param1 == BlackSpurtzCannon.TYPE) && !BASE.isInfernoMainYardOrOutpost;
+         return (param1 == INFERNOQUAKETOWER.TYPE || param1 == INFERNO_MAGMA_TOWER.ID || param1 == SiegeFactory.ID || param1 == SiegeLab.ID || param1 == SpurtzCannon.TYPE || param1 == BlackSpurtzCannon.TYPE || param1 == 142 || param1 == 143) && !BASE.isInfernoMainYardOrOutpost;
       }
 
       public static function hasNumBuildings(param1:int, param2:int = 0, param3:Boolean = false):int

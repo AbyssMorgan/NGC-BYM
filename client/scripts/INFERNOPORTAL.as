@@ -304,6 +304,8 @@ package
             GLOBAL._buildingProps[INFERNOQUAKETOWER.TYPE - 1].block = false;
             GLOBAL._buildingProps[SiegeFactory.ID - 1].block = false;
             GLOBAL._buildingProps[SiegeLab.ID - 1].block = false;
+            GLOBAL._buildingProps[142 - 1].block = false;
+            GLOBAL._buildingProps[143 - 1].block = false;
          }
       }
       

@@ -208,7 +208,7 @@ package
          }
          else
          {
-            _loc5_ = _loc4_ ? int(BASE._iresources.r4.Get()) : int(BASE._resources.r4.Get());
+            _loc5_ = _loc4_ ? Number(BASE._iresources.r4.Get()) : Number(BASE._resources.r4.Get());
             _loc3_ -= _loc5_;
             _loc6_ = GLOBAL.getShinyCostFromResourceAmt(_loc3_);
             _loc7_ = int(GLOBAL.player.getNumToHealByResourceCost(_loc2_,_loc5_).num);

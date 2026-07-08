@@ -1128,10 +1128,10 @@ package
                   _iresources.r2 = new SecNum(Math.floor(iresources.r2));
                   _iresources.r3 = new SecNum(Math.floor(iresources.r3));
                   _iresources.r4 = new SecNum(Math.floor(iresources.r4));
-                  _iresources.r1max = int(iresources.r1max);
-                  _iresources.r2max = int(iresources.r2max);
-                  _iresources.r3max = int(iresources.r3max);
-                  _iresources.r4max = int(iresources.r4max);
+                  _iresources.r1max = Number(iresources.r1max);
+                  _iresources.r2max = Number(iresources.r2max);
+                  _iresources.r3max = Number(iresources.r3max);
+                  _iresources.r4max = Number(iresources.r4max);
                }
                if (Boolean(serverData.updates) && serverData.updates.length > 0)
                {
@@ -2932,13 +2932,13 @@ package
          else
          {
             _loc13_ = 0;
-            _loc14_ = int(BASE._resources.r4.Get());
+            _loc14_ = Number(BASE._resources.r4.Get());
             if (_loc5_ > _loc14_)
             {
                _loc13_ = _loc5_ - _loc14_;
                _loc5_ = Number(BASE._resources.r4.Get());
             }
-            _loc14_ = int(BASE._iresources.r4.Get());
+            _loc14_ = Number(BASE._iresources.r4.Get());
             if (_loc6_ > _loc14_)
             {
                _loc13_ += _loc6_ - _loc14_;
@@ -3296,10 +3296,10 @@ package
                "r2": _ideltaResources.r2.Get(),
                "r3": _ideltaResources.r3.Get(),
                "r4": _ideltaResources.r4.Get(),
-               "r1max": _iresources.r1max,
-               "r2max": _iresources.r2max,
-               "r3max": _iresources.r3max,
-               "r4max": _iresources.r4max
+               "r1max": Number(_iresources.r1max),
+               "r2max": Number(_iresources.r2max),
+               "r3max": Number(_iresources.r3max),
+               "r4max": Number(_iresources.r4max)
             };
          for (_loc2_ in _loc1_)
          {

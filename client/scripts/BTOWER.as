@@ -332,6 +332,7 @@ package
       
       private function UpdateJar() : void
       {
+		if(!this._jarAnimation) return;
          var _loc1_:Number = this._jarHealth.Get() / Jars(SiegeWeapons.getWeapon(Jars.ID)).durability;
          if(_loc1_ < 0.3)
          {

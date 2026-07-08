@@ -41,7 +41,7 @@ export type TakeoverData = ResourceTakeover | StrongholdTakeover | Fortification
 export type TakeoverResult = Promise<TakeoverData | null>;
 
 /**
- * Processes an MR3 takeover when a tribe/WM base is captured (damage >= 90, over = 1).
+ * Processes an MR3 takeover when a tribe/WM base is captured (damage >= 99, over = 1).
  *
  * Transfers cell ownership to the attacking player, updates the Save and WorldMapCell,
  * adds the cell to the user's outposts, and returns the takeover data object for the

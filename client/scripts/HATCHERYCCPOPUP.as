@@ -657,7 +657,7 @@ package
          }
          if(HATCHERYCC.doesShowInfernoCreeps)
          {
-            _loc11_ = int(BASE._iresources.r4.Get());
+            _loc11_ = Number(BASE._iresources.r4.Get());
             _loc10_ = 0;
             while(_loc10_ < _loc2_.length)
             {

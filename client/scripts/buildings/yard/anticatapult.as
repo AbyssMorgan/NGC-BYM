@@ -27,9 +27,9 @@ package buildings.yard {
 				{"range":130}, // Level 5
 				{"range":132}, // Level 6
 				{"range":135}, // Level 7
-				{"range":137}, // Level 8
-				{"range":142}, // Level 9
-				{"range":145}, // Level 10
+				{"range":140}, // Level 8
+				{"range":145}, // Level 9
+				{"range":150}, // Level 10
 			],
 			"costs":[
 				{"r1":new SecNum(100000000), "r2":new SecNum(100000000), "r3":new SecNum(1000000000), "r4":new SecNum(1000000000), "time":new SecNum(86400 * 1), "re":[[14,1,12],[12,1,2]]}, // Level 1

@@ -82,12 +82,12 @@ package
             }
             if(this._fireStage == 2)
             {
-               if(canShootVacuumHose())
+               /*if(canShootVacuumHose())
                {
                   _targetVacuum = true;
                   _fireTick = 30;
                }
-               else if(!_hasTargets || !targetInRange())
+               else */if(!_hasTargets || !targetInRange())
                {
                   _targetVacuum = false;
                   FindTargets(_loc1_,_priority);

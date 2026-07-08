@@ -28,28 +28,28 @@ package com.monsters.siege.weapons
 			dropTarget = DROPZONE.SIEGEWEAPON_GROUND;
 			super();
 			addProperty(LOOT_BONUS, new SiegeWeaponProperty([
-				25000,
-				38153,
-				58225,
-				88856,
-				135604,
-				206945,
-				292002,
-				380324,
-				495361,
-				593977
+				250000,
+				500000,
+				750000,
+				1000000,
+				1500000,
+				2000000,
+				3000000,
+				4000000,
+				6000000,
+				8000000
 			],1));
 			addProperty(DURABILITY, new SiegeWeaponProperty([
-				6000 * 2,
-				7200 * 2,
-				7800 * 2,
-				9400 * 2,
-				10300 * 2,
-				11200 * 2,
-				14600 * 2,
-				20500 * 2,
-				29000 * 2,
-				44200 * 2,
+				60000,
+				72000,
+				78000,
+				94000,
+				103000,
+				112000,
+				146000,
+				205000,
+				290000,
+				442000,
 			],2));
 			addProperty(DURATION, new SiegeWeaponProperty([
 				30,

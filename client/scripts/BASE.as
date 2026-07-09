@@ -6045,7 +6045,7 @@ package
             _antiList = InstanceManager.getInstancesByClass(BFOUNDATION);
             for each (_anti in _antiList)
             {
-               if(_anti && _anti._type == 144)
+               if(_anti && _anti._type == 144 && _anti.health > 0)
                {
                   if(IsEllipseInAnticatapultRange(param1, param2, _anti))
                   {

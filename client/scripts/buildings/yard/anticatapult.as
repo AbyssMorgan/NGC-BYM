@@ -54,12 +54,9 @@ package buildings.yard {
 			"imageData":{
 				"baseurl":"buildings/anticatapult/",
 				"1":{
-					"top":["top.1.png",new Point(-40,-80)],
-					"topdamaged":["top.1.damaged.png",new Point(-40,-83)],
-					"topdestroyed":["top.1.destroyed.png",new Point(-41,11)],
-					"shadow":["shadow.1.jpg",new Point(-44,7)],
-					"shadowdamaged":["shadow.1.damaged.jpg",new Point(-44,7)],
-					"shadowdestroyed":["shadow.1.destroyed.jpg",new Point(-41,19)]
+					"top":["top.1.png",new Point(-52,-41)],
+					"topdamaged":["top.1.damaged.png",new Point(-52,-41)],
+					"topdestroyed":["top.1.destroyed.png",new Point(-52,-41)]
 				}
 			},
 			"upgradeImgData":{

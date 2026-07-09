@@ -161,10 +161,10 @@ export const baseSave: KoaController = async (ctx) => {
 		await postgres.em.flush();
 
 		// MR3 Takeover Logic:
-		// If the attack is over and damage >= 99, trigger takeover or destroy logic.
+		// If the attack is over and damage >= 98, trigger takeover or destroy logic.
 		// MR3 capturable structures (RESOURCE, STRONGHOLD, FORTIFICATION) allow re-capture
 		// from OUTPOST type (player-owned) in addition to first capture from TRIBE type.
-		if (saveData.over && baseSave.damage >= 99) {
+		if (saveData.over && baseSave.damage >= 98) {
 			if(userSave.mapversion == MapRoomVersion.V3){
 				switch(baseSave.type){
 					case BaseType.MAIN: {

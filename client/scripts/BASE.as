@@ -5241,6 +5241,10 @@ package
          {
             buildingFoundation = new BUILDING144();
          }
+		 else if (buildingNum == 145)
+         {
+            buildingFoundation = new BUILDING145();
+         }
          return !!buildingProperties.cls ? new (buildingProperties.cls as Class)() : buildingFoundation;
       }
 

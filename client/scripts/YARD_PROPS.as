@@ -144,6 +144,7 @@ package {
 	import buildings.yard.bi_cannontower;
 	import buildings.yard.bi_snipertower;
 	import buildings.yard.anticatapult;
+	import buildings.yard.techlaboratory;
 	
 	public class YARD_PROPS {
 
@@ -292,6 +293,7 @@ package {
 			bi_cannontower.DATA,       // ID 142
 			bi_snipertower.DATA,       // ID 143
 			anticatapult.DATA,         // ID 144
+			techlaboratory.DATA,       // ID 145
 		];
 		
 		public function YARD_PROPS(){

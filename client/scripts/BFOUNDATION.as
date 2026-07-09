@@ -3980,6 +3980,9 @@ package
          {
             return new building19hit();
          }
+		 if(this._type == 144){
+			return new building20hit();
+		 }
          if(this._type == 20 || this._type == 142)
          {
             return _loc2_ ? new cannonTowerHit() : new building20hit();
@@ -4252,7 +4255,7 @@ package
          {
             return new building135hit();
          }
-		 if(this._type == 141)
+		 if(this._type == 141 || this._type == 145)
          {
             return new building112hit();
          }

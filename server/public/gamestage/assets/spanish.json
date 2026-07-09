@@ -50,6 +50,7 @@
     "#b_snipertower#": "Torre de francotirador",
     "#b_anticatapult#": "Anti-Catapult",
     "#b_techlab#": "Technology Laboratory",
+    "#b_techlab_desc#": "Build to get access new technology buildings",
     "#b_conqueror#": "Conqueror Statue",
     "#b_stoneblock#": "Bloque de piedra",
     "#b_storagesilo#": "Silo",

@@ -104,16 +104,16 @@ package com.monsters.siege.weapons
 				{"r1":7386672.13671496, "r2":8617784.15950078, "r3":8617784.15950078, "r4":0, "time":388800}
 			]));
 			addProperty(BUILD_COSTS,new SiegeWeaponProperty([
-				{"r1":14324, "r2":28648, "r3":28648, "r4":0, "time":3000},
-				{"r1":27493, "r2":54987, "r3":54987, "r4":0, "time":4500},
-				{"r1":52767, "r2":105534, "r3":105534, "r4":0, "time":7200},
-				{"r1":101245, "r2":202491, "r3":202491, "r4":0, "time":9900},
-				{"r1":194063, "r2":388126, "r3":388126, "r4":0, "time":15300},
-				{"r1":370582, "r2":741164, "r3":741164, "r4":0, "time":22500},
-				{"r1":698335, "r2":1396671, "r3":1396671, "r4":0, "time":34200},
-				{"r1":1260829, "r2":2521659, "r3":2521659, "r4":0, "time":51300},
-				{"r1":2045630, "r2":4091259, "r3":4091259, "r4":0, "time":76500},
-				{"r1":2813970, "r2":5627941, "r3":5627941, "r4":0, "time":86400},
+				{"r1":14324, "r2":28648, "r3":28648, "r4":0, "time":1800},
+				{"r1":27493, "r2":54987, "r3":54987, "r4":0, "time":2000},
+				{"r1":52767, "r2":105534, "r3":105534, "r4":0, "time":2200},
+				{"r1":101245, "r2":202491, "r3":202491, "r4":0, "time":2400},
+				{"r1":194063, "r2":388126, "r3":388126, "r4":0, "time":2600},
+				{"r1":370582, "r2":741164, "r3":741164, "r4":0, "time":2800},
+				{"r1":698335, "r2":1396671, "r3":1396671, "r4":0, "time":3000},
+				{"r1":1260829, "r2":2521659, "r3":2521659, "r4":0, "time":3200},
+				{"r1":2045630, "r2":4091259, "r3":4091259, "r4":0, "time":3400},
+				{"r1":2813970, "r2":5627941, "r3":5627941, "r4":0, "time":3600},
 			]));
 			this.loadAssets();
 		}
@@ -179,7 +179,7 @@ package com.monsters.siege.weapons
 			{
 				if(_loc1_[_loc2_] is BUILDING22)
 				{
-				BUILDING22(_loc1_[_loc2_]).EjectCreeps(new Point(this.x,this.y));
+					BUILDING22(_loc1_[_loc2_]).EjectCreeps(new Point(this.x,this.y));
 				}
 				_loc2_++;
 			}
@@ -194,11 +194,11 @@ package com.monsters.siege.weapons
 			{
 				if(_loc1_[_loc3_] is CreepBase)
 				{
-				_loc2_ = CreepBase(_loc1_[_loc3_]);
-				if(this._attractedCreeps.indexOf(_loc2_) == -1)
-				{
-					this.attractCreep(_loc2_);
-				}
+					_loc2_ = CreepBase(_loc1_[_loc3_]);
+					if(this._attractedCreeps.indexOf(_loc2_) == -1)
+					{
+						this.attractCreep(_loc2_);
+					}
 				}
 				_loc3_++;
 			}
@@ -208,7 +208,7 @@ package com.monsters.siege.weapons
 				_loc2_ = this._attractedCreeps[_loc3_];
 				if(_loc1_.indexOf(_loc2_) == -1)
 				{
-				this.detractCreep(_loc2_,_loc3_);
+					this.detractCreep(_loc2_,_loc3_);
 				}
 				_loc3_--;
 			}
@@ -242,7 +242,7 @@ package com.monsters.siege.weapons
 			{
 				if(_loc4_ is BMUSHROOM === false && GLOBAL.QuickDistance(_loc1_,new Point(_loc4_.x,_loc4_.y)) < range * 0.65)
 				{
-				_loc2_.push(_loc4_);
+					_loc2_.push(_loc4_);
 				}
 			}
 			Targeting.DealLinearAEDamage(_loc1_,range,this.damage,_loc2_);
@@ -291,7 +291,7 @@ package com.monsters.siege.weapons
 				GLOBAL.UnregisterTickFastTarget(this);
 				if(this._container.parent)
 				{
-				this._container.parent.removeChild(this._container);
+					this._container.parent.removeChild(this._container);
 				}
 			}
 		}

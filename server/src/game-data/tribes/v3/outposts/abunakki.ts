@@ -38993,7 +38993,7 @@ export const abunakki: Record<number, SaveData> = {
 		chatenabled: 0,
 		relationship: 0,
 		timeplayed: 0,
-		version: 130,
+		version: 131,
 		clienttime: 0,
 		baseseed: 0,
 		healtime: 0,
@@ -42134,6 +42134,7 @@ export const abunakki: Record<number, SaveData> = {
 					IC5: 22
 				},
 				t: 22,
+				fort: 5,
 				id: 530
 			},
 			531: {
@@ -42144,6 +42145,7 @@ export const abunakki: Record<number, SaveData> = {
 					IC5: 22
 				},
 				t: 22,
+				fort: 5,
 				id: 531
 			},
 			532: {
@@ -42154,6 +42156,7 @@ export const abunakki: Record<number, SaveData> = {
 					IC5: 22
 				},
 				t: 22,
+				fort: 5,
 				id: 532
 			},
 			533: {
@@ -42164,6 +42167,7 @@ export const abunakki: Record<number, SaveData> = {
 					IC5: 22
 				},
 				t: 22,
+				fort: 5,
 				id: 533
 			},
 			558: {
@@ -42222,6 +42226,7 @@ export const abunakki: Record<number, SaveData> = {
 					IC5: 22
 				},
 				t: 22,
+				fort: 5,
 				id: 564
 			},
 			565: {
@@ -42232,6 +42237,7 @@ export const abunakki: Record<number, SaveData> = {
 					IC5: 22
 				},
 				t: 22,
+				fort: 5,
 				id: 565
 			},
 			566: {
@@ -42242,6 +42248,7 @@ export const abunakki: Record<number, SaveData> = {
 					IC5: 22
 				},
 				t: 22,
+				fort: 5,
 				id: 566
 			},
 			567: {
@@ -42252,6 +42259,7 @@ export const abunakki: Record<number, SaveData> = {
 					IC5: 22
 				},
 				t: 22,
+				fort: 5,
 				id: 567
 			},
 			568: {
@@ -42280,6 +42288,7 @@ export const abunakki: Record<number, SaveData> = {
 					IC5: 22
 				},
 				t: 22,
+				fort: 5,
 				id: 572
 			},
 			573: {
@@ -42290,6 +42299,7 @@ export const abunakki: Record<number, SaveData> = {
 					IC5: 22
 				},
 				t: 22,
+				fort: 5,
 				id: 573
 			},
 			574: {
@@ -42300,6 +42310,7 @@ export const abunakki: Record<number, SaveData> = {
 					IC5: 22
 				},
 				t: 22,
+				fort: 5,
 				id: 574
 			},
 			575: {
@@ -42310,6 +42321,7 @@ export const abunakki: Record<number, SaveData> = {
 					IC5: 22
 				},
 				t: 22,
+				fort: 5,
 				id: 575
 			},
 			579: {
@@ -45424,7 +45436,7 @@ export const abunakki: Record<number, SaveData> = {
 		chatenabled: 0,
 		relationship: 0,
 		timeplayed: 0,
-		version: 130,
+		version: 131,
 		clienttime: 0,
 		baseseed: 0,
 		healtime: 0,
@@ -48565,6 +48577,7 @@ export const abunakki: Record<number, SaveData> = {
 					C8: 33
 				},
 				t: 22,
+				fort: 5,
 				id: 530
 			},
 			531: {
@@ -48575,6 +48588,7 @@ export const abunakki: Record<number, SaveData> = {
 					C8: 33
 				},
 				t: 22,
+				fort: 5,
 				id: 531
 			},
 			532: {
@@ -48585,6 +48599,7 @@ export const abunakki: Record<number, SaveData> = {
 					C8: 33
 				},
 				t: 22,
+				fort: 5,
 				id: 532
 			},
 			533: {
@@ -48595,6 +48610,7 @@ export const abunakki: Record<number, SaveData> = {
 					C8: 33
 				},
 				t: 22,
+				fort: 5,
 				id: 533
 			},
 			558: {
@@ -48653,6 +48669,7 @@ export const abunakki: Record<number, SaveData> = {
 					C8: 33
 				},
 				t: 22,
+				fort: 5,
 				id: 564
 			},
 			565: {
@@ -48663,6 +48680,7 @@ export const abunakki: Record<number, SaveData> = {
 					C8: 33
 				},
 				t: 22,
+				fort: 5,
 				id: 565
 			},
 			566: {
@@ -48673,6 +48691,7 @@ export const abunakki: Record<number, SaveData> = {
 					C8: 33
 				},
 				t: 22,
+				fort: 5,
 				id: 566
 			},
 			567: {
@@ -48683,6 +48702,7 @@ export const abunakki: Record<number, SaveData> = {
 					C8: 33
 				},
 				t: 22,
+				fort: 5,
 				id: 567
 			},
 			568: {
@@ -48711,6 +48731,7 @@ export const abunakki: Record<number, SaveData> = {
 					C8: 33
 				},
 				t: 22,
+				fort: 5,
 				id: 572
 			},
 			573: {
@@ -48721,6 +48742,7 @@ export const abunakki: Record<number, SaveData> = {
 					C8: 33
 				},
 				t: 22,
+				fort: 5,
 				id: 573
 			},
 			574: {
@@ -48731,6 +48753,7 @@ export const abunakki: Record<number, SaveData> = {
 					C8: 33
 				},
 				t: 22,
+				fort: 5,
 				id: 574
 			},
 			575: {
@@ -48741,6 +48764,7 @@ export const abunakki: Record<number, SaveData> = {
 					C8: 33
 				},
 				t: 22,
+				fort: 5,
 				id: 575
 			},
 			579: {

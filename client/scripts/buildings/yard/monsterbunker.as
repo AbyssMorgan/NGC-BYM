@@ -36,6 +36,14 @@ package buildings.yard {
 				{"r1":new SecNum(8000000), "r2":new SecNum(8000000), "r3":new SecNum(4000000), "r4":new SecNum(0), "time":new SecNum(345600), "re":[[14,1,10],[15,1,3]]}, // Level 5
 				{"r1":new SecNum(16000000), "r2":new SecNum(16000000), "r3":new SecNum(8000000), "r4":new SecNum(0), "time":new SecNum(432000), "re":[[14,1,12],[15,1,3],[12,1,2]]} // Level 6
 			],
+			"can_fortify":true,
+			"fortify_costs":[
+				{"r1":new SecNum(250000000), "r2":new SecNum(250000000), "r3":new SecNum(0), "r4":new SecNum(250000000), "time":new SecNum(60750), "re":[[145,1,1]]},
+				{"r1":new SecNum(500000000), "r2":new SecNum(500000000), "r3":new SecNum(0), "r4":new SecNum(500000000), "time":new SecNum(91120), "re":[[145,1,2]]},
+				{"r1":new SecNum(1000000000), "r2":new SecNum(1000000000), "r3":new SecNum(0), "r4":new SecNum(1000000000), "time":new SecNum(136680), "re":[[145,1,3]]},
+				{"r1":new SecNum(2500000000), "r2":new SecNum(2500000000), "r3":new SecNum(0), "r4":new SecNum(2500000000), "time":new SecNum(205030), "re":[[145,1,4]]},
+				{"r1":new SecNum(5000000000), "r2":new SecNum(5000000000), "r3":new SecNum(0), "r4":new SecNum(5000000000), "time":new SecNum(259200), "re":[[145,1,5]]},
+			],
 			"imageData":{
 				"baseurl":"buildings/bunker/",
 				"1":{
@@ -60,6 +68,29 @@ package buildings.yard {
 				"1":{
 					"img":"22.jpg",
 					"silhouette_img":"22.silhouette.jpg"
+				}
+			},
+			"fortImgData":{
+				"baseurl":"buildings/fortifications/",
+				"1":{
+					"front":["fort70_F1.png",new Point(-73,28 + 15)],
+					"back":["fort70_B1.png",new Point(-71 - 5,-4)]
+				},
+				"2":{
+					"front":["fort70_F2.png",new Point(-69,26 + 15)],
+					"back":["fort70_B2.png",new Point(-65 - 5,-7)]
+				},
+				"3":{
+					"front":["fort70_F3.png",new Point(-73,17 + 15)],
+					"back":["fort70_B3.png",new Point(-69 - 5,-5)]
+				},
+				"4":{
+					"front":["fort70_F4.png",new Point(-70,-3 + 15)],
+					"back":["fort70_B4.png",new Point(-62 - 5,-31)]
+				},
+				"5":{
+					"front":["fort70_F5.png",new Point(-70, -11 + 15)],
+					"back":["fort70_B5.png",new Point(-61 - 5, -36)]
 				}
 			},
 			"thumbImgData":{

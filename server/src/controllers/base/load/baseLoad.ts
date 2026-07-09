@@ -117,11 +117,11 @@ export const baseLoad: KoaController = async (ctx) => {
 		await postgres.em.flush();
 	}
 
-	if(baseSave && mapversion == MapRoomVersion.V3 && baseSave.version != 130){
+	if(baseSave && mapversion == MapRoomVersion.V3){
 		if(baseSave.wmid == EnumYardType.RESOURCE || baseSave.wmid == EnumYardType.STRONGHOLD || baseSave.wmid == EnumYardType.FORTIFICATION){
 			const tribeSave = STRUCTURE_SAVES[baseSave.wmid];
 			const original = tribeSave[baseSave.level];
-			if(original){
+			if(original && original.version != baseSave.version){
 				baseSave.buildingdata = original.buildingdata as Save["buildingdata"];
 				baseSave.version = original.version as Save["version"];
 				baseSave.champion = original.champion as Save["champion"];

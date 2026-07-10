@@ -57,6 +57,8 @@
     "#b_anticatapult#": "Anti-Catapult",
     "#b_techlab#": "Technology Laboratory",
     "#b_techlab_desc#": "Build to get access new technology buildings",
+	"#crystalhive#": "Crystal Hive",
+    "#crystalhive_desc#": "Creates an enchantment wave that does damage to all monsters in a certain area.",
     "#b_conqueror#": "Conqueror Statue",
     "#b_stoneblock#": "Stone Block",
     "#b_storagesilo#": "Storage Silo",

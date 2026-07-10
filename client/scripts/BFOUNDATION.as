@@ -4235,7 +4235,7 @@ package
          {
             return new housingBunkerHit();
          }
-         if(this._type == 129)
+         if(this._type == 129 || this._type == 146)
          {
             return new quakeTowerHit();
          }

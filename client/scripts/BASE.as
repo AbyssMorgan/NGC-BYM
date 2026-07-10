@@ -5245,6 +5245,10 @@ package
          {
             buildingFoundation = new BUILDING145();
          }
+		 else if (buildingNum == 146)
+         {
+            buildingFoundation = new BUILDING146();
+         }
          return !!buildingProperties.cls ? new (buildingProperties.cls as Class)() : buildingFoundation;
       }
 
@@ -6418,7 +6422,7 @@ package
             {
                _loc2_++;
             }
-            if (_loc34_._type == 129)
+            if (_loc34_._type == 129 || _loc34_._type == 146)
             {
                _loc5_++;
             }
@@ -6521,7 +6525,7 @@ package
             {
                _loc29_ = _loc7_._hpLvl;
             }
-            else if (_loc7_._type == 129 && _loc31_ < _loc7_._hpLvl)
+            else if ((_loc7_._type == 129 || _loc7_._type == 146) && _loc31_ < _loc7_._hpLvl)
             {
                _loc31_ = _loc7_._hpLvl;
             }

@@ -294,6 +294,10 @@ package
          {
             _loc2_ |= k_TARGETS_FLYING;
          }
+		 else if(param1 == 3)
+         {
+            _loc2_ |= k_TARGETS_FLYING;
+         }
          return _loc2_ | k_TARGETS_ATTACKERS;
       }
       

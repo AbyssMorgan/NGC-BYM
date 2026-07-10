@@ -141,6 +141,11 @@ package buildings.yard {
 				4, // Level 18
 				4, // Level 19
 				4, // Level 20
+				4, // Level 21
+				4, // Level 22
+				4, // Level 23
+				4, // Level 24
+				4, // Level 25
 			],
 			"hp":[
 				17640, // Level 1

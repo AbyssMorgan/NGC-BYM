@@ -37,7 +37,19 @@ package buildings.yard {
 					"silhouette_img":"117.silhouette.jpg"
 				}
 			},
-			"quantity":[0,0,0,0,4,6,8,10,12,15,18],
+			"quantity":[
+				0, // Level 0
+				0, // Level 1
+				0, // Level 2
+				0, // Level 3
+				4, // Level 4
+				6, // Level 5
+				8, // Level 6
+				10, // Level 7
+				12, // Level 8
+				15, // Level 9
+				18, // Level 10
+			],
 			"damage":[10000],
 			"hp":[10],
 			"repairTime":[5]

@@ -36,7 +36,7 @@ package
          _gridCost = [[new Rectangle(0,0,130,130),10],[new Rectangle(10,10,110,110),200]];
          _type = k_TYPE;
          SetProps();
-         graphic.addEventListener(Event.ENTER_FRAME,this.onEnterFrame);
+        //  graphic.addEventListener(Event.ENTER_FRAME,this.onEnterFrame);
       }
       
       override public function ApplyJar(param1:int) : void
@@ -45,18 +45,7 @@ package
       
       override protected function onEnterFrame(param1:Event) : void
       {
-         if(!_mcHit.parent)
-         {
-            return;
-         }
-         anim2Container.visible = false;
-         ++this.m_tick;
-         AnimFrame(true);
-         if(this.m_tick % 2 == 0)
-         {
-            --_animTick;
-         }
-         anim2Container.visible = this.m_isAttacking;
+
       }
       
       override public function Setup(param1:Object) : void
@@ -119,6 +108,16 @@ package
          {
             this.updateTeslaPositions();
          }
+		 if(_mcHit.parent){
+			anim2Container.visible = false;
+			++this.m_tick;
+			AnimFrame(true);
+			if(this.m_tick % 2 == 0)
+			{
+				--_animTick;
+			}
+			anim2Container.visible = this.m_isAttacking;
+		 }
       }
       
       private function updateTeslaPositions() : void

@@ -1155,32 +1155,6 @@ package {
 						}
 					}
 				}
-			} else if (_loc9_.substr(0, 3) != "BEW") {
-				if (_loc9_ != "BST") {
-					if (_loc9_ != "ENL") {
-						if (_loc9_ != "BIP") {
-							if (_loc9_ != "HOD") {
-								if (_loc9_ != "HOD2") {
-									if (_loc9_ != "HOD3") {
-										if (_loc9_ != "PRO1") {
-											if (_loc9_ != "PRO2") {
-												if (_loc9_ != "PRO3") {
-													if (_loc9_ != "TOD") {
-														if (_loc9_ != "MOD") {
-															if (_loc9_ != "MDOD") {
-																if (_loc9_ == "MSOD") {}
-															}
-														}
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-				}
 			}
 			_loc4_ = 0;
 			_loc5_ = int(_loc10_.c.length);
@@ -1191,7 +1165,7 @@ package {
 				_loc4_ = 0;
 			}
 			_loc6_ = "<b>" + _loc10_.t + "</b><br>" + _loc10_.d;
-			if (_loc9_ == "BIP" && _storeData.BIP && _storeData.BIP.q < 10) {
+			if (_loc9_ == "BIP" && _storeData.BIP && _storeData.BIP.q < 20) {
 				_loc6_ += " (Total increase of " + (_storeData.BIP.q + 1) * 10 + "%)";
 			}
 			var _loc20_: String = "";
@@ -1772,7 +1746,7 @@ package {
 					_loc6_ = 0;
 				}
 				_loc8_ = "<b>" + storeItemObject.t + "</b><br>" + storeItemObject.d;
-				if (item == "BIP" && _storeData.BIP && _storeData.BIP.q < 10) {
+				if (item == "BIP" && _storeData.BIP && _storeData.BIP.q < 20) {
 					_loc8_ += " " + KEYS.Get("store_total%increase", {
 						"v1": (_storeData.BIP.q + 1) * 10
 					});

@@ -32,7 +32,7 @@ export const storeItems: { [key: string]: StoreItem } = {
 		t: "Improved packing skills",
 		d: "Improves the capacity of all resources by 10%",
 		du: 0,
-		c: [50, 100, 150, 200, 250, 300, 350, 400, 450, 500], // 550, 600, 650, 700, 750, 800, 850, 900, 950, 1000
+		c: [50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 650, 700, 750, 800, 850, 900, 950, 1000],
 		i: 0,
 		a: 0,
 	},

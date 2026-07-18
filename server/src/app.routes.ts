@@ -125,8 +125,8 @@ router.post("/api/:apiVersion/bm/yardplanner/savetemplate", apiVersion, verifyUs
 * 📦 Leaderboards & Attack Logs
 * ──────────────────────────────────────────────── */
 router.get("/api/:apiVersion/worlds", getAvailableWorlds);
-router.get("/api/:apiVersion/leaderboards", getLeaderboards);
-router.get("/api/:apiVersion/attacklogs", verifyUserAuth, getAttackLogs);
+// router.get("/api/:apiVersion/leaderboards", getLeaderboards);
+// router.get("/api/:apiVersion/attacklogs", verifyUserAuth, getAttackLogs);
 
 /**  ────────────────────────────────────────────────
 * 📦 Events

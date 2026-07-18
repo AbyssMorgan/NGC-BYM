@@ -125,6 +125,9 @@ export const STRUCTURE_RANGE: Record<number, Record<number, number>> = {
 		70: 4,
 		80: 5,
 		90: 6,
+		100: 7,
+		110: 8,
+		120: 9,
 	},
 };
 
@@ -135,6 +138,9 @@ export const RESOURCE_PRODUCTION_RATES: Record<number, number> = {
 	70: 100,
 	80: 200,
 	90: 400,
+	100: 800,
+	110: 1600,
+	120: 3200,
 };
 
 /** Additional resource storage capacity granted by a RESOURCE outpost per level. */
@@ -144,6 +150,9 @@ export const RESOURCE_CAPACITIES: Record<number, number> = {
 	70: 20000000,
 	80: 40000000,
 	90: 80000000,
+	100: 160000000,
+	110: 320000000,
+	120: 640000000,
 };
 
 /** Monster and tower damage bonus (%) granted by a STRONGHOLD per level. */
@@ -186,6 +195,9 @@ export const DEFENDER_LEVELS = {
 		70: [60, 60, 60, 60, 60, 60],
 		80: [70, 70, 70, 70, 70, 70],
 		90: [80, 80, 80, 80, 80, 80],
+		// 100: [95, 95, 95, 95, 95, 95],
+		// 110: [105, 105, 105, 105, 105, 105],
+		120: [115, 115, 115, 115, 115, 115],
 	},
 
 	[EnumYardType.STRONGHOLD]: {

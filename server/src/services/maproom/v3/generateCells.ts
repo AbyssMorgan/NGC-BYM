@@ -214,6 +214,46 @@ export const getGeneratedCells = (): Map<number, GeneratedCell> => {
 		}
 	}
 
+	// ============================================================================
+	// PHASE 5: Ultimate Resource Outposts
+	// ============================================================================
+	// const maxUltimateResourceAttempts = (WIDTH - 2 * CELL_EDGE) * (HEIGHT - 2 * CELL_EDGE) * 0.005;
+
+	// for (let attempt = 0; attempt < maxUltimateResourceAttempts; attempt++) {
+	// 	const x = CELL_EDGE + Math.floor(resourceRng() * (WIDTH - 2 * CELL_EDGE));
+	// 	const y = CELL_EDGE + Math.floor(resourceRng() * (HEIGHT - 2 * CELL_EDGE));
+		
+	// 	const key = cellKey(x, y);
+		
+	// 	if (occupiedCells.has(key)) continue;
+
+	// 	const defenders = getDefenderCoords(x, y);
+	// 	if (defenders.some(([dx, dy]) => occupiedCells.has((dx << 16) | dy))) continue;
+
+	// 	const tribeIndex = (x + y) % Tribes.length;
+	// 	cells.push({ x, y, type: EnumYardType.RESOURCE, tribe: tribeIndex, level: 120});
+	// 	occupiedCells.add(key);
+
+	// 	const defenderLevels = getDefenderLevels(EnumYardType.RESOURCE, 120);
+
+	// 	if (!defenderLevels) continue;
+
+	// 	for (let i = 0; i < defenders.length; i++) {
+	// 		const [fortX, fortY] = defenders[i];
+
+	// 		cells.push({
+	// 			x: fortX, 
+	// 			y: fortY, 
+	// 			type: EnumYardType.FORTIFICATION, 
+	// 			level: defenderLevels[i],
+	// 			tribe: tribeIndex
+	// 		});
+
+	// 		occupiedCells.add((fortX << 16) | fortY);
+	// 	}
+	// }
+
+
 	cachedCells = new Map(cells.map(cell => [cellKey(cell.x, cell.y), cell]));
 	return cachedCells;
 };

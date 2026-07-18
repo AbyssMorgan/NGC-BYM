@@ -168,8 +168,8 @@ export const getGeneratedCells = (): Map<number, GeneratedCell> => {
 	const noise = createNoise2D(alea(CELL_SEED));
 	const cloverRng = alea(CELL_SEED + "-clover");
 
-	for (let y = CELL_EDGE; y < MapRoom3.HEIGHT - CELL_EDGE; y++) {
-		for (let x = CELL_EDGE; x < MapRoom3.WIDTH - CELL_EDGE; x++) {
+	for (let y = 0; y < MapRoom3.HEIGHT; y++) {
+		for (let x = 0; x < MapRoom3.WIDTH; x++) {
 			const key = cellKey(x, y);
 
 			if (occupiedCells.has(key)) continue;

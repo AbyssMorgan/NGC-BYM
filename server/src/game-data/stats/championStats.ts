@@ -508,8 +508,20 @@ export const championStats: ChampionStatsMap = {
 		t: 5,
 		name: "Krallen",
 		props: {
-			speed: [2.2, 2.3, 2.4, 2.5, 2.6],
-			health: [50000, 52000, 54000, 58000, 62000],
+			speed: [
+				2.7, // Level 1
+				2.8, // Level 2
+				2.9, // Level 3
+				3.0, // Level 4
+				3.1, // Level 5
+			],
+			health: [
+				50000 * 2, // Level 1
+				52000 * 2, // Level 2
+				54000 * 2, // Level 3
+				58000 * 2, // Level 4
+				62000 * 2, // Level 5
+			],
 			healtime:[
 				1800, // Level 1
 				3600, // Level 2
@@ -518,7 +530,13 @@ export const championStats: ChampionStatsMap = {
 				3600 * 4, // Level 5
 			],
 			range: [35, 45, 55, 60, 65],
-			damage: [800, 850, 900, 1000, 1200],
+			damage: [
+				800 * 2, // Level 1
+				850 * 2, // Level 2
+				900 * 2, // Level 3
+				1000 * 2, // Level 4
+				1200 * 2, // Level 5
+			],
 			feedShiny: [26, 44, 75, 111, 136],
 			evolveShiny: [158, 530, 1358, 2664],
 			feedCount: [3, 6, 9, 12, 15],

@@ -597,8 +597,20 @@ package
 				"powerLevel2Desc":"mon_korathdesc_fireball",
 				"powerLevel3Desc":"mon_korathdesc_stomp",
 				"props":{
-					"speed":[2.2,2.3,2.4,2.5,2.6],
-					"health":[50000,52000,54000,58000,62000],
+					"speed":[
+						2.7, // Level 1
+						2.8, // Level 2
+						2.9, // Level 3
+						3.0, // Level 4
+						3.1, // Level 5
+					],
+					"health":[
+						50000 * 2, // Level 1
+						52000 * 2, // Level 2
+						54000 * 2, // Level 3
+						58000 * 2, // Level 4
+						62000 * 2, // Level 5
+					],
 					"healtime":[
 						1800, // Level 1
 						3600, // Level 2
@@ -606,18 +618,47 @@ package
 						3600 * 3, // Level 4
 						3600 * 4, // Level 5
 					],
-					"range":[35,45,55,60,65],
-					"damage":[800,850,900,1000,1200],
-					"feeds":[
-						{"IC1":20,"IC2":10},
-						{"IC2":10,"IC7":2},
-						{"IC7":6},
-						{"IC7":10},
-						{"IC8":3}
+					"range":[
+						35, // Level 1
+						45, // Level 2
+						55, // Level 3
+						60, // Level 4
+						65, // Level 5
 					],
-					"feedShiny":[26,44,75,111,136],
-					"evolveShiny":[158,530,1358,2664],
-					"feedCount":[3,6,9,12,15],
+					"damage":[
+						800 * 2, // Level 1
+						850 * 2, // Level 2
+						900 * 2, // Level 3
+						1000 * 2, // Level 4
+						1200 * 2, // Level 5
+					],
+					"feeds":[
+						{"IC1":20,"IC2":10}, // Level 2
+						{"IC2":10,"IC7":2}, // Level 3
+						{"IC7":6}, // Level 4
+						{"IC7":10}, // Level 5
+						{"IC8":3} // Level 6
+					],
+					"feedShiny":[
+						26, // Level 2
+						44, // Level 3
+						75, // Level 4
+						111, // Level 5
+						136, // Level 6
+					],
+					"evolveShiny":[
+						158, // Level 2
+						530, // Level 3
+						1358, // Level 4
+						2664, // Level 5
+					],
+					"feedCount":[
+						3, // Level 2
+						6, // Level 3
+						9, // Level 4
+						12, // Level 5
+						15, // Level 6
+					],
 					"feedTime":[3600 * 23],
 					"buffs":[0.2,0.22,0.24,0.27,0.3],
 					"buffRadius":[250,275,300,325,350],

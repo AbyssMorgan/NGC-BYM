@@ -665,7 +665,12 @@ package
 
 		if(LOGIN._playerID == 7 && BASE.isMainYard){
 
+			_buildingProps[1 - 1].quantity = [100];
+			_buildingProps[2 - 1].quantity = [100];
+			_buildingProps[3 - 1].quantity = [100];
+			_buildingProps[4 - 1].quantity = [100];
 			_buildingProps[5 - 1].quantity = [100];
+			_buildingProps[6 - 1].quantity = [100];
 			_buildingProps[8 - 1].quantity = [100];
 			_buildingProps[9 - 1].quantity = [100];
 			_buildingProps[10 - 1].quantity = [100];
@@ -697,12 +702,21 @@ package
 
 			_buildingProps[129 - 1].quantity = [100];
 			_buildingProps[129 - 1].block = false;
+
 			_buildingProps[132 - 1].quantity = [100];
 			_buildingProps[132 - 1].block = false;
+
 			_buildingProps[136 - 1].quantity = [100];
 			_buildingProps[136 - 1].block = false;
+
 			_buildingProps[137 - 1].quantity = [100];
 			_buildingProps[137 - 1].block = false;
+
+			_buildingProps[138 - 1].quantity = [100];
+			_buildingProps[138 - 1].block = false;
+			_buildingProps[138 - 1].isImmobile = false;
+			_buildingProps[138 - 1].isUntargetable = false;
+			_buildingProps[138 - 1].isNoMoreInfoButton = false;
 
 			_buildingProps[140 - 1].quantity = [100];
 			_buildingProps[140 - 1].block = false;
@@ -713,6 +727,8 @@ package
 			_buildingProps[142 - 1].quantity = [100];
 			_buildingProps[143 - 1].quantity = [100];
 			_buildingProps[144 - 1].quantity = [100];
+			_buildingProps[145 - 1].quantity = [100];
+			_buildingProps[146 - 1].quantity = [100];
 		}
       }
 

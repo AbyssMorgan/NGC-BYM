@@ -54,21 +54,21 @@ package buildings.yard {
 				50, // Level 8
 				60, // Level 9
 				75, // Level 10
-				75, // Level 11
-				75, // Level 12
-				75, // Level 13
-				75, // Level 14
-				75, // Level 15
-				75, // Level 16
-				75, // Level 17
-				75, // Level 18
-				75, // Level 19
-				75, // Level 20
-				75, // Level 21
-				75, // Level 22
-				75, // Level 23
-				75, // Level 24
-				75, // Level 25
+				80, // Level 11
+				80, // Level 12
+				85, // Level 13
+				85, // Level 14
+				90, // Level 15
+				90, // Level 16
+				95, // Level 17
+				95, // Level 18
+				100, // Level 19
+				100, // Level 20
+				110, // Level 21
+				110, // Level 22
+				115, // Level 23
+				115, // Level 24
+				120, // Level 25
 			],
 			"damage":[1000],
 			"hp":[10],

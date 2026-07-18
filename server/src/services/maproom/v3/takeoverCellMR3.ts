@@ -85,6 +85,47 @@ export const takeoverCellMR3 = async (baseSave: Save, user: User, userSave: Save
   baseSave.createtime = currentTime;
 
   switch(wmid){
+	case EnumYardType.FORTIFICATION: {
+		switch(level){
+			case 45: {
+				baseSave.protected = currentTime + (3 * 24 * 60 * 60);
+				break;
+			}
+			case 50: {
+				baseSave.protected = currentTime + (3 * 24 * 60 * 60);
+				break;
+			}
+			case 60: {
+				baseSave.protected = currentTime + (4 * 24 * 60 * 60);
+				break;
+			}
+			case 70: {
+				baseSave.protected = currentTime + (5 * 24 * 60 * 60);
+				break;
+			}
+			case 80: {
+				baseSave.protected = currentTime + (6 * 24 * 60 * 60);
+				break;
+			}
+			case 90: {
+				baseSave.protected = currentTime + (7 * 24 * 60 * 60);
+				break;
+			}
+			case 95: {
+				baseSave.protected = currentTime + (8 * 24 * 60 * 60);
+				break;
+			}
+			case 105: {
+				baseSave.protected = currentTime + (9 * 24 * 60 * 60);
+				break;
+			}
+			case 115: {
+				baseSave.protected = currentTime + (10 * 24 * 60 * 60);
+				break;
+			}
+		}
+		break;
+	}
 	case EnumYardType.RESOURCE: {
 		switch(level){
 			case 50: {
@@ -105,6 +146,18 @@ export const takeoverCellMR3 = async (baseSave: Save, user: User, userSave: Save
 			}
 			case 90: {
 				baseSave.protected = currentTime + (7 * 24 * 60 * 60);
+				break;
+			}
+			case 100: {
+				baseSave.protected = currentTime + (8 * 24 * 60 * 60);
+				break;
+			}
+			case 110: {
+				baseSave.protected = currentTime + (9 * 24 * 60 * 60);
+				break;
+			}
+			case 120: {
+				baseSave.protected = currentTime + (10 * 24 * 60 * 60);
 				break;
 			}
 		}

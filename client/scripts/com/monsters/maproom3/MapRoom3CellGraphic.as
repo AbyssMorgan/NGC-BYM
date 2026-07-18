@@ -528,6 +528,10 @@ package com.monsters.maproom3
                   _loc1_ = this.GetFortificationIconToDisplay();
                   this.DrawFortificationLightIcon();
                }
+			   if(this.m_Cell.hasDamageProtection)
+				{
+					this.DrawDamageProtectionIcon();
+				}
                break;
             case EnumYardType.EMPTY:
                if(this.m_Cell.isOwnedByWildMonster)

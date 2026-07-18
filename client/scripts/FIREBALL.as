@@ -179,10 +179,10 @@ package
                }
                else
                {
-                  if(this._targetCreep._creatureID.substr(0,1) == "G")
-                  {
-                     _damage *= 0.1;
-                  }
+                //   if(this._targetCreep._creatureID.substr(0,1) == "G")
+                //   {
+                //      _damage *= 0.1;
+                //   }
                   _loc2_ = _damage;
                   if(this._targetCreep.health - _loc2_ >= this._targetCreep.maxHealth)
                   {

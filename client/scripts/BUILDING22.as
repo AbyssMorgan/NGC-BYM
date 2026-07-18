@@ -93,7 +93,7 @@ package
          var _loc10_:int = 0;
          if(_lvl.Get() > 0 && health > 0)
          {
-            _loc9_ = Targeting.getCreepsInRange(GLOBAL._buildingProps[21].stats[_lvl.Get() - 1].range,_position.add(new Point(0,_footprint[0].height / 2)),Targeting.getOldStyleTargets(3));
+            _loc9_ = Targeting.getCreepsInRange(GLOBAL._buildingProps[21].stats[_lvl.Get() - 1].range,_position.add(new Point(0,_footprint[0].height / 2)),Targeting.getOldStyleTargets(0));
             this._hasTargets = false;
             if(_loc9_.length > 0)
             {
@@ -133,9 +133,20 @@ package
                   }
                }
             }
-            if(Boolean(this._monsters["C12"]) && Boolean(GLOBAL.player.m_upgrades["C12"].powerup) || Boolean(this._monsters["C5"]) && Boolean(GLOBAL.player.m_upgrades["C5"].powerup) || Boolean(this._monsters["IC5"]) || Boolean(this._monsters["IC7"]))
+            if(
+				(Boolean(this._monsters["C12"]) && Boolean(GLOBAL.player.m_upgrades["C12"].powerup))
+				||
+				(Boolean(this._monsters["C5"]) && Boolean(GLOBAL.player.m_upgrades["C5"].powerup))
+				||
+				Boolean(this._monsters["IC5"])
+				||
+				Boolean(this._monsters["IC7"])
+				||
+				Boolean(this._monsters["C14"])
+			)
             {
-               if((_loc9_ = Targeting.getCreepsInRange(GLOBAL._buildingProps[21].stats[_lvl.Get() - 1].range,_position.add(new Point(0,_footprint[0].height / 2)),Targeting.getOldStyleTargets(2))).length > 0)
+			   _loc9_ = Targeting.getCreepsInRange(GLOBAL._buildingProps[21].stats[_lvl.Get() - 1].range,_position.add(new Point(0,_footprint[0].height / 2)),Targeting.getOldStyleTargets(2));
+               if(_loc9_.length > 0)
                {
                   this._targetFlyers = [];
                   if(param2 == 1)
@@ -425,6 +436,10 @@ package
             {
                _loc5_ = "IC7";
             }
+			else if(this._targetFlyers.length > 0 && this.getNumReleasableCreeps("C14") > 0 && _monstersDispatched["C14"] < this.numMonsters("C14"))
+            {
+               _loc5_ = "C14";
+            }
             else if(this._targetCreeps.length > 0)
             {
                for(_loc3_ in this._monsters)
@@ -456,7 +471,7 @@ package
                      "v3":GLOBAL.Array2String(_loc12_)
                   }) + "</font>");
                }
-               if(this._targetFlyers.length > 0 && (_loc5_ == "C12" || _loc5_ == "C5" || _loc5_ == "IC5" || _loc5_ == "IC7"))
+               if(this._targetFlyers.length > 0 && (_loc5_ == "C12" || _loc5_ == "C5" || _loc5_ == "IC5" || _loc5_ == "IC7" || _loc5_ == "C14"))
                {
                   _loc6_ = this._targetFlyers[int(Math.random() * this._targetFlyers.length)].creep;
                }

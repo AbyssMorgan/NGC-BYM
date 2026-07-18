@@ -6033,7 +6033,7 @@ package
          }
       }
 
-      public static function BuildingOverlap(param1:Point, param2:int, param3:Boolean, param4:Boolean = false, param5:Boolean = false, param6:Boolean = false, anticatapult:Boolean = false):Boolean
+      public static function BuildingOverlap(param1:Point, radius:int, include_traps:Boolean, include_destroyed:Boolean = false, include_decorations:Boolean = false, include_enemy:Boolean = false, anticatapult:Boolean = false):Boolean
       {
          var _loc7_:Vector.<Object> = null;
          var _loc8_:BFOUNDATION = null;
@@ -6055,7 +6055,7 @@ package
             {
                if(_anti && _anti._type == 144 && _anti.health > 0)
                {
-                  if(IsEllipseInAnticatapultRange(param1, param2, _anti))
+                  if(IsEllipseInAnticatapultRange(param1, radius, _anti))
                   {
                      return false;
                   }
@@ -6068,10 +6068,10 @@ package
             if (!(_loc8_ is BMUSHROOM))
             {
                _loc9_ = new Point(_loc8_._mc.x, _loc8_._mc.y + _loc8_._middle);
-               if (!(param3 && _loc8_._class == "trap" || param4 && _loc8_.health <= 0 || param5 && _loc8_._class == "decoration" || param6 && (_loc8_._class == "immovable" || _loc8_._class == "enemy")))
+               if (!(include_traps && _loc8_._class == "trap" || include_destroyed && _loc8_.health <= 0 || include_decorations && _loc8_._class == "decoration" || include_enemy && (_loc8_._class == "immovable" || _loc8_._class == "enemy")))
                {
                   _loc10_ = Math.atan2(param1.y - _loc9_.y, param1.x - _loc9_.x);
-                  _loc11_ = EllipseEdgeDistance(_loc10_, param2, param2 * _angle);
+                  _loc11_ = EllipseEdgeDistance(_loc10_, radius, radius * _angle);
                   _loc10_ = Math.atan2(_loc9_.y - param1.y, _loc9_.x - param1.x);
                   _loc12_ = EllipseEdgeDistance(_loc10_, _loc8_._size * 0.5, _loc8_._size * 0.5 * _angle);
                   _loc13_ = param1.x - _loc9_.x;

@@ -94,7 +94,7 @@ package
 						break;
 					}
 					case SIEGEWEAPON_GROUND_SPECIAL: {
-						if(!BASE.BuildingOverlap(new Point(x,y),SIEGEWEAPON_GROUND_SPECIAL_RADIUS,true,true,true,false,true))
+						if(!BASE.BuildingOverlap(new Point(x,y),SIEGEWEAPON_GROUND_SPECIAL_RADIUS,true,true,true,false,false))
 						{
 							ring1.gotoAndStop(1);
 						}
@@ -109,12 +109,10 @@ package
 					case SIEGEWEAPON_BUILDINGS: {
 						if(BASE.BuildingOverlap(new Point(x,y),this._size,true,true,true,false,true))
 						{
-							// Można użyć katapulty
 							ring1.gotoAndStop(1);
 						}
 						else
 						{
-							// Nie można użyć katapulty
 							ring1.gotoAndStop(2);
 						}
 						this.UpdateTargetBuildings(x,y,this._size);
@@ -195,57 +193,63 @@ package
 			var _loc1_:SIEGEWEAPONPOPUP = null;
 			switch(this._dropTarget)
 			{
-				case GROUND:
+				case GROUND: {
 					if(!BASE.BuildingOverlap(new Point(x,y),this._size,true,true,true))
-				{
-					ATTACK.Spawn(new Point(x,y),this._size / 2);
-				}
-				break;
-				case BUILDINGS:
-				if(BASE.BuildingOverlap(new Point(x,y),this._size,true,true,true,false,true))
-				{
-					ResourceBombs.BombDrop();
-				}
-				break;
-				case MONSTERS:
-				if(CREEPS.CreepOverlap(new Point(x,y),this._size))
-				{
-					ResourceBombs.BombDrop();
-				}
-				break;
-				case SIEGEWEAPON_GROUND:
-				if(BASE.BuildingOverlap(new Point(x,y),this._size,true,true,true,false,true))
-				{
+					{
+						ATTACK.Spawn(new Point(x,y),this._size / 2);
+					}
 					break;
 				}
-				_loc1_ = UI2._top._siegeweapon;
-				if(Boolean(_loc1_) && _loc1_._state == 1)
-				{
-					_loc1_.Fire(x,y);
-				}
-				break;
-				case SIEGEWEAPON_BUILDINGS:
-				if(!BASE.BuildingOverlap(new Point(x,y),this._size,true,true,true,false,true))
-				{
+				case BUILDINGS: {
+					if(BASE.BuildingOverlap(new Point(x,y),this._size,true,true,true,false,true))
+					{
+						ResourceBombs.BombDrop();
+					}
 					break;
 				}
-				_loc1_ = UI2._top._siegeweapon;
-				if(Boolean(_loc1_) && _loc1_._state == 1)
-				{
-					_loc1_.Fire(x,y);
-				}
-				break;
-				case SIEGEWEAPON_GROUND_SPECIAL:
-				if(BASE.BuildingOverlap(new Point(x,y),SIEGEWEAPON_GROUND_SPECIAL_RADIUS,true,true,true,false,true))
-				{
+				case MONSTERS: {
+					if(CREEPS.CreepOverlap(new Point(x,y),this._size))
+					{
+						ResourceBombs.BombDrop();
+					}
 					break;
 				}
-				_loc1_ = UI2._top._siegeweapon;
-				if(Boolean(_loc1_) && _loc1_._state == 1)
-				{
-					_loc1_.Fire(x,y);
+				case SIEGEWEAPON_GROUND: {
+					if(BASE.BuildingOverlap(new Point(x,y),this._size,true,true,true,false,true))
+					{
+						break;
+					}
+					_loc1_ = UI2._top._siegeweapon;
+					if(Boolean(_loc1_) && _loc1_._state == 1)
+					{
+						_loc1_.Fire(x,y);
+					}
+					break;
 				}
-				break;
+				case SIEGEWEAPON_BUILDINGS: {
+					if(!BASE.BuildingOverlap(new Point(x,y),this._size,true,true,true,false,true))
+					{
+						break;
+					}
+					_loc1_ = UI2._top._siegeweapon;
+					if(Boolean(_loc1_) && _loc1_._state == 1)
+					{
+						_loc1_.Fire(x,y);
+					}
+					break;
+				}
+				case SIEGEWEAPON_GROUND_SPECIAL: {
+					if(BASE.BuildingOverlap(new Point(x,y),SIEGEWEAPON_GROUND_SPECIAL_RADIUS,true,true,true,false,true))
+					{
+						break;
+					}
+					_loc1_ = UI2._top._siegeweapon;
+					if(Boolean(_loc1_) && _loc1_._state == 1)
+					{
+						_loc1_.Fire(x,y);
+					}
+					break;
+				}
 			}
 		}
 	}

@@ -311,7 +311,7 @@ package com.monsters.player
                         }
                      }
                   }
-                  if(_loc6_.health > this.m_maxHealth)
+                  if(_loc6_.health >= this.m_maxHealth)
                   {
                      _loc6_.health = this.m_maxHealth;
                      _loc6_.queued = 0;

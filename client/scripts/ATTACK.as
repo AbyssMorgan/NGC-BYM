@@ -912,6 +912,7 @@ package
       
       public static function damage(amount:int, damagedTarget:IAttackable = null, amountModified:Number = 0) : void
       {
+		 if(amount == 0) return;
          if(getTimer() - m_lastAttackTime > 400)
          {
             m_recentlyAttacked = new Dictionary();

@@ -1815,20 +1815,20 @@ package
             _buildingData["0"].t = 112;
          }
 
-         if (isOutpostStronghold && _buildingData.hasOwnProperty("0") && _buildingData["0"].t !== GuardTower.k_TYPE)
-         {
-            _buildingData["0"].t = GuardTower.k_TYPE;
-         }
+        //  if (isOutpostStronghold && _buildingData.hasOwnProperty("0") && _buildingData["0"].t !== GuardTower.k_TYPE)
+        //  {
+        //     _buildingData["0"].t = GuardTower.k_TYPE;
+        //  }
 
-         if (isOutpostResource && _buildingData.hasOwnProperty("0") && _buildingData["0"].t !== ResourceOutpost.k_TYPE)
-         {
-            _buildingData["0"].t = ResourceOutpost.k_TYPE;
-         }
+        //  if (isOutpostResource && _buildingData.hasOwnProperty("0") && _buildingData["0"].t !== ResourceOutpost.k_TYPE)
+        //  {
+        //     _buildingData["0"].t = ResourceOutpost.k_TYPE;
+        //  }
 
-         if (isOutpostFortification && _buildingData.hasOwnProperty("0") && _buildingData["0"].t !== OutpostDefender.k_TYPE)
-         {
-            _buildingData["0"].t = OutpostDefender.k_TYPE;
-         }
+        //  if (isOutpostFortification && _buildingData.hasOwnProperty("0") && _buildingData["0"].t !== OutpostDefender.k_TYPE)
+        //  {
+        //     _buildingData["0"].t = OutpostDefender.k_TYPE;
+        //  }
 
          var buildingTypeCounts:Dictionary = new Dictionary();
          for each (building in _buildingData)
@@ -2498,7 +2498,7 @@ package
                   var _loc3_:BFOUNDATION = null;
                   if (MapRoomManager.instance.isInMapRoom3 && BASE.isOutpost)
                   {
-                     repairAllBuildingsToMinimumPercentage(0.25);
+                     repairAllBuildingsToMinimumPercentage(0.01);
                   }
                   popupMCDamaged.bAction.removeEventListener(MouseEvent.CLICK, RepairAll);
                   popupMCDamaged.bAction2.removeEventListener(MouseEvent.CLICK, RepairNow);
@@ -2518,7 +2518,7 @@ package
                   var _loc3_:BFOUNDATION = null;
                   if (MapRoomManager.instance.isInMapRoom3 && BASE.isOutpost)
                   {
-                     repairAllBuildingsToMinimumPercentage(0.25);
+                     repairAllBuildingsToMinimumPercentage(0.01);
                   }
                   popupMCDamaged.bAction.removeEventListener(MouseEvent.CLICK, RepairAll);
                   popupMCDamaged.bAction2.removeEventListener(MouseEvent.CLICK, RepairNow);

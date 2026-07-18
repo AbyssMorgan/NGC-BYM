@@ -95,10 +95,6 @@ package
                {
                   _loc2_ = int(_loc2_ * 0.5);
                }
-               else
-               {
-                  _loc2_ = int(_loc2_ * 0.9);
-               }
                if(GLOBAL.mode == "wmattack")
                {
                   _loc2_ = int(_loc2_ / 5);

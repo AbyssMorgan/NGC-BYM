@@ -752,7 +752,7 @@ package com.monsters.monsters.creeps
          {
             _targetCreeps.sortOn(["dist"],Array.NUMERIC);
 			var target_stats:Object, target_id:String;
-            if(!(Boolean(_targetCreep) && _targetCreep.health > 0 && _targetCreep.health < _targetCreep.maxHealth))
+            if(!(Boolean(_targetCreep) && _targetCreep.health > 0 && Math.round(_targetCreep.health) < Math.round(_targetCreep.maxHealth)))
             {
                _loc4_ = true;
 				while(_targetCreeps.length > 0){

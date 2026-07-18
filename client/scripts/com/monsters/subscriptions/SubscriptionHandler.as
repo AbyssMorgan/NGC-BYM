@@ -113,7 +113,7 @@ package com.monsters.subscriptions
       
       private function specialUser() : Boolean
       {
-         return ignoreAB || (LOGIN._playerID == 12467111 || LOGIN._playerID == 3099454);
+         return false;
       }
       
       public function initialize(param1:Object = null) : void

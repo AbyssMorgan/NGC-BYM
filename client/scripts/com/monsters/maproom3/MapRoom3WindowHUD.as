@@ -37,7 +37,7 @@ package com.monsters.maproom3
       
       private static const BOOKMARKS_BAR_SPACING:uint = 10;
       
-      private static const MAX_BOOKMARKS_DISPLAY_LIST_LENGTH:uint = 3;
+      private static const MAX_BOOKMARKS_DISPLAY_LIST_LENGTH:uint = 12;
       
       private static const REOURCE_BAR_WIDTH:uint = 90;
       

@@ -107,9 +107,7 @@ export const tribeSaveV3 = async (baseid: string, worldid: string): Promise<Save
 		const tribeSave = STRUCTURE_SAVES[structureType];
 
 		if (!tribeSave) return null;
-
-		const isFortification = structureType === EnumYardType.FORTIFICATION;
-		const level = isFortification ? (genCell!.level ?? 0) : calculateStructureLevel(cellX, cellY, structureType);
+		const level = genCell!.level ?? calculateStructureLevel(cellX, cellY, structureType);
 
 		return postgres.em.create(Save, {
 			...tribeSave[level],

@@ -104,7 +104,7 @@ export const getGeneratedCells = (): Map<number, GeneratedCell> => {
 	// PHASE 2: Resource Outposts
 	// ============================================================================
 	const resourceRng = alea(RESOURCE_SEED);
-	const maxResourceAttempts = (WIDTH - 2 * CELL_EDGE) * (HEIGHT - 2 * CELL_EDGE) * 0.08;
+	const maxResourceAttempts = (WIDTH - 2 * CELL_EDGE) * (HEIGHT - 2 * CELL_EDGE) * 0.08; // 8 %
 
 	for (let attempt = 0; attempt < maxResourceAttempts; attempt++) {
 		const x = CELL_EDGE + Math.floor(resourceRng() * (WIDTH - 2 * CELL_EDGE));
@@ -115,7 +115,7 @@ export const getGeneratedCells = (): Map<number, GeneratedCell> => {
 		if (occupiedCells.has(key)) continue;
 
 		const defenders = getDefenderCoords(x, y);
-		if (defenders.some(([dx, dy]) => occupiedCells.has((dx << 16) | dy	))) continue;
+		if (defenders.some(([dx, dy]) => occupiedCells.has((dx << 16) | dy))) continue;
 
 		const tribeIndex = (x + y) % Tribes.length;
 		cells.push({ x, y, type: EnumYardType.RESOURCE, tribe: tribeIndex });
@@ -145,7 +145,7 @@ export const getGeneratedCells = (): Map<number, GeneratedCell> => {
 	// PHASE 3: Tribe Outposts
 	// ============================================================================
 	const tribeRng = alea(TRIBE_OUTPOST_SEED);
-	const maxAttempts = (WIDTH - 2 * CELL_EDGE) * (HEIGHT - 2 * CELL_EDGE) * 0.20;
+	const maxAttempts = (WIDTH - 2 * CELL_EDGE) * (HEIGHT - 2 * CELL_EDGE) * 0.20; // 20 %
 
 	for (let attempt = 0; attempt < maxAttempts; attempt++) {
 		const x = CELL_EDGE + Math.floor(tribeRng() * (WIDTH - 2 * CELL_EDGE));

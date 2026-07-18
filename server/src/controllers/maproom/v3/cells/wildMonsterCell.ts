@@ -22,7 +22,7 @@ export const wildMonsterCell = async (cell: WorldMapCell, worldId: string): Prom
   const genCell = getGeneratedCells().get(cellKey(cellX, cellY));
   const tribeIndex = genCell?.tribe ?? ((cellX + cellY) % Tribes.length);
 
-  const level = calculateStructureLevel(cellX, cellY, cell.base_type);
+  const level = genCell?.level ?? calculateStructureLevel(cellX, cellY, cell.base_type);
   const baseid = generateBaseId(worldId, cellX, cellY, MapRoomVersion.V3);
 
   // 60% no clover (altitude 5-31), 40% on clovers (altitude 32-49)

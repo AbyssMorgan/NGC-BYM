@@ -174,6 +174,7 @@ package com.monsters.ai
       public function Resize() : void
       {
          POPUPSETTINGS.AlignToCenter(this);
+		 if (!this.bm) return;
          this.bm.x = GLOBAL._SCREENCENTER.x - 520 - this.bm.width * 0.5;
          this.bm.y = GLOBAL._SCREENCENTER.y - 250 - this.bm.height * 0.5;
       }

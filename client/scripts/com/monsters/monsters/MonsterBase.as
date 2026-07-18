@@ -388,7 +388,7 @@ package com.monsters.monsters
       override public function modifyHealth(param1:Number, param2:ITargetable = null) : Number
       {
          var _loc6_:Component = null;
-         if(!health)
+         if(!health || param1 == 0)
          {
             return 0;
          }

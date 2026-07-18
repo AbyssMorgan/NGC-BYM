@@ -93,7 +93,7 @@ package
          var _loc10_:int = 0;
          if(_lvl.Get() > 0 && health > 0)
          {
-            _loc9_ = Targeting.getCreepsInRange(GLOBAL._buildingProps[21].stats[_lvl.Get() - 1].range,_position.add(new Point(0,_footprint[0].height / 2)),Targeting.getOldStyleTargets(0));
+            _loc9_ = Targeting.getCreepsInRange(GLOBAL._buildingProps[21].stats[_lvl.Get() - 1].range,_position.add(new Point(0,_footprint[0].height / 2)),Targeting.getOldStyleTargets(3));
             this._hasTargets = false;
             if(_loc9_.length > 0)
             {

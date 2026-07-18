@@ -610,18 +610,24 @@ package
          if(BASE.isOutpost)
          {
             _loc3_ = health / maxHealth;
-            if(_loc3_ <= 0)
-            {
-               _loc2_ = 0;
-            }
-            else if(_loc3_ <= 0.5)
-            {
-               _loc2_ = 0.25 * this.productionCapacity;
-            }
-            else
-            {
-               _loc2_ = 0.5 * this.productionCapacity;
-            }
+			trace("level = " + BASE._level);
+			if(BASE._level >= 100){
+ 				if(_loc3_ <= 0){
+					_loc2_ = 0;
+				} else if(_loc3_ <= 0.5){
+					_loc2_ = 0.5 * this.productionCapacity;
+				} else {
+					_loc2_ = 1 * this.productionCapacity;
+				}
+			} else {
+				if(_loc3_ <= 0){
+					_loc2_ = 0;
+				} else if(_loc3_ <= 0.5){
+					_loc2_ = 0.25 * this.productionCapacity;
+				} else {
+					_loc2_ = 0.5 * this.productionCapacity;
+				}
+			}
             _producing = 1;
             _countdownProduce.Set(Math.random() * 10);
          }

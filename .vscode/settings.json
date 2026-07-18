@@ -1,4 +1,9 @@
 {
+	"settings": {
+		"files.associations": {
+			"*.ngcs": "php"
+		},
+	},
 	"files.eol": "\n",
 	"editor.insertSpaces": false,
 	"editor.detectIndentation": false

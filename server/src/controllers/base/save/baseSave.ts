@@ -67,6 +67,10 @@ export const baseSave: KoaController = async (ctx) => {
 	// Not the owner and not in an attack
 	if (!isOwner && baseSave.attackid === 0) throw permissionErr();
 
+	if(userSave.mapversion == MapRoomVersion.V3){
+		baseSave.mapversion = MapRoomVersion.V3;
+	}
+
 	await validateSave(user, baseSave, body);
 
 	// Standard save logic

@@ -197,8 +197,8 @@ package {
 			var _loc23_: String = null;
 			if (BASE.isOutpost) {
 				_grouping = [
-					[MapRoomManager.instance.isInMapRoom3 ? [] : ["BST", "BLK2", "BLK3", "BLK4", "BLK5", "BLK6", "BLK7", "BLK8", "EXR1", "EXR2", "EXR3", "EXR4", "EXR10", "EXR20", "EXR30", "EXR40"]],
-					// [MapRoomManager.instance.isInMapRoom3 ? [] : ["BR11", "BR12", "BR13", "BR21", "BR22", "BR23", "BR31", "BR32", "BR33", "BR41", "BR42", "BR43"]],
+					[MapRoomManager.instance.isInMapRoom3 ? [] : ["BST", "BLK2", "BLK3", "BLK4", "BLK5", "BLK6", "BLK7", "BLK8"]],
+					[MapRoomManager.instance.isInMapRoom3 ? [] : ["EXR1", "EXR2", "EXR3", "EXR4", "EXR10", "EXR20", "EXR30", "EXR40"]],
 					[MapRoomManager.instance.isInMapRoom3 ? ["SP1", "SP2", "SP3", "SP4", "FIX"] : ["SP1", "SP2", "SP3", "SP4", "POD", "FIX", "HOD", "HOD2", "HOD3"]],
 					[MapRoomManager.instance.isInMapRoom3 ? [] : ["PRO1", "PRO2", "PRO3", "TOD", "EXH"]]
 				];
@@ -206,11 +206,10 @@ package {
 				if (MAPROOM_DESCENT.DescentPassed) {
 					_grouping = [
 						[
-							["BEW", "BST", "ENL", "BLK2", "BLK3", "BLK4", "BLK5", "BLK6", "BLK7", "BLK8", "EXR1", "EXR2", "EXR3", "EXR4", "EXR10", "EXR20", "EXR30", "EXR40"]
+							["BEW", "BST", "ENL", "BLK2", "BLK3", "BLK4", "BLK5", "BLK6", "BLK7", "BLK8"]
 						],
 						[
-							//"BR11", "BR12", "BR13", "BR21", "BR22", "BR23", "BR31", "BR32", "BR33", "BR41", "BR42", "BR43", "BR11I", "BR12I", "BR13I", "BR21I", "BR22I", "BR23I", "BR31I", "BR32I", "BR33I", "BR41I", "BR42I", "BR43I", 
-							["BIP"]
+							["EXR1", "EXR2", "EXR3", "EXR4", "EXR10", "EXR20", "EXR30", "EXR40", "BIP"]
 						],
 						[
 							["SP1", "SP2", "SP3", "SP4", "POD", "FIX", "HOD", "HOD2", "HOD3"]
@@ -220,11 +219,10 @@ package {
 				} else {
 					_grouping = [
 						[
-							["BEW", "BST", "ENL", "BLK2", "BLK3", "BLK4", "BLK5", "BLK6", "BLK7", "BLK8", "EXR1", "EXR2", "EXR3", "EXR4", "EXR10", "EXR20", "EXR30", "EXR40"]
+							["BEW", "BST", "ENL", "BLK2", "BLK3", "BLK4", "BLK5", "BLK6", "BLK7", "BLK8"]
 						],
 						[
-							// "BR11", "BR12", "BR13", "BR21", "BR22", "BR23", "BR31", "BR32", "BR33", "BR41", "BR42", "BR43", 
-							["BIP"]
+							["EXR1", "EXR2", "EXR3", "EXR4", "EXR10", "EXR20", "EXR30", "EXR40", "BIP"]
 						],
 						[
 							["SP1", "SP2", "SP3", "SP4", "POD", "FIX", "HOD", "HOD2", "HOD3"]
@@ -235,11 +233,10 @@ package {
 			} else {
 				_grouping = [
 					[
-						["ENLI", "BLK2I", "BLK3I","EXR1","EXR2","EXR3","EXR4","EXR10","EXR20","EXR30","EXR40"]
+						["ENLI", "BLK2I", "BLK3I"]
 					],
 					[
-						//"BR11I", "BR12I", "BR13I", "BR21I", "BR22I", "BR23I", "BR31I", "BR32I", "BR33I", "BR41I", "BR42I", "BR43I", 
-						["BIP"]
+						["EXR1", "EXR2", "EXR3", "EXR4", "EXR10", "EXR20", "EXR30", "EXR40", "BIP"]
 					],
 					[
 						["SP1", "SP2", "SP3", "SP4", "FIX", "HODI", "HOD2I", "HOD3I"]

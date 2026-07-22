@@ -105,17 +105,11 @@ package
       
       override public function Loot(param1:int) : uint
       {
-		if(!BASE.isInfernoMainYardOrOutpost && GLOBAL._currentCell){
-			if(MapRoomManager.instance.isInMapRoom3 && GLOBAL._currentCell.baseType == EnumYardType.PLAYER){
-				return 0;
-			}
-		}
-		
          param1 = Math.max(0,param1);
-         var _loc2_:int = Math.min(_stored.Get(), param1);
+         var _loc2_:Number = Math.min(_stored.Get(), param1);
          if(_loc2_ > 0)
          {
-            _stored.Add(int(-_loc2_));
+            _stored.Add(-_loc2_);
             ATTACK.Loot(_type,_loc2_,_mc.x,_mc.y,0,this);
             if(BASE.isOutpost)
             {
@@ -610,7 +604,6 @@ package
          if(BASE.isOutpost)
          {
             _loc3_ = health / maxHealth;
-			trace("level = " + BASE._level);
 			if(BASE._level >= 100){
  				if(_loc3_ <= 0){
 					_loc2_ = 0;

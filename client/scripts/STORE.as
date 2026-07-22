@@ -2618,12 +2618,17 @@ package {
 					GLOBAL._hatcheryOverdrive = _storeData.HODI.e - GLOBAL.Timestamp();
 					GLOBAL._hatcheryOverdrivePower.Set(4);
 				}
+				
 				GLOBAL._harvesterOverdrive = 0;
 				GLOBAL._harvesterOverdrivePower.Set(0);
-				if (Boolean(_storeData.POD) && _storeData.POD.e > GLOBAL.Timestamp()) {
+				if (_storeData.POD && _storeData.POD.e < GLOBAL.Timestamp()) {
+					delete _storeData.POD;
+				}
+				if(_storeData.POD && _storeData.POD.e > GLOBAL.Timestamp()){
 					GLOBAL._harvesterOverdrive = _storeData.POD.e;
 					GLOBAL._harvesterOverdrivePower.Set(4);
 				}
+
 				GLOBAL._extraHousing = 0;
 				if (Boolean(_storeData.EXH) && _storeData.EXH.e < GLOBAL.Timestamp()) {
 					delete _storeData.EXH;

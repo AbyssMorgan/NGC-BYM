@@ -792,37 +792,37 @@ package
          UI2.Update();
       }
       
-      public static function Loot(param1:int, param2:int, param3:int, param4:int, param5:int = 10, param6:BFOUNDATION = null, param7:Boolean = false) : int
+      public static function Loot(index:int, quantity:int, param3:int, param4:int, param5:int = 10, param6:BFOUNDATION = null, param7:Boolean = false) : int
       {
          if(LOGIN._playerLevel < 20)
          {
-            param2 += param2 * Math.max(0,(20 - LOGIN._playerLevel) * 0.03);
+            quantity += quantity * Math.max(0,(20 - LOGIN._playerLevel) * 0.03);
          }
-         _loot["r" + param1].Add(param2);
-         switch(param1)
+         _loot["r" + index].Add(quantity);
+         switch(index)
          {
             case 1:
-               _hpLoot1 += param2;
+               _hpLoot1 += quantity;
                break;
             case 2:
-               _hpLoot2 += param2;
+               _hpLoot2 += quantity;
                break;
             case 3:
-               _hpLoot3 += param2;
+               _hpLoot3 += quantity;
                break;
             case 4:
-               _hpLoot4 += param2;
+               _hpLoot4 += quantity;
          }
-         var _loc8_:Number = param2;
-         var _loc9_:Number = Number(GLOBAL._resources["r" + param1 + "max"]);
-         var _loc10_:Number = Number(GLOBAL._resources["r" + param1].Get());
+         var _loc8_:Number = quantity;
+         var _loc9_:Number = Number(GLOBAL._resources["r" + index + "max"]);
+         var _loc10_:Number = Number(GLOBAL._resources["r" + index].Get());
          var _loc11_:Krallen;
          _loc11_ = CREEPS.krallen;
          if(_loc11_)
          {
             _loc9_ += _loc9_ * _loc11_._buff;
          }
-         if(_loc10_ + param2 > _loc9_)
+         if(_loc10_ + quantity > _loc9_)
          {
             if(BASE.isInfernoMainYardOrOutpost && MAPROOM_DESCENT.DescentPassed || GLOBAL.mode == GLOBAL._loadmode)
             {
@@ -832,17 +832,17 @@ package
                }
             }
          }
-         GLOBAL._resources["r" + param1].Add(_loc8_);
-         GLOBAL._hpResources["r" + param1] += _loc8_;
-         if(_deltaLoot["r" + param1])
+         GLOBAL._resources["r" + index].Add(_loc8_);
+         GLOBAL._hpResources["r" + index] += _loc8_;
+         if(_deltaLoot["r" + index])
          {
-            _deltaLoot["r" + param1].Add(_loc8_);
-            _hpDeltaLoot["r" + param1] += _loc8_;
+            _deltaLoot["r" + index].Add(_loc8_);
+            _hpDeltaLoot["r" + index] += _loc8_;
          }
          else
          {
-            _deltaLoot["r" + param1] = new SecNum(_loc8_);
-            _hpDeltaLoot["r" + param1] = _loc8_;
+            _deltaLoot["r" + index] = new SecNum(_loc8_);
+            _hpDeltaLoot["r" + index] = _loc8_;
          }
          _deltaLoot.dirty = true;
          _hpDeltaLoot.dirty = true;
@@ -850,19 +850,19 @@ package
          {
             if(BASE.isInfernoMainYardOrOutpost)
             {
-               param1 += 4;
+               index += 4;
             }
             if(param7)
             {
-               new ParticleVacuumLoot(param6,param2,param1);
+               new ParticleVacuumLoot(param6,quantity,index);
             }
             else
             {
-               new ParticleLoot(param6,param2,param1);
+               new ParticleLoot(param6,quantity,index);
             }
-            ParticleText.Create(new Point(param3,param4 - 35),param2,param1);
+            ParticleText.Create(new Point(param3,param4 - 35),quantity,index);
          }
-         return param2;
+         return quantity;
       }
       
       public static function SaveDeltaLoot() : void

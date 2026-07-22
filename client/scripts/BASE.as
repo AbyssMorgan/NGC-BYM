@@ -1667,7 +1667,9 @@ package
             }
             else
             {
-               GLOBAL.ErrorMessage(serverData.error, GLOBAL.ERROR_ORANGE_BOX_ONLY);
+            //    GLOBAL.ErrorMessage(serverData.error, GLOBAL.ERROR_ORANGE_BOX_ONLY);
+			   GLOBAL.Message(serverData.error);
+			   MAPROOM.Show();
                PLEASEWAIT.Hide();
             }
             LOGGER.StatB({
@@ -1840,8 +1842,11 @@ package
                   buildingTypeCounts[building.t] ||= 0;
                   ++buildingTypeCounts[building.t];
                }
-			   if(building.t == 27){ // && !BASE.isMainYard
+			   if(building.t == 27){ //[TROJAN HORSE REMOVED] && !BASE.isMainYard
 				continue;
+			   }
+			   if(building.rE == 1 && (GLOBAL.mode == GLOBAL.e_BASE_MODE.ATTACK || GLOBAL.mode == GLOBAL.e_BASE_MODE.IATTACK)){
+				building.rE = 0;
 			   }
                if (!(building.t == 53 || building.t == 54))
                {
@@ -3804,10 +3809,10 @@ package
             saveData["healtime"] = getEstimatedRepairDuration();
          }
          var buildingSaveData:Vector.<Object> = BFOUNDATION.getBuildingSaveData();
-         if (!MapRoomManager.instance.isInMapRoom3 || !GLOBAL.isInAttackMode || BASE.isInfernoMainYardOrOutpost)
-         {
+        //  if (!MapRoomManager.instance.isInMapRoom3 || !GLOBAL.isInAttackMode || BASE.isInfernoMainYardOrOutpost)
+        //  {
             saveData["buildingdata"] = JSON.stringify(buildingSaveData[0]);
-         }
+        //  }
          // Old implementation - was specific to MapRoom3, should have been for every map room.
          // if(MapRoomManager.instance.isInMapRoom3 && !BASE.isInfernoMainYardOrOutpost)
          // {

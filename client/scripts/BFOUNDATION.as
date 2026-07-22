@@ -3563,10 +3563,14 @@ package
          {
             _loc1_.cF = this._countdownFortify.Get();
          }
-         if(this._repairing > 0)
-         {
-            _loc1_.rE = this._repairing;
-         }
+		 if(GLOBAL.mode == GLOBAL.e_BASE_MODE.ATTACK || GLOBAL.mode == GLOBAL.e_BASE_MODE.IATTACK){
+			_loc1_.rE = 0
+		 } else {
+			if(this._repairing > 0)
+			{
+				_loc1_.rE = this._repairing;
+			}
+		 }
          if(this._fortification.Get() > 0)
          {
             _loc1_.fort = this._fortification.Get();

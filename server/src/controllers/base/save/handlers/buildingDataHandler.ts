@@ -2,11 +2,6 @@ import { SaveKeys } from "../../../../enums/SaveKeys.js";
 import { Save } from "../../../../models/save.model.js";
 import type { BuildingData } from "../../../../types/BuildingData.js";
 
-enum Building {
-  TRAP = 24,
-  HEAVY_TRAP = 117,
-}
-
 /**
  * Updates buildingdata after an attack in a server-authoritative way.
  *
@@ -22,24 +17,17 @@ enum Building {
  * @param {Save} save - The defender's save record
  */
 export const buildingDataHandler = (buildingData: Record<string, any> | null, save: Save) => {
-  if (!buildingData) return;
-
-  const savedBuildingData = save.buildingdata || {};
-
-  const result: Record<string, BuildingData> = {};
-
-  for (const [key, building] of Object.entries(savedBuildingData)) {
-    const isTrap = building.t === Building.TRAP || building.t === Building.HEAVY_TRAP;
-
-    if (isTrap) {
-      // Keep the trap only if the client still reports it as present.
-      // Absent = triggered during the attack, so we drop it.
-      if (buildingData[key]) result[key] = building;
-    } else {
-      // Non-trap buildings are never modified by attacks - always keep DB value.
-      result[key] = building;
-    }
-  }
-
-  save[SaveKeys.BUILDINGDATA] = result;
+	if (!buildingData) return;
+	const savedBuildingData = save.buildingdata || {};
+	const result: Record<string, BuildingData> = {};
+	for (const [key, building] of Object.entries(savedBuildingData)){
+		delete building.rE;
+		if(save.wmid == 0){
+			if ("st" in building && key in buildingData && "st" in buildingData[key]) {
+				building.st = buildingData[key].st;
+			}
+		}
+		result[key] = building;
+	}
+	save[SaveKeys.BUILDINGDATA] = result;
 };

@@ -40,6 +40,21 @@ export const baseModeBuild = async (user: User, baseid: string) => {
 		return userSave;
 	}
 
+	var save = false
+	userSave.champion.forEach(function(element, index){
+		if(userSave.champion[index].t == 5 && userSave.champion[index].l < 5){
+			userSave.champion[index].l = 5;
+			userSave.champion[index].status = 0;
+			userSave.krallen = {countdown: 443189, wins: 5, tier: 5, loot: 750000000000};
+			save = true;
+		}
+	});
+
+	if(save){
+		postgres.em.persist(userSave);
+		await postgres.em.flush();
+	}
+
 	if (baseid !== userSave.baseid) {
 		const baseSave = await postgres.em.findOne(Save, { baseid });
 

@@ -715,17 +715,16 @@ package
       
       private function hasKoth() : Boolean
       {
-         var _loc1_:Boolean = false;
          var _loc2_:int = 0;
          while(_loc2_ < GLOBAL._playerGuardianData.length)
          {
             if(GLOBAL._playerGuardianData[_loc2_].t == 5)
             {
-               _loc1_ = true;
+               return true;
             }
             _loc2_++;
          }
-         return _loc1_;
+         return false;
       }
       
       private function getKothThreshold(param1:int = 1) : Number

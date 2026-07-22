@@ -42,7 +42,7 @@ package buildings.yard {
 				{"r1":new SecNum(500000000), "r2":new SecNum(500000000), "r3":new SecNum(0), "r4":new SecNum(500000000), "time":new SecNum(91120), "re":[[145,1,2]]},
 				{"r1":new SecNum(1000000000), "r2":new SecNum(1000000000), "r3":new SecNum(0), "r4":new SecNum(1000000000), "time":new SecNum(136680), "re":[[145,1,3]]},
 				{"r1":new SecNum(2500000000), "r2":new SecNum(2500000000), "r3":new SecNum(0), "r4":new SecNum(2500000000), "time":new SecNum(205030), "re":[[145,1,4]]},
-				{"r1":new SecNum(5000000000), "r2":new SecNum(5000000000), "r3":new SecNum(0), "r4":new SecNum(5000000000), "time":new SecNum(259200), "re":[[145,1,5]]},
+				{"r1":new SecNum(2500000000), "r2":new SecNum(2500000000), "r3":new SecNum(5000000000), "r4":new SecNum(5000000000), "time":new SecNum(259200), "re":[[145,1,5]]},
 			],
 			"imageData":{
 				"baseurl":"buildings/bunker/",

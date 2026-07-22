@@ -1223,6 +1223,13 @@ package
                   };
                if (GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD)
                {
+					if (_userID == LOGIN._playerID){
+						QUESTS._global.gift_accept = 50;
+						QUESTS._global.bonus_fan = 1;
+						QUESTS._global.goldmushroomspicked = 50;
+						QUESTS._global.mushroomspicked = 200;
+						QUESTS.Check("level_up", _level);
+					}
                   kx = 1;
                   while (kx < 5)
                   {
@@ -1231,14 +1238,14 @@ package
                      kx++;
                   }
                }
-               if (serverData.stats.mp)
-               {
-                  QUESTS._global.mushroomspicked = serverData.stats.mp;
-               }
-               if (serverData.stats.mg)
-               {
-                  QUESTS._global.goldmushroomspicked = serverData.stats.mg;
-               }
+            //    if (serverData.stats.mp)
+            //    {
+            //       QUESTS._global.mushroomspicked = serverData.stats.mp;
+            //    }
+            //    if (serverData.stats.mg)
+            //    {
+            //       QUESTS._global.goldmushroomspicked = serverData.stats.mg;
+            //    }
                if (serverData.stats.mob)
                {
                   QUESTS._global.monstersblended = serverData.stats.mob;
@@ -1247,10 +1254,10 @@ package
                {
                   QUESTS._global.monstersblendedgoo = serverData.stats.mobg;
                }
-               if (serverData.stats.moga)
-               {
-                  QUESTS._global.gift_accept = serverData.stats.moga;
-               }
+            //    if (serverData.stats.moga)
+            //    {
+            //       QUESTS._global.gift_accept = serverData.stats.moga;
+            //    }
                NewPopupSystem.instance.Setup(serverData.stats.popupdata);
                if (serverData.stats.updateid)
                {

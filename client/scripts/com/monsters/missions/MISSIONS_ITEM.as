@@ -39,6 +39,9 @@ package com.monsters.missions
          nametxt = KEYS.Get(this._missionObject.name,this._missionObject.keyvars);
          description = KEYS.Get(this._missionObject.description,this._missionObject.keyvars);
          description = description.replace("#installsgenerated#",BASE._installsGenerated);
+		 if(this._missionObject.rules.hasOwnProperty('level_up')){
+         	description = description.replace("#level_required#",this._missionObject.rules.level_up);
+		 }
          description = description.replace("#mushroomspicked#",QUESTS._global.mushroomspicked);
          description = description.replace("#goldmushroomspicked#",QUESTS._global.goldmushroomspicked);
          description = description.replace("#monstersblended#",QUESTS._global.monstersblended);

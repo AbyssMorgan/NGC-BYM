@@ -260,6 +260,9 @@ package
             {
                description = KEYS.Get(q.description,q.keyvars);
                description = description.replace("#installsgenerated#",BASE._installsGenerated);
+			    if(q.rules.hasOwnProperty('level_up')){
+					description = description.replace("#level_required#",q.rules.level_up);
+				}
                description = description.replace("#mushroomspicked#",QUESTS._global.mushroomspicked);
                description = description.replace("#goldmushroomspicked#",QUESTS._global.goldmushroomspicked);
                description = description.replace("#monstersblended#",QUESTS._global.monstersblended);

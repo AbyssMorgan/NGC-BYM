@@ -159,15 +159,13 @@ package {
 
 		}
 
-		public static function GetTimeCost(param1: int, param2: Boolean = true): int {
+		public static function GetTimeCost(seconds: int, free_available: Boolean = true): int {
 			var _loc3_: int = 0;
 			var _loc4_: int = 0;
-			if (param2 && param1 <= 600) {
+			if (free_available && seconds <= 600) {
 				return 0;
 			}
-			_loc3_ = Math.ceil(param1 * 10 / 3600);
-			_loc4_ = int(Math.sqrt(param1 * 0.4));
-			return Math.min(_loc3_, _loc4_);
+			return  Math.ceil(seconds / 3600);
 		}
 
 		public static function GetResourceCost(param1: Array): int {
@@ -2624,7 +2622,7 @@ package {
 				GLOBAL._harvesterOverdrivePower.Set(0);
 				if (Boolean(_storeData.POD) && _storeData.POD.e > GLOBAL.Timestamp()) {
 					GLOBAL._harvesterOverdrive = _storeData.POD.e;
-					GLOBAL._harvesterOverdrivePower.Set(2);
+					GLOBAL._harvesterOverdrivePower.Set(4);
 				}
 				GLOBAL._extraHousing = 0;
 				if (Boolean(_storeData.EXH) && _storeData.EXH.e < GLOBAL.Timestamp()) {

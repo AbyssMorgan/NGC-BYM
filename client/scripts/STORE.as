@@ -165,7 +165,7 @@ package {
 			if (free_available && seconds <= 600) {
 				return 0;
 			}
-			return  Math.ceil(seconds / 3600);
+			return  Math.ceil(seconds / 2400);
 		}
 
 		public static function GetResourceCost(param1: Array): int {

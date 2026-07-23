@@ -69,8 +69,7 @@ package
          {
             _loc2_ = QUESTS._questGroups[_loc1_];
             _loc3_ = this._groupsMC.addChild(new QUESTGROUP()) as QUESTGROUP;
-			name = _loc2_.name;
-            _loc3_.tLabel.htmlText = KEYS.Get(name);
+            _loc3_.tLabel.htmlText = KEYS.Get(_loc2_.name);
             _loc3_.name = _loc1_.toString();
             _loc3_.x = 10;
             _loc3_.y = 10 + 30 * _loc1_;
@@ -150,11 +149,11 @@ package
                   return 0;
                }
                _loc3_ = _questsMC.addChild(new QUESTITEM()) as QUESTITEM;
-			   var name:String = param1.name;
+			   var name:String = KEYS.Get(param1.name, param1.keyvars);
 			   if(param1.rules.hasOwnProperty('level_up')){
 					name = name.replace("#level_required#",param1.rules.level_up);
 				}
-               _loc3_.tLabel.htmlText = KEYS.Get(name,param1.keyvars);
+               _loc3_.tLabel.htmlText = name;
                _loc3_.y = 10 + 30 * param2;
                _loc3_.x = 10;
                _loc3_.mouseChildren = false;

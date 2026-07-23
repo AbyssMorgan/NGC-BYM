@@ -1143,6 +1143,8 @@
     "q_gi3_streamtitle": "#fname# just completed the #questname# Quest and collected #collected# as a reward.",
     "q_good": "Good",
 	"q_progress": "Progress",
+	"q_technology": "Technology",
+	"q_assault": "Assault",
     "q_invite10_description": "Get 10 friends to start playing<br> #installsgenerated#\/10 friends are playing because of you.",
     "q_invite10_hint": "Quest not rewarded for simply sending invites. Invite friends that you think will love Backyard Monsters. ",
     "q_invite10_name": "Monster Party",

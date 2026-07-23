@@ -83,6 +83,9 @@ package
 				"b129lvl":0,
 				"b130lvl":0,
 				"b132lvl":0,
+				"b144lvl":0,
+				"b145lvl":0,
+				"b146lvl":0,
 				"kills":0,
 				"bonus_bookmark":0,
 				"bonus_fan":0,
@@ -124,6 +127,8 @@ package
 				{"id":3, "name":"q_good"},
 				{"id":4, "name":"q_evil"},
 				{"id":5, "name":"q_progress"},
+				{"id":6, "name":"q_technology"},
+				{"id":7, "name":"q_assault"},
 			];
 			if(!BASE.isInfernoMainYardOrOutpost)
 			{
@@ -956,7 +961,7 @@ package
 					"order": 11602,
 					"list": true,
 					"reward": [0, 160000000, 0, 0, 0],
-					"id": "PE14",
+					"id": "PE16",
 					"group": 0,
 					"name": "Level 16 Pebble Shiner",
 					"description": "Upgrade your Pebble Shiner to Level 16",
@@ -972,7 +977,7 @@ package
 					"order": 11603,
 					"list": true,
 					"reward": [0, 0, 160000000, 0, 0],
-					"id": "PU14",
+					"id": "PU16",
 					"group": 0,
 					"name": "Level 16 Putty Squisher",
 					"description": "Upgrade your Putty Squisher to Level 16",
@@ -988,7 +993,7 @@ package
 					"order": 11604,
 					"list": true,
 					"reward": [0, 0, 0, 160000000, 0],
-					"id": "GO14",
+					"id": "GO16",
 					"group": 0,
 					"name": "Level 16 Goo Factory",
 					"description": "Upgrade your Goo Factory to Level 16",
@@ -1366,54 +1371,6 @@ package
 					"rules":
 					{
 						"b14lvl": 25
-					}
-				},
-
-
-				// Mixed
-				{
-					"order": 5,
-					"list": true,
-					"reward": [2000, 2000, 0, 0, 0],
-					"id": "T1",
-					"group": 0,
-					"name": "q_t1_name",
-					"description": "q_t1_description",
-					"hint": "q_t1_hint",
-					"questimage": "building-sniper.png",
-					"rules":
-					{
-						"b21lvl": 1
-					}
-				},
-				{
-					"order": 14,
-					"list": true,
-					"reward": [2000, 2000, 0, 0, 0],
-					"id": "T2",
-					"group": 0,
-					"name": "q_t2_name",
-					"description": "q_t2_description",
-					"hint": "q_t2_hint",
-					"questimage": "building-cannon.png",
-					"rules":
-					{
-						"b20lvl": 1
-					}
-				},
-				{
-					"order": 46,
-					"list": true,
-					"reward": [10000, 10000, 10000, 0, 0],
-					"id": "T3",
-					"group": 0,
-					"name": "q_t3_name",
-					"description": "q_t3_description",
-					"hint": "q_t3_hint",
-					"questimage": "building-tesla.png",
-					"rules":
-					{
-						"b25lvl": 1
 					}
 				},
 
@@ -1972,7 +1929,7 @@ package
 				},
 				
 
-				// Group 5
+				// Group 5 (Progress)
 				{
 					"order": 25,
 					"list": true,
@@ -2420,7 +2377,486 @@ package
 					{
 						"level_up": 120
 					}
-				}
+				},
+
+				// Group 6 (Technology)
+				{
+					"order": 1,
+					"list": true,
+					"reward": [0, 0, 100000000, 100000000, 0],
+					"id": "TL1",
+					"group": 6,
+					"name": "Technology Laboratory",
+					"description": "Build your Technology Laboratory",
+					"hint": "You can speed up upgrades.",
+					"questimage": "tech_laboratory.png",
+					"rules":
+					{
+						"b145lvl": 1
+					}
+				},
+				{
+					"order": 1,
+					"list": true,
+					"reward": [0, 0, 100000000, 100000000, 0],
+					"id": "AC1",
+					"group": 6,
+					"name": "Anti-Catapult",
+					"description": "Build your Anti-Catapult",
+					"hint": "You can speed up upgrades.",
+					"questimage": "anti_catapult.png",
+					"rules":
+					{
+						"b144lvl": 1
+					}
+				},
+				{
+					"order": 1,
+					"list": true,
+					"reward": [0, 0, 100000000, 100000000, 0],
+					"id": "CH1",
+					"group": 6,
+					"name": "Crystal Hive",
+					"description": "Build your Crystal Hive",
+					"hint": "You can speed up upgrades.",
+					"questimage": "crystal_hive.png",
+					"rules":
+					{
+						"b146lvl": 1
+					}
+				},
+				{
+					"order": 2,
+					"list": true,
+					"reward": [0, 0, 200000000, 200000000, 0],
+					"id": "TL2",
+					"group": 6,
+					"name": "Technology Laboratory Level 2",
+					"description": "Upgrade your Technology Laboratory to Level 2",
+					"hint": "You can speed up upgrades.",
+					"questimage": "tech_laboratory.png",
+					"prereq": "TL1",
+					"rules":
+					{
+						"b145lvl": 2
+					}
+				},
+				{
+					"order": 2,
+					"list": true,
+					"reward": [0, 0, 200000000, 200000000, 0],
+					"id": "AC2",
+					"group": 6,
+					"name": "Crystal Hive Level 2",
+					"description": "Upgrade your Crystal Hive to Level 2",
+					"hint": "You can speed up upgrades.",
+					"questimage": "anti_catapult.png",
+					"prereq": "AC1",
+					"rules":
+					{
+						"b144lvl": 2
+					}
+				},
+				{
+					"order": 2,
+					"list": true,
+					"reward": [0, 0, 200000000, 200000000, 0],
+					"id": "CH2",
+					"group": 6,
+					"name": "Crystal Hive Level 2",
+					"description": "Upgrade your Crystal Hive to Level 2",
+					"hint": "You can speed up upgrades.",
+					"questimage": "crystal_hive.png",
+					"prereq": "CH1",
+					"rules":
+					{
+						"b146lvl": 2
+					}
+				},
+				{
+					"order": 3,
+					"list": true,
+					"reward": [0, 0, 300000000, 300000000, 0],
+					"id": "TL3",
+					"group": 6,
+					"name": "Technology Laboratory Level 3",
+					"description": "Upgrade your Technology Laboratory to Level 3",
+					"hint": "You can speed up upgrades.",
+					"questimage": "tech_laboratory.png",
+					"prereq": "TL2",
+					"rules":
+					{
+						"b145lvl": 3
+					}
+				},
+				{
+					"order": 3,
+					"list": true,
+					"reward": [0, 0, 300000000, 300000000, 0],
+					"id": "AC3",
+					"group": 6,
+					"name": "Crystal Hive Level 3",
+					"description": "Upgrade your Crystal Hive to Level 3",
+					"hint": "You can speed up upgrades.",
+					"questimage": "anti_catapult.png",
+					"prereq": "AC2",
+					"rules":
+					{
+						"b144lvl": 3
+					}
+				},
+				{
+					"order": 3,
+					"list": true,
+					"reward": [0, 0, 300000000, 300000000, 0],
+					"id": "CH3",
+					"group": 6,
+					"name": "Crystal Hive Level 3",
+					"description": "Upgrade your Crystal Hive to Level 3",
+					"hint": "You can speed up upgrades.",
+					"questimage": "crystal_hive.png",
+					"prereq": "CH2",
+					"rules":
+					{
+						"b146lvl": 3
+					}
+				},
+				{
+					"order": 4,
+					"list": true,
+					"reward": [0, 0, 400000000, 400000000, 0],
+					"id": "TL4",
+					"group": 6,
+					"name": "Technology Laboratory Level 4",
+					"description": "Upgrade your Technology Laboratory to Level 4",
+					"hint": "You can speed up upgrades.",
+					"questimage": "tech_laboratory.png",
+					"prereq": "TL3",
+					"rules":
+					{
+						"b145lvl": 4
+					}
+				},
+				{
+					"order": 4,
+					"list": true,
+					"reward": [0, 0, 400000000, 400000000, 0],
+					"id": "AC4",
+					"group": 6,
+					"name": "Crystal Hive Level 4",
+					"description": "Upgrade your Crystal Hive to Level 4",
+					"hint": "You can speed up upgrades.",
+					"questimage": "anti_catapult.png",
+					"prereq": "AC3",
+					"rules":
+					{
+						"b144lvl": 4
+					}
+				},
+				{
+					"order": 4,
+					"list": true,
+					"reward": [0, 0, 400000000, 400000000, 0],
+					"id": "CH4",
+					"group": 6,
+					"name": "Crystal Hive Level 4",
+					"description": "Upgrade your Crystal Hive to Level 4",
+					"hint": "You can speed up upgrades.",
+					"questimage": "crystal_hive.png",
+					"prereq": "CH3",
+					"rules":
+					{
+						"b146lvl": 4
+					}
+				},
+				{
+					"order": 5,
+					"list": true,
+					"reward": [0, 0, 500000000, 500000000, 0],
+					"id": "TL5",
+					"group": 6,
+					"name": "Technology Laboratory Level 5",
+					"description": "Upgrade your Technology Laboratory to Level 5",
+					"hint": "You can speed up upgrades.",
+					"questimage": "tech_laboratory.png",
+					"prereq": "TL4",
+					"rules":
+					{
+						"b145lvl": 5
+					}
+				},
+				{
+					"order": 5,
+					"list": true,
+					"reward": [0, 0, 500000000, 500000000, 0],
+					"id": "AC5",
+					"group": 6,
+					"name": "Crystal Hive Level 5",
+					"description": "Upgrade your Crystal Hive to Level 5",
+					"hint": "You can speed up upgrades.",
+					"questimage": "anti_catapult.png",
+					"prereq": "AC4",
+					"rules":
+					{
+						"b144lvl": 5
+					}
+				},
+				{
+					"order": 5,
+					"list": true,
+					"reward": [0, 0, 500000000, 500000000, 0],
+					"id": "CH5",
+					"group": 6,
+					"name": "Crystal Hive Level 5",
+					"description": "Upgrade your Crystal Hive to Level 5",
+					"hint": "You can speed up upgrades.",
+					"questimage": "crystal_hive.png",
+					"prereq": "CH4",
+					"rules":
+					{
+						"b146lvl": 5
+					}
+				},
+				{
+					"order": 6,
+					"list": true,
+					"reward": [0, 0, 600000000, 600000000, 0],
+					"id": "TL6",
+					"group": 6,
+					"name": "Technology Laboratory Level 6",
+					"description": "Upgrade your Technology Laboratory to Level 6",
+					"hint": "You can speed up upgrades.",
+					"questimage": "tech_laboratory.png",
+					"prereq": "TL5",
+					"rules":
+					{
+						"b145lvl": 6
+					}
+				},
+				{
+					"order": 6,
+					"list": true,
+					"reward": [0, 0, 600000000, 600000000, 0],
+					"id": "AC6",
+					"group": 6,
+					"name": "Crystal Hive Level 6",
+					"description": "Upgrade your Crystal Hive to Level 6",
+					"hint": "You can speed up upgrades.",
+					"questimage": "anti_catapult.png",
+					"prereq": "AC5",
+					"rules":
+					{
+						"b144lvl": 6
+					}
+				},
+				{
+					"order": 6,
+					"list": true,
+					"reward": [0, 0, 600000000, 600000000, 0],
+					"id": "CH6",
+					"group": 6,
+					"name": "Crystal Hive Level 6",
+					"description": "Upgrade your Crystal Hive to Level 6",
+					"hint": "You can speed up upgrades.",
+					"questimage": "crystal_hive.png",
+					"prereq": "CH5",
+					"rules":
+					{
+						"b146lvl": 6
+					}
+				},
+				{
+					"order": 7,
+					"list": true,
+					"reward": [0, 0, 700000000, 700000000, 0],
+					"id": "TL7",
+					"group": 6,
+					"name": "Technology Laboratory Level 7",
+					"description": "Upgrade your Technology Laboratory to Level 7",
+					"hint": "You can speed up upgrades.",
+					"questimage": "tech_laboratory.png",
+					"prereq": "TL6",
+					"rules":
+					{
+						"b145lvl": 7
+					}
+				},
+				{
+					"order": 7,
+					"list": true,
+					"reward": [0, 0, 700000000, 700000000, 0],
+					"id": "AC7",
+					"group": 6,
+					"name": "Crystal Hive Level 7",
+					"description": "Upgrade your Crystal Hive to Level 7",
+					"hint": "You can speed up upgrades.",
+					"questimage": "anti_catapult.png",
+					"prereq": "AC6",
+					"rules":
+					{
+						"b144lvl": 7
+					}
+				},
+				{
+					"order": 7,
+					"list": true,
+					"reward": [0, 0, 700000000, 700000000, 0],
+					"id": "CH7",
+					"group": 6,
+					"name": "Crystal Hive Level 7",
+					"description": "Upgrade your Crystal Hive to Level 7",
+					"hint": "You can speed up upgrades.",
+					"questimage": "crystal_hive.png",
+					"prereq": "CH6",
+					"rules":
+					{
+						"b146lvl": 7
+					}
+				},
+				{
+					"order": 8,
+					"list": true,
+					"reward": [0, 0, 800000000, 800000000, 0],
+					"id": "TL8",
+					"group": 6,
+					"name": "Technology Laboratory Level 8",
+					"description": "Upgrade your Technology Laboratory to Level 8",
+					"hint": "You can speed up upgrades.",
+					"questimage": "tech_laboratory.png",
+					"prereq": "TL7",
+					"rules":
+					{
+						"b145lvl": 8
+					}
+				},
+				{
+					"order": 8,
+					"list": true,
+					"reward": [0, 0, 800000000, 800000000, 0],
+					"id": "AC8",
+					"group": 6,
+					"name": "Crystal Hive Level 8",
+					"description": "Upgrade your Crystal Hive to Level 8",
+					"hint": "You can speed up upgrades.",
+					"questimage": "anti_catapult.png",
+					"prereq": "AC7",
+					"rules":
+					{
+						"b144lvl": 8
+					}
+				},
+				{
+					"order": 8,
+					"list": true,
+					"reward": [0, 0, 800000000, 800000000, 0],
+					"id": "CH8",
+					"group": 6,
+					"name": "Crystal Hive Level 8",
+					"description": "Upgrade your Crystal Hive to Level 8",
+					"hint": "You can speed up upgrades.",
+					"questimage": "crystal_hive.png",
+					"prereq": "CH7",
+					"rules":
+					{
+						"b146lvl": 8
+					}
+				},
+				{
+					"order": 9,
+					"list": true,
+					"reward": [0, 0, 900000000, 900000000, 0],
+					"id": "TL9",
+					"group": 6,
+					"name": "Technology Laboratory Level 9",
+					"description": "Upgrade your Technology Laboratory to Level 9",
+					"hint": "You can speed up upgrades.",
+					"questimage": "tech_laboratory.png",
+					"prereq": "TL8",
+					"rules":
+					{
+						"b145lvl": 9
+					}
+				},
+				{
+					"order": 9,
+					"list": true,
+					"reward": [0, 0, 900000000, 900000000, 0],
+					"id": "AC9",
+					"group": 6,
+					"name": "Crystal Hive Level 9",
+					"description": "Upgrade your Crystal Hive to Level 9",
+					"hint": "You can speed up upgrades.",
+					"questimage": "anti_catapult.png",
+					"prereq": "AC8",
+					"rules":
+					{
+						"b144lvl": 9
+					}
+				},
+				{
+					"order": 9,
+					"list": true,
+					"reward": [0, 0, 900000000, 900000000, 0],
+					"id": "CH9",
+					"group": 6,
+					"name": "Crystal Hive Level 9",
+					"description": "Upgrade your Crystal Hive to Level 9",
+					"hint": "You can speed up upgrades.",
+					"questimage": "crystal_hive.png",
+					"prereq": "CH8",
+					"rules":
+					{
+						"b146lvl": 9
+					}
+				},
+				{
+					"order": 10,
+					"list": true,
+					"reward": [0, 0, 1000000000, 1000000000, 0],
+					"id": "TL10",
+					"group": 6,
+					"name": "Technology Laboratory Level 10",
+					"description": "Upgrade your Technology Laboratory to Level 10",
+					"hint": "You can speed up upgrades.",
+					"questimage": "tech_laboratory.png",
+					"prereq": "TL9",
+					"rules":
+					{
+						"b145lvl": 10
+					}
+				},
+				{
+					"order": 10,
+					"list": true,
+					"reward": [0, 0, 1000000000, 1000000000, 0],
+					"id": "AC10",
+					"group": 6,
+					"name": "Crystal Hive Level 10",
+					"description": "Upgrade your Crystal Hive to Level 10",
+					"hint": "You can speed up upgrades.",
+					"questimage": "anti_catapult.png",
+					"prereq": "AC9",
+					"rules":
+					{
+						"b144lvl": 10
+					}
+				},
+				{
+					"order": 10,
+					"list": true,
+					"reward": [0, 0, 1000000000, 1000000000, 0],
+					"id": "CH10",
+					"group": 6,
+					"name": "Crystal Hive Level 10",
+					"description": "Upgrade your Crystal Hive to Level 10",
+					"hint": "You can speed up upgrades.",
+					"questimage": "crystal_hive.png",
+					"prereq": "CH9",
+					"rules":
+					{
+						"b146lvl": 10
+					}
+				},
 
 			];
 			if(!GLOBAL._flags.kongregate && !GLOBAL._flags.viximo)

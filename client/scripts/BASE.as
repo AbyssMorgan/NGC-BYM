@@ -1254,6 +1254,34 @@ package
                {
                   QUESTS._global.monstersblendedgoo = serverData.stats.mobg;
                }
+			   if (serverData.stats.assault_to_1_0)
+               {
+                  QUESTS._global.assault_to_1_0 = serverData.stats.assault_to_1_0;
+               }
+			   if (serverData.stats.assault_to_1_1)
+               {
+                  QUESTS._global.assault_to_1_1 = serverData.stats.assault_to_1_1;
+               }
+			   if (serverData.stats.assault_to_1_2)
+               {
+                  QUESTS._global.assault_to_1_2 = serverData.stats.assault_to_1_2;
+               }
+			   if (serverData.stats.assault_to_1_3)
+               {
+                  QUESTS._global.assault_to_1_3 = serverData.stats.assault_to_1_3;
+               }
+			   if (serverData.stats.assault_to_2)
+               {
+                  QUESTS._global.assault_to_2 = serverData.stats.assault_to_2;
+               }
+			   if (serverData.stats.assault_to_3)
+               {
+                  QUESTS._global.assault_to_3 = serverData.stats.assault_to_3;
+               }
+			   if (serverData.stats.assault_to_4)
+               {
+                  QUESTS._global.assault_to_4 = serverData.stats.assault_to_4;
+               }
             //    if (serverData.stats.moga)
             //    {
             //       QUESTS._global.gift_accept = serverData.stats.moga;
@@ -3192,6 +3220,13 @@ package
          _loc1_.mg = int(QUESTS._global.goldmushroomspicked);
          _loc1_.mob = int(QUESTS._global.monstersblended);
          _loc1_.mobg = int(QUESTS._global.monstersblendedgoo);
+         _loc1_.assault_to_1_0 = int(QUESTS._global.assault_to_1_0);
+         _loc1_.assault_to_1_1 = int(QUESTS._global.assault_to_1_1);
+         _loc1_.assault_to_1_2 = int(QUESTS._global.assault_to_1_2);
+         _loc1_.assault_to_1_3 = int(QUESTS._global.assault_to_1_3);
+         _loc1_.assault_to_2 = int(QUESTS._global.assault_to_2);
+         _loc1_.assault_to_3 = int(QUESTS._global.assault_to_3);
+         _loc1_.assault_to_4 = int(QUESTS._global.assault_to_4);
          _loc1_.moga = int(QUESTS._global.gift_accept);
          _loc1_.updateid = GLOBAL._whatsnewid;
          _loc1_.updateid_mr2 = GLOBAL._mr2TutorialId;
@@ -3982,22 +4017,54 @@ package
             if (!MapRoomManager.instance.isInMapRoom2or3 || MapRoomManager.instance.isInMapRoom3 && isInfernoMainYardOrOutpost)
             {
                saveData.type = GLOBAL._loadmode == "iwmattack" || BASE.isInfernoMainYardOrOutpost && GLOBAL.mode == "wmattack" ? "iwm" : "wm";
-               saveData.destroyed = _percentDamaged >= 90 ? 1 : 0;
+               saveData.destroyed = _percentDamaged >= 98 ? 1 : 0;
             }
             else
             {
-               saveData.destroyed = _percentDamaged >= 90 ? 1 : 0;
+               saveData.destroyed = _percentDamaged >= 98 ? 1 : 0;
             }
          }
          else if (isOutpostOrInfernoOutpost && GLOBAL.mode != GLOBAL.e_BASE_MODE.BUILD)
          {
-            saveData.destroyed = _percentDamaged >= 90 ? 1 : 0;
+            saveData.destroyed = _percentDamaged >= 98 ? 1 : 0;
          }
          else if (isInfernoMainYardOrOutpost || GLOBAL._loadmode != GLOBAL.mode)
          {
             saveData.type = "inferno";
          }
          saveData.damage = _percentDamaged;
+		 if(MapRoomManager.instance.isInMapRoom3 && saveData["over"] == 1 && saveData.damage >= 98){
+			if(_level >= 45 && _level <= 65){
+				switch(_wmID){
+					case 1: {
+						// Legionnaire
+						QUESTS.Check("assault_to_1_0", ++QUESTS._global.assault_to_1_0);
+						break;
+					}
+					case 11: {
+						// Kozu
+						QUESTS.Check("assault_to_1_1", ++QUESTS._global.assault_to_1_1);
+						break;
+					}
+					case 21: {
+						// Abunakki
+						QUESTS.Check("assault_to_1_2", ++QUESTS._global.assault_to_1_2);
+						break;
+					}
+					case 31: {
+						// Dreadnaught
+						QUESTS.Check("assault_to_1_3", ++QUESTS._global.assault_to_1_3);
+						break;
+					}
+				}
+			} else if(_level >= 70 && _level <= 80){
+				QUESTS.Check("assault_to_2", ++QUESTS._global.assault_to_2);
+			} else if(_level == 100){
+				QUESTS.Check("assault_to_3", ++QUESTS._global.assault_to_3);
+			} else if(_level == 120){
+				QUESTS.Check("assault_to_4", ++QUESTS._global.assault_to_4);
+			}
+		 }
          if (_pendingPromo)
          {
             saveData.purchasecomplete = 1;

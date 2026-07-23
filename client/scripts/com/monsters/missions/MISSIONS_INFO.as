@@ -55,6 +55,13 @@ package com.monsters.missions
          description = description.replace("#mushroomspicked#",QUESTS._global.mushroomspicked);
          description = description.replace("#goldmushroomspicked#",QUESTS._global.goldmushroomspicked);
          description = description.replace("#monstersblended#",QUESTS._global.monstersblended);
+		 description = description.replace("#assault_to_1_0#",QUESTS._global.assault_to_1_0);
+		 description = description.replace("#assault_to_1_1#",QUESTS._global.assault_to_1_1);
+		 description = description.replace("#assault_to_1_2#",QUESTS._global.assault_to_1_2);
+		 description = description.replace("#assault_to_1_3#",QUESTS._global.assault_to_1_3);
+		 description = description.replace("#assault_to_2#",QUESTS._global.assault_to_2);
+		 description = description.replace("#assault_to_3#",QUESTS._global.assault_to_3);
+		 description = description.replace("#assault_to_4#",QUESTS._global.assault_to_4);
          description = description.replace("#giftssent#",QUESTS._global.bonus_gifts);
          description = description.replace("#sentgiftsaccepted#",QUESTS._global.gift_accept);
          if(Boolean(QUESTS._completed) && QUESTS._completed[this._missionKey] == 1)

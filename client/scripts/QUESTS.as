@@ -146,7 +146,23 @@ package
 			var _loc2_:Object = null;
 			_mainQuests = [
 
-				// Group 0 (New)
+				// Group 0 (Construction)
+				{
+					"order": 1,
+					"list": true,
+					"priority": 1,
+					"reward": [20000, 20000, 20000, 20000, 0],
+					"id": "EM1",
+					"group": 0,
+					"name": "q_em1_name",
+					"description": "q_em1_description",
+					"hint": "q_em1_hint",
+					"questimage": "radiotower.png",
+					"rules":
+					{
+						"b113lvl": 1
+					}
+				},
 				{
 					"order": 10106, 
 					"list": true,
@@ -1374,7 +1390,147 @@ package
 					}
 				},
 
-				// Mixed
+				// Monsters
+				{
+					"order": 1,
+					"list": true,
+					"reward": [2000, 2000, 2000, 2000, 0],
+					"id": "CR3",
+					"group": 1,
+					"name": "q_cr3_name",
+					"description": "q_cr3_description",
+					"hint": "q_cr3_hint",
+					"questimage": "building-housing.png",
+					"rules":
+					{
+						"b15lvl": 1
+					}
+				},
+				{
+					"order": 2,
+					"list": true,
+					"reward": [1000, 1000, 0, 1000, 0],
+					"id": "CR2",
+					"group": 1,
+					"name": "q_cr2_name",
+					"description": "q_cr2_description",
+					"hint": "q_cr2_hint",
+					"questimage": "building-hatchery.png",
+					"rules":
+					{
+						"b13lvl": 1
+					}
+				},
+				{
+					"order": 3,
+					"list": true,
+					"reward": [1000, 1000, 5000, 0, 0],
+					"id": "CR1",
+					"group": 1,
+					"name": "q_cr1_name",
+					"description": "q_cr1_description",
+					"hint": "q_cr1_hint",
+					"questimage": "building-monsterlocker.v2.png",
+					"rules":
+					{
+						"b8lvl": 1
+					}
+				},
+				{
+					"order": 4,
+					"list": true,
+					"reward": [0, 0, 0, 10000, 0],
+					"id": "HG1",
+					"group": 1,
+					"name": "q_cm1_name",
+					"description": "q_cm1_description",
+					"hint": "q_cm1_hint",
+					"questimage": "G1_L1-150.png",
+					"rules":
+					{
+						"hatch_champ1": 1
+					}
+				},
+				{
+					"order": 5,
+					"list": true,
+					"reward": [0, 0, 0, 800000, 0],
+					"id": "UG1",
+					"group": 1,
+					"name": "q_cm2_name",
+					"description": "q_cm2_description",
+					"hint": "q_cm2_hint",
+					"questimage": "G1_L6-150.png",
+					"prereq": "HG1",
+					"rules":
+					{
+						"upgrade_champ1": 1
+					}
+				},
+				{
+					"order": 6,
+					"list": true,
+					"reward": [0, 0, 0, 10000, 0],
+					"id": "HG2",
+					"group": 1,
+					"name": "q_cm3_name",
+					"description": "q_cm3_description",
+					"hint": "q_cm3_hint",
+					"questimage": "G2_L1-150.png",
+					"rules":
+					{
+						"hatch_champ2": 1
+					}
+				},
+				{
+					"order": 7,
+					"list": true,
+					"reward": [0, 0, 0, 800000, 0],
+					"id": "UG2",
+					"group": 1,
+					"name": "q_cm4_name",
+					"description": "q_cm4_description",
+					"hint": "q_cm4_hint",
+					"questimage": "G2_L6-150.png",
+					"prereq": "HG2",
+					"rules":
+					{
+						"upgrade_champ2": 1
+					}
+				},
+				{
+					"order": 8,
+					"list": true,
+					"reward": [0, 0, 0, 10000, 0],
+					"id": "HG3",
+					"group": 1,
+					"name": "q_cm5_name",
+					"description": "q_cm5_description",
+					"hint": "q_cm5_hint",
+					"questimage": "G3_L1-150.png",
+					"rules":
+					{
+						"hatch_champ3": 1
+					}
+				},
+				{
+					"order": 9,
+					"list": true,
+					"reward": [0, 0, 0, 800000, 0],
+					"id": "UG3",
+					"group": 1,
+					"name": "q_cm6_name",
+					"description": "q_cm6_description",
+					"hint": "q_cm6_hint",
+					"questimage": "G3_L6-150.png",
+					"prereq": "HG3",
+					"rules":
+					{
+						"upgrade_champ3": 1
+					}
+				},
+
+				// Group 2 (Attacking)
 				{
 					"order": 6,
 					"list": true,
@@ -1388,21 +1544,6 @@ package
 					"rules":
 					{
 						"kills": 1
-					}
-				},
-				{
-					"order": 7,
-					"list": true,
-					"reward": [2000, 2000, 2000, 2000, 0],
-					"id": "CR3",
-					"group": 1,
-					"name": "q_cr3_name",
-					"description": "q_cr3_description",
-					"hint": "q_cr3_hint",
-					"questimage": "building-housing.png",
-					"rules":
-					{
-						"b15lvl": 1
 					}
 				},
 				{
@@ -1451,21 +1592,6 @@ package
 					}
 				},
 				{
-					"order": 11,
-					"list": true,
-					"reward": [1000, 1000, 0, 1000, 0],
-					"id": "CR2",
-					"group": 1,
-					"name": "q_cr2_name",
-					"description": "q_cr2_description",
-					"hint": "q_cr2_hint",
-					"questimage": "building-hatchery.png",
-					"rules":
-					{
-						"b13lvl": 1
-					}
-				},
-				{
 					"order": 36,
 					"list": true,
 					"reward": [20000, 0, 0, 0, 0],
@@ -1481,23 +1607,52 @@ package
 					}
 				},
 				{
-					"order": 19,
+					"order": 18,
 					"list": true,
-					"reward": [1000, 1000, 5000, 0, 0],
-					"id": "CR1",
-					"group": 1,
-					"name": "q_cr1_name",
-					"description": "q_cr1_description",
-					"hint": "q_cr1_hint",
-					"questimage": "building-monsterlocker.v2.png",
-					"prereq": "C13",
+					"reward": [10000, 10000, 10000, 10000, 0],
+					"id": "WM2",
+					"group": 2,
+					"name": "q_wm2_name",
+					"description": "q_wm2_description",
+					"hint": "q_wm2_hint",
+					"questimage": "tribe_kozu.v2.png",
 					"rules":
 					{
-						"b8lvl": 1
+						"destroy_tribe2": 1
+					}
+				},
+				{
+					"order": 33,
+					"list": true,
+					"reward": [20000, 20000, 20000, 20000, 0],
+					"id": "WM3",
+					"group": 2,
+					"name": "q_wm3_name",
+					"description": "q_wm3_description",
+					"hint": "q_wm3_hint",
+					"questimage": "tribe_abunakki.v2.png",
+					"rules":
+					{
+						"destroy_tribe3": 1
+					}
+				},
+				{
+					"order": 50,
+					"list": true,
+					"reward": [40000, 40000, 40000, 40000, 0],
+					"id": "WM4",
+					"group": 2,
+					"name": "q_wm4_name",
+					"description": "q_wm4_description",
+					"hint": "q_wm4_hint",
+					"questimage": "tribe_dreadnaut.v2.png",
+					"rules":
+					{
+						"destroy_tribe4": 1
 					}
 				},
 
-				// Group 3
+				// Group 3 (Good)
 				{
 					"order": 63,
 					"list": true,
@@ -1507,7 +1662,7 @@ package
 					"name": "q_m2_name",
 					"description": "q_m2_description",
 					"hint": "q_m2_hint",
-					"questimage": "mushroompizza.png",
+					"questimage": "loot.png",
 					"prereq": "M1",
 					"rules":
 					{
@@ -1602,7 +1757,7 @@ package
 					"name": "q_m4_name",
 					"description": "q_m4_description",
 					"hint": "q_m4_hint",
-					"questimage": "mushroombooty.png",
+					"questimage": "loot.png",
 					"prereq": "M1",
 					"rules":
 					{
@@ -1722,8 +1877,74 @@ package
 						"gift_accept": 50
 					}
 				},
+				{
+					"order": 70,
+					"list": true,
+					"priority": 1,
+					"reward": [0, 0, 0, 0, 50],
+					"id": "FAN",
+					"group": 3,
+					"name": "q_fan_name",
+					"description": "q_fan_description",
+					"hint": "q_fan_hint",
+					"questimage": "fantastic.v2.png",
+					"rules":
+					{
+						"bonus_fan": 1
+					}
+				},
+				{
+					"order": 71,
+					"list": true,
+					"priority": 1,
+					"reward": [0, 0, 0, 0, 25],
+					"id": "INVITE1",
+					"group": 3,
+					"name": "q_invite1_name",
+					"description": "q_invite1_description",
+					"hint": "q_invite1_hint",
+					"questimage": "friendlymonster.png",
+					"rules":
+					{
+						"bonus_invites": 1
+					}
+				},
+				{
+					"order": 74,
+					"list": true,
+					"priority": 1,
+					"reward": [0, 0, 0, 0, 45],
+					"id": "INVITE5",
+					"group": 3,
+					"name": "q_invite5_name",
+					"description": "q_invite5_description",
+					"hint": "q_invite5_hint",
+					"questimage": "bandofmonsters.png",
+					"prereq": "INVITE1",
+					"rules":
+					{
+						"bonus_invites": 5
+					}
+				},
+				{
+					"order": 76,
+					"list": true,
+					"priority": 1,
+					"reward": [0, 0, 0, 0, 65],
+					"id": "INVITE10",
+					"group": 3,
+					"name": "q_invite10_name",
+					"description": "q_invite10_description",
+					"hint": "q_invite10_hint",
+					"questimage": "monsterparty.png",
+					"prereq": "INVITE5",
+					"rules":
+					{
+						"bonus_invites": 10
+					}
+				},
 
-				// Group 4
+				// Group 4 (Evil)
 				{
 					"order": 44,
 					"list": true,
@@ -1787,147 +2008,6 @@ package
 						"monstersblended": 5000
 					}
 				},
-				
-				// Mixed
-				{
-					"order": 18,
-					"list": true,
-					"reward": [10000, 10000, 10000, 10000, 0],
-					"id": "WM2",
-					"group": 2,
-					"name": "q_wm2_name",
-					"description": "q_wm2_description",
-					"hint": "q_wm2_hint",
-					"questimage": "tribe_kozu.v2.png",
-					"rules":
-					{
-						"destroy_tribe2": 1
-					}
-				},
-				{
-					"order": 33,
-					"list": true,
-					"reward": [20000, 20000, 20000, 20000, 0],
-					"id": "WM3",
-					"group": 2,
-					"name": "q_wm3_name",
-					"description": "q_wm3_description",
-					"hint": "q_wm3_hint",
-					"questimage": "tribe_abunakki.v2.png",
-					"rules":
-					{
-						"destroy_tribe3": 1
-					}
-				},
-				{
-					"order": 50,
-					"list": true,
-					"reward": [40000, 40000, 40000, 40000, 0],
-					"id": "WM4",
-					"group": 2,
-					"name": "q_wm4_name",
-					"description": "q_wm4_description",
-					"hint": "q_wm4_hint",
-					"questimage": "tribe_dreadnaut.v2.png",
-					"rules":
-					{
-						"destroy_tribe4": 1
-					}
-				},
-				{
-					"order": 67,
-					"list": true,
-					"reward": [0, 0, 0, 10000, 0],
-					"id": "HG1",
-					"group": 1,
-					"name": "q_cm1_name",
-					"description": "q_cm1_description",
-					"hint": "q_cm1_hint",
-					"questimage": "G1_L1-150.png",
-					"rules":
-					{
-						"hatch_champ1": 1
-					}
-				},
-				{
-					"order": 52,
-					"list": true,
-					"reward": [0, 0, 0, 800000, 0],
-					"id": "UG1",
-					"group": 1,
-					"name": "q_cm2_name",
-					"description": "q_cm2_description",
-					"hint": "q_cm2_hint",
-					"questimage": "G1_L6-150.png",
-					"prereq": "HG1",
-					"rules":
-					{
-						"upgrade_champ1": 1
-					}
-				},
-				{
-					"order": 68,
-					"list": true,
-					"reward": [0, 0, 0, 10000, 0],
-					"id": "HG2",
-					"group": 1,
-					"name": "q_cm3_name",
-					"description": "q_cm3_description",
-					"hint": "q_cm3_hint",
-					"questimage": "G2_L1-150.png",
-					"rules":
-					{
-						"hatch_champ2": 1
-					}
-				},
-				{
-					"order": 53,
-					"list": true,
-					"reward": [0, 0, 0, 800000, 0],
-					"id": "UG2",
-					"group": 1,
-					"name": "q_cm4_name",
-					"description": "q_cm4_description",
-					"hint": "q_cm4_hint",
-					"questimage": "G2_L6-150.png",
-					"prereq": "HG2",
-					"rules":
-					{
-						"upgrade_champ2": 1
-					}
-				},
-				{
-					"order": 69,
-					"list": true,
-					"reward": [0, 0, 0, 10000, 0],
-					"id": "HG3",
-					"group": 1,
-					"name": "q_cm5_name",
-					"description": "q_cm5_description",
-					"hint": "q_cm5_hint",
-					"questimage": "G3_L1-150.png",
-					"rules":
-					{
-						"hatch_champ3": 1
-					}
-				},
-				{
-					"order": 57,
-					"list": true,
-					"reward": [0, 0, 0, 800000, 0],
-					"id": "UG3",
-					"group": 1,
-					"name": "q_cm6_name",
-					"description": "q_cm6_description",
-					"hint": "q_cm6_hint",
-					"questimage": "G3_L6-150.png",
-					"prereq": "HG3",
-					"rules":
-					{
-						"upgrade_champ3": 1
-					}
-				},
-				
 
 				// Group 5 (Progress)
 				{
@@ -2859,77 +2939,6 @@ package
 				},
 
 			];
-			if(!GLOBAL._flags.kongregate && !GLOBAL._flags.viximo)
-			{
-				_quests.push({
-					"order":70,
-					"list":true,
-					"priority":1,
-					"reward":[0,0,0,0,50],
-					"id":"FAN",
-					"group":3,
-					"name":"q_fan_name",
-					"description":"q_fan_description",
-					"hint":"q_fan_hint",
-					"questimage":"fantastic.v2.png",
-					"rules":{"bonus_fan":1}
-				});
-				_quests.push({
-					"order":71,
-					"list":true,
-					"priority":1,
-					"reward":[0,0,0,0,25],
-					"id":"INVITE1",
-					"group":3,
-					"name":"q_invite1_name",
-					"description":"q_invite1_description",
-					"hint":"q_invite1_hint",
-					"questimage":"friendlymonster.png",
-					"rules":{"bonus_invites":1}
-				});
-				_quests.push({
-					"order":74,
-					"list":true,
-					"priority":1,
-					"reward":[0,0,0,0,45],
-					"id":"INVITE5",
-					"group":3,
-					"name":"q_invite5_name",
-					"description":"q_invite5_description",
-					"hint":"q_invite5_hint",
-					"questimage":"bandofmonsters.png",
-					"prereq":"INVITE1",
-					"rules":{"bonus_invites":5}
-				});
-				_quests.push({
-					"order":76,
-					"list":true,
-					"priority":1,
-					"reward":[0,0,0,0,65],
-					"id":"INVITE10",
-					"group":3,
-					"name":"q_invite10_name",
-					"description":"q_invite10_description",
-					"hint":"q_invite10_hint",
-					"questimage":"monsterparty.png",
-					"prereq":"INVITE5",
-					"rules":{"bonus_invites":10}
-				});
-				_quests.push({
-					"order":17,
-					"list":true,
-					"priority":1,
-					"reward":[20000,20000,20000,20000,0],
-					"id":"EM1",
-					"group":0,
-					"name":"q_em1_name",
-					"description":"q_em1_description",
-					"hint":"q_em1_hint",
-					"questimage":"radiotower.png",
-					"prereq":"C13",
-					"rules":{"b113lvl":1}
-				});
-			}
 			var _loc1_:Array = [0,0,10,10,10,2,15,15,15,20,20,5,2,5,5,1];
 			_loc2_ = CREATURELOCKER._creatures["C" + 2];
 			_quests.push({
@@ -2937,7 +2946,7 @@ package
 				"list":true,
 				"reward":[0,0,0,0,0],
 				"id":"UC2",
-				"group":1,
+				"group": 1,
 				"name":"q_unlock_name",
 				"description":"q_unlock_description",
 				"keyvars":{"v1":KEYS.Get(_loc2_.name)},
@@ -2955,7 +2964,7 @@ package
 				"list":true,
 				"reward":[0,0,0,0,0],
 				"id":"UC3",
-				"group":1,
+				"group": 1,
 				"name":"q_unlock_name",
 				"description":"q_unlock_description",
 				"keyvars":{"v1":KEYS.Get(_loc2_.name)},
@@ -2973,7 +2982,7 @@ package
 				"list":true,
 				"reward":[0,0,0,0,0],
 				"id":"UC4",
-				"group":1,
+				"group": 1,
 				"name":"q_unlock_name",
 				"description":"q_unlock_description",
 				"keyvars":{"v1":KEYS.Get(_loc2_.name)},
@@ -2991,7 +3000,7 @@ package
 				"list":true,
 				"reward":[0,0,0,0,0],
 				"id":"UC5",
-				"group":1,
+				"group": 1,
 				"name":"q_unlock_name",
 				"description":"q_unlock_description",
 				"keyvars":{"v1":KEYS.Get(_loc2_.name)},
@@ -3009,7 +3018,7 @@ package
 				"list":true,
 				"reward":[0,0,0,0,0],
 				"id":"UC6",
-				"group":1,
+				"group": 1,
 				"name":"q_unlock_name",
 				"description":"q_unlock_description",
 				"keyvars":{"v1":KEYS.Get(_loc2_.name)},
@@ -3027,7 +3036,7 @@ package
 				"list":true,
 				"reward":[0,0,0,0,0],
 				"id":"UC7",
-				"group":1,
+				"group": 1,
 				"name":"q_unlock_name",
 				"description":"q_unlock_description",
 				"keyvars":{"v1":KEYS.Get(_loc2_.name)},
@@ -3045,7 +3054,7 @@ package
 				"list":true,
 				"reward":[0,0,0,0,0],
 				"id":"UC8",
-				"group":1,
+				"group": 1,
 				"name":"q_unlock_name",
 				"description":"q_unlock_description",
 				"keyvars":{"v1":KEYS.Get(_loc2_.name)},
@@ -3063,7 +3072,7 @@ package
 				"list":true,
 				"reward":[0,0,0,0,0],
 				"id":"UC9",
-				"group":1,
+				"group": 1,
 				"name":"q_unlock_name",
 				"description":"q_unlock_description",
 				"keyvars":{"v1":KEYS.Get(_loc2_.name)},
@@ -3081,7 +3090,7 @@ package
 				"list":true,
 				"reward":[0,0,0,0,0],
 				"id":"UC10",
-				"group":1,
+				"group": 1,
 				"name":"q_unlock_name",
 				"description":"q_unlock_description",
 				"keyvars":{"v1":KEYS.Get(_loc2_.name)},
@@ -3099,7 +3108,7 @@ package
 				"list":true,
 				"reward":[0,0,0,0,0],
 				"id":"UC11",
-				"group":1,
+				"group": 1,
 				"name":"q_unlock_name",
 				"description":"q_unlock_description",
 				"keyvars":{"v1":KEYS.Get(_loc2_.name)},
@@ -3117,7 +3126,7 @@ package
 				"list":true,
 				"reward":[0,0,0,0,0],
 				"id":"UC12",
-				"group":1,
+				"group": 1,
 				"name":"q_unlock_name",
 				"description":"q_unlock_description",
 				"keyvars":{"v1":KEYS.Get(_loc2_.name)},
@@ -3135,7 +3144,7 @@ package
 				"list":true,
 				"reward":[0,0,0,0,0],
 				"id":"UC13",
-				"group":1,
+				"group": 1,
 				"name":"q_unlock_name",
 				"description":"q_unlock_description",
 				"keyvars":{"v1":KEYS.Get(_loc2_.name)},
@@ -3152,12 +3161,12 @@ package
 				"list":true,
 				"reward":[0,0,0,0,0],
 				"id":"SW4",
-				"group":2,
+				"group": 2,
 				"name":"q_unlockweapon_name",
 				"description":"q_unlockweapon_desc",
 				"keyvars":{"v1":SiegeWeapons.getWeapon(Decoy.ID).name},
 				"hint":"q_unlockweapon_hint",
-				"questimage":"siegeweapon_decoy.jpg",
+				"questimage":"siege_icon_decoy.png",
 				"prereq":"C16",
 				"siegeweapon_reward":"decoy",
 				"siegeweapon_rewardcount":1,
@@ -3168,12 +3177,12 @@ package
 				"list":true,
 				"reward":[0,0,0,0,0],
 				"id":"SW5",
-				"group":2,
+				"group": 2,
 				"name":"q_unlockweapon_name",
 				"description":"q_unlockweapon_desc",
 				"keyvars":{"v1":SiegeWeapons.getWeapon(Vacuum.ID).name},
 				"hint":"q_unlockweapon_hint",
-				"questimage":"siegeweapon_vacuum.jpg",
+				"questimage":"siege_icon_vacuum.png",
 				"prereq":"C16",
 				"siegeweapon_reward":"vacuum",
 				"siegeweapon_rewardcount":1,
@@ -3184,12 +3193,12 @@ package
 				"list":true,
 				"reward":[0,0,0,0,0],
 				"id":"SW6",
-				"group":2,
+				"group": 2,
 				"name":"q_unlockweapon_name",
 				"description":"q_unlockweapon_desc",
 				"keyvars":{"v1":SiegeWeapons.getWeapon(Jars.ID).name},
 				"hint":"q_unlockweapon_hint",
-				"questimage":"siegeweapon_jars.jpg",
+				"questimage":"siege_icon_jars.png",
 				"prereq":"C16",
 				"siegeweapon_reward":"jars",
 				"siegeweapon_rewardcount":1,
@@ -3200,7 +3209,7 @@ package
 				"list":true,
 				"reward":[0,0,0,0,0],
 				"id":"SW7",
-				"group":2,
+				"group": 2,
 				"name":"q_upgradeweapon_name",
 				"description":"q_upgradeweapon_desc",
 				"keyvars":{
@@ -3208,7 +3217,7 @@ package
 					"v2":5
 				},
 				"hint":"q_upgradeweapon_hint",
-				"questimage":"siegeweapon_decoy.jpg",
+				"questimage":"siege_icon_decoy.png",
 				"prereq":"SW4",
 				"siegeweapon_reward":"decoy",
 				"siegeweapon_rewardcount":1,
@@ -3219,7 +3228,7 @@ package
 				"list":true,
 				"reward":[0,0,0,0,0],
 				"id":"SW8",
-				"group":2,
+				"group": 2,
 				"name":"q_upgradeweapon_name",
 				"description":"q_upgradeweapon_desc",
 				"keyvars":{
@@ -3227,7 +3236,7 @@ package
 					"v2":5
 				},
 				"hint":"q_upgradeweapon_hint",
-				"questimage":"siegeweapon_vacuum.jpg",
+				"questimage":"siege_icon_vacuum.png",
 				"prereq":"SW5",
 				"siegeweapon_reward":"vacuum",
 				"siegeweapon_rewardcount":1,
@@ -3238,7 +3247,7 @@ package
 				"list":true,
 				"reward":[0,0,0,0,0],
 				"id":"SW9",
-				"group":2,
+				"group": 2,
 				"name":"q_upgradeweapon_name",
 				"description":"q_upgradeweapon_desc",
 				"keyvars":{
@@ -3246,7 +3255,7 @@ package
 					"v2":5
 				},
 				"hint":"q_upgradeweapon_hint",
-				"questimage":"siegeweapon_jars.jpg",
+				"questimage":"siege_icon_jars.png",
 				"prereq":"SW6",
 				"siegeweapon_reward":"jars",
 				"siegeweapon_rewardcount":1,
@@ -3257,7 +3266,7 @@ package
 				"list":true,
 				"reward":[0,0,0,0,0],
 				"id":"SW10",
-				"group":2,
+				"group": 2,
 				"name":"q_upgradeweapon_name",
 				"description":"q_upgradeweapon_desc",
 				"keyvars":{
@@ -3265,7 +3274,7 @@ package
 					"v2":10
 				},
 				"hint":"q_upgradeweapon_hint",
-				"questimage":"siegeweapon_decoy.jpg",
+				"questimage":"siege_icon_decoy.png",
 				"prereq":"SW7",
 				"siegeweapon_reward":"decoy",
 				"siegeweapon_rewardcount":1,
@@ -3276,7 +3285,7 @@ package
 				"list":true,
 				"reward":[0,0,0,0,0],
 				"id":"SW11",
-				"group":2,
+				"group": 2,
 				"name":"q_upgradeweapon_name",
 				"description":"q_upgradeweapon_desc",
 				"keyvars":{
@@ -3284,7 +3293,7 @@ package
 					"v2":10
 				},
 				"hint":"q_upgradeweapon_hint",
-				"questimage":"siegeweapon_vacuum.jpg",
+				"questimage":"siege_icon_vacuum.png",
 				"prereq":"SW8",
 				"siegeweapon_reward":"vacuum",
 				"siegeweapon_rewardcount":1,
@@ -3295,7 +3304,7 @@ package
 				"list":true,
 				"reward":[0,0,0,0,0],
 				"id":"SW12",
-				"group":2,
+				"group": 2,
 				"name":"q_upgradeweapon_name",
 				"description":"q_upgradeweapon_desc",
 				"keyvars":{
@@ -3303,7 +3312,7 @@ package
 					"v2":10
 				},
 				"hint":"q_upgradeweapon_hint",
-				"questimage":"siegeweapon_jars.jpg",
+				"questimage":"siege_icon_jars.png",
 				"prereq":"SW9",
 				"siegeweapon_reward":"jars",
 				"siegeweapon_rewardcount":1,

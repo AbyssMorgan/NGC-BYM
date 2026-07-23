@@ -162,8 +162,13 @@ package com.monsters.maproom3.data
             while(this.m_CellCreationIndexY < this.m_Height)
             {
                index = this.GetCellIndex(this.m_CellCreationIndexX,this.m_CellCreationIndexY);
-               cellData = this.m_CreatingMapData.data[index];
-               this.m_MapRoom3Cells[index] = new MapRoom3Cell(this.m_CellCreationIndexX,this.m_CellCreationIndexY,cellData.h,cellData.t);
+               cellData = this.m_CreatingMapData != null && this.m_CreatingMapData.data != null ? this.m_CreatingMapData.data[index] : null;
+               this.m_MapRoom3Cells[index] = new MapRoom3Cell(
+                  this.m_CellCreationIndexX,
+                  this.m_CellCreationIndexY,
+                  cellData != null && cellData.h !== undefined ? cellData.h : 0,
+                  cellData != null && cellData.t !== undefined ? cellData.t : EnumYardType.EMPTY
+               );
                // Timeout check disabled for faster loading
                // if(getTimer() - timer > CELL_CREATION_LOOP_TIMEOUT)
                // {
@@ -176,7 +181,7 @@ package com.monsters.maproom3.data
          }
          this.m_CreatingMapData = null;
       }
-      
+
       public function LoadInitialCellData(param1:Point) : void
       {
          var _loc3_:uint = 0;
@@ -187,7 +192,7 @@ package com.monsters.maproom3.data
             _loc4_ = 0;
             while(_loc4_ < _loc3_)
             {
-               this.m_MapRoom3Cells[_loc4_].ClearData();
+               if(this.m_MapRoom3Cells[_loc4_]) this.m_MapRoom3Cells[_loc4_].ClearData();
                _loc4_++;
             }
             this.m_PlayerOwnedCells.length = 0;
@@ -264,6 +269,10 @@ package com.monsters.maproom3.data
          var _loc3_:int = this.GetCellIndex(param1,param2);
          if(_loc3_ != -1 && this.m_MapRoom3Cells.length > _loc3_)
          {
+            if(this.m_MapRoom3Cells[_loc3_] == null)
+            {
+               this.m_MapRoom3Cells[_loc3_] = new MapRoom3Cell(param1,param2,0,EnumYardType.EMPTY);
+            }
             return this.m_MapRoom3Cells[_loc3_];
          }
          return this.m_BorderCell;

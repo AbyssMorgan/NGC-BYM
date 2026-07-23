@@ -8,10 +8,8 @@ import { leaveWorld } from "../../services/maproom/v2/leaveWorld.js";
 import { FilterFrontendKeys } from "../../utils/FrontendKey.js";
 import { MapRoomVersion } from "../../enums/MapRoom.js";
 import { Status } from "../../enums/StatusCodes.js";
-import { Env } from "../../enums/Env.js";
 import { joinNewWorldMap } from "../../services/maproom/v3/joinNewWorldMap.js";
-import { extractTownHall } from "../../utils/extractTownHall.js";
-import { discordAgeErr, townHallLevelErr } from "../../errors/errors.js";
+import { discordAgeErr } from "../../errors/errors.js";
 import { Maproom } from "../../models/maproom.model.js";
 
 /**
@@ -54,31 +52,19 @@ export const setMapVersion: KoaController = async (ctx) => {
 
     case MapRoomVersion.V2: {
       if (save.mapversion === MapRoomVersion.V3) break;
-
-      const townHall = extractTownHall(save.buildingdata ?? {});
-
-      if (!save.mr2upgraded && (!townHall || townHall.l < 6)) throw townHallLevelErr();
-      
       await joinOrCreateWorld(user, save);
       save.mr2upgraded = true;
       save.mapversion = MapRoomVersion.V2;
-
       const maproom1 = await postgres.em.findOne(Maproom, { userid: user.userid });
-
       if (maproom1) postgres.em.remove(maproom1);
       break;
     }
 
     case MapRoomVersion.V3:
-      const townHall = extractTownHall(save.buildingdata ?? {});
-
-      if (!save.mr2upgraded && (!townHall || townHall.l < 6)) throw townHallLevelErr();
-
       await joinNewWorldMap(user, save);
+	  save.mr2upgraded = true;
       save.mapversion = MapRoomVersion.V3;
-
       const maproom1 = await postgres.em.findOne(Maproom, { userid: user.userid });
-
       if (maproom1) postgres.em.remove(maproom1);
       break;
   }

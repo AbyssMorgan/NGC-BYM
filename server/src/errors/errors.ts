@@ -172,14 +172,6 @@ export const mapRoomDisabledErr = () =>
     isClientFriendly: false,
   });
 
-export const townHallLevelErr = () =>
-  new ClientSafeError({
-    message: "Town Hall level 6 required to upgrade Map Room.",
-    status: Status.FORBIDDEN,
-    data: {},
-    isClientFriendly: true,
-  });
-
 export const truceActiveErr = () =>
   new ClientSafeError({
     message: "You have an active truce with this player and cannot attack them.",

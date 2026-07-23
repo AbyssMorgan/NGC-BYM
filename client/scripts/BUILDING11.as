@@ -156,7 +156,8 @@ package
       override public function Constructed() : void
       {
          GLOBAL._bMap = this;
-         new URLLoaderApi().load(GLOBAL._mapURL + "setmapversion", [["version", 1]], null, null);
+        //  new URLLoaderApi().load(GLOBAL._mapURL + "setmapversion", [["version", 1]], null, null);
+		 MapRoomManager.instance.UpgradeToMapRoom3();
          super.Constructed();
       }
       
@@ -330,6 +331,7 @@ package
          else if(MapRoomManager.instance.isInMapRoom2)
          {
             _lvl.Set(2);
+			MapRoomManager.instance.UpgradeToMapRoom3();
          }
          if(_lvl.Get() > 1)
          {

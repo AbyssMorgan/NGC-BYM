@@ -98,10 +98,6 @@ package
                   _loc11_ = Math.min(_loc11_,Number(_loc12_));
                }
             }
-            if(_loc11_ != int.MAX_VALUE && this._buildingProps.upgradeImgData[_loc11_].silhouette_img && !BASE.HasRequirements(this._buildingProps.costs[0]) && !this._buildingProps.rewarded)
-            {
-               _loc8_ = String(this._buildingProps.upgradeImgData.baseurl + this._buildingProps.upgradeImgData[_loc11_].silhouette_img);
-            }
          }
          if(!_loc8_)
          {

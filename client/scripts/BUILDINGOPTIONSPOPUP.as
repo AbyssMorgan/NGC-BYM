@@ -1001,10 +1001,6 @@ package
                      lowestLevel = Math.min(lowestLevel,Number(n));
                   }
                }
-               if(lowestLevel != int.MAX_VALUE && buildingProps.upgradeImgData[lowestLevel].silhouette_img && !BASE.HasRequirements(buildingProps.costs[0]) && !buildingProps.rewarded)
-               {
-                  img = String(buildingProps.upgradeImgData.baseurl + buildingProps.upgradeImgData[lowestLevel].silhouette_img);
-               }
             }
             if(!img)
             {

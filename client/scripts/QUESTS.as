@@ -140,85 +140,1237 @@ package
 		{
 			var _loc2_:Object = null;
 			_mainQuests = [
+
+				// Group 0 (New)
 				{
-					"order": 1,
-					"block": true,
-					"list": false,
-					"reward": [0, 750, 0, 0, 0],
-					"id": "C0",
-					"group": 0,
-					"name": "q_c0_name",
-					"description": "q_c0_description",
-					"hint": "q_c0_hint",
-					"questimage": "building-townhall.png",
-					"questicon": "icon_TH-L1.png",
-					"streamTitle": "q_c0_streamtitle",
-					"streamDescription": "q_c0_streamdescription",
-					"streamImage": "quests/generic.png",
-					"rules":
-					{
-						"b14lvl": 1
-					}
-				},
-				{
-					"order": 2,
-					"block": true,
-					"list": false,
-					"reward": [1100, 800, 0, 0, 0],
-					"id": "C1",
-					"group": 0,
-					"name": "q_c1_name",
-					"description": "q_c1_description",
-					"hint": "q_c1_hint",
-					"questimage": "completequest.png",
-					"questicon": "icon_twig.png",
-					"streamTitle": "q_c1_streamtitle",
-					"streamDescription": "q_c1_streamdescription",
-					"streamImage": "quests/generic.png",
-					"rules":
-					{
-						"brlvl": 1
-					}
-				},
-				{
-					"order": 3,
-					"block": true,
-					"list": false,
-					"reward": [500, 1500, 500, 500, 1000],
-					"id": "C8",
-					"group": 3,
-					"name": "q_c8_name",
-					"description": "q_c8_description",
-					"hint": "q_c8_hint",
-					"questimage": "building-store.png",
-					"questicon": "icon_store.png",
-					"streamTitle": "q_c8_streamtitle",
-					"streamDescription": "q_c8_streamdescription",
-					"streamImage": "quests/openforbusiness.png",
-					"rules":
-					{
-						"b12lvl": 1
-					}
-				},
-				{
-					"order": 4,
+					"order": 10106, 
 					"list": true,
-					"reward": [4000, 4600, 500, 0, 0],
-					"id": "U1",
+					"reward": [2000, 2000, 1000, 1000, 0],
+					"id": "SS1",
 					"group": 0,
-					"name": "q_u1_name",
-					"description": "q_u1_description",
-					"hint": "q_u1_hint",
-					"questimage": "nextlevel.v2.png",
-					"questicon": "cat_construction.png",
-					"streamTitle": "q_u1_streamtitle",
-					"streamDescription": "q_u1_streamdescription",
-					"streamImage": "quests/nextlevel.png",
+					"name": "Storage Silo",
+					"description": "Build storage silo",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-storage.v2.png",
 					"rules":
 					{
-						"blvl": 2
+						"b6lvl": 1
 					}
 				},
+				{
+					"order": 10206,
+					"list": true,
+					"reward": [4000, 4000, 2000, 2000, 0],
+					"id": "SS2",
+					"group": 0,
+					"name": "Storage Silo Level 2",
+					"description": "Upgrade your Storage Silo to Level 2",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-storage.v2.png",
+					"prereq": "SS1",
+					"rules":
+					{
+						"b6lvl": 2
+					}
+				},
+				{
+					"order": 10214,
+					"list": true,
+					"reward": [25000, 25000, 25000, 25000, 0],
+					"id": "TH2",
+					"group": 0,
+					"name": "Town Hall Level 2",
+					"description": "Upgrade your Town Hall to Level 2",
+					"hint": "You can speed up upgrades.",
+					"questimage": "townhall_2.png",
+					"rules":
+					{
+						"b14lvl": 2
+					}
+				},
+				{
+					"order": 10306,
+					"list": true,
+					"reward": [8000, 8000, 4000, 4000, 0],
+					"id": "SS3",
+					"group": 0,
+					"name": "Storage Silo Level 3",
+					"description": "Upgrade your Storage Silo to Level 3",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-storage.v2.png",
+					"prereq": "SS2",
+					"rules":
+					{
+						"b6lvl": 3
+					}
+				},
+				{
+					"order": 10301,
+					"list": true,
+					"reward": [20000, 0, 0, 0, 0],
+					"id": "TW3",
+					"group": 0,
+					"name": "Level 3 Twig Snapper",
+					"description": "Upgrade your Twig Snapper to Level 3",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourcetwigs.png",
+					"rules":
+					{
+						"b1lvl": 3
+					}
+				},
+				{
+					"order": 10302,
+					"list": true,
+					"reward": [0, 20000, 0, 0, 0],
+					"id": "PE3",
+					"group": 0,
+					"name": "Level 3 Pebble Shiner",
+					"description": "Upgrade your Pebble Shiner to Level 3",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourcepebbles.png",
+					"rules":
+					{
+						"b2lvl": 3
+					}
+				},
+				{
+					"order": 10303,
+					"list": true,
+					"reward": [0, 0, 20000, 0, 0],
+					"id": "PU3",
+					"group": 0,
+					"name": "Level 3 Putty Squisher",
+					"description": "Upgrade your Putty Squisher to Level 3",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourceputty.png",
+					"rules":
+					{
+						"b3lvl": 3
+					}
+				},
+				{
+					"order": 10304,
+					"list": true,
+					"reward": [0, 0, 0, 20000, 0],
+					"id": "GO3",
+					"group": 0,
+					"name": "Level 3 Goo Factory",
+					"description": "Upgrade your Goo Factory to Level 3",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourcegoo.png",
+					"rules":
+					{
+						"b4lvl": 3
+					}
+				},
+				{
+					"order": 10314,
+					"list": true,
+					"reward": [50000, 50000, 50000, 50000, 0],
+					"id": "TH3",
+					"group": 0,
+					"name": "Town Hall Level 3",
+					"description": "Upgrade your Town Hall to Level 3",
+					"hint": "You can speed up upgrades.",
+					"questimage": "townhall_3.png",
+					"prereq": "TH2",
+					"rules":
+					{
+						"b14lvl": 3
+					}
+				},
+				{
+					"order": 10406,
+					"list": true,
+					"reward": [16000, 16000, 8000, 8000, 0],
+					"id": "SS4",
+					"group": 0,
+					"name": "Storage Silo Level 4",
+					"description": "Upgrade your Storage Silo to Level 4",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-storage.v2.png",
+					"prereq": "SS3",
+					"rules":
+					{
+						"b6lvl": 4
+					}
+				},
+				{
+					"order": 10401,
+					"list": true,
+					"reward": [40000, 0, 0, 0, 0],
+					"id": "TW4",
+					"group": 0,
+					"name": "Level 3 Twig Snapper",
+					"description": "Upgrade your Twig Snapper to Level 3",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourcetwigs.png",
+					"prereq": "TW3",
+					"rules":
+					{
+						"b1lvl": 4
+					}
+				},
+				{
+					"order": 10402,
+					"list": true,
+					"reward": [0, 40000, 0, 0, 0],
+					"id": "PE4",
+					"group": 0,
+					"name": "Level 3 Pebble Shiner",
+					"description": "Upgrade your Pebble Shiner to Level 3",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourcepebbles.png",
+					"prereq": "PE3",
+					"rules":
+					{
+						"b2lvl": 4
+					}
+				},
+				{
+					"order": 10403,
+					"list": true,
+					"reward": [0, 0, 40000, 0, 0],
+					"id": "PU4",
+					"group": 0,
+					"name": "Level 3 Putty Squisher",
+					"description": "Upgrade your Putty Squisher to Level 3",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourceputty.png",
+					"prereq": "PU3",
+					"rules":
+					{
+						"b3lvl": 4
+					}
+				},
+				{
+					"order": 10404,
+					"list": true,
+					"reward": [0, 0, 0, 40000, 0],
+					"id": "GO4",
+					"group": 0,
+					"name": "Level 3 Goo Factory",
+					"description": "Upgrade your Goo Factory to Level 3",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourcegoo.png",
+					"prereq": "GO3",
+					"rules":
+					{
+						"b4lvl": 4
+					}
+				},
+				{
+					"order": 10414,
+					"list": true,
+					"reward": [100000, 100000, 100000, 100000, 0],
+					"id": "TH4",
+					"group": 0,
+					"name": "Town Hall Level 4",
+					"description": "Upgrade your Town Hall to Level 4",
+					"hint": "You can speed up upgrades.",
+					"questimage": "townhall_4.png",
+					"prereq": "TH3",
+					"rules":
+					{
+						"b14lvl": 4
+					}
+				},
+				{
+					"order": 10506,
+					"list": true,
+					"reward": [32000, 32000, 16000, 16000, 0],
+					"id": "SS5",
+					"group": 0,
+					"name": "Storage Silo Level 5",
+					"description": "Upgrade your Storage Silo to Level 5",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-storage.v2.png",
+					"prereq": "SS4",
+					"rules":
+					{
+						"b6lvl": 5
+					}
+				},
+				{
+					"order": 10514,
+					"list": true,
+					"reward": [250000, 250000, 250000, 250000, 0],
+					"id": "TH5",
+					"group": 0,
+					"name": "Town Hall Level 5",
+					"description": "Upgrade your Town Hall to Level 5",
+					"hint": "You can speed up upgrades.",
+					"questimage": "townhall_5.png",
+					"prereq": "TH4",
+					"rules":
+					{
+						"b14lvl": 5
+					}
+				},
+				{
+					"order": 10606,
+					"list": true,
+					"reward": [64000, 64000, 32000, 32000, 0],
+					"id": "SS6",
+					"group": 0,
+					"name": "Storage Silo Level 6",
+					"description": "Upgrade your Storage Silo to Level 6",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-storage.v2.png",
+					"prereq": "SS5",
+					"rules":
+					{
+						"b6lvl": 6
+					}
+				},
+				{
+					"order": 10601,
+					"list": true,
+					"reward": [200000, 0, 0, 0, 0],
+					"id": "TW6",
+					"group": 0,
+					"name": "Level 6 Twig Snapper",
+					"description": "Upgrade your Twig Snapper to Level 6",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourcetwigs.png",
+					"prereq": "TW4",
+					"rules":
+					{
+						"b1lvl": 6
+					}
+				},
+				{
+					"order": 10602,
+					"list": true,
+					"reward": [0, 200000, 0, 0, 0],
+					"id": "PE6",
+					"group": 0,
+					"name": "Level 6 Pebble Shiner",
+					"description": "Upgrade your Pebble Shiner to Level 6",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourcepebbles.png",
+					"prereq": "PE4",
+					"rules":
+					{
+						"b2lvl": 6
+					}
+				},
+				{
+					"order": 10603,
+					"list": true,
+					"reward": [0, 0, 200000, 0, 0],
+					"id": "PU6",
+					"group": 0,
+					"name": "Level 6 Putty Squisher",
+					"description": "Upgrade your Putty Squisher to Level 6",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourceputty.png",
+					"prereq": "PU4",
+					"rules":
+					{
+						"b3lvl": 6
+					}
+				},
+				{
+					"order": 10604,
+					"list": true,
+					"reward": [0, 0, 0, 200000, 0],
+					"id": "GO6",
+					"group": 0,
+					"name": "Level 6 Goo Factory",
+					"description": "Upgrade your Goo Factory to Level 6",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourcegoo.png",
+					"prereq": "GO4",
+					"rules":
+					{
+						"b4lvl": 6
+					}
+				},
+				{
+					"order": 10614,
+					"list": true,
+					"reward": [500000, 500000, 500000, 500000, 0],
+					"id": "TH6",
+					"group": 0,
+					"name": "Town Hall Level 6",
+					"description": "Upgrade your Town Hall to Level 6",
+					"hint": "You can speed up upgrades.",
+					"questimage": "townhall_6.png",
+					"prereq": "TH5",
+					"rules":
+					{
+						"b14lvl": 6
+					}
+				},
+				{
+					"order": 10714,
+					"list": true,
+					"reward": [1000000, 1000000, 1000000, 1000000, 0],
+					"id": "TH7",
+					"group": 0,
+					"name": "Town Hall Level 7",
+					"description": "Upgrade your Town Hall to Level 7",
+					"hint": "You can speed up upgrades.",
+					"questimage": "townhall_7.png",
+					"prereq": "TH6",
+					"rules":
+					{
+						"b14lvl": 7
+					}
+				},
+				{
+					"order": 10806,
+					"list": true,
+					"reward": [128000, 128000, 64000, 64000, 0],
+					"id": "SS8",
+					"group": 0,
+					"name": "Storage Silo Level 8",
+					"description": "Upgrade your Storage Silo to Level 8",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-storage.v2.png",
+					"prereq": "SS7",
+					"rules":
+					{
+						"b6lvl": 8
+					}
+				},
+				{
+					"order": 10801,
+					"list": true,
+					"reward": [2000000, 0, 0, 0, 0],
+					"id": "TW8",
+					"group": 0,
+					"name": "Level 8 Twig Snapper",
+					"description": "Upgrade your Twig Snapper to Level 8",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourcetwigs.png",
+					"prereq": "TW6",
+					"rules":
+					{
+						"b1lvl": 8
+					}
+				},
+				{
+					"order": 10802,
+					"list": true,
+					"reward": [0, 2000000, 0, 0, 0],
+					"id": "PE8",
+					"group": 0,
+					"name": "Level 8 Pebble Shiner",
+					"description": "Upgrade your Pebble Shiner to Level 8",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourcepebbles.png",
+					"prereq": "PE6",
+					"rules":
+					{
+						"b2lvl": 8
+					}
+				},
+				{
+					"order": 10803,
+					"list": true,
+					"reward": [0, 0, 2000000, 0, 0],
+					"id": "PU8",
+					"group": 0,
+					"name": "Level 8 Putty Squisher",
+					"description": "Upgrade your Putty Squisher to Level 8",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourceputty.png",
+					"prereq": "PU6",
+					"rules":
+					{
+						"b3lvl": 8
+					}
+				},
+				{
+					"order": 10804,
+					"list": true,
+					"reward": [0, 0, 0, 2000000, 0],
+					"id": "GO8",
+					"group": 0,
+					"name": "Level 8 Goo Factory",
+					"description": "Upgrade your Goo Factory to Level 8",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourcegoo.png",
+					"prereq": "GO6",
+					"rules":
+					{
+						"b4lvl": 8
+					}
+				},
+				{
+					"order": 10814,
+					"list": true,
+					"reward": [2500000, 2500000, 2500000, 2500000, 0],
+					"id": "TH8",
+					"group": 0,
+					"name": "Town Hall Level 8",
+					"description": "Upgrade your Town Hall to Level 8",
+					"hint": "You can speed up upgrades.",
+					"questimage": "townhall_8.png",
+					"prereq": "TH7",
+					"rules":
+					{
+						"b14lvl": 8
+					}
+				},
+				{
+					"order": 10914,
+					"list": true,
+					"reward": [5000000, 5000000, 5000000, 5000000, 0],
+					"id": "TH9",
+					"group": 0,
+					"name": "Town Hall Level 9",
+					"description": "Upgrade your Town Hall to Level 9",
+					"hint": "You can speed up upgrades.",
+					"questimage": "townhall_9.png",
+					"prereq": "TH8",
+					"rules":
+					{
+						"b14lvl": 9
+					}
+				},
+				{
+					"order": 11006,
+					"list": true,
+					"reward": [256000, 256000, 128000, 128000, 0],
+					"id": "SS10",
+					"group": 0,
+					"name": "Storage Silo Level 10",
+					"description": "Upgrade your Storage Silo to Level 10",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-storage.v2.png",
+					"prereq": "SS9",
+					"rules":
+					{
+						"b6lvl": 10
+					}
+				},
+				{
+					"order": 11001,
+					"list": true,
+					"reward": [20000000, 0, 0, 0, 0],
+					"id": "TW10",
+					"group": 0,
+					"name": "Level 10 Twig Snapper",
+					"description": "Upgrade your Twig Snapper to Level 10",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourcetwigs.png",
+					"prereq": "TW8",
+					"rules":
+					{
+						"b1lvl": 10
+					}
+				},
+				{
+					"order": 11002,
+					"list": true,
+					"reward": [0, 20000000, 0, 0, 0],
+					"id": "PE10",
+					"group": 0,
+					"name": "Level 10 Pebble Shiner",
+					"description": "Upgrade your Pebble Shiner to Level 10",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourcepebbles.png",
+					"prereq": "PE8",
+					"rules":
+					{
+						"b2lvl": 10
+					}
+				},
+				{
+					"order": 11003,
+					"list": true,
+					"reward": [0, 0, 20000000, 0, 0],
+					"id": "PU10",
+					"group": 0,
+					"name": "Level 10 Putty Squisher",
+					"description": "Upgrade your Putty Squisher to Level 10",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourceputty.png",
+					"prereq": "PU8",
+					"rules":
+					{
+						"b3lvl": 10
+					}
+				},
+				{
+					"order": 11004,
+					"list": true,
+					"reward": [0, 0, 0, 20000000, 0],
+					"id": "GO10",
+					"group": 0,
+					"name": "Level 10 Goo Factory",
+					"description": "Upgrade your Goo Factory to Level 10",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourcegoo.png",
+					"prereq": "GO8",
+					"rules":
+					{
+						"b4lvl": 10
+					}
+				},
+				{
+					"order": 11014,
+					"list": true,
+					"reward": [50000000, 50000000, 50000000, 50000000, 0],
+					"id": "TH10",
+					"group": 0,
+					"name": "Town Hall Level 10",
+					"description": "Upgrade your Town Hall to Level 10",
+					"hint": "You can speed up upgrades.",
+					"questimage": "townhall_10.png",
+					"prereq": "TH9",
+					"rules":
+					{
+						"b14lvl": 10
+					}
+				},
+				{
+					"order": 11206,
+					"list": true,
+					"reward": [512000, 512000, 256000, 256000, 0],
+					"id": "SS12",
+					"group": 0,
+					"name": "Storage Silo Level 12",
+					"description": "Upgrade your Storage Silo to Level 12",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-storage.v2.png",
+					"prereq": "SS10",
+					"rules":
+					{
+						"b6lvl": 12
+					}
+				},
+				{
+					"order": 11201,
+					"list": true,
+					"reward": [40000000, 0, 0, 0, 0],
+					"id": "TW12",
+					"group": 0,
+					"name": "Level 12 Twig Snapper",
+					"description": "Upgrade your Twig Snapper to Level 12",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourcetwigs.png",
+					"prereq": "TW10",
+					"rules":
+					{
+						"b1lvl": 12
+					}
+				},
+				{
+					"order": 11202,
+					"list": true,
+					"reward": [0, 40000000, 0, 0, 0],
+					"id": "PE12",
+					"group": 0,
+					"name": "Level 12 Pebble Shiner",
+					"description": "Upgrade your Pebble Shiner to Level 12",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourcepebbles.png",
+					"prereq": "PE10",
+					"rules":
+					{
+						"b2lvl": 12
+					}
+				},
+				{
+					"order": 11203,
+					"list": true,
+					"reward": [0, 0, 40000000, 0, 0],
+					"id": "PU12",
+					"group": 0,
+					"name": "Level 12 Putty Squisher",
+					"description": "Upgrade your Putty Squisher to Level 12",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourceputty.png",
+					"prereq": "PU10",
+					"rules":
+					{
+						"b3lvl": 12
+					}
+				},
+				{
+					"order": 11204,
+					"list": true,
+					"reward": [0, 0, 0, 40000000, 0],
+					"id": "GO12",
+					"group": 0,
+					"name": "Level 12 Goo Factory",
+					"description": "Upgrade your Goo Factory to Level 12",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourcegoo.png",
+					"prereq": "GO10",
+					"rules":
+					{
+						"b4lvl": 12
+					}
+				},
+				{
+					"order": 11214,
+					"list": true,
+					"reward": [100000000, 100000000, 100000000, 100000000, 0],
+					"id": "TH12",
+					"group": 0,
+					"name": "Town Hall Level 12",
+					"description": "Upgrade your Town Hall to Level 12",
+					"hint": "You can speed up upgrades.",
+					"questimage": "townhall_10.png",
+					"prereq": "TH10",
+					"rules":
+					{
+						"b14lvl": 12
+					}
+				},
+				{
+					"order": 11406,
+					"list": true,
+					"reward": [1024000, 1024000, 512000, 512000, 0],
+					"id": "SS14",
+					"group": 0,
+					"name": "Storage Silo Level 14",
+					"description": "Upgrade your Storage Silo to Level 14",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-storage.v2.png",
+					"prereq": "SS12",
+					"rules":
+					{
+						"b6lvl": 14
+					}
+				},
+				{
+					"order": 11401,
+					"list": true,
+					"reward": [80000000, 0, 0, 0, 0],
+					"id": "TW14",
+					"group": 0,
+					"name": "Level 14 Twig Snapper",
+					"description": "Upgrade your Twig Snapper to Level 14",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourcetwigs.png",
+					"prereq": "TW12",
+					"rules":
+					{
+						"b1lvl": 14
+					}
+				},
+				{
+					"order": 11402,
+					"list": true,
+					"reward": [0, 80000000, 0, 0, 0],
+					"id": "PE14",
+					"group": 0,
+					"name": "Level 14 Pebble Shiner",
+					"description": "Upgrade your Pebble Shiner to Level 14",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourcepebbles.png",
+					"prereq": "PE12",
+					"rules":
+					{
+						"b2lvl": 14
+					}
+				},
+				{
+					"order": 11403,
+					"list": true,
+					"reward": [0, 0, 80000000, 0, 0],
+					"id": "PU14",
+					"group": 0,
+					"name": "Level 14 Putty Squisher",
+					"description": "Upgrade your Putty Squisher to Level 14",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourceputty.png",
+					"prereq": "PU12",
+					"rules":
+					{
+						"b3lvl": 14
+					}
+				},
+				{
+					"order": 11404,
+					"list": true,
+					"reward": [0, 0, 0, 80000000, 0],
+					"id": "GO14",
+					"group": 0,
+					"name": "Level 14 Goo Factory",
+					"description": "Upgrade your Goo Factory to Level 14",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourcegoo.png",
+					"prereq": "GO12",
+					"rules":
+					{
+						"b4lvl": 14
+					}
+				},
+				{
+					"order": 11414,
+					"list": true,
+					"reward": [250000000, 250000000, 250000000, 250000000, 0],
+					"id": "TH14",
+					"group": 0,
+					"name": "Town Hall Level 14",
+					"description": "Upgrade your Town Hall to Level 14",
+					"hint": "You can speed up upgrades.",
+					"questimage": "townhall_10.png",
+					"prereq": "TH12",
+					"rules":
+					{
+						"b14lvl": 14
+					}
+				},
+				{
+					"order": 11606,
+					"list": true,
+					"reward": [2048000, 2048000, 1024000, 1024000, 0],
+					"id": "SS16",
+					"group": 0,
+					"name": "Storage Silo Level 16",
+					"description": "Upgrade your Storage Silo to Level 16",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-storage.v2.png",
+					"prereq": "SS14",
+					"rules":
+					{
+						"b6lvl": 16
+					}
+				},
+				{
+					"order": 11601,
+					"list": true,
+					"reward": [160000000, 0, 0, 0, 0],
+					"id": "TW16",
+					"group": 0,
+					"name": "Level 16 Twig Snapper",
+					"description": "Upgrade your Twig Snapper to Level 16",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourcetwigs.png",
+					"prereq": "TW14",
+					"rules":
+					{
+						"b1lvl": 16
+					}
+				},
+				{
+					"order": 11602,
+					"list": true,
+					"reward": [0, 160000000, 0, 0, 0],
+					"id": "PE14",
+					"group": 0,
+					"name": "Level 16 Pebble Shiner",
+					"description": "Upgrade your Pebble Shiner to Level 16",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourcepebbles.png",
+					"prereq": "PE14",
+					"rules":
+					{
+						"b2lvl": 16
+					}
+				},
+				{
+					"order": 11603,
+					"list": true,
+					"reward": [0, 0, 160000000, 0, 0],
+					"id": "PU14",
+					"group": 0,
+					"name": "Level 16 Putty Squisher",
+					"description": "Upgrade your Putty Squisher to Level 16",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourceputty.png",
+					"prereq": "PU14",
+					"rules":
+					{
+						"b3lvl": 16
+					}
+				},
+				{
+					"order": 11604,
+					"list": true,
+					"reward": [0, 0, 0, 160000000, 0],
+					"id": "GO14",
+					"group": 0,
+					"name": "Level 16 Goo Factory",
+					"description": "Upgrade your Goo Factory to Level 16",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourcegoo.png",
+					"prereq": "GO14",
+					"rules":
+					{
+						"b4lvl": 16
+					}
+				},
+				{
+					"order": 11614,
+					"list": true,
+					"reward": [500000000, 500000000, 500000000, 500000000, 0],
+					"id": "TH16",
+					"group": 0,
+					"name": "Town Hall Level 16",
+					"description": "Upgrade your Town Hall to Level 16",
+					"hint": "You can speed up upgrades.",
+					"questimage": "townhall_10.png",
+					"prereq": "TH14",
+					"rules":
+					{
+						"b14lvl": 16
+					}
+				},
+				{
+					"order": 11806,
+					"list": true,
+					"reward": [4096000, 4096000, 2048000, 2048000, 0],
+					"id": "SS18",
+					"group": 0,
+					"name": "Storage Silo Level 18",
+					"description": "Upgrade your Storage Silo to Level 18",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-storage.v2.png",
+					"prereq": "SS16",
+					"rules":
+					{
+						"b6lvl": 18
+					}
+				},
+				{
+					"order": 11801,
+					"list": true,
+					"reward": [320000000, 0, 0, 0, 0],
+					"id": "TW18",
+					"group": 0,
+					"name": "Level 18 Twig Snapper",
+					"description": "Upgrade your Twig Snapper to Level 18",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourcetwigs.png",
+					"prereq": "TW16",
+					"rules":
+					{
+						"b1lvl": 18
+					}
+				},
+				{
+					"order": 11802,
+					"list": true,
+					"reward": [0, 320000000, 0, 0, 0],
+					"id": "PE18",
+					"group": 0,
+					"name": "Level 18 Pebble Shiner",
+					"description": "Upgrade your Pebble Shiner to Level 18",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourcepebbles.png",
+					"prereq": "PE16",
+					"rules":
+					{
+						"b2lvl": 18
+					}
+				},
+				{
+					"order": 11803,
+					"list": true,
+					"reward": [0, 0, 320000000, 0, 0],
+					"id": "PU18",
+					"group": 0,
+					"name": "Level 18 Putty Squisher",
+					"description": "Upgrade your Putty Squisher to Level 18",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourceputty.png",
+					"prereq": "PU16",
+					"rules":
+					{
+						"b3lvl": 18
+					}
+				},
+				{
+					"order": 11804,
+					"list": true,
+					"reward": [0, 0, 0, 320000000, 0],
+					"id": "GO18",
+					"group": 0,
+					"name": "Level 18 Goo Factory",
+					"description": "Upgrade your Goo Factory to Level 18",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourcegoo.png",
+					"prereq": "GO16",
+					"rules":
+					{
+						"b4lvl": 18
+					}
+				},
+				{
+					"order": 11814,
+					"list": true,
+					"reward": [1000000000, 1000000000, 1000000000, 1000000000, 0],
+					"id": "TH18",
+					"group": 0,
+					"name": "Town Hall Level 18",
+					"description": "Upgrade your Town Hall to Level 18",
+					"hint": "You can speed up upgrades.",
+					"questimage": "townhall_10.png",
+					"prereq": "TH16",
+					"rules":
+					{
+						"b14lvl": 18
+					}
+				},
+				{
+					"order": 12006,
+					"list": true,
+					"reward": [8192000, 8192000, 4096000, 4096000, 0],
+					"id": "SS20",
+					"group": 0,
+					"name": "Storage Silo Level 20",
+					"description": "Upgrade your Storage Silo to Level 20",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-storage.v2.png",
+					"prereq": "SS18",
+					"rules":
+					{
+						"b6lvl": 20
+					}
+				},
+				{
+					"order": 12001,
+					"list": true,
+					"reward": [640000000, 0, 0, 0, 0],
+					"id": "TW20",
+					"group": 0,
+					"name": "Level 20 Twig Snapper",
+					"description": "Upgrade your Twig Snapper to Level 20",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourcetwigs.png",
+					"prereq": "TW18",
+					"rules":
+					{
+						"b1lvl": 20
+					}
+				},
+				{
+					"order": 12002,
+					"list": true,
+					"reward": [0, 640000000, 0, 0, 0],
+					"id": "PE20",
+					"group": 0,
+					"name": "Level 20 Pebble Shiner",
+					"description": "Upgrade your Pebble Shiner to Level 20",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourcepebbles.png",
+					"prereq": "PE18",
+					"rules":
+					{
+						"b2lvl": 20
+					}
+				},
+				{
+					"order": 12003,
+					"list": true,
+					"reward": [0, 0, 640000000, 0, 0],
+					"id": "PU20",
+					"group": 0,
+					"name": "Level 20 Putty Squisher",
+					"description": "Upgrade your Putty Squisher to Level 20",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourceputty.png",
+					"prereq": "PU18",
+					"rules":
+					{
+						"b3lvl": 20
+					}
+				},
+				{
+					"order": 12004,
+					"list": true,
+					"reward": [0, 0, 0, 640000000, 0],
+					"id": "GO20",
+					"group": 0,
+					"name": "Level 20 Goo Factory",
+					"description": "Upgrade your Goo Factory to Level 20",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourcegoo.png",
+					"prereq": "GO18",
+					"rules":
+					{
+						"b4lvl": 20
+					}
+				},
+				{
+					"order": 12014,
+					"list": true,
+					"reward": [1500000000, 1500000000, 1500000000, 1500000000, 0],
+					"id": "TH20",
+					"group": 0,
+					"name": "Town Hall Level 20",
+					"description": "Upgrade your Town Hall to Level 20",
+					"hint": "You can speed up upgrades.",
+					"questimage": "townhall_20.png",
+					"prereq": "TH18",
+					"rules":
+					{
+						"b14lvl": 20
+					}
+				},
+				{
+					"order": 12106,
+					"list": true,
+					"reward": [100000000, 100000000, 50000000, 50000000, 0],
+					"id": "SS21",
+					"group": 0,
+					"name": "Storage Silo Level 21",
+					"description": "Upgrade your Storage Silo to Level 21",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-storage.v2.png",
+					"prereq": "SS20",
+					"rules":
+					{
+						"b6lvl": 21
+					}
+				},
+				{
+					"order": 12114,
+					"list": true,
+					"reward": [2000000000, 2000000000, 2000000000, 2000000000, 0],
+					"id": "TH21",
+					"group": 0,
+					"name": "Town Hall Level 21",
+					"description": "Upgrade your Town Hall to Level 21",
+					"hint": "You can speed up upgrades.",
+					"questimage": "townhall_20.png",
+					"prereq": "TH20",
+					"rules":
+					{
+						"b14lvl": 21
+					}
+				},
+				{
+					"order": 12206,
+					"list": true,
+					"reward": [200000000, 200000000, 100000000, 100000000, 0],
+					"id": "SS22",
+					"group": 0,
+					"name": "Storage Silo Level 22",
+					"description": "Upgrade your Storage Silo to Level 22",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-storage.v2.png",
+					"prereq": "SS21",
+					"rules":
+					{
+						"b6lvl": 22
+					}
+				},
+				{
+					"order": 12214,
+					"list": true,
+					"reward": [2500000000, 2500000000, 2500000000, 2500000000, 0],
+					"id": "TH22",
+					"group": 0,
+					"name": "Town Hall Level 22",
+					"description": "Upgrade your Town Hall to Level 22",
+					"hint": "You can speed up upgrades.",
+					"questimage": "townhall_20.png",
+					"prereq": "TH21",
+					"rules":
+					{
+						"b14lvl": 22
+					}
+				},
+				{
+					"order": 12306,
+					"list": true,
+					"reward": [400000000, 400000000, 200000000, 200000000, 0],
+					"id": "SS23",
+					"group": 0,
+					"name": "Storage Silo Level 23",
+					"description": "Upgrade your Storage Silo to Level 23",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-storage.v2.png",
+					"prereq": "SS22",
+					"rules":
+					{
+						"b6lvl": 23
+					}
+				},
+				{
+					"order": 12314,
+					"list": true,
+					"reward": [5000000000, 5000000000, 5000000000, 5000000000, 0],
+					"id": "TH23",
+					"group": 0,
+					"name": "Town Hall Level 23",
+					"description": "Upgrade your Town Hall to Level 23",
+					"hint": "You can speed up upgrades.",
+					"questimage": "townhall_20.png",
+					"prereq": "TH22",
+					"rules":
+					{
+						"b14lvl": 23
+					}
+				},
+				{
+					"order": 12406,
+					"list": true,
+					"reward": [800000000, 800000000, 400000000, 400000000, 0],
+					"id": "SS24",
+					"group": 0,
+					"name": "Storage Silo Level 24",
+					"description": "Upgrade your Storage Silo to Level 24",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-storage.v2.png",
+					"prereq": "SS23",
+					"rules":
+					{
+						"b6lvl": 24
+					}
+				},
+				{
+					"order": 12414,
+					"list": true,
+					"reward": [10000000000, 10000000000, 10000000000, 10000000000, 0],
+					"id": "TH24",
+					"group": 0,
+					"name": "Town Hall Level 24",
+					"description": "Upgrade your Town Hall to Level 24",
+					"hint": "You can speed up upgrades.",
+					"questimage": "townhall_20.png",
+					"prereq": "TH23",
+					"rules":
+					{
+						"b14lvl": 24
+					}
+				},
+				{
+					"order": 12506,
+					"list": true,
+					"reward": [1600000000, 1600000000, 800000000, 800000000, 0],
+					"id": "SS25",
+					"group": 0,
+					"name": "Storage Silo Level 25",
+					"description": "Upgrade your Storage Silo to Level 25",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-storage.v2.png",
+					"prereq": "SS24",
+					"rules":
+					{
+						"b6lvl": 25
+					}
+				},
+				{
+					"order": 12514,
+					"list": true,
+					"reward": [20000000000, 20000000000, 20000000000, 20000000000, 0],
+					"id": "TH25",
+					"group": 0,
+					"name": "Town Hall Level 25",
+					"description": "Upgrade your Town Hall to Level 25",
+					"hint": "You can speed up upgrades.",
+					"questimage": "townhall_20.png",
+					"prereq": "TH24",
+					"rules":
+					{
+						"b14lvl": 25
+					}
+				},
+
+
+				// Mixed
 				{
 					"order": 5,
 					"list": true,
@@ -229,242 +1381,9 @@ package
 					"description": "q_t1_description",
 					"hint": "q_t1_hint",
 					"questimage": "building-sniper.png",
-					"questicon": "icon_sniper.png",
-					"streamTitle": "q_t1_streamtitle",
-					"streamDescription": "q_t1_streamdescription",
-					"streamImage": "quests/sniper.png",
 					"rules":
 					{
 						"b21lvl": 1
-					}
-				},
-				{
-					"order": 6,
-					"list": true,
-					"reward": [800, 800, 1000, 1000, 0],
-					"id": "D1",
-					"group": 2,
-					"name": "q_d1_name",
-					"description": "q_d1_description",
-					"hint": "q_d1_hint",
-					"questimage": "firstblood.v2.png",
-					"questicon": "icon_First-Blood.png",
-					"streamTitle": "q_d1_streamtitle",
-					"streamDescription": "q_d1_streamdescription",
-					"streamImage": "quests/firstblood.r3.png",
-					"rules":
-					{
-						"kills": 1
-					}
-				},
-				{
-					"order": 7,
-					"list": true,
-					"reward": [2000, 2000, 2000, 2000, 0],
-					"id": "CR3",
-					"group": 1,
-					"name": "q_cr3_name",
-					"description": "q_cr3_description",
-					"hint": "q_cr3_hint",
-					"questimage": "building-housing.png",
-					"questicon": "icon_housing.png",
-					"streamTitle": "q_cr3_streamtitle",
-					"streamDescription": "q_cr3_streamdescription",
-					"streamImage": "quests/housing.png",
-					"rules":
-					{
-						"b15lvl": 1
-					}
-				},
-				{
-					"order": 8,
-					"list": true,
-					"reward": [0, 0, 0, 1000, 0],
-					"id": "C18",
-					"group": 2,
-					"name": "q_c18_name",
-					"description": "q_c18_description",
-					"hint": "q_c18_hint",
-					"questimage": "building-flinger.png",
-					"questicon": "icon_flinger.png",
-					"streamTitle": "q_c18_streamtitle",
-					"streamDescription": "q_c18_streamdescription",
-					"streamImage": "quests/flinger.png",
-					"rules":
-					{
-						"b5lvl": 1
-					}
-				},
-				{
-					"order": 9,
-					"list": true,
-					"reward": [0, 0, 0, 1000, 0],
-					"id": "C17",
-					"group": 2,
-					"name": "q_c17_name",
-					"description": "q_c17_description",
-					"hint": "q_c17_hint",
-					"questimage": "building-map.png",
-					"questicon": "icon_maproom.png",
-					"streamTitle": "q_c17_streamtitle",
-					"streamDescription": "q_c17_streamdescription",
-					"streamImage": "quests/maproom.png",
-					"rules":
-					{
-						"b11lvl": 1
-					}
-				},
-				{
-					"order": 10,
-					"list": true,
-					"reward": [6500, 6500, 500, 1500, 0],
-					"id": "WM1",
-					"group": 2,
-					"name": "q_wm1_name",
-					"description": "q_wm1_description",
-					"hint": "q_wm1_hint",
-					"questimage": "tribe_legionnaire.v2.png",
-					"questicon": "icon_tribe_legonnaire.png",
-					"streamTitle": "q_wm1_streamtitle",
-					"streamDescription": "q_wm1_streamdescription",
-					"streamImage": "quests/tribe-legionnaire.v2.png",
-					"rules":
-					{
-						"destroy_tribe1": 1
-					}
-				},
-				{
-					"order": 11,
-					"list": true,
-					"reward": [1000, 1000, 0, 1000, 0],
-					"id": "CR2",
-					"group": 1,
-					"name": "q_cr2_name",
-					"description": "q_cr2_description",
-					"hint": "q_cr2_hint",
-					"questimage": "building-hatchery.png",
-					"questicon": "icon_hatchery.png",
-					"rules":
-					{
-						"b13lvl": 1
-					}
-				},
-				{
-					"order": 36,
-					"list": true,
-					"reward": [20000, 0, 0, 0, 0],
-					"id": "C51",
-					"group": 2,
-					"name": "q_c51_name",
-					"description": "q_c51_description",
-					"hint": "q_c51_hint",
-					"questimage": "building-catapult.png",
-					"questicon": "icon_catapult.png",
-					"streamTitle": "q_c51_streamtitle",
-					"streamDescription": "q_c51_streamdescription",
-					"streamImage": "quests/catapult.png",
-					"rules":
-					{
-						"b51lvl": 1
-					}
-				},
-				{
-					"order": 15,
-					"list": true,
-					"reward": [2000, 2000, 1000, 1000, 0],
-					"id": "S1",
-					"group": 0,
-					"name": "q_s1_name",
-					"description": "q_s1_description",
-					"hint": "q_s1_hint",
-					"questimage": "building-storage.v2.png",
-					"questicon": "icon_storage.png",
-					"streamTitle": "q_s1_streamtitle",
-					"streamDescription": "q_s1_streamdescription",
-					"streamImage": "quests/building-storage.r3.png",
-					"rules":
-					{
-						"b6lvl": 1
-					}
-				},
-				{
-					"order": 13,
-					"list": true,
-					"reward": [1000, 1000, 500, 500, 0],
-					"id": "M1",
-					"group": 3,
-					"name": "q_m1_name",
-					"description": "q_m1_description",
-					"hint": "q_m1_hint",
-					"questimage": "mushroomsoup.png",
-					"questicon": "icon_mushroomsoup.png",
-					"streamTitle": "q_m1_streamtitle",
-					"streamDescription": "q_m1_streamdescription",
-					"streamImage": "quests/mushroomsoup.png",
-					"rules":
-					{
-						"mushroomspicked": 5
-					}
-				},
-				{
-					"order": 19,
-					"list": true,
-					"reward": [1000, 1000, 5000, 0, 0],
-					"id": "CR1",
-					"group": 1,
-					"name": "q_cr1_name",
-					"description": "q_cr1_description",
-					"hint": "q_cr1_hint",
-					"questimage": "building-monsterlocker.v2.png",
-					"questicon": "icon_monsterlocker.png",
-					"streamTitle": "q_cr1_streamtitle",
-					"streamDescription": "q_cr1_streamdescription",
-					"streamImage": "quests/building-monsterlocker.r3.png",
-					"prereq": "C13",
-					"rules":
-					{
-						"b8lvl": 1
-					}
-				},
-				{
-					"order": 12,
-					"list": true,
-					"reward": [8000, 8000, 8000, 8000, 0],
-					"id": "C3",
-					"group": 0,
-					"name": "q_c3_name",
-					"description": "q_c3_description",
-					"hint": "q_c3_hint",
-					"questimage": "nextlevel2.v2.png",
-					"questicon": "icon_nextlevel.png",
-					"streamTitle": "q_c3_streamtitle",
-					"streamDescription": "q_c3_streamdescription",
-					"streamImage": "quests/nextlevel2.png",
-					"rules":
-					{
-						"b1lvl": 2,
-						"b2lvl": 2,
-						"b3lvl": 2,
-						"b4lvl": 2
-					}
-				},
-				{
-					"order": 16,
-					"list": true,
-					"reward": [4000, 4000, 0, 500, 0],
-					"id": "C13",
-					"group": 0,
-					"name": "q_c13_name",
-					"description": "q_c13_description",
-					"hint": "q_c13_hint",
-					"questimage": "building-townhall.png",
-					"questicon": "icon_TH-L2.png",
-					"streamTitle": "q_c13_streamtitle",
-					"streamDescription": "q_c13_streamdescription",
-					"streamImage": "quests/building-TH-L2.r3.png",
-					"rules":
-					{
-						"b14lvl": 2
 					}
 				},
 				{
@@ -476,11 +1395,7 @@ package
 					"name": "q_t2_name",
 					"description": "q_t2_description",
 					"hint": "q_t2_hint",
-					"questimage": "building-cannon.v2.png",
-					"questicon": "icon_cannon.png",
-					"streamTitle": "q_t2_streamtitle",
-					"streamDescription": "q_t2_streamdescription",
-					"streamImage": "quests/building-cannon.r3.png",
+					"questimage": "building-cannon.png",
 					"rules":
 					{
 						"b20lvl": 1
@@ -496,335 +1411,136 @@ package
 					"description": "q_t3_description",
 					"hint": "q_t3_hint",
 					"questimage": "building-tesla.png",
-					"questicon": "icon_tesla.png",
-					"streamTitle": "q_t3_streamtitle",
-					"streamDescription": "q_t3_streamdescription",
-					"streamImage": "build-lightning.png",
 					"rules":
 					{
 						"b25lvl": 1
 					}
 				},
+
+				// Mixed
 				{
-					"order": 23,
+					"order": 6,
+					"list": true,
+					"reward": [800, 800, 1000, 1000, 0],
+					"id": "D1",
+					"group": 2,
+					"name": "q_d1_name",
+					"description": "q_d1_description",
+					"hint": "q_d1_hint",
+					"questimage": "firstblood.v2.png",
+					"rules":
+					{
+						"kills": 1
+					}
+				},
+				{
+					"order": 7,
+					"list": true,
+					"reward": [2000, 2000, 2000, 2000, 0],
+					"id": "CR3",
+					"group": 1,
+					"name": "q_cr3_name",
+					"description": "q_cr3_description",
+					"hint": "q_cr3_hint",
+					"questimage": "building-housing.png",
+					"rules":
+					{
+						"b15lvl": 1
+					}
+				},
+				{
+					"order": 8,
+					"list": true,
+					"reward": [0, 0, 0, 1000, 0],
+					"id": "C18",
+					"group": 2,
+					"name": "q_c18_name",
+					"description": "q_c18_description",
+					"hint": "q_c18_hint",
+					"questimage": "building-flinger.png",
+					"rules":
+					{
+						"b5lvl": 1
+					}
+				},
+				{
+					"order": 9,
+					"list": true,
+					"reward": [0, 0, 0, 1000, 0],
+					"id": "C17",
+					"group": 2,
+					"name": "q_c17_name",
+					"description": "q_c17_description",
+					"hint": "q_c17_hint",
+					"questimage": "building-map.png",
+					"rules":
+					{
+						"b11lvl": 1
+					}
+				},
+				{
+					"order": 10,
+					"list": true,
+					"reward": [6500, 6500, 500, 1500, 0],
+					"id": "WM1",
+					"group": 2,
+					"name": "q_wm1_name",
+					"description": "q_wm1_description",
+					"hint": "q_wm1_hint",
+					"questimage": "tribe_legionnaire.v2.png",
+					"rules":
+					{
+						"destroy_tribe1": 1
+					}
+				},
+				{
+					"order": 11,
+					"list": true,
+					"reward": [1000, 1000, 0, 1000, 0],
+					"id": "CR2",
+					"group": 1,
+					"name": "q_cr2_name",
+					"description": "q_cr2_description",
+					"hint": "q_cr2_hint",
+					"questimage": "building-hatchery.png",
+					"rules":
+					{
+						"b13lvl": 1
+					}
+				},
+				{
+					"order": 36,
 					"list": true,
 					"reward": [20000, 0, 0, 0, 0],
-					"id": "C9",
-					"group": 0,
-					"name": "q_c9_name",
-					"description": "q_c9_description",
-					"hint": "q_c9_hint",
-					"questimage": "building-twig-L3.png",
-					"questicon": "icon_B1-L3.png",
-					"streamTitle": "q_c9_streamtitle",
-					"streamDescription": "q_c9_streamdescription",
-					"streamImage": "quests/building-twig-L3.r3.png",
+					"id": "C51",
+					"group": 2,
+					"name": "q_c51_name",
+					"description": "q_c51_description",
+					"hint": "q_c51_hint",
+					"questimage": "building-catapult.png",
 					"rules":
 					{
-						"b1lvl": 3
+						"b51lvl": 1
 					}
 				},
 				{
-					"order": 24,
+					"order": 19,
 					"list": true,
-					"reward": [0, 10000, 0, 0, 0],
-					"id": "C10",
-					"group": 0,
-					"name": "q_c10_name",
-					"description": "q_c10_description",
-					"hint": "q_c10_hint",
-					"questimage": "building-pebbles-L3.v2.png",
-					"questicon": "icon_B2-L3.png",
-					"streamTitle": "q_c10_streamtitle",
-					"streamDescription": "q_c10_streamdescription",
-					"streamImage": "quests/building-pebble-L3.r3.png",
-					"rules":
-					{
-						"b2lvl": 3
-					}
-				},
-				{
-					"order": 25,
-					"list": true,
-					"reward": [0, 0, 2500, 0, 0],
-					"id": "C11",
-					"group": 0,
-					"name": "q_c11_name",
-					"description": "q_c11_description",
-					"hint": "q_c11_hint",
-					"questimage": "building-putty-L3.v2.png",
-					"questicon": "icon_B3-L3.png",
-					"streamTitle": "q_c11_streamtitle",
-					"streamDescription": "q_c11_streamdescription",
-					"streamImage": "quests/building-putty-L3.r3.png",
-					"rules":
-					{
-						"b3lvl": 3
-					}
-				},
-				{
-					"order": 26,
-					"list": true,
-					"reward": [0, 0, 0, 2000, 0],
-					"id": "C12",
-					"group": 0,
-					"name": "q_c12_name",
-					"description": "q_c12_description",
-					"hint": "q_c12_hint",
-					"questimage": "building-goo-L3.v2.png",
-					"questicon": "icon_B4-L3.png",
-					"streamTitle": "q_c12_streamtitle",
-					"streamDescription": "q_c12_streamdescription",
-					"streamImage": "quests/building-goo-L3.r3.png",
-					"rules":
-					{
-						"b4lvl": 3
-					}
-				},
-				{
-					"order": 27,
-					"list": true,
-					"reward": [4000, 4000, 2000, 2000, 0],
-					"id": "S2",
-					"group": 0,
-					"name": "q_s2_name",
-					"description": "q_s2_description",
-					"hint": "q_s2_hint",
-					"questimage": "building-storage.v2.png",
-					"questicon": "icon_storage.png",
-					"streamTitle": "q_s2_streamtitle",
-					"streamDescription": "q_s2_streamdescription",
-					"streamImage": "quests/building-storage.r3.png",
-					"prereq": "S1",
-					"rules":
-					{
-						"b6lvl": 2
-					}
-				},
-				{
-					"order": 29,
-					"list": true,
-					"reward": [20000, 0, 0, 0, 0],
-					"id": "C4",
-					"group": 0,
-					"name": "q_c4_name",
-					"description": "q_c4_description",
-					"hint": "q_c4_hint",
-					"questimage": "building-twig-L3.png",
-					"questicon": "icon_B1-L3.png",
-					"streamTitle": "q_c4_streamtitle",
-					"streamDescription": "q_c4_streamdescription",
-					"streamImage": "quests/building-twig-L3.r3.png",
-					"prereq": "C9",
-					"rules":
-					{
-						"b1lvl": 4
-					}
-				},
-				{
-					"order": 62,
-					"list": true,
-					"reward": [1000, 1000, 500, 500, 0],
-					"id": "M4",
-					"group": 3,
-					"name": "q_m4_name",
-					"description": "q_m4_description",
-					"hint": "q_m4_hint",
-					"questimage": "mushroombooty.png",
-					"questicon": "icon_mushroombooty.png",
-					"streamTitle": "q_m4_streamtitle",
-					"streamDescription": "q_m4_streamdescription",
-					"streamImage": "quests/mushroombooty.png",
-					"prereq": "M1",
-					"rules":
-					{
-						"goldmushroomspicked": 5
-					}
-				},
-				{
-					"order": 30,
-					"list": true,
-					"reward": [0, 20000, 0, 0, 0],
-					"id": "C5",
-					"group": 0,
-					"name": "q_c5_name",
-					"description": "q_c5_description",
-					"hint": "q_c5_hint",
-					"questimage": "building-pebbles-L3.v2.png",
-					"questicon": "icon_B2-L3.png",
-					"streamTitle": "q_c5_streamtitle",
-					"streamDescription": "q_c5_streamdescription",
-					"streamImage": "quests/building-pebble-L3.r3.png",
-					"prereq": "C10",
-					"rules":
-					{
-						"b2lvl": 4
-					}
-				},
-				{
-					"order": 31,
-					"list": true,
-					"reward": [0, 0, 10000, 0, 0],
-					"id": "C6",
-					"group": 0,
-					"name": "q_c6_name",
-					"description": "q_c6_description",
-					"hint": "q_c6_hint",
-					"questimage": "building-putty-L3.png",
-					"questicon": "icon_B3-L3.png",
-					"streamTitle": "q_c6_streamtitle",
-					"streamDescription": "q_c6_streamdescription",
-					"streamImage": "quests/building-putty-L3.r3.png",
-					"prereq": "C11",
-					"rules":
-					{
-						"b3lvl": 4
-					}
-				},
-				{
-					"order": 32,
-					"list": true,
-					"reward": [0, 0, 0, 10000, 0],
-					"id": "C7",
-					"group": 0,
-					"name": "q_c7_name",
-					"description": "q_c7_description",
-					"hint": "q_c7_hint",
-					"questimage": "building-goo-L3.png",
-					"questicon": "icon_B4-L3.png",
-					"streamTitle": "q_c7_streamtitle",
-					"streamDescription": "q_c7_streamdescription",
-					"streamImage": "quests/building-goo-L3.r3.png",
-					"prereq": "C12",
-					"rules":
-					{
-						"b4lvl": 4
-					}
-				},
-				{
-					"order": 35,
-					"list": true,
-					"reward": [5000, 5000, 2500, 2500, 0],
-					"id": "C14",
-					"group": 0,
-					"name": "q_c14_name",
-					"description": "q_c14_description",
-					"hint": "q_c14_hint",
-					"questimage": "building-townhall-L3.v4.png",
-					"questicon": "icon_TH-L3.png",
-					"streamTitle": "q_c14_streamtitle",
-					"streamDescription": "q_c14_streamdescription",
-					"streamImage": "quests/building-TH-L3.r3.png",
+					"reward": [1000, 1000, 5000, 0, 0],
+					"id": "CR1",
+					"group": 1,
+					"name": "q_cr1_name",
+					"description": "q_cr1_description",
+					"hint": "q_cr1_hint",
+					"questimage": "building-monsterlocker.v2.png",
 					"prereq": "C13",
 					"rules":
 					{
-						"b14lvl": 3
+						"b8lvl": 1
 					}
 				},
-				{
-					"order": 34,
-					"list": true,
-					"reward": [8000, 8000, 4000, 4000, 0],
-					"id": "S3",
-					"group": 0,
-					"name": "q_s3_name",
-					"description": "q_s3_description",
-					"hint": "q_s3_hint",
-					"questimage": "building-storage.v2.png",
-					"questicon": "icon_storage.png",
-					"streamTitle": "q_s3_streamtitle",
-					"streamDescription": "q_s3_streamdescription",
-					"streamImage": "quests/building-storage.r3.png",
-					"prereq": "S2",
-					"rules":
-					{
-						"b6lvl": 3
-					}
-				},
-				{
-					"order": 45,
-					"list": true,
-					"reward": [0, 0, 0, 0, 0],
-					"id": "C15",
-					"group": 0,
-					"name": "q_c15_name",
-					"description": "q_c15_description",
-					"hint": "q_c15_hint",
-					"questimage": "building-townhall-L4.v2.png",
-					"questicon": "icon_TH-L4.png",
-					"streamTitle": "q_c15_streamtitle",
-					"streamDescription": "q_c15_streamdescription",
-					"streamImage": "quests/building-TH-L4.r3.png",
-					"reward_creatureid": "C9",
-					"monster_reward": 20,
-					"prereq": "C14",
-					"rules":
-					{
-						"b14lvl": 4
-					}
-				},
-				{
-					"order": 37,
-					"list": true,
-					"reward": [16000, 16000, 8000, 8000, 0],
-					"id": "S4",
-					"group": 0,
-					"name": "q_s4_name",
-					"description": "q_s4_description",
-					"hint": "q_s4_hint",
-					"questimage": "building-storage.v2.png",
-					"questicon": "icon_storage.png",
-					"streamTitle": "q_s4_streamtitle",
-					"streamDescription": "q_s4_streamdescription",
-					"streamImage": "quests/building-storage.r3.png",
-					"prereq": "S3",
-					"rules":
-					{
-						"b6lvl": 4
-					}
-				},
-				{
-					"order": 51,
-					"list": true,
-					"reward": [0, 0, 0, 0, 0],
-					"id": "C16",
-					"group": 0,
-					"name": "q_c16_name",
-					"description": "q_c16_description",
-					"hint": "q_c16_hint",
-					"questimage": "building-townhall-L5.v2.png",
-					"questicon": "icon_TH-L5.png",
-					"streamTitle": "q_c16_streamtitle",
-					"streamDescription": "q_c16_streamdescription",
-					"streamImage": "quests/building-TH-L5.r3.png",
-					"reward_creatureid": "C14",
-					"monster_reward": 5,
-					"prereq": "C14",
-					"rules":
-					{
-						"b14lvl": 5
-					}
-				},
-				{
-					"order": 38,
-					"list": true,
-					"reward": [32000, 32000, 16000, 16000, 0],
-					"id": "S5",
-					"group": 0,
-					"name": "q_s5_name",
-					"description": "q_s5_description",
-					"hint": "q_s5_hint",
-					"questimage": "building-storage.v2.png",
-					"questicon": "icon_storage.png",
-					"streamTitle": "q_s5_streamtitle",
-					"streamDescription": "q_s5_streamdescription",
-					"streamImage": "quests/building-storage.r3.png",
-					"prereq": "S4",
-					"rules":
-					{
-						"b6lvl": 5
-					}
-				},
+
+				// Group 3
 				{
 					"order": 63,
 					"list": true,
@@ -835,10 +1551,6 @@ package
 					"description": "q_m2_description",
 					"hint": "q_m2_hint",
 					"questimage": "mushroompizza.png",
-					"questicon": "icon_mushroompizza.png",
-					"streamTitle": "q_m2_streamtitle",
-					"streamDescription": "q_m2_streamdescription",
-					"streamImage": "mushroompizza.png",
 					"prereq": "M1",
 					"rules":
 					{
@@ -855,10 +1567,6 @@ package
 					"description": "q_m5_description",
 					"hint": "q_m5_hint",
 					"questimage": "mushroombling.png",
-					"questicon": "icon_mushroombling.png",
-					"streamTitle": "q_m5_streamtitle",
-					"streamDescription": "q_m5_streamdescription",
-					"streamImage": "quests/mushroombling.png",
 					"prereq": "M4",
 					"rules":
 					{
@@ -875,10 +1583,6 @@ package
 					"description": "q_m6_description",
 					"hint": "q_m6_hint",
 					"questimage": "slotmachine.png",
-					"questicon": "icon_slotmachine.png",
-					"streamTitle": "q_m6_streamtitle",
-					"streamDescription": "q_m6_streamdescription",
-					"streamImage": "quests/slotmachine.png",
 					"prereq": "M5",
 					"rules":
 					{
@@ -895,10 +1599,6 @@ package
 					"description": "q_m3_description",
 					"hint": "q_m3_hint",
 					"questimage": "burger.png",
-					"questicon": "icon_burger.png",
-					"streamTitle": "q_m3_streamtitle",
-					"streamDescription": "q_m3_streamdescription",
-					"streamImage": "quests/burger.png",
 					"prereq": "M2",
 					"rules":
 					{
@@ -906,82 +1606,50 @@ package
 					}
 				},
 				{
-					"order": 44,
-					"list": true,
-					"reward": [0, 0, 1000, 1000, 0],
-					"id": "BL1",
-					"group": 4,
-					"name": "q_bl1_name",
-					"description": "q_bl1_description",
-					"hint": "q_bl1_hint",
-					"questimage": "monsterjuice.v2.png",
-					"questicon": "icon_monsterjuice.png",
-					"streamTitle": "q_bl1_streamtitle",
-					"streamDescription": "q_bl1_streamdescription",
-					"streamImage": "quests/monsterjuice.r3.png",
+					"order": 3,
+					"block": true,
+					"list": false,
+					"reward": [500, 1500, 500, 500, 1000],
+					"id": "C8",
+					"group": 3,
+					"name": "q_c8_name",
+					"description": "q_c8_description",
+					"hint": "q_c8_hint",
+					"questimage": "building-store.png",
 					"rules":
 					{
-						"monstersblended": 10
+						"b12lvl": 1
 					}
 				},
 				{
-					"order": 59,
+					"order": 13,
 					"list": true,
-					"reward": [0, 0, 10000, 10000, 0],
-					"id": "BL2",
-					"group": 4,
-					"name": "q_bl2_name",
-					"description": "q_bl2_description",
-					"hint": "q_bl2_hint",
-					"questimage": "smoothie.v2.png",
-					"questicon": "icon_smoothie.png",
-					"streamTitle": "q_bl2_streamtitle",
-					"streamDescription": "q_bl2_streamdescription",
-					"streamImage": "quests/smoothie.r3.png",
-					"prereq": "BL1",
+					"reward": [1000, 1000, 500, 500, 0],
+					"id": "M1",
+					"group": 3,
+					"name": "q_m1_name",
+					"description": "q_m1_description",
+					"hint": "q_m1_hint",
+					"questimage": "mushroomsoup.png",
 					"rules":
 					{
-						"monstersblended": 100
+						"mushroomspicked": 5
 					}
 				},
 				{
-					"order": 60,
+					"order": 62,
 					"list": true,
-					"reward": [0, 0, 100000, 100000, 0],
-					"id": "BL3",
-					"group": 4,
-					"name": "q_bl3_name",
-					"description": "q_bl3_description",
-					"hint": "q_bl3_hint",
-					"questimage": "monstershake.v2.png",
-					"questicon": "icon_monstershake.png",
-					"streamTitle": "q_bl3_streamtitle",
-					"streamDescription": "q_bl3_streamdescription",
-					"streamImage": "quests/monstershake.r3.png",
-					"prereq": "BL2",
+					"reward": [1000, 1000, 500, 500, 0],
+					"id": "M4",
+					"group": 3,
+					"name": "q_m4_name",
+					"description": "q_m4_description",
+					"hint": "q_m4_hint",
+					"questimage": "mushroombooty.png",
+					"prereq": "M1",
 					"rules":
 					{
-						"monstersblended": 1000
-					}
-				},
-				{
-					"order": 61,
-					"list": true,
-					"reward": [0, 0, 1000000, 1000000, 0],
-					"id": "BL4",
-					"group": 4,
-					"name": "q_bl4_name",
-					"description": "q_bl4_description",
-					"hint": "q_bl4_hint",
-					"questimage": "margarita.png",
-					"questicon": "icon_magarita.png",
-					"streamTitle": "q_bl4_streamtitle",
-					"streamDescription": "q_bl4_streamdescription",
-					"streamImage": "quests/margarita.png",
-					"prereq": "BL3",
-					"rules":
-					{
-						"monstersblended": 5000
+						"goldmushroomspicked": 5
 					}
 				},
 				{
@@ -994,10 +1662,6 @@ package
 					"description": "q_bk1_description",
 					"hint": "q_bk1_hint",
 					"questimage": "gatherer.v2.png",
-					"questicon": "icon_gatherer.png",
-					"streamTitle": "q_bk1_streamtitle",
-					"streamDescription": "q_bk1_streamdescription",
-					"streamImage": "quests/gatherer.r3.png",
 					"rules":
 					{
 						"singleclickbank": 1000
@@ -1013,10 +1677,6 @@ package
 					"description": "q_bk2_description",
 					"hint": "q_bk2_hint",
 					"questimage": "trenchcoat.v2.png",
-					"questicon": "icon_trenchcoat.png",
-					"streamTitle": "q_bk2_streamtitle",
-					"streamDescription": "q_bk2_streamdescription",
-					"streamImage": "quests/trenchcoat.r3.png",
 					"prereq": "BK1",
 					"rules":
 					{
@@ -1033,10 +1693,6 @@ package
 					"description": "q_bk3_description",
 					"hint": "q_bk3_hint",
 					"questimage": "wallstreet.v2.png",
-					"questicon": "icon_wallstreet.png",
-					"streamTitle": "q_bk3_streamtitle",
-					"streamDescription": "q_bk3_streamdescription",
-					"streamImage": "quests/wallstreet.r3.png",
 					"prereq": "BK2",
 					"rules":
 					{
@@ -1053,188 +1709,10 @@ package
 					"description": "q_bk4_description",
 					"hint": "q_bk4_hint",
 					"questimage": "mogul.v2.png",
-					"questicon": "icon_mogul.png",
-					"streamTitle": "q_bk4_streamtitle",
-					"streamDescription": "q_bk4_streamdescription",
-					"streamImage": "quests/mogul.r3.png",
 					"prereq": "BK3",
 					"rules":
 					{
 						"singleclickbank": 500000
-					}
-				},
-				{
-					"order": 18,
-					"list": true,
-					"reward": [10000, 10000, 10000, 10000, 0],
-					"id": "WM2",
-					"group": 2,
-					"name": "q_wm2_name",
-					"description": "q_wm2_description",
-					"hint": "q_wm2_hint",
-					"questimage": "tribe_kozu.v2.png",
-					"questicon": "icon_tribe_kozu.png",
-					"streamTitle": "q_wm2_streamtitle",
-					"streamDescription": "q_wm2_streamdescription",
-					"streamImage": "quests/tribe-kozu.v2.png",
-					"rules":
-					{
-						"destroy_tribe2": 1
-					}
-				},
-				{
-					"order": 33,
-					"list": true,
-					"reward": [20000, 20000, 20000, 20000, 0],
-					"id": "WM3",
-					"group": 2,
-					"name": "q_wm3_name",
-					"description": "q_wm3_description",
-					"hint": "q_wm3_hint",
-					"questimage": "tribe_abunakki.v2.png",
-					"questicon": "icon_tribe_abunakki.png",
-					"streamTitle": "q_wm3_streamtitle",
-					"streamDescription": "q_wm3_streamdescription",
-					"streamImage": "quests/tribe-abunakki.v2.png",
-					"rules":
-					{
-						"destroy_tribe3": 1
-					}
-				},
-				{
-					"order": 50,
-					"list": true,
-					"reward": [40000, 40000, 40000, 40000, 0],
-					"id": "WM4",
-					"group": 2,
-					"name": "q_wm4_name",
-					"description": "q_wm4_description",
-					"hint": "q_wm4_hint",
-					"questimage": "tribe_dreadnaut.v2.png",
-					"questicon": "icon_tribe_deadnaut.png",
-					"streamTitle": "q_wm4_streamtitle",
-					"streamDescription": "q_wm4_streamdescription",
-					"streamImage": "quests/tribe-dreadnaut.v2.png",
-					"rules":
-					{
-						"destroy_tribe4": 1
-					}
-				},
-				{
-					"order": 67,
-					"list": true,
-					"reward": [0, 0, 0, 10000, 0],
-					"id": "HG1",
-					"group": 1,
-					"name": "q_cm1_name",
-					"description": "q_cm1_description",
-					"hint": "q_cm1_hint",
-					"questimage": "G1_L1-150.png",
-					"questicon": "icon_G1-L1.png",
-					"streamTitle": "q_cm1_streamtitle",
-					"streamDescription": "q_cm1_streamdescription",
-					"streamImage": "quests/champ_1_1.png",
-					"rules":
-					{
-						"hatch_champ1": 1
-					}
-				},
-				{
-					"order": 52,
-					"list": true,
-					"reward": [0, 0, 0, 800000, 0],
-					"id": "UG1",
-					"group": 1,
-					"name": "q_cm2_name",
-					"description": "q_cm2_description",
-					"hint": "q_cm2_hint",
-					"questimage": "G1_L6-150.png",
-					"questicon": "icon_G1-L6.png",
-					"streamTitle": "q_cm2_streamtitle",
-					"streamDescription": "q_cm2_streamdescription",
-					"streamImage": "quests/champ_1_6.png",
-					"prereq": "HG1",
-					"rules":
-					{
-						"upgrade_champ1": 1
-					}
-				},
-				{
-					"order": 68,
-					"list": true,
-					"reward": [0, 0, 0, 10000, 0],
-					"id": "HG2",
-					"group": 1,
-					"name": "q_cm3_name",
-					"description": "q_cm3_description",
-					"hint": "q_cm3_hint",
-					"questimage": "G2_L1-150.png",
-					"questicon": "icon_G2-L1.png",
-					"streamTitle": "q_cm3_streamtitle",
-					"streamDescription": "q_cm3_streamdescription",
-					"streamImage": "quests/champ_2_1.png",
-					"rules":
-					{
-						"hatch_champ2": 1
-					}
-				},
-				{
-					"order": 53,
-					"list": true,
-					"reward": [0, 0, 0, 800000, 0],
-					"id": "UG2",
-					"group": 1,
-					"name": "q_cm4_name",
-					"description": "q_cm4_description",
-					"hint": "q_cm4_hint",
-					"questimage": "G2_L6-150.png",
-					"questicon": "icon_G2-L6.png",
-					"streamTitle": "q_cm4_streamtitle",
-					"streamDescription": "q_cm4_streamdescription",
-					"streamImage": "quests/champ_2_6.png",
-					"prereq": "HG2",
-					"rules":
-					{
-						"upgrade_champ2": 1
-					}
-				},
-				{
-					"order": 69,
-					"list": true,
-					"reward": [0, 0, 0, 10000, 0],
-					"id": "HG3",
-					"group": 1,
-					"name": "q_cm5_name",
-					"description": "q_cm5_description",
-					"hint": "q_cm5_hint",
-					"questimage": "G3_L1-150.png",
-					"questicon": "icon_G3-L1.png",
-					"streamTitle": "q_cm5_streamtitle",
-					"streamDescription": "q_cm5_streamdescription",
-					"streamImage": "quests/champ_3_1.png",
-					"rules":
-					{
-						"hatch_champ3": 1
-					}
-				},
-				{
-					"order": 57,
-					"list": true,
-					"reward": [0, 0, 0, 800000, 0],
-					"id": "UG3",
-					"group": 1,
-					"name": "q_cm6_name",
-					"description": "q_cm6_description",
-					"hint": "q_cm6_hint",
-					"questimage": "G3_L6-150.png",
-					"questicon": "icon_G3-L6.png",
-					"streamTitle": "q_cm6_streamtitle",
-					"streamDescription": "q_cm6_streamdescription",
-					"streamImage": "quests/champ_3_6.png",
-					"prereq": "HG3",
-					"rules":
-					{
-						"upgrade_champ3": 1
 					}
 				},
 				{
@@ -1248,10 +1726,6 @@ package
 					"description": "q_ga1_description",
 					"hint": "q_ga1_hint",
 					"questimage": "brasscoin.png",
-					"questicon": "icon_brasscoin.png",
-					"streamTitle": "q_ga1_streamtitle",
-					"streamDescription": "q_ga1_streamdescription",
-					"streamImage": "quests/brasscoin.png",
 					"rules":
 					{
 						"gift_accept": 5
@@ -1268,10 +1742,6 @@ package
 					"description": "q_ga2_description",
 					"hint": "q_ga2_hint",
 					"questimage": "silvercoin.png",
-					"questicon": "icon_silvercoin.png",
-					"streamTitle": "q_ga2_streamtitle",
-					"streamDescription": "q_ga2_streamdescription",
-					"streamImage": "quests/silvercoin.png",
 					"prereq": "GA1",
 					"rules":
 					{
@@ -1289,10 +1759,6 @@ package
 					"description": "q_ga3_description",
 					"hint": "q_ga3_hint",
 					"questimage": "goldcoin.png",
-					"questicon": "icon_goldcoin.png",
-					"streamTitle": "q_ga3_streamtitle",
-					"streamDescription": "q_ga3_streamdescription",
-					"streamImage": "quests/goldcoin.png",
 					"prereq": "GA2",
 					"rules":
 					{
@@ -1300,8 +1766,263 @@ package
 					}
 				},
 
+				// Group 4
 				{
-					"order": 1,
+					"order": 44,
+					"list": true,
+					"reward": [0, 0, 1000, 1000, 0],
+					"id": "BL1",
+					"group": 4,
+					"name": "q_bl1_name",
+					"description": "q_bl1_description",
+					"hint": "q_bl1_hint",
+					"questimage": "monsterjuice.v2.png",
+					"rules":
+					{
+						"monstersblended": 10
+					}
+				},
+				{
+					"order": 59,
+					"list": true,
+					"reward": [0, 0, 10000, 10000, 0],
+					"id": "BL2",
+					"group": 4,
+					"name": "q_bl2_name",
+					"description": "q_bl2_description",
+					"hint": "q_bl2_hint",
+					"questimage": "smoothie.v2.png",
+					"prereq": "BL1",
+					"rules":
+					{
+						"monstersblended": 100
+					}
+				},
+				{
+					"order": 60,
+					"list": true,
+					"reward": [0, 0, 100000, 100000, 0],
+					"id": "BL3",
+					"group": 4,
+					"name": "q_bl3_name",
+					"description": "q_bl3_description",
+					"hint": "q_bl3_hint",
+					"questimage": "monstershake.v2.png",
+					"prereq": "BL2",
+					"rules":
+					{
+						"monstersblended": 1000
+					}
+				},
+				{
+					"order": 61,
+					"list": true,
+					"reward": [0, 0, 1000000, 1000000, 0],
+					"id": "BL4",
+					"group": 4,
+					"name": "q_bl4_name",
+					"description": "q_bl4_description",
+					"hint": "q_bl4_hint",
+					"questimage": "margarita.png",
+					"prereq": "BL3",
+					"rules":
+					{
+						"monstersblended": 5000
+					}
+				},
+				
+				// Mixed
+				{
+					"order": 18,
+					"list": true,
+					"reward": [10000, 10000, 10000, 10000, 0],
+					"id": "WM2",
+					"group": 2,
+					"name": "q_wm2_name",
+					"description": "q_wm2_description",
+					"hint": "q_wm2_hint",
+					"questimage": "tribe_kozu.v2.png",
+					"rules":
+					{
+						"destroy_tribe2": 1
+					}
+				},
+				{
+					"order": 33,
+					"list": true,
+					"reward": [20000, 20000, 20000, 20000, 0],
+					"id": "WM3",
+					"group": 2,
+					"name": "q_wm3_name",
+					"description": "q_wm3_description",
+					"hint": "q_wm3_hint",
+					"questimage": "tribe_abunakki.v2.png",
+					"rules":
+					{
+						"destroy_tribe3": 1
+					}
+				},
+				{
+					"order": 50,
+					"list": true,
+					"reward": [40000, 40000, 40000, 40000, 0],
+					"id": "WM4",
+					"group": 2,
+					"name": "q_wm4_name",
+					"description": "q_wm4_description",
+					"hint": "q_wm4_hint",
+					"questimage": "tribe_dreadnaut.v2.png",
+					"rules":
+					{
+						"destroy_tribe4": 1
+					}
+				},
+				{
+					"order": 67,
+					"list": true,
+					"reward": [0, 0, 0, 10000, 0],
+					"id": "HG1",
+					"group": 1,
+					"name": "q_cm1_name",
+					"description": "q_cm1_description",
+					"hint": "q_cm1_hint",
+					"questimage": "G1_L1-150.png",
+					"rules":
+					{
+						"hatch_champ1": 1
+					}
+				},
+				{
+					"order": 52,
+					"list": true,
+					"reward": [0, 0, 0, 800000, 0],
+					"id": "UG1",
+					"group": 1,
+					"name": "q_cm2_name",
+					"description": "q_cm2_description",
+					"hint": "q_cm2_hint",
+					"questimage": "G1_L6-150.png",
+					"prereq": "HG1",
+					"rules":
+					{
+						"upgrade_champ1": 1
+					}
+				},
+				{
+					"order": 68,
+					"list": true,
+					"reward": [0, 0, 0, 10000, 0],
+					"id": "HG2",
+					"group": 1,
+					"name": "q_cm3_name",
+					"description": "q_cm3_description",
+					"hint": "q_cm3_hint",
+					"questimage": "G2_L1-150.png",
+					"rules":
+					{
+						"hatch_champ2": 1
+					}
+				},
+				{
+					"order": 53,
+					"list": true,
+					"reward": [0, 0, 0, 800000, 0],
+					"id": "UG2",
+					"group": 1,
+					"name": "q_cm4_name",
+					"description": "q_cm4_description",
+					"hint": "q_cm4_hint",
+					"questimage": "G2_L6-150.png",
+					"prereq": "HG2",
+					"rules":
+					{
+						"upgrade_champ2": 1
+					}
+				},
+				{
+					"order": 69,
+					"list": true,
+					"reward": [0, 0, 0, 10000, 0],
+					"id": "HG3",
+					"group": 1,
+					"name": "q_cm5_name",
+					"description": "q_cm5_description",
+					"hint": "q_cm5_hint",
+					"questimage": "G3_L1-150.png",
+					"rules":
+					{
+						"hatch_champ3": 1
+					}
+				},
+				{
+					"order": 57,
+					"list": true,
+					"reward": [0, 0, 0, 800000, 0],
+					"id": "UG3",
+					"group": 1,
+					"name": "q_cm6_name",
+					"description": "q_cm6_description",
+					"hint": "q_cm6_hint",
+					"questimage": "G3_L6-150.png",
+					"prereq": "HG3",
+					"rules":
+					{
+						"upgrade_champ3": 1
+					}
+				},
+				
+
+				// Group 5
+				{
+					"order": 25,
+					"list": true,
+					"reward": [0, 0, 0, 0, 250],
+					"id": "LVL25",
+					"group": 5,
+					"name": "q_lvl_name",
+					"description": "q_lvl_description",
+					"hint": "q_lvl_hint",
+					"questimage": "levelup.png",
+					"prereq": "LVL25",
+					"rules":
+					{
+						"level_up": 25
+					}
+				},
+				{
+					"order": 30,
+					"list": true,
+					"reward": [0, 0, 0, 0, 300],
+					"id": "LVL30",
+					"group": 5,
+					"name": "q_lvl_name",
+					"description": "q_lvl_description",
+					"hint": "q_lvl_hint",
+					"questimage": "levelup.png",
+					"prereq": "LVL25",
+					"rules":
+					{
+						"level_up": 30
+					}
+				},
+				{
+					"order": 35,
+					"list": true,
+					"reward": [0, 0, 0, 0, 350],
+					"id": "LVL35",
+					"group": 5,
+					"name": "q_lvl_name",
+					"description": "q_lvl_description",
+					"hint": "q_lvl_hint",
+					"questimage": "levelup.png",
+					"prereq": "LVL30",
+					"rules":
+					{
+						"level_up": 35
+					}
+				},
+				{
+					"order": 40,
 					"list": true,
 					"reward": [0, 0, 0, 0, 400],
 					"id": "LVL40",
@@ -1309,18 +2030,15 @@ package
 					"name": "q_lvl_name",
 					"description": "q_lvl_description",
 					"hint": "q_lvl_hint",
-					"questimage": "goldcoin.png",
-					"questicon": "icon_goldcoin.png",
-					"streamTitle": "q_lvl_streamtitle",
-					"streamDescription": "q_lvl_streamdescription",
-					"streamImage": "quests/goldcoin.png",
+					"questimage": "levelup.png",
+					"prereq": "LVL35",
 					"rules":
 					{
 						"level_up": 40
 					}
 				},
 				{
-					"order": 2,
+					"order": 45,
 					"list": true,
 					"reward": [0, 0, 0, 0, 450],
 					"id": "LVL45",
@@ -1328,11 +2046,7 @@ package
 					"name": "q_lvl_name",
 					"description": "q_lvl_description",
 					"hint": "q_lvl_hint",
-					"questimage": "goldcoin.png",
-					"questicon": "icon_goldcoin.png",
-					"streamTitle": "q_lvl_streamtitle",
-					"streamDescription": "q_lvl_streamdescription",
-					"streamImage": "quests/goldcoin.png",
+					"questimage": "levelup.png",
 					"prereq": "LVL40",
 					"rules":
 					{
@@ -1340,7 +2054,7 @@ package
 					}
 				},
 				{
-					"order": 3,
+					"order": 50,
 					"list": true,
 					"reward": [0, 0, 0, 0, 500],
 					"id": "LVL50",
@@ -1348,11 +2062,7 @@ package
 					"name": "q_lvl_name",
 					"description": "q_lvl_description",
 					"hint": "q_lvl_hint",
-					"questimage": "goldcoin.png",
-					"questicon": "icon_goldcoin.png",
-					"streamTitle": "q_lvl_streamtitle",
-					"streamDescription": "q_lvl_streamdescription",
-					"streamImage": "quests/goldcoin.png",
+					"questimage": "levelup.png",
 					"prereq": "LVL45",
 					"rules":
 					{
@@ -1360,7 +2070,7 @@ package
 					}
 				},
 				{
-					"order": 4,
+					"order": 55,
 					"list": true,
 					"reward": [0, 0, 0, 0, 550],
 					"id": "LVL55",
@@ -1368,11 +2078,7 @@ package
 					"name": "q_lvl_name",
 					"description": "q_lvl_description",
 					"hint": "q_lvl_hint",
-					"questimage": "goldcoin.png",
-					"questicon": "icon_goldcoin.png",
-					"streamTitle": "q_lvl_streamtitle",
-					"streamDescription": "q_lvl_streamdescription",
-					"streamImage": "quests/goldcoin.png",
+					"questimage": "levelup.png",
 					"prereq": "LVL50",
 					"rules":
 					{
@@ -1380,7 +2086,7 @@ package
 					}
 				},
 				{
-					"order": 5,
+					"order": 60,
 					"list": true,
 					"reward": [0, 0, 0, 0, 600],
 					"id": "LVL60",
@@ -1388,11 +2094,7 @@ package
 					"name": "q_lvl_name",
 					"description": "q_lvl_description",
 					"hint": "q_lvl_hint",
-					"questimage": "goldcoin.png",
-					"questicon": "icon_goldcoin.png",
-					"streamTitle": "q_lvl_streamtitle",
-					"streamDescription": "q_lvl_streamdescription",
-					"streamImage": "quests/goldcoin.png",
+					"questimage": "levelup.png",
 					"prereq": "LVL55",
 					"rules":
 					{
@@ -1400,7 +2102,7 @@ package
 					}
 				},
 				{
-					"order": 6,
+					"order": 65,
 					"list": true,
 					"reward": [0, 0, 0, 0, 650],
 					"id": "LVL65",
@@ -1408,11 +2110,7 @@ package
 					"name": "q_lvl_name",
 					"description": "q_lvl_description",
 					"hint": "q_lvl_hint",
-					"questimage": "goldcoin.png",
-					"questicon": "icon_goldcoin.png",
-					"streamTitle": "q_lvl_streamtitle",
-					"streamDescription": "q_lvl_streamdescription",
-					"streamImage": "quests/goldcoin.png",
+					"questimage": "levelup.png",
 					"prereq": "LVL60",
 					"rules":
 					{
@@ -1420,7 +2118,7 @@ package
 					}
 				},
 				{
-					"order": 7,
+					"order": 70,
 					"list": true,
 					"reward": [0, 0, 0, 0, 700],
 					"id": "LVL70",
@@ -1428,11 +2126,7 @@ package
 					"name": "q_lvl_name",
 					"description": "q_lvl_description",
 					"hint": "q_lvl_hint",
-					"questimage": "goldcoin.png",
-					"questicon": "icon_goldcoin.png",
-					"streamTitle": "q_lvl_streamtitle",
-					"streamDescription": "q_lvl_streamdescription",
-					"streamImage": "quests/goldcoin.png",
+					"questimage": "levelup.png",
 					"prereq": "LVL65",
 					"rules":
 					{
@@ -1440,7 +2134,7 @@ package
 					}
 				},
 				{
-					"order": 8,
+					"order": 75,
 					"list": true,
 					"reward": [0, 0, 0, 0, 750],
 					"id": "LVL75",
@@ -1448,11 +2142,7 @@ package
 					"name": "q_lvl_name",
 					"description": "q_lvl_description",
 					"hint": "q_lvl_hint",
-					"questimage": "goldcoin.png",
-					"questicon": "icon_goldcoin.png",
-					"streamTitle": "q_lvl_streamtitle",
-					"streamDescription": "q_lvl_streamdescription",
-					"streamImage": "quests/goldcoin.png",
+					"questimage": "levelup.png",
 					"prereq": "LVL70",
 					"rules":
 					{
@@ -1460,7 +2150,7 @@ package
 					}
 				},
 				{
-					"order": 9,
+					"order": 80,
 					"list": true,
 					"reward": [0, 0, 0, 0, 800],
 					"id": "LVL80",
@@ -1468,11 +2158,7 @@ package
 					"name": "q_lvl_name",
 					"description": "q_lvl_description",
 					"hint": "q_lvl_hint",
-					"questimage": "goldcoin.png",
-					"questicon": "icon_goldcoin.png",
-					"streamTitle": "q_lvl_streamtitle",
-					"streamDescription": "q_lvl_streamdescription",
-					"streamImage": "quests/goldcoin.png",
+					"questimage": "levelup.png",
 					"prereq": "LVL75",
 					"rules":
 					{
@@ -1480,7 +2166,7 @@ package
 					}
 				},
 				{
-					"order": 10,
+					"order": 85,
 					"list": true,
 					"reward": [0, 0, 0, 0, 850],
 					"id": "LVL85",
@@ -1488,11 +2174,7 @@ package
 					"name": "q_lvl_name",
 					"description": "q_lvl_description",
 					"hint": "q_lvl_hint",
-					"questimage": "goldcoin.png",
-					"questicon": "icon_goldcoin.png",
-					"streamTitle": "q_lvl_streamtitle",
-					"streamDescription": "q_lvl_streamdescription",
-					"streamImage": "quests/goldcoin.png",
+					"questimage": "levelup.png",
 					"prereq": "LVL80",
 					"rules":
 					{
@@ -1500,7 +2182,7 @@ package
 					}
 				},
 				{
-					"order": 11,
+					"order": 90,
 					"list": true,
 					"reward": [0, 0, 0, 0, 900],
 					"id": "LVL90",
@@ -1508,11 +2190,7 @@ package
 					"name": "q_lvl_name",
 					"description": "q_lvl_description",
 					"hint": "q_lvl_hint",
-					"questimage": "goldcoin.png",
-					"questicon": "icon_goldcoin.png",
-					"streamTitle": "q_lvl_streamtitle",
-					"streamDescription": "q_lvl_streamdescription",
-					"streamImage": "quests/goldcoin.png",
+					"questimage": "levelup.png",
 					"prereq": "LVL85",
 					"rules":
 					{
@@ -1520,7 +2198,7 @@ package
 					}
 				},
 				{
-					"order": 12,
+					"order": 95,
 					"list": true,
 					"reward": [0, 0, 0, 0, 950],
 					"id": "LVL95",
@@ -1528,11 +2206,7 @@ package
 					"name": "q_lvl_name",
 					"description": "q_lvl_description",
 					"hint": "q_lvl_hint",
-					"questimage": "goldcoin.png",
-					"questicon": "icon_goldcoin.png",
-					"streamTitle": "q_lvl_streamtitle",
-					"streamDescription": "q_lvl_streamdescription",
-					"streamImage": "quests/goldcoin.png",
+					"questimage": "levelup.png",
 					"prereq": "LVL90",
 					"rules":
 					{
@@ -1540,7 +2214,7 @@ package
 					}
 				},
 				{
-					"order": 13,
+					"order": 100,
 					"list": true,
 					"reward": [0, 0, 0, 0, 1000],
 					"id": "LVL100",
@@ -1548,11 +2222,7 @@ package
 					"name": "q_lvl_name",
 					"description": "q_lvl_description",
 					"hint": "q_lvl_hint",
-					"questimage": "goldcoin.png",
-					"questicon": "icon_goldcoin.png",
-					"streamTitle": "q_lvl_streamtitle",
-					"streamDescription": "q_lvl_streamdescription",
-					"streamImage": "quests/goldcoin.png",
+					"questimage": "levelup.png",
 					"prereq": "LVL95",
 					"rules":
 					{
@@ -1560,7 +2230,7 @@ package
 					}
 				},
 				{
-					"order": 14,
+					"order": 105,
 					"list": true,
 					"reward": [0, 0, 0, 0, 1050],
 					"id": "LVL105",
@@ -1568,11 +2238,7 @@ package
 					"name": "q_lvl_name",
 					"description": "q_lvl_description",
 					"hint": "q_lvl_hint",
-					"questimage": "goldcoin.png",
-					"questicon": "icon_goldcoin.png",
-					"streamTitle": "q_lvl_streamtitle",
-					"streamDescription": "q_lvl_streamdescription",
-					"streamImage": "quests/goldcoin.png",
+					"questimage": "levelup.png",
 					"prereq": "LVL100",
 					"rules":
 					{
@@ -1580,7 +2246,7 @@ package
 					}
 				},
 				{
-					"order": 15,
+					"order": 110,
 					"list": true,
 					"reward": [0, 0, 0, 0, 1100],
 					"id": "LVL110",
@@ -1588,11 +2254,7 @@ package
 					"name": "q_lvl_name",
 					"description": "q_lvl_description",
 					"hint": "q_lvl_hint",
-					"questimage": "goldcoin.png",
-					"questicon": "icon_goldcoin.png",
-					"streamTitle": "q_lvl_streamtitle",
-					"streamDescription": "q_lvl_streamdescription",
-					"streamImage": "quests/goldcoin.png",
+					"questimage": "levelup.png",
 					"prereq": "LVL105",
 					"rules":
 					{
@@ -1600,7 +2262,71 @@ package
 					}
 				},
 				{
-					"order": 16,
+					"order": 111,
+					"list": true,
+					"reward": [0, 0, 0, 0, 1110],
+					"id": "LVL111",
+					"group": 5,
+					"name": "q_lvl_name",
+					"description": "q_lvl_description",
+					"hint": "q_lvl_hint",
+					"questimage": "levelup.png",
+					"prereq": "LVL110",
+					"rules":
+					{
+						"level_up": 111
+					}
+				},
+				{
+					"order": 112,
+					"list": true,
+					"reward": [0, 0, 0, 0, 1120],
+					"id": "LVL112",
+					"group": 5,
+					"name": "q_lvl_name",
+					"description": "q_lvl_description",
+					"hint": "q_lvl_hint",
+					"questimage": "levelup.png",
+					"prereq": "LVL111",
+					"rules":
+					{
+						"level_up": 112
+					}
+				},
+				{
+					"order": 113,
+					"list": true,
+					"reward": [0, 0, 0, 0, 1130],
+					"id": "LVL113",
+					"group": 5,
+					"name": "q_lvl_name",
+					"description": "q_lvl_description",
+					"hint": "q_lvl_hint",
+					"questimage": "levelup.png",
+					"prereq": "LVL112",
+					"rules":
+					{
+						"level_up": 113
+					}
+				},
+				{
+					"order": 114,
+					"list": true,
+					"reward": [0, 0, 0, 0, 1140],
+					"id": "LVL114",
+					"group": 5,
+					"name": "q_lvl_name",
+					"description": "q_lvl_description",
+					"hint": "q_lvl_hint",
+					"questimage": "levelup.png",
+					"prereq": "LVL113",
+					"rules":
+					{
+						"level_up": 114
+					}
+				},
+				{
+					"order": 115,
 					"list": true,
 					"reward": [0, 0, 0, 0, 1150],
 					"id": "LVL115",
@@ -1608,19 +2334,79 @@ package
 					"name": "q_lvl_name",
 					"description": "q_lvl_description",
 					"hint": "q_lvl_hint",
-					"questimage": "goldcoin.png",
-					"questicon": "icon_goldcoin.png",
-					"streamTitle": "q_lvl_streamtitle",
-					"streamDescription": "q_lvl_streamdescription",
-					"streamImage": "quests/goldcoin.png",
-					"prereq": "LVL110",
+					"questimage": "levelup.png",
+					"prereq": "LVL114",
 					"rules":
 					{
 						"level_up": 115
 					}
 				},
 				{
-					"order": 17,
+					"order": 116,
+					"list": true,
+					"reward": [0, 0, 0, 0, 1160],
+					"id": "LVL116",
+					"group": 5,
+					"name": "q_lvl_name",
+					"description": "q_lvl_description",
+					"hint": "q_lvl_hint",
+					"questimage": "levelup.png",
+					"prereq": "LVL115",
+					"rules":
+					{
+						"level_up": 116
+					}
+				},
+				{
+					"order": 117,
+					"list": true,
+					"reward": [0, 0, 0, 0, 1170],
+					"id": "LVL117",
+					"group": 5,
+					"name": "q_lvl_name",
+					"description": "q_lvl_description",
+					"hint": "q_lvl_hint",
+					"questimage": "levelup.png",
+					"prereq": "LVL116",
+					"rules":
+					{
+						"level_up": 117
+					}
+				},
+				{
+					"order": 118,
+					"list": true,
+					"reward": [0, 0, 0, 0, 1180],
+					"id": "LVL118",
+					"group": 5,
+					"name": "q_lvl_name",
+					"description": "q_lvl_description",
+					"hint": "q_lvl_hint",
+					"questimage": "levelup.png",
+					"prereq": "LVL117",
+					"rules":
+					{
+						"level_up": 118
+					}
+				},
+				{
+					"order": 119,
+					"list": true,
+					"reward": [0, 0, 0, 0, 1190],
+					"id": "LVL119",
+					"group": 5,
+					"name": "q_lvl_name",
+					"description": "q_lvl_description",
+					"hint": "q_lvl_hint",
+					"questimage": "levelup.png",
+					"prereq": "LVL118",
+					"rules":
+					{
+						"level_up": 119
+					}
+				},
+				{
+					"order": 120,
 					"list": true,
 					"reward": [0, 0, 0, 0, 1200],
 					"id": "LVL120",
@@ -1628,12 +2414,8 @@ package
 					"name": "q_lvl_name",
 					"description": "q_lvl_description",
 					"hint": "q_lvl_hint",
-					"questimage": "goldcoin.png",
-					"questicon": "icon_goldcoin.png",
-					"streamTitle": "q_lvl_streamtitle",
-					"streamDescription": "q_lvl_streamdescription",
-					"streamImage": "quests/goldcoin.png",
-					"prereq": "LVL115",
+					"questimage": "levelup.png",
+					"prereq": "LVL119",
 					"rules":
 					{
 						"level_up": 120
@@ -1654,10 +2436,6 @@ package
 					"description":"q_fan_description",
 					"hint":"q_fan_hint",
 					"questimage":"fantastic.v2.png",
-					"questicon":"icon_fantastic.png",
-					"streamTitle":"q_fan_streamtitle",
-					"streamDescription":"q_fan_streamdescription",
-					"streamImage":"quests/fantastic.r3.png",
 					"rules":{"bonus_fan":1}
 				});
 				_quests.push({
@@ -1671,10 +2449,6 @@ package
 					"description":"q_invite1_description",
 					"hint":"q_invite1_hint",
 					"questimage":"friendlymonster.png",
-					"questicon":"icon_shiny.png",
-					"streamTitle":"q_invite1_streamtitle",
-					"streamDescription":"q_invite1_streamdescription",
-					"streamImage":"quests/friendlymonster.png",
 					"rules":{"bonus_invites":1}
 				});
 				_quests.push({
@@ -1688,10 +2462,6 @@ package
 					"description":"q_invite5_description",
 					"hint":"q_invite5_hint",
 					"questimage":"bandofmonsters.png",
-					"questicon":"icon_shiny.png",
-					"streamTitle":"q_invite5_streamtitle",
-					"streamDescription":"q_invite5_streamdescription",
-					"streamImage":"quests/bandofmonsters.png",
 					"prereq":"INVITE1",
 					"rules":{"bonus_invites":5}
 				});
@@ -1706,10 +2476,6 @@ package
 					"description":"q_invite10_description",
 					"hint":"q_invite10_hint",
 					"questimage":"monsterparty.png",
-					"questicon":"icon_shiny.png",
-					"streamTitle":"q_invite10_streamtitle",
-					"streamDescription":"q_invite10_streamdescription",
-					"streamImage":"quests/monsterparty.png",
 					"prereq":"INVITE5",
 					"rules":{"bonus_invites":10}
 				});
@@ -1724,10 +2490,6 @@ package
 					"description":"q_em1_description",
 					"hint":"q_em1_hint",
 					"questimage":"radiotower.png",
-					"questicon":"icon_radiotower.png",
-					"streamTitle":"q_em1_streamtitle",
-					"streamDescription":"q_em1_streamdescription",
-					"streamImage":"quests/build-radio.png",
 					"prereq":"C13",
 					"rules":{"b113lvl":1}
 				});
@@ -1746,7 +2508,6 @@ package
 				"hint":"q_unlock_hint",
 				"creatureid":"C" + 2,
 				"questimage":"monster" + 2 + ".v2.png",
-				"questicon":"icon_C" + 2 + ".png",
 				"reward_creatureid":"C" + 2,
 				"monster_reward":_loc1_[2],
 				"prereq":"CR1",
@@ -1765,7 +2526,6 @@ package
 				"hint":"q_unlock_hint",
 				"creatureid":"C" + 3,
 				"questimage":"monster" + 3 + ".v2.png",
-				"questicon":"icon_C" + 3 + ".png",
 				"reward_creatureid":"C" + 3,
 				"monster_reward":_loc1_[3],
 				"prereq":"UC" + 2,
@@ -1784,7 +2544,6 @@ package
 				"hint":"q_unlock_hint",
 				"creatureid":"C" + 4,
 				"questimage":"monster" + 4 + ".v2.png",
-				"questicon":"icon_C" + 4 + ".png",
 				"reward_creatureid":"C" + 4,
 				"monster_reward":_loc1_[4],
 				"prereq":"UC" + 3,
@@ -1803,7 +2562,6 @@ package
 				"hint":"q_unlock_hint",
 				"creatureid":"C" + 5,
 				"questimage":"monster" + 5 + ".v2.png",
-				"questicon":"icon_C" + 5 + ".png",
 				"reward_creatureid":"C" + 5,
 				"monster_reward":_loc1_[5],
 				"prereq":"C" + 14,
@@ -1822,7 +2580,6 @@ package
 				"hint":"q_unlock_hint",
 				"creatureid":"C" + 6,
 				"questimage":"monster" + 6 + ".v2.png",
-				"questicon":"icon_C" + 6 + ".png",
 				"reward_creatureid":"C" + 6,
 				"monster_reward":_loc1_[6],
 				"prereq":"UC" + 5,
@@ -1841,7 +2598,6 @@ package
 				"hint":"q_unlock_hint",
 				"creatureid":"C" + 7,
 				"questimage":"monster" + 7 + ".v2.png",
-				"questicon":"icon_C" + 7 + ".png",
 				"reward_creatureid":"C" + 7,
 				"monster_reward":_loc1_[7],
 				"prereq":"UC" + 6,
@@ -1860,7 +2616,6 @@ package
 				"hint":"q_unlock_hint",
 				"creatureid":"C" + 8,
 				"questimage":"monster" + 8 + ".v2.png",
-				"questicon":"icon_C" + 8 + ".png",
 				"reward_creatureid":"C" + 8,
 				"monster_reward":_loc1_[8],
 				"prereq":"UC" + 7,
@@ -1879,7 +2634,6 @@ package
 				"hint":"q_unlock_hint",
 				"creatureid":"C" + 9,
 				"questimage":"monster" + 9 + ".v2.png",
-				"questicon":"icon_C" + 9 + ".png",
 				"reward_creatureid":"C" + 9,
 				"monster_reward":_loc1_[9],
 				"prereq":"C" + 15,
@@ -1898,7 +2652,6 @@ package
 				"hint":"q_unlock_hint",
 				"creatureid":"C" + 10,
 				"questimage":"monster" + 10 + ".v2.png",
-				"questicon":"icon_C" + 10 + ".png",
 				"reward_creatureid":"C" + 10,
 				"monster_reward":_loc1_[10],
 				"prereq":"UC" + 9,
@@ -1917,7 +2670,6 @@ package
 				"hint":"q_unlock_hint",
 				"creatureid":"C" + 11,
 				"questimage":"monster" + 11 + ".v2.png",
-				"questicon":"icon_C" + 11 + ".png",
 				"reward_creatureid":"C" + 11,
 				"monster_reward":_loc1_[11],
 				"prereq":"UC" + 10,
@@ -1936,7 +2688,6 @@ package
 				"hint":"q_unlock_hint",
 				"creatureid":"C" + 12,
 				"questimage":"monster" + 12 + ".v2.png",
-				"questicon":"icon_C" + 12 + ".png",
 				"reward_creatureid":"C" + 12,
 				"monster_reward":_loc1_[12],
 				"prereq":"UC" + 13,
@@ -1955,7 +2706,6 @@ package
 				"hint":"q_unlock_hint",
 				"creatureid":"C" + 13,
 				"questimage":"monster" + 13 + ".v2.png",
-				"questicon":"icon_C" + 13 + ".png",
 				"reward_creatureid":"C" + 13,
 				"monster_reward":_loc1_[13],
 				"prereq":"UC" + 11,
@@ -1972,10 +2722,6 @@ package
 				"keyvars":{"v1":SiegeWeapons.getWeapon(Decoy.ID).name},
 				"hint":"q_unlockweapon_hint",
 				"questimage":"siegeweapon_decoy.jpg",
-				"questicon":"icon_siegeweapon_decoy.v2.png",
-				"streamImage":"siegebuild_decoy.png",
-				"streamTitle":"q_unlockdecoy_streamtitle",
-				"streamDescription":"q_unlockdecoy_streambody",
 				"prereq":"C16",
 				"siegeweapon_reward":"decoy",
 				"siegeweapon_rewardcount":1,
@@ -1992,10 +2738,6 @@ package
 				"keyvars":{"v1":SiegeWeapons.getWeapon(Vacuum.ID).name},
 				"hint":"q_unlockweapon_hint",
 				"questimage":"siegeweapon_vacuum.jpg",
-				"questicon":"icon_siegeweapon_vacuum.v2.png",
-				"streamImage":"siegebuild_vacuum.png",
-				"streamTitle":"q_unlockvacuum_streamtitle",
-				"streamDescription":"q_unlockvacuum_streambody",
 				"prereq":"C16",
 				"siegeweapon_reward":"vacuum",
 				"siegeweapon_rewardcount":1,
@@ -2012,10 +2754,6 @@ package
 				"keyvars":{"v1":SiegeWeapons.getWeapon(Jars.ID).name},
 				"hint":"q_unlockweapon_hint",
 				"questimage":"siegeweapon_jars.jpg",
-				"questicon":"icon_siegeweapon_jars.v2.png",
-				"streamImage":"siegebuild_jars.png",
-				"streamTitle":"q_unlockjars_streamtitle",
-				"streamDescription":"q_unlockjars_streambody",
 				"prereq":"C16",
 				"siegeweapon_reward":"jars",
 				"siegeweapon_rewardcount":1,
@@ -2035,10 +2773,6 @@ package
 				},
 				"hint":"q_upgradeweapon_hint",
 				"questimage":"siegeweapon_decoy.jpg",
-				"questicon":"icon_siegeweapon_decoy.v2.png",
-				"streamImage":"siegebuild_decoy.png",
-				"streamTitle":"q_upgradedecoy_streamtitle_5",
-				"streamDescription":"q_upgradedecoy_streambody",
 				"prereq":"SW4",
 				"siegeweapon_reward":"decoy",
 				"siegeweapon_rewardcount":1,
@@ -2058,10 +2792,6 @@ package
 				},
 				"hint":"q_upgradeweapon_hint",
 				"questimage":"siegeweapon_vacuum.jpg",
-				"questicon":"icon_siegeweapon_vacuum.v2.png",
-				"streamImage":"siegebuild_vacuum.png",
-				"streamTitle":"q_upgradevacuum_streamtitle_5",
-				"streamDescription":"q_upgradevacuum_streambody",
 				"prereq":"SW5",
 				"siegeweapon_reward":"vacuum",
 				"siegeweapon_rewardcount":1,
@@ -2081,10 +2811,6 @@ package
 				},
 				"hint":"q_upgradeweapon_hint",
 				"questimage":"siegeweapon_jars.jpg",
-				"questicon":"icon_siegeweapon_jars.v2.png",
-				"streamImage":"siegebuild_jars.png",
-				"streamTitle":"q_upgradejars_streamtitle_5",
-				"streamDescription":"q_upgradejars_streambody",
 				"prereq":"SW6",
 				"siegeweapon_reward":"jars",
 				"siegeweapon_rewardcount":1,
@@ -2104,10 +2830,6 @@ package
 				},
 				"hint":"q_upgradeweapon_hint",
 				"questimage":"siegeweapon_decoy.jpg",
-				"questicon":"icon_siegeweapon_decoy.v2.png",
-				"streamImage":"siegebuild_decoy.png",
-				"streamTitle":"q_upgradedecoy_streamtitle_10",
-				"streamDescription":"q_upgradedecoy_streambody",
 				"prereq":"SW7",
 				"siegeweapon_reward":"decoy",
 				"siegeweapon_rewardcount":1,
@@ -2127,10 +2849,6 @@ package
 				},
 				"hint":"q_upgradeweapon_hint",
 				"questimage":"siegeweapon_vacuum.jpg",
-				"questicon":"icon_siegeweapon_vacuum.v2.png",
-				"streamImage":"siegebuild_vacuum.png",
-				"streamTitle":"q_upgradevacuum_streamtitle_10",
-				"streamDescription":"q_upgradevacuum_streambody",
 				"prereq":"SW8",
 				"siegeweapon_reward":"vacuum",
 				"siegeweapon_rewardcount":1,
@@ -2150,10 +2868,6 @@ package
 				},
 				"hint":"q_upgradeweapon_hint",
 				"questimage":"siegeweapon_jars.jpg",
-				"questicon":"icon_siegeweapon_jars.v2.png",
-				"streamImage":"siegebuild_jars.png",
-				"streamTitle":"q_upgradejars_streamtitle_10",
-				"streamDescription":"q_upgradejars_streambody",
 				"prereq":"SW9",
 				"siegeweapon_reward":"jars",
 				"siegeweapon_rewardcount":1,
@@ -2332,8 +3046,6 @@ package
 			var questGroup:int = 0;
 			var reward:Array = null;
 			var title:String = null;
-			var streamTitle:String = null;
-			var streamDescription:String = null;
 			var found:Boolean = false;
 			var q:Object = null;
 			var value:int = 0;
@@ -2366,8 +3078,6 @@ package
 					questGroup = int(q.group);
 					reward = q.reward;
 					title = String(q.name);
-					streamTitle = String(q.streamTitle);
-					streamDescription = String(q.streamDescription);
 					found = true;
 					break;
 				}
@@ -2460,7 +3170,6 @@ package
 				BASE.Save();
 			}
 			Check();
-			if(TUTORIAL._stage >= 200 && Boolean(q.streamTitle))
 			{
 				Brag = function():void
 				{
@@ -2494,10 +3203,6 @@ package
 						_loc1_.push([q.siegeweapon_rewardcount,SiegeWeapons.getWeapon(q.siegeweapon_reward).name]);
 					}
 					var _loc2_:String = GLOBAL.Array2String(_loc1_);
-					var _loc3_:String = KEYS.Get(q.streamTitle).replace("#questname#",KEYS.Get(q.name,q.keyvars)).replace("#collected#",_loc2_);
-					var _loc4_:String = KEYS.Get(q.streamDescription).replace("#questname#",KEYS.Get(q.name,q.keyvars)).replace("#collected#",_loc2_);
-					var _loc5_:String = String(q.streamImage);
-					GLOBAL.CallJS("sendFeed",["quest-collected",_loc3_,_loc4_,_loc5_,0]);
 					POPUPS.Next();
 				};
 				popupMC = new popup_quest();
@@ -2526,8 +3231,6 @@ package
 			var questGroup:int = 0;
 			var reward:Array = null;
 			var title:String = null;
-			var streamTitle:String = null;
-			var streamDescription:String = null;
 			var found:Boolean = false;
 			var q:Object = null;
 			var value:int = 0;
@@ -2549,8 +3252,6 @@ package
 						questGroup = int(q.group);
 						reward = q.reward;
 						title = String(q.name);
-						streamTitle = String(q.streamTitle);
-						streamDescription = String(q.streamDescription);
 						found = true;
 						break;
 					}
@@ -2587,7 +3288,6 @@ package
 				BASE.PointsAdd(Math.ceil(value / 50));
 				BASE.Save();
 				Check();
-				if(TUTORIAL._stage >= 200 && Boolean(q.streamTitle))
 				{
 					Brag = function():void
 					{
@@ -2621,10 +3321,6 @@ package
 							_loc1_.push([q.siegeweapon_rewardcount,SiegeWeapons.getWeapon(q.siegeweapon_reward).name]);
 						}
 						var _loc2_:String = GLOBAL.Array2String(_loc1_);
-						var _loc3_:String = KEYS.Get(q.streamTitle).replace("#questname#",KEYS.Get(q.name,q.keyvars)).replace("#collected#",_loc2_);
-						var _loc4_:String = KEYS.Get(q.streamDescription).replace("#questname#",KEYS.Get(q.name,q.keyvars)).replace("#collected#",_loc2_);
-						var _loc5_:String = String(q.streamImage);
-						GLOBAL.CallJS("sendFeed",["quest-collected",_loc3_,_loc4_,_loc5_,0]);
 						POPUPS.Next();
 					};
 					popupMC = new popup_quest();

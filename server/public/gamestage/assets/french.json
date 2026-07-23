@@ -1253,7 +1253,7 @@
     "q_wm4_streamtitle": "#fname# vient d'accomplir la Quête #questname# et a reçu en récompense #collected#.",
 	"q_lvl_description": "Reach #level_required# level.",
 	"q_lvl_hint": "Destroy Tribe Outposts to get more Conqueror Points and experience.",
-	"q_lvl_name": "Level Up",
+	"q_lvl_name": "Level Up #level_required#",
 	"q_lvl_streamdescription": "",
 	"q_lvl_streamtitle": "",
 	"anticatapult_desc": "This tower prevent from usage catapult on nearby buildings, have very low range.",

@@ -41,6 +41,7 @@ package com.monsters.missions
          description = description.replace("#installsgenerated#",BASE._installsGenerated);
 		 if(this._missionObject.rules.hasOwnProperty('level_up')){
          	description = description.replace("#level_required#",this._missionObject.rules.level_up);
+         	nametxt = nametxt.replace("#level_required#",this._missionObject.rules.level_up);
 		 }
          description = description.replace("#mushroomspicked#",QUESTS._global.mushroomspicked);
          description = description.replace("#goldmushroomspicked#",QUESTS._global.goldmushroomspicked);
@@ -55,20 +56,8 @@ package com.monsters.missions
          }
          tDesc.htmlText = description;
          mouseChildren = false;
-         if(this._missionObject.questicon)
-         {
-            ImageLoaded = function(param1:String, param2:BitmapData):void
-            {
-               try
-               {
-                  mcImage.addChild(new Bitmap(param2));
-               }
-               catch(e:Error)
-               {
-               }
-            };
-            ImageCache.GetImageWithCallBack("missionicon/" + this._missionObject.questicon,ImageLoaded);
-         }
+		 mcImage.visible = false;
+		 mcLoading.visible = false;
          if(Boolean(QUESTS._completed) && QUESTS._completed[this._missionKey] == 1)
          {
             this._isComplete = true;

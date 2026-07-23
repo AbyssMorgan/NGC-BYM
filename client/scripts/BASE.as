@@ -4033,38 +4033,6 @@ package
             saveData.type = "inferno";
          }
          saveData.damage = _percentDamaged;
-		 if(MapRoomManager.instance.isInMapRoom3 && saveData["over"] == 1 && saveData.damage >= 98){
-			if(_level >= 45 && _level <= 65){
-				switch(_wmID){
-					case 1: {
-						// Legionnaire
-						QUESTS.Check("assault_to_1_0", ++QUESTS._global.assault_to_1_0);
-						break;
-					}
-					case 11: {
-						// Kozu
-						QUESTS.Check("assault_to_1_1", ++QUESTS._global.assault_to_1_1);
-						break;
-					}
-					case 21: {
-						// Abunakki
-						QUESTS.Check("assault_to_1_2", ++QUESTS._global.assault_to_1_2);
-						break;
-					}
-					case 31: {
-						// Dreadnaught
-						QUESTS.Check("assault_to_1_3", ++QUESTS._global.assault_to_1_3);
-						break;
-					}
-				}
-			} else if(_level >= 70 && _level <= 80){
-				QUESTS.Check("assault_to_2", ++QUESTS._global.assault_to_2);
-			} else if(_level == 100){
-				QUESTS.Check("assault_to_3", ++QUESTS._global.assault_to_3);
-			} else if(_level == 120){
-				QUESTS.Check("assault_to_4", ++QUESTS._global.assault_to_4);
-			}
-		 }
          if (_pendingPromo)
          {
             saveData.purchasecomplete = 1;

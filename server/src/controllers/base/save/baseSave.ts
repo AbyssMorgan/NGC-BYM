@@ -187,6 +187,47 @@ export const baseSave: KoaController = async (ctx) => {
 					}
 					case BaseType.TRIBE: {
 						if(baseSave.wmid == 31 || baseSave.wmid == 21 || baseSave.wmid == 11 || baseSave.wmid == 1){
+							if(userSave.stats == null){
+								userSave.stats = {};
+							}
+							if(baseSave.level >= 45 && baseSave.level <= 65){
+								switch(baseSave.wmid){
+									case 1: {
+										// Legionnaire
+										userSave.stats.assault_to_1_0 ??= 0;
+										userSave.stats.assault_to_1_0++;
+										break;
+									}
+									case 11: {
+										// Kozu
+										userSave.stats.assault_to_1_1 ??= 0;
+										userSave.stats.assault_to_1_1++;
+										break;
+									}
+									case 21: {
+										// Abunakki
+										userSave.stats.assault_to_1_2 ??= 0;
+										userSave.stats.assault_to_1_2++;
+										break;
+									}
+									case 31: {
+										// Dreadnaught
+										userSave.stats.assault_to_1_3 ??= 0;
+										userSave.stats.assault_to_1_3++;
+										break;
+									}
+								}
+							} else if(baseSave.level >= 70 && baseSave.level <= 80){
+								userSave.stats.assault_to_2 ??= 0;
+								userSave.stats.assault_to_2++;
+							} else if(baseSave.level == 100){
+								userSave.stats.assault_to_3 ??= 0;
+								userSave.stats.assault_to_3++;
+							} else if(baseSave.level == 120){
+								userSave.stats.assault_to_4 ??= 0;
+								userSave.stats.assault_to_4++;
+							}
+
 							userSave.empirevalue += getConquerorPointsByLevel(baseSave.level);
 							postgres.em.persist(userSave);
 							await postgres.em.flush();

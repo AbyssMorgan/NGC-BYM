@@ -2944,6 +2944,151 @@ package
 					}
 				},
 
+				// Group 7 (Assault)
+				{
+					"order": 10,
+					"list": true,
+					"reward": [3000000, 3000000, 3000000, 3000000, 3],
+					"id": "ASSAULT_TO_1_0_10",
+					"group": 7,
+					"name": "Assault T1 (Legionnaire)",
+					"description": "Destroy tribe outposts T1.<br>Destroyed #assault_to_1_0#\/10.",
+					"hint": "Tribe outposts level 45 - 65",
+					"questimage": "tribe_abunakki.v2.png",
+					"rules":
+					{
+						"assault_to_1_0": 10
+					}
+				},
+				{
+					"order": 25,
+					"list": true,
+					"reward": [7000000, 7000000, 7000000, 7000000, 7],
+					"id": "ASSAULT_TO_1_0_25",
+					"group": 7,
+					"name": "Assault T1 (Legionnaire)",
+					"description": "Destroy tribe outposts T1.<br>Destroyed #assault_to_1_0#\/25.",
+					"hint": "Tribe outposts level 45 - 65",
+					"questimage": "tribe_abunakki.v2.png",
+					"prereq": "ASSAULT_TO_1_0_10",
+					"rules":
+					{
+						"assault_to_1_0": 25
+					}
+				},
+				{
+					"order": 50,
+					"list": true,
+					"reward": [13000000, 13000000, 13000000, 13000000, 13],
+					"id": "ASSAULT_TO_1_0_50",
+					"group": 7,
+					"name": "Assault T1 (Legionnaire)",
+					"description": "Destroy tribe outposts T1.<br>Destroyed #assault_to_1_0#\/50.",
+					"hint": "Tribe outposts level 45 - 65",
+					"questimage": "tribe_abunakki.v2.png",
+					"prereq": "ASSAULT_TO_1_0_25",
+					"rules":
+					{
+						"assault_to_1_0": 50
+					}
+				},
+				{
+					"order": 100,
+					"list": true,
+					"reward": [25000000, 25000000, 25000000, 25000000, 25],
+					"id": "ASSAULT_TO_1_0_100",
+					"group": 7,
+					"name": "Assault T1 (Legionnaire)",
+					"description": "Destroy tribe outposts T1.<br>Destroyed #assault_to_1_0#\/100.",
+					"hint": "Tribe outposts level 45 - 65",
+					"questimage": "tribe_abunakki.v2.png",
+					"prereq": "ASSAULT_TO_1_0_50",
+					"rules":
+					{
+						"assault_to_1_0": 100
+					}
+				},
+				{
+					"order": 250,
+					"list": true,
+					"reward": [63000000, 63000000, 63000000, 63000000, 63],
+					"id": "ASSAULT_TO_1_0_250",
+					"group": 7,
+					"name": "Assault T1 (Legionnaire)",
+					"description": "Destroy tribe outposts T1.<br>Destroyed #assault_to_1_0#\/250.",
+					"hint": "Tribe outposts level 45 - 65",
+					"questimage": "tribe_abunakki.v2.png",
+					"prereq": "ASSAULT_TO_1_0_100",
+					"rules":
+					{
+						"assault_to_1_0": 250
+					}
+				},
+				{
+					"order": 500,
+					"list": true,
+					"reward": [125000000, 125000000, 125000000, 125000000, 125],
+					"id": "ASSAULT_TO_1_0_500",
+					"group": 7,
+					"name": "Assault T1 (Legionnaire)",
+					"description": "Destroy tribe outposts T1.<br>Destroyed #assault_to_1_0#\/500.",
+					"hint": "Tribe outposts level 45 - 65",
+					"questimage": "tribe_abunakki.v2.png",
+					"prereq": "ASSAULT_TO_1_0_250",
+					"rules":
+					{
+						"assault_to_1_0": 500
+					}
+				},
+				{
+					"order": 1000,
+					"list": true,
+					"reward": [250000000, 250000000, 250000000, 250000000, 250],
+					"id": "ASSAULT_TO_1_0_1000",
+					"group": 7,
+					"name": "Assault T1 (Legionnaire)",
+					"description": "Destroy tribe outposts T1.<br>Destroyed #assault_to_1_0#\/1000.",
+					"hint": "Tribe outposts level 45 - 65",
+					"questimage": "tribe_abunakki.v2.png",
+					"prereq": "ASSAULT_TO_1_0_500",
+					"rules":
+					{
+						"assault_to_1_0": 1000
+					}
+				},
+				{
+					"order": 2500,
+					"list": true,
+					"reward": [625000000, 625000000, 625000000, 625000000, 625],
+					"id": "ASSAULT_TO_1_0_2500",
+					"group": 7,
+					"name": "Assault T1 (Legionnaire)",
+					"description": "Destroy tribe outposts T1.<br>Destroyed #assault_to_1_0#\/2500.",
+					"hint": "Tribe outposts level 45 - 65",
+					"questimage": "tribe_abunakki.v2.png",
+					"prereq": "ASSAULT_TO_1_0_1000",
+					"rules":
+					{
+						"assault_to_1_0": 2500
+					}
+				},
+				{
+					"order": 5000,
+					"list": true,
+					"reward": [1250000000, 1250000000, 1250000000, 1250000000, 1250],
+					"id": "ASSAULT_TO_1_0_5000",
+					"group": 7,
+					"name": "Assault T1 (Legionnaire)",
+					"description": "Destroy tribe outposts T1.<br>Destroyed #assault_to_1_0#\/5000.",
+					"hint": "Tribe outposts level 45 - 65",
+					"questimage": "tribe_abunakki.v2.png",
+					"prereq": "ASSAULT_TO_1_0_2500",
+					"rules":
+					{
+						"assault_to_1_0": 5000
+					}
+				},
+
 			];
 			var _loc1_:Array = [0,0,10,10,10,2,15,15,15,20,20,5,2,5,5,1];
 			_loc2_ = CREATURELOCKER._creatures["C" + 2];

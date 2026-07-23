@@ -3,13 +3,20 @@ import { getActiveInvasion } from "./getActiveInvasion.js";
 import { setupInvasionEvent } from "./setupInvasionEvent.js";
 
 export interface Stats {
-  other?: {
-    wmi_wave?: number;
-    wmi2_wave?: number;
-    lastWmi1EventEnd?: number;
-    lastWmi2EventEnd?: number;
-    [key: string]: any;
-  };
+	other?: {
+		wmi_wave?: number;
+		wmi2_wave?: number;
+		lastWmi1EventEnd?: number;
+		lastWmi2EventEnd?: number;
+		[key: string]: any;
+	};
+	assault_to_1_0?:number,
+	assault_to_1_1?:number,
+	assault_to_1_2?:number,
+	assault_to_1_3?:number,
+	assault_to_2?:number,
+	assault_to_3?:number,
+	assault_to_4?:number,
 }
 
 const waveKeyMap: Record<Invasion, keyof NonNullable<Stats["other"]>> = {

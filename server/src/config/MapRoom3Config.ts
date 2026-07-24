@@ -93,7 +93,9 @@ export const STRUCTURE_LEVELS: Record<number, number[]> = {
 		90
 	],
 	[EnumYardType.OUTPOST]: [
-		45, 45, 45, 45, 45, 45, 45, 45, 45, 45, 45, 45, 45, 45, 45, // 15 %
+		25, 25, 25, 25, 25, // 5 %
+		35, 35, 35, 35, 35, // 5 %
+		45, 45, 45, 45, 45, // 5 %
 		50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, // 15 %
 		55, 55, 55, 55, 55, 55, 55, 55, 55, 55, 55, 55, 55, 55, 55, // 15 %
 		60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, // 15 %
@@ -181,7 +183,7 @@ export const OUTPOST_SAVES: Record<number, Record<number, SaveData>> = {
 export const TRIBE_REGEN_TIME = 3 * 24 * 60 * 60 * 1000;
 
 /** Damage reduction (%) granted per number of owned FORTIFICATION defenders surrounding a structure. Index = defender count. */
-export const DEFENDER_DAMAGE_REDUCTION = [0, 7, 13, 23, 35, 50, 75];
+export const DEFENDER_DAMAGE_REDUCTION = [0, 20, 35, 50, 65, 80, 90];
 
 /** Defender levels per parent structure type and level. */
 export const DEFENDER_LEVELS = {

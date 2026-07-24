@@ -45,7 +45,7 @@ package
       
       public static var _looters:Array = ["C3","C9","C14"];
       
-      public static var _dps:Array = ["C1","C4","C7","C8","C11","C11"];
+      public static var _dps:Array = ["C1","C4","C7","C8","C11"];
       
       public static var _tanks:Array = ["C2","C6","C10","C12"];
       

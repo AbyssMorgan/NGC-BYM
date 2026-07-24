@@ -180,7 +180,7 @@ package
 				{
 					"order": 10106, 
 					"list": true,
-					"reward": [2000, 2000, 1000, 1000, 0],
+					"reward": [20000, 20000, 10000, 10000, 0],
 					"id": "SS1",
 					"group": 0,
 					"name": "Storage Silo",
@@ -195,7 +195,7 @@ package
 				{
 					"order": 10206,
 					"list": true,
-					"reward": [4000, 4000, 2000, 2000, 0],
+					"reward": [40000, 40000, 20000, 20000, 0],
 					"id": "SS2",
 					"group": 0,
 					"name": "Storage Silo Level 2",
@@ -226,7 +226,7 @@ package
 				{
 					"order": 10306,
 					"list": true,
-					"reward": [8000, 8000, 4000, 4000, 0],
+					"reward": [80000, 80000, 40000, 40000, 0],
 					"id": "SS3",
 					"group": 0,
 					"name": "Storage Silo Level 3",
@@ -318,7 +318,7 @@ package
 				{
 					"order": 10406,
 					"list": true,
-					"reward": [16000, 16000, 8000, 8000, 0],
+					"reward": [160000, 160000, 80000, 80000, 0],
 					"id": "SS4",
 					"group": 0,
 					"name": "Storage Silo Level 4",
@@ -414,7 +414,7 @@ package
 				{
 					"order": 10506,
 					"list": true,
-					"reward": [32000, 32000, 16000, 16000, 0],
+					"reward": [320000, 320000, 160000, 160000, 0],
 					"id": "SS5",
 					"group": 0,
 					"name": "Storage Silo Level 5",
@@ -446,7 +446,7 @@ package
 				{
 					"order": 10606,
 					"list": true,
-					"reward": [64000, 64000, 32000, 32000, 0],
+					"reward": [640000, 640000, 320000, 320000, 0],
 					"id": "SS6",
 					"group": 0,
 					"name": "Storage Silo Level 6",
@@ -558,7 +558,7 @@ package
 				{
 					"order": 10806,
 					"list": true,
-					"reward": [128000, 128000, 64000, 64000, 0],
+					"reward": [1280000, 1280000, 640000, 640000, 0],
 					"id": "SS8",
 					"group": 0,
 					"name": "Storage Silo Level 8",
@@ -670,7 +670,7 @@ package
 				{
 					"order": 11006,
 					"list": true,
-					"reward": [256000, 256000, 128000, 128000, 0],
+					"reward": [2560000, 2560000, 1280000, 1280000, 0],
 					"id": "SS10",
 					"group": 0,
 					"name": "Storage Silo Level 10",
@@ -766,7 +766,7 @@ package
 				{
 					"order": 11206,
 					"list": true,
-					"reward": [512000, 512000, 256000, 256000, 0],
+					"reward": [5120000, 5120000, 2560000, 2560000, 0],
 					"id": "SS12",
 					"group": 0,
 					"name": "Storage Silo Level 12",
@@ -862,7 +862,7 @@ package
 				{
 					"order": 11406,
 					"list": true,
-					"reward": [1024000, 1024000, 512000, 512000, 0],
+					"reward": [10240000, 10240000, 5120000, 5120000, 0],
 					"id": "SS14",
 					"group": 0,
 					"name": "Storage Silo Level 14",
@@ -958,7 +958,7 @@ package
 				{
 					"order": 11606,
 					"list": true,
-					"reward": [2048000, 2048000, 1024000, 1024000, 0],
+					"reward": [20480000, 20480000, 10240000, 10240000, 0],
 					"id": "SS16",
 					"group": 0,
 					"name": "Storage Silo Level 16",
@@ -1054,7 +1054,7 @@ package
 				{
 					"order": 11806,
 					"list": true,
-					"reward": [4096000, 4096000, 2048000, 2048000, 0],
+					"reward": [40960000, 40960000, 20480000, 20480000, 0],
 					"id": "SS18",
 					"group": 0,
 					"name": "Storage Silo Level 18",
@@ -1150,7 +1150,7 @@ package
 				{
 					"order": 12006,
 					"list": true,
-					"reward": [8192000, 8192000, 4096000, 4096000, 0],
+					"reward": [81920000, 81920000, 40960000, 40960000, 0],
 					"id": "SS20",
 					"group": 0,
 					"name": "Storage Silo Level 20",
@@ -5199,170 +5199,114 @@ package
 			var popup:Boolean = param2;
 			if(GLOBAL.mode != GLOBAL.e_BASE_MODE.BUILD)
 			{
-			return false;
+				return false;
 			}
 			if(BASE._pendingPurchase.length == 0)
 			{
-			found = false;
-			for each(q in QUESTS._quests)
-			{
-				if(q.id == questID)
+				found = false;
+				for each(q in QUESTS._quests)
 				{
-					if(_completed[questID] != 1)
+					if(q.id == questID)
 					{
-						return false;
+						if(_completed[questID] != 1)
+						{
+							return false;
+						}
+						questGroup = int(q.group);
+						reward = q.reward;
+						title = String(q.name);
+						found = true;
+						break;
 					}
-					questGroup = int(q.group);
-					reward = q.reward;
-					title = String(q.name);
-					found = true;
-					break;
 				}
-			}
-			if(!found)
-			{
-				GLOBAL.Message(KEYS.Get("q_errorcollecting"));
-				Hide();
-				return false;
-			}
-			if(q.monster_reward != undefined)
-			{
-				HOUSING.HousingSpace();
-				storage = int(CREATURES.GetProperty(q.reward_creatureid,"cStorage"));
-				if(HOUSING._housingSpace.Get() < storage * q.monster_reward)
+				if(!found)
 				{
-					if(HOUSING._housingSpace.Get() < storage)
-					{
-						GLOBAL.Message(KEYS.Get(BASE.isInfernoMainYardOrOutpost ? "msg_questi_housing" : "msg_quest_housing"),KEYS.Get("btn_collect"),CollectSpecial,[questID]);
-						return false;
-					}
-					quantity = HOUSING._housingSpace.Get() / storage;
-					GLOBAL.Message(KEYS.Get(BASE.isInfernoMainYardOrOutpost ? "inf_msg_housinglimited" : "msg_housinglimited",{"v1":quantity}),KEYS.Get("btn_collect"),CollectSpecial,[questID]);
+					GLOBAL.Message(KEYS.Get("q_errorcollecting"));
+					Hide();
 					return false;
 				}
-			}
-			if(q.siegeweapon_reward)
-			{
-				hasRoom = Boolean(GLOBAL._bSiegeFactory) && !GLOBAL._bSiegeFactory.upgradingWeapon && !GLOBAL._bSiegeFactory.hasBuiltWeapon;
-				if(!hasRoom)
+				if(q.monster_reward != undefined)
 				{
-					GLOBAL.Message(KEYS.Get("msg_quest_noroomsiegeweapon",{"v1":SiegeWeapons.getWeapon(q.siegeweapon_reward).name}));
-					return false;
+					HOUSING.HousingSpace();
+					storage = int(CREATURES.GetProperty(q.reward_creatureid,"cStorage"));
+					if(HOUSING._housingSpace.Get() < storage * q.monster_reward)
+					{
+						if(HOUSING._housingSpace.Get() < storage)
+						{
+							GLOBAL.Message(KEYS.Get(BASE.isInfernoMainYardOrOutpost ? "msg_questi_housing" : "msg_quest_housing"),KEYS.Get("btn_collect"),CollectSpecial,[questID]);
+							return false;
+						}
+						quantity = HOUSING._housingSpace.Get() / storage;
+						GLOBAL.Message(KEYS.Get(BASE.isInfernoMainYardOrOutpost ? "inf_msg_housinglimited" : "msg_housinglimited",{"v1":quantity}),KEYS.Get("btn_collect"),CollectSpecial,[questID]);
+						return false;
+					}
 				}
-			}
-			value = 0;
-			collectedArr = [];
-			saveOK = true;
-			r = 0;
-			while(r < reward.length)
-			{
-				if(reward[r] > 0)
+				if(q.siegeweapon_reward)
 				{
-					collectedArr.push([r,reward[r]]);
-					if(r < 4)
+					hasRoom = Boolean(GLOBAL._bSiegeFactory) && !GLOBAL._bSiegeFactory.upgradingWeapon && !GLOBAL._bSiegeFactory.hasBuiltWeapon;
+					if(!hasRoom)
 					{
-						BASE.Fund(r + 1,reward[r],true);
+						GLOBAL.Message(KEYS.Get("msg_quest_noroomsiegeweapon",{"v1":SiegeWeapons.getWeapon(q.siegeweapon_reward).name}));
+						return false;
 					}
-					else
-					{
-						_completed[questID] = 2;
-						BASE._credits.Add(reward[r]);
-						BASE._hpCredits += reward[r];
-						BASE.Purchase("Q" + questID,1,"quest");
-						saveOK = false;
-					}
-					value += reward[r];
 				}
-				r++;
-			}
-			if(q.monster_reward != undefined)
-			{
-				z = 0;
-				while(z < q.monster_reward)
+				value = 0;
+				collectedArr = [];
+				saveOK = true;
+				r = 0;
+				while(r < reward.length)
 				{
-					if(q.id.substr(0,2) == "UC" && Boolean(GLOBAL._bLocker))
+					if(reward[r] > 0)
 					{
-						HOUSING.HousingStore(q.reward_creatureid,GLOBAL._bLocker._position);
+						collectedArr.push([r,reward[r]]);
+						if(r < 4)
+						{
+							BASE.Fund(r + 1,reward[r],true);
+						}
+						else
+						{
+							_completed[questID] = 2;
+							BASE._credits.Add(reward[r]);
+							BASE._hpCredits += reward[r];
+							BASE.Purchase("Q" + questID,1,"quest");
+							saveOK = false;
+						}
+						value += reward[r];
 					}
-					else
-					{
-						HOUSING.HousingStore(q.reward_creatureid,GLOBAL.townHall._position);
-					}
-					value += CREATURES.GetProperty(q.reward_creatureid,"cResource");
-					z++;
+					r++;
 				}
-			}
-			if(Boolean(q.siegeweapon_reward) && Boolean(q.siegeweapon_rewardcount))
-			{
-				GLOBAL._bSiegeFactory.CompleteUpgradingWeapon(q.siegeweapon_reward,false);
-			}
-			_completed[questID] = 2;
-			BASE.PointsAdd(Math.ceil(value / 50));
-			if(questID == "C0")
-			{
-				BASE.PointsAdd(100);
-			}
-			if(saveOK)
-			{
-				BASE.Save();
-			}
-			Check();
-			{
-				Brag = function():void
+				if(q.monster_reward != undefined)
 				{
-					var _loc1_:Array = [];
-					if(q.reward[0] > 0)
+					z = 0;
+					while(z < q.monster_reward)
 					{
-						_loc1_.push([q.reward[0],KEYS.Get(GLOBAL._resourceNames[0])]);
+						if(q.id.substr(0,2) == "UC" && Boolean(GLOBAL._bLocker))
+						{
+							HOUSING.HousingStore(q.reward_creatureid,GLOBAL._bLocker._position);
+						}
+						else
+						{
+							HOUSING.HousingStore(q.reward_creatureid,GLOBAL.townHall._position);
+						}
+						value += CREATURES.GetProperty(q.reward_creatureid,"cResource");
+						z++;
 					}
-					if(q.reward[1] > 0)
-					{
-						_loc1_.push([q.reward[1],KEYS.Get(GLOBAL._resourceNames[1])]);
-					}
-					if(q.reward[2] > 0)
-					{
-						_loc1_.push([q.reward[2],KEYS.Get(GLOBAL._resourceNames[2])]);
-					}
-					if(q.reward[3] > 0)
-					{
-						_loc1_.push([q.reward[3],KEYS.Get(GLOBAL._resourceNames[3])]);
-					}
-					if(q.reward[4] > 0)
-					{
-						_loc1_.push([q.reward[4],KEYS.Get(GLOBAL._resourceNames[4])]);
-					}
-					if(q.monster_reward != undefined)
-					{
-						_loc1_.push([q.monster_reward,KEYS.Get(CREATURELOCKER._creatures[q.reward_creatureid].name)]);
-					}
-					if(q.siegeweapon_reward)
-					{
-						_loc1_.push([q.siegeweapon_rewardcount,SiegeWeapons.getWeapon(q.siegeweapon_reward).name]);
-					}
-					var _loc2_:String = GLOBAL.Array2String(_loc1_);
-					POPUPS.Next();
-				};
-				var name:String = KEYS.Get(q.name, q.keyvars);
-				if(q.rules.hasOwnProperty('level_up')){
-					name = name.replace("#level_required#",q.rules.level_up);
 				}
-				popupMC = new popup_quest();
-				popupMC.tA.htmlText = "<b>" + KEYS.Get("pop_questcollected_body",{"v1":name}) + "</b>";
-				popupMC.bAction.visible = false;
-				popupMC.bAction.SetupKey("btn_brag");
-				popupMC.bAction.addEventListener(MouseEvent.CLICK,Brag);
-				popupMC.bAction.Highlight = true;
-				h = popupMC.tA.height + 80;
-				if(q.questimage != "")
+				if(Boolean(q.siegeweapon_reward) && Boolean(q.siegeweapon_rewardcount))
 				{
-					h += 190;
-					popupMC.mcImage.y = popupMC.tA.y + popupMC.tA.height + 20;
+					GLOBAL._bSiegeFactory.CompleteUpgradingWeapon(q.siegeweapon_reward,false);
 				}
-				popupMC.mcBG.height = h;
-				(popupMC.mcBG as frame).Setup();
-				popupMC.bAction.y = popupMC.mcBG.y + h - 45;
-				POPUPS.Push(popupMC,null,null,null,q.questimage);
-			}
+				_completed[questID] = 2;
+				BASE.PointsAdd(Math.ceil(value / 50));
+				if(questID == "C0")
+				{
+					BASE.PointsAdd(100);
+				}
+				if(saveOK)
+				{
+					BASE.Save();
+				}
+				Check();
 			}
 			return true;
 		}

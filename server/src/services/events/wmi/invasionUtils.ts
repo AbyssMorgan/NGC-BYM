@@ -17,6 +17,9 @@ export interface Stats {
 	assault_to_2?:number,
 	assault_to_3?:number,
 	assault_to_4?:number,
+	assault_sh?:number,
+	assault_ro?:number,
+	assault_de?:number,
 }
 
 const waveKeyMap: Record<Invasion, keyof NonNullable<Stats["other"]>> = {

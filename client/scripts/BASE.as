@@ -1282,6 +1282,24 @@ package
                {
                   QUESTS._global.assault_to_4 = serverData.stats.assault_to_4;
                }
+			   if (serverData.stats.assault_ro && GLOBAL.assault_ro == 0){
+				  GLOBAL.assault_ro = serverData.stats.assault_ro;
+                  QUESTS._global.assault_ro = serverData.stats.assault_ro;
+               } else {
+				  QUESTS._global.assault_ro = GLOBAL.assault_ro;
+			   }
+			   if (serverData.stats.assault_sh && GLOBAL.assault_sh == 0){
+				  GLOBAL.assault_sh = serverData.stats.assault_sh;
+                  QUESTS._global.assault_sh = serverData.stats.assault_sh;
+               } else {
+ 				  QUESTS._global.assault_sh = GLOBAL.assault_sh;
+			   }
+			   if (serverData.stats.assault_de && GLOBAL.assault_de == 0){
+				  GLOBAL.assault_de = serverData.stats.assault_de;
+                  QUESTS._global.assault_de = serverData.stats.assault_de;
+               } else {
+ 				  QUESTS._global.assault_de = GLOBAL.assault_de;
+			   }
             //    if (serverData.stats.moga)
             //    {
             //       QUESTS._global.gift_accept = serverData.stats.moga;
@@ -3227,6 +3245,9 @@ package
          _loc1_.assault_to_2 = int(QUESTS._global.assault_to_2);
          _loc1_.assault_to_3 = int(QUESTS._global.assault_to_3);
          _loc1_.assault_to_4 = int(QUESTS._global.assault_to_4);
+         _loc1_.assault_sh = int(QUESTS._global.assault_sh);
+         _loc1_.assault_ro = int(QUESTS._global.assault_ro);
+         _loc1_.assault_de = int(QUESTS._global.assault_de);
          _loc1_.moga = int(QUESTS._global.gift_accept);
          _loc1_.updateid = GLOBAL._whatsnewid;
          _loc1_.updateid_mr2 = GLOBAL._mr2TutorialId;
@@ -6026,6 +6047,7 @@ package
                   mc.bPost.addEventListener(MouseEvent.CLICK, StreamPost);
                   mc.bPost.Highlight = true;
                   POPUPS.Push(mc, null, null, "levelup", "levelup.v2.png");
+				  QUESTS.Check("level_up", lvl.level);
                }
             }
             _baseLevel = lvl.level;

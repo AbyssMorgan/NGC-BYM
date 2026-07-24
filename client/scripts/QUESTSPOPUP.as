@@ -152,7 +152,7 @@ package
 			   var name:String = KEYS.Get(param1.name, param1.keyvars);
 			   if(param1.rules.hasOwnProperty('level_up')){
 					name = name.replace("#level_required#",param1.rules.level_up);
-				}
+			   }
                _loc3_.tLabel.htmlText = name;
                _loc3_.y = 10 + 30 * param2;
                _loc3_.x = 10;
@@ -278,6 +278,9 @@ package
                description = description.replace("#assault_to_2#",QUESTS._global.assault_to_2);
                description = description.replace("#assault_to_3#",QUESTS._global.assault_to_3);
                description = description.replace("#assault_to_4#",QUESTS._global.assault_to_4);
+               description = description.replace("#assault_sh#",QUESTS._global.assault_sh);
+               description = description.replace("#assault_ro#",QUESTS._global.assault_ro);
+               description = description.replace("#assault_de#",QUESTS._global.assault_de);
                description = description.replace("#giftssent#",QUESTS._global.bonus_gifts);
                description = description.replace("#sentgiftsaccepted#",QUESTS._global.gift_accept);
                if(Boolean(QUESTS._completed) && QUESTS._completed[questID] == 1)

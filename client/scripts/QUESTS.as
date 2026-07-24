@@ -125,6 +125,9 @@ package
 				"assault_to_2":0,
 				"assault_to_3":0,
 				"assault_to_4":0,
+				"assault_sh":0,
+				"assault_ro":0,
+				"assault_de":0,
 				"level_up":0
 			};
 			_questGroups = [
@@ -135,7 +138,11 @@ package
 				{"id":4, "name":"q_evil"},
 				{"id":5, "name":"q_progress"},
 				{"id":6, "name":"q_technology"},
-				{"id":7, "name":"q_assault"},
+				{"id":7, "name":"q_conqueror"},
+				{"id":8, "name":"q_assault_t1"},
+				{"id":9, "name":"q_assault_t2"},
+				{"id":10, "name":"q_assault_t3"},
+				{"id":11, "name":"q_assault_t4"},
 			];
 			if(!BASE.isInfernoMainYardOrOutpost)
 			{
@@ -2944,20 +2951,768 @@ package
 					}
 				},
 
-				// Group 7 (Assault)
+				// Group 7 (Conqueror)
+				{
+					"order": 5,
+					"list": true,
+					"reward": [5000000, 5000000, 5000000, 5000000, 0],
+					"id": "assault_ro_5",
+					"group": 7,
+					"name": "Resource Outpost x5",
+					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/5.",
+					"hint": "Resource Outposts level 50 - 90",
+					"questimage": "resource_outpost.png",
+					"rules":
+					{
+						"assault_ro": 5
+					}
+				},
+				{
+					"order": 10,
+					"list": true,
+					"reward": [10000000, 10000000, 10000000, 10000000, 0],
+					"id": "assault_ro_10",
+					"group": 7,
+					"name": "Resource Outpost x10",
+					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/10.",
+					"hint": "Resource Outposts level 50 - 90",
+					"questimage": "resource_outpost.png",
+					"prereq": "assault_ro_5",
+					"rules":
+					{
+						"assault_ro": 10
+					}
+				},
+				{
+					"order": 10,
+					"list": true,
+					"reward": [5000000, 5000000, 5000000, 5000000, 0],
+					"id": "assault_de_10",
+					"group": 7,
+					"name": "Defenders x10",
+					"description": "Conquer defenders.<br>Conquered #assault_de#\/10.",
+					"hint": "Defender level 45 - 90",
+					"questimage": "defender.png",
+					"rules":
+					{
+						"assault_de": 10
+					}
+				},
+				{
+					"order": 25,
+					"list": true,
+					"reward": [250000000, 250000000, 250000000, 250000000, 0],
+					"id": "assault_ro_25",
+					"group": 7,
+					"name": "Resource Outpost x25",
+					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/25.",
+					"hint": "Resource Outposts level 50 - 90",
+					"questimage": "resource_outpost.png",
+					"prereq": "assault_ro_10",
+					"rules":
+					{
+						"assault_ro": 25
+					}
+				},
+				{
+					"order": 25,
+					"list": true,
+					"reward": [13000000, 13000000, 13000000, 13000000, 0],
+					"id": "assault_de_25",
+					"group": 7,
+					"name": "Defenders x25",
+					"description": "Conquer defenders.<br>Conquered #assault_de#\/25.",
+					"hint": "Defender level 45 - 90",
+					"questimage": "defender.png",
+					"prereq": "assault_de_10",
+					"rules":
+					{
+						"assault_de": 25
+					}
+				},
+				{
+					"order": 50,
+					"list": true,
+					"reward": [500000000, 500000000, 500000000, 500000000, 50],
+					"id": "assault_ro_50",
+					"group": 7,
+					"name": "Resource Outpost x50",
+					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/50.",
+					"hint": "Resource Outposts level 50 - 90",
+					"questimage": "resource_outpost.png",
+					"prereq": "assault_ro_25",
+					"rules":
+					{
+						"assault_ro": 50
+					}
+				},
+				{
+					"order": 50,
+					"list": true,
+					"reward": [25000000, 25000000, 25000000, 25000000, 0],
+					"id": "assault_de_50",
+					"group": 7,
+					"name": "Defenders x50",
+					"description": "Conquer defenders.<br>Conquered #assault_de#\/50.",
+					"hint": "Defender level 45 - 90",
+					"questimage": "defender.png",
+					"prereq": "assault_de_25",
+					"rules":
+					{
+						"assault_de": 50
+					}
+				},
+				{
+					"order": 1,
+					"list": true,
+					"reward": [5000000, 5000000, 5000000, 5000000, 0],
+					"id": "assault_sh_1",
+					"group": 7,
+					"name": "Stronghold x1",
+					"description": "Conquer Strongholds.<br>Conquered #assault_sh#\/1.",
+					"hint": "Stronghold level 60 - 100",
+					"questimage": "stronghold.png",
+					"rules":
+					{
+						"assault_sh": 1
+					}
+				},
+				{
+					"order": 5,
+					"list": true,
+					"reward": [25000000, 25000000, 25000000, 25000000, 0],
+					"id": "assault_sh_5",
+					"group": 7,
+					"name": "Stronghold x5",
+					"description": "Conquer Strongholds.<br>Conquered #assault_sh#\/5.",
+					"hint": "Stronghold level 60 - 100",
+					"questimage": "stronghold.png",
+					"prereq": "assault_sh_1",
+					"rules":
+					{
+						"assault_sh": 5
+					}
+				},
+				{
+					"order": 75,
+					"list": true,
+					"reward": [750000000, 750000000, 750000000, 750000000, 75],
+					"id": "assault_ro_75",
+					"group": 7,
+					"name": "Resource Outpost x75",
+					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/75.",
+					"hint": "Resource Outposts level 50 - 90",
+					"questimage": "resource_outpost.png",
+					"prereq": "assault_ro_50",
+					"rules":
+					{
+						"assault_ro": 75
+					}
+				},
+				{
+					"order": 100,
+					"list": true,
+					"reward": [1000000000, 1000000000, 1000000000, 1000000000, 100],
+					"id": "assault_ro_100",
+					"group": 7,
+					"name": "Resource Outpost x100",
+					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/100.",
+					"hint": "Resource Outposts level 50 - 90",
+					"questimage": "resource_outpost.png",
+					"prereq": "assault_ro_75",
+					"rules":
+					{
+						"assault_ro": 100
+					}
+				},
+				{
+					"order": 100,
+					"list": true,
+					"reward": [50000000, 50000000, 50000000, 50000000, 0],
+					"id": "assault_de_100",
+					"group": 7,
+					"name": "Defenders x100",
+					"description": "Conquer defenders.<br>Conquered #assault_de#\/100.",
+					"hint": "Defender level 45 - 90",
+					"questimage": "defender.png",
+					"prereq": "assault_de_50",
+					"rules":
+					{
+						"assault_de": 100
+					}
+				},
+				{
+					"order": 10,
+					"list": true,
+					"reward": [50000000, 50000000, 50000000, 50000000, 0],
+					"id": "assault_sh_10",
+					"group": 7,
+					"name": "Stronghold x10",
+					"description": "Conquer Strongholds.<br>Conquered #assault_sh#\/10.",
+					"hint": "Stronghold level 60 - 100",
+					"questimage": "stronghold.png",
+					"prereq": "assault_sh_5",
+					"rules":
+					{
+						"assault_sh": 10
+					}
+				},
+				{
+					"order": 150,
+					"list": true,
+					"reward": [1500000000, 1500000000, 1500000000, 1500000000, 150],
+					"id": "assault_ro_150",
+					"group": 7,
+					"name": "Resource Outpost x150",
+					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/150.",
+					"hint": "Resource Outposts level 50 - 90",
+					"questimage": "resource_outpost.png",
+					"prereq": "assault_ro_100",
+					"rules":
+					{
+						"assault_ro": 150
+					}
+				},
+				{
+					"order": 15,
+					"list": true,
+					"reward": [100000000, 100000000, 100000000, 100000000, 0],
+					"id": "assault_sh_15",
+					"group": 7,
+					"name": "Stronghold x15",
+					"description": "Conquer Strongholds.<br>Conquered #assault_sh#\/15.",
+					"hint": "Stronghold level 60 - 100",
+					"questimage": "stronghold.png",
+					"prereq": "assault_sh_10",
+					"rules":
+					{
+						"assault_sh": 15
+					}
+				},
+				{
+					"order": 200,
+					"list": true,
+					"reward": [2000000000, 2000000000, 2000000000, 2000000000, 200],
+					"id": "assault_ro_200",
+					"group": 7,
+					"name": "Resource Outpost x200",
+					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/200.",
+					"hint": "Resource Outposts level 50 - 90",
+					"questimage": "resource_outpost.png",
+					"prereq": "assault_ro_150",
+					"rules":
+					{
+						"assault_ro": 200
+					}
+				},
+				{
+					"order": 20,
+					"list": true,
+					"reward": [250000000, 250000000, 250000000, 250000000, 0],
+					"id": "assault_sh_20",
+					"group": 7,
+					"name": "Stronghold x20",
+					"description": "Conquer Strongholds.<br>Conquered #assault_sh#\/20.",
+					"hint": "Stronghold level 60 - 100",
+					"questimage": "stronghold.png",
+					"prereq": "assault_sh_15",
+					"rules":
+					{
+						"assault_sh": 15
+					}
+				},
+				{
+					"order": 250,
+					"list": true,
+					"reward": [2500000000, 2500000000, 2500000000, 2500000000, 250],
+					"id": "assault_ro_250",
+					"group": 7,
+					"name": "Resource Outpost x250",
+					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/250.",
+					"hint": "Resource Outposts level 50 - 90",
+					"questimage": "resource_outpost.png",
+					"prereq": "assault_ro_200",
+					"rules":
+					{
+						"assault_ro": 250
+					}
+				},
+				{
+					"order": 250,
+					"list": true,
+					"reward": [125000000, 125000000, 125000000, 125000000, 0],
+					"id": "assault_de_250",
+					"group": 7,
+					"name": "Defenders x250",
+					"description": "Conquer defenders.<br>Conquered #assault_de#\/250.",
+					"hint": "Defender level 45 - 90",
+					"questimage": "defender.png",
+					"prereq": "assault_de_100",
+					"rules":
+					{
+						"assault_de": 250
+					}
+				},
+				{
+					"order": 25,
+					"list": true,
+					"reward": [500000000, 500000000, 500000000, 500000000, 0],
+					"id": "assault_sh_25",
+					"group": 7,
+					"name": "Stronghold x25",
+					"description": "Conquer Strongholds.<br>Conquered #assault_sh#\/25.",
+					"hint": "Stronghold level 60 - 100",
+					"questimage": "stronghold.png",
+					"prereq": "assault_sh_20",
+					"rules":
+					{
+						"assault_sh": 25
+					}
+				},
+				{
+					"order": 300,
+					"list": true,
+					"reward": [3000000000, 3000000000, 3000000000, 3000000000, 300],
+					"id": "assault_ro_300",
+					"group": 7,
+					"name": "Resource Outpost x300",
+					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/300.",
+					"hint": "Resource Outposts level 50 - 90",
+					"questimage": "resource_outpost.png",
+					"prereq": "assault_ro_250",
+					"rules":
+					{
+						"assault_ro": 300
+					}
+				},
+				{
+					"order": 30,
+					"list": true,
+					"reward": [1000000000, 1000000000, 1000000000, 1000000000, 0],
+					"id": "assault_sh_30",
+					"group": 7,
+					"name": "Stronghold x30",
+					"description": "Conquer Strongholds.<br>Conquered #assault_sh#\/30.",
+					"hint": "Stronghold level 60 - 100",
+					"questimage": "stronghold.png",
+					"prereq": "assault_sh_25",
+					"rules":
+					{
+						"assault_sh": 30
+					}
+				},
+				{
+					"order": 350,
+					"list": true,
+					"reward": [3500000000, 3500000000, 3500000000, 3500000000, 350],
+					"id": "assault_ro_350",
+					"group": 7,
+					"name": "Resource Outpost x350",
+					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/350.",
+					"hint": "Resource Outposts level 50 - 90",
+					"questimage": "resource_outpost.png",
+					"prereq": "assault_ro_300",
+					"rules":
+					{
+						"assault_ro": 350
+					}
+				},
+				{
+					"order": 35,
+					"list": true,
+					"reward": [2000000000, 2000000000, 2000000000, 2000000000, 0],
+					"id": "assault_sh_35",
+					"group": 7,
+					"name": "Stronghold x35",
+					"description": "Conquer Strongholds.<br>Conquered #assault_sh#\/35.",
+					"hint": "Stronghold level 60 - 100",
+					"questimage": "stronghold.png",
+					"prereq": "assault_sh_30",
+					"rules":
+					{
+						"assault_sh": 35
+					}
+				},
+				{
+					"order": 400,
+					"list": true,
+					"reward": [4000000000, 4000000000, 4000000000, 4000000000, 400],
+					"id": "assault_ro_400",
+					"group": 7,
+					"name": "Resource Outpost x400",
+					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/400.",
+					"hint": "Resource Outposts level 50 - 90",
+					"questimage": "resource_outpost.png",
+					"prereq": "assault_ro_350",
+					"rules":
+					{
+						"assault_ro": 400
+					}
+				},
+				{
+					"order": 40,
+					"list": true,
+					"reward": [4000000000, 4000000000, 4000000000, 4000000000, 0],
+					"id": "assault_sh_40",
+					"group": 7,
+					"name": "Stronghold x40",
+					"description": "Conquer Strongholds.<br>Conquered #assault_sh#\/40.",
+					"hint": "Stronghold level 60 - 100",
+					"questimage": "stronghold.png",
+					"prereq": "assault_sh_35",
+					"rules":
+					{
+						"assault_sh": 40
+					}
+				},
+				{
+					"order": 450,
+					"list": true,
+					"reward": [4500000000, 4500000000, 4500000000, 4500000000, 450],
+					"id": "assault_ro_450",
+					"group": 7,
+					"name": "Resource Outpost x450",
+					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/450.",
+					"hint": "Resource Outposts level 50 - 90",
+					"questimage": "resource_outpost.png",
+					"prereq": "assault_ro_400",
+					"rules":
+					{
+						"assault_ro": 450
+					}
+				},
+				{
+					"order": 45,
+					"list": true,
+					"reward": [5000000000, 5000000000, 5000000000, 5000000000, 0],
+					"id": "assault_sh_45",
+					"group": 7,
+					"name": "Stronghold x45",
+					"description": "Conquer Strongholds.<br>Conquered #assault_sh#\/45.",
+					"hint": "Stronghold level 60 - 100",
+					"questimage": "stronghold.png",
+					"prereq": "assault_sh_40",
+					"rules":
+					{
+						"assault_sh": 45
+					}
+				},
+				{
+					"order": 500,
+					"list": true,
+					"reward": [5000000000, 5000000000, 5000000000, 5000000000, 500],
+					"id": "assault_ro_500",
+					"group": 7,
+					"name": "Resource Outpost x500",
+					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/500.",
+					"hint": "Resource Outposts level 50 - 90",
+					"questimage": "resource_outpost.png",
+					"prereq": "assault_ro_450",
+					"rules":
+					{
+						"assault_ro": 500
+					}
+				},
+				{
+					"order": 500,
+					"list": true,
+					"reward": [250000000, 250000000, 250000000, 250000000, 0],
+					"id": "assault_de_500",
+					"group": 7,
+					"name": "Defenders x500",
+					"description": "Conquer defenders.<br>Conquered #assault_de#\/500.",
+					"hint": "Defender level 45 - 90",
+					"questimage": "defender.png",
+					"prereq": "assault_de_250",
+					"rules":
+					{
+						"assault_de": 500
+					}
+				},
+				{
+					"order": 50,
+					"list": true,
+					"reward": [6000000000, 6000000000, 6000000000, 6000000000, 0],
+					"id": "assault_sh_50",
+					"group": 7,
+					"name": "Stronghold x50",
+					"description": "Conquer Strongholds.<br>Conquered #assault_sh#\/50.",
+					"hint": "Stronghold level 60 - 100",
+					"questimage": "stronghold.png",
+					"prereq": "assault_sh_45",
+					"rules":
+					{
+						"assault_sh": 50
+					}
+				},
+				{
+					"order": 600,
+					"list": true,
+					"reward": [6000000000, 6000000000, 6000000000, 6000000000, 600],
+					"id": "assault_ro_600",
+					"group": 7,
+					"name": "Resource Outpost x600",
+					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/600.",
+					"hint": "Resource Outposts level 50 - 90",
+					"questimage": "resource_outpost.png",
+					"prereq": "assault_ro_500",
+					"rules":
+					{
+						"assault_ro": 600
+					}
+				},
+				{
+					"order": 60,
+					"list": true,
+					"reward": [7000000000, 7000000000, 7000000000, 7000000000, 0],
+					"id": "assault_sh_60",
+					"group": 7,
+					"name": "Stronghold x60",
+					"description": "Conquer Strongholds.<br>Conquered #assault_sh#\/60.",
+					"hint": "Stronghold level 60 - 100",
+					"questimage": "stronghold.png",
+					"prereq": "assault_sh_50",
+					"rules":
+					{
+						"assault_sh": 60
+					}
+				},
+				{
+					"order": 700,
+					"list": true,
+					"reward": [7000000000, 7000000000, 7000000000, 7000000000, 700],
+					"id": "assault_ro_700",
+					"group": 7,
+					"name": "Resource Outpost x700",
+					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/700.",
+					"hint": "Resource Outposts level 50 - 90",
+					"questimage": "resource_outpost.png",
+					"prereq": "assault_ro_600",
+					"rules":
+					{
+						"assault_ro": 700
+					}
+				},
+				{
+					"order": 70,
+					"list": true,
+					"reward": [8000000000, 8000000000, 8000000000, 8000000000, 0],
+					"id": "assault_sh_70",
+					"group": 7,
+					"name": "Stronghold x70",
+					"description": "Conquer Strongholds.<br>Conquered #assault_sh#\/70.",
+					"hint": "Stronghold level 60 - 100",
+					"questimage": "stronghold.png",
+					"prereq": "assault_sh_60",
+					"rules":
+					{
+						"assault_sh": 70
+					}
+				},
+				{
+					"order": 800,
+					"list": true,
+					"reward": [8000000000, 8000000000, 8000000000, 8000000000, 800],
+					"id": "assault_ro_800",
+					"group": 7,
+					"name": "Resource Outpost x800",
+					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/800.",
+					"hint": "Resource Outposts level 50 - 90",
+					"questimage": "resource_outpost.png",
+					"prereq": "assault_ro_700",
+					"rules":
+					{
+						"assault_ro": 800
+					}
+				},
+				{
+					"order": 80,
+					"list": true,
+					"reward": [9000000000, 9000000000, 9000000000, 9000000000, 0],
+					"id": "assault_sh_80",
+					"group": 7,
+					"name": "Stronghold x80",
+					"description": "Conquer Strongholds.<br>Conquered #assault_sh#\/80.",
+					"hint": "Stronghold level 60 - 100",
+					"questimage": "stronghold.png",
+					"prereq": "assault_sh_70",
+					"rules":
+					{
+						"assault_sh": 80
+					}
+				},
+				{
+					"order": 900,
+					"list": true,
+					"reward": [9000000000, 9000000000, 9000000000, 9000000000, 900],
+					"id": "assault_ro_900",
+					"group": 7,
+					"name": "Resource Outpost x900",
+					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/900.",
+					"hint": "Resource Outposts level 50 - 90",
+					"questimage": "resource_outpost.png",
+					"prereq": "assault_ro_800",
+					"rules":
+					{
+						"assault_ro": 900
+					}
+				},
+				{
+					"order": 90,
+					"list": true,
+					"reward": [10000000000, 10000000000, 10000000000, 10000000000, 0],
+					"id": "assault_sh_90",
+					"group": 7,
+					"name": "Stronghold x90",
+					"description": "Conquer Strongholds.<br>Conquered #assault_sh#\/90.",
+					"hint": "Stronghold level 60 - 100",
+					"questimage": "stronghold.png",
+					"prereq": "assault_sh_80",
+					"rules":
+					{
+						"assault_sh": 90
+					}
+				},
+				{
+					"order": 1000,
+					"list": true,
+					"reward": [10000000000, 10000000000, 10000000000, 10000000000, 1000],
+					"id": "assault_ro_1000",
+					"group": 7,
+					"name": "Resource Outpost x1000",
+					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/1000.",
+					"hint": "Resource Outposts level 50 - 90",
+					"questimage": "resource_outpost.png",
+					"prereq": "assault_ro_900",
+					"rules":
+					{
+						"assault_ro": 1000
+					}
+				},
+				{
+					"order": 1000,
+					"list": true,
+					"reward": [500000000, 500000000, 500000000, 500000000, 0],
+					"id": "assault_de_1000",
+					"group": 7,
+					"name": "Defenders x1000",
+					"description": "Conquer defenders.<br>Conquered #assault_de#\/1000.",
+					"hint": "Defender level 45 - 90",
+					"questimage": "defender.png",
+					"prereq": "assault_de_500",
+					"rules":
+					{
+						"assault_de": 1000
+					}
+				},
+				{
+					"order": 100,
+					"list": true,
+					"reward": [12000000000, 12000000000, 12000000000, 12000000000, 1000],
+					"id": "assault_sh_100",
+					"group": 7,
+					"name": "Stronghold x100",
+					"description": "Conquer Strongholds.<br>Conquered #assault_sh#\/100.",
+					"hint": "Stronghold level 60 - 100",
+					"questimage": "stronghold.png",
+					"prereq": "assault_sh_90",
+					"rules":
+					{
+						"assault_sh": 100
+					}
+				},
+				{
+					"order": 2500,
+					"list": true,
+					"reward": [1250000000, 1250000000, 1250000000, 1250000000, 0],
+					"id": "assault_de_2500",
+					"group": 7,
+					"name": "Defenders x2500",
+					"description": "Conquer defenders.<br>Conquered #assault_de#\/2500.",
+					"hint": "Defender level 45 - 90",
+					"questimage": "defender.png",
+					"prereq": "assault_de_1000",
+					"rules":
+					{
+						"assault_de": 2500
+					}
+				},
+				{
+					"order": 5000,
+					"list": true,
+					"reward": [2500000000, 2500000000, 2500000000, 2500000000, 1000],
+					"id": "assault_de_5000",
+					"group": 7,
+					"name": "Defenders x5000",
+					"description": "Conquer defenders.<br>Conquered #assault_de#\/5000.",
+					"hint": "Defender level 45 - 90",
+					"questimage": "defender.png",
+					"prereq": "assault_de_2500",
+					"rules":
+					{
+						"assault_de": 5000
+					}
+				},
+
+				// Group 8 (Assault T1)
 				{
 					"order": 10,
 					"list": true,
 					"reward": [3000000, 3000000, 3000000, 3000000, 3],
 					"id": "ASSAULT_TO_1_0_10",
-					"group": 7,
-					"name": "Assault T1 (Legionnaire)",
-					"description": "Destroy tribe outposts T1.<br>Destroyed #assault_to_1_0#\/10.",
+					"group": 8,
+					"name": "Legionnaire x10",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_0#\/10.",
+					"hint": "Tribe outposts level 45 - 65",
+					"questimage": "tribe_legionnaire.v2.png",
+					"rules":
+					{
+						"assault_to_1_0": 10
+					}
+				},
+				{
+					"order": 10,
+					"list": true,
+					"reward": [3000000, 3000000, 3000000, 3000000, 3],
+					"id": "ASSAULT_TO_1_1_10",
+					"group": 8,
+					"name": "Kozu x10",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_1#\/10.",
+					"hint": "Tribe outposts level 45 - 65",
+					"questimage": "tribe_kozu.v2.png",
+					"rules":
+					{
+						"assault_to_1_1": 10
+					}
+				},
+				{
+					"order": 10,
+					"list": true,
+					"reward": [3000000, 3000000, 3000000, 3000000, 3],
+					"id": "ASSAULT_TO_1_2_10",
+					"group": 8,
+					"name": "Abunakki x10",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_2#\/10.",
 					"hint": "Tribe outposts level 45 - 65",
 					"questimage": "tribe_abunakki.v2.png",
 					"rules":
 					{
-						"assault_to_1_0": 10
+						"assault_to_1_2": 10
+					}
+				},
+				{
+					"order": 10,
+					"list": true,
+					"reward": [3000000, 3000000, 3000000, 3000000, 3],
+					"id": "ASSAULT_TO_1_3_10",
+					"group": 8,
+					"name": "Dreadnaught x10",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_3#\/10.",
+					"hint": "Tribe outposts level 45 - 65",
+					"questimage": "tribe_dreadnaut.v2.png",
+					"rules":
+					{
+						"assault_to_1_3": 10
 					}
 				},
 				{
@@ -2965,11 +3720,11 @@ package
 					"list": true,
 					"reward": [7000000, 7000000, 7000000, 7000000, 7],
 					"id": "ASSAULT_TO_1_0_25",
-					"group": 7,
-					"name": "Assault T1 (Legionnaire)",
-					"description": "Destroy tribe outposts T1.<br>Destroyed #assault_to_1_0#\/25.",
+					"group": 8,
+					"name": "Legionnaire x25",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_0#\/25.",
 					"hint": "Tribe outposts level 45 - 65",
-					"questimage": "tribe_abunakki.v2.png",
+					"questimage": "tribe_legionnaire.v2.png",
 					"prereq": "ASSAULT_TO_1_0_10",
 					"rules":
 					{
@@ -2977,15 +3732,63 @@ package
 					}
 				},
 				{
+					"order": 25,
+					"list": true,
+					"reward": [7000000, 7000000, 7000000, 7000000, 7],
+					"id": "ASSAULT_TO_1_1_25",
+					"group": 8,
+					"name": "Kozu x25",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_1#\/25.",
+					"hint": "Tribe outposts level 45 - 65",
+					"questimage": "tribe_kozu.v2.png",
+					"prereq": "ASSAULT_TO_1_1_10",
+					"rules":
+					{
+						"assault_to_1_1": 25
+					}
+				},
+				{
+					"order": 25,
+					"list": true,
+					"reward": [7000000, 7000000, 7000000, 7000000, 7],
+					"id": "ASSAULT_TO_1_2_25",
+					"group": 8,
+					"name": "Abunakki x25",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_2#\/25.",
+					"hint": "Tribe outposts level 45 - 65",
+					"questimage": "tribe_abunakki.v2.png",
+					"prereq": "ASSAULT_TO_1_2_10",
+					"rules":
+					{
+						"assault_to_1_2": 25
+					}
+				},
+				{
+					"order": 25,
+					"list": true,
+					"reward": [7000000, 7000000, 7000000, 7000000, 7],
+					"id": "ASSAULT_TO_1_3_25",
+					"group": 8,
+					"name": "Dreadnaught x25",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_3#\/25.",
+					"hint": "Tribe outposts level 45 - 65",
+					"questimage": "tribe_dreadnaut.v2.png",
+					"prereq": "ASSAULT_TO_1_3_10",
+					"rules":
+					{
+						"assault_to_1_3": 25
+					}
+				},
+				{
 					"order": 50,
 					"list": true,
 					"reward": [13000000, 13000000, 13000000, 13000000, 13],
 					"id": "ASSAULT_TO_1_0_50",
-					"group": 7,
-					"name": "Assault T1 (Legionnaire)",
-					"description": "Destroy tribe outposts T1.<br>Destroyed #assault_to_1_0#\/50.",
+					"group": 8,
+					"name": "Legionnaire x50",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_0#\/50.",
 					"hint": "Tribe outposts level 45 - 65",
-					"questimage": "tribe_abunakki.v2.png",
+					"questimage": "tribe_legionnaire.v2.png",
 					"prereq": "ASSAULT_TO_1_0_25",
 					"rules":
 					{
@@ -2993,15 +3796,63 @@ package
 					}
 				},
 				{
+					"order": 50,
+					"list": true,
+					"reward": [13000000, 13000000, 13000000, 13000000, 13],
+					"id": "ASSAULT_TO_1_1_50",
+					"group": 8,
+					"name": "Kozu x50",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_1#\/50.",
+					"hint": "Tribe outposts level 45 - 65",
+					"questimage": "tribe_kozu.v2.png",
+					"prereq": "ASSAULT_TO_1_1_25",
+					"rules":
+					{
+						"assault_to_1_1": 50
+					}
+				},
+				{
+					"order": 50,
+					"list": true,
+					"reward": [13000000, 13000000, 13000000, 13000000, 13],
+					"id": "ASSAULT_TO_1_2_50",
+					"group": 8,
+					"name": "Abunakki x50",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_2#\/50.",
+					"hint": "Tribe outposts level 45 - 65",
+					"questimage": "tribe_abunakki.v2.png",
+					"prereq": "ASSAULT_TO_1_2_25",
+					"rules":
+					{
+						"assault_to_1_2": 50
+					}
+				},
+				{
+					"order": 50,
+					"list": true,
+					"reward": [13000000, 13000000, 13000000, 13000000, 13],
+					"id": "ASSAULT_TO_1_3_50",
+					"group": 8,
+					"name": "Dreadnaught x50",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_3#\/50.",
+					"hint": "Tribe outposts level 45 - 65",
+					"questimage": "tribe_dreadnaut.v2.png",
+					"prereq": "ASSAULT_TO_1_3_25",
+					"rules":
+					{
+						"assault_to_1_3": 50
+					}
+				},
+				{
 					"order": 100,
 					"list": true,
 					"reward": [25000000, 25000000, 25000000, 25000000, 25],
 					"id": "ASSAULT_TO_1_0_100",
-					"group": 7,
-					"name": "Assault T1 (Legionnaire)",
-					"description": "Destroy tribe outposts T1.<br>Destroyed #assault_to_1_0#\/100.",
+					"group": 8,
+					"name": "Legionnaire x100",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_0#\/100.",
 					"hint": "Tribe outposts level 45 - 65",
-					"questimage": "tribe_abunakki.v2.png",
+					"questimage": "tribe_legionnaire.v2.png",
 					"prereq": "ASSAULT_TO_1_0_50",
 					"rules":
 					{
@@ -3009,15 +3860,63 @@ package
 					}
 				},
 				{
+					"order": 100,
+					"list": true,
+					"reward": [25000000, 25000000, 25000000, 25000000, 25],
+					"id": "ASSAULT_TO_1_1_100",
+					"group": 8,
+					"name": "Kozu x100",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_1#\/100.",
+					"hint": "Tribe outposts level 45 - 65",
+					"questimage": "tribe_kozu.v2.png",
+					"prereq": "ASSAULT_TO_1_1_50",
+					"rules":
+					{
+						"assault_to_1_1": 100
+					}
+				},
+				{
+					"order": 100,
+					"list": true,
+					"reward": [25000000, 25000000, 25000000, 25000000, 25],
+					"id": "ASSAULT_TO_1_2_100",
+					"group": 8,
+					"name": "Abunakki x100",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_2#\/100.",
+					"hint": "Tribe outposts level 45 - 65",
+					"questimage": "tribe_abunakki.v2.png",
+					"prereq": "ASSAULT_TO_1_2_50",
+					"rules":
+					{
+						"assault_to_1_2": 100
+					}
+				},
+				{
+					"order": 100,
+					"list": true,
+					"reward": [25000000, 25000000, 25000000, 25000000, 25],
+					"id": "ASSAULT_TO_1_3_100",
+					"group": 8,
+					"name": "Dreadnaught x100",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_3#\/100.",
+					"hint": "Tribe outposts level 45 - 65",
+					"questimage": "tribe_dreadnaut.v2.png",
+					"prereq": "ASSAULT_TO_1_3_50",
+					"rules":
+					{
+						"assault_to_1_3": 100
+					}
+				},
+				{
 					"order": 250,
 					"list": true,
 					"reward": [63000000, 63000000, 63000000, 63000000, 63],
 					"id": "ASSAULT_TO_1_0_250",
-					"group": 7,
-					"name": "Assault T1 (Legionnaire)",
-					"description": "Destroy tribe outposts T1.<br>Destroyed #assault_to_1_0#\/250.",
+					"group": 8,
+					"name": "Legionnaire x250",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_0#\/250.",
 					"hint": "Tribe outposts level 45 - 65",
-					"questimage": "tribe_abunakki.v2.png",
+					"questimage": "tribe_legionnaire.v2.png",
 					"prereq": "ASSAULT_TO_1_0_100",
 					"rules":
 					{
@@ -3025,15 +3924,63 @@ package
 					}
 				},
 				{
+					"order": 250,
+					"list": true,
+					"reward": [63000000, 63000000, 63000000, 63000000, 63],
+					"id": "ASSAULT_TO_1_1_250",
+					"group": 8,
+					"name": "Kozu x250",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_1#\/250.",
+					"hint": "Tribe outposts level 45 - 65",
+					"questimage": "tribe_kozu.v2.png",
+					"prereq": "ASSAULT_TO_1_1_100",
+					"rules":
+					{
+						"assault_to_1_1": 250
+					}
+				},
+				{
+					"order": 250,
+					"list": true,
+					"reward": [63000000, 63000000, 63000000, 63000000, 63],
+					"id": "ASSAULT_TO_1_2_250",
+					"group": 8,
+					"name": "Abunakki x250",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_2#\/250.",
+					"hint": "Tribe outposts level 45 - 65",
+					"questimage": "tribe_abunakki.v2.png",
+					"prereq": "ASSAULT_TO_1_2_100",
+					"rules":
+					{
+						"assault_to_1_2": 250
+					}
+				},
+				{
+					"order": 250,
+					"list": true,
+					"reward": [63000000, 63000000, 63000000, 63000000, 63],
+					"id": "ASSAULT_TO_1_3_250",
+					"group": 8,
+					"name": "Dreadnaught x250",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_3#\/250.",
+					"hint": "Tribe outposts level 45 - 65",
+					"questimage": "tribe_dreadnaut.v2.png",
+					"prereq": "ASSAULT_TO_1_3_100",
+					"rules":
+					{
+						"assault_to_1_3": 250
+					}
+				},
+				{
 					"order": 500,
 					"list": true,
 					"reward": [125000000, 125000000, 125000000, 125000000, 125],
 					"id": "ASSAULT_TO_1_0_500",
-					"group": 7,
-					"name": "Assault T1 (Legionnaire)",
-					"description": "Destroy tribe outposts T1.<br>Destroyed #assault_to_1_0#\/500.",
+					"group": 8,
+					"name": "Legionnaire x500",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_0#\/500.",
 					"hint": "Tribe outposts level 45 - 65",
-					"questimage": "tribe_abunakki.v2.png",
+					"questimage": "tribe_legionnaire.v2.png",
 					"prereq": "ASSAULT_TO_1_0_250",
 					"rules":
 					{
@@ -3041,15 +3988,63 @@ package
 					}
 				},
 				{
+					"order": 500,
+					"list": true,
+					"reward": [125000000, 125000000, 125000000, 125000000, 125],
+					"id": "ASSAULT_TO_1_1_500",
+					"group": 8,
+					"name": "Kozu x500",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_1#\/500.",
+					"hint": "Tribe outposts level 45 - 65",
+					"questimage": "tribe_kozu.v2.png",
+					"prereq": "ASSAULT_TO_1_1_250",
+					"rules":
+					{
+						"assault_to_1_1": 500
+					}
+				},
+				{
+					"order": 500,
+					"list": true,
+					"reward": [125000000, 125000000, 125000000, 125000000, 125],
+					"id": "ASSAULT_TO_1_2_500",
+					"group": 8,
+					"name": "Abunakki x500",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_2#\/500.",
+					"hint": "Tribe outposts level 45 - 65",
+					"questimage": "tribe_abunakki.v2.png",
+					"prereq": "ASSAULT_TO_1_2_250",
+					"rules":
+					{
+						"assault_to_1_2": 500
+					}
+				},
+				{
+					"order": 500,
+					"list": true,
+					"reward": [125000000, 125000000, 125000000, 125000000, 125],
+					"id": "ASSAULT_TO_1_3_500",
+					"group": 8,
+					"name": "Dreadnaught x500",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_3#\/500.",
+					"hint": "Tribe outposts level 45 - 65",
+					"questimage": "tribe_dreadnaut.v2.png",
+					"prereq": "ASSAULT_TO_1_3_250",
+					"rules":
+					{
+						"assault_to_1_3": 500
+					}
+				},
+				{
 					"order": 1000,
 					"list": true,
 					"reward": [250000000, 250000000, 250000000, 250000000, 250],
 					"id": "ASSAULT_TO_1_0_1000",
-					"group": 7,
-					"name": "Assault T1 (Legionnaire)",
-					"description": "Destroy tribe outposts T1.<br>Destroyed #assault_to_1_0#\/1000.",
+					"group": 8,
+					"name": "Legionnaire x1000",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_0#\/1000.",
 					"hint": "Tribe outposts level 45 - 65",
-					"questimage": "tribe_abunakki.v2.png",
+					"questimage": "tribe_legionnaire.v2.png",
 					"prereq": "ASSAULT_TO_1_0_500",
 					"rules":
 					{
@@ -3057,15 +4052,63 @@ package
 					}
 				},
 				{
+					"order": 1000,
+					"list": true,
+					"reward": [250000000, 250000000, 250000000, 250000000, 250],
+					"id": "ASSAULT_TO_1_1_1000",
+					"group": 8,
+					"name": "Kozu x1000",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_1#\/1000.",
+					"hint": "Tribe outposts level 45 - 65",
+					"questimage": "tribe_kozu.v2.png",
+					"prereq": "ASSAULT_TO_1_1_500",
+					"rules":
+					{
+						"assault_to_1_1": 1000
+					}
+				},
+				{
+					"order": 1000,
+					"list": true,
+					"reward": [250000000, 250000000, 250000000, 250000000, 250],
+					"id": "ASSAULT_TO_1_2_1000",
+					"group": 8,
+					"name": "Abunakki x1000",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_2#\/1000.",
+					"hint": "Tribe outposts level 45 - 65",
+					"questimage": "tribe_abunakki.v2.png",
+					"prereq": "ASSAULT_TO_1_2_500",
+					"rules":
+					{
+						"assault_to_1_2": 1000
+					}
+				},
+				{
+					"order": 1000,
+					"list": true,
+					"reward": [250000000, 250000000, 250000000, 250000000, 250],
+					"id": "ASSAULT_TO_1_3_1000",
+					"group": 8,
+					"name": "Dreadnaught x1000",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_3#\/1000.",
+					"hint": "Tribe outposts level 45 - 65",
+					"questimage": "tribe_dreadnaut.v2.png",
+					"prereq": "ASSAULT_TO_1_3_500",
+					"rules":
+					{
+						"assault_to_1_3": 1000
+					}
+				},
+				{
 					"order": 2500,
 					"list": true,
 					"reward": [625000000, 625000000, 625000000, 625000000, 625],
 					"id": "ASSAULT_TO_1_0_2500",
-					"group": 7,
-					"name": "Assault T1 (Legionnaire)",
-					"description": "Destroy tribe outposts T1.<br>Destroyed #assault_to_1_0#\/2500.",
+					"group": 8,
+					"name": "Legionnaire x2500",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_0#\/2500.",
 					"hint": "Tribe outposts level 45 - 65",
-					"questimage": "tribe_abunakki.v2.png",
+					"questimage": "tribe_legionnaire.v2.png",
 					"prereq": "ASSAULT_TO_1_0_1000",
 					"rules":
 					{
@@ -3073,22 +4116,520 @@ package
 					}
 				},
 				{
+					"order": 2500,
+					"list": true,
+					"reward": [625000000, 625000000, 625000000, 625000000, 625],
+					"id": "ASSAULT_TO_1_1_2500",
+					"group": 8,
+					"name": "Kozu x2500",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_1#\/2500.",
+					"hint": "Tribe outposts level 45 - 65",
+					"questimage": "tribe_kozu.v2.png",
+					"prereq": "ASSAULT_TO_1_1_1000",
+					"rules":
+					{
+						"assault_to_1_1": 2500
+					}
+				},
+				{
+					"order": 2500,
+					"list": true,
+					"reward": [625000000, 625000000, 625000000, 625000000, 625],
+					"id": "ASSAULT_TO_1_2_2500",
+					"group": 8,
+					"name": "Abunakki x2500",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_2#\/2500.",
+					"hint": "Tribe outposts level 45 - 65",
+					"questimage": "tribe_abunakki.v2.png",
+					"prereq": "ASSAULT_TO_1_2_1000",
+					"rules":
+					{
+						"assault_to_1_2": 2500
+					}
+				},
+				{
+					"order": 2500,
+					"list": true,
+					"reward": [625000000, 625000000, 625000000, 625000000, 625],
+					"id": "ASSAULT_TO_1_3_2500",
+					"group": 8,
+					"name": "Dreadnaught x2500",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_3#\/2500.",
+					"hint": "Tribe outposts level 45 - 65",
+					"questimage": "tribe_dreadnaut.v2.png",
+					"prereq": "ASSAULT_TO_1_3_1000",
+					"rules":
+					{
+						"assault_to_1_3": 2500
+					}
+				},
+				{
 					"order": 5000,
 					"list": true,
 					"reward": [1250000000, 1250000000, 1250000000, 1250000000, 1250],
 					"id": "ASSAULT_TO_1_0_5000",
-					"group": 7,
-					"name": "Assault T1 (Legionnaire)",
-					"description": "Destroy tribe outposts T1.<br>Destroyed #assault_to_1_0#\/5000.",
+					"group": 8,
+					"name": "Legionnaire x5000",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_0#\/5000.",
 					"hint": "Tribe outposts level 45 - 65",
-					"questimage": "tribe_abunakki.v2.png",
+					"questimage": "tribe_legionnaire.v2.png",
 					"prereq": "ASSAULT_TO_1_0_2500",
 					"rules":
 					{
 						"assault_to_1_0": 5000
 					}
 				},
+				{
+					"order": 5000,
+					"list": true,
+					"reward": [1250000000, 1250000000, 1250000000, 1250000000, 1250],
+					"id": "ASSAULT_TO_1_1_5000",
+					"group": 8,
+					"name": "Kozu x5000",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_1#\/5000.",
+					"hint": "Tribe outposts level 45 - 65",
+					"questimage": "tribe_kozu.v2.png",
+					"prereq": "ASSAULT_TO_1_1_2500",
+					"rules":
+					{
+						"assault_to_1_1": 5000
+					}
+				},
+				{
+					"order": 5000,
+					"list": true,
+					"reward": [1250000000, 1250000000, 1250000000, 1250000000, 1250],
+					"id": "ASSAULT_TO_1_2_5000",
+					"group": 8,
+					"name": "Abunakki x5000",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_2#\/5000.",
+					"hint": "Tribe outposts level 45 - 65",
+					"questimage": "tribe_abunakki.v2.png",
+					"prereq": "ASSAULT_TO_1_2_2500",
+					"rules":
+					{
+						"assault_to_1_2": 5000
+					}
+				},
+				{
+					"order": 5000,
+					"list": true,
+					"reward": [1250000000, 1250000000, 1250000000, 1250000000, 1250],
+					"id": "ASSAULT_TO_1_3_5000",
+					"group": 8,
+					"name": "Dreadnaught x5000",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_3#\/5000.",
+					"hint": "Tribe outposts level 45 - 65",
+					"questimage": "tribe_dreadnaut.v2.png",
+					"prereq": "ASSAULT_TO_1_3_2500",
+					"rules":
+					{
+						"assault_to_1_3": 5000
+					}
+				},
 
+				// Group 9 (Assault T2)
+				{
+					"order": 10,
+					"list": true,
+					"reward": [5000000, 5000000, 5000000, 5000000, 5],
+					"id": "ASSAULT_TO_2_10",
+					"group": 9,
+					"name": "Tribe Outpost x10",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_2#\/10.",
+					"hint": "Tribe outposts level 70 - 80",
+					"questimage": "tribe_outpost.png",
+					"rules":
+					{
+						"assault_to_2": 10
+					}
+				},
+				{
+					"order": 25,
+					"list": true,
+					"reward": [13000000, 13000000, 13000000, 13000000, 13],
+					"id": "ASSAULT_TO_2_25",
+					"group": 9,
+					"name": "Tribe Outpost x25",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_2#\/25.",
+					"hint": "Tribe outposts level 70 - 80",
+					"questimage": "tribe_outpost.png",
+					"prereq": "ASSAULT_TO_2_10",
+					"rules":
+					{
+						"assault_to_2": 25
+					}
+				},
+				{
+					"order": 50,
+					"list": true,
+					"reward": [25000000, 25000000, 25000000, 25000000, 25],
+					"id": "ASSAULT_TO_2_50",
+					"group": 9,
+					"name": "Tribe Outpost x50",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_2#\/50.",
+					"hint": "Tribe outposts level 70 - 80",
+					"questimage": "tribe_outpost.png",
+					"prereq": "ASSAULT_TO_2_25",
+					"rules":
+					{
+						"assault_to_2": 50
+					}
+				},
+				{
+					"order": 100,
+					"list": true,
+					"reward": [50000000, 50000000, 50000000, 50000000, 50],
+					"id": "ASSAULT_TO_2_100",
+					"group": 9,
+					"name": "Tribe Outpost x100",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_2#\/100.",
+					"hint": "Tribe outposts level 70 - 80",
+					"questimage": "tribe_outpost.png",
+					"prereq": "ASSAULT_TO_2_50",
+					"rules":
+					{
+						"assault_to_2": 100
+					}
+				},
+				{
+					"order": 250,
+					"list": true,
+					"reward": [125000000, 125000000, 125000000, 125000000, 125],
+					"id": "ASSAULT_TO_2_250",
+					"group": 9,
+					"name": "Tribe Outpost x250",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_2#\/250.",
+					"hint": "Tribe outposts level 70 - 80",
+					"questimage": "tribe_outpost.png",
+					"prereq": "ASSAULT_TO_2_100",
+					"rules":
+					{
+						"assault_to_2": 250
+					}
+				},
+				{
+					"order": 500,
+					"list": true,
+					"reward": [250000000, 250000000, 250000000, 250000000, 250],
+					"id": "ASSAULT_TO_2_500",
+					"group": 9,
+					"name": "Tribe Outpost x500",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_2#\/500.",
+					"hint": "Tribe outposts level 70 - 80",
+					"questimage": "tribe_outpost.png",
+					"prereq": "ASSAULT_TO_2_250",
+					"rules":
+					{
+						"assault_to_2": 500
+					}
+				},
+				{
+					"order": 1000,
+					"list": true,
+					"reward": [500000000, 500000000, 500000000, 500000000, 500],
+					"id": "ASSAULT_TO_2_1000",
+					"group": 9,
+					"name": "Tribe Outpost x1000",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_2#\/1000.",
+					"hint": "Tribe outposts level 70 - 80",
+					"questimage": "tribe_outpost.png",
+					"prereq": "ASSAULT_TO_2_500",
+					"rules":
+					{
+						"assault_to_2": 1000
+					}
+				},
+				{
+					"order": 2500,
+					"list": true,
+					"reward": [1250000000, 1250000000, 1250000000, 1250000000, 1250],
+					"id": "ASSAULT_TO_2_2500",
+					"group": 9,
+					"name": "Tribe Outpost x2500",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_2#\/2500.",
+					"hint": "Tribe outposts level 70 - 80",
+					"questimage": "tribe_outpost.png",
+					"prereq": "ASSAULT_TO_2_1000",
+					"rules":
+					{
+						"assault_to_2": 2500
+					}
+				},
+				{
+					"order": 5000,
+					"list": true,
+					"reward": [2500000000, 2500000000, 2500000000, 2500000000, 2500],
+					"id": "ASSAULT_TO_2_5000",
+					"group": 9,
+					"name": "Tribe Outpost x5000",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_2#\/5000.",
+					"hint": "Tribe outposts level 70 - 80",
+					"questimage": "tribe_outpost.png",
+					"prereq": "ASSAULT_TO_2_2500",
+					"rules":
+					{
+						"assault_to_2": 5000
+					}
+				},
+				{
+					"order": 10000,
+					"list": true,
+					"reward": [5000000000, 5000000000, 5000000000, 5000000000, 5000],
+					"id": "ASSAULT_TO_2_10000",
+					"group": 9,
+					"name": "Tribe Outpost x10000",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_2#\/10000.",
+					"hint": "Tribe outposts level 70 - 80",
+					"questimage": "tribe_outpost.png",
+					"prereq": "ASSAULT_TO_2_5000",
+					"rules":
+					{
+						"assault_to_2": 10000
+					}
+				},
+
+				// Group 10 (Assault T3)
+				{
+					"order": 10,
+					"list": true,
+					"reward": [10000000, 10000000, 10000000, 10000000, 10],
+					"id": "ASSAULT_TO_3_10",
+					"group": 10,
+					"name": "Tribe Outpost x10",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_3#\/10.",
+					"hint": "Tribe outposts level 100",
+					"questimage": "tribe_outpost.png",
+					"rules":
+					{
+						"assault_to_3": 10
+					}
+				},
+				{
+					"order": 25,
+					"list": true,
+					"reward": [25000000, 25000000, 25000000, 25000000, 25],
+					"id": "ASSAULT_TO_3_25",
+					"group": 10,
+					"name": "Tribe Outpost x25",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_3#\/25.",
+					"hint": "Tribe outposts level 100",
+					"questimage": "tribe_outpost.png",
+					"prereq": "ASSAULT_TO_3_10",
+					"rules":
+					{
+						"assault_to_3": 25
+					}
+				},
+				{
+					"order": 50,
+					"list": true,
+					"reward": [50000000, 50000000, 50000000, 50000000, 50],
+					"id": "ASSAULT_TO_3_50",
+					"group": 10,
+					"name": "Tribe Outpost x50",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_3#\/50.",
+					"hint": "Tribe outposts level 100",
+					"questimage": "tribe_outpost.png",
+					"prereq": "ASSAULT_TO_3_25",
+					"rules":
+					{
+						"assault_to_3": 50
+					}
+				},
+				{
+					"order": 100,
+					"list": true,
+					"reward": [100000000, 100000000, 100000000, 100000000, 100],
+					"id": "ASSAULT_TO_3_100",
+					"group": 10,
+					"name": "Tribe Outpost x100",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_3#\/100.",
+					"hint": "Tribe outposts level 100",
+					"questimage": "tribe_outpost.png",
+					"prereq": "ASSAULT_TO_3_50",
+					"rules":
+					{
+						"assault_to_3": 100
+					}
+				},
+				{
+					"order": 250,
+					"list": true,
+					"reward": [250000000, 250000000, 250000000, 250000000, 250],
+					"id": "ASSAULT_TO_3_250",
+					"group": 10,
+					"name": "Tribe Outpost x250",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_3#\/250.",
+					"hint": "Tribe outposts level 100",
+					"questimage": "tribe_outpost.png",
+					"prereq": "ASSAULT_TO_3_100",
+					"rules":
+					{
+						"assault_to_3": 250
+					}
+				},
+				{
+					"order": 500,
+					"list": true,
+					"reward": [500000000, 500000000, 500000000, 500000000, 500],
+					"id": "ASSAULT_TO_3_500",
+					"group": 10,
+					"name": "Tribe Outpost x500",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_3#\/500.",
+					"hint": "Tribe outposts level 100",
+					"questimage": "tribe_outpost.png",
+					"prereq": "ASSAULT_TO_3_250",
+					"rules":
+					{
+						"assault_to_3": 500
+					}
+				},
+				{
+					"order": 1000,
+					"list": true,
+					"reward": [1000000000, 1000000000, 1000000000, 1000000000, 1000],
+					"id": "ASSAULT_TO_3_1000",
+					"group": 10,
+					"name": "Tribe Outpost x1000",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_3#\/1000.",
+					"hint": "Tribe outposts level 100",
+					"questimage": "tribe_outpost.png",
+					"prereq": "ASSAULT_TO_3_500",
+					"rules":
+					{
+						"assault_to_3": 1000
+					}
+				},
+				{
+					"order": 2500,
+					"list": true,
+					"reward": [2500000000, 2500000000, 2500000000, 2500000000, 2500],
+					"id": "ASSAULT_TO_3_2500",
+					"group": 10,
+					"name": "Tribe Outpost x2500",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_3#\/2500.",
+					"hint": "Tribe outposts level 100",
+					"questimage": "tribe_outpost.png",
+					"prereq": "ASSAULT_TO_3_1000",
+					"rules":
+					{
+						"assault_to_3": 2500
+					}
+				},
+
+				// Group 11 (Assault T4)
+				{
+					"order": 10,
+					"list": true,
+					"reward": [30000000, 30000000, 30000000, 30000000, 30],
+					"id": "ASSAULT_TO_4_10",
+					"group": 11,
+					"name": "Tribe Outpost x10",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_4#\/10.",
+					"hint": "Tribe outposts level 120",
+					"questimage": "tribe_outpost.png",
+					"rules":
+					{
+						"assault_to_4": 10
+					}
+				},
+				{
+					"order": 25,
+					"list": true,
+					"reward": [75000000, 75000000, 75000000, 75000000, 75],
+					"id": "ASSAULT_TO_4_25",
+					"group": 11,
+					"name": "Tribe Outpost x25",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_4#\/25.",
+					"hint": "Tribe outposts level 120",
+					"questimage": "tribe_outpost.png",
+					"prereq": "ASSAULT_TO_4_10",
+					"rules":
+					{
+						"assault_to_4": 25
+					}
+				},
+				{
+					"order": 50,
+					"list": true,
+					"reward": [150000000, 150000000, 150000000, 150000000, 150],
+					"id": "ASSAULT_TO_4_50",
+					"group": 11,
+					"name": "Tribe Outpost x50",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_4#\/50.",
+					"hint": "Tribe outposts level 120",
+					"questimage": "tribe_outpost.png",
+					"prereq": "ASSAULT_TO_4_25",
+					"rules":
+					{
+						"assault_to_4": 50
+					}
+				},
+				{
+					"order": 100,
+					"list": true,
+					"reward": [300000000, 300000000, 300000000, 300000000, 300],
+					"id": "ASSAULT_TO_4_100",
+					"group": 11,
+					"name": "Tribe Outpost x100",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_4#\/100.",
+					"hint": "Tribe outposts level 120",
+					"questimage": "tribe_outpost.png",
+					"prereq": "ASSAULT_TO_4_50",
+					"rules":
+					{
+						"assault_to_4": 100
+					}
+				},
+				{
+					"order": 250,
+					"list": true,
+					"reward": [750000000, 750000000, 750000000, 750000000, 750],
+					"id": "ASSAULT_TO_4_250",
+					"group": 11,
+					"name": "Tribe Outpost x250",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_4#\/250.",
+					"hint": "Tribe outposts level 120",
+					"questimage": "tribe_outpost.png",
+					"prereq": "ASSAULT_TO_4_100",
+					"rules":
+					{
+						"assault_to_4": 250
+					}
+				},
+				{
+					"order": 500,
+					"list": true,
+					"reward": [1500000000, 1500000000, 1500000000, 1500000000, 1500],
+					"id": "ASSAULT_TO_4_500",
+					"group": 11,
+					"name": "Tribe Outpost x500",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_4#\/500.",
+					"hint": "Tribe outposts level 120",
+					"questimage": "tribe_outpost.png",
+					"prereq": "ASSAULT_TO_4_250",
+					"rules":
+					{
+						"assault_to_4": 500
+					}
+				},
+				{
+					"order": 1000,
+					"list": true,
+					"reward": [3000000000, 3000000000, 3000000000, 3000000000, 3000],
+					"id": "ASSAULT_TO_4_1000",
+					"group": 11,
+					"name": "Tribe Outpost x1000",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_4#\/1000.",
+					"hint": "Tribe outposts level 120",
+					"questimage": "tribe_outpost.png",
+					"prereq": "ASSAULT_TO_4_500",
+					"rules":
+					{
+						"assault_to_4": 1000
+					}
+				},
 			];
 			var _loc1_:Array = [0,0,10,10,10,2,15,15,15,20,20,5,2,5,5,1];
 			_loc2_ = CREATURELOCKER._creatures["C" + 2];
@@ -3801,8 +5342,13 @@ package
 					var _loc2_:String = GLOBAL.Array2String(_loc1_);
 					POPUPS.Next();
 				};
+				var name:String = KEYS.Get(q.name, q.keyvars);
+				if(q.rules.hasOwnProperty('level_up')){
+					name = name.replace("#level_required#",q.rules.level_up);
+				}
 				popupMC = new popup_quest();
-				popupMC.tA.htmlText = "<b>" + KEYS.Get("pop_questcollected_body",{"v1":KEYS.Get(q.name,q.keyvars)}) + "</b>";
+				popupMC.tA.htmlText = "<b>" + KEYS.Get("pop_questcollected_body",{"v1":name}) + "</b>";
+				popupMC.bAction.visible = false;
 				popupMC.bAction.SetupKey("btn_brag");
 				popupMC.bAction.addEventListener(MouseEvent.CLICK,Brag);
 				popupMC.bAction.Highlight = true;
@@ -3919,8 +5465,13 @@ package
 						var _loc2_:String = GLOBAL.Array2String(_loc1_);
 						POPUPS.Next();
 					};
+					var name:String = KEYS.Get(q.name, q.keyvars);
+					if(q.rules.hasOwnProperty('level_up')){
+						name = name.replace("#level_required#",q.rules.level_up);
+					}
 					popupMC = new popup_quest();
-					popupMC.tA.htmlText = "<b>" + KEYS.Get("pop_questcollected_body",{"v1":KEYS.Get(q.name,q.keyvars)}) + "</b>";
+					popupMC.tA.htmlText = "<b>" + KEYS.Get("pop_questcollected_body",{"v1":name}) + "</b>";
+					popupMC.bAction.visible = false;
 					popupMC.bAction.SetupKey("btn_brag");
 					popupMC.bAction.addEventListener(MouseEvent.CLICK,Brag);
 					popupMC.bAction.Highlight = true;

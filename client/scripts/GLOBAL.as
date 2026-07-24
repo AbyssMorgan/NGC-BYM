@@ -456,6 +456,12 @@ package
       
       public static var versionMismatch:Boolean = false;
 
+	  public static var assault_ro:int = 0;
+
+	  public static var assault_sh:int = 0;
+
+	  public static var assault_de:int = 0;
+
       public function GLOBAL()
       {
          super();

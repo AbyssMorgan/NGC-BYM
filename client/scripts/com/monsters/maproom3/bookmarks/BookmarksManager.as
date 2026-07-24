@@ -35,6 +35,8 @@ package com.monsters.maproom3.bookmarks
       public static const TYPE_PLAYER_RESOURCES:int = 3;
       
       public static const TYPE_PLAYER_STRONGHOLDS:int = 4;
+
+      public static const TYPE_PLAYER_FORTIFICATION:int = 5;
        
       
       private var m_CustomBookmarks:Vector.<Bookmark>;
@@ -46,6 +48,8 @@ package com.monsters.maproom3.bookmarks
       private var m_PlayerResourceBookmarks:Vector.<Bookmark>;
       
       private var m_PlayerStrongholdBookmarks:Vector.<Bookmark>;
+
+      private var m_PlayerDefenderBookmarks:Vector.<Bookmark>;
       
       public function BookmarksManager(param1:SingletonLock)
       {
@@ -54,6 +58,7 @@ package com.monsters.maproom3.bookmarks
          this.m_FriendBookmarks = new Vector.<Bookmark>();
          this.m_PlayerResourceBookmarks = new Vector.<Bookmark>();
          this.m_PlayerStrongholdBookmarks = new Vector.<Bookmark>();
+         this.m_PlayerDefenderBookmarks = new Vector.<Bookmark>();
          super();
       }
       
@@ -78,6 +83,9 @@ package com.monsters.maproom3.bookmarks
                case EnumYardType.STRONGHOLD:
                   this.AddBookmark(_loc3_,TYPE_PLAYER_STRONGHOLDS,false);
                   break;
+			   case EnumYardType.FORTIFICATION:
+                  this.AddBookmark(_loc3_,TYPE_PLAYER_FORTIFICATION,false);
+                  break;
             }
             _loc5_++;
          }
@@ -97,6 +105,9 @@ package com.monsters.maproom3.bookmarks
          {
             this.LoadBookmarksOfType(param1[BOOKMARKS_FRIENDS_SAVE_DATA_FIELD],param2,TYPE_FRIENDS);
          }
+		 GLOBAL.assault_ro = BookmarksManager.instance.GetBookmarksOfType(BookmarksManager.TYPE_PLAYER_RESOURCES).length;
+		 GLOBAL.assault_sh = BookmarksManager.instance.GetBookmarksOfType(BookmarksManager.TYPE_PLAYER_STRONGHOLDS).length;
+		 GLOBAL.assault_de = BookmarksManager.instance.GetBookmarksOfType(BookmarksManager.TYPE_PLAYER_FORTIFICATION).length;
       }
       
       public function SaveBookmarks() : void
@@ -194,6 +205,7 @@ package com.monsters.maproom3.bookmarks
          this.ClearBookmarks(TYPE_FRIENDS);
          this.ClearBookmarks(TYPE_PLAYER_RESOURCES);
          this.ClearBookmarks(TYPE_PLAYER_STRONGHOLDS);
+         this.ClearBookmarks(TYPE_PLAYER_FORTIFICATION);
       }
       
       public function AddBookmark(param1:MapRoom3Cell, param2:int = 0, param3:Boolean = true) : void
@@ -314,6 +326,8 @@ package com.monsters.maproom3.bookmarks
                return this.m_PlayerResourceBookmarks;
             case TYPE_PLAYER_STRONGHOLDS:
                return this.m_PlayerStrongholdBookmarks;
+			case TYPE_PLAYER_FORTIFICATION:
+               return this.m_PlayerDefenderBookmarks;
             default:
                return null;
          }

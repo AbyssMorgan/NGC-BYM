@@ -15,18 +15,20 @@ import { EnumYardType } from "../../enums/EnumYardType.js";
  */
 export const canAttack = (attackerSave: Save, defenderSave: Save, mapversion?: MapRoomVersion): boolean => {
 	if(defenderSave.name == 'sandbox' || attackerSave.name == 'sandbox') return false;
-	const isOwner = defenderSave.type !== BaseType.INFERNO && attackerSave.saveuserid === defenderSave.saveuserid;
 	const attackerLevel = calculateBaseLevel(attackerSave.points, attackerSave.basevalue);
+	const defenderLevel = calculateBaseLevel(defenderSave.points, defenderSave.basevalue);
+	const isOwner = defenderSave.type !== BaseType.INFERNO && attackerSave.saveuserid === defenderSave.saveuserid;
+	const inSafeZone = attackerLevel >= 40 && attackerLevel <= 120 && defenderLevel >= 40 && defenderLevel <= 120;
 
-	/**
-	 * PvP level restriction: attackers cannot attack player main yards more than
-	 * 12 levels below them. Both players in the level 40–80 safe zone
-	 * can always attack each other. Although the max level is 56, we use 80 as a client-safe upper bound.
-	 */
-	if (defenderSave.type === BaseType.MAIN && !isOwner) {
-		const defenderLevel = calculateBaseLevel(defenderSave.points, defenderSave.basevalue);
-		const inSafeZone = attackerLevel >= 40 && attackerLevel <= 120 && defenderLevel >= 40 && defenderLevel <= 120;
-		if (attackerLevel - defenderLevel >= 10 && !inSafeZone) return false;
+	if(defenderSave.type === BaseType.MAIN && !isOwner){
+		if(attackerLevel - defenderLevel >= 10 && !inSafeZone) return false;
+	}
+	if(defenderSave.wmid == 1 || defenderSave.wmid == 11 || defenderSave.wmid == 21 || defenderSave.wmid == 31){
+		if(defenderLevel < 45 && attackerLevel >= 40) return false;
+	} else if(defenderSave.wmid === EnumYardType.RESOURCE){
+		if(defenderLevel < 51 && attackerLevel >= 61) return false;
+		if(defenderLevel < 61 && attackerLevel >= 71) return false;
+		if(defenderLevel < 71 && attackerLevel >= 81) return false;
 	}
 
 	return true;

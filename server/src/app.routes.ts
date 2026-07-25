@@ -2,7 +2,7 @@ import Router from "@koa/router";
 
 import { logRequest } from "./middleware/logRequest.js";
 import { apiVersion } from "./middleware/apiVersioning.js";
-import { verifyUserAuth, verifyAccountStatus } from "./middleware/auth.js";
+import { verifyUserAuth } from "./middleware/auth.js";
 import { getCellsLimiter, registerLimiter } from "./middleware/rateLimiters.js";
 import { Status } from "./enums/StatusCodes.js";
 
@@ -46,8 +46,8 @@ import { getTemplates } from "./controllers/yardplanner/getTemplates.js";
 import { saveTemplate } from "./controllers/yardplanner/saveTemplate.js";
 
 import { getAvailableWorlds } from "./controllers/leaderboards/getAvailableWorlds.js";
-import { getLeaderboards } from "./controllers/leaderboards/getLeaderboards.js";
-import { getAttackLogs } from "./controllers/attacklogs/getAttackLogs.js";
+// import { getLeaderboards } from "./controllers/leaderboards/getLeaderboards.js";
+// import { getAttackLogs } from "./controllers/attacklogs/getAttackLogs.js";
 
 import { wildMonsterInvasion } from "./controllers/events/wildMonsterInvasion.js";
 import { recordDebugData } from "./controllers/debug/recordDebugData.js";
@@ -90,20 +90,20 @@ router.post("/api/:apiVersion/bm/neighbours/get", apiVersion, verifyUserAuth, lo
 /**  ────────────────────────────────────────────────
 * 📦 Map Room 2
 * ──────────────────────────────────────────────── */
-router.post("/worldmapv2/getarea", verifyUserAuth, verifyAccountStatus, logRequest, getArea);
+router.post("/worldmapv2/getarea", verifyUserAuth, logRequest, getArea);
 router.post("/worldmapv2/setmapversion", verifyUserAuth, logRequest, setMapVersion);
-router.post("/worldmapv2/takeoverCell", verifyUserAuth, verifyAccountStatus, logRequest, takeoverCell);
-router.post("/worldmapv2/transferassets", verifyUserAuth, verifyAccountStatus, logRequest, transferMonsters);
-router.post("/api/:apiVersion/player/savebookmarks", apiVersion, verifyUserAuth, verifyAccountStatus, logRequest, saveBookmarks);
+router.post("/worldmapv2/takeoverCell", verifyUserAuth, logRequest, takeoverCell);
+router.post("/worldmapv2/transferassets", verifyUserAuth, logRequest, transferMonsters);
+router.post("/api/:apiVersion/player/savebookmarks", apiVersion, verifyUserAuth, logRequest, saveBookmarks);
 
 /**  ────────────────────────────────────────────────
 * 📦 Map Room 3
 * ──────────────────────────────────────────────── */
-router.post("/worldmapv3/initworldmap", verifyUserAuth, verifyAccountStatus, logRequest, initialPlayerCellData);
-router.post("/worldmapv3/getcells", verifyUserAuth, verifyAccountStatus, getCellsLimiter, logRequest, getMapRoomCells);
-router.post("/worldmapv3/relocate", verifyUserAuth, verifyAccountStatus, logRequest, relocate);
-router.post("/worldmapv3/getfriendinfo", verifyUserAuth, verifyAccountStatus, getFriendInfo);
-router.post("/worldmapv3/setmapversion", verifyUserAuth, verifyAccountStatus, logRequest, setMapVersion);
+router.post("/worldmapv3/initworldmap", verifyUserAuth, logRequest, initialPlayerCellData);
+router.post("/worldmapv3/getcells", verifyUserAuth, getCellsLimiter, logRequest, getMapRoomCells);
+router.post("/worldmapv3/relocate", verifyUserAuth, logRequest, relocate);
+router.post("/worldmapv3/getfriendinfo", verifyUserAuth, getFriendInfo);
+router.post("/worldmapv3/setmapversion", verifyUserAuth, logRequest, setMapVersion);
 
 /**  ────────────────────────────────────────────────
 * 📦 Mail

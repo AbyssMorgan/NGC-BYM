@@ -89,24 +89,6 @@ export const antiCheatBanErr = () =>
     isClientFriendly: true
   });
 
-export const discordVerifyErr = () =>
-  new ClientSafeError({
-    message:
-      "In order to continue, you must verify your account on our Discord server, in the #claim-account channel.",
-    status: Status.UNAUTHORIZED,
-    data: {},
-    isClientFriendly: true
-  });
-
-export const discordAgeErr = () =>
-  new ClientSafeError({
-    message:
-      "Your discord account must be at least 1 week old in order to access this feature.",
-    status: Status.UNAUTHORIZED,
-    data: {},
-    isClientFriendly: true
-  });
-
 export const permissionErr = () =>
   new ClientSafeError({
     message: "You do not have permission to complete this operation.",

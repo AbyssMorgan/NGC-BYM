@@ -9,7 +9,6 @@ import { FilterFrontendKeys } from "../../utils/FrontendKey.js";
 import { MapRoomVersion } from "../../enums/MapRoom.js";
 import { Status } from "../../enums/StatusCodes.js";
 import { joinNewWorldMap } from "../../services/maproom/v3/joinNewWorldMap.js";
-import { discordAgeErr } from "../../errors/errors.js";
 import { Maproom } from "../../models/maproom.model.js";
 
 /**
@@ -37,8 +36,6 @@ export const setMapVersion: KoaController = async (ctx) => {
   const save = user.save!;
 
   const { version } = SetMapVersionSchema.parse(ctx.request.body);
-
-  if (!ctx.meetsDiscordAgeCheck) throw discordAgeErr();
 
   switch (version) {
     case MapRoomVersion.NONE:

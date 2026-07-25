@@ -3,12 +3,10 @@ import { User } from "../models/user.model.js";
 import type { Context, Next } from "koa";
 import {
   authFailureErr,
-  discordAgeErr,
   tokenAuthFailureErr,
 } from "../errors/errors.js";
 import JWT from "jsonwebtoken";
 import { Env } from "../enums/Env.js";
-import { isDiscordAccountOldEnough } from "../services/discord/discordAccountStatus.js";
 import type { SessionType } from "../enums/SessionType.js";
 
 export interface JwtClaims {
@@ -61,22 +59,6 @@ export const verifyUserAuth = async (ctx: Context, next: Next) => {
 };
 
 /**
- * Middleware to enforce the Discord account age requirement for Map Room access.
- * Depends on verifyUserAuth middleware to have already set ctx.meetsDiscordAgeCheck.
- *
- * @param {Context} ctx - The Koa context object.
- * @param {Next} next - The Koa next middleware function.
- * @throws {Error} Throws `discordAgeErr` if the user's Discord account does not meet the 7-day age requirement.
- */
-export const verifyAccountStatus = async (ctx: Context, next: Next) => {
-  if (ctx.meetsDiscordAgeCheck === undefined)
-    throw new Error("meetsDiscordAgeCheck not set in context");
-
-  if (!ctx.meetsDiscordAgeCheck) throw discordAgeErr();
-  await next();
-};
-
-/**
  * Verifies a JWT token and returns the decoded payload.
  *
  * For local development, we return a basic payload with the user's email.
@@ -102,9 +84,7 @@ export const verifyJwtToken = (token: string): AuthTokenPayload => {
 
   try {
     const decoded = <AuthTokenPayload>JWT.verify(token, process.env.SECRET_KEY!);
-    
-    const { discordId } = decoded.user;
-    const meetsDiscordAgeCheck = discordId ? isDiscordAccountOldEnough(discordId) : false;
+    const meetsDiscordAgeCheck = true;
 
     return {
       user: { ...decoded.user, meetsDiscordAgeCheck },

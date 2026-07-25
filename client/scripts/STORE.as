@@ -1199,9 +1199,9 @@ package {
 						_loc20_ = KEYS.Get("str_prob_nothing");
 					} else if (_loc9_ == "SP1" && _loc12_ > 10 * 60) {
 						_loc20_ = KEYS.Get("str_prob_morethan5");
-					} else if (_loc9_.substr(0, 3) == "SP2" && (_loc12_ < 60 * 60 && !_storeInventory.SP2 || _storeInventory.SP2 && _loc12_ <= 10 * 60)) {
+					} else if (_loc9_.substr(0, 3) == "SP2" && (_loc12_ < 60 * 60 * 2 && !_storeInventory.SP2 || _storeInventory.SP2 && _loc12_ <= 10 * 60)) {
 						_loc20_ = KEYS.Get("str_prob_notneeded");
-					} else if (_loc9_.substr(0, 3) == "SP3" && (_loc12_ < 60 * 60 * 2 && !_storeInventory.SP3 || _storeInventory.SP3 && _loc12_ <= 10 * 60)) {
+					} else if (_loc9_.substr(0, 3) == "SP3" && (_loc12_ < 60 * 60 * 24 && !_storeInventory.SP3 || _storeInventory.SP3 && _loc12_ <= 10 * 60)) {
 						_loc20_ = KEYS.Get("str_prob_notneeded");
 					} else if (_loc9_.substr(0, 3) == "SP4" && _loc12_ <= 10 * 60) {
 						_loc20_ = KEYS.Get("str_prob_notneeded");
@@ -1782,9 +1782,9 @@ package {
 							_loc32_ = KEYS.Get("str_prob_nothing");
 						} else if (item == "SP1" && _loc24_ > 10 * 60) {
 							_loc32_ = KEYS.Get("str_prob_morethan5");
-						} else if (item.substr(0, 3) == "SP2" && (_loc24_ < 60 * 60 && !_storeInventory.SP2 || _storeInventory.SP2 && _loc24_ <= 10 * 60)) {
+						} else if (item.substr(0, 3) == "SP2" && (_loc24_ < 60 * 60 * 2 && !_storeInventory.SP2 || _storeInventory.SP2 && _loc24_ <= 10 * 60)) {
 							_loc32_ = KEYS.Get("str_prob_notneeded");
-						} else if (item.substr(0, 3) == "SP3" && (_loc24_ < 60 * 60 * 2 && !_storeInventory.SP3 || _storeInventory.SP3 && _loc24_ <= 10 * 60)) {
+						} else if (item.substr(0, 3) == "SP3" && (_loc24_ < 60 * 60 * 24 && !_storeInventory.SP3 || _storeInventory.SP3 && _loc24_ <= 10 * 60)) {
 							_loc32_ = KEYS.Get("str_prob_notneeded");
 						} else if (item.substr(0, 3) == "SP4" && _loc24_ <= 10 * 60) {
 							_loc32_ = KEYS.Get("str_prob_notneeded");
@@ -2272,10 +2272,10 @@ package {
 					_loc16_ = 10 * 60;
 				}
 				if (param1.substr(2, 1) == "2") {
-					_loc16_ = 60 * 60;
+					_loc16_ = 60 * 60 * 2;
 				}
 				if (param1.substr(2, 1) == "3") {
-					_loc16_ = 60 * 60 * 2;
+					_loc16_ = 60 * 60 * 24;
 				}
 				if (_loc15_._repairing) {
 					_loc17_ = _loc15_._lvl.Get() == 0 ? 0 : int(_loc15_._lvl.Get() - 1);

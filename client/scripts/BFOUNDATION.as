@@ -2270,6 +2270,7 @@ package
             }
 			else if(this._type == 144){
 				BASE._buildingsTowers["b" + this._id] = this;
+				BASE._buildingsMain["b" + this._id] = this;
 			}
             else if(this._class == "gift" || this._class == "taunt")
             {

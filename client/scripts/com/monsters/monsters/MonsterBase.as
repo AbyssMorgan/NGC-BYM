@@ -1285,21 +1285,19 @@ package com.monsters.monsters
          {
             for each(building in BASE._buildingsMain)
             {
-               if(building._class != "decoration" && building._class != "immovable" && building.health > 0 && building._class != "enemy")
-               {
-                  if(this._targetGroup != 4)
-                  {
-                     this._targetGroup = 1;
-                  }
-                  if(building._class == "tower" && !MONSTERBUNKER.isBunkerBuilding(building._type))
-                  {
-                     if((building as BTOWER).isJard)
-                     {
-                        continue;
-                     }
-                  }
-                  checkTarget(building);
-               }
+				if(building._type == 144 && building.health > 0){
+					if(this._targetGroup != 4)
+					{
+						this._targetGroup = 1;
+					}
+					checkTarget(building);
+				} else if(building._class != "decoration" && building._class != "immovable" && building.health > 0 && building._class != "enemy"){
+					if(this._targetGroup != 4)
+					{
+						this._targetGroup = 1;
+					}
+					checkTarget(building);
+				}
             }
          }
          if(!closestBuilding && !this._targetCreep)

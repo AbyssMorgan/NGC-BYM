@@ -581,6 +581,7 @@ package
          GLOBAL._bHatchery = null;
          GLOBAL._bHatcheryCC = null;
          GLOBAL._bHousing = null;
+		 GLOBAL._bHousingLevel = 0;
          GLOBAL._bJuicer = null;
          GLOBAL._bLocker = null;
          GLOBAL._bMap = null;

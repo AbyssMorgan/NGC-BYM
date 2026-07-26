@@ -206,6 +206,8 @@ package
 
       public static var _bHousing:BFOUNDATION;
 
+      public static var _bHousingLevel:int;
+
       public static var _bHatchery:BFOUNDATION;
 
       public static var _bFlinger:BUILDING5;
@@ -1006,6 +1008,7 @@ package
          _bHatchery = null;
          _bHatcheryCC = null;
          _bHousing = null;
+		 _bHousingLevel = 0;
          _bJuicer = null;
          _bLocker = null;
          _bTower = null;

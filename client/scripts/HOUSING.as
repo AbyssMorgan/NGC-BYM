@@ -308,12 +308,16 @@ package
       public static function AddHouse(param1:BFOUNDATION) : void
       {
          HousingSpace();
-         GLOBAL._bHousing = param1;
+		 if(param1._lvl.Get() > GLOBAL._bHousingLevel){
+ 			GLOBAL._bHousing = param1;
+		 	GLOBAL._bHousingLevel = param1._lvl.Get();
+		 }
       }
       
       public static function RemoveHouse(param1:BFOUNDATION) : void
       {
          GLOBAL._bHousing = null;
+		 GLOBAL._bHousingLevel = 0;
          HousingSpace();
       }
       

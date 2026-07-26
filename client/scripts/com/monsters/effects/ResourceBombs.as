@@ -5,6 +5,7 @@ package com.monsters.effects
 	import com.monsters.alliances.ALLIANCES;
 	import com.monsters.display.ImageCache;
 	import com.monsters.managers.InstanceManager;
+    import com.monsters.enums.EnumYardType;
 	import flash.display.BitmapData;
 	import flash.display.MovieClip;
 	import flash.geom.Point;
@@ -335,7 +336,7 @@ package com.monsters.effects
 			{
 				for each(_loc4_ in _bombs)
 				{
-					if(_loc4_.resource == _loc2_.resource)
+					if(_loc4_.resource == _loc2_.resource && (_loc4_.resource == 3 || BASE.isMainYard))
 					{
 						_loc4_.used = true;
 					}

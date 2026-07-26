@@ -2913,7 +2913,11 @@ package
          var _loc2_:Vector.<Object> = InstanceManager.getInstancesByClass(BFOUNDATION);
          for each (_loc3_ in _loc2_)
          {
-            _loc4_ = _loc3_.maxHealth * param1;
+			if(_loc3_ is BWALL){
+ 				_loc4_ = _loc3_.maxHealth;
+			} else {
+				_loc4_ = _loc3_.maxHealth * param1;
+			}
             if (_loc3_.health < _loc4_)
             {
                _loc3_.setHealth(_loc4_);

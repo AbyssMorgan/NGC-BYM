@@ -109,7 +109,7 @@ export const STRUCTURE_LEVELS: Record<number, number[]> = {
 };
 
 /** Attack range in cells for a player's main yard. */
-export const PLAYER_RANGE = 10;
+export const PLAYER_RANGE = 16;
 
 /** Minimum hex distance required between any two player yards. */
 export const MIN_PLAYER_DISTANCE = 7;
@@ -188,7 +188,22 @@ export const DEFENDER_DAMAGE_REDUCTION = [0, 20, 35, 50, 65, 80, 90];
 /** Defender levels per parent structure type and level. */
 export const DEFENDER_LEVELS = {
 	[EnumYardType.PLAYER]: {
-		0: [50, 50, 50, 50, 50, 50],
+		10: [5, 5, 5, 5, 5, 5],
+		15: [10, 10, 10, 10, 10, 10],
+		20: [15, 15, 15, 15, 15, 15],
+		25: [20, 20, 20, 20, 20, 20],
+		30: [25, 25, 25, 25, 25, 25],
+		35: [30, 30, 30, 30, 30, 30],
+		40: [35, 35, 35, 35, 35, 35],
+		45: [40, 40, 40, 40, 40, 40],
+		50: [45, 45, 45, 45, 45, 45],
+		60: [50, 50, 50, 50, 50, 50],
+		70: [60, 60, 60, 60, 60, 60],
+		80: [70, 70, 70, 70, 70, 70],
+		90: [80, 80, 80, 80, 80, 80],
+		100: [90, 90, 90, 90, 90, 90],
+		// 110: [100, 100, 100, 100, 100, 100],
+		// 120: [110, 110, 110, 110, 110, 110],
 	},
 
 	[EnumYardType.RESOURCE]: {

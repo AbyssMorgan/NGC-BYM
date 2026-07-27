@@ -10,6 +10,7 @@ import { getCurrentDateTime } from "../../../utils/getCurrentDateTime.js";
 import { BaseMode, BaseType } from "../../../enums/Base.js";
 import { EnumYardType } from "../../../enums/EnumYardType.js";
 import { MapRoomVersion } from "../../../enums/MapRoom.js";
+import { getHexNeighborOffsets } from "../../../services/maproom/v3/getHexNeighborOffsets.js";
 import { WORLD_SIZE } from "../../../config/MapRoom2Config.js";
 import { RESOURCE_PRODUCTION_RATES, RESOURCE_CAPACITIES, DEFENDER_DAMAGE_REDUCTION, STRONGHOLD_BONUSES, STRUCTURE_RANGE } from "../../../config/MapRoom3Config.js";
 import { WorldMapCell } from "../../../models/worldmapcell.model.js";
@@ -33,6 +34,42 @@ import { MR1_TRIBES } from "../../../enums/Tribes.js";
 import { calculateBaseLevel } from "../../../services/base/calculateBaseLevel.js";
 import { extractTownHall } from "../../../utils/extractTownHall.js";
 import { STRUCTURE_SAVES } from "../../../config/MapRoom3Config.js";
+import { getPlayerDefenderLevel } from "../../../services/maproom/v3/getPlayerDefenderLevel.js";
+import { getDefenderLevels } from "../../../services/maproom/v3/getDefenderLevels.js";
+
+const getConnectedPlayerFortificationInfo = async (baseSave: Save, worldid?: string | null) => {
+	if (baseSave.wmid !== EnumYardType.FORTIFICATION) return null;
+
+	const cell = baseSave.cell;
+	const cellX = cell?.x ?? (baseSave.baseid ? parseInt(baseSave.baseid.slice(-6, -3)) : NaN);
+	const cellY = cell?.y ?? (baseSave.baseid ? parseInt(baseSave.baseid.slice(-3)) : NaN);
+
+	if (!Number.isFinite(cellX) || !Number.isFinite(cellY)) return null;
+
+	const neighborCoords = getHexNeighborOffsets(cellY).map(([dx, dy]) => ({
+		x: cellX + dx,
+		y: cellY + dy,
+	}));
+
+	const parentCell = await postgres.em.findOne(WorldMapCell, {
+		$and: [
+			{ $or: neighborCoords },
+			{
+				world: worldid,
+				base_type: EnumYardType.PLAYER,
+				uid: { $gt: 0 },
+				map_version: MapRoomVersion.V3,
+			},
+		],
+	}, { populate: ["save"] });
+
+	if (!parentCell?.save?.level) return null;
+
+	return {
+		isPlayerConnected: true,
+		playerLevel: parentCell.save.level,
+	};
+};
 
 /**
  * Controller responsible for loading base modes based on the user's request.
@@ -120,10 +157,21 @@ export const baseLoad: KoaController = async (ctx) => {
 	if(baseSave && mapversion == MapRoomVersion.V3){
 		if(baseSave.wmid == EnumYardType.RESOURCE || baseSave.wmid == EnumYardType.STRONGHOLD || baseSave.wmid == EnumYardType.FORTIFICATION){
 			const tribeSave = STRUCTURE_SAVES[baseSave.wmid];
-			const original = tribeSave[baseSave.level];
-			if(original && original.version != baseSave.version){
+			let original = tribeSave[baseSave.level];
+			if(baseSave.wmid == EnumYardType.FORTIFICATION){
+				const connectedPlayerInfo = await getConnectedPlayerFortificationInfo(baseSave, user.save?.worldid ?? userSave.worldid);
+				if (connectedPlayerInfo?.isPlayerConnected) {
+					const defenderLevels = getDefenderLevels(EnumYardType.PLAYER, getPlayerDefenderLevel(connectedPlayerInfo.playerLevel));
+					if(defenderLevels){
+						original = tribeSave[defenderLevels[0]];
+					}
+				}
+			}
+			if(original && (original.version != baseSave.version || original.level != baseSave.level)){
+
 				baseSave.buildingdata = original.buildingdata as Save["buildingdata"];
 				baseSave.version = original.version as Save["version"];
+				baseSave.level = original.level as Save["level"];
 				baseSave.champion = original.champion as Save["champion"];
 				baseSave.resources = original.resources as Save["resources"];
 				baseSave.storedata = original.storedata as Save["storedata"];

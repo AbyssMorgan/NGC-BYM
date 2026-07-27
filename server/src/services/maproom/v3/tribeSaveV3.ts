@@ -14,6 +14,8 @@ import { getDefenderLevels } from "./getDefenderLevels.js";
 import { getHexNeighborOffsets } from "./getHexNeighborOffsets.js";
 import { WorldMapCell } from "../../../models/worldmapcell.model.js";
 import { MapRoomVersion } from "../../../enums/MapRoom.js";
+import { getPlayerDefenderLevel } from "./getPlayerDefenderLevel.js";
+import { logger } from "../../../utils/logger.js";
 
 /**
  * Generates a Save entity for an MR3 procedural structure (stronghold, resource,
@@ -61,9 +63,8 @@ export const tribeSaveV3 = async (baseid: string, worldid: string): Promise<Save
 		const defenderCoords = getDefenderCoords(parentCell.x, parentCell.y);
 		const defenderIndex = defenderCoords.findIndex(([fx, fy]) => fx === cellX && fy === cellY);
 
-		if (defenderIndex >= 0) {
-			const defenderLevels = getDefenderLevels(EnumYardType.PLAYER);
-			
+		if (defenderIndex >= 0 && parentCell.save) {
+			const defenderLevels = getDefenderLevels(EnumYardType.PLAYER, getPlayerDefenderLevel(parentCell.save.level));
 			if (!defenderLevels) return null;
 
 			const level = defenderLevels[defenderIndex];

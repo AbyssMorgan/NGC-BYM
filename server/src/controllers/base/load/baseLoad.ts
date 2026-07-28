@@ -10,7 +10,6 @@ import { getCurrentDateTime } from "../../../utils/getCurrentDateTime.js";
 import { BaseMode, BaseType } from "../../../enums/Base.js";
 import { EnumYardType } from "../../../enums/EnumYardType.js";
 import { MapRoomVersion } from "../../../enums/MapRoom.js";
-import { getHexNeighborOffsets } from "../../../services/maproom/v3/getHexNeighborOffsets.js";
 import { WORLD_SIZE } from "../../../config/MapRoom2Config.js";
 import { RESOURCE_PRODUCTION_RATES, RESOURCE_CAPACITIES, DEFENDER_DAMAGE_REDUCTION, STRONGHOLD_BONUSES, STRUCTURE_RANGE } from "../../../config/MapRoom3Config.js";
 import { WorldMapCell } from "../../../models/worldmapcell.model.js";
@@ -36,40 +35,8 @@ import { extractTownHall } from "../../../utils/extractTownHall.js";
 import { STRUCTURE_SAVES } from "../../../config/MapRoom3Config.js";
 import { getPlayerDefenderLevel } from "../../../services/maproom/v3/getPlayerDefenderLevel.js";
 import { getDefenderLevels } from "../../../services/maproom/v3/getDefenderLevels.js";
+import { getConnectedPlayerFortificationInfo } from "../../../services/maproom/v3/getConnectedPlayerFortificationInfo.js";
 
-const getConnectedPlayerFortificationInfo = async (baseSave: Save, worldid?: string | null) => {
-	if (baseSave.wmid !== EnumYardType.FORTIFICATION) return null;
-
-	const cell = baseSave.cell;
-	const cellX = cell?.x ?? (baseSave.baseid ? parseInt(baseSave.baseid.slice(-6, -3)) : NaN);
-	const cellY = cell?.y ?? (baseSave.baseid ? parseInt(baseSave.baseid.slice(-3)) : NaN);
-
-	if (!Number.isFinite(cellX) || !Number.isFinite(cellY)) return null;
-
-	const neighborCoords = getHexNeighborOffsets(cellY).map(([dx, dy]) => ({
-		x: cellX + dx,
-		y: cellY + dy,
-	}));
-
-	const parentCell = await postgres.em.findOne(WorldMapCell, {
-		$and: [
-			{ $or: neighborCoords },
-			{
-				world: worldid,
-				base_type: EnumYardType.PLAYER,
-				uid: { $gt: 0 },
-				map_version: MapRoomVersion.V3,
-			},
-		],
-	}, { populate: ["save"] });
-
-	if (!parentCell?.save?.level) return null;
-
-	return {
-		isPlayerConnected: true,
-		playerLevel: parentCell.save.level,
-	};
-};
 
 /**
  * Controller responsible for loading base modes based on the user's request.

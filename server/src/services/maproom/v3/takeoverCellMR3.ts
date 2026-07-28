@@ -5,10 +5,10 @@ import { User } from "../../../models/user.model.js";
 import { WorldMapCell } from "../../../models/worldmapcell.model.js";
 import { postgres } from "../../../server.js";
 import {
-  RESOURCE_CAPACITIES,
-  RESOURCE_PRODUCTION_RATES,
-  STRONGHOLD_BONUSES,
-  STRUCTURE_RANGE,
+	RESOURCE_CAPACITIES,
+	RESOURCE_PRODUCTION_RATES,
+	STRONGHOLD_BONUSES,
+	STRUCTURE_RANGE,
 } from "../../../config/MapRoom3Config.js";
 import { getCurrentDateTime } from "../../../utils/getCurrentDateTime.js";
 import { cellKey, getGeneratedCells } from "./generateCells.js";
@@ -16,25 +16,27 @@ import { getHexNeighborOffsets } from "./getHexNeighborOffsets.js";
 import { isMR3Structure } from "./utils/isMR3Structure.js";
 import { logger } from "../../../utils/logger.js";
 import { MapRoomVersion } from "../../../enums/MapRoom.js";
+import { getProtectionDaysByLevel } from "./getProtectionDaysByLevel.js";
+// import { getConnectedPlayerFortificationInfo } from "./getConnectedPlayerFortificationInfo.js";
 
 interface ResourceTakeover {
-  level: number;
-  productionRate: number;
-  capacity: number;
-  range: number;
+	level: number;
+	productionRate: number;
+	capacity: number;
+	range: number;
 }
 
 interface StrongholdTakeover {
-  level: number;
-  monsterBonus: number;
-  towerBonus: number;
-  range: number;
+	level: number;
+	monsterBonus: number;
+	towerBonus: number;
+	range: number;
 }
 
 interface FortificationTakeover {
-  level: number;
-  fortified?: number;
-  weakened?: number;
+	level: number;
+	fortified?: number;
+	weakened?: number;
 }
 
 export type TakeoverData = ResourceTakeover | StrongholdTakeover | FortificationTakeover;
@@ -56,196 +58,105 @@ export type TakeoverResult = Promise<TakeoverData | null>;
  * @returns {Promise<TakeoverData | null>} Takeover data for the response, or null
  */
 export const takeoverCellMR3 = async (baseSave: Save, user: User, userSave: Save): TakeoverResult => {
-  const { baseid, wmid, level } = baseSave;
+	const { baseid, wmid, level } = baseSave;
 
-  if (!isMR3Structure(wmid)) return null;
+	if (!isMR3Structure(wmid)) return null;
 
-  const cell = await postgres.em.findOne(WorldMapCell, { baseid });
+	const cell = await postgres.em.findOne(WorldMapCell, { baseid });
 
-  if (!cell) {
-    logger.error(`WorldMapCell not found for baseid: ${baseid}`);
-    return null;
-  }
-
-  const previousSaveUserId = baseSave.saveuserid;
-  const currentTime = getCurrentDateTime();
-
-  // Transfer ownership of the save
-  baseSave.saveuserid = user.userid;
-  baseSave.userid = userSave.userid;
-  baseSave.homebaseid = userSave.homebaseid;
-  baseSave.name = userSave.name;
-  baseSave.type = BaseType.OUTPOST;
-  baseSave.mapversion = MapRoomVersion.V3;
-  baseSave.damage = 0;
-  baseSave.resources = {};
-  baseSave.monsters = {};
-  baseSave.attacks = [];
-  baseSave.tutorialstage = 205;
-  baseSave.createtime = currentTime;
-
-  switch(wmid){
-	case EnumYardType.FORTIFICATION: {
-		switch(level){
-			case 45: {
-				baseSave.protected = currentTime + (3 * 24 * 60 * 60);
-				break;
-			}
-			case 50: {
-				baseSave.protected = currentTime + (3 * 24 * 60 * 60);
-				break;
-			}
-			case 60: {
-				baseSave.protected = currentTime + (4 * 24 * 60 * 60);
-				break;
-			}
-			case 70: {
-				baseSave.protected = currentTime + (5 * 24 * 60 * 60);
-				break;
-			}
-			case 80: {
-				baseSave.protected = currentTime + (6 * 24 * 60 * 60);
-				break;
-			}
-			case 90: {
-				baseSave.protected = currentTime + (7 * 24 * 60 * 60);
-				break;
-			}
-			case 95: {
-				baseSave.protected = currentTime + (8 * 24 * 60 * 60);
-				break;
-			}
-			case 105: {
-				baseSave.protected = currentTime + (9 * 24 * 60 * 60);
-				break;
-			}
-			case 115: {
-				baseSave.protected = currentTime + (10 * 24 * 60 * 60);
-				break;
-			}
-		}
-		break;
+	if (!cell) {
+		logger.error(`WorldMapCell not found for baseid: ${baseid}`);
+		return null;
 	}
-	case EnumYardType.RESOURCE: {
-		switch(level){
-			case 50: {
-				baseSave.protected = currentTime + (3 * 24 * 60 * 60);
-				break;
-			}
-			case 60: {
-				baseSave.protected = currentTime + (4 * 24 * 60 * 60);
-				break;
-			}
-			case 70: {
-				baseSave.protected = currentTime + (5 * 24 * 60 * 60);
-				break;
-			}
-			case 80: {
-				baseSave.protected = currentTime + (6 * 24 * 60 * 60);
-				break;
-			}
-			case 90: {
-				baseSave.protected = currentTime + (7 * 24 * 60 * 60);
-				break;
-			}
-			case 100: {
-				baseSave.protected = currentTime + (8 * 24 * 60 * 60);
-				break;
-			}
-			case 110: {
-				baseSave.protected = currentTime + (9 * 24 * 60 * 60);
-				break;
-			}
-			case 120: {
-				baseSave.protected = currentTime + (10 * 24 * 60 * 60);
-				break;
-			}
+
+	const previousSaveUserId = baseSave.saveuserid;
+	const currentTime = getCurrentDateTime();
+
+	// Transfer ownership of the save
+	baseSave.saveuserid = user.userid;
+	baseSave.userid = userSave.userid;
+	baseSave.homebaseid = userSave.homebaseid;
+	baseSave.name = userSave.name;
+	baseSave.type = BaseType.OUTPOST;
+	baseSave.mapversion = MapRoomVersion.V3;
+	baseSave.damage = 0;
+	baseSave.resources = {};
+	baseSave.monsters = {};
+	baseSave.attacks = [];
+	baseSave.tutorialstage = 205;
+	baseSave.createtime = currentTime;
+
+	switch(wmid){
+		case EnumYardType.STRONGHOLD:
+		case EnumYardType.RESOURCE:
+		case EnumYardType.FORTIFICATION: {
+			baseSave.protected = currentTime + (getProtectionDaysByLevel(level) * 24 * 60 * 60);
 		}
-		break;
 	}
-	case EnumYardType.STRONGHOLD: {
-		switch(level){
-			case 60: {
-				baseSave.protected = currentTime + (4 * 24 * 60 * 60);
-				break;
-			}
-			case 80: {
-				baseSave.protected = currentTime + (6 * 24 * 60 * 60);
-				break;
-			}
-			case 100: {
-				baseSave.protected = currentTime + (8 * 24 * 60 * 60);
-				break;
-			}
+	baseSave.takeoverDate = new Date();
+
+	// Clean up previous owner's save if the cell was player-owned
+	const previousOwner = await postgres.em.findOne(
+		User,
+		{ userid: previousSaveUserId },
+		{ populate: ["save"] },
+	);
+
+	if (previousOwner?.save) {
+		const { outposts } = previousOwner.save;
+		
+		previousOwner.save.outposts = outposts.filter(
+			([x, y, id]) => !(x === cell.x && y === cell.y && id === baseid),
+		);
+
+		if (previousOwner.save.buildingresources) {
+			delete previousOwner.save.buildingresources[`b${baseid}`];
 		}
-		break;
+
+		postgres.em.persist(previousOwner);
 	}
-  }
-  baseSave.takeoverDate = new Date();
 
-  // Clean up previous owner's save if the cell was player-owned
-  const previousOwner = await postgres.em.findOne(
-    User,
-    { userid: previousSaveUserId },
-    { populate: ["save"] },
-  );
+	// Update world map cell
+	cell.uid = user.userid;
+	cell.base_type = wmid;
 
-  if (previousOwner?.save) {
-    const { outposts } = previousOwner.save;
-    
-    previousOwner.save.outposts = outposts.filter(
-      ([x, y, id]) => !(x === cell.x && y === cell.y && id === baseid),
-    );
+	userSave.outposts.push([cell.x, cell.y, baseSave.baseid]);
+	postgres.em.persist([cell, userSave]);
+	await postgres.em.flush();
 
-    if (previousOwner.save.buildingresources) {
-      delete previousOwner.save.buildingresources[`b${baseid}`];
-    }
-
-    postgres.em.persist(previousOwner);
-  }
-
-  // Update world map cell
-  cell.uid = user.userid;
-  cell.base_type = wmid;
-
-  userSave.outposts.push([cell.x, cell.y, baseSave.baseid]);
-  postgres.em.persist([cell, userSave]);
-  await postgres.em.flush();
-
-  switch (wmid) {
-    case EnumYardType.RESOURCE:
-      return {
-        level,
-        productionRate: RESOURCE_PRODUCTION_RATES[level],
-        capacity: RESOURCE_CAPACITIES[level],
-        range: STRUCTURE_RANGE[EnumYardType.RESOURCE][level],
-      };
-
-    case EnumYardType.STRONGHOLD:
-      return {
-        level,
-        monsterBonus: STRONGHOLD_BONUSES[level],
-        towerBonus: STRONGHOLD_BONUSES[level],
-        range: STRUCTURE_RANGE[EnumYardType.STRONGHOLD][level],
-      };
-
-    case EnumYardType.FORTIFICATION: {
-      const cells = getGeneratedCells();
-
-      for (const [dx, dy] of getHexNeighborOffsets(cell.y)) {
-        const neighbor = cells.get(cellKey(cell.x + dx, cell.y + dy));
-
-        if (!neighbor) continue;
-
-        if (neighbor.type === EnumYardType.RESOURCE || neighbor.type === EnumYardType.STRONGHOLD) {
-          return { level, fortified: neighbor.type };
-        }
-      }
-
-      return { level, weakened: EnumYardType.RESOURCE };
-    }
-
-    default:
-      return null;
-  }
+	switch (wmid) {
+		case EnumYardType.RESOURCE: {
+			return {
+				level,
+				productionRate: RESOURCE_PRODUCTION_RATES[level],
+				capacity: RESOURCE_CAPACITIES[level],
+				range: STRUCTURE_RANGE[EnumYardType.RESOURCE][level],
+			};
+		}
+		case EnumYardType.STRONGHOLD: {
+			return {
+				level,
+				monsterBonus: STRONGHOLD_BONUSES[level],
+				towerBonus: STRONGHOLD_BONUSES[level],
+				range: STRUCTURE_RANGE[EnumYardType.STRONGHOLD][level],
+			};
+		}
+		case EnumYardType.FORTIFICATION: {
+			const cells = getGeneratedCells();
+			for (const [dx, dy] of getHexNeighborOffsets(cell.y)) {
+				const neighbor = cells.get(cellKey(cell.x + dx, cell.y + dy));
+				if (!neighbor) continue;
+				if (neighbor.type === EnumYardType.RESOURCE || neighbor.type === EnumYardType.STRONGHOLD) {
+					return { level, fortified: neighbor.type };
+				}
+			}
+			return {
+				level,
+				weakened: EnumYardType.RESOURCE
+			};
+		}
+		default: {
+			return null;
+		}
+	}
 };

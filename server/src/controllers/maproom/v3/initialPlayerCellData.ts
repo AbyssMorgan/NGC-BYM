@@ -58,6 +58,7 @@ export const initialPlayerCellData: KoaController = async (ctx) => {
           EnumYardType.PLAYER,
           EnumYardType.RESOURCE,
           EnumYardType.STRONGHOLD,
+          EnumYardType.FORTIFICATION,
         ],
       },
     },

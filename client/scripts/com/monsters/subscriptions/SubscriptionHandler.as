@@ -341,15 +341,13 @@ package com.monsters.subscriptions
       
       public function importData(param1:Object) : void
       {
-         this._renewalDate = GLOBAL.StatGet("renewal");
-         this._expirationDate = GLOBAL.StatGet("expiration");
+         this._renewalDate = 0;
+         this._expirationDate = 0;
          this.updateRewards();
       }
       
       public function exportData() : Object
       {
-         GLOBAL.StatSet("renewal",this._renewalDate,false);
-         GLOBAL.StatSet("expiration",this._expirationDate,false);
          return null;
       }
    }

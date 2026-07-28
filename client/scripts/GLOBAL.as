@@ -2020,6 +2020,7 @@ package
 
       public static function StatSet(param1:String, param2:int, param3:Boolean = true):void
       {
+		trace("StatSet: "+param1 + ' = '+param2);
          var _loc4_:Boolean = false;
          if (MapRoomManager.instance.isInMapRoom3 && param1 === "mrl" && param2 !== 3)
          {

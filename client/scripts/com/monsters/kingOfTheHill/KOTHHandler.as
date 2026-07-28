@@ -95,48 +95,17 @@ package com.monsters.kingOfTheHill
       
       private function checkEventReset() : void
       {
-         var _loc2_:Message = null;
-         var _loc1_:Number = GLOBAL.StatGet(this._LAST_LOOT_SCORE_LABEL);
-         if(this._totalLoot < _loc1_)
-         {
-            if(this._wins)
-            {
-               if(!this.hasWonPermanantly)
-               {
-                  _loc2_ = new KOTHRewardMessage(this._wins > 1);
-               }
-            }
-            else
-            {
-               _loc2_ = new KOTHEndMessage(GLOBAL.StatGet(this._LAST_TIER_LABEL) >= 1);
-            }
-            if(_loc2_)
-            {
-               POPUPS.Push(new FrontPageGraphic(_loc2_));
-            }
-         }
+         
       }
       
       private function checkQuotaPopups() : void
       {
-        //  var _loc3_:Message = null;
-        //  var _loc1_:uint = this.getTier(GLOBAL.StatGet(this._LAST_LOOT_SCORE_LABEL));
-        //  var _loc2_:uint = this.getTier(this._totalLoot);
-        //  if(_loc2_ > _loc1_ && _loc2_ <= this._lootChangeMessages.length)
-        //  {
-        //     _loc3_ = new this._lootChangeMessages[_loc2_ - 1]();
-        //     POPUPS.Push(new FrontPageGraphic(_loc3_));
-        //  }
+
       }
       
       protected function endedAttack(param1:AttackEvent) : void
       {
-         var _loc2_:Object = param1.loot;
-         var _loc3_:uint = _loc2_.r1.Get() + _loc2_.r2.Get() + _loc2_.r3.Get() + _loc2_.r4.Get();
-         LOGGER.StatB({
-            "st1":"KOTH",
-            "value":_loc3_.toString()
-         },"Loot");
+        
       }
       
       protected function destroyedMaproom(param1:BuildingEvent) : void
@@ -313,8 +282,6 @@ package com.monsters.kingOfTheHill
       
 		public function exportData() : Object
 		{
-		    GLOBAL.StatSet(this._LAST_LOOT_SCORE_LABEL,this._totalLoot,false);
-			GLOBAL.StatSet(this._LAST_TIER_LABEL,this._tier,false);
 			return null;
 		}
       

@@ -2356,7 +2356,7 @@ package
             this.Update(true);
             this.GridCost(false);
             PATHING.ResetCosts();
-            BASE.Save();
+            // BASE.Save();
          }
          this._repairing = 0;
       }

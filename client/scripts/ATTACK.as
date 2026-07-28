@@ -670,10 +670,11 @@ package
          ATTACK._flingerBucket = {};
          _flingerCooling = _flingerCooldown;
          UI2.Update();
-         if(BASE._saveOver != 1)
-         {
-            BASE.Save();
-         }
+        //  if(BASE._saveOver != 1)
+        //  {
+		// 	trace("save from spawn");
+        //     BASE.Save();
+        //  }
          RemoveDropZone();
       }
       
@@ -1018,7 +1019,7 @@ package
             }
             _loc5_++;
          }
-         BASE.SaveB();
+        //  BASE.SaveB();
       }
       
       public static function End() : void

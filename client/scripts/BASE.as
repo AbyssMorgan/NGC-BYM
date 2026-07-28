@@ -3199,6 +3199,7 @@ package
 
       public static function Save(param1:int = 0, return_home:Boolean = false, force:Boolean = false, param4:Boolean = false):void
       {
+		trace("Save");
          if (Boolean(UI2._top) && Boolean(UI2._top.mcSave))
          {
             UI2._top.mcSave.gotoAndStop(2);
@@ -3229,11 +3230,6 @@ package
          {
             _infernoSaveLoad = true;
          }
-      }
-
-      public static function saveBLite():Boolean
-      {
-         return true;
       }
 
       private static function getStatsSaveData():Object
@@ -3843,6 +3839,7 @@ package
 
       public static function SaveB():Boolean
       {
+		trace("SaveB");
          var handler:IHandler = null;
          var exportedData:Object = null;
          var updateAutoBank:Object = null;
@@ -3867,7 +3864,18 @@ package
          }
          _saving = true;
          _saveCounterB = _saveCounterA;
-         fixNegativeResourceValues();
+		if(_resources.r1.Get() < 0){
+			_resources.r1.Set(0);
+		}
+		if(_resources.r2.Get() < 0){
+			_resources.r2.Set(0);
+		}
+		if(_resources.r3.Get() < 0){
+			_resources.r3.Set(0);
+		}
+		if(_resources.r4.Get() < 0){
+			_resources.r4.Set(0);
+		}
          CalcBaseValue();
          CalcResources();
          SaveDeltaResources();
@@ -5662,6 +5670,7 @@ package
 
       public static function SaveDeltaResources():void
       {
+		trace("SaveDeltaResources");
          var _loc1_:int = 0;
          if (_deltaResources.dirty)
          {

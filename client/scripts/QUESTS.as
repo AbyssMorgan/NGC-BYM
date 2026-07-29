@@ -78,11 +78,16 @@ package
 				"b25lvl":0,
 				"b26lvl":0,
 				"b51lvl":0,
-				"b128lvl":0,
 				"b113lvl":0,
+				"b115lvl":0,
+				"b118lvl":0,
+				"b128lvl":0,
 				"b129lvl":0,
 				"b130lvl":0,
 				"b132lvl":0,
+				"b136lvl":0,
+				"b142lvl":0,
+				"b143lvl":0,
 				"b144lvl":0,
 				"b145lvl":0,
 				"b146lvl":0,
@@ -177,38 +182,7 @@ package
 					}
 				},
 				{
-					"order": 10106, 
-					"list": true,
-					"reward": [20000, 20000, 10000, 10000, 0],
-					"id": "SS1",
-					"group": 0,
-					"name": "Storage Silo",
-					"description": "Build storage silo",
-					"hint": "You can speed up upgrades.",
-					"questimage": "building-storage.v2.png",
-					"rules":
-					{
-						"b6lvl": 1
-					}
-				},
-				{
-					"order": 10206,
-					"list": true,
-					"reward": [40000, 40000, 20000, 20000, 0],
-					"id": "SS2",
-					"group": 0,
-					"name": "Storage Silo Level 2",
-					"description": "Upgrade your Storage Silo to Level 2",
-					"hint": "You can speed up upgrades.",
-					"questimage": "building-storage.v2.png",
-					"prereq": "SS1",
-					"rules":
-					{
-						"b6lvl": 2
-					}
-				},
-				{
-					"order": 10214,
+					"order": 2,
 					"list": true,
 					"reward": [25000, 25000, 25000, 25000, 0],
 					"id": "TH2",
@@ -223,83 +197,7 @@ package
 					}
 				},
 				{
-					"order": 10306,
-					"list": true,
-					"reward": [80000, 80000, 40000, 40000, 0],
-					"id": "SS3",
-					"group": 0,
-					"name": "Storage Silo Level 3",
-					"description": "Upgrade your Storage Silo to Level 3",
-					"hint": "You can speed up upgrades.",
-					"questimage": "building-storage.v2.png",
-					"prereq": "SS2",
-					"rules":
-					{
-						"b6lvl": 3
-					}
-				},
-				{
-					"order": 10301,
-					"list": true,
-					"reward": [20000, 0, 0, 0, 0],
-					"id": "TW3",
-					"group": 0,
-					"name": "Level 3 Twig Snapper",
-					"description": "Upgrade your Twig Snapper to Level 3",
-					"hint": "You can speed up upgrades.",
-					"questimage": "resourcetwigs.png",
-					"rules":
-					{
-						"b1lvl": 3
-					}
-				},
-				{
-					"order": 10302,
-					"list": true,
-					"reward": [0, 20000, 0, 0, 0],
-					"id": "PE3",
-					"group": 0,
-					"name": "Level 3 Pebble Shiner",
-					"description": "Upgrade your Pebble Shiner to Level 3",
-					"hint": "You can speed up upgrades.",
-					"questimage": "resourcepebbles.png",
-					"rules":
-					{
-						"b2lvl": 3
-					}
-				},
-				{
-					"order": 10303,
-					"list": true,
-					"reward": [0, 0, 20000, 0, 0],
-					"id": "PU3",
-					"group": 0,
-					"name": "Level 3 Putty Squisher",
-					"description": "Upgrade your Putty Squisher to Level 3",
-					"hint": "You can speed up upgrades.",
-					"questimage": "resourceputty.png",
-					"rules":
-					{
-						"b3lvl": 3
-					}
-				},
-				{
-					"order": 10304,
-					"list": true,
-					"reward": [0, 0, 0, 20000, 0],
-					"id": "GO3",
-					"group": 0,
-					"name": "Level 3 Goo Factory",
-					"description": "Upgrade your Goo Factory to Level 3",
-					"hint": "You can speed up upgrades.",
-					"questimage": "resourcegoo.png",
-					"rules":
-					{
-						"b4lvl": 3
-					}
-				},
-				{
-					"order": 10314,
+					"order": 3,
 					"list": true,
 					"reward": [50000, 50000, 50000, 50000, 0],
 					"id": "TH3",
@@ -315,87 +213,7 @@ package
 					}
 				},
 				{
-					"order": 10406,
-					"list": true,
-					"reward": [160000, 160000, 80000, 80000, 0],
-					"id": "SS4",
-					"group": 0,
-					"name": "Storage Silo Level 4",
-					"description": "Upgrade your Storage Silo to Level 4",
-					"hint": "You can speed up upgrades.",
-					"questimage": "building-storage.v2.png",
-					"prereq": "SS3",
-					"rules":
-					{
-						"b6lvl": 4
-					}
-				},
-				{
-					"order": 10401,
-					"list": true,
-					"reward": [40000, 0, 0, 0, 0],
-					"id": "TW4",
-					"group": 0,
-					"name": "Level 3 Twig Snapper",
-					"description": "Upgrade your Twig Snapper to Level 3",
-					"hint": "You can speed up upgrades.",
-					"questimage": "resourcetwigs.png",
-					"prereq": "TW3",
-					"rules":
-					{
-						"b1lvl": 4
-					}
-				},
-				{
-					"order": 10402,
-					"list": true,
-					"reward": [0, 40000, 0, 0, 0],
-					"id": "PE4",
-					"group": 0,
-					"name": "Level 3 Pebble Shiner",
-					"description": "Upgrade your Pebble Shiner to Level 3",
-					"hint": "You can speed up upgrades.",
-					"questimage": "resourcepebbles.png",
-					"prereq": "PE3",
-					"rules":
-					{
-						"b2lvl": 4
-					}
-				},
-				{
-					"order": 10403,
-					"list": true,
-					"reward": [0, 0, 40000, 0, 0],
-					"id": "PU4",
-					"group": 0,
-					"name": "Level 3 Putty Squisher",
-					"description": "Upgrade your Putty Squisher to Level 3",
-					"hint": "You can speed up upgrades.",
-					"questimage": "resourceputty.png",
-					"prereq": "PU3",
-					"rules":
-					{
-						"b3lvl": 4
-					}
-				},
-				{
-					"order": 10404,
-					"list": true,
-					"reward": [0, 0, 0, 40000, 0],
-					"id": "GO4",
-					"group": 0,
-					"name": "Level 3 Goo Factory",
-					"description": "Upgrade your Goo Factory to Level 3",
-					"hint": "You can speed up upgrades.",
-					"questimage": "resourcegoo.png",
-					"prereq": "GO3",
-					"rules":
-					{
-						"b4lvl": 4
-					}
-				},
-				{
-					"order": 10414,
+					"order": 4,
 					"list": true,
 					"reward": [100000, 100000, 100000, 100000, 0],
 					"id": "TH4",
@@ -411,23 +229,7 @@ package
 					}
 				},
 				{
-					"order": 10506,
-					"list": true,
-					"reward": [320000, 320000, 160000, 160000, 0],
-					"id": "SS5",
-					"group": 0,
-					"name": "Storage Silo Level 5",
-					"description": "Upgrade your Storage Silo to Level 5",
-					"hint": "You can speed up upgrades.",
-					"questimage": "building-storage.v2.png",
-					"prereq": "SS4",
-					"rules":
-					{
-						"b6lvl": 5
-					}
-				},
-				{
-					"order": 10514,
+					"order": 5,
 					"list": true,
 					"reward": [250000, 250000, 250000, 250000, 0],
 					"id": "TH5",
@@ -443,87 +245,7 @@ package
 					}
 				},
 				{
-					"order": 10606,
-					"list": true,
-					"reward": [640000, 640000, 320000, 320000, 0],
-					"id": "SS6",
-					"group": 0,
-					"name": "Storage Silo Level 6",
-					"description": "Upgrade your Storage Silo to Level 6",
-					"hint": "You can speed up upgrades.",
-					"questimage": "building-storage.v2.png",
-					"prereq": "SS5",
-					"rules":
-					{
-						"b6lvl": 6
-					}
-				},
-				{
-					"order": 10601,
-					"list": true,
-					"reward": [200000, 0, 0, 0, 0],
-					"id": "TW6",
-					"group": 0,
-					"name": "Level 6 Twig Snapper",
-					"description": "Upgrade your Twig Snapper to Level 6",
-					"hint": "You can speed up upgrades.",
-					"questimage": "resourcetwigs.png",
-					"prereq": "TW4",
-					"rules":
-					{
-						"b1lvl": 6
-					}
-				},
-				{
-					"order": 10602,
-					"list": true,
-					"reward": [0, 200000, 0, 0, 0],
-					"id": "PE6",
-					"group": 0,
-					"name": "Level 6 Pebble Shiner",
-					"description": "Upgrade your Pebble Shiner to Level 6",
-					"hint": "You can speed up upgrades.",
-					"questimage": "resourcepebbles.png",
-					"prereq": "PE4",
-					"rules":
-					{
-						"b2lvl": 6
-					}
-				},
-				{
-					"order": 10603,
-					"list": true,
-					"reward": [0, 0, 200000, 0, 0],
-					"id": "PU6",
-					"group": 0,
-					"name": "Level 6 Putty Squisher",
-					"description": "Upgrade your Putty Squisher to Level 6",
-					"hint": "You can speed up upgrades.",
-					"questimage": "resourceputty.png",
-					"prereq": "PU4",
-					"rules":
-					{
-						"b3lvl": 6
-					}
-				},
-				{
-					"order": 10604,
-					"list": true,
-					"reward": [0, 0, 0, 200000, 0],
-					"id": "GO6",
-					"group": 0,
-					"name": "Level 6 Goo Factory",
-					"description": "Upgrade your Goo Factory to Level 6",
-					"hint": "You can speed up upgrades.",
-					"questimage": "resourcegoo.png",
-					"prereq": "GO4",
-					"rules":
-					{
-						"b4lvl": 6
-					}
-				},
-				{
-					"order": 10614,
+					"order": 3,
 					"list": true,
 					"reward": [500000, 500000, 500000, 500000, 0],
 					"id": "TH6",
@@ -539,7 +261,7 @@ package
 					}
 				},
 				{
-					"order": 10714,
+					"order": 7,
 					"list": true,
 					"reward": [1000000, 1000000, 1000000, 1000000, 0],
 					"id": "TH7",
@@ -555,87 +277,7 @@ package
 					}
 				},
 				{
-					"order": 10806,
-					"list": true,
-					"reward": [1280000, 1280000, 640000, 640000, 0],
-					"id": "SS8",
-					"group": 0,
-					"name": "Storage Silo Level 8",
-					"description": "Upgrade your Storage Silo to Level 8",
-					"hint": "You can speed up upgrades.",
-					"questimage": "building-storage.v2.png",
-					"prereq": "SS7",
-					"rules":
-					{
-						"b6lvl": 8
-					}
-				},
-				{
-					"order": 10801,
-					"list": true,
-					"reward": [2000000, 0, 0, 0, 0],
-					"id": "TW8",
-					"group": 0,
-					"name": "Level 8 Twig Snapper",
-					"description": "Upgrade your Twig Snapper to Level 8",
-					"hint": "You can speed up upgrades.",
-					"questimage": "resourcetwigs.png",
-					"prereq": "TW6",
-					"rules":
-					{
-						"b1lvl": 8
-					}
-				},
-				{
-					"order": 10802,
-					"list": true,
-					"reward": [0, 2000000, 0, 0, 0],
-					"id": "PE8",
-					"group": 0,
-					"name": "Level 8 Pebble Shiner",
-					"description": "Upgrade your Pebble Shiner to Level 8",
-					"hint": "You can speed up upgrades.",
-					"questimage": "resourcepebbles.png",
-					"prereq": "PE6",
-					"rules":
-					{
-						"b2lvl": 8
-					}
-				},
-				{
-					"order": 10803,
-					"list": true,
-					"reward": [0, 0, 2000000, 0, 0],
-					"id": "PU8",
-					"group": 0,
-					"name": "Level 8 Putty Squisher",
-					"description": "Upgrade your Putty Squisher to Level 8",
-					"hint": "You can speed up upgrades.",
-					"questimage": "resourceputty.png",
-					"prereq": "PU6",
-					"rules":
-					{
-						"b3lvl": 8
-					}
-				},
-				{
-					"order": 10804,
-					"list": true,
-					"reward": [0, 0, 0, 2000000, 0],
-					"id": "GO8",
-					"group": 0,
-					"name": "Level 8 Goo Factory",
-					"description": "Upgrade your Goo Factory to Level 8",
-					"hint": "You can speed up upgrades.",
-					"questimage": "resourcegoo.png",
-					"prereq": "GO6",
-					"rules":
-					{
-						"b4lvl": 8
-					}
-				},
-				{
-					"order": 10814,
+					"order": 8,
 					"list": true,
 					"reward": [2500000, 2500000, 2500000, 2500000, 0],
 					"id": "TH8",
@@ -651,7 +293,7 @@ package
 					}
 				},
 				{
-					"order": 10914,
+					"order": 9,
 					"list": true,
 					"reward": [5000000, 5000000, 5000000, 5000000, 0],
 					"id": "TH9",
@@ -667,87 +309,7 @@ package
 					}
 				},
 				{
-					"order": 11006,
-					"list": true,
-					"reward": [2560000, 2560000, 1280000, 1280000, 0],
-					"id": "SS10",
-					"group": 0,
-					"name": "Storage Silo Level 10",
-					"description": "Upgrade your Storage Silo to Level 10",
-					"hint": "You can speed up upgrades.",
-					"questimage": "building-storage.v2.png",
-					"prereq": "SS9",
-					"rules":
-					{
-						"b6lvl": 10
-					}
-				},
-				{
-					"order": 11001,
-					"list": true,
-					"reward": [20000000, 0, 0, 0, 0],
-					"id": "TW10",
-					"group": 0,
-					"name": "Level 10 Twig Snapper",
-					"description": "Upgrade your Twig Snapper to Level 10",
-					"hint": "You can speed up upgrades.",
-					"questimage": "resourcetwigs.png",
-					"prereq": "TW8",
-					"rules":
-					{
-						"b1lvl": 10
-					}
-				},
-				{
-					"order": 11002,
-					"list": true,
-					"reward": [0, 20000000, 0, 0, 0],
-					"id": "PE10",
-					"group": 0,
-					"name": "Level 10 Pebble Shiner",
-					"description": "Upgrade your Pebble Shiner to Level 10",
-					"hint": "You can speed up upgrades.",
-					"questimage": "resourcepebbles.png",
-					"prereq": "PE8",
-					"rules":
-					{
-						"b2lvl": 10
-					}
-				},
-				{
-					"order": 11003,
-					"list": true,
-					"reward": [0, 0, 20000000, 0, 0],
-					"id": "PU10",
-					"group": 0,
-					"name": "Level 10 Putty Squisher",
-					"description": "Upgrade your Putty Squisher to Level 10",
-					"hint": "You can speed up upgrades.",
-					"questimage": "resourceputty.png",
-					"prereq": "PU8",
-					"rules":
-					{
-						"b3lvl": 10
-					}
-				},
-				{
-					"order": 11004,
-					"list": true,
-					"reward": [0, 0, 0, 20000000, 0],
-					"id": "GO10",
-					"group": 0,
-					"name": "Level 10 Goo Factory",
-					"description": "Upgrade your Goo Factory to Level 10",
-					"hint": "You can speed up upgrades.",
-					"questimage": "resourcegoo.png",
-					"prereq": "GO8",
-					"rules":
-					{
-						"b4lvl": 10
-					}
-				},
-				{
-					"order": 11014,
+					"order": 10,
 					"list": true,
 					"reward": [50000000, 50000000, 50000000, 50000000, 0],
 					"id": "TH10",
@@ -763,87 +325,7 @@ package
 					}
 				},
 				{
-					"order": 11206,
-					"list": true,
-					"reward": [5120000, 5120000, 2560000, 2560000, 0],
-					"id": "SS12",
-					"group": 0,
-					"name": "Storage Silo Level 12",
-					"description": "Upgrade your Storage Silo to Level 12",
-					"hint": "You can speed up upgrades.",
-					"questimage": "building-storage.v2.png",
-					"prereq": "SS10",
-					"rules":
-					{
-						"b6lvl": 12
-					}
-				},
-				{
-					"order": 11201,
-					"list": true,
-					"reward": [40000000, 0, 0, 0, 0],
-					"id": "TW12",
-					"group": 0,
-					"name": "Level 12 Twig Snapper",
-					"description": "Upgrade your Twig Snapper to Level 12",
-					"hint": "You can speed up upgrades.",
-					"questimage": "resourcetwigs.png",
-					"prereq": "TW10",
-					"rules":
-					{
-						"b1lvl": 12
-					}
-				},
-				{
-					"order": 11202,
-					"list": true,
-					"reward": [0, 40000000, 0, 0, 0],
-					"id": "PE12",
-					"group": 0,
-					"name": "Level 12 Pebble Shiner",
-					"description": "Upgrade your Pebble Shiner to Level 12",
-					"hint": "You can speed up upgrades.",
-					"questimage": "resourcepebbles.png",
-					"prereq": "PE10",
-					"rules":
-					{
-						"b2lvl": 12
-					}
-				},
-				{
-					"order": 11203,
-					"list": true,
-					"reward": [0, 0, 40000000, 0, 0],
-					"id": "PU12",
-					"group": 0,
-					"name": "Level 12 Putty Squisher",
-					"description": "Upgrade your Putty Squisher to Level 12",
-					"hint": "You can speed up upgrades.",
-					"questimage": "resourceputty.png",
-					"prereq": "PU10",
-					"rules":
-					{
-						"b3lvl": 12
-					}
-				},
-				{
-					"order": 11204,
-					"list": true,
-					"reward": [0, 0, 0, 40000000, 0],
-					"id": "GO12",
-					"group": 0,
-					"name": "Level 12 Goo Factory",
-					"description": "Upgrade your Goo Factory to Level 12",
-					"hint": "You can speed up upgrades.",
-					"questimage": "resourcegoo.png",
-					"prereq": "GO10",
-					"rules":
-					{
-						"b4lvl": 12
-					}
-				},
-				{
-					"order": 11214,
+					"order": 12,
 					"list": true,
 					"reward": [100000000, 100000000, 100000000, 100000000, 0],
 					"id": "TH12",
@@ -859,87 +341,7 @@ package
 					}
 				},
 				{
-					"order": 11406,
-					"list": true,
-					"reward": [10240000, 10240000, 5120000, 5120000, 0],
-					"id": "SS14",
-					"group": 0,
-					"name": "Storage Silo Level 14",
-					"description": "Upgrade your Storage Silo to Level 14",
-					"hint": "You can speed up upgrades.",
-					"questimage": "building-storage.v2.png",
-					"prereq": "SS12",
-					"rules":
-					{
-						"b6lvl": 14
-					}
-				},
-				{
-					"order": 11401,
-					"list": true,
-					"reward": [80000000, 0, 0, 0, 0],
-					"id": "TW14",
-					"group": 0,
-					"name": "Level 14 Twig Snapper",
-					"description": "Upgrade your Twig Snapper to Level 14",
-					"hint": "You can speed up upgrades.",
-					"questimage": "resourcetwigs.png",
-					"prereq": "TW12",
-					"rules":
-					{
-						"b1lvl": 14
-					}
-				},
-				{
-					"order": 11402,
-					"list": true,
-					"reward": [0, 80000000, 0, 0, 0],
-					"id": "PE14",
-					"group": 0,
-					"name": "Level 14 Pebble Shiner",
-					"description": "Upgrade your Pebble Shiner to Level 14",
-					"hint": "You can speed up upgrades.",
-					"questimage": "resourcepebbles.png",
-					"prereq": "PE12",
-					"rules":
-					{
-						"b2lvl": 14
-					}
-				},
-				{
-					"order": 11403,
-					"list": true,
-					"reward": [0, 0, 80000000, 0, 0],
-					"id": "PU14",
-					"group": 0,
-					"name": "Level 14 Putty Squisher",
-					"description": "Upgrade your Putty Squisher to Level 14",
-					"hint": "You can speed up upgrades.",
-					"questimage": "resourceputty.png",
-					"prereq": "PU12",
-					"rules":
-					{
-						"b3lvl": 14
-					}
-				},
-				{
-					"order": 11404,
-					"list": true,
-					"reward": [0, 0, 0, 80000000, 0],
-					"id": "GO14",
-					"group": 0,
-					"name": "Level 14 Goo Factory",
-					"description": "Upgrade your Goo Factory to Level 14",
-					"hint": "You can speed up upgrades.",
-					"questimage": "resourcegoo.png",
-					"prereq": "GO12",
-					"rules":
-					{
-						"b4lvl": 14
-					}
-				},
-				{
-					"order": 11414,
+					"order": 14,
 					"list": true,
 					"reward": [250000000, 250000000, 250000000, 250000000, 0],
 					"id": "TH14",
@@ -955,87 +357,7 @@ package
 					}
 				},
 				{
-					"order": 11606,
-					"list": true,
-					"reward": [20480000, 20480000, 10240000, 10240000, 0],
-					"id": "SS16",
-					"group": 0,
-					"name": "Storage Silo Level 16",
-					"description": "Upgrade your Storage Silo to Level 16",
-					"hint": "You can speed up upgrades.",
-					"questimage": "building-storage.v2.png",
-					"prereq": "SS14",
-					"rules":
-					{
-						"b6lvl": 16
-					}
-				},
-				{
-					"order": 11601,
-					"list": true,
-					"reward": [160000000, 0, 0, 0, 0],
-					"id": "TW16",
-					"group": 0,
-					"name": "Level 16 Twig Snapper",
-					"description": "Upgrade your Twig Snapper to Level 16",
-					"hint": "You can speed up upgrades.",
-					"questimage": "resourcetwigs.png",
-					"prereq": "TW14",
-					"rules":
-					{
-						"b1lvl": 16
-					}
-				},
-				{
-					"order": 11602,
-					"list": true,
-					"reward": [0, 160000000, 0, 0, 0],
-					"id": "PE16",
-					"group": 0,
-					"name": "Level 16 Pebble Shiner",
-					"description": "Upgrade your Pebble Shiner to Level 16",
-					"hint": "You can speed up upgrades.",
-					"questimage": "resourcepebbles.png",
-					"prereq": "PE14",
-					"rules":
-					{
-						"b2lvl": 16
-					}
-				},
-				{
-					"order": 11603,
-					"list": true,
-					"reward": [0, 0, 160000000, 0, 0],
-					"id": "PU16",
-					"group": 0,
-					"name": "Level 16 Putty Squisher",
-					"description": "Upgrade your Putty Squisher to Level 16",
-					"hint": "You can speed up upgrades.",
-					"questimage": "resourceputty.png",
-					"prereq": "PU14",
-					"rules":
-					{
-						"b3lvl": 16
-					}
-				},
-				{
-					"order": 11604,
-					"list": true,
-					"reward": [0, 0, 0, 160000000, 0],
-					"id": "GO16",
-					"group": 0,
-					"name": "Level 16 Goo Factory",
-					"description": "Upgrade your Goo Factory to Level 16",
-					"hint": "You can speed up upgrades.",
-					"questimage": "resourcegoo.png",
-					"prereq": "GO14",
-					"rules":
-					{
-						"b4lvl": 16
-					}
-				},
-				{
-					"order": 11614,
+					"order": 16,
 					"list": true,
 					"reward": [500000000, 500000000, 500000000, 500000000, 0],
 					"id": "TH16",
@@ -1051,87 +373,7 @@ package
 					}
 				},
 				{
-					"order": 11806,
-					"list": true,
-					"reward": [40960000, 40960000, 20480000, 20480000, 0],
-					"id": "SS18",
-					"group": 0,
-					"name": "Storage Silo Level 18",
-					"description": "Upgrade your Storage Silo to Level 18",
-					"hint": "You can speed up upgrades.",
-					"questimage": "building-storage.v2.png",
-					"prereq": "SS16",
-					"rules":
-					{
-						"b6lvl": 18
-					}
-				},
-				{
-					"order": 11801,
-					"list": true,
-					"reward": [320000000, 0, 0, 0, 0],
-					"id": "TW18",
-					"group": 0,
-					"name": "Level 18 Twig Snapper",
-					"description": "Upgrade your Twig Snapper to Level 18",
-					"hint": "You can speed up upgrades.",
-					"questimage": "resourcetwigs.png",
-					"prereq": "TW16",
-					"rules":
-					{
-						"b1lvl": 18
-					}
-				},
-				{
-					"order": 11802,
-					"list": true,
-					"reward": [0, 320000000, 0, 0, 0],
-					"id": "PE18",
-					"group": 0,
-					"name": "Level 18 Pebble Shiner",
-					"description": "Upgrade your Pebble Shiner to Level 18",
-					"hint": "You can speed up upgrades.",
-					"questimage": "resourcepebbles.png",
-					"prereq": "PE16",
-					"rules":
-					{
-						"b2lvl": 18
-					}
-				},
-				{
-					"order": 11803,
-					"list": true,
-					"reward": [0, 0, 320000000, 0, 0],
-					"id": "PU18",
-					"group": 0,
-					"name": "Level 18 Putty Squisher",
-					"description": "Upgrade your Putty Squisher to Level 18",
-					"hint": "You can speed up upgrades.",
-					"questimage": "resourceputty.png",
-					"prereq": "PU16",
-					"rules":
-					{
-						"b3lvl": 18
-					}
-				},
-				{
-					"order": 11804,
-					"list": true,
-					"reward": [0, 0, 0, 320000000, 0],
-					"id": "GO18",
-					"group": 0,
-					"name": "Level 18 Goo Factory",
-					"description": "Upgrade your Goo Factory to Level 18",
-					"hint": "You can speed up upgrades.",
-					"questimage": "resourcegoo.png",
-					"prereq": "GO16",
-					"rules":
-					{
-						"b4lvl": 18
-					}
-				},
-				{
-					"order": 11814,
+					"order": 18,
 					"list": true,
 					"reward": [1000000000, 1000000000, 1000000000, 1000000000, 0],
 					"id": "TH18",
@@ -1147,87 +389,7 @@ package
 					}
 				},
 				{
-					"order": 12006,
-					"list": true,
-					"reward": [81920000, 81920000, 40960000, 40960000, 0],
-					"id": "SS20",
-					"group": 0,
-					"name": "Storage Silo Level 20",
-					"description": "Upgrade your Storage Silo to Level 20",
-					"hint": "You can speed up upgrades.",
-					"questimage": "building-storage.v2.png",
-					"prereq": "SS18",
-					"rules":
-					{
-						"b6lvl": 20
-					}
-				},
-				{
-					"order": 12001,
-					"list": true,
-					"reward": [640000000, 0, 0, 0, 0],
-					"id": "TW20",
-					"group": 0,
-					"name": "Level 20 Twig Snapper",
-					"description": "Upgrade your Twig Snapper to Level 20",
-					"hint": "You can speed up upgrades.",
-					"questimage": "resourcetwigs.png",
-					"prereq": "TW18",
-					"rules":
-					{
-						"b1lvl": 20
-					}
-				},
-				{
-					"order": 12002,
-					"list": true,
-					"reward": [0, 640000000, 0, 0, 0],
-					"id": "PE20",
-					"group": 0,
-					"name": "Level 20 Pebble Shiner",
-					"description": "Upgrade your Pebble Shiner to Level 20",
-					"hint": "You can speed up upgrades.",
-					"questimage": "resourcepebbles.png",
-					"prereq": "PE18",
-					"rules":
-					{
-						"b2lvl": 20
-					}
-				},
-				{
-					"order": 12003,
-					"list": true,
-					"reward": [0, 0, 640000000, 0, 0],
-					"id": "PU20",
-					"group": 0,
-					"name": "Level 20 Putty Squisher",
-					"description": "Upgrade your Putty Squisher to Level 20",
-					"hint": "You can speed up upgrades.",
-					"questimage": "resourceputty.png",
-					"prereq": "PU18",
-					"rules":
-					{
-						"b3lvl": 20
-					}
-				},
-				{
-					"order": 12004,
-					"list": true,
-					"reward": [0, 0, 0, 640000000, 0],
-					"id": "GO20",
-					"group": 0,
-					"name": "Level 20 Goo Factory",
-					"description": "Upgrade your Goo Factory to Level 20",
-					"hint": "You can speed up upgrades.",
-					"questimage": "resourcegoo.png",
-					"prereq": "GO18",
-					"rules":
-					{
-						"b4lvl": 20
-					}
-				},
-				{
-					"order": 12014,
+					"order": 20,
 					"list": true,
 					"reward": [1500000000, 1500000000, 1500000000, 1500000000, 0],
 					"id": "TH20",
@@ -1243,23 +405,7 @@ package
 					}
 				},
 				{
-					"order": 12106,
-					"list": true,
-					"reward": [100000000, 100000000, 50000000, 50000000, 0],
-					"id": "SS21",
-					"group": 0,
-					"name": "Storage Silo Level 21",
-					"description": "Upgrade your Storage Silo to Level 21",
-					"hint": "You can speed up upgrades.",
-					"questimage": "building-storage.v2.png",
-					"prereq": "SS20",
-					"rules":
-					{
-						"b6lvl": 21
-					}
-				},
-				{
-					"order": 12114,
+					"order": 21,
 					"list": true,
 					"reward": [2000000000, 2000000000, 2000000000, 2000000000, 0],
 					"id": "TH21",
@@ -1275,23 +421,7 @@ package
 					}
 				},
 				{
-					"order": 12206,
-					"list": true,
-					"reward": [200000000, 200000000, 100000000, 100000000, 0],
-					"id": "SS22",
-					"group": 0,
-					"name": "Storage Silo Level 22",
-					"description": "Upgrade your Storage Silo to Level 22",
-					"hint": "You can speed up upgrades.",
-					"questimage": "building-storage.v2.png",
-					"prereq": "SS21",
-					"rules":
-					{
-						"b6lvl": 22
-					}
-				},
-				{
-					"order": 12214,
+					"order": 22,
 					"list": true,
 					"reward": [2500000000, 2500000000, 2500000000, 2500000000, 0],
 					"id": "TH22",
@@ -1307,23 +437,7 @@ package
 					}
 				},
 				{
-					"order": 12306,
-					"list": true,
-					"reward": [400000000, 400000000, 200000000, 200000000, 0],
-					"id": "SS23",
-					"group": 0,
-					"name": "Storage Silo Level 23",
-					"description": "Upgrade your Storage Silo to Level 23",
-					"hint": "You can speed up upgrades.",
-					"questimage": "building-storage.v2.png",
-					"prereq": "SS22",
-					"rules":
-					{
-						"b6lvl": 23
-					}
-				},
-				{
-					"order": 12314,
+					"order": 23,
 					"list": true,
 					"reward": [5000000000, 5000000000, 5000000000, 5000000000, 0],
 					"id": "TH23",
@@ -1339,23 +453,7 @@ package
 					}
 				},
 				{
-					"order": 12406,
-					"list": true,
-					"reward": [800000000, 800000000, 400000000, 400000000, 0],
-					"id": "SS24",
-					"group": 0,
-					"name": "Storage Silo Level 24",
-					"description": "Upgrade your Storage Silo to Level 24",
-					"hint": "You can speed up upgrades.",
-					"questimage": "building-storage.v2.png",
-					"prereq": "SS23",
-					"rules":
-					{
-						"b6lvl": 24
-					}
-				},
-				{
-					"order": 12414,
+					"order": 24,
 					"list": true,
 					"reward": [10000000000, 10000000000, 10000000000, 10000000000, 0],
 					"id": "TH24",
@@ -1371,7 +469,294 @@ package
 					}
 				},
 				{
-					"order": 12506,
+					"order": 25,
+					"list": true,
+					"reward": [20000000000, 20000000000, 20000000000, 20000000000, 0],
+					"id": "TH25",
+					"group": 0,
+					"name": "Town Hall Level 25",
+					"description": "Upgrade your Town Hall to Level 25",
+					"hint": "You can speed up upgrades.",
+					"questimage": "townhall_20.png",
+					"prereq": "TH24",
+					"rules":
+					{
+						"b14lvl": 25
+					}
+				},
+				{
+					"order": 1,
+					"list": true,
+					"reward": [20000, 20000, 10000, 10000, 0],
+					"id": "SS1",
+					"group": 0,
+					"name": "Storage Silo",
+					"description": "Build storage silo",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-storage.v2.png",
+					"rules":
+					{
+						"b6lvl": 1
+					}
+				},
+				{
+					"order": 2,
+					"list": true,
+					"reward": [40000, 40000, 20000, 20000, 0],
+					"id": "SS2",
+					"group": 0,
+					"name": "Storage Silo Level 2",
+					"description": "Upgrade your Storage Silo to Level 2",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-storage.v2.png",
+					"prereq": "SS1",
+					"rules":
+					{
+						"b6lvl": 2
+					}
+				},
+				{
+					"order": 3,
+					"list": true,
+					"reward": [80000, 80000, 40000, 40000, 0],
+					"id": "SS3",
+					"group": 0,
+					"name": "Storage Silo Level 3",
+					"description": "Upgrade your Storage Silo to Level 3",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-storage.v2.png",
+					"prereq": "SS2",
+					"rules":
+					{
+						"b6lvl": 3
+					}
+				},
+				{
+					"order": 4,
+					"list": true,
+					"reward": [160000, 160000, 80000, 80000, 0],
+					"id": "SS4",
+					"group": 0,
+					"name": "Storage Silo Level 4",
+					"description": "Upgrade your Storage Silo to Level 4",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-storage.v2.png",
+					"prereq": "SS3",
+					"rules":
+					{
+						"b6lvl": 4
+					}
+				},
+				{
+					"order": 5,
+					"list": true,
+					"reward": [320000, 320000, 160000, 160000, 0],
+					"id": "SS5",
+					"group": 0,
+					"name": "Storage Silo Level 5",
+					"description": "Upgrade your Storage Silo to Level 5",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-storage.v2.png",
+					"prereq": "SS4",
+					"rules":
+					{
+						"b6lvl": 5
+					}
+				},
+				{
+					"order": 6,
+					"list": true,
+					"reward": [640000, 640000, 320000, 320000, 0],
+					"id": "SS6",
+					"group": 0,
+					"name": "Storage Silo Level 6",
+					"description": "Upgrade your Storage Silo to Level 6",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-storage.v2.png",
+					"prereq": "SS5",
+					"rules":
+					{
+						"b6lvl": 6
+					}
+				},
+				{
+					"order": 8,
+					"list": true,
+					"reward": [1280000, 1280000, 640000, 640000, 0],
+					"id": "SS8",
+					"group": 0,
+					"name": "Storage Silo Level 8",
+					"description": "Upgrade your Storage Silo to Level 8",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-storage.v2.png",
+					"prereq": "SS7",
+					"rules":
+					{
+						"b6lvl": 8
+					}
+				},
+				{
+					"order": 10,
+					"list": true,
+					"reward": [2560000, 2560000, 1280000, 1280000, 0],
+					"id": "SS10",
+					"group": 0,
+					"name": "Storage Silo Level 10",
+					"description": "Upgrade your Storage Silo to Level 10",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-storage.v2.png",
+					"prereq": "SS9",
+					"rules":
+					{
+						"b6lvl": 10
+					}
+				},
+				{
+					"order": 12,
+					"list": true,
+					"reward": [5120000, 5120000, 2560000, 2560000, 0],
+					"id": "SS12",
+					"group": 0,
+					"name": "Storage Silo Level 12",
+					"description": "Upgrade your Storage Silo to Level 12",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-storage.v2.png",
+					"prereq": "SS10",
+					"rules":
+					{
+						"b6lvl": 12
+					}
+				},
+				{
+					"order": 14,
+					"list": true,
+					"reward": [10240000, 10240000, 5120000, 5120000, 0],
+					"id": "SS14",
+					"group": 0,
+					"name": "Storage Silo Level 14",
+					"description": "Upgrade your Storage Silo to Level 14",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-storage.v2.png",
+					"prereq": "SS12",
+					"rules":
+					{
+						"b6lvl": 14
+					}
+				},
+				{
+					"order": 16,
+					"list": true,
+					"reward": [20480000, 20480000, 10240000, 10240000, 0],
+					"id": "SS16",
+					"group": 0,
+					"name": "Storage Silo Level 16",
+					"description": "Upgrade your Storage Silo to Level 16",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-storage.v2.png",
+					"prereq": "SS14",
+					"rules":
+					{
+						"b6lvl": 16
+					}
+				},
+				{
+					"order": 18,
+					"list": true,
+					"reward": [40960000, 40960000, 20480000, 20480000, 0],
+					"id": "SS18",
+					"group": 0,
+					"name": "Storage Silo Level 18",
+					"description": "Upgrade your Storage Silo to Level 18",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-storage.v2.png",
+					"prereq": "SS16",
+					"rules":
+					{
+						"b6lvl": 18
+					}
+				},
+				{
+					"order": 20,
+					"list": true,
+					"reward": [81920000, 81920000, 40960000, 40960000, 0],
+					"id": "SS20",
+					"group": 0,
+					"name": "Storage Silo Level 20",
+					"description": "Upgrade your Storage Silo to Level 20",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-storage.v2.png",
+					"prereq": "SS18",
+					"rules":
+					{
+						"b6lvl": 20
+					}
+				},
+				{
+					"order": 21,
+					"list": true,
+					"reward": [100000000, 100000000, 50000000, 50000000, 0],
+					"id": "SS21",
+					"group": 0,
+					"name": "Storage Silo Level 21",
+					"description": "Upgrade your Storage Silo to Level 21",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-storage.v2.png",
+					"prereq": "SS20",
+					"rules":
+					{
+						"b6lvl": 21
+					}
+				},
+				{
+					"order": 22,
+					"list": true,
+					"reward": [200000000, 200000000, 100000000, 100000000, 0],
+					"id": "SS22",
+					"group": 0,
+					"name": "Storage Silo Level 22",
+					"description": "Upgrade your Storage Silo to Level 22",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-storage.v2.png",
+					"prereq": "SS21",
+					"rules":
+					{
+						"b6lvl": 22
+					}
+				},
+				{
+					"order": 23,
+					"list": true,
+					"reward": [400000000, 400000000, 200000000, 200000000, 0],
+					"id": "SS23",
+					"group": 0,
+					"name": "Storage Silo Level 23",
+					"description": "Upgrade your Storage Silo to Level 23",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-storage.v2.png",
+					"prereq": "SS22",
+					"rules":
+					{
+						"b6lvl": 23
+					}
+				},
+				{
+					"order": 24,
+					"list": true,
+					"reward": [800000000, 800000000, 400000000, 400000000, 0],
+					"id": "SS24",
+					"group": 0,
+					"name": "Storage Silo Level 24",
+					"description": "Upgrade your Storage Silo to Level 24",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-storage.v2.png",
+					"prereq": "SS23",
+					"rules":
+					{
+						"b6lvl": 24
+					}
+				},
+				{
+					"order": 25,
 					"list": true,
 					"reward": [1600000000, 1600000000, 800000000, 800000000, 0],
 					"id": "SS25",
@@ -1387,19 +772,1975 @@ package
 					}
 				},
 				{
-					"order": 12514,
+					"order": 3,
 					"list": true,
-					"reward": [20000000000, 20000000000, 20000000000, 20000000000, 0],
-					"id": "TH25",
+					"reward": [20000, 0, 0, 0, 0],
+					"id": "TW3",
 					"group": 0,
-					"name": "Town Hall Level 25",
-					"description": "Upgrade your Town Hall to Level 25",
+					"name": "Level 3 Twig Snapper",
+					"description": "Upgrade your Twig Snapper to Level 3",
 					"hint": "You can speed up upgrades.",
-					"questimage": "townhall_20.png",
-					"prereq": "TH24",
+					"questimage": "resourcetwigs.png",
 					"rules":
 					{
-						"b14lvl": 25
+						"b1lvl": 3
+					}
+				},
+				{
+					"order": 4,
+					"list": true,
+					"reward": [40000, 0, 0, 0, 0],
+					"id": "TW4",
+					"group": 0,
+					"name": "Level 3 Twig Snapper",
+					"description": "Upgrade your Twig Snapper to Level 3",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourcetwigs.png",
+					"prereq": "TW3",
+					"rules":
+					{
+						"b1lvl": 4
+					}
+				},
+				{
+					"order": 6,
+					"list": true,
+					"reward": [200000, 0, 0, 0, 0],
+					"id": "TW6",
+					"group": 0,
+					"name": "Level 6 Twig Snapper",
+					"description": "Upgrade your Twig Snapper to Level 6",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourcetwigs.png",
+					"prereq": "TW4",
+					"rules":
+					{
+						"b1lvl": 6
+					}
+				},
+				{
+					"order": 8,
+					"list": true,
+					"reward": [2000000, 0, 0, 0, 0],
+					"id": "TW8",
+					"group": 0,
+					"name": "Level 8 Twig Snapper",
+					"description": "Upgrade your Twig Snapper to Level 8",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourcetwigs.png",
+					"prereq": "TW6",
+					"rules":
+					{
+						"b1lvl": 8
+					}
+				},
+				{
+					"order": 10,
+					"list": true,
+					"reward": [20000000, 0, 0, 0, 0],
+					"id": "TW10",
+					"group": 0,
+					"name": "Level 10 Twig Snapper",
+					"description": "Upgrade your Twig Snapper to Level 10",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourcetwigs.png",
+					"prereq": "TW8",
+					"rules":
+					{
+						"b1lvl": 10
+					}
+				},
+				{
+					"order": 12,
+					"list": true,
+					"reward": [40000000, 0, 0, 0, 0],
+					"id": "TW12",
+					"group": 0,
+					"name": "Level 12 Twig Snapper",
+					"description": "Upgrade your Twig Snapper to Level 12",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourcetwigs.png",
+					"prereq": "TW10",
+					"rules":
+					{
+						"b1lvl": 12
+					}
+				},
+				{
+					"order": 14,
+					"list": true,
+					"reward": [80000000, 0, 0, 0, 0],
+					"id": "TW14",
+					"group": 0,
+					"name": "Level 14 Twig Snapper",
+					"description": "Upgrade your Twig Snapper to Level 14",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourcetwigs.png",
+					"prereq": "TW12",
+					"rules":
+					{
+						"b1lvl": 14
+					}
+				},
+				{
+					"order": 16,
+					"list": true,
+					"reward": [160000000, 0, 0, 0, 0],
+					"id": "TW16",
+					"group": 0,
+					"name": "Level 16 Twig Snapper",
+					"description": "Upgrade your Twig Snapper to Level 16",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourcetwigs.png",
+					"prereq": "TW14",
+					"rules":
+					{
+						"b1lvl": 16
+					}
+				},
+				{
+					"order": 18,
+					"list": true,
+					"reward": [320000000, 0, 0, 0, 0],
+					"id": "TW18",
+					"group": 0,
+					"name": "Level 18 Twig Snapper",
+					"description": "Upgrade your Twig Snapper to Level 18",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourcetwigs.png",
+					"prereq": "TW16",
+					"rules":
+					{
+						"b1lvl": 18
+					}
+				},
+				{
+					"order": 20,
+					"list": true,
+					"reward": [640000000, 0, 0, 0, 0],
+					"id": "TW20",
+					"group": 0,
+					"name": "Level 20 Twig Snapper",
+					"description": "Upgrade your Twig Snapper to Level 20",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourcetwigs.png",
+					"prereq": "TW18",
+					"rules":
+					{
+						"b1lvl": 20
+					}
+				},
+				{
+					"order": 3,
+					"list": true,
+					"reward": [0, 20000, 0, 0, 0],
+					"id": "PE3",
+					"group": 0,
+					"name": "Level 3 Pebble Shiner",
+					"description": "Upgrade your Pebble Shiner to Level 3",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourcepebbles.png",
+					"rules":
+					{
+						"b2lvl": 3
+					}
+				},
+				{
+					"order": 4,
+					"list": true,
+					"reward": [0, 40000, 0, 0, 0],
+					"id": "PE4",
+					"group": 0,
+					"name": "Level 3 Pebble Shiner",
+					"description": "Upgrade your Pebble Shiner to Level 3",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourcepebbles.png",
+					"prereq": "PE3",
+					"rules":
+					{
+						"b2lvl": 4
+					}
+				},
+				{
+					"order": 6,
+					"list": true,
+					"reward": [0, 200000, 0, 0, 0],
+					"id": "PE6",
+					"group": 0,
+					"name": "Level 6 Pebble Shiner",
+					"description": "Upgrade your Pebble Shiner to Level 6",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourcepebbles.png",
+					"prereq": "PE4",
+					"rules":
+					{
+						"b2lvl": 6
+					}
+				},
+				{
+					"order": 8,
+					"list": true,
+					"reward": [0, 2000000, 0, 0, 0],
+					"id": "PE8",
+					"group": 0,
+					"name": "Level 8 Pebble Shiner",
+					"description": "Upgrade your Pebble Shiner to Level 8",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourcepebbles.png",
+					"prereq": "PE6",
+					"rules":
+					{
+						"b2lvl": 8
+					}
+				},
+				{
+					"order": 10,
+					"list": true,
+					"reward": [0, 20000000, 0, 0, 0],
+					"id": "PE10",
+					"group": 0,
+					"name": "Level 10 Pebble Shiner",
+					"description": "Upgrade your Pebble Shiner to Level 10",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourcepebbles.png",
+					"prereq": "PE8",
+					"rules":
+					{
+						"b2lvl": 10
+					}
+				},
+				{
+					"order": 12,
+					"list": true,
+					"reward": [0, 40000000, 0, 0, 0],
+					"id": "PE12",
+					"group": 0,
+					"name": "Level 12 Pebble Shiner",
+					"description": "Upgrade your Pebble Shiner to Level 12",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourcepebbles.png",
+					"prereq": "PE10",
+					"rules":
+					{
+						"b2lvl": 12
+					}
+				},
+				{
+					"order": 14,
+					"list": true,
+					"reward": [0, 80000000, 0, 0, 0],
+					"id": "PE14",
+					"group": 0,
+					"name": "Level 14 Pebble Shiner",
+					"description": "Upgrade your Pebble Shiner to Level 14",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourcepebbles.png",
+					"prereq": "PE12",
+					"rules":
+					{
+						"b2lvl": 14
+					}
+				},
+				{
+					"order": 16,
+					"list": true,
+					"reward": [0, 160000000, 0, 0, 0],
+					"id": "PE16",
+					"group": 0,
+					"name": "Level 16 Pebble Shiner",
+					"description": "Upgrade your Pebble Shiner to Level 16",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourcepebbles.png",
+					"prereq": "PE14",
+					"rules":
+					{
+						"b2lvl": 16
+					}
+				},
+				{
+					"order": 18,
+					"list": true,
+					"reward": [0, 320000000, 0, 0, 0],
+					"id": "PE18",
+					"group": 0,
+					"name": "Level 18 Pebble Shiner",
+					"description": "Upgrade your Pebble Shiner to Level 18",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourcepebbles.png",
+					"prereq": "PE16",
+					"rules":
+					{
+						"b2lvl": 18
+					}
+				},
+				{
+					"order": 20,
+					"list": true,
+					"reward": [0, 640000000, 0, 0, 0],
+					"id": "PE20",
+					"group": 0,
+					"name": "Level 20 Pebble Shiner",
+					"description": "Upgrade your Pebble Shiner to Level 20",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourcepebbles.png",
+					"prereq": "PE18",
+					"rules":
+					{
+						"b2lvl": 20
+					}
+				},
+				{
+					"order": 3,
+					"list": true,
+					"reward": [0, 0, 20000, 0, 0],
+					"id": "PU3",
+					"group": 0,
+					"name": "Level 3 Putty Squisher",
+					"description": "Upgrade your Putty Squisher to Level 3",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourceputty.png",
+					"rules":
+					{
+						"b3lvl": 3
+					}
+				},
+				{
+					"order": 4,
+					"list": true,
+					"reward": [0, 0, 40000, 0, 0],
+					"id": "PU4",
+					"group": 0,
+					"name": "Level 3 Putty Squisher",
+					"description": "Upgrade your Putty Squisher to Level 3",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourceputty.png",
+					"prereq": "PU3",
+					"rules":
+					{
+						"b3lvl": 4
+					}
+				},
+				{
+					"order": 6,
+					"list": true,
+					"reward": [0, 0, 200000, 0, 0],
+					"id": "PU6",
+					"group": 0,
+					"name": "Level 6 Putty Squisher",
+					"description": "Upgrade your Putty Squisher to Level 6",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourceputty.png",
+					"prereq": "PU4",
+					"rules":
+					{
+						"b3lvl": 6
+					}
+				},
+				{
+					"order": 8,
+					"list": true,
+					"reward": [0, 0, 2000000, 0, 0],
+					"id": "PU8",
+					"group": 0,
+					"name": "Level 8 Putty Squisher",
+					"description": "Upgrade your Putty Squisher to Level 8",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourceputty.png",
+					"prereq": "PU6",
+					"rules":
+					{
+						"b3lvl": 8
+					}
+				},
+				{
+					"order": 10,
+					"list": true,
+					"reward": [0, 0, 20000000, 0, 0],
+					"id": "PU10",
+					"group": 0,
+					"name": "Level 10 Putty Squisher",
+					"description": "Upgrade your Putty Squisher to Level 10",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourceputty.png",
+					"prereq": "PU8",
+					"rules":
+					{
+						"b3lvl": 10
+					}
+				},
+				{
+					"order": 12,
+					"list": true,
+					"reward": [0, 0, 40000000, 0, 0],
+					"id": "PU12",
+					"group": 0,
+					"name": "Level 12 Putty Squisher",
+					"description": "Upgrade your Putty Squisher to Level 12",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourceputty.png",
+					"prereq": "PU10",
+					"rules":
+					{
+						"b3lvl": 12
+					}
+				},
+				{
+					"order": 14,
+					"list": true,
+					"reward": [0, 0, 80000000, 0, 0],
+					"id": "PU14",
+					"group": 0,
+					"name": "Level 14 Putty Squisher",
+					"description": "Upgrade your Putty Squisher to Level 14",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourceputty.png",
+					"prereq": "PU12",
+					"rules":
+					{
+						"b3lvl": 14
+					}
+				},
+				{
+					"order": 16,
+					"list": true,
+					"reward": [0, 0, 160000000, 0, 0],
+					"id": "PU16",
+					"group": 0,
+					"name": "Level 16 Putty Squisher",
+					"description": "Upgrade your Putty Squisher to Level 16",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourceputty.png",
+					"prereq": "PU14",
+					"rules":
+					{
+						"b3lvl": 16
+					}
+				},
+				{
+					"order": 18,
+					"list": true,
+					"reward": [0, 0, 320000000, 0, 0],
+					"id": "PU18",
+					"group": 0,
+					"name": "Level 18 Putty Squisher",
+					"description": "Upgrade your Putty Squisher to Level 18",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourceputty.png",
+					"prereq": "PU16",
+					"rules":
+					{
+						"b3lvl": 18
+					}
+				},
+				{
+					"order": 20,
+					"list": true,
+					"reward": [0, 0, 640000000, 0, 0],
+					"id": "PU20",
+					"group": 0,
+					"name": "Level 20 Putty Squisher",
+					"description": "Upgrade your Putty Squisher to Level 20",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourceputty.png",
+					"prereq": "PU18",
+					"rules":
+					{
+						"b3lvl": 20
+					}
+				},
+				{
+					"order": 3,
+					"list": true,
+					"reward": [0, 0, 0, 20000, 0],
+					"id": "GO3",
+					"group": 0,
+					"name": "Level 3 Goo Factory",
+					"description": "Upgrade your Goo Factory to Level 3",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourcegoo.png",
+					"rules":
+					{
+						"b4lvl": 3
+					}
+				},
+				{
+					"order": 4,
+					"list": true,
+					"reward": [0, 0, 0, 40000, 0],
+					"id": "GO4",
+					"group": 0,
+					"name": "Level 3 Goo Factory",
+					"description": "Upgrade your Goo Factory to Level 3",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourcegoo.png",
+					"prereq": "GO3",
+					"rules":
+					{
+						"b4lvl": 4
+					}
+				},
+				{
+					"order": 6,
+					"list": true,
+					"reward": [0, 0, 0, 200000, 0],
+					"id": "GO6",
+					"group": 0,
+					"name": "Level 6 Goo Factory",
+					"description": "Upgrade your Goo Factory to Level 6",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourcegoo.png",
+					"prereq": "GO4",
+					"rules":
+					{
+						"b4lvl": 6
+					}
+				},
+				{
+					"order": 8,
+					"list": true,
+					"reward": [0, 0, 0, 2000000, 0],
+					"id": "GO8",
+					"group": 0,
+					"name": "Level 8 Goo Factory",
+					"description": "Upgrade your Goo Factory to Level 8",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourcegoo.png",
+					"prereq": "GO6",
+					"rules":
+					{
+						"b4lvl": 8
+					}
+				},
+				{
+					"order": 10,
+					"list": true,
+					"reward": [0, 0, 0, 20000000, 0],
+					"id": "GO10",
+					"group": 0,
+					"name": "Level 10 Goo Factory",
+					"description": "Upgrade your Goo Factory to Level 10",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourcegoo.png",
+					"prereq": "GO8",
+					"rules":
+					{
+						"b4lvl": 10
+					}
+				},
+				{
+					"order": 12,
+					"list": true,
+					"reward": [0, 0, 0, 40000000, 0],
+					"id": "GO12",
+					"group": 0,
+					"name": "Level 12 Goo Factory",
+					"description": "Upgrade your Goo Factory to Level 12",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourcegoo.png",
+					"prereq": "GO10",
+					"rules":
+					{
+						"b4lvl": 12
+					}
+				},
+				{
+					"order": 14,
+					"list": true,
+					"reward": [0, 0, 0, 80000000, 0],
+					"id": "GO14",
+					"group": 0,
+					"name": "Level 14 Goo Factory",
+					"description": "Upgrade your Goo Factory to Level 14",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourcegoo.png",
+					"prereq": "GO12",
+					"rules":
+					{
+						"b4lvl": 14
+					}
+				},
+				{
+					"order": 16,
+					"list": true,
+					"reward": [0, 0, 0, 160000000, 0],
+					"id": "GO16",
+					"group": 0,
+					"name": "Level 16 Goo Factory",
+					"description": "Upgrade your Goo Factory to Level 16",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourcegoo.png",
+					"prereq": "GO14",
+					"rules":
+					{
+						"b4lvl": 16
+					}
+				},
+				{
+					"order": 18,
+					"list": true,
+					"reward": [0, 0, 0, 320000000, 0],
+					"id": "GO18",
+					"group": 0,
+					"name": "Level 18 Goo Factory",
+					"description": "Upgrade your Goo Factory to Level 18",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourcegoo.png",
+					"prereq": "GO16",
+					"rules":
+					{
+						"b4lvl": 18
+					}
+				},
+				{
+					"order": 20,
+					"list": true,
+					"reward": [0, 0, 0, 640000000, 0],
+					"id": "GO20",
+					"group": 0,
+					"name": "Level 20 Goo Factory",
+					"description": "Upgrade your Goo Factory to Level 20",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourcegoo.png",
+					"prereq": "GO18",
+					"rules":
+					{
+						"b4lvl": 20
+					}
+				},
+				{
+					"order": 1,
+					"list": true,
+					"reward": [200000, 200000, 100000, 100000, 0],
+					"id": "ST1",
+					"group": 0,
+					"name": "Sniper Tower",
+					"description": "Build Sniper Tower",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-sniper.png",
+					"rules":
+					{
+						"b21lvl": 1
+					}
+				},
+				{
+					"order": 2,
+					"list": true,
+					"reward": [400000, 400000, 200000, 200000, 0],
+					"id": "ST2",
+					"group": 0,
+					"name": "Sniper Tower Level 2",
+					"description": "Upgrade your Sniper Tower to Level 2",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-sniper.png",
+					"prereq": "ST1",
+					"rules":
+					{
+						"b21lvl": 2
+					}
+				},
+				{
+					"order": 3,
+					"list": true,
+					"reward": [800000, 800000, 400000, 400000, 0],
+					"id": "ST3",
+					"group": 0,
+					"name": "Sniper Tower Level 3",
+					"description": "Upgrade your Sniper Tower to Level 3",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-sniper.png",
+					"prereq": "ST2",
+					"rules":
+					{
+						"b21lvl": 3
+					}
+				},
+				{
+					"order": 4,
+					"list": true,
+					"reward": [1600000, 1600000, 800000, 800000, 0],
+					"id": "ST4",
+					"group": 0,
+					"name": "Sniper Tower Level 4",
+					"description": "Upgrade your Sniper Tower to Level 4",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-sniper.png",
+					"prereq": "ST3",
+					"rules":
+					{
+						"b21lvl": 4
+					}
+				},
+				{
+					"order": 5,
+					"list": true,
+					"reward": [3200000, 3200000, 1600000, 1600000, 0],
+					"id": "ST5",
+					"group": 0,
+					"name": "Sniper Tower Level 5",
+					"description": "Upgrade your Sniper Tower to Level 5",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-sniper.png",
+					"prereq": "ST4",
+					"rules":
+					{
+						"b21lvl": 5
+					}
+				},
+				{
+					"order": 6,
+					"list": true,
+					"reward": [6400000, 6400000, 3200000, 3200000, 0],
+					"id": "ST6",
+					"group": 0,
+					"name": "Sniper Tower Level 6",
+					"description": "Upgrade your Sniper Tower to Level 6",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-sniper.png",
+					"prereq": "ST5",
+					"rules":
+					{
+						"b21lvl": 6
+					}
+				},
+				{
+					"order": 8,
+					"list": true,
+					"reward": [12800000, 12800000, 6400000, 6400000, 0],
+					"id": "ST8",
+					"group": 0,
+					"name": "Sniper Tower Level 8",
+					"description": "Upgrade your Sniper Tower to Level 8",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-sniper.png",
+					"prereq": "ST7",
+					"rules":
+					{
+						"b21lvl": 8
+					}
+				},
+				{
+					"order": 10,
+					"list": true,
+					"reward": [25600000, 25600000, 12800000, 12800000, 0],
+					"id": "ST10",
+					"group": 0,
+					"name": "Sniper Tower Level 10",
+					"description": "Upgrade your Sniper Tower to Level 10",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-sniper.png",
+					"prereq": "ST9",
+					"rules":
+					{
+						"b21lvl": 10
+					}
+				},
+				{
+					"order": 12,
+					"list": true,
+					"reward": [51200000, 51200000, 25600000, 25600000, 0],
+					"id": "ST12",
+					"group": 0,
+					"name": "Sniper Tower Level 12",
+					"description": "Upgrade your Sniper Tower to Level 12",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-sniper.png",
+					"prereq": "ST10",
+					"rules":
+					{
+						"b21lvl": 12
+					}
+				},
+				{
+					"order": 14,
+					"list": true,
+					"reward": [102400000, 102400000, 51200000, 51200000, 0],
+					"id": "ST14",
+					"group": 0,
+					"name": "Sniper Tower Level 14",
+					"description": "Upgrade your Sniper Tower to Level 14",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-sniper.png",
+					"prereq": "ST12",
+					"rules":
+					{
+						"b21lvl": 14
+					}
+				},
+				{
+					"order": 16,
+					"list": true,
+					"reward": [204800000, 204800000, 102400000, 102400000, 0],
+					"id": "ST16",
+					"group": 0,
+					"name": "Sniper Tower Level 16",
+					"description": "Upgrade your Sniper Tower to Level 16",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-sniper.png",
+					"prereq": "ST14",
+					"rules":
+					{
+						"b21lvl": 16
+					}
+				},
+				{
+					"order": 1,
+					"list": true,
+					"reward": [200000, 200000, 100000, 100000, 0],
+					"id": "CT1",
+					"group": 0,
+					"name": "Cannon Tower",
+					"description": "Build Cannon Tower",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-cannon.png",
+					"rules":
+					{
+						"b20lvl": 1
+					}
+				},
+				{
+					"order": 2,
+					"list": true,
+					"reward": [400000, 400000, 200000, 200000, 0],
+					"id": "CT2",
+					"group": 0,
+					"name": "Cannon Tower Level 2",
+					"description": "Upgrade your Cannon Tower to Level 2",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-cannon.png",
+					"prereq": "CT1",
+					"rules":
+					{
+						"b20lvl": 2
+					}
+				},
+				{
+					"order": 3,
+					"list": true,
+					"reward": [800000, 800000, 400000, 400000, 0],
+					"id": "CT3",
+					"group": 0,
+					"name": "Cannon Tower Level 3",
+					"description": "Upgrade your Cannon Tower to Level 3",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-cannon.png",
+					"prereq": "CT2",
+					"rules":
+					{
+						"b20lvl": 3
+					}
+				},
+				{
+					"order": 4,
+					"list": true,
+					"reward": [1600000, 1600000, 800000, 800000, 0],
+					"id": "CT4",
+					"group": 0,
+					"name": "Cannon Tower Level 4",
+					"description": "Upgrade your Cannon Tower to Level 4",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-cannon.png",
+					"prereq": "CT3",
+					"rules":
+					{
+						"b20lvl": 4
+					}
+				},
+				{
+					"order": 5,
+					"list": true,
+					"reward": [3200000, 3200000, 1600000, 1600000, 0],
+					"id": "CT5",
+					"group": 0,
+					"name": "Cannon Tower Level 5",
+					"description": "Upgrade your Cannon Tower to Level 5",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-cannon.png",
+					"prereq": "CT4",
+					"rules":
+					{
+						"b20lvl": 5
+					}
+				},
+				{
+					"order": 6,
+					"list": true,
+					"reward": [6400000, 6400000, 3200000, 3200000, 0],
+					"id": "CT6",
+					"group": 0,
+					"name": "Cannon Tower Level 6",
+					"description": "Upgrade your Cannon Tower to Level 6",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-cannon.png",
+					"prereq": "CT5",
+					"rules":
+					{
+						"b20lvl": 6
+					}
+				},
+				{
+					"order": 8,
+					"list": true,
+					"reward": [12800000, 12800000, 6400000, 6400000, 0],
+					"id": "CT8",
+					"group": 0,
+					"name": "Cannon Tower Level 8",
+					"description": "Upgrade your Cannon Tower to Level 8",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-cannon.png",
+					"prereq": "CT7",
+					"rules":
+					{
+						"b20lvl": 8
+					}
+				},
+				{
+					"order": 10,
+					"list": true,
+					"reward": [25600000, 25600000, 12800000, 12800000, 0],
+					"id": "CT10",
+					"group": 0,
+					"name": "Cannon Tower Level 10",
+					"description": "Upgrade your Cannon Tower to Level 10",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-cannon.png",
+					"prereq": "CT9",
+					"rules":
+					{
+						"b20lvl": 10
+					}
+				},
+				{
+					"order": 12,
+					"list": true,
+					"reward": [51200000, 51200000, 25600000, 25600000, 0],
+					"id": "CT12",
+					"group": 0,
+					"name": "Cannon Tower Level 12",
+					"description": "Upgrade your Cannon Tower to Level 12",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-cannon.png",
+					"prereq": "CT10",
+					"rules":
+					{
+						"b20lvl": 12
+					}
+				},
+				{
+					"order": 14,
+					"list": true,
+					"reward": [102400000, 102400000, 51200000, 51200000, 0],
+					"id": "CT14",
+					"group": 0,
+					"name": "Cannon Tower Level 14",
+					"description": "Upgrade your Cannon Tower to Level 14",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-cannon.png",
+					"prereq": "CT12",
+					"rules":
+					{
+						"b20lvl": 14
+					}
+				},
+				{
+					"order": 16,
+					"list": true,
+					"reward": [204800000, 204800000, 102400000, 102400000, 0],
+					"id": "CT16",
+					"group": 0,
+					"name": "Cannon Tower Level 16",
+					"description": "Upgrade your Cannon Tower to Level 16",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-cannon.png",
+					"prereq": "CT14",
+					"rules":
+					{
+						"b20lvl": 16
+					}
+				},
+								{
+					"order": 1,
+					"list": true,
+					"reward": [200000, 200000, 100000, 100000, 0],
+					"id": "SHARP1",
+					"group": 0,
+					"name": "Sharpshooter",
+					"description": "Build Sharpshooter",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-sharpshooter.png",
+					"rules":
+					{
+						"b143lvl": 1
+					}
+				},
+				{
+					"order": 2,
+					"list": true,
+					"reward": [400000, 400000, 200000, 200000, 0],
+					"id": "SHARP2",
+					"group": 0,
+					"name": "Sharpshooter Level 2",
+					"description": "Upgrade your Sharpshooter to Level 2",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-sharpshooter.png",
+					"prereq": "SHARP1",
+					"rules":
+					{
+						"b143lvl": 2
+					}
+				},
+				{
+					"order": 3,
+					"list": true,
+					"reward": [800000, 800000, 400000, 400000, 0],
+					"id": "SHARP3",
+					"group": 0,
+					"name": "Sharpshooter Level 3",
+					"description": "Upgrade your Sharpshooter to Level 3",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-sharpshooter.png",
+					"prereq": "SHARP2",
+					"rules":
+					{
+						"b143lvl": 3
+					}
+				},
+				{
+					"order": 4,
+					"list": true,
+					"reward": [1600000, 1600000, 800000, 800000, 0],
+					"id": "SHARP4",
+					"group": 0,
+					"name": "Sharpshooter Level 4",
+					"description": "Upgrade your Sharpshooter to Level 4",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-sharpshooter.png",
+					"prereq": "SHARP3",
+					"rules":
+					{
+						"b143lvl": 4
+					}
+				},
+				{
+					"order": 5,
+					"list": true,
+					"reward": [3200000, 3200000, 1600000, 1600000, 0],
+					"id": "SHARP5",
+					"group": 0,
+					"name": "Sharpshooter Level 5",
+					"description": "Upgrade your Sharpshooter to Level 5",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-sharpshooter.png",
+					"prereq": "SHARP4",
+					"rules":
+					{
+						"b143lvl": 5
+					}
+				},
+				{
+					"order": 6,
+					"list": true,
+					"reward": [6400000, 6400000, 3200000, 3200000, 0],
+					"id": "SHARP6",
+					"group": 0,
+					"name": "Sharpshooter Level 6",
+					"description": "Upgrade your Sharpshooter to Level 6",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-sharpshooter.png",
+					"prereq": "SHARP5",
+					"rules":
+					{
+						"b143lvl": 6
+					}
+				},
+				{
+					"order": 8,
+					"list": true,
+					"reward": [12800000, 12800000, 6400000, 6400000, 0],
+					"id": "SHARP8",
+					"group": 0,
+					"name": "Sharpshooter Level 8",
+					"description": "Upgrade your Sharpshooter to Level 8",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-sharpshooter.png",
+					"prereq": "SHARP7",
+					"rules":
+					{
+						"b143lvl": 8
+					}
+				},
+				{
+					"order": 10,
+					"list": true,
+					"reward": [25600000, 25600000, 12800000, 12800000, 0],
+					"id": "SHARP10",
+					"group": 0,
+					"name": "Sharpshooter Level 10",
+					"description": "Upgrade your Sharpshooter to Level 10",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-sharpshooter.png",
+					"prereq": "SHARP9",
+					"rules":
+					{
+						"b143lvl": 10
+					}
+				},
+				{
+					"order": 12,
+					"list": true,
+					"reward": [51200000, 51200000, 25600000, 25600000, 0],
+					"id": "SHARP12",
+					"group": 0,
+					"name": "Sharpshooter Level 12",
+					"description": "Upgrade your Sharpshooter to Level 12",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-sharpshooter.png",
+					"prereq": "SHARP10",
+					"rules":
+					{
+						"b143lvl": 12
+					}
+				},
+				{
+					"order": 14,
+					"list": true,
+					"reward": [102400000, 102400000, 51200000, 51200000, 0],
+					"id": "SHARP14",
+					"group": 0,
+					"name": "Sharpshooter Level 14",
+					"description": "Upgrade your Sharpshooter to Level 14",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-sharpshooter.png",
+					"prereq": "SHARP12",
+					"rules":
+					{
+						"b143lvl": 14
+					}
+				},
+				{
+					"order": 16,
+					"list": true,
+					"reward": [204800000, 204800000, 102400000, 102400000, 0],
+					"id": "SHARP16",
+					"group": 0,
+					"name": "Sharpshooter Level 16",
+					"description": "Upgrade your Sharpshooter to Level 16",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-sharpshooter.png",
+					"prereq": "SHARP14",
+					"rules":
+					{
+						"b143lvl": 16
+					}
+				},
+				{
+					"order": 1,
+					"list": true,
+					"reward": [200000, 200000, 100000, 100000, 0],
+					"id": "BLAST1",
+					"group": 0,
+					"name": "Blast Tower",
+					"description": "Build Blast Tower",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-blast_tower.png",
+					"rules":
+					{
+						"b142lvl": 1
+					}
+				},
+				{
+					"order": 2,
+					"list": true,
+					"reward": [400000, 400000, 200000, 200000, 0],
+					"id": "BLAST2",
+					"group": 0,
+					"name": "Blast Tower Level 2",
+					"description": "Upgrade your Blast Tower to Level 2",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-blast_tower.png",
+					"prereq": "BLAST1",
+					"rules":
+					{
+						"b142lvl": 2
+					}
+				},
+				{
+					"order": 3,
+					"list": true,
+					"reward": [800000, 800000, 400000, 400000, 0],
+					"id": "BLAST3",
+					"group": 0,
+					"name": "Blast Tower Level 3",
+					"description": "Upgrade your Blast Tower to Level 3",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-blast_tower.png",
+					"prereq": "BLAST2",
+					"rules":
+					{
+						"b142lvl": 3
+					}
+				},
+				{
+					"order": 4,
+					"list": true,
+					"reward": [1600000, 1600000, 800000, 800000, 0],
+					"id": "BLAST4",
+					"group": 0,
+					"name": "Blast Tower Level 4",
+					"description": "Upgrade your Blast Tower to Level 4",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-blast_tower.png",
+					"prereq": "BLAST3",
+					"rules":
+					{
+						"b142lvl": 4
+					}
+				},
+				{
+					"order": 5,
+					"list": true,
+					"reward": [3200000, 3200000, 1600000, 1600000, 0],
+					"id": "BLAST5",
+					"group": 0,
+					"name": "Blast Tower Level 5",
+					"description": "Upgrade your Blast Tower to Level 5",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-blast_tower.png",
+					"prereq": "BLAST4",
+					"rules":
+					{
+						"b142lvl": 5
+					}
+				},
+				{
+					"order": 6,
+					"list": true,
+					"reward": [6400000, 6400000, 3200000, 3200000, 0],
+					"id": "BLAST6",
+					"group": 0,
+					"name": "Blast Tower Level 6",
+					"description": "Upgrade your Blast Tower to Level 6",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-blast_tower.png",
+					"prereq": "BLAST5",
+					"rules":
+					{
+						"b142lvl": 6
+					}
+				},
+				{
+					"order": 8,
+					"list": true,
+					"reward": [12800000, 12800000, 6400000, 6400000, 0],
+					"id": "BLAST8",
+					"group": 0,
+					"name": "Blast Tower Level 8",
+					"description": "Upgrade your Blast Tower to Level 8",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-blast_tower.png",
+					"prereq": "BLAST7",
+					"rules":
+					{
+						"b142lvl": 8
+					}
+				},
+				{
+					"order": 10,
+					"list": true,
+					"reward": [25600000, 25600000, 12800000, 12800000, 0],
+					"id": "BLAST10",
+					"group": 0,
+					"name": "Blast Tower Level 10",
+					"description": "Upgrade your Blast Tower to Level 10",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-blast_tower.png",
+					"prereq": "BLAST9",
+					"rules":
+					{
+						"b142lvl": 10
+					}
+				},
+				{
+					"order": 12,
+					"list": true,
+					"reward": [51200000, 51200000, 25600000, 25600000, 0],
+					"id": "BLAST12",
+					"group": 0,
+					"name": "Blast Tower Level 12",
+					"description": "Upgrade your Blast Tower to Level 12",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-blast_tower.png",
+					"prereq": "BLAST10",
+					"rules":
+					{
+						"b142lvl": 12
+					}
+				},
+				{
+					"order": 14,
+					"list": true,
+					"reward": [102400000, 102400000, 51200000, 51200000, 0],
+					"id": "BLAST14",
+					"group": 0,
+					"name": "Blast Tower Level 14",
+					"description": "Upgrade your Blast Tower to Level 14",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-blast_tower.png",
+					"prereq": "BLAST12",
+					"rules":
+					{
+						"b142lvl": 14
+					}
+				},
+				{
+					"order": 16,
+					"list": true,
+					"reward": [204800000, 204800000, 102400000, 102400000, 0],
+					"id": "BLAST16",
+					"group": 0,
+					"name": "Blast Tower Level 16",
+					"description": "Upgrade your Blast Tower to Level 16",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-blast_tower.png",
+					"prereq": "BLAST14",
+					"rules":
+					{
+						"b142lvl": 16
+					}
+				},
+				{
+					"order": 1,
+					"list": true,
+					"reward": [200000, 200000, 100000, 100000, 0],
+					"id": "TESLA1",
+					"group": 0,
+					"name": "Tesla Tower",
+					"description": "Build Tesla Tower",
+					"hint": "You can speed up upgrades.",
+					"questimage": "tesla_tower.png",
+					"rules":
+					{
+						"b25lvl": 1
+					}
+				},
+				{
+					"order": 2,
+					"list": true,
+					"reward": [400000, 400000, 200000, 200000, 0],
+					"id": "TESLA2",
+					"group": 0,
+					"name": "Tesla Tower Level 2",
+					"description": "Upgrade your Tesla Tower to Level 2",
+					"hint": "You can speed up upgrades.",
+					"questimage": "tesla_tower.png",
+					"prereq": "TESLA1",
+					"rules":
+					{
+						"b25lvl": 2
+					}
+				},
+				{
+					"order": 3,
+					"list": true,
+					"reward": [800000, 800000, 400000, 400000, 0],
+					"id": "TESLA3",
+					"group": 0,
+					"name": "Tesla Tower Level 3",
+					"description": "Upgrade your Tesla Tower to Level 3",
+					"hint": "You can speed up upgrades.",
+					"questimage": "tesla_tower.png",
+					"prereq": "TESLA2",
+					"rules":
+					{
+						"b25lvl": 3
+					}
+				},
+				{
+					"order": 4,
+					"list": true,
+					"reward": [1600000, 1600000, 800000, 800000, 0],
+					"id": "TESLA4",
+					"group": 0,
+					"name": "Tesla Tower Level 4",
+					"description": "Upgrade your Tesla Tower to Level 4",
+					"hint": "You can speed up upgrades.",
+					"questimage": "tesla_tower.png",
+					"prereq": "TESLA3",
+					"rules":
+					{
+						"b25lvl": 4
+					}
+				},
+				{
+					"order": 5,
+					"list": true,
+					"reward": [3200000, 3200000, 1600000, 1600000, 0],
+					"id": "TESLA5",
+					"group": 0,
+					"name": "Tesla Tower Level 5",
+					"description": "Upgrade your Tesla Tower to Level 5",
+					"hint": "You can speed up upgrades.",
+					"questimage": "tesla_tower.png",
+					"prereq": "TESLA4",
+					"rules":
+					{
+						"b25lvl": 5
+					}
+				},
+				{
+					"order": 6,
+					"list": true,
+					"reward": [6400000, 6400000, 3200000, 3200000, 0],
+					"id": "TESLA6",
+					"group": 0,
+					"name": "Tesla Tower Level 6",
+					"description": "Upgrade your Tesla Tower to Level 6",
+					"hint": "You can speed up upgrades.",
+					"questimage": "tesla_tower.png",
+					"prereq": "TESLA5",
+					"rules":
+					{
+						"b25lvl": 6
+					}
+				},
+				{
+					"order": 8,
+					"list": true,
+					"reward": [12800000, 12800000, 6400000, 6400000, 0],
+					"id": "TESLA8",
+					"group": 0,
+					"name": "Tesla Tower Level 8",
+					"description": "Upgrade your Tesla Tower to Level 8",
+					"hint": "You can speed up upgrades.",
+					"questimage": "tesla_tower.png",
+					"prereq": "TESLA7",
+					"rules":
+					{
+						"b25lvl": 8
+					}
+				},
+				{
+					"order": 10,
+					"list": true,
+					"reward": [25600000, 25600000, 12800000, 12800000, 0],
+					"id": "TESLA10",
+					"group": 0,
+					"name": "Tesla Tower Level 10",
+					"description": "Upgrade your Tesla Tower to Level 10",
+					"hint": "You can speed up upgrades.",
+					"questimage": "tesla_tower.png",
+					"prereq": "TESLA9",
+					"rules":
+					{
+						"b25lvl": 10
+					}
+				},
+				{
+					"order": 12,
+					"list": true,
+					"reward": [51200000, 51200000, 25600000, 25600000, 0],
+					"id": "TESLA12",
+					"group": 0,
+					"name": "Tesla Tower Level 12",
+					"description": "Upgrade your Tesla Tower to Level 12",
+					"hint": "You can speed up upgrades.",
+					"questimage": "tesla_tower.png",
+					"prereq": "TESLA10",
+					"rules":
+					{
+						"b25lvl": 12
+					}
+				},
+				{
+					"order": 14,
+					"list": true,
+					"reward": [102400000, 102400000, 51200000, 51200000, 0],
+					"id": "TESLA14",
+					"group": 0,
+					"name": "Tesla Tower Level 14",
+					"description": "Upgrade your Tesla Tower to Level 14",
+					"hint": "You can speed up upgrades.",
+					"questimage": "tesla_tower.png",
+					"prereq": "TESLA12",
+					"rules":
+					{
+						"b25lvl": 14
+					}
+				},
+				{
+					"order": 1,
+					"list": true,
+					"reward": [200000, 200000, 100000, 100000, 0],
+					"id": "LASER1",
+					"group": 0,
+					"name": "Laser Tower",
+					"description": "Build Laser Tower",
+					"hint": "You can speed up upgrades.",
+					"questimage": "laser_tower.jpg",
+					"rules":
+					{
+						"b23lvl": 1
+					}
+				},
+				{
+					"order": 2,
+					"list": true,
+					"reward": [400000, 400000, 200000, 200000, 0],
+					"id": "LASER2",
+					"group": 0,
+					"name": "Laser Tower Level 2",
+					"description": "Upgrade your Laser Tower to Level 2",
+					"hint": "You can speed up upgrades.",
+					"questimage": "laser_tower.jpg",
+					"prereq": "LASER1",
+					"rules":
+					{
+						"b23lvl": 2
+					}
+				},
+				{
+					"order": 3,
+					"list": true,
+					"reward": [800000, 800000, 400000, 400000, 0],
+					"id": "LASER3",
+					"group": 0,
+					"name": "Laser Tower Level 3",
+					"description": "Upgrade your Laser Tower to Level 3",
+					"hint": "You can speed up upgrades.",
+					"questimage": "laser_tower.jpg",
+					"prereq": "LASER2",
+					"rules":
+					{
+						"b23lvl": 3
+					}
+				},
+				{
+					"order": 4,
+					"list": true,
+					"reward": [1600000, 1600000, 800000, 800000, 0],
+					"id": "LASER4",
+					"group": 0,
+					"name": "Laser Tower Level 4",
+					"description": "Upgrade your Laser Tower to Level 4",
+					"hint": "You can speed up upgrades.",
+					"questimage": "laser_tower.jpg",
+					"prereq": "LASER3",
+					"rules":
+					{
+						"b23lvl": 4
+					}
+				},
+				{
+					"order": 5,
+					"list": true,
+					"reward": [3200000, 3200000, 1600000, 1600000, 0],
+					"id": "LASER5",
+					"group": 0,
+					"name": "Laser Tower Level 5",
+					"description": "Upgrade your Laser Tower to Level 5",
+					"hint": "You can speed up upgrades.",
+					"questimage": "laser_tower.jpg",
+					"prereq": "LASER4",
+					"rules":
+					{
+						"b23lvl": 5
+					}
+				},
+				{
+					"order": 6,
+					"list": true,
+					"reward": [6400000, 6400000, 3200000, 3200000, 0],
+					"id": "LASER6",
+					"group": 0,
+					"name": "Laser Tower Level 6",
+					"description": "Upgrade your Laser Tower to Level 6",
+					"hint": "You can speed up upgrades.",
+					"questimage": "laser_tower.jpg",
+					"prereq": "LASER5",
+					"rules":
+					{
+						"b23lvl": 6
+					}
+				},
+				{
+					"order": 8,
+					"list": true,
+					"reward": [12800000, 12800000, 6400000, 6400000, 0],
+					"id": "LASER8",
+					"group": 0,
+					"name": "Laser Tower Level 8",
+					"description": "Upgrade your Laser Tower to Level 8",
+					"hint": "You can speed up upgrades.",
+					"questimage": "laser_tower.jpg",
+					"prereq": "LASER7",
+					"rules":
+					{
+						"b23lvl": 8
+					}
+				},
+				{
+					"order": 10,
+					"list": true,
+					"reward": [25600000, 25600000, 12800000, 12800000, 0],
+					"id": "LASER10",
+					"group": 0,
+					"name": "Laser Tower Level 10",
+					"description": "Upgrade your Laser Tower to Level 10",
+					"hint": "You can speed up upgrades.",
+					"questimage": "laser_tower.jpg",
+					"prereq": "LASER9",
+					"rules":
+					{
+						"b23lvl": 10
+					}
+				},
+				{
+					"order": 12,
+					"list": true,
+					"reward": [51200000, 51200000, 25600000, 25600000, 0],
+					"id": "LASER12",
+					"group": 0,
+					"name": "Laser Tower Level 12",
+					"description": "Upgrade your Laser Tower to Level 12",
+					"hint": "You can speed up upgrades.",
+					"questimage": "laser_tower.jpg",
+					"prereq": "LASER10",
+					"rules":
+					{
+						"b23lvl": 12
+					}
+				},
+				{
+					"order": 14,
+					"list": true,
+					"reward": [102400000, 102400000, 51200000, 51200000, 0],
+					"id": "LASER14",
+					"group": 0,
+					"name": "Laser Tower Level 14",
+					"description": "Upgrade your Laser Tower to Level 14",
+					"hint": "You can speed up upgrades.",
+					"questimage": "laser_tower.jpg",
+					"prereq": "LASER12",
+					"rules":
+					{
+						"b23lvl": 14
+					}
+				},
+				{
+					"order": 1,
+					"list": true,
+					"reward": [200000, 200000, 100000, 100000, 0],
+					"id": "RAILGUN1",
+					"group": 0,
+					"name": "Railgun",
+					"description": "Build Railgun",
+					"hint": "You can speed up upgrades.",
+					"questimage": "railgun.jpg",
+					"rules":
+					{
+						"b118lvl": 1
+					}
+				},
+				{
+					"order": 2,
+					"list": true,
+					"reward": [400000, 400000, 200000, 200000, 0],
+					"id": "RAILGUN2",
+					"group": 0,
+					"name": "Railgun Level 2",
+					"description": "Upgrade your Railgun to Level 2",
+					"hint": "You can speed up upgrades.",
+					"questimage": "railgun.jpg",
+					"prereq": "RAILGUN1",
+					"rules":
+					{
+						"b118lvl": 2
+					}
+				},
+				{
+					"order": 3,
+					"list": true,
+					"reward": [800000, 800000, 400000, 400000, 0],
+					"id": "RAILGUN3",
+					"group": 0,
+					"name": "Railgun Level 3",
+					"description": "Upgrade your Railgun to Level 3",
+					"hint": "You can speed up upgrades.",
+					"questimage": "railgun.jpg",
+					"prereq": "RAILGUN2",
+					"rules":
+					{
+						"b118lvl": 3
+					}
+				},
+				{
+					"order": 4,
+					"list": true,
+					"reward": [1600000, 1600000, 800000, 800000, 0],
+					"id": "RAILGUN4",
+					"group": 0,
+					"name": "Railgun Level 4",
+					"description": "Upgrade your Railgun to Level 4",
+					"hint": "You can speed up upgrades.",
+					"questimage": "railgun.jpg",
+					"prereq": "RAILGUN3",
+					"rules":
+					{
+						"b118lvl": 4
+					}
+				},
+				{
+					"order": 5,
+					"list": true,
+					"reward": [3200000, 3200000, 1600000, 1600000, 0],
+					"id": "RAILGUN5",
+					"group": 0,
+					"name": "Railgun Level 5",
+					"description": "Upgrade your Railgun to Level 5",
+					"hint": "You can speed up upgrades.",
+					"questimage": "railgun.jpg",
+					"prereq": "RAILGUN4",
+					"rules":
+					{
+						"b118lvl": 5
+					}
+				},
+				{
+					"order": 6,
+					"list": true,
+					"reward": [6400000, 6400000, 3200000, 3200000, 0],
+					"id": "RAILGUN6",
+					"group": 0,
+					"name": "Railgun Level 6",
+					"description": "Upgrade your Railgun to Level 6",
+					"hint": "You can speed up upgrades.",
+					"questimage": "railgun.jpg",
+					"prereq": "RAILGUN5",
+					"rules":
+					{
+						"b118lvl": 6
+					}
+				},
+				{
+					"order": 8,
+					"list": true,
+					"reward": [12800000, 12800000, 6400000, 6400000, 0],
+					"id": "RAILGUN8",
+					"group": 0,
+					"name": "Railgun Level 8",
+					"description": "Upgrade your Railgun to Level 8",
+					"hint": "You can speed up upgrades.",
+					"questimage": "railgun.jpg",
+					"prereq": "RAILGUN7",
+					"rules":
+					{
+						"b118lvl": 8
+					}
+				},
+				{
+					"order": 10,
+					"list": true,
+					"reward": [25600000, 25600000, 12800000, 12800000, 0],
+					"id": "RAILGUN10",
+					"group": 0,
+					"name": "Railgun Level 10",
+					"description": "Upgrade your Railgun to Level 10",
+					"hint": "You can speed up upgrades.",
+					"questimage": "railgun.jpg",
+					"prereq": "RAILGUN9",
+					"rules":
+					{
+						"b118lvl": 10
+					}
+				},
+				{
+					"order": 12,
+					"list": true,
+					"reward": [51200000, 51200000, 25600000, 25600000, 0],
+					"id": "RAILGUN12",
+					"group": 0,
+					"name": "Railgun Level 12",
+					"description": "Upgrade your Railgun to Level 12",
+					"hint": "You can speed up upgrades.",
+					"questimage": "railgun.jpg",
+					"prereq": "RAILGUN10",
+					"rules":
+					{
+						"b118lvl": 12
+					}
+				},
+				{
+					"order": 14,
+					"list": true,
+					"reward": [102400000, 102400000, 51200000, 51200000, 0],
+					"id": "RAILGUN14",
+					"group": 0,
+					"name": "Railgun Level 14",
+					"description": "Upgrade your Railgun to Level 14",
+					"hint": "You can speed up upgrades.",
+					"questimage": "railgun.jpg",
+					"prereq": "RAILGUN12",
+					"rules":
+					{
+						"b118lvl": 14
+					}
+				},
+				{
+					"order": 1,
+					"list": true,
+					"reward": [200000, 200000, 100000, 100000, 0],
+					"id": "adt1",
+					"group": 0,
+					"name": "ADT",
+					"description": "Build ADT",
+					"hint": "You can speed up upgrades.",
+					"questimage": "adt.jpg",
+					"rules":
+					{
+						"b115lvl": 1
+					}
+				},
+				{
+					"order": 2,
+					"list": true,
+					"reward": [400000, 400000, 200000, 200000, 0],
+					"id": "adt2",
+					"group": 0,
+					"name": "ADT Level 2",
+					"description": "Upgrade your ADT to Level 2",
+					"hint": "You can speed up upgrades.",
+					"questimage": "adt.jpg",
+					"prereq": "adt1",
+					"rules":
+					{
+						"b115lvl": 2
+					}
+				},
+				{
+					"order": 3,
+					"list": true,
+					"reward": [800000, 800000, 400000, 400000, 0],
+					"id": "adt3",
+					"group": 0,
+					"name": "ADT Level 3",
+					"description": "Upgrade your ADT to Level 3",
+					"hint": "You can speed up upgrades.",
+					"questimage": "adt.jpg",
+					"prereq": "adt2",
+					"rules":
+					{
+						"b115lvl": 3
+					}
+				},
+				{
+					"order": 4,
+					"list": true,
+					"reward": [1600000, 1600000, 800000, 800000, 0],
+					"id": "adt4",
+					"group": 0,
+					"name": "ADT Level 4",
+					"description": "Upgrade your ADT to Level 4",
+					"hint": "You can speed up upgrades.",
+					"questimage": "adt.jpg",
+					"prereq": "adt3",
+					"rules":
+					{
+						"b115lvl": 4
+					}
+				},
+				{
+					"order": 5,
+					"list": true,
+					"reward": [3200000, 3200000, 1600000, 1600000, 0],
+					"id": "adt5",
+					"group": 0,
+					"name": "ADT Level 5",
+					"description": "Upgrade your ADT to Level 5",
+					"hint": "You can speed up upgrades.",
+					"questimage": "adt.jpg",
+					"prereq": "adt4",
+					"rules":
+					{
+						"b115lvl": 5
+					}
+				},
+				{
+					"order": 6,
+					"list": true,
+					"reward": [6400000, 6400000, 3200000, 3200000, 0],
+					"id": "adt6",
+					"group": 0,
+					"name": "ADT Level 6",
+					"description": "Upgrade your ADT to Level 6",
+					"hint": "You can speed up upgrades.",
+					"questimage": "adt.jpg",
+					"prereq": "adt5",
+					"rules":
+					{
+						"b115lvl": 6
+					}
+				},
+				{
+					"order": 8,
+					"list": true,
+					"reward": [12800000, 12800000, 6400000, 6400000, 0],
+					"id": "adt8",
+					"group": 0,
+					"name": "ADT Level 8",
+					"description": "Upgrade your ADT to Level 8",
+					"hint": "You can speed up upgrades.",
+					"questimage": "adt.jpg",
+					"prereq": "adt7",
+					"rules":
+					{
+						"b115lvl": 8
+					}
+				},
+				{
+					"order": 10,
+					"list": true,
+					"reward": [25600000, 25600000, 12800000, 12800000, 0],
+					"id": "adt10",
+					"group": 0,
+					"name": "ADT Level 10",
+					"description": "Upgrade your ADT to Level 10",
+					"hint": "You can speed up upgrades.",
+					"questimage": "adt.jpg",
+					"prereq": "adt9",
+					"rules":
+					{
+						"b115lvl": 10
+					}
+				},
+				{
+					"order": 12,
+					"list": true,
+					"reward": [51200000, 51200000, 25600000, 25600000, 0],
+					"id": "adt12",
+					"group": 0,
+					"name": "ADT Level 12",
+					"description": "Upgrade your ADT to Level 12",
+					"hint": "You can speed up upgrades.",
+					"questimage": "adt.jpg",
+					"prereq": "adt10",
+					"rules":
+					{
+						"b115lvl": 12
+					}
+				},
+				{
+					"order": 14,
+					"list": true,
+					"reward": [102400000, 102400000, 51200000, 51200000, 0],
+					"id": "adt14",
+					"group": 0,
+					"name": "ADT Level 14",
+					"description": "Upgrade your ADT to Level 14",
+					"hint": "You can speed up upgrades.",
+					"questimage": "adt.jpg",
+					"prereq": "adt12",
+					"rules":
+					{
+						"b115lvl": 14
 					}
 				},
 
@@ -2950,116 +4291,6 @@ package
 
 				// Group 6 (Conqueror)
 				{
-					"order": 5,
-					"list": true,
-					"reward": [5000000, 5000000, 5000000, 5000000, 0],
-					"id": "assault_ro_5",
-					"group": 6,
-					"name": "Resource Outpost x5",
-					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/5.",
-					"hint": "Resource Outposts level 50 - 90",
-					"questimage": "resource_outpost.png",
-					"rules":
-					{
-						"assault_ro": 5
-					}
-				},
-				{
-					"order": 10,
-					"list": true,
-					"reward": [10000000, 10000000, 10000000, 10000000, 0],
-					"id": "assault_ro_10",
-					"group": 6,
-					"name": "Resource Outpost x10",
-					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/10.",
-					"hint": "Resource Outposts level 50 - 90",
-					"questimage": "resource_outpost.png",
-					"prereq": "assault_ro_5",
-					"rules":
-					{
-						"assault_ro": 10
-					}
-				},
-				{
-					"order": 10,
-					"list": true,
-					"reward": [5000000, 5000000, 5000000, 5000000, 0],
-					"id": "assault_de_10",
-					"group": 6,
-					"name": "Defenders x10",
-					"description": "Conquer defenders.<br>Conquered #assault_de#\/10.",
-					"hint": "Defender level 45 - 90",
-					"questimage": "defender.png",
-					"rules":
-					{
-						"assault_de": 10
-					}
-				},
-				{
-					"order": 25,
-					"list": true,
-					"reward": [250000000, 250000000, 250000000, 250000000, 0],
-					"id": "assault_ro_25",
-					"group": 6,
-					"name": "Resource Outpost x25",
-					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/25.",
-					"hint": "Resource Outposts level 50 - 90",
-					"questimage": "resource_outpost.png",
-					"prereq": "assault_ro_10",
-					"rules":
-					{
-						"assault_ro": 25
-					}
-				},
-				{
-					"order": 25,
-					"list": true,
-					"reward": [13000000, 13000000, 13000000, 13000000, 0],
-					"id": "assault_de_25",
-					"group": 6,
-					"name": "Defenders x25",
-					"description": "Conquer defenders.<br>Conquered #assault_de#\/25.",
-					"hint": "Defender level 45 - 90",
-					"questimage": "defender.png",
-					"prereq": "assault_de_10",
-					"rules":
-					{
-						"assault_de": 25
-					}
-				},
-				{
-					"order": 50,
-					"list": true,
-					"reward": [500000000, 500000000, 500000000, 500000000, 50],
-					"id": "assault_ro_50",
-					"group": 6,
-					"name": "Resource Outpost x50",
-					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/50.",
-					"hint": "Resource Outposts level 50 - 90",
-					"questimage": "resource_outpost.png",
-					"prereq": "assault_ro_25",
-					"rules":
-					{
-						"assault_ro": 50
-					}
-				},
-				{
-					"order": 50,
-					"list": true,
-					"reward": [25000000, 25000000, 25000000, 25000000, 0],
-					"id": "assault_de_50",
-					"group": 6,
-					"name": "Defenders x50",
-					"description": "Conquer defenders.<br>Conquered #assault_de#\/50.",
-					"hint": "Defender level 45 - 90",
-					"questimage": "defender.png",
-					"prereq": "assault_de_25",
-					"rules":
-					{
-						"assault_de": 50
-					}
-				},
-				{
 					"order": 1,
 					"list": true,
 					"reward": [5000000, 5000000, 5000000, 5000000, 0],
@@ -3075,7 +4306,7 @@ package
 					}
 				},
 				{
-					"order": 5,
+					"order": 2,
 					"list": true,
 					"reward": [25000000, 25000000, 25000000, 25000000, 0],
 					"id": "assault_sh_5",
@@ -3091,55 +4322,7 @@ package
 					}
 				},
 				{
-					"order": 75,
-					"list": true,
-					"reward": [750000000, 750000000, 750000000, 750000000, 75],
-					"id": "assault_ro_75",
-					"group": 6,
-					"name": "Resource Outpost x75",
-					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/75.",
-					"hint": "Resource Outposts level 50 - 90",
-					"questimage": "resource_outpost.png",
-					"prereq": "assault_ro_50",
-					"rules":
-					{
-						"assault_ro": 75
-					}
-				},
-				{
-					"order": 100,
-					"list": true,
-					"reward": [1000000000, 1000000000, 1000000000, 1000000000, 100],
-					"id": "assault_ro_100",
-					"group": 6,
-					"name": "Resource Outpost x100",
-					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/100.",
-					"hint": "Resource Outposts level 50 - 90",
-					"questimage": "resource_outpost.png",
-					"prereq": "assault_ro_75",
-					"rules":
-					{
-						"assault_ro": 100
-					}
-				},
-				{
-					"order": 100,
-					"list": true,
-					"reward": [50000000, 50000000, 50000000, 50000000, 0],
-					"id": "assault_de_100",
-					"group": 6,
-					"name": "Defenders x100",
-					"description": "Conquer defenders.<br>Conquered #assault_de#\/100.",
-					"hint": "Defender level 45 - 90",
-					"questimage": "defender.png",
-					"prereq": "assault_de_50",
-					"rules":
-					{
-						"assault_de": 100
-					}
-				},
-				{
-					"order": 10,
+					"order": 3,
 					"list": true,
 					"reward": [50000000, 50000000, 50000000, 50000000, 0],
 					"id": "assault_sh_10",
@@ -3155,23 +4338,7 @@ package
 					}
 				},
 				{
-					"order": 150,
-					"list": true,
-					"reward": [1500000000, 1500000000, 1500000000, 1500000000, 150],
-					"id": "assault_ro_150",
-					"group": 6,
-					"name": "Resource Outpost x150",
-					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/150.",
-					"hint": "Resource Outposts level 50 - 90",
-					"questimage": "resource_outpost.png",
-					"prereq": "assault_ro_100",
-					"rules":
-					{
-						"assault_ro": 150
-					}
-				},
-				{
-					"order": 15,
+					"order": 4,
 					"list": true,
 					"reward": [100000000, 100000000, 100000000, 100000000, 0],
 					"id": "assault_sh_15",
@@ -3187,23 +4354,7 @@ package
 					}
 				},
 				{
-					"order": 200,
-					"list": true,
-					"reward": [2000000000, 2000000000, 2000000000, 2000000000, 200],
-					"id": "assault_ro_200",
-					"group": 6,
-					"name": "Resource Outpost x200",
-					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/200.",
-					"hint": "Resource Outposts level 50 - 90",
-					"questimage": "resource_outpost.png",
-					"prereq": "assault_ro_150",
-					"rules":
-					{
-						"assault_ro": 200
-					}
-				},
-				{
-					"order": 20,
+					"order": 5,
 					"list": true,
 					"reward": [250000000, 250000000, 250000000, 250000000, 0],
 					"id": "assault_sh_20",
@@ -3215,43 +4366,11 @@ package
 					"prereq": "assault_sh_15",
 					"rules":
 					{
-						"assault_sh": 15
+						"assault_sh": 20
 					}
 				},
 				{
-					"order": 250,
-					"list": true,
-					"reward": [2500000000, 2500000000, 2500000000, 2500000000, 250],
-					"id": "assault_ro_250",
-					"group": 6,
-					"name": "Resource Outpost x250",
-					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/250.",
-					"hint": "Resource Outposts level 50 - 90",
-					"questimage": "resource_outpost.png",
-					"prereq": "assault_ro_200",
-					"rules":
-					{
-						"assault_ro": 250
-					}
-				},
-				{
-					"order": 250,
-					"list": true,
-					"reward": [125000000, 125000000, 125000000, 125000000, 0],
-					"id": "assault_de_250",
-					"group": 6,
-					"name": "Defenders x250",
-					"description": "Conquer defenders.<br>Conquered #assault_de#\/250.",
-					"hint": "Defender level 45 - 90",
-					"questimage": "defender.png",
-					"prereq": "assault_de_100",
-					"rules":
-					{
-						"assault_de": 250
-					}
-				},
-				{
-					"order": 25,
+					"order": 6,
 					"list": true,
 					"reward": [500000000, 500000000, 500000000, 500000000, 0],
 					"id": "assault_sh_25",
@@ -3267,23 +4386,7 @@ package
 					}
 				},
 				{
-					"order": 300,
-					"list": true,
-					"reward": [3000000000, 3000000000, 3000000000, 3000000000, 300],
-					"id": "assault_ro_300",
-					"group": 6,
-					"name": "Resource Outpost x300",
-					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/300.",
-					"hint": "Resource Outposts level 50 - 90",
-					"questimage": "resource_outpost.png",
-					"prereq": "assault_ro_250",
-					"rules":
-					{
-						"assault_ro": 300
-					}
-				},
-				{
-					"order": 30,
+					"order": 7,
 					"list": true,
 					"reward": [1000000000, 1000000000, 1000000000, 1000000000, 0],
 					"id": "assault_sh_30",
@@ -3299,23 +4402,7 @@ package
 					}
 				},
 				{
-					"order": 350,
-					"list": true,
-					"reward": [3500000000, 3500000000, 3500000000, 3500000000, 350],
-					"id": "assault_ro_350",
-					"group": 6,
-					"name": "Resource Outpost x350",
-					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/350.",
-					"hint": "Resource Outposts level 50 - 90",
-					"questimage": "resource_outpost.png",
-					"prereq": "assault_ro_300",
-					"rules":
-					{
-						"assault_ro": 350
-					}
-				},
-				{
-					"order": 35,
+					"order": 8,
 					"list": true,
 					"reward": [2000000000, 2000000000, 2000000000, 2000000000, 0],
 					"id": "assault_sh_35",
@@ -3331,23 +4418,7 @@ package
 					}
 				},
 				{
-					"order": 400,
-					"list": true,
-					"reward": [4000000000, 4000000000, 4000000000, 4000000000, 400],
-					"id": "assault_ro_400",
-					"group": 6,
-					"name": "Resource Outpost x400",
-					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/400.",
-					"hint": "Resource Outposts level 50 - 90",
-					"questimage": "resource_outpost.png",
-					"prereq": "assault_ro_350",
-					"rules":
-					{
-						"assault_ro": 400
-					}
-				},
-				{
-					"order": 40,
+					"order": 9,
 					"list": true,
 					"reward": [4000000000, 4000000000, 4000000000, 4000000000, 0],
 					"id": "assault_sh_40",
@@ -3363,23 +4434,7 @@ package
 					}
 				},
 				{
-					"order": 450,
-					"list": true,
-					"reward": [4500000000, 4500000000, 4500000000, 4500000000, 450],
-					"id": "assault_ro_450",
-					"group": 6,
-					"name": "Resource Outpost x450",
-					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/450.",
-					"hint": "Resource Outposts level 50 - 90",
-					"questimage": "resource_outpost.png",
-					"prereq": "assault_ro_400",
-					"rules":
-					{
-						"assault_ro": 450
-					}
-				},
-				{
-					"order": 45,
+					"order": 10,
 					"list": true,
 					"reward": [5000000000, 5000000000, 5000000000, 5000000000, 0],
 					"id": "assault_sh_45",
@@ -3395,39 +4450,7 @@ package
 					}
 				},
 				{
-					"order": 500,
-					"list": true,
-					"reward": [5000000000, 5000000000, 5000000000, 5000000000, 500],
-					"id": "assault_ro_500",
-					"group": 6,
-					"name": "Resource Outpost x500",
-					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/500.",
-					"hint": "Resource Outposts level 50 - 90",
-					"questimage": "resource_outpost.png",
-					"prereq": "assault_ro_450",
-					"rules":
-					{
-						"assault_ro": 500
-					}
-				},
-				{
-					"order": 500,
-					"list": true,
-					"reward": [250000000, 250000000, 250000000, 250000000, 0],
-					"id": "assault_de_500",
-					"group": 6,
-					"name": "Defenders x500",
-					"description": "Conquer defenders.<br>Conquered #assault_de#\/500.",
-					"hint": "Defender level 45 - 90",
-					"questimage": "defender.png",
-					"prereq": "assault_de_250",
-					"rules":
-					{
-						"assault_de": 500
-					}
-				},
-				{
-					"order": 50,
+					"order": 11,
 					"list": true,
 					"reward": [6000000000, 6000000000, 6000000000, 6000000000, 0],
 					"id": "assault_sh_50",
@@ -3443,23 +4466,7 @@ package
 					}
 				},
 				{
-					"order": 600,
-					"list": true,
-					"reward": [6000000000, 6000000000, 6000000000, 6000000000, 600],
-					"id": "assault_ro_600",
-					"group": 6,
-					"name": "Resource Outpost x600",
-					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/600.",
-					"hint": "Resource Outposts level 50 - 90",
-					"questimage": "resource_outpost.png",
-					"prereq": "assault_ro_500",
-					"rules":
-					{
-						"assault_ro": 600
-					}
-				},
-				{
-					"order": 60,
+					"order": 12,
 					"list": true,
 					"reward": [7000000000, 7000000000, 7000000000, 7000000000, 0],
 					"id": "assault_sh_60",
@@ -3475,23 +4482,7 @@ package
 					}
 				},
 				{
-					"order": 700,
-					"list": true,
-					"reward": [7000000000, 7000000000, 7000000000, 7000000000, 700],
-					"id": "assault_ro_700",
-					"group": 6,
-					"name": "Resource Outpost x700",
-					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/700.",
-					"hint": "Resource Outposts level 50 - 90",
-					"questimage": "resource_outpost.png",
-					"prereq": "assault_ro_600",
-					"rules":
-					{
-						"assault_ro": 700
-					}
-				},
-				{
-					"order": 70,
+					"order": 13,
 					"list": true,
 					"reward": [8000000000, 8000000000, 8000000000, 8000000000, 0],
 					"id": "assault_sh_70",
@@ -3507,23 +4498,7 @@ package
 					}
 				},
 				{
-					"order": 800,
-					"list": true,
-					"reward": [8000000000, 8000000000, 8000000000, 8000000000, 800],
-					"id": "assault_ro_800",
-					"group": 6,
-					"name": "Resource Outpost x800",
-					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/800.",
-					"hint": "Resource Outposts level 50 - 90",
-					"questimage": "resource_outpost.png",
-					"prereq": "assault_ro_700",
-					"rules":
-					{
-						"assault_ro": 800
-					}
-				},
-				{
-					"order": 80,
+					"order": 14,
 					"list": true,
 					"reward": [9000000000, 9000000000, 9000000000, 9000000000, 0],
 					"id": "assault_sh_80",
@@ -3539,23 +4514,7 @@ package
 					}
 				},
 				{
-					"order": 900,
-					"list": true,
-					"reward": [9000000000, 9000000000, 9000000000, 9000000000, 900],
-					"id": "assault_ro_900",
-					"group": 6,
-					"name": "Resource Outpost x900",
-					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/900.",
-					"hint": "Resource Outposts level 50 - 90",
-					"questimage": "resource_outpost.png",
-					"prereq": "assault_ro_800",
-					"rules":
-					{
-						"assault_ro": 900
-					}
-				},
-				{
-					"order": 90,
+					"order": 15,
 					"list": true,
 					"reward": [10000000000, 10000000000, 10000000000, 10000000000, 0],
 					"id": "assault_sh_90",
@@ -3571,39 +4530,7 @@ package
 					}
 				},
 				{
-					"order": 1000,
-					"list": true,
-					"reward": [10000000000, 10000000000, 10000000000, 10000000000, 1000],
-					"id": "assault_ro_1000",
-					"group": 6,
-					"name": "Resource Outpost x1000",
-					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/1000.",
-					"hint": "Resource Outposts level 50 - 90",
-					"questimage": "resource_outpost.png",
-					"prereq": "assault_ro_900",
-					"rules":
-					{
-						"assault_ro": 1000
-					}
-				},
-				{
-					"order": 1000,
-					"list": true,
-					"reward": [500000000, 500000000, 500000000, 500000000, 0],
-					"id": "assault_de_1000",
-					"group": 6,
-					"name": "Defenders x1000",
-					"description": "Conquer defenders.<br>Conquered #assault_de#\/1000.",
-					"hint": "Defender level 45 - 90",
-					"questimage": "defender.png",
-					"prereq": "assault_de_500",
-					"rules":
-					{
-						"assault_de": 1000
-					}
-				},
-				{
-					"order": 100,
+					"order": 16,
 					"list": true,
 					"reward": [12000000000, 12000000000, 12000000000, 12000000000, 1000],
 					"id": "assault_sh_100",
@@ -3619,14 +4546,428 @@ package
 					}
 				},
 				{
-					"order": 2500,
+					"order": 1,
+					"list": true,
+					"reward": [5000000, 5000000, 5000000, 5000000, 0],
+					"id": "assault_ro_5",
+					"group": 6,
+					"name": "Resource Outpost x5",
+					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/5.",
+					"hint": "Resource Outposts level 50 - 90",
+					"questimage": "resource_outpost.png",
+					"rules":
+					{
+						"assault_ro": 5
+					}
+				},
+				{
+					"order": 2,
+					"list": true,
+					"reward": [10000000, 10000000, 10000000, 10000000, 0],
+					"id": "assault_ro_10",
+					"group": 6,
+					"name": "Resource Outpost x10",
+					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/10.",
+					"hint": "Resource Outposts level 50 - 90",
+					"questimage": "resource_outpost.png",
+					"prereq": "assault_ro_5",
+					"rules":
+					{
+						"assault_ro": 10
+					}
+				},
+				{
+					"order": 3,
+					"list": true,
+					"reward": [250000000, 250000000, 250000000, 250000000, 0],
+					"id": "assault_ro_25",
+					"group": 6,
+					"name": "Resource Outpost x25",
+					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/25.",
+					"hint": "Resource Outposts level 50 - 90",
+					"questimage": "resource_outpost.png",
+					"prereq": "assault_ro_10",
+					"rules":
+					{
+						"assault_ro": 25
+					}
+				},
+				{
+					"order": 4,
+					"list": true,
+					"reward": [500000000, 500000000, 500000000, 500000000, 50],
+					"id": "assault_ro_50",
+					"group": 6,
+					"name": "Resource Outpost x50",
+					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/50.",
+					"hint": "Resource Outposts level 50 - 90",
+					"questimage": "resource_outpost.png",
+					"prereq": "assault_ro_25",
+					"rules":
+					{
+						"assault_ro": 50
+					}
+				},
+				{
+					"order": 5,
+					"list": true,
+					"reward": [750000000, 750000000, 750000000, 750000000, 75],
+					"id": "assault_ro_75",
+					"group": 6,
+					"name": "Resource Outpost x75",
+					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/75.",
+					"hint": "Resource Outposts level 50 - 90",
+					"questimage": "resource_outpost.png",
+					"prereq": "assault_ro_50",
+					"rules":
+					{
+						"assault_ro": 75
+					}
+				},
+				{
+					"order": 6,
+					"list": true,
+					"reward": [1000000000, 1000000000, 1000000000, 1000000000, 100],
+					"id": "assault_ro_100",
+					"group": 6,
+					"name": "Resource Outpost x100",
+					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/100.",
+					"hint": "Resource Outposts level 50 - 90",
+					"questimage": "resource_outpost.png",
+					"prereq": "assault_ro_75",
+					"rules":
+					{
+						"assault_ro": 100
+					}
+				},
+				{
+					"order": 7,
+					"list": true,
+					"reward": [1500000000, 1500000000, 1500000000, 1500000000, 150],
+					"id": "assault_ro_150",
+					"group": 6,
+					"name": "Resource Outpost x150",
+					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/150.",
+					"hint": "Resource Outposts level 50 - 90",
+					"questimage": "resource_outpost.png",
+					"prereq": "assault_ro_100",
+					"rules":
+					{
+						"assault_ro": 150
+					}
+				},
+				{
+					"order": 8,
+					"list": true,
+					"reward": [2000000000, 2000000000, 2000000000, 2000000000, 200],
+					"id": "assault_ro_200",
+					"group": 6,
+					"name": "Resource Outpost x200",
+					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/200.",
+					"hint": "Resource Outposts level 50 - 90",
+					"questimage": "resource_outpost.png",
+					"prereq": "assault_ro_150",
+					"rules":
+					{
+						"assault_ro": 200
+					}
+				},
+				{
+					"order": 9,
+					"list": true,
+					"reward": [2500000000, 2500000000, 2500000000, 2500000000, 250],
+					"id": "assault_ro_250",
+					"group": 6,
+					"name": "Resource Outpost x250",
+					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/250.",
+					"hint": "Resource Outposts level 50 - 90",
+					"questimage": "resource_outpost.png",
+					"prereq": "assault_ro_200",
+					"rules":
+					{
+						"assault_ro": 250
+					}
+				},
+				{
+					"order": 10,
+					"list": true,
+					"reward": [3000000000, 3000000000, 3000000000, 3000000000, 300],
+					"id": "assault_ro_300",
+					"group": 6,
+					"name": "Resource Outpost x300",
+					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/300.",
+					"hint": "Resource Outposts level 50 - 90",
+					"questimage": "resource_outpost.png",
+					"prereq": "assault_ro_250",
+					"rules":
+					{
+						"assault_ro": 300
+					}
+				},
+				{
+					"order": 11,
+					"list": true,
+					"reward": [3500000000, 3500000000, 3500000000, 3500000000, 350],
+					"id": "assault_ro_350",
+					"group": 6,
+					"name": "Resource Outpost x350",
+					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/350.",
+					"hint": "Resource Outposts level 50 - 90",
+					"questimage": "resource_outpost.png",
+					"prereq": "assault_ro_300",
+					"rules":
+					{
+						"assault_ro": 350
+					}
+				},
+				{
+					"order": 12,
+					"list": true,
+					"reward": [4000000000, 4000000000, 4000000000, 4000000000, 400],
+					"id": "assault_ro_400",
+					"group": 6,
+					"name": "Resource Outpost x400",
+					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/400.",
+					"hint": "Resource Outposts level 50 - 90",
+					"questimage": "resource_outpost.png",
+					"prereq": "assault_ro_350",
+					"rules":
+					{
+						"assault_ro": 400
+					}
+				},
+				{
+					"order": 13,
+					"list": true,
+					"reward": [4500000000, 4500000000, 4500000000, 4500000000, 450],
+					"id": "assault_ro_450",
+					"group": 6,
+					"name": "Resource Outpost x450",
+					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/450.",
+					"hint": "Resource Outposts level 50 - 90",
+					"questimage": "resource_outpost.png",
+					"prereq": "assault_ro_400",
+					"rules":
+					{
+						"assault_ro": 450
+					}
+				},
+				{
+					"order": 14,
+					"list": true,
+					"reward": [5000000000, 5000000000, 5000000000, 5000000000, 500],
+					"id": "assault_ro_500",
+					"group": 6,
+					"name": "Resource Outpost x500",
+					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/500.",
+					"hint": "Resource Outposts level 50 - 90",
+					"questimage": "resource_outpost.png",
+					"prereq": "assault_ro_450",
+					"rules":
+					{
+						"assault_ro": 500
+					}
+				},
+				{
+					"order": 15,
+					"list": true,
+					"reward": [6000000000, 6000000000, 6000000000, 6000000000, 600],
+					"id": "assault_ro_600",
+					"group": 6,
+					"name": "Resource Outpost x600",
+					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/600.",
+					"hint": "Resource Outposts level 50 - 90",
+					"questimage": "resource_outpost.png",
+					"prereq": "assault_ro_500",
+					"rules":
+					{
+						"assault_ro": 600
+					}
+				},
+				{
+					"order": 16,
+					"list": true,
+					"reward": [7000000000, 7000000000, 7000000000, 7000000000, 700],
+					"id": "assault_ro_700",
+					"group": 6,
+					"name": "Resource Outpost x700",
+					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/700.",
+					"hint": "Resource Outposts level 50 - 90",
+					"questimage": "resource_outpost.png",
+					"prereq": "assault_ro_600",
+					"rules":
+					{
+						"assault_ro": 700
+					}
+				},
+				{
+					"order": 17,
+					"list": true,
+					"reward": [8000000000, 8000000000, 8000000000, 8000000000, 800],
+					"id": "assault_ro_800",
+					"group": 6,
+					"name": "Resource Outpost x800",
+					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/800.",
+					"hint": "Resource Outposts level 50 - 90",
+					"questimage": "resource_outpost.png",
+					"prereq": "assault_ro_700",
+					"rules":
+					{
+						"assault_ro": 800
+					}
+				},
+				{
+					"order": 18,
+					"list": true,
+					"reward": [9000000000, 9000000000, 9000000000, 9000000000, 900],
+					"id": "assault_ro_900",
+					"group": 6,
+					"name": "Resource Outpost x900",
+					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/900.",
+					"hint": "Resource Outposts level 50 - 90",
+					"questimage": "resource_outpost.png",
+					"prereq": "assault_ro_800",
+					"rules":
+					{
+						"assault_ro": 900
+					}
+				},
+				{
+					"order": 19,
+					"list": true,
+					"reward": [10000000000, 10000000000, 10000000000, 10000000000, 1000],
+					"id": "assault_ro_1000",
+					"group": 6,
+					"name": "Resource Outpost x1000",
+					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/1000.",
+					"hint": "Resource Outposts level 50 - 90",
+					"questimage": "resource_outpost.png",
+					"prereq": "assault_ro_900",
+					"rules":
+					{
+						"assault_ro": 1000
+					}
+				},
+				{
+					"order": 1,
+					"list": true,
+					"reward": [5000000, 5000000, 5000000, 5000000, 0],
+					"id": "assault_de_10",
+					"group": 6,
+					"name": "Defenders x10",
+					"description": "Conquer defenders.<br>Conquered #assault_de#\/10.",
+					"hint": "Conquer defenders with any level",
+					"questimage": "defender.png",
+					"rules":
+					{
+						"assault_de": 10
+					}
+				},
+				{
+					"order": 2,
+					"list": true,
+					"reward": [13000000, 13000000, 13000000, 13000000, 0],
+					"id": "assault_de_25",
+					"group": 6,
+					"name": "Defenders x25",
+					"description": "Conquer defenders.<br>Conquered #assault_de#\/25.",
+					"hint": "Conquer defenders with any level",
+					"questimage": "defender.png",
+					"prereq": "assault_de_10",
+					"rules":
+					{
+						"assault_de": 25
+					}
+				},
+				{
+					"order": 3,
+					"list": true,
+					"reward": [25000000, 25000000, 25000000, 25000000, 0],
+					"id": "assault_de_50",
+					"group": 6,
+					"name": "Defenders x50",
+					"description": "Conquer defenders.<br>Conquered #assault_de#\/50.",
+					"hint": "Conquer defenders with any level",
+					"questimage": "defender.png",
+					"prereq": "assault_de_25",
+					"rules":
+					{
+						"assault_de": 50
+					}
+				},
+				{
+					"order": 4,
+					"list": true,
+					"reward": [50000000, 50000000, 50000000, 50000000, 0],
+					"id": "assault_de_100",
+					"group": 6,
+					"name": "Defenders x100",
+					"description": "Conquer defenders.<br>Conquered #assault_de#\/100.",
+					"hint": "Conquer defenders with any level",
+					"questimage": "defender.png",
+					"prereq": "assault_de_50",
+					"rules":
+					{
+						"assault_de": 100
+					}
+				},
+				{
+					"order": 5,
+					"list": true,
+					"reward": [125000000, 125000000, 125000000, 125000000, 0],
+					"id": "assault_de_250",
+					"group": 6,
+					"name": "Defenders x250",
+					"description": "Conquer defenders.<br>Conquered #assault_de#\/250.",
+					"hint": "Conquer defenders with any level",
+					"questimage": "defender.png",
+					"prereq": "assault_de_100",
+					"rules":
+					{
+						"assault_de": 250
+					}
+				},
+				{
+					"order": 6,
+					"list": true,
+					"reward": [250000000, 250000000, 250000000, 250000000, 0],
+					"id": "assault_de_500",
+					"group": 6,
+					"name": "Defenders x500",
+					"description": "Conquer defenders.<br>Conquered #assault_de#\/500.",
+					"hint": "Conquer defenders with any level",
+					"questimage": "defender.png",
+					"prereq": "assault_de_250",
+					"rules":
+					{
+						"assault_de": 500
+					}
+				},
+				{
+					"order": 7,
+					"list": true,
+					"reward": [500000000, 500000000, 500000000, 500000000, 0],
+					"id": "assault_de_1000",
+					"group": 6,
+					"name": "Defenders x1000",
+					"description": "Conquer defenders.<br>Conquered #assault_de#\/1000.",
+					"hint": "Conquer defenders with any level",
+					"questimage": "defender.png",
+					"prereq": "assault_de_500",
+					"rules":
+					{
+						"assault_de": 1000
+					}
+				},
+				{
+					"order": 8,
 					"list": true,
 					"reward": [1250000000, 1250000000, 1250000000, 1250000000, 0],
 					"id": "assault_de_2500",
 					"group": 6,
 					"name": "Defenders x2500",
 					"description": "Conquer defenders.<br>Conquered #assault_de#\/2500.",
-					"hint": "Defender level 45 - 90",
+					"hint": "Conquer defenders with any level",
 					"questimage": "defender.png",
 					"prereq": "assault_de_1000",
 					"rules":
@@ -3635,14 +4976,14 @@ package
 					}
 				},
 				{
-					"order": 5000,
+					"order": 9,
 					"list": true,
 					"reward": [2500000000, 2500000000, 2500000000, 2500000000, 1000],
 					"id": "assault_de_5000",
 					"group": 6,
 					"name": "Defenders x5000",
 					"description": "Conquer defenders.<br>Conquered #assault_de#\/5000.",
-					"hint": "Defender level 45 - 90",
+					"hint": "Conquer defenders with any level",
 					"questimage": "defender.png",
 					"prereq": "assault_de_2500",
 					"rules":
@@ -3650,6 +4991,23 @@ package
 						"assault_de": 5000
 					}
 				},
+				{
+					"order": 10,
+					"list": true,
+					"reward": [5000000000, 5000000000, 5000000000, 5000000000, 2000],
+					"id": "assault_de_10000",
+					"group": 6,
+					"name": "Defenders x10000",
+					"description": "Conquer defenders.<br>Conquered #assault_de#\/10000.",
+					"hint": "Conquer defenders with any level",
+					"questimage": "defender.png",
+					"prereq": "assault_de_5000",
+					"rules":
+					{
+						"assault_de": 10000
+					}
+				},
+
 
 				// Group 7 (Assault T1)
 				{
@@ -5077,33 +6435,33 @@ package
 					{
 						if(!_completed[q.id])
 						{
-						fail = false;
-						for(n in q.rules)
-						{
-							if(n == "UNLOCK")
+							fail = false;
+							for(n in q.rules)
 							{
-								if(!CREATURELOCKER._lockerData[q.rules.UNLOCK] || CREATURELOCKER._lockerData[q.rules.UNLOCK].t == 1)
+								if(n == "UNLOCK")
+								{
+									if(!CREATURELOCKER._lockerData[q.rules.UNLOCK] || CREATURELOCKER._lockerData[q.rules.UNLOCK].t == 1)
+									{
+										fail = true;
+									}
+								}
+								else if(q.rules[n] > _global[n])
 								{
 									fail = true;
 								}
 							}
-							else if(q.rules[n] > _global[n])
+							if(Boolean(_completed[q.id]) && _completed[q.id] == 2)
 							{
 								fail = true;
 							}
-						}
-						if(Boolean(_completed[q.id]) && _completed[q.id] == 2)
-						{
-							fail = true;
-						}
-						if(!fail)
-						{
-							_completed[q.id] = 1;
-							if(BASE.isInfernoMainYardOrOutpost)
+							if(!fail)
 							{
-								ACHIEVEMENTS.Check(ACHIEVEMENTS.INFERNO_QUESTS_COMPLETED,amountCompleted);
+								_completed[q.id] = 1;
+								if(BASE.isInfernoMainYardOrOutpost)
+								{
+									ACHIEVEMENTS.Check(ACHIEVEMENTS.INFERNO_QUESTS_COMPLETED,amountCompleted);
+								}
 							}
-						}
 						}
 					}
 					i++;

@@ -73,6 +73,7 @@ export const rewardCredits: Record<string, number> = {
 	"Qassault_ro_1000": 1000,
 	"Qassault_sh_100": 1000,
 	"Qassault_de_5000": 1000,
+	"Qassault_de_10000": 2000,
 	"QASSAULT_TO_1_0_10": 3,
 	"QASSAULT_TO_1_1_10": 3,
 	"QASSAULT_TO_1_2_10": 3,

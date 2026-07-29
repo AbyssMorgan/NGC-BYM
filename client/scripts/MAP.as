@@ -100,6 +100,14 @@ package
       public static const MAP_TYPE_CRATER:int = 3;
       
       public static const MAP_TYPE_LAVA:int = 4;
+
+      public static const MAP_TYPE_SHOP_LAVA:int = 5;
+
+      public static const MAP_TYPE_SHOP_STONE:int = 6;
+
+      public static const MAP_TYPE_SHOP_GRASS:int = 7;
+
+      public static const MAP_TYPE_SHOP_PURPLE:int = 8;
       
       public static const DEPTH_SHADOW:uint = 1;
       
@@ -288,8 +296,8 @@ package
                _loc5_ = 0;
                while(_loc5_ < 4)
                {
-                  _loc6_.x = _loc4_ * 1000;
-                  _loc6_.y = _loc5_ * 500;
+                  _loc6_.x = _loc4_ * MAPBG.width;
+                  _loc6_.y = _loc5_ * MAPBG.height;
                   _EFFECTSBMP.copyPixels(_bmdTile,_bmdTile.rect,_loc6_);
                   _loc5_++;
                }
@@ -308,8 +316,8 @@ package
                while(_loc5_ < 2)
                {
                   _loc3_ = _BGTILES.addChild(new Bitmap(_bmdTile));
-                  _loc3_.x = _loc4_ * 998;
-                  _loc3_.y = _loc5_ * 498;
+                  _loc3_.x = _loc4_ * (MAPBG.width - 2);
+                  _loc3_.y = _loc5_ * (MAPBG.height - 2);
                   _loc3_.cacheAsBitmap = true;
                   _loc5_++;
                }
@@ -324,6 +332,10 @@ package
 			case MAP_TYPE_SAND: return "sand";
 			case MAP_TYPE_CRATER: return "crater";
 			case MAP_TYPE_LAVA: return "lava";
+			case MAP_TYPE_SHOP_LAVA: return "map5";
+			case MAP_TYPE_SHOP_STONE: return "map6";
+			case MAP_TYPE_SHOP_GRASS: return "map7";
+			case MAP_TYPE_SHOP_PURPLE: return "map8";
 		}
 		return "grass";
 	}

@@ -85,7 +85,7 @@ package com.monsters.subscriptions.ui.controlPanel
             }
             _loc1_++;
          }
-         this._tiles[this.bgTileSelected].mcSelect.visible = true;
+		 if(this.bgTileSelected < 5) this._tiles[this.bgTileSelected].mcSelect.visible = true;
       }
       
       private function setup() : void

@@ -588,7 +588,7 @@ package com.monsters.monsters.champions
       
       protected function getTargetCreeps() : void
       {
-         _targetCreeps = Targeting.getCreepsInRange(800,_tmpPoint,attackFlags);
+         _targetCreeps = Targeting.getCreepsInRange(1200,_tmpPoint,attackFlags);
       }
       
       public function FindDefenseTargets() : void

@@ -23,16 +23,16 @@ package buildings.yard {
 			"isUntargetable":false,
 			"isNoMoreInfoButton":true,
 			"stats":[
-				{"range":360, "damage":900, "rate":1}, // Level 1
-				{"range":380, "damage":1000, "rate":1}, // Level 2
-				{"range":400, "damage":1100, "rate":1}, // Level 3
-				{"range":420, "damage":1200, "rate":1}, // Level 4
-				{"range":440, "damage":1300, "rate":1}, // Level 5
-				{"range":460, "damage":1400, "rate":1}, // Level 6
-				{"range":480, "damage":1500, "rate":1}, // Level 7
-				{"range":500, "damage":1600, "rate":1}, // Level 8
-				{"range":520, "damage":1700, "rate":1}, // Level 9
-				{"range":550, "damage":1800, "rate":1}, // Level 10
+				{"range":350, "damage":900, "rate":1}, // Level 1
+				{"range":400, "damage":1000, "rate":1}, // Level 2
+				{"range":450, "damage":1100, "rate":1}, // Level 3
+				{"range":500, "damage":1200, "rate":1}, // Level 4
+				{"range":550, "damage":1300, "rate":1}, // Level 5
+				{"range":600, "damage":1400, "rate":1}, // Level 6
+				{"range":650, "damage":1500, "rate":1}, // Level 7
+				{"range":700, "damage":1600, "rate":1}, // Level 8
+				{"range":750, "damage":1700, "rate":1}, // Level 9
+				{"range":800, "damage":1800, "rate":1}, // Level 10
 			],
 			"costs":[
 				{"r1":new SecNum(5), "r2":new SecNum(5), "r3":new SecNum(5), "r4":new SecNum(5), "time":new SecNum(1), "re":[]}, // Level 1 (30)

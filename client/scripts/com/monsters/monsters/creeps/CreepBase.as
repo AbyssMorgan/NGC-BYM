@@ -827,7 +827,6 @@ package com.monsters.monsters.creeps
       
 		public function findDefenseTargets() : void
 		{
-			trace("findDefenseTargets");
 			var _loc1_:Array = null;
 			var _loc2_:Boolean = true;
 			_targetCreeps = Targeting.getCreepsInRange(200,_tmpPoint,Targeting.getOldStyleTargets(targetMode));
@@ -862,7 +861,6 @@ package com.monsters.monsters.creeps
 			}
 			else if(_homeBunker && _homeBunker.health > 0)
 			{
-				trace("findDefenseTargets 3 : " + _behaviour)
 				_homeBunker.FindTargets(3);
 				_targetCreep = _homeBunker.GetTarget(targetMode);
 				trace(_targetCreep);

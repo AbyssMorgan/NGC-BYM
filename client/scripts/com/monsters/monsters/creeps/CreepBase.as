@@ -1817,14 +1817,18 @@ package com.monsters.monsters.creeps
             this.m_findTargetsCounter++;
             if(this.m_findTargetsCounter >= FIND_TARGETS_INTERVAL)
             {
-               this.m_findTargetsCounter = 0;
-               this.findDefenseTargets();
+				this.m_findTargetsCounter = 0;
+				this.findDefenseTargets();
             }
          }
          if(_atTarget && _behaviour == k_sBHVR_BUNKER)
          {
             if(_homeBunker && !this._defenderRemoved)
             {
+               if(MapRoomManager.instance.isInMapRoom3 && BASE.isMainYardOrInfernoMainYard)
+               {
+                  GLOBAL.player.monsterListByID(_creatureID).unlinkCreepFromData(this);
+               }
                _homeBunker._monstersDispatched[_creatureID] = int(_homeBunker._monstersDispatched[_creatureID]) - 1;
                if(_homeBunker._monstersDispatched[_creatureID] < 0)
                {

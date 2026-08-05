@@ -19,16 +19,16 @@ package buildings.yard {
 			"description":"#crystalhive_desc#",
 			"cls":BUILDING146,
 			"stats":[
-				{"range":240, "damage":100, "rate":15}, // Level 1
-				{"range":280, "damage":200, "rate":15}, // Level 2
-				{"range":320, "damage":300, "rate":15}, // Level 3
-				{"range":360, "damage":400, "rate":15}, // Level 4
-				{"range":400, "damage":500, "rate":15}, // Level 5
-				{"range":440, "damage":600, "rate":15}, // Level 6
-				{"range":480, "damage":700, "rate":15}, // Level 7
-				{"range":520, "damage":800, "rate":15}, // Level 8
-				{"range":560, "damage":900, "rate":15}, // Level 9
-				{"range":600, "damage":1000, "rate":15}, // Level 10
+				{"range":220, "damage":100, "rate":15}, // Level 1
+				{"range":240, "damage":200, "rate":15}, // Level 2
+				{"range":260, "damage":300, "rate":15}, // Level 3
+				{"range":280, "damage":400, "rate":15}, // Level 4
+				{"range":300, "damage":500, "rate":15}, // Level 5
+				{"range":320, "damage":600, "rate":15}, // Level 6
+				{"range":350, "damage":700, "rate":15}, // Level 7
+				{"range":300, "damage":800, "rate":15}, // Level 8
+				{"range":450, "damage":900, "rate":15}, // Level 9
+				{"range":500, "damage":1000, "rate":15}, // Level 10
 			],
 			"costs":[
 				{"r1":new SecNum(100000000), "r2":new SecNum(100000000), "r3":new SecNum(1000000000), "r4":new SecNum(1000000000), "time":new SecNum(86400 * 1), "re":[[145,1,1]]}, // Level 1

@@ -198,7 +198,17 @@ package
          while(_loc1_ < _creatures.length)
          {
             _loc2_ = _creatures[_loc1_];
-            if(_loc2_._creatureID == "IC5" || _loc2_._creatureID == "IC7")
+            if(
+				(_loc2_._creatureID == "C12" && Boolean(GLOBAL.player.m_upgrades["C12"].powerup))
+				||
+				(_loc2_._creatureID == "C5" && Boolean(GLOBAL.player.m_upgrades["C5"].powerup))
+				||
+				_loc2_._creatureID == "IC5"
+				||
+				_loc2_._creatureID == "IC7"
+				||
+				_loc2_._creatureID == "C14"
+				)
             {
                return true;
             }

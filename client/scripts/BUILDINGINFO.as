@@ -47,7 +47,7 @@ package
          _mc = MAP._BUILDINGINFO.addChild(new buildingInfoData()) as MovieClip;
          _mc.tName.autoSize = TextFieldAutoSize.CENTER;
          var _loc2_:* = "<b>" + KEYS.Get(_props.name) + "</b>";
-         var effectiveLvl:int = _building.getEffectiveLevel();
+         var effectiveLvl:int = _building._lvl.Get();
          if(_building._lvl.Get() > 0 && _props.costs && _props.costs.length > 1)
          {
             if(Boolean(_props.names) && _props.names.length > 1)

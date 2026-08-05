@@ -36,7 +36,7 @@ package
       override public function Description() : void
       {
          super.Description();
-         var effectiveLevel:int = getEffectiveLevel();
+         var effectiveLevel:int = _lvl.Get();
          _upgradeDescription = KEYS.Get("bdg_housing_capacitydesc",{
             "v1":GLOBAL.FormatNumber(_buildingProps.capacity[effectiveLevel - 1]),
             "v2":GLOBAL.FormatNumber(_buildingProps.capacity[effectiveLevel])

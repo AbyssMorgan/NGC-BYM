@@ -774,7 +774,7 @@ package
       {
          var _loc1_:Number = NaN;
          var _loc2_:Object = null;
-         var effectiveLvl:int = getEffectiveLevel();
+         var effectiveLvl:int = _lvl.Get();
          if(this._buildingProps.names != null && this._buildingProps.names.length >= effectiveLvl)
          {
             this._buildingTitle = "<b>" + this._buildingProps.names[effectiveLvl - 1] + "</b>";
@@ -927,22 +927,6 @@ package
       }
 
       /**
-       * Returns the building level clamped to the MR2 maximum for buildings whose
-       * max level differs between MR2 and MR3. Always returns the real level in MR3.
-       * 
-       * @return Effective building level for rendering purposes
-       */
-      public function getEffectiveLevel() : int
-      {
-         if(!MapRoomManager.instance.isInMapRoom3)
-         {
-            if(_type == 5)  return Math.min(_lvl.Get(), 4);   // Flinger: MR2 max 4, MR3 max 5
-            if(_type == 15) return Math.min(_lvl.Get(), 6);   // Housing: MR2 max 6, MR3 max 10
-         }
-         return _lvl.Get();
-      }
-
-      /**
        * Returns the maximum upgradeable level for this building in the current map room mode.
        * In MR2, some buildings are capped below their full costs array length.
        * In MR3, the full costs array applies.
@@ -994,7 +978,7 @@ package
          if(this._renderState == null || state !== this._renderState || this._lvl.Get() != this._renderLevel)
          {
             this._renderLevel = this._lvl.Get();
-            var effectiveLevel:int = getEffectiveLevel();
+            var effectiveLevel:int = _lvl.Get();
             imageDataA = GLOBAL._buildingProps[this._type - 1].imageData;
             if(effectiveLevel == 0)
             {
@@ -3723,7 +3707,7 @@ package
          {
             this._lvl.Set(0);
          }
-         var hpLevel:int = getEffectiveLevel();
+         var hpLevel:int = _lvl.Get();
          this._hpLvl = hpLevel;
          if(hpLevel == 0)
          {

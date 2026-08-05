@@ -368,7 +368,7 @@ package
             }
             else if(this._building._buildingProps.names && this._building._buildingProps.names.length > 1 && Boolean(this._building._buildingProps.descriptions) && this._building._buildingProps.descriptions.length > 1)
             {
-               var _effectiveLvl:int = this._building.getEffectiveLevel();
+               var _effectiveLvl:int = this._building._lvl.Get();
                _loc2_ = KEYS.Get("bdg_morenolevel",{
                   "v1":KEYS.Get(this._building._buildingProps.names[_effectiveLvl - 1]),
                   "v2":KEYS.Get(this._building._buildingProps.descriptions[_effectiveLvl - 1]),
@@ -379,7 +379,7 @@ package
             {
                _loc2_ = KEYS.Get("bdg_more",{
                   "v1":KEYS.Get(this._building._buildingProps.name),
-                  "v2":this._building.getEffectiveLevel(),
+                  "v2":this._building._lvl.Get(),
                   "v3":KEYS.Get(this._building._buildingProps.description),
                   "v4":this._building._recycleDescription
                });

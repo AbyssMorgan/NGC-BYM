@@ -87,7 +87,7 @@ package
       {
          var _loc6_:* = undefined;
          var _loc7_:Array = null;
-         var _loc8_:Vector.<Object> = null;
+         var houses:Vector.<Object> = InstanceManager.getInstancesByClass(BUILDING15).concat(InstanceManager.getInstancesByClass(HOUSINGBUNKER));
          var _loc9_:BFOUNDATION = null;
          var _loc10_:Number = NaN;
          var _loc11_:Number = NaN;
@@ -125,18 +125,14 @@ package
                else
                {
                   _loc7_ = [];
-                  _loc8_ = InstanceManager.getInstancesByClass(BASE.isInfernoMainYardOrOutpost ? HOUSINGBUNKER : BUILDING15);
-                  for each(_loc9_ in _loc8_)
+                  for each(_loc9_ in houses)
                   {
                      if(_loc9_._countdownBuild.Get() <= 0 && _loc9_.health > 0)
                      {
                         _loc10_ = _loc9_._mc.x - param2.x;
                         _loc11_ = _loc9_._mc.y - param2.y;
                         _loc12_ = int(Math.sqrt(_loc10_ * _loc10_ + _loc11_ * _loc11_));
-                        _loc7_.push({
-                           "mc":_loc9_,
-                           "dist":_loc12_
-                        });
+                        _loc7_.push({"mc" : _loc9_, "dist" : _loc12_});
                      }
                   }
                   if(_loc7_.length == 0)
@@ -169,8 +165,8 @@ package
          var _loc8_:BFOUNDATION = null;
          var _loc9_:Point = null;
          var _loc1_:Array = [];
-         var _loc2_:Vector.<Object> = InstanceManager.getInstancesByClass(BASE.isInfernoMainYardOrOutpost ? HOUSINGBUNKER : BUILDING15);
-         for each(_loc3_ in _loc2_)
+         var houses:Vector.<Object> = InstanceManager.getInstancesByClass(BUILDING15).concat(InstanceManager.getInstancesByClass(HOUSINGBUNKER));
+         for each(_loc3_ in houses)
          {
             if(_loc3_.health > 0)
             {

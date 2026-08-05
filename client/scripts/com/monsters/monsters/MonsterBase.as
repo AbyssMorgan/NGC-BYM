@@ -416,10 +416,10 @@ package com.monsters.monsters
          {
             if(_loc5_ >= maxHealth)
             {
-            //    if(this._graphic)
-            //    {
-            //       this._graphic.fillRect(this._graphic.rect,0);
-            //    }
+               if(this._graphic)
+               {
+                  this._graphic.fillRect(this._graphic.rect,0);
+               }
                param1 = maxHealth - health;
             }
             this.healed(param1);

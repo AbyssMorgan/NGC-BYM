@@ -381,16 +381,10 @@ package
       public function Juice(param1:MouseEvent = null) : void
       {
          var _loc2_:String = null;
-         var _loc3_:String = null;
          var _loc4_:BFOUNDATION = null;
          var _loc5_:MonsterBase = null;
          var _loc8_:int = 0;
-         var _loc6_:Array = [];
-         var _loc7_:Vector.<Object> = InstanceManager.getInstancesByClass(BASE.isInfernoMainYardOrOutpost ? HOUSINGBUNKER : BUILDING15);
-         for each(_loc4_ in _loc7_)
-         {
-            _loc6_.push(_loc4_);
-         }
+         var houses:Vector.<Object> = InstanceManager.getInstancesByClass(BUILDING15).concat(InstanceManager.getInstancesByClass(HOUSINGBUNKER));
          for(_loc2_ in this._juiceList)
          {
             GLOBAL.player.monsterListByID(_loc2_).add(-this._juiceList[_loc2_]);
@@ -409,7 +403,7 @@ package
             _loc8_ = 0;
             while(_loc8_ < this._juiceList[_loc2_])
             {
-               _loc4_ = _loc6_[int(Math.random() * _loc6_.length)];
+               _loc4_ = houses[int(Math.random() * houses.length)] as BFOUNDATION;
                CREATURES.Spawn(_loc2_,MAP._BUILDINGTOPS,"juice",new Point(_loc4_.x,_loc4_.y).add(new Point(-60 + Math.random() * 135,65 + Math.random() * 50)),Math.random() * 360);
                _loc8_++;
             }

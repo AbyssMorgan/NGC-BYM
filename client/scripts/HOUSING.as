@@ -72,12 +72,12 @@ package
          _housingSpace = new SecNum(0);
          _housingBuildingUpgrading = false;
          var _loc1_:int = 0;
-         var _loc2_:Vector.<Object> = InstanceManager.getInstancesByClass(BASE.isInfernoMainYardOrOutpost ? HOUSINGBUNKER : BUILDING15);
-         for each(_loc3_ in _loc2_)
+         var houses:Vector.<Object> = InstanceManager.getInstancesByClass(BUILDING15).concat(InstanceManager.getInstancesByClass(HOUSINGBUNKER));
+         for each(_loc3_ in houses)
          {
             if(_loc3_._countdownBuild.Get() <= 0 && (_loc3_.health > 10 || MapRoomManager.instance.isInMapRoom3))
             {
-               _loc6_ = int(_loc3_._buildingProps.capacity[_loc3_.getEffectiveLevel() - 1]);
+               _loc6_ = int(_loc3_._buildingProps.capacity[_loc3_._lvl.Get() - 1]);
                if(GLOBAL._extraHousing >= GLOBAL.Timestamp() && GLOBAL._extraHousingPower.Get() > 0)
                {
                   _loc6_ = addHousingCapacityMultiplier(_loc6_);
@@ -167,8 +167,8 @@ package
          var _loc6_:Number = NaN;
          var _loc7_:int = 0;
          var _loc2_:Array = [];
-         var _loc3_:Vector.<Object> = InstanceManager.getInstancesByClass(BASE.isInfernoMainYardOrOutpost ? HOUSINGBUNKER : BUILDING15);
-         for each(_loc4_ in _loc3_)
+         var houses:Vector.<Object> = InstanceManager.getInstancesByClass(BUILDING15).concat(InstanceManager.getInstancesByClass(HOUSINGBUNKER));
+         for each(_loc4_ in houses)
          {
             if(_loc4_._countdownBuild.Get() <= 0 && (_loc4_.health > 0 || MapRoomManager.instance.isInMapRoom3))
             {
@@ -198,12 +198,12 @@ package
          _housingCapacity = new SecNum(0);
          _housingUsed = new SecNum(0);
          _housingSpace = new SecNum(0);
-         var _loc2_:Vector.<Object> = InstanceManager.getInstancesByClass(BASE.isInfernoMainYardOrOutpost ? HOUSINGBUNKER : BUILDING15);
-         for each(_loc3_ in _loc2_)
+         var houses:Vector.<Object> = InstanceManager.getInstancesByClass(BUILDING15).concat(InstanceManager.getInstancesByClass(HOUSINGBUNKER));
+         for each(_loc3_ in houses)
          {
             if(_loc3_._countdownBuild.Get() <= 0 && (_loc3_.health > 0 || MapRoomManager.instance.isInMapRoom3))
             {
-               _loc6_ = int(_loc3_._buildingProps.capacity[_loc3_.getEffectiveLevel() - 1]);
+               _loc6_ = int(_loc3_._buildingProps.capacity[_loc3_._lvl.Get() - 1]);
                if(GLOBAL._extraHousing >= GLOBAL.Timestamp() && GLOBAL._extraHousingPower.Get() > 0)
                {
                   _loc6_ = addHousingCapacityMultiplier(_loc6_);
@@ -249,8 +249,8 @@ package
          var _loc9_:BFOUNDATION = null;
          var _loc10_:Point = null;
          var _loc1_:Array = [];
-         var _loc2_:Vector.<Object> = InstanceManager.getInstancesByClass(BASE.isInfernoMainYardOrOutpost ? HOUSINGBUNKER : BUILDING15);
-         for each(_loc3_ in _loc2_)
+         var houses:Vector.<Object> = InstanceManager.getInstancesByClass(BUILDING15).concat(InstanceManager.getInstancesByClass(HOUSINGBUNKER));
+         for each(_loc3_ in houses)
          {
             if(_loc3_.health > 0 || MapRoomManager.instance.isInMapRoom3)
             {

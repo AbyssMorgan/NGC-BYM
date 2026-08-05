@@ -730,17 +730,8 @@ package
       public function juice(param1:MouseEvent = null) : void
       {
          var _loc2_:String = null;
-         var _loc3_:String = null;
-         var _loc4_:BFOUNDATION = null;
-         var _loc5_:MonsterBase = null;
          var _loc8_:int = 0;
          var _loc9_:int = 0;
-         var _loc6_:Array = [];
-         var _loc7_:Vector.<Object> = InstanceManager.getInstancesByClass(BASE.isInfernoMainYardOrOutpost ? HOUSINGBUNKER : BUILDING15);
-         for each(_loc4_ in _loc7_)
-         {
-            _loc6_.push(_loc4_);
-         }
          for(_loc2_ in this._juiceList)
          {
             _loc8_ = int(this._juiceList[_loc2_]);

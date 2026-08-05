@@ -772,10 +772,10 @@ package
          var _loc4_:int = 0;
          var _loc5_:CreepBase = null;
          var _loc6_:MonsterBase = null;
-         var _loc2_:Vector.<Object> = InstanceManager.getInstancesByClass(BASE.isInfernoMainYardOrOutpost ? HOUSINGBUNKER : BUILDING15);
+         var houses:Vector.<Object> = InstanceManager.getInstancesByClass(BUILDING15).concat(InstanceManager.getInstancesByClass(HOUSINGBUNKER));
          for each(_loc3_ in BASE._buildingsHousing)
          {
-            _loc2_.push(_loc3_);
+            houses.push(_loc3_);
          }
          _loc4_ = int(CREATURELOCKER._creatures[param1].props.cStorage);
          if(Boolean(GLOBAL.player.monsterListByID(param1)) && _loc4_ <= this._bunker._capacity - this._bunker._used)
@@ -791,7 +791,7 @@ package
             }
             if(_loc5_ == null)
             {
-               _loc3_ = _loc2_[int(Math.random() * _loc2_.length)];
+               _loc3_ = houses[int(Math.random() * houses.length)];
                _loc5_ = CREATURES.Spawn(param1,MAP._BUILDINGTOPS,"bunker",new Point(_loc3_.x,_loc3_.y).add(new Point(-60 + Math.random() * 135,65 + Math.random() * 50)),Math.random() * 360) as CreepBase;
             }
             if(_loc5_)

@@ -6794,7 +6794,7 @@ package
 
       public static function isInfernoBuilding(param1:uint):Boolean
       {
-         return (param1 == INFERNOQUAKETOWER.TYPE || param1 == INFERNO_MAGMA_TOWER.ID || param1 == SiegeFactory.ID || param1 == SiegeLab.ID || param1 == SpurtzCannon.TYPE || param1 == BlackSpurtzCannon.TYPE || param1 == 142 || param1 == 143) && !BASE.isInfernoMainYardOrOutpost;
+         return (param1 == INFERNOQUAKETOWER.TYPE || param1 == INFERNO_MAGMA_TOWER.ID || param1 == SiegeFactory.ID || param1 == SiegeLab.ID || param1 == SpurtzCannon.TYPE || param1 == BlackSpurtzCannon.TYPE || param1 == 142 || param1 == 143 || param1 == 128) && !BASE.isInfernoMainYardOrOutpost;
       }
 
       public static function hasNumBuildings(param1:int, param2:int = 0, param3:Boolean = false):int
@@ -6861,41 +6861,22 @@ package
          return _loc1_;
       }
 
-      public static function getNumHousingHealsPerTick():int
-      {
-         var _loc1_:int = 0;
-         var _loc2_:Vector.<Object> = null;
-         var _loc3_:BFOUNDATION = null;
-         _loc1_ = 0;
-         _loc2_ = InstanceManager.getInstancesByClass(!!BASE.isInfernoMainYardOrOutpost ? HOUSINGBUNKER : BUILDING15);
-         if (isInfernoMainYardOrOutpost)
-         {
-            if (_loc2_[0])
-            {
-               _loc1_ = Math.min(4, _loc2_[0]._lvl.Get());
-            }
-         }
-         else
-         {
-            for each (_loc3_ in _loc2_)
-            {
-               _loc1_++;
-            }
-         }
-         return _loc1_;
-      }
+		public static function getNumHousingHealsPerTick():int
+		{
+			var houses:Vector.<Object> = InstanceManager.getInstancesByClass(BUILDING15).concat(InstanceManager.getInstancesByClass(HOUSINGBUNKER));
+			return houses.length;
+		}
 
       public static function FindClosestHousingToPoint(param1:int, param2:int, param3:BFOUNDATION = null, param4:Boolean = true, param5:Boolean = true):BFOUNDATION
       {
          var _loc6_:Array = null;
-         var _loc7_:Vector.<Object> = null;
          var _loc8_:BFOUNDATION = null;
          var _loc9_:int = 0;
          var _loc10_:int = 0;
          var _loc11_:int = 0;
+         var houses:Vector.<Object> = InstanceManager.getInstancesByClass(BUILDING15).concat(InstanceManager.getInstancesByClass(HOUSINGBUNKER));
          _loc6_ = [];
-         _loc7_ = InstanceManager.getInstancesByClass(!!BASE.isInfernoMainYardOrOutpost ? HOUSINGBUNKER : BUILDING15);
-         for each (_loc8_ in _loc7_)
+         for each (_loc8_ in houses)
          {
             if (_loc8_ != param3)
             {
@@ -6906,10 +6887,7 @@ package
                      _loc9_ = _loc8_.x - param1;
                      _loc10_ = _loc8_.y - param2;
                      _loc11_ = int(Math.sqrt(_loc9_ * _loc9_ + _loc10_ * _loc10_));
-                     _loc6_.push({
-                              "house": _loc8_,
-                              "dist": _loc11_
-                           });
+                     _loc6_.push({"house" : _loc8_, "dist" : _loc11_});
                   }
                }
             }

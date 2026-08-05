@@ -1194,11 +1194,11 @@ package
          var _loc8_:int = 0;
          var _loc10_:String = null;
          var _loc11_:MonsterBase = null;
-         var _loc12_:Vector.<Object> = null;
          var _loc13_:BFOUNDATION = null;
          var _loc14_:String = null;
          var _loc15_:int = 0;
          var _loc16_:int = 0;
+		 var houses:Vector.<Object> = InstanceManager.getInstancesByClass(BUILDING15).concat(InstanceManager.getInstancesByClass(HOUSINGBUNKER));
          if(_guardians[param1] == null)
          {
             return;
@@ -1265,7 +1265,6 @@ package
                }
                if(_loc9_)
                {
-                  _loc12_ = InstanceManager.getInstancesByClass(BASE.isInfernoMainYardOrOutpost ? HOUSINGBUNKER : BUILDING15);
                   for(_loc14_ in _loc6_)
                   {
                      GLOBAL.player.monsterListByID(_loc14_).add(-_loc6_[_loc14_]);
@@ -1283,7 +1282,7 @@ package
                      _loc15_ = 0;
                      while(_loc15_ < _loc6_[_loc14_])
                      {
-                        _loc13_ = _loc12_[int(Math.random() * _loc12_.length)] as BFOUNDATION;
+                        _loc13_ = houses[int(Math.random() * houses.length)] as BFOUNDATION;
                         CREATURES.Spawn(_loc14_,MAP._BUILDINGTOPS,"feed",new Point(_loc13_.x,_loc13_.y).add(new Point(-60 + Math.random() * 135,65 + Math.random() * 50)),Math.random() * 360);
                         _loc15_++;
                      }
@@ -1370,7 +1369,6 @@ package
             }
             if(_loc9_)
             {
-               _loc12_ = InstanceManager.getInstancesByClass(BASE.isInfernoMainYardOrOutpost ? HOUSINGBUNKER : BUILDING15);
                for(_loc14_ in _loc6_)
                {
                   GLOBAL.player.monsterListByID(_loc14_).add(-_loc6_[_loc14_]);
@@ -1388,7 +1386,7 @@ package
                   _loc15_ = 0;
                   while(_loc15_ < _loc6_[_loc14_])
                   {
-                     _loc13_ = _loc12_[int(Math.random() * _loc12_.length)] as BFOUNDATION;
+                     _loc13_ = houses[int(Math.random() * houses.length)] as BFOUNDATION;
                      CREATURES.Spawn(_loc14_,MAP._BUILDINGTOPS,"feed",new Point(_loc13_.x,_loc13_.y).add(new Point(-60 + Math.random() * 135,65 + Math.random() * 50)),Math.random() * 360);
                      _loc15_++;
                   }

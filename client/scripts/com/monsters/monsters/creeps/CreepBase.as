@@ -541,7 +541,7 @@ package com.monsters.monsters.creeps
          }
          if(_homeBunker)
          {
-            if(BASE.isInfernoMainYardOrOutpost)
+            if(_homeBunker._type == 128)
             {
                _targetCenter = GRID.FromISO(_homeBunker._mc.x,_homeBunker._mc.y);
                _targetPosition = GRID.FromISO(_homeBunker._mc.x,_homeBunker._mc.y);
@@ -582,7 +582,7 @@ package com.monsters.monsters.creeps
                _targetPosition = new Point(_homeBunker._mc.x,_homeBunker._mc.y);
             }
             _jumpingUp = false;
-            if(BASE.isInfernoMainYardOrOutpost)
+            if(_homeBunker._type == 128)
             {
                _loc1_ = GRID.ToISO(_targetCenter.x + _loc9_,_targetCenter.y + _loc10_,0);
             }
@@ -825,56 +825,64 @@ package com.monsters.monsters.creeps
          }
       }
       
-      public function findDefenseTargets() : void
-      {
-         var _loc1_:Array = null;
-         var _loc2_:Boolean = true;
-         _targetCreeps = Targeting.getCreepsInRange(200,_tmpPoint,Targeting.getOldStyleTargets(targetMode));
-         if(_targetCreeps.length)
-         {
-            _targetCreeps.sortOn(["dist"],Array.NUMERIC);
-            while(_targetCreeps.length > 0 && _targetCreeps[0].creep._behaviour == k_sBHVR_RETREAT)
-            {
-               _targetCreeps.splice(0,1);
-            }
-            if(_creatureID == "IC5")
-            {
-               while(_targetCreeps.length > 0 && _targetCreeps[0].creep._creatureID == "C5")
-               {
-                  _targetCreeps.splice(0,1);
-               }
-            }
-         }
-         if(_targetCreeps.length)
-         {
-            _targetCreep = _targetCreeps[0].creep;
-            this.interceptTarget();
-            _behaviour = k_sBHVR_DEFEND;
-         }
-         else if(Boolean(_targetCreep) && _targetCreep.health > 0)
-         {
-            if(_noDefensePath || _pathing == "direct")
-            {
-               this.interceptTarget();
-            }
-            _behaviour = k_sBHVR_DEFEND;
-         }
-         else if(_homeBunker && _homeBunker.health > 0)
-         {
-            _targetCreep = _homeBunker.GetTarget(targetMode);
-            if(_targetCreep)
-            {
-               _atTarget = false;
-               _attacking = false;
-               _behaviour = k_sBHVR_DEFEND;
-               this.interceptTarget();
-            }
-            else if(_behaviour != k_sBHVR_BUNKER)
-            {
-               this.changeModeBunker();
-            }
-         }
-      }
+		public function findDefenseTargets() : void
+		{
+			trace("findDefenseTargets");
+			var _loc1_:Array = null;
+			var _loc2_:Boolean = true;
+			_targetCreeps = Targeting.getCreepsInRange(200,_tmpPoint,Targeting.getOldStyleTargets(targetMode));
+			if(_targetCreeps.length)
+			{
+				_targetCreeps.sortOn(["dist"],Array.NUMERIC);
+				while(_targetCreeps.length > 0 && _targetCreeps[0].creep._behaviour == k_sBHVR_RETREAT)
+				{
+					_targetCreeps.splice(0,1);
+				}
+				if(_creatureID == "IC5")
+				{
+					while(_targetCreeps.length > 0 && _targetCreeps[0].creep._creatureID == "C5")
+					{
+						_targetCreeps.splice(0,1);
+					}
+				}
+			}
+			if(_targetCreeps.length)
+			{
+				_targetCreep = _targetCreeps[0].creep;
+				this.interceptTarget();
+				_behaviour = k_sBHVR_DEFEND;
+			}
+			else if(Boolean(_targetCreep) && _targetCreep.health > 0)
+			{
+				if(_noDefensePath || _pathing == "direct")
+				{
+					this.interceptTarget();
+				}
+				_behaviour = k_sBHVR_DEFEND;
+			}
+			else if(_homeBunker && _homeBunker.health > 0)
+			{
+				trace("findDefenseTargets 3 : " + _behaviour)
+				_homeBunker.FindTargets(3);
+				_targetCreep = _homeBunker.GetTarget(targetMode);
+				trace(_targetCreep);
+				if(_targetCreep)
+				{
+					_atTarget = false;
+					_attacking = false;
+					_behaviour = k_sBHVR_DEFEND;
+					this.interceptTarget();
+				}
+				else
+				{
+					if(_behaviour != k_sBHVR_BUNKER)
+					{
+						trace("back to bunker");
+						this.changeModeBunker();
+					}
+				}
+			}
+		}
       
       public function click(param1:MouseEvent) : void
       {
@@ -1273,7 +1281,7 @@ package com.monsters.monsters.creeps
             {
                if(Boolean(_homeBunker._monsters) && !this._defenderRemoved)
                {
-                  if(BASE.isInfernoMainYardOrOutpost)
+                  if(_homeBunker._type == 128)
                   {
                      _homeBunker.RemoveCreature(_creatureID);
                      if(MapRoomManager.instance.isInMapRoom3)

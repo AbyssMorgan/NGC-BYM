@@ -499,101 +499,101 @@ package com.monsters.monsters.creeps
          findTarget(_targetGroup);
       }
       
-      public function changeModeBunker() : void
-      {
-         var _loc1_:Point = null;
-         var _loc2_:Number = NaN;
-         var _loc3_:Object = null;
-         var _loc4_:String = null;
-         var _loc5_:Object = null;
-         var _loc6_:BFOUNDATION = null;
-         var _loc7_:Number = NaN;
-         var _loc8_:Number = NaN;
-         var _loc9_:Number = NaN;
-         var _loc10_:Number = NaN;
-         var _loc11_:int = 0;
-         var _loc12_:int = 0;
-         _behaviour = k_sBHVR_BUNKER;
-         changeMode();
-         _doDefenseBurrow = false;
-         if(isDisposable)
-         {
-            setHealth(0);
-            return;
-         }
-         if(!_homeBunker)
-         {
-            _loc2_ = 9999999 * 9999999;
-            _loc3_ = BASE._buildingsAll;
-            for(_loc4_ in _loc3_)
-            {
-               _loc5_ = _loc3_[_loc4_];
-               if(MONSTERBUNKER.isBunkerBuilding(_loc5_._type) && _loc5_._countdownBuild.Get() <= 0 && _loc5_.health > 0)
-               {
-                  _loc7_ = (_loc6_ = _loc5_ as BFOUNDATION)._mc.x - _tmpPoint.x;
-                  _loc8_ = _loc6_._mc.y - _tmpPoint.y;
-                  if(_loc2_ > _loc7_ * _loc7_ + _loc8_ * _loc8_)
-                  {
-                     _homeBunker = _loc6_;
-                  }
-               }
-            }
-         }
-         if(_homeBunker)
-         {
-            if(_homeBunker._type == 128)
-            {
-               _targetCenter = GRID.FromISO(_homeBunker._mc.x,_homeBunker._mc.y);
-               _targetPosition = GRID.FromISO(_homeBunker._mc.x,_homeBunker._mc.y);
-               _loc9_ = 100;
-               _loc10_ = 60;
-            }
-            else
-            {
-               _loc9_ = _tmpPoint.x - _homeBunker._position.x;
-               _loc10_ = _tmpPoint.y - _homeBunker._position.y;
-               _loc11_ = int(_homeBunker._footprint[0].width);
-               _loc12_ = int(_homeBunker._footprint[0].height);
-               if(_loc10_ <= 0)
-               {
-                  _loc10_ = _loc12_ / 4;
-                  if(_loc9_ <= 0)
-                  {
-                     _loc9_ = _loc11_ / -3;
-                  }
-                  else
-                  {
-                     _loc9_ = _loc11_ / 2;
-                  }
-               }
-               else
-               {
-                  _loc10_ = _loc12_ / 2;
-                  if(_loc9_ <= 0)
-                  {
-                     _loc9_ = _loc11_ / -4;
-                  }
-                  else
-                  {
-                     _loc9_ = _loc11_ / 2;
-                  }
-               }
-               _targetCenter = GRID.FromISO(_homeBunker._position.x + _loc9_,_homeBunker._position.y + _loc10_);
-               _targetPosition = new Point(_homeBunker._mc.x,_homeBunker._mc.y);
-            }
-            _jumpingUp = false;
-            if(_homeBunker._type == 128)
-            {
-               _loc1_ = GRID.ToISO(_targetCenter.x + _loc9_,_targetCenter.y + _loc10_,0);
-            }
-            else
-            {
-               _loc1_ = GRID.ToISO(_targetCenter.x,_targetCenter.y,0);
-            }
-            PATHING.GetPath(_tmpPoint,new Rectangle(_loc1_.x,_loc1_.y,10,10),setWaypoints,true);
-            return;
-         }
-      }
+		public function changeModeBunker() : void
+		{
+			var _loc1_:Point = null;
+			var _loc2_:Number = NaN;
+			var _loc3_:Object = null;
+			var _loc4_:String = null;
+			var _loc5_:Object = null;
+			var _loc6_:BFOUNDATION = null;
+			var _loc7_:Number = NaN;
+			var _loc8_:Number = NaN;
+			var _loc9_:Number = NaN;
+			var _loc10_:Number = NaN;
+			var _loc11_:int = 0;
+			var _loc12_:int = 0;
+			_behaviour = k_sBHVR_BUNKER;
+			changeMode();
+			_doDefenseBurrow = false;
+			if(isDisposable)
+			{
+				setHealth(0);
+				return;
+			}
+			if(!_homeBunker)
+			{
+				_loc2_ = 9999999 * 9999999;
+				_loc3_ = BASE._buildingsAll;
+				for(_loc4_ in _loc3_)
+				{
+					_loc5_ = _loc3_[_loc4_];
+					if(MONSTERBUNKER.isBunkerBuilding(_loc5_._type) && _loc5_._countdownBuild.Get() <= 0 && _loc5_.health > 0)
+					{
+						_loc7_ = (_loc6_ = _loc5_ as BFOUNDATION)._mc.x - _tmpPoint.x;
+						_loc8_ = _loc6_._mc.y - _tmpPoint.y;
+						if(_loc2_ > _loc7_ * _loc7_ + _loc8_ * _loc8_)
+						{
+							_homeBunker = _loc6_;
+						}
+					}
+				}
+			}
+			if(_homeBunker)
+			{
+				if(_homeBunker._type == 128)
+				{
+					_targetCenter = GRID.FromISO(_homeBunker._mc.x,_homeBunker._mc.y);
+					_targetPosition = GRID.FromISO(_homeBunker._mc.x,_homeBunker._mc.y);
+					_loc9_ = 100;
+					_loc10_ = 60;
+				}
+				else
+				{
+					_loc9_ = _tmpPoint.x - _homeBunker._position.x;
+					_loc10_ = _tmpPoint.y - _homeBunker._position.y;
+					_loc11_ = int(_homeBunker._footprint[0].width);
+					_loc12_ = int(_homeBunker._footprint[0].height);
+					if(_loc10_ <= 0)
+					{
+						_loc10_ = _loc12_ / 4;
+						if(_loc9_ <= 0)
+						{
+							_loc9_ = _loc11_ / -3;
+						}
+						else
+						{
+							_loc9_ = _loc11_ / 2;
+						}
+					}
+					else
+					{
+						_loc10_ = _loc12_ / 2;
+						if(_loc9_ <= 0)
+						{
+							_loc9_ = _loc11_ / -4;
+						}
+						else
+						{
+							_loc9_ = _loc11_ / 2;
+						}
+					}
+					_targetCenter = GRID.FromISO(_homeBunker._position.x + _loc9_,_homeBunker._position.y + _loc10_);
+					_targetPosition = new Point(_homeBunker._mc.x,_homeBunker._mc.y);
+				}
+				_jumpingUp = false;
+				if(_homeBunker._type == 128)
+				{
+					_loc1_ = GRID.ToISO(_targetCenter.x + _loc9_,_targetCenter.y + _loc10_,0);
+				}
+				else
+				{
+					_loc1_ = GRID.ToISO(_targetCenter.x,_targetCenter.y,0);
+				}
+				PATHING.GetPath(_tmpPoint,new Rectangle(_loc1_.x,_loc1_.y,10,10),setWaypoints,true);
+				return;
+			}
+		}
       
       public function changeModeDecoy() : void
       {
@@ -1823,12 +1823,8 @@ package com.monsters.monsters.creeps
          }
          if(_atTarget && _behaviour == k_sBHVR_BUNKER)
          {
-            if(_homeBunker)
+            if(_homeBunker && !this._defenderRemoved)
             {
-               if(MapRoomManager.instance.isInMapRoom3 && BASE.isMainYardOrInfernoMainYard)
-               {
-                  GLOBAL.player.monsterListByID(_creatureID).unlinkCreepFromData(this);
-               }
                _homeBunker._monstersDispatched[_creatureID] = int(_homeBunker._monstersDispatched[_creatureID]) - 1;
                if(_homeBunker._monstersDispatched[_creatureID] < 0)
                {
@@ -1839,8 +1835,12 @@ package com.monsters.monsters.creeps
                {
                   _homeBunker._monstersDispatchedTotal = 0;
                }
+               this._defenderRemoved = true;
             }
-            if(!this.m_bInfernoCreep || !BASE.isInfernoMainYardOrOutpost)
+            // Only despawn (return true) in MapRoom3 when the creep should not remain
+            // visible inside the bunker. Keep returned monsters alive for main-yard views
+            // and inferno creeps in inferno yard/outpost views.
+            if(MapRoomManager.instance.isInMapRoom3 && !((BASE.isInfernoMainYardOrOutpost && this.m_bInfernoCreep) || (BASE.isMainYardOrInfernoMainYard && !this.m_bInfernoCreep)))
             {
                return true;
             }
@@ -1926,25 +1926,25 @@ package com.monsters.monsters.creeps
                         {
                            if(building.health > 0)
                            {
-                              TweenLite.to(_graphicMC,0.4,{
-                                 "y":_graphicMC.y - 60,
-                                 "ease":Sine.easeOut,
-                                 "overwrite":false,
-                                 "onComplete":function():void
-                                 {
-                                    _jumpingUp = false;
-                                 }
-                              });
-                              TweenLite.to(_graphicMC,0.4,{
-                                 "y":_graphicMC.y,
-                                 "ease":Bounce.easeOut,
-                                 "overwrite":false,
-                                 "delay":0.4,
-                                 "onComplete":function():void
-                                 {
-                                    _jumping = false;
-                                 }
-                              });
+								TweenLite.to(_graphicMC,0.4,{
+									"y":_graphicMC.y - 60,
+									"ease":Sine.easeOut,
+									"overwrite":false,
+									"onComplete":function():void
+									{
+										_jumpingUp = false;
+									}
+								});
+								TweenLite.to(_graphicMC,0.4,{
+									"y":_graphicMC.y,
+									"ease":Bounce.easeOut,
+									"overwrite":false,
+									"delay":0.4,
+									"onComplete":function():void
+									{
+										_jumping = false;
+									}
+								});
                               _jumping = true;
                               _jumpingUp = true;
                            }

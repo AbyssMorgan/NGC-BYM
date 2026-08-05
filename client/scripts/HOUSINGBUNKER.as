@@ -502,7 +502,9 @@ package
       
       public function RemoveCreature(param1:String) : void
       {
-         if(!MapRoomManager.instance.isInMapRoom3 || !BASE.isMainYardOrInfernoMainYard)
+		 trace("RemoveCreature ");
+         // Only decrement stored counts when NOT in MapRoom3 AND NOT a main/inferno yard
+         if(!MapRoomManager.instance.isInMapRoom3 && !BASE.isMainYardOrInfernoMainYard)
          {
             this._monsters[param1] = int(this._monsters[param1]) - 1;
             if(this._monsters[param1] < 0)

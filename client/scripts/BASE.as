@@ -3386,19 +3386,20 @@ package
 
       private static function getMushroomSaveData():Object
       {
-         var _loc1_:BFOUNDATION = null;
-         var _loc2_:Object = null;
-         _mushroomList = [];
-         var _loc3_:Vector.<Object> = InstanceManager.getInstancesByClass(BMUSHROOM);
-         for each (_loc1_ in _loc3_)
-         {
-            _loc2_ = _loc1_.Export();
-            _mushroomList.push([_loc2_.frame, _loc2_.X, _loc2_.Y]);
-         }
-         return {
-               "l": _mushroomList,
-               "s": int(_lastSpawnedMushroom)
-            };
+		return {"l" : [], "s" : int(_lastSpawnedMushroom)};
+        //  var _loc1_:BFOUNDATION = null;
+        //  var _loc2_:Object = null;
+        //  _mushroomList = [];
+        //  var _loc3_:Vector.<Object> = InstanceManager.getInstancesByClass(BMUSHROOM);
+        //  for each (_loc1_ in _loc3_)
+        //  {
+        //     _loc2_ = _loc1_.Export();
+        //     _mushroomList.push([_loc2_.frame, _loc2_.X, _loc2_.Y]);
+        //  }
+        //  return {
+        //        "l": _mushroomList,
+        //        "s": int(_lastSpawnedMushroom)
+        //     };
       }
 
       private static function getLootReportSaveData():Object
@@ -3885,16 +3886,7 @@ package
             saveData["healtime"] = getEstimatedRepairDuration();
          }
          var buildingSaveData:Vector.<Object> = BFOUNDATION.getBuildingSaveData();
-        //  if (!MapRoomManager.instance.isInMapRoom3 || !GLOBAL.isInAttackMode || BASE.isInfernoMainYardOrOutpost)
-        //  {
-            saveData["buildingdata"] = JSON.stringify(buildingSaveData[0]);
-        //  }
-         // Old implementation - was specific to MapRoom3, should have been for every map room.
-         // if(MapRoomManager.instance.isInMapRoom3 && !BASE.isInfernoMainYardOrOutpost)
-         // {
-         // saveData["buildinghealthdata"] = JSON.stringify(buildingSaveData[1]);
-         // saveData["buildingkeydata"] = JSON.stringify(buildingSaveData[2]);
-         // }
+         saveData["buildingdata"] = JSON.stringify(buildingSaveData[0]);
          saveData["buildinghealthdata"] = JSON.stringify(buildingSaveData[1]);
          saveData["buildingkeydata"] = JSON.stringify(buildingSaveData[2]);
          saveData["stats"] = JSON.stringify(getStatsSaveData());

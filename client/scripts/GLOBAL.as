@@ -672,7 +672,6 @@ package
          }
 
 		if(LOGIN._playerID == 7 && BASE.isMainYard){
-
 			_buildingProps[1 - 1].quantity = [100];
 			_buildingProps[2 - 1].quantity = [100];
 			_buildingProps[3 - 1].quantity = [100];
@@ -686,7 +685,6 @@ package
 			_buildingProps[12 - 1].quantity = [100];
 			_buildingProps[13 - 1].quantity = [100];
 			_buildingProps[14 - 1].quantity = [100];
-			_buildingProps[14 - 1].block = false;
 			_buildingProps[15 - 1].quantity = [100];
 			_buildingProps[16 - 1].quantity = [100];
 			_buildingProps[17 - 1].quantity = [5000];
@@ -705,38 +703,35 @@ package
 			_buildingProps[116 - 1].quantity = [100];
 			_buildingProps[117 - 1].quantity = [100];
 			_buildingProps[118 - 1].quantity = [100];
+			_buildingProps[128 - 1].quantity = [100];
+			_buildingProps[129 - 1].quantity = [100];
+			_buildingProps[132 - 1].quantity = [100];
 			_buildingProps[133 - 1].quantity = [100];
 			_buildingProps[134 - 1].quantity = [100];
-
-			_buildingProps[129 - 1].quantity = [100];
-			_buildingProps[129 - 1].block = false;
-
-			_buildingProps[132 - 1].quantity = [100];
-			_buildingProps[132 - 1].block = false;
-
 			_buildingProps[136 - 1].quantity = [100];
-			_buildingProps[136 - 1].block = false;
-
 			_buildingProps[137 - 1].quantity = [100];
-			_buildingProps[137 - 1].block = false;
-
 			_buildingProps[138 - 1].quantity = [100];
-			_buildingProps[138 - 1].block = false;
-			_buildingProps[138 - 1].isImmobile = false;
-			_buildingProps[138 - 1].isUntargetable = false;
-			_buildingProps[138 - 1].isNoMoreInfoButton = false;
-
 			_buildingProps[140 - 1].quantity = [100];
-			_buildingProps[140 - 1].block = false;
-			_buildingProps[140 - 1].isImmobile = false;
-			_buildingProps[140 - 1].isUntargetable = false;
-			_buildingProps[140 - 1].isNoMoreInfoButton = false;
-			
 			_buildingProps[142 - 1].quantity = [100];
 			_buildingProps[143 - 1].quantity = [100];
 			_buildingProps[144 - 1].quantity = [100];
 			_buildingProps[145 - 1].quantity = [100];
 			_buildingProps[146 - 1].quantity = [100];
+
+			_buildingProps[14 - 1].block = false;
+			_buildingProps[128 - 1].block = false;
+			_buildingProps[129 - 1].block = false;
+			_buildingProps[132 - 1].block = false;
+			_buildingProps[136 - 1].block = false;
+			_buildingProps[137 - 1].block = false;
+			_buildingProps[138 - 1].block = false;
+			_buildingProps[138 - 1].isImmobile = false;
+			_buildingProps[138 - 1].isUntargetable = false;
+			_buildingProps[138 - 1].isNoMoreInfoButton = false;
+			_buildingProps[140 - 1].block = false;
+			_buildingProps[140 - 1].isImmobile = false;
+			_buildingProps[140 - 1].isUntargetable = false;
+			_buildingProps[140 - 1].isNoMoreInfoButton = false;
 		}
       }
 

@@ -5,12 +5,6 @@ import { purchaseKeys, rewardCredits } from "../../game-data/store/purchaseKeys.
 import { User } from "../../models/user.model.js";
 import type { Context } from "koa";
 
-interface Mushrooms {
-  MUSHROOM1: number;
-  MUSHROOM2: number;
-  MUSHROOM3: number;
-}
-
 /**
  *  Keeps track of shiny (credits) spent and obtained.
  * @param {Save} save - The object representing the user's save data.
@@ -23,13 +17,6 @@ export const updateCredits = (ctx: Context, save: Save, item: string, quantity: 
 
   if (quantity <= 0) {
     logger.error("Invalid purchase quantity!", { item, quantity });
-    return;
-  }
-
-  // Handle mushrooms
-  const mushroomCredits: Mushrooms = { MUSHROOM1: 3, MUSHROOM2: 8, MUSHROOM3: 3 };
-  if (item in mushroomCredits) {
-    userSave.credits += mushroomCredits[item as keyof Mushrooms];
     return;
   }
 

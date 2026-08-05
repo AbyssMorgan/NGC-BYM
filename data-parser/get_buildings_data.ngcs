@@ -34,6 +34,7 @@ $files = [
 	'heavytrap.as',            // ID 117
 	'railguntower.as',         // ID 118
 	'championchamber.as',      // ID 119
+	'housingbunker.as',        // ID 128
 	'bi_quaketower.as',        // ID 129
 	'bi_magmatower.as',        // ID 132
 	'siegefactory.as',         // ID 133

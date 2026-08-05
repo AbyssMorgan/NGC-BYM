@@ -437,7 +437,6 @@ package
       {
          var exportBuildingData:Object = null;
          var buildingData:BFOUNDATION = null;
-         var hasTownHall:Boolean = false;
          var saveData:Vector.<Object> = new Vector.<Object>();
          var building:Vector.<Object> = InstanceManager.getInstancesByClass(BFOUNDATION);
          var buildingHealthData:Object = {};
@@ -450,10 +449,6 @@ package
          {
             if(!(buildingData is BMUSHROOM) && !(GLOBAL._newBuilding === buildingData))
             {
-               if(buildingData is ICoreBuilding)
-               {
-                  hasTownHall = true;
-               }
                if(buildingData._type == 53 && buildingData._expireTime < GLOBAL.Timestamp())
                {
                   buildingHealthData[buildingData._id] = 0;
@@ -484,10 +479,6 @@ package
                   }
                }
             }
-         }
-         if(!hasTownHall)
-         {
-            LOGGER.Log("err","User missing TownHall upon save");
          }
          BASE._percentDamaged = Math.max(0, Math.ceil(100.0 - 100.0 / s_totalBuildingMaxHP * s_totalBuildingHP));
          // Comment: This gives an out-of-range index error. The md5.as class is malformed

@@ -2743,6 +2743,292 @@ package
 						"b115lvl": 14
 					}
 				},
+				{
+					"order": 1,
+					"list": true,
+					"reward": [200000, 200000, 100000, 100000, 0],
+					"id": "MAGMA1",
+					"group": 0,
+					"name": "Magma Tower",
+					"description": "Build Magma Tower",
+					"hint": "You can speed up upgrades.",
+					"questimage": "magma_tower.jpg",
+					"rules":
+					{
+						"b132lvl": 1
+					}
+				},
+				{
+					"order": 2,
+					"list": true,
+					"reward": [400000, 400000, 200000, 200000, 0],
+					"id": "MAGMA2",
+					"group": 0,
+					"name": "Magma Tower Level 2",
+					"description": "Upgrade your Magma Tower to Level 2",
+					"hint": "You can speed up upgrades.",
+					"questimage": "magma_tower.jpg",
+					"prereq": "MAGMA1",
+					"rules":
+					{
+						"b132lvl": 2
+					}
+				},
+				{
+					"order": 3,
+					"list": true,
+					"reward": [800000, 800000, 400000, 400000, 0],
+					"id": "MAGMA3",
+					"group": 0,
+					"name": "Magma Tower Level 3",
+					"description": "Upgrade your Magma Tower to Level 3",
+					"hint": "You can speed up upgrades.",
+					"questimage": "magma_tower.jpg",
+					"prereq": "MAGMA2",
+					"rules":
+					{
+						"b132lvl": 3
+					}
+				},
+				{
+					"order": 4,
+					"list": true,
+					"reward": [1600000, 1600000, 800000, 800000, 0],
+					"id": "MAGMA4",
+					"group": 0,
+					"name": "Magma Tower Level 4",
+					"description": "Upgrade your Magma Tower to Level 4",
+					"hint": "You can speed up upgrades.",
+					"questimage": "magma_tower.jpg",
+					"prereq": "MAGMA3",
+					"rules":
+					{
+						"b132lvl": 4
+					}
+				},
+				{
+					"order": 5,
+					"list": true,
+					"reward": [3200000, 3200000, 1600000, 1600000, 0],
+					"id": "MAGMA5",
+					"group": 0,
+					"name": "Magma Tower Level 5",
+					"description": "Upgrade your Magma Tower to Level 5",
+					"hint": "You can speed up upgrades.",
+					"questimage": "magma_tower.jpg",
+					"prereq": "MAGMA4",
+					"rules":
+					{
+						"b132lvl": 5
+					}
+				},
+				{
+					"order": 6,
+					"list": true,
+					"reward": [6400000, 6400000, 3200000, 3200000, 0],
+					"id": "MAGMA6",
+					"group": 0,
+					"name": "Magma Tower Level 6",
+					"description": "Upgrade your Magma Tower to Level 6",
+					"hint": "You can speed up upgrades.",
+					"questimage": "magma_tower.jpg",
+					"prereq": "MAGMA5",
+					"rules":
+					{
+						"b132lvl": 6
+					}
+				},
+				{
+					"order": 8,
+					"list": true,
+					"reward": [12800000, 12800000, 6400000, 6400000, 0],
+					"id": "MAGMA8",
+					"group": 0,
+					"name": "Magma Tower Level 8",
+					"description": "Upgrade your Magma Tower to Level 8",
+					"hint": "You can speed up upgrades.",
+					"questimage": "magma_tower.jpg",
+					"prereq": "MAGMA7",
+					"rules":
+					{
+						"b132lvl": 8
+					}
+				},
+				{
+					"order": 10,
+					"list": true,
+					"reward": [25600000, 25600000, 12800000, 12800000, 0],
+					"id": "MAGMA10",
+					"group": 0,
+					"name": "Magma Tower Level 10",
+					"description": "Upgrade your Magma Tower to Level 10",
+					"hint": "You can speed up upgrades.",
+					"questimage": "magma_tower.jpg",
+					"prereq": "MAGMA9",
+					"rules":
+					{
+						"b132lvl": 10
+					}
+				},
+				{
+					"order": 12,
+					"list": true,
+					"reward": [51200000, 51200000, 25600000, 25600000, 0],
+					"id": "MAGMA12",
+					"group": 0,
+					"name": "Magma Tower Level 12",
+					"description": "Upgrade your Magma Tower to Level 12",
+					"hint": "You can speed up upgrades.",
+					"questimage": "magma_tower.jpg",
+					"prereq": "MAGMA10",
+					"rules":
+					{
+						"b132lvl": 12
+					}
+				},
+				{
+					"order": 1,
+					"list": true,
+					"reward": [200000, 200000, 100000, 100000, 0],
+					"id": "QUAKE1",
+					"group": 0,
+					"name": "Quake Tower",
+					"description": "Build Quake Tower",
+					"hint": "You can speed up upgrades.",
+					"questimage": "quake_tower.jpg",
+					"rules":
+					{
+						"b129lvl": 1
+					}
+				},
+				{
+					"order": 2,
+					"list": true,
+					"reward": [400000, 400000, 200000, 200000, 0],
+					"id": "QUAKE2",
+					"group": 0,
+					"name": "Quake Tower Level 2",
+					"description": "Upgrade your Quake Tower to Level 2",
+					"hint": "You can speed up upgrades.",
+					"questimage": "quake_tower.jpg",
+					"prereq": "QUAKE1",
+					"rules":
+					{
+						"b129lvl": 2
+					}
+				},
+				{
+					"order": 3,
+					"list": true,
+					"reward": [800000, 800000, 400000, 400000, 0],
+					"id": "QUAKE3",
+					"group": 0,
+					"name": "Quake Tower Level 3",
+					"description": "Upgrade your Quake Tower to Level 3",
+					"hint": "You can speed up upgrades.",
+					"questimage": "quake_tower.jpg",
+					"prereq": "QUAKE2",
+					"rules":
+					{
+						"b129lvl": 3
+					}
+				},
+				{
+					"order": 4,
+					"list": true,
+					"reward": [1600000, 1600000, 800000, 800000, 0],
+					"id": "QUAKE4",
+					"group": 0,
+					"name": "Quake Tower Level 4",
+					"description": "Upgrade your Quake Tower to Level 4",
+					"hint": "You can speed up upgrades.",
+					"questimage": "quake_tower.jpg",
+					"prereq": "QUAKE3",
+					"rules":
+					{
+						"b129lvl": 4
+					}
+				},
+				{
+					"order": 5,
+					"list": true,
+					"reward": [3200000, 3200000, 1600000, 1600000, 0],
+					"id": "QUAKE5",
+					"group": 0,
+					"name": "Quake Tower Level 5",
+					"description": "Upgrade your Quake Tower to Level 5",
+					"hint": "You can speed up upgrades.",
+					"questimage": "quake_tower.jpg",
+					"prereq": "QUAKE4",
+					"rules":
+					{
+						"b129lvl": 5
+					}
+				},
+				{
+					"order": 6,
+					"list": true,
+					"reward": [6400000, 6400000, 3200000, 3200000, 0],
+					"id": "QUAKE6",
+					"group": 0,
+					"name": "Quake Tower Level 6",
+					"description": "Upgrade your Quake Tower to Level 6",
+					"hint": "You can speed up upgrades.",
+					"questimage": "quake_tower.jpg",
+					"prereq": "QUAKE5",
+					"rules":
+					{
+						"b129lvl": 6
+					}
+				},
+				{
+					"order": 8,
+					"list": true,
+					"reward": [12800000, 12800000, 6400000, 6400000, 0],
+					"id": "QUAKE8",
+					"group": 0,
+					"name": "Quake Tower Level 8",
+					"description": "Upgrade your Quake Tower to Level 8",
+					"hint": "You can speed up upgrades.",
+					"questimage": "quake_tower.jpg",
+					"prereq": "QUAKE7",
+					"rules":
+					{
+						"b129lvl": 8
+					}
+				},
+				{
+					"order": 10,
+					"list": true,
+					"reward": [25600000, 25600000, 12800000, 12800000, 0],
+					"id": "QUAKE10",
+					"group": 0,
+					"name": "Quake Tower Level 10",
+					"description": "Upgrade your Quake Tower to Level 10",
+					"hint": "You can speed up upgrades.",
+					"questimage": "quake_tower.jpg",
+					"prereq": "QUAKE9",
+					"rules":
+					{
+						"b129lvl": 10
+					}
+				},
+				{
+					"order": 12,
+					"list": true,
+					"reward": [51200000, 51200000, 25600000, 25600000, 0],
+					"id": "QUAKE12",
+					"group": 0,
+					"name": "Quake Tower Level 12",
+					"description": "Upgrade your Quake Tower to Level 12",
+					"hint": "You can speed up upgrades.",
+					"questimage": "quake_tower.jpg",
+					"prereq": "QUAKE10",
+					"rules":
+					{
+						"b129lvl": 12
+					}
+				},
 
 				// Group 1 (Monsters)
 				{
@@ -4298,7 +4584,7 @@ package
 					"group": 6,
 					"name": "Stronghold x1",
 					"description": "Conquer Strongholds.<br>Conquered #assault_sh#\/1.",
-					"hint": "Stronghold level 60 - 100",
+					"hint": "Stronghold with any level",
 					"questimage": "stronghold.png",
 					"rules":
 					{
@@ -4313,7 +4599,7 @@ package
 					"group": 6,
 					"name": "Stronghold x5",
 					"description": "Conquer Strongholds.<br>Conquered #assault_sh#\/5.",
-					"hint": "Stronghold level 60 - 100",
+					"hint": "Stronghold with any level",
 					"questimage": "stronghold.png",
 					"prereq": "assault_sh_1",
 					"rules":
@@ -4329,7 +4615,7 @@ package
 					"group": 6,
 					"name": "Stronghold x10",
 					"description": "Conquer Strongholds.<br>Conquered #assault_sh#\/10.",
-					"hint": "Stronghold level 60 - 100",
+					"hint": "Stronghold with any level",
 					"questimage": "stronghold.png",
 					"prereq": "assault_sh_5",
 					"rules":
@@ -4345,7 +4631,7 @@ package
 					"group": 6,
 					"name": "Stronghold x15",
 					"description": "Conquer Strongholds.<br>Conquered #assault_sh#\/15.",
-					"hint": "Stronghold level 60 - 100",
+					"hint": "Stronghold with any level",
 					"questimage": "stronghold.png",
 					"prereq": "assault_sh_10",
 					"rules":
@@ -4361,7 +4647,7 @@ package
 					"group": 6,
 					"name": "Stronghold x20",
 					"description": "Conquer Strongholds.<br>Conquered #assault_sh#\/20.",
-					"hint": "Stronghold level 60 - 100",
+					"hint": "Stronghold with any level",
 					"questimage": "stronghold.png",
 					"prereq": "assault_sh_15",
 					"rules":
@@ -4377,7 +4663,7 @@ package
 					"group": 6,
 					"name": "Stronghold x25",
 					"description": "Conquer Strongholds.<br>Conquered #assault_sh#\/25.",
-					"hint": "Stronghold level 60 - 100",
+					"hint": "Stronghold with any level",
 					"questimage": "stronghold.png",
 					"prereq": "assault_sh_20",
 					"rules":
@@ -4393,7 +4679,7 @@ package
 					"group": 6,
 					"name": "Stronghold x30",
 					"description": "Conquer Strongholds.<br>Conquered #assault_sh#\/30.",
-					"hint": "Stronghold level 60 - 100",
+					"hint": "Stronghold with any level",
 					"questimage": "stronghold.png",
 					"prereq": "assault_sh_25",
 					"rules":
@@ -4409,7 +4695,7 @@ package
 					"group": 6,
 					"name": "Stronghold x35",
 					"description": "Conquer Strongholds.<br>Conquered #assault_sh#\/35.",
-					"hint": "Stronghold level 60 - 100",
+					"hint": "Stronghold with any level",
 					"questimage": "stronghold.png",
 					"prereq": "assault_sh_30",
 					"rules":
@@ -4425,7 +4711,7 @@ package
 					"group": 6,
 					"name": "Stronghold x40",
 					"description": "Conquer Strongholds.<br>Conquered #assault_sh#\/40.",
-					"hint": "Stronghold level 60 - 100",
+					"hint": "Stronghold with any level",
 					"questimage": "stronghold.png",
 					"prereq": "assault_sh_35",
 					"rules":
@@ -4441,7 +4727,7 @@ package
 					"group": 6,
 					"name": "Stronghold x45",
 					"description": "Conquer Strongholds.<br>Conquered #assault_sh#\/45.",
-					"hint": "Stronghold level 60 - 100",
+					"hint": "Stronghold with any level",
 					"questimage": "stronghold.png",
 					"prereq": "assault_sh_40",
 					"rules":
@@ -4457,7 +4743,7 @@ package
 					"group": 6,
 					"name": "Stronghold x50",
 					"description": "Conquer Strongholds.<br>Conquered #assault_sh#\/50.",
-					"hint": "Stronghold level 60 - 100",
+					"hint": "Stronghold with any level",
 					"questimage": "stronghold.png",
 					"prereq": "assault_sh_45",
 					"rules":
@@ -4473,7 +4759,7 @@ package
 					"group": 6,
 					"name": "Stronghold x60",
 					"description": "Conquer Strongholds.<br>Conquered #assault_sh#\/60.",
-					"hint": "Stronghold level 60 - 100",
+					"hint": "Stronghold with any level",
 					"questimage": "stronghold.png",
 					"prereq": "assault_sh_50",
 					"rules":
@@ -4489,7 +4775,7 @@ package
 					"group": 6,
 					"name": "Stronghold x70",
 					"description": "Conquer Strongholds.<br>Conquered #assault_sh#\/70.",
-					"hint": "Stronghold level 60 - 100",
+					"hint": "Stronghold with any level",
 					"questimage": "stronghold.png",
 					"prereq": "assault_sh_60",
 					"rules":
@@ -4505,7 +4791,7 @@ package
 					"group": 6,
 					"name": "Stronghold x80",
 					"description": "Conquer Strongholds.<br>Conquered #assault_sh#\/80.",
-					"hint": "Stronghold level 60 - 100",
+					"hint": "Stronghold with any level",
 					"questimage": "stronghold.png",
 					"prereq": "assault_sh_70",
 					"rules":
@@ -4521,7 +4807,7 @@ package
 					"group": 6,
 					"name": "Stronghold x90",
 					"description": "Conquer Strongholds.<br>Conquered #assault_sh#\/90.",
-					"hint": "Stronghold level 60 - 100",
+					"hint": "Stronghold with any level",
 					"questimage": "stronghold.png",
 					"prereq": "assault_sh_80",
 					"rules":
@@ -4537,7 +4823,7 @@ package
 					"group": 6,
 					"name": "Stronghold x100",
 					"description": "Conquer Strongholds.<br>Conquered #assault_sh#\/100.",
-					"hint": "Stronghold level 60 - 100",
+					"hint": "Stronghold with any level",
 					"questimage": "stronghold.png",
 					"prereq": "assault_sh_90",
 					"rules":

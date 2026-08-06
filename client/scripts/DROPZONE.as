@@ -19,7 +19,7 @@ package
 		
 		public static const SIEGEWEAPON_GROUND_SPECIAL:int = 6;
 		
-		public static const SIEGEWEAPON_GROUND_SPECIAL_RADIUS:int = 30;
+		public static const SIEGEWEAPON_GROUND_SPECIAL_RADIUS:int = 100;
 		
 		
 		public var _size:int;
@@ -71,7 +71,7 @@ package
 				switch(this._dropTarget)
 				{
 					case GROUND: {
-						if(!BASE.BuildingOverlap(new Point(x,y),this._size,true,true,true))
+						if(!BASE.BuildingOverlap(new Point(x,y), this._size, true, true, true, false, null))
 						{
 							ring1.gotoAndStop(1);
 						}
@@ -82,7 +82,7 @@ package
 						break;
 					}
 					case SIEGEWEAPON_GROUND: {
-						if(!BASE.BuildingOverlap(new Point(x,y),this._size,true,true,true,false,true))
+						if(!BASE.BuildingOverlap(new Point(x,y), this._size, true, true, true, false, true))
 						{
 							ring1.gotoAndStop(1);
 						}
@@ -94,7 +94,7 @@ package
 						break;
 					}
 					case SIEGEWEAPON_GROUND_SPECIAL: {
-						if(!BASE.BuildingOverlap(new Point(x,y),SIEGEWEAPON_GROUND_SPECIAL_RADIUS,true,true,true,false,false))
+						if(!BASE.BuildingOverlap(new Point(x,y), SIEGEWEAPON_GROUND_SPECIAL_RADIUS, true, true, true, false, false))
 						{
 							ring1.gotoAndStop(1);
 						}
@@ -107,7 +107,7 @@ package
 					}
 					case BUILDINGS:
 					case SIEGEWEAPON_BUILDINGS: {
-						if(BASE.BuildingOverlap(new Point(x,y),this._size,true,true,true,false,true))
+						if(BASE.BuildingOverlap(new Point(x,y), this._size, true, true, true, false, true))
 						{
 							ring1.gotoAndStop(1);
 						}

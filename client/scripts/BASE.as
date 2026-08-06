@@ -6093,7 +6093,7 @@ package
          }
       }
 
-      public static function BuildingOverlap(param1:Point, radius:int, include_traps:Boolean, include_destroyed:Boolean = false, include_decorations:Boolean = false, include_enemy:Boolean = false, anticatapult:Boolean = false):Boolean
+      public static function BuildingOverlap(param1:Point, radius:int, include_traps:Boolean, include_destroyed:Boolean = false, include_decorations:Boolean = false, include_enemy:Boolean = false, anticatapult:* = null):Boolean
       {
          var _loc7_:Vector.<Object> = null;
          var _loc8_:BFOUNDATION = null;
@@ -6108,7 +6108,7 @@ package
          var _anti:BFOUNDATION = null;
 
          // If requested, disallow overlap when the target ellipse intersects any anticatapult (type 144) range.
-         if(anticatapult)
+         if(anticatapult != null)
          {
             _antiList = InstanceManager.getInstancesByClass(BFOUNDATION);
             for each (_anti in _antiList)
@@ -6117,7 +6117,7 @@ package
                {
                   if(IsEllipseInAnticatapultRange(param1, radius, _anti))
                   {
-                     return false;
+                     return !anticatapult;
                   }
                }
             }

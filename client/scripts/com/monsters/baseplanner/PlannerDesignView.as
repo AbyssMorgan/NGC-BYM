@@ -95,6 +95,8 @@ package com.monsters.baseplanner
 
       public var _windowRect:Rectangle;
 
+	  public static var moreInfo:Boolean = false;
+
       private const GRASSCOLOR:uint = 6723891;
 
       private const BOUNDS_LINE_COLOR:uint = 16777215;
@@ -795,6 +797,7 @@ package com.monsters.baseplanner
          {
             return;
          }
+		 moreInfo = param1;
          var _loc2_:int = 0;
          while (_loc2_ < this.displayInventory.length)
          {

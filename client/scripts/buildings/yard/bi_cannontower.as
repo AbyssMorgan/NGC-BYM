@@ -15,6 +15,7 @@ package buildings.yard {
 			"name":"#bi_cannontower#",
 			"size":64,
 			"attackgroup":1,
+			"attackType":1,
 			"tutstage":200,
 			"sale":0,
 			"description":"bi_cannontower_desc",

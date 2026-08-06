@@ -14,6 +14,7 @@ package buildings.yard {
 			"name":"#bi_housing#",
 			"size":200,
 			"attackgroup":2,
+			"attackType":3,
 			"tutstage":50,
 			"sale":0,
 			"block":true,

@@ -15,6 +15,7 @@ package buildings.yard {
 			"name":"#bi_snipertower#",
 			"size":64,
 			"attackgroup":3,
+			"attackType":3,
 			"tutstage":200,
 			"sale":0,
 			"description":"bi_snipertower_desc",

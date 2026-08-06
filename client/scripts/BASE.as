@@ -1871,21 +1871,6 @@ package
             _buildingData["0"].t = 112;
          }
 
-        //  if (isOutpostStronghold && _buildingData.hasOwnProperty("0") && _buildingData["0"].t !== GuardTower.k_TYPE)
-        //  {
-        //     _buildingData["0"].t = GuardTower.k_TYPE;
-        //  }
-
-        //  if (isOutpostResource && _buildingData.hasOwnProperty("0") && _buildingData["0"].t !== ResourceOutpost.k_TYPE)
-        //  {
-        //     _buildingData["0"].t = ResourceOutpost.k_TYPE;
-        //  }
-
-        //  if (isOutpostFortification && _buildingData.hasOwnProperty("0") && _buildingData["0"].t !== OutpostDefender.k_TYPE)
-        //  {
-        //     _buildingData["0"].t = OutpostDefender.k_TYPE;
-        //  }
-
          var buildingTypeCounts:Dictionary = new Dictionary();
          for each (building in _buildingData)
          {

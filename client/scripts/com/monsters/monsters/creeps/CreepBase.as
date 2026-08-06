@@ -875,7 +875,6 @@ package com.monsters.monsters.creeps
 				{
 					if(_behaviour != k_sBHVR_BUNKER)
 					{
-						trace("back to bunker");
 						this.changeModeBunker();
 					}
 				}

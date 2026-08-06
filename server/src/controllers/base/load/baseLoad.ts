@@ -139,6 +139,7 @@ export const baseLoad: KoaController = async (ctx) => {
 				baseSave.buildingdata = original.buildingdata as Save["buildingdata"];
 				baseSave.version = original.version as Save["version"];
 				baseSave.level = original.level as Save["level"];
+				baseSave.monsters = original.monsters as Save["monsters"];
 				baseSave.champion = original.champion as Save["champion"];
 				baseSave.resources = original.resources as Save["resources"];
 				baseSave.storedata = original.storedata as Save["storedata"];

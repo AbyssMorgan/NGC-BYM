@@ -37,7 +37,7 @@ package buildings.yard {
 					"silhouette_img":"114.silhouette.jpg"
 				}
 			},
-			"quantity":[0,0,0,0,1,1,1,1,1,1,1],
+			"quantity":[1,1,1,1,1,1,1,1,1,1,1],
 			"hp":[10000],
 			"repairTime":[1080]
 		};

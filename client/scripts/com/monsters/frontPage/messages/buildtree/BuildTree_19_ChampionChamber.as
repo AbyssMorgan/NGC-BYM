@@ -14,7 +14,7 @@ package com.monsters.frontPage.messages.buildtree
       
       override public function get areRequirementsMet() : Boolean
       {
-         return GLOBAL.townHall._lvl.Get() >= 4 && BASE.hasNumBuildings(CHAMPIONCHAMBER.TYPE) <= 0 && BASE.hasNumBuildings(CHAMPIONCAGE.TYPE,1) >= 1;
+         return BASE.hasNumBuildings(CHAMPIONCHAMBER.TYPE) <= 0 && BASE.hasNumBuildings(CHAMPIONCAGE.TYPE,1) >= 1;
       }
       
       override protected function onButtonClick() : void

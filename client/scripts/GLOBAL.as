@@ -711,9 +711,10 @@ package
 			_buildingProps[136 - 1].quantity = [100];
 			_buildingProps[137 - 1].quantity = [100];
 			_buildingProps[138 - 1].quantity = [100];
+			_buildingProps[139 - 1].quantity = [100];
 			_buildingProps[140 - 1].quantity = [100];
 			_buildingProps[142 - 1].quantity = [100];
-			_buildingProps[143 - 1].quantity = [100];
+			_buildingProps[143 - 1].quantity = [500];
 			_buildingProps[144 - 1].quantity = [100];
 			_buildingProps[145 - 1].quantity = [100];
 			_buildingProps[146 - 1].quantity = [100];
@@ -728,6 +729,10 @@ package
 			_buildingProps[138 - 1].isImmobile = false;
 			_buildingProps[138 - 1].isUntargetable = false;
 			_buildingProps[138 - 1].isNoMoreInfoButton = false;
+			_buildingProps[139 - 1].block = false;
+			_buildingProps[139 - 1].isImmobile = false;
+			_buildingProps[139 - 1].isUntargetable = false;
+			_buildingProps[139 - 1].isNoMoreInfoButton = false;
 			_buildingProps[140 - 1].block = false;
 			_buildingProps[140 - 1].isImmobile = false;
 			_buildingProps[140 - 1].isUntargetable = false;

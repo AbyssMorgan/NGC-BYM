@@ -312,6 +312,9 @@ package com.monsters.player
          var _loc4_:Boolean = false;
          for(creatureID in param1)
          {
+			if(creatureID == "C7" && param1.ownerID > 0){
+				param1.ownerID = 0;
+			}
             if(creatureID.substr(0,1) == "C" || creatureID.substr(0,2) == "IC")
             {
                if(!_loc4_ && !(param1[creatureID] is Number))

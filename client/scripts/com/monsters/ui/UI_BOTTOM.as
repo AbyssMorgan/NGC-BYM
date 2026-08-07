@@ -34,7 +34,7 @@ package com.monsters.ui
       {
          _children = new Vector.<DisplayObject>();
          _mc = new UI_MENU();
-         if(!_missions && !GLOBAL._flags.viximo)
+         if(GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD && !GLOBAL.isMapOpen())
          {
             _missions = new UI_MISSIONMENU();
          }

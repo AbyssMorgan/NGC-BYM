@@ -106,6 +106,9 @@ export const STRUCTURE_LEVELS: Record<number, number[]> = {
 		100, 100, 100,                                              //  3 %
 		120,                                                        //  1 %
 	],
+	[EnumYardType.MOLOCH_OUTPOST]: [
+		
+	],
 };
 
 /** Attack range in cells for a player's main yard. */

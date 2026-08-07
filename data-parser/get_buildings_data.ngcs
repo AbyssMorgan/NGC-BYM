@@ -14,7 +14,7 @@ $files = [
 	'maproom.as',              // ID 11
 	'generalstore.as',         // ID 12
 	'hatchery.as',             // ID 13
-	'townhall.as',             // ID 14 (Locked always exists)
+	'townhall.as',             // ID 14
 	'housing.as',              // ID 15
 	'hcc.as',                  // ID 16
 	'woodenblock.as',          // ID 17
@@ -48,6 +48,14 @@ $files = [
 	'anticatapult.as',         // ID 144
 	'techlaboratory.as',       // ID 145
 	'crystalhive.as',          // ID 146
+	'bi_boneharvester.as',     // ID 147
+	'bi_coalharvester.as',     // ID 148
+	'bi_sulfurharvester.as',   // ID 149
+	'bi_magmaharverster.as',   // ID 150
+	'bi_storagesilo.as',       // ID 151
+	'bi_hatchery.as',          // ID 152
+	'bi_townhall.as',          // ID 153
+	'bi_academy.as',           // ID 154
 ];
 
 function extract_array(string $content, string $name) : array {

@@ -12,11 +12,13 @@ package buildings.inferno {
 			"buildStatus":0,
 			"type":"trap",
 			"name":"#b_boobytrap#",
+			"attackType":1,
 			"size":50,
 			"attackgroup":4,
 			"tutstage":200,
 			"sale":0,
 			"description":"boobytrap_desc",
+			"cls":BUILDING24,
 			"costs":[
 				{"r1":new SecNum(100000), "r2":new SecNum(100000), "r3":new SecNum(100000), "r4":new SecNum(0), "time":new SecNum(0), "re":[[14,1,2]]}
 			],

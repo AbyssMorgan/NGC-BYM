@@ -7,6 +7,7 @@ export enum EnumYardType {
 	OUTPOST = 1,
 	INFERNO_YARD = 2,
 	INFERNO_OUTPOST = 3,
+	MOLOCH_OUTPOST = 41,
 	EMPTY = 100,
 	PLAYER = 101,
 	RESOURCE = 102,

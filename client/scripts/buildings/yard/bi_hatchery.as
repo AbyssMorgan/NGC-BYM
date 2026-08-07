@@ -1,13 +1,14 @@
-package buildings.inferno {
+package buildings.yard {
 
 	import com.cc.utils.SecNum;
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
+	import buildings.cls.BUILDING152;
 
 	public class bi_hatchery {
 
 		public static const DATA:Object = {
-			"id":13,
+			"id":152,
 			"group":2,
 			"order":7,
 			"buildStatus":0,
@@ -17,11 +18,13 @@ package buildings.inferno {
 			"attackgroup":2,
 			"tutstage":140,
 			"sale":0,
+			"block":true,
+			"cls":BUILDING152,
 			"description":"bi_hatchery_desc",
 			"costs":[
-				{"r1":new SecNum(2000), "r2":new SecNum(2000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(900), "re":[[14,1,1],[128,1,1]]}, // Level 1
-				{"r1":new SecNum(21227), "r2":new SecNum(49529), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(3600), "re":[[14,1,3],[8,1,1]]}, // Level 2
-				{"r1":new SecNum(93600), "r2":new SecNum(218427), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(43200), "re":[[14,1,4]]}, // Level 3
+				{"r1":new SecNum(2000), "r2":new SecNum(2000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(900), "re":[]}, // Level 1
+				{"r1":new SecNum(21227), "r2":new SecNum(49529), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(3600), "re":[]}, // Level 2
+				{"r1":new SecNum(93600), "r2":new SecNum(218427), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(43200), "re":[]}, // Level 3
 			],
 			"imageData":{
 				"baseurl":"buildings/ihatchery/",

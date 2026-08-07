@@ -20,7 +20,7 @@ package buildings.yard {
 			"recycleconfirmationoverride":"hcc_msg_recycle",
 			"cls":BUILDING16,
 			"costs":[
-				{"r1":new SecNum(4000000), "r2":new SecNum(4000000), "r3":new SecNum(4000000), "r4":new SecNum(0), "time":new SecNum(90000), "re":[[14,1,3],[13,3,2]]}
+				{"r1":new SecNum(4000000), "r2":new SecNum(4000000), "r3":new SecNum(4000000), "r4":new SecNum(0), "time":new SecNum(90000), "re":[[14,1,3],[13,3,2]]}, // Level 1
 			],
 			"imageData":{
 				"baseurl":"buildings/hatcherycontrolcenter/",
@@ -44,9 +44,25 @@ package buildings.yard {
 				"baseurl":"buildingthumbs/",
 				"1":{"img":"16.png"}
 			},
-			"quantity":[0,0,0,1,1,1,1,1,1,1,1],
-			"hp":[64000],
-			"repairTime":[300]
+			"quantity":[
+				0, // Level 0
+				0, // Level 1
+				0, // Level 2
+				1, // Level 3
+				1, // Level 4
+				1, // Level 5
+				1, // Level 6
+				1, // Level 7
+				1, // Level 8
+				1, // Level 9
+				1, // Level 10
+			],
+			"hp":[
+				64000, // Level 1
+			],
+			"repairTime":[
+				300, // Level 1
+			]
 		};
 		
 	}

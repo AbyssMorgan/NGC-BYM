@@ -3,6 +3,7 @@ package buildings.yard {
 	import com.cc.utils.SecNum;
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
+	import buildings.cls.BUILDING149;
 
 	public class bi_sulfurharvester {
 
@@ -19,8 +20,8 @@ package buildings.yard {
 			"tutstage":80,
 			"sale":0,
 			"block":true,
-			"description":"bi_sulfurharvester_desc",
 			"cls":BUILDING149,
+			"description":"bi_sulfurharvester_desc",
 			"costs":[
 				{"r1":new SecNum(525), "r2":new SecNum(224), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(20), "re":[[14,1,1]]}, // Level 1
 				{"r1":new SecNum(1102), "r2":new SecNum(470), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(300), "re":[[14,1,1]]}, // Level 2

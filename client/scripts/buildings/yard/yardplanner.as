@@ -19,7 +19,7 @@ package buildings.yard {
 			"description":"yardplanner_desc",
 			"cls":BUILDING10,
 			"costs":[
-				{"r1":new SecNum(250000), "r2":new SecNum(250000), "r3":new SecNum(0), "r4":new SecNum(0), "r5":0, "time":new SecNum(43200), "re":[[14,1,3]]}
+				{"r1":new SecNum(250000), "r2":new SecNum(250000), "r3":new SecNum(0), "r4":new SecNum(0), "r5":0, "time":new SecNum(43200), "re":[[14,1,3]]}, // Level 1
 			],
 			"imageData":{
 				"baseurl":"buildings/yardplanner/",
@@ -43,9 +43,35 @@ package buildings.yard {
 				"baseurl":"buildingthumbs/",
 				"1":{"img":"10.png"}
 			},
-			"quantity":[0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
-			"hp":[16000],
-			"repairTime":[3840]
+			"quantity":[
+				0, // Level 0
+				0, // Level 1
+				0, // Level 2
+				1, // Level 3
+				1, // Level 4
+				1, // Level 5
+				1, // Level 6
+				1, // Level 7
+				1, // Level 8
+				1, // Level 9
+				1, // Level 10
+				1, // Level 11
+				1, // Level 12
+				1, // Level 13
+				1, // Level 14
+				1, // Level 15
+				1, // Level 16
+				1, // Level 17
+				1, // Level 18
+				1, // Level 19
+				1, // Level 20
+			],
+			"hp":[
+				16000, // Level 1
+			],
+			"repairTime":[
+				3840, // Level 1
+			]
 		};
 		
 	}

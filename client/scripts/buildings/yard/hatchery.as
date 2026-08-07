@@ -20,9 +20,9 @@ package buildings.yard {
 			"description":"hatchery_desc",
 			"cls":BUILDING13,
 			"costs":[
-				{"r1":new SecNum(2000), "r2":new SecNum(2000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(900), "re":[[14,1,1],[15,1,1]]},
-				{"r1":new SecNum(21227), "r2":new SecNum(49529), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(3600), "re":[[14,1,3],[8,1,1]]},
-				{"r1":new SecNum(93600), "r2":new SecNum(218427), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(43200), "re":[[14,1,4]]}
+				{"r1":new SecNum(2000), "r2":new SecNum(2000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(900), "re":[[14,1,1],[15,1,1]]}, // Level 1
+				{"r1":new SecNum(21227), "r2":new SecNum(49529), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(3600), "re":[[14,1,3],[8,1,1]]}, // Level 2
+				{"r1":new SecNum(93600), "r2":new SecNum(218427), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(43200), "re":[[14,1,4]]}, // Level 3
 			],
 			"imageData":{
 				"baseurl":"buildings/hatchery/",
@@ -69,9 +69,29 @@ package buildings.yard {
 				"2":{"img":"13.2.png"},
 				"3":{"img":"13.3.png"}
 			},
-			"quantity":[0,1,2,3,4,5,5,5,5,5,5],
-			"hp":[4000,16000,32000],
-			"repairTime":[60,150,300]
+			"quantity":[
+				0, // Level 0
+				1, // Level 1
+				2, // Level 2
+				3, // Level 3
+				4, // Level 4
+				5, // Level 5
+				5, // Level 6
+				5, // Level 7
+				5, // Level 8
+				5, // Level 9
+				5, // Level 10
+			],
+			"hp":[
+				4000, // Level 1
+				16000, // Level 2
+				32000, // Level 3
+			],
+			"repairTime":[
+				60, // Level 1
+				150, // Level 2
+				300, // Level 3
+			]
 		};
 		
 	}

@@ -3,6 +3,7 @@ package buildings.yard {
 	import com.cc.utils.SecNum;
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
+	import buildings.cls.BUILDING150;
 
 	public class bi_magmaharverster {
 
@@ -57,14 +58,6 @@ package buildings.yard {
 					"shadowdestroyed":["shadow.1.destroyed.v2.jpg",new Point(-41,6)]
 				},
 				3:{
-					//"anim":["anim.1.2.png",new Rectangle(-37,-66,59,52),49],
-					//"anim2":["anim.2.2.png",new Rectangle(-1,-4,40,63),49],
-					//"top":["top.2.png",new Point(-40,-15)],
-					//"shadow":["shadow.2.jpg",new Point(-36,4)],
-					//"topdamaged":["top.2.damaged.png",new Point(-48,-35)],
-					//"shadowdamaged":["shadow.2.damaged.jpg",new Point(-38,23)],
-					//"topdestroyed":["top.2.destroyed.png",new Point(-67,-8)]
-					//"shadowdestroyed":["shadow.2.destroyed.jpg",new Point(-70,18)]
 					"anim":["anim.1.v2.png",new Rectangle(9.2,12.6,25,31),49],
 					"anim2":["anim.2.v2.png",new Rectangle(-32,9,36,26),49],
 					"anim3":["anim.3.v2.png",new Rectangle(-18,-60,34,58),49],

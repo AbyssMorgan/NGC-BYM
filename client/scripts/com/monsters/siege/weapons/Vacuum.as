@@ -1,28 +1,25 @@
 package com.monsters.siege.weapons
 {
-   import com.monsters.siege.SiegeWeaponProperty;
-   import com.monsters.siege.SiegeWeapons;
-   import flash.events.TimerEvent;
-   import flash.utils.Timer;
-   import flash.utils.getQualifiedClassName;
-   
-   public class Vacuum extends SiegeWeapon implements IDurable
-   {
-      
-      private static const k_BUILDINGS_THAT_CAN_BE_SUCKED:Vector.<String> = Vector.<String>([getQualifiedClassName(BUILDING14),getQualifiedClassName(ResourceOutpost)]);
-      
-      public static const ID:String = "vacuum";
-      
-      public static const LOOT_BONUS:String = "siegeWeaponLootBonus";
-      
-      public static var target:BFOUNDATION;
-       
-      
-      public var hose:VacuumHose;
-      private var _vacuumTimer:Timer;
-      
-      public function Vacuum()
-      {
+	import com.monsters.siege.SiegeWeaponProperty;
+	import com.monsters.siege.SiegeWeapons;
+	import flash.events.TimerEvent;
+	import flash.utils.Timer;
+	
+	public class Vacuum extends SiegeWeapon implements IDurable
+	{
+		
+		public static const ID:String = "vacuum";
+		
+		public static const LOOT_BONUS:String = "siegeWeaponLootBonus";
+		
+		public static var target:BFOUNDATION;
+		
+		public var hose:VacuumHose;
+
+		private var _vacuumTimer:Timer;
+		
+		public function Vacuum()
+		{
 			weaponID = ID;
 			dropTarget = DROPZONE.SIEGEWEAPON_GROUND;
 			super();
@@ -88,110 +85,115 @@ package com.monsters.siege.weapons
 				{"r1":6260167, "r2":3130083, "r3":6260167, "r4":0, "time":3600}
 			]));
 			canUseInOutposts = true;
-      }
-      
-      public static function getHose() : VacuumHose
-      {
-         var _loc1_:SiegeWeapon = SiegeWeapons.activeWeapon;
-         if(Boolean(_loc1_) && _loc1_ is Vacuum)
-         {
-            return Vacuum(_loc1_).hose;
-         }
-         return null;
-      }
-      
-      public static function getTarget() : BFOUNDATION
-      {
-         var _loc1_:SiegeWeapon = SiegeWeapons.activeWeapon;
-         if(Boolean(_loc1_) && _loc1_ is Vacuum)
-         {
-            return Vacuum(_loc1_).hose._target;
-         }
-         return null;
-      }
-      
-      override public function canFire() : Boolean
-      {
-         return super.canFire() && this.findTarget() != null;
-      }
-      
-      public function get lootBonus() : int
-      {
-         return getProperty(LOOT_BONUS).getValueForLevel(level);
-      }
-      
-      public function get durability() : int
-      {
-         return getProperty(DURABILITY).getValueForLevel(level);
-      }
-      
-      public function get activeDurability() : Number
-      {
-         if(this.hose)
-         {
-            return this.hose.health;
-         }
-         return 0;
-      }
-      
-      override public function activate(param1:Number, param2:Number) : Boolean
-      {
-         var _loc3_:BFOUNDATION = this.findTarget();
-         if(!_loc3_ || Boolean(this.hose))
-         {
-            print("Could not start Vacuum, either no valid target or the weapon is already on");
-            return false;
-         }
-         return super.activate(param1,param2);
-      }
-      
-      override public function onActivation(param1:Number, param2:Number) : void
-      {
-         var _loc3_:BFOUNDATION = this.findTarget();
-         if(!_loc3_ || Boolean(this.hose))
-         {
-            print("Could not start Vacuum, either no valid target or the weapon is already on");
-            return;
-         }
-         this.hose = new VacuumHose(_loc3_,this.durability,this.lootBonus);
-         if(this._vacuumTimer)
-         {
-            this._vacuumTimer.stop();
-            this._vacuumTimer.removeEventListener(TimerEvent.TIMER,this.onTimer);
-            this._vacuumTimer = null;
-         }
-         this._vacuumTimer = new Timer(GLOBAL.tickFastInterval);
-         this._vacuumTimer.addEventListener(TimerEvent.TIMER,this.onTimer,false,0,true);
-         this._vacuumTimer.start();
-         Vacuum.target;
-      }
-      
-      protected function onTimer(param1:TimerEvent) : void
-      {
-         if(this.hose)
-         {
-            this.hose.tick();
-         }
-      }
-      
-      override public function onDeactivation() : void
-      {
-         if(this._vacuumTimer)
-         {
-            this._vacuumTimer.stop();
-            this._vacuumTimer.removeEventListener(TimerEvent.TIMER,this.onTimer);
-            this._vacuumTimer = null;
-         }
-         if(this.hose)
-         {
-            this.hose.RemoveVacuum();
-         }
-         this.hose = null;
-      }
-      
-      private function findTarget() : BFOUNDATION
-      {
-         return Boolean(GLOBAL.townHall) && k_BUILDINGS_THAT_CAN_BE_SUCKED.indexOf(getQualifiedClassName(GLOBAL.townHall)) >= 0 ? GLOBAL.townHall : null;
-      }
-   }
+		}
+		
+		public static function getHose() : VacuumHose
+		{
+			var _loc1_:SiegeWeapon = SiegeWeapons.activeWeapon;
+			if(Boolean(_loc1_) && _loc1_ is Vacuum)
+			{
+				return Vacuum(_loc1_).hose;
+			}
+			return null;
+		}
+		
+		public static function getTarget() : BFOUNDATION
+		{
+			var _loc1_:SiegeWeapon = SiegeWeapons.activeWeapon;
+			if(Boolean(_loc1_) && _loc1_ is Vacuum)
+			{
+				return Vacuum(_loc1_).hose._target;
+			}
+			return null;
+		}
+		
+		override public function canFire() : Boolean
+		{
+			return super.canFire() && this.findTarget() != null;
+		}
+		
+		public function get lootBonus() : int
+		{
+			return getProperty(LOOT_BONUS).getValueForLevel(level);
+		}
+		
+		public function get durability() : int
+		{
+			return getProperty(DURABILITY).getValueForLevel(level);
+		}
+		
+		public function get activeDurability() : Number
+		{
+			if(this.hose)
+			{
+				return this.hose.health;
+			}
+			return 0;
+		}
+		
+		override public function activate(param1:Number, param2:Number) : Boolean
+		{
+			var _loc3_:BFOUNDATION = this.findTarget();
+			if(!_loc3_ || Boolean(this.hose))
+			{
+				print("Could not start Vacuum, either no valid target or the weapon is already on");
+				return false;
+			}
+			return super.activate(param1,param2);
+		}
+		
+		override public function onActivation(param1:Number, param2:Number) : void
+		{
+			var _loc3_:BFOUNDATION = this.findTarget();
+			if(!_loc3_ || Boolean(this.hose))
+			{
+				print("Could not start Vacuum, either no valid target or the weapon is already on");
+				return;
+			}
+			this.hose = new VacuumHose(_loc3_, this.durability, this.lootBonus);
+			if(this._vacuumTimer)
+			{
+				this._vacuumTimer.stop();
+				this._vacuumTimer.removeEventListener(TimerEvent.TIMER,this.onTimer);
+				this._vacuumTimer = null;
+			}
+			this._vacuumTimer = new Timer(GLOBAL.tickFastInterval);
+			this._vacuumTimer.addEventListener(TimerEvent.TIMER,this.onTimer,false,0,true);
+			this._vacuumTimer.start();
+			Vacuum.target;
+		}
+		
+		protected function onTimer(param1:TimerEvent) : void
+		{
+			if(this.hose)
+			{
+				this.hose.tick();
+			}
+		}
+		
+		override public function onDeactivation() : void
+		{
+			if(this._vacuumTimer)
+			{
+				this._vacuumTimer.stop();
+				this._vacuumTimer.removeEventListener(TimerEvent.TIMER,this.onTimer);
+				this._vacuumTimer = null;
+			}
+			if(this.hose)
+			{
+				this.hose.RemoveVacuum();
+			}
+			this.hose = null;
+		}
+
+		private function findTarget() : BFOUNDATION {
+			var building:BFOUNDATION;
+			for each(building in BASE._buildingsSuck){
+				if(building.health > 0){
+					return building;
+				}
+			}
+			return null;
+		}
+	}
 }

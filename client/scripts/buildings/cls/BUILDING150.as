@@ -1,4 +1,4 @@
-package
+package buildings.cls
 {
    import flash.display.Bitmap;
    import flash.display.BitmapData;
@@ -6,7 +6,7 @@ package
    import flash.geom.Point;
    import flash.geom.Rectangle;
    
-   public class BUILDING149 extends BRESOURCE
+   public class BUILDING150 extends BRESOURCE
    {
        
       
@@ -18,16 +18,20 @@ package
       
       public var _animBitmap:BitmapData;
       
-      public function BUILDING149()
+      public function BUILDING150()
       {
          this._frameNumber = Math.random() * 5;
          super();
          this._frameNumber = int(Math.random() * 5);
-         _type = 149;
+         _type = 150;
          _footprint = [new Rectangle(0,0,70,70)];
          _gridCost = [[new Rectangle(0,0,70,70),10],[new Rectangle(10,10,50,50),200]];
-         _spoutPoint = new Point(28,-17);
-         _spoutHeight = 50;
+         _spoutPoint = new Point(-1,-31);
+         _spoutHeight = 65;
+         if(BASE.isInfernoMainYardOrOutpost)
+         {
+            _animRandomStart = false;
+         }
          SetProps();
       }
       

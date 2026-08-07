@@ -25,14 +25,14 @@ interface Cell {
  * Note: Tribe outposts are stored as OUTPOST (1) but sent to client as EMPTY (100).
  */
 const canOverride = (dbCell: WorldMapCell | null, genCell: GeneratedCell | undefined): boolean => {
-  // Check database cell first
-  if (dbCell) return dbCell.base_type === EnumYardType.OUTPOST;
+	// Check database cell first
+	if (dbCell) return (dbCell.base_type === EnumYardType.OUTPOST || dbCell.base_type === EnumYardType.MOLOCH_OUTPOST);
 
-  // No database cell, check generated cell
-  if (genCell?.type !== undefined) return genCell.type === EnumYardType.OUTPOST;
+	// No database cell, check generated cell
+	if (genCell?.type !== undefined) return (genCell.type === EnumYardType.OUTPOST || genCell.type === EnumYardType.MOLOCH_OUTPOST);
 
-  // No database cell, no generated structure = terrain/empty, can override
-  return true;
+	// No database cell, no generated structure = terrain/empty, can override
+	return true;
 };
 
 /**

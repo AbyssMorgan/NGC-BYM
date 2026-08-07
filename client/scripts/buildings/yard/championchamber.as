@@ -19,7 +19,7 @@ package buildings.yard {
 			"description":"championchamber_desc",
 			"cls":CHAMPIONCHAMBER,
 			"costs":[
-				{"r1":new SecNum(500000), "r2":new SecNum(500000), "r3":new SecNum(250000), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,4],[114,1,1]]}
+				{"r1":new SecNum(500000), "r2":new SecNum(500000), "r3":new SecNum(250000), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,4],[114,1,1]]}, // Level 1
 			],
 			"imageData":{
 				"baseurl":"buildings/champchamber/",
@@ -39,9 +39,25 @@ package buildings.yard {
 					"silhouette_img":"119.silhouette.jpg"
 				}
 			},
-			"quantity":[0,0,0,0,1,1,1,1,1,1,1],
-			"hp":[16000],
-			"repairTime":[3600]
+			"quantity":[
+				0, // Level 0
+				0, // Level 1
+				0, // Level 2
+				0, // Level 3
+				1, // Level 4
+				1, // Level 5
+				1, // Level 6
+				1, // Level 7
+				1, // Level 8
+				1, // Level 9
+				1, // Level 10
+			],
+			"hp":[
+				16000, // Level 1
+			],
+			"repairTime":[
+				3600, // Level 1
+			]
 		};
 		
 	}

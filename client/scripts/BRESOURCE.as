@@ -127,25 +127,11 @@ package
 				{
 					if(this.force_inferno_resources){
 						BASE._iresources["r" + this.resource_index].Add(-_loc2_);
-						if(BASE._ideltaResources["r" + this.resource_index])
-						{
-							BASE._ideltaResources["r" + this.resource_index].Add(-_loc2_);
-						}
-						else
-						{
-							BASE._ideltaResources["r" + this.resource_index] = new SecNum(-_loc2_);
-						}
+						BASE._ideltaResources["r" + this.resource_index].Add(-_loc2_);
 						BASE._ideltaResources.dirty = true;
 					} else {
 						BASE._resources["r" + this.resource_index].Add(-_loc2_);
-						if(BASE._deltaResources["r" + this.resource_index])
-						{
-							BASE._deltaResources["r" + this.resource_index].Add(-_loc2_);
-						}
-						else
-						{
-							BASE._deltaResources["r" + this.resource_index] = new SecNum(-_loc2_);
-						}
+						BASE._deltaResources["r" + this.resource_index].Add(-_loc2_);
 						BASE._deltaResources.dirty = true;
 					}
 				}

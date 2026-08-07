@@ -695,7 +695,7 @@ package
 			_buildingProps[21 - 1].quantity = [100];
 			_buildingProps[22 - 1].quantity = [100];
 			_buildingProps[23 - 1].quantity = [100];
-			_buildingProps[24 - 1].quantity = [200];
+			_buildingProps[24 - 1].quantity = [100];
 			_buildingProps[25 - 1].quantity = [100];
 			_buildingProps[26 - 1].quantity = [100];
 			_buildingProps[51 - 1].quantity = [100];
@@ -724,6 +724,10 @@ package
 			_buildingProps[148 - 1].quantity = [100];
 			_buildingProps[149 - 1].quantity = [100];
 			_buildingProps[150 - 1].quantity = [100];
+			_buildingProps[151 - 1].quantity = [100];
+			_buildingProps[152 - 1].quantity = [100];
+			_buildingProps[153 - 1].quantity = [100];
+			_buildingProps[154 - 1].quantity = [100];
 
 			_buildingProps[14 - 1].block = false;
 			_buildingProps[128 - 1].block = false;
@@ -738,6 +742,10 @@ package
 			_buildingProps[148 - 1].block = false;
 			_buildingProps[149 - 1].block = false;
 			_buildingProps[150 - 1].block = false;
+			_buildingProps[151 - 1].block = false;
+			_buildingProps[152 - 1].block = false;
+			_buildingProps[153 - 1].block = false;
+			_buildingProps[154 - 1].block = false;
 
 			_buildingProps[138 - 1].isImmobile = false;
 			_buildingProps[139 - 1].isImmobile = false;

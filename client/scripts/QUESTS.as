@@ -130,6 +130,10 @@ package
 				"assault_to_2":0,
 				"assault_to_3":0,
 				"assault_to_4":0,
+				"assault_mo_1":0,
+				"assault_mo_2":0,
+				"assault_mo_3":0,
+				"assault_mo_4":0,
 				"assault_sh":0,
 				"assault_ro":0,
 				"assault_de":0,
@@ -5294,7 +5298,6 @@ package
 					}
 				},
 
-
 				// Group 7 (Assault T1)
 				{
 					"order": 10,
@@ -5309,51 +5312,6 @@ package
 					"rules":
 					{
 						"assault_to_1_0": 10
-					}
-				},
-				{
-					"order": 10,
-					"list": true,
-					"reward": [3000000, 3000000, 3000000, 3000000, 3],
-					"id": "ASSAULT_TO_1_1_10",
-					"group": 7,
-					"name": "Kozu x10",
-					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_1#\/10.",
-					"hint": "Tribe outposts level 45 - 65",
-					"questimage": "tribe_kozu.v2.png",
-					"rules":
-					{
-						"assault_to_1_1": 10
-					}
-				},
-				{
-					"order": 10,
-					"list": true,
-					"reward": [3000000, 3000000, 3000000, 3000000, 3],
-					"id": "ASSAULT_TO_1_2_10",
-					"group": 7,
-					"name": "Abunakki x10",
-					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_2#\/10.",
-					"hint": "Tribe outposts level 45 - 65",
-					"questimage": "tribe_abunakki.v2.png",
-					"rules":
-					{
-						"assault_to_1_2": 10
-					}
-				},
-				{
-					"order": 10,
-					"list": true,
-					"reward": [3000000, 3000000, 3000000, 3000000, 3],
-					"id": "ASSAULT_TO_1_3_10",
-					"group": 7,
-					"name": "Dreadnaught x10",
-					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_3#\/10.",
-					"hint": "Tribe outposts level 45 - 65",
-					"questimage": "tribe_dreadnaut.v2.png",
-					"rules":
-					{
-						"assault_to_1_3": 10
 					}
 				},
 				{
@@ -5373,6 +5331,134 @@ package
 					}
 				},
 				{
+					"order": 50,
+					"list": true,
+					"reward": [13000000, 13000000, 13000000, 13000000, 13],
+					"id": "ASSAULT_TO_1_0_50",
+					"group": 7,
+					"name": "Legionnaire x50",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_0#\/50.",
+					"hint": "Tribe outposts level 45 - 65",
+					"questimage": "tribe_legionnaire.v2.png",
+					"prereq": "ASSAULT_TO_1_0_25",
+					"rules":
+					{
+						"assault_to_1_0": 50
+					}
+				},
+				{
+					"order": 100,
+					"list": true,
+					"reward": [25000000, 25000000, 25000000, 25000000, 25],
+					"id": "ASSAULT_TO_1_0_100",
+					"group": 7,
+					"name": "Legionnaire x100",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_0#\/100.",
+					"hint": "Tribe outposts level 45 - 65",
+					"questimage": "tribe_legionnaire.v2.png",
+					"prereq": "ASSAULT_TO_1_0_50",
+					"rules":
+					{
+						"assault_to_1_0": 100
+					}
+				},
+				{
+					"order": 250,
+					"list": true,
+					"reward": [63000000, 63000000, 63000000, 63000000, 63],
+					"id": "ASSAULT_TO_1_0_250",
+					"group": 7,
+					"name": "Legionnaire x250",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_0#\/250.",
+					"hint": "Tribe outposts level 45 - 65",
+					"questimage": "tribe_legionnaire.v2.png",
+					"prereq": "ASSAULT_TO_1_0_100",
+					"rules":
+					{
+						"assault_to_1_0": 250
+					}
+				},
+				{
+					"order": 500,
+					"list": true,
+					"reward": [125000000, 125000000, 125000000, 125000000, 125],
+					"id": "ASSAULT_TO_1_0_500",
+					"group": 7,
+					"name": "Legionnaire x500",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_0#\/500.",
+					"hint": "Tribe outposts level 45 - 65",
+					"questimage": "tribe_legionnaire.v2.png",
+					"prereq": "ASSAULT_TO_1_0_250",
+					"rules":
+					{
+						"assault_to_1_0": 500
+					}
+				},
+				{
+					"order": 1000,
+					"list": true,
+					"reward": [250000000, 250000000, 250000000, 250000000, 250],
+					"id": "ASSAULT_TO_1_0_1000",
+					"group": 7,
+					"name": "Legionnaire x1000",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_0#\/1000.",
+					"hint": "Tribe outposts level 45 - 65",
+					"questimage": "tribe_legionnaire.v2.png",
+					"prereq": "ASSAULT_TO_1_0_500",
+					"rules":
+					{
+						"assault_to_1_0": 1000
+					}
+				},
+				{
+					"order": 2500,
+					"list": true,
+					"reward": [625000000, 625000000, 625000000, 625000000, 625],
+					"id": "ASSAULT_TO_1_0_2500",
+					"group": 7,
+					"name": "Legionnaire x2500",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_0#\/2500.",
+					"hint": "Tribe outposts level 45 - 65",
+					"questimage": "tribe_legionnaire.v2.png",
+					"prereq": "ASSAULT_TO_1_0_1000",
+					"rules":
+					{
+						"assault_to_1_0": 2500
+					}
+				},
+				{
+					"order": 5000,
+					"list": true,
+					"reward": [1250000000, 1250000000, 1250000000, 1250000000, 1250],
+					"id": "ASSAULT_TO_1_0_5000",
+					"group": 7,
+					"name": "Legionnaire x5000",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_0#\/5000.",
+					"hint": "Tribe outposts level 45 - 65",
+					"questimage": "tribe_legionnaire.v2.png",
+					"prereq": "ASSAULT_TO_1_0_2500",
+					"rules":
+					{
+						"assault_to_1_0": 5000
+					}
+				},
+
+				{
+					"order": 10,
+					"list": true,
+					"reward": [3000000, 3000000, 3000000, 3000000, 3],
+					"id": "ASSAULT_TO_1_1_10",
+					"group": 7,
+					"name": "Kozu x10",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_1#\/10.",
+					"hint": "Tribe outposts level 45 - 65",
+					"questimage": "tribe_kozu.v2.png",
+					"rules":
+					{
+						"assault_to_1_1": 10
+					}
+				},
+				{
 					"order": 25,
 					"list": true,
 					"reward": [7000000, 7000000, 7000000, 7000000, 7],
@@ -5389,6 +5475,134 @@ package
 					}
 				},
 				{
+					"order": 50,
+					"list": true,
+					"reward": [13000000, 13000000, 13000000, 13000000, 13],
+					"id": "ASSAULT_TO_1_1_50",
+					"group": 7,
+					"name": "Kozu x50",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_1#\/50.",
+					"hint": "Tribe outposts level 45 - 65",
+					"questimage": "tribe_kozu.v2.png",
+					"prereq": "ASSAULT_TO_1_1_25",
+					"rules":
+					{
+						"assault_to_1_1": 50
+					}
+				},
+				{
+					"order": 100,
+					"list": true,
+					"reward": [25000000, 25000000, 25000000, 25000000, 25],
+					"id": "ASSAULT_TO_1_1_100",
+					"group": 7,
+					"name": "Kozu x100",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_1#\/100.",
+					"hint": "Tribe outposts level 45 - 65",
+					"questimage": "tribe_kozu.v2.png",
+					"prereq": "ASSAULT_TO_1_1_50",
+					"rules":
+					{
+						"assault_to_1_1": 100
+					}
+				},
+				{
+					"order": 250,
+					"list": true,
+					"reward": [63000000, 63000000, 63000000, 63000000, 63],
+					"id": "ASSAULT_TO_1_1_250",
+					"group": 7,
+					"name": "Kozu x250",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_1#\/250.",
+					"hint": "Tribe outposts level 45 - 65",
+					"questimage": "tribe_kozu.v2.png",
+					"prereq": "ASSAULT_TO_1_1_100",
+					"rules":
+					{
+						"assault_to_1_1": 250
+					}
+				},
+				{
+					"order": 500,
+					"list": true,
+					"reward": [125000000, 125000000, 125000000, 125000000, 125],
+					"id": "ASSAULT_TO_1_1_500",
+					"group": 7,
+					"name": "Kozu x500",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_1#\/500.",
+					"hint": "Tribe outposts level 45 - 65",
+					"questimage": "tribe_kozu.v2.png",
+					"prereq": "ASSAULT_TO_1_1_250",
+					"rules":
+					{
+						"assault_to_1_1": 500
+					}
+				},
+				{
+					"order": 1000,
+					"list": true,
+					"reward": [250000000, 250000000, 250000000, 250000000, 250],
+					"id": "ASSAULT_TO_1_1_1000",
+					"group": 7,
+					"name": "Kozu x1000",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_1#\/1000.",
+					"hint": "Tribe outposts level 45 - 65",
+					"questimage": "tribe_kozu.v2.png",
+					"prereq": "ASSAULT_TO_1_1_500",
+					"rules":
+					{
+						"assault_to_1_1": 1000
+					}
+				},
+				{
+					"order": 2500,
+					"list": true,
+					"reward": [625000000, 625000000, 625000000, 625000000, 625],
+					"id": "ASSAULT_TO_1_1_2500",
+					"group": 7,
+					"name": "Kozu x2500",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_1#\/2500.",
+					"hint": "Tribe outposts level 45 - 65",
+					"questimage": "tribe_kozu.v2.png",
+					"prereq": "ASSAULT_TO_1_1_1000",
+					"rules":
+					{
+						"assault_to_1_1": 2500
+					}
+				},
+				{
+					"order": 5000,
+					"list": true,
+					"reward": [1250000000, 1250000000, 1250000000, 1250000000, 1250],
+					"id": "ASSAULT_TO_1_1_5000",
+					"group": 7,
+					"name": "Kozu x5000",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_1#\/5000.",
+					"hint": "Tribe outposts level 45 - 65",
+					"questimage": "tribe_kozu.v2.png",
+					"prereq": "ASSAULT_TO_1_1_2500",
+					"rules":
+					{
+						"assault_to_1_1": 5000
+					}
+				},
+
+				{
+					"order": 10,
+					"list": true,
+					"reward": [3000000, 3000000, 3000000, 3000000, 3],
+					"id": "ASSAULT_TO_1_2_10",
+					"group": 7,
+					"name": "Abunakki x10",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_2#\/10.",
+					"hint": "Tribe outposts level 45 - 65",
+					"questimage": "tribe_abunakki.v2.png",
+					"rules":
+					{
+						"assault_to_1_2": 10
+					}
+				},
+				{
 					"order": 25,
 					"list": true,
 					"reward": [7000000, 7000000, 7000000, 7000000, 7],
@@ -5402,6 +5616,134 @@ package
 					"rules":
 					{
 						"assault_to_1_2": 25
+					}
+				},
+				{
+					"order": 50,
+					"list": true,
+					"reward": [13000000, 13000000, 13000000, 13000000, 13],
+					"id": "ASSAULT_TO_1_2_50",
+					"group": 7,
+					"name": "Abunakki x50",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_2#\/50.",
+					"hint": "Tribe outposts level 45 - 65",
+					"questimage": "tribe_abunakki.v2.png",
+					"prereq": "ASSAULT_TO_1_2_25",
+					"rules":
+					{
+						"assault_to_1_2": 50
+					}
+				},
+				{
+					"order": 100,
+					"list": true,
+					"reward": [25000000, 25000000, 25000000, 25000000, 25],
+					"id": "ASSAULT_TO_1_2_100",
+					"group": 7,
+					"name": "Abunakki x100",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_2#\/100.",
+					"hint": "Tribe outposts level 45 - 65",
+					"questimage": "tribe_abunakki.v2.png",
+					"prereq": "ASSAULT_TO_1_2_50",
+					"rules":
+					{
+						"assault_to_1_2": 100
+					}
+				},
+				{
+					"order": 250,
+					"list": true,
+					"reward": [63000000, 63000000, 63000000, 63000000, 63],
+					"id": "ASSAULT_TO_1_2_250",
+					"group": 7,
+					"name": "Abunakki x250",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_2#\/250.",
+					"hint": "Tribe outposts level 45 - 65",
+					"questimage": "tribe_abunakki.v2.png",
+					"prereq": "ASSAULT_TO_1_2_100",
+					"rules":
+					{
+						"assault_to_1_2": 250
+					}
+				},
+				{
+					"order": 500,
+					"list": true,
+					"reward": [125000000, 125000000, 125000000, 125000000, 125],
+					"id": "ASSAULT_TO_1_2_500",
+					"group": 7,
+					"name": "Abunakki x500",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_2#\/500.",
+					"hint": "Tribe outposts level 45 - 65",
+					"questimage": "tribe_abunakki.v2.png",
+					"prereq": "ASSAULT_TO_1_2_250",
+					"rules":
+					{
+						"assault_to_1_2": 500
+					}
+				},
+				{
+					"order": 1000,
+					"list": true,
+					"reward": [250000000, 250000000, 250000000, 250000000, 250],
+					"id": "ASSAULT_TO_1_2_1000",
+					"group": 7,
+					"name": "Abunakki x1000",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_2#\/1000.",
+					"hint": "Tribe outposts level 45 - 65",
+					"questimage": "tribe_abunakki.v2.png",
+					"prereq": "ASSAULT_TO_1_2_500",
+					"rules":
+					{
+						"assault_to_1_2": 1000
+					}
+				},
+				{
+					"order": 2500,
+					"list": true,
+					"reward": [625000000, 625000000, 625000000, 625000000, 625],
+					"id": "ASSAULT_TO_1_2_2500",
+					"group": 7,
+					"name": "Abunakki x2500",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_2#\/2500.",
+					"hint": "Tribe outposts level 45 - 65",
+					"questimage": "tribe_abunakki.v2.png",
+					"prereq": "ASSAULT_TO_1_2_1000",
+					"rules":
+					{
+						"assault_to_1_2": 2500
+					}
+				},
+				{
+					"order": 5000,
+					"list": true,
+					"reward": [1250000000, 1250000000, 1250000000, 1250000000, 1250],
+					"id": "ASSAULT_TO_1_2_5000",
+					"group": 7,
+					"name": "Abunakki x5000",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_2#\/5000.",
+					"hint": "Tribe outposts level 45 - 65",
+					"questimage": "tribe_abunakki.v2.png",
+					"prereq": "ASSAULT_TO_1_2_2500",
+					"rules":
+					{
+						"assault_to_1_2": 5000
+					}
+				},
+
+				{
+					"order": 10,
+					"list": true,
+					"reward": [3000000, 3000000, 3000000, 3000000, 3],
+					"id": "ASSAULT_TO_1_3_10",
+					"group": 7,
+					"name": "Dreadnaught x10",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_3#\/10.",
+					"hint": "Tribe outposts level 45 - 65",
+					"questimage": "tribe_dreadnaut.v2.png",
+					"rules":
+					{
+						"assault_to_1_3": 10
 					}
 				},
 				{
@@ -5424,54 +5766,6 @@ package
 					"order": 50,
 					"list": true,
 					"reward": [13000000, 13000000, 13000000, 13000000, 13],
-					"id": "ASSAULT_TO_1_0_50",
-					"group": 7,
-					"name": "Legionnaire x50",
-					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_0#\/50.",
-					"hint": "Tribe outposts level 45 - 65",
-					"questimage": "tribe_legionnaire.v2.png",
-					"prereq": "ASSAULT_TO_1_0_25",
-					"rules":
-					{
-						"assault_to_1_0": 50
-					}
-				},
-				{
-					"order": 50,
-					"list": true,
-					"reward": [13000000, 13000000, 13000000, 13000000, 13],
-					"id": "ASSAULT_TO_1_1_50",
-					"group": 7,
-					"name": "Kozu x50",
-					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_1#\/50.",
-					"hint": "Tribe outposts level 45 - 65",
-					"questimage": "tribe_kozu.v2.png",
-					"prereq": "ASSAULT_TO_1_1_25",
-					"rules":
-					{
-						"assault_to_1_1": 50
-					}
-				},
-				{
-					"order": 50,
-					"list": true,
-					"reward": [13000000, 13000000, 13000000, 13000000, 13],
-					"id": "ASSAULT_TO_1_2_50",
-					"group": 7,
-					"name": "Abunakki x50",
-					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_2#\/50.",
-					"hint": "Tribe outposts level 45 - 65",
-					"questimage": "tribe_abunakki.v2.png",
-					"prereq": "ASSAULT_TO_1_2_25",
-					"rules":
-					{
-						"assault_to_1_2": 50
-					}
-				},
-				{
-					"order": 50,
-					"list": true,
-					"reward": [13000000, 13000000, 13000000, 13000000, 13],
 					"id": "ASSAULT_TO_1_3_50",
 					"group": 7,
 					"name": "Dreadnaught x50",
@@ -5482,54 +5776,6 @@ package
 					"rules":
 					{
 						"assault_to_1_3": 50
-					}
-				},
-				{
-					"order": 100,
-					"list": true,
-					"reward": [25000000, 25000000, 25000000, 25000000, 25],
-					"id": "ASSAULT_TO_1_0_100",
-					"group": 7,
-					"name": "Legionnaire x100",
-					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_0#\/100.",
-					"hint": "Tribe outposts level 45 - 65",
-					"questimage": "tribe_legionnaire.v2.png",
-					"prereq": "ASSAULT_TO_1_0_50",
-					"rules":
-					{
-						"assault_to_1_0": 100
-					}
-				},
-				{
-					"order": 100,
-					"list": true,
-					"reward": [25000000, 25000000, 25000000, 25000000, 25],
-					"id": "ASSAULT_TO_1_1_100",
-					"group": 7,
-					"name": "Kozu x100",
-					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_1#\/100.",
-					"hint": "Tribe outposts level 45 - 65",
-					"questimage": "tribe_kozu.v2.png",
-					"prereq": "ASSAULT_TO_1_1_50",
-					"rules":
-					{
-						"assault_to_1_1": 100
-					}
-				},
-				{
-					"order": 100,
-					"list": true,
-					"reward": [25000000, 25000000, 25000000, 25000000, 25],
-					"id": "ASSAULT_TO_1_2_100",
-					"group": 7,
-					"name": "Abunakki x100",
-					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_2#\/100.",
-					"hint": "Tribe outposts level 45 - 65",
-					"questimage": "tribe_abunakki.v2.png",
-					"prereq": "ASSAULT_TO_1_2_50",
-					"rules":
-					{
-						"assault_to_1_2": 100
 					}
 				},
 				{
@@ -5552,54 +5798,6 @@ package
 					"order": 250,
 					"list": true,
 					"reward": [63000000, 63000000, 63000000, 63000000, 63],
-					"id": "ASSAULT_TO_1_0_250",
-					"group": 7,
-					"name": "Legionnaire x250",
-					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_0#\/250.",
-					"hint": "Tribe outposts level 45 - 65",
-					"questimage": "tribe_legionnaire.v2.png",
-					"prereq": "ASSAULT_TO_1_0_100",
-					"rules":
-					{
-						"assault_to_1_0": 250
-					}
-				},
-				{
-					"order": 250,
-					"list": true,
-					"reward": [63000000, 63000000, 63000000, 63000000, 63],
-					"id": "ASSAULT_TO_1_1_250",
-					"group": 7,
-					"name": "Kozu x250",
-					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_1#\/250.",
-					"hint": "Tribe outposts level 45 - 65",
-					"questimage": "tribe_kozu.v2.png",
-					"prereq": "ASSAULT_TO_1_1_100",
-					"rules":
-					{
-						"assault_to_1_1": 250
-					}
-				},
-				{
-					"order": 250,
-					"list": true,
-					"reward": [63000000, 63000000, 63000000, 63000000, 63],
-					"id": "ASSAULT_TO_1_2_250",
-					"group": 7,
-					"name": "Abunakki x250",
-					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_2#\/250.",
-					"hint": "Tribe outposts level 45 - 65",
-					"questimage": "tribe_abunakki.v2.png",
-					"prereq": "ASSAULT_TO_1_2_100",
-					"rules":
-					{
-						"assault_to_1_2": 250
-					}
-				},
-				{
-					"order": 250,
-					"list": true,
-					"reward": [63000000, 63000000, 63000000, 63000000, 63],
 					"id": "ASSAULT_TO_1_3_250",
 					"group": 7,
 					"name": "Dreadnaught x250",
@@ -5610,54 +5808,6 @@ package
 					"rules":
 					{
 						"assault_to_1_3": 250
-					}
-				},
-				{
-					"order": 500,
-					"list": true,
-					"reward": [125000000, 125000000, 125000000, 125000000, 125],
-					"id": "ASSAULT_TO_1_0_500",
-					"group": 7,
-					"name": "Legionnaire x500",
-					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_0#\/500.",
-					"hint": "Tribe outposts level 45 - 65",
-					"questimage": "tribe_legionnaire.v2.png",
-					"prereq": "ASSAULT_TO_1_0_250",
-					"rules":
-					{
-						"assault_to_1_0": 500
-					}
-				},
-				{
-					"order": 500,
-					"list": true,
-					"reward": [125000000, 125000000, 125000000, 125000000, 125],
-					"id": "ASSAULT_TO_1_1_500",
-					"group": 7,
-					"name": "Kozu x500",
-					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_1#\/500.",
-					"hint": "Tribe outposts level 45 - 65",
-					"questimage": "tribe_kozu.v2.png",
-					"prereq": "ASSAULT_TO_1_1_250",
-					"rules":
-					{
-						"assault_to_1_1": 500
-					}
-				},
-				{
-					"order": 500,
-					"list": true,
-					"reward": [125000000, 125000000, 125000000, 125000000, 125],
-					"id": "ASSAULT_TO_1_2_500",
-					"group": 7,
-					"name": "Abunakki x500",
-					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_2#\/500.",
-					"hint": "Tribe outposts level 45 - 65",
-					"questimage": "tribe_abunakki.v2.png",
-					"prereq": "ASSAULT_TO_1_2_250",
-					"rules":
-					{
-						"assault_to_1_2": 500
 					}
 				},
 				{
@@ -5680,54 +5830,6 @@ package
 					"order": 1000,
 					"list": true,
 					"reward": [250000000, 250000000, 250000000, 250000000, 250],
-					"id": "ASSAULT_TO_1_0_1000",
-					"group": 7,
-					"name": "Legionnaire x1000",
-					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_0#\/1000.",
-					"hint": "Tribe outposts level 45 - 65",
-					"questimage": "tribe_legionnaire.v2.png",
-					"prereq": "ASSAULT_TO_1_0_500",
-					"rules":
-					{
-						"assault_to_1_0": 1000
-					}
-				},
-				{
-					"order": 1000,
-					"list": true,
-					"reward": [250000000, 250000000, 250000000, 250000000, 250],
-					"id": "ASSAULT_TO_1_1_1000",
-					"group": 7,
-					"name": "Kozu x1000",
-					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_1#\/1000.",
-					"hint": "Tribe outposts level 45 - 65",
-					"questimage": "tribe_kozu.v2.png",
-					"prereq": "ASSAULT_TO_1_1_500",
-					"rules":
-					{
-						"assault_to_1_1": 1000
-					}
-				},
-				{
-					"order": 1000,
-					"list": true,
-					"reward": [250000000, 250000000, 250000000, 250000000, 250],
-					"id": "ASSAULT_TO_1_2_1000",
-					"group": 7,
-					"name": "Abunakki x1000",
-					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_2#\/1000.",
-					"hint": "Tribe outposts level 45 - 65",
-					"questimage": "tribe_abunakki.v2.png",
-					"prereq": "ASSAULT_TO_1_2_500",
-					"rules":
-					{
-						"assault_to_1_2": 1000
-					}
-				},
-				{
-					"order": 1000,
-					"list": true,
-					"reward": [250000000, 250000000, 250000000, 250000000, 250],
 					"id": "ASSAULT_TO_1_3_1000",
 					"group": 7,
 					"name": "Dreadnaught x1000",
@@ -5738,54 +5840,6 @@ package
 					"rules":
 					{
 						"assault_to_1_3": 1000
-					}
-				},
-				{
-					"order": 2500,
-					"list": true,
-					"reward": [625000000, 625000000, 625000000, 625000000, 625],
-					"id": "ASSAULT_TO_1_0_2500",
-					"group": 7,
-					"name": "Legionnaire x2500",
-					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_0#\/2500.",
-					"hint": "Tribe outposts level 45 - 65",
-					"questimage": "tribe_legionnaire.v2.png",
-					"prereq": "ASSAULT_TO_1_0_1000",
-					"rules":
-					{
-						"assault_to_1_0": 2500
-					}
-				},
-				{
-					"order": 2500,
-					"list": true,
-					"reward": [625000000, 625000000, 625000000, 625000000, 625],
-					"id": "ASSAULT_TO_1_1_2500",
-					"group": 7,
-					"name": "Kozu x2500",
-					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_1#\/2500.",
-					"hint": "Tribe outposts level 45 - 65",
-					"questimage": "tribe_kozu.v2.png",
-					"prereq": "ASSAULT_TO_1_1_1000",
-					"rules":
-					{
-						"assault_to_1_1": 2500
-					}
-				},
-				{
-					"order": 2500,
-					"list": true,
-					"reward": [625000000, 625000000, 625000000, 625000000, 625],
-					"id": "ASSAULT_TO_1_2_2500",
-					"group": 7,
-					"name": "Abunakki x2500",
-					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_2#\/2500.",
-					"hint": "Tribe outposts level 45 - 65",
-					"questimage": "tribe_abunakki.v2.png",
-					"prereq": "ASSAULT_TO_1_2_1000",
-					"rules":
-					{
-						"assault_to_1_2": 2500
 					}
 				},
 				{
@@ -5808,54 +5862,6 @@ package
 					"order": 5000,
 					"list": true,
 					"reward": [1250000000, 1250000000, 1250000000, 1250000000, 1250],
-					"id": "ASSAULT_TO_1_0_5000",
-					"group": 7,
-					"name": "Legionnaire x5000",
-					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_0#\/5000.",
-					"hint": "Tribe outposts level 45 - 65",
-					"questimage": "tribe_legionnaire.v2.png",
-					"prereq": "ASSAULT_TO_1_0_2500",
-					"rules":
-					{
-						"assault_to_1_0": 5000
-					}
-				},
-				{
-					"order": 5000,
-					"list": true,
-					"reward": [1250000000, 1250000000, 1250000000, 1250000000, 1250],
-					"id": "ASSAULT_TO_1_1_5000",
-					"group": 7,
-					"name": "Kozu x5000",
-					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_1#\/5000.",
-					"hint": "Tribe outposts level 45 - 65",
-					"questimage": "tribe_kozu.v2.png",
-					"prereq": "ASSAULT_TO_1_1_2500",
-					"rules":
-					{
-						"assault_to_1_1": 5000
-					}
-				},
-				{
-					"order": 5000,
-					"list": true,
-					"reward": [1250000000, 1250000000, 1250000000, 1250000000, 1250],
-					"id": "ASSAULT_TO_1_2_5000",
-					"group": 7,
-					"name": "Abunakki x5000",
-					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_2#\/5000.",
-					"hint": "Tribe outposts level 45 - 65",
-					"questimage": "tribe_abunakki.v2.png",
-					"prereq": "ASSAULT_TO_1_2_2500",
-					"rules":
-					{
-						"assault_to_1_2": 5000
-					}
-				},
-				{
-					"order": 5000,
-					"list": true,
-					"reward": [1250000000, 1250000000, 1250000000, 1250000000, 1250],
 					"id": "ASSAULT_TO_1_3_5000",
 					"group": 7,
 					"name": "Dreadnaught x5000",
@@ -5866,6 +5872,150 @@ package
 					"rules":
 					{
 						"assault_to_1_3": 5000
+					}
+				},
+
+				{
+					"order": 10,
+					"list": true,
+					"reward": [3000000, 3000000, 3000000, 3000000, 3],
+					"id": "ASSAULT_MO_1_10",
+					"group": 7,
+					"name": "Moloch x10",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_mo_1#\/10.",
+					"hint": "Moloch outposts level 50 - 65",
+					"questimage": "portrait_moloch.png",
+					"rules":
+					{
+						"assault_mo_1": 10
+					}
+				},
+				{
+					"order": 25,
+					"list": true,
+					"reward": [7000000, 7000000, 7000000, 7000000, 7],
+					"id": "ASSAULT_MO_1_25",
+					"group": 7,
+					"name": "Moloch x25",
+					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_1#\/25.",
+					"hint": "Moloch outposts level 50 - 65",
+					"questimage": "portrait_moloch.png",
+					"prereq": "ASSAULT_MO_1_10",
+					"rules":
+					{
+						"assault_mo_1": 25
+					}
+				},
+				{
+					"order": 50,
+					"list": true,
+					"reward": [13000000, 13000000, 13000000, 13000000, 13],
+					"id": "ASSAULT_MO_1_50",
+					"group": 7,
+					"name": "Moloch x50",
+					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_1#\/50.",
+					"hint": "Moloch outposts level 50 - 65",
+					"questimage": "portrait_moloch.png",
+					"prereq": "ASSAULT_MO_1_25",
+					"rules":
+					{
+						"assault_mo_1": 50
+					}
+				},
+				{
+					"order": 100,
+					"list": true,
+					"reward": [25000000, 25000000, 25000000, 25000000, 25],
+					"id": "ASSAULT_MO_1_100",
+					"group": 7,
+					"name": "Moloch x100",
+					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_1#\/100.",
+					"hint": "Moloch outposts level 50 - 65",
+					"questimage": "portrait_moloch.png",
+					"prereq": "ASSAULT_MO_1_50",
+					"rules":
+					{
+						"assault_mo_1": 100
+					}
+				},
+				{
+					"order": 250,
+					"list": true,
+					"reward": [63000000, 63000000, 63000000, 63000000, 63],
+					"id": "ASSAULT_MO_1_250",
+					"group": 7,
+					"name": "Moloch x250",
+					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_1#\/250.",
+					"hint": "Moloch outposts level 50 - 65",
+					"questimage": "portrait_moloch.png",
+					"prereq": "ASSAULT_MO_1_100",
+					"rules":
+					{
+						"assault_mo_1": 250
+					}
+				},
+				{
+					"order": 500,
+					"list": true,
+					"reward": [125000000, 125000000, 125000000, 125000000, 125],
+					"id": "ASSAULT_MO_1_500",
+					"group": 7,
+					"name": "Moloch x500",
+					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_1#\/500.",
+					"hint": "Moloch outposts level 50 - 65",
+					"questimage": "portrait_moloch.png",
+					"prereq": "ASSAULT_MO_1_250",
+					"rules":
+					{
+						"assault_mo_1": 500
+					}
+				},
+				{
+					"order": 1000,
+					"list": true,
+					"reward": [250000000, 250000000, 250000000, 250000000, 250],
+					"id": "ASSAULT_MO_1_1000",
+					"group": 7,
+					"name": "Moloch x1000",
+					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_1#\/1000.",
+					"hint": "Moloch outposts level 50 - 65",
+					"questimage": "portrait_moloch.png",
+					"prereq": "ASSAULT_MO_1_500",
+					"rules":
+					{
+						"assault_mo_1": 1000
+					}
+				},
+				{
+					"order": 2500,
+					"list": true,
+					"reward": [625000000, 625000000, 625000000, 625000000, 625],
+					"id": "ASSAULT_MO_1_2500",
+					"group": 7,
+					"name": "Moloch x2500",
+					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_1#\/2500.",
+					"hint": "Moloch outposts level 50 - 65",
+					"questimage": "portrait_moloch.png",
+					"prereq": "ASSAULT_MO_1_1000",
+					"rules":
+					{
+						"assault_mo_1": 2500
+					}
+				},
+				{
+					"order": 5000,
+					"list": true,
+					"reward": [1250000000, 1250000000, 1250000000, 1250000000, 1250],
+					"id": "ASSAULT_MO_1_5000",
+					"group": 7,
+					"name": "Moloch x5000",
+					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_1#\/5000.",
+					"hint": "Moloch outposts level 50 - 65",
+					"questimage": "portrait_moloch.png",
+					"prereq": "ASSAULT_MO_1_2500",
+					"rules":
+					{
+						"assault_mo_1": 5000
 					}
 				},
 
@@ -6030,6 +6180,166 @@ package
 					}
 				},
 
+				{
+					"order": 10,
+					"list": true,
+					"reward": [5000000, 5000000, 5000000, 5000000, 5],
+					"id": "ASSAULT_MO_2_10",
+					"group": 8,
+					"name": "Moloch Outpost x10",
+					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_2#\/10.",
+					"hint": "Moloch outposts level 70 - 80",
+					"questimage": "portrait_moloch.png",
+					"rules":
+					{
+						"assault_mo_2": 10
+					}
+				},
+				{
+					"order": 25,
+					"list": true,
+					"reward": [13000000, 13000000, 13000000, 13000000, 13],
+					"id": "ASSAULT_MO_2_25",
+					"group": 8,
+					"name": "Moloch Outpost x25",
+					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_2#\/25.",
+					"hint": "Moloch outposts level 70 - 80",
+					"questimage": "portrait_moloch.png",
+					"prereq": "ASSAULT_MO_2_10",
+					"rules":
+					{
+						"assault_mo_2": 25
+					}
+				},
+				{
+					"order": 50,
+					"list": true,
+					"reward": [25000000, 25000000, 25000000, 25000000, 25],
+					"id": "ASSAULT_MO_2_50",
+					"group": 8,
+					"name": "Moloch Outpost x50",
+					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_2#\/50.",
+					"hint": "Moloch outposts level 70 - 80",
+					"questimage": "portrait_moloch.png",
+					"prereq": "ASSAULT_MO_2_25",
+					"rules":
+					{
+						"assault_mo_2": 50
+					}
+				},
+				{
+					"order": 100,
+					"list": true,
+					"reward": [50000000, 50000000, 50000000, 50000000, 50],
+					"id": "ASSAULT_MO_2_100",
+					"group": 8,
+					"name": "Moloch Outpost x100",
+					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_2#\/100.",
+					"hint": "Moloch outposts level 70 - 80",
+					"questimage": "portrait_moloch.png",
+					"prereq": "ASSAULT_MO_2_50",
+					"rules":
+					{
+						"assault_mo_2": 100
+					}
+				},
+				{
+					"order": 250,
+					"list": true,
+					"reward": [125000000, 125000000, 125000000, 125000000, 125],
+					"id": "ASSAULT_MO_2_250",
+					"group": 8,
+					"name": "Moloch Outpost x250",
+					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_2#\/250.",
+					"hint": "Moloch outposts level 70 - 80",
+					"questimage": "portrait_moloch.png",
+					"prereq": "ASSAULT_MO_2_100",
+					"rules":
+					{
+						"assault_mo_2": 250
+					}
+				},
+				{
+					"order": 500,
+					"list": true,
+					"reward": [250000000, 250000000, 250000000, 250000000, 250],
+					"id": "ASSAULT_MO_2_500",
+					"group": 8,
+					"name": "Moloch Outpost x500",
+					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_2#\/500.",
+					"hint": "Moloch outposts level 70 - 80",
+					"questimage": "portrait_moloch.png",
+					"prereq": "ASSAULT_MO_2_250",
+					"rules":
+					{
+						"assault_mo_2": 500
+					}
+				},
+				{
+					"order": 1000,
+					"list": true,
+					"reward": [500000000, 500000000, 500000000, 500000000, 500],
+					"id": "ASSAULT_MO_2_1000",
+					"group": 8,
+					"name": "Moloch Outpost x1000",
+					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_2#\/1000.",
+					"hint": "Moloch outposts level 70 - 80",
+					"questimage": "portrait_moloch.png",
+					"prereq": "ASSAULT_MO_2_500",
+					"rules":
+					{
+						"assault_mo_2": 1000
+					}
+				},
+				{
+					"order": 2500,
+					"list": true,
+					"reward": [1250000000, 1250000000, 1250000000, 1250000000, 1250],
+					"id": "ASSAULT_MO_2_2500",
+					"group": 8,
+					"name": "Moloch Outpost x2500",
+					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_2#\/2500.",
+					"hint": "Moloch outposts level 70 - 80",
+					"questimage": "portrait_moloch.png",
+					"prereq": "ASSAULT_MO_2_1000",
+					"rules":
+					{
+						"assault_mo_2": 2500
+					}
+				},
+				{
+					"order": 5000,
+					"list": true,
+					"reward": [2500000000, 2500000000, 2500000000, 2500000000, 2500],
+					"id": "ASSAULT_MO_2_5000",
+					"group": 8,
+					"name": "Moloch Outpost x5000",
+					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_2#\/5000.",
+					"hint": "Moloch outposts level 70 - 80",
+					"questimage": "portrait_moloch.png",
+					"prereq": "ASSAULT_MO_2_2500",
+					"rules":
+					{
+						"assault_mo_2": 5000
+					}
+				},
+				{
+					"order": 10000,
+					"list": true,
+					"reward": [5000000000, 5000000000, 5000000000, 5000000000, 5000],
+					"id": "ASSAULT_MO_2_10000",
+					"group": 8,
+					"name": "Moloch Outpost x10000",
+					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_2#\/10000.",
+					"hint": "Moloch outposts level 70 - 80",
+					"questimage": "portrait_moloch.png",
+					"prereq": "ASSAULT_MO_2_5000",
+					"rules":
+					{
+						"assault_mo_2": 10000
+					}
+				},
+
 				// Group 9 (Assault T3)
 				{
 					"order": 10,
@@ -6159,6 +6469,166 @@ package
 					}
 				},
 
+				{
+					"order": 10,
+					"list": true,
+					"reward": [5000000, 5000000, 5000000, 5000000, 5],
+					"id": "ASSAULT_MO_2_10",
+					"group": 8,
+					"name": "Moloch Outpost x10",
+					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_2#\/10.",
+					"hint": "Moloch outposts level 70 - 80",
+					"questimage": "portrait_moloch.png",
+					"rules":
+					{
+						"assault_mo_2": 10
+					}
+				},
+				{
+					"order": 25,
+					"list": true,
+					"reward": [13000000, 13000000, 13000000, 13000000, 13],
+					"id": "ASSAULT_MO_2_25",
+					"group": 8,
+					"name": "Moloch Outpost x25",
+					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_2#\/25.",
+					"hint": "Moloch outposts level 70 - 80",
+					"questimage": "portrait_moloch.png",
+					"prereq": "ASSAULT_MO_2_10",
+					"rules":
+					{
+						"assault_mo_2": 25
+					}
+				},
+				{
+					"order": 50,
+					"list": true,
+					"reward": [25000000, 25000000, 25000000, 25000000, 25],
+					"id": "ASSAULT_MO_2_50",
+					"group": 8,
+					"name": "Moloch Outpost x50",
+					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_2#\/50.",
+					"hint": "Moloch outposts level 70 - 80",
+					"questimage": "portrait_moloch.png",
+					"prereq": "ASSAULT_MO_2_25",
+					"rules":
+					{
+						"assault_mo_2": 50
+					}
+				},
+				{
+					"order": 100,
+					"list": true,
+					"reward": [50000000, 50000000, 50000000, 50000000, 50],
+					"id": "ASSAULT_MO_2_100",
+					"group": 8,
+					"name": "Moloch Outpost x100",
+					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_2#\/100.",
+					"hint": "Moloch outposts level 70 - 80",
+					"questimage": "portrait_moloch.png",
+					"prereq": "ASSAULT_MO_2_50",
+					"rules":
+					{
+						"assault_mo_2": 100
+					}
+				},
+				{
+					"order": 250,
+					"list": true,
+					"reward": [125000000, 125000000, 125000000, 125000000, 125],
+					"id": "ASSAULT_MO_2_250",
+					"group": 8,
+					"name": "Moloch Outpost x250",
+					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_2#\/250.",
+					"hint": "Moloch outposts level 70 - 80",
+					"questimage": "portrait_moloch.png",
+					"prereq": "ASSAULT_MO_2_100",
+					"rules":
+					{
+						"assault_mo_2": 250
+					}
+				},
+				{
+					"order": 500,
+					"list": true,
+					"reward": [250000000, 250000000, 250000000, 250000000, 250],
+					"id": "ASSAULT_MO_2_500",
+					"group": 8,
+					"name": "Moloch Outpost x500",
+					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_2#\/500.",
+					"hint": "Moloch outposts level 70 - 80",
+					"questimage": "portrait_moloch.png",
+					"prereq": "ASSAULT_MO_2_250",
+					"rules":
+					{
+						"assault_mo_2": 500
+					}
+				},
+				{
+					"order": 1000,
+					"list": true,
+					"reward": [500000000, 500000000, 500000000, 500000000, 500],
+					"id": "ASSAULT_MO_2_1000",
+					"group": 8,
+					"name": "Moloch Outpost x1000",
+					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_2#\/1000.",
+					"hint": "Moloch outposts level 70 - 80",
+					"questimage": "portrait_moloch.png",
+					"prereq": "ASSAULT_MO_2_500",
+					"rules":
+					{
+						"assault_mo_2": 1000
+					}
+				},
+				{
+					"order": 2500,
+					"list": true,
+					"reward": [1250000000, 1250000000, 1250000000, 1250000000, 1250],
+					"id": "ASSAULT_MO_2_2500",
+					"group": 8,
+					"name": "Moloch Outpost x2500",
+					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_2#\/2500.",
+					"hint": "Moloch outposts level 70 - 80",
+					"questimage": "portrait_moloch.png",
+					"prereq": "ASSAULT_MO_2_1000",
+					"rules":
+					{
+						"assault_mo_2": 2500
+					}
+				},
+				{
+					"order": 5000,
+					"list": true,
+					"reward": [2500000000, 2500000000, 2500000000, 2500000000, 2500],
+					"id": "ASSAULT_MO_2_5000",
+					"group": 8,
+					"name": "Moloch Outpost x5000",
+					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_2#\/5000.",
+					"hint": "Moloch outposts level 70 - 80",
+					"questimage": "portrait_moloch.png",
+					"prereq": "ASSAULT_MO_2_2500",
+					"rules":
+					{
+						"assault_mo_2": 5000
+					}
+				},
+				{
+					"order": 10000,
+					"list": true,
+					"reward": [5000000000, 5000000000, 5000000000, 5000000000, 5000],
+					"id": "ASSAULT_MO_2_10000",
+					"group": 8,
+					"name": "Moloch Outpost x10000",
+					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_2#\/10000.",
+					"hint": "Moloch outposts level 70 - 80",
+					"questimage": "portrait_moloch.png",
+					"prereq": "ASSAULT_MO_2_5000",
+					"rules":
+					{
+						"assault_mo_2": 10000
+					}
+				},
+
 				// Group 10 (Assault T4)
 				{
 					"order": 10,
@@ -6269,6 +6739,118 @@ package
 					"rules":
 					{
 						"assault_to_4": 1000
+					}
+				},
+
+				{
+					"order": 10,
+					"list": true,
+					"reward": [30000000, 30000000, 30000000, 30000000, 30],
+					"id": "ASSAULT_MO_4_10",
+					"group": 10,
+					"name": "Moloch Outpost x10",
+					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_4#\/10.",
+					"hint": "Moloch outposts level 120",
+					"questimage": "portrait_moloch.png",
+					"rules":
+					{
+						"assault_mo_4": 10
+					}
+				},
+				{
+					"order": 25,
+					"list": true,
+					"reward": [75000000, 75000000, 75000000, 75000000, 75],
+					"id": "ASSAULT_MO_4_25",
+					"group": 10,
+					"name": "Moloch Outpost x25",
+					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_4#\/25.",
+					"hint": "Moloch outposts level 120",
+					"questimage": "portrait_moloch.png",
+					"prereq": "ASSAULT_MO_4_10",
+					"rules":
+					{
+						"assault_mo_4": 25
+					}
+				},
+				{
+					"order": 50,
+					"list": true,
+					"reward": [150000000, 150000000, 150000000, 150000000, 150],
+					"id": "ASSAULT_MO_4_50",
+					"group": 10,
+					"name": "Moloch Outpost x50",
+					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_4#\/50.",
+					"hint": "Moloch outposts level 120",
+					"questimage": "portrait_moloch.png",
+					"prereq": "ASSAULT_MO_4_25",
+					"rules":
+					{
+						"assault_mo_4": 50
+					}
+				},
+				{
+					"order": 100,
+					"list": true,
+					"reward": [300000000, 300000000, 300000000, 300000000, 300],
+					"id": "ASSAULT_MO_4_100",
+					"group": 10,
+					"name": "Moloch Outpost x100",
+					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_4#\/100.",
+					"hint": "Moloch outposts level 120",
+					"questimage": "portrait_moloch.png",
+					"prereq": "ASSAULT_MO_4_50",
+					"rules":
+					{
+						"assault_mo_4": 100
+					}
+				},
+				{
+					"order": 250,
+					"list": true,
+					"reward": [750000000, 750000000, 750000000, 750000000, 750],
+					"id": "ASSAULT_MO_4_250",
+					"group": 10,
+					"name": "Moloch Outpost x250",
+					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_4#\/250.",
+					"hint": "Moloch outposts level 120",
+					"questimage": "portrait_moloch.png",
+					"prereq": "ASSAULT_MO_4_100",
+					"rules":
+					{
+						"assault_mo_4": 250
+					}
+				},
+				{
+					"order": 500,
+					"list": true,
+					"reward": [1500000000, 1500000000, 1500000000, 1500000000, 1500],
+					"id": "ASSAULT_MO_4_500",
+					"group": 10,
+					"name": "Moloch Outpost x500",
+					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_4#\/500.",
+					"hint": "Moloch outposts level 120",
+					"questimage": "portrait_moloch.png",
+					"prereq": "ASSAULT_MO_4_250",
+					"rules":
+					{
+						"assault_mo_4": 500
+					}
+				},
+				{
+					"order": 1000,
+					"list": true,
+					"reward": [3000000000, 3000000000, 3000000000, 3000000000, 3000],
+					"id": "ASSAULT_MO_4_1000",
+					"group": 10,
+					"name": "Moloch Outpost x1000",
+					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_4#\/1000.",
+					"hint": "Moloch outposts level 120",
+					"questimage": "portrait_moloch.png",
+					"prereq": "ASSAULT_MO_4_500",
+					"rules":
+					{
+						"assault_mo_4": 1000
 					}
 				},
 			];

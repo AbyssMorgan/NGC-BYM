@@ -256,74 +256,67 @@ package
          }
       }
       
-      private function setupAttackMode() : void
-      {
-         var _loc1_:Array = null;
-         var _loc2_:Sprite = null;
-         this._creatureButtonsMC = mc.addChild(new flingerLevel()) as flingerLevel;
-         this._creatureButtonsMC._mc._txtContainer.flinger_txt.htmlText = KEYS.Get("txt_flinger_capacity");
-         this._creatureButtonsMC._mc._txtContainer.mcBar.visible = true;
-         this._creatureButtonsMC._mc._txtContainer.tA.htmlText = "0%";
-         this._creatureButtonsMC.y = 180;
-         this._creatureButtonsMC._mc.x = 2;
-         this._creatureButtonsMC._mc.y = -6;
-         this._creatureButtons = [];
-         if(!GLOBAL._attackersFlinger)
-         {
-            this._creatureButtonsMC._mc._txtContainer.flinger_txt.htmlText = KEYS.Get("no_flinger");
-            this._creatureButtonsMC._mc._txtContainer.tA.htmlText = "";
-            this._creatureButtonsMC._mc._bottomBar.visible = false;
-         }
-         else
-         {
-            this.m_creatureContainer = new Sprite();
-            this._creatureButtonsMC.addChild(this.m_creatureContainer);
-            _loc1_ = this.setupChampionButtons(this.m_creatureContainer);
-            this.setupCreatureButtons(this.m_creatureContainer,_loc1_[0],_loc1_[1]);
-            if(this.m_creatureContainer.numChildren == 0)
-            {
-               this._creatureButtonsMC._mc._txtContainer.flinger_txt.htmlText = KEYS.Get("no_monsters");
-               this._creatureButtonsMC._mc._bottomBar.visible = false;
-            }
-            _loc2_ = new Sprite();
-            _loc2_.graphics.beginFill(16777215,1);
-            _loc2_.graphics.drawRect(0,22,200,GLOBAL._SCREEN.height - 476);
-            _loc2_.graphics.endFill();
-            _loc2_.mouseEnabled = false;
-            _loc2_.mouseChildren = false;
-            this._creatureButtonsMC.addChild(_loc2_);
-            this.m_creatureContainer.mask = _loc2_;
-            this.m_scrollBar = new ScrollSetV(this.m_creatureContainer,_loc2_,true);
-            this.m_scrollBar.x = 202 - this.m_scrollBar.width;
-            this.m_scrollBar.y = 22;
-            this._creatureButtonsMC.addChild(this.m_scrollBar);
-         }
-		var siege_available:Boolean = true;
-		// if(BASE._wmID == 31 || BASE._wmID == 21 || BASE._wmID == 11 || BASE._wmID == 1){
-		// 	if(BASE._level >= 91 && BASE._level <= 109){
-		// 		siege_available = false;
-		// 	}
-		// }
-		if(siege_available && !BASE.isInfernoMainYardOrOutpost){
-			if(SiegeWeapons.availableWeapon != null)
+		private function setupAttackMode() : void
+		{
+			var _loc1_:Array = null;
+			var _loc2_:Sprite = null;
+			this._creatureButtonsMC = mc.addChild(new flingerLevel()) as flingerLevel;
+			this._creatureButtonsMC._mc._txtContainer.flinger_txt.htmlText = KEYS.Get("txt_flinger_capacity");
+			this._creatureButtonsMC._mc._txtContainer.mcBar.visible = true;
+			this._creatureButtonsMC._mc._txtContainer.tA.htmlText = "0%";
+			this._creatureButtonsMC.y = 180;
+			this._creatureButtonsMC._mc.x = 2;
+			this._creatureButtonsMC._mc.y = -6;
+			this._creatureButtons = [];
+			if(!GLOBAL._attackersFlinger)
 			{
-				this._siegeweapon = new SIEGEWEAPONPOPUP();
-				mc.addChild(this._siegeweapon);
-				this._siegeweapon.x = 442;
-				this._siegeweapon.y = 20;
-				this._siegeweapon.Setup(!GLOBAL.isInAttackMode);
+				this._creatureButtonsMC._mc._txtContainer.flinger_txt.htmlText = KEYS.Get("no_flinger");
+				this._creatureButtonsMC._mc._txtContainer.tA.htmlText = "";
+				this._creatureButtonsMC._mc._bottomBar.visible = false;
 			}
-			if(GLOBAL._attackersCatapult > 0)
+			else
 			{
-				this._catapult = new CATAPULTPOPUP();
-				mc.addChild(this._catapult);
-				this._catapult.x = 350;
-				this._catapult.y = 20;
-				this._catapult.Setup(!GLOBAL.isInAttackMode);
+				this.m_creatureContainer = new Sprite();
+				this._creatureButtonsMC.addChild(this.m_creatureContainer);
+				_loc1_ = this.setupChampionButtons(this.m_creatureContainer);
+				this.setupCreatureButtons(this.m_creatureContainer,_loc1_[0],_loc1_[1]);
+				if(this.m_creatureContainer.numChildren == 0)
+				{
+					this._creatureButtonsMC._mc._txtContainer.flinger_txt.htmlText = KEYS.Get("no_monsters");
+					this._creatureButtonsMC._mc._bottomBar.visible = false;
+				}
+				_loc2_ = new Sprite();
+				_loc2_.graphics.beginFill(16777215,1);
+				_loc2_.graphics.drawRect(0,22,200,GLOBAL._SCREEN.height - 476);
+				_loc2_.graphics.endFill();
+				_loc2_.mouseEnabled = false;
+				_loc2_.mouseChildren = false;
+				this._creatureButtonsMC.addChild(_loc2_);
+				this.m_creatureContainer.mask = _loc2_;
+				this.m_scrollBar = new ScrollSetV(this.m_creatureContainer,_loc2_,true);
+				this.m_scrollBar.x = 202 - this.m_scrollBar.width;
+				this.m_scrollBar.y = 22;
+				this._creatureButtonsMC.addChild(this.m_scrollBar);
 			}
-		}
-			
-      }
+			if(!BASE.isInfernoMainYardOrOutpost){
+				if(SiegeWeapons.availableWeapon != null)
+				{
+					this._siegeweapon = new SIEGEWEAPONPOPUP();
+					mc.addChild(this._siegeweapon);
+					this._siegeweapon.x = 442;
+					this._siegeweapon.y = 20;
+					this._siegeweapon.Setup(!GLOBAL.isInAttackMode);
+				}
+				if(GLOBAL._attackersCatapult > 0)
+				{
+					this._catapult = new CATAPULTPOPUP();
+					mc.addChild(this._catapult);
+					this._catapult.x = 350;
+					this._catapult.y = 20;
+					this._catapult.Setup(!GLOBAL.isInAttackMode);
+				}
+			}
+      	}
       
       private function setupScrollMenu() : void
       {

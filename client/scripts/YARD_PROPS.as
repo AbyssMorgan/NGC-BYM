@@ -150,6 +150,10 @@ package {
 	import buildings.yard.bi_coalharvester;
 	import buildings.yard.bi_sulfurharvester;
 	import buildings.yard.bi_magmaharverster;
+	import buildings.yard.bi_storagesilo;
+	import buildings.yard.bi_hatchery;
+	import buildings.yard.bi_townhall;
+	import buildings.yard.bi_academy;
 	
 	public class YARD_PROPS {
 
@@ -304,6 +308,10 @@ package {
 			bi_coalharvester.DATA,     // ID 148
 			bi_sulfurharvester.DATA,   // ID 149
 			bi_magmaharverster.DATA,   // ID 150
+			bi_storagesilo.DATA,       // ID 151
+			bi_hatchery.DATA,          // ID 152
+			bi_townhall.DATA,          // ID 153
+			bi_academy.DATA,           // ID 154
 		];
 		
 		public function YARD_PROPS(){

@@ -1,4 +1,4 @@
-package
+package buildings.cls
 {
    import flash.display.Bitmap;
    import flash.display.BitmapData;
@@ -6,7 +6,7 @@ package
    import flash.geom.Point;
    import flash.geom.Rectangle;
    
-   public class BUILDING147 extends BRESOURCE
+   public class BUILDING149 extends BRESOURCE
    {
        
       
@@ -16,16 +16,18 @@ package
       
       public var _frameNumber:int;
       
-      public function BUILDING147()
+      public var _animBitmap:BitmapData;
+      
+      public function BUILDING149()
       {
          this._frameNumber = Math.random() * 5;
          super();
          this._frameNumber = int(Math.random() * 5);
-         _type = 147;
+         _type = 149;
          _footprint = [new Rectangle(0,0,70,70)];
          _gridCost = [[new Rectangle(0,0,70,70),10],[new Rectangle(10,10,50,50),200]];
-         _spoutPoint = new Point(-23,-20);
-         _spoutHeight = 45;
+         _spoutPoint = new Point(28,-17);
+         _spoutHeight = 50;
          SetProps();
       }
       
@@ -44,11 +46,6 @@ package
             }
          }
          ++this._frameNumber;
-      }
-      
-      override public function Update(param1:Boolean = false) : void
-      {
-         super.Update(param1);
       }
       
       override public function Upgraded() : void

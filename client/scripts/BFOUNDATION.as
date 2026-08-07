@@ -1044,6 +1044,7 @@ package
                   case EnumYardType.RESOURCE:
                   case EnumYardType.STRONGHOLD:
                   case EnumYardType.FORTIFICATION:
+                  case EnumYardType.MOLOCH_OUTPOST:
                      imageGroupYardType = int(EnumYardType.OUTPOST);
                }
                ImageCache.GetImageGroupWithCallBack(imageGroupYardType + "b" + this._type + "-" + imageLevel + state,loadImages,this.ImageCallback,true,2,state);
@@ -2255,6 +2256,9 @@ package
             {
                BASE._buildingsMain["b" + this._id] = this;
             }
+			if(this._type == 14 || this._type == 139 || this._type == 153){
+				BASE._buildingsSuck["b" + this._id] = this;
+			}
          }
          if(!GLOBAL._catchup && !BASE.processing)
          {
@@ -4254,6 +4258,22 @@ package
          else if(this._type == 150)
          {
          	return new magmaProducerHit();
+         }
+         else if(this._type == 151)
+         {
+            return new siloHit();
+         }
+		 else if(this._type == 152)
+         {
+            return new hatcheryHit();
+         }
+		 else if(this._type == 153)
+         {
+            return new townHallHit();
+         }
+		 else if(this._type == 154)
+         {
+            return new infernoAcademyHit();
          }
          return !!_loc1_.hitCls ? new (_loc1_.hitCls as Class)() : new building1hit();
       }

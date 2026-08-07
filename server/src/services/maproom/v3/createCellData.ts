@@ -21,26 +21,28 @@ import type { CellData } from "../../../types/CellData.js";
  * @returns {Promise<CellData>} - The data object for the cell.
  */
 export const createCellData = async (
-  cell: Loaded<WorldMapCell, never>,
-  worldid: string,
-  ctx: Context,
-  cellOwners: Map<number, User> = new Map(),
+	cell: Loaded<WorldMapCell, never>,
+	worldid: string,
+	ctx: Context,
+	cellOwners: Map<number, User> = new Map(),
 ): Promise<CellData> => {
-  if (cell.uid > 0) return await playerCell(ctx, cell, cellOwners);
+	if (cell.uid > 0) return await playerCell(ctx, cell, cellOwners);
 
-  switch (cell.base_type) {
-    case EnumYardType.STRONGHOLD:
-    case EnumYardType.RESOURCE:
-    case EnumYardType.FORTIFICATION:
-      return wildMonsterCell(cell, worldid);
-
-    case EnumYardType.OUTPOST:
-      return tribeOutpostCell(cell, worldid);
-
-    case EnumYardType.BORDER:
-      return terrainCell({ x: cell.x, y: cell.y, i: cell.terrainHeight });
-
-    default:
-      return terrainCell({ x: cell.x, y: cell.y, i: cell.terrainHeight });
-  }
+	switch (cell.base_type) {
+		case EnumYardType.STRONGHOLD:
+		case EnumYardType.RESOURCE:
+		case EnumYardType.FORTIFICATION: {
+			return wildMonsterCell(cell, worldid);
+		}
+		case EnumYardType.OUTPOST:
+		case EnumYardType.MOLOCH_OUTPOST: {
+			return tribeOutpostCell(cell, worldid);
+		}
+		case EnumYardType.BORDER: {
+			return terrainCell({ x: cell.x, y: cell.y, i: cell.terrainHeight });
+		}
+		default: {
+			return terrainCell({ x: cell.x, y: cell.y, i: cell.terrainHeight });
+		}
+	}
 };

@@ -36,10 +36,7 @@ const worldIdTo24Bit = (worldId: string): number => {
  * @returns {string} A deterministic base ID.
  */
 export const generateBaseId = (worldId: string, x: number, y: number, version?: number) => {
-  const worldHash = (worldIdTo24Bit(worldId) % 90000000) + 10000000;
-  const prefix = version ? `${version}` : "";
-
-  return `${prefix}${worldHash}${x.toString().padStart(3, "0")}${y
-    .toString()
-    .padStart(3, "0")}`;
+	const worldHash = (worldIdTo24Bit(worldId) % 90000000) + 10000000;
+	const prefix = version ? `${version}` : "";
+	return `${prefix}${worldHash}${x.toString().padStart(3, "0")}${y.toString().padStart(3, "0")}`;
 };

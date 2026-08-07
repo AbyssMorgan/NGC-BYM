@@ -19,7 +19,7 @@ package buildings.yard {
 			"description":"heavytrap_desc",
 			"cls":BUILDING117,
 			"costs":[
-				{"r1":new SecNum(5000000), "r2":new SecNum(5000000), "r3":new SecNum(5000000), "r4":new SecNum(0), "time":new SecNum(0), "re":[[14,1,4]]}
+				{"r1":new SecNum(5000000), "r2":new SecNum(5000000), "r3":new SecNum(5000000), "r4":new SecNum(0), "time":new SecNum(0), "re":[[14,1,4]]}, // Level 1
 			],
 			"imageData":{
 				"baseurl":"buildings/heavytrap/",
@@ -65,9 +65,15 @@ package buildings.yard {
 				25, // Level 24
 				26, // Level 25
 			],
-			"damage":[10000],
-			"hp":[10],
-			"repairTime":[5]
+			"damage":[
+				10000, // Level 1
+			],
+			"hp":[
+				10, // Level 1
+			],
+			"repairTime":[
+				5, // Level 1
+			]
 		};
 		
 	}

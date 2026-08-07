@@ -167,6 +167,8 @@ package
       public static var _buildingsGifts:Object;
 
       public static var _buildingsStored:Object;
+	  
+      public static var _buildingsSuck:Object;
 
       public static var buildings:Vector.<BFOUNDATION>;
 
@@ -535,6 +537,7 @@ package
          _buildingsMushrooms = {};
          _buildingsGifts = {};
          _buildingsStored = {};
+         _buildingsSuck = {};
          GLOBAL.setTownHall(null);
          GLOBAL._bAcademy = null;
          GLOBAL._bBaiter = null;
@@ -1221,6 +1224,22 @@ package
                {
                   QUESTS._global.assault_to_4 = serverData.stats.assault_to_4;
                }
+			   if (serverData.stats.assault_mo_1)
+               {
+                 QUESTS._global.assault_mo_1 = serverData.stats.assault_mo_1;
+               }
+               if (serverData.stats.assault_mo_2)
+               {
+                 QUESTS._global.assault_mo_2 = serverData.stats.assault_mo_2;
+               }
+               if (serverData.stats.assault_mo_3)
+               {
+                 QUESTS._global.assault_mo_3 = serverData.stats.assault_mo_3;
+               }
+               if (serverData.stats.assault_mo_4)
+               {
+                 QUESTS._global.assault_mo_4 = serverData.stats.assault_mo_4;
+               }
 			   if (serverData.stats.assault_ro && GLOBAL.assault_ro == 0){
 				  GLOBAL.assault_ro = serverData.stats.assault_ro;
                   QUESTS._global.assault_ro = serverData.stats.assault_ro;
@@ -1736,6 +1755,7 @@ package
 		 if(BASE.isInfernoMainYardOrOutpost){
             terrainType = "lava";
          } else if(MapRoomManager.instance.isInMapRoom3){
+			trace("m_yardType = " + m_yardType);
 			if(m_yardType == EnumYardType.PLAYER){
 				var extra_tiles:int = 0;
 				if(_rewards.hasOwnProperty("extraTiles") && _rewards.extraTiles != null){
@@ -1780,6 +1800,8 @@ package
 				} else if(_level >= 50){
 					terrainType = "rock";
 				}
+			} else if(_wmID == 41){
+				terrainType = "lava";
 			}
 		 } else if(!MapRoomManager.instance.isInMapRoom3 && GLOBAL._currentCell && (isOutpostOrInfernoOutpost || GLOBAL.mode == GLOBAL.e_BASE_MODE.WMATTACK || GLOBAL.mode == GLOBAL.e_BASE_MODE.WMVIEW)){
             terrainType = (GLOBAL._currentCell as MapRoomCell).terrain;
@@ -3164,6 +3186,10 @@ package
          _loc1_.assault_to_2 = int(QUESTS._global.assault_to_2);
          _loc1_.assault_to_3 = int(QUESTS._global.assault_to_3);
          _loc1_.assault_to_4 = int(QUESTS._global.assault_to_4);
+         _loc1_.assault_mo_1 = int(QUESTS._global.assault_mo_1);
+         _loc1_.assault_mo_2 = int(QUESTS._global.assault_mo_2);
+         _loc1_.assault_mo_3 = int(QUESTS._global.assault_mo_3);
+         _loc1_.assault_mo_4 = int(QUESTS._global.assault_mo_4);
          _loc1_.assault_sh = int(QUESTS._global.assault_sh);
          _loc1_.assault_ro = int(QUESTS._global.assault_ro);
          _loc1_.assault_de = int(QUESTS._global.assault_de);
@@ -5200,10 +5226,6 @@ package
          {
             buildingFoundation = new BUILDING23();
          }
-         else if (buildingNum == 24)
-         {
-            buildingFoundation = new BUILDING24();
-         }
          else if (buildingNum == 25)
          {
             buildingFoundation = new BUILDING25();
@@ -6688,7 +6710,7 @@ package
 
       public static function get isOutpost():Boolean
       {
-         return m_yardType == EnumYardType.OUTPOST || m_yardType == EnumYardType.RESOURCE || m_yardType == EnumYardType.STRONGHOLD || m_yardType == EnumYardType.FORTIFICATION;
+         return m_yardType == EnumYardType.OUTPOST || m_yardType == EnumYardType.RESOURCE || m_yardType == EnumYardType.STRONGHOLD || m_yardType == EnumYardType.FORTIFICATION || m_yardType == EnumYardType.MOLOCH_OUTPOST;
       }
 
       public static function get isOutpostMapRoom2Only():Boolean
@@ -6703,7 +6725,7 @@ package
 
       public static function get isOutpostOrInfernoOutpost():Boolean
       {
-         return m_yardType == EnumYardType.OUTPOST || m_yardType == EnumYardType.INFERNO_OUTPOST || m_yardType == EnumYardType.RESOURCE || m_yardType == EnumYardType.STRONGHOLD || m_yardType == EnumYardType.FORTIFICATION;
+         return m_yardType == EnumYardType.OUTPOST || m_yardType == EnumYardType.INFERNO_OUTPOST || m_yardType == EnumYardType.RESOURCE || m_yardType == EnumYardType.STRONGHOLD || m_yardType == EnumYardType.FORTIFICATION || m_yardType == EnumYardType.MOLOCH_OUTPOST;
       }
 
       public static function get isOutpostResource():Boolean

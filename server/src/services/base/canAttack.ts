@@ -16,7 +16,7 @@ export const canAttack = (attackerSave: Save, defenderSave: Save, mapversion?: M
 	if(defenderSave.name == 'sandbox' || attackerSave.name == 'sandbox') return false;
 	const isOwner = defenderSave.type !== BaseType.INFERNO && attackerSave.saveuserid === defenderSave.saveuserid;
 
-	if(defenderSave.wmid == 1 || defenderSave.wmid == 11 || defenderSave.wmid == 21 || defenderSave.wmid == 31){
+	if(defenderSave.wmid == 1 || defenderSave.wmid == 11 || defenderSave.wmid == 21 || defenderSave.wmid == 31 || defenderSave.wmid == 41){
 		if(defenderSave.level < 40 && attackerSave.level > 40) return false;
 		if(defenderSave.level < 46 && attackerSave.level >= 56) return false;
 	} else if(defenderSave.wmid === EnumYardType.RESOURCE){

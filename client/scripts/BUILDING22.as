@@ -794,30 +794,28 @@ package
          TweenLite.killDelayedCallsTo(this.RangeIndicator);
       }
       
-      private function linkMonstersToData(param1:Object) : void
-      {
-         var _loc3_:Vector.<CreepInfo> = null;
-         if(!this._monsters)
-         {
-            this._monsters = new Dictionary(true);
-         }
-         var _loc2_:int = int(GLOBAL.player.monsterList.length);
-         var _loc4_:int = 0;
-		 var creature_id:String;
-         while(_loc4_ < _loc2_)
-         {
-            _loc3_ = GLOBAL.player.monsterList[_loc4_].getOwnedCreeps(_id);
-            if(_loc3_.length)
-            {
-			   creature_id = GLOBAL.player.monsterList[_loc4_].m_creatureID;
-			   if(creature_id != 'C7'){
-				this._monsters[creature_id] = _loc3_;
-				_monstersDispatched[creature_id] = 0;
-			   }
-            }
-            _loc4_++;
-         }
-      }
+		private function linkMonstersToData(param1:Object) : void
+		{
+			var _loc3_:Vector.<CreepInfo> = null;
+			if(!this._monsters)
+			{
+				this._monsters = new Dictionary(true);
+			}
+			var _loc2_:int = int(GLOBAL.player.monsterList.length);
+			var _loc4_:int = 0;
+			var creature_id:String;
+			while(_loc4_ < _loc2_)
+			{
+				_loc3_ = GLOBAL.player.monsterList[_loc4_].getOwnedCreeps(_id);
+				if(_loc3_.length)
+				{
+					creature_id = GLOBAL.player.monsterList[_loc4_].m_creatureID;
+					this._monsters[creature_id] = _loc3_;
+					_monstersDispatched[creature_id] = 0;
+				}
+				_loc4_++;
+			}
+		}
       
       override public function Setup(param1:Object) : void
       {

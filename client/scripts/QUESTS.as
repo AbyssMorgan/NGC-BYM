@@ -4843,7 +4843,7 @@ package
 					"group": 6,
 					"name": "Resource Outpost x5",
 					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/5.",
-					"hint": "Resource Outposts level 50 - 90",
+					"hint": "Resource outposts with any level",
 					"questimage": "resource_outpost.png",
 					"rules":
 					{
@@ -4858,7 +4858,7 @@ package
 					"group": 6,
 					"name": "Resource Outpost x10",
 					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/10.",
-					"hint": "Resource Outposts level 50 - 90",
+					"hint": "Resource outposts with any level",
 					"questimage": "resource_outpost.png",
 					"prereq": "assault_ro_5",
 					"rules":
@@ -4874,7 +4874,7 @@ package
 					"group": 6,
 					"name": "Resource Outpost x25",
 					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/25.",
-					"hint": "Resource Outposts level 50 - 90",
+					"hint": "Resource outposts with any level",
 					"questimage": "resource_outpost.png",
 					"prereq": "assault_ro_10",
 					"rules":
@@ -4890,7 +4890,7 @@ package
 					"group": 6,
 					"name": "Resource Outpost x50",
 					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/50.",
-					"hint": "Resource Outposts level 50 - 90",
+					"hint": "Resource outposts with any level",
 					"questimage": "resource_outpost.png",
 					"prereq": "assault_ro_25",
 					"rules":
@@ -4906,7 +4906,7 @@ package
 					"group": 6,
 					"name": "Resource Outpost x75",
 					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/75.",
-					"hint": "Resource Outposts level 50 - 90",
+					"hint": "Resource outposts with any level",
 					"questimage": "resource_outpost.png",
 					"prereq": "assault_ro_50",
 					"rules":
@@ -4922,7 +4922,7 @@ package
 					"group": 6,
 					"name": "Resource Outpost x100",
 					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/100.",
-					"hint": "Resource Outposts level 50 - 90",
+					"hint": "Resource outposts with any level",
 					"questimage": "resource_outpost.png",
 					"prereq": "assault_ro_75",
 					"rules":
@@ -4938,7 +4938,7 @@ package
 					"group": 6,
 					"name": "Resource Outpost x150",
 					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/150.",
-					"hint": "Resource Outposts level 50 - 90",
+					"hint": "Resource outposts with any level",
 					"questimage": "resource_outpost.png",
 					"prereq": "assault_ro_100",
 					"rules":
@@ -4954,7 +4954,7 @@ package
 					"group": 6,
 					"name": "Resource Outpost x200",
 					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/200.",
-					"hint": "Resource Outposts level 50 - 90",
+					"hint": "Resource outposts with any level",
 					"questimage": "resource_outpost.png",
 					"prereq": "assault_ro_150",
 					"rules":
@@ -4970,7 +4970,7 @@ package
 					"group": 6,
 					"name": "Resource Outpost x250",
 					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/250.",
-					"hint": "Resource Outposts level 50 - 90",
+					"hint": "Resource outposts with any level",
 					"questimage": "resource_outpost.png",
 					"prereq": "assault_ro_200",
 					"rules":
@@ -4986,7 +4986,7 @@ package
 					"group": 6,
 					"name": "Resource Outpost x300",
 					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/300.",
-					"hint": "Resource Outposts level 50 - 90",
+					"hint": "Resource outposts with any level",
 					"questimage": "resource_outpost.png",
 					"prereq": "assault_ro_250",
 					"rules":
@@ -5002,7 +5002,7 @@ package
 					"group": 6,
 					"name": "Resource Outpost x350",
 					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/350.",
-					"hint": "Resource Outposts level 50 - 90",
+					"hint": "Resource outposts with any level",
 					"questimage": "resource_outpost.png",
 					"prereq": "assault_ro_300",
 					"rules":
@@ -5018,7 +5018,7 @@ package
 					"group": 6,
 					"name": "Resource Outpost x400",
 					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/400.",
-					"hint": "Resource Outposts level 50 - 90",
+					"hint": "Resource outposts with any level",
 					"questimage": "resource_outpost.png",
 					"prereq": "assault_ro_350",
 					"rules":
@@ -5034,7 +5034,7 @@ package
 					"group": 6,
 					"name": "Resource Outpost x450",
 					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/450.",
-					"hint": "Resource Outposts level 50 - 90",
+					"hint": "Resource outposts with any level",
 					"questimage": "resource_outpost.png",
 					"prereq": "assault_ro_400",
 					"rules":
@@ -5050,7 +5050,7 @@ package
 					"group": 6,
 					"name": "Resource Outpost x500",
 					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/500.",
-					"hint": "Resource Outposts level 50 - 90",
+					"hint": "Resource outposts with any level",
 					"questimage": "resource_outpost.png",
 					"prereq": "assault_ro_450",
 					"rules":
@@ -5066,7 +5066,7 @@ package
 					"group": 6,
 					"name": "Resource Outpost x600",
 					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/600.",
-					"hint": "Resource Outposts level 50 - 90",
+					"hint": "Resource outposts with any level",
 					"questimage": "resource_outpost.png",
 					"prereq": "assault_ro_500",
 					"rules":
@@ -5082,7 +5082,7 @@ package
 					"group": 6,
 					"name": "Resource Outpost x700",
 					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/700.",
-					"hint": "Resource Outposts level 50 - 90",
+					"hint": "Resource outposts with any level",
 					"questimage": "resource_outpost.png",
 					"prereq": "assault_ro_600",
 					"rules":
@@ -5098,7 +5098,7 @@ package
 					"group": 6,
 					"name": "Resource Outpost x800",
 					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/800.",
-					"hint": "Resource Outposts level 50 - 90",
+					"hint": "Resource outposts with any level",
 					"questimage": "resource_outpost.png",
 					"prereq": "assault_ro_700",
 					"rules":
@@ -5114,7 +5114,7 @@ package
 					"group": 6,
 					"name": "Resource Outpost x900",
 					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/900.",
-					"hint": "Resource Outposts level 50 - 90",
+					"hint": "Resource outposts with any level",
 					"questimage": "resource_outpost.png",
 					"prereq": "assault_ro_800",
 					"rules":
@@ -5130,7 +5130,7 @@ package
 					"group": 6,
 					"name": "Resource Outpost x1000",
 					"description": "Conquer resource outposts.<br>Conquered #assault_ro#\/1000.",
-					"hint": "Resource Outposts level 50 - 90",
+					"hint": "Resource outposts with any level",
 					"questimage": "resource_outpost.png",
 					"prereq": "assault_ro_900",
 					"rules":

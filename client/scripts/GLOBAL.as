@@ -328,8 +328,6 @@ package
 
       public static var _attackersResources:Object;
 
-      public static var _hpAttackersResources:Object;
-
       public static var _attackersCredits:SecNum;
 
       public static var _attackersFlinger:int;
@@ -344,7 +342,11 @@ package
 
       public static var _savedAttackersDeltaResources:Object;
 
+      public static var _isavedAttackersDeltaResources:Object;
+
       public static var _attackersDeltaResources:Object;
+
+      public static var _iattackersDeltaResources:Object;
 
       public static var _attackerMapResources:Object = {};
 
@@ -362,7 +364,7 @@ package
 
       public static var _resources:Object = {};
 
-      public static var _hpResources:Object = {};
+      public static var _iresources:Object = {};
 
       public static var _yardResources:Object = {};
 
@@ -718,6 +720,10 @@ package
 			_buildingProps[144 - 1].quantity = [100];
 			_buildingProps[145 - 1].quantity = [100];
 			_buildingProps[146 - 1].quantity = [100];
+			_buildingProps[147 - 1].quantity = [100];
+			_buildingProps[148 - 1].quantity = [100];
+			_buildingProps[149 - 1].quantity = [100];
+			_buildingProps[150 - 1].quantity = [100];
 
 			_buildingProps[14 - 1].block = false;
 			_buildingProps[128 - 1].block = false;
@@ -726,16 +732,23 @@ package
 			_buildingProps[136 - 1].block = false;
 			_buildingProps[137 - 1].block = false;
 			_buildingProps[138 - 1].block = false;
-			_buildingProps[138 - 1].isImmobile = false;
-			_buildingProps[138 - 1].isUntargetable = false;
-			_buildingProps[138 - 1].isNoMoreInfoButton = false;
 			_buildingProps[139 - 1].block = false;
-			_buildingProps[139 - 1].isImmobile = false;
-			_buildingProps[139 - 1].isUntargetable = false;
-			_buildingProps[139 - 1].isNoMoreInfoButton = false;
 			_buildingProps[140 - 1].block = false;
+			_buildingProps[147 - 1].block = false;
+			_buildingProps[148 - 1].block = false;
+			_buildingProps[149 - 1].block = false;
+			_buildingProps[150 - 1].block = false;
+
+			_buildingProps[138 - 1].isImmobile = false;
+			_buildingProps[139 - 1].isImmobile = false;
 			_buildingProps[140 - 1].isImmobile = false;
+
+			_buildingProps[139 - 1].isUntargetable = false;
+			_buildingProps[138 - 1].isUntargetable = false;
 			_buildingProps[140 - 1].isUntargetable = false;
+			
+			_buildingProps[138 - 1].isNoMoreInfoButton = false;
+			_buildingProps[139 - 1].isNoMoreInfoButton = false;
 			_buildingProps[140 - 1].isNoMoreInfoButton = false;
 		}
       }
@@ -801,19 +814,15 @@ package
          _outpostCapacity = new SecNum(2000000);
          _attackersCatapult = 0;
          _attackersFlinger = 0;
-         _savedAttackersDeltaResources = {
-               "r1": new SecNum(0),
-               "r2": new SecNum(0),
-               "r3": new SecNum(0),
-               "r4": new SecNum(0)
-            };
-         _attackersDeltaResources = {"dirty": false};
+         _savedAttackersDeltaResources = {"r1": new SecNum(0), "r2": new SecNum(0), "r3": new SecNum(0), "r4": new SecNum(0)};
+         _isavedAttackersDeltaResources = {"r1": new SecNum(0), "r2": new SecNum(0), "r3": new SecNum(0), "r4": new SecNum(0)};
+         _attackersDeltaResources = {"dirty": false, "r1": new SecNum(0), "r2": new SecNum(0), "r3": new SecNum(0), "r4": new SecNum(0)};
+         _iattackersDeltaResources = {"dirty": false, "r1": new SecNum(0), "r2": new SecNum(0), "r3": new SecNum(0), "r4": new SecNum(0)};
          _attackerMonsterOverdrive = new SecNum(0);
          if (_mode != GLOBAL.e_BASE_MODE.BUILD)
          {
             HOUSING.Cull();
             _attackersResources = GLOBAL._resources;
-            _hpAttackersResources = GLOBAL._hpResources;
             _attackerMonsterOverdrive = new SecNum(GLOBAL._playerMonsterOverdrive.Get());
             _attackerMonsterDefenseOverdrive = new SecNum(GLOBAL._playerMonsterDefenseOverdrive.Get());
             _attackerMonsterSpeedOverdrive = new SecNum(GLOBAL._playerMonsterSpeedOverdrive.Get());
@@ -2134,41 +2143,41 @@ package
          }
       }
 
-      public static function SaveAttackersDeltaResources():void
-      {
-         var _loc1_:int = 0;
-         if (_attackersDeltaResources.dirty)
-         {
-            _loc1_ = 1;
-            while (_loc1_ < 5)
-            {
-               if (_attackersDeltaResources["r" + _loc1_])
-               {
-                  if (_savedAttackersDeltaResources["r" + _loc1_])
-                  {
-                     _savedAttackersDeltaResources["r" + _loc1_].Add(_attackersDeltaResources["r" + _loc1_].Get());
-                  }
-                  else
-                  {
-                     _savedAttackersDeltaResources["r" + _loc1_] = new SecNum(_attackersDeltaResources["r" + _loc1_].Get());
-                  }
-               }
-               _loc1_++;
-            }
-         }
-         _attackersDeltaResources = {"dirty": false};
-      }
+		public static function SaveAttackersDeltaResources():void
+		{
+			var _loc1_:int = 0;
+			if (_attackersDeltaResources.dirty)
+			{
+				_loc1_ = 1;
+				while (_loc1_ < 5)
+				{
+					_savedAttackersDeltaResources["r" + _loc1_].Add(_attackersDeltaResources["r" + _loc1_].Get());
+					_loc1_++;
+				}
+			}
+			_attackersDeltaResources = {"dirty": false, "r1": new SecNum(0), "r2": new SecNum(0), "r3": new SecNum(0), "r4": new SecNum(0)};
+		}
 
-      public static function CleanAttackersDeltaResources():void
-      {
-         _savedAttackersDeltaResources = {
-               "r1": new SecNum(0),
-               "r2": new SecNum(0),
-               "r3": new SecNum(0),
-               "r4": new SecNum(0),
-               "dirty": false
-            };
-      }
+		public static function SaveAttackersInfernoDeltaResources():void
+		{
+			var _loc1_:int = 0;
+			if (_iattackersDeltaResources.dirty)
+			{
+				_loc1_ = 1;
+				while (_loc1_ < 5)
+				{
+					_isavedAttackersDeltaResources["r" + _loc1_].Add(_iattackersDeltaResources["r" + _loc1_].Get());
+					_loc1_++;
+				}
+			}
+			_iattackersDeltaResources = {"dirty": false, "r1": new SecNum(0), "r2": new SecNum(0), "r3": new SecNum(0), "r4": new SecNum(0)};
+		}
+
+		public static function CleanAttackersDeltaResources():void
+		{
+			_savedAttackersDeltaResources = {"r1": new SecNum(0), "r2": new SecNum(0), "r3": new SecNum(0), "r4": new SecNum(0), "dirty": false};
+			_isavedAttackersDeltaResources = {"r1": new SecNum(0), "r2": new SecNum(0), "r3": new SecNum(0), "r4": new SecNum(0), "dirty": false};
+		}
 
       public static function SetFlags(serverFlags:Object):void
       {

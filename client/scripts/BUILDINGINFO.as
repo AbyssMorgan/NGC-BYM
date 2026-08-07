@@ -495,8 +495,14 @@ package
                   }
                   _loc18_ = _loc16_ / _loc17_ * 60;
                   _loc19_ = 100 / _building._buildingProps.capacity[_building._lvl.Get() - 1] * _building._stored.Get();
+				  var resource_index:int = _building._type;
+				  var resource_names:Array = GLOBAL._resourceNames;
+				  if(_building._type >= 147 && _building._type <= 150){
+					resource_index = resource_index - 146;
+					resource_names = GLOBAL.iresourceNames;
+				  }
                   _loc9_ = KEYS.Get("ui_producing",{
-                     "v1":KEYS.Get(GLOBAL._resourceNames[_building._type - 1]),
+                     "v1":KEYS.Get(resource_names[resource_index - 1]),
                      "v2":GLOBAL.ToTime(_loc18_,true,true),
                      "v3":_loc19_
                   });

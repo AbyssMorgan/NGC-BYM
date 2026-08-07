@@ -3888,356 +3888,372 @@ package
          {
             return _loc2_ ? new boneCrusherHit() : new building1hit();
          }
-         if(this._type == 2)
+		 else if(this._type == 2)
          {
             return _loc2_ ? new coalProducerHit() : new building2hit();
          }
-         if(this._type == 3)
+         else if(this._type == 3)
          {
             return _loc2_ ? new sulpherProducerHit() : new building3hit();
          }
-         if(this._type == 4)
+         else if(this._type == 4)
          {
             return _loc2_ ? new magmaProducerHit() : new building4hit();
          }
-         if(this._type == 5)
+         else if(this._type == 5)
          {
             return new building5hit();
          }
-         if(this._type == 6)
+         else if(this._type == 6)
          {
             return _loc2_ ? new siloHit() : new building6hit();
          }
-         if(this._type == 7)
+         else if(this._type == 7)
          {
             return new building7hit();
          }
-         if(this._type == 8)
+         else if(this._type == 8)
          {
             return _loc2_ ? new monsterLockerHit() : new building8hit();
          }
-         if(this._type == 9)
+         else if(this._type == 9)
          {
             return new building9hit();
          }
-         if(this._type == 10)
+         else if(this._type == 10)
          {
             return new building10hit();
          }
-         if(this._type == 11)
+         else if(this._type == 11)
          {
             return new building11hit();
          }
-         if(this._type == 12)
+         else if(this._type == 12)
          {
             return new building12hit();
          }
-         if(this._type == 13)
+         else if(this._type == 13)
          {
             return _loc2_ ? new hatcheryHit() : new building13hit();
          }
-         if(this._type == 14)
+         else if(this._type == 14)
          {
             return _loc2_ ? new townHallHit() : new building14hit();
          }
-         if(this._type == 15)
+         else if(this._type == 15)
          {
             return new building15hit();
          }
-         if(this._type == 16)
+         else if(this._type == 16)
          {
             return new building16hit();
          }
-         if(this._type == 17)
+         else if(this._type == 17)
          {
             return _loc2_ ? new wallHit() : new building17hit();
          }
-         if(this._type == 18)
+         else if(this._type == 18)
          {
             return new building18hit();
          }
-         if(this._type == 19)
+         else if(this._type == 19)
          {
             return new building19hit();
          }
-		 if(this._type == 144){
+		 else if(this._type == 144){
 			return new building20hit();
 		 }
-         if(this._type == 20 || this._type == 142)
+         else if(this._type == 20 || this._type == 142)
          {
             return _loc2_ ? new cannonTowerHit() : new building20hit();
          }
-         if(this._type == 21 || this._type == 143)
+         else if(this._type == 21 || this._type == 143)
          {
             return _loc2_ ? new sniperTowerHit() : new building21hit();
          }
-         if(this._type == 22)
+         else if(this._type == 22)
          {
             return new building22hit();
          }
-         if(this._type == 23)
+         else if(this._type == 23)
          {
             return new building23hit();
          }
-         if(this._type == 24)
+         else if(this._type == 24)
          {
             return new building24hit();
          }
-         if(this._type == 25)
+         else if(this._type == 25)
          {
             return new building25hit();
          }
-         if(this._type == 26)
+         else if(this._type == 26)
          {
             return _loc2_ ? new infernoAcademyHit() : new building26hit();
          }
-         if(this._type == 27)
+         else if(this._type == 27)
          {
             return new building27hit();
          }
-         if(this._type == 51)
+         else if(this._type == 51)
          {
             return new building51hit();
          }
-         if(this._type == 53)
+         else if(this._type == 53)
          {
             return new building53hit();
          }
-         if(this._type == 54)
+         else if(this._type == 54)
          {
             return new building54hit();
          }
-         if(this._type == 55)
+         else if(this._type == 55)
          {
             return new building55hit();
          }
-         if(this._type >= 28 && this._type <= 50)
+         else if(this._type >= 28 && this._type <= 50)
          {
             return new buildingflaghit();
          }
-         if(this._type == 56)
+         else if(this._type == 56)
          {
             return new building56hit();
          }
-         if(this._type == 57)
+         else if(this._type == 57)
          {
             return new building57hit();
          }
-         if(this._type >= 60 && this._type <= 62)
+         else if(this._type >= 60 && this._type <= 62)
          {
             return new buildinggnomehit();
          }
-         if(this._type == 63)
+         else if(this._type == 63)
          {
             return new building63hit();
          }
-         if(this._type == 64)
+         else if(this._type == 64)
          {
             return new building64hit();
          }
-         if(this._type == 65)
+         else if(this._type == 65)
          {
             return new building65hit();
          }
-         if(this._type == 66)
+         else if(this._type == 66)
          {
             return new building66hit();
          }
-         if(this._type == 68)
+         else if(this._type == 68)
          {
             return new building68hit();
          }
-         if(this._type == 71)
+         else if(this._type == 71)
          {
             return new building71hit();
          }
-         if(this._type == 72)
+         else if(this._type == 72)
          {
             return new building72hit();
          }
-         if(this._type == 73)
+         else if(this._type == 73)
          {
             return new building73hit();
          }
-         if(this._type >= 74 && this._type <= 85 || this._type == 107)
+         else if(this._type >= 74 && this._type <= 85 || this._type == 107)
          {
             return new buildingheadhit();
          }
-         if(this._type == 86)
+         else if(this._type == 86)
          {
             return new building86hit();
          }
-         if(this._type == 87)
+         else if(this._type == 87)
          {
             return new building87hit();
          }
-         if(this._type == 88)
+         else if(this._type == 88)
          {
             return new building88hit();
          }
-         if(this._type == 89)
+         else if(this._type == 89)
          {
             return new building89hit();
          }
-         if(this._type == 90)
+         else if(this._type == 90)
          {
             return new building90hit();
          }
-         if(this._type >= 91 && this._type <= 95)
+         else if(this._type >= 91 && this._type <= 95)
          {
             return new buildingflowershit();
          }
-         if(this._type == 96)
+         else if(this._type == 96)
          {
             return new building96hit();
          }
-         if(this._type == 97)
+         else if(this._type == 97)
          {
             return new building97hit();
          }
-         if(this._type == 98)
+         else if(this._type == 98)
          {
             return new building98hit();
          }
-         if(this._type == 99)
+         else if(this._type == 99)
          {
             return new building99hit();
          }
-         if(this._type == 100)
+         else if(this._type == 100)
          {
             return new building100hit();
          }
-         if(this._type == 101)
+         else if(this._type == 101)
          {
             return new building101hit();
          }
-         if(this._type == 102)
+         else if(this._type == 102)
          {
             return new building102hit();
          }
-         if(this._type == 103)
+         else if(this._type == 103)
          {
             return new building103hit();
          }
-         if(this._type == 104)
+         else if(this._type == 104)
          {
             return new building104hit();
          }
-         if(this._type == 105)
+         else if(this._type == 105)
          {
             return new building105hit();
          }
-         if(this._type == 106)
+         else if(this._type == 106)
          {
             return new building106hit();
          }
-         if(this._type >= 108 && this._type <= 109)
+         else if(this._type >= 108 && this._type <= 109)
          {
             return new buildingcubehit();
          }
-         if(this._type == 106)
+         else if(this._type == 106)
          {
             return new building106hit();
          }
-         if(this._type == 110)
+         else if(this._type == 110)
          {
             return new building110hit();
          }
-         if(this._type == 111)
+         else if(this._type == 111)
          {
             return new building111hit();
          }
-         if(this._type == 112)
+         else if(this._type == 112)
          {
             return new building112hit();
          }
-         if(this._type == 113 || this._type == 144)
+         else if(this._type == 113 || this._type == 144)
          {
             return new building113hit();
          }
-         if(this._type == 114)
+         else if(this._type == 114)
          {
             return new building114hit();
          }
-         if(this._type == 115)
+         else if(this._type == 115)
          {
             return new building115hit();
          }
-         if(this._type == 116)
+         else if(this._type == 116)
          {
             return new building116hit();
          }
-         if(this._type == 117)
+         else if(this._type == 117)
          {
             return new building117hit();
          }
-         if(this._type == 118)
+         else if(this._type == 118)
          {
             return new building118hit();
          }
-         if(this._type == 119)
+         else if(this._type == 119)
          {
             return new building119hit();
          }
-         if(this._type == 120)
+         else if(this._type == 120)
          {
             return new building120hit();
          }
-         if(this._type == 121)
+         else if(this._type == 121)
          {
             return new building121hit();
          }
-         if(this._type == 122)
+         else if(this._type == 122)
          {
             return new building122hit();
          }
-         if(this._type == 123)
+         else if(this._type == 123)
          {
             return new building123hit();
          }
-         if(this._type == 124)
+         else if(this._type == 124)
          {
             return new building124hit();
          }
-         if(this._type == 125)
+         else if(this._type == 125)
          {
             return new building125hit();
          }
-         if(this._type == 126)
+         else if(this._type == 126)
          {
             return new building126hit();
          }
-         if(this._type == 127)
+         else if(this._type == 127)
          {
             return new infernoPortalHit();
          }
-         if(this._type == 128)
+         else if(this._type == 128)
          {
             return new housingBunkerHit();
          }
-         if(this._type == 129 || this._type == 146)
+         else if(this._type == 129 || this._type == 146)
          {
             return new quakeTowerHit();
          }
-         if(this._type == 130)
+         else if(this._type == 130)
          {
             return new cannonTowerHit();
          }
-         if(this._type == 131)
+         else if(this._type == 131)
          {
             return new building131hit();
          }
-         if(this._type == 132)
+         else if(this._type == 132)
          {
             return new magmaTowerHit();
          }
-         if(this._type == 135)
+         else if(this._type == 135)
          {
             return new building135hit();
          }
-		 if(this._type == 141 || this._type == 145)
+		 else if(this._type == 141 || this._type == 145)
          {
             return new building112hit();
+         }
+		 else if(this._type == 147)
+         {
+         	return new boneCrusherHit();
+         }
+         else if(this._type == 148)
+         {
+         	return new coalProducerHit();
+         }
+         else if(this._type == 149)
+         {
+         	return new sulpherProducerHit();
+         }
+         else if(this._type == 150)
+         {
+         	return new magmaProducerHit();
          }
          return !!_loc1_.hitCls ? new (_loc1_.hitCls as Class)() : new building1hit();
       }

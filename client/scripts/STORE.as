@@ -2209,11 +2209,9 @@ package {
 				var resIndex: int = int(param1.substr(3, 1));
 				BASE.Charge(resIndex, Number(_loc3_.resourceCost), false, false);
 				BASE._credits.Add(-_loc4_);
-				BASE._hpCredits -= _loc4_;
 				BASE.Purchase(param1, _loc11_, "store");
 			} else if (!_loc7_ && !param2) {
 				BASE._credits.Add(-_loc4_);
-				BASE._hpCredits -= _loc4_;
 			}
 			if (param1.substr(0, 3) == "BEW") {
 				QUEUE.Spawn(1);
@@ -2762,7 +2760,6 @@ package {
 			if (_loc2_.error == 0) {
 				if (LOGIN.checkHash(param1)) {
 					BASE._credits.Set(int(_loc2_.credits));
-					BASE._hpCredits = int(_loc2_.credits);
 					GLOBAL._credits.Set(int(_loc2_.credits));
 				} else {
 					LOGGER.Log("err", "STORE.updateCrddits " + param1);

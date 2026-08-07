@@ -54,8 +54,6 @@ package com.monsters.maproom_advanced
       
       internal var _resources:Object;
       
-      internal var _hpResources:Object;
-      
       internal var _monsterData:Object;
       
       internal var _flingerRange:SecNum;
@@ -210,11 +208,6 @@ package com.monsters.maproom_advanced
       public function get hpMonsterData() : Object
       {
          return this._hpMonsterData;
-      }
-      
-      public function get hpResources() : Object
-      {
-         return this._hpResources;
       }
       
       public function get terrain() : String
@@ -397,16 +390,6 @@ package com.monsters.maproom_advanced
          }
          if(serverData.r)
          {
-            this._hpResources = {
-               "r1":int(serverData.r.r1),
-               "r2":int(serverData.r.r2),
-               "r3":int(serverData.r.r3),
-               "r4":int(serverData.r.r4),
-               "r1max":int(serverData.r.r1max),
-               "r2max":int(serverData.r.r2max),
-               "r3max":int(serverData.r.r3max),
-               "r4max":int(serverData.r.r4max)
-            };
             this._resources = {
                "r1":new SecNum(int(serverData.r.r1)),
                "r2":new SecNum(int(serverData.r.r2)),
@@ -420,16 +403,6 @@ package com.monsters.maproom_advanced
          }
          else
          {
-            this._hpResources = {
-               "r1":0,
-               "r2":0,
-               "r3":0,
-               "r4":0,
-               "r1max":500000,
-               "r2max":500000,
-               "r3max":500000,
-               "r4max":500000
-            };
             this._resources = {
                "r1":new SecNum(0),
                "r2":new SecNum(0),
@@ -1173,7 +1146,6 @@ package com.monsters.maproom_advanced
       
       private function Click(param1:MouseEvent) : void
       {
-         var _loc2_:String = null;
          if(Boolean(MapRoom._mc) && MapRoom._mc._dragged)
          {
             return;
@@ -1183,22 +1155,6 @@ package com.monsters.maproom_advanced
             return;
          }
          MapRoom._currentPosition = new Point(this.X,this.Y);
-         if(GLOBAL._local)
-         {
-            _loc2_ = "MapRoomCell.Click - X " + this.X + " Y " + this.Y + " H " + this._height + " B " + this._base + " ID " + this._baseID + " UID " + this._userID + " FBID " + this._facebookID + " Mine " + this._mine + " Name " + this._name + " d " + this._destroyed + " dm " + this._damage + " p " + this._protected + " fr " + this._friend + " busy " + this._workerBusy;
-            if(this._flingerRange)
-            {
-               _loc2_ += " f " + this._flingerRange.Get();
-            }
-            if(this._hpMonsterData)
-            {
-               _loc2_ += " monsterdata " + JSON.stringify(this._hpMonsterData);
-            }
-            if(this._hpResources)
-            {
-               _loc2_ += " resources " + JSON.stringify(this._hpResources);
-            }
-         }
          MapRoom.TransferMonstersB(this);
          if(MapRoom._viewOnly && this._base > 0)
          {

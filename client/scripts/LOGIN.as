@@ -294,7 +294,6 @@ package
             while (_loc1_ < 5)
             {
                GLOBAL._resources["r" + _loc1_] = new SecNum(0);
-               GLOBAL._hpResources["r" + _loc1_] = 0;
                _loc1_++;
             }
             BASE.Load(GLOBAL._openBase.url, GLOBAL._openBase.userid, GLOBAL._openBase.baseid);

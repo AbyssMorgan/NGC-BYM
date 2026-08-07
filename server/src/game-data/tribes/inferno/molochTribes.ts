@@ -3078,6 +3078,7 @@ export const molochTribes: SaveData[] = [
     frontpage: {},
     attackcreatures: {},
     attackloot: {},
+    attackiloot: {},
     lootreport: {},
     savetemplate: [],
     updates: [],

@@ -15,7 +15,6 @@ import { getHexNeighborOffsets } from "./getHexNeighborOffsets.js";
 import { WorldMapCell } from "../../../models/worldmapcell.model.js";
 import { MapRoomVersion } from "../../../enums/MapRoom.js";
 import { getPlayerDefenderLevel } from "./getPlayerDefenderLevel.js";
-import { logger } from "../../../utils/logger.js";
 
 /**
  * Generates a Save entity for an MR3 procedural structure (stronghold, resource,

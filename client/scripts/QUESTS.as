@@ -6908,7 +6908,6 @@ package
 						{
 							_completed[questID] = 2;
 							BASE._credits.Add(reward[r]);
-							BASE._hpCredits += reward[r];
 							BASE.Purchase("Q" + questID,1,"quest");
 							saveOK = false;
 						}

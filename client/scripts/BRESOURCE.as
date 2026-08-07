@@ -31,8 +31,13 @@ package
       private static const _RESOURCE_BONUS:Number = 1.5;
       
       private static const _RESOURCE_ALLIANCE_BONUS:Number = 1.15;
+
+	  private var resource_index:int;
+	  
+	  private var resource_real_type:int;
+
+	  private var force_inferno_resources:Boolean = false;
        
-      
       public var productionRateProperty:CModifiableProperty;
       
       public var productionCapacityProperty:CModifiableProperty;
@@ -91,6 +96,13 @@ package
          _spriteAlert.mouseEnabled = false;
          this.productionRateProperty = new CModifiableProperty();
          this.productionCapacityProperty = new CModifiableProperty();
+		 this.resource_index = _type;
+		 this.resource_real_type = BASE.isInfernoMainYardOrOutpost ? _type + 4 : _type;
+		 if(_type >= 147 && _type <= 150){
+			this.resource_index = _type - 146;
+			this.resource_real_type =  this.resource_index + 4;
+			this.force_inferno_resources = true;
+		 }
       }
       
       override public function PlaceB() : void
@@ -103,40 +115,49 @@ package
          super.Click(param1);
       }
       
-      override public function Loot(param1:int) : uint
-      {
-         param1 = Math.max(0,param1);
-         var _loc2_:Number = Math.min(_stored.Get(), param1);
-         if(_loc2_ > 0)
-         {
-            _stored.Add(-_loc2_);
-            ATTACK.Loot(_type,_loc2_,_mc.x,_mc.y,0,this);
-            if(BASE.isOutpost)
-            {
-               BASE._resources["r" + _type].Add(-_loc2_);
-               BASE._hpResources["r" + _type] -= _loc2_;
-               if(BASE._deltaResources["r" + _type])
-               {
-                  BASE._deltaResources["r" + _type].Add(-_loc2_);
-                  BASE._hpDeltaResources["r" + _type] -= _loc2_;
-               }
-               else
-               {
-                  BASE._deltaResources["r" + _type] = new SecNum(-_loc2_);
-                  BASE._hpDeltaResources["r" + _type] = -_loc2_;
-               }
-               BASE._deltaResources.dirty = true;
-               BASE._hpDeltaResources.dirty = true;
-            }
-         }
-         if(_stored.Get() <= 0)
-         {
-            _looted = true;
-            _canFunction = false;
-            _producing = 0;
-         }
-         return super.Loot(_loc2_);
-      }
+		override public function Loot(param1:int) : uint
+		{
+			param1 = Math.max(0,param1);
+			var _loc2_:Number = Math.min(_stored.Get(), param1);
+			if(_loc2_ > 0)
+			{
+				_stored.Add(-_loc2_);
+				ATTACK.Loot(this.resource_index, _loc2_, _mc.x, _mc.y, 0, this, false, this.force_inferno_resources);
+				if(BASE.isOutpost)
+				{
+					if(this.force_inferno_resources){
+						BASE._iresources["r" + this.resource_index].Add(-_loc2_);
+						if(BASE._ideltaResources["r" + this.resource_index])
+						{
+							BASE._ideltaResources["r" + this.resource_index].Add(-_loc2_);
+						}
+						else
+						{
+							BASE._ideltaResources["r" + this.resource_index] = new SecNum(-_loc2_);
+						}
+						BASE._ideltaResources.dirty = true;
+					} else {
+						BASE._resources["r" + this.resource_index].Add(-_loc2_);
+						if(BASE._deltaResources["r" + this.resource_index])
+						{
+							BASE._deltaResources["r" + this.resource_index].Add(-_loc2_);
+						}
+						else
+						{
+							BASE._deltaResources["r" + this.resource_index] = new SecNum(-_loc2_);
+						}
+						BASE._deltaResources.dirty = true;
+					}
+				}
+			}
+			if(_stored.Get() <= 0)
+			{
+				_looted = true;
+				_canFunction = false;
+				_producing = 0;
+			}
+			return super.Loot(_loc2_);
+		}
       
       override public function Destroyed(param1:Boolean = true) : void
       {
@@ -167,21 +188,22 @@ package
          }
          if(GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD && _lvl.Get() >= 3 && TUTORIAL._stage > 200 && !BASE.isInfernoMainYardOrOutpost)
          {
+			var self:Object = this;
             Brag = function(param1:MouseEvent):void
             {
                var _loc2_:String = "upgrade-twigsnapper.png";
                var _loc3_:String = KEYS.Get("#r_twigs#");
-               if(_type == 2)
+               if(self.resource_index == 2)
                {
                   _loc2_ = "upgrade-pebbleshiner.png";
                   _loc3_ = KEYS.Get("#r_pebbles#");
                }
-               if(_type == 3)
+               if(self.resource_index == 3)
                {
                   _loc2_ = "upgrade-puttysquisher.png";
                   _loc3_ = KEYS.Get("#r_puttys#");
                }
-               if(_type == 4)
+               if(self.resource_index == 4)
                {
                   _loc2_ = "upgrade-goofactory.png";
                   _loc3_ = KEYS.Get("#r_goos#");
@@ -199,7 +221,7 @@ package
             }) + "</b>";
             mc.tB.htmlText = KEYS.Get("pop_rupgraded_body",{
                "v1":KEYS.Get(_buildingProps.name),
-               "v2":KEYS.Get(GLOBAL._resourceNames[_type - 1])
+               "v2":KEYS.Get(GLOBAL._resourceNames[this.resource_index - 1])
             });
             mc.bPost.SetupKey("btn_brag");
             mc.bPost.addEventListener(MouseEvent.CLICK,Brag);
@@ -261,9 +283,9 @@ package
          {
             _specialDescription = KEYS.Get("bdg_resource_produces",{
                "v1":GLOBAL.FormatNumber(_loc1_),
-               "v2":KEYS.Get(GLOBAL._resourceNames[_type - 1]),
+               "v2":KEYS.Get(GLOBAL._resourceNames[this.resource_index - 1]),
                "v3":GLOBAL.FormatNumber(this.productionCapacity),
-               "v4":GLOBAL._resourceNames[_type - 1]
+               "v4":GLOBAL._resourceNames[this.resource_index - 1]
             });
             if(_producing)
             {
@@ -346,7 +368,7 @@ package
                {
                   if(health > 0)
                   {
-                     ResourcePackages.Create(BASE.isInfernoMainYardOrOutpost ? _type + 4 : _type,this,1);
+                     ResourcePackages.Create(this.resource_real_type,this,1);
                   }
                   _countdownProduce.Set(10 + Math.random() * 10);
                }
@@ -462,7 +484,7 @@ package
       private function ApplyTerrainBonus(param1:int) : int
       {
          var _loc3_:Number = NaN;
-         var _loc2_:* = "r" + _type + "bonus";
+         var _loc2_:* = "r" + this.resource_index + "bonus";
          if(BASE.isMainYardInfernoOnly && BASE._resources[_loc2_] == 1)
          {
             _loc3_ = _RESOURCE_BONUS;
@@ -537,10 +559,10 @@ package
          }
          if(_loc1_.Get() > 0)
          {
-            _loc3_ = new SecNum(BASE.Fund(_type,_loc1_.Get(),false,this));
+            _loc3_ = new SecNum(BASE.Fund(this.resource_index, _loc1_.Get(), false, this, this.force_inferno_resources));
             if(_loc3_.Get() > 0)
             {
-               ResourcePackages.Create(BASE.isInfernoMainYardOrOutpost ? _type + 4 : _type,this,_loc1_.Get());
+               ResourcePackages.Create(this.resource_real_type,this,_loc1_.Get());
                BASE.PointsAdd(_loc3_.Get());
             }
             BASE.CalcResources();
@@ -552,7 +574,7 @@ package
             {
                QUESTS.Check();
             }
-            LOGGER.Stat([32,_type,_loc1_.Get()]);
+            LOGGER.Stat([32,this.resource_index,_loc1_.Get()]);
          }
       }
       

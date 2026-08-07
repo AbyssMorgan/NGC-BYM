@@ -344,15 +344,10 @@ package
          if(update.data[1] == "BE")
          {
             BASE._resources.r1.Add(-update.data[3]);
-            BASE._hpResources.r1 -= update.data[3];
             BASE._resources.r2.Add(-update.data[4]);
-            BASE._hpResources.r2 -= update.data[4];
             BASE._resources.r3.Add(-update.data[5]);
-            BASE._hpResources.r3 -= update.data[5];
             BASE._resources.r4.Add(-update.data[6]);
-            BASE._hpResources.r4 -= update.data[6];
             BASE._credits.Add(-update.data[7]);
-            BASE._hpCredits -= update.data[7];
          }
          if(update.data[1] == "BS")
          {

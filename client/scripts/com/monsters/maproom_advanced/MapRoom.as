@@ -640,9 +640,9 @@ package com.monsters.maproom_advanced
                      while(resourceIndex < 5)
                      {
                         GLOBAL._resources["r" + resourceIndex].Set(serverData.resources["r" + resourceIndex]);
-                        GLOBAL._hpResources["r" + resourceIndex] = GLOBAL._resources["r" + resourceIndex].Get();
                         GLOBAL._resources["r" + resourceIndex + "max"] = serverData.resources["r" + resourceIndex + "max"];
-                        GLOBAL._hpResources["r" + resourceIndex + "max"] = serverData.resources["r" + resourceIndex + "max"];
+						GLOBAL._iresources["r" + resourceIndex].Set(serverData.iresources["r" + resourceIndex]);
+                        GLOBAL._iresources["r" + resourceIndex + "max"] = serverData.iresources["r" + resourceIndex + "max"];
                         resourceIndex++;
                      }
                   }

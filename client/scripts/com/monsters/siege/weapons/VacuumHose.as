@@ -85,6 +85,7 @@ package com.monsters.siege.weapons
       
       public function VacuumLoot(param1:int) : void
       {
+		//TODO change loot type when add inferno under hall
          var _loc3_:int = 0;
          var _loc4_:Array = null;
          var _loc5_:Object = null;
@@ -132,19 +133,15 @@ package com.monsters.siege.weapons
                   _loc3_ = int(_loc5_.quantity);
                }
                BASE._resources["r" + _loc5_.id].Add(-_loc3_);
-               BASE._hpResources["r" + _loc5_.id] -= _loc3_;
                if(BASE._deltaResources["r" + _loc5_.id])
                {
                   BASE._deltaResources["r" + _loc5_.id].Add(-_loc3_);
-                  BASE._hpDeltaResources["r" + _loc5_.id] -= _loc3_;
                }
                else
                {
                   BASE._deltaResources["r" + _loc5_.id] = new SecNum(-_loc3_);
-                  BASE._hpDeltaResources["r" + _loc5_.id] = -_loc3_;
                }
                BASE._deltaResources.dirty = true;
-               BASE._hpDeltaResources.dirty = true;
                if(GLOBAL.mode == GLOBAL.e_BASE_MODE.WMATTACK)
                {
                   _loc3_ = int(_loc3_ / 5);

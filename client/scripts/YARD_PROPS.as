@@ -146,6 +146,10 @@ package {
 	import buildings.yard.anticatapult;
 	import buildings.yard.techlaboratory;
 	import buildings.yard.crystalhive;
+	import buildings.yard.bi_boneharvester;
+	import buildings.yard.bi_coalharvester;
+	import buildings.yard.bi_sulfurharvester;
+	import buildings.yard.bi_magmaharverster;
 	
 	public class YARD_PROPS {
 
@@ -296,6 +300,10 @@ package {
 			anticatapult.DATA,         // ID 144
 			techlaboratory.DATA,       // ID 145
 			crystalhive.DATA,          // ID 146
+			bi_boneharvester.DATA,     // ID 147
+			bi_coalharvester.DATA,     // ID 148
+			bi_sulfurharvester.DATA,   // ID 149
+			bi_magmaharverster.DATA,   // ID 150
 		];
 		
 		public function YARD_PROPS(){

@@ -34,14 +34,8 @@ package
       public static var _damageGrid:Object;
       
       public static var _loot:Object;
-      
-      public static var _hpLoot1:int;
-      
-      public static var _hpLoot2:int;
-      
-      public static var _hpLoot3:int;
-      
-      public static var _hpLoot4:int;
+
+      public static var _iloot:Object;
       
       public static var _log:Array;
       
@@ -90,10 +84,12 @@ package
       public static var _flungSpace:SecNum;
       
       public static var _deltaLoot:Object;
-      
-      public static var _hpDeltaLoot:Object;
+
+      public static var _ideltaLoot:Object;
       
       public static var _savedDeltaLoot:Object;
+	  
+      public static var _isavedDeltaLoot:Object;
       
       public static var _creaturesFlung:SecNum = new SecNum(0);
       
@@ -160,24 +156,12 @@ package
          _log = [];
          _attackStart = GLOBAL.Timestamp();
          _flungSpace = new SecNum(0);
-         _loot = {
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0)
-         };
-         _savedDeltaLoot = {
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0)
-         };
-         _deltaLoot = {"dirty":false};
-         _hpDeltaLoot = {"dirty":false};
-         _hpLoot1 = 0;
-         _hpLoot2 = 0;
-         _hpLoot3 = 0;
-         _hpLoot4 = 0;
+         _loot = {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0)};
+         _iloot = {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0)};
+         _savedDeltaLoot = {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0)};
+         _isavedDeltaLoot = {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0)};
+         _deltaLoot = {"dirty":false, "r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0)};
+         _ideltaLoot = {"dirty":false, "r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0)};
          _dropZone = null;
          _sentOver = false;
          m_waitingForSaveToComplete = false;
@@ -532,50 +516,72 @@ package
          });
       }
       
-      public static function LogRead() : String
-      {
-         var _loc5_:int = 0;
-         var _loc6_:Array = null;
-         var _loc1_:* = "";
-         var _loc2_:String = "";
-         var _loc3_:String = "";
-         var _loc4_:Array = [];
-         if(_log.length > 0)
-         {
-            _loc1_ = "<ul>";
-            _log.sortOn("time",Array.NUMERIC);
-            _loc5_ = 0;
-            while(_loc5_ < _log.length)
-            {
-               _loc1_ += "<li><font color=\"#999999\">" + GLOBAL.ToTime(_log[_loc5_].time,true) + "</font>: " + _log[_loc5_].event + "</li>";
-               _loc5_++;
-            }
-            _loc1_ += "</ul>";
-            if(ATTACK._loot.r1.Get() + ATTACK._loot.r2.Get() + ATTACK._loot.r3.Get() + ATTACK._loot.r4.Get() > 0)
-            {
-               _loc1_ += "<br>" + KEYS.Get("attack_log_resourceslooted") + ":<br>";
-               _loc6_ = [];
-               if(ATTACK._loot.r1.Get() > 0)
-               {
-                  _loc6_.push([ATTACK._loot.r1.Get(),KEYS.Get(GLOBAL._resourceNames[0])]);
-               }
-               if(ATTACK._loot.r2.Get() > 0)
-               {
-                  _loc6_.push([ATTACK._loot.r2.Get(),KEYS.Get(GLOBAL._resourceNames[1])]);
-               }
-               if(ATTACK._loot.r3.Get() > 0)
-               {
-                  _loc6_.push([ATTACK._loot.r3.Get(),KEYS.Get(GLOBAL._resourceNames[2])]);
-               }
-               if(ATTACK._loot.r4.Get() > 0)
-               {
-                  _loc6_.push([ATTACK._loot.r4.Get(),KEYS.Get(GLOBAL._resourceNames[3])]);
-               }
-               _loc1_ += GLOBAL.Array2String(_loc6_);
-            }
-         }
-         return _loc1_;
-      }
+		public static function LogRead() : String
+		{
+			var _loc5_:int = 0;
+			var _loc6_:Array = null;
+			var _loc1_:* = "";
+			var _loc2_:String = "";
+			var _loc3_:String = "";
+			var _loc4_:Array = [];
+			if(_log.length > 0)
+			{
+				_loc1_ = "<ul>";
+				_log.sortOn("time",Array.NUMERIC);
+				_loc5_ = 0;
+				while(_loc5_ < _log.length)
+				{
+					_loc1_ += "<li><font color=\"#999999\">" + GLOBAL.ToTime(_log[_loc5_].time,true) + "</font>: " + _log[_loc5_].event + "</li>";
+					_loc5_++;
+				}
+				_loc1_ += "</ul>";
+				if(ATTACK._loot.r1.Get() + ATTACK._loot.r2.Get() + ATTACK._loot.r3.Get() + ATTACK._loot.r4.Get() > 0)
+				{
+					_loc1_ += "<br>" + KEYS.Get("attack_log_resourceslooted") + ":<br>";
+					_loc6_ = [];
+					if(ATTACK._loot.r1.Get() > 0)
+					{
+						_loc6_.push([ATTACK._loot.r1.Get(),KEYS.Get(GLOBAL._resourceNames[0])]);
+					}
+					if(ATTACK._loot.r2.Get() > 0)
+					{
+						_loc6_.push([ATTACK._loot.r2.Get(),KEYS.Get(GLOBAL._resourceNames[1])]);
+					}
+					if(ATTACK._loot.r3.Get() > 0)
+					{
+						_loc6_.push([ATTACK._loot.r3.Get(),KEYS.Get(GLOBAL._resourceNames[2])]);
+					}
+					if(ATTACK._loot.r4.Get() > 0)
+					{
+						_loc6_.push([ATTACK._loot.r4.Get(),KEYS.Get(GLOBAL._resourceNames[3])]);
+					}
+					_loc1_ += GLOBAL.Array2String(_loc6_);
+				}
+				if(ATTACK._iloot.r1.Get() + ATTACK._iloot.r2.Get() + ATTACK._iloot.r3.Get() + ATTACK._iloot.r4.Get() > 0)
+				{
+					_loc1_ += "<br>" + KEYS.Get("attack_log_resourceslooted") + ":<br>";
+					_loc6_ = [];
+					if(ATTACK._iloot.r1.Get() > 0)
+					{
+						_loc6_.push([ATTACK._iloot.r1.Get(),KEYS.Get(GLOBAL.iresourceNames[0])]);
+					}
+					if(ATTACK._iloot.r2.Get() > 0)
+					{
+						_loc6_.push([ATTACK._iloot.r2.Get(),KEYS.Get(GLOBAL.iresourceNames[1])]);
+					}
+					if(ATTACK._iloot.r3.Get() > 0)
+					{
+						_loc6_.push([ATTACK._iloot.r3.Get(),KEYS.Get(GLOBAL.iresourceNames[2])]);
+					}
+					if(ATTACK._iloot.r4.Get() > 0)
+					{
+						_loc6_.push([ATTACK._iloot.r4.Get(),KEYS.Get(GLOBAL.iresourceNames[3])]);
+					}
+					_loc1_ += GLOBAL.Array2String(_loc6_);
+				}
+			}
+			return _loc1_;
+		}
       
       public static function RemoveDropZone() : void
       {
@@ -793,118 +799,102 @@ package
          UI2.Update();
       }
       
-      public static function Loot(index:int, quantity:int, param3:int, param4:int, param5:int = 10, param6:BFOUNDATION = null, param7:Boolean = false) : int
-      {
-         if(LOGIN._playerLevel < 20)
-         {
-            quantity += quantity * Math.max(0,(20 - LOGIN._playerLevel) * 0.03);
-         }
-         _loot["r" + index].Add(quantity);
-         switch(index)
-         {
-            case 1:
-               _hpLoot1 += quantity;
-               break;
-            case 2:
-               _hpLoot2 += quantity;
-               break;
-            case 3:
-               _hpLoot3 += quantity;
-               break;
-            case 4:
-               _hpLoot4 += quantity;
-         }
-         var _loc8_:Number = quantity;
-         var _loc9_:Number = Number(GLOBAL._resources["r" + index + "max"]);
-         var _loc10_:Number = Number(GLOBAL._resources["r" + index].Get());
-         var _loc11_:Krallen;
-         _loc11_ = CREEPS.krallen;
-         if(_loc11_)
-         {
-            _loc9_ += _loc9_ * _loc11_._buff;
-         }
-         if(_loc10_ + quantity > _loc9_)
-         {
-            if(BASE.isInfernoMainYardOrOutpost && MAPROOM_DESCENT.DescentPassed || GLOBAL.mode == GLOBAL._loadmode)
-            {
-               if((_loc8_ = _loc9_ - _loc10_) < 0)
-               {
-                  _loc8_ = 0;
-               }
-            }
-         }
-         GLOBAL._resources["r" + index].Add(_loc8_);
-         GLOBAL._hpResources["r" + index] += _loc8_;
-         if(_deltaLoot["r" + index])
-         {
-            _deltaLoot["r" + index].Add(_loc8_);
-            _hpDeltaLoot["r" + index] += _loc8_;
-         }
-         else
-         {
-            _deltaLoot["r" + index] = new SecNum(_loc8_);
-            _hpDeltaLoot["r" + index] = _loc8_;
-         }
-         _deltaLoot.dirty = true;
-         _hpDeltaLoot.dirty = true;
-         if(GLOBAL._render && Boolean(param6))
-         {
-            if(BASE.isInfernoMainYardOrOutpost)
-            {
-               index += 4;
-            }
-            if(param7)
-            {
-               new ParticleVacuumLoot(param6,quantity,index);
-            }
-            else
-            {
-               new ParticleLoot(param6,quantity,index);
-            }
-            ParticleText.Create(new Point(param3,param4 - 35),quantity,index);
-         }
-         return quantity;
-      }
+		public static function Loot(index:int, quantity:int, param3:int, param4:int, param5:int = 10, param6:BFOUNDATION = null, param7:Boolean = false, force_inferno_resources:Boolean = false) : int
+		{
+			var _loc8_:Number = quantity;
+			var _loc9_:Number;
+			var _loc10_:Number;
+			if(force_inferno_resources){
+				_iloot["r" + index].Add(quantity);
+				_loc9_ = Number(GLOBAL._iresources["r" + index + "max"]);
+				_loc10_ = Number(GLOBAL._iresources["r" + index].Get());
+			} else {
+				_loot["r" + index].Add(quantity);
+				_loc9_ = Number(GLOBAL._resources["r" + index + "max"]);
+				_loc10_ = Number(GLOBAL._resources["r" + index].Get());
+			}
+
+			var _loc11_:Krallen;
+			_loc11_ = CREEPS.krallen;
+			if(_loc11_)
+			{
+				_loc9_ += _loc9_ * _loc11_._buff;
+			}
+			if(_loc10_ + quantity > _loc9_)
+			{
+				if(BASE.isInfernoMainYardOrOutpost && MAPROOM_DESCENT.DescentPassed || GLOBAL.mode == GLOBAL._loadmode)
+				{
+					if((_loc8_ = _loc9_ - _loc10_) < 0)
+					{
+						_loc8_ = 0;
+					}
+				}
+			}
+			if(force_inferno_resources){
+				GLOBAL._iresources["r" + index].Add(_loc8_);
+				_ideltaLoot["r" + index].Add(_loc8_);
+				_ideltaLoot.dirty = true;
+			} else {
+				GLOBAL._resources["r" + index].Add(_loc8_);
+				_deltaLoot["r" + index].Add(_loc8_);
+				_deltaLoot.dirty = true;
+			}
+			
+			if(GLOBAL._render && Boolean(param6))
+			{
+				if(BASE.isInfernoMainYardOrOutpost || force_inferno_resources)
+				{
+					index += 4;
+				}
+				if(param7)
+				{
+					new ParticleVacuumLoot(param6,quantity,index);
+				}
+				else
+				{
+					new ParticleLoot(param6,quantity,index);
+				}
+				ParticleText.Create(new Point(param3,param4 - 35),quantity,index);
+			}
+			return quantity;
+		}
       
-      public static function SaveDeltaLoot() : void
-      {
-         var _loc1_:int = 0;
-         if(_deltaLoot.dirty)
-         {
-            _loc1_ = 1;
-            while(_loc1_ < 5)
-            {
-               if(_deltaLoot["r" + _loc1_])
-               {
-                  if(_savedDeltaLoot["r" + _loc1_])
-                  {
-                     _savedDeltaLoot["r" + _loc1_].Add(_deltaLoot["r" + _loc1_].Get());
-                  }
-                  else
-                  {
-                     _savedDeltaLoot["r" + _loc1_] = new SecNum(_deltaLoot["r" + _loc1_].Get());
-                  }
-                  if(_deltaLoot["r" + _loc1_].Get() != _hpDeltaLoot["r" + _loc1_])
-                  {
-                     LOGGER.Log("log","ATTACK.SaveDeltaLoot delta loot mismatch secure " + _deltaLoot.Get() + " unsecure " + _hpDeltaLoot[_loc1_]);
-                     GLOBAL.ErrorMessage("ATTACK.SaveDeltaLoot");
-                  }
-               }
-               _loc1_++;
-            }
-         }
-         _deltaLoot = {"dirty":false};
-         _hpDeltaLoot = {"dirty":false};
-      }
+		public static function SaveDeltaLoot() : void
+		{
+			trace("SaveDeltaLoot");
+			var _loc1_:int = 0;
+			if(_deltaLoot.dirty)
+			{
+				_loc1_ = 1;
+				while(_loc1_ < 5)
+				{
+					_savedDeltaLoot["r" + _loc1_].Add(_deltaLoot["r" + _loc1_].Get());
+					_loc1_++;
+				}
+			}
+			_deltaLoot = {"dirty":false, "r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0)};
+		}
+
+		public static function SaveInfernoDeltaLoot() : void
+		{
+			trace("SaveInfernoDeltaLoot");
+			var _loc1_:int = 0;
+			if(_ideltaLoot.dirty)
+			{
+				_loc1_ = 1;
+				while(_loc1_ < 5)
+				{
+					_isavedDeltaLoot["r" + _loc1_].Add(_ideltaLoot["r" + _loc1_].Get());
+					_loc1_++;
+				}
+			}
+			_ideltaLoot = {"dirty":false, "r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0)};
+		}
       
       public static function CleanLoot() : void
       {
-         _savedDeltaLoot = {
-            "r1":new SecNum(0),
-            "r2":new SecNum(0),
-            "r3":new SecNum(0),
-            "r4":new SecNum(0)
-         };
+         _savedDeltaLoot = {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0)};
+         _isavedDeltaLoot = {"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0)};
       }
       
       public static function Miss(param1:Number, param2:Number) : void
@@ -1065,7 +1055,7 @@ package
          {
             EndB();
          }
-         var _loc2_:Number = _loot.r1.Get() + _loot.r2.Get() + _loot.r3.Get() + _loot.r4.Get();
+         var _loc2_:Number = _loot.r1.Get() + _loot.r2.Get() + _loot.r3.Get() + _loot.r4.Get() + _iloot.r1.Get() + _iloot.r2.Get() + _iloot.r3.Get() + _iloot.r4.Get();
          LOGGER.KongStat([3,_loc2_]);
       }
       

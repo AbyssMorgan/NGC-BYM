@@ -3,8 +3,6 @@ import { User } from "../models/user.model.js";
 import { getCurrentDateTime } from "../utils/getCurrentDateTime.js";
 import { Reward } from "../enums/Rewards.js";
 import { BaseType } from "../enums/Base.js";
-import { infernoYardSandbox } from "../utils/sandbox/infernoYard.js";
-import { overworldYardSandbox } from "../utils/sandbox/overworldYard.js";
 
 /**
  * Generates the default base data object for a new save.
@@ -13,13 +11,6 @@ import { overworldYardSandbox } from "../utils/sandbox/overworldYard.js";
  * @returns {object} - The default base data object.
  */
 export const getDefaultBaseData = (user: User, baseType: BaseType) => {
-  // Inserts a sandbox test base into the database if enabled.
-  if (baseType === BaseType.MAIN && devConfig.devSandbox)
-    return overworldYardSandbox(user);
-
-  if (baseType === BaseType.INFERNO && devConfig.infernoSandbox)
-    return infernoYardSandbox(user);
-
   const currentTime = getCurrentDateTime();
   const sevenDays = 7 * 24 * 60 * 60;
 

@@ -33,6 +33,7 @@ package
       
       override public function Loot(param1:int) : uint
       {
+		//TODO change loot type when add inferno storage silo
 		if(!BASE.isInfernoMainYardOrOutpost && GLOBAL._currentCell){
 			if(MapRoomManager.instance.isInMapRoom3 && GLOBAL._currentCell.baseType == EnumYardType.PLAYER){
 				return 0;
@@ -77,19 +78,15 @@ package
             if(_loc5_ > 0)
             {
                BASE._resources["r" + _loc4_.id].Add(-_loc5_);
-               BASE._hpResources["r" + _loc4_.id] -= _loc5_;
                if(BASE._deltaResources["r" + _loc4_.id])
                {
                   BASE._deltaResources["r" + _loc4_.id].Add(-_loc5_);
-                  BASE._hpDeltaResources["r" + _loc4_.id] -= _loc5_;
                }
                else
                {
                   BASE._deltaResources["r" + _loc4_.id] = new SecNum(-_loc5_);
-                  BASE._hpDeltaResources["r" + _loc4_.id] = -_loc5_;
                }
                BASE._deltaResources.dirty = true;
-               BASE._hpDeltaResources.dirty = true;
                _loc2_ = _loc5_;
                if(MapRoomManager.instance.isInMapRoom2 && GLOBAL._currentCell && GLOBAL._currentCell.baseType == EnumYardType.OUTPOST)
                {
@@ -111,6 +108,7 @@ package
       
       override public function Destroyed(param1:Boolean = true) : void
       {
+		//TODO change loot type when add inferno storage silo
          var _loc2_:Number = NaN;
          var building_id:int = 0;
          var loot_value:int = 0;
@@ -162,19 +160,15 @@ package
                if(loot_value > 0)
                {
                   BASE._resources["r" + building_id].Add(-loot_value);
-                  BASE._hpResources["r" + building_id] -= loot_value;
                   if(BASE._deltaResources["r" + building_id])
                   {
                      BASE._deltaResources["r" + building_id].Add(-loot_value);
-                     BASE._hpDeltaResources["r" + building_id] -= loot_value;
                   }
                   else
                   {
                      BASE._deltaResources["r" + building_id] = new SecNum(-loot_value);
-                     BASE._hpDeltaResources["r" + building_id] = -loot_value;
                   }
                   BASE._deltaResources.dirty = true;
-                  BASE._hpDeltaResources.dirty = true;
                   ATTACK.Loot(building_id,loot_value,_mc.x,int(_mc.y + 20 - building_id * 10),12);
                }
                building_id++;

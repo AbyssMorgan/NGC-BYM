@@ -77,65 +77,39 @@ package
       
       private var m_scrollBar:ScrollSetV;
       
-      public function UI_TOP()
-      {
-         var _loc1_:int = 0;
-         var _loc3_:Boolean = false;
-         super();
-         var _loc2_:String = GLOBAL.mode;
-         switch(GLOBAL.mode)
-         {
-            case GLOBAL.e_BASE_MODE.BUILD:
-            case GLOBAL.e_BASE_MODE.IBUILD:
-               _loc2_ = GLOBAL.e_BASE_MODE.BUILD;
-               break;
-            case GLOBAL.e_BASE_MODE.ATTACK:
-            case GLOBAL.e_BASE_MODE.IATTACK:
-               _loc2_ = GLOBAL.e_BASE_MODE.ATTACK;
-               break;
-            case GLOBAL.e_BASE_MODE.WMATTACK:
-            case GLOBAL.e_BASE_MODE.IWMATTACK:
-               _loc2_ = GLOBAL.e_BASE_MODE.WMATTACK;
-               break;
-            case GLOBAL.e_BASE_MODE.VIEW:
-            case GLOBAL.e_BASE_MODE.IVIEW:
-               _loc2_ = GLOBAL.e_BASE_MODE.VIEW;
-               break;
-            case GLOBAL.e_BASE_MODE.HELP:
-            case GLOBAL.e_BASE_MODE.IHELP:
-               _loc2_ = GLOBAL.e_BASE_MODE.HELP;
-               break;
-            case GLOBAL.e_BASE_MODE.WMVIEW:
-            case GLOBAL.e_BASE_MODE.IWMVIEW:
-               _loc2_ = MapRoomManager.instance.isInMapRoom3 ? (_loc2_ = GLOBAL.e_BASE_MODE.ATTACK) : GLOBAL.e_BASE_MODE.WMVIEW;
-         }
-         if(MapRoomManager.instance.isInMapRoom3 && (GLOBAL.mode === GLOBAL.e_BASE_MODE.VIEW || GLOBAL.mode === GLOBAL.e_BASE_MODE.WMVIEW))
-         {
-            gotoAndStop(GLOBAL.e_BASE_MODE.ATTACK);
-         }
-         else
-         {
-            gotoAndStop(GLOBAL._loadmode);
-         }
-         if (mc && mc.mcPoints) mc.mcPoints.stop();
-         if(GLOBAL._loadmode == GLOBAL.e_BASE_MODE.BUILD || GLOBAL._loadmode == GLOBAL.e_BASE_MODE.IBUILD)
-         {
-            this.setupBuildMode();
-         }
-         else if(GLOBAL._loadmode == GLOBAL.e_BASE_MODE.ATTACK || GLOBAL._loadmode == GLOBAL.e_BASE_MODE.WMATTACK || GLOBAL._loadmode == GLOBAL.e_BASE_MODE.IATTACK || GLOBAL._loadmode == GLOBAL.e_BASE_MODE.IWMATTACK)
-         {
-            this.setupAttackMode();
-         }
-         else if(MapRoomManager.instance.isInMapRoom3 && (GLOBAL.mode === GLOBAL.e_BASE_MODE.VIEW || GLOBAL.mode === GLOBAL.e_BASE_MODE.WMVIEW))
-         {
-            this.setupScoutMode();
-         }
-         else
-         {
-            this.DescentDebuffHide();
-         }
-         this.Update();
-      }
+		public function UI_TOP()
+		{
+			var _loc1_:int = 0;
+			var _loc3_:Boolean = false;
+			super();
+			//  gotoAndStop(GLOBAL.e_BASE_MODE.IATTACK); //TODO warunkowe aktywowanie na nowych bazach inferno
+			if(MapRoomManager.instance.isInMapRoom3 && (GLOBAL.mode === GLOBAL.e_BASE_MODE.VIEW || GLOBAL.mode === GLOBAL.e_BASE_MODE.WMVIEW))
+			{
+				gotoAndStop(GLOBAL.e_BASE_MODE.ATTACK);
+			}
+			else
+			{
+				gotoAndStop(GLOBAL._loadmode);
+			}
+			if (mc && mc.mcPoints) mc.mcPoints.stop();
+			if(GLOBAL._loadmode == GLOBAL.e_BASE_MODE.BUILD || GLOBAL._loadmode == GLOBAL.e_BASE_MODE.IBUILD)
+			{
+				this.setupBuildMode();
+			}
+			else if(GLOBAL._loadmode == GLOBAL.e_BASE_MODE.ATTACK || GLOBAL._loadmode == GLOBAL.e_BASE_MODE.WMATTACK || GLOBAL._loadmode == GLOBAL.e_BASE_MODE.IATTACK || GLOBAL._loadmode == GLOBAL.e_BASE_MODE.IWMATTACK)
+			{
+				this.setupAttackMode();
+			}
+			else if(MapRoomManager.instance.isInMapRoom3 && (GLOBAL.mode === GLOBAL.e_BASE_MODE.VIEW || GLOBAL.mode === GLOBAL.e_BASE_MODE.WMVIEW))
+			{
+				this.setupScoutMode();
+			}
+			else
+			{
+				this.DescentDebuffHide();
+			}
+			this.Update();
+		}
       
       private function setupBuildMode() : void
       {
@@ -330,8 +304,8 @@ package
 		// 		siege_available = false;
 		// 	}
 		// }
-		if(siege_available){
-			if(SiegeWeapons.availableWeapon != null && !BASE.isInfernoMainYardOrOutpost)
+		if(siege_available && !BASE.isInfernoMainYardOrOutpost){
+			if(SiegeWeapons.availableWeapon != null)
 			{
 				this._siegeweapon = new SIEGEWEAPONPOPUP();
 				mc.addChild(this._siegeweapon);
@@ -339,7 +313,7 @@ package
 				this._siegeweapon.y = 20;
 				this._siegeweapon.Setup(!GLOBAL.isInAttackMode);
 			}
-			if(GLOBAL._attackersCatapult > 0 && !BASE.isInfernoMainYardOrOutpost)
+			if(GLOBAL._attackersCatapult > 0)
 			{
 				this._catapult = new CATAPULTPOPUP();
 				mc.addChild(this._catapult);

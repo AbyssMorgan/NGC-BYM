@@ -22,7 +22,7 @@ export const tribeSaveV2 = (baseid: string, worldid: string | null | undefined) 
   const cellX = parseInt(baseid.slice(-6, -3));
   const cellY = parseInt(baseid.slice(-3));
 
-  const tribeIndex = (cellX + cellY) % Tribes.length;
+  const tribeIndex = (cellX + cellY) % 4;
   const tribe = Tribes[tribeIndex] as Tribe;
   const wmid = tribeIndex * 10 + 1;
 

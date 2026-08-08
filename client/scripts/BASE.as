@@ -266,6 +266,8 @@ package
 
       public static var loadObject:Object;
 
+      public static var _tribeIndex:int;
+
       public static var _ideltaResources:Object = null;
 
       public static var _iresources:Object = null;
@@ -907,6 +909,7 @@ package
                _isBookmarked = int(serverData.bookmarked);
                _isBookmarked = int(0);
                _installsGenerated = int(42069);
+			   
                if (serverData.fan)
                {
                   QUESTS._global.bonus_fan = 1;
@@ -1290,6 +1293,9 @@ package
                {
                   _wmID = serverData.wmid;
                }
+			   _tribeIndex = serverData.tribe;
+			   trace("_wmID = " + _wmID);
+			   trace("_tribeIndex = " + _tribeIndex);
                if (GLOBAL._otherStats && GLOBAL._otherStats.descentLvl && GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD)
                {
                   if (Boolean(WMBASE._descentBases) && WMBASE._descentBases.length > 0)
@@ -1595,8 +1601,8 @@ package
                      POPUPS.Push(popupMC);
                   }
                }
-               _ownerName = GLOBAL.mode == GLOBAL.e_BASE_MODE.WMATTACK || GLOBAL.mode == GLOBAL.e_BASE_MODE.WMVIEW ? String(TRIBES.TribeForBaseID(_wmID).name) : String(serverData.name);
-               _ownerPic = GLOBAL.mode == GLOBAL.e_BASE_MODE.WMATTACK || GLOBAL.mode == GLOBAL.e_BASE_MODE.WMVIEW ? String(TRIBES.TribeForBaseID(_wmID).profilepic) : String(serverData.pic_square);
+               _ownerName = GLOBAL.mode == GLOBAL.e_BASE_MODE.WMATTACK || GLOBAL.mode == GLOBAL.e_BASE_MODE.WMVIEW ? String(TRIBES.TribeForBaseID(_wmID, 0, _tribeIndex).name) : String(serverData.name);
+               _ownerPic = GLOBAL.mode == GLOBAL.e_BASE_MODE.WMATTACK || GLOBAL.mode == GLOBAL.e_BASE_MODE.WMVIEW ? String(TRIBES.TribeForBaseID(_wmID, 0, _tribeIndex).profilepic) : String(serverData.pic_square);
                if (!GLOBAL._flags.viximo && !GLOBAL._flags.kongregate)
                {
                   if (serverData.promotiontimer)
@@ -3907,7 +3913,7 @@ package
             saveData["mushrooms"] = JSON.stringify(getMushroomSaveData());
          }
          saveData["quests"] = JSON.stringify(QUESTS._completed);
-         saveData["basename"] = GLOBAL.mode == GLOBAL.e_BASE_MODE.WMATTACK ? TRIBES.TribeForBaseID(_wmID).name : _baseName;
+         saveData["basename"] = GLOBAL.mode == GLOBAL.e_BASE_MODE.WMATTACK ? TRIBES.TribeForBaseID(_wmID, 0, _tribeIndex).name : _baseName;
          saveData["siege"] = JSON.stringify(GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD && isMainYardOrInfernoMainYard ? SiegeWeapons.exportWeapons() : _oldSiegeData);
          saveData["attackersiege"] = JSON.stringify(GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD && isMainYardOrInfernoMainYard ? null : SiegeWeapons.exportWeapons());
          saveData["baseid"] = _baseID;

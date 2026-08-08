@@ -1,5 +1,5 @@
 import z from "zod";
-import type { ChampionData } from "../types/ChampionData.js";
+import { ChampionListSchema } from "./ChampionSchema.js";
 import type { Resources } from "../services/base/updateResources.js";
 
 /**
@@ -34,25 +34,9 @@ export const BaseSaveSchema = z.object({
       data ? (JSON.parse(data) as [string, number]) : undefined
     ),
 
-  /**
-   * The champion data, transformed from a JSON string to a typed array.
-   * This property is optional.
-   * @type {ChampionData[] | undefined}
-   */
-  champion: z
-    .string()
-    .optional()
-    .transform((data) => (data ? (JSON.parse(data) as ChampionData[]) : undefined)),
+  champion: ChampionListSchema,
 
-  /**
-   * The attacker champion data, transformed from a JSON string to a typed array.
-   * This property is optional.
-   * @type {ChampionData[] | undefined}
-   */
-  attackerchampion: z
-    .string()
-    .optional()
-    .transform((data) => (data ? (JSON.parse(data) as ChampionData[]) : undefined)),
+  attackerchampion: ChampionListSchema,
 
   /**
    * The building data, transformed from a JSON string to an object.
@@ -91,6 +75,16 @@ export const BaseSaveSchema = z.object({
    * @type {object | undefined}
    */
   attackloot: z
+    .string()
+    .optional()
+    .transform((data) => (data ? (JSON.parse(data) as Resources) : undefined)),
+
+  /**
+   * The attack inferno loot data, transformed from a JSON string to an object.
+   * This property is optional.
+   * @type {object | undefined}
+   */
+  attackiloot: z
     .string()
     .optional()
     .transform((data) => (data ? (JSON.parse(data) as Resources) : undefined)),

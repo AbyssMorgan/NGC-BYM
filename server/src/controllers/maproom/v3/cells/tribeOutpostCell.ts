@@ -11,7 +11,7 @@ export const tribeOutpostCell = async (cell: WorldMapCell, worldId: string): Pro
 	const [cellX, cellY] = [cell.x, cell.y];
 
 	const genCell = getGeneratedCells().get(cellKey(cellX, cellY));
-	const tribeIndex = genCell?.tribe ?? ((cellX + cellY) % Tribes.length);
+	const tribeIndex = genCell?.tribe ?? ((cellX + cellY) % 4);
 	const baseid = generateBaseId(worldId, cellX, cellY, MapRoomVersion.V3);
 	const altitude = 5 + (cellX * 73 + cellY * 31) % 45;
 
@@ -19,8 +19,8 @@ export const tribeOutpostCell = async (cell: WorldMapCell, worldId: string): Pro
 		uid: 0,
 		b: EnumYardType.EMPTY,
 		bid: baseid,
-		n: Tribes[tribeIndex],
-		tid: tribeIndex,
+		n: cell.base_type == EnumYardType.MOLOCH_OUTPOST ? 'Moloch' : Tribes[tribeIndex],
+		tid: cell.base_type == EnumYardType.MOLOCH_OUTPOST ? 4 : tribeIndex,
 		x: cellX,
 		y: cellY,
 		i: altitude,

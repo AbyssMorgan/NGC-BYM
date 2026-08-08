@@ -6,10 +6,10 @@ import type { MR1TribeScaleConfig } from "../services/maproom/v1/createMR1Tribes
  * @enum {string}
  */
 export enum Tribe {
-  LEGIONNAIRE = "Legionnaire",
-  KOZU = "Kozu",
-  ABUNAKKI = "Abunakki",
-  DREADNAUT = "Dreadnaut",
+	LEGIONNAIRE = "Legionnaire",
+	KOZU = "Kozu",
+	ABUNAKKI = "Abunakki",
+	DREADNAUT = "Dreadnaut",
 }
 
 /**
@@ -39,10 +39,10 @@ export enum InfernoTribeScale {
  * @type {Tribe[]}
  */
 export const Tribes: Tribe[] = [
-  Tribe.LEGIONNAIRE,
-  Tribe.KOZU,
-  Tribe.ABUNAKKI,
-  Tribe.DREADNAUT,
+	Tribe.LEGIONNAIRE,
+	Tribe.KOZU,
+	Tribe.ABUNAKKI,
+	Tribe.DREADNAUT,
 ];
 
 /**

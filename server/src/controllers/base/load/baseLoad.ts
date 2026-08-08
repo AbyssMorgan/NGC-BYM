@@ -331,6 +331,9 @@ export const baseLoad: KoaController = async (ctx) => {
 		response.resources = filteredSave.iresources;
 		response.wmstatus = wmstatus;
 	}
+	if(response.tribe == -1 && baseSave.cell && (response.wmid == 102 || response.wmid == 103)){
+		response.tribe = (baseSave.cell.x + baseSave.cell.y) % 4;
+	}
 
 	ctx.status = Status.OK;
 	ctx.body = response;

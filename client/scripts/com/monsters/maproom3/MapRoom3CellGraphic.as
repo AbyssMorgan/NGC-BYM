@@ -351,34 +351,41 @@ package com.monsters.maproom3
          }
       }
       
-      private function DrawCellOverlayLayer() : void
-      {
-         if(this.m_Cell.cellType == EnumYardType.FORTIFICATION)
-         {
-            return;
-         }
-         switch(this.m_Cell.relationship)
-         {
-            case EnumBaseRelationship.k_RELATIONSHIP_SELF:
-               this.m_CellOverlayLayer.addChild(new Bitmap(MapRoom3AssetCache.instance.GetAsset(MapRoom3AssetCache.CELL_OVERLAY_GLOW_BLUE)));
-               break;
-            case EnumBaseRelationship.k_RELATIONSHIP_ALLY:
-               this.m_CellOverlayLayer.addChild(new Bitmap(MapRoom3AssetCache.instance.GetAsset(MapRoom3AssetCache.CELL_OVERLAY_GLOW_GREEN)));
-               break;
-            case EnumBaseRelationship.k_RELATIONSHIP_NEUTRAL:
-               this.m_CellOverlayLayer.addChild(new Bitmap(MapRoom3AssetCache.instance.GetAsset(MapRoom3AssetCache.CELL_OVERLAY_GLOW_YELLOW)));
-               break;
-            case EnumBaseRelationship.k_RELATIONSHIP_ENEMY:
-               this.m_CellOverlayLayer.addChild(new Bitmap(MapRoom3AssetCache.instance.GetAsset(MapRoom3AssetCache.CELL_OVERLAY_GLOW_RED)));
-               break;
-            case EnumBaseRelationship.k_RELATIONSHIP_NONE:
-            default:
-               return;
-         }
-         MapRoom3.mapRoom3Window.cellOverlayLayer.addChild(this.m_CellOverlayLayer);
-         this.m_CellOverlayLayer.x = x;
-         this.m_CellOverlayLayer.y = y;
-      }
+		private function DrawCellOverlayLayer() : void
+		{
+			if(this.m_Cell.cellType == EnumYardType.FORTIFICATION)
+			{
+				return;
+			}
+			if(this.m_Cell.wildMonsterTribeId == 4){
+				this.m_CellOverlayLayer.addChild(new Bitmap(MapRoom3AssetCache.instance.GetAsset(MapRoom3AssetCache.CELL_ICON_HELLRAISER_EVENT_BASE_TILE)));
+			} else {
+				switch(this.m_Cell.relationship){
+					case EnumBaseRelationship.k_RELATIONSHIP_SELF: {
+						this.m_CellOverlayLayer.addChild(new Bitmap(MapRoom3AssetCache.instance.GetAsset(MapRoom3AssetCache.CELL_OVERLAY_GLOW_BLUE)));
+						break;
+					}
+					case EnumBaseRelationship.k_RELATIONSHIP_ALLY: {
+						this.m_CellOverlayLayer.addChild(new Bitmap(MapRoom3AssetCache.instance.GetAsset(MapRoom3AssetCache.CELL_OVERLAY_GLOW_GREEN)));
+						break;
+					}
+					case EnumBaseRelationship.k_RELATIONSHIP_NEUTRAL: {
+						this.m_CellOverlayLayer.addChild(new Bitmap(MapRoom3AssetCache.instance.GetAsset(MapRoom3AssetCache.CELL_OVERLAY_GLOW_YELLOW)));
+						break;
+					}
+					case EnumBaseRelationship.k_RELATIONSHIP_ENEMY: {
+						this.m_CellOverlayLayer.addChild(new Bitmap(MapRoom3AssetCache.instance.GetAsset(MapRoom3AssetCache.CELL_OVERLAY_GLOW_RED)));
+						break;
+					}
+					default: {
+						return;
+					}
+				}
+			}
+			MapRoom3.mapRoom3Window.cellOverlayLayer.addChild(this.m_CellOverlayLayer);
+			this.m_CellOverlayLayer.x = x;
+			this.m_CellOverlayLayer.y = y;
+		}
       
       private function DrawRangeLayer() : void
       {
@@ -486,83 +493,96 @@ package com.monsters.maproom3
          }
       }
       
-      private function DrawIconLayer() : void
-      {
-         var _loc3_:Bitmap = null;
-         var _loc4_:Bitmap = null;
-         var _loc1_:Bitmap = null;
-         var _loc2_:Boolean = false;
-         switch(this.m_Cell.cellType)
-         {
-            case EnumYardType.PLAYER:
-               _loc1_ = new Bitmap(MapRoom3AssetCache.instance.GetAsset(this.m_Cell.isDestroyed ? MapRoom3AssetCache.CELL_ICON_PLAYER_BASE : MapRoom3AssetCache.CELL_ICON_PLAYER_BASE));
-               _loc2_ = this.IsFullyFortified();
-               if(this.m_Cell.hasDamageProtection)
-               {
-                  this.DrawDamageProtectionIcon();
-               }
-               break;
-            case EnumYardType.RESOURCE:
-               _loc1_ = new Bitmap(MapRoom3AssetCache.instance.GetAsset(this.m_Cell.isDestroyed ? MapRoom3AssetCache.CELL_ICON_RESOURCE_CELL : MapRoom3AssetCache.CELL_ICON_RESOURCE_CELL));
-               _loc2_ = this.IsFullyFortified();
-			    if(this.m_Cell.hasDamageProtection)
-				{
-					this.DrawDamageProtectionIcon();
+		private function DrawIconLayer() : void
+		{
+			var _loc3_:Bitmap = null;
+			var _loc4_:Bitmap = null;
+			var _loc1_:Bitmap = null;
+			var _loc2_:Boolean = false;
+			switch(this.m_Cell.cellType)
+			{
+				case EnumYardType.PLAYER: {
+					_loc1_ = new Bitmap(MapRoom3AssetCache.instance.GetAsset(this.m_Cell.isDestroyed ? MapRoom3AssetCache.CELL_ICON_PLAYER_BASE : MapRoom3AssetCache.CELL_ICON_PLAYER_BASE));
+					_loc2_ = this.IsFullyFortified();
+					if(this.m_Cell.hasDamageProtection)
+					{
+						this.DrawDamageProtectionIcon();
+					}
+					break;
 				}
-               break;
-            case EnumYardType.STRONGHOLD:
-               _loc1_ = new Bitmap(MapRoom3AssetCache.instance.GetAsset(this.m_Cell.isDestroyed ? MapRoom3AssetCache.CELL_ICON_STRONGHOLD : MapRoom3AssetCache.CELL_ICON_STRONGHOLD));
-               _loc2_ = this.IsFullyFortified();
-			   if(this.m_Cell.hasDamageProtection)
-				{
-					this.DrawDamageProtectionIcon();
+				case EnumYardType.RESOURCE: {
+					_loc1_ = new Bitmap(MapRoom3AssetCache.instance.GetAsset(this.m_Cell.isDestroyed ? MapRoom3AssetCache.CELL_ICON_RESOURCE_CELL : MapRoom3AssetCache.CELL_ICON_RESOURCE_CELL));
+					_loc2_ = this.IsFullyFortified();
+					if(this.m_Cell.hasDamageProtection)
+					{
+						this.DrawDamageProtectionIcon();
+					}
+					break;
 				}
-               break;
-            case EnumYardType.FORTIFICATION:
-               if(this.m_Cell.isDestroyed)
-               {
-                  _loc1_ = new Bitmap(MapRoom3AssetCache.instance.GetAsset(MapRoom3AssetCache.CELL_ICON_FORTIFICATION));
-               }
-               else
-               {
-                  _loc1_ = this.GetFortificationIconToDisplay();
-                  this.DrawFortificationLightIcon();
-               }
-			   if(this.m_Cell.hasDamageProtection)
-				{
-					this.DrawDamageProtectionIcon();
+				case EnumYardType.STRONGHOLD: {
+					_loc1_ = new Bitmap(MapRoom3AssetCache.instance.GetAsset(this.m_Cell.isDestroyed ? MapRoom3AssetCache.CELL_ICON_STRONGHOLD : MapRoom3AssetCache.CELL_ICON_STRONGHOLD));
+					_loc2_ = this.IsFullyFortified();
+					if(this.m_Cell.hasDamageProtection)
+					{
+						this.DrawDamageProtectionIcon();
+					}
+					break;
 				}
-               break;
-            case EnumYardType.EMPTY:
-               if(this.m_Cell.isOwnedByWildMonster)
-               {
-                  _loc1_ = new Bitmap(MapRoom3AssetCache.instance.GetAsset(this.m_Cell.isDestroyed ? MapRoom3AssetCache.CELL_ICON_WILD_MONSTER_BASE : MapRoom3AssetCache.CELL_ICON_WILD_MONSTER_BASE));
-               }
-         }
-         if(_loc2_)
-         {
-            _loc3_ = new Bitmap(MapRoom3AssetCache.instance.GetAsset(MapRoom3AssetCache.CELL_ICON_FULLY_FORTIFIED_FRONT));
-            _loc3_.x = Math.round((HEX_WIDTH - _loc3_.width) * 0.5);
-            _loc3_.y = Math.round((HEX_HEIGHT - _loc3_.height) * 0.5);
-            this.m_IconLayer.addChildAt(_loc3_,0);
-         }
-         if(_loc1_ != null)
-         {
-            _loc1_.x = Math.round((HEX_WIDTH - _loc1_.width) * 0.5);
-            _loc1_.y = Math.round((HEX_HEIGHT - _loc1_.height) * 0.5);
-            this.m_IconLayer.addChildAt(_loc1_,0);
-         }
-         if(_loc2_)
-         {
-            (_loc4_ = new Bitmap(MapRoom3AssetCache.instance.GetAsset(MapRoom3AssetCache.CELL_ICON_FULLY_FORTIFIED_BACK))).x = Math.round((HEX_WIDTH - _loc4_.width) * 0.5);
-            _loc4_.y = Math.round((HEX_HEIGHT - _loc4_.height) * 0.5);
-            this.m_IconLayer.addChildAt(_loc4_,0);
-         }
-         if(this.m_Cell.isInRangeOfStronghold && !MapRoom3.mapRoom3Window.IsZoomedOut())
-         {
-            this.DrawBuffedEffect();
-         }
-      }
+				case EnumYardType.FORTIFICATION: {
+					if(this.m_Cell.isDestroyed)
+					{
+						_loc1_ = new Bitmap(MapRoom3AssetCache.instance.GetAsset(MapRoom3AssetCache.CELL_ICON_FORTIFICATION));
+					}
+					else
+					{
+						_loc1_ = this.GetFortificationIconToDisplay();
+						this.DrawFortificationLightIcon();
+					}
+					if(this.m_Cell.hasDamageProtection)
+					{
+						this.DrawDamageProtectionIcon();
+					}
+					break;
+				}	
+				case EnumYardType.EMPTY: {
+					
+					if(this.m_Cell.isOwnedByWildMonster)
+					{
+						if(this.m_Cell.wildMonsterTribeId == 4){
+							_loc1_ = new Bitmap(MapRoom3AssetCache.instance.GetAsset(MapRoom3AssetCache.CELL_ICON_HELLRAISER_EVENT_BASE));
+						} else {
+							_loc1_ = new Bitmap(MapRoom3AssetCache.instance.GetAsset(MapRoom3AssetCache.CELL_ICON_WILD_MONSTER_BASE));
+						}
+					}
+						
+					break;
+				}
+				
+			}
+			if(_loc2_)
+			{
+				_loc3_ = new Bitmap(MapRoom3AssetCache.instance.GetAsset(MapRoom3AssetCache.CELL_ICON_FULLY_FORTIFIED_FRONT));
+				_loc3_.x = Math.round((HEX_WIDTH - _loc3_.width) * 0.5);
+				_loc3_.y = Math.round((HEX_HEIGHT - _loc3_.height) * 0.5);
+				this.m_IconLayer.addChildAt(_loc3_,0);
+			}
+			if(_loc1_ != null)
+			{
+				_loc1_.x = Math.round((HEX_WIDTH - _loc1_.width) * 0.5);
+				_loc1_.y = Math.round((HEX_HEIGHT - _loc1_.height) * 0.5);
+				this.m_IconLayer.addChildAt(_loc1_,0);
+			}
+			if(_loc2_)
+			{
+				(_loc4_ = new Bitmap(MapRoom3AssetCache.instance.GetAsset(MapRoom3AssetCache.CELL_ICON_FULLY_FORTIFIED_BACK))).x = Math.round((HEX_WIDTH - _loc4_.width) * 0.5);
+				_loc4_.y = Math.round((HEX_HEIGHT - _loc4_.height) * 0.5);
+				this.m_IconLayer.addChildAt(_loc4_,0);
+			}
+			if(this.m_Cell.isInRangeOfStronghold && !MapRoom3.mapRoom3Window.IsZoomedOut())
+			{
+				this.DrawBuffedEffect();
+			}
+		}
       
       private function GetFortificationIconToDisplay() : Bitmap
       {

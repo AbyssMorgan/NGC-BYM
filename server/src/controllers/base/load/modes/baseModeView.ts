@@ -23,7 +23,11 @@ const WILD_MONSTER_EXPIRATION = 43200;
  */
 export const baseModeView = async (baseid: string, mapversion: MapRoomVersion = MapRoomVersion.V2, worldid: string | null | undefined, user: User) => {
 	if (mapversion === MapRoomVersion.V1 && MR1_TRIBE_IDS.has(baseid)) return tribeSaveHandler(baseid, mapversion, worldid, user);
-	let save = await postgres.em.findOne(Save, { baseid });
+	let save = await postgres.em.findOne(Save, {
+		baseid
+	}, {
+		populate: ["cell"]
+	});
 	if(!save){
 		save = await tribeSaveHandler(baseid, mapversion, worldid, user);
 	}

@@ -805,11 +805,9 @@ package
 			var _loc9_:Number;
 			var _loc10_:Number;
 			if(force_inferno_resources){
-				_iloot["r" + index].Add(quantity);
 				_loc9_ = Number(GLOBAL._iresources["r" + index + "max"]);
 				_loc10_ = Number(GLOBAL._iresources["r" + index].Get());
 			} else {
-				_loot["r" + index].Add(quantity);
 				_loc9_ = Number(GLOBAL._resources["r" + index + "max"]);
 				_loc10_ = Number(GLOBAL._resources["r" + index].Get());
 			}
@@ -831,10 +829,12 @@ package
 				}
 			}
 			if(force_inferno_resources){
+				_iloot["r" + index].Add(_loc8_);
 				GLOBAL._iresources["r" + index].Add(_loc8_);
 				_ideltaLoot["r" + index].Add(_loc8_);
 				_ideltaLoot.dirty = true;
 			} else {
+				_loot["r" + index].Add(_loc8_);
 				GLOBAL._resources["r" + index].Add(_loc8_);
 				_deltaLoot["r" + index].Add(_loc8_);
 				_deltaLoot.dirty = true;

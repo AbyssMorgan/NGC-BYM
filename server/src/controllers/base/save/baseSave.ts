@@ -18,6 +18,7 @@ import { attackLootHandler } from "./handlers/attackLootHandler.js";
 import { monsterUpdateHandler } from "./handlers/monsterUpdateHandler.js";
 import { validateSave } from "../../../scripts/anticheat/anticheat.js";
 import { updateResources } from "../../../services/base/updateResources.js";
+import { championHandler } from "./handlers/championHandler.js";
 import { buildingDataHandler } from "./handlers/buildingDataHandler.js";
 import { takeoverCellMR3, type TakeoverData } from "../../../services/maproom/v3/takeoverCellMR3.js";
 import { damageProtection } from "../../../services/maproom/v2/damageProtection.js";
@@ -115,6 +116,9 @@ export const baseSave: KoaController = async (ctx) => {
 					if (saveData.attackerchampion) {
 						userSave.champion = saveData.attackerchampion;
 					}
+					if (saveData.champion) {
+						championHandler(saveData.champion, baseSave);
+					}
 				} else {
 					if (saveData.champion) {
 						baseSave.champion = saveData.champion;
@@ -157,6 +161,12 @@ export const baseSave: KoaController = async (ctx) => {
 			userSave.monsters = saveData.attackcreatures;
 		}
 
+		// if(userSave.mapversion == MapRoomVersion.V3 && baseSave.type == BaseType.TRIBE){
+		// 	if(baseSave.wmid == 31 || baseSave.wmid == 21 || baseSave.wmid == 11 || baseSave.wmid == 1){
+		// 		baseSave.monsters = saveData.monsters;
+		// 	}
+		// }
+
 		if (saveData.attackloot) {
 			attackLootHandler(saveData.attackloot, userSave, SaveKeys.RESOURCES, true);
 		}
@@ -190,9 +200,31 @@ export const baseSave: KoaController = async (ctx) => {
 						break;
 					}
 					case BaseType.TRIBE: {
-						if(baseSave.wmid == 31 || baseSave.wmid == 21 || baseSave.wmid == 11 || baseSave.wmid == 1){
+						if(baseSave.wmid == 1 || baseSave.wmid == 11 || baseSave.wmid == 21 || baseSave.wmid == 31){
 							if(userSave.stats == null){
 								userSave.stats = {};
+							}
+							switch(baseSave.wmid){
+								case 1: {
+									// Legionnaire
+									baseSave.tribe = 0;
+									break;
+								}
+								case 11: {
+									// Kozu
+									baseSave.tribe = 1;
+									break;
+								}
+								case 21: {
+									// Abunakki
+									baseSave.tribe = 2;
+									break;
+								}
+								case 31: {
+									// Dreadnaught
+									baseSave.tribe = 3;
+									break;
+								}
 							}
 							if(baseSave.level >= 45 && baseSave.level <= 65){
 								switch(baseSave.wmid){
@@ -230,6 +262,27 @@ export const baseSave: KoaController = async (ctx) => {
 							} else if(baseSave.level == 120){
 								userSave.stats.assault_to_4 ??= 0;
 								userSave.stats.assault_to_4++;
+							}
+
+							userSave.empirevalue += getConquerorPointsByLevel(baseSave.level);
+							postgres.em.persist(userSave);
+							await postgres.em.flush();
+						} else if(baseSave.wmid == 41){
+							if(userSave.stats == null){
+								userSave.stats = {};
+							}
+							if(baseSave.level >= 45 && baseSave.level <= 65){
+								userSave.stats.assault_mo_1 ??= 0;
+								userSave.stats.assault_mo_1++;
+							} else if(baseSave.level >= 70 && baseSave.level <= 80){
+								userSave.stats.assault_mo_2 ??= 0;
+								userSave.stats.assault_mo_2++;
+							} else if(baseSave.level == 100){
+								userSave.stats.assault_mo_3 ??= 0;
+								userSave.stats.assault_mo_3++;
+							} else if(baseSave.level == 120){
+								userSave.stats.assault_mo_4 ??= 0;
+								userSave.stats.assault_mo_4++;
 							}
 
 							userSave.empirevalue += getConquerorPointsByLevel(baseSave.level);

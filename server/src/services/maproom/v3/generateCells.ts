@@ -3,7 +3,6 @@ import alea from "alea";
 import { createNoise2D } from "simplex-noise";
 import { MapRoom3 } from "../../../enums/MapRoom.js";
 import { EnumYardType } from "../../../enums/EnumYardType.js";
-import { Tribes } from "../../../enums/Tribes.js";
 import { getDefenderCoords } from "./getDefenderCoords.js";
 import { getDefenderLevels } from "./getDefenderLevels.js";
 import { calculateStructureLevel } from "./calculateStructureLevel.js";
@@ -20,7 +19,9 @@ import {
 	STRONGHOLD_GRID_SIZE,
 	STRONGHOLD_JITTER,
 	RESOURCE_SEED,
+	ULTIMATE_RESOURCE_SEED,
 	TRIBE_OUTPOST_SEED,
+	MOLOCH_TRIBE_OUTPOST_SEED,
 	STRUCTURE_LEVELS,
 } from "../../../config/MapRoom3Config.js";
 
@@ -73,7 +74,7 @@ export const getGeneratedCells = (): Map<number, GeneratedCell> => {
 
 			if (!isValidPosition(x, y) || occupiedCells.has(key)) continue;
 
-			const tribeIndex = (x + y) % Tribes.length;
+			const tribeIndex = (x + y) % 4;
 			cells.push({ x, y, type: EnumYardType.STRONGHOLD, tribe: tribeIndex });
 			occupiedCells.add(key);
 
@@ -109,7 +110,6 @@ export const getGeneratedCells = (): Map<number, GeneratedCell> => {
 	for (let attempt = 0; attempt < maxResourceAttempts; attempt++) {
 		const x = CELL_EDGE + Math.floor(resourceRng() * (WIDTH - 2 * CELL_EDGE));
 		const y = CELL_EDGE + Math.floor(resourceRng() * (HEIGHT - 2 * CELL_EDGE));
-		
 		const key = cellKey(x, y);
 		
 		if (occupiedCells.has(key)) continue;
@@ -117,7 +117,7 @@ export const getGeneratedCells = (): Map<number, GeneratedCell> => {
 		const defenders = getDefenderCoords(x, y);
 		if (defenders.some(([dx, dy]) => occupiedCells.has((dx << 16) | dy))) continue;
 
-		const tribeIndex = (x + y) % Tribes.length;
+		const tribeIndex = (x + y) % 4;
 		cells.push({ x, y, type: EnumYardType.RESOURCE, tribe: tribeIndex });
 		occupiedCells.add(key);
 
@@ -128,7 +128,6 @@ export const getGeneratedCells = (): Map<number, GeneratedCell> => {
 
 		for (let i = 0; i < defenders.length; i++) {
 			const [fortX, fortY] = defenders[i];
-
 			cells.push({
 				x: fortX, 
 				y: fortY, 
@@ -136,7 +135,6 @@ export const getGeneratedCells = (): Map<number, GeneratedCell> => {
 				level: defenderLevels[i],
 				tribe: tribeIndex
 			});
-
 			occupiedCells.add((fortX << 16) | fortY);
 		}
 	}
@@ -150,14 +148,16 @@ export const getGeneratedCells = (): Map<number, GeneratedCell> => {
 	for (let attempt = 0; attempt < maxAttempts; attempt++) {
 		const x = CELL_EDGE + Math.floor(tribeRng() * (WIDTH - 2 * CELL_EDGE));
 		const y = CELL_EDGE + Math.floor(tribeRng() * (HEIGHT - 2 * CELL_EDGE));
-
 		const key = cellKey(x, y);
-		
 		if (!occupiedCells.has(key)) {
 			const outpostLevels = STRUCTURE_LEVELS[EnumYardType.OUTPOST];
-			const level = outpostLevels[Math.floor(tribeRng() * outpostLevels.length)];
-
-			cells.push({ x, y, type: EnumYardType.OUTPOST, level });
+			cells.push({
+				x,
+				y,
+				type: EnumYardType.OUTPOST,
+				level: outpostLevels[Math.floor(tribeRng() * outpostLevels.length)],
+				tribe: (x + y) % 4
+			});
 			occupiedCells.add(key);
 		}
 	}
@@ -217,11 +217,12 @@ export const getGeneratedCells = (): Map<number, GeneratedCell> => {
 	// ============================================================================
 	// PHASE 5: Ultimate Resource Outposts
 	// ============================================================================
+	const ultimateResourceRng = alea(ULTIMATE_RESOURCE_SEED);
 	const maxUltimateResourceAttempts = (WIDTH - 2 * CELL_EDGE) * (HEIGHT - 2 * CELL_EDGE) * 0.005;
 
 	for (let attempt = 0; attempt < maxUltimateResourceAttempts; attempt++) {
-		const x = CELL_EDGE + Math.floor(resourceRng() * (WIDTH - 2 * CELL_EDGE));
-		const y = CELL_EDGE + Math.floor(resourceRng() * (HEIGHT - 2 * CELL_EDGE));
+		const x = CELL_EDGE + Math.floor(ultimateResourceRng() * (WIDTH - 2 * CELL_EDGE));
+		const y = CELL_EDGE + Math.floor(ultimateResourceRng() * (HEIGHT - 2 * CELL_EDGE));
 		
 		const key = cellKey(x, y);
 		
@@ -230,7 +231,7 @@ export const getGeneratedCells = (): Map<number, GeneratedCell> => {
 		const defenders = getDefenderCoords(x, y);
 		if (defenders.some(([dx, dy]) => occupiedCells.has((dx << 16) | dy))) continue;
 
-		const tribeIndex = (x + y) % Tribes.length;
+		const tribeIndex = (x + y) % 4;
 		cells.push({ x, y, type: EnumYardType.RESOURCE, tribe: tribeIndex, level: 120});
 		occupiedCells.add(key);
 
@@ -253,6 +254,30 @@ export const getGeneratedCells = (): Map<number, GeneratedCell> => {
 		}
 	}
 
+	// // ============================================================================
+	// // PHASE 6: Moloch Outpost
+	// // ============================================================================
+	// const molochRng = alea(MOLOCH_TRIBE_OUTPOST_SEED);
+	// const maxMolochAttempts = (WIDTH - 2 * CELL_EDGE) * (HEIGHT - 2 * CELL_EDGE) * 0.05; // 5 %
+
+	// for (let attempt = 0; attempt < maxMolochAttempts; attempt++) {
+	// 	const x = CELL_EDGE + Math.floor(molochRng() * (WIDTH - 2 * CELL_EDGE));
+	// 	const y = CELL_EDGE + Math.floor(molochRng() * (HEIGHT - 2 * CELL_EDGE));
+
+	// 	const key = cellKey(x, y);
+		
+	// 	if (!occupiedCells.has(key)) {
+	// 		const molochOutpostLevels = STRUCTURE_LEVELS[EnumYardType.MOLOCH_OUTPOST];
+	// 		cells.push({
+	// 			x,
+	// 			y,
+	// 			type: EnumYardType.MOLOCH_OUTPOST,
+	// 			level: molochOutpostLevels[Math.floor(molochRng() * molochOutpostLevels.length)],
+	// 			tribe: 4,
+	// 		});
+	// 		occupiedCells.add(key);
+	// 	}
+	// }
 
 	cachedCells = new Map(cells.map(cell => [cellKey(cell.x, cell.y), cell]));
 	return cachedCells;

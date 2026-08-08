@@ -56,7 +56,11 @@ export const baseModeBuild = async (user: User, baseid: string) => {
 	}
 
 	if (baseid !== userSave.baseid) {
-		const baseSave = await postgres.em.findOne(Save, { baseid });
+		const baseSave = await postgres.em.findOne(Save, {
+			baseid
+		}, {
+			populate: ["cell"]
+		});
 
 		if (!baseSave) throw new Error(`Base save not found for baseid: ${baseid}`);
 		if (baseSave.userid !== user.userid) throw permissionErr();

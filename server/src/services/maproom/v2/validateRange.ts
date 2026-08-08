@@ -19,24 +19,16 @@ type RangeOptions = { baseid?: string; attackCell?: Loaded<WorldMapCell, never> 
  * @returns {Promise<Save>} - The save object if the attack is valid
  */
 export const validateRange = async (
-  user: User, 
-  save: Save, mapversion: MapRoomVersion | undefined, 
-  options: RangeOptions) => {
-  if (!mapversion) throw new Error("Map version is required for range validation.");
-  
-  switch (mapversion) {
-    case MapRoomVersion.V1:
-      return save;
-
-    case MapRoomVersion.V2:
-      return validateRangeV2(user, save, options);
-
-    case MapRoomVersion.V3:
-      return validateRangeV3(save);
-
-    default:
-      throw new Error(`validateRange: unhandled map version ${mapversion}`);
-  }
+	user: User, 
+	save: Save, mapversion: MapRoomVersion | undefined, 
+	options: RangeOptions) => {
+	if (!mapversion) throw new Error("Map version is required for range validation.");
+	switch (mapversion) {
+		case MapRoomVersion.V1: return save;
+		case MapRoomVersion.V2: return validateRangeV2(user, save, options);
+		case MapRoomVersion.V3: return validateRangeV3(save);
+		default: throw new Error(`validateRange: unhandled map version ${mapversion}`);
+	}
 };
 
 /**

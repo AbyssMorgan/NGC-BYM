@@ -6,7 +6,6 @@ import {
 	STRUCTURE_SAVES,
 	OUTPOST_SAVES,
 } from "../../../config/MapRoom3Config.js";
-import { Tribes } from "../../../enums/Tribes.js";
 import { getGeneratedCells, cellKey } from "./generateCells.js";
 import { calculateStructureLevel } from "./calculateStructureLevel.js";
 import { getDefenderCoords } from "./getDefenderCoords.js";
@@ -68,13 +67,16 @@ export const tribeSaveV3 = async (baseid: string, worldid: string): Promise<Save
 
 			const level = defenderLevels[defenderIndex];
 			const defenderSave = STRUCTURE_SAVES[EnumYardType.FORTIFICATION];
-
+			const genCell = getGeneratedCells().get(cellKey(parentCell.x, parentCell.y));
+			const tribeIndex = genCell!.tribe ?? (parentCell.x, parentCell.y) % 4;
+			
 			return postgres.em.create(Save, {
 				...defenderSave[level],
 				baseid,
 				level,
 				wmid: EnumYardType.FORTIFICATION,
 				worldid,
+				tribe: tribeIndex
 			} as unknown as RequiredEntityData<Save>);
 		}
 	}
@@ -83,23 +85,19 @@ export const tribeSaveV3 = async (baseid: string, worldid: string): Promise<Save
 	const structureType = genCell?.type;
 
 	if (structureType === EnumYardType.OUTPOST) {
-		const tribeIndex = (cellX + cellY) % Tribes.length;
+		const tribeIndex = genCell!.tribe ?? (cellX + cellY) % 4;
 		const level = genCell!.level ?? 0;
 		const outpostSave = OUTPOST_SAVES[tribeIndex]?.[level];
 
 		if (!outpostSave) return null;
 
-		// Client uses wmid to look up the tribe via TRIBES.TribeForBaseID(_wmID).
-		// L_IDS/K_IDS/A_IDS/D_IDS start at 1/11/21/31, so tribeIndex * 10 + 1
-		// gives the first nid of each tribe's range and resolves correctly.
-		const wmid = tribeIndex * 10 + 1;
-
 		return postgres.em.create(Save, {
 			...outpostSave,
 			baseid,
 			level,
-			wmid,
+			wmid: tribeIndex * 10 + 1,
 			worldid,
+			tribe: tribeIndex,
 		} as unknown as RequiredEntityData<Save>);
 	}
 
@@ -108,6 +106,7 @@ export const tribeSaveV3 = async (baseid: string, worldid: string): Promise<Save
 
 		if (!tribeSave) return null;
 		const level = genCell!.level ?? calculateStructureLevel(cellX, cellY, structureType);
+		const tribeIndex = genCell!.tribe ?? (cellX + cellY) % 4;
 
 		return postgres.em.create(Save, {
 			...tribeSave[level],
@@ -115,6 +114,7 @@ export const tribeSaveV3 = async (baseid: string, worldid: string): Promise<Save
 			level,
 			wmid: structureType,
 			worldid,
+			tribe: tribeIndex,
 		} as unknown as RequiredEntityData<Save>);
 	}
 

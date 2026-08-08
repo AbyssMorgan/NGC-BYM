@@ -17,30 +17,30 @@ import { MapRoomVersion } from "../../../../enums/MapRoom.js";
  * @returns Formatted wild monster cell data
  */
 export const wildMonsterCell = async (cell: WorldMapCell, worldId: string): Promise<CellData> => {
-  const [cellX, cellY] = [cell.x, cell.y];
+	const [cellX, cellY] = [cell.x, cell.y];
 
-  const genCell = getGeneratedCells().get(cellKey(cellX, cellY));
-  const tribeIndex = genCell?.tribe ?? ((cellX + cellY) % Tribes.length);
+	const genCell = getGeneratedCells().get(cellKey(cellX, cellY));
+	const tribeIndex = genCell?.tribe ?? ((cellX + cellY) % 4);
 
-  const level = genCell?.level ?? calculateStructureLevel(cellX, cellY, cell.base_type);
-  const baseid = generateBaseId(worldId, cellX, cellY, MapRoomVersion.V3);
+	const level = genCell?.level ?? calculateStructureLevel(cellX, cellY, cell.base_type);
+	const baseid = generateBaseId(worldId, cellX, cellY, MapRoomVersion.V3);
 
-  // 60% no clover (altitude 5-31), 40% on clovers (altitude 32-49)
-  const altitude = 5 + (cellX * 73 + cellY * 31) % 45;
+	// 60% no clover (altitude 5-31), 40% on clovers (altitude 32-49)
+	const altitude = 5 + (cellX * 73 + cellY * 31) % 45;
 
-  return {
-    uid: 0,
-    bid: baseid,
-    n: Tribes[tribeIndex],
-    tid: tribeIndex,
-    x: cellX,
-    y: cellY,
-    i: altitude,
-    l: level,
-    r: STRUCTURE_RANGE[cell.base_type]?.[level] ?? 0,
-    dm: cell?.save?.damage || 0,
-    d: cell?.save?.destroyed || 0,
-    b: cell.base_type,
-    rel: EnumBaseRelationship.ENEMY,
-  };
+	return {
+		uid: 0,
+		bid: baseid,
+		n: Tribes[tribeIndex],
+		tid: tribeIndex,
+		x: cellX,
+		y: cellY,
+		i: altitude,
+		l: level,
+		r: STRUCTURE_RANGE[cell.base_type]?.[level] ?? 0,
+		dm: cell?.save?.damage || 0,
+		d: cell?.save?.destroyed || 0,
+		b: cell.base_type,
+		rel: EnumBaseRelationship.ENEMY,
+	};
 };

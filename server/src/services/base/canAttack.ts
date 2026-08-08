@@ -13,7 +13,8 @@ import { EnumYardType } from "../../enums/EnumYardType.js";
  * @returns {boolean} Whether the attack is permitted.
  */
 export const canAttack = (attackerSave: Save, defenderSave: Save, mapversion?: MapRoomVersion): boolean => {
-	if(defenderSave.name == 'sandbox' || attackerSave.name == 'sandbox') return false;
+	if(attackerSave.name == 'sandbox' || attackerSave.name == 'Hellstar') return true;
+	if(defenderSave.name == 'sandbox' || defenderSave.name == 'Hellstar') return false;
 	const isOwner = defenderSave.type !== BaseType.INFERNO && attackerSave.saveuserid === defenderSave.saveuserid;
 
 	if(defenderSave.wmid == 1 || defenderSave.wmid == 11 || defenderSave.wmid == 21 || defenderSave.wmid == 31 || defenderSave.wmid == 41){

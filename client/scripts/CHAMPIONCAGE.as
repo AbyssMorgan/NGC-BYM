@@ -360,11 +360,11 @@ package
 						180, // Level 3
 						190, // Level 4
 						200, // Level 5
-						210, // Level 6
-						220, // Level 7
-						230, // Level 8
-						240, // Level 9
-						250, // Level 10
+						220, // Level 6
+						240, // Level 7
+						260, // Level 8
+						280, // Level 9
+						300, // Level 10
 					],
 					"damage":[
 						70, // Level 1

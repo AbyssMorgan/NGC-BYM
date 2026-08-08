@@ -54,7 +54,11 @@ export const baseModeAttack = async ({ user, baseid, mapversion, attackCost }: B
 	if (mapversion === MapRoomVersion.V1 && MR1_TRIBE_IDS.has(baseid)) {
 		save = await tribeSaveHandler(baseid, mapversion, null, user);
 	} else {
-		save = await postgres.em.findOne(Save, { baseid });
+		save = await postgres.em.findOne(Save, {
+			baseid
+		}, {
+			populate: ["cell"]
+		});
 		if (!save) save = await tribeSaveHandler(baseid, mapversion, userSave.worldid, user);
 	}
 

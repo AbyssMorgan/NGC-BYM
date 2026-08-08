@@ -4,6 +4,7 @@ import { strongholds } from "../game-data/tribes/v3/strongholds.js";
 import { resources } from "../game-data/tribes/v3/resources.js";
 import { defenders } from "../game-data/tribes/v3/defenders.js";
 import { kozu } from "../game-data/tribes/v3/outposts/kozu.js";
+import { moloch } from "../game-data/tribes/v3/outposts/moloch.js";
 import { legionnaire } from "../game-data/tribes/v3/outposts/legionnaire.js";
 import { abunakki } from "../game-data/tribes/v3/outposts/abunakki.js";
 import { dreadnaught } from "../game-data/tribes/v3/outposts/dreadnaught.js";
@@ -72,11 +73,19 @@ export const STRONGHOLD_JITTER = 8;
  */
 export const RESOURCE_SEED = "maproom3-resources-v2";
 
+export const ULTIMATE_RESOURCE_SEED = "maproom3-ultimate-resources-v2";
+
 /**
  * Seed for tribe outpost placement randomization
  * @constant {string}
  */
 export const TRIBE_OUTPOST_SEED = "maproom3-tribes";
+
+/**
+ * Seed for tribe outpost placement randomization
+ * @constant {string}
+ */
+export const MOLOCH_TRIBE_OUTPOST_SEED = "maproom3-moloch-tribes";
 
 /** Available levels per structure type. */
 export const STRUCTURE_LEVELS: Record<number, number[]> = {
@@ -107,7 +116,7 @@ export const STRUCTURE_LEVELS: Record<number, number[]> = {
 		120,                                                        //  1 %
 	],
 	[EnumYardType.MOLOCH_OUTPOST]: [
-		
+		50,
 	],
 };
 
@@ -172,6 +181,7 @@ export const STRUCTURE_SAVES: Record<number, Record<number, SaveData>> = {
 	[EnumYardType.STRONGHOLD]: strongholds,
 	[EnumYardType.RESOURCE]: resources,
 	[EnumYardType.FORTIFICATION]: defenders,
+	[EnumYardType.MOLOCH_OUTPOST]: moloch,
 };
 
 /** Save data templates for tribe outposts, keyed by tribe index then level. */

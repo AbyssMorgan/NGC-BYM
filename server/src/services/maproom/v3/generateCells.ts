@@ -254,30 +254,30 @@ export const getGeneratedCells = (): Map<number, GeneratedCell> => {
 		}
 	}
 
-	// // ============================================================================
-	// // PHASE 6: Moloch Outpost
-	// // ============================================================================
-	// const molochRng = alea(MOLOCH_TRIBE_OUTPOST_SEED);
-	// const maxMolochAttempts = (WIDTH - 2 * CELL_EDGE) * (HEIGHT - 2 * CELL_EDGE) * 0.05; // 5 %
+	// ============================================================================
+	// PHASE 6: Moloch Outpost
+	// ============================================================================
+	const molochRng = alea(MOLOCH_TRIBE_OUTPOST_SEED);
+	const maxMolochAttempts = (WIDTH - 2 * CELL_EDGE) * (HEIGHT - 2 * CELL_EDGE) * 0.05; // 5 %
 
-	// for (let attempt = 0; attempt < maxMolochAttempts; attempt++) {
-	// 	const x = CELL_EDGE + Math.floor(molochRng() * (WIDTH - 2 * CELL_EDGE));
-	// 	const y = CELL_EDGE + Math.floor(molochRng() * (HEIGHT - 2 * CELL_EDGE));
+	for (let attempt = 0; attempt < maxMolochAttempts; attempt++) {
+		const x = CELL_EDGE + Math.floor(molochRng() * (WIDTH - 2 * CELL_EDGE));
+		const y = CELL_EDGE + Math.floor(molochRng() * (HEIGHT - 2 * CELL_EDGE));
 
-	// 	const key = cellKey(x, y);
+		const key = cellKey(x, y);
 		
-	// 	if (!occupiedCells.has(key)) {
-	// 		const molochOutpostLevels = STRUCTURE_LEVELS[EnumYardType.MOLOCH_OUTPOST];
-	// 		cells.push({
-	// 			x,
-	// 			y,
-	// 			type: EnumYardType.MOLOCH_OUTPOST,
-	// 			level: molochOutpostLevels[Math.floor(molochRng() * molochOutpostLevels.length)],
-	// 			tribe: 4,
-	// 		});
-	// 		occupiedCells.add(key);
-	// 	}
-	// }
+		if (!occupiedCells.has(key)) {
+			const molochOutpostLevels = STRUCTURE_LEVELS[EnumYardType.MOLOCH_OUTPOST];
+			cells.push({
+				x,
+				y,
+				type: EnumYardType.MOLOCH_OUTPOST,
+				level: molochOutpostLevels[Math.floor(molochRng() * molochOutpostLevels.length)],
+				tribe: 4,
+			});
+			occupiedCells.add(key);
+		}
+	}
 
 	cachedCells = new Map(cells.map(cell => [cellKey(cell.x, cell.y), cell]));
 	return cachedCells;

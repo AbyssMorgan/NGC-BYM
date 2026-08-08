@@ -53,7 +53,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -75,
 				Y: -75,
 				l: 10,
-				t: 14,
+				t: 153,
 				id: 0,
 				fort: 2
 			},
@@ -61,21 +61,21 @@ export const moloch: Record<number, SaveData> = {
 				X: -235,
 				Y: 145,
 				l: 10,
-				t: 21,
+				t: 143,
 				id: 28
 			},
 			29: {
 				X: 145,
 				Y: -235,
 				l: 10,
-				t: 21,
+				t: 143,
 				id: 29
 			},
 			30: {
 				X: -235,
 				Y: -415,
 				l: 10,
-				t: 21,
+				t: 143,
 				id: 30,
 				fort: 1
 			},
@@ -83,7 +83,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -425,
 				Y: -45,
 				l: 10,
-				t: 21,
+				t: 143,
 				id: 31,
 				fort: 1
 			},
@@ -91,7 +91,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 225,
 				Y: -40,
 				l: 10,
-				t: 20,
+				t: 142,
 				id: 32,
 				fort: 2
 			},
@@ -99,7 +99,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 135,
 				Y: 205,
 				l: 10,
-				t: 20,
+				t: 142,
 				id: 33,
 				fort: 1
 			},
@@ -107,7 +107,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 215,
 				Y: -160,
 				l: 10,
-				t: 20,
+				t: 142,
 				id: 34,
 				fort: 3
 			},
@@ -115,7 +115,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 205,
 				Y: 135,
 				l: 10,
-				t: 20,
+				t: 142,
 				id: 35,
 				fort: 1
 			},
@@ -123,7 +123,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -165,
 				Y: 215,
 				l: 10,
-				t: 20,
+				t: 142,
 				id: 36,
 				fort: 1
 			},
@@ -131,30 +131,30 @@ export const moloch: Record<number, SaveData> = {
 				X: -40,
 				Y: 225,
 				l: 10,
-				t: 20,
+				t: 142,
 				id: 37,
 				fort: 1
 			},
 			38: {
 				X: 205,
 				Y: 285,
-				l: 8,
-				t: 23,
+				l: 6,
+				t: 129,
 				id: 38,
 				fort: 3
 			},
 			39: {
 				X: 135,
 				Y: 135,
-				l: 8,
-				t: 23,
+				l: 6,
+				t: 129,
 				id: 39
 			},
 			40: {
 				X: 285,
 				Y: 205,
-				l: 8,
-				t: 23,
+				l: 6,
+				t: 129,
 				id: 40,
 				fort: 3
 			},
@@ -162,30 +162,30 @@ export const moloch: Record<number, SaveData> = {
 				X: -50,
 				Y: -425,
 				l: 10,
-				t: 21,
+				t: 143,
 				id: 41
 			},
 			42: {
 				X: -415,
 				Y: -235,
 				l: 10,
-				t: 21,
+				t: 143,
 				id: 42,
 				fort: 3
 			},
 			48: {
 				X: 65,
 				Y: 65,
-				l: 6,
-				t: 25,
+				l: 2,
+				t: 136,
 				id: 48,
 				fort: 4
 			},
 			49: {
 				X: 295,
 				Y: 295,
-				l: 8,
-				t: 25,
+				l: 3,
+				t: 136,
 				id: 49
 			},
 			50: {
@@ -2988,14 +2988,14 @@ export const moloch: Record<number, SaveData> = {
 				X: 205,
 				Y: 205,
 				l: 10,
-				t: 6,
+				t: 151,
 				id: 621
 			},
 			622: {
 				X: 275,
 				Y: 125,
 				l: 10,
-				t: 6,
+				t: 151,
 				id: 622,
 				fort: 1
 			},
@@ -3003,7 +3003,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 125,
 				Y: 275,
 				l: 10,
-				t: 6,
+				t: 151,
 				id: 623,
 				fort: 1
 			},
@@ -3011,14 +3011,14 @@ export const moloch: Record<number, SaveData> = {
 				X: 55,
 				Y: 135,
 				l: 10,
-				t: 6,
+				t: 151,
 				id: 624
 			},
 			625: {
 				X: 135,
 				Y: 55,
 				l: 10,
-				t: 6,
+				t: 151,
 				id: 625
 			},
 			626: {
@@ -3058,7 +3058,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -215,
 				Y: -215,
 				l: 10,
-				t: 6,
+				t: 151,
 				id: 650
 			},
 			658: {
@@ -3283,7 +3283,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -415,
 				Y: -335,
 				l: 10,
-				t: 6,
+				t: 151,
 				id: 762,
 				fort: 1
 			},
@@ -3459,7 +3459,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -335,
 				Y: -415,
 				l: 10,
-				t: 6,
+				t: 151,
 				id: 788,
 				fort: 1
 			},
@@ -3670,7 +3670,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -315,
 				Y: -315,
 				l: 10,
-				t: 6,
+				t: 151,
 				id: 820
 			},
 			821: {
@@ -3840,14 +3840,14 @@ export const moloch: Record<number, SaveData> = {
 				X: 115,
 				Y: -145,
 				l: 10,
-				t: 6,
+				t: 151,
 				id: 880
 			},
 			890: {
 				X: -305,
 				Y: 65,
 				l: 10,
-				t: 6,
+				t: 151,
 				id: 890
 			},
 			900: {
@@ -4014,7 +4014,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -75,
 				Y: -75,
 				l: 14,
-				t: 14,
+				t: 153,
 				id: 0,
 				fort: 2
 			},
@@ -4022,7 +4022,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -235,
 				Y: 145,
 				l: 12,
-				t: 21,
+				t: 143,
 				id: 28,
 				fort: 2
 			},
@@ -4030,7 +4030,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 145,
 				Y: -235,
 				l: 12,
-				t: 21,
+				t: 143,
 				id: 29,
 				fort: 2
 			},
@@ -4038,7 +4038,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -235,
 				Y: -415,
 				l: 12,
-				t: 21,
+				t: 143,
 				id: 30,
 				fort: 2
 			},
@@ -4046,7 +4046,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -425,
 				Y: -45,
 				l: 12,
-				t: 21,
+				t: 143,
 				id: 31,
 				fort: 2
 			},
@@ -4054,7 +4054,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 225,
 				Y: -40,
 				l: 12,
-				t: 20,
+				t: 142,
 				id: 32,
 				fort: 2
 			},
@@ -4062,7 +4062,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 135,
 				Y: 205,
 				l: 12,
-				t: 20,
+				t: 142,
 				id: 33,
 				fort: 2
 			},
@@ -4070,7 +4070,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 215,
 				Y: -160,
 				l: 12,
-				t: 20,
+				t: 142,
 				id: 34,
 				fort: 2
 			},
@@ -4078,7 +4078,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 205,
 				Y: 135,
 				l: 12,
-				t: 20,
+				t: 142,
 				id: 35,
 				fort: 2
 			},
@@ -4086,7 +4086,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -165,
 				Y: 215,
 				l: 12,
-				t: 20,
+				t: 142,
 				id: 36,
 				fort: 2
 			},
@@ -4094,31 +4094,31 @@ export const moloch: Record<number, SaveData> = {
 				X: -40,
 				Y: 225,
 				l: 12,
-				t: 20,
+				t: 142,
 				id: 37,
 				fort: 2
 			},
 			38: {
 				X: 205,
 				Y: 285,
-				l: 10,
-				t: 23,
+				l: 8,
+				t: 129,
 				id: 38,
 				fort: 2
 			},
 			39: {
 				X: 135,
 				Y: 135,
-				l: 10,
-				t: 23,
+				l: 8,
+				t: 129,
 				id: 39,
 				fort: 2
 			},
 			40: {
 				X: 285,
 				Y: 205,
-				l: 10,
-				t: 23,
+				l: 8,
+				t: 129,
 				id: 40,
 				fort: 2
 			},
@@ -4126,7 +4126,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -50,
 				Y: -425,
 				l: 12,
-				t: 21,
+				t: 143,
 				id: 41,
 				fort: 2
 			},
@@ -4134,31 +4134,31 @@ export const moloch: Record<number, SaveData> = {
 				X: -415,
 				Y: -235,
 				l: 12,
-				t: 21,
+				t: 143,
 				id: 42,
 				fort: 2
 			},
 			48: {
 				X: 65,
 				Y: 65,
-				l: 10,
-				t: 25,
+				l: 4,
+				t: 136,
 				id: 48,
 				fort: 2
 			},
 			49: {
 				X: 295,
 				Y: 295,
-				l: 10,
-				t: 25,
+				l: 4,
+				t: 136,
 				id: 49,
 				fort: 2
 			},
 			50: {
 				X: -135,
 				Y: -145,
-				l: 10,
-				t: 25,
+				l: 4,
+				t: 136,
 				id: 50,
 				fort: 2
 			},
@@ -6954,7 +6954,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 205,
 				Y: 205,
 				l: 14,
-				t: 6,
+				t: 151,
 				id: 621,
 				fort: 2
 			},
@@ -6962,7 +6962,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 275,
 				Y: 125,
 				l: 14,
-				t: 6,
+				t: 151,
 				id: 622,
 				fort: 2
 			},
@@ -6970,7 +6970,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 125,
 				Y: 275,
 				l: 14,
-				t: 6,
+				t: 151,
 				id: 623,
 				fort: 2
 			},
@@ -6978,7 +6978,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 55,
 				Y: 135,
 				l: 14,
-				t: 6,
+				t: 151,
 				id: 624,
 				fort: 2
 			},
@@ -6986,7 +6986,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 135,
 				Y: 55,
 				l: 14,
-				t: 6,
+				t: 151,
 				id: 625,
 				fort: 2
 			},
@@ -7027,7 +7027,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -215,
 				Y: -215,
 				l: 14,
-				t: 6,
+				t: 151,
 				id: 650,
 				fort: 2
 			},
@@ -7253,7 +7253,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -415,
 				Y: -335,
 				l: 14,
-				t: 6,
+				t: 151,
 				id: 762,
 				fort: 2
 			},
@@ -7429,7 +7429,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -335,
 				Y: -415,
 				l: 14,
-				t: 6,
+				t: 151,
 				id: 788,
 				fort: 2
 			},
@@ -7640,7 +7640,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -315,
 				Y: -315,
 				l: 14,
-				t: 6,
+				t: 151,
 				id: 820,
 				fort: 2
 			},
@@ -7811,7 +7811,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 115,
 				Y: -145,
 				l: 14,
-				t: 6,
+				t: 151,
 				id: 880,
 				fort: 2
 			},
@@ -7819,7 +7819,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -305,
 				Y: 65,
 				l: 14,
-				t: 6,
+				t: 151,
 				id: 890,
 				fort: 2
 			},
@@ -7987,7 +7987,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -75,
 				Y: -75,
 				l: 16,
-				t: 14,
+				t: 153,
 				id: 0,
 				fort: 3
 			},
@@ -7995,7 +7995,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -235,
 				Y: 145,
 				l: 14,
-				t: 21,
+				t: 143,
 				id: 28,
 				fort: 3
 			},
@@ -8003,7 +8003,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 145,
 				Y: -235,
 				l: 14,
-				t: 21,
+				t: 143,
 				id: 29,
 				fort: 3
 			},
@@ -8011,7 +8011,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -235,
 				Y: -415,
 				l: 14,
-				t: 21,
+				t: 143,
 				id: 30,
 				fort: 3
 			},
@@ -8019,7 +8019,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -425,
 				Y: -45,
 				l: 14,
-				t: 21,
+				t: 143,
 				id: 31,
 				fort: 3
 			},
@@ -8027,7 +8027,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 225,
 				Y: -40,
 				l: 14,
-				t: 20,
+				t: 142,
 				id: 32,
 				fort: 3
 			},
@@ -8035,7 +8035,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 135,
 				Y: 205,
 				l: 14,
-				t: 20,
+				t: 142,
 				id: 33,
 				fort: 3
 			},
@@ -8043,7 +8043,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 215,
 				Y: -160,
 				l: 14,
-				t: 20,
+				t: 142,
 				id: 34,
 				fort: 3
 			},
@@ -8051,7 +8051,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 205,
 				Y: 135,
 				l: 14,
-				t: 20,
+				t: 142,
 				id: 35,
 				fort: 3
 			},
@@ -8059,7 +8059,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -165,
 				Y: 215,
 				l: 14,
-				t: 20,
+				t: 142,
 				id: 36,
 				fort: 3
 			},
@@ -8067,31 +8067,31 @@ export const moloch: Record<number, SaveData> = {
 				X: -40,
 				Y: 225,
 				l: 14,
-				t: 20,
+				t: 142,
 				id: 37,
 				fort: 3
 			},
 			38: {
 				X: 205,
 				Y: 285,
-				l: 12,
-				t: 23,
+				l: 10,
+				t: 129,
 				id: 38,
 				fort: 3
 			},
 			39: {
 				X: 135,
 				Y: 135,
-				l: 12,
-				t: 23,
+				l: 10,
+				t: 129,
 				id: 39,
 				fort: 3
 			},
 			40: {
 				X: 285,
 				Y: 205,
-				l: 12,
-				t: 23,
+				l: 10,
+				t: 129,
 				id: 40,
 				fort: 3
 			},
@@ -8099,7 +8099,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -50,
 				Y: -425,
 				l: 14,
-				t: 21,
+				t: 143,
 				id: 41,
 				fort: 3
 			},
@@ -8107,31 +8107,31 @@ export const moloch: Record<number, SaveData> = {
 				X: -415,
 				Y: -235,
 				l: 14,
-				t: 21,
+				t: 143,
 				id: 42,
 				fort: 3
 			},
 			48: {
 				X: 65,
 				Y: 65,
-				l: 12,
-				t: 25,
+				l: 5,
+				t: 136,
 				id: 48,
 				fort: 3
 			},
 			49: {
 				X: 295,
 				Y: 295,
-				l: 12,
-				t: 25,
+				l: 5,
+				t: 136,
 				id: 49,
 				fort: 3
 			},
 			50: {
 				X: -135,
 				Y: -145,
-				l: 12,
-				t: 25,
+				l: 5,
+				t: 136,
 				id: 50,
 				fort: 3
 			},
@@ -10927,7 +10927,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 205,
 				Y: 205,
 				l: 16,
-				t: 6,
+				t: 151,
 				id: 621,
 				fort: 3
 			},
@@ -10935,7 +10935,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 275,
 				Y: 125,
 				l: 16,
-				t: 6,
+				t: 151,
 				id: 622,
 				fort: 3
 			},
@@ -10943,7 +10943,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 125,
 				Y: 275,
 				l: 16,
-				t: 6,
+				t: 151,
 				id: 623,
 				fort: 3
 			},
@@ -10951,7 +10951,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 55,
 				Y: 135,
 				l: 16,
-				t: 6,
+				t: 151,
 				id: 624,
 				fort: 3
 			},
@@ -10959,7 +10959,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 135,
 				Y: 55,
 				l: 16,
-				t: 6,
+				t: 151,
 				id: 625,
 				fort: 3
 			},
@@ -11000,7 +11000,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -215,
 				Y: -215,
 				l: 16,
-				t: 6,
+				t: 151,
 				id: 650,
 				fort: 3
 			},
@@ -11226,7 +11226,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -415,
 				Y: -335,
 				l: 16,
-				t: 6,
+				t: 151,
 				id: 762,
 				fort: 3
 			},
@@ -11402,7 +11402,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -335,
 				Y: -415,
 				l: 16,
-				t: 6,
+				t: 151,
 				id: 788,
 				fort: 3
 			},
@@ -11613,7 +11613,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -315,
 				Y: -315,
 				l: 16,
-				t: 6,
+				t: 151,
 				id: 820,
 				fort: 3
 			},
@@ -11784,7 +11784,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 115,
 				Y: -145,
 				l: 16,
-				t: 6,
+				t: 151,
 				id: 880,
 				fort: 3
 			},
@@ -11792,7 +11792,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -305,
 				Y: 65,
 				l: 16,
-				t: 6,
+				t: 151,
 				id: 890,
 				fort: 3
 			},
@@ -11960,7 +11960,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -75,
 				Y: -75,
 				l: 18,
-				t: 14,
+				t: 153,
 				id: 0,
 				fort: 4
 			},
@@ -11968,7 +11968,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -235,
 				Y: 145,
 				l: 16,
-				t: 21,
+				t: 143,
 				id: 28,
 				fort: 4
 			},
@@ -11976,7 +11976,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 145,
 				Y: -235,
 				l: 16,
-				t: 21,
+				t: 143,
 				id: 29,
 				fort: 4
 			},
@@ -11984,7 +11984,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -235,
 				Y: -415,
 				l: 16,
-				t: 21,
+				t: 143,
 				id: 30,
 				fort: 4
 			},
@@ -11992,7 +11992,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -425,
 				Y: -45,
 				l: 16,
-				t: 21,
+				t: 143,
 				id: 31,
 				fort: 4
 			},
@@ -12000,7 +12000,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 225,
 				Y: -40,
 				l: 16,
-				t: 20,
+				t: 142,
 				id: 32,
 				fort: 4
 			},
@@ -12008,7 +12008,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 135,
 				Y: 205,
 				l: 16,
-				t: 20,
+				t: 142,
 				id: 33,
 				fort: 4
 			},
@@ -12016,7 +12016,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 215,
 				Y: -160,
 				l: 16,
-				t: 20,
+				t: 142,
 				id: 34,
 				fort: 4
 			},
@@ -12024,7 +12024,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 205,
 				Y: 135,
 				l: 16,
-				t: 20,
+				t: 142,
 				id: 35,
 				fort: 4
 			},
@@ -12032,7 +12032,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -165,
 				Y: 215,
 				l: 16,
-				t: 20,
+				t: 142,
 				id: 36,
 				fort: 4
 			},
@@ -12040,31 +12040,31 @@ export const moloch: Record<number, SaveData> = {
 				X: -40,
 				Y: 225,
 				l: 16,
-				t: 20,
+				t: 142,
 				id: 37,
 				fort: 4
 			},
 			38: {
 				X: 205,
 				Y: 285,
-				l: 14,
-				t: 23,
+				l: 12,
+				t: 129,
 				id: 38,
 				fort: 4
 			},
 			39: {
 				X: 135,
 				Y: 135,
-				l: 14,
-				t: 23,
+				l: 12,
+				t: 129,
 				id: 39,
 				fort: 4
 			},
 			40: {
 				X: 285,
 				Y: 205,
-				l: 14,
-				t: 23,
+				l: 12,
+				t: 129,
 				id: 40,
 				fort: 4
 			},
@@ -12072,7 +12072,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -50,
 				Y: -425,
 				l: 16,
-				t: 21,
+				t: 143,
 				id: 41,
 				fort: 4
 			},
@@ -12080,31 +12080,31 @@ export const moloch: Record<number, SaveData> = {
 				X: -415,
 				Y: -235,
 				l: 16,
-				t: 21,
+				t: 143,
 				id: 42,
 				fort: 4
 			},
 			48: {
 				X: 65,
 				Y: 65,
-				l: 14,
-				t: 25,
+				l: 6,
+				t: 136,
 				id: 48,
 				fort: 4
 			},
 			49: {
 				X: 295,
 				Y: 295,
-				l: 14,
-				t: 25,
+				l: 6,
+				t: 136,
 				id: 49,
 				fort: 4
 			},
 			50: {
 				X: -135,
 				Y: -145,
-				l: 14,
-				t: 25,
+				l: 6,
+				t: 136,
 				id: 50,
 				fort: 4
 			},
@@ -14900,7 +14900,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 205,
 				Y: 205,
 				l: 18,
-				t: 6,
+				t: 151,
 				id: 621,
 				fort: 4
 			},
@@ -14908,7 +14908,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 275,
 				Y: 125,
 				l: 18,
-				t: 6,
+				t: 151,
 				id: 622,
 				fort: 4
 			},
@@ -14916,7 +14916,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 125,
 				Y: 275,
 				l: 18,
-				t: 6,
+				t: 151,
 				id: 623,
 				fort: 4
 			},
@@ -14924,7 +14924,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 55,
 				Y: 135,
 				l: 18,
-				t: 6,
+				t: 151,
 				id: 624,
 				fort: 4
 			},
@@ -14932,7 +14932,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 135,
 				Y: 55,
 				l: 18,
-				t: 6,
+				t: 151,
 				id: 625,
 				fort: 4
 			},
@@ -14973,7 +14973,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -215,
 				Y: -215,
 				l: 18,
-				t: 6,
+				t: 151,
 				id: 650,
 				fort: 4
 			},
@@ -15199,7 +15199,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -415,
 				Y: -335,
 				l: 18,
-				t: 6,
+				t: 151,
 				id: 762,
 				fort: 4
 			},
@@ -15375,7 +15375,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -335,
 				Y: -415,
 				l: 18,
-				t: 6,
+				t: 151,
 				id: 788,
 				fort: 4
 			},
@@ -15586,7 +15586,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -315,
 				Y: -315,
 				l: 18,
-				t: 6,
+				t: 151,
 				id: 820,
 				fort: 4
 			},
@@ -15757,7 +15757,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 115,
 				Y: -145,
 				l: 18,
-				t: 6,
+				t: 151,
 				id: 880,
 				fort: 4
 			},
@@ -15765,7 +15765,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -305,
 				Y: 65,
 				l: 18,
-				t: 6,
+				t: 151,
 				id: 890,
 				fort: 4
 			},
@@ -15933,7 +15933,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -65,
 				Y: -65,
 				l: 18,
-				t: 14,
+				t: 153,
 				id: 0,
 				fort: 2,
 			},
@@ -16236,7 +16236,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -35,
 				Y: 165,
 				l: 12,
-				t: 21,
+				t: 143,
 				id: 121,
 				fort: 2
 			},
@@ -16388,7 +16388,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 165,
 				Y: 65,
 				l: 12,
-				t: 20,
+				t: 142,
 				id: 143,
 				fort: 2
 			},
@@ -16565,7 +16565,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -35,
 				Y: -235,
 				l: 12,
-				t: 21,
+				t: 143,
 				id: 260,
 				fort: 2
 			},
@@ -16640,7 +16640,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -235,
 				Y: 65,
 				l: 12,
-				t: 20,
+				t: 142,
 				id: 327,
 				fort: 2
 			},
@@ -16869,7 +16869,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 265,
 				Y: -235,
 				l: 12,
-				t: 21,
+				t: 143,
 				id: 427,
 				fort: 2
 			},
@@ -17175,7 +17175,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 165,
 				Y: -135,
 				l: 12,
-				t: 20,
+				t: 142,
 				id: 732,
 				fort: 2
 			},
@@ -17183,7 +17183,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -335,
 				Y: 165,
 				l: 12,
-				t: 21,
+				t: 143,
 				id: 733,
 				fort: 2
 			},
@@ -17670,16 +17670,16 @@ export const moloch: Record<number, SaveData> = {
 			1373: {
 				X: -335,
 				Y: -235,
-				l: 10,
-				t: 25,
+				l: 4,
+				t: 136,
 				id: 1373,
 				fort: 2
 			},
 			1375: {
 				X: 265,
 				Y: 265,
-				l: 10,
-				t: 23,
+				l: 8,
+				t: 129,
 				id: 1375,
 				fort: 2
 			},
@@ -17687,7 +17687,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -140,
 				Y: 70,
 				l: 10,
-				t: 118,
+				t: 25,
 				id: 1376,
 				fort: 2
 			},
@@ -17695,23 +17695,23 @@ export const moloch: Record<number, SaveData> = {
 				X: 70,
 				Y: -140,
 				l: 10,
-				t: 118,
+				t: 25,
 				id: 1377,
 				fort: 2
 			},
 			1378: {
 				X: 70,
 				Y: 70,
-				l: 10,
-				t: 115,
+				l: 6,
+				t: 146,
 				id: 1378,
 				fort: 2
 			},
 			1379: {
 				X: -140,
 				Y: -140,
-				l: 10,
-				t: 115,
+				l: 6,
+				t: 146,
 				id: 1379,
 				fort: 2
 			},
@@ -17741,7 +17741,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 165,
 				Y: 265,
 				l: 12,
-				t: 21,
+				t: 143,
 				id: 1523,
 				fort: 2
 			},
@@ -17771,7 +17771,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -235,
 				Y: -135,
 				l: 12,
-				t: 20,
+				t: 142,
 				id: 1783,
 				fort: 2
 			},
@@ -17823,31 +17823,31 @@ export const moloch: Record<number, SaveData> = {
 				X: -235,
 				Y: -335,
 				l: 12,
-				t: 21,
+				t: 143,
 				id: 2009,
 				fort: 2
 			},
 			2516: {
 				X: 265,
 				Y: 165,
-				l: 10,
-				t: 25,
+				l: 4,
+				t: 136,
 				id: 2516,
 				fort: 2
 			},
 			2517: {
 				X: 265,
 				Y: -335,
-				l: 10,
-				t: 23,
+				l: 8,
+				t: 129,
 				id: 2517,
 				fort: 2
 			},
 			2518: {
 				X: -335,
 				Y: 265,
-				l: 10,
-				t: 23,
+				l: 8,
+				t: 129,
 				id: 2518,
 				fort: 2
 			},
@@ -18880,24 +18880,24 @@ export const moloch: Record<number, SaveData> = {
 			4067: {
 				X: 165,
 				Y: -335,
-				l: 10,
-				t: 25,
+				l: 4,
+				t: 136,
 				id: 4067,
 				fort: 2
 			},
 			4516: {
 				X: -335,
 				Y: -335,
-				l: 10,
-				t: 23,
+				l: 8,
+				t: 129,
 				id: 4516,
 				fort: 2
 			},
 			4517: {
 				X: -235,
 				Y: 265,
-				l: 10,
-				t: 25,
+				l: 4,
+				t: 136,
 				id: 4517,
 				fort: 2
 			},
@@ -19565,7 +19565,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -65,
 				Y: -65,
 				l: 19,
-				t: 14,
+				t: 153,
 				id: 0,
 				fort: 3,
 			},
@@ -19868,7 +19868,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 475,
 				Y: 115,
 				l: 14,
-				t: 21,
+				t: 143,
 				id: 121,
 				fort: 3
 			},
@@ -20197,7 +20197,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 115,
 				Y: -545,
 				l: 14,
-				t: 21,
+				t: 143,
 				id: 260,
 				fort: 3
 			},
@@ -20501,7 +20501,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 115,
 				Y: 475,
 				l: 14,
-				t: 21,
+				t: 143,
 				id: 427,
 				fort: 3
 			},
@@ -20807,7 +20807,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -545,
 				Y: -185,
 				l: 14,
-				t: 21,
+				t: 143,
 				id: 732,
 				fort: 3
 			},
@@ -20815,7 +20815,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -185,
 				Y: -545,
 				l: 14,
-				t: 21,
+				t: 143,
 				id: 733,
 				fort: 3
 			},
@@ -21302,16 +21302,16 @@ export const moloch: Record<number, SaveData> = {
 			1373: {
 				X: -365,
 				Y: -365,
-				l: 12,
-				t: 25,
+				l: 5,
+				t: 136,
 				id: 1373,
 				fort: 3
 			},
 			1375: {
 				X: -35,
 				Y: 115,
-				l: 12,
-				t: 23,
+				l: 10,
+				t: 129,
 				id: 1375,
 				fort: 3
 			},
@@ -21319,7 +21319,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 115,
 				Y: -185,
 				l: 12,
-				t: 118,
+				t: 25,
 				id: 1376,
 				fort: 3
 			},
@@ -21327,23 +21327,23 @@ export const moloch: Record<number, SaveData> = {
 				X: -185,
 				Y: -185,
 				l: 12,
-				t: 118,
+				t: 25,
 				id: 1377,
 				fort: 3
 			},
 			1378: {
 				X: 295,
 				Y: -35,
-				l: 12,
-				t: 115,
+				l: 8,
+				t: 146,
 				id: 1378,
 				fort: 3
 			},
 			1379: {
 				X: -35,
 				Y: -365,
-				l: 12,
-				t: 115,
+				l: 8,
+				t: 146,
 				id: 1379,
 				fort: 3
 			},
@@ -21373,7 +21373,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 475,
 				Y: -185,
 				l: 14,
-				t: 21,
+				t: 143,
 				id: 1523,
 				fort: 3
 			},
@@ -21403,7 +21403,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -545,
 				Y: 115,
 				l: 14,
-				t: 21,
+				t: 143,
 				id: 1783,
 				fort: 3
 			},
@@ -21455,31 +21455,31 @@ export const moloch: Record<number, SaveData> = {
 				X: -185,
 				Y: 475,
 				l: 14,
-				t: 21,
+				t: 143,
 				id: 2009,
 				fort: 3
 			},
 			2516: {
 				X: 295,
 				Y: -365,
-				l: 12,
-				t: 25,
+				l: 5,
+				t: 136,
 				id: 2516,
 				fort: 3
 			},
 			2517: {
 				X: -185,
 				Y: -35,
-				l: 12,
-				t: 23,
+				l: 10,
+				t: 129,
 				id: 2517,
 				fort: 3
 			},
 			2518: {
 				X: -35,
 				Y: -185,
-				l: 12,
-				t: 23,
+				l: 10,
+				t: 129,
 				id: 2518,
 				fort: 3
 			},
@@ -22512,24 +22512,24 @@ export const moloch: Record<number, SaveData> = {
 			4067: {
 				X: 295,
 				Y: 295,
-				l: 12,
-				t: 25,
+				l: 5,
+				t: 136,
 				id: 4067,
 				fort: 3
 			},
 			4516: {
 				X: 115,
 				Y: -35,
-				l: 12,
-				t: 23,
+				l: 10,
+				t: 129,
 				id: 4516,
 				fort: 3
 			},
 			4517: {
 				X: -365,
 				Y: 295,
-				l: 12,
-				t: 25,
+				l: 5,
+				t: 136,
 				id: 4517,
 				fort: 3
 			},
@@ -23092,7 +23092,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 115,
 				Y: 115,
 				l: 12,
-				t: 118,
+				t: 25,
 				id: 4917,
 				fort: 3
 			},
@@ -23100,23 +23100,23 @@ export const moloch: Record<number, SaveData> = {
 				X: -185,
 				Y: 115,
 				l: 12,
-				t: 118,
+				t: 25,
 				id: 4918,
 				fort: 3
 			},
 			4919: {
 				X: -365,
 				Y: -35,
-				l: 12,
-				t: 115,
+				l: 8,
+				t: 146,
 				id: 4919,
 				fort: 3
 			},
 			4920: {
 				X: -35,
 				Y: 295,
-				l: 12,
-				t: 115,
+				l: 8,
+				t: 146,
 				id: 4920,
 				fort: 3
 			},
@@ -24769,7 +24769,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -645,
 				Y: 575,
 				l: 14,
-				t: 20,
+				t: 142,
 				id: 5853,
 				fort: 3
 			},
@@ -24777,7 +24777,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -645,
 				Y: -645,
 				l: 14,
-				t: 20,
+				t: 142,
 				id: 5854,
 				fort: 3
 			},
@@ -24785,7 +24785,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 575,
 				Y: -645,
 				l: 14,
-				t: 20,
+				t: 142,
 				id: 5855,
 				fort: 3
 			},
@@ -24793,7 +24793,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 575,
 				Y: 575,
 				l: 14,
-				t: 20,
+				t: 142,
 				id: 5856,
 				fort: 3
 			},
@@ -25244,7 +25244,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -65,
 				Y: -65,
 				l: 20,
-				t: 14,
+				t: 153,
 				id: 0,
 				fort: 4,
 			},
@@ -25547,7 +25547,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 475,
 				Y: 115,
 				l: 16,
-				t: 21,
+				t: 143,
 				id: 121,
 				fort: 4
 			},
@@ -25876,7 +25876,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 115,
 				Y: -545,
 				l: 16,
-				t: 21,
+				t: 143,
 				id: 260,
 				fort: 4
 			},
@@ -26180,7 +26180,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 115,
 				Y: 475,
 				l: 16,
-				t: 21,
+				t: 143,
 				id: 427,
 				fort: 4
 			},
@@ -26486,7 +26486,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -545,
 				Y: -185,
 				l: 16,
-				t: 21,
+				t: 143,
 				id: 732,
 				fort: 4
 			},
@@ -26494,7 +26494,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -185,
 				Y: -545,
 				l: 16,
-				t: 21,
+				t: 143,
 				id: 733,
 				fort: 4
 			},
@@ -26981,16 +26981,16 @@ export const moloch: Record<number, SaveData> = {
 			1373: {
 				X: -365,
 				Y: -365,
-				l: 14,
-				t: 25,
+				l: 6,
+				t: 136,
 				id: 1373,
 				fort: 4
 			},
 			1375: {
 				X: -725,
 				Y: -365,
-				l: 14,
-				t: 23,
+				l: 12,
+				t: 129,
 				id: 1375,
 				fort: 4
 			},
@@ -26998,7 +26998,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 105,
 				Y: -175,
 				l: 14,
-				t: 118,
+				t: 25,
 				id: 1376,
 				fort: 4
 			},
@@ -27006,23 +27006,23 @@ export const moloch: Record<number, SaveData> = {
 				X: -175,
 				Y: -175,
 				l: 14,
-				t: 118,
+				t: 25,
 				id: 1377,
 				fort: 4
 			},
 			1378: {
 				X: 295,
 				Y: -35,
-				l: 14,
-				t: 115,
+				l: 10,
+				t: 146,
 				id: 1378,
 				fort: 4
 			},
 			1379: {
 				X: -30,
 				Y: -360,
-				l: 14,
-				t: 115,
+				l: 10,
+				t: 146,
 				id: 1379,
 				fort: 4
 			},
@@ -27052,7 +27052,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 475,
 				Y: -185,
 				l: 16,
-				t: 21,
+				t: 143,
 				id: 1523,
 				fort: 4
 			},
@@ -27082,7 +27082,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -545,
 				Y: 115,
 				l: 16,
-				t: 21,
+				t: 143,
 				id: 1783,
 				fort: 4
 			},
@@ -27134,31 +27134,31 @@ export const moloch: Record<number, SaveData> = {
 				X: -185,
 				Y: 475,
 				l: 16,
-				t: 21,
+				t: 143,
 				id: 2009,
 				fort: 4
 			},
 			2516: {
 				X: 295,
 				Y: -365,
-				l: 14,
-				t: 25,
+				l: 6,
+				t: 136,
 				id: 2516,
 				fort: 4
 			},
 			2517: {
 				X: 655,
 				Y: 295,
-				l: 14,
-				t: 23,
+				l: 12,
+				t: 129,
 				id: 2517,
 				fort: 4
 			},
 			2518: {
 				X: 295,
 				Y: -725,
-				l: 14,
-				t: 23,
+				l: 12,
+				t: 129,
 				id: 2518,
 				fort: 4
 			},
@@ -28191,8 +28191,8 @@ export const moloch: Record<number, SaveData> = {
 			4067: {
 				X: 295,
 				Y: 295,
-				l: 14,
-				t: 25,
+				l: 6,
+				t: 136,
 				id: 4067,
 				fort: 4
 			},
@@ -28205,16 +28205,16 @@ export const moloch: Record<number, SaveData> = {
 			4516: {
 				X: -365,
 				Y: 655,
-				l: 14,
-				t: 23,
+				l: 12,
+				t: 129,
 				id: 4516,
 				fort: 4
 			},
 			4517: {
 				X: -365,
 				Y: 295,
-				l: 14,
-				t: 25,
+				l: 6,
+				t: 136,
 				id: 4517,
 				fort: 4
 			},
@@ -28777,7 +28777,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 105,
 				Y: 105,
 				l: 14,
-				t: 118,
+				t: 25,
 				id: 4917,
 				fort: 4
 			},
@@ -28785,23 +28785,23 @@ export const moloch: Record<number, SaveData> = {
 				X: -175,
 				Y: 105,
 				l: 14,
-				t: 118,
+				t: 25,
 				id: 4918,
 				fort: 4
 			},
 			4919: {
 				X: -365,
 				Y: -35,
-				l: 14,
-				t: 115,
+				l: 10,
+				t: 146,
 				id: 4919,
 				fort: 4
 			},
 			4920: {
 				X: -35,
 				Y: 295,
-				l: 14,
-				t: 115,
+				l: 10,
+				t: 146,
 				id: 4920,
 				fort: 4
 			},
@@ -30453,32 +30453,32 @@ export const moloch: Record<number, SaveData> = {
 			5853: {
 				X: -725,
 				Y: 295,
-				l: 14,
-				t: 23,
+				l: 12,
+				t: 129,
 				id: 5853,
 				fort: 4
 			},
 			5854: {
 				X: -365,
 				Y: -725,
-				l: 14,
-				t: 23,
+				l: 12,
+				t: 129,
 				id: 5854,
 				fort: 4
 			},
 			5855: {
 				X: 655,
 				Y: -365,
-				l: 14,
-				t: 23,
+				l: 12,
+				t: 129,
 				id: 5855,
 				fort: 4
 			},
 			5856: {
 				X: 295,
 				Y: 655,
-				l: 14,
-				t: 23,
+				l: 12,
+				t: 129,
 				id: 5856,
 				fort: 4
 			},
@@ -30822,7 +30822,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -175,
 				Y: -35,
 				l: 16,
-				t: 20,
+				t: 142,
 				id: 7118,
 				fort: 4
 			},
@@ -30830,7 +30830,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -35,
 				Y: 105,
 				l: 16,
-				t: 20,
+				t: 142,
 				id: 7119,
 				fort: 4
 			},
@@ -30838,7 +30838,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -35,
 				Y: -175,
 				l: 16,
-				t: 20,
+				t: 142,
 				id: 7120,
 				fort: 4
 			},
@@ -30846,7 +30846,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 105,
 				Y: -35,
 				l: 16,
-				t: 20,
+				t: 142,
 				id: 7121,
 				fort: 4
 			},
@@ -32249,7 +32249,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -65,
 				Y: -65,
 				l: 20,
-				t: 14,
+				t: 153,
 				id: 0,
 				fort: 5
 			},
@@ -35354,16 +35354,16 @@ export const moloch: Record<number, SaveData> = {
 			519: {
 				X: -175,
 				Y: 205,
-				l: 14,
-				t: 115,
+				l: 10,
+				t: 146,
 				id: 519,
 				fort: 5
 			},
 			520: {
 				X: 205,
 				Y: -175,
-				l: 14,
-				t: 115,
+				l: 10,
+				t: 146,
 				id: 520,
 				fort: 5
 			},
@@ -35414,48 +35414,48 @@ export const moloch: Record<number, SaveData> = {
 			558: {
 				X: -175,
 				Y: -275,
-				l: 14,
-				t: 115,
+				l: 10,
+				t: 146,
 				id: 558,
 				fort: 5
 			},
 			559: {
 				X: 105,
 				Y: -275,
-				l: 14,
-				t: 115,
+				l: 10,
+				t: 146,
 				id: 559,
 				fort: 5
 			},
 			560: {
 				X: -275,
 				Y: 105,
-				l: 14,
-				t: 115,
+				l: 10,
+				t: 146,
 				id: 560,
 				fort: 5
 			},
 			561: {
 				X: 105,
 				Y: 205,
-				l: 14,
-				t: 115,
+				l: 10,
+				t: 146,
 				id: 561,
 				fort: 5
 			},
 			562: {
 				X: -275,
 				Y: -175,
-				l: 14,
-				t: 115,
+				l: 10,
+				t: 146,
 				id: 562,
 				fort: 5
 			},
 			563: {
 				X: 205,
 				Y: 105,
-				l: 14,
-				t: 115,
+				l: 10,
+				t: 146,
 				id: 563,
 				fort: 5
 			},
@@ -38693,7 +38693,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -60,
 				Y: -65,
 				l: 25,
-				t: 14,
+				t: 153,
 				id: 0,
 				fort: 5
 			},
@@ -41798,16 +41798,16 @@ export const moloch: Record<number, SaveData> = {
 			519: {
 				X: -520,
 				Y: 650,
-				l: 14,
-				t: 115,
+				l: 10,
+				t: 146,
 				id: 519,
 				fort: 5
 			},
 			520: {
 				X: 30,
 				Y: -425,
-				l: 14,
-				t: 115,
+				l: 10,
+				t: 146,
 				id: 520,
 				fort: 5
 			},
@@ -41858,48 +41858,48 @@ export const moloch: Record<number, SaveData> = {
 			558: {
 				X: -420,
 				Y: 25,
-				l: 14,
-				t: 115,
+				l: 10,
+				t: 146,
 				id: 558,
 				fort: 5
 			},
 			559: {
 				X: -420,
 				Y: -265,
-				l: 14,
-				t: 115,
+				l: 10,
+				t: 146,
 				id: 559,
 				fort: 5
 			},
 			560: {
 				X: -260,
 				Y: -425,
-				l: 14,
-				t: 115,
+				l: 10,
+				t: 146,
 				id: 560,
 				fort: 5
 			},
 			561: {
 				X: 650,
 				Y: -520,
-				l: 14,
-				t: 115,
+				l: 10,
+				t: 146,
 				id: 561,
 				fort: 5
 			},
 			562: {
 				X: 70,
 				Y: 65,
-				l: 14,
-				t: 115,
+				l: 10,
+				t: 146,
 				id: 562,
 				fort: 5
 			},
 			563: {
 				X: -710,
 				Y: -710,
-				l: 14,
-				t: 115,
+				l: 10,
+				t: 146,
 				id: 563,
 				fort: 5
 			},
@@ -44840,7 +44840,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -650,
 				Y: 520,
 				l: 20,
-				t: 14,
+				t: 153,
 				id: 998,
 				fort: 5
 			},
@@ -44875,232 +44875,232 @@ export const moloch: Record<number, SaveData> = {
 			1040: {
 				X: -120,
 				Y: -890,
-				l: 14,
-				t: 25,
+				l: 6,
+				t: 136,
 				id: 1040,
 				fort: 5
 			},
 			1041: {
 				X: 20,
 				Y: -890,
-				l: 14,
-				t: 25,
+				l: 6,
+				t: 136,
 				id: 1041,
 				fort: 5
 			},
 			1042: {
 				X: 160,
 				Y: -890,
-				l: 14,
-				t: 25,
+				l: 6,
+				t: 136,
 				id: 1042,
 				fort: 5
 			},
 			1043: {
 				X: -540,
 				Y: -890,
-				l: 14,
-				t: 25,
+				l: 6,
+				t: 136,
 				id: 1043,
 				fort: 5
 			},
 			1044: {
 				X: 440,
 				Y: -890,
-				l: 14,
-				t: 25,
+				l: 6,
+				t: 136,
 				id: 1044,
 				fort: 5
 			},
 			1045: {
 				X: -610,
 				Y: -890,
-				l: 14,
-				t: 23,
+				l: 12,
+				t: 129,
 				id: 1045,
 				fort: 5
 			},
 			1046: {
 				X: 510,
 				Y: -890,
-				l: 14,
-				t: 23,
+				l: 12,
+				t: 129,
 				id: 1046,
 				fort: 5
 			},
 			1047: {
 				X: -750,
 				Y: -890,
-				l: 14,
-				t: 23,
+				l: 12,
+				t: 129,
 				id: 1047,
 				fort: 5
 			},
 			1048: {
 				X: -260,
 				Y: -890,
-				l: 14,
-				t: 25,
+				l: 6,
+				t: 136,
 				id: 1048,
 				fort: 5
 			},
 			1049: {
 				X: 230,
 				Y: -890,
-				l: 14,
-				t: 23,
+				l: 12,
+				t: 129,
 				id: 1049,
 				fort: 5
 			},
 			1050: {
 				X: 90,
 				Y: -890,
-				l: 14,
-				t: 23,
+				l: 12,
+				t: 129,
 				id: 1050,
 				fort: 5
 			},
 			1051: {
 				X: 370,
 				Y: -890,
-				l: 14,
-				t: 23,
+				l: 12,
+				t: 129,
 				id: 1051,
 				fort: 5
 			},
 			1052: {
 				X: -470,
 				Y: -890,
-				l: 14,
-				t: 23,
+				l: 12,
+				t: 129,
 				id: 1052,
 				fort: 5
 			},
 			1053: {
 				X: -190,
 				Y: -890,
-				l: 14,
-				t: 23,
+				l: 12,
+				t: 129,
 				id: 1053,
 				fort: 5
 			},
 			1054: {
 				X: -50,
 				Y: -890,
-				l: 14,
-				t: 23,
+				l: 12,
+				t: 129,
 				id: 1054,
 				fort: 5
 			},
 			1055: {
 				X: -330,
 				Y: -890,
-				l: 14,
-				t: 23,
+				l: 12,
+				t: 129,
 				id: 1055,
 				fort: 5
 			},
 			1056: {
 				X: -820,
 				Y: -890,
-				l: 14,
-				t: 25,
+				l: 6,
+				t: 136,
 				id: 1056,
 				fort: 5
 			},
 			1057: {
 				X: -680,
 				Y: -890,
-				l: 14,
-				t: 25,
+				l: 6,
+				t: 136,
 				id: 1057,
 				fort: 5
 			},
 			1058: {
 				X: 300,
 				Y: -890,
-				l: 14,
-				t: 25,
+				l: 6,
+				t: 136,
 				id: 1058,
 				fort: 5
 			},
 			1059: {
 				X: -400,
 				Y: -890,
-				l: 14,
-				t: 25,
+				l: 6,
+				t: 136,
 				id: 1059,
 				fort: 5
 			},
 			1060: {
 				X: -890,
 				Y: -330,
-				l: 14,
-				t: 23,
+				l: 12,
+				t: 129,
 				id: 1060,
 				fort: 5
 			},
 			1061: {
 				X: -890,
 				Y: 90,
-				l: 14,
-				t: 23,
+				l: 12,
+				t: 129,
 				id: 1061,
 				fort: 5
 			},
 			1062: {
 				X: -890,
 				Y: -470,
-				l: 14,
-				t: 23,
+				l: 12,
+				t: 129,
 				id: 1062,
 				fort: 5
 			},
 			1063: {
 				X: -890,
 				Y: -50,
-				l: 14,
-				t: 23,
+				l: 12,
+				t: 129,
 				id: 1063,
 				fort: 5
 			},
 			1064: {
 				X: -890,
 				Y: -750,
-				l: 14,
-				t: 23,
+				l: 12,
+				t: 129,
 				id: 1064,
 				fort: 5
 			},
 			1065: {
 				X: 650,
 				Y: -890,
-				l: 14,
-				t: 23,
+				l: 12,
+				t: 129,
 				id: 1065,
 				fort: 5
 			},
 			1066: {
 				X: -890,
 				Y: -610,
-				l: 14,
-				t: 23,
+				l: 12,
+				t: 129,
 				id: 1066,
 				fort: 5
 			},
 			1067: {
 				X: -890,
 				Y: -190,
-				l: 14,
-				t: 23,
+				l: 12,
+				t: 129,
 				id: 1067,
 				fort: 5
 			},
 			1068: {
 				X: -890,
 				Y: 230,
-				l: 14,
-				t: 23,
+				l: 12,
+				t: 129,
 				id: 1068,
 				fort: 5
 			},
@@ -45113,504 +45113,504 @@ export const moloch: Record<number, SaveData> = {
 			1070: {
 				X: 580,
 				Y: -890,
-				l: 14,
-				t: 25,
+				l: 6,
+				t: 136,
 				id: 1070,
 				fort: 5
 			},
 			1071: {
 				X: 720,
 				Y: -890,
-				l: 14,
-				t: 25,
+				l: 6,
+				t: 136,
 				id: 1071,
 				fort: 5
 			},
 			1072: {
 				X: -890,
 				Y: -820,
-				l: 14,
-				t: 25,
+				l: 6,
+				t: 136,
 				id: 1072,
 				fort: 5
 			},
 			1073: {
 				X: -890,
 				Y: -680,
-				l: 14,
-				t: 25,
+				l: 6,
+				t: 136,
 				id: 1073,
 				fort: 5
 			},
 			1074: {
 				X: -890,
 				Y: -540,
-				l: 14,
-				t: 25,
+				l: 6,
+				t: 136,
 				id: 1074,
 				fort: 5
 			},
 			1075: {
 				X: -890,
 				Y: -400,
-				l: 14,
-				t: 25,
+				l: 6,
+				t: 136,
 				id: 1075,
 				fort: 5
 			},
 			1076: {
 				X: -890,
 				Y: -260,
-				l: 14,
-				t: 25,
+				l: 6,
+				t: 136,
 				id: 1076,
 				fort: 5
 			},
 			1077: {
 				X: -890,
 				Y: -120,
-				l: 14,
-				t: 25,
+				l: 6,
+				t: 136,
 				id: 1077,
 				fort: 5
 			},
 			1078: {
 				X: -890,
 				Y: 20,
-				l: 14,
-				t: 25,
+				l: 6,
+				t: 136,
 				id: 1078,
 				fort: 5
 			},
 			1079: {
 				X: -890,
 				Y: 160,
-				l: 14,
-				t: 25,
+				l: 6,
+				t: 136,
 				id: 1079,
 				fort: 5
 			},
 			1080: {
 				X: -890,
 				Y: 300,
-				l: 14,
-				t: 25,
+				l: 6,
+				t: 136,
 				id: 1080,
 				fort: 5
 			},
 			1081: {
 				X: -890,
 				Y: 370,
-				l: 14,
-				t: 23,
+				l: 12,
+				t: 129,
 				id: 1081,
 				fort: 5
 			},
 			1082: {
 				X: -890,
 				Y: 440,
-				l: 14,
-				t: 25,
+				l: 6,
+				t: 136,
 				id: 1082,
 				fort: 5
 			},
 			1083: {
 				X: -890,
 				Y: 510,
-				l: 14,
-				t: 23,
+				l: 12,
+				t: 129,
 				id: 1083,
 				fort: 5
 			},
 			1084: {
 				X: -890,
 				Y: 580,
-				l: 14,
-				t: 25,
+				l: 6,
+				t: 136,
 				id: 1084,
 				fort: 5
 			},
 			1085: {
 				X: -890,
 				Y: 650,
-				l: 14,
-				t: 23,
+				l: 12,
+				t: 129,
 				id: 1085,
 				fort: 5
 			},
 			1086: {
 				X: -890,
 				Y: 720,
-				l: 14,
-				t: 25,
+				l: 6,
+				t: 136,
 				id: 1086,
 				fort: 5
 			},
 			1087: {
 				X: 820,
 				Y: 750,
-				l: 14,
-				t: 25,
+				l: 6,
+				t: 136,
 				id: 1087,
 				fort: 5
 			},
 			1088: {
 				X: 750,
 				Y: 820,
-				l: 14,
-				t: 25,
+				l: 6,
+				t: 136,
 				id: 1088,
 				fort: 5
 			},
 			1089: {
 				X: 820,
 				Y: 680,
-				l: 14,
-				t: 23,
+				l: 12,
+				t: 129,
 				id: 1089,
 				fort: 5
 			},
 			1090: {
 				X: 820,
 				Y: 610,
-				l: 14,
-				t: 25,
+				l: 6,
+				t: 136,
 				id: 1090,
 				fort: 5
 			},
 			1091: {
 				X: 820,
 				Y: 540,
-				l: 14,
-				t: 23,
+				l: 12,
+				t: 129,
 				id: 1091,
 				fort: 5
 			},
 			1092: {
 				X: 820,
 				Y: 470,
-				l: 14,
-				t: 25,
+				l: 6,
+				t: 136,
 				id: 1092,
 				fort: 5
 			},
 			1093: {
 				X: 820,
 				Y: 400,
-				l: 14,
-				t: 23,
+				l: 12,
+				t: 129,
 				id: 1093,
 				fort: 5
 			},
 			1094: {
 				X: 820,
 				Y: 330,
-				l: 14,
-				t: 25,
+				l: 6,
+				t: 136,
 				id: 1094,
 				fort: 5
 			},
 			1095: {
 				X: 820,
 				Y: 260,
-				l: 14,
-				t: 23,
+				l: 12,
+				t: 129,
 				id: 1095,
 				fort: 5
 			},
 			1096: {
 				X: 820,
 				Y: 190,
-				l: 14,
-				t: 25,
+				l: 6,
+				t: 136,
 				id: 1096,
 				fort: 5
 			},
 			1097: {
 				X: 820,
 				Y: 120,
-				l: 14,
-				t: 23,
+				l: 12,
+				t: 129,
 				id: 1097,
 				fort: 5
 			},
 			1098: {
 				X: 820,
 				Y: 50,
-				l: 14,
-				t: 25,
+				l: 6,
+				t: 136,
 				id: 1098,
 				fort: 5
 			},
 			1099: {
 				X: 820,
 				Y: -20,
-				l: 14,
-				t: 23,
+				l: 12,
+				t: 129,
 				id: 1099,
 				fort: 5
 			},
 			1100: {
 				X: 820,
 				Y: -90,
-				l: 14,
-				t: 25,
+				l: 6,
+				t: 136,
 				id: 1100,
 				fort: 5
 			},
 			1101: {
 				X: 820,
 				Y: -160,
-				l: 14,
-				t: 23,
+				l: 12,
+				t: 129,
 				id: 1101,
 				fort: 5
 			},
 			1102: {
 				X: 820,
 				Y: -230,
-				l: 14,
-				t: 25,
+				l: 6,
+				t: 136,
 				id: 1102,
 				fort: 5
 			},
 			1103: {
 				X: 820,
 				Y: -300,
-				l: 14,
-				t: 23,
+				l: 12,
+				t: 129,
 				id: 1103,
 				fort: 5
 			},
 			1104: {
 				X: 820,
 				Y: -370,
-				l: 14,
-				t: 25,
+				l: 6,
+				t: 136,
 				id: 1104,
 				fort: 5
 			},
 			1105: {
 				X: 820,
 				Y: -440,
-				l: 14,
-				t: 23,
+				l: 12,
+				t: 129,
 				id: 1105,
 				fort: 5
 			},
 			1106: {
 				X: 820,
 				Y: -510,
-				l: 14,
-				t: 25,
+				l: 6,
+				t: 136,
 				id: 1106,
 				fort: 5
 			},
 			1107: {
 				X: 820,
 				Y: -580,
-				l: 14,
-				t: 23,
+				l: 12,
+				t: 129,
 				id: 1107,
 				fort: 5
 			},
 			1108: {
 				X: 820,
 				Y: -650,
-				l: 14,
-				t: 25,
+				l: 6,
+				t: 136,
 				id: 1108,
 				fort: 5
 			},
 			1109: {
 				X: 820,
 				Y: -720,
-				l: 14,
-				t: 23,
+				l: 12,
+				t: 129,
 				id: 1109,
 				fort: 5
 			},
 			1110: {
 				X: 820,
 				Y: -790,
-				l: 14,
-				t: 25,
+				l: 6,
+				t: 136,
 				id: 1110,
 				fort: 5
 			},
 			1111: {
 				X: 680,
 				Y: 820,
-				l: 14,
-				t: 23,
+				l: 12,
+				t: 129,
 				id: 1111,
 				fort: 5
 			},
 			1112: {
 				X: 610,
 				Y: 820,
-				l: 14,
-				t: 25,
+				l: 6,
+				t: 136,
 				id: 1112,
 				fort: 5
 			},
 			1113: {
 				X: 540,
 				Y: 820,
-				l: 14,
-				t: 23,
+				l: 12,
+				t: 129,
 				id: 1113,
 				fort: 5
 			},
 			1114: {
 				X: 470,
 				Y: 820,
-				l: 14,
-				t: 25,
+				l: 6,
+				t: 136,
 				id: 1114,
 				fort: 5
 			},
 			1115: {
 				X: 400,
 				Y: 820,
-				l: 14,
-				t: 23,
+				l: 12,
+				t: 129,
 				id: 1115,
 				fort: 5
 			},
 			1116: {
 				X: 330,
 				Y: 820,
-				l: 14,
-				t: 25,
+				l: 6,
+				t: 136,
 				id: 1116,
 				fort: 5
 			},
 			1117: {
 				X: 260,
 				Y: 820,
-				l: 14,
-				t: 23,
+				l: 12,
+				t: 129,
 				id: 1117,
 				fort: 5
 			},
 			1118: {
 				X: 190,
 				Y: 820,
-				l: 14,
-				t: 25,
+				l: 6,
+				t: 136,
 				id: 1118,
 				fort: 5
 			},
 			1119: {
 				X: 120,
 				Y: 820,
-				l: 14,
-				t: 23,
+				l: 12,
+				t: 129,
 				id: 1119,
 				fort: 5
 			},
 			1120: {
 				X: 50,
 				Y: 820,
-				l: 14,
-				t: 25,
+				l: 6,
+				t: 136,
 				id: 1120,
 				fort: 5
 			},
 			1121: {
 				X: -20,
 				Y: 820,
-				l: 14,
-				t: 23,
+				l: 12,
+				t: 129,
 				id: 1121,
 				fort: 5
 			},
 			1122: {
 				X: -90,
 				Y: 820,
-				l: 14,
-				t: 25,
+				l: 6,
+				t: 136,
 				id: 1122,
 				fort: 5
 			},
 			1123: {
 				X: -160,
 				Y: 820,
-				l: 14,
-				t: 23,
+				l: 12,
+				t: 129,
 				id: 1123,
 				fort: 5
 			},
 			1124: {
 				X: -230,
 				Y: 820,
-				l: 14,
-				t: 25,
+				l: 6,
+				t: 136,
 				id: 1124,
 				fort: 5
 			},
 			1125: {
 				X: -300,
 				Y: 820,
-				l: 14,
-				t: 23,
+				l: 12,
+				t: 129,
 				id: 1125,
 				fort: 5
 			},
 			1126: {
 				X: -370,
 				Y: 820,
-				l: 14,
-				t: 25,
+				l: 6,
+				t: 136,
 				id: 1126,
 				fort: 5
 			},
 			1127: {
 				X: -440,
 				Y: 820,
-				l: 14,
-				t: 23,
+				l: 12,
+				t: 129,
 				id: 1127,
 				fort: 5
 			},
 			1128: {
 				X: -510,
 				Y: 820,
-				l: 14,
-				t: 25,
+				l: 6,
+				t: 136,
 				id: 1128,
 				fort: 5
 			},
 			1129: {
 				X: -580,
 				Y: 820,
-				l: 14,
-				t: 23,
+				l: 12,
+				t: 129,
 				id: 1129,
 				fort: 5
 			},
 			1130: {
 				X: -650,
 				Y: 820,
-				l: 14,
-				t: 25,
+				l: 6,
+				t: 136,
 				id: 1130,
 				fort: 5
 			},
 			1131: {
 				X: -720,
 				Y: 820,
-				l: 14,
-				t: 23,
+				l: 12,
+				t: 129,
 				id: 1131,
 				fort: 5
 			},
 			1132: {
 				X: -790,
 				Y: 820,
-				l: 14,
-				t: 25,
+				l: 6,
+				t: 136,
 				id: 1132,
 				fort: 5
 			},
@@ -45618,7 +45618,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 580,
 				Y: 580,
 				l: 15,
-				t: 14,
+				t: 153,
 				id: 1133,
 				fort: 5
 			},
@@ -45626,7 +45626,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 520,
 				Y: -650,
 				l: 20,
-				t: 14,
+				t: 153,
 				id: 1134,
 				fort: 5
 			},
@@ -45814,7 +45814,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -730,
 				Y: -550,
 				l: 16,
-				t: 21,
+				t: 143,
 				id: 1155,
 				fort: 5
 			},
@@ -45822,7 +45822,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -550,
 				Y: -730,
 				l: 16,
-				t: 21,
+				t: 143,
 				id: 1156,
 				fort: 5
 			},
@@ -45830,7 +45830,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -800,
 				Y: 550,
 				l: 16,
-				t: 21,
+				t: 143,
 				id: 1157,
 				fort: 5
 			},
@@ -45838,7 +45838,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -620,
 				Y: 730,
 				l: 16,
-				t: 21,
+				t: 143,
 				id: 1158,
 				fort: 5
 			},
@@ -45846,7 +45846,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 310,
 				Y: 660,
 				l: 16,
-				t: 21,
+				t: 143,
 				id: 1159,
 				fort: 5
 			},
@@ -45854,7 +45854,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 660,
 				Y: 310,
 				l: 16,
-				t: 21,
+				t: 143,
 				id: 1160,
 				fort: 5
 			},
@@ -45862,7 +45862,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 580,
 				Y: -450,
 				l: 16,
-				t: 21,
+				t: 143,
 				id: 1161,
 				fort: 5
 			},
@@ -45870,7 +45870,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 380,
 				Y: -650,
 				l: 16,
-				t: 21,
+				t: 143,
 				id: 1162,
 				fort: 5
 			},
@@ -45941,7 +45941,7 @@ export const moloch: Record<number, SaveData> = {
 			1171: {
 				X: 715,
 				Y: 715,
-				l: 12,
+				l: 10,
 				t: 129,
 				id: 1171,
 				fort: 5
@@ -45950,7 +45950,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -450,
 				Y: 510,
 				l: 14,
-				t: 118,
+				t: 25,
 				id: 1172,
 				fort: 5
 			},
@@ -45958,7 +45958,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -580,
 				Y: 380,
 				l: 14,
-				t: 118,
+				t: 25,
 				id: 1173,
 				fort: 5
 			},
@@ -45966,7 +45966,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 440,
 				Y: 590,
 				l: 14,
-				t: 118,
+				t: 25,
 				id: 1174,
 				fort: 5
 			},
@@ -45974,7 +45974,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 590,
 				Y: 440,
 				l: 14,
-				t: 118,
+				t: 25,
 				id: 1175,
 				fort: 5
 			},
@@ -45982,7 +45982,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 510,
 				Y: -380,
 				l: 14,
-				t: 118,
+				t: 25,
 				id: 1176,
 				fort: 5
 			},
@@ -45990,7 +45990,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 380,
 				Y: -510,
 				l: 14,
-				t: 118,
+				t: 25,
 				id: 1177,
 				fort: 5
 			},
@@ -45998,7 +45998,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -480,
 				Y: -660,
 				l: 14,
-				t: 118,
+				t: 25,
 				id: 1178,
 				fort: 5
 			},
@@ -46006,7 +46006,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -660,
 				Y: -480,
 				l: 14,
-				t: 118,
+				t: 25,
 				id: 1179,
 				fort: 5
 			},
@@ -46014,7 +46014,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -260,
 				Y: 190,
 				l: 16,
-				t: 21,
+				t: 143,
 				id: 1180,
 				fort: 5
 			},
@@ -46022,7 +46022,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 185,
 				Y: -265,
 				l: 16,
-				t: 21,
+				t: 143,
 				id: 1181,
 				fort: 5
 			},
@@ -46045,7 +46045,7 @@ export const moloch: Record<number, SaveData> = {
 			1184: {
 				X: -490,
 				Y: 100,
-				l: 12,
+				l: 10,
 				t: 129,
 				id: 1184,
 				fort: 5
@@ -46053,7 +46053,7 @@ export const moloch: Record<number, SaveData> = {
 			1185: {
 				X: 100,
 				Y: -490,
-				l: 12,
+				l: 10,
 				t: 129,
 				id: 1185,
 				fort: 5
@@ -46061,7 +46061,7 @@ export const moloch: Record<number, SaveData> = {
 			1186: {
 				X: 545,
 				Y: -795,
-				l: 12,
+				l: 10,
 				t: 129,
 				id: 1186,
 				fort: 5
@@ -46069,7 +46069,7 @@ export const moloch: Record<number, SaveData> = {
 			1187: {
 				X: 725,
 				Y: -615,
-				l: 12,
+				l: 10,
 				t: 129,
 				id: 1187,
 				fort: 5
@@ -46077,7 +46077,7 @@ export const moloch: Record<number, SaveData> = {
 			1188: {
 				X: -550,
 				Y: 730,
-				l: 12,
+				l: 10,
 				t: 129,
 				id: 1188,
 				fort: 5
@@ -46085,7 +46085,7 @@ export const moloch: Record<number, SaveData> = {
 			1189: {
 				X: -660,
 				Y: -590,
-				l: 12,
+				l: 10,
 				t: 129,
 				id: 1189,
 				fort: 5
@@ -46093,7 +46093,7 @@ export const moloch: Record<number, SaveData> = {
 			1190: {
 				X: -580,
 				Y: -660,
-				l: 12,
+				l: 10,
 				t: 129,
 				id: 1190,
 				fort: 5
@@ -46102,7 +46102,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -380,
 				Y: 650,
 				l: 16,
-				t: 20,
+				t: 142,
 				id: 1191,
 				fort: 5
 			},
@@ -46110,7 +46110,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -670,
 				Y: 360,
 				l: 16,
-				t: 20,
+				t: 142,
 				id: 1192,
 				fort: 5
 			},
@@ -46118,7 +46118,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -490,
 				Y: -200,
 				l: 16,
-				t: 20,
+				t: 142,
 				id: 1193,
 				fort: 5
 			},
@@ -46126,7 +46126,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -195,
 				Y: -495,
 				l: 16,
-				t: 20,
+				t: 142,
 				id: 1194,
 				fort: 5
 			},
@@ -46134,7 +46134,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 590,
 				Y: 310,
 				l: 16,
-				t: 20,
+				t: 142,
 				id: 1195,
 				fort: 5
 			},
@@ -46142,39 +46142,39 @@ export const moloch: Record<number, SaveData> = {
 				X: 310,
 				Y: 590,
 				l: 16,
-				t: 20,
+				t: 142,
 				id: 1196,
 				fort: 5
 			},
 			1197: {
 				X: -335,
 				Y: -265,
-				l: 14,
-				t: 25,
+				l: 6,
+				t: 136,
 				id: 1197,
 				fort: 5
 			},
 			1198: {
 				X: -260,
 				Y: -340,
-				l: 14,
-				t: 25,
+				l: 6,
+				t: 136,
 				id: 1198,
 				fort: 5
 			},
 			1199: {
 				X: -335,
 				Y: -195,
-				l: 14,
-				t: 23,
+				l: 12,
+				t: 129,
 				id: 1199,
 				fort: 5
 			},
 			1200: {
 				X: -190,
 				Y: -340,
-				l: 14,
-				t: 23,
+				l: 12,
+				t: 129,
 				id: 1200,
 				fort: 5
 			},
@@ -46212,7 +46212,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 460,
 				Y: -50,
 				l: 25,
-				t: 6,
+				t: 151,
 				id: 1207,
 				fort: 5
 			},
@@ -46220,7 +46220,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -45,
 				Y: 465,
 				l: 25,
-				t: 6,
+				t: 151,
 				id: 1208,
 				fort: 5
 			},
@@ -46228,7 +46228,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 540,
 				Y: -130,
 				l: 25,
-				t: 6,
+				t: 151,
 				id: 1209,
 				fort: 5
 			},
@@ -46236,7 +46236,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -125,
 				Y: 545,
 				l: 25,
-				t: 6,
+				t: 151,
 				id: 1210,
 				fort: 5
 			},
@@ -46244,7 +46244,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -415,
 				Y: -195,
 				l: 25,
-				t: 6,
+				t: 151,
 				id: 1211,
 				fort: 5
 			},
@@ -46252,7 +46252,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -190,
 				Y: -420,
 				l: 25,
-				t: 6,
+				t: 151,
 				id: 1212,
 				fort: 5
 			},
@@ -46260,7 +46260,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -380,
 				Y: 440,
 				l: 16,
-				t: 21,
+				t: 143,
 				id: 1213,
 				fort: 5
 			},
@@ -46268,7 +46268,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -310,
 				Y: 510,
 				l: 16,
-				t: 21,
+				t: 143,
 				id: 1214,
 				fort: 5
 			},
@@ -46276,7 +46276,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -240,
 				Y: 440,
 				l: 16,
-				t: 21,
+				t: 143,
 				id: 1215,
 				fort: 5
 			},
@@ -46284,7 +46284,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 440,
 				Y: -310,
 				l: 16,
-				t: 21,
+				t: 143,
 				id: 1216,
 				fort: 5
 			},
@@ -46292,7 +46292,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 510,
 				Y: -240,
 				l: 16,
-				t: 21,
+				t: 143,
 				id: 1217,
 				fort: 5
 			},
@@ -46300,7 +46300,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 580,
 				Y: -310,
 				l: 16,
-				t: 21,
+				t: 143,
 				id: 1218,
 				fort: 5
 			},
@@ -46308,7 +46308,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -135,
 				Y: -5,
 				l: 16,
-				t: 20,
+				t: 142,
 				id: 1219,
 				fort: 5
 			},
@@ -46316,23 +46316,23 @@ export const moloch: Record<number, SaveData> = {
 				X: 0,
 				Y: -140,
 				l: 16,
-				t: 20,
+				t: 142,
 				id: 1220,
 				fort: 5
 			},
 			1223: {
 				X: -115,
 				Y: 475,
-				l: 14,
-				t: 25,
+				l: 6,
+				t: 136,
 				id: 1223,
 				fort: 5
 			},
 			1224: {
 				X: 540,
 				Y: -50,
-				l: 14,
-				t: 25,
+				l: 6,
+				t: 136,
 				id: 1224,
 				fort: 5
 			},
@@ -46340,7 +46340,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -240,
 				Y: -60,
 				l: 14,
-				t: 118,
+				t: 25,
 				id: 1225,
 				fort: 5
 			},
@@ -46348,14 +46348,14 @@ export const moloch: Record<number, SaveData> = {
 				X: -60,
 				Y: -240,
 				l: 14,
-				t: 118,
+				t: 25,
 				id: 1226,
 				fort: 5
 			},
 			1227: {
 				X: -340,
 				Y: -440,
-				l: 12,
+				l: 10,
 				t: 129,
 				id: 1227,
 				fort: 5
@@ -46363,7 +46363,7 @@ export const moloch: Record<number, SaveData> = {
 			1228: {
 				X: -435,
 				Y: -345,
-				l: 12,
+				l: 10,
 				t: 129,
 				id: 1228,
 				fort: 5
@@ -46371,16 +46371,16 @@ export const moloch: Record<number, SaveData> = {
 			1229: {
 				X: -45,
 				Y: 545,
-				l: 14,
-				t: 23,
+				l: 12,
+				t: 129,
 				id: 1229,
 				fort: 5
 			},
 			1230: {
 				X: 470,
 				Y: -120,
-				l: 14,
-				t: 23,
+				l: 12,
+				t: 129,
 				id: 1230,
 				fort: 5
 			},
@@ -46404,7 +46404,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -310,
 				Y: 370,
 				l: 16,
-				t: 20,
+				t: 142,
 				id: 1233,
 				fort: 5
 			},
@@ -46412,7 +46412,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 510,
 				Y: -310,
 				l: 16,
-				t: 20,
+				t: 142,
 				id: 1234,
 				fort: 5
 			},
@@ -46436,7 +46436,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 25,
 				Y: 615,
 				l: 16,
-				t: 21,
+				t: 143,
 				id: 1237,
 				fort: 5
 			},
@@ -46444,7 +46444,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 610,
 				Y: 20,
 				l: 16,
-				t: 21,
+				t: 143,
 				id: 1238,
 				fort: 5
 			},
@@ -46452,7 +46452,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 375,
 				Y: 515,
 				l: 16,
-				t: 21,
+				t: 143,
 				id: 1239,
 				fort: 5
 			},
@@ -46460,14 +46460,14 @@ export const moloch: Record<number, SaveData> = {
 				X: 520,
 				Y: 380,
 				l: 16,
-				t: 21,
+				t: 143,
 				id: 1240,
 				fort: 5
 			},
 			1241: {
 				X: 250,
 				Y: 420,
-				l: 12,
+				l: 10,
 				t: 129,
 				id: 1241,
 				fort: 5
@@ -46475,7 +46475,7 @@ export const moloch: Record<number, SaveData> = {
 			1242: {
 				X: -800,
 				Y: 60,
-				l: 12,
+				l: 10,
 				t: 129,
 				id: 1242,
 				fort: 5
@@ -46483,7 +46483,7 @@ export const moloch: Record<number, SaveData> = {
 			1243: {
 				X: 25,
 				Y: -795,
-				l: 12,
+				l: 10,
 				t: 129,
 				id: 1243,
 				fort: 5
@@ -46491,7 +46491,7 @@ export const moloch: Record<number, SaveData> = {
 			1244: {
 				X: 430,
 				Y: 240,
-				l: 12,
+				l: 10,
 				t: 129,
 				id: 1244,
 				fort: 5
@@ -46500,7 +46500,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 75,
 				Y: 465,
 				l: 14,
-				t: 118,
+				t: 25,
 				id: 1245,
 				fort: 5
 			},
@@ -46508,7 +46508,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 460,
 				Y: 80,
 				l: 14,
-				t: 118,
+				t: 25,
 				id: 1246,
 				fort: 5
 			},
@@ -46516,7 +46516,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 315,
 				Y: -205,
 				l: 14,
-				t: 118,
+				t: 25,
 				id: 1247,
 				fort: 5
 			},
@@ -46524,7 +46524,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -185,
 				Y: 305,
 				l: 14,
-				t: 118,
+				t: 25,
 				id: 1248,
 				fort: 5
 			},
@@ -46586,7 +46586,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -800,
 				Y: -410,
 				l: 16,
-				t: 20,
+				t: 142,
 				id: 1256,
 				fort: 5
 			},
@@ -46594,7 +46594,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -800,
 				Y: -620,
 				l: 16,
-				t: 20,
+				t: 142,
 				id: 1257,
 				fort: 5
 			},
@@ -46602,7 +46602,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -620,
 				Y: -800,
 				l: 16,
-				t: 20,
+				t: 142,
 				id: 1258,
 				fort: 5
 			},
@@ -46610,7 +46610,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -455,
 				Y: -795,
 				l: 16,
-				t: 20,
+				t: 142,
 				id: 1259,
 				fort: 5
 			},
@@ -46618,7 +46618,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 680,
 				Y: 90,
 				l: 16,
-				t: 20,
+				t: 142,
 				id: 1260,
 				fort: 5
 			},
@@ -46626,7 +46626,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 95,
 				Y: 685,
 				l: 16,
-				t: 20,
+				t: 142,
 				id: 1261,
 				fort: 5
 			},
@@ -46634,7 +46634,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -705,
 				Y: -375,
 				l: 16,
-				t: 21,
+				t: 143,
 				id: 1262,
 				fort: 5
 			},
@@ -46642,7 +46642,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -395,
 				Y: -705,
 				l: 16,
-				t: 21,
+				t: 143,
 				id: 1263,
 				fort: 5
 			},
@@ -46650,7 +46650,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -85,
 				Y: 665,
 				l: 16,
-				t: 21,
+				t: 143,
 				id: 1264,
 				fort: 5
 			},
@@ -46658,7 +46658,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 665,
 				Y: -85,
 				l: 16,
-				t: 21,
+				t: 143,
 				id: 1265,
 				fort: 5
 			},
@@ -46666,7 +46666,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -225,
 				Y: -695,
 				l: 16,
-				t: 21,
+				t: 143,
 				id: 1266,
 				fort: 5
 			},
@@ -46674,7 +46674,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -695,
 				Y: -185,
 				l: 16,
-				t: 21,
+				t: 143,
 				id: 1267,
 				fort: 5
 			},
@@ -46682,7 +46682,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 140,
 				Y: -580,
 				l: 16,
-				t: 21,
+				t: 143,
 				id: 1268,
 				fort: 5
 			},
@@ -46690,7 +46690,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -565,
 				Y: 145,
 				l: 16,
-				t: 21,
+				t: 143,
 				id: 1269,
 				fort: 5
 			},
@@ -46698,7 +46698,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -490,
 				Y: 0,
 				l: 16,
-				t: 21,
+				t: 143,
 				id: 1270,
 				fort: 5
 			},
@@ -46706,14 +46706,14 @@ export const moloch: Record<number, SaveData> = {
 				X: 5,
 				Y: -495,
 				l: 16,
-				t: 21,
+				t: 143,
 				id: 1271,
 				fort: 5
 			},
 			1272: {
 				X: 445,
 				Y: 445,
-				l: 12,
+				l: 10,
 				t: 129,
 				id: 1272,
 				fort: 5
@@ -46738,7 +46738,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 335,
 				Y: -315,
 				l: 16,
-				t: 20,
+				t: 142,
 				id: 1275,
 				fort: 5
 			},
@@ -46746,7 +46746,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 350,
 				Y: -420,
 				l: 16,
-				t: 20,
+				t: 142,
 				id: 1276,
 				fort: 5
 			},
@@ -46754,7 +46754,7 @@ export const moloch: Record<number, SaveData> = {
 				X: 690,
 				Y: -280,
 				l: 16,
-				t: 20,
+				t: 142,
 				id: 1277,
 				fort: 5
 			},
@@ -46762,7 +46762,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -220,
 				Y: 540,
 				l: 16,
-				t: 20,
+				t: 142,
 				id: 1278,
 				fort: 5
 			},
@@ -46770,7 +46770,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -660,
 				Y: -270,
 				l: 16,
-				t: 20,
+				t: 142,
 				id: 1279,
 				fort: 5
 			},
@@ -46778,7 +46778,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -310,
 				Y: -660,
 				l: 16,
-				t: 20,
+				t: 142,
 				id: 1280,
 				fort: 5
 			},
@@ -46786,7 +46786,7 @@ export const moloch: Record<number, SaveData> = {
 				X: -710,
 				Y: -790,
 				l: 14,
-				t: 118,
+				t: 25,
 				id: 1281,
 				fort: 5
 			},
@@ -46794,78 +46794,78 @@ export const moloch: Record<number, SaveData> = {
 				X: -780,
 				Y: -700,
 				l: 14,
-				t: 118,
+				t: 25,
 				id: 1282,
 				fort: 5
 			},
 			1283: {
 				X: 420,
 				Y: -210,
-				l: 14,
-				t: 25,
+				l: 6,
+				t: 136,
 				id: 1283,
 				fort: 5
 			},
 			1284: {
 				X: 565,
 				Y: 105,
-				l: 14,
-				t: 25,
+				l: 6,
+				t: 136,
 				id: 1284,
 				fort: 5
 			},
 			1285: {
 				X: 145,
 				Y: 145,
-				l: 14,
-				t: 25,
+				l: 6,
+				t: 136,
 				id: 1285,
 				fort: 5
 			},
 			1286: {
 				X: 425,
 				Y: 355,
-				l: 14,
-				t: 25,
+				l: 6,
+				t: 136,
 				id: 1286,
 				fort: 5
 			},
 			1287: {
 				X: 355,
 				Y: 425,
-				l: 14,
-				t: 25,
+				l: 6,
+				t: 136,
 				id: 1287,
 				fort: 5
 			},
 			1288: {
 				X: -290,
 				Y: 610,
-				l: 14,
-				t: 25,
+				l: 6,
+				t: 136,
 				id: 1288,
 				fort: 5
 			},
 			1289: {
 				X: 720,
 				Y: -450,
-				l: 14,
-				t: 25,
+				l: 6,
+				t: 136,
 				id: 1289,
 				fort: 5
 			},
 			1290: {
 				X: 360,
 				Y: -790,
-				l: 14,
-				t: 25,
+				l: 6,
+				t: 136,
 				id: 1290,
 				fort: 5
 			},
 			1291: {
 				X: 95,
 				Y: 545,
-				l: 12,
+				l: 10,
 				t: 129,
 				id: 1291,
 				fort: 5
@@ -46873,7 +46873,7 @@ export const moloch: Record<number, SaveData> = {
 			1292: {
 				X: 700,
 				Y: 0,
-				l: 12,
+				l: 10,
 				t: 129,
 				id: 1292,
 				fort: 5
@@ -46881,7 +46881,7 @@ export const moloch: Record<number, SaveData> = {
 			1293: {
 				X: 430,
 				Y: -420,
-				l: 12,
+				l: 10,
 				t: 129,
 				id: 1293,
 				fort: 5
@@ -46889,7 +46889,7 @@ export const moloch: Record<number, SaveData> = {
 			1294: {
 				X: -280,
 				Y: 30,
-				l: 12,
+				l: 10,
 				t: 129,
 				id: 1294,
 				fort: 5
@@ -46897,7 +46897,7 @@ export const moloch: Record<number, SaveData> = {
 			1295: {
 				X: 30,
 				Y: -270,
-				l: 12,
+				l: 10,
 				t: 129,
 				id: 1295,
 				fort: 5

@@ -23,18 +23,18 @@ package buildings.yard {
 			"cls":INFERNO_MAGMA_TOWER,
 			"rewarded":false,
 			"stats":[
-				{"range":180, "damage":180, "rate":20, "speed":14, "splash":0}, // Level 1
-				{"range":190, "damage":240, "rate":20, "speed":15, "splash":0}, // Level 2
-				{"range":200, "damage":300, "rate":20, "speed":16, "splash":0}, // Level 3
-				{"range":210, "damage":360, "rate":20, "speed":17, "splash":0}, // Level 4
-				{"range":220, "damage":420, "rate":20, "speed":18, "splash":0}, // Level 5
-				{"range":230, "damage":480, "rate":20, "speed":19, "splash":0}, // Level 6
-				{"range":240, "damage":540, "rate":20, "speed":20, "splash":0}, // Level 7
-				{"range":250, "damage":600, "rate":20, "speed":21, "splash":0}, // Level 8
-				{"range":260, "damage":660, "rate":20, "speed":22, "splash":0}, // Level 9
-				{"range":270, "damage":720, "rate":20, "speed":23, "splash":0}, // Level 10
-				{"range":280, "damage":780, "rate":20, "speed":24, "splash":0}, // Level 11
-				{"range":290, "damage":840, "rate":20, "speed":25, "splash":0}, // Level 12
+				{"range":180, "damage":100, "rate":20, "speed":14, "splash":20}, // Level 1
+				{"range":200, "damage":200, "rate":20, "speed":15, "splash":20}, // Level 2
+				{"range":220, "damage":400, "rate":20, "speed":16, "splash":20}, // Level 3
+				{"range":240, "damage":600, "rate":20, "speed":17, "splash":20}, // Level 4
+				{"range":260, "damage":800, "rate":20, "speed":18, "splash":20}, // Level 5
+				{"range":280, "damage":1000, "rate":20, "speed":19, "splash":20}, // Level 6
+				{"range":300, "damage":1200, "rate":20, "speed":20, "splash":20}, // Level 7
+				{"range":320, "damage":1400, "rate":20, "speed":21, "splash":20}, // Level 8
+				{"range":340, "damage":1600, "rate":20, "speed":22, "splash":20}, // Level 9
+				{"range":360, "damage":1800, "rate":20, "speed":23, "splash":20}, // Level 10
+				{"range":380, "damage":2000, "rate":20, "speed":24, "splash":20}, // Level 11
+				{"range":400, "damage":2200, "rate":20, "speed":25, "splash":20}, // Level 12
 			],
 			"costs":[
 				{"r1":new SecNum(187500), "r2":new SecNum(250000), "r3":new SecNum(62500), "r4":new SecNum(0), "time":new SecNum(86400 * 1), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]}, // Level 1

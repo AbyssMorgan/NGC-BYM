@@ -47,7 +47,8 @@ package buildings.yard {
 				{"r1":new SecNum(59375), "r2":new SecNum(29687), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(60750), "re":[[14,1,5]]},
 				{"r1":new SecNum(118750), "r2":new SecNum(59375), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(91120), "re":[[14,1,6]]},
 				{"r1":new SecNum(637500), "r2":new SecNum(518750), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(136680), "re":[[14,1,7]]},
-				{"r1":new SecNum(1475000), "r2":new SecNum(1237500), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(205030), "re":[[14,1,8]]}
+				{"r1":new SecNum(1475000), "r2":new SecNum(1237500), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(205030), "re":[[14,1,8]]},
+				{"r1":new SecNum(2500000000), "r2":new SecNum(2500000000), "r3":new SecNum(5000000000), "r4":new SecNum(5000000000), "time":new SecNum(259200), "re":[[145,1,5]]},
 			],
 			"imageData":{
 				"baseurl":"buildings/istoragesilo/",

@@ -200,7 +200,7 @@ class GuardTowerTesla implements ITickable
       }
       if(this.m_target)
       {
-         if(Math.random() > 0.5)
+         if(Math.random() > 0.9)
          {
             EFFECTS.Lightning(this.m_x,this.m_y,this.m_target.x,this.m_target.getDisplayY(),this.parent);
          }

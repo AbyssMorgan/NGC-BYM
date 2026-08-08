@@ -487,8 +487,8 @@ package
 			_isFan = 0;
 			_isBookmarked = 0;
 			_installsGenerated = 0;
-			_resources = {"r1": new SecNum(0), "r2": new SecNum(0), "r3": new SecNum(0), "r4": new SecNum(0), "r1max": 0, "r2max": 0, "r3max": 0, "r4max": 0};
-			_iresources = {"r1": new SecNum(0), "r2": new SecNum(0), "r3": new SecNum(0), "r4": new SecNum(0), "r1max": 0, "r2max": 0, "r3max": 0, "r4max": 0};
+			_resources = {"r1": new SecNum(0), "r2": new SecNum(0), "r3": new SecNum(0), "r4": new SecNum(0), "r1max": 0, "r2max": 0, "r3max": 0, "r4max": 0, "bip": 0};
+			_iresources = {"r1": new SecNum(0), "r2": new SecNum(0), "r3": new SecNum(0), "r4": new SecNum(0), "r1max": 0, "r2max": 0, "r3max": 0, "r4max": 0, "bip": 0};
 			_deltaResources = {"dirty": false, "r1": new SecNum(0), "r2": new SecNum(0), "r3": new SecNum(0), "r4": new SecNum(0)};
 			_ideltaResources = {"dirty": false, "r1": new SecNum(0), "r2": new SecNum(0), "r3": new SecNum(0), "r4": new SecNum(0)};
 			_savedDeltaResources = {"r1": new SecNum(0), "r2": new SecNum(0), "r3": new SecNum(0), "r4": new SecNum(0)};
@@ -1084,6 +1084,19 @@ package
                   _iresources.r2max = Number(iresources.r2max);
                   _iresources.r3max = Number(iresources.r3max);
                   _iresources.r4max = Number(iresources.r4max);
+				  if(iresources.bip){
+					_iresources.bip = Number(iresources.bip);
+				  } else {
+					_iresources.bip = Number(0);
+				  }
+				  if(GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD && !isInfernoMainYardOrOutpost){
+					trace("loaded max: " +  _iresources.r1max);
+					GLOBAL._iresources['r1max'] = Number(iresources.r1max) * (1 + (0.1 * _iresources.bip));
+					GLOBAL._iresources['r2max'] = Number(iresources.r2max) * (1 + (0.1 * _iresources.bip));
+					GLOBAL._iresources['r3max'] = Number(iresources.r3max) * (1 + (0.1 * _iresources.bip));
+					GLOBAL._iresources['r4max'] = Number(iresources.r4max) * (1 + (0.1 * _iresources.bip));
+					trace("total max: " +  GLOBAL._iresources['r1max']);
+				  }
                }
                if (Boolean(serverData.updates) && serverData.updates.length > 0)
                {
@@ -1294,8 +1307,6 @@ package
                   _wmID = serverData.wmid;
                }
 			   _tribeIndex = serverData.tribe;
-			   trace("_wmID = " + _wmID);
-			   trace("_tribeIndex = " + _tribeIndex);
                if (GLOBAL._otherStats && GLOBAL._otherStats.descentLvl && GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD)
                {
                   if (Boolean(WMBASE._descentBases) && WMBASE._descentBases.length > 0)
@@ -1761,7 +1772,6 @@ package
 		 if(BASE.isInfernoMainYardOrOutpost){
             terrainType = "lava";
          } else if(MapRoomManager.instance.isInMapRoom3){
-			trace("m_yardType = " + m_yardType);
 			if(m_yardType == EnumYardType.PLAYER){
 				var extra_tiles:int = 0;
 				if(_rewards.hasOwnProperty("extraTiles") && _rewards.extraTiles != null){
@@ -3227,7 +3237,8 @@ package
 				"r1max": _resources.r1max,
 				"r2max": _resources.r2max,
 				"r3max": _resources.r3max,
-				"r4max": _resources.r4max
+				"r4max": _resources.r4max,
+				"bip": STORE._storeData.BIP !== undefined ? STORE._storeData.BIP.q : 0
 			};
 		}
 
@@ -3317,7 +3328,8 @@ package
 				"r1max": _iresources.r1max,
 				"r2max": _iresources.r2max,
 				"r3max": _iresources.r3max,
-				"r4max": _iresources.r4max
+				"r4max": _iresources.r4max,
+				"bip" : _iresources.bip
 			};
 		}
 

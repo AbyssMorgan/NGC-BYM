@@ -9,6 +9,7 @@ export interface Resources {
 	r2max?: number;
 	r3max?: number;
 	r4max?: number;
+	bip?: number;
 }
 
 export enum Operation {
@@ -32,8 +33,8 @@ export const updateResources = (
 	if (resources) {
 		Object.keys(resources).forEach((key) => {
 			const resourceKey = key as keyof Resources;
-			if (key.endsWith("max")) {
-				saveResources[resourceKey] = resources[resourceKey];
+			if (key.endsWith("max") || key == 'bip') {
+				saveResources[resourceKey] = resources[resourceKey] ?? 0;
 			} else {
 				if(operation === Operation.ADD){
 					saveResources[resourceKey] += resources[resourceKey]!;

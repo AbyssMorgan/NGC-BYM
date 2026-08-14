@@ -18,10 +18,9 @@ package buildings.yard {
 			"tutstage":200,
 			"sale":0,
 			"description":"bdg_halloween_desc",
-			"block":true,
 			"cls":BDECORATION,
 			"costs":[
-				{"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":1000, "time":new SecNum(0), "re":[]}
+				{"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":250, "time":new SecNum(0), "re":[]}
 			],
 			"imageData":{
 				"baseurl":"buildings/decorations/pumpkins/",

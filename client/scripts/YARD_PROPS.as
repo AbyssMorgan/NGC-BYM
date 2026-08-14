@@ -267,8 +267,8 @@ package {
 			bdg_monsterskull.DATA,     // ID 107
 			bdg_rubikunsolved.DATA,    // ID 108
 			bdg_rubiksolved.DATA,      // ID 109
-			bdg_halloween.DATA,        // ID 110 (Missing in storeItems)
-			bdg_halloween_small.DATA,  // ID 111 (Missing in storeItems)
+			bdg_halloween.DATA,        // ID 110
+			bdg_halloween_small.DATA,  // ID 111
 			outpost.DATA,              // ID 112 (Locked)
 			radio.DATA,                // ID 113
 			monstercage.DATA,          // ID 114

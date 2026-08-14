@@ -2,21 +2,21 @@
  * Purchase keys are items which are not explicitly store items, but are still considered purchases.
  */
 export const purchaseKeys = new Set([
-  "IU",         // Instant Upgrade
-  "IF",         // Instant Finish
-  "IFD",        // Instant Champion Feed
-  "ITR",        // Instant Train
-  "IUN",        // Instant Unlock
-  "IPU",        // Instant Monster Lab Ability
-  "IEV",        // Instant Champion Evolution
-  "IHE",        // Instant Heal
-  "BRTOPUP",    // Topoff Build, Upgrade or Fortify
-  "MHTOPUP",    // Topoff Monster Heal
-  "HSM",        // Instant Heal Single Monster
-  "BUNK",       // Monster Bunker Instant Monsters
-  "KIT",        // Outpost Kit
-  "QWM1",       // Quest Wild Monster 1
-  "HAM",        // Heal All Monsters
+	"IU",         // Instant Upgrade
+	"IF",         // Instant Finish
+	"IFD",        // Instant Champion Feed
+	"ITR",        // Instant Train
+	"IUN",        // Instant Unlock
+	"IPU",        // Instant Monster Lab Ability
+	"IEV",        // Instant Champion Evolution
+	"IHE",        // Instant Heal
+	"BRTOPUP",    // Topoff Build, Upgrade or Fortify
+	"MHTOPUP",    // Topoff Monster Heal
+	"HSM",        // Instant Heal Single Monster
+	"BUNK",       // Monster Bunker Instant Monsters
+	"KIT",        // Outpost Kit
+	"QWM1",       // Quest Wild Monster 1
+	"HAM",        // Heal All Monsters
 ]);
 
 /**
@@ -27,6 +27,9 @@ export const rewardCredits: Record<string, number> = {
 	"QINVITE5": 45,
 	"QINVITE10": 65,
 	"QFAN": 50,
+	"QLVL10": 100,
+	"QLVL15": 150,
+	"QLVL20": 200,
 	"QLVL25": 250,
 	"QLVL30": 300,
 	"QLVL35": 350,
@@ -43,7 +46,15 @@ export const rewardCredits: Record<string, number> = {
 	"QLVL90": 900,
 	"QLVL95": 950,
 	"QLVL100": 1000,
+	"QLVL101": 1010,
+	"QLVL102": 1020,
+	"QLVL103": 1030,
+	"QLVL104": 1040,
 	"QLVL105": 1050,
+	"QLVL106": 1060,
+	"QLVL107": 1070,
+	"QLVL108": 1080,
+	"QLVL109": 1090,
 	"QLVL110": 1100,
 	"QLVL111": 1110,
 	"QLVL112": 1120,

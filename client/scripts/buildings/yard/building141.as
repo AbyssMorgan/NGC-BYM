@@ -9,7 +9,7 @@ package buildings.yard {
 			"id":141,
 			"group":4,
 			"subgroup":4,
-			"order":12,
+			"order":13,
 			"buildStatus":0,
 			"type":"decoration",
 			"name":"#b_conqueror#",

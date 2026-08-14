@@ -1,4 +1,4 @@
-package
+package buildings.cls
 {
 	import flash.geom.Rectangle;
 	

@@ -2,6 +2,7 @@ package buildings.yard {
 
 	import com.cc.utils.SecNum;
 	import flash.geom.Point;
+	import buildings.cls.BUILDING145;
 
 	public class techlaboratory {
 
@@ -17,6 +18,7 @@ package buildings.yard {
 			"tutstage":200,
 			"sale":0,
 			"description":"#b_techlab_desc#",
+			"cls":BUILDING145,
 			"costs":[
 				{"r1":new SecNum(100000000), "r2":new SecNum(100000000), "r3":new SecNum(1000000000), "r4":new SecNum(1000000000), "time":new SecNum(86400 * 1), "re":[[14,1,12],[12,1,2]]}, // Level 1
 				{"r1":new SecNum(200000000), "r2":new SecNum(200000000), "r3":new SecNum(1500000000), "r4":new SecNum(1500000000), "time":new SecNum(86400 * 2), "re":[[14,1,14],[12,1,2]]}, // Level 2

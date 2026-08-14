@@ -1,4 +1,4 @@
-package
+package buildings.cls
 {
    import com.monsters.display.BuildingOverlay;
    import com.monsters.interfaces.IAttackable;

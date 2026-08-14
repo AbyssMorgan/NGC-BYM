@@ -2,6 +2,7 @@ package buildings.yard {
 
 	import com.cc.utils.SecNum;
 	import flash.geom.Point;
+	import buildings.cls.BUILDING144;
 
 	public class anticatapult {
 

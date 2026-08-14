@@ -1,4 +1,4 @@
-package
+package buildings.cls
 {
    import com.monsters.interfaces.IAttackable;
    import flash.display.BitmapData;

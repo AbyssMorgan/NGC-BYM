@@ -47,10 +47,10 @@ package
          _workers = [];
          if(GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD)
          {
-            _maxWorkers = 8;
+            _maxWorkers = 12;
             if(!BASE.isMainYard)
             {
-               _maxWorkers = 3;
+               _maxWorkers = 5;
             }
             _loc1_ = 0;
             while(_loc1_ < _maxWorkers)

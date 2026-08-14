@@ -3,6 +3,7 @@ package buildings.yard {
 	import com.cc.utils.SecNum;
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
+	import buildings.cls.BUILDING142;
 
 	public class bi_cannontower {
 
@@ -20,6 +21,7 @@ package buildings.yard {
 			"sale":0,
 			"description":"bi_cannontower_desc",
 			"block":true,
+			"cls":BUILDING142,
 			"stats":[
 				{"range":160, "damage":20, "rate":40, "speed":5, "splash":30}, // Level 1
 				{"range":170, "damage":40, "rate":40, "speed":6, "splash":35}, // Level 2

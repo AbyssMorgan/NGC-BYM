@@ -64,7 +64,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 5,
 				id: 4,
 				pr: 1,
-				st: 2800,
+				st: 775018,
 				rCP: 5
 			},
 			5: {
@@ -75,7 +75,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 4,
 				id: 5,
 				pr: 1,
-				st: 19200,
+				st: 775018,
 				rCP: 4
 			},
 			6: {
@@ -86,7 +86,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 4,
 				id: 6,
 				pr: 1,
-				st: 19200,
+				st: 775018,
 				rCP: 4
 			},
 			7: {
@@ -97,7 +97,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 4,
 				id: 7,
 				pr: 1,
-				st: 19200,
+				st: 775018,
 				rCP: 4
 			},
 			50: {
@@ -108,7 +108,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 5,
 				id: 50,
 				pr: 1,
-				st: 19040,
+				st: 775018,
 				rCP: 5
 			},
 			51: {
@@ -119,7 +119,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 5,
 				id: 51,
 				pr: 1,
-				st: 165844,
+				st: 775018,
 				rCP: 5
 			},
 			52: {
@@ -130,7 +130,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 7,
 				id: 52,
 				pr: 1,
-				st: 164860,
+				st: 775018,
 				rCP: 7
 			},
 			53: {
@@ -141,7 +141,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 3,
 				id: 53,
 				pr: 1,
-				st: 157804,
+				st: 775018,
 				rCP: 3
 			},
 			54: {
@@ -152,7 +152,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 9,
 				id: 54,
 				pr: 1,
-				st: 157150,
+				st: 775018,
 				rCP: 9
 			},
 			55: {
@@ -163,7 +163,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 4,
 				id: 55,
 				pr: 1,
-				st: 2800,
+				st: 775018,
 				rCP: 4
 			},
 			56: {
@@ -174,7 +174,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 4,
 				id: 56,
 				pr: 1,
-				st: 2800,
+				st: 775018,
 				rCP: 4
 			},
 			57: {
@@ -185,7 +185,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 6,
 				id: 57,
 				pr: 1,
-				st: 169110,
+				st: 775018,
 				rCP: 6
 			},
 			58: {
@@ -196,7 +196,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 4,
 				id: 58,
 				pr: 1,
-				st: 2800,
+				st: 775018,
 				rCP: 4
 			},
 			59: {
@@ -207,7 +207,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 2,
 				id: 59,
 				pr: 1,
-				st: 41095,
+				st: 775018,
 				rCP: 2
 			},
 			60: {
@@ -218,7 +218,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 4,
 				id: 60,
 				pr: 1,
-				st: 2800,
+				st: 775018,
 				rCP: 4
 			},
 			61: {
@@ -229,7 +229,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 3,
 				id: 61,
 				pr: 1,
-				st: 155224,
+				st: 775018,
 				rCP: 3
 			},
 			62: {
@@ -240,7 +240,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 4,
 				id: 62,
 				pr: 1,
-				st: 2800,
+				st: 775018,
 				rCP: 4
 			},
 			63: {
@@ -251,7 +251,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 3,
 				id: 63,
 				pr: 1,
-				st: 159614,
+				st: 775018,
 				rCP: 3
 			},
 			64: {
@@ -262,7 +262,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 5,
 				id: 64,
 				pr: 1,
-				st: 19040,
+				st: 775018,
 				rCP: 5
 			},
 			65: {
@@ -2118,7 +2118,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 6,
 				id: 4,
 				pr: 1,
-				st: 107000,
+				st: 1400000,
 				rCP: 6
 			},
 			5: {
@@ -2129,7 +2129,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 5,
 				id: 5,
 				pr: 1,
-				st: 122960,
+				st: 1400000,
 				rCP: 5
 			},
 			6: {
@@ -2140,7 +2140,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 5,
 				id: 6,
 				pr: 1,
-				st: 120320,
+				st: 1400000,
 				rCP: 5
 			},
 			7: {
@@ -2151,7 +2151,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 5,
 				id: 7,
 				pr: 1,
-				st: 122080,
+				st: 1400000,
 				rCP: 5
 			},
 			50: {
@@ -2162,7 +2162,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 6,
 				id: 50,
 				pr: 1,
-				st: 123240,
+				st: 1400000,
 				rCP: 6
 			},
 			51: {
@@ -2173,7 +2173,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 6,
 				id: 51,
 				pr: 1,
-				st: 269164,
+				st: 1400000,
 				rCP: 6
 			},
 			52: {
@@ -2184,7 +2184,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 8,
 				id: 52,
 				pr: 1,
-				st: 268620,
+				st: 1400000,
 				rCP: 8
 			},
 			53: {
@@ -2195,7 +2195,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 4,
 				id: 53,
 				pr: 1,
-				st: 261564,
+				st: 1400000,
 				rCP: 4
 			},
 			54: {
@@ -2206,7 +2206,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 10,
 				id: 54,
 				pr: 1,
-				st: 261350,
+				st: 1400000,
 				rCP: 10
 			},
 			55: {
@@ -2217,7 +2217,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 5,
 				id: 55,
 				pr: 1,
-				st: 107440,
+				st: 1400000,
 				rCP: 5
 			},
 			56: {
@@ -2228,7 +2228,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 5,
 				id: 56,
 				pr: 1,
-				st: 107440,
+				st: 1400000,
 				rCP: 5
 			},
 			57: {
@@ -2239,7 +2239,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 7,
 				id: 57,
 				pr: 1,
-				st: 274190,
+				st: 1400000,
 				rCP: 7
 			},
 			58: {
@@ -2250,7 +2250,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 5,
 				id: 58,
 				pr: 1,
-				st: 107440,
+				st: 1400000,
 				rCP: 5
 			},
 			59: {
@@ -2261,7 +2261,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 3,
 				id: 59,
 				pr: 1,
-				st: 145735,
+				st: 1400000,
 				rCP: 3
 			},
 			60: {
@@ -2272,7 +2272,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 5,
 				id: 60,
 				pr: 1,
-				st: 104800,
+				st: 1400000,
 				rCP: 5
 			},
 			61: {
@@ -2283,7 +2283,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 4,
 				id: 61,
 				pr: 1,
-				st: 256344,
+				st: 1400000,
 				rCP: 4
 			},
 			62: {
@@ -2294,7 +2294,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 5,
 				id: 62,
 				pr: 1,
-				st: 104360,
+				st: 1400000,
 				rCP: 5
 			},
 			63: {
@@ -2305,7 +2305,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 4,
 				id: 63,
 				pr: 1,
-				st: 261614,
+				st: 1400000,
 				rCP: 4
 			},
 			64: {
@@ -2316,7 +2316,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 6,
 				id: 64,
 				pr: 1,
-				st: 120600,
+				st: 1400000,
 				rCP: 6
 			},
 			65: {
@@ -2327,7 +2327,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 6,
 				id: 65,
 				pr: 1,
-				st: 283850,
+				st: 1400000,
 				rCP: 6
 			},
 			66: {
@@ -2338,7 +2338,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 2,
 				id: 66,
 				pr: 1,
-				st: 281068,
+				st: 1400000,
 				rCP: 2
 			},
 			67: {
@@ -2349,7 +2349,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 7,
 				id: 67,
 				pr: 1,
-				st: 280420,
+				st: 1400000,
 				rCP: 7
 			},
 			68: {
@@ -2360,7 +2360,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 8,
 				id: 68,
 				pr: 1,
-				st: 291854,
+				st: 1400000,
 				rCP: 8
 			},
 			69: {
@@ -2371,7 +2371,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 3,
 				id: 69,
 				pr: 1,
-				st: 289114,
+				st: 1400000,
 				rCP: 3
 			},
 			70: {
@@ -4988,7 +4988,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 8,
 				id: 4,
 				pr: 1,
-				st: 353000,
+				st: 2800000,
 				rCP: 8
 			},
 			5: {
@@ -4999,7 +4999,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 7,
 				id: 5,
 				pr: 1,
-				st: 370960,
+				st: 2800000,
 				rCP: 7
 			},
 			6: {
@@ -5010,7 +5010,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 7,
 				id: 6,
 				pr: 1,
-				st: 364320,
+				st: 2800000,
 				rCP: 7
 			},
 			7: {
@@ -5021,7 +5021,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 7,
 				id: 7,
 				pr: 1,
-				st: 365080,
+				st: 2800000,
 				rCP: 7
 			},
 			50: {
@@ -5032,7 +5032,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 8,
 				id: 50,
 				pr: 1,
-				st: 372240,
+				st: 2800000,
 				rCP: 8
 			},
 			51: {
@@ -5043,7 +5043,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 8,
 				id: 51,
 				pr: 1,
-				st: 517164,
+				st: 2800000,
 				rCP: 8
 			},
 			52: {
@@ -5054,7 +5054,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 10,
 				id: 52,
 				pr: 1,
-				st: 516620,
+				st: 2800000,
 				rCP: 10
 			},
 			53: {
@@ -5065,7 +5065,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 6,
 				id: 53,
 				pr: 1,
-				st: 510564,
+				st: 2800000,
 				rCP: 6
 			},
 			54: {
@@ -5076,7 +5076,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 2,
 				id: 54,
 				pr: 1,
-				st: 509350,
+				st: 2800000,
 				rCP: 2
 			},
 			55: {
@@ -5087,7 +5087,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 7,
 				id: 55,
 				pr: 1,
-				st: 353440,
+				st: 2800000,
 				rCP: 7
 			},
 			56: {
@@ -5098,7 +5098,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 7,
 				id: 56,
 				pr: 1,
-				st: 354440,
+				st: 2800000,
 				rCP: 7
 			},
 			57: {
@@ -5109,7 +5109,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 9,
 				id: 57,
 				pr: 1,
-				st: 520190,
+				st: 2800000,
 				rCP: 9
 			},
 			58: {
@@ -5120,7 +5120,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 7,
 				id: 58,
 				pr: 1,
-				st: 353440,
+				st: 2800000,
 				rCP: 7
 			},
 			59: {
@@ -5131,7 +5131,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 5,
 				id: 59,
 				pr: 1,
-				st: 392735,
+				st: 2800000,
 				rCP: 5
 			},
 			60: {
@@ -5142,7 +5142,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 7,
 				id: 60,
 				pr: 1,
-				st: 349800,
+				st: 2800000,
 				rCP: 7
 			},
 			61: {
@@ -5153,7 +5153,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 6,
 				id: 61,
 				pr: 1,
-				st: 500344,
+				st: 2800000,
 				rCP: 6
 			},
 			62: {
@@ -5164,7 +5164,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 1,
 				id: 62,
 				pr: 1,
-				st: 74000,
+				st: 2800000,
 				rCP: 1
 			},
 			63: {
@@ -5175,7 +5175,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 6,
 				id: 63,
 				pr: 1,
-				st: 506614,
+				st: 2800000,
 				rCP: 6
 			},
 			64: {
@@ -5186,7 +5186,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 2,
 				id: 64,
 				pr: 1,
-				st: 76000,
+				st: 2800000,
 				rCP: 2
 			},
 			65: {
@@ -5197,7 +5197,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 8,
 				id: 65,
 				pr: 1,
-				st: 524850,
+				st: 2800000,
 				rCP: 8
 			},
 			66: {
@@ -5208,7 +5208,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 4,
 				id: 66,
 				pr: 1,
-				st: 522068,
+				st: 2800000,
 				rCP: 4
 			},
 			67: {
@@ -5219,7 +5219,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 9,
 				id: 67,
 				pr: 1,
-				st: 522420,
+				st: 2800000,
 				rCP: 9
 			},
 			68: {
@@ -5230,7 +5230,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 10,
 				id: 68,
 				pr: 1,
-				st: 534854,
+				st: 2800000,
 				rCP: 10
 			},
 			69: {
@@ -5241,7 +5241,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 5,
 				id: 69,
 				pr: 1,
-				st: 531114,
+				st: 2800000,
 				rCP: 5
 			},
 			70: {
@@ -8038,7 +8038,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 3,
 				id: 4,
 				pr: 1,
-				st: 30000,
+				st: 5000000,
 				rCP: 3
 			},
 			5: {
@@ -8049,7 +8049,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 3,
 				id: 5,
 				pr: 1,
-				st: 30000,
+				st: 5000000,
 				rCP: 3
 			},
 			6: {
@@ -8060,7 +8060,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 3,
 				id: 6,
 				pr: 1,
-				st: 30000,
+				st: 5000000,
 				rCP: 3
 			},
 			7: {
@@ -8071,7 +8071,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 3,
 				id: 7,
 				pr: 1,
-				st: 30000,
+				st: 5000000,
 				rCP: 3
 			},
 			50: {
@@ -8082,7 +8082,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 3,
 				id: 50,
 				pr: 1,
-				st: 30000,
+				st: 5000000,
 				rCP: 3
 			},
 			51: {
@@ -8093,7 +8093,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 3,
 				id: 51,
 				pr: 1,
-				st: 30000,
+				st: 5000000,
 				rCP: 3
 			},
 			52: {
@@ -8104,7 +8104,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 3,
 				id: 52,
 				pr: 1,
-				st: 30000,
+				st: 5000000,
 				rCP: 3
 			},
 			53: {
@@ -8115,7 +8115,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 3,
 				id: 53,
 				pr: 1,
-				st: 30000,
+				st: 5000000,
 				rCP: 3
 			},
 			54: {
@@ -8126,7 +8126,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 3,
 				id: 54,
 				pr: 1,
-				st: 30000,
+				st: 5000000,
 				rCP: 3
 			},
 			55: {
@@ -8137,7 +8137,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 3,
 				id: 55,
 				pr: 1,
-				st: 30000,
+				st: 5000000,
 				rCP: 3
 			},
 			56: {
@@ -8148,7 +8148,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 3,
 				id: 56,
 				pr: 1,
-				st: 30000,
+				st: 5000000,
 				rCP: 3
 			},
 			57: {
@@ -8159,7 +8159,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 3,
 				id: 57,
 				pr: 1,
-				st: 30000,
+				st: 5000000,
 				rCP: 3
 			},
 			58: {
@@ -8170,7 +8170,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 3,
 				id: 58,
 				pr: 1,
-				st: 30000,
+				st: 5000000,
 				rCP: 3
 			},
 			59: {
@@ -8181,7 +8181,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 3,
 				id: 59,
 				pr: 1,
-				st: 30000,
+				st: 5000000,
 				rCP: 3
 			},
 			60: {
@@ -8192,7 +8192,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 3,
 				id: 60,
 				pr: 1,
-				st: 30000,
+				st: 5000000,
 				rCP: 3
 			},
 			61: {
@@ -8203,7 +8203,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 3,
 				id: 61,
 				pr: 1,
-				st: 30000,
+				st: 5000000,
 				rCP: 3
 			},
 			62: {
@@ -8214,7 +8214,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 3,
 				id: 62,
 				pr: 1,
-				st: 30000,
+				st: 5000000,
 				rCP: 3
 			},
 			63: {
@@ -8225,7 +8225,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 3,
 				id: 63,
 				pr: 1,
-				st: 30000,
+				st: 5000000,
 				rCP: 3
 			},
 			64: {
@@ -8236,7 +8236,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 3,
 				id: 64,
 				pr: 1,
-				st: 30000,
+				st: 5000000,
 				rCP: 3
 			},
 			65: {
@@ -8247,7 +8247,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 3,
 				id: 65,
 				pr: 1,
-				st: 30000,
+				st: 5000000,
 				rCP: 3
 			},
 			66: {
@@ -8258,7 +8258,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 3,
 				id: 66,
 				pr: 1,
-				st: 30000,
+				st: 5000000,
 				rCP: 3
 			},
 			67: {
@@ -8269,7 +8269,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 3,
 				id: 67,
 				pr: 1,
-				st: 30000,
+				st: 5000000,
 				rCP: 3
 			},
 			68: {
@@ -8280,7 +8280,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 3,
 				id: 68,
 				pr: 1,
-				st: 30000,
+				st: 5000000,
 				rCP: 3
 			},
 			69: {
@@ -8291,7 +8291,7 @@ export const moloch: Record<number, SaveData> = {
 				cP: 3,
 				id: 69,
 				pr: 1,
-				st: 30000,
+				st: 5000000,
 				rCP: 3
 			},
 			70: {

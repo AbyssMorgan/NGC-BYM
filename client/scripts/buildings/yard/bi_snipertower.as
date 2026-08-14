@@ -3,6 +3,7 @@ package buildings.yard {
 	import com.cc.utils.SecNum;
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
+	import buildings.cls.BUILDING143;
 
 	public class bi_snipertower {
 
@@ -20,6 +21,7 @@ package buildings.yard {
 			"sale":0,
 			"description":"bi_snipertower_desc",
 			"block":true,
+			"cls":BUILDING143,
 			"stats":[
 				{"range":300, "damage":100, "rate":80, "speed":10, "splash":0}, // Level 1
 				{"range":320, "damage":210, "rate":80, "speed":10, "splash":0}, // Level 2

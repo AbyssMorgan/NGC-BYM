@@ -5316,26 +5316,6 @@ package
          {
             buildingFoundation = new INFERNO_MAGMA_TOWER();
          }
-		 else if (buildingNum == 142)
-         {
-            buildingFoundation = new BUILDING142();
-         }
-		 else if (buildingNum == 143)
-         {
-            buildingFoundation = new BUILDING143();
-         }
-		 else if (buildingNum == 144)
-         {
-            buildingFoundation = new BUILDING144();
-         }
-		 else if (buildingNum == 145)
-         {
-            buildingFoundation = new BUILDING145();
-         }
-		 else if (buildingNum == 146)
-         {
-            buildingFoundation = new BUILDING146();
-         }
          return !!buildingProperties.cls ? new (buildingProperties.cls as Class)() : buildingFoundation;
       }
 

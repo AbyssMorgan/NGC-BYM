@@ -6473,159 +6473,159 @@ package
 					"order": 10,
 					"list": true,
 					"reward": [5000000, 5000000, 5000000, 5000000, 5],
-					"id": "ASSAULT_MO_2_10",
-					"group": 8,
+					"id": "ASSAULT_MO_3_10",
+					"group": 9,
 					"name": "Moloch Outpost x10",
-					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_2#\/10.",
-					"hint": "Moloch outposts level 70 - 80",
+					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_3#\/10.",
+					"hint": "Moloch outposts level 100",
 					"questimage": "tribe_moloch.png",
 					"rules":
 					{
-						"assault_mo_2": 10
+						"assault_mo_3": 10
 					}
 				},
 				{
 					"order": 25,
 					"list": true,
 					"reward": [13000000, 13000000, 13000000, 13000000, 13],
-					"id": "ASSAULT_MO_2_25",
-					"group": 8,
+					"id": "ASSAULT_MO_3_25",
+					"group": 9,
 					"name": "Moloch Outpost x25",
-					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_2#\/25.",
-					"hint": "Moloch outposts level 70 - 80",
+					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_3#\/25.",
+					"hint": "Moloch outposts level 100",
 					"questimage": "tribe_moloch.png",
-					"prereq": "ASSAULT_MO_2_10",
+					"prereq": "ASSAULT_MO_3_10",
 					"rules":
 					{
-						"assault_mo_2": 25
+						"assault_mo_3": 25
 					}
 				},
 				{
 					"order": 50,
 					"list": true,
 					"reward": [25000000, 25000000, 25000000, 25000000, 25],
-					"id": "ASSAULT_MO_2_50",
-					"group": 8,
+					"id": "ASSAULT_MO_3_50",
+					"group": 9,
 					"name": "Moloch Outpost x50",
-					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_2#\/50.",
-					"hint": "Moloch outposts level 70 - 80",
+					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_3#\/50.",
+					"hint": "Moloch outposts level 100",
 					"questimage": "tribe_moloch.png",
-					"prereq": "ASSAULT_MO_2_25",
+					"prereq": "ASSAULT_MO_3_25",
 					"rules":
 					{
-						"assault_mo_2": 50
+						"assault_mo_3": 50
 					}
 				},
 				{
 					"order": 100,
 					"list": true,
 					"reward": [50000000, 50000000, 50000000, 50000000, 50],
-					"id": "ASSAULT_MO_2_100",
-					"group": 8,
+					"id": "ASSAULT_MO_3_100",
+					"group": 9,
 					"name": "Moloch Outpost x100",
-					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_2#\/100.",
-					"hint": "Moloch outposts level 70 - 80",
+					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_3#\/100.",
+					"hint": "Moloch outposts level 100",
 					"questimage": "tribe_moloch.png",
-					"prereq": "ASSAULT_MO_2_50",
+					"prereq": "ASSAULT_MO_3_50",
 					"rules":
 					{
-						"assault_mo_2": 100
+						"assault_mo_3": 100
 					}
 				},
 				{
 					"order": 250,
 					"list": true,
 					"reward": [125000000, 125000000, 125000000, 125000000, 125],
-					"id": "ASSAULT_MO_2_250",
-					"group": 8,
+					"id": "ASSAULT_MO_3_250",
+					"group": 9,
 					"name": "Moloch Outpost x250",
-					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_2#\/250.",
-					"hint": "Moloch outposts level 70 - 80",
+					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_3#\/250.",
+					"hint": "Moloch outposts level 100",
 					"questimage": "tribe_moloch.png",
-					"prereq": "ASSAULT_MO_2_100",
+					"prereq": "ASSAULT_MO_3_100",
 					"rules":
 					{
-						"assault_mo_2": 250
+						"assault_mo_3": 250
 					}
 				},
 				{
 					"order": 500,
 					"list": true,
 					"reward": [250000000, 250000000, 250000000, 250000000, 250],
-					"id": "ASSAULT_MO_2_500",
-					"group": 8,
+					"id": "ASSAULT_MO_3_500",
+					"group": 9,
 					"name": "Moloch Outpost x500",
-					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_2#\/500.",
-					"hint": "Moloch outposts level 70 - 80",
+					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_3#\/500.",
+					"hint": "Moloch outposts level 100",
 					"questimage": "tribe_moloch.png",
-					"prereq": "ASSAULT_MO_2_250",
+					"prereq": "ASSAULT_MO_3_250",
 					"rules":
 					{
-						"assault_mo_2": 500
+						"assault_mo_3": 500
 					}
 				},
 				{
 					"order": 1000,
 					"list": true,
 					"reward": [500000000, 500000000, 500000000, 500000000, 500],
-					"id": "ASSAULT_MO_2_1000",
-					"group": 8,
+					"id": "ASSAULT_MO_3_1000",
+					"group": 9,
 					"name": "Moloch Outpost x1000",
-					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_2#\/1000.",
-					"hint": "Moloch outposts level 70 - 80",
+					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_3#\/1000.",
+					"hint": "Moloch outposts level 100",
 					"questimage": "tribe_moloch.png",
-					"prereq": "ASSAULT_MO_2_500",
+					"prereq": "ASSAULT_MO_3_500",
 					"rules":
 					{
-						"assault_mo_2": 1000
+						"assault_mo_3": 1000
 					}
 				},
 				{
 					"order": 2500,
 					"list": true,
 					"reward": [1250000000, 1250000000, 1250000000, 1250000000, 1250],
-					"id": "ASSAULT_MO_2_2500",
-					"group": 8,
+					"id": "ASSAULT_MO_3_2500",
+					"group": 9,
 					"name": "Moloch Outpost x2500",
-					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_2#\/2500.",
-					"hint": "Moloch outposts level 70 - 80",
+					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_3#\/2500.",
+					"hint": "Moloch outposts level 100",
 					"questimage": "tribe_moloch.png",
-					"prereq": "ASSAULT_MO_2_1000",
+					"prereq": "ASSAULT_MO_3_1000",
 					"rules":
 					{
-						"assault_mo_2": 2500
+						"assault_mo_3": 2500
 					}
 				},
 				{
 					"order": 5000,
 					"list": true,
 					"reward": [2500000000, 2500000000, 2500000000, 2500000000, 2500],
-					"id": "ASSAULT_MO_2_5000",
-					"group": 8,
+					"id": "ASSAULT_MO_3_5000",
+					"group": 9,
 					"name": "Moloch Outpost x5000",
-					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_2#\/5000.",
-					"hint": "Moloch outposts level 70 - 80",
+					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_3#\/5000.",
+					"hint": "Moloch outposts level 100",
 					"questimage": "tribe_moloch.png",
-					"prereq": "ASSAULT_MO_2_2500",
+					"prereq": "ASSAULT_MO_3_2500",
 					"rules":
 					{
-						"assault_mo_2": 5000
+						"assault_mo_3": 5000
 					}
 				},
 				{
 					"order": 10000,
 					"list": true,
 					"reward": [5000000000, 5000000000, 5000000000, 5000000000, 5000],
-					"id": "ASSAULT_MO_2_10000",
-					"group": 8,
+					"id": "ASSAULT_MO_3_10000",
+					"group": 9,
 					"name": "Moloch Outpost x10000",
-					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_2#\/10000.",
-					"hint": "Moloch outposts level 70 - 80",
+					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_3#\/10000.",
+					"hint": "Moloch outposts level 100",
 					"questimage": "tribe_moloch.png",
-					"prereq": "ASSAULT_MO_2_5000",
+					"prereq": "ASSAULT_MO_3_5000",
 					"rules":
 					{
-						"assault_mo_2": 10000
+						"assault_mo_3": 10000
 					}
 				},
 

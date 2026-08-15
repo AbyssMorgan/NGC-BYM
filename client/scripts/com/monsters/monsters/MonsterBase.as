@@ -1450,6 +1450,10 @@ package com.monsters.monsters
             dispatchEvent(new Event(k_DEATH_EVENT));
             ++QUESTS._global.kills;
             this.deathSplat();
+			if((!BASE.isMainYardOrInfernoMainYard || WMATTACK._isAI) && GLOBAL.assault_monsters < 2000000000){
+				GLOBAL.assault_monsters++;
+				QUESTS._global.assault_monsters++;
+			}
          }
          this.removeAllComponents();
          this.clear();

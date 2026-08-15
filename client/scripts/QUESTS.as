@@ -137,20 +137,22 @@ package
 				"assault_sh":0,
 				"assault_ro":0,
 				"assault_de":0,
+				"assault_towers":0,
+				"assault_monsters":0,
 				"level_up":0
 			};
 			_questGroups = [
-				{"id":0, "name":"q_construction"},
-				{"id":1, "name":"q_monsters"},
-				{"id":2, "name":"q_attacking"},
-				{"id":3, "name":"q_basic"},
-				{"id":4, "name":"q_progress"},
-				{"id":5, "name":"q_technology"},
-				{"id":6, "name":"q_conqueror"},
-				{"id":7, "name":"q_assault_t1"},
-				{"id":8, "name":"q_assault_t2"},
-				{"id":9, "name":"q_assault_t3"},
-				{"id":10, "name":"q_assault_t4"},
+				{"id":0, "name":"Construction"},
+				{"id":1, "name":"Monsters"},
+				{"id":2, "name":"Attacking"},
+				{"id":3, "name":"Basic"},
+				{"id":4, "name":"Progress"},
+				{"id":5, "name":"Challenges"},
+				{"id":6, "name":"Conqueror"},
+				{"id":7, "name":"Assault T1"},
+				{"id":8, "name":"Assault T2"},
+				{"id":9, "name":"Assault T3"},
+				{"id":10, "name":"Assault T4"},
 			];
 			if(!BASE.isInfernoMainYardOrOutpost)
 			{
@@ -3320,6 +3322,483 @@ package
 						"b15lvl": 20
 					}
 				},
+				{
+					"order": 1,
+					"list": true,
+					"reward": [0, 0, 100000000, 100000000, 0],
+					"id": "TL1",
+					"group": 0,
+					"name": "Technology Laboratory",
+					"description": "Build your Technology Laboratory",
+					"hint": "You can speed up upgrades.",
+					"questimage": "tech_laboratory.png",
+					"rules":
+					{
+						"b145lvl": 1
+					}
+				},
+				{
+					"order": 2,
+					"list": true,
+					"reward": [0, 0, 200000000, 200000000, 0],
+					"id": "TL2",
+					"group": 0,
+					"name": "Technology Laboratory level 2",
+					"description": "Upgrade your Technology Laboratory to level 2",
+					"hint": "You can speed up upgrades.",
+					"questimage": "tech_laboratory.png",
+					"prereq": "TL1",
+					"rules":
+					{
+						"b145lvl": 2
+					}
+				},
+				{
+					"order": 3,
+					"list": true,
+					"reward": [0, 0, 300000000, 300000000, 0],
+					"id": "TL3",
+					"group": 0,
+					"name": "Technology Laboratory level 3",
+					"description": "Upgrade your Technology Laboratory to level 3",
+					"hint": "You can speed up upgrades.",
+					"questimage": "tech_laboratory.png",
+					"prereq": "TL2",
+					"rules":
+					{
+						"b145lvl": 3
+					}
+				},
+				{
+					"order": 4,
+					"list": true,
+					"reward": [0, 0, 400000000, 400000000, 0],
+					"id": "TL4",
+					"group": 0,
+					"name": "Technology Laboratory level 4",
+					"description": "Upgrade your Technology Laboratory to level 4",
+					"hint": "You can speed up upgrades.",
+					"questimage": "tech_laboratory.png",
+					"prereq": "TL3",
+					"rules":
+					{
+						"b145lvl": 4
+					}
+				},
+				{
+					"order": 5,
+					"list": true,
+					"reward": [0, 0, 500000000, 500000000, 0],
+					"id": "TL5",
+					"group": 0,
+					"name": "Technology Laboratory level 5",
+					"description": "Upgrade your Technology Laboratory to level 5",
+					"hint": "You can speed up upgrades.",
+					"questimage": "tech_laboratory.png",
+					"prereq": "TL4",
+					"rules":
+					{
+						"b145lvl": 5
+					}
+				},
+				{
+					"order": 6,
+					"list": true,
+					"reward": [0, 0, 600000000, 600000000, 0],
+					"id": "TL6",
+					"group": 0,
+					"name": "Technology Laboratory level 6",
+					"description": "Upgrade your Technology Laboratory to level 6",
+					"hint": "You can speed up upgrades.",
+					"questimage": "tech_laboratory.png",
+					"prereq": "TL5",
+					"rules":
+					{
+						"b145lvl": 6
+					}
+				},
+				{
+					"order": 7,
+					"list": true,
+					"reward": [0, 0, 700000000, 700000000, 0],
+					"id": "TL7",
+					"group": 0,
+					"name": "Technology Laboratory level 7",
+					"description": "Upgrade your Technology Laboratory to level 7",
+					"hint": "You can speed up upgrades.",
+					"questimage": "tech_laboratory.png",
+					"prereq": "TL6",
+					"rules":
+					{
+						"b145lvl": 7
+					}
+				},
+				{
+					"order": 8,
+					"list": true,
+					"reward": [0, 0, 800000000, 800000000, 0],
+					"id": "TL8",
+					"group": 0,
+					"name": "Technology Laboratory level 8",
+					"description": "Upgrade your Technology Laboratory to level 8",
+					"hint": "You can speed up upgrades.",
+					"questimage": "tech_laboratory.png",
+					"prereq": "TL7",
+					"rules":
+					{
+						"b145lvl": 8
+					}
+				},
+				{
+					"order": 9,
+					"list": true,
+					"reward": [0, 0, 900000000, 900000000, 0],
+					"id": "TL9",
+					"group": 0,
+					"name": "Technology Laboratory level 9",
+					"description": "Upgrade your Technology Laboratory to level 9",
+					"hint": "You can speed up upgrades.",
+					"questimage": "tech_laboratory.png",
+					"prereq": "TL8",
+					"rules":
+					{
+						"b145lvl": 9
+					}
+				},
+				{
+					"order": 10,
+					"list": true,
+					"reward": [0, 0, 1000000000, 1000000000, 0],
+					"id": "TL10",
+					"group": 0,
+					"name": "Technology Laboratory level 10",
+					"description": "Upgrade your Technology Laboratory to level 10",
+					"hint": "You can speed up upgrades.",
+					"questimage": "tech_laboratory.png",
+					"prereq": "TL9",
+					"rules":
+					{
+						"b145lvl": 10
+					}
+				},
+				{
+					"order": 1,
+					"list": true,
+					"reward": [0, 0, 100000000, 100000000, 0],
+					"id": "AC1",
+					"group": 0,
+					"name": "Anti-Catapult",
+					"description": "Build your Anti-Catapult",
+					"hint": "You can speed up upgrades.",
+					"questimage": "anti_catapult.png",
+					"rules":
+					{
+						"b144lvl": 1
+					}
+				},
+				{
+					"order": 2,
+					"list": true,
+					"reward": [0, 0, 200000000, 200000000, 0],
+					"id": "AC2",
+					"group": 0,
+					"name": "Anti-Catapult level 2",
+					"description": "Upgrade your Anti-Catapult to level 2",
+					"hint": "You can speed up upgrades.",
+					"questimage": "anti_catapult.png",
+					"prereq": "AC1",
+					"rules":
+					{
+						"b144lvl": 2
+					}
+				},
+				{
+					"order": 3,
+					"list": true,
+					"reward": [0, 0, 300000000, 300000000, 0],
+					"id": "AC3",
+					"group": 0,
+					"name": "Anti-Catapult level 3",
+					"description": "Upgrade your Anti-Catapult to level 3",
+					"hint": "You can speed up upgrades.",
+					"questimage": "anti_catapult.png",
+					"prereq": "AC2",
+					"rules":
+					{
+						"b144lvl": 3
+					}
+				},
+				{
+					"order": 4,
+					"list": true,
+					"reward": [0, 0, 400000000, 400000000, 0],
+					"id": "AC4",
+					"group": 0,
+					"name": "Anti-Catapult level 4",
+					"description": "Upgrade your Anti-Catapult to level 4",
+					"hint": "You can speed up upgrades.",
+					"questimage": "anti_catapult.png",
+					"prereq": "AC3",
+					"rules":
+					{
+						"b144lvl": 4
+					}
+				},
+				{
+					"order": 5,
+					"list": true,
+					"reward": [0, 0, 500000000, 500000000, 0],
+					"id": "AC5",
+					"group": 0,
+					"name": "Anti-Catapult level 5",
+					"description": "Upgrade your Anti-Catapult to level 5",
+					"hint": "You can speed up upgrades.",
+					"questimage": "anti_catapult.png",
+					"prereq": "AC4",
+					"rules":
+					{
+						"b144lvl": 5
+					}
+				},
+				{
+					"order": 6,
+					"list": true,
+					"reward": [0, 0, 600000000, 600000000, 0],
+					"id": "AC6",
+					"group": 0,
+					"name": "Anti-Catapult level 6",
+					"description": "Upgrade your Anti-Catapult to level 6",
+					"hint": "You can speed up upgrades.",
+					"questimage": "anti_catapult.png",
+					"prereq": "AC5",
+					"rules":
+					{
+						"b144lvl": 6
+					}
+				},
+				{
+					"order": 7,
+					"list": true,
+					"reward": [0, 0, 700000000, 700000000, 0],
+					"id": "AC7",
+					"group": 0,
+					"name": "Anti-Catapult level 7",
+					"description": "Upgrade your Anti-Catapult to level 7",
+					"hint": "You can speed up upgrades.",
+					"questimage": "anti_catapult.png",
+					"prereq": "AC6",
+					"rules":
+					{
+						"b144lvl": 7
+					}
+				},
+				{
+					"order": 8,
+					"list": true,
+					"reward": [0, 0, 800000000, 800000000, 0],
+					"id": "AC8",
+					"group": 0,
+					"name": "Anti-Catapult level 8",
+					"description": "Upgrade your Anti-Catapult to level 8",
+					"hint": "You can speed up upgrades.",
+					"questimage": "anti_catapult.png",
+					"prereq": "AC7",
+					"rules":
+					{
+						"b144lvl": 8
+					}
+				},
+				{
+					"order": 9,
+					"list": true,
+					"reward": [0, 0, 900000000, 900000000, 0],
+					"id": "AC9",
+					"group": 0,
+					"name": "Anti-Catapult level 9",
+					"description": "Upgrade your Anti-Catapult to level 9",
+					"hint": "You can speed up upgrades.",
+					"questimage": "anti_catapult.png",
+					"prereq": "AC8",
+					"rules":
+					{
+						"b144lvl": 9
+					}
+				},
+				{
+					"order": 10,
+					"list": true,
+					"reward": [0, 0, 1000000000, 1000000000, 0],
+					"id": "AC10",
+					"group": 0,
+					"name": "Anti-Catapult level 10",
+					"description": "Upgrade your Anti-Catapult to level 10",
+					"hint": "You can speed up upgrades.",
+					"questimage": "anti_catapult.png",
+					"prereq": "AC9",
+					"rules":
+					{
+						"b144lvl": 10
+					}
+				},
+				{
+					"order": 1,
+					"list": true,
+					"reward": [0, 0, 100000000, 100000000, 0],
+					"id": "CH1",
+					"group": 0,
+					"name": "Crystal Hive",
+					"description": "Build your Crystal Hive",
+					"hint": "You can speed up upgrades.",
+					"questimage": "crystal_hive.png",
+					"rules":
+					{
+						"b146lvl": 1
+					}
+				},
+				{
+					"order": 2,
+					"list": true,
+					"reward": [0, 0, 200000000, 200000000, 0],
+					"id": "CH2",
+					"group": 0,
+					"name": "Crystal Hive level 2",
+					"description": "Upgrade your Crystal Hive to level 2",
+					"hint": "You can speed up upgrades.",
+					"questimage": "crystal_hive.png",
+					"prereq": "CH1",
+					"rules":
+					{
+						"b146lvl": 2
+					}
+				},
+				{
+					"order": 3,
+					"list": true,
+					"reward": [0, 0, 300000000, 300000000, 0],
+					"id": "CH3",
+					"group": 0,
+					"name": "Crystal Hive level 3",
+					"description": "Upgrade your Crystal Hive to level 3",
+					"hint": "You can speed up upgrades.",
+					"questimage": "crystal_hive.png",
+					"prereq": "CH2",
+					"rules":
+					{
+						"b146lvl": 3
+					}
+				},
+				{
+					"order": 4,
+					"list": true,
+					"reward": [0, 0, 400000000, 400000000, 0],
+					"id": "CH4",
+					"group": 0,
+					"name": "Crystal Hive level 4",
+					"description": "Upgrade your Crystal Hive to level 4",
+					"hint": "You can speed up upgrades.",
+					"questimage": "crystal_hive.png",
+					"prereq": "CH3",
+					"rules":
+					{
+						"b146lvl": 4
+					}
+				},
+				{
+					"order": 5,
+					"list": true,
+					"reward": [0, 0, 500000000, 500000000, 0],
+					"id": "CH5",
+					"group": 0,
+					"name": "Crystal Hive level 5",
+					"description": "Upgrade your Crystal Hive to level 5",
+					"hint": "You can speed up upgrades.",
+					"questimage": "crystal_hive.png",
+					"prereq": "CH4",
+					"rules":
+					{
+						"b146lvl": 5
+					}
+				},
+				{
+					"order": 6,
+					"list": true,
+					"reward": [0, 0, 600000000, 600000000, 0],
+					"id": "CH6",
+					"group": 0,
+					"name": "Crystal Hive level 6",
+					"description": "Upgrade your Crystal Hive to level 6",
+					"hint": "You can speed up upgrades.",
+					"questimage": "crystal_hive.png",
+					"prereq": "CH5",
+					"rules":
+					{
+						"b146lvl": 6
+					}
+				},
+				{
+					"order": 7,
+					"list": true,
+					"reward": [0, 0, 700000000, 700000000, 0],
+					"id": "CH7",
+					"group": 0,
+					"name": "Crystal Hive level 7",
+					"description": "Upgrade your Crystal Hive to level 7",
+					"hint": "You can speed up upgrades.",
+					"questimage": "crystal_hive.png",
+					"prereq": "CH6",
+					"rules":
+					{
+						"b146lvl": 7
+					}
+				},
+				{
+					"order": 8,
+					"list": true,
+					"reward": [0, 0, 800000000, 800000000, 0],
+					"id": "CH8",
+					"group": 0,
+					"name": "Crystal Hive level 8",
+					"description": "Upgrade your Crystal Hive to level 8",
+					"hint": "You can speed up upgrades.",
+					"questimage": "crystal_hive.png",
+					"prereq": "CH7",
+					"rules":
+					{
+						"b146lvl": 8
+					}
+				},
+				{
+					"order": 9,
+					"list": true,
+					"reward": [0, 0, 900000000, 900000000, 0],
+					"id": "CH9",
+					"group": 0,
+					"name": "Crystal Hive level 9",
+					"description": "Upgrade your Crystal Hive to level 9",
+					"hint": "You can speed up upgrades.",
+					"questimage": "crystal_hive.png",
+					"prereq": "CH8",
+					"rules":
+					{
+						"b146lvl": 9
+					}
+				},
+				{
+					"order": 10,
+					"list": true,
+					"reward": [0, 0, 1000000000, 1000000000, 0],
+					"id": "CH10",
+					"group": 0,
+					"name": "Crystal Hive level 10",
+					"description": "Upgrade your Crystal Hive to level 10",
+					"hint": "You can speed up upgrades.",
+					"questimage": "crystal_hive.png",
+					"prereq": "CH9",
+					"rules":
+					{
+						"b146lvl": 10
+					}
+				},
 
 				// Group 1 (Monsters)
 				{
@@ -4548,482 +5027,579 @@ package
 					}
 				},
 
-				// Group 5 (Technology)
+				// Group 5 (Challenges)
 				{
-					"order": 1,
+					"order": 100,
 					"list": true,
-					"reward": [0, 0, 100000000, 100000000, 0],
-					"id": "TL1",
+					"reward": [10000000, 10000000, 10000000, 10000000, 0],
+					"id": "ASSAULT_TOWERS_100",
 					"group": 5,
-					"name": "Technology Laboratory",
-					"description": "Build your Technology Laboratory",
-					"hint": "You can speed up upgrades.",
-					"questimage": "tech_laboratory.png",
+					"name": "Enemy towers x100",
+					"description": "Destroy enemy towers.<br>Destroyed #assault_towers#\/100.",
+					"hint": "Destroy enemy towers in any base type",
+					"questimage": "shotgun.png",
 					"rules":
 					{
-						"b145lvl": 1
+						"assault_towers": 100
 					}
 				},
 				{
-					"order": 1,
+					"order": 250,
 					"list": true,
-					"reward": [0, 0, 100000000, 100000000, 0],
-					"id": "AC1",
+					"reward": [25000000, 25000000, 25000000, 25000000, 0],
+					"id": "ASSAULT_TOWERS_250",
 					"group": 5,
-					"name": "Anti-Catapult",
-					"description": "Build your Anti-Catapult",
-					"hint": "You can speed up upgrades.",
-					"questimage": "anti_catapult.png",
+					"name": "Enemy towers x250",
+					"description": "Destroy enemy towers.<br>Destroyed #assault_towers#\/250.",
+					"hint": "Destroy enemy towers in any base type",
+					"questimage": "shotgun.png",
+					"prereq": "ASSAULT_TOWERS_100",
 					"rules":
 					{
-						"b144lvl": 1
+						"assault_towers": 250
 					}
 				},
 				{
-					"order": 1,
+					"order": 500,
 					"list": true,
-					"reward": [0, 0, 100000000, 100000000, 0],
-					"id": "CH1",
+					"reward": [50000000, 50000000, 50000000, 50000000, 0],
+					"id": "ASSAULT_TOWERS_500",
 					"group": 5,
-					"name": "Crystal Hive",
-					"description": "Build your Crystal Hive",
-					"hint": "You can speed up upgrades.",
-					"questimage": "crystal_hive.png",
+					"name": "Enemy towers x500",
+					"description": "Destroy enemy towers.<br>Destroyed #assault_towers#\/500.",
+					"hint": "Destroy enemy towers in any base type",
+					"questimage": "shotgun.png",
+					"prereq": "ASSAULT_TOWERS_250",
 					"rules":
 					{
-						"b146lvl": 1
+						"assault_towers": 500
 					}
 				},
 				{
-					"order": 2,
+					"order": 1000,
 					"list": true,
-					"reward": [0, 0, 200000000, 200000000, 0],
-					"id": "TL2",
+					"reward": [100000000, 100000000, 100000000, 100000000, 10],
+					"id": "ASSAULT_TOWERS_1000",
 					"group": 5,
-					"name": "Technology Laboratory level 2",
-					"description": "Upgrade your Technology Laboratory to level 2",
-					"hint": "You can speed up upgrades.",
-					"questimage": "tech_laboratory.png",
-					"prereq": "TL1",
+					"name": "Enemy towers x1000",
+					"description": "Destroy enemy towers.<br>Destroyed #assault_towers#\/1000.",
+					"hint": "Destroy enemy towers in any base type",
+					"questimage": "shotgun.png",
+					"prereq": "ASSAULT_TOWERS_500",
 					"rules":
 					{
-						"b145lvl": 2
+						"assault_towers": 1000
 					}
 				},
 				{
-					"order": 2,
+					"order": 2500,
 					"list": true,
-					"reward": [0, 0, 200000000, 200000000, 0],
-					"id": "AC2",
+					"reward": [250000000, 250000000, 250000000, 250000000, 25],
+					"id": "ASSAULT_TOWERS_2500",
 					"group": 5,
-					"name": "Anti-Catapult level 2",
-					"description": "Upgrade your Anti-Catapult to level 2",
-					"hint": "You can speed up upgrades.",
-					"questimage": "anti_catapult.png",
-					"prereq": "AC1",
+					"name": "Enemy towers x2500",
+					"description": "Destroy enemy towers.<br>Destroyed #assault_towers#\/2500.",
+					"hint": "Destroy enemy towers in any base type",
+					"questimage": "shotgun.png",
+					"prereq": "ASSAULT_TOWERS_1000",
 					"rules":
 					{
-						"b144lvl": 2
+						"assault_towers": 2500
 					}
 				},
 				{
-					"order": 2,
+					"order": 5000,
 					"list": true,
-					"reward": [0, 0, 200000000, 200000000, 0],
-					"id": "CH2",
+					"reward": [500000000, 500000000, 500000000, 500000000, 50],
+					"id": "ASSAULT_TOWERS_5000",
 					"group": 5,
-					"name": "Crystal Hive level 2",
-					"description": "Upgrade your Crystal Hive to level 2",
-					"hint": "You can speed up upgrades.",
-					"questimage": "crystal_hive.png",
-					"prereq": "CH1",
+					"name": "Enemy towers x5000",
+					"description": "Destroy enemy towers.<br>Destroyed #assault_towers#\/5000.",
+					"hint": "Destroy enemy towers in any base type",
+					"questimage": "shotgun.png",
+					"prereq": "ASSAULT_TOWERS_2500",
 					"rules":
 					{
-						"b146lvl": 2
+						"assault_towers": 5000
 					}
 				},
 				{
-					"order": 3,
+					"order": 7500,
 					"list": true,
-					"reward": [0, 0, 300000000, 300000000, 0],
-					"id": "TL3",
+					"reward": [750000000, 750000000, 750000000, 750000000, 75],
+					"id": "ASSAULT_TOWERS_7500",
 					"group": 5,
-					"name": "Technology Laboratory level 3",
-					"description": "Upgrade your Technology Laboratory to level 3",
-					"hint": "You can speed up upgrades.",
-					"questimage": "tech_laboratory.png",
-					"prereq": "TL2",
+					"name": "Enemy towers x7500",
+					"description": "Destroy enemy towers.<br>Destroyed #assault_towers#\/7500.",
+					"hint": "Destroy enemy towers in any base type",
+					"questimage": "shotgun.png",
+					"prereq": "ASSAULT_TOWERS_5000",
 					"rules":
 					{
-						"b145lvl": 3
+						"assault_towers": 7500
 					}
 				},
 				{
-					"order": 3,
+					"order": 10000,
 					"list": true,
-					"reward": [0, 0, 300000000, 300000000, 0],
-					"id": "AC3",
+					"reward": [1000000000, 1000000000, 1000000000, 1000000000, 100],
+					"id": "ASSAULT_TOWERS_10000",
 					"group": 5,
-					"name": "Anti-Catapult level 3",
-					"description": "Upgrade your Anti-Catapult to level 3",
-					"hint": "You can speed up upgrades.",
-					"questimage": "anti_catapult.png",
-					"prereq": "AC2",
+					"name": "Enemy towers x10000",
+					"description": "Destroy enemy towers.<br>Destroyed #assault_towers#\/10000.",
+					"hint": "Destroy enemy towers in any base type",
+					"questimage": "shotgun.png",
+					"prereq": "ASSAULT_TOWERS_7500",
 					"rules":
 					{
-						"b144lvl": 3
+						"assault_towers": 10000
 					}
 				},
 				{
-					"order": 3,
+					"order": 20000,
 					"list": true,
-					"reward": [0, 0, 300000000, 300000000, 0],
-					"id": "CH3",
+					"reward": [2000000000, 2000000000, 2000000000, 2000000000, 200],
+					"id": "ASSAULT_TOWERS_20000",
 					"group": 5,
-					"name": "Crystal Hive level 3",
-					"description": "Upgrade your Crystal Hive to level 3",
-					"hint": "You can speed up upgrades.",
-					"questimage": "crystal_hive.png",
-					"prereq": "CH2",
+					"name": "Enemy towers x20000",
+					"description": "Destroy enemy towers.<br>Destroyed #assault_towers#\/20000.",
+					"hint": "Destroy enemy towers in any base type",
+					"questimage": "shotgun.png",
+					"prereq": "ASSAULT_TOWERS_10000",
 					"rules":
 					{
-						"b146lvl": 3
+						"assault_towers": 20000
 					}
 				},
 				{
-					"order": 4,
+					"order": 40000,
 					"list": true,
-					"reward": [0, 0, 400000000, 400000000, 0],
-					"id": "TL4",
+					"reward": [4000000000, 4000000000, 4000000000, 4000000000, 400],
+					"id": "ASSAULT_TOWERS_40000",
 					"group": 5,
-					"name": "Technology Laboratory level 4",
-					"description": "Upgrade your Technology Laboratory to level 4",
-					"hint": "You can speed up upgrades.",
-					"questimage": "tech_laboratory.png",
-					"prereq": "TL3",
+					"name": "Enemy towers x40000",
+					"description": "Destroy enemy towers.<br>Destroyed #assault_towers#\/40000.",
+					"hint": "Destroy enemy towers in any base type",
+					"questimage": "shotgun.png",
+					"prereq": "ASSAULT_TOWERS_20000",
 					"rules":
 					{
-						"b145lvl": 4
+						"assault_towers": 40000
 					}
 				},
 				{
-					"order": 4,
+					"order": 60000,
 					"list": true,
-					"reward": [0, 0, 400000000, 400000000, 0],
-					"id": "AC4",
+					"reward": [6000000000, 6000000000, 6000000000, 6000000000, 600],
+					"id": "ASSAULT_TOWERS_60000",
 					"group": 5,
-					"name": "Anti-Catapult level 4",
-					"description": "Upgrade your Anti-Catapult to level 4",
-					"hint": "You can speed up upgrades.",
-					"questimage": "anti_catapult.png",
-					"prereq": "AC3",
+					"name": "Enemy towers x60000",
+					"description": "Destroy enemy towers.<br>Destroyed #assault_towers#\/60000.",
+					"hint": "Destroy enemy towers in any base type",
+					"questimage": "shotgun.png",
+					"prereq": "ASSAULT_TOWERS_40000",
 					"rules":
 					{
-						"b144lvl": 4
+						"assault_towers": 60000
 					}
 				},
 				{
-					"order": 4,
+					"order": 80000,
 					"list": true,
-					"reward": [0, 0, 400000000, 400000000, 0],
-					"id": "CH4",
+					"reward": [8000000000, 8000000000, 8000000000, 8000000000, 800],
+					"id": "ASSAULT_TOWERS_80000",
 					"group": 5,
-					"name": "Crystal Hive level 4",
-					"description": "Upgrade your Crystal Hive to level 4",
-					"hint": "You can speed up upgrades.",
-					"questimage": "crystal_hive.png",
-					"prereq": "CH3",
+					"name": "Enemy towers x80000",
+					"description": "Destroy enemy towers.<br>Destroyed #assault_towers#\/80000.",
+					"hint": "Destroy enemy towers in any base type",
+					"questimage": "shotgun.png",
+					"prereq": "ASSAULT_TOWERS_60000",
 					"rules":
 					{
-						"b146lvl": 4
+						"assault_towers": 80000
 					}
 				},
 				{
-					"order": 5,
+					"order": 100000,
 					"list": true,
-					"reward": [0, 0, 500000000, 500000000, 0],
-					"id": "TL5",
+					"reward": [10000000000, 10000000000, 10000000000, 10000000000, 1000],
+					"id": "ASSAULT_TOWERS_100000",
 					"group": 5,
-					"name": "Technology Laboratory level 5",
-					"description": "Upgrade your Technology Laboratory to level 5",
-					"hint": "You can speed up upgrades.",
-					"questimage": "tech_laboratory.png",
-					"prereq": "TL4",
+					"name": "Enemy towers x100000",
+					"description": "Destroy enemy towers.<br>Destroyed #assault_towers#\/100000.",
+					"hint": "Destroy enemy towers in any base type",
+					"questimage": "shotgun.png",
+					"prereq": "ASSAULT_TOWERS_80000",
 					"rules":
 					{
-						"b145lvl": 5
+						"assault_towers": 100000
 					}
 				},
 				{
-					"order": 5,
+					"order": 200000,
 					"list": true,
-					"reward": [0, 0, 500000000, 500000000, 0],
-					"id": "AC5",
+					"reward": [20000000000, 20000000000, 20000000000, 20000000000, 2000],
+					"id": "ASSAULT_TOWERS_200000",
 					"group": 5,
-					"name": "Anti-Catapult level 5",
-					"description": "Upgrade your Anti-Catapult to level 5",
-					"hint": "You can speed up upgrades.",
-					"questimage": "anti_catapult.png",
-					"prereq": "AC4",
+					"name": "Enemy towers x200000",
+					"description": "Destroy enemy towers.<br>Destroyed #assault_towers#\/200000.",
+					"hint": "Destroy enemy towers in any base type",
+					"questimage": "shotgun.png",
+					"prereq": "ASSAULT_TOWERS_100000",
 					"rules":
 					{
-						"b144lvl": 5
+						"assault_towers": 200000
 					}
 				},
 				{
-					"order": 5,
+					"order": 400000,
 					"list": true,
-					"reward": [0, 0, 500000000, 500000000, 0],
-					"id": "CH5",
+					"reward": [40000000000, 40000000000, 40000000000, 40000000000, 4000],
+					"id": "ASSAULT_TOWERS_400000",
 					"group": 5,
-					"name": "Crystal Hive level 5",
-					"description": "Upgrade your Crystal Hive to level 5",
-					"hint": "You can speed up upgrades.",
-					"questimage": "crystal_hive.png",
-					"prereq": "CH4",
+					"name": "Enemy towers x400000",
+					"description": "Destroy enemy towers.<br>Destroyed #assault_towers#\/400000.",
+					"hint": "Destroy enemy towers in any base type",
+					"questimage": "shotgun.png",
+					"prereq": "ASSAULT_TOWERS_200000",
 					"rules":
 					{
-						"b146lvl": 5
+						"assault_towers": 400000
 					}
 				},
 				{
-					"order": 6,
+					"order": 600000,
 					"list": true,
-					"reward": [0, 0, 600000000, 600000000, 0],
-					"id": "TL6",
+					"reward": [60000000000, 60000000000, 60000000000, 60000000000, 6000],
+					"id": "ASSAULT_TOWERS_600000",
 					"group": 5,
-					"name": "Technology Laboratory level 6",
-					"description": "Upgrade your Technology Laboratory to level 6",
-					"hint": "You can speed up upgrades.",
-					"questimage": "tech_laboratory.png",
-					"prereq": "TL5",
+					"name": "Enemy towers x600000",
+					"description": "Destroy enemy towers.<br>Destroyed #assault_towers#\/600000.",
+					"hint": "Destroy enemy towers in any base type",
+					"questimage": "shotgun.png",
+					"prereq": "ASSAULT_TOWERS_400000",
 					"rules":
 					{
-						"b145lvl": 6
+						"assault_towers": 600000
 					}
 				},
 				{
-					"order": 6,
+					"order": 800000,
 					"list": true,
-					"reward": [0, 0, 600000000, 600000000, 0],
-					"id": "AC6",
+					"reward": [80000000000, 80000000000, 80000000000, 80000000000, 8000],
+					"id": "ASSAULT_TOWERS_800000",
 					"group": 5,
-					"name": "Anti-Catapult level 6",
-					"description": "Upgrade your Anti-Catapult to level 6",
-					"hint": "You can speed up upgrades.",
-					"questimage": "anti_catapult.png",
-					"prereq": "AC5",
+					"name": "Enemy towers x800000",
+					"description": "Destroy enemy towers.<br>Destroyed #assault_towers#\/800000.",
+					"hint": "Destroy enemy towers in any base type",
+					"questimage": "shotgun.png",
+					"prereq": "ASSAULT_TOWERS_600000",
 					"rules":
 					{
-						"b144lvl": 6
+						"assault_towers": 800000
 					}
 				},
 				{
-					"order": 6,
+					"order": 1000000,
 					"list": true,
-					"reward": [0, 0, 600000000, 600000000, 0],
-					"id": "CH6",
+					"reward": [100000000000, 100000000000, 100000000000, 100000000000, 10000],
+					"id": "ASSAULT_TOWERS_1000000",
 					"group": 5,
-					"name": "Crystal Hive level 6",
-					"description": "Upgrade your Crystal Hive to level 6",
-					"hint": "You can speed up upgrades.",
-					"questimage": "crystal_hive.png",
-					"prereq": "CH5",
+					"name": "Enemy towers x1000000",
+					"description": "Destroy enemy towers.<br>Destroyed #assault_towers#\/1000000.",
+					"hint": "Destroy enemy towers in any base type",
+					"questimage": "shotgun.png",
+					"prereq": "ASSAULT_TOWERS_800000",
 					"rules":
 					{
-						"b146lvl": 6
+						"assault_towers": 1000000
 					}
 				},
 				{
-					"order": 7,
+					"order": 100,
 					"list": true,
-					"reward": [0, 0, 700000000, 700000000, 0],
-					"id": "TL7",
+					"reward": [1000000, 1000000, 1000000, 1000000, 0],
+					"id": "ASSAULT_MONSTERS_100",
 					"group": 5,
-					"name": "Technology Laboratory level 7",
-					"description": "Upgrade your Technology Laboratory to level 7",
-					"hint": "You can speed up upgrades.",
-					"questimage": "tech_laboratory.png",
-					"prereq": "TL6",
+					"name": "Enemy monsters x100",
+					"description": "Destroy enemy monsters.<br>Destroyed #assault_monsters#\/100.",
+					"hint": "Destroy enemy monsters in any base type",
+					"questimage": "greenbouncer.png",
 					"rules":
 					{
-						"b145lvl": 7
+						"assault_monsters": 100
 					}
 				},
 				{
-					"order": 7,
+					"order": 250,
 					"list": true,
-					"reward": [0, 0, 700000000, 700000000, 0],
-					"id": "AC7",
+					"reward": [2500000, 2500000, 2500000, 2500000, 0],
+					"id": "ASSAULT_MONSTERS_250",
 					"group": 5,
-					"name": "Anti-Catapult level 7",
-					"description": "Upgrade your Anti-Catapult to level 7",
-					"hint": "You can speed up upgrades.",
-					"questimage": "anti_catapult.png",
-					"prereq": "AC6",
+					"name": "Enemy monsters x250",
+					"description": "Destroy enemy monsters.<br>Destroyed #assault_monsters#\/250.",
+					"hint": "Destroy enemy monsters in any base type",
+					"questimage": "greenbouncer.png",
+					"prereq": "ASSAULT_MONSTERS_100",
 					"rules":
 					{
-						"b144lvl": 7
+						"assault_monsters": 250
 					}
 				},
 				{
-					"order": 7,
+					"order": 500,
 					"list": true,
-					"reward": [0, 0, 700000000, 700000000, 0],
-					"id": "CH7",
+					"reward": [5000000, 5000000, 5000000, 5000000, 0],
+					"id": "ASSAULT_MONSTERS_500",
 					"group": 5,
-					"name": "Crystal Hive level 7",
-					"description": "Upgrade your Crystal Hive to level 7",
-					"hint": "You can speed up upgrades.",
-					"questimage": "crystal_hive.png",
-					"prereq": "CH6",
+					"name": "Enemy monsters x500",
+					"description": "Destroy enemy monsters.<br>Destroyed #assault_monsters#\/500.",
+					"hint": "Destroy enemy monsters in any base type",
+					"questimage": "greenbouncer.png",
+					"prereq": "ASSAULT_MONSTERS_250",
 					"rules":
 					{
-						"b146lvl": 7
+						"assault_monsters": 500
 					}
 				},
 				{
-					"order": 8,
+					"order": 1000,
 					"list": true,
-					"reward": [0, 0, 800000000, 800000000, 0],
-					"id": "TL8",
+					"reward": [10000000, 10000000, 10000000, 10000000, 0],
+					"id": "ASSAULT_MONSTERS_1000",
 					"group": 5,
-					"name": "Technology Laboratory level 8",
-					"description": "Upgrade your Technology Laboratory to level 8",
-					"hint": "You can speed up upgrades.",
-					"questimage": "tech_laboratory.png",
-					"prereq": "TL7",
+					"name": "Enemy monsters x1000",
+					"description": "Destroy enemy monsters.<br>Destroyed #assault_monsters#\/1000.",
+					"hint": "Destroy enemy monsters in any base type",
+					"questimage": "greenbouncer.png",
+					"prereq": "ASSAULT_MONSTERS_500",
 					"rules":
 					{
-						"b145lvl": 8
+						"assault_monsters": 1000
 					}
 				},
 				{
-					"order": 8,
+					"order": 2500,
 					"list": true,
-					"reward": [0, 0, 800000000, 800000000, 0],
-					"id": "AC8",
+					"reward": [25000000, 25000000, 25000000, 25000000, 0],
+					"id": "ASSAULT_MONSTERS_2500",
 					"group": 5,
-					"name": "Anti-Catapult level 8",
-					"description": "Upgrade your Anti-Catapult to level 8",
-					"hint": "You can speed up upgrades.",
-					"questimage": "anti_catapult.png",
-					"prereq": "AC7",
+					"name": "Enemy monsters x2500",
+					"description": "Destroy enemy monsters.<br>Destroyed #assault_monsters#\/2500.",
+					"hint": "Destroy enemy monsters in any base type",
+					"questimage": "greenbouncer.png",
+					"prereq": "ASSAULT_MONSTERS_1000",
 					"rules":
 					{
-						"b144lvl": 8
+						"assault_monsters": 2500
 					}
 				},
 				{
-					"order": 8,
+					"order": 5000,
 					"list": true,
-					"reward": [0, 0, 800000000, 800000000, 0],
-					"id": "CH8",
+					"reward": [50000000, 50000000, 50000000, 50000000, 0],
+					"id": "ASSAULT_MONSTERS_5000",
 					"group": 5,
-					"name": "Crystal Hive level 8",
-					"description": "Upgrade your Crystal Hive to level 8",
-					"hint": "You can speed up upgrades.",
-					"questimage": "crystal_hive.png",
-					"prereq": "CH7",
+					"name": "Enemy monsters x5000",
+					"description": "Destroy enemy monsters.<br>Destroyed #assault_monsters#\/5000.",
+					"hint": "Destroy enemy monsters in any base type",
+					"questimage": "greenbouncer.png",
+					"prereq": "ASSAULT_MONSTERS_2500",
 					"rules":
 					{
-						"b146lvl": 8
+						"assault_monsters": 5000
 					}
 				},
 				{
-					"order": 9,
+					"order": 7500,
 					"list": true,
-					"reward": [0, 0, 900000000, 900000000, 0],
-					"id": "TL9",
+					"reward": [75000000, 75000000, 75000000, 75000000, 0],
+					"id": "ASSAULT_MONSTERS_7500",
 					"group": 5,
-					"name": "Technology Laboratory level 9",
-					"description": "Upgrade your Technology Laboratory to level 9",
-					"hint": "You can speed up upgrades.",
-					"questimage": "tech_laboratory.png",
-					"prereq": "TL8",
+					"name": "Enemy monsters x7500",
+					"description": "Destroy enemy monsters.<br>Destroyed #assault_monsters#\/7500.",
+					"hint": "Destroy enemy monsters in any base type",
+					"questimage": "greenbouncer.png",
+					"prereq": "ASSAULT_MONSTERS_5000",
 					"rules":
 					{
-						"b145lvl": 9
+						"assault_monsters": 7500
 					}
 				},
 				{
-					"order": 9,
+					"order": 10000,
 					"list": true,
-					"reward": [0, 0, 900000000, 900000000, 0],
-					"id": "AC9",
+					"reward": [100000000, 100000000, 100000000, 100000000, 0],
+					"id": "ASSAULT_MONSTERS_10000",
 					"group": 5,
-					"name": "Anti-Catapult level 9",
-					"description": "Upgrade your Anti-Catapult to level 9",
-					"hint": "You can speed up upgrades.",
-					"questimage": "anti_catapult.png",
-					"prereq": "AC8",
+					"name": "Enemy monsters x10000",
+					"description": "Destroy enemy monsters.<br>Destroyed #assault_monsters#\/10000.",
+					"hint": "Destroy enemy monsters in any base type",
+					"questimage": "greenbouncer.png",
+					"prereq": "ASSAULT_MONSTERS_7500",
 					"rules":
 					{
-						"b144lvl": 9
+						"assault_monsters": 10000
 					}
 				},
 				{
-					"order": 9,
+					"order": 20000,
 					"list": true,
-					"reward": [0, 0, 900000000, 900000000, 0],
-					"id": "CH9",
+					"reward": [200000000, 200000000, 200000000, 200000000, 0],
+					"id": "ASSAULT_MONSTERS_20000",
 					"group": 5,
-					"name": "Crystal Hive level 9",
-					"description": "Upgrade your Crystal Hive to level 9",
-					"hint": "You can speed up upgrades.",
-					"questimage": "crystal_hive.png",
-					"prereq": "CH8",
+					"name": "Enemy monsters x20000",
+					"description": "Destroy enemy monsters.<br>Destroyed #assault_monsters#\/20000.",
+					"hint": "Destroy enemy monsters in any base type",
+					"questimage": "greenbouncer.png",
+					"prereq": "ASSAULT_MONSTERS_10000",
 					"rules":
 					{
-						"b146lvl": 9
+						"assault_monsters": 20000
 					}
 				},
 				{
-					"order": 10,
+					"order": 40000,
 					"list": true,
-					"reward": [0, 0, 1000000000, 1000000000, 0],
-					"id": "TL10",
+					"reward": [400000000, 400000000, 400000000, 400000000, 0],
+					"id": "ASSAULT_MONSTERS_40000",
 					"group": 5,
-					"name": "Technology Laboratory level 10",
-					"description": "Upgrade your Technology Laboratory to level 10",
-					"hint": "You can speed up upgrades.",
-					"questimage": "tech_laboratory.png",
-					"prereq": "TL9",
+					"name": "Enemy monsters x40000",
+					"description": "Destroy enemy monsters.<br>Destroyed #assault_monsters#\/40000.",
+					"hint": "Destroy enemy monsters in any base type",
+					"questimage": "greenbouncer.png",
+					"prereq": "ASSAULT_MONSTERS_20000",
 					"rules":
 					{
-						"b145lvl": 10
+						"assault_monsters": 40000
 					}
 				},
 				{
-					"order": 10,
+					"order": 60000,
 					"list": true,
-					"reward": [0, 0, 1000000000, 1000000000, 0],
-					"id": "AC10",
+					"reward": [600000000, 600000000, 600000000, 600000000, 0],
+					"id": "ASSAULT_MONSTERS_60000",
 					"group": 5,
-					"name": "Anti-Catapult level 10",
-					"description": "Upgrade your Anti-Catapult to level 10",
-					"hint": "You can speed up upgrades.",
-					"questimage": "anti_catapult.png",
-					"prereq": "AC9",
+					"name": "Enemy monsters x60000",
+					"description": "Destroy enemy monsters.<br>Destroyed #assault_monsters#\/60000.",
+					"hint": "Destroy enemy monsters in any base type",
+					"questimage": "greenbouncer.png",
+					"prereq": "ASSAULT_MONSTERS_40000",
 					"rules":
 					{
-						"b144lvl": 10
+						"assault_monsters": 60000
 					}
 				},
 				{
-					"order": 10,
+					"order": 80000,
 					"list": true,
-					"reward": [0, 0, 1000000000, 1000000000, 0],
-					"id": "CH10",
+					"reward": [800000000, 800000000, 800000000, 800000000, 0],
+					"id": "ASSAULT_MONSTERS_80000",
 					"group": 5,
-					"name": "Crystal Hive level 10",
-					"description": "Upgrade your Crystal Hive to level 10",
-					"hint": "You can speed up upgrades.",
-					"questimage": "crystal_hive.png",
-					"prereq": "CH9",
+					"name": "Enemy monsters x80000",
+					"description": "Destroy enemy monsters.<br>Destroyed #assault_monsters#\/80000.",
+					"hint": "Destroy enemy monsters in any base type",
+					"questimage": "greenbouncer.png",
+					"prereq": "ASSAULT_MONSTERS_60000",
 					"rules":
 					{
-						"b146lvl": 10
+						"assault_monsters": 80000
+					}
+				},
+				{
+					"order": 100000,
+					"list": true,
+					"reward": [1000000000, 1000000000, 1000000000, 1000000000, 0],
+					"id": "ASSAULT_MONSTERS_100000",
+					"group": 5,
+					"name": "Enemy monsters x100000",
+					"description": "Destroy enemy monsters.<br>Destroyed #assault_monsters#\/100000.",
+					"hint": "Destroy enemy monsters in any base type",
+					"questimage": "greenbouncer.png",
+					"prereq": "ASSAULT_MONSTERS_80000",
+					"rules":
+					{
+						"assault_monsters": 100000
+					}
+				},
+				{
+					"order": 200000,
+					"list": true,
+					"reward": [2000000000, 2000000000, 2000000000, 2000000000, 0],
+					"id": "ASSAULT_MONSTERS_200000",
+					"group": 5,
+					"name": "Enemy monsters x200000",
+					"description": "Destroy enemy monsters.<br>Destroyed #assault_monsters#\/200000.",
+					"hint": "Destroy enemy monsters in any base type",
+					"questimage": "greenbouncer.png",
+					"prereq": "ASSAULT_MONSTERS_100000",
+					"rules":
+					{
+						"assault_monsters": 200000
+					}
+				},
+				{
+					"order": 400000,
+					"list": true,
+					"reward": [4000000000, 4000000000, 4000000000, 4000000000, 0],
+					"id": "ASSAULT_MONSTERS_400000",
+					"group": 5,
+					"name": "Enemy monsters x400000",
+					"description": "Destroy enemy monsters.<br>Destroyed #assault_monsters#\/400000.",
+					"hint": "Destroy enemy monsters in any base type",
+					"questimage": "greenbouncer.png",
+					"prereq": "ASSAULT_MONSTERS_200000",
+					"rules":
+					{
+						"assault_monsters": 400000
+					}
+				},
+				{
+					"order": 600000,
+					"list": true,
+					"reward": [6000000000, 6000000000, 6000000000, 6000000000, 0],
+					"id": "ASSAULT_MONSTERS_600000",
+					"group": 5,
+					"name": "Enemy monsters x600000",
+					"description": "Destroy enemy monsters.<br>Destroyed #assault_monsters#\/600000.",
+					"hint": "Destroy enemy monsters in any base type",
+					"questimage": "greenbouncer.png",
+					"prereq": "ASSAULT_MONSTERS_400000",
+					"rules":
+					{
+						"assault_monsters": 600000
+					}
+				},
+				{
+					"order": 800000,
+					"list": true,
+					"reward": [8000000000, 8000000000, 8000000000, 8000000000, 0],
+					"id": "ASSAULT_MONSTERS_800000",
+					"group": 5,
+					"name": "Enemy monsters x800000",
+					"description": "Destroy enemy monsters.<br>Destroyed #assault_monsters#\/800000.",
+					"hint": "Destroy enemy monsters in any base type",
+					"questimage": "greenbouncer.png",
+					"prereq": "ASSAULT_MONSTERS_600000",
+					"rules":
+					{
+						"assault_monsters": 800000
+					}
+				},
+				{
+					"order": 1000000,
+					"list": true,
+					"reward": [10000000000, 10000000000, 10000000000, 10000000000, 2500],
+					"id": "ASSAULT_MONSTERS_1000000",
+					"group": 5,
+					"name": "Enemy monsters x1000000",
+					"description": "Destroy enemy monsters.<br>Destroyed #assault_monsters#\/1000000.",
+					"hint": "Destroy enemy monsters in any base type",
+					"questimage": "greenbouncer.png",
+					"prereq": "ASSAULT_MONSTERS_800000",
+					"rules":
+					{
+						"assault_monsters": 1000000
 					}
 				},
 
@@ -7301,6 +7877,7 @@ package
 						"assault_mo_4": 1000
 					}
 				},
+
 			];
 			var _loc1_:Array = [0,0,10,10,10,2,15,15,15,20,20,5,2,5,5,1];
 			_loc2_ = CREATURELOCKER._creatures["C" + 2];

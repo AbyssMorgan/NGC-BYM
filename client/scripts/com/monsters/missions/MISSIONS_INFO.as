@@ -69,6 +69,8 @@ package com.monsters.missions
 	 	 description = description.replace("#assault_sh#",QUESTS._global.assault_sh);
 		 description = description.replace("#assault_ro#",QUESTS._global.assault_ro);
 		 description = description.replace("#assault_de#",QUESTS._global.assault_de);
+		 description = description.replace("#assault_towers#",QUESTS._global.assault_towers);
+		 description = description.replace("#assault_monsters#",QUESTS._global.assault_monsters);
          description = description.replace("#giftssent#",QUESTS._global.bonus_gifts);
          description = description.replace("#sentgiftsaccepted#",QUESTS._global.gift_accept);
          if(Boolean(QUESTS._completed) && QUESTS._completed[this._missionKey] == 1)

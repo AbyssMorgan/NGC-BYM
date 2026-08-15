@@ -44,7 +44,7 @@ package
 
       public static var cdnUrl:String = CONFIG::CDN_URL;
 
-      public static var apiVersionSuffix:String = "ngc-v1.4.3";
+      public static var apiVersionSuffix:String = "ngc-v1.4.4";
 
       public static var connectionCounter:int;
 
@@ -465,6 +465,10 @@ package
 	  public static var assault_sh:int = 0;
 
 	  public static var assault_de:int = 0;
+	  
+	  public static var assault_towers:int = 0;
+	  
+	  public static var assault_monsters:int = 0;
 
       public function GLOBAL()
       {

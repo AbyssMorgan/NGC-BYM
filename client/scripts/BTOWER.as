@@ -275,7 +275,16 @@ package
 				this.TickJar();
 			}
 		}
-		
+
+		override public function Destroyed(param1:Boolean = true) : void
+		{
+			super.Destroyed(param1);
+			if(!BASE.isMainYardOrInfernoMainYard && GLOBAL.assault_towers < 2000000000){
+				GLOBAL.assault_towers++;
+				QUESTS._global.assault_towers++;
+			}
+		}
+			
 		public function targetInRange() : Boolean
 		{
 			var _loc1_:Point = null;

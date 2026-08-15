@@ -1274,6 +1274,18 @@ package
                } else {
  				  QUESTS._global.assault_de = GLOBAL.assault_de;
 			   }
+			   if (serverData.stats.assault_towers && GLOBAL.assault_towers == 0){
+				  GLOBAL.assault_towers = serverData.stats.assault_towers;
+                  QUESTS._global.assault_towers = serverData.stats.assault_towers;
+               } else {
+ 				  QUESTS._global.assault_towers = GLOBAL.assault_towers;
+			   }
+			   if (serverData.stats.assault_monsters && GLOBAL.assault_monsters == 0){
+				  GLOBAL.assault_monsters = serverData.stats.assault_monsters;
+                  QUESTS._global.assault_monsters = serverData.stats.assault_monsters;
+               } else {
+ 				  QUESTS._global.assault_monsters = GLOBAL.assault_monsters;
+			   }
             //    if (serverData.stats.moga)
             //    {
             //       QUESTS._global.gift_accept = serverData.stats.moga;
@@ -3209,6 +3221,8 @@ package
          _loc1_.assault_sh = int(QUESTS._global.assault_sh);
          _loc1_.assault_ro = int(QUESTS._global.assault_ro);
          _loc1_.assault_de = int(QUESTS._global.assault_de);
+         _loc1_.assault_towers = int(QUESTS._global.assault_towers);
+         _loc1_.assault_monsters = int(QUESTS._global.assault_monsters);
          _loc1_.moga = int(QUESTS._global.gift_accept);
          _loc1_.updateid = GLOBAL._whatsnewid;
          _loc1_.updateid_mr2 = GLOBAL._mr2TutorialId;

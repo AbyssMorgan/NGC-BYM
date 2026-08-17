@@ -20,7 +20,6 @@ package com.monsters.kingOfTheHill.messages
       
       override protected function onButtonClick() : void
       {
-         GLOBAL.CallJS("sendFeed",["event4-reward",KEYS.Get("fb_kothstream_title"),KEYS.Get("fb_kothstream_desc"),"fb_kothstream.png"]);
          POPUPS.Next();
       }
    }

@@ -111,14 +111,12 @@ package
       {
          this.bragPopUp.bPost.removeEventListener(MouseEvent.CLICK,this.CloseUpgradePopUp);
          POPUPS.Next();
-         GLOBAL.CallJS("sendFeed",["upgrade-ho-" + _lvl.Get(),KEYS.Get("pop_housingupgraded_streamtitle",{"v1":_lvl.Get()}),KEYS.Get("pop_housingupgraded_streambody"),"upgrade-housing.png"]);
       }
       
       private function CloseConstructionPopUp(param1:MouseEvent) : void
       {
          this.bragPopUp.bPost.removeEventListener(MouseEvent.CLICK,this.CloseConstructionPopUp);
          POPUPS.Next();
-         GLOBAL.CallJS("sendFeed",["build-wmb",KEYS.Get("pop_bunkerbuilt_streamtitle"),KEYS.Get("pop_bunkerbuilt_streambody"),"build-monsterbunker.png"]);
       }
       
       override public function RecycleC() : void

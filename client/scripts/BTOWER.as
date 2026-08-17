@@ -410,52 +410,8 @@ package
 		
 		override public function Upgraded() : void
 		{
-			var Brag:Function;
-			var mc:MovieClip = null;
 			super.Upgraded();
 			this.Props();
-			if(GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD && !(BASE.isInfernoBuilding(_type) || BASE.isInfernoMainYardOrOutpost))
-			{
-				Brag = function(param1:MouseEvent):void
-				{
-					var _loc2_:String = "build-cannon.png";
-					if(_type == 21)
-					{
-						_loc2_ = "build-sniper.png";
-					}
-					if(_type == 25)
-					{
-						_loc2_ = "build-lightning.png";
-					}
-					if(_type == 23)
-					{
-						_loc2_ = "build-laser.png";
-					}
-					if(_type == 115)
-					{
-						_loc2_ = "build-aerial.v2.png";
-					}
-					if(_type == 118)
-					{
-						_loc2_ = "build_railgun.png";
-					}
-					GLOBAL.CallJS("sendFeed",["build-" + String(_buildingProps.name).toLowerCase(),KEYS.Get("pop_tupgraded_streamtitle",{
-						"v1":_lvl.Get(),
-						"v2":KEYS.Get(_buildingProps.name)
-					}),KEYS.Get("pop_tupgraded_streambody"),_loc2_]);
-					POPUPS.Next();
-				};
-				mc = new popup_building();
-				mc.tA.htmlText = "<b>" + KEYS.Get("pop_tupgraded_title",{
-				"v1":KEYS.Get(_buildingProps.name),
-				"v2":_lvl.Get()
-				}) + "</b>";
-				mc.tB.htmlText = KEYS.Get("pop_tupgraded_body",{"v1":KEYS.Get(_buildingProps.name)});
-				mc.bPost.SetupKey("btn_brag");
-				mc.bPost.addEventListener(MouseEvent.CLICK,Brag);
-				mc.bPost.Highlight = true;
-				POPUPS.Push(mc,null,null,null,"build.v2.png");
-			}
 		}
 		
 		override public function Constructed() : void

@@ -165,54 +165,10 @@ package
       
       override public function Upgraded() : void
       {
-         var Brag:Function;
-         var mc:MovieClip = null;
          super.Upgraded();
          if(!_producing)
          {
             this.StartProduction();
-         }
-         if(GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD && _lvl.Get() >= 3 && TUTORIAL._stage > 200 && !BASE.isInfernoMainYardOrOutpost)
-         {
-			var self:Object = this;
-            Brag = function(param1:MouseEvent):void
-            {
-               var _loc2_:String = "upgrade-twigsnapper.png";
-               var _loc3_:String = KEYS.Get("#r_twigs#");
-               if(self.resource_index == 2)
-               {
-                  _loc2_ = "upgrade-pebbleshiner.png";
-                  _loc3_ = KEYS.Get("#r_pebbles#");
-               }
-               if(self.resource_index == 3)
-               {
-                  _loc2_ = "upgrade-puttysquisher.png";
-                  _loc3_ = KEYS.Get("#r_puttys#");
-               }
-               if(self.resource_index == 4)
-               {
-                  _loc2_ = "upgrade-goofactory.png";
-                  _loc3_ = KEYS.Get("#r_goos#");
-               }
-               GLOBAL.CallJS("sendFeed",["build-" + String(_buildingProps.name).toLowerCase(),KEYS.Get("pop_rupgraded_streamtitle",{
-                  "v1":_lvl.Get(),
-                  "v2":KEYS.Get(_buildingProps.name)
-               }),KEYS.Get("pop_rupgraded_streambody"),_loc2_]);
-               POPUPS.Next();
-            };
-            mc = new popup_building();
-            mc.tA.htmlText = "<b>" + KEYS.Get("pop_rupgraded_title",{
-               "v1":KEYS.Get(_buildingProps.name),
-               "v2":_lvl.Get()
-            }) + "</b>";
-            mc.tB.htmlText = KEYS.Get("pop_rupgraded_body",{
-               "v1":KEYS.Get(_buildingProps.name),
-               "v2":KEYS.Get(GLOBAL._resourceNames[this.resource_index - 1])
-            });
-            mc.bPost.SetupKey("btn_brag");
-            mc.bPost.addEventListener(MouseEvent.CLICK,Brag);
-            mc.bPost.Highlight = true;
-            POPUPS.Push(mc,null,null,null,"build.v2.png");
          }
       }
       

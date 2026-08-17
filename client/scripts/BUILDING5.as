@@ -99,23 +99,9 @@ package
       
       override public function Upgraded() : void
       {
-         var Brag:Function;
-         var mc:MovieClip = null;
          super.Upgraded();
          if(GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD && BASE.isMainYard)
          {
-            Brag = function(param1:MouseEvent):void
-            {
-               GLOBAL.CallJS("sendFeed",["upgrade-fl-" + _lvl.Get(),KEYS.Get("pop_flingerupgraded_streamtitle",{"v1":_lvl.Get()}),KEYS.Get("pop_flingerupgraded_streambody"),"upgrade-flinger.png"]);
-               POPUPS.Next();
-            };
-            mc = new popup_building();
-            mc.tA.htmlText = "<b>" + KEYS.Get("pop_flingerupgraded_title") + "</b>";
-            mc.tB.htmlText = KEYS.Get("pop_flingerupgraded_body",{"v1":_lvl.Get()});
-            mc.bPost.SetupKey("btn_brag");
-            mc.bPost.addEventListener(MouseEvent.CLICK,Brag);
-            mc.bPost.Highlight = true;
-            POPUPS.Push(mc,null,null,null,"build.v2.png");
             GLOBAL._playerFlingerLevel.Set(_lvl.Get());
          }
       }

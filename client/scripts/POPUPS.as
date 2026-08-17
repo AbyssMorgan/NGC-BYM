@@ -598,7 +598,6 @@ package
             Share = function():void
             {
                LOGGER.Stat([23,1]);
-               GLOBAL.CallJS("sendFeed",["started-aggressive",KEYS.Get("pop_displaywelcome_streamtitle"),KEYS.Get("pop_displaywelcome_streambody"),"aggressive.png",0,null,"aggressive.v3.swf"]);
                Next();
             };
             LOGGER.Stat([23]);

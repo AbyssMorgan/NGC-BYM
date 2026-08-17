@@ -236,29 +236,6 @@ package
                   MAP._BUILDINGTOPS.addChild(CREATURES._guardian.graphic);
                }
                this._frozen = newFrozen;
-               if(GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD)
-               {
-                  StreamPost = function(param1:String, param2:String, param3:String):Function
-                  {
-                     var st:String = param1;
-                     var sd:String = param2;
-                     var im:String = param3;
-                     return function(param1:MouseEvent = null):void
-                     {
-                        GLOBAL.CallJS("sendFeed",["unlock-end",st,sd,im,0]);
-                        POPUPS.Next();
-                     };
-                  };
-                  mc = new popup_monster();
-                  mc.bSpeedup.SetupKey("btn_warnyourfriends");
-                  mc.bSpeedup.addEventListener(MouseEvent.CLICK,StreamPost(KEYS.Get("chamber_thawstreamtitle",{"v1":CHAMPIONCAGE._guardians["G" + type].name}),KEYS.Get("chamber_thawstreamdesc",{"v1":CHAMPIONCAGE._guardians["G" + type].name}),"G" + type + "_L6-90.png"));
-                  mc.bSpeedup.Highlight = true;
-                  mc.bAction.visible = false;
-                  mc.tText.htmlText = KEYS.Get("chamber_thawstreamdesc",{"v1":CHAMPIONCAGE._guardians["G" + type].name});
-				  var graphic_level:int = level;
-		 		  if(graphic_level > 6) graphic_level = 6;
-                  POPUPS.Push(mc,null,null,null,"G" + type + "_L" + graphic_level + "-150.png");
-               }
                LOGGER.Stat([70,CREATURES._guardian._type,CREATURES._guardian._level.Get()]);
                BASE.Save();
                break;

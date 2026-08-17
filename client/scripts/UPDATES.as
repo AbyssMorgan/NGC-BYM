@@ -529,7 +529,6 @@ package
          var image:String = param4;
          return function(param1:MouseEvent):void
          {
-            GLOBAL.CallJS("sendFeed",["thanks",messageA,messageB,image,fbid]);
             POPUPS.Next();
          };
       }

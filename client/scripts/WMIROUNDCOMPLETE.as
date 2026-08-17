@@ -187,29 +187,6 @@ package
       
       private static function Brag(param1:MouseEvent) : void
       {
-         switch(_wave)
-         {
-            case 1:
-               GLOBAL.CallJS("sendFeed",["wmi2totem-construct",KEYS.Get("wmi2_wave1streamtitle"),KEYS.Get("wmi2_wave1streamdesc"),"wmitotemfeed2_1.png"]);
-               break;
-            case 10:
-               GLOBAL.CallJS("sendFeed",["wmi2totem-construct",KEYS.Get("wmi2_wave10streamtitle"),KEYS.Get("wmi2_wave10streamdesc"),"wmitotemfeed2_2.png"]);
-               break;
-            case 20:
-               GLOBAL.CallJS("sendFeed",["wmi2totem-construct",KEYS.Get("wmi2_wave20streamtitle"),KEYS.Get("wmi2_wave20streamdesc"),"wmitotemfeed2_3.png"]);
-               break;
-            case 30:
-               GLOBAL.CallJS("sendFeed",["wmi2totem-construct",KEYS.Get("wmi2_wave30streamtitle"),KEYS.Get("wmi2_wave30streamdesc"),"wmitotemfeed2_4.png"]);
-               break;
-            case 31:
-               GLOBAL.CallJS("sendFeed",["wmi2totem-construct",KEYS.Get("wmi2_wave31streamtitle"),KEYS.Get("wmi2_wave31streamdesc"),"wmitotemfeed2_5.png"]);
-               break;
-            case 32:
-               GLOBAL.CallJS("sendFeed",["wmi2totem-construct",KEYS.Get("wmi2_wave32streamtitle"),KEYS.Get("wmi2_wave32streamdesc"),"wmitotemfeed2_6.png"]);
-               break;
-            case 33:
-               GLOBAL.CallJS("sendFeed",["wmi2-eventover",KEYS.Get("wmi2_eventoverstreamtitle"),KEYS.Get("wmi2_eventoverstreamdesc",{"v1":SPECIALEVENT.GetStat("wmi2_wave")}),"wmi2_aftermath.v2.png"]);
-         }
          POPUPS.Next();
       }
       

@@ -450,7 +450,6 @@ package
          onShare = function(param1:MouseEvent):void
          {
             ATTACK._taunted = true;
-            GLOBAL.CallJS("sendFeed",["taunt",KEYS.Get("attack_taunt_streamtitle"),KEYS.Get("attack_taunt_streambody"),"taunt" + imgNumber + ".png",BASE._loadedFBID]);
             onClose();
          };
          try
@@ -1206,14 +1205,6 @@ package
          var attackersName:String = param2;
          Post = function():void
          {
-            if(wildMonsters)
-            {
-               GLOBAL.CallJS("sendFeed",["defense-wild",KEYS.Get("ai_gooddefense_streamtitle",{"v1":tribe.name}),KEYS.Get("ai_gooddefense",{"v1":tribe.name}),tribe.streampostpic]);
-            }
-            else
-            {
-               GLOBAL.CallJS("sendFeed",["defense-human",KEYS.Get("attack_gooddefense_streamtitle",{"v1":attackersName}),KEYS.Get("attack_gooddefense_streambody"),"defense2.png"]);
-            }
             POPUPS.Next();
          };
          var activeEvent:* = SPECIALEVENT.getActiveSpecialEvent()

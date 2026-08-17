@@ -19,7 +19,6 @@ package com.monsters.frontPage.messages.events.battletoads
       
       override protected function onButtonClick() : void
       {
-         GLOBAL.CallJS("sendFeed",["event1-reward",KEYS.Get("event1reward_streamtitle"),KEYS.Get("event1reward_streambody"),"event1reward_stream.png"]);
       }
    }
 }

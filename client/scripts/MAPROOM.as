@@ -243,7 +243,6 @@ package
          var message:String = param2;
          Share = function(param1:MouseEvent = null):void
          {
-            GLOBAL.CallJS("sendFeed",["Truce",KEYS.Get("map_truceaccept_streamtitle",{"v1":name}),KEYS.Get("map_truceaccept_streambody"),"truceaccept" + imgNumber + ".png",0]);
             POPUPS.Next();
          };
          var Switch:Function = function(param1:int):Function
@@ -292,7 +291,6 @@ package
          var message:String = param2;
          Share = function(param1:MouseEvent = null):void
          {
-            GLOBAL.CallJS("sendFeed",["Truce",KEYS.Get("map_truceproposed_streamtitle",{"v1":name}),KEYS.Get("map_truceproposed_streambody"),"truceaccept" + imgNumber + ".png",0]);
             POPUPS.Next();
          };
          var Switch:Function = function(param1:int):Function
@@ -341,7 +339,6 @@ package
          var message:String = param2;
          Share = function(param1:MouseEvent = null):void
          {
-            GLOBAL.CallJS("sendFeed",["Truce",KEYS.Get("map_trucerejected_streamtitle",{"v1":name}),KEYS.Get("map_trucerejected_streambody"),"taunt" + imgNumber + ".png",0]);
             POPUPS.Next();
          };
          var Switch:Function = function(param1:int):Function

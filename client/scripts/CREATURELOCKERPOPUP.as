@@ -487,7 +487,6 @@ package
                var im:String = param3;
                return function(param1:MouseEvent = null):void
                {
-                  GLOBAL.CallJS("sendFeed",["unlock-end",st,sd,im,0]);
                   POPUPS.Next();
                };
             };

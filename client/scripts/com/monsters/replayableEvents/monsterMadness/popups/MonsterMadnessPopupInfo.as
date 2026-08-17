@@ -217,7 +217,6 @@ package com.monsters.replayableEvents.monsterMadness.popups
       
       protected function ShowBrag(param1:String, param2:String, param3:String, param4:String) : void
       {
-         GLOBAL.CallJS("sendFeed",[param1,KEYS.Get(param2),KEYS.Get(param3),param4]);
          this.close();
       }
       

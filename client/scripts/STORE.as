@@ -2512,7 +2512,6 @@ package {
 				}
 				if (arr.length > 0) {
 					Brag = function(param1: MouseEvent): void {
-						GLOBAL.CallJS("sendFeed", ["store-" + itemCode, arr[2], arr[3], arr[4]]);
 						POPUPS.Next();
 					};
 					mc = new popup_purchase();

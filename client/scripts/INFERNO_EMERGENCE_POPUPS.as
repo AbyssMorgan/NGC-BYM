@@ -249,7 +249,6 @@ package
          };
          EmergeBragCB = function(param1:MouseEvent):void
          {
-            GLOBAL.CallJS("sendFeed",["emerge-defense",KEYS.Get("ai_caverndefense_streamtitle"),KEYS.Get("ai_caverndefense_streambody"),"emergence_streampost01A.png"]);
             POPUPS.Next();
          };
          completeRound = new popup_infernoemerge_roundover();

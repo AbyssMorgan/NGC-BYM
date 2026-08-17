@@ -19,7 +19,6 @@ package com.monsters.frontPage.messages.events.monsterBlitzkrieg
       
       override protected function onButtonClick() : void
       {
-         GLOBAL.CallJS("sendFeed",["event2-reward",KEYS.Get("event2reward_streamtitle"),KEYS.Get("event2reward_streambody"),"event2reward_stream.v2.png"]);
          POPUPS.Next();
       }
    }

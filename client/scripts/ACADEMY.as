@@ -177,11 +177,7 @@ package
       {
          var stat:Array;
          var academyInstances:Vector.<Object>;
-         var Post:Function;
          var academy:BUILDING26 = null;
-         var bragImage:String = null;
-         var monsterName:String = null;
-         var popupMC:popup_monster = null;
          var monsterID:String = param1;
          delete GLOBAL.player.m_upgrades[monsterID].time;
          delete GLOBAL.player.m_upgrades[monsterID].duration;
@@ -205,39 +201,6 @@ package
             }
          }
          LOGGER.Stat([12,monsterID.substr(monsterID.indexOf("C") + 1),GLOBAL.player.m_upgrades[monsterID].level]);
-         if(GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD)
-         {
-            Post = function():void
-            {
-               if(BASE.isInfernoMainYardOrOutpost)
-               {
-                  GLOBAL.CallJS("sendFeed",["academy-training",KEYS.Get("acad_stream_title_inf",{
-                     "v1":monsterName,
-                     "v2":GLOBAL.player.m_upgrades[monsterID].level
-                  }),KEYS.Get("acad_stream_description"),bragImage,0]);
-               }
-               else
-               {
-                  GLOBAL.CallJS("sendFeed",["academy-training",KEYS.Get("acad_stream_title",{
-                     "v1":monsterName,
-                     "v2":GLOBAL.player.m_upgrades[monsterID].level
-                  }),KEYS.Get("acad_stream_description"),bragImage,0]);
-               }
-               POPUPS.Next();
-            };
-            if(CREATURELOCKER._creatures[monsterID].stream[2])
-            {
-               bragImage = String(CREATURELOCKER._creatures[monsterID].stream[2]);
-            }
-            monsterName = KEYS.Get(CREATURELOCKER._creatures[monsterID].name);
-            popupMC = new popup_monster();
-            popupMC.tText.htmlText = KEYS.Get("acad_pop_complete",{"v1":monsterName});
-            popupMC.bAction.SetupKey("btn_warnyourfriends");
-            popupMC.bAction.addEventListener(MouseEvent.CLICK,Post);
-            popupMC.bAction.Highlight = true;
-            popupMC.bSpeedup.visible = false;
-            POPUPS.Push(popupMC,null,null,null,"" + monsterID + "-150.png");
-         }
       }
       
       public static function Tick() : void

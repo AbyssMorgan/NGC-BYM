@@ -101,18 +101,6 @@ package com.monsters.siege
          var weapon:SiegeWeapon = param1;
          Post = function(param1:MouseEvent):void
          {
-            if(weapon.weaponID == Jars.ID)
-            {
-               GLOBAL.CallJS("sendFeed",["siege-weapon-build",KEYS.Get("warn_jars_streamtitle"),KEYS.Get("warn_jars_streambody"),"siegebuild_" + weapon.weaponID + ".png",0]);
-            }
-            else if(weapon.weaponID == Decoy.ID)
-            {
-               GLOBAL.CallJS("sendFeed",["siege-weapon-build",KEYS.Get("warn_decoy_streamtitle"),KEYS.Get("warn_decoy_streambody"),"siegebuild_" + weapon.weaponID + ".png",0]);
-            }
-            else if(weapon.weaponID == Vacuum.ID)
-            {
-               GLOBAL.CallJS("sendFeed",["siege-weapon-build",KEYS.Get("warn_vacuum_streamtitle"),KEYS.Get("warn_vacuum_streambody"),"siegebuild_" + weapon.weaponID + ".png",0]);
-            }
             POPUPS.Next();
          };
          var popup:popup_siegebrag = new popup_siegebrag();

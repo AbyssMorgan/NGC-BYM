@@ -243,25 +243,8 @@ package
       
       override public function Constructed() : void
       {
-         var Brag:Function;
-         var mc:MovieClip = null;
          super.Constructed();
          GLOBAL._bLab = this;
-         if(GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD && BASE.isMainYard)
-         {
-            Brag = function():void
-            {
-               GLOBAL.CallJS("sendFeed",["monsterlab-construct",KEYS.Get("pop_labbuilt_streamtitle"),KEYS.Get("pop_labbuilt_streambody"),"build-monsterlab.png"]);
-               POPUPS.Next();
-            };
-            mc = new popup_building();
-            mc.tA.htmlText = "<b>" + KEYS.Get("pop_labbuilt_title") + "</b>";
-            mc.tB.htmlText = KEYS.Get("pop_labbuilt_body");
-            mc.bPost.SetupKey("btn_brag");
-            mc.bPost.addEventListener(MouseEvent.CLICK,Brag);
-            mc.bPost.Highlight = true;
-            POPUPS.Push(mc,null,null,null,"build.v2.png");
-         }
       }
       
       override public function Upgrade() : Boolean
@@ -369,10 +352,6 @@ package
       
       public function FinishMonsterPowerup() : void
       {
-         var Post:Function;
-         var monsterName:String = null;
-         var powerName:String = null;
-         var popupMC:popup_monster = null;
          var wasUpgrading:String = _upgrading;
          this._upgradeFinishTime = new SecNum(0);
          // Comment: Safe fix. Tries to access .powerup which doesn't exist on certain monsters
@@ -383,30 +362,6 @@ package
          LOGGER.Stat([50,_upgrading.substr(1),this._upgradeLevel]);
          if(GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD)
          {
-            Post = function():void
-            {
-               if(_upgradeLevel == 1)
-               {
-                  GLOBAL.CallJS("sendFeed",["lab-powerup",KEYS.Get(_powerupProps[_streamUpgradeCache].stream[0]),KEYS.Get(_powerupProps[_streamUpgradeCache].stream[1],{"v1":powerName}),_powerupProps[_streamUpgradeCache].streampic,0]);
-               }
-               else
-               {
-                  GLOBAL.CallJS("sendFeed",["lab-powerup",KEYS.Get(_powerupProps[_streamUpgradeCache].stream[0]),KEYS.Get(_powerupProps[_streamUpgradeCache].stream[2],{"v1":_upgradeLevel}),_powerupProps[_streamUpgradeCache].streampic,0]);
-               }
-               POPUPS.Next();
-            };
-            monsterName = KEYS.Get(CREATURELOCKER._creatures[_upgrading].name);
-            powerName = KEYS.Get(_powerupProps[_upgrading].name);
-            popupMC = new popup_monster();
-            popupMC.tText.htmlText = "<b>" + KEYS.Get("lab_powerup_complete",{
-               "v1":powerName,
-               "v2":this._upgradeLevel
-            }) + "</b>";
-            popupMC.bAction.SetupKey("btn_warnyourfriends");
-            popupMC.bAction.addEventListener(MouseEvent.CLICK,Post);
-            popupMC.bAction.Highlight = true;
-            popupMC.bSpeedup.visible = false;
-            POPUPS.Push(popupMC,null,null,null,"" + _upgrading + "-LAB-150.png");
             this._streamUpgradeCache = _upgrading;
          }
          _upgrading = null;
@@ -442,9 +397,6 @@ package
       
       public function InstantMonsterPowerup(param1:String, param2:int) : void
       {
-         var Post:Function;
-         var powerName:String = null;
-         var popupMC:popup_monster = null;
          var id:String = param1;
          var level:int = param2;
          var instantCost:int = GetShinyCost(id,level);
@@ -458,29 +410,6 @@ package
          LOGGER.Stat([48,id.substr(1),level]);
          if(GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD)
          {
-            Post = function():void
-            {
-               if(_upgradeLevel == 1)
-               {
-                  GLOBAL.CallJS("sendFeed",["lab-powerup",KEYS.Get(_powerupProps[_streamUpgradeCache].stream[0]),KEYS.Get(_powerupProps[_streamUpgradeCache].stream[1],{"v1":powerName}),_powerupProps[_streamUpgradeCache].streampic,0]);
-               }
-               else
-               {
-                  GLOBAL.CallJS("sendFeed",["lab-powerup",KEYS.Get(_powerupProps[_streamUpgradeCache].stream[0]),KEYS.Get(_powerupProps[_streamUpgradeCache].stream[2],{"v1":_upgradeLevel}),_powerupProps[_streamUpgradeCache].streampic,0]);
-               }
-               POPUPS.Next();
-            };
-            powerName = KEYS.Get(_powerupProps[id].name);
-            popupMC = new popup_monster();
-            popupMC.tText.htmlText = "<b>" + KEYS.Get("lab_powerup_complete",{
-               "v1":powerName,
-               "v2":level
-            }) + "</b>";
-            popupMC.bAction.SetupKey("btn_warnyourfriends");
-            popupMC.bAction.addEventListener(MouseEvent.CLICK,Post);
-            popupMC.bAction.Highlight = true;
-            popupMC.bSpeedup.visible = false;
-            POPUPS.Push(popupMC,null,null,null,"" + id + "-LAB-150.png");
             this._streamUpgradeCache = id;
          }
          if(_upgrading)

@@ -75,38 +75,6 @@ package buildings.cls
          }
       }
       
-      override public function Upgraded() : void
-      {
-         var Brag:Function;
-         var mc:MovieClip = null;
-         super.Upgraded();
-         if(GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD && BASE.isMainYard)
-         {
-            Brag = function(param1:MouseEvent):void
-            {
-               GLOBAL.CallJS("sendFeed",["upgrade-st-" + _lvl.Get(),KEYS.Get("pop_siloupgraded_streamtitle",{"v1":_lvl.Get()}),KEYS.Get("pop_siloupgraded_streambody"),"upgrade-storage.png"]);
-               POPUPS.Next();
-            };
-            mc = new popup_building();
-            mc.tA.htmlText = "<b>" + KEYS.Get("pop_siloupgraded_title") + "</b>";
-            mc.tB.htmlText = KEYS.Get("pop_siloupgraded_body",{"v1":_lvl.Get()});
-            mc.bPost.SetupKey("btn_brag");
-            mc.bPost.addEventListener(MouseEvent.CLICK,Brag);
-            mc.bPost.Highlight = true;
-            POPUPS.Push(mc,null,null,null,"build.v2.png");
-         }
-      }
-      
-      override public function Constructed() : void
-      {
-         super.Constructed();
-      }
-      
-      override public function Click(param1:MouseEvent = null) : void
-      {
-         super.Click(param1);
-      }
-      
       override public function Description() : void
       {
          super.Description();

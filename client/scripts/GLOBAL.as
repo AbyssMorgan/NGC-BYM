@@ -1908,7 +1908,7 @@ package
 
       public static function Brag(param1:String, param2:String, param3:String, param4:String):void
       {
-         GLOBAL.CallJS("sendFeed", [param1, KEYS.Get(param2), KEYS.Get(param3), param4]);
+         
       }
 
       public static function CallJS(param1:String, param2:Array = null, param3:Boolean = true):void

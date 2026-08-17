@@ -520,25 +520,8 @@ package
       
       override public function Constructed() : void
       {
-         var Brag:Function;
-         var mc:MovieClip = null;
          super.Constructed();
          GLOBAL._bHatchery = this;
-         if(GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD && TUTORIAL._stage > 200 && BASE.isMainYard)
-         {
-            Brag = function(param1:MouseEvent):void
-            {
-               GLOBAL.CallJS("sendFeed",["build-ha",KEYS.Get("pop_hatbuilt_streamtitle"),KEYS.Get("pop_hatbuilt_body"),"build-hatchery.png"]);
-               POPUPS.Next();
-            };
-            mc = new popup_building();
-            mc.tA.htmlText = "<b>" + KEYS.Get("pop_hatbuilt_title") + "</b>";
-            mc.tB.htmlText = KEYS.Get("pop_hatbuilt_body");
-            mc.bPost.SetupKey("btn_brag");
-            mc.bPost.addEventListener(MouseEvent.CLICK,Brag);
-            mc.bPost.Highlight = true;
-            POPUPS.Push(mc,null,null,null,"build.v2.png");
-         }
       }
       
       override public function Cancel() : void
@@ -551,28 +534,6 @@ package
       {
          GLOBAL._bHatchery = null;
          super.RecycleC();
-      }
-      
-      override public function Upgraded() : void
-      {
-         var Brag:Function;
-         var mc:MovieClip = null;
-         super.Upgraded();
-         if(GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD && !BASE.isInfernoMainYardOrOutpost)
-         {
-            Brag = function(param1:MouseEvent):void
-            {
-               GLOBAL.CallJS("sendFeed",["upgrade-ha-" + _lvl.Get(),KEYS.Get("pop_hatupgraded_streamtitle",{"v1":_lvl.Get()}),KEYS.Get("pop_hatupgraded_body",{"v1":_lvl.Get()}),"upgrade-hatchery.png"]);
-               POPUPS.Next();
-            };
-            mc = new popup_building();
-            mc.tA.htmlText = "<b>" + KEYS.Get("pop_hatupgraded_title") + "</b>";
-            mc.tB.htmlText = KEYS.Get("pop_hatupgraded_body",{"v1":_lvl.Get()});
-            mc.bPost.SetupKey("btn_brag");
-            mc.bPost.addEventListener(MouseEvent.CLICK,Brag);
-            mc.bPost.Highlight = true;
-            POPUPS.Push(mc,null,null,null,"build.v2.png");
-         }
       }
       
       override public function Setup(param1:Object) : void

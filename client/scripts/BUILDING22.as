@@ -576,24 +576,7 @@ package
       
       override public function Constructed() : void
       {
-         var Brag:Function;
-         var mc:MovieClip = null;
          super.Constructed();
-         if(GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD && BASE.isMainYard)
-         {
-            Brag = function(param1:MouseEvent):void
-            {
-               GLOBAL.CallJS("sendFeed",["build-wmb",KEYS.Get("pop_bunkerbuilt_streamtitle"),KEYS.Get("pop_bunkerbuilt_streambody"),"build-monsterbunker.png"]);
-               POPUPS.Next();
-            };
-            mc = new popup_building();
-            mc.tA.htmlText = "<b>" + KEYS.Get("pop_bunkerbuilt_title") + "</b>";
-            mc.tB.htmlText = KEYS.Get("pop_bunkerbuilt_body");
-            mc.bPost.SetupKey("btn_brag");
-            mc.bPost.addEventListener(MouseEvent.CLICK,Brag);
-            mc.bPost.Highlight = true;
-            POPUPS.Push(mc,null,null,null,"build.v2.png");
-         }
          if(_lvl.Get() > 0)
          {
             this._capacity = GLOBAL._buildingProps[21].capacity[_lvl.Get() - 1];
@@ -630,24 +613,7 @@ package
       
       override public function Upgraded() : void
       {
-         var Brag:Function;
-         var mc:MovieClip = null;
          super.Upgraded();
-         if(GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD)
-         {
-            Brag = function(param1:MouseEvent):void
-            {
-               GLOBAL.CallJS("sendFeed",["upgrade-wmb-" + _lvl.Get(),KEYS.Get("pop_bunkerupgraded_streamtitle",{"v1":_lvl.Get()}),KEYS.Get("pop_bunkerupgraded_streambody"),"build-monsterbunker.png"]);
-               POPUPS.Next();
-            };
-            mc = new popup_building();
-            mc.tA.htmlText = "<b>" + KEYS.Get("pop_bunkerupgraded_title") + "</b>";
-            mc.tB.htmlText = KEYS.Get("pop_bunkerupgraded_body",{"v1":_lvl.Get()});
-            mc.bPost.SetupKey("btn_brag");
-            mc.bPost.addEventListener(MouseEvent.CLICK,Brag);
-            mc.bPost.Highlight = true;
-            POPUPS.Push(mc,null,null,null,"build.v2.png");
-         }
          if(_lvl.Get() > 0)
          {
             this._capacity = GLOBAL._buildingProps[21].capacity[_lvl.Get() - 1];

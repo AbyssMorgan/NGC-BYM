@@ -254,7 +254,6 @@ package
       
       private function UpgradedBrag(param1:MouseEvent) : void
       {
-         GLOBAL.CallJS("sendFeed",["build-" + String(_buildingProps.name).toLowerCase(),KEYS.Get("upgrade_quaketower_streamtitle",{"v1":_lvl.Get()}),KEYS.Get("upgrade_quaketower_streambody"),"quests/quake_tower.png"]);
          POPUPS.Next();
       }
       
@@ -279,7 +278,6 @@ package
       
       private function ConstructedBrag(param1:MouseEvent) : void
       {
-         GLOBAL.CallJS("sendFeed",["build-" + String(_buildingProps.name).toLowerCase(),KEYS.Get("build_quaketower_streamtitle"),KEYS.Get("build_quaketower_streambody"),"quests/quake_tower.png"]);
          POPUPS.Next();
       }
       

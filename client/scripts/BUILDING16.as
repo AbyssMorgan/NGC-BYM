@@ -297,10 +297,8 @@ package
       override public function Constructed() : void
       {
          var hatcheryInstances:Vector.<Object>;
-         var Brag:Function;
          var building:BUILDING13 = null;
          var i:int = 0;
-         var mc:MovieClip = null;
          super.Constructed();
          GLOBAL._bHatcheryCC = this;
          hatcheryInstances = InstanceManager.getInstancesByClass(BUILDING13);
@@ -313,21 +311,6 @@ package
                i++;
             }
             building._monsterQueue = [];
-         }
-         if(GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD && BASE.isMainYard)
-         {
-            Brag = function(param1:MouseEvent):void
-            {
-               GLOBAL.CallJS("sendFeed",["build-hcc",KEYS.Get("pop_hccbuilt_streamtitle"),KEYS.Get("pop_hccbuilt_streambody"),"build-hatcherycontrolcenter.png"]);
-               POPUPS.Next();
-            };
-            mc = new popup_building();
-            mc.tA.htmlText = "<b>" + KEYS.Get("pop_hccbuilt_title") + "</b>";
-            mc.tB.htmlText = KEYS.Get("pop_hccbuilt_body");
-            mc.bPost.SetupKey("btn_brag");
-            mc.bPost.addEventListener(MouseEvent.CLICK,Brag);
-            mc.bPost.Highlight = true;
-            POPUPS.Push(mc,null,null,null,"build.v2.png");
          }
       }
       

@@ -226,37 +226,6 @@ package
             }
          }
       }
-      
-      override public function Props() : void
-      {
-         super.Props();
-      }
-      
-      override public function Upgraded() : void
-      {
-         super.Upgraded();
-      }
-      
-      override public function Constructed() : void
-      {
-         var Brag:Function;
-         var mc:MovieClip = null;
-         super.Constructed();
-         if(GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD && BASE.isMainYard)
-         {
-            Brag = function():void
-            {
-               GLOBAL.CallJS("sendFeed",["aatower-construct",KEYS.Get("pop_aabuilt_streamtitle"),KEYS.Get("pop_aabuilt_streambody"),"build-aerial.v2.png"]);
-               POPUPS.Next();
-            };
-            mc = new popup_building();
-            mc.tA.htmlText = "<b>" + KEYS.Get("pop_aabuilt_title") + "</b>";
-            mc.tB.htmlText = KEYS.Get("pop_aabuilt_body");
-            mc.bPost.SetupKey("btn_brag");
-            mc.bPost.addEventListener(MouseEvent.CLICK,Brag);
-            mc.bPost.Highlight = true;
-            POPUPS.Push(mc,null,null,null,"build.v2.png");
-         }
-      }
+	  
    }
 }

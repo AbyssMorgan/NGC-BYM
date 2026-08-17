@@ -214,7 +214,6 @@ package
          {
             Brag = function():void
             {
-               GLOBAL.CallJS("sendFeed",["upgrade-mr",KEYS.Get("newmap_upgraded3"),KEYS.Get("newmap_upgraded1"),"build-maproom.png"]);
                POPUPS.Next();
             };
             POPUPS.DisplayGeneric(KEYS.Get("newmap_upgraded1"),KEYS.Get("newmap_upgraded2"),KEYS.Get("btn_brag"),"building-map.png",Brag);

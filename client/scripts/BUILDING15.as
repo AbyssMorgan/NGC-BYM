@@ -67,25 +67,8 @@ package
       
       override public function Upgraded() : void
       {
-         var Brag:Function;
-         var mc:MovieClip = null;
          super.Upgraded();
          HOUSING.HousingSpace();
-         if(GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD && BASE.isMainYard)
-         {
-            Brag = function(param1:MouseEvent):void
-            {
-               GLOBAL.CallJS("sendFeed",["upgrade-ho-" + _lvl.Get(),KEYS.Get("pop_housingupgraded_streamtitle",{"v1":_lvl.Get()}),KEYS.Get("pop_housingupgraded_streambody"),"upgrade-housing.png"]);
-               POPUPS.Next();
-            };
-            mc = new popup_building();
-            mc.tA.htmlText = "<b>" + KEYS.Get("pop_housingupgraded_title") + "</b>";
-            mc.tB.htmlText = KEYS.Get("pop_housingupgraded_body",{"v1":_lvl.Get()});
-            mc.bPost.SetupKey("btn_brag");
-            mc.bPost.addEventListener(MouseEvent.CLICK,Brag);
-            mc.bPost.Highlight = true;
-            POPUPS.Push(mc,null,null,null,"build.v2.png");
-         }
       }
       
       override public function Tick(param1:int) : void

@@ -60,32 +60,8 @@ package
       
       override public function Constructed() : void
       {
-         var Brag:Function;
-         var mc:MovieClip = null;
          super.Constructed();
          GLOBAL._bAcademy = this;
-         if(GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD && BASE.isMainYard)
-         {
-            Brag = function():void
-            {
-               if(BASE.isInfernoMainYardOrOutpost)
-               {
-                  GLOBAL.CallJS("sendFeed",["iacademy-construct",KEYS.Get("q_build_infernalacademy_streamtitle"),KEYS.Get("q_build_infernalacademy_streambody"),"build-iacademy.png"]);
-               }
-               else
-               {
-                  GLOBAL.CallJS("sendFeed",["academy-construct",KEYS.Get("pop_acadbuilt_streamtitle"),KEYS.Get("pop_acadbuilt_streambody"),"build-academy.png"]);
-               }
-               POPUPS.Next();
-            };
-            mc = new popup_building();
-            mc.tA.htmlText = "<b>" + KEYS.Get("pop_acadbuilt_title") + "</b>";
-            mc.tB.htmlText = KEYS.Get("pop_acadbuilt_body");
-            mc.bPost.SetupKey("btn_brag");
-            mc.bPost.addEventListener(MouseEvent.CLICK,Brag);
-            mc.bPost.Highlight = true;
-            POPUPS.Push(mc,null,null,null,"build.v2.png");
-         }
       }
       
       override public function Description() : void

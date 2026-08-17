@@ -97,26 +97,5 @@ package
          ++_frameNumber;
       }
       
-      override public function Constructed() : void
-      {
-         var Brag:Function;
-         var mc:MovieClip = null;
-         super.Constructed();
-         if(GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD && BASE.isMainYard)
-         {
-            Brag = function(param1:MouseEvent):void
-            {
-               GLOBAL.CallJS("sendFeed",["build-lt",KEYS.Get("pop_laserbuilt_streamtitle"),KEYS.Get("pop_laserbuilt_streambody"),"build-lasertower.png"]);
-               POPUPS.Next();
-            };
-            mc = new popup_building();
-            mc.tA.htmlText = "<b>" + KEYS.Get("pop_laserbuilt_title") + "</b>";
-            mc.tB.htmlText = KEYS.Get("pop_laserbuilt_body");
-            mc.bPost.SetupKey("btn_brag");
-            mc.bPost.addEventListener(MouseEvent.CLICK,Brag);
-            mc.bPost.Highlight = true;
-            POPUPS.Push(mc,null,null,null,"build.v2.png");
-         }
-      }
    }
 }

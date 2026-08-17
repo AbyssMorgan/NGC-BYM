@@ -134,7 +134,6 @@ package
       
       private static function BragBattleReport(param1:MouseEvent) : void
       {
-         GLOBAL.CallJS("sendFeed",["loot",KEYS.Get("pop_cavernwin" + _level + "_streamtitle"),KEYS.Get("pop_cavernwin" + _level + "_streambody"),"pop_cavernwin" + _level + ".png"]);
          POPUPS.Next();
       }
       

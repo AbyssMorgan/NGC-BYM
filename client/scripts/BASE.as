@@ -1530,7 +1530,6 @@ package
                      var fbid:int = param2;
                      return function(param1:MouseEvent):void
                      {
-                        GLOBAL.CallJS("sendFeed", ["tauntB", KEYS.Get("js_attackedmyyard"), KEYS.Get("js_tauned"), "taunt" + n + ".png", fbid]);
                         POPUPS.Next();
                      };
                   };
@@ -2183,10 +2182,6 @@ package
             {
                Post = function(param1:MouseEvent):void
                {
-                  GLOBAL.CallJS("sendFeed", ["loot", KEYS.Get("pop_youlooted_streamtitle", {
-                                 "v1": lootString,
-                                 "v2": _tempLoot.name
-                              }), KEYS.Get("pop_youlooted_streambody"), "loot.png"]);
                   POPUPS.Next();
                };
                lootString = GLOBAL.Array2String(lootArray);
@@ -2777,7 +2772,6 @@ package
             {
                Action = function(param1:MouseEvent = null):void
                {
-                  GLOBAL.CallJS("sendFeed", ["warn-damaged", KEYS.Get("base_damaged_streamtitle"), KEYS.Get("base_damaged_streambody", {"v1": BASE._ownerName}), "monstersatwork.png", _loadedFBID]);
                   UPDATES.Create(["DBU"]);
                   POPUPS.Next();
                };
@@ -2809,7 +2803,6 @@ package
             {
                BragA = function():void
                {
-                  GLOBAL.CallJS("sendFeed", ["upgrade-mr", KEYS.Get("conqueredbase", {"v1": _takeoverPreviousOwnersName}), KEYS.Get("newmap_destroyed3"), "build-outpost.png"]);
                   POPUPS.Next();
                };
                ACHIEVEMENTS.Check("wmoutpost", 1);
@@ -2819,7 +2812,6 @@ package
             {
                BragB = function():void
                {
-                  GLOBAL.CallJS("sendFeed", ["upgrade-mr", KEYS.Get("conqueredoutpost", {"v1": _takeoverPreviousOwnersName}), KEYS.Get("venividivici"), "build-outpost.png"]);
                   POPUPS.Next();
                };
                ++ACHIEVEMENTS._stats.playeroutpost;
@@ -6044,7 +6036,6 @@ package
                {
                   StreamPost = function(param1:MouseEvent):void
                   {
-                     GLOBAL.CallJS("sendFeed", ["levelup" + lvl.level, KEYS.Get(title, {"v1": lvl.level}), KEYS.Get(body), "levelup/levelup" + lvl.level + ".v2.png"]);
                      POPUPS.Next();
                   };
                   mc = new popup_levelup();

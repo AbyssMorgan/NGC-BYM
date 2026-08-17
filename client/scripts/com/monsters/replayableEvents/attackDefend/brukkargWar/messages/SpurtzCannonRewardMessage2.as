@@ -31,10 +31,6 @@ package com.monsters.replayableEvents.attackDefend.brukkargWar.messages
             "st3":"cannon_placed"
          },"Cannon_Placed");
          GLOBAL.eventDispatcher.removeEventListener(BuildingEvent.PLACED_FOR_CONSTRUCTION,this.constructedBuilding);
-         if(param1.building is SpurtzCannon)
-         {
-            GLOBAL.Brag("event5-reward","event_bruwarreward2_streamtitle","event_bruwarreward2_streamdesc","event_bruwarreward2_stream.png");
-         }
       }
    }
 }

@@ -321,17 +321,8 @@ package
       
       public static function GiveThanks(param1:int, param2:String, param3:int) : Function
       {
-         var resourceID:int = param1;
-         var giftFromID:String = param2;
-         var giftValue:int = param3;
          return function(param1:MouseEvent = null):void
          {
-            var _loc2_:* = BASE.isInfernoMainYardOrOutpost ? resourceID + 4 : resourceID;
-            var _loc3_:* = "gift" + _loc2_ + ".png";
-            GLOBAL.CallJS("sendFeed",["thanks",KEYS.Get("pop_givethanks_streamtitle"),KEYS.Get("pop_givethanks_streambody",{
-               "v1":GLOBAL.FormatNumber(giftValue),
-               "v2":KEYS.Get(GLOBAL._resourceNames[resourceID - 1])
-            }),_loc3_,giftFromID]);
             POPUPS.Next();
          };
       }

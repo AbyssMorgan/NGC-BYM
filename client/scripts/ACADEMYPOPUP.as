@@ -424,11 +424,7 @@ package
       public function InstantMonsterUpgrade(param1:MouseEvent) : void
       {
          var buildingInstances:Vector.<Object>;
-         var Post:Function;
          var building:BFOUNDATION = null;
-         var bragImage:String = null;
-         var monsterName:String = null;
-         var popupMC:popup_monster = null;
          var e:MouseEvent = param1;
          if(BASE._credits.Get() < _instantUpgradeCost)
          {
@@ -455,43 +451,6 @@ package
             }
          }
          LOGGER.Stat([47,_monsterID,GLOBAL.player.m_upgrades[_monsterID].level]);
-         if(GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD)
-         {
-            Post = function():void
-            {
-               if(BASE.isInfernoMainYardOrOutpost)
-               {
-                  GLOBAL.CallJS("sendFeed",["academy-training",KEYS.Get("acad_stream_title_inf",{
-                     "v1":monsterName,
-                     "v2":GLOBAL.player.m_upgrades[_monsterID].level
-                  }),KEYS.Get("acad_stream_description"),bragImage,0]);
-               }
-               else
-               {
-                  GLOBAL.CallJS("sendFeed",["academy-training",KEYS.Get("acad_stream_title",{
-                     "v1":monsterName,
-                     "v2":GLOBAL.player.m_upgrades[_monsterID].level
-                  }),KEYS.Get("acad_stream_description"),bragImage,0]);
-               }
-               POPUPS.Next();
-            };
-            if(CREATURELOCKER._creatures[_monsterID].stream[2])
-            {
-               bragImage = String(CREATURELOCKER._creatures[_monsterID].stream[2]);
-            }
-            monsterName = String(CREATURELOCKER._creatures[_monsterID].name);
-            if(monsterName.substring(0,1) == "#")
-            {
-               monsterName = KEYS.Get(monsterName);
-            }
-            popupMC = new popup_monster();
-            popupMC.tText.htmlText = KEYS.Get("acad_pop_complete",{"v1":monsterName});
-            popupMC.bAction.SetupKey("btn_warnyourfriends");
-            popupMC.bAction.addEventListener(MouseEvent.CLICK,Post);
-            popupMC.bAction.Highlight = true;
-            popupMC.bSpeedup.visible = false;
-            POPUPS.Push(popupMC,null,null,null,"" + _monsterID + "-150.png");
-         }
          BASE.Purchase("ITR",_instantUpgradeCost,"academy");
       }
       

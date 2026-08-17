@@ -170,16 +170,6 @@ package com.monsters.radio
          removeEmail("o1",obj);
       }
       
-      public static function TwitterFollow() : void
-      {
-         GLOBAL.CallJS("openUrl",["http://twitter.com/#!/BackyardMonster"],true);
-      }
-      
-      public static function TwitterBrag() : void
-      {
-         GLOBAL.CallJS("sendFeed",["build-radio",KEYS.Get("radiobuilt_streamtitle"),KEYS.Get("radiobuilt_streambody"),"build-radio.v2.png"]);
-      }
-      
       public static function Export() : Object
       {
          return _settings;

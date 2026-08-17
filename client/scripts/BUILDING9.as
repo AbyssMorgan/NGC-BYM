@@ -160,60 +160,8 @@ package
       
       override public function Constructed() : void
       {
-         var Brag:Function;
-         var mc:MovieClip = null;
          super.Constructed();
          GLOBAL._bJuicer = this;
-         if(GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD && BASE.isMainYard)
-         {
-            Brag = function(param1:MouseEvent):void
-            {
-               GLOBAL.CallJS("sendFeed",["build-mjl",KEYS.Get("pop_juicerbuilt_streamtitle"),KEYS.Get("pop_juicerbuilt_streambody"),"build-monsterjuiceloosener.png"]);
-               POPUPS.Next();
-            };
-            mc = new popup_building();
-            mc.tA.htmlText = "<b>" + KEYS.Get("pop_juicerbuilt_title") + "</b>";
-            mc.tB.htmlText = KEYS.Get("pop_juicerbuilt_body");
-            mc.bPost.SetupKey("btn_brag");
-            mc.bPost.addEventListener(MouseEvent.CLICK,Brag);
-            mc.bPost.Highlight = true;
-            POPUPS.Push(mc,null,null,null,"build.v2.png");
-         }
-      }
-      
-      override public function Upgraded() : void
-      {
-         var Brag:Function;
-         var percent:int = 0;
-         var mc:MovieClip = null;
-         super.Upgraded();
-         if(GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD)
-         {
-            Brag = function(param1:MouseEvent):void
-            {
-               GLOBAL.CallJS("sendFeed",["upgrade-fl-" + _lvl.Get(),KEYS.Get("pop_juicerupgraded_streamtitle",{"v1":_lvl.Get()}),KEYS.Get("pop_juicerupgraded_streambody"),"upgrade-monsterjuiceloosener.png"]);
-               POPUPS.Next();
-            };
-            percent = 60;
-            if(_lvl.Get() == 2)
-            {
-               percent = 80;
-            }
-            if(_lvl.Get() == 3)
-            {
-               percent = 100;
-            }
-            mc = new popup_building();
-            mc.tA.htmlText = "<b>" + KEYS.Get("pop_juicerupgraded_title") + "</b>";
-            mc.tB.htmlText = KEYS.Get("pop_juicerupgraded_body",{
-               "v1":_lvl.Get(),
-               "v2":percent
-            });
-            mc.bPost.SetupKey("btn_brag");
-            mc.bPost.addEventListener(MouseEvent.CLICK,Brag);
-            mc.bPost.Highlight = true;
-            POPUPS.Push(mc,null,null,null,"build.v2.png");
-         }
       }
       
       override public function RecycleC() : void

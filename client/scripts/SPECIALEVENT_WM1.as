@@ -1169,7 +1169,7 @@ package
       public static function ShowEventEndPopup() : void
       {
          var _loc1_:MovieClip = null;
-         if(!WMIROUNDCOMPLETE_WM1.open && !_active)
+         if(!WMIROUNDCOMPLETE_WM1.open && !_active && GLOBAL.StatGet("wmi_end") == 0)
          {
             _loc1_ = new WMIROUNDCOMPLETE_WM1(EVENTEND);
             POPUPS.Push(_loc1_,null,null,null,null,false,"wait");

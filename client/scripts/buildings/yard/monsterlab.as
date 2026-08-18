@@ -19,9 +19,12 @@ package buildings.yard {
 			"description":"monsterlab_desc",
 			"cls":MONSTERLAB,
 			"costs":[
-				{"r1":new SecNum(100000), "r2":new SecNum(100000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(10800), "re":[[14,1,5],[8,1,3],[26,1,2]]},
-				{"r1":new SecNum(300000), "r2":new SecNum(300000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(43200), "re":[[14,1,6],[8,1,4],[26,1,3]]},
-				{"r1":new SecNum(600000), "r2":new SecNum(600000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,7],[8,1,4],[26,1,4]]}
+				{"r1":new SecNum(100000), "r2":new SecNum(100000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(10800), "re":[[14,1,5],[8,1,3],[26,1,2]]}, // Level 1
+				{"r1":new SecNum(300000), "r2":new SecNum(300000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(43200), "re":[[14,1,6],[8,1,4],[26,1,3]]}, // Level 2
+				{"r1":new SecNum(600000), "r2":new SecNum(600000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,7],[8,1,4],[26,1,4]]}, // Level 3
+				{"r1":new SecNum(500000000), "r2":new SecNum(500000000), "r3":new SecNum(2500000000), "r4":new SecNum(2500000000), "time":new SecNum(172800), "re":[[14,1,18],[145,1,4]]}, // Level 4
+				{"r1":new SecNum(1000000000), "r2":new SecNum(1000000000), "r3":new SecNum(5000000000), "r4":new SecNum(5000000000), "time":new SecNum(259200), "re":[[14,1,20],[145,1,5]]}, // Level 5
+				{"r1":new SecNum(2000000000), "r2":new SecNum(2000000000), "r3":new SecNum(10000000000), "r4":new SecNum(10000000000), "time":new SecNum(345600), "re":[[14,1,22],[145,1,7]]}, // Level 5
 			],
 			"imageData":{
 				"baseurl":"buildings/monsterlab/",
@@ -44,9 +47,35 @@ package buildings.yard {
 					"silhouette_img":"116.silhouette.jpg"
 				}
 			},
-			"quantity":[0,0,0,0,0,1,1,1,1,1,1],
-			"hp":[9000,16000,24000,32000],
-			"repairTime":[3800,7680,10640,15600]
+			"quantity":[
+				0,
+				0,
+				0,
+				0,
+				0,
+				1,
+				1,
+				1,
+				1,
+				1,
+				1,
+			],
+			"hp":[
+				9000, // Level 1
+				16000, // Level 2
+				24000, // Level 3
+				32000, // Level 4
+				48000, // Level 5
+				64000, // Level 6
+			],
+			"repairTime":[
+				3800, // Level 1
+				7680, // Level 2
+				10640, // Level 3
+				15600, // Level 4
+				20560, // Level 5
+				25520, // Level 6
+			]
 		};
 		
 	}

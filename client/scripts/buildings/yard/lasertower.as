@@ -20,19 +20,19 @@ package buildings.yard {
 			"cls":BUILDING23,
 			"stats":[
 				{"range":160, "damage":120, "rate":80, "speed":0, "splash":40}, // Level 1
-				{"range":162, "damage":150, "rate":80, "speed":0, "splash":40}, // Level 2
-				{"range":164, "damage":180, "rate":80, "speed":0, "splash":40}, // Level 3
-				{"range":168, "damage":200, "rate":80, "speed":0, "splash":40}, // Level 4
-				{"range":170, "damage":220, "rate":80, "speed":0, "splash":40}, // Level 5
-				{"range":175, "damage":240, "rate":80, "speed":0, "splash":40}, // Level 6
-				{"range":180, "damage":260, "rate":80, "speed":0, "splash":40}, // Level 7
-				{"range":190, "damage":280, "rate":80, "speed":0, "splash":41}, // Level 8
-				{"range":200, "damage":300, "rate":80, "speed":0, "splash":42}, // Level 9
-				{"range":210, "damage":320, "rate":80, "speed":0, "splash":43}, // Level 10
-				{"range":220, "damage":340, "rate":80, "speed":0, "splash":44}, // Level 11
-				{"range":230, "damage":360, "rate":80, "speed":0, "splash":46}, // Level 12
-				{"range":240, "damage":380, "rate":80, "speed":0, "splash":48}, // Level 13
-				{"range":250, "damage":400, "rate":80, "speed":0, "splash":50}, // Level 14
+				{"range":170, "damage":150, "rate":80, "speed":0, "splash":40}, // Level 2
+				{"range":180, "damage":180, "rate":80, "speed":0, "splash":40}, // Level 3
+				{"range":190, "damage":200, "rate":80, "speed":0, "splash":40}, // Level 4
+				{"range":200, "damage":220, "rate":80, "speed":0, "splash":40}, // Level 5
+				{"range":210, "damage":240, "rate":80, "speed":0, "splash":40}, // Level 6
+				{"range":220, "damage":260, "rate":80, "speed":0, "splash":40}, // Level 7
+				{"range":230, "damage":280, "rate":80, "speed":0, "splash":41}, // Level 8
+				{"range":240, "damage":300, "rate":80, "speed":0, "splash":42}, // Level 9
+				{"range":250, "damage":320, "rate":80, "speed":0, "splash":43}, // Level 10
+				{"range":260, "damage":340, "rate":80, "speed":0, "splash":44}, // Level 11
+				{"range":270, "damage":360, "rate":80, "speed":0, "splash":46}, // Level 12
+				{"range":280, "damage":380, "rate":80, "speed":0, "splash":48}, // Level 13
+				{"range":290, "damage":400, "rate":80, "speed":0, "splash":50}, // Level 14
 			],
 			"costs":[
 				{"r1":new SecNum(500000), "r2":new SecNum(250000), "r3":new SecNum(100000), "r4":new SecNum(0), "time":new SecNum(86400 * 1), "re":[[14,1,4]]}, // Level 1

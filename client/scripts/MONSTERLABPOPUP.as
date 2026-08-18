@@ -42,7 +42,7 @@ package
       
       public static var _unlockLevel:int = 0;
       
-      public static var _maxLevel:int = 3;
+      public static var _maxLevel:int = 6;
        
       
       private var _portraitImage:MovieClip;
@@ -234,54 +234,51 @@ package
          }
          this.tf_statsPBar.htmlText = "<b>" + KEYS.Get(_loc8_.name) + "</b>";
          var _loc9_:String = "";
-         if(_bMonsterLab.CanPowerup(_creatureID,_unlockLevel).errorString == "Fully Powered Up")
+		 var ability_level_index:int = _unlockLevel;
+         if(ability_level_index > 6)
          {
-            _unlockLevel = 3;
+            ability_level_index = 6;
          }
          switch(_creatureID)
          {
             case "C2":
-               _loc9_ = _loc8_.effect[_unlockLevel - 1] + " " + _loc8_.ability;
+               _loc9_ = _loc8_.effect[ability_level_index - 1] + " " + _loc8_.ability;
                break;
             case "C3":
-               _loc9_ = _loc8_.effect[_unlockLevel - 1] + " " + _loc8_.ability;
+               _loc9_ = _loc8_.effect[ability_level_index - 1] + " " + _loc8_.ability;
                break;
             case "C4":
-               _loc9_ = _loc8_.effect[_unlockLevel - 1] + " " + _loc8_.ability;
+               _loc9_ = _loc8_.effect[ability_level_index - 1] + " " + _loc8_.ability;
                break;
             case "C5":
-               _loc9_ = _loc8_.effect[_unlockLevel - 1] * 100 + "% " + _loc8_.ability;
+               _loc9_ = _loc8_.effect[ability_level_index - 1] * 100 + "% " + _loc8_.ability;
                break;
             case "C7":
-               _loc9_ = _loc8_.effect[_unlockLevel - 1] + "x speed " + _loc8_.ability;
+               _loc9_ = _loc8_.effect[ability_level_index - 1] + "x speed " + _loc8_.ability;
                break;
             case "C8":
-               _loc9_ = CREATURELOCKER._creatures[_creatureID].props.damage[_unlockLevel - 1] * _loc8_.effect[_unlockLevel - 1] + " " + _loc8_.ability;
+               _loc9_ = CREATURELOCKER._creatures[_creatureID].props.damage[ability_level_index - 1] * _loc8_.effect[ability_level_index - 1] + " " + _loc8_.ability;
                break;
             case "C9":
-               _loc9_ = String(_loc8_.effect[_unlockLevel - 1] + _loc8_.ability);
+               _loc9_ = String(_loc8_.effect[ability_level_index - 1] + _loc8_.ability);
                break;
             case "C11":
-               _loc9_ = CREATURELOCKER._creatures[_creatureID].props.damage[_unlockLevel - 1] * _loc8_.effect[_unlockLevel - 1] + " " + _loc8_.ability;
+               _loc9_ = CREATURELOCKER._creatures[_creatureID].props.damage[ability_level_index - 1] * _loc8_.effect[ability_level_index - 1] + " " + _loc8_.ability;
                break;
             case "C12":
-               _loc9_ = _loc8_.effect[_unlockLevel - 1] + " " + _loc8_.ability;
+               _loc9_ = _loc8_.effect[ability_level_index - 1] + " " + _loc8_.ability;
                break;
             case "C13":
-               _loc9_ = CREATURELOCKER._creatures[_creatureID].props.damage[_unlockLevel - 1] * _loc8_.effect[_unlockLevel - 1] + " " + _loc8_.ability;
+               _loc9_ = CREATURELOCKER._creatures[_creatureID].props.damage[ability_level_index - 1] * _loc8_.effect[ability_level_index - 1] + " " + _loc8_.ability;
                break;
             case "C14":
-               _loc9_ = _unlockLevel + " " + _loc8_.ability;
-         }
-         if(_bMonsterLab.CanPowerup(_creatureID,_unlockLevel).errorString == "Fully Powered Up")
-         {
-            _unlockLevel = 4;
+               _loc9_ = (_loc8_.effect[ability_level_index - 1] + 1) + "x damage";
          }
          this.tf_statsPBarLabel.htmlText = _loc9_;
-         var _loc10_:Number = 100 / _maxLevel * Math.min(_unlockLevel - 1,_maxLevel);
-         var _loc11_:Number = 100 / _maxLevel * Math.min(_unlockLevel,_maxLevel) - 1;
-         this.pBar_stats.mcBar.width = Math.max(_loc10_,1);
-         this.pBar_stats.mcBar2.width = Math.max(_loc11_,1);
+         var _loc10_:Number = 100 / _maxLevel * Math.min(_unlockLevel - 1, _maxLevel);
+         var _loc11_:Number = 100 / _maxLevel * Math.min(_unlockLevel, _maxLevel) - 1;
+         this.pBar_stats.mcBar.width = Math.max(_loc10_, 1);
+         this.pBar_stats.mcBar2.width = Math.max(_loc11_, 1);
          this.pBar_stats.mcBar2.gotoAndStop(3);
          this.tf_statsWarning.visible = false;
          this.UpdatePortrait(_creatureID);

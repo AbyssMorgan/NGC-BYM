@@ -23,17 +23,17 @@ package buildings.yard {
 			"cls":INFERNOQUAKETOWER,
 			"stats":[
 				{"range":160, "damage":1100, "rate":15}, // Level 1
-				{"range":170, "damage":1680, "rate":15}, // Level 2
-				{"range":180, "damage":2220, "rate":15}, // Level 3
-				{"range":190, "damage":2880, "rate":15}, // Level 4
-				{"range":200, "damage":3640, "rate":15}, // Level 5
-				{"range":210, "damage":4400, "rate":15}, // Level 6
-				{"range":215, "damage":4800, "rate":15}, // Level 7
-				{"range":220, "damage":5200, "rate":15}, // Level 8
-				{"range":225, "damage":5600, "rate":15}, // Level 9
-				{"range":230, "damage":6000, "rate":15}, // Level 10
-				{"range":235, "damage":6400, "rate":15}, // Level 11
-				{"range":240, "damage":6800, "rate":15}, // Level 12
+				{"range":180, "damage":1680, "rate":15}, // Level 2
+				{"range":200, "damage":2220, "rate":15}, // Level 3
+				{"range":220, "damage":2880, "rate":15}, // Level 4
+				{"range":240, "damage":3640, "rate":15}, // Level 5
+				{"range":260, "damage":4400, "rate":15}, // Level 6
+				{"range":280, "damage":4800, "rate":15}, // Level 7
+				{"range":300, "damage":5200, "rate":15}, // Level 8
+				{"range":320, "damage":5600, "rate":15}, // Level 9
+				{"range":340, "damage":6000, "rate":15}, // Level 10
+				{"range":360, "damage":6400, "rate":15}, // Level 11
+				{"range":380, "damage":6800, "rate":15}, // Level 12
 			],
 			"costs":[
 				{"r1":new SecNum(312500), "r2":new SecNum(187500), "r3":new SecNum(125000), "r4":new SecNum(0), "time":new SecNum(86400 * 1), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]}, // Level 1

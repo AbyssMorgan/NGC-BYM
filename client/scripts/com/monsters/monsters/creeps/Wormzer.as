@@ -23,7 +23,7 @@ package com.monsters.monsters.creeps
             {
                _loc13_ |= Targeting.k_TARGETS_DEFENDERS;
             }
-            addComponent(new AOEDamageOnAttackOncePerTarget(100,_loc13_,powerUpLevel()));
+            addComponent(new AOEDamageOnAttackOncePerTarget(100, _loc13_, powerUpLevel()));
          }
       }
    }

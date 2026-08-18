@@ -11,19 +11,20 @@ package com.monsters.monsters.creeps
 		{
 			super(param1, param2, param3, param4, param5, param6, param7, param8, param9, param10, param11, param12);
 			SPRITES.SetupSprite("shadow");
-			if(poweredUp())
-			{
-				addComponent(new GlavesOnAttack(powerUpLevel()));
-			}
+			// if(poweredUp())
+			// {
+			// 	addComponent(new GlavesOnAttack(powerUpLevel()));
+			// }
 		}
 		
 		override protected function rangedAttack(param1:ITargetable) : ITargetable
 		{
+			var multiplier:int = 1 + (powerUpLevel() * 0.5);
 			if(param1 is BFOUNDATION)
 			{
-				return FIREBALLS.Spawn(new Point(_tmpPoint.x, _tmpPoint.y - _altitude), _targetBuilding._position, _targetBuilding, 6, damage, 0, 0, FIREBALLS.TYPE_MAGMA, this);
+				return FIREBALLS.Spawn(new Point(_tmpPoint.x, _tmpPoint.y - _altitude), _targetBuilding._position, _targetBuilding, 6, damage * multiplier, 0, 0, FIREBALLS.TYPE_MAGMA, this);
 			}
-			return FIREBALLS.Spawn2(new Point(_tmpPoint.x, _tmpPoint.y - _altitude), _targetCreep._tmpPoint, _targetCreep, 10, damage, 0, FIREBALLS.TYPE_MAGMA, 1, this);
+			return FIREBALLS.Spawn2(new Point(_tmpPoint.x, _tmpPoint.y - _altitude), _targetCreep._tmpPoint, _targetCreep, 10, damage * multiplier, 0, FIREBALLS.TYPE_MAGMA, 1, this);
 		}
 	}
 }

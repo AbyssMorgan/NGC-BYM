@@ -35,9 +35,8 @@ export const playerCell = async (ctx: Context, cell: WorldMapCell, cellOwners: M
   if (!cellSave || !cellOwner?.save) return { x: cell.x, y: cell.y, i: 0 };
 
   const points = cellOwner.save.points;
-  const basevalue = cellOwner.save.basevalue;
 
-  const playerLevel = calculateBaseLevel(points, basevalue);
+  const playerLevel = calculateBaseLevel(points);
   const structureLevel = cellSave.level ?? 0;
 
   const structureRange = STRUCTURE_RANGE[cell.base_type];

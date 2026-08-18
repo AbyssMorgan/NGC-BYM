@@ -194,6 +194,8 @@ package
 
       public static var _basePoints:Number;
 
+      public static var _baseExperience:SecNum = new SecNum(0);
+
       public static var _outpostValue:Number;
 
       public static var _processing:Boolean;
@@ -5988,91 +5990,85 @@ package
          return _loc4_;
       }
 
-      public static function PointsAdd(param1:uint):void
-      {
-		 if(MapRoomManager.instance.isInMapRoom3){
-			param1 *= (1.0 + (BASE._conquerorPoints.Get() * 0.001));
-		 }
-         _basePoints = Math.floor(_basePoints + param1);
-      }
+		public static function PointsAdd(param1:uint):void
+		{
+			if(MapRoomManager.instance.isInMapRoom3){
+				param1 *= (1.0 + (BASE._conquerorPoints.Get() * 0.001));
+			}
+			_basePoints = Math.floor(_basePoints + param1);
+		}
 
-      public static function BaseLevel():Object
-      {
-         var points:Number = NaN;
-         var lvl:Object = null;
-         var length:int = 0;
-         var i:int = 0;
-         var mc:popup_levelup = null;
-         var title:String = null;
-         var body:String = null;
-         var StreamPost:Function = null;
-         CalcBaseValue();
-         points = _basePoints + Number(_baseValue);
-         lvl = {
-               "level": 0,
-               "lower": 0,
-               "upper": 0,
-               "leveled": false
-            };
-         length = int(s_levels.length - 1);
-         lvl.points = points;
-         while (i < length)
-         {
-            if (points >= s_levels[i])
-            {
-               lvl.level = i + 1;
-               lvl.lower = s_levels[i];
-               lvl.upper = s_levels[i + 1];
-               lvl.needed = lvl.upper - points;
-            }
-            i++;
-         }
-         if (GLOBAL._render && lvl.level > _baseLevel && lvl.level > 1 && GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD)
-         {
-            if (_baseLevel > 0)
-            {
-               lvl.leveled = true;
-               if (TUTORIAL._stage > 200)
-               {
-                  StreamPost = function(param1:MouseEvent):void
-                  {
-                     POPUPS.Next();
-                  };
-                  mc = new popup_levelup();
-                  title = "pop_levelup_streamtitle";
-                  body = "pop_levelup_body";
-                  if (BASE.isInfernoMainYardOrOutpost)
-                  {
-                     title = "inf_pop_levelup_streamtitle";
-                     body = "inf_pop_levelup_body";
-                  }
-                  mc.title_txt.htmlText = "<b>" + KEYS.Get("pop_levelup_title") + "</b>";
-                  mc.headline_txt.htmlText = KEYS.Get("pop_levelup_headline", {"v1": lvl.level});
-                  mc.body_txt.htmlText = KEYS.Get("pop_levelup_body");
-                  mc.bPost.SetupKey("btn_brag");
-                  mc.bPost.addEventListener(MouseEvent.CLICK, StreamPost);
-                  mc.bPost.Highlight = true;
-                  POPUPS.Push(mc, null, null, "levelup", "levelup.v2.png");
-				  QUESTS.Check("level_up", lvl.level);
-               }
-            }
-            _baseLevel = lvl.level;
-            LOGGER.Stat([33, _baseLevel]);
-         }
-         if (lvl.leveled)
-         {
-            BASE.Save();
-            if (Chat._bymChat)
-            {
-               Chat._bymChat.broadcastDisplayNameUpdate(lvl.level);
-            }
-         }
-         if (GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD)
-         {
-            LOGIN._playerLevel = lvl.level;
-         }
-         return lvl;
-      }
+		public static function BaseLevel():Object
+		{
+			var points:Number = NaN;
+			var lvl:Object = null;
+			var length:int = 0;
+			var i:int = 0;
+			var mc:popup_levelup = null;
+			var title:String = null;
+			var body:String = null;
+			var StreamPost:Function = null;
+			points = _basePoints;
+			lvl = {"level": 0, "lower": 0, "upper": 0, "leveled": false};
+			length = int(s_levels.length - 1);
+			lvl.points = points;
+			while (i < length)
+			{
+				if (points >= s_levels[i])
+				{
+					lvl.level = i + 1;
+					lvl.lower = s_levels[i];
+					lvl.upper = s_levels[i + 1];
+					lvl.needed = lvl.upper - points;
+				}
+				i++;
+			}
+			if (GLOBAL._render && lvl.level > _baseLevel && lvl.level > 1 && GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD)
+			{
+				if (_baseLevel > 0)
+				{
+				lvl.leveled = true;
+				if (TUTORIAL._stage > 200)
+				{
+					StreamPost = function(param1:MouseEvent):void
+					{
+						POPUPS.Next();
+					};
+					mc = new popup_levelup();
+					title = "pop_levelup_streamtitle";
+					body = "pop_levelup_body";
+					if (BASE.isInfernoMainYardOrOutpost)
+					{
+						title = "inf_pop_levelup_streamtitle";
+						body = "inf_pop_levelup_body";
+					}
+					mc.title_txt.htmlText = "<b>" + KEYS.Get("pop_levelup_title") + "</b>";
+					mc.headline_txt.htmlText = KEYS.Get("pop_levelup_headline", {"v1": lvl.level});
+					mc.body_txt.htmlText = KEYS.Get("pop_levelup_body");
+					mc.bPost.SetupKey("btn_brag");
+					mc.bPost.addEventListener(MouseEvent.CLICK, StreamPost);
+					mc.bPost.Highlight = true;
+					POPUPS.Push(mc, null, null, "levelup", "levelup.v2.png");
+					QUESTS.Check("level_up", lvl.level);
+				}
+				}
+				_baseLevel = lvl.level;
+				LOGGER.Stat([33, _baseLevel]);
+			}
+			if (lvl.leveled)
+			{
+				BASE.Save();
+				if (Chat._bymChat)
+				{
+					Chat._bymChat.broadcastDisplayNameUpdate(lvl.level);
+				}
+			}
+			if (GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD)
+			{
+				LOGIN._playerLevel = lvl.level;
+			}
+			return lvl;
+		}
 
       public static function GetBuildingOverlap(param1:Number, param2:Number, param3:Number, param4:Vector.<BFOUNDATION>):void
       {

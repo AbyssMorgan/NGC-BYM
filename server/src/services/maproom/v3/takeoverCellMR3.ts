@@ -91,6 +91,7 @@ export const takeoverCellMR3 = async (baseSave: Save, user: User, userSave: Save
 		case EnumYardType.RESOURCE:
 		case EnumYardType.FORTIFICATION: {
 			baseSave.protected = currentTime + (getProtectionDaysByLevel(level) * 24 * 60 * 60);
+			baseSave.damage = 100;
 		}
 	}
 	baseSave.takeoverDate = new Date();

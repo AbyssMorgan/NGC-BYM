@@ -1793,7 +1793,7 @@ package
 				return formatted.replace(".", ",") + " B";
 			} 
 			else {
-				// Miliony (M) - dla zakresu [500M - 1B)
+				// Miliony (M) - dla zakresu [10M - 1B)
 				formatted = (baseValue / 1000000).toFixed(2);
 				return formatted.replace(".", ",") + " M";
 			}

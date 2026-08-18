@@ -110,7 +110,7 @@ export const baseLoad: KoaController = async (ctx) => {
 	const userSave = user.save!;
 
 	if (type === BaseMode.BUILD) {
-		userSave.level = calculateBaseLevel(userSave.points, userSave.basevalue);
+		userSave.level = calculateBaseLevel(userSave.points);
 		if(mapversion === MapRoomVersion.V1){
 			const mr1Tribes = await createMR1Tribes(userSave, MR1_TRIBES);
 			const wmstatus = new Map(userSave.wmstatus.map((status) => [status[0], status]));

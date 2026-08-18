@@ -31,8 +31,8 @@ export const infernoModeBuild = async (user: User) => {
   if (infernoSave.userid !== user.userid) throw permissionErr();
   if (isAttackActive(infernoSave)) throw baseUnderAttackErr();
 
-  const { points, basevalue, stats, academy, lockerdata } = infernoSave;
-  infernoSave.level = calculateBaseLevel(points, basevalue);
+  const { points, stats, academy, lockerdata } = infernoSave;
+  infernoSave.level = calculateBaseLevel(points);
 
   // Set worldid to match the user's main save for neighbor matching
   infernoSave.worldid = userSave.worldid;

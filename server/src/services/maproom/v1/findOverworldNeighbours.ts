@@ -17,7 +17,7 @@ import type { NeighbourData } from "../../../types/NeighbourData.js";
  * @returns {Promise<NeighbourData[]>} - Array of neighbour data suitable for caching
  */
 export const findOverworldNeighbours = async (user: User, save: Save): Promise<NeighbourData[]> => {
-  const userLevel = calculateBaseLevel(save.points, save.basevalue);
+  const userLevel = calculateBaseLevel(save.points);
   const levelRange = 7;
   const minLevel = Math.max(1, userLevel - levelRange);
   const maxLevel = userLevel + levelRange;
@@ -39,7 +39,7 @@ export const findOverworldNeighbours = async (user: User, save: Save): Promise<N
   );
 
   for (const neighbourSave of saves) {
-    const level = calculateBaseLevel(neighbourSave.points, neighbourSave.basevalue);
+    const level = calculateBaseLevel(neighbourSave.points);
 
     if (level >= minLevel && level <= maxLevel) {
       validNeighbours.push({ save: neighbourSave, level });

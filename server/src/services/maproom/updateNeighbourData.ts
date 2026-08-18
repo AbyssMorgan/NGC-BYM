@@ -103,7 +103,7 @@ export const updateNeighbourData = async (cachedNeighbours: NeighbourData[], bas
     }
 
     neighbour.baseid = neighbourSave.baseid;
-    neighbour.level = calculateBaseLevel(neighbourSave.points, neighbourSave.basevalue);
+    neighbour.level = calculateBaseLevel(neighbourSave.points);
     neighbour.saved = lastSeens.get(neighbour.userid) ?? 0;
 
     const truce = truces.get(neighbour.userid);

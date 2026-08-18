@@ -35,16 +35,8 @@ export const registerAttacker = async (attacker: User, defender: User) => {
   );
 
   if (!existingAttacker) {
-    const attackerLevel = calculateBaseLevel(
-      attacker.save.points,
-      attacker.save.basevalue
-    );
-
-    const attackerNeighbour = createNeighbourData(
-      attacker.save,
-      attacker,
-      attackerLevel
-    );
+    const attackerLevel = calculateBaseLevel(attacker.save.points);
+    const attackerNeighbour = createNeighbourData(attacker.save, attacker, attackerLevel);
 
     attackerNeighbour.attacksfrom = 1;
 

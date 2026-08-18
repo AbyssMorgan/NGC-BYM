@@ -39,8 +39,7 @@ export const userCell = async (ctx: Context, cell: WorldMapCell, cellOwners: Map
   if (mine) locked = 0;
 
   const points = cellOwner.save.points;
-  const basevalue = cellOwner.save.basevalue;
-  const baseLevel = calculateBaseLevel(points, basevalue);
+  const baseLevel = calculateBaseLevel(points);
 
   const isProtected = cellSave.protected > 0 && cellSave.protected > currentTime;
   const protectionExpired = cellSave.protected > 0 && cellSave.protected <= currentTime;

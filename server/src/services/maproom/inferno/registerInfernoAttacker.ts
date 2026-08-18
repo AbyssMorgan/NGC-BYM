@@ -35,16 +35,8 @@ export const registerInfernoAttacker = async (attacker: User, defender: User) =>
   );
 
   if (!existingAttacker) {
-    const attackerLevel = calculateBaseLevel(
-      attacker.infernosave.points,
-      attacker.infernosave.basevalue
-    );
-
-    const attackerNeighbour = createNeighbourData(
-      attacker.infernosave,
-      attacker,
-      attackerLevel
-    );
+    const attackerLevel = calculateBaseLevel(attacker.infernosave.points);
+    const attackerNeighbour = createNeighbourData(attacker.infernosave, attacker, attackerLevel);
 
     attackerNeighbour.attacksfrom = 1;
 

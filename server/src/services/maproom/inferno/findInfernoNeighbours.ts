@@ -21,7 +21,7 @@ export const findInfernoNeighbours = async (user: User): Promise<NeighbourData[]
 
   if (!infernosave) return [];
 
-  const userLevel = calculateBaseLevel(infernosave.points, infernosave.basevalue);
+  const userLevel = calculateBaseLevel(infernosave.points);
   const levelRange = 7;
   const minLevel = Math.max(1, userLevel - levelRange);
   const maxLevel = userLevel + levelRange;
@@ -43,7 +43,7 @@ export const findInfernoNeighbours = async (user: User): Promise<NeighbourData[]
   );
 
   for (const neighbourSave of infernoSaves) {
-    const neighbourLevel = calculateBaseLevel(neighbourSave.points, neighbourSave.basevalue);
+    const neighbourLevel = calculateBaseLevel(neighbourSave.points);
 
     if (neighbourLevel >= minLevel && neighbourLevel <= maxLevel) {
       validNeighbours.push({ save: neighbourSave, level: neighbourLevel });

@@ -432,11 +432,13 @@ package
       private function InfoShow(param1:MouseEvent) : void
       {
          mc.mcPoints.gotoAndStop(2);
-         var _loc2_:Object = BASE.BaseLevel();
+         var base_level_data:Object = BASE.BaseLevel();
          mc.mcPoints.tInfo.htmlText = KEYS.Get("pop_experiencebar",{
-            "v1":GLOBAL.FormatNumber(_loc2_.points),
-            "v2":GLOBAL.FormatNumber(_loc2_.needed),
-            "v3":_loc2_.level + 1
+            "v1":GLOBAL.FormatNumber(base_level_data.points.Get()),
+            "v2":GLOBAL.FormatNumber(base_level_data.needed.Get()),
+            "v3":base_level_data.level + 1,
+            "v4":GLOBAL.FormatNumber(BASE._basePower.Get()),
+			"v5":(100.0 / (base_level_data.upper.Get() - base_level_data.lower.Get()) * (base_level_data.points.Get() - base_level_data.lower.Get())).toFixed(2)
          });
       }
       
@@ -881,7 +883,7 @@ package
                this.updateAttackMode();
             }
             _loc1_ = BASE.BaseLevel();
-            this.SetPoints(_loc1_.lower,_loc1_.upper,_loc1_.needed,_loc1_.points,_loc1_.level,false);
+            this.SetPoints(_loc1_.lower.Get(), _loc1_.upper.Get(), _loc1_.needed.Get(), _loc1_.points.Get(), _loc1_.level, false);
          }
       }
       

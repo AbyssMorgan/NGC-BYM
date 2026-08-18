@@ -838,7 +838,7 @@
     "pop_alerts": "<b><font size=\"12\">Alerts<\/font><\/b><br>You have alerts! Click to view",
     "pop_attackedyou": "<font size='14'><b>#v1# attacked you!<\/b><\/font><br><font size='11'>They attacked your yard #v2# ago!<\/font>",
     "pop_attackedyouxtimes": "<font size='14'><b>#v1# attacked you!<\/b><\/font><br><font size='11'>They attacked your yard #v2# times! The most recent attack was #v3# ago!<\/font>",
-    "pop_experiencebar": "You have <b>#v1#<\/b> points. \rYou need <b>#v2#<\/b> more points to reach <b>Level #v3#.<\/b><br><br>Build, upgrade, complete quests, attack, defend well... pretty much everything you do gives you more points!",
+    "pop_experiencebar": "You have <b>#v1# (#v5# %)<\/b> points. \rYou need <b>#v2#<\/b> more points to reach <b>Level #v3#.<\/b><br>Base power <b>#v4#<\/b><br><br>Collect resources or attack enemy bases for get more points!",
     "pop_invite": "<b><font size=\"12\">Invite Friends<\/font><\/b><br>Select friends you think would enjoy playing Backyard Monsters",
     "pop_mailbox": "<b><font size=\"12\">Mailbox<\/font><\/b><br>Read and send messages to other players",
     "pop_resource": "<b>Capacity:<\/b> #v1#<br><b>Per hour:<\/b> #v2#",

@@ -90,7 +90,7 @@ package
       {
          var _loc4_:int = 0;
          ++this._spewNumber;
-         var _loc2_:int = int(BASE._basePoints) + int(BASE._baseValue);
+         var _loc2_:Number = BASE._baseExperience.Get();
          var _loc3_:Number = 0.4;
          if(_loc2_ > 3000000)
          {

@@ -1,462 +1,458 @@
 package
 {
-   import com.cc.utils.SecNum;
-   import com.jac.mouse.MouseWheelEnabler;
-   import com.monsters.ai.TRIBES;
-   import com.monsters.ai.WMBASE;
-   import com.monsters.alliances.ALLIANCES;
-   import com.monsters.autobanking.AutoBankManager;
-   import com.monsters.baseBuffs.BaseBuffHandler;
-   import com.monsters.baseBuffs.buffs.ResourceCapacityBaseBuff;
-   import com.monsters.baseplanner.BaseTemplate;
-   import com.monsters.baseplanner.BaseTemplateNode;
-   import com.monsters.baseplanner.PlannerTemplate;
-   import com.monsters.chat.Chat;
-   import com.monsters.configs.BYMConfig;
-   import com.monsters.display.BuildingOverlay;
-   import com.monsters.effects.ResourceBombs;
-   import com.monsters.effects.fire.Fire;
-   import com.monsters.effects.particles.ParticleText;
-   import com.monsters.effects.smoke.Smoke;
-   import com.monsters.enums.EnumYardType;
-   import com.monsters.frontPage.FrontPageHandler;
-   import com.monsters.interfaces.ICoreBuilding;
-   import com.monsters.interfaces.IHandler;
-   import com.monsters.inventory.InventoryManager;
-   import com.monsters.managers.InstanceManager;
-   import com.monsters.maproom3.MapRoom3;
-   import com.monsters.maproom3.MapRoom3Tutorial;
-   import com.monsters.maproom3.popups.MapRoom3OutpostSecured;
-   import com.monsters.maproom_advanced.CellData;
-   import com.monsters.maproom_advanced.MapRoom;
-   import com.monsters.maproom_advanced.MapRoomCell;
-   import com.monsters.maproom_advanced.PopupLostMainBase;
-   import com.monsters.maproom_manager.MapRoomManager;
-   import com.monsters.monsters.champions.ChampionBase;
-   import com.monsters.pathing.PATHING;
-   import com.monsters.player.Player;
-   import com.monsters.radio.RADIO;
-   import com.monsters.rendering.RasterData;
-   import com.monsters.replayableEvents.ReplayableEventHandler;
-   import com.monsters.replayableEvents.attacking.monsterMadness.MonsterMadness;
-   import com.monsters.rewarding.RewardHandler;
-   import com.monsters.siege.*;
-   import flash.display.*;
-   import flash.events.*;
-   import flash.external.ExternalInterface;
-   import flash.geom.Point;
-   import flash.net.*;
-   import flash.system.System;
-   import flash.text.TextField;
-   import flash.utils.Dictionary;
-   import flash.utils.Timer;
-   import flash.utils.getTimer;
-   import gs.*;
-   import gs.easing.*;
+	import com.cc.utils.SecNum;
+	import com.jac.mouse.MouseWheelEnabler;
+	import com.monsters.ai.TRIBES;
+	import com.monsters.ai.WMBASE;
+	import com.monsters.alliances.ALLIANCES;
+	import com.monsters.autobanking.AutoBankManager;
+	import com.monsters.baseBuffs.BaseBuffHandler;
+	import com.monsters.baseBuffs.buffs.ResourceCapacityBaseBuff;
+	import com.monsters.baseplanner.BaseTemplate;
+	import com.monsters.baseplanner.BaseTemplateNode;
+	import com.monsters.baseplanner.PlannerTemplate;
+	import com.monsters.chat.Chat;
+	import com.monsters.configs.BYMConfig;
+	import com.monsters.display.BuildingOverlay;
+	import com.monsters.effects.ResourceBombs;
+	import com.monsters.effects.fire.Fire;
+	import com.monsters.effects.particles.ParticleText;
+	import com.monsters.effects.smoke.Smoke;
+	import com.monsters.enums.EnumYardType;
+	import com.monsters.frontPage.FrontPageHandler;
+	import com.monsters.interfaces.ICoreBuilding;
+	import com.monsters.interfaces.IHandler;
+	import com.monsters.inventory.InventoryManager;
+	import com.monsters.managers.InstanceManager;
+	import com.monsters.maproom3.MapRoom3;
+	import com.monsters.maproom3.MapRoom3Tutorial;
+	import com.monsters.maproom3.popups.MapRoom3OutpostSecured;
+	import com.monsters.maproom_advanced.CellData;
+	import com.monsters.maproom_advanced.MapRoom;
+	import com.monsters.maproom_advanced.MapRoomCell;
+	import com.monsters.maproom_advanced.PopupLostMainBase;
+	import com.monsters.maproom_manager.MapRoomManager;
+	import com.monsters.monsters.champions.ChampionBase;
+	import com.monsters.pathing.PATHING;
+	import com.monsters.player.Player;
+	import com.monsters.radio.RADIO;
+	import com.monsters.rendering.RasterData;
+	import com.monsters.replayableEvents.ReplayableEventHandler;
+	import com.monsters.replayableEvents.attacking.monsterMadness.MonsterMadness;
+	import com.monsters.rewarding.RewardHandler;
+	import com.monsters.siege.*;
+	import flash.display.*;
+	import flash.events.*;
+	import flash.external.ExternalInterface;
+	import flash.geom.Point;
+	import flash.net.*;
+	import flash.system.System;
+	import flash.text.TextField;
+	import flash.utils.Dictionary;
+	import flash.utils.Timer;
+	import flash.utils.getTimer;
+	import gs.*;
+	import gs.easing.*;
 
-   public class BASE
-   {
-      public static var _baseID:Number;
+	public class BASE
+	{
+		public static var _baseID:Number;
 
-      public static var _wmID:int;
+		public static var _wmID:int;
 
-      public static var _resources:Object;
+		public static var _resources:Object;
 
-      public static var _bankedValue:Number;
+		public static var _bankedValue:Number;
 
-      public static var _bankedTime:int;
+		public static var _bankedTime:int;
 
-      public static var _shakeCountdown:int;
+		public static var _shakeCountdown:int;
 
-      public static var _blockSave:Boolean;
+		public static var _blockSave:Boolean;
 
-      public static var _attackerArray:Array;
+		public static var _attackerArray:Array;
 
-      public static var _attackerNameArray:Array;
-      
-      public static var _currentAttacks:Array;
-      
-      public static var _attacksModified:Boolean;
+		public static var _attackerNameArray:Array;
+		
+		public static var _currentAttacks:Array;
+		
+		public static var _attacksModified:Boolean;
 
-      public static var _deltaResources:Object;
+		public static var _deltaResources:Object;
 
-      public static var _savedDeltaResources:Object;
+		public static var _savedDeltaResources:Object;
 
-      public static var _isavedDeltaResources:Object;
+		public static var _isavedDeltaResources:Object;
 
-      public static var _GIP:Object;
+		public static var _GIP:Object;
 
-      public static var _processedGIP:Object;
+		public static var _processedGIP:Object;
 
-      public static var _rawGIP:Object;
+		public static var _rawGIP:Object;
 
-      public static var _level:int;
+		public static var _level:int;
 
-      public static var _rewards:Object;
+		public static var _rewards:Object;
 
-      public static var _lastProcessedGIP:int;
+		public static var _lastProcessedGIP:int;
 
-      public static var _credits:SecNum;
+		public static var _credits:SecNum;
 
-      public static var _saveCounterA:int;
+		public static var _saveCounterA:int;
 
-      public static var _saveCounterB:int;
+		public static var _saveCounterB:int;
 
-      public static var _saving:Boolean;
+		public static var _saving:Boolean;
 
-      public static var _paging:Boolean;
+		public static var _paging:Boolean;
 
-      public static var _lastSaveID:int;
+		public static var _lastSaveID:int;
 
-      public static var _attackID:int;
+		public static var _attackID:int;
 
-      public static var _lastSaved:int;
+		public static var _lastSaved:int;
 
-      public static var _lastSaveRequest:int;
+		public static var _lastSaveRequest:int;
 
-      public static var _saveOver:int;
+		public static var _saveOver:int;
 
-      public static var _returnHome:Boolean;
+		public static var _returnHome:Boolean;
 
-      public static var _saveProtect:int;
+		public static var _saveProtect:int;
 
-      public static var _saveErrors:int;
+		public static var _saveErrors:int;
 
-      public static var _pageErrors:int;
+		public static var _pageErrors:int;
 
-      public static var _loadTime:int;
-      
-      private static var _processingTimer:Timer;
+		public static var _loadTime:int;
+		
+		private static var _processingTimer:Timer;
 
-      public static var _loading:Boolean;
+		public static var _loading:Boolean;
 
-      public static var _infernoSaveLoad:Boolean;
+		public static var _infernoSaveLoad:Boolean;
 
-      public static var _lastProcessed:int;
+		public static var _lastProcessed:int;
 
-      public static var _lastProcessedB:int;
+		public static var _lastProcessedB:int;
 
-      public static var _catchupTime:int;
+		public static var _catchupTime:int;
 
-      public static var _currentTime:int;
+		public static var _currentTime:int;
 
-      public static var _baseData:Array;
+		public static var _baseData:Array;
 
-      public static var _upgradeData:Object;
+		public static var _upgradeData:Object;
 
-      public static var _buildingCount:int;
+		public static var _buildingCount:int;
 
-      public static var _buildingHealthData:Object;
+		public static var _buildingHealthData:Object;
 
-      public static var _buildingData:Object;
+		public static var _buildingData:Object;
 
-      public static var _buildingsAll:Object;
+		public static var _buildingsAll:Object;
 
-      public static var _buildingsWalls:Object;
+		public static var _buildingsWalls:Object;
 
-      public static var _buildingsTowers:Object;
+		public static var _buildingsTowers:Object;
 
-      public static var _buildingsBunkers:Object;
+		public static var _buildingsBunkers:Object;
 
-      public static var _buildingsHousing:Array;
+		public static var _buildingsHousing:Array;
 
-      public static var _buildingsMain:Object;
+		public static var _buildingsMain:Object;
 
-      public static var _buildingsMushrooms:Object;
+		public static var _buildingsMushrooms:Object;
 
-      public static var _buildingsGifts:Object;
+		public static var _buildingsGifts:Object;
 
-      public static var _buildingsStored:Object;
-	  
-      public static var _buildingsSuck:Object;
+		public static var _buildingsStored:Object;
+		
+		public static var _buildingsSuck:Object;
 
-      public static var buildings:Vector.<BFOUNDATION>;
+		public static var buildings:Vector.<BFOUNDATION>;
 
-      public static var _rawMonsters:Object;
+		public static var _rawMonsters:Object;
 
-      public static var _mushroomList:Array;
+		public static var _mushroomList:Array;
 
-      public static var _lastSpawnedMushroom:int;
+		public static var _lastSpawnedMushroom:int;
 
-      public static var _baseName:String;
+		public static var _baseName:String;
 
-      public static var _baseSeed:int;
+		public static var _baseSeed:int;
 
-      public static var _loadedBaseID:Number;
+		public static var _loadedBaseID:Number;
 
-      public static var _loadedFriendlyBaseID:Number;
+		public static var _loadedFriendlyBaseID:Number;
 
-      public static var _loadedFBID:Number;
+		public static var _loadedFBID:Number;
 
-      public static var _baseLevel:int;
+		public static var _baseLevel:int;
 
-      public static var _baseValue:Number;
+		public static var _baseExperience:SecNum = new SecNum(0);
 
-      public static var _basePoints:Number;
+		public static var _basePower:SecNum = new SecNum(0);
 
-      public static var _baseExperience:SecNum = new SecNum(0);
+		public static var _processing:Boolean;
 
-      public static var _outpostValue:Number;
+		public static var _timer:int;
 
-      public static var _processing:Boolean;
+		public static var _size:int;
 
-      public static var _timer:int;
+		public static var _angle:Number;
 
-      public static var _size:int;
+		public static var _buildingCounts:Object;
 
-      public static var _angle:Number;
+		public static var _buildingStatsToggle:Boolean;
 
-      public static var _buildingCounts:Object;
+		public static var _lastPaged:int;
 
-      public static var _buildingStatsToggle:Boolean;
+		public static var _tempLoot:Object;
 
-      public static var _lastPaged:int;
+		public static var _tempGifts:Array;
 
-      public static var _tempLoot:Object;
+		public static var _tempSentGifts:Array;
 
-      public static var _tempGifts:Array;
+		public static var _tempSentInvites:Array;
 
-      public static var _tempSentGifts:Array;
+		public static var _isProtected:int;
 
-      public static var _tempSentInvites:Array;
+		public static var _isReinforcements:int;
 
-      public static var _isProtected:int;
+		public static var _isSanctuary:int;
 
-      public static var _isReinforcements:int;
+		public static var _isFan:int;
 
-      public static var _isSanctuary:int;
+		public static var _isBookmarked:int;
 
-      public static var _isFan:int;
+		public static var _installsGenerated:int;
 
-      public static var _isBookmarked:int;
+		public static var _ownerName:String;
 
-      public static var _installsGenerated:int;
+		public static var _ownerPic:String;
 
-      public static var _ownerName:String;
+		public static var _pendingPurchase:Array;
 
-      public static var _ownerPic:String;
+		public static var _pendingPromo:int;
 
-      public static var _pendingPurchase:Array;
+		public static var _pendingFBPromo:int;
 
-      public static var _pendingPromo:int;
+		public static var _pendingFBPromoIDs:Array;
 
-      public static var _pendingFBPromo:int;
+		public static var _salePromoTime:int;
 
-      public static var _pendingFBPromoIDs:Array;
+		public static var _loadBase:Array;
 
-      public static var _salePromoTime:int;
+		public static var _percentDamaged:int;
 
-      public static var _loadBase:Array;
+		public static var _userID:int;
 
-      public static var _percentDamaged:int;
+		public static var _allianceID:int;
 
-      public static var _userID:int;
+		public static var _damagedBaseWarnTime:Number;
 
-      public static var _allianceID:int;
+		public static var _takeoverFirstOpen:int;
 
-      public static var _damagedBaseWarnTime:Number;
+		public static var _takeoverPreviousOwnersName:String;
 
-      public static var _takeoverFirstOpen:int;
+		private static var s_processing:Boolean;
 
-      public static var _takeoverPreviousOwnersName:String;
+		private static var _tmpPercent:Number;
 
-      private static var s_processing:Boolean;
+		private static var _oldSiegeData:Object;
 
-      private static var _tmpPercent:Number;
+		public static var loadObject:Object;
 
-      private static var _oldSiegeData:Object;
+		public static var _tribeIndex:int;
 
-      public static var loadObject:Object;
+		public static var _ideltaResources:Object = null;
 
-      public static var _tribeIndex:int;
+		public static var _iresources:Object = null;
 
-      public static var _ideltaResources:Object = null;
+		public static var _allianceArmamentTime:SecNum = new SecNum(0);
 
-      public static var _iresources:Object = null;
+		private static var s_resourceCells:Object = {};
 
-      public static var _allianceArmamentTime:SecNum = new SecNum(0);
+		public static var _loadedYardType:int = 0;
 
-      private static var s_resourceCells:Object = {};
+		private static var m_yardType:int = EnumYardType.MAIN_YARD;
 
-      public static var _loadedYardType:int = 0;
+		protected static var _firstBaseLoaded:Boolean = true;
 
-      private static var m_yardType:int = EnumYardType.MAIN_YARD;
+		public static var _userDigits:Array = [];
 
-      protected static var _firstBaseLoaded:Boolean = true;
+		public static var _guardianData:Vector.<Object> = new Vector.<Object>();
 
-      public static var _userDigits:Array = [];
+		public static var s_eventBases:Vector.<Number> = new Vector.<Number>();
 
-      public static var _guardianData:Vector.<Object> = new Vector.<Object>();
+		public static var _showingWhatsNew:Boolean = false;
 
-      public static var s_eventBases:Vector.<Number> = new Vector.<Number>();
+		public static var _needCurrentCell:Boolean = false;
 
-      public static var _showingWhatsNew:Boolean = false;
+		public static var _currentCellLoc:Point = null;
 
-      public static var _needCurrentCell:Boolean = false;
+		public static var _conquerorPoints:SecNum = new SecNum(0);
 
-      public static var _currentCellLoc:Point = null;
+		private static const s_levels:Array = [
+			new SecNum(0),                 // Level 1
+			new SecNum(900),               // Level 2
+			new SecNum(3500),              // Level 3
+			new SecNum(5000),              // Level 4
+			new SecNum(7500),              // Level 5
+			new SecNum(10500),             // Level 6
+			new SecNum(14700),             // Level 7
+			new SecNum(20580),             // Level 8
+			new SecNum(28812),             // Level 9
+			new SecNum(40337),             // Level 10
+			new SecNum(56472),             // Level 11
+			new SecNum(79060),             // Level 12
+			new SecNum(110684),            // Level 13
+			new SecNum(154958),            // Level 14
+			new SecNum(216941),            // Level 15
+			new SecNum(303717),            // Level 16
+			new SecNum(425204),            // Level 17
+			new SecNum(595286),            // Level 18
+			new SecNum(833401),            // Level 19
+			new SecNum(1166761),           // Level 20
+			new SecNum(1633465),           // Level 21
+			new SecNum(2286851),           // Level 22
+			new SecNum(3201591),           // Level 23
+			new SecNum(4482228),           // Level 24
+			new SecNum(6275119),           // Level 25
+			new SecNum(8785167),           // Level 26
+			new SecNum(12299234),          // Level 27
+			new SecNum(17218927),          // Level 28
+			new SecNum(24106498),          // Level 29
+			new SecNum(33749097),          // Level 30
+			new SecNum(47248736),          // Level 31
+			new SecNum(66148230),          // Level 32
+			new SecNum(92607522),          // Level 33
+			new SecNum(129650530),         // Level 34
+			new SecNum(181510743),         // Level 35
+			new SecNum(254115040),         // Level 36
+			new SecNum(355761056),         // Level 37
+			new SecNum(498065478),         // Level 38
+			new SecNum(697291669),         // Level 39
+			new SecNum(976208337),         // Level 40
+			new SecNum(1366691671),        // Level 41
+			new SecNum(1913368339),        // Level 42
+			new SecNum(2678715675),        // Level 43
+			new SecNum(3750201945),        // Level 44
+			new SecNum(5250282723),        // Level 45
+			new SecNum(7350395812),        // Level 46
+			new SecNum(10290554137),       // Level 47
+			new SecNum(14406775792),       // Level 48
+			new SecNum(20169486109),       // Level 49
+			new SecNum(28237280553),       // Level 50
+			new SecNum(39532192774),       // Level 51
+			new SecNum(55345069884),       // Level 52
+			new SecNum(77483097838),       // Level 53
+			new SecNum(108476336973),      // Level 54
+			new SecNum(151866871762),      // Level 55
+			new SecNum(212613620467),      // Level 56
+			new SecNum(297659068653),      // Level 57
+			new SecNum(357190880000),      // Level 58
+			new SecNum(428629050000),      // Level 59
+			new SecNum(514354860000),      // Level 60
+			new SecNum(617225830000),      // Level 61
+			new SecNum(740670990000),      // Level 62
+			new SecNum(888805180000),      // Level 63
+			new SecNum(1066566210000),     // Level 64
+			new SecNum(1279879450000),     // Level 65
+			new SecNum(1535853400000),     // Level 66
+			new SecNum(1843026400000),     // Level 67
+			new SecNum(2211631680000),     // Level 68
+			new SecNum(2653958010000),     // Level 69
+			new SecNum(3184749610000),     // Level 70
+			new SecNum(3821699530000),     // Level 71
+			new SecNum(4586039430000),     // Level 72
+			new SecNum(5503247310000),     // Level 73
+			new SecNum(6603896770000),     // Level 74
+			new SecNum(7924676120000),     // Level 75
+			new SecNum(9509611340000),     // Level 76
+			new SecNum(11411533600000),    // Level 77
+			new SecNum(13693840320000),    // Level 78
+			new SecNum(16432608380000),    // Level 79
+			new SecNum(19719130050000),    // Level 80
+			new SecNum(23662956060000),    // Level 81
+			new SecNum(28395547270000),    // Level 82
+			new SecNum(34074656720000),    // Level 83
+			new SecNum(40889588060000),    // Level 84
+			new SecNum(49067505670000),    // Level 85
+			new SecNum(58881006800000),    // Level 86
+			new SecNum(70657208160000),    // Level 87
+			new SecNum(84788649790000),    // Level 88
+			new SecNum(101746379740000),   // Level 89
+			new SecNum(122095655680000),   // Level 90
+			new SecNum(146514786810000),   // Level 91
+			new SecNum(175817744170000),   // Level 92
+			new SecNum(210981293000000),   // Level 93
+			new SecNum(253177551600000),   // Level 94
+			new SecNum(303813061920000),   // Level 95
+			new SecNum(364575674300000),   // Level 96
+			new SecNum(437490809160000),   // Level 97
+			new SecNum(524988970990000),   // Level 98
+			new SecNum(629986765180000),   // Level 99
+			new SecNum(755984118210000),   // Level 100
+			new SecNum(869381735941500),   // Level 101
+			new SecNum(999788996332725),   // Level 102
+			new SecNum(1149757345700000),  // Level 103
+			new SecNum(1322220947600000),  // Level 104
+			new SecNum(1520554089700000),  // Level 105
+			new SecNum(1748637203200000),  // Level 106
+			new SecNum(2010932783700000),  // Level 107
+			new SecNum(2312572701300000),  // Level 108
+			new SecNum(2659458606500000),  // Level 109
+			new SecNum(3058377397400000),  // Level 110
+			new SecNum(3500000000000000),  // Level 111
+			new SecNum(4000000000000000),  // Level 112
+			new SecNum(4500000000000000),  // Level 113
+			new SecNum(5000000000000000),  // Level 114
+			new SecNum(5500000000000000),  // Level 115
+			new SecNum(6000000000000000),  // Level 116
+			new SecNum(6500000000000000),  // Level 117
+			new SecNum(7000000000000000),  // Level 118
+			new SecNum(8000000000000000),  // Level 119
+			new SecNum(9000000000000000),  // Level 120
+		];
 
-	  public static var _conquerorPoints:SecNum = new SecNum(0);
+		private static var _loadedSomething:Boolean = false;
 
-      private static const s_levels:Array = [
-         0,                 // Level 1
-         900,               // Level 2
-         3500,              // Level 3
-         5000,              // Level 4
-         7500,              // Level 5
-         10500,             // Level 6
-         14700,             // Level 7
-         20580,             // Level 8
-         28812,             // Level 9
-         40337,             // Level 10
-         56472,             // Level 11
-         79060,             // Level 12
-         110684,            // Level 13
-         154958,            // Level 14
-         216941,            // Level 15
-         303717,            // Level 16
-         425204,            // Level 17
-         595286,            // Level 18
-         833401,            // Level 19
-         1166761,           // Level 20
-         1633465,           // Level 21
-         2286851,           // Level 22
-         3201591,           // Level 23
-         4482228,           // Level 24
-         6275119,           // Level 25
-         8785167,           // Level 26
-         12299234,          // Level 27
-         17218927,          // Level 28
-         24106498,          // Level 29
-         33749097,          // Level 30
-         47248736,          // Level 31
-         66148230,          // Level 32
-         92607522,          // Level 33
-         129650530,         // Level 34
-         181510743,         // Level 35
-         254115040,         // Level 36
-         355761056,         // Level 37
-         498065478,         // Level 38
-         697291669,         // Level 39
-         976208337,         // Level 40
-         1366691671,        // Level 41
-         1913368339,        // Level 42
-         2678715675,        // Level 43
-         3750201945,        // Level 44
-         5250282723,        // Level 45
-         7350395812,        // Level 46
-         10290554137,       // Level 47
-         14406775792,       // Level 48
-         20169486109,       // Level 49
-         28237280553,       // Level 50
-         39532192774,       // Level 51
-         55345069884,       // Level 52
-         77483097838,       // Level 53
-         108476336973,      // Level 54
-         151866871762,      // Level 55
-         212613620467,      // Level 56
-         297659068653,      // Level 57
-         357190880000,      // Level 58
-         428629050000,      // Level 59
-         514354860000,      // Level 60
-         617225830000,      // Level 61
-         740670990000,      // Level 62
-         888805180000,      // Level 63
-         1066566210000,     // Level 64
-         1279879450000,     // Level 65
-         1535853400000,     // Level 66
-         1843026400000,     // Level 67
-         2211631680000,     // Level 68
-         2653958010000,     // Level 69
-         3184749610000,     // Level 70
-         3821699530000,     // Level 71
-         4586039430000,     // Level 72
-         5503247310000,     // Level 73
-         6603896770000,     // Level 74
-         7924676120000,     // Level 75
-         9509611340000,     // Level 76
-         11411533600000,    // Level 77
-         13693840320000,    // Level 78
-         16432608380000,    // Level 79
-         19719130050000,    // Level 80
-         23662956060000,    // Level 81
-         28395547270000,    // Level 82
-         34074656720000,    // Level 83
-         40889588060000,    // Level 84
-         49067505670000,    // Level 85
-         58881006800000,    // Level 86
-         70657208160000,    // Level 87
-         84788649790000,    // Level 88
-         101746379740000,   // Level 89
-         122095655680000,   // Level 90
-         146514786810000,   // Level 91
-         175817744170000,   // Level 92
-         210981293000000,   // Level 93
-         253177551600000,   // Level 94
-         303813061920000,   // Level 95
-         364575674300000,   // Level 96
-         437490809160000,   // Level 97
-         524988970990000,   // Level 98
-         629986765180000,   // Level 99
-         755984118210000,   // Level 100
-         869381735941500,   // Level 101
-         999788996332725,   // Level 102
-         1149757345700000,  // Level 103
-         1322220947600000,  // Level 104
-         1520554089700000,  // Level 105
-         1748637203200000,  // Level 106
-         2010932783700000,  // Level 107
-         2312572701300000,  // Level 108
-         2659458606500000,  // Level 109
-         3058377397400000,  // Level 110
-         3500000000000000,  // Level 111
-         4000000000000000,  // Level 112
-         4500000000000000,  // Level 113
-         5000000000000000,  // Level 114
-         5500000000000000,  // Level 115
-         6000000000000000,  // Level 116
-         6500000000000000,  // Level 117
-         7000000000000000,  // Level 118
-         8000000000000000,  // Level 119
-         9000000000000000,  // Level 120
-      ];
+		private static var _addtionalLoadArguments:Array = [];
 
-      private static var _loadedSomething:Boolean = false;
+		public function BASE()
+		{
+			super();
+			_baseID = 0;
+			Setup();
+			Load();
+		}
 
-      private static var _addtionalLoadArguments:Array = [];
+		public static function get yardType():int
+		{
+			return m_yardType;
+		}
 
-      public function BASE()
-      {
-         super();
-         _baseID = 0;
-         Setup();
-         Load();
-      }
+		public static function set yardType(param1:int):void
+		{
+			m_yardType = param1;
+		}
 
-      public static function get yardType():int
-      {
-         return m_yardType;
-      }
+		public static function get firstBaseLoaded():Boolean
+		{
+			return _firstBaseLoaded;
+		}
 
-      public static function set yardType(param1:int):void
-      {
-         m_yardType = param1;
-      }
+		public static function get processing():Boolean
+		{
+			return s_processing;
+		}
 
-      public static function get firstBaseLoaded():Boolean
-      {
-         return _firstBaseLoaded;
-      }
-
-      public static function get processing():Boolean
-      {
-         return s_processing;
-      }
-
-      public static function get resourceCells():Object
-      {
-         return s_resourceCells;
-      }
+		public static function get resourceCells():Object
+		{
+			return s_resourceCells;
+		}
 
 		public static function Setup():void
 		{
@@ -499,316 +495,316 @@ package
 			GLOBAL.Clear();
 		}
 
-      public static function Cleanup():void
-      {
-         SPECIALEVENT.ClearWildMonsterPowerups();
-         SPECIALEVENT_WM1.ClearWildMonsterPowerups();
-         BaseBuffHandler.instance.clearBuffs();
-         RewardHandler.instance.clear();
-         GLOBAL.player.clear();
-         if (GLOBAL.attackingPlayer)
-         {
-            GLOBAL.attackingPlayer.clear();
-         }
-         CREATURES.Clear();
-         CREEPS.Clear();
-         GLOBAL._ROOT.removeChild(GLOBAL._layerMap);
-         GLOBAL._ROOT.removeChild(GLOBAL._layerUI);
-         GLOBAL._ROOT.removeChild(GLOBAL._layerWindows);
-         GLOBAL._ROOT.removeChild(GLOBAL._layerMessages);
-         GLOBAL._ROOT.removeChild(GLOBAL._layerTop);
-         GLOBAL._layerMap = GLOBAL._ROOT.addChild(new Sprite()) as Sprite;
-         GLOBAL._layerUI = GLOBAL._ROOT.addChild(new Sprite()) as Sprite;
-         GLOBAL._layerWindows = GLOBAL._ROOT.addChild(new Sprite()) as Sprite;
-         GLOBAL._layerMessages = GLOBAL._ROOT.addChild(new Sprite()) as Sprite;
-         GLOBAL._layerTop = GLOBAL._ROOT.addChild(new Sprite()) as Sprite;
-         GLOBAL._layerMap.mouseEnabled = false;
-         GLOBAL._layerUI.mouseEnabled = false;
-         GLOBAL._layerWindows.mouseEnabled = false;
-         GLOBAL._layerMessages.mouseEnabled = false;
-         GLOBAL._layerTop.mouseEnabled = false;
-         var _loc1_:Vector.<Object> = InstanceManager.getInstancesByClass(BFOUNDATION);
-         while (_loc1_.length)
-         {
-            (_loc1_[0] as BFOUNDATION).clear();
-         }
-         InstanceManager.clearAll();
-         buildings = new Vector.<BFOUNDATION>();
-         _buildingsAll = {};
-         _buildingsWalls = {};
-         _buildingsTowers = {};
-         _buildingsMain = {};
-         _buildingsMushrooms = {};
-         _buildingsGifts = {};
-         _buildingsStored = {};
-         _buildingsSuck = {};
-         GLOBAL.setTownHall(null);
-         GLOBAL._bAcademy = null;
-         GLOBAL._bBaiter = null;
-         GLOBAL._bFlinger = null;
-         GLOBAL._bHatchery = null;
-         GLOBAL._bHatcheryCC = null;
-         GLOBAL._bHousing = null;
-		 GLOBAL._bHousingLevel = 0;
-         GLOBAL._bJuicer = null;
-         GLOBAL._bLocker = null;
-         GLOBAL._bMap = null;
-         GLOBAL._bStore = null;
-         UI2.Hide("warning");
-         UI2.Hide("scareAway");
-         WMATTACK._inProgress = false;
-         MONSTERBAITER._scaredAway = false;
-         CUSTOMATTACKS._started = false;
-         WMATTACK._queued = null;
-         if (Boolean(WMATTACK._history) && Boolean(WMATTACK._history._queued))
-         {
-            delete WMATTACK._history.queued;
-         }
-         if (UI2._wildMonsterBar)
-         {
-            UI2.Hide("wmbar");
-         }
-         GRID.Cleanup();
-         PATHING.Cleanup();
-         RasterData.clear();
-         _showingWhatsNew = false;
-         _deltaResources = {"dirty": false, "r1": new SecNum(0), "r2": new SecNum(0), "r3": new SecNum(0), "r4": new SecNum(0)};
-         _ideltaResources = {"dirty": false, "r1": new SecNum(0), "r2": new SecNum(0), "r3": new SecNum(0), "r4": new SecNum(0)};
-         _savedDeltaResources = {"r1": new SecNum(0), "r2": new SecNum(0), "r3": new SecNum(0), "r4": new SecNum(0)};
-         _isavedDeltaResources = {"r1": new SecNum(0), "r2": new SecNum(0), "r3": new SecNum(0), "r4": new SecNum(0)};
-      }
+		public static function Cleanup():void
+		{
+			SPECIALEVENT.ClearWildMonsterPowerups();
+			SPECIALEVENT_WM1.ClearWildMonsterPowerups();
+			BaseBuffHandler.instance.clearBuffs();
+			RewardHandler.instance.clear();
+			GLOBAL.player.clear();
+			if (GLOBAL.attackingPlayer)
+			{
+				GLOBAL.attackingPlayer.clear();
+			}
+			CREATURES.Clear();
+			CREEPS.Clear();
+			GLOBAL._ROOT.removeChild(GLOBAL._layerMap);
+			GLOBAL._ROOT.removeChild(GLOBAL._layerUI);
+			GLOBAL._ROOT.removeChild(GLOBAL._layerWindows);
+			GLOBAL._ROOT.removeChild(GLOBAL._layerMessages);
+			GLOBAL._ROOT.removeChild(GLOBAL._layerTop);
+			GLOBAL._layerMap = GLOBAL._ROOT.addChild(new Sprite()) as Sprite;
+			GLOBAL._layerUI = GLOBAL._ROOT.addChild(new Sprite()) as Sprite;
+			GLOBAL._layerWindows = GLOBAL._ROOT.addChild(new Sprite()) as Sprite;
+			GLOBAL._layerMessages = GLOBAL._ROOT.addChild(new Sprite()) as Sprite;
+			GLOBAL._layerTop = GLOBAL._ROOT.addChild(new Sprite()) as Sprite;
+			GLOBAL._layerMap.mouseEnabled = false;
+			GLOBAL._layerUI.mouseEnabled = false;
+			GLOBAL._layerWindows.mouseEnabled = false;
+			GLOBAL._layerMessages.mouseEnabled = false;
+			GLOBAL._layerTop.mouseEnabled = false;
+			var _loc1_:Vector.<Object> = InstanceManager.getInstancesByClass(BFOUNDATION);
+			while (_loc1_.length)
+			{
+				(_loc1_[0] as BFOUNDATION).clear();
+			}
+			InstanceManager.clearAll();
+			buildings = new Vector.<BFOUNDATION>();
+			_buildingsAll = {};
+			_buildingsWalls = {};
+			_buildingsTowers = {};
+			_buildingsMain = {};
+			_buildingsMushrooms = {};
+			_buildingsGifts = {};
+			_buildingsStored = {};
+			_buildingsSuck = {};
+			GLOBAL.setTownHall(null);
+			GLOBAL._bAcademy = null;
+			GLOBAL._bBaiter = null;
+			GLOBAL._bFlinger = null;
+			GLOBAL._bHatchery = null;
+			GLOBAL._bHatcheryCC = null;
+			GLOBAL._bHousing = null;
+			GLOBAL._bHousingLevel = 0;
+			GLOBAL._bJuicer = null;
+			GLOBAL._bLocker = null;
+			GLOBAL._bMap = null;
+			GLOBAL._bStore = null;
+			UI2.Hide("warning");
+			UI2.Hide("scareAway");
+			WMATTACK._inProgress = false;
+			MONSTERBAITER._scaredAway = false;
+			CUSTOMATTACKS._started = false;
+			WMATTACK._queued = null;
+			if (Boolean(WMATTACK._history) && Boolean(WMATTACK._history._queued))
+			{
+				delete WMATTACK._history.queued;
+			}
+			if (UI2._wildMonsterBar)
+			{
+				UI2.Hide("wmbar");
+			}
+			GRID.Cleanup();
+			PATHING.Cleanup();
+			RasterData.clear();
+			_showingWhatsNew = false;
+			_deltaResources = {"dirty": false, "r1": new SecNum(0), "r2": new SecNum(0), "r3": new SecNum(0), "r4": new SecNum(0)};
+			_ideltaResources = {"dirty": false, "r1": new SecNum(0), "r2": new SecNum(0), "r3": new SecNum(0), "r4": new SecNum(0)};
+			_savedDeltaResources = {"r1": new SecNum(0), "r2": new SecNum(0), "r3": new SecNum(0), "r4": new SecNum(0)};
+			_isavedDeltaResources = {"r1": new SecNum(0), "r2": new SecNum(0), "r3": new SecNum(0), "r4": new SecNum(0)};
+		}
 
-      public static function LoadBase(url:String = null, userId:Number = 0, baseId:Number = 0, baseMode:String = "build", isError:Boolean = false, baseType:int = -1, cellId:Number = 0, keyValuePairs:Array = null):Boolean
-      {
-         if (isNaN(baseId))
-         {
-            baseId = 0;
-         }
-         if (isNaN(userId))
-         {
-            userId = 0;
-         }
-         if (MapRoomManager.instance.isInMapRoom2or3 && MapRoomManager.instance.isOpen)
-         {
-            MapRoomManager.instance.Hide();
-         }
-         if (MAPROOM_INFERNO._open)
-         {
-            MAPROOM_INFERNO.Hide();
-         }
-         if (MAPROOM._open)
-         {
-            MAPROOM.Hide();
-         }
-         if (!MapRoomManager.instance.isInMapRoom2or3 && (baseMode == GLOBAL.e_BASE_MODE.ATTACK || baseMode == GLOBAL.e_BASE_MODE.IATTACK) && (GLOBAL.mode != GLOBAL.e_BASE_MODE.BUILD && GLOBAL.mode != GLOBAL.e_BASE_MODE.IBUILD))
-         {
-            return false;
-         }
-         if (!_loading)
-         {
-            GLOBAL._reloadonerror = isError;
-            if (baseId == 0 && userId == 0)
-            {
-               if (baseMode != GLOBAL.e_BASE_MODE.IBUILD)
-               {
-                  baseMode = GLOBAL.e_BASE_MODE.BUILD;
-               }
-            }
-            if ((baseMode == GLOBAL.e_BASE_MODE.ATTACK || baseMode == GLOBAL.e_BASE_MODE.WMATTACK) && (!MapRoomManager.instance.isInMapRoom2or3 && (!GLOBAL._bFlinger || !GLOBAL._bFlinger._canFunction) && !isInfernoMainYardOrOutpost))
-            {
-               LOGGER.Log("err", "Impossible fling");
-               GLOBAL.ErrorMessage("BASE.LoadBase impossible fling");
-               return false;
-            }
-            _loadBase = [url, userId, baseId, baseMode, baseType, cellId];
-            if (!MapRoomManager.instance.isInMapRoom2or3 && (baseMode == GLOBAL.e_BASE_MODE.ATTACK || baseMode == GLOBAL.e_BASE_MODE.WMATTACK || baseMode == GLOBAL.e_BASE_MODE.IATTACK || baseMode == GLOBAL.e_BASE_MODE.IWMATTACK))
-            {
-               PLEASEWAIT.Show(KEYS.Get("msg_preparing"));
-               Save(0, false, true);
-            }
-            else if (!_saving)
-            {
-               if (keyValuePairs)
-               {
-                  _addtionalLoadArguments.push(keyValuePairs);
-               }
-               LoadBaseB();
-               _addtionalLoadArguments = [];
-            }
-         }
-         return true;
-      }
+		public static function LoadBase(url:String = null, userId:Number = 0, baseId:Number = 0, baseMode:String = "build", isError:Boolean = false, baseType:int = -1, cellId:Number = 0, keyValuePairs:Array = null):Boolean
+		{
+			if (isNaN(baseId))
+			{
+				baseId = 0;
+			}
+			if (isNaN(userId))
+			{
+				userId = 0;
+			}
+			if (MapRoomManager.instance.isInMapRoom2or3 && MapRoomManager.instance.isOpen)
+			{
+				MapRoomManager.instance.Hide();
+			}
+			if (MAPROOM_INFERNO._open)
+			{
+				MAPROOM_INFERNO.Hide();
+			}
+			if (MAPROOM._open)
+			{
+				MAPROOM.Hide();
+			}
+			if (!MapRoomManager.instance.isInMapRoom2or3 && (baseMode == GLOBAL.e_BASE_MODE.ATTACK || baseMode == GLOBAL.e_BASE_MODE.IATTACK) && (GLOBAL.mode != GLOBAL.e_BASE_MODE.BUILD && GLOBAL.mode != GLOBAL.e_BASE_MODE.IBUILD))
+			{
+				return false;
+			}
+			if (!_loading)
+			{
+				GLOBAL._reloadonerror = isError;
+				if (baseId == 0 && userId == 0)
+				{
+				if (baseMode != GLOBAL.e_BASE_MODE.IBUILD)
+				{
+					baseMode = GLOBAL.e_BASE_MODE.BUILD;
+				}
+				}
+				if ((baseMode == GLOBAL.e_BASE_MODE.ATTACK || baseMode == GLOBAL.e_BASE_MODE.WMATTACK) && (!MapRoomManager.instance.isInMapRoom2or3 && (!GLOBAL._bFlinger || !GLOBAL._bFlinger._canFunction) && !isInfernoMainYardOrOutpost))
+				{
+					LOGGER.Log("err", "Impossible fling");
+					GLOBAL.ErrorMessage("BASE.LoadBase impossible fling");
+					return false;
+				}
+				_loadBase = [url, userId, baseId, baseMode, baseType, cellId];
+				if (!MapRoomManager.instance.isInMapRoom2or3 && (baseMode == GLOBAL.e_BASE_MODE.ATTACK || baseMode == GLOBAL.e_BASE_MODE.WMATTACK || baseMode == GLOBAL.e_BASE_MODE.IATTACK || baseMode == GLOBAL.e_BASE_MODE.IWMATTACK))
+				{
+					PLEASEWAIT.Show(KEYS.Get("msg_preparing"));
+					Save(0, false, true);
+				}
+				else if (!_saving)
+				{
+					if (keyValuePairs)
+					{
+						_addtionalLoadArguments.push(keyValuePairs);
+					}
+					LoadBaseB();
+					_addtionalLoadArguments = [];
+				}
+			}
+			return true;
+		}
 
-      public static function LoadBaseB():void
-      {
-         print("|BASE| - LoadBaseB() _loadBase:" + JSON.stringify(_loadBase));
-         GLOBAL._baseURL2 = _loadBase[0];
-         var userId:Number = Number(_loadBase[1]);
-         var baseId:Number = Number(_loadBase[2]);
-         var baseMode:String = String(_loadBase[3]);
-         var baseType:int = int(_loadBase[4]);
-         var cellId:int = int(_loadBase[5]);
-         _loadBase = [];
-         GLOBAL.Setup(baseMode, baseType, _baseLevel);
-         Load(GLOBAL._baseURL2, userId, baseId, baseType, cellId);
-      }
+		public static function LoadBaseB():void
+		{
+			print("|BASE| - LoadBaseB() _loadBase:" + JSON.stringify(_loadBase));
+			GLOBAL._baseURL2 = _loadBase[0];
+			var userId:Number = Number(_loadBase[1]);
+			var baseId:Number = Number(_loadBase[2]);
+			var baseMode:String = String(_loadBase[3]);
+			var baseType:int = int(_loadBase[4]);
+			var cellId:int = int(_loadBase[5]);
+			_loadBase = [];
+			GLOBAL.Setup(baseMode, baseType, _baseLevel);
+			Load(GLOBAL._baseURL2, userId, baseId, baseType, cellId);
+		}
 
-      public static function Load(url:String = null, userId:Number = 0, baseId:Number = 0, baseType:int = -1, cellId:Number = 0):void
-      {
-         var _loc15_:int = 0;
-         GLOBAL._baseLoads += 1;
-         var _loc6_:int = getTimer();
-         _loading = true;
-         _baseID = baseId;
-         _baseLevel = 0;
-         _saveOver = 0;
-         _returnHome = false;
-         _saveProtect = 0;
-         PLEASEWAIT.Hide();
-         Cleanup();
-         if (MapRoomManager.instance.isInMapRoom3 && baseType != -1)
-         {
-            m_yardType = baseType;
-         }
-         else if (baseType >= EnumYardType.MAIN_YARD)
-         {
-            m_yardType = baseType;
-         }
-         if (isMainYardOrInfernoMainYard)
-         {
-            if (GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD || GLOBAL.mode == GLOBAL.e_BASE_MODE.IBUILD)
-            {
-               GLOBAL.attackingPlayer = GLOBAL.player;
-            }
-         }
-         GLOBAL.attackingPlayer.isAttacking = GLOBAL.attackingPlayer != GLOBAL.player;
-         PLEASEWAIT.Show(KEYS.Get("msg_loading"));
-         GRID.CreateGrid();
-         POPUPS.Setup();
-         CREEPS.Clear();
-         GLOBAL.Clear();
-         MAP.Clear();
-         UI2.Clear();
-         ResourceBombs.Clear();
-         CREATURES.Clear();
-         PROJECTILES.Clear();
-         ATTACK.Setup();
-         ResourcePackages.Clear();
-         GIBLETS.Clear();
-         CREATURELOCKER.Setup();
-         CUSTOMATTACKS.Setup();
-         UPDATES.Setup();
-         BuildingOverlay.Clear();
-         ParticleText.Clear();
-         SPRITES.Clear();
-         SPRITES.Setup();
-         Fire.Clear();
-         ResourceBombs.Data();
-         ALLIANCES.Setup();
-         GLOBAL._catchup = true;
-         _mushroomList = [];
-         _lastSpawnedMushroom = 0;
-         _size = 400;
-         var _loc7_:String = GLOBAL._loadmode;
-         if (MapRoomManager.instance.isInMapRoom2or3)
-         {
-            if (_loc7_ == GLOBAL.e_BASE_MODE.WMATTACK)
-            {
-               _loc7_ = GLOBAL.e_BASE_MODE.ATTACK;
-            }
-            if (_loc7_ == GLOBAL.e_BASE_MODE.WMVIEW)
-            {
-               _loc7_ = GLOBAL.e_BASE_MODE.VIEW;
-            }
-         }
-         if (MAPROOM_INFERNO._open)
-         {
-            MAPROOM_INFERNO.Hide();
-         }
-         if (MAPROOM._open)
-         {
-            MAPROOM.Hide();
-         }
-         var requestData:Array = [];
-         requestData.push(["userid", userId > 0 ? userId : ""]);
-         if (cellId)
-         {
-            requestData.push(["cellid", cellId]);
-         }
-         requestData.push(["baseid", _baseID]);
-         requestData.push(["type", _loc7_]);
-         requestData.push(["mapversion", MapRoomManager.instance.mapRoomVersion]);
-         if (MapRoomManager.instance.viewOnly && (GLOBAL.mode == GLOBAL.e_BASE_MODE.VIEW || GLOBAL.mode == GLOBAL.e_BASE_MODE.WMVIEW))
-         {
-            requestData.push(["worldid", MapRoomManager.instance.worldID]);
-         }
-         if (_loc7_ == GLOBAL.e_BASE_MODE.ATTACK || _loc7_ == GLOBAL.e_BASE_MODE.WMATTACK || _loc7_ == GLOBAL.e_BASE_MODE.IATTACK || _loc7_ == GLOBAL.e_BASE_MODE.IWMATTACK)
-         {
-            var attackData:String = JSON.stringify(ATTACK.AttackData());
-            requestData.push(["attackData", attackData]);
-         }
-         var _loc9_:int = 0;
-         var _loc10_:int = int(LOGIN._digits[LOGIN._digits.length - 1]);
-         var _loc11_:int = int(LOGIN._digits[LOGIN._digits.length - 2]);
-         var _loc12_:int = int(LOGIN._digits[LOGIN._digits.length - 3]);
-         var _loc13_:int = (_loc12_ + _loc10_) % 10;
-         var _loc14_:int = (_loc11_ + _loc10_) % 10;
-         if (_loc13_ <= 7)
-         {
-            _loc9_ = 0;
-         }
-         else if (_loc13_ == 8)
-         {
-            if (_loc14_ <= 4)
-            {
-               _loc9_ = 1;
-            }
-            else
-            {
-               _loc9_ = 2;
-            }
-         }
-         else if (_loc13_ == 9)
-         {
-            if (_loc14_ <= 4)
-            {
-               _loc9_ = 3;
-            }
-            else
-            {
-               _loc9_ = 4;
-            }
-         }
-         if (GLOBAL._checkPromo == 1 && _loc9_ != 0)
-         {
-            requestData.push(["checkpromotion", 1]);
-         }
-         if (_addtionalLoadArguments)
-         {
-            _loc15_ = 0;
-            while (_loc15_ < _addtionalLoadArguments.length)
-            {
-               requestData.push(_addtionalLoadArguments[_loc15_]);
-               _loc15_++;
-            }
-         }
-         if (!_loadedSomething && ExternalInterface.available)
-         {
-            ExternalInterface.call("cc.recordStats", "basestart");
-         }
-         if (url)
-         {
-            new URLLoaderApi().load(url + "load", requestData, handleBaseLoadSuccessful, handleBaseLoadError);
-         }
-         else if (isInfernoMainYardOrOutpost || isEventBaseId(_baseID) && GLOBAL.mode == GLOBAL.e_BASE_MODE.WMATTACK)
-         {
-            new URLLoaderApi().load(GLOBAL._infBaseURL + "load", requestData, handleBaseLoadSuccessful, handleBaseLoadError);
-         }
-         else
-         {
-            new URLLoaderApi().load(GLOBAL._baseURL + "load", requestData, handleBaseLoadSuccessful, handleBaseLoadError);
-         }
-      }
+		public static function Load(url:String = null, userId:Number = 0, baseId:Number = 0, baseType:int = -1, cellId:Number = 0):void
+		{
+			var _loc15_:int = 0;
+			GLOBAL._baseLoads += 1;
+			var _loc6_:int = getTimer();
+			_loading = true;
+			_baseID = baseId;
+			_baseLevel = 0;
+			_saveOver = 0;
+			_returnHome = false;
+			_saveProtect = 0;
+			PLEASEWAIT.Hide();
+			Cleanup();
+			if (MapRoomManager.instance.isInMapRoom3 && baseType != -1)
+			{
+				m_yardType = baseType;
+			}
+			else if (baseType >= EnumYardType.MAIN_YARD)
+			{
+				m_yardType = baseType;
+			}
+			if (isMainYardOrInfernoMainYard)
+			{
+				if (GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD || GLOBAL.mode == GLOBAL.e_BASE_MODE.IBUILD)
+				{
+				GLOBAL.attackingPlayer = GLOBAL.player;
+				}
+			}
+			GLOBAL.attackingPlayer.isAttacking = GLOBAL.attackingPlayer != GLOBAL.player;
+			PLEASEWAIT.Show(KEYS.Get("msg_loading"));
+			GRID.CreateGrid();
+			POPUPS.Setup();
+			CREEPS.Clear();
+			GLOBAL.Clear();
+			MAP.Clear();
+			UI2.Clear();
+			ResourceBombs.Clear();
+			CREATURES.Clear();
+			PROJECTILES.Clear();
+			ATTACK.Setup();
+			ResourcePackages.Clear();
+			GIBLETS.Clear();
+			CREATURELOCKER.Setup();
+			CUSTOMATTACKS.Setup();
+			UPDATES.Setup();
+			BuildingOverlay.Clear();
+			ParticleText.Clear();
+			SPRITES.Clear();
+			SPRITES.Setup();
+			Fire.Clear();
+			ResourceBombs.Data();
+			ALLIANCES.Setup();
+			GLOBAL._catchup = true;
+			_mushroomList = [];
+			_lastSpawnedMushroom = 0;
+			_size = 400;
+			var _loc7_:String = GLOBAL._loadmode;
+			if (MapRoomManager.instance.isInMapRoom2or3)
+			{
+				if (_loc7_ == GLOBAL.e_BASE_MODE.WMATTACK)
+				{
+					_loc7_ = GLOBAL.e_BASE_MODE.ATTACK;
+				}
+				if (_loc7_ == GLOBAL.e_BASE_MODE.WMVIEW)
+				{
+					_loc7_ = GLOBAL.e_BASE_MODE.VIEW;
+				}
+			}
+			if (MAPROOM_INFERNO._open)
+			{
+				MAPROOM_INFERNO.Hide();
+			}
+			if (MAPROOM._open)
+			{
+				MAPROOM.Hide();
+			}
+			var requestData:Array = [];
+			requestData.push(["userid", userId > 0 ? userId : ""]);
+			if (cellId)
+			{
+				requestData.push(["cellid", cellId]);
+			}
+			requestData.push(["baseid", _baseID]);
+			requestData.push(["type", _loc7_]);
+			requestData.push(["mapversion", MapRoomManager.instance.mapRoomVersion]);
+			if (MapRoomManager.instance.viewOnly && (GLOBAL.mode == GLOBAL.e_BASE_MODE.VIEW || GLOBAL.mode == GLOBAL.e_BASE_MODE.WMVIEW))
+			{
+				requestData.push(["worldid", MapRoomManager.instance.worldID]);
+			}
+			if (_loc7_ == GLOBAL.e_BASE_MODE.ATTACK || _loc7_ == GLOBAL.e_BASE_MODE.WMATTACK || _loc7_ == GLOBAL.e_BASE_MODE.IATTACK || _loc7_ == GLOBAL.e_BASE_MODE.IWMATTACK)
+			{
+				var attackData:String = JSON.stringify(ATTACK.AttackData());
+				requestData.push(["attackData", attackData]);
+			}
+			var _loc9_:int = 0;
+			var _loc10_:int = int(LOGIN._digits[LOGIN._digits.length - 1]);
+			var _loc11_:int = int(LOGIN._digits[LOGIN._digits.length - 2]);
+			var _loc12_:int = int(LOGIN._digits[LOGIN._digits.length - 3]);
+			var _loc13_:int = (_loc12_ + _loc10_) % 10;
+			var _loc14_:int = (_loc11_ + _loc10_) % 10;
+			if (_loc13_ <= 7)
+			{
+				_loc9_ = 0;
+			}
+			else if (_loc13_ == 8)
+			{
+				if (_loc14_ <= 4)
+				{
+					_loc9_ = 1;
+				}
+				else
+				{
+					_loc9_ = 2;
+				}
+			}
+			else if (_loc13_ == 9)
+			{
+				if (_loc14_ <= 4)
+				{
+					_loc9_ = 3;
+				}
+				else
+				{
+					_loc9_ = 4;
+				}
+			}
+			if (GLOBAL._checkPromo == 1 && _loc9_ != 0)
+			{
+				requestData.push(["checkpromotion", 1]);
+			}
+			if (_addtionalLoadArguments)
+			{
+				_loc15_ = 0;
+				while (_loc15_ < _addtionalLoadArguments.length)
+				{
+				requestData.push(_addtionalLoadArguments[_loc15_]);
+				_loc15_++;
+				}
+			}
+			if (!_loadedSomething && ExternalInterface.available)
+			{
+				ExternalInterface.call("cc.recordStats", "basestart");
+			}
+			if (url)
+			{
+				new URLLoaderApi().load(url + "load", requestData, handleBaseLoadSuccessful, handleBaseLoadError);
+			}
+			else if (isInfernoMainYardOrOutpost || isEventBaseId(_baseID) && GLOBAL.mode == GLOBAL.e_BASE_MODE.WMATTACK)
+			{
+				new URLLoaderApi().load(GLOBAL._infBaseURL + "load", requestData, handleBaseLoadSuccessful, handleBaseLoadError);
+			}
+			else
+			{
+				new URLLoaderApi().load(GLOBAL._baseURL + "load", requestData, handleBaseLoadSuccessful, handleBaseLoadError);
+			}
+		}
 
       private static function continueFromBaseLoadError():void
       {
@@ -1158,16 +1154,18 @@ package
                   };
                _lastProcessedGIP = AutoBankManager.updateLoadData(_rawGIP, _GIP, _processedGIP, _lastProcessed, _lastProcessedGIP);
                _baseName = serverData.basename;
-               _baseValue = Number(serverData.basevalue);
-               _basePoints = Number(serverData.points);
-               if (!_outpostValue)
-               {
-                  _outpostValue = 0;
-               }
-               if (!_basePoints)
-               {
-                  _basePoints = 0;
-               }
+               var basevalue:Number = Number(serverData.basevalue);
+			   var points:Number = Number(serverData.points);
+               if(points){
+				_baseExperience.Set(points);
+			   } else {
+				_baseExperience.Set(0);
+			   }
+			   if(basevalue){
+				_basePower.Set(basevalue);
+			   } else {
+				_basePower.Set(0);
+			   }
                _conquerorPoints = new SecNum(int(serverData.empirevalue));
                _credits = new SecNum(int(serverData.credits));
                GLOBAL._credits = new SecNum(int(serverData.credits));
@@ -1969,100 +1967,40 @@ package
             if (isOutpost && !MapRoom3Tutorial.instance.isStarted)
             {
                buildingFoundation = addBuildingC(112);
-               buildingFoundation.Setup({
-                        "X": 0,
-                        "Y": -50,
-                        "id": buildingCount++,
-                        "t": 112,
-                        "l": 1
-                     });
+               buildingFoundation.Setup({"X": 0, "Y": -50, "id": buildingCount++, "t": 112, "l": 1});
             }
             else if (BASE.isInfernoMainYardOrOutpost)
             {
-               buildingFoundation = addBuildingC(14);
-               buildingFoundation.Setup({
-                        "X": -100,
-                        "Y": 0,
-                        "id": buildingCount++,
-                        "t": 14,
-                        "l": 1
-                     });
-               buildingFoundation = addBuildingC(1);
-               buildingFoundation.Setup({
-                        "X": 60,
-                        "Y": 0,
-                        "id": buildingCount++,
-                        "t": 1,
-                        "l": 1
-                     });
-               buildingFoundation = addBuildingC(2);
-               buildingFoundation.Setup({
-                        "X": 60,
-                        "Y": 70,
-                        "id": buildingCount++,
-                        "t": 2,
-                        "l": 1
-                     });
-               buildingFoundation = addBuildingC(6);
-               buildingFoundation.Setup({
-                        "X": 130,
-                        "Y": 0,
-                        "id": buildingCount++,
-                        "t": 6,
-                        "l": 3
-                     });
-               buildingFoundation = addBuildingC(6);
-               buildingFoundation.Setup({
-                        "X": 130,
-                        "Y": 80,
-                        "id": buildingCount++,
-                        "t": 6,
-                        "l": 3
-                     });
-               _basePoints = 0;
+				buildingFoundation = addBuildingC(14);
+				buildingFoundation.Setup({"X": -100, "Y": 0, "id": buildingCount++, "t": 14, "l": 1});
+				buildingFoundation = addBuildingC(1);
+				buildingFoundation.Setup({"X": 60, "Y": 0, "id": buildingCount++, "t": 1, "l": 1});
+				buildingFoundation = addBuildingC(2);
+				buildingFoundation.Setup({"X": 60, "Y": 70, "id": buildingCount++, "t": 2, "l": 1});
+				buildingFoundation = addBuildingC(6);
+				buildingFoundation.Setup({"X": 130, "Y": 0, "id": buildingCount++, "t": 6, "l": 3});
+				buildingFoundation = addBuildingC(6);
+				buildingFoundation.Setup({"X": 130, "Y": 80, "id": buildingCount++, "t": 6, "l": 3});
+				_baseExperience.Set(0);
             }
             else
             {
                buildingFoundation = addBuildingC(14);
-               buildingFoundation.Setup({
-                        "X": -70,
-                        "Y": 0,
-                        "id": buildingCount++,
-                        "t": 14,
-                        "l": 1
-                     });
+               buildingFoundation.Setup({"X": -70, "Y": 0, "id": buildingCount++, "t": 14, "l": 1});
                buildingFoundation = addBuildingC(1);
-               buildingFoundation.Setup({
-                        "X": 60,
-                        "Y": 0,
-                        "id": buildingCount++,
-                        "t": 1,
-                        "l": 1
-                     });
+               buildingFoundation.Setup({"X": 60, "Y": 0, "id": buildingCount++, "t": 1, "l": 1});
                buildingFoundation._stored.Set(200);
                buildingFoundation._hpStored = 200;
                buildingFoundation = addBuildingC(2);
-               buildingFoundation.Setup({
-                        "X": 60,
-                        "Y": 70,
-                        "id": buildingCount++,
-                        "t": 2,
-                        "l": 1
-                     });
+               buildingFoundation.Setup({"X": 60, "Y": 70, "id": buildingCount++, "t": 2, "l": 1});
                buildingFoundation = addBuildingC(12);
-               buildingFoundation.Setup({
-                        "X": 60,
-                        "Y": -70,
-                        "id": buildingCount++,
-                        "t": 12,
-                        "l": 1
-                     });
+               buildingFoundation.Setup({"X": 60, "Y": -70, "id": buildingCount++, "t": 12, "l": 1});
                _resources.r1.Set(1600);
                _resources.r2.Set(1600);
                _deltaResources.r1.Set(1600);
                _deltaResources.r2.Set(1600);
                _deltaResources.dirty = true;
-               _basePoints = 0;
+               _baseExperience.Set(0);
                SOUNDS.TutorialStopMusic();
             }
          }
@@ -3941,8 +3879,8 @@ package
          saveData["academy"] = JSON.stringify(GLOBAL.player.exportAcademyData());
          saveData["baseseed"] = _baseSeed;
          saveData["lockerdata"] = JSON.stringify(CREATURELOCKER._lockerData);
-         saveData["basevalue"] = _baseValue;
-         saveData["points"] = _basePoints;
+         saveData["basevalue"] = _basePower.Get();
+         saveData["points"] = _baseExperience.Get();
          saveData["tutorialstage"] = !!BASE.isInfernoMainYardOrOutpost ? TUTORIAL._endstage : TUTORIAL._stage;
          saveData["basesaveid"] = _lastSaveID;
          saveData["clienttime"] = GLOBAL.Timestamp();
@@ -5950,57 +5888,54 @@ package
          UI2.Update();
       }
 
-      public static function CalcBaseValue():Number
-      {
-         var _loc1_:Boolean = false;
-         var _loc2_:Vector.<Object> = null;
-         var _loc3_:BFOUNDATION = null;
-         var _loc4_:Number = NaN;
-         var _loc5_:int = 0;
-         var _loc6_:Object = null;
-         var _loc7_:Object = null;
-         _loc1_ = isOutpost;
-         _loc2_ = InstanceManager.getInstancesByClass(BFOUNDATION);
-         _loc4_ = 0;
-         for each (_loc3_ in _loc2_)
-         {
-            if (_loc3_._class != "decoration" && _loc3_._class != "enemy" && _loc3_._class != "immovable" && _loc3_._class != "trap" && _loc3_ !== GLOBAL._newBuilding && (_loc1_ || _loc3_._countdownBuild.Get() <= 0))
-            {
-               _loc5_ = _loc3_._lvl.Get();
-               if (_loc5_ <= 0)
-               {
-                  _loc5_ = 1;
-               }
-               if (Boolean(_loc6_ = GLOBAL._buildingProps[_loc3_._type - 1]) && Boolean(_loc6_.costs[_loc5_ - 1]))
-               {
-                  _loc7_ = _loc6_.costs[_loc5_ - 1];
-                  _loc4_ += _loc7_.time.Get() + _loc7_.r1.Get() + _loc7_.r2.Get() + _loc7_.r3.Get() + _loc7_.r4.Get();
-               }
-            }
-         }
-         _loc4_ = Math.ceil(_loc4_ * 0.1);
-         if (isOutpostOrInfernoOutpost)
-         {
-            _outpostValue = _loc4_;
-         }
-         if (_loc4_ > _baseValue && isMainYardOrInfernoMainYard)
-         {
-            _baseValue = _loc4_;
-         }
-         return _loc4_;
-      }
-
-		public static function PointsAdd(param1:uint):void
+		public static function CalcBaseValue():void
 		{
-			if(MapRoomManager.instance.isInMapRoom3){
-				param1 *= (1.0 + (BASE._conquerorPoints.Get() * 0.001));
+			if(isMainYardOrInfernoMainYard){
+				var power:SecNum = new SecNum(0);
+				var _loc2_:Vector.<Object> = InstanceManager.getInstancesByClass(BFOUNDATION);
+				var _loc3_:BFOUNDATION = null;
+				var level:int = 0;
+				var _loc6_:Object = null;
+				var _loc7_:Object = null;
+				for each (_loc3_ in _loc2_)
+				{
+					if (_loc3_._class != "decoration" && _loc3_._class != "enemy" && _loc3_._class != "wall" && _loc3_._class != "immovable" && _loc3_._class != "trap" && _loc3_ !== GLOBAL._newBuilding && _loc3_._countdownBuild.Get() <= 0)
+					{
+						level = _loc3_._lvl.Get();
+						if (level <= 0)
+						{
+							level = 1;
+						}
+						if (Boolean(_loc6_ = GLOBAL._buildingProps[_loc3_._type - 1]) && Boolean(_loc6_.hp[level - 1]))
+						{
+							power.Add(_loc6_.hp[level - 1]);
+						}
+					}
+				}
+				_basePower.Set(power.Get());
+				trace("base power = " + power.Get());
 			}
-			_basePoints = Math.floor(_basePoints + param1);
+		}
+
+		public static function PointsAdd(value:uint):void
+		{
+			const MAX_EXPERIENCE:Number = 9000000000000000;
+			var current:Number = _baseExperience.Get();
+			if(current >= MAX_EXPERIENCE) return;
+			var add_value:Number = value;
+			if(MapRoomManager.instance.isInMapRoom3){
+				add_value *= 1.0 + (BASE._conquerorPoints.Get() * 0.001);
+			}
+			add_value = Math.floor(add_value);
+			var newExperience:Number = current + add_value;
+			if(newExperience >= MAX_EXPERIENCE){
+				newExperience = MAX_EXPERIENCE;
+			}
+			_baseExperience.Set(newExperience);
 		}
 
 		public static function BaseLevel():Object
 		{
-			var points:Number = NaN;
 			var lvl:Object = null;
 			var length:int = 0;
 			var i:int = 0;
@@ -6008,18 +5943,24 @@ package
 			var title:String = null;
 			var body:String = null;
 			var StreamPost:Function = null;
-			points = _basePoints;
-			lvl = {"level": 0, "lower": 0, "upper": 0, "leveled": false};
+			lvl = {
+				"level": 0,
+				"lower": new SecNum(0),
+				"upper": new SecNum(0),
+				"needed": new SecNum(0),
+				"points": new SecNum(0),
+				"leveled": false
+			};
 			length = int(s_levels.length - 1);
-			lvl.points = points;
+			lvl.points.Set(_baseExperience.Get());
 			while (i < length)
 			{
-				if (points >= s_levels[i])
+				if (_baseExperience.Get() >= s_levels[i].Get())
 				{
 					lvl.level = i + 1;
-					lvl.lower = s_levels[i];
-					lvl.upper = s_levels[i + 1];
-					lvl.needed = lvl.upper - points;
+					lvl.lower.Set(s_levels[i].Get());
+					lvl.upper.Set(s_levels[i + 1].Get());
+					lvl.needed.Set(lvl.upper.Get() - _baseExperience.Get());
 				}
 				i++;
 			}
@@ -6027,30 +5968,30 @@ package
 			{
 				if (_baseLevel > 0)
 				{
-				lvl.leveled = true;
-				if (TUTORIAL._stage > 200)
-				{
-					StreamPost = function(param1:MouseEvent):void
+					lvl.leveled = true;
+					if (TUTORIAL._stage > 200)
 					{
-						POPUPS.Next();
-					};
-					mc = new popup_levelup();
-					title = "pop_levelup_streamtitle";
-					body = "pop_levelup_body";
-					if (BASE.isInfernoMainYardOrOutpost)
-					{
-						title = "inf_pop_levelup_streamtitle";
-						body = "inf_pop_levelup_body";
+						StreamPost = function(param1:MouseEvent):void
+						{
+							POPUPS.Next();
+						};
+						mc = new popup_levelup();
+						title = "pop_levelup_streamtitle";
+						body = "pop_levelup_body";
+						if (BASE.isInfernoMainYardOrOutpost)
+						{
+							title = "inf_pop_levelup_streamtitle";
+							body = "inf_pop_levelup_body";
+						}
+						mc.title_txt.htmlText = "<b>" + KEYS.Get("pop_levelup_title") + "</b>";
+						mc.headline_txt.htmlText = KEYS.Get("pop_levelup_headline", {"v1": lvl.level});
+						mc.body_txt.htmlText = KEYS.Get("pop_levelup_body");
+						mc.bPost.SetupKey("btn_brag");
+						mc.bPost.addEventListener(MouseEvent.CLICK, StreamPost);
+						mc.bPost.Highlight = true;
+						POPUPS.Push(mc, null, null, "levelup", "levelup.v2.png");
+						QUESTS.Check("level_up", lvl.level);
 					}
-					mc.title_txt.htmlText = "<b>" + KEYS.Get("pop_levelup_title") + "</b>";
-					mc.headline_txt.htmlText = KEYS.Get("pop_levelup_headline", {"v1": lvl.level});
-					mc.body_txt.htmlText = KEYS.Get("pop_levelup_body");
-					mc.bPost.SetupKey("btn_brag");
-					mc.bPost.addEventListener(MouseEvent.CLICK, StreamPost);
-					mc.bPost.Highlight = true;
-					POPUPS.Push(mc, null, null, "levelup", "levelup.v2.png");
-					QUESTS.Check("level_up", lvl.level);
-				}
 				}
 				_baseLevel = lvl.level;
 				LOGGER.Stat([33, _baseLevel]);
@@ -6385,7 +6326,7 @@ package
             return;
          }
          CalcBaseValue();
-         if (BASE._basePoints + BASE._baseValue >= 2000000)
+         if (BASE._baseExperience.Get() >= 2000000)
          {
             _loc4_ = CaluclateExpectedTownHallLevel();
             if (GLOBAL.townHall)

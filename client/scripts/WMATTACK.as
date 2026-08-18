@@ -328,7 +328,7 @@ package
             var noTrojanHistory:Boolean = !_history["s1"];
             var trojanNotPlaced:Boolean = !BUILDING27._exists;
             var meetsLevelReq:Boolean = BASE._baseLevel >= 9;
-            var meetsPointsReq:Boolean = int(BASE._basePoints) + int(BASE._baseValue) > _trojanThreshold;
+            var meetsPointsReq:Boolean = BASE._baseExperience.Get() > _trojanThreshold;
 
             // if (isCheckTick && BASE.isMainYard && noTrojanHistory && trojanNotPlaced && meetsLevelReq && meetsPointsReq) {
             //    CUSTOMATTACKS.TrojanHorse();
@@ -601,7 +601,7 @@ package
          {
             _loc2_ = 5;
          }
-         var _loc3_:int = BASE._basePoints + BASE._baseValue;
+         var _loc3_:Number = BASE._baseExperience.Get();
          _queued = {
             "type":_type,
             "attack":param1.attack,
@@ -839,7 +839,7 @@ package
          var _loc7_:int = 0;
          var _loc8_:Point = null;
          var monster:MonsterBase = null;
-         var _loc10_:uint = uint(BASE._basePoints) + uint(BASE._baseValue);
+         var _loc10_:Number = BASE._baseExperience.Get();
          var _loc11_:Number = 0.4;
 
          // We use cached RNG by seed to avoid recreating identical Rndm objects

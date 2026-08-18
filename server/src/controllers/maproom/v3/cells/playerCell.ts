@@ -21,70 +21,71 @@ import { isAttackActive } from "../../../../services/base/isAttackActive.js";
  * @param {Map<number, User>} cellOwners - Pre-loaded map of user IDs to User entities.
  */
 export const playerCell = async (ctx: Context, cell: WorldMapCell, cellOwners: Map<number, User>): Promise<CellData> => {
-  const [cellX, cellY] = [cell.x, cell.y];
+	const [cellX, cellY] = [cell.x, cell.y];
 
-  const currentUser: User = ctx.authUser;
-  const { lastSeen = new Map(), truces } = ctx.state;
+	const currentUser: User = ctx.authUser;
+	const { lastSeen = new Map(), truces } = ctx.state;
 
-  const mine = currentUser.userid === cell.uid;
-  const cellOwner = mine ? currentUser : cellOwners.get(cell.uid);
+	const mine = currentUser.userid === cell.uid;
+	const cellOwner = mine ? currentUser : cellOwners.get(cell.uid);
 
-  const cellSave = cell.save;
+	const cellSave = cell.save;
 
-  // We render an empty cell if the owner is not found or doesn't have save data
-  if (!cellSave || !cellOwner?.save) return { x: cell.x, y: cell.y, i: 0 };
+	// We render an empty cell if the owner is not found or doesn't have save data
+	if (!cellSave || !cellOwner?.save) return { x: cell.x, y: cell.y, i: 0 };
 
-  const points = cellOwner.save.points;
+	const points = cellOwner.save.points;
 
-  const playerLevel = calculateBaseLevel(points);
-  const structureLevel = cellSave.level ?? 0;
+	const playerLevel = calculateBaseLevel(points);
+	const structureLevel = cellSave.level ?? 0;
 
-  const structureRange = STRUCTURE_RANGE[cell.base_type];
+	const structureRange = STRUCTURE_RANGE[cell.base_type];
 
-  let range = 0;
+	let range = 0;
 
-  if (structureRange) {
-    range = structureRange[structureLevel];
-  } else if (cell.base_type === EnumYardType.PLAYER) {
-    range = PLAYER_RANGE;
-  }
+	if (structureRange) {
+		range = structureRange[structureLevel];
+	} else if (cell.base_type === EnumYardType.PLAYER) {
+		range = PLAYER_RANGE;
+	}
 
-  const altitude = 5 + (cellX * 73 + cellY * 31) % 45;
+	const altitude = 5 + (cellX * 73 + cellY * 31) % 45;
 
-  const currentTime = getCurrentDateTime();
-  const homeCell = cell.base_type === EnumYardType.PLAYER;
+	const currentTime = getCurrentDateTime();
+	const homeCell = cell.base_type === EnumYardType.PLAYER;
 
-  let isProtected = cellSave.protected > 0 && cellSave.protected > currentTime;
+	let isProtected = cellSave.protected > 0 && cellSave.protected > currentTime;
 
-  const online = homeCell && (lastSeen.get(cell.uid) ?? 0) >= currentTime - 60;
-  const isUnderAttack = homeCell && isAttackActive(cellSave);
+	const online = homeCell && (lastSeen.get(cell.uid) ?? 0) >= currentTime - 60;
+	const isUnderAttack = homeCell && isAttackActive(cellSave);
 
-  let locked = 0;
-  if (online || isUnderAttack) locked = 1;
-  if (mine) locked = 0;
+	let locked = 0;
+	if (online || isUnderAttack) locked = 1;
+	if (mine) locked = 0;
 
-  const hasTruce = !mine && !!truces.get(cellOwner.userid);
+	const hasTruce = !mine && !!truces.get(cellOwner.userid);
 
-  return {
-    uid: cellOwner.userid,
-    b: cell.base_type,
-    bid: cell.baseid,
-    n: cellOwner.username,
-    tid: 0,
-    x: cell.x,
-    y: cell.y,
-    i: altitude,
-    l: cell.base_type !== EnumYardType.PLAYER ? structureLevel : playerLevel,
-    fbid: "",
-    pl: 0,
-    r: range,
-    dm: cellSave?.damage ?? 0,
-    lo: locked,
-    fr: 0,
-    p: isProtected ? 1 : 0,
-    d: (cellSave?.damage ?? 0) >= 90 ? 1 : 0,
-    t: hasTruce ? 1 : 0,
-    rel: mine ? EnumBaseRelationship.SELF : EnumBaseRelationship.ENEMY,
-    pic_square: cellOwner.pic_square ?? undefined,
-  };
+	return {
+		uid: cellOwner.userid,
+		b: cell.base_type,
+		bid: cell.baseid,
+		n: cellOwner.username,
+		tid: 0,
+		x: cell.x,
+		y: cell.y,
+		i: altitude,
+		l: cell.base_type !== EnumYardType.PLAYER ? structureLevel : playerLevel,
+		fbid: "",
+		pl: 0,
+		r: range,
+		dm: cellSave?.damage ?? 0,
+		lo: locked,
+		fr: 0,
+		p: isProtected ? 1 : 0,
+		d: (cellSave?.damage ?? 0) >= 90 ? 1 : 0,
+		t: hasTruce ? 1 : 0,
+		rel: mine ? EnumBaseRelationship.SELF : EnumBaseRelationship.ENEMY,
+		pic_square: cellOwner.pic_square ?? undefined,
+		cq: cellOwner.save.empirevalue,
+	};
 };

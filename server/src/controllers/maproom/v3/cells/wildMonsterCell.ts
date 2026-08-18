@@ -42,5 +42,6 @@ export const wildMonsterCell = async (cell: WorldMapCell, worldId: string): Prom
 		d: cell?.save?.destroyed || 0,
 		b: cell.base_type,
 		rel: EnumBaseRelationship.ENEMY,
+		cq: 0,
 	};
 };

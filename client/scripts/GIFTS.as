@@ -202,7 +202,7 @@ package
          var giftValue:int = param6;
          var onePctNextLevelXP:int = 0;
          var lvlInfo:Object = BASE.BaseLevel();
-         onePctNextLevelXP = lvlInfo.upper * 0.01;
+         onePctNextLevelXP = lvlInfo.upper.Get() * 0.01;
          onePctNextLevelXP = onePctNextLevelXP > _maxXPReward ? int(_maxXPReward) : onePctNextLevelXP;
          _mc = new popup_gift();
          _mc.tA.htmlText = KEYS.Get("pop_sentgift_title",{"v1":giftFromName});
@@ -253,7 +253,7 @@ package
          var giftValue:int = param6;
          var onePctNextLevelXP:int = 0;
          var lvlInfo:Object = BASE.BaseLevel();
-         onePctNextLevelXP = lvlInfo.upper * 0.01;
+         onePctNextLevelXP = lvlInfo.upper.Get() * 0.01;
          onePctNextLevelXP = onePctNextLevelXP > _maxXPReward ? int(_maxXPReward) : onePctNextLevelXP;
          _mc = new popup_gift();
          _mc.tA.htmlText = KEYS.Get("pop_sentinvite_title",{"v1":giftFromName});

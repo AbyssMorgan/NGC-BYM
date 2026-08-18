@@ -18,58 +18,59 @@ import { isAttackActive } from "../../../../services/base/isAttackActive.js";
  * @param {Map<number, User>} cellOwners - Pre-loaded map of user IDs to User entities.
  */
 export const userCell = async (ctx: Context, cell: WorldMapCell, cellOwners: Map<number, User>) => {
-  const currentUser: User = ctx.authUser;
-  const { lastSeen, truces } = ctx.state;
+	const currentUser: User = ctx.authUser;
+	const { lastSeen, truces } = ctx.state;
 
-  const mine = currentUser.userid === cell.uid;
-  const cellOwner = mine ? currentUser : cellOwners.get(cell.uid);
+	const mine = currentUser.userid === cell.uid;
+	const cellOwner = mine ? currentUser : cellOwners.get(cell.uid);
 
-  const cellSave = cell.save;
-  if (!cellSave || !cellOwner?.save) return;
+	const cellSave = cell.save;
+	if (!cellSave || !cellOwner?.save) return;
 
-  const currentTime = getCurrentDateTime();
+	const currentTime = getCurrentDateTime();
 
-  const homeCell = cell.base_type === MapRoomCell.HOMECELL;
-    
-  const online = homeCell && (lastSeen.get(cell.uid) ?? 0) >= currentTime - 60;
-  const isUnderAttack = homeCell && isAttackActive(cellSave);
+	const homeCell = cell.base_type === MapRoomCell.HOMECELL;
+		
+	const online = homeCell && (lastSeen.get(cell.uid) ?? 0) >= currentTime - 60;
+	const isUnderAttack = homeCell && isAttackActive(cellSave);
 
-  let locked = cellSave.locked;
-  if (online || isUnderAttack) locked = 1;
-  if (mine) locked = 0;
+	let locked = cellSave.locked;
+	if (online || isUnderAttack) locked = 1;
+	if (mine) locked = 0;
 
-  const points = cellOwner.save.points;
-  const baseLevel = calculateBaseLevel(points);
+	const points = cellOwner.save.points;
+	const baseLevel = calculateBaseLevel(points);
 
-  const isProtected = cellSave.protected > 0 && cellSave.protected > currentTime;
-  const protectionExpired = cellSave.protected > 0 && cellSave.protected <= currentTime;
+	const isProtected = cellSave.protected > 0 && cellSave.protected > currentTime;
+	const protectionExpired = cellSave.protected > 0 && cellSave.protected <= currentTime;
 
-  const damage = protectionExpired ? 0 : cellSave.damage;
+	const damage = protectionExpired ? 0 : cellSave.damage;
 
-  const truceExpiry = mine ? undefined : truces.get(cellOwner.userid)?.expires_at;
+	const truceExpiry = mine ? undefined : truces.get(cellOwner.userid)?.expires_at;
 
-  return {
-    uid: cellOwner.userid,
-    b: cell.base_type,
-    pi: 0,
-    bid: cell.baseid,
-    aid: 0,
-    i: cell.terrainHeight,
-    v: cellSave.empirevalue,
-    mine: mine ? 1 : 0,
-    f: cellSave.flinger,
-    c: cellSave.catapult,
-    t: truceExpiry,
-    n: cellOwner.username,
-    fr: 0,
-    p: isProtected ? 1 : 0,
-    r: cellSave.resources,
-    m: cellSave.monsters || {},
-    l: baseLevel,
-    d: damage >= 90 ? 1 : 0,
-    lo: locked,
-    dm: damage,
-    pic_square: cellOwner.pic_square,
-    im: cellOwner.pic_square,
-  };
+	return {
+		uid: cellOwner.userid,
+		b: cell.base_type,
+		pi: 0,
+		bid: cell.baseid,
+		aid: 0,
+		i: cell.terrainHeight,
+		v: cellSave.empirevalue,
+		mine: mine ? 1 : 0,
+		f: cellSave.flinger,
+		c: cellSave.catapult,
+		t: truceExpiry,
+		n: cellOwner.username,
+		fr: 0,
+		p: isProtected ? 1 : 0,
+		r: cellSave.resources,
+		m: cellSave.monsters || {},
+		l: baseLevel,
+		d: damage >= 90 ? 1 : 0,
+		lo: locked,
+		dm: damage,
+		pic_square: cellOwner.pic_square,
+		im: cellOwner.pic_square,
+		cq: cellOwner.save.empirevalue,
+	};
 };

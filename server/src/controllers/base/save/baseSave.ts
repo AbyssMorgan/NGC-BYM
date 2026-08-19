@@ -75,7 +75,8 @@ export const baseSave: KoaController = async (ctx) => {
 	await validateSave(user, baseSave, body);
 
 	// Standard save logic
-	for (const key of isAttack ? Save.attackSaveKeys : Save.saveKeys) {
+	var isMainYardOrInfernoMainYard = isOwner && (baseSave.type == BaseType.MAIN || baseSave.type == BaseType.INFERNO);
+	for (const key of isAttack ? Save.attackSaveKeys : (isMainYardOrInfernoMainYard ? Save.PlayerSaveKeys : Save.attackSaveKeys)) {
 		const value = body[key] as string;
 		switch (key) {
 			case SaveKeys.RESOURCES: {

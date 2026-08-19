@@ -454,7 +454,7 @@ export class Save {
   @Property({ columnType: "jsonb", nullable: true })
   attpowerups: string[] = [];
 
-  public static saveKeys: (keyof Save)[] = [
+  public static PlayerSaveKeys: (keyof Save)[] = [
     "buildingdata",
     "buildingkeydata",
     "researchdata",
@@ -516,18 +516,18 @@ export class Save {
   ];
 
   public static attackSaveKeys: (keyof Save)[] = [
-    "destroyed",
-    "damage",
-    "locked",
-    "protected",
-    "monsters",
-    "champion",
-    "over",
+    "attackersiege",
+    "attackreport",
     "buildingdata",
     "buildinghealthdata",
     "buildingresources",
-    "attackreport",
-    "attackersiege",
+    "champion",
+    "damage",
+    "destroyed",
+    "locked",
+    "monsters",
+    "over",
+    "protected",
   ];
 
   public static createMainSave = async (em: EntityManager<PostgreSqlDriver>, user: User) => {

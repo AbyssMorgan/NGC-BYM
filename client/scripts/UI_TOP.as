@@ -28,6 +28,7 @@ package
    import flash.text.TextFieldAutoSize;
    import gs.*;
    import gs.easing.*;
+   import flash.text.TextFormat;
    
    public class UI_TOP extends UI_TOP_CLIP
    {
@@ -131,14 +132,14 @@ package
             _loc1_++;
          }
          this._resourceUI = {};
-         this._resourceUI.r1 = BASE._resources["r" + 1].Get();
-         this._resourceUI.r2 = BASE._resources["r" + 2].Get();
-         this._resourceUI.r3 = BASE._resources["r" + 3].Get();
-         this._resourceUI.r4 = BASE._resources["r" + 4].Get();
-         mc["mcR" + 1]._resource = BASE._resources["r" + 1].Get();
-         mc["mcR" + 2]._resource = BASE._resources["r" + 2].Get();
-         mc["mcR" + 3]._resource = BASE._resources["r" + 3].Get();
-         mc["mcR" + 4]._resource = BASE._resources["r" + 4].Get();
+         this._resourceUI.r1 = GLOBAL._resources["r" + 1].Get();
+         this._resourceUI.r2 = GLOBAL._resources["r" + 2].Get();
+         this._resourceUI.r3 = GLOBAL._resources["r" + 3].Get();
+         this._resourceUI.r4 = GLOBAL._resources["r" + 4].Get();
+         mc["mcR" + 1]._resource = GLOBAL._resources["r" + 1].Get();
+         mc["mcR" + 2]._resource = GLOBAL._resources["r" + 2].Get();
+         mc["mcR" + 3]._resource = GLOBAL._resources["r" + 3].Get();
+         mc["mcR" + 4]._resource = GLOBAL._resources["r" + 4].Get();
          mc.mcR5.bAdd.txtAdd.autoSize = TextFieldAutoSize.LEFT;
          mc.mcR5.bAdd.txtAdd.htmlText = KEYS.Get("ui_topaddshiny");
          mc.mcR5.bAdd.mcBG.width = mc.mcR5.bAdd.txtAdd.width + 11;
@@ -429,18 +430,29 @@ package
          this._creatureButtonsMC.addChild(param1.target as DisplayObject);
       }
       
-      private function InfoShow(param1:MouseEvent) : void
-      {
-         mc.mcPoints.gotoAndStop(2);
-         var base_level_data:Object = BASE.BaseLevel();
-         mc.mcPoints.tInfo.htmlText = KEYS.Get("pop_experiencebar",{
-            "v1":GLOBAL.FormatNumber(base_level_data.points.Get()),
-            "v2":GLOBAL.FormatNumber(base_level_data.needed.Get()),
-            "v3":base_level_data.level + 1,
-            "v4":GLOBAL.FormatNumber(BASE._basePower.Get()),
-			"v5":(100.0 / (base_level_data.upper.Get() - base_level_data.lower.Get()) * (base_level_data.points.Get() - base_level_data.lower.Get())).toFixed(2)
-         });
-      }
+		private function InfoShow(param1:MouseEvent) : void
+		{
+			mc.mcPoints.gotoAndStop(2);
+			var base_level_data:Object = BASE.BaseLevel();
+			var exp_current_level_total:Number = base_level_data.upper.Get() - base_level_data.lower.Get();
+			var exp_current_level_have:Number = base_level_data.points.Get() - base_level_data.lower.Get();
+			
+			var format:TextFormat = new TextFormat();
+			format.font = "CustomMono";
+			format.size = 12;
+			format.color = 0x333333;
+
+			mc.mcPoints.tInfo.embedFonts = true;
+			mc.mcPoints.tInfo.defaultTextFormat = format;
+			mc.mcPoints.tInfo.htmlText = KEYS.Get("pop_experiencebar_new",{
+				"v1":GLOBAL.FormatNumber(base_level_data.points.Get()),
+				"v2":GLOBAL.FormatNumber(exp_current_level_have),
+				"v3":GLOBAL.FormatNumber(exp_current_level_total),
+				"v4":((exp_current_level_have / exp_current_level_total) * 100).toFixed(2).replace(".", ","),
+				"v5":((BASE._conquerorPoints.Get() * 0.001) * 100).toFixed(2).replace(".", ","),
+				"v6":GLOBAL.FormatNumberEx(BASE._basePower.Get())
+			});
+		}
       
       private function InfoHide(param1:MouseEvent) : void
       {
@@ -767,60 +779,75 @@ package
          }
       }
       
-      public function StatsShow(param1:int, param2:Boolean) : Function
-      {
-         var n:int = param1;
-         var topup:Boolean = param2;
-         return function(param1:MouseEvent):void
-         {
-            var _loc2_:* = undefined;
-            var _loc3_:* = undefined;
-            var _loc5_:* = undefined;
-            var _loc6_:* = undefined;
-            var _loc7_:* = undefined;
-            var _loc8_:* = undefined;
-            if(n < 5)
-            {
-               if(topup)
-               {
-                  _loc2_ = "<b><font size=\"12\">" + KEYS.Get(GLOBAL._resourceNames[n - 1]) + "</font></b><br><b>" + KEYS.Get("bubble_topup") + "</b>";
-                  _loc3_ = 2;
-               }
-               else if(MapRoomManager.instance.isInMapRoom2or3)
-               {
-                  _loc5_ = BaseBuffHandler.instance.getBuffByName(AutoBankBaseBuff.k_NAME) as AutoBankBaseBuff;
-                  _loc6_ = MapRoomManager.instance.isInMapRoom3 && _loc5_ ? _loc5_.value * 3600 : BASE.getEmpireResources(n);
-                  if(BASE.yardType === EnumYardType.RESOURCE)
-                  {
-                     _loc7_ = InstanceManager.getInstancesByClass(ResourceOutpost)[0] as ResourceOutpost;
-                  }
-                  _loc8_ = MapRoomManager.instance.isInMapRoom3 && _loc7_ ? _loc7_.resourcesPerSecond * 3600 : BASE._resources["r" + n + "Rate"];
-                  _loc2_ = KEYS.Get("pop_resource2",{
-                     "v1":KEYS.Get(GLOBAL._resourceNames[n - 1]),
-                     "v2":GLOBAL.FormatNumber(BASE._resources["r" + n + "max"]),
-                     "v3":GLOBAL.FormatNumber(_loc8_),
-                     "v4":GLOBAL.FormatNumber(_loc6_)
-                  });
-                  _loc3_ = 4;
-               }
-               else
-               {
-                  _loc2_ = "<b><font size=\"12\">" + KEYS.Get(GLOBAL._resourceNames[n - 1]) + "</font></b><br>" + KEYS.Get("pop_resource",{
-                     "v1":GLOBAL.FormatNumber(BASE._resources["r" + n + "max"]),
-                     "v2":GLOBAL.FormatNumber(BASE._resources["r" + n + "Rate"])
-                  });
-                  _loc3_ = 3;
-               }
-            }
-            else
-            {
-               _loc2_ = "<b>" + KEYS.Get("bubble_getshiny") + "</b>";
-               _loc3_ = 2;
-            }
-            var _loc4_:* = mc["mcR" + n];
-            BubbleShow(_loc4_.x + 135,_loc4_.y + int(_loc4_.height * 0.5),_loc2_,_loc3_);
-         };
-      }
+		public function StatsShow(param1:int, param2:Boolean) : Function
+		{
+			var n:int = param1;
+			var topup:Boolean = param2;
+			return function(param1:MouseEvent):void
+			{
+				var _loc2_:* = undefined;
+				var _loc3_:* = undefined;
+				var _loc5_:* = undefined;
+				var _loc6_:* = undefined;
+				var _loc7_:* = undefined;
+				var _loc8_:* = undefined;
+				if(n < 5)
+				{
+					if(topup)
+					{
+						_loc2_ = "<b><font size=\"12\">" + KEYS.Get(GLOBAL._resourceNames[n - 1]) + "</font></b><br><b>" + KEYS.Get("bubble_topup") + "</b>";
+						_loc3_ = 2;
+					}
+					else if(MapRoomManager.instance.isInMapRoom3)
+					{
+						_loc5_ = BaseBuffHandler.instance.getBuffByName(AutoBankBaseBuff.k_NAME) as AutoBankBaseBuff;
+						if(BASE.yardType === EnumYardType.RESOURCE)
+						{
+							_loc7_ = InstanceManager.getInstancesByClass(ResourceOutpost)[0] as ResourceOutpost;
+						}
+						_loc2_ = KEYS.Get("pop_resource3",{
+							"v1":KEYS.Get(GLOBAL._resourceNames[n - 1]),
+							"v2":GLOBAL.FormatNumber(GLOBAL._yardResources["r" + n + "max"]),
+							"v3":GLOBAL.FormatNumber(GLOBAL._yardResources["r" + n + "Rate"]),
+							"v4":GLOBAL.FormatNumber(_loc5_.value * 3600)
+						});
+						_loc3_ = 4;
+					}
+					else if(MapRoomManager.instance.isInMapRoom2)
+					{
+						_loc5_ = BaseBuffHandler.instance.getBuffByName(AutoBankBaseBuff.k_NAME) as AutoBankBaseBuff;
+						_loc6_ = MapRoomManager.instance.isInMapRoom3 && _loc5_ ? _loc5_.value * 3600 : BASE.getEmpireResources(n);
+						if(BASE.yardType === EnumYardType.RESOURCE)
+						{
+							_loc7_ = InstanceManager.getInstancesByClass(ResourceOutpost)[0] as ResourceOutpost;
+						}
+						_loc8_ = MapRoomManager.instance.isInMapRoom3 && _loc7_ ? _loc7_.resourcesPerSecond * 3600 : BASE._resources["r" + n + "Rate"];
+						_loc2_ = KEYS.Get("pop_resource2",{
+							"v1":KEYS.Get(GLOBAL._resourceNames[n - 1]),
+							"v2":GLOBAL.FormatNumber(GLOBAL._resources["r" + n + "max"]),
+							"v3":GLOBAL.FormatNumber(_loc8_),
+							"v4":GLOBAL.FormatNumber(_loc6_)
+						});
+						_loc3_ = 4;
+					}
+					else
+					{
+						_loc2_ = "<b><font size=\"12\">" + KEYS.Get(GLOBAL._resourceNames[n - 1]) + "</font></b><br>" + KEYS.Get("pop_resource",{
+							"v1":GLOBAL.FormatNumber(BASE._resources["r" + n + "max"]),
+							"v2":GLOBAL.FormatNumber(BASE._resources["r" + n + "Rate"])
+						});
+						_loc3_ = 3;
+					}
+				}
+				else
+				{
+					_loc2_ = "<b>" + KEYS.Get("bubble_getshiny") + "</b>";
+					_loc3_ = 2;
+				}
+				var _loc4_:* = mc["mcR" + n];
+				BubbleShow(_loc4_.x + 135,_loc4_.y + int(_loc4_.height * 0.5),_loc2_,_loc3_);
+			};
+		}
       
       public function StatsHide(param1:MouseEvent) : void
       {
@@ -857,7 +884,7 @@ package
          var _loc2_:int = param1;
          _loc5_ = Number((_loc4_ = mc["mcR" + _loc2_])._resource);
          _loc4_.tR.htmlText = "<b>" + GLOBAL.FormatNumber(_loc5_) + "</b>";
-         _loc3_ = 117 / BASE._resources["r" + _loc2_ + "max"] * _loc5_;
+         _loc3_ = 117 / GLOBAL._resources["r" + _loc2_ + "max"] * _loc5_;
          if(_loc3_ > 117)
          {
             _loc3_ = 117;
@@ -897,33 +924,29 @@ package
          var _loc10_:int = 0;
          var _loc11_:Boolean = false;
          var _loc12_:MovieClip = null;
-         var _loc3_:Number = Number(BASE._resources["r" + 1].Get());
-         var _loc4_:Number = Number(BASE._resources["r" + 2].Get());
-         var _loc5_:Number = Number(BASE._resources["r" + 3].Get());
-         var _loc6_:Number = Number(BASE._resources["r" + 4].Get());
          TweenLite.to(mc.mcR1,0.5,{
-            "_resource":_loc3_,
+            "_resource":GLOBAL._resources["r" + 1].Get(),
             "onUpdate":this.UpdateTweenResourceText,
             "onUpdateParams":[1],
             "ease":Linear.easeNone,
             "overwrite":1
          });
          TweenLite.to(mc.mcR2,0.5,{
-            "_resource":_loc4_,
+            "_resource":GLOBAL._resources["r" + 2].Get(),
             "onUpdate":this.UpdateTweenResourceText,
             "onUpdateParams":[2],
             "ease":Linear.easeNone,
             "overwrite":1
          });
          TweenLite.to(mc.mcR3,0.5,{
-            "_resource":_loc5_,
+            "_resource":GLOBAL._resources["r" + 3].Get(),
             "onUpdate":this.UpdateTweenResourceText,
             "onUpdateParams":[3],
             "ease":Linear.easeNone,
             "overwrite":1
          });
          TweenLite.to(mc.mcR4,0.5,{
-            "_resource":_loc6_,
+            "_resource":GLOBAL._resources["r" + 4].Get(),
             "onUpdate":this.UpdateTweenResourceText,
             "onUpdateParams":[4],
             "ease":Linear.easeNone,

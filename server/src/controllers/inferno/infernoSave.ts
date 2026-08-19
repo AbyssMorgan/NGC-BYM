@@ -53,7 +53,7 @@ export const infernoSave: KoaController = async (ctx) => {
 
     if (!isOwner && baseSave.attackid === 0) throw permissionErr();
 
-    for (const key of isAttack ? Save.attackSaveKeys : Save.saveKeys) {
+    for (const key of isAttack ? Save.attackSaveKeys : Save.PlayerSaveKeys) {
       const value = body[key] as string;
 
       switch (key) {

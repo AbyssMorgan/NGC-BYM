@@ -485,8 +485,8 @@ package
 			_isFan = 0;
 			_isBookmarked = 0;
 			_installsGenerated = 0;
-			_resources = {"r1": new SecNum(0), "r2": new SecNum(0), "r3": new SecNum(0), "r4": new SecNum(0), "r1max": 0, "r2max": 0, "r3max": 0, "r4max": 0, "bip": 0};
-			_iresources = {"r1": new SecNum(0), "r2": new SecNum(0), "r3": new SecNum(0), "r4": new SecNum(0), "r1max": 0, "r2max": 0, "r3max": 0, "r4max": 0, "bip": 0};
+			_resources = {"r1": new SecNum(0), "r2": new SecNum(0), "r3": new SecNum(0), "r4": new SecNum(0), "r1max": 0, "r2max": 0, "r3max": 0, "r4max": 0, "r1Rate":0, "r2Rate":0, "r3Rate":0, "r4Rate":0, "bip": 0};
+			_iresources = {"r1": new SecNum(0), "r2": new SecNum(0), "r3": new SecNum(0), "r4": new SecNum(0), "r1max": 0, "r2max": 0, "r3max": 0, "r4max": 0, "r1Rate":0, "r2Rate":0, "r3Rate":0, "r4Rate":0, "bip": 0};
 			_deltaResources = {"dirty": false, "r1": new SecNum(0), "r2": new SecNum(0), "r3": new SecNum(0), "r4": new SecNum(0)};
 			_ideltaResources = {"dirty": false, "r1": new SecNum(0), "r2": new SecNum(0), "r3": new SecNum(0), "r4": new SecNum(0)};
 			_savedDeltaResources = {"r1": new SecNum(0), "r2": new SecNum(0), "r3": new SecNum(0), "r4": new SecNum(0)};
@@ -806,926 +806,899 @@ package
 			}
 		}
 
-      private static function continueFromBaseLoadError():void
-      {
-         GLOBAL.CallJS("cc.reloadParent");
-      }
+		private static function continueFromBaseLoadError():void
+		{
+			GLOBAL.CallJS("cc.reloadParent");
+		}
 
-      private static function parseBaseLoadMessages(param1:Object):Boolean
-      {
-         if (param1.hasOwnProperty("ownershipchanged"))
-         {
-            GLOBAL.Message("mr3_baseoccupied_message", "btn_ok", handleBaseLoadError, null, null, null, null, 1, false);
-            return true;
-         }
-         if (param1.hasOwnProperty("baseoccupied"))
-         {
-            GLOBAL.Message("mr3_baseoccupied_message", "btn_ok", handleBaseLoadError, null, null, null, null, 1, false);
-            return true;
-         }
-         return false;
-      }
+		private static function parseBaseLoadMessages(param1:Object):Boolean
+		{
+			if (param1.hasOwnProperty("ownershipchanged"))
+			{
+				GLOBAL.Message("mr3_baseoccupied_message", "btn_ok", handleBaseLoadError, null, null, null, null, 1, false);
+				return true;
+			}
+			if (param1.hasOwnProperty("baseoccupied"))
+			{
+				GLOBAL.Message("mr3_baseoccupied_message", "btn_ok", handleBaseLoadError, null, null, null, null, 1, false);
+				return true;
+			}
+			return false;
+		}
 
-      private static function handleBaseLoadSuccessful(data:Object):void
-      {
-         var TauntB:Function;
-         var onImageLoad:Function;
-         var LoadImageError:Function;
-         var firstLoad:Boolean = false;
-         var idstr:String = null;
-         var ix:int = 0;
-         var resources:Object = null;
-         var building:Object = null;
-         var researchdata:String = null;
-         var iresources:Object = null;
-         var kx:int = 0;
-         var champion:Array = null;
-         var existingGuardians:Dictionary = null;
-         var playerGuardianIndex:int = 0;
-         var guardianIndex:int = 0;
-         var addedGuardian:Boolean = false;
-         var unfrozenFound:Boolean = false;
-         var j:int = 0;
-         var attacksArr:Array = null;
-         var attackCount:int = 0;
-         var attackObj:Object = null;
-         var found:Boolean = false;
-         var listed:Object = null;
-         var popupMC:popup_attackedme = null;
-         var loader:Loader = null;
-         var promoTimer:int = 0;
-         var promoItemsArr:Array = null;
-         var promoID:Array = null;
-         var promoGifts:Array = null;
-         var serverData:Object = data;
-         try
-         {
-            if (serverData.error == 0)
-            {
-               if (parseBaseLoadMessages(serverData))
-               {
-                  return;
-               }
-               loadObject = serverData;
-               if (serverData && serverData.player && Boolean(serverData.player.buffs))
-               {
-                  s_resourceCells = serverData.player.buffs.resources;
-               }
-               if (MapRoomManager.instance.isInMapRoom3)
-               {
-                  _baseID = loadObject.baseid;
-               }
-               firstLoad = false;
-               if (!_loadedSomething)
-               {
-                  if (ExternalInterface.available)
-                  {
-                     ExternalInterface.call("cc.recordStats", "baseend");
-                  }
-                  firstLoad = true;
-                  _loadedSomething = true;
-                  GAME._firstLoadComplete = true;
-               }
-               else
-               {
-                  _firstBaseLoaded = false;
-               }
-               if (GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD || GLOBAL.mode == GLOBAL.e_BASE_MODE.IBUILD)
-               {
-                  GLOBAL._openBase = null;
-               }
-               MapRoomManager.instance.worldID = 0;
-               GLOBAL.SetFlags(serverData.flags);
-               QUESTS.Setup();
-               GLOBAL._reloadonerror = false;
-               if (TUTORIAL.hasFinished)
-               {
-                  _isProtected = int(serverData["protected"]);
-               }
-               _isFan = int(serverData.fan);
-               _isFan = int(0);
-               _isBookmarked = int(serverData.bookmarked);
-               _isBookmarked = int(0);
-               _installsGenerated = int(42069);
-			   
-               if (serverData.fan)
-               {
-                  QUESTS._global.bonus_fan = 1;
-               }
-               if (serverData.bookmarked)
-               {
-                  QUESTS._global.bonus_bookmark = 1;
-               }
-               if (serverData.giftsentcount)
-               {
-                  QUESTS._global.bonus_gifts = serverData.giftsentcount;
-               }
-               QUESTS._global.bonus_invites = _installsGenerated;
-               _lastProcessed = int(serverData.savetime);
-               GLOBAL.t = _lastProcessed;
-               _currentTime = int(serverData.currenttime);
-               if (_lastProcessed < _currentTime - 60 * 60 * 24 * 30)
-               {
-                  // Limits the last known save time to 30 days ago at most, as this affects load times.
-                  // Practically, no single time-based action in a base will take longer than this.
-                  _lastProcessed = _currentTime - 60 * 60 * 24 * 30;
-               }
-               if (serverData.chatservers != null)
-               {
-                  Chat._chatServers = serverData.chatservers;
-               }
-               else
-               {
-                  Chat._chatServers = new Array();
-               }
-               _lastSaveID = serverData.id;
-               _baseSeed = serverData.baseseed;
-               _loadedBaseID = serverData.baseid;
-               if (GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD)
-               {
-                  _loadedFriendlyBaseID = serverData.baseid;
-                  _loadedYardType = m_yardType;
-               }
-               _loadedFBID = serverData.fbid;
-               _userID = serverData.userid;
-               idstr = _userID.toString();
-               _userDigits = [];
-               ix = 0;
-               while (ix < idstr.length)
-               {
-                  _userDigits.push(int(idstr.charAt(ix)));
-                  ix++;
-               }
-               if (GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD && isMainYard)
-               {
-                  if (serverData.alliancedata)
-                  {
-                     _allianceID = int(serverData.alliancedata.alliance_id);
-                     if (_userID == LOGIN._playerID)
-                     {
-                        ALLIANCES._allianceID = int(serverData.alliancedata.alliance_id);
-                        ALLIANCES._myAlliance = ALLIANCES.SetAlliance(serverData.alliancedata);
-                        ACHIEVEMENTS.Check("alliance", 1);
-                     }
-                  }
-                  else if (_userID == LOGIN._playerID && (ALLIANCES._allianceID || ALLIANCES._myAlliance))
-                  {
-                     ALLIANCES.Clear();
-                  }
-               }
-               if (serverData.powerups)
-               {
-                  POWERUPS.Setup(serverData.powerups, null, true);
-               }
-               if (serverData.attpowerups)
-               {
-                  POWERUPS.Setup(null, serverData.attpowerups, true);
-               }
-               _attackID = int(serverData.attackid);
-               if (serverData.worldsize)
-               {
-                  MapRoomManager.instance.mapWidth = serverData.worldsize[0];
-                  MapRoomManager.instance.mapHeight = serverData.worldsize[1];
-               }
-               if (serverData.usemap)
-               {
-                  if (isInfernoMainYardOrOutpost)
-                  {
-                     MapRoomManager.instance.mapRoomVersion = MapRoomManager.instance.currentMapRoom is MapRoom3 ? MapRoomManager.MAP_ROOM_VERSION_3 : MapRoomManager.MAP_ROOM_VERSION_1;
-                  }
-                  else
-                  {
-                     MapRoomManager.instance.mapRoomVersion = MapRoomManager.instance.currentMapRoom is MapRoom3 ? MapRoomManager.MAP_ROOM_VERSION_3 : MapRoomManager.MAP_ROOM_VERSION_2;
-                  }
-               }
-               if (MapRoomManager.instance.isInMapRoom2)
-               {
-                  if (GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD)
-                  {
-                     if (serverData.homebaseid)
-                     {
-                        GLOBAL._homeBaseID = serverData.homebaseid;
-                     }
-                     if (serverData.homebase)
-                     {
-                        if (serverData.homebase.length == 2 && serverData.homebase[0] > -1 && serverData.homebase[1] > -1)
-                        {
-                           if (serverData.outposts)
-                           {
-                              GLOBAL._mapOutpost = [];
-                              GLOBAL._mapOutpostIDs = [];
-                              ix = 0;
-                              while (ix < serverData.outposts.length)
-                              {
-                                 if (serverData.outposts[ix].length == 3)
-                                 {
-                                    GLOBAL._mapOutpost.push(new Point(serverData.outposts[ix][0], serverData.outposts[ix][1]));
-                                    GLOBAL._mapOutpostIDs.push(serverData.outposts[ix][2]);
-                                 }
-                                 ix++;
-                              }
-                           }
-                           GLOBAL._mapHome = new Point(serverData.homebase[0], serverData.homebase[1]);
-                        }
-                        else
-                        {
-                           LOGGER.Log("err", "BASE.Process Invalid home base coordinate. " + serverData.homebase);
-                        }
-                     }
-                     if (serverData.empiredestroyed)
-                     {
-                        GLOBAL._empireDestroyed = serverData.empiredestroyed;
-                     }
-                     else
-                     {
-                        GLOBAL._empireDestroyed = 0;
-                     }
-                  }
-               }
-               else if (MapRoomManager.instance.isInMapRoom3 && GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD && Boolean(serverData.homebase))
-               {
-                  GLOBAL._mapHome = new Point(serverData.homebase[0], serverData.homebase[1]);
-               }
-               GLOBAL._unreadMessages = serverData.unreadmessages;
-               resources = serverData.resources;
-               if (resources == null)
-               {
-                  _resources.r1 = 1000;
-                  _resources.r2 = 1000;
-                  _resources.r3 = 1000;
-                  _resources.r4 = 1000;
-                  _resources.r1max = 10000;
-                  _resources.r2max = 10000;
-                  _resources.r3max = 10000;
-                  _resources.r4max = 10000;
-               }
-               else
-               {
-                  _resources = _resources || {};
-                  _resources.r1 = new SecNum(Math.floor(resources.r1));
-                  _resources.r2 = new SecNum(Math.floor(resources.r2));
-                  _resources.r3 = new SecNum(Math.floor(resources.r3));
-                  _resources.r4 = new SecNum(Math.floor(resources.r4));
-                  _resources.r1bonus = resources.r1bonus;
-                  _resources.r2bonus = resources.r2bonus;
-                  _resources.r3bonus = resources.r3bonus;
-                  _resources.r4bonus = resources.r4bonus;
-               }
-               if (serverData.iresources)
-               {
-                  iresources = serverData.iresources;
-                  _iresources.r1 = new SecNum(Math.floor(iresources.r1));
-                  _iresources.r2 = new SecNum(Math.floor(iresources.r2));
-                  _iresources.r3 = new SecNum(Math.floor(iresources.r3));
-                  _iresources.r4 = new SecNum(Math.floor(iresources.r4));
-                  _iresources.r1max = Number(iresources.r1max);
-                  _iresources.r2max = Number(iresources.r2max);
-                  _iresources.r3max = Number(iresources.r3max);
-                  _iresources.r4max = Number(iresources.r4max);
-				  if(iresources.bip){
-					_iresources.bip = Number(iresources.bip);
-				  } else {
-					_iresources.bip = Number(0);
-				  }
-				  if(GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD && !isInfernoMainYardOrOutpost){
-					trace("loaded max: " +  _iresources.r1max);
-					GLOBAL._iresources['r1max'] = Number(iresources.r1max) * (1 + (0.1 * _iresources.bip));
-					GLOBAL._iresources['r2max'] = Number(iresources.r2max) * (1 + (0.1 * _iresources.bip));
-					GLOBAL._iresources['r3max'] = Number(iresources.r3max) * (1 + (0.1 * _iresources.bip));
-					GLOBAL._iresources['r4max'] = Number(iresources.r4max) * (1 + (0.1 * _iresources.bip));
-					trace("total max: " +  GLOBAL._iresources['r1max']);
-				  }
-               }
-               if (Boolean(serverData.updates) && serverData.updates.length > 0)
-               {
-                  UPDATES.Process(serverData.updates);
-               }
-               else if (serverData.lastupdate)
-               {
-                  UPDATES._lastUpdateID = Number(serverData.lastupdate);
-               }
-               else
-               {
-                  UPDATES._lastUpdateID = 0;
-               }
-               if (serverData.mushrooms.l)
-               {
-                  _mushroomList = serverData.mushrooms.l;
-               }
-               if (serverData.mushrooms.s)
-               {
-                  _lastSpawnedMushroom = int(serverData.mushrooms.s);
-               }
-               _buildingHealthData = serverData.buildinghealthdata;
-               _buildingData = serverData.buildingdata;
-               if (!MapRoomManager.instance.isInMapRoom3)
-               {
-                  for each (building in _buildingData)
-                  {
-                     if (building.t == 14)
-                     {
-                        if (isOutpost && (GLOBAL._currentCell && GLOBAL._currentCell.baseType == EnumYardType.INFERNO_OUTPOST))
-                        {
-                           LOGGER.Log("err", "Base ID " + _loadedBaseID + " outpost w TH bdg");
-                           GLOBAL.ErrorMessage("BASE.Process outpost w TH");
-                        }
-                        break;
-                     }
-                     if (building.t == 112)
-                     {
-                        if (isMainYardOrInfernoMainYard && (GLOBAL._currentCell && GLOBAL._currentCell.baseType != EnumYardType.INFERNO_OUTPOST))
-                        {
-                           LOGGER.Log("err", "Base ID " + _loadedBaseID + " yard w OP bdg");
-                           GLOBAL.ErrorMessage("BASE.Process yard w outpost");
-                        }
-                        break;
-                     }
-                  }
-               }
-			   _level = serverData.level;
-			   _rewards = serverData.rewards;
-               _rawGIP = serverData.buildingresources;
-               _processedGIP = {};
-               _GIP = {
-                     "r1": new SecNum(0),
-                     "r2": new SecNum(0),
-                     "r3": new SecNum(0),
-                     "r4": new SecNum(0)
-                  };
-               _lastProcessedGIP = AutoBankManager.updateLoadData(_rawGIP, _GIP, _processedGIP, _lastProcessed, _lastProcessedGIP);
-               _baseName = serverData.basename;
-               var basevalue:Number = Number(serverData.basevalue);
-			   var points:Number = Number(serverData.points);
-               if(points){
-				_baseExperience.Set(points);
-			   } else {
-				_baseExperience.Set(0);
-			   }
-			   if(basevalue){
-				_basePower.Set(basevalue);
-			   } else {
-				_basePower.Set(0);
-			   }
-               _conquerorPoints = new SecNum(int(serverData.empirevalue));
-               _credits = new SecNum(int(serverData.credits));
-               GLOBAL._credits = new SecNum(int(serverData.credits));
-               _tempLoot = serverData.loot;
-               GLOBAL.SetBuildingProps();
-               _buildingsStored = {};
-               for (researchdata in serverData.researchdata)
-               {
-                  if (serverData.researchdata[researchdata])
-                  {
-                     _buildingsStored[researchdata] = new SecNum(serverData.researchdata[researchdata]);
-                  }
-               }
-               if (GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD)
-               {
-					if (_userID == LOGIN._playerID){
-						QUESTS._global.gift_accept = 50;
-						QUESTS._global.bonus_fan = 1;
-						QUESTS._global.goldmushroomspicked = 50;
-						QUESTS._global.mushroomspicked = 200;
-						QUESTS.Check("level_up", _level);
+		private static function handleBaseLoadSuccessful(data:Object):void
+		{
+			var TauntB:Function;
+			var onImageLoad:Function;
+			var LoadImageError:Function;
+			var firstLoad:Boolean = false;
+			var idstr:String = null;
+			var ix:int = 0;
+			var resources:Object = null;
+			var building:Object = null;
+			var researchdata:String = null;
+			var iresources:Object = null;
+			var kx:int = 0;
+			var champion:Array = null;
+			var existingGuardians:Dictionary = null;
+			var playerGuardianIndex:int = 0;
+			var guardianIndex:int = 0;
+			var addedGuardian:Boolean = false;
+			var unfrozenFound:Boolean = false;
+			var j:int = 0;
+			var attacksArr:Array = null;
+			var attackCount:int = 0;
+			var attackObj:Object = null;
+			var found:Boolean = false;
+			var listed:Object = null;
+			var popupMC:popup_attackedme = null;
+			var loader:Loader = null;
+			var promoTimer:int = 0;
+			var promoItemsArr:Array = null;
+			var promoID:Array = null;
+			var promoGifts:Array = null;
+			var serverData:Object = data;
+			try
+			{
+				if (serverData.error == 0)
+				{
+					if (parseBaseLoadMessages(serverData))
+					{
+						return;
 					}
-                  kx = 1;
-                  while (kx < 5)
-                  {
-                     GLOBAL._resources["r" + kx] = new SecNum(_resources["r" + kx].Get());
-					 GLOBAL._iresources["r" + kx] = new SecNum(_iresources["r" + kx].Get());
-                     kx++;
-                  }
-               }
-            //    if (serverData.stats.mp)
-            //    {
-            //       QUESTS._global.mushroomspicked = serverData.stats.mp;
-            //    }
-            //    if (serverData.stats.mg)
-            //    {
-            //       QUESTS._global.goldmushroomspicked = serverData.stats.mg;
-            //    }
-               if (serverData.stats.mob)
-               {
-                  QUESTS._global.monstersblended = serverData.stats.mob;
-               }
-               if (serverData.stats.mobg)
-               {
-                  QUESTS._global.monstersblendedgoo = serverData.stats.mobg;
-               }
-			   if (serverData.stats.assault_to_1_0)
-               {
-                  QUESTS._global.assault_to_1_0 = serverData.stats.assault_to_1_0;
-               }
-			   if (serverData.stats.assault_to_1_1)
-               {
-                  QUESTS._global.assault_to_1_1 = serverData.stats.assault_to_1_1;
-               }
-			   if (serverData.stats.assault_to_1_2)
-               {
-                  QUESTS._global.assault_to_1_2 = serverData.stats.assault_to_1_2;
-               }
-			   if (serverData.stats.assault_to_1_3)
-               {
-                  QUESTS._global.assault_to_1_3 = serverData.stats.assault_to_1_3;
-               }
-			   if (serverData.stats.assault_to_2)
-               {
-                  QUESTS._global.assault_to_2 = serverData.stats.assault_to_2;
-               }
-			   if (serverData.stats.assault_to_3)
-               {
-                  QUESTS._global.assault_to_3 = serverData.stats.assault_to_3;
-               }
-			   if (serverData.stats.assault_to_4)
-               {
-                  QUESTS._global.assault_to_4 = serverData.stats.assault_to_4;
-               }
-			   if (serverData.stats.assault_mo_1)
-               {
-                 QUESTS._global.assault_mo_1 = serverData.stats.assault_mo_1;
-               }
-               if (serverData.stats.assault_mo_2)
-               {
-                 QUESTS._global.assault_mo_2 = serverData.stats.assault_mo_2;
-               }
-               if (serverData.stats.assault_mo_3)
-               {
-                 QUESTS._global.assault_mo_3 = serverData.stats.assault_mo_3;
-               }
-               if (serverData.stats.assault_mo_4)
-               {
-                 QUESTS._global.assault_mo_4 = serverData.stats.assault_mo_4;
-               }
-			   if (serverData.stats.assault_ro && GLOBAL.assault_ro == 0){
-				  GLOBAL.assault_ro = serverData.stats.assault_ro;
-                  QUESTS._global.assault_ro = serverData.stats.assault_ro;
-               } else {
-				  QUESTS._global.assault_ro = GLOBAL.assault_ro;
-			   }
-			   if (serverData.stats.assault_sh && GLOBAL.assault_sh == 0){
-				  GLOBAL.assault_sh = serverData.stats.assault_sh;
-                  QUESTS._global.assault_sh = serverData.stats.assault_sh;
-               } else {
- 				  QUESTS._global.assault_sh = GLOBAL.assault_sh;
-			   }
-			   if (serverData.stats.assault_de && GLOBAL.assault_de == 0){
-				  GLOBAL.assault_de = serverData.stats.assault_de;
-                  QUESTS._global.assault_de = serverData.stats.assault_de;
-               } else {
- 				  QUESTS._global.assault_de = GLOBAL.assault_de;
-			   }
-			   if (serverData.stats.assault_towers && GLOBAL.assault_towers == 0){
-				  GLOBAL.assault_towers = serverData.stats.assault_towers;
-                  QUESTS._global.assault_towers = serverData.stats.assault_towers;
-               } else {
- 				  QUESTS._global.assault_towers = GLOBAL.assault_towers;
-			   }
-			   if (serverData.stats.assault_monsters && GLOBAL.assault_monsters == 0){
-				  GLOBAL.assault_monsters = serverData.stats.assault_monsters;
-                  QUESTS._global.assault_monsters = serverData.stats.assault_monsters;
-               } else {
- 				  QUESTS._global.assault_monsters = GLOBAL.assault_monsters;
-			   }
-            //    if (serverData.stats.moga)
-            //    {
-            //       QUESTS._global.gift_accept = serverData.stats.moga;
-            //    }
-               NewPopupSystem.instance.Setup(serverData.stats.popupdata);
-               if (serverData.stats.updateid)
-               {
-                  GLOBAL._whatsnewid = serverData.stats.updateid;
-               }
-               if (serverData.stats.updateid_mr2 != null)
-               {
-                  GLOBAL._mr2TutorialId = Math.max(GLOBAL._mr2TutorialId, serverData.stats.updateid_mr2);
-               }
-               else
-               {
-                  GLOBAL._mr2TutorialId = Math.max(GLOBAL._mr2TutorialId, MapRoomManager.instance.isInMapRoom2 ? 1 : 0);
-               }
-               MapRoom3Tutorial.instance.importData(serverData);
-               GLOBAL._otherStats = {"s": 1};
-               if (serverData.stats.other)
-               {
-                  GLOBAL._otherStats = serverData.stats.other;
-               }
-               if (GLOBAL.StatGet(BUILDING11.CHANGED_TO_MR2) == 1)
-               {
-                  LOGGER.StatB({"st1": "world_map", "st2": "enter"}, MapRoomManager.instance.worldID);
-                  GLOBAL.StatSet(BUILDING11.CHANGED_TO_MR2, 2);
-               }
-               if (serverData.wmid)
-               {
-                  _wmID = serverData.wmid;
-               }
-			   _tribeIndex = serverData.tribe;
-               if (GLOBAL._otherStats && GLOBAL._otherStats.descentLvl && GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD)
-               {
-                  if (Boolean(WMBASE._descentBases) && WMBASE._descentBases.length > 0)
-                  {
-                     if (MAPROOM_DESCENT.DescentLevel > 1)
-                     {
-                        MAPROOM_DESCENT._descentLvl = MAPROOM_DESCENT.DescentLevel;
-                        GLOBAL.StatSet("descentLvl", MAPROOM_DESCENT._descentLvl);
-                     }
-                  }
-                  else if (MAPROOM_DESCENT._descentLvl < serverData.stats.other.descentLvl)
-                  {
-                     MAPROOM_DESCENT._descentLvl = serverData.stats.other.descentLvl;
-                  }
-               }
-               GLOBAL.player.importAcademyData(serverData.academy);
-               if (GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD && isMainYardOrInfernoMainYard)
-               {
-                  SiegeWeapons.importWeapons(serverData.siege);
-               }
-               else
-               {
-                  _oldSiegeData = serverData.siege;
-               }
-               EFFECTS.Setup(serverData.effects);
-               if (Boolean(serverData.monsters) && Boolean(serverData.monsters.housed))
-               {
-                  GLOBAL.player.fillMonsterData(serverData.monsters.housed);
-               }
-               else if (serverData.monsters)
-               {
-                  GLOBAL.player.fillMonsterData(serverData.monsters);
-               }
-               _rawMonsters = serverData.monsters;
-               TRIBES.Setup();
-               if (serverData.wmstatus)
-               {
-                  WMBASE.Data(serverData.wmstatus);
-               }
-               else
-               {
-                  WMBASE.Clear();
-               }
-               WMATTACK.Setup(serverData.aiattacks);
-               if (GLOBAL.mode == GLOBAL.e_BASE_MODE.WMATTACK || GLOBAL.mode == GLOBAL.e_BASE_MODE.WMVIEW || GLOBAL.mode == GLOBAL.e_BASE_MODE.IWMATTACK)
-               {
-                  WMBASE.Setup();
-               }
-               TUTORIAL.Setup();
-               if (GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD)
-               {
-                  if (BASE.isInfernoMainYardOrOutpost)
-                  {
-                     TUTORIAL._stage = TUTORIAL._endstage;
-                  }
-                  else
-                  {
-                     TUTORIAL._stage = int(serverData.tutorialstage);
-                  }
-                  TUTORIAL.Tick();
-               }
-               WORKERS.Setup();
-               QUEUE.Setup();
-               STORE.Data(serverData.storeitems, serverData.storedata, serverData.inventory);
-               CREATURELOCKER.Data(serverData.lockerdata);
-               QUESTS.Data(serverData.quests);
-               MONSTERBAITER.Setup(serverData.monsterbaiter);
-               if (serverData.chatenabled != null)
-               {
-                  Chat._chatEnabled = serverData.chatenabled;
-                  if (Chat.flagsShouldChatExist())
-                  {
-                     Chat.initChat();
-                  }
-               }
-               if (serverData.stats.achievements)
-               {
-                  ACHIEVEMENTS.Data(serverData.stats.achievements);
-                  ACHIEVEMENTS.CheckRetroactiveAchievments();
-               }
-               else if (serverData.quests)
-               {
-                  if (GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD)
-                  {
-                     ACHIEVEMENTS._stats.upgrade_champ1 = QUESTS._global.upgrade_champ1;
-                     ACHIEVEMENTS._stats.upgrade_champ2 = QUESTS._global.upgrade_champ2;
-                     ACHIEVEMENTS._stats.upgrade_champ3 = QUESTS._global.upgrade_champ3;
-                     ACHIEVEMENTS._stats.monstersblended = QUESTS._global.monstersblended;
-                     ACHIEVEMENTS._stats.wm2hall = QUESTS._global.destroy_tribe2;
-                     if (serverData.alliancedata)
-                     {
-                        if (serverData.alliancedata.alliance_id)
-                        {
-                           ACHIEVEMENTS._stats.alliance = 1;
-                        }
-                     }
-                     ACHIEVEMENTS.Check();
-                  }
-               }
-               _guardianData.length = 0;
-               if (serverData.champion)
-               {
-                  champion = serverData.champion;
-                  if (champion.length > 0)
-                  {
-                     existingGuardians = new Dictionary();
-                     playerGuardianIndex = 0;
-                     guardianIndex = 0;
-                     addedGuardian = false;
-                     unfrozenFound = false;
-                     j = 0;
-                     while (j < champion.length)
-                     {
-                        if (Boolean(champion[j].t) && !existingGuardians[champion[j].t])
-                           {
-                              existingGuardians[champion[j].t] = true;
-                              _guardianData[guardianIndex] = {};
-                              addedGuardian = true;
-                              if (champion[j].nm)
-                              {
-                                 _guardianData[guardianIndex].nm = champion[j].nm;
-                              }
-                              _guardianData[guardianIndex].t = champion[j].t;
-                              if (champion[j].ft)
-                              {
-                                 _guardianData[guardianIndex].ft = champion[j].ft;
-                              }
-                              if (champion[j].fd)
-                              {
-                                 _guardianData[guardianIndex].fd = champion[j].fd;
-                              }
-                              else
-                              {
-                                 _guardianData[guardianIndex].fd = 0;
-                              }
-                              if (champion[j].l)
-                              {
-                                 _guardianData[guardianIndex].l = new SecNum(champion[j].l);
-                              }
-                              else
-                              {
-                                 _guardianData[guardianIndex].l = new SecNum(0);
-                              }
-                              if (champion[j].hp)
-                              {
-                                 _guardianData[guardianIndex].hp = new SecNum(champion[j].hp);
-                              }
-                              else
-                              {
-                                 _guardianData[guardianIndex].hp = new SecNum(0);
-                              }
-                              if (champion[j].fb)
-                              {
-                                 _guardianData[guardianIndex].fb = new SecNum(champion[j].fb);
-                              }
-                              else
-                              {
-                                 _guardianData[guardianIndex].fb = new SecNum(0);
-                              }
-                              if (champion[j].pl)
-                              {
-                                 _guardianData[guardianIndex].pl = new SecNum(champion[j].pl);
-                              }
-                              else
-                              {
-                                 _guardianData[guardianIndex].pl = new SecNum(0);
-                              }
-                              if (champion[j].status is int)
-                              {
-                                 _guardianData[guardianIndex].status = champion[j].status;
-                              }
-                              else
-                              {
-                                 _guardianData[guardianIndex].status = ChampionBase.k_CHAMPION_STATUS_NORMAL;
-                              }
-                              if (_guardianData[guardianIndex].t != 5)
-                              {
-                                 if (unfrozenFound && _guardianData[guardianIndex].status == ChampionBase.k_CHAMPION_STATUS_NORMAL)
-                                 {
-                                    _guardianData[guardianIndex].status = ChampionBase.k_CHAMPION_STATUS_FROZEN;
-                                 }
-                                 else if (!unfrozenFound && _guardianData[guardianIndex].status == ChampionBase.k_CHAMPION_STATUS_NORMAL)
-                                 {
-                                    unfrozenFound = true;
-                                 }
-                              }
-                           }
-                        if (GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD && isMainYard && Boolean(_guardianData[j]))
-                        {
-                           GLOBAL._playerGuardianData[j] = _guardianData[j];
-                        }
-                        if (addedGuardian)
-                        {
-                           guardianIndex++;
-                        }
-                        addedGuardian = false;
-                        j++;
-                     }
-                  }
-               }
-               _attackerArray = [];
-               _attackerNameArray = [];
-               if (GLOBAL.mode != GLOBAL.e_BASE_MODE.WMATTACK && GLOBAL.mode != GLOBAL.e_BASE_MODE.WMVIEW && Boolean(serverData.attacks))
-               {
-                  _currentAttacks = serverData.attacks;
-                  TauntB = function(param1:int, param2:int):Function
-                  {
-                     var n:int = param1;
-                     var fbid:int = param2;
-                     return function(param1:MouseEvent):void
-                     {
-                        POPUPS.Next();
-                     };
-                  };
-                  attacksArr = serverData.attacks;
-                  attackCount = 0;
-                  for each (attackObj in attacksArr)
-                  {
-                     if (attackObj.seen) continue;
-                     
-                     attackCount++;
-                     found = false;
-                     for each (listed in _attackerArray)
-                     {
-                        if (listed.fbid == attackObj.fbid)
-                        {
-                           found = true;
-                           ++listed.count;
-                           listed.lastTime = attackObj.starttime;
-                        }
-                     }
-                     if (!found)
-                     {
-                        _attackerNameArray.push([0, attackObj.name]);
-                        _attackerArray.push({
-                                 "fbid": attackObj.fbid,
-                                 "name": attackObj.name,
-                                 "pic": attackObj.pic_square,
-                                 "friend": attackObj.friend,
-                                 "count": 1,
-                                 "lastTime": attackObj.starttime
-                              });
-                     }
-                  }
-                  for each (attackObj in _attackerArray)
-                  {
-                     popupMC = new popup_attackedme();
-                     popupMC.gotoAndStop(1);
-                     if (attackObj.count == 1)
-                     {
-                        popupMC.tA.htmlText = KEYS.Get("pop_attackedyou", {
-                                 "v1": attackObj.name,
-                                 "v2": GLOBAL.ToTime(_currentTime - int(attackObj.lastTime), true)
-                              });
-                     }
-                     else
-                     {
-                        popupMC.tA.htmlText = KEYS.Get("pop_attackedyouxtimes", {
-                                 "v1": attackObj.name,
-                                 "v2": attackObj.count,
-                                 "v3": GLOBAL.ToTime(_currentTime - int(attackObj.lastTime), true)
-                              });
-                     }
-                     if (attackObj.pic)
-                     {
-                        onImageLoad = function(param1:Event):void
-                        {
-                           loader.height = 50;
-                           loader.width = 50;
-                        };
-                        LoadImageError = function(param1:IOErrorEvent):void
-                        {
-                        };
-                        loader = new Loader();
-                        loader.contentLoaderInfo.addEventListener(IOErrorEvent.IO_ERROR, LoadImageError, false, 0, true);
-                        loader.contentLoaderInfo.addEventListener(Event.COMPLETE, onImageLoad);
-                        popupMC.mcPic.mcBG.addChild(loader);
-                        loader.load(new URLRequest(attackObj.pic));
-                     }
-                     if (attackObj.friend == 1)
-                     {
-                        popupMC.bShare.SetupKey("btn_talktrash");
-                        popupMC.bShare.Highlight = true;
-                        popupMC.bShare.addEventListener(MouseEvent.CLICK, function TauntA(param1:MouseEvent):void
-                           {
-                              var _loc2_:MovieClip = param1.target.parent;
-                              _loc2_.gotoAndStop(2);
-                              var _loc3_:int = 1;
-                              while (_loc3_ < 4)
-                              {
-                                 _loc2_["b" + _loc3_].gotoAndStop(_loc3_);
-                                 _loc2_["b" + _loc3_].buttonMode = true;
-                                 _loc2_["b" + _loc3_].addEventListener(MouseEvent.CLICK, TauntB(_loc3_, attackObj.fbid));
-                                 _loc3_++;
-                              }
-                           });
-                     }
-                     else
-                     {
-                        popupMC.bShare.visible = false;
-                     }
-                     POPUPS.Push(popupMC);
-                  }
-               }
-               _ownerName = GLOBAL.mode == GLOBAL.e_BASE_MODE.WMATTACK || GLOBAL.mode == GLOBAL.e_BASE_MODE.WMVIEW ? String(TRIBES.TribeForBaseID(_wmID, 0, _tribeIndex).name) : String(serverData.name);
-               _ownerPic = GLOBAL.mode == GLOBAL.e_BASE_MODE.WMATTACK || GLOBAL.mode == GLOBAL.e_BASE_MODE.WMVIEW ? String(TRIBES.TribeForBaseID(_wmID, 0, _tribeIndex).profilepic) : String(serverData.pic_square);
-               if (!GLOBAL._flags.viximo && !GLOBAL._flags.kongregate)
-               {
-                  if (serverData.promotiontimer)
-                  {
-                     if (serverData.promotiontimer is int)
-                     {
-                        promoTimer = int(serverData.promotiontimer);
-                        GLOBAL._flags.hasPromo = 1;
-                     }
-                     else if (serverData.promotiontimer is String && serverData.promotiontimer == "purchasereceive")
-                     {
-                        if (serverData.purchasereceive)
-                        {
-                           promoItemsArr = serverData.purchasereceive;
-                           BUY.purchaseProcess(promoItemsArr);
-                           BUY.purchaseComplete(serverData.promotiontimer);
-                           GLOBAL._flags.hasPromo = 1;
-                        }
-                     }
-                  }
-               }
-               if (!GLOBAL._flags.viximo && !GLOBAL._flags.kongregate)
-               {
-                  if (serverData.fbpromos)
-                  {
-                     promoID = [];
-                     promoGifts = [];
-                     if (serverData.fbpromos)
-                     {
-                        if (serverData.fbpromos.ids)
-                        {
-                           promoID = serverData.fbpromos.ids;
-                        }
-                        if (promoGifts)
-                        {
-                           promoGifts = serverData.fbpromos.items;
-                        }
-                        if (Boolean(promoID) && Boolean(promoGifts))
-                        {
-                           _pendingFBPromo = 1;
-                           GLOBAL._flags.hasFBPromo = 1;
-                           if (promoGifts)
-                           {
-                              BUY.purchaseProcess(promoGifts);
-                              BUY.purchaseComplete("biggulp");
-                           }
-                           if (promoID)
-                           {
-                              _pendingFBPromoIDs = promoID;
-                           }
-                        }
-                        GLOBAL._flags.hasPromo = 1;
-                     }
-                  }
-               }
-               _tempGifts = serverData.gifts;
-               if (serverData.sentgifts)
-               {
-                  _tempSentGifts = serverData.sentgifts;
-               }
-               if (serverData.sentinvites)
-               {
-                  _tempSentInvites = serverData.sentinvites;
-               }
-               else
-               {
-                  _tempSentInvites = [];
-               }
-               Build();
-               WMBASE.CheckQuests();
-            }
-            else if (GLOBAL._reloadonerror)
-            {
-               GLOBAL.CallJS("reloadPage");
-            }
-            else if (GLOBAL._local && serverData.error == "Incorrect map version")
-            {
-               BASE.Load();
-            }
-            else
-            {
-            //    GLOBAL.ErrorMessage(serverData.error, GLOBAL.ERROR_ORANGE_BOX_ONLY);
-			   GLOBAL.Message(serverData.error);
-			   MAPROOM.Show();
-               PLEASEWAIT.Hide();
-            }
-            LOGGER.StatB({
-                     "st1": MapRoomManager.instance.mapRoomVersion + "_loadmode",
-                     "st2": BASE.yardType
-                  }, GLOBAL.mode);
-            if (Boolean(LOGIN._playerID) && int(LOGIN._playerID % 100) == 0)
-            {
-               LOGGER.Stat([LOGGER.STAT_MEM, "loadbase", (System.totalMemory / 1024 / 1024).toString(), int(getTimer() * 0.001).toString()]);
-            }
-         }
-         catch (error:Error)
-         {
-            GLOBAL.Message(KEYS.Get("err_loading_base"));
-            LOGGER.Log("err", "Failed to load user base with error: " + error.getStackTrace());
-         }
-      }
+					loadObject = serverData;
+					if (serverData && serverData.player && Boolean(serverData.player.buffs))
+					{
+						s_resourceCells = serverData.player.buffs.resources;
+					}
+					if (MapRoomManager.instance.isInMapRoom3)
+					{
+						_baseID = loadObject.baseid;
+					}
+					firstLoad = false;
+					if (!_loadedSomething)
+					{
+						if (ExternalInterface.available)
+						{
+							ExternalInterface.call("cc.recordStats", "baseend");
+						}
+						firstLoad = true;
+						_loadedSomething = true;
+						GAME._firstLoadComplete = true;
+					}
+					else
+					{
+						_firstBaseLoaded = false;
+					}
+					if (GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD || GLOBAL.mode == GLOBAL.e_BASE_MODE.IBUILD)
+					{
+						GLOBAL._openBase = null;
+					}
+					MapRoomManager.instance.worldID = 0;
+					GLOBAL.SetFlags(serverData.flags);
+					QUESTS.Setup();
+					GLOBAL._reloadonerror = false;
+					if (TUTORIAL.hasFinished)
+					{
+						_isProtected = int(serverData["protected"]);
+					}
+					_isFan = int(serverData.fan);
+					_isFan = int(0);
+					_isBookmarked = int(serverData.bookmarked);
+					_isBookmarked = int(0);
+					_installsGenerated = int(42069);
+					
+					if (serverData.fan)
+					{
+						QUESTS._global.bonus_fan = 1;
+					}
+					if (serverData.bookmarked)
+					{
+						QUESTS._global.bonus_bookmark = 1;
+					}
+					if (serverData.giftsentcount)
+					{
+						QUESTS._global.bonus_gifts = serverData.giftsentcount;
+					}
+					QUESTS._global.bonus_invites = _installsGenerated;
+					_lastProcessed = int(serverData.savetime);
+					GLOBAL.t = _lastProcessed;
+					_currentTime = int(serverData.currenttime);
+					if (_lastProcessed < _currentTime - 60 * 60 * 24 * 30)
+					{
+						// Limits the last known save time to 30 days ago at most, as this affects load times.
+						// Practically, no single time-based action in a base will take longer than this.
+						_lastProcessed = _currentTime - 60 * 60 * 24 * 30;
+					}
+					if (serverData.chatservers != null)
+					{
+						Chat._chatServers = serverData.chatservers;
+					}
+					else
+					{
+						Chat._chatServers = new Array();
+					}
+					_lastSaveID = serverData.id;
+					_baseSeed = serverData.baseseed;
+					_loadedBaseID = serverData.baseid;
+					if (GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD)
+					{
+						_loadedFriendlyBaseID = serverData.baseid;
+						_loadedYardType = m_yardType;
+					}
+					_loadedFBID = serverData.fbid;
+					_userID = serverData.userid;
+					idstr = _userID.toString();
+					_userDigits = [];
+					ix = 0;
+					while (ix < idstr.length)
+					{
+						_userDigits.push(int(idstr.charAt(ix)));
+						ix++;
+					}
+					if (GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD && isMainYard)
+					{
+						if (serverData.alliancedata)
+						{
+							_allianceID = int(serverData.alliancedata.alliance_id);
+							if (_userID == LOGIN._playerID)
+							{
+								ALLIANCES._allianceID = int(serverData.alliancedata.alliance_id);
+								ALLIANCES._myAlliance = ALLIANCES.SetAlliance(serverData.alliancedata);
+								ACHIEVEMENTS.Check("alliance", 1);
+							}
+						}
+						else if (_userID == LOGIN._playerID && (ALLIANCES._allianceID || ALLIANCES._myAlliance))
+						{
+							ALLIANCES.Clear();
+						}
+					}
+					if (serverData.powerups)
+					{
+						POWERUPS.Setup(serverData.powerups, null, true);
+					}
+					if (serverData.attpowerups)
+					{
+						POWERUPS.Setup(null, serverData.attpowerups, true);
+					}
+					_attackID = int(serverData.attackid);
+					if (serverData.worldsize)
+					{
+						MapRoomManager.instance.mapWidth = serverData.worldsize[0];
+						MapRoomManager.instance.mapHeight = serverData.worldsize[1];
+					}
+					if (serverData.usemap)
+					{
+						if (isInfernoMainYardOrOutpost)
+						{
+							MapRoomManager.instance.mapRoomVersion = MapRoomManager.instance.currentMapRoom is MapRoom3 ? MapRoomManager.MAP_ROOM_VERSION_3 : MapRoomManager.MAP_ROOM_VERSION_1;
+						}
+						else
+						{
+							MapRoomManager.instance.mapRoomVersion = MapRoomManager.instance.currentMapRoom is MapRoom3 ? MapRoomManager.MAP_ROOM_VERSION_3 : MapRoomManager.MAP_ROOM_VERSION_2;
+						}
+					}
+					if (MapRoomManager.instance.isInMapRoom2)
+					{
+						if (GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD)
+						{
+							if (serverData.homebaseid)
+							{
+								GLOBAL._homeBaseID = serverData.homebaseid;
+							}
+							if (serverData.homebase)
+							{
+								if (serverData.homebase.length == 2 && serverData.homebase[0] > -1 && serverData.homebase[1] > -1)
+								{
+									if (serverData.outposts)
+									{
+										GLOBAL._mapOutpost = [];
+										GLOBAL._mapOutpostIDs = [];
+										ix = 0;
+										while (ix < serverData.outposts.length)
+										{
+											if (serverData.outposts[ix].length == 3)
+											{
+												GLOBAL._mapOutpost.push(new Point(serverData.outposts[ix][0], serverData.outposts[ix][1]));
+												GLOBAL._mapOutpostIDs.push(serverData.outposts[ix][2]);
+											}
+											ix++;
+										}
+									}
+									GLOBAL._mapHome = new Point(serverData.homebase[0], serverData.homebase[1]);
+								}
+								else
+								{
+									LOGGER.Log("err", "BASE.Process Invalid home base coordinate. " + serverData.homebase);
+								}
+							}
+							if (serverData.empiredestroyed)
+							{
+								GLOBAL._empireDestroyed = serverData.empiredestroyed;
+							}
+							else
+							{
+								GLOBAL._empireDestroyed = 0;
+							}
+						}
+					}
+					else if (MapRoomManager.instance.isInMapRoom3 && GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD && Boolean(serverData.homebase))
+					{
+						GLOBAL._mapHome = new Point(serverData.homebase[0], serverData.homebase[1]);
+					}
+					GLOBAL._unreadMessages = serverData.unreadmessages;
+					resources = serverData.resources;
+					if (resources == null)
+					{
+						_resources.r1 = 1000;
+						_resources.r2 = 1000;
+						_resources.r3 = 1000;
+						_resources.r4 = 1000;
+						_resources.r1max = 10000;
+						_resources.r2max = 10000;
+						_resources.r3max = 10000;
+						_resources.r4max = 10000;
+					}
+					else
+					{
+						_resources = _resources || {};
+						_resources.r1 = new SecNum(Math.floor(resources.r1));
+						_resources.r2 = new SecNum(Math.floor(resources.r2));
+						_resources.r3 = new SecNum(Math.floor(resources.r3));
+						_resources.r4 = new SecNum(Math.floor(resources.r4));
+						_resources.r1bonus = resources.r1bonus;
+						_resources.r2bonus = resources.r2bonus;
+						_resources.r3bonus = resources.r3bonus;
+						_resources.r4bonus = resources.r4bonus;
+					}
+					if (serverData.iresources)
+					{
+						iresources = serverData.iresources;
+						_iresources.r1 = new SecNum(Math.floor(iresources.r1));
+						_iresources.r2 = new SecNum(Math.floor(iresources.r2));
+						_iresources.r3 = new SecNum(Math.floor(iresources.r3));
+						_iresources.r4 = new SecNum(Math.floor(iresources.r4));
+						_iresources.r1max = Number(iresources.r1max);
+						_iresources.r2max = Number(iresources.r2max);
+						_iresources.r3max = Number(iresources.r3max);
+						_iresources.r4max = Number(iresources.r4max);
+						if(iresources.bip){
+							_iresources.bip = Number(iresources.bip);
+						} else {
+							_iresources.bip = Number(0);
+						}
+						if(GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD && isMainYard){
+							trace("loaded max: " +  _iresources.r1max);
+							GLOBAL._iresources['r1max'] = Number(iresources.r1max) * (1 + (0.1 * _iresources.bip));
+							GLOBAL._iresources['r2max'] = Number(iresources.r2max) * (1 + (0.1 * _iresources.bip));
+							GLOBAL._iresources['r3max'] = Number(iresources.r3max) * (1 + (0.1 * _iresources.bip));
+							GLOBAL._iresources['r4max'] = Number(iresources.r4max) * (1 + (0.1 * _iresources.bip));
+							trace("total max: " +  GLOBAL._iresources['r1max']);
+						}
+					}
+					if (Boolean(serverData.updates) && serverData.updates.length > 0)
+					{
+						UPDATES.Process(serverData.updates);
+					}
+					else if (serverData.lastupdate)
+					{
+						UPDATES._lastUpdateID = Number(serverData.lastupdate);
+					}
+					else
+					{
+						UPDATES._lastUpdateID = 0;
+					}
+					if (serverData.mushrooms.l)
+					{
+						_mushroomList = serverData.mushrooms.l;
+					}
+					if (serverData.mushrooms.s)
+					{
+						_lastSpawnedMushroom = int(serverData.mushrooms.s);
+					}
+					_buildingHealthData = serverData.buildinghealthdata;
+					_buildingData = serverData.buildingdata;
+					if (!MapRoomManager.instance.isInMapRoom3)
+					{
+						for each (building in _buildingData)
+						{
+							if (building.t == 14)
+							{
+								if (isOutpost && (GLOBAL._currentCell && GLOBAL._currentCell.baseType == EnumYardType.INFERNO_OUTPOST))
+								{
+									LOGGER.Log("err", "Base ID " + _loadedBaseID + " outpost w TH bdg");
+									GLOBAL.ErrorMessage("BASE.Process outpost w TH");
+								}
+								break;
+							}
+							if (building.t == 112)
+							{
+								if (isMainYardOrInfernoMainYard && (GLOBAL._currentCell && GLOBAL._currentCell.baseType != EnumYardType.INFERNO_OUTPOST))
+								{
+									LOGGER.Log("err", "Base ID " + _loadedBaseID + " yard w OP bdg");
+									GLOBAL.ErrorMessage("BASE.Process yard w outpost");
+								}
+								break;
+							}
+						}
+					}
+					_level = serverData.level;
+					_rewards = serverData.rewards;
+					_rawGIP = serverData.buildingresources;
+					_processedGIP = {};
+					_GIP = {"r1": new SecNum(0), "r2": new SecNum(0), "r3": new SecNum(0), "r4": new SecNum(0)};
+					_lastProcessedGIP = AutoBankManager.updateLoadData(_rawGIP, _GIP, _processedGIP, _lastProcessed, _lastProcessedGIP);
+					_baseName = serverData.basename;
+					if(isMainYardOrInfernoMainYard){
+						var points:Number = Number(serverData.points);
+						if(points){
+							_baseExperience.Set(points);
+						} else {
+							_baseExperience.Set(0);
+						}
+						var basevalue:Number = Number(serverData.basevalue);
+						if(basevalue){
+							_basePower.Set(basevalue);
+						} else {
+							_basePower.Set(0);
+						}
+						_conquerorPoints = new SecNum(int(serverData.empirevalue));
+						_credits = new SecNum(int(serverData.credits));
+						GLOBAL._credits = new SecNum(int(serverData.credits));
+					}
+					_tempLoot = serverData.loot;
+					GLOBAL.SetBuildingProps();
+					_buildingsStored = {};
+					for (researchdata in serverData.researchdata)
+					{
+						if (serverData.researchdata[researchdata])
+						{
+							_buildingsStored[researchdata] = new SecNum(serverData.researchdata[researchdata]);
+						}
+					}
+					if (GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD)
+					{
+						trace("load resource capacity");
+						if (isMainYard && _userID == LOGIN._playerID){
+							trace("load main yard stats 1");
+							QUESTS._global.gift_accept = 50;
+							QUESTS._global.bonus_fan = 1;
+							QUESTS._global.goldmushroomspicked = 50;
+							QUESTS._global.mushroomspicked = 200;
+							QUESTS.Check("level_up", _level);
+						}
+						kx = 1;
+						while (kx < 5)
+						{
+							GLOBAL._resources["r" + kx] = new SecNum(_resources["r" + kx].Get());
+							GLOBAL._iresources["r" + kx] = new SecNum(_iresources["r" + kx].Get());
+							kx++;
+						}
+						if(isMainYard){
+							trace("load main yard stats 2");
+							if (serverData.stats.mob){
+								QUESTS._global.monstersblended = serverData.stats.mob;
+							}
+							if (serverData.stats.mobg){
+								QUESTS._global.monstersblendedgoo = serverData.stats.mobg;
+							}
+							if (serverData.stats.assault_to_1_0){
+								QUESTS._global.assault_to_1_0 = serverData.stats.assault_to_1_0;
+							}
+							if (serverData.stats.assault_to_1_1){
+								QUESTS._global.assault_to_1_1 = serverData.stats.assault_to_1_1;
+							}
+							if (serverData.stats.assault_to_1_2){
+								QUESTS._global.assault_to_1_2 = serverData.stats.assault_to_1_2;
+							}
+							if (serverData.stats.assault_to_1_3){
+								QUESTS._global.assault_to_1_3 = serverData.stats.assault_to_1_3;
+							}
+							if (serverData.stats.assault_to_2){
+								QUESTS._global.assault_to_2 = serverData.stats.assault_to_2;
+							}
+							if (serverData.stats.assault_to_3){
+								QUESTS._global.assault_to_3 = serverData.stats.assault_to_3;
+							}
+							if (serverData.stats.assault_to_4){
+								QUESTS._global.assault_to_4 = serverData.stats.assault_to_4;
+							}
+							if (serverData.stats.assault_mo_1){
+								QUESTS._global.assault_mo_1 = serverData.stats.assault_mo_1;
+							}
+							if (serverData.stats.assault_mo_2){
+								QUESTS._global.assault_mo_2 = serverData.stats.assault_mo_2;
+							}
+							if (serverData.stats.assault_mo_3){
+								QUESTS._global.assault_mo_3 = serverData.stats.assault_mo_3;
+							}
+							if (serverData.stats.assault_mo_4){
+								QUESTS._global.assault_mo_4 = serverData.stats.assault_mo_4;
+							}
+							if (serverData.stats.assault_ro && GLOBAL.assault_ro == 0){
+								GLOBAL.assault_ro = serverData.stats.assault_ro;
+								QUESTS._global.assault_ro = serverData.stats.assault_ro;
+							} else {
+								QUESTS._global.assault_ro = GLOBAL.assault_ro;
+							}
+							if (serverData.stats.assault_sh && GLOBAL.assault_sh == 0){
+								GLOBAL.assault_sh = serverData.stats.assault_sh;
+								QUESTS._global.assault_sh = serverData.stats.assault_sh;
+							} else {
+								QUESTS._global.assault_sh = GLOBAL.assault_sh;
+							}
+							if (serverData.stats.assault_de && GLOBAL.assault_de == 0){
+								GLOBAL.assault_de = serverData.stats.assault_de;
+								QUESTS._global.assault_de = serverData.stats.assault_de;
+							} else {
+								QUESTS._global.assault_de = GLOBAL.assault_de;
+							}
+							if (serverData.stats.assault_towers && GLOBAL.assault_towers == 0){
+								GLOBAL.assault_towers = serverData.stats.assault_towers;
+								QUESTS._global.assault_towers = serverData.stats.assault_towers;
+							} else {
+								QUESTS._global.assault_towers = GLOBAL.assault_towers;
+							}
+							if (serverData.stats.assault_monsters && GLOBAL.assault_monsters == 0){
+								GLOBAL.assault_monsters = serverData.stats.assault_monsters;
+								QUESTS._global.assault_monsters = serverData.stats.assault_monsters;
+							} else {
+								QUESTS._global.assault_monsters = GLOBAL.assault_monsters;
+							}
+						}
+					}
+					NewPopupSystem.instance.Setup(serverData.stats.popupdata);
+					if (serverData.stats.updateid)
+					{
+						GLOBAL._whatsnewid = serverData.stats.updateid;
+					}
+					if (serverData.stats.updateid_mr2 != null)
+					{
+						GLOBAL._mr2TutorialId = Math.max(GLOBAL._mr2TutorialId, serverData.stats.updateid_mr2);
+					}
+					else
+					{
+						GLOBAL._mr2TutorialId = Math.max(GLOBAL._mr2TutorialId, MapRoomManager.instance.isInMapRoom2 ? 1 : 0);
+					}
+					MapRoom3Tutorial.instance.importData(serverData);
+					GLOBAL._otherStats = {"s": 1};
+					if (serverData.stats.other)
+					{
+						GLOBAL._otherStats = serverData.stats.other;
+					}
+					if (GLOBAL.StatGet(BUILDING11.CHANGED_TO_MR2) == 1)
+					{
+						LOGGER.StatB({"st1": "world_map", "st2": "enter"}, MapRoomManager.instance.worldID);
+						GLOBAL.StatSet(BUILDING11.CHANGED_TO_MR2, 2);
+					}
+					if (serverData.wmid)
+					{
+						_wmID = serverData.wmid;
+					}
+					_tribeIndex = serverData.tribe;
+					if (GLOBAL._otherStats && GLOBAL._otherStats.descentLvl && GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD)
+					{
+						if (Boolean(WMBASE._descentBases) && WMBASE._descentBases.length > 0)
+						{
+							if (MAPROOM_DESCENT.DescentLevel > 1)
+							{
+								MAPROOM_DESCENT._descentLvl = MAPROOM_DESCENT.DescentLevel;
+								GLOBAL.StatSet("descentLvl", MAPROOM_DESCENT._descentLvl);
+							}
+						}
+						else if (MAPROOM_DESCENT._descentLvl < serverData.stats.other.descentLvl)
+						{
+							MAPROOM_DESCENT._descentLvl = serverData.stats.other.descentLvl;
+						}
+					}
+					GLOBAL.player.importAcademyData(serverData.academy);
+					if (GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD && isMainYardOrInfernoMainYard)
+					{
+						SiegeWeapons.importWeapons(serverData.siege);
+					}
+					else
+					{
+						_oldSiegeData = serverData.siege;
+					}
+					EFFECTS.Setup(serverData.effects);
+					if (Boolean(serverData.monsters) && Boolean(serverData.monsters.housed))
+					{
+						GLOBAL.player.fillMonsterData(serverData.monsters.housed);
+					}
+					else if (serverData.monsters)
+					{
+						GLOBAL.player.fillMonsterData(serverData.monsters);
+					}
+					_rawMonsters = serverData.monsters;
+					TRIBES.Setup();
+					if (serverData.wmstatus)
+					{
+						WMBASE.Data(serverData.wmstatus);
+					}
+					else
+					{
+						WMBASE.Clear();
+					}
+					WMATTACK.Setup(serverData.aiattacks);
+					if (GLOBAL.mode == GLOBAL.e_BASE_MODE.WMATTACK || GLOBAL.mode == GLOBAL.e_BASE_MODE.WMVIEW || GLOBAL.mode == GLOBAL.e_BASE_MODE.IWMATTACK)
+					{
+						WMBASE.Setup();
+					}
+					TUTORIAL.Setup();
+					if (GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD)
+					{
+						if (BASE.isInfernoMainYardOrOutpost)
+						{
+							TUTORIAL._stage = TUTORIAL._endstage;
+						}
+						else
+						{
+							TUTORIAL._stage = int(serverData.tutorialstage);
+						}
+						TUTORIAL.Tick();
+					}
+					WORKERS.Setup();
+					QUEUE.Setup();
+					STORE.Data(serverData.storeitems, serverData.storedata, serverData.inventory);
+					CREATURELOCKER.Data(serverData.lockerdata);
+					QUESTS.Data(serverData.quests);
+					MONSTERBAITER.Setup(serverData.monsterbaiter);
+					if (serverData.chatenabled != null)
+					{
+						Chat._chatEnabled = serverData.chatenabled;
+						if (Chat.flagsShouldChatExist())
+						{
+							Chat.initChat();
+						}
+					}
+					if (serverData.stats.achievements)
+					{
+						ACHIEVEMENTS.Data(serverData.stats.achievements);
+						ACHIEVEMENTS.CheckRetroactiveAchievments();
+					}
+					else if (serverData.quests)
+					{
+						if (GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD)
+						{
+							ACHIEVEMENTS._stats.upgrade_champ1 = QUESTS._global.upgrade_champ1;
+							ACHIEVEMENTS._stats.upgrade_champ2 = QUESTS._global.upgrade_champ2;
+							ACHIEVEMENTS._stats.upgrade_champ3 = QUESTS._global.upgrade_champ3;
+							ACHIEVEMENTS._stats.monstersblended = QUESTS._global.monstersblended;
+							ACHIEVEMENTS._stats.wm2hall = QUESTS._global.destroy_tribe2;
+							if (serverData.alliancedata)
+							{
+								if (serverData.alliancedata.alliance_id)
+								{
+								ACHIEVEMENTS._stats.alliance = 1;
+								}
+							}
+							ACHIEVEMENTS.Check();
+						}
+					}
+					_guardianData.length = 0;
+					if (serverData.champion)
+					{
+						champion = serverData.champion;
+						if (champion.length > 0)
+						{
+							existingGuardians = new Dictionary();
+							playerGuardianIndex = 0;
+							guardianIndex = 0;
+							addedGuardian = false;
+							unfrozenFound = false;
+							j = 0;
+							while (j < champion.length)
+							{
+								if (Boolean(champion[j].t) && !existingGuardians[champion[j].t])
+								{
+									existingGuardians[champion[j].t] = true;
+									_guardianData[guardianIndex] = {};
+									addedGuardian = true;
+									if (champion[j].nm)
+									{
+										_guardianData[guardianIndex].nm = champion[j].nm;
+									}
+									_guardianData[guardianIndex].t = champion[j].t;
+									if (champion[j].ft)
+									{
+										_guardianData[guardianIndex].ft = champion[j].ft;
+									}
+									if (champion[j].fd)
+									{
+										_guardianData[guardianIndex].fd = champion[j].fd;
+									}
+									else
+									{
+										_guardianData[guardianIndex].fd = 0;
+									}
+									if (champion[j].l)
+									{
+										_guardianData[guardianIndex].l = new SecNum(champion[j].l);
+									}
+									else
+									{
+										_guardianData[guardianIndex].l = new SecNum(0);
+									}
+									if (champion[j].hp)
+									{
+										_guardianData[guardianIndex].hp = new SecNum(champion[j].hp);
+									}
+									else
+									{
+										_guardianData[guardianIndex].hp = new SecNum(0);
+									}
+									if (champion[j].fb)
+									{
+										_guardianData[guardianIndex].fb = new SecNum(champion[j].fb);
+									}
+									else
+									{
+										_guardianData[guardianIndex].fb = new SecNum(0);
+									}
+									if (champion[j].pl)
+									{
+										_guardianData[guardianIndex].pl = new SecNum(champion[j].pl);
+									}
+									else
+									{
+										_guardianData[guardianIndex].pl = new SecNum(0);
+									}
+									if (champion[j].status is int)
+									{
+										_guardianData[guardianIndex].status = champion[j].status;
+									}
+									else
+									{
+										_guardianData[guardianIndex].status = ChampionBase.k_CHAMPION_STATUS_NORMAL;
+									}
+									if (_guardianData[guardianIndex].t != 5)
+									{
+										if (unfrozenFound && _guardianData[guardianIndex].status == ChampionBase.k_CHAMPION_STATUS_NORMAL)
+										{
+											_guardianData[guardianIndex].status = ChampionBase.k_CHAMPION_STATUS_FROZEN;
+										}
+										else if (!unfrozenFound && _guardianData[guardianIndex].status == ChampionBase.k_CHAMPION_STATUS_NORMAL)
+										{
+											unfrozenFound = true;
+										}
+									}
+								}
+								if (GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD && isMainYard && Boolean(_guardianData[j]))
+								{
+								GLOBAL._playerGuardianData[j] = _guardianData[j];
+								}
+								if (addedGuardian)
+								{
+								guardianIndex++;
+								}
+								addedGuardian = false;
+								j++;
+							}
+						}
+					}
+					_attackerArray = [];
+					_attackerNameArray = [];
+					if (GLOBAL.mode != GLOBAL.e_BASE_MODE.WMATTACK && GLOBAL.mode != GLOBAL.e_BASE_MODE.WMVIEW && Boolean(serverData.attacks))
+					{
+						_currentAttacks = serverData.attacks;
+						TauntB = function(param1:int, param2:int):Function
+						{
+							var n:int = param1;
+							var fbid:int = param2;
+							return function(param1:MouseEvent):void
+							{
+								POPUPS.Next();
+							};
+						};
+						attacksArr = serverData.attacks;
+						attackCount = 0;
+						for each (attackObj in attacksArr)
+						{
+							if (attackObj.seen) continue;
+							
+							attackCount++;
+							found = false;
+							for each (listed in _attackerArray)
+							{
+								if (listed.fbid == attackObj.fbid)
+								{
+								found = true;
+								++listed.count;
+								listed.lastTime = attackObj.starttime;
+								}
+							}
+							if (!found)
+							{
+								_attackerNameArray.push([0, attackObj.name]);
+								_attackerArray.push({
+										"fbid": attackObj.fbid,
+										"name": attackObj.name,
+										"pic": attackObj.pic_square,
+										"friend": attackObj.friend,
+										"count": 1,
+										"lastTime": attackObj.starttime
+									});
+							}
+						}
+						for each (attackObj in _attackerArray)
+						{
+							popupMC = new popup_attackedme();
+							popupMC.gotoAndStop(1);
+							if (attackObj.count == 1)
+							{
+								popupMC.tA.htmlText = KEYS.Get("pop_attackedyou", {
+										"v1": attackObj.name,
+										"v2": GLOBAL.ToTime(_currentTime - int(attackObj.lastTime), true)
+									});
+							}
+							else
+							{
+								popupMC.tA.htmlText = KEYS.Get("pop_attackedyouxtimes", {
+										"v1": attackObj.name,
+										"v2": attackObj.count,
+										"v3": GLOBAL.ToTime(_currentTime - int(attackObj.lastTime), true)
+									});
+							}
+							if (attackObj.pic)
+							{
+								onImageLoad = function(param1:Event):void
+								{
+								loader.height = 50;
+								loader.width = 50;
+								};
+								LoadImageError = function(param1:IOErrorEvent):void
+								{
+								};
+								loader = new Loader();
+								loader.contentLoaderInfo.addEventListener(IOErrorEvent.IO_ERROR, LoadImageError, false, 0, true);
+								loader.contentLoaderInfo.addEventListener(Event.COMPLETE, onImageLoad);
+								popupMC.mcPic.mcBG.addChild(loader);
+								loader.load(new URLRequest(attackObj.pic));
+							}
+							if (attackObj.friend == 1)
+							{
+								popupMC.bShare.SetupKey("btn_talktrash");
+								popupMC.bShare.Highlight = true;
+								popupMC.bShare.addEventListener(MouseEvent.CLICK, function TauntA(param1:MouseEvent):void
+								{
+									var _loc2_:MovieClip = param1.target.parent;
+									_loc2_.gotoAndStop(2);
+									var _loc3_:int = 1;
+									while (_loc3_ < 4)
+									{
+										_loc2_["b" + _loc3_].gotoAndStop(_loc3_);
+										_loc2_["b" + _loc3_].buttonMode = true;
+										_loc2_["b" + _loc3_].addEventListener(MouseEvent.CLICK, TauntB(_loc3_, attackObj.fbid));
+										_loc3_++;
+									}
+								});
+							}
+							else
+							{
+								popupMC.bShare.visible = false;
+							}
+							POPUPS.Push(popupMC);
+						}
+					}
+					_ownerName = GLOBAL.mode == GLOBAL.e_BASE_MODE.WMATTACK || GLOBAL.mode == GLOBAL.e_BASE_MODE.WMVIEW ? String(TRIBES.TribeForBaseID(_wmID, 0, _tribeIndex).name) : String(serverData.name);
+					_ownerPic = GLOBAL.mode == GLOBAL.e_BASE_MODE.WMATTACK || GLOBAL.mode == GLOBAL.e_BASE_MODE.WMVIEW ? String(TRIBES.TribeForBaseID(_wmID, 0, _tribeIndex).profilepic) : String(serverData.pic_square);
+					if (!GLOBAL._flags.viximo && !GLOBAL._flags.kongregate)
+					{
+						if (serverData.promotiontimer)
+						{
+							if (serverData.promotiontimer is int)
+							{
+								promoTimer = int(serverData.promotiontimer);
+								GLOBAL._flags.hasPromo = 1;
+							}
+							else if (serverData.promotiontimer is String && serverData.promotiontimer == "purchasereceive")
+							{
+								if (serverData.purchasereceive)
+								{
+								promoItemsArr = serverData.purchasereceive;
+								BUY.purchaseProcess(promoItemsArr);
+								BUY.purchaseComplete(serverData.promotiontimer);
+								GLOBAL._flags.hasPromo = 1;
+								}
+							}
+						}
+					}
+					if (!GLOBAL._flags.viximo && !GLOBAL._flags.kongregate)
+					{
+						if (serverData.fbpromos)
+						{
+							promoID = [];
+							promoGifts = [];
+							if (serverData.fbpromos)
+							{
+								if (serverData.fbpromos.ids)
+								{
+								promoID = serverData.fbpromos.ids;
+								}
+								if (promoGifts)
+								{
+								promoGifts = serverData.fbpromos.items;
+								}
+								if (Boolean(promoID) && Boolean(promoGifts))
+								{
+								_pendingFBPromo = 1;
+								GLOBAL._flags.hasFBPromo = 1;
+								if (promoGifts)
+								{
+									BUY.purchaseProcess(promoGifts);
+									BUY.purchaseComplete("biggulp");
+								}
+								if (promoID)
+								{
+									_pendingFBPromoIDs = promoID;
+								}
+								}
+								GLOBAL._flags.hasPromo = 1;
+							}
+						}
+					}
+					_tempGifts = serverData.gifts;
+					if (serverData.sentgifts)
+					{
+						_tempSentGifts = serverData.sentgifts;
+					}
+					if (serverData.sentinvites)
+					{
+						_tempSentInvites = serverData.sentinvites;
+					}
+					else
+					{
+						_tempSentInvites = [];
+					}
+					Build();
+					WMBASE.CheckQuests();
+				}
+				else if (GLOBAL._reloadonerror)
+				{
+					GLOBAL.CallJS("reloadPage");
+				}
+				else if (GLOBAL._local && serverData.error == "Incorrect map version")
+				{
+					BASE.Load();
+				}
+				else
+				{
+					GLOBAL.Message(serverData.error);
+					MAPROOM.Show();
+					PLEASEWAIT.Hide();
+				}
+				LOGGER.StatB({"st1": MapRoomManager.instance.mapRoomVersion + "_loadmode", "st2": BASE.yardType}, GLOBAL.mode);
+				if (Boolean(LOGIN._playerID) && int(LOGIN._playerID % 100) == 0)
+				{
+					LOGGER.Stat([LOGGER.STAT_MEM, "loadbase", (System.totalMemory / 1024 / 1024).toString(), int(getTimer() * 0.001).toString()]);
+				}
+			}
+			catch (error:Error)
+			{
+				GLOBAL.Message(KEYS.Get("err_loading_base"));
+				LOGGER.Log("err", "Failed to load user base with error: " + error.getStackTrace());
+			}
+		}
 
       private static function handleBaseLoadError(param1:IOErrorEvent):void
       {
@@ -5892,23 +5865,22 @@ package
 		{
 			if(isMainYardOrInfernoMainYard){
 				var power:SecNum = new SecNum(0);
-				var _loc2_:Vector.<Object> = InstanceManager.getInstancesByClass(BFOUNDATION);
-				var _loc3_:BFOUNDATION = null;
+				var buildings:Vector.<Object> = InstanceManager.getInstancesByClass(BFOUNDATION);
+				var building:BFOUNDATION = null;
 				var level:int = 0;
-				var _loc6_:Object = null;
-				var _loc7_:Object = null;
-				for each (_loc3_ in _loc2_)
+				var props:Object = null;
+				for each (building in buildings)
 				{
-					if (_loc3_._class != "decoration" && _loc3_._class != "enemy" && _loc3_._class != "wall" && _loc3_._class != "immovable" && _loc3_._class != "trap" && _loc3_ !== GLOBAL._newBuilding && _loc3_._countdownBuild.Get() <= 0)
+					if (building._class != "decoration" && building._class != "enemy" && building._class != "wall" && building._class != "immovable" && building._class != "trap" && building !== GLOBAL._newBuilding && building._countdownBuild.Get() <= 0)
 					{
-						level = _loc3_._lvl.Get();
+						level = building._lvl.Get();
 						if (level <= 0)
 						{
 							level = 1;
 						}
-						if (Boolean(_loc6_ = GLOBAL._buildingProps[_loc3_._type - 1]) && Boolean(_loc6_.hp[level - 1]))
+						if (Boolean(props = GLOBAL._buildingProps[building._type - 1]) && Boolean(props.hp[level - 1]))
 						{
-							power.Add(_loc6_.hp[level - 1]);
+							power.Add(props.hp[level - 1]);
 						}
 					}
 				}

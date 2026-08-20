@@ -1088,12 +1088,10 @@ package
 							_iresources.bip = Number(0);
 						}
 						if(GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD && isMainYard){
-							trace("loaded max: " +  _iresources.r1max);
 							GLOBAL._iresources['r1max'] = Number(iresources.r1max) * (1 + (0.1 * _iresources.bip));
 							GLOBAL._iresources['r2max'] = Number(iresources.r2max) * (1 + (0.1 * _iresources.bip));
 							GLOBAL._iresources['r3max'] = Number(iresources.r3max) * (1 + (0.1 * _iresources.bip));
 							GLOBAL._iresources['r4max'] = Number(iresources.r4max) * (1 + (0.1 * _iresources.bip));
-							trace("total max: " +  GLOBAL._iresources['r1max']);
 						}
 					}
 					if (Boolean(serverData.updates) && serverData.updates.length > 0)
@@ -1178,9 +1176,7 @@ package
 					}
 					if (GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD)
 					{
-						trace("load resource capacity");
 						if (isMainYard && _userID == LOGIN._playerID){
-							trace("load main yard stats 1");
 							QUESTS._global.gift_accept = 50;
 							QUESTS._global.bonus_fan = 1;
 							QUESTS._global.goldmushroomspicked = 50;
@@ -1195,7 +1191,6 @@ package
 							kx++;
 						}
 						if(isMainYard){
-							trace("load main yard stats 2");
 							if (serverData.stats.mob){
 								QUESTS._global.monstersblended = serverData.stats.mob;
 							}
@@ -1981,9 +1976,6 @@ package
          {
             LOGGER.Log("err", "Town Hall Missing");
          }
-         // Comment: RebuildTH() is commented out as it's a dangerous bad-practice implementation from
-         // the original game, causing unintended behavior.
-         // RebuildTH();
          var bFoundation:Vector.<Object> = InstanceManager.getInstancesByClass(BFOUNDATION);
          if (GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD && GLOBAL.townHall && isMainYardOrInfernoMainYard && !GLOBAL._aiDesignMode)
          {
@@ -5562,7 +5554,6 @@ package
 
 		public static function SaveDeltaResources():void
 		{
-			trace("SaveDeltaResources");
 			var _loc1_:int = 0;
 			if (_deltaResources.dirty)
 			{
@@ -5588,7 +5579,6 @@ package
 
 	  public static function SaveInfernoDeltaResources():void
       {
-		trace("SaveInfernoDeltaResources");
          var _loc1_:int = 0;
          if (_ideltaResources.dirty)
          {
@@ -5896,7 +5886,7 @@ package
 			if(current >= MAX_EXPERIENCE) return;
 			var add_value:Number = value;
 			if(MapRoomManager.instance.isInMapRoom3){
-				add_value *= 1.0 + (BASE._conquerorPoints.Get() * 0.001);
+				add_value *= 1.0 + BASE.GetExperienceBuff();
 			}
 			add_value = Math.floor(add_value);
 			var newExperience:Number = current + add_value;
@@ -6230,571 +6220,268 @@ package
          return _loc3_;
       }
 
-      public static function getTemplate():BaseTemplate
-      {
-         var _loc1_:BaseTemplate = null;
-         var _loc2_:Vector.<BFOUNDATION> = null;
-         var _loc3_:BFOUNDATION = null;
-         var _loc4_:Point = null;
-         _loc1_ = new BaseTemplate();
-         _loc1_.name = _baseName;
-         _loc2_ = getYardPlannerBuildings();
-         for each (_loc3_ in _loc2_)
-         {
-            _loc4_ = GRID.FromISO(_loc3_.x, _loc3_.y);
-            _loc1_.addNode(new BaseTemplateNode(_loc4_.x, _loc4_.y, _loc3_._id, _loc3_._type));
-         }
-         return _loc1_;
-      }
+		public static function getTemplate():BaseTemplate
+		{
+			var _loc1_:BaseTemplate = null;
+			var _loc2_:Vector.<BFOUNDATION> = null;
+			var _loc3_:BFOUNDATION = null;
+			var _loc4_:Point = null;
+			_loc1_ = new BaseTemplate();
+			_loc1_.name = _baseName;
+			_loc2_ = getYardPlannerBuildings();
+			for each (_loc3_ in _loc2_)
+			{
+				_loc4_ = GRID.FromISO(_loc3_.x, _loc3_.y);
+				_loc1_.addNode(new BaseTemplateNode(_loc4_.x, _loc4_.y, _loc3_._id, _loc3_._type));
+			}
+			return _loc1_;
+		}
 
-      public static function getYardPlannerBuildings():Vector.<BFOUNDATION>
-      {
-         var _loc1_:Vector.<Object> = null;
-         var _loc2_:Vector.<BFOUNDATION> = null;
-         var _loc3_:BFOUNDATION = null;
-         _loc1_ = InstanceManager.getInstancesByClass(BFOUNDATION);
-         _loc2_ = new Vector.<BFOUNDATION>();
-         for each (_loc3_ in _loc1_)
-         {
-            if (_loc3_._type != 7)
-            {
-               _loc2_.push(_loc3_);
-            }
-         }
-         return _loc2_;
-      }
+		public static function getYardPlannerBuildings():Vector.<BFOUNDATION>
+		{
+			var _loc1_:Vector.<Object> = null;
+			var _loc2_:Vector.<BFOUNDATION> = null;
+			var _loc3_:BFOUNDATION = null;
+			_loc1_ = InstanceManager.getInstancesByClass(BFOUNDATION);
+			_loc2_ = new Vector.<BFOUNDATION>();
+			for each (_loc3_ in _loc1_)
+			{
+				if (_loc3_._type != 7)
+				{
+					_loc2_.push(_loc3_);
+				}
+			}
+			return _loc2_;
+		}
 
-      public static function isBuildingIgnoredInYardPlannerSave(param1:BFOUNDATION):Boolean
-      {
-         return param1._class == "enemy";
-      }
+		public static function isBuildingIgnoredInYardPlannerSave(param1:BFOUNDATION):Boolean
+		{
+			return param1._class == "enemy";
+		}
 
-      public static function getBuildingByID(param1:uint):BFOUNDATION
-      {
-         var _loc2_:Vector.<Object> = null;
-         var _loc3_:BFOUNDATION = null;
-         _loc2_ = InstanceManager.getInstancesByClass(BFOUNDATION);
-         for each (_loc3_ in _loc2_)
-         {
-            if (_loc3_._id == param1)
-            {
-               return _loc3_;
-            }
-         }
-         return null;
-      }
+		public static function getBuildingByID(param1:uint):BFOUNDATION
+		{
+			var _loc2_:Vector.<Object> = null;
+			var _loc3_:BFOUNDATION = null;
+			_loc2_ = InstanceManager.getInstancesByClass(BFOUNDATION);
+			for each (_loc3_ in _loc2_)
+			{
+				if (_loc3_._id == param1)
+				{
+					return _loc3_;
+				}
+			}
+			return null;
+		}
 
-      public static function RebuildTH(param1:Boolean = false):void
-      {
-         var _loc2_:Point = null;
-         var _loc3_:BFOUNDATION = null;
-         var _loc4_:int = 0;
-         if (!isMainYard && m_yardType !== EnumYardType.INFERNO_YARD)
-         {
-            return;
-         }
-         if (!param1 && (GLOBAL.townHall is ResourceOutpost || GLOBAL.townHall is GuardTower || GLOBAL.townHall is OutpostDefender))
-         {
-            return;
-         }
-         CalcBaseValue();
-         if (BASE._baseExperience.Get() >= 2000000)
-         {
-            _loc4_ = CaluclateExpectedTownHallLevel();
-            if (GLOBAL.townHall)
-            {
-               if (GLOBAL.townHall._lvl.Get() < _loc4_)
-               {
-                  if (GLOBAL.townHall._countdownUpgrade.Get() > 0)
-                  {
-                     GLOBAL.townHall.Upgraded();
-                     _loc4_ = CaluclateExpectedTownHallLevel();
-                  }
-                  if (GLOBAL.townHall._lvl.Get() < _loc4_)
-                  {
-                     GLOBAL.townHall._lvl.Set(_loc4_ - 1);
-                     GLOBAL.townHall.Upgraded();
-                  }
-               }
-            }
-            else
-            {
-               _loc2_ = new Point(-800, -40);
-               _loc3_ = BASE.addBuildingC(14);
-               ++BASE._buildingCount;
-               _loc3_.Setup({
-                        "t": 14,
-                        "X": _loc2_.x,
-                        "Y": _loc2_.y,
-                        "id": BASE._buildingCount,
-                        "l": _loc4_
-                     });
-               _loc2_ = GRID.ToISO(_loc2_.x, _loc2_.y, 0);
-               MAP.FocusTo(_loc2_.x, _loc2_.y, 2);
-               GLOBAL.Message(KEYS.Get("msg_rebuildTH"));
-            }
-         }
-         else if (!GLOBAL.townHall || param1)
-         {
-            _loc2_ = new Point(-800, -40);
-            _loc3_ = BASE.addBuildingC(14);
-            ++BASE._buildingCount;
-            _loc4_ = CaluclateExpectedTownHallLevel();
-            _loc3_.Setup({
-                     "t": 14,
-                     "X": _loc2_.x,
-                     "Y": _loc2_.y,
-                     "id": BASE._buildingCount,
-                     "l": _loc4_
-                  });
-            _loc2_ = GRID.ToISO(_loc2_.x, _loc2_.y, 0);
-            MAP.FocusTo(_loc2_.x, _loc2_.y, 2);
-            GLOBAL.Message(KEYS.Get("msg_rebuildTH"));
-         }
-      }
+		public static function addEventBaseException(param1:Number):void
+		{
+			if (s_eventBases.indexOf(param1) == -1)
+			{
+				s_eventBases.push(param1);
+			}
+		}
 
-      private static function CaluclateExpectedTownHallLevel():int
-      {
-         var _loc1_:int = 0;
-         var _loc2_:int = 0;
-         var _loc3_:int = 0;
-         var _loc4_:int = 0;
-         var _loc5_:int = 0;
-         var _loc6_:int = 0;
-         var _loc7_:BFOUNDATION = null;
-         var _loc8_:int = 0;
-         var _loc9_:int = 0;
-         var _loc10_:int = 0;
-         var _loc11_:int = 0;
-         var _loc12_:int = 0;
-         var _loc13_:int = 0;
-         var _loc14_:int = 0;
-         var _loc15_:int = 0;
-         var _loc16_:int = 0;
-         var _loc17_:int = 0;
-         var _loc18_:int = 0;
-         var _loc19_:int = 0;
-         var _loc20_:int = 0;
-         var _loc21_:int = 0;
-         var _loc22_:int = 0;
-         var _loc23_:int = 0;
-         var _loc24_:int = 0;
-         var _loc25_:int = 0;
-         var _loc26_:int = 0;
-         var _loc27_:int = 0;
-         var _loc28_:Boolean = false;
-         var _loc29_:int = 0;
-         var _loc30_:int = 0;
-         var _loc31_:int = 0;
-         var _loc32_:int = 0;
-         var _loc33_:Vector.<Object> = null;
-         var _loc34_:BFOUNDATION = null;
-         _loc1_ = 1;
-         _loc6_ = 0;
-         _loc16_ = 0;
-         _loc27_ = 0;
-         _loc28_ = false;
-         _loc32_ = 0;
-         _loc33_ = InstanceManager.getInstancesByClass(BTOWER);
-         for each (_loc34_ in _loc33_)
-         {
-            if (_loc34_._type == 20 || _loc34_._type == 142)
-            {
-               _loc3_++;
-            }
-            if (_loc34_._type == 21 || _loc34_._type == 143)
-            {
-               _loc2_++;
-            }
-            if (_loc34_._type == 129 || _loc34_._type == 146)
-            {
-               _loc5_++;
-            }
-            if (_loc34_._type == 130)
-            {
-               _loc4_++;
-            }
-            if (_loc34_._type == 132)
-            {
-               _loc6_++;
-            }
-         }
-         for each (_loc7_ in buildings)
-         {
-            if ((_loc7_._type == 1 || _loc7_._type == 2 || _loc7_._type == 3 || _loc7_._type == 4) && _loc26_ < _loc7_._hpLvl)
-            {
-               _loc26_ = _loc7_._hpLvl;
-            }
-            else if (_loc7_._type == 5)
-            {
-               _loc17_ = _loc7_._hpLvl;
-            }
-            else if (_loc7_._type == 6 && _loc27_ < _loc7_._hpLvl)
-            {
-               _loc27_ = _loc7_._hpLvl;
-            }
-            else if (_loc7_._type == 8)
-            {
-               _loc19_ = _loc7_._hpLvl;
-            }
-            else if (_loc7_._type == 9)
-            {
-               _loc8_ = _loc7_._hpLvl;
-            }
-            else if (_loc7_._type == 10)
-            {
-               _loc10_ = _loc7_._hpLvl;
-            }
-            else if (_loc7_._type == 13 && _loc20_ < _loc7_._hpLvl)
-            {
-               _loc20_ = _loc7_._hpLvl;
-            }
-            else if (_loc7_._type == 15 && _loc21_ < _loc7_._hpLvl)
-            {
-               _loc21_ = _loc7_._hpLvl;
-            }
-            else if (_loc7_._type == 16)
-            {
-               _loc12_ = _loc7_._hpLvl;
-            }
-            else if (_loc7_._type == 17 && _loc25_ < _loc7_._hpLvl)
-            {
-               _loc25_ = _loc7_._hpLvl;
-            }
-            else if (_loc7_._type == 19)
-            {
-               _loc13_ = _loc7_._hpLvl;
-            }
-            else if ((_loc7_._type == 20 || _loc7_._type == 142) && _loc24_ < _loc7_._hpLvl)
-            {
-               _loc24_ = _loc7_._hpLvl;
-            }
-            else if ((_loc7_._type == 21 || _loc7_._type == 143) && _loc18_ < _loc7_._hpLvl)
-            {
-               _loc18_ = _loc7_._hpLvl;
-            }
-            else if (_loc7_._type == 22)
-            {
-               _loc11_ = _loc7_._hpLvl;
-            }
-            else if (_loc7_._type == 23)
-            {
-               _loc15_ = _loc7_._hpLvl;
-            }
-            else if (_loc7_._type == 24)
-            {
-               _loc28_ = true;
-            }
-            else if (_loc7_._type == 25)
-            {
-               _loc14_ = _loc7_._hpLvl;
-            }
-            else if (_loc7_._type == 26 && _loc23_ < _loc7_._hpLvl)
-            {
-               _loc23_ = _loc7_._hpLvl;
-            }
-            else if (_loc7_._type == 51)
-            {
-               _loc9_ = _loc7_._hpLvl;
-            }
-            else if (_loc7_._type == 115)
-            {
-               _loc16_ = _loc7_._hpLvl;
-            }
-            else if (_loc7_._type == 116)
-            {
-               _loc22_ = _loc7_._hpLvl;
-            }
-            else if (_loc7_._type == 128 && _loc29_ < _loc7_._hpLvl)
-            {
-               _loc29_ = _loc7_._hpLvl;
-            }
-            else if ((_loc7_._type == 129 || _loc7_._type == 146) && _loc31_ < _loc7_._hpLvl)
-            {
-               _loc31_ = _loc7_._hpLvl;
-            }
-            else if (_loc7_._type == 130 && _loc30_ < _loc7_._hpLvl)
-            {
-               _loc30_ = _loc7_._hpLvl;
-            }
-            else if (_loc7_._type == 132 && _loc32_ < _loc7_._hpLvl)
-            {
-               _loc32_ = _loc7_._hpLvl;
-            }
-         }
-         if (!BASE.isInfernoMainYardOrOutpost)
-         {
-            if (QUESTS._global.brlvl >= 4 || QUESTS._global.b6lvl >= 2 || _loc8_ >= 2 || _loc28_ || _loc17_ >= 2 || _loc19_ > 0)
-            {
-               _loc1_ = 2;
-            }
-            if (QUESTS._global.brlvl >= 6 || QUESTS._global.b6lvl >= 4 || QUESTS._global.b15lvl >= 2 || _loc20_ >= 2 || _loc21_ >= 2 || _loc17_ >= 3 || _loc3_ >= 4 || _loc2_ >= 4 || _loc19_ > 0 || _loc12_ > 0 || _loc9_ > 0 || _loc10_ > 0 || _loc11_ > 0 || _loc19_ >= 2 || _loc21_ >= 2 || _loc23_ > 0 || _loc11_ > 0)
-            {
-               _loc1_ = 3;
-            }
-            if (QUESTS._global.brlvl >= 8 || QUESTS._global.b6lvl >= 7 || QUESTS._global.b15lvl >= 3 || QUESTS._global.b23lvl >= 1 || QUESTS._global.b25lvl >= 1 || _loc21_ >= 3 || _loc23_ >= 2 || _loc11_ >= 2 || QUESTS._global.b19lvl > 0 || _loc3_ >= 5 || _loc2_ >= 5 || _loc13_ > 0 || _loc14_ > 0 || _loc16_ > 0 || _loc15_ > 0 || _loc20_ >= 3 || _loc19_ >= 4 || _loc17_ >= 4)
-            {
-               _loc1_ = 4;
-            }
-            if (_loc19_ >= 4 || _loc17_ >= 5 || _loc21_ >= 4 || _loc13_ >= 4 || _loc23_ >= 3 || _loc11_ >= 3)
-            {
-               _loc1_ = 5;
-            }
-            if (_loc21_ >= 5 || _loc13_ >= 5 || _loc23_ >= 4)
-            {
-               _loc1_ = 6;
-            }
-            if ((_loc21_ >= 7 || _loc13_ >= 6 || _loc23_ >= 5 || _loc18_ >= 7) && !BASE.isInfernoMainYardOrOutpost)
-            {
-               _loc1_ = 7;
-            }
-            if ((_loc21_ >= 8 || _loc13_ >= 7) && !BASE.isInfernoMainYardOrOutpost)
-            {
-               _loc1_ = 8;
-            }
-            if ((_loc21_ >= 9 || _loc11_ >= 4) && !BASE.isInfernoMainYardOrOutpost)
-            {
-               _loc1_ = 9;
-            }
-            if ((_loc21_ >= 10 || _loc11_ >= 5) && !BASE.isInfernoMainYardOrOutpost)
-            {
-               _loc1_ = 10;
-            }
-         }
-         else if (BASE.isInfernoMainYardOrOutpost)
-         {
-            if (_loc29_ >= 2 || _loc19_ >= 2 || _loc28_ || _loc18_ >= 2 || _loc30_ >= 2 || _loc25_ > 0 || _loc26_ >= 4 || _loc27_ >= 4 || _loc2_ >= 3 || _loc4_ >= 3)
-            {
-               _loc1_ = 2;
-            }
-            if (_loc29_ >= 3 || _loc19_ >= 3 || _loc23_ > 0 || _loc20_ >= 2 || _loc18_ >= 3 || _loc30_ >= 3 || _loc31_ > 0 || _loc32_ > 0 || _loc25_ >= 2 || _loc26_ >= 6 || _loc27_ >= 5)
-            {
-               _loc1_ = 3;
-            }
-            if (_loc29_ >= 4 || _loc19_ >= 4 || _loc23_ >= 2 || _loc20_ >= 3 || _loc18_ >= 4 || _loc30_ >= 4 || _loc31_ >= 2 || _loc32_ >= 2 || _loc25_ >= 3 || _loc26_ >= 8 || _loc27_ >= 7 || _loc2_ >= 4 || _loc4_ >= 4)
-            {
-               _loc1_ = 4;
-            }
-            if (_loc29_ >= 5 || _loc23_ >= 3 || _loc18_ >= 6 || _loc30_ >= 6 || _loc31_ >= 4 || _loc32_ >= 4 || _loc26_ >= 10 || _loc27_ >= 9 || _loc5_ >= 4)
-            {
-               _loc1_ = 5;
-            }
-            if (_loc29_ >= 6 || _loc23_ >= 4 || _loc18_ >= 7 || _loc30_ >= 7 || _loc31_ >= 6 || _loc32_ >= 6 || _loc27_ >= 10 || _loc2_ >= 6 || _loc4_ >= 6 || _loc6_ >= 3)
-            {
-               _loc1_ = 6;
-            }
-         }
-         return _loc1_;
-      }
+		public static function isEventBaseId(param1:Number):Boolean
+		{
+			return s_eventBases.indexOf(param1) != -1;
+		}
 
-      public static function addEventBaseException(param1:Number):void
-      {
-         if (s_eventBases.indexOf(param1) == -1)
-         {
-            s_eventBases.push(param1);
-         }
-      }
+		public static function get isInfernoMainYardOrOutpost():Boolean
+		{
+			return m_yardType == EnumYardType.INFERNO_OUTPOST || m_yardType == EnumYardType.INFERNO_YARD;
+		}
 
-      public static function isEventBaseId(param1:Number):Boolean
-      {
-         return s_eventBases.indexOf(param1) != -1;
-      }
+		public static function get isMainYard():Boolean
+		{
+			return m_yardType == EnumYardType.MAIN_YARD || m_yardType == EnumYardType.PLAYER;
+		}
 
-      public static function get isInfernoMainYardOrOutpost():Boolean
-      {
-         return m_yardType == EnumYardType.INFERNO_OUTPOST || m_yardType == EnumYardType.INFERNO_YARD;
-      }
+		public static function get isMainYardInfernoOnly():Boolean
+		{
+			return m_yardType == EnumYardType.INFERNO_YARD;
+		}
 
-      public static function get isMainYard():Boolean
-      {
-         return m_yardType == EnumYardType.MAIN_YARD || m_yardType == EnumYardType.PLAYER;
-      }
+		public static function get isMainYardOrInfernoMainYard():Boolean
+		{
+			return m_yardType == EnumYardType.MAIN_YARD || m_yardType == EnumYardType.INFERNO_YARD || m_yardType == EnumYardType.PLAYER;
+		}
 
-      public static function get isMainYardInfernoOnly():Boolean
-      {
-         return m_yardType == EnumYardType.INFERNO_YARD;
-      }
+		public static function get isOutpost():Boolean
+		{
+			return m_yardType == EnumYardType.OUTPOST || m_yardType == EnumYardType.RESOURCE || m_yardType == EnumYardType.STRONGHOLD || m_yardType == EnumYardType.FORTIFICATION || m_yardType == EnumYardType.MOLOCH_OUTPOST;
+		}
 
-      public static function get isMainYardOrInfernoMainYard():Boolean
-      {
-         return m_yardType == EnumYardType.MAIN_YARD || m_yardType == EnumYardType.INFERNO_YARD || m_yardType == EnumYardType.PLAYER;
-      }
+		public static function get isOutpostMapRoom2Only():Boolean
+		{
+			return m_yardType == EnumYardType.OUTPOST;
+		}
 
-      public static function get isOutpost():Boolean
-      {
-         return m_yardType == EnumYardType.OUTPOST || m_yardType == EnumYardType.RESOURCE || m_yardType == EnumYardType.STRONGHOLD || m_yardType == EnumYardType.FORTIFICATION || m_yardType == EnumYardType.MOLOCH_OUTPOST;
-      }
+		public static function get isOutpostInfernoOnly():Boolean
+		{
+			return m_yardType == EnumYardType.INFERNO_OUTPOST;
+		}
 
-      public static function get isOutpostMapRoom2Only():Boolean
-      {
-         return m_yardType == EnumYardType.OUTPOST;
-      }
+		public static function get isOutpostOrInfernoOutpost():Boolean
+		{
+			return m_yardType == EnumYardType.OUTPOST || m_yardType == EnumYardType.INFERNO_OUTPOST || m_yardType == EnumYardType.RESOURCE || m_yardType == EnumYardType.STRONGHOLD || m_yardType == EnumYardType.FORTIFICATION || m_yardType == EnumYardType.MOLOCH_OUTPOST;
+		}
 
-      public static function get isOutpostInfernoOnly():Boolean
-      {
-         return m_yardType == EnumYardType.INFERNO_OUTPOST;
-      }
+		public static function get isOutpostResource():Boolean
+		{
+			return m_yardType == EnumYardType.RESOURCE;
+		}
 
-      public static function get isOutpostOrInfernoOutpost():Boolean
-      {
-         return m_yardType == EnumYardType.OUTPOST || m_yardType == EnumYardType.INFERNO_OUTPOST || m_yardType == EnumYardType.RESOURCE || m_yardType == EnumYardType.STRONGHOLD || m_yardType == EnumYardType.FORTIFICATION || m_yardType == EnumYardType.MOLOCH_OUTPOST;
-      }
+		public static function get isOutpostStronghold():Boolean
+		{
+			return m_yardType == EnumYardType.STRONGHOLD;
+		}
 
-      public static function get isOutpostResource():Boolean
-      {
-         return m_yardType == EnumYardType.RESOURCE;
-      }
+		public static function get isOutpostFortification():Boolean
+		{
+			return m_yardType == EnumYardType.FORTIFICATION;
+		}
 
-      public static function get isOutpostStronghold():Boolean
-      {
-         return m_yardType == EnumYardType.STRONGHOLD;
-      }
+		public static function getEmpireResources(param1:int):Number
+		{
+			var _loc2_:int = 0;
+			_loc2_ = 1;
+			if (GLOBAL._harvesterOverdrive >= GLOBAL.Timestamp() && GLOBAL._harvesterOverdrivePower.Get() > 0)
+			{
+				_loc2_ = GLOBAL._harvesterOverdrivePower.Get();
+			}
+			return _GIP["r" + param1].Get() * 360 * _loc2_;
+		}
 
-      public static function get isOutpostFortification():Boolean
-      {
-         return m_yardType == EnumYardType.FORTIFICATION;
-      }
+		public static function HasRequirements(param1:Object):Boolean
+		{
+			var _loc2_:Array = null;
+			var _loc3_:int = 0;
+			var _loc4_:Vector.<Object> = null;
+			var _loc5_:BFOUNDATION = null;
+			for each (_loc2_ in param1.re)
+			{
+				_loc3_ = 0;
+				if (_loc2_[0] == INFERNOQUAKETOWER.UNDERHALL_ID)
+				{
+					if (GLOBAL.StatGet(BUILDING14.UNDERHALL_LEVEL) >= _loc2_[2] && MAPROOM_DESCENT.DescentPassed)
+					{
+						_loc3_ = 1;
+					}
+				}
+				else
+				{
+					_loc4_ = InstanceManager.getInstancesByClass(BFOUNDATION);
+					for each (_loc5_ in _loc4_)
+					{
+						if (_loc5_._type == _loc2_[0] && _loc5_._lvl.Get() >= _loc2_[2])
+						{
+							_loc3_++;
+						}
+					}
+				}
+				if (_loc3_ < _loc2_[1])
+				{
+					return false;
+				}
+			}
+			return true;
+		}
 
-      public static function getEmpireResources(param1:int):Number
-      {
-         var _loc2_:int = 0;
-         _loc2_ = 1;
-         if (GLOBAL._harvesterOverdrive >= GLOBAL.Timestamp() && GLOBAL._harvesterOverdrivePower.Get() > 0)
-         {
-            _loc2_ = GLOBAL._harvesterOverdrivePower.Get();
-         }
-         return _GIP["r" + param1].Get() * 360 * _loc2_;
-      }
+		public static function isInfernoBuilding(param1:uint):Boolean
+		{
+			return (
+				param1 == INFERNOQUAKETOWER.TYPE
+				||
+				param1 == INFERNO_MAGMA_TOWER.ID
+				||
+				param1 == SiegeFactory.ID
+				||
+				param1 == SiegeLab.ID
+				||
+				param1 == SpurtzCannon.TYPE
+				||
+				param1 == BlackSpurtzCannon.TYPE
+				||
+				param1 == 128
+				||
+				param1 == 142
+				||
+				param1 == 143
+				||
+				param1 == 147
+				||
+				param1 == 148
+				||
+				param1 == 149
+				||
+				param1 == 150
+			) && !BASE.isInfernoMainYardOrOutpost;
+		}
 
-      public static function HasRequirements(param1:Object):Boolean
-      {
-         var _loc2_:Array = null;
-         var _loc3_:int = 0;
-         var _loc4_:Vector.<Object> = null;
-         var _loc5_:BFOUNDATION = null;
-         for each (_loc2_ in param1.re)
-         {
-            _loc3_ = 0;
-            if (_loc2_[0] == INFERNOQUAKETOWER.UNDERHALL_ID)
-            {
-               if (GLOBAL.StatGet(BUILDING14.UNDERHALL_LEVEL) >= _loc2_[2] && MAPROOM_DESCENT.DescentPassed)
-               {
-                  _loc3_ = 1;
-               }
-            }
-            else
-            {
-               _loc4_ = InstanceManager.getInstancesByClass(BFOUNDATION);
-               for each (_loc5_ in _loc4_)
-               {
-                  if (_loc5_._type == _loc2_[0] && _loc5_._lvl.Get() >= _loc2_[2])
-                  {
-                     _loc3_++;
-                  }
-               }
-            }
-            if (_loc3_ < _loc2_[1])
-            {
-               return false;
-            }
-         }
-         return true;
-      }
+		public static function hasNumBuildings(param1:int, param2:int = 0, param3:Boolean = false):int
+		{
+			var _loc4_:Object = null;
+			var _loc5_:Vector.<Object> = null;
+			var _loc6_:int = 0;
+			var _loc7_:BFOUNDATION = null;
+			_loc4_ = GLOBAL._buildingProps[param1 - 1];
+			_loc5_ = InstanceManager.getInstancesByClass(!!_loc4_.cls ? _loc4_.cls : BFOUNDATION);
+			_loc6_ = 0;
+			for each (_loc7_ in _loc5_)
+			{
+				if (_loc7_._type == param1 && _loc7_._lvl.Get() >= param2)
+				{
+					_loc6_++;
+					if (param3)
+					{
+						break;
+					}
+				}
+			}
+			return _loc6_;
+		}
 
-      public static function isInfernoBuilding(param1:uint):Boolean
-      {
-         return (
-			param1 == INFERNOQUAKETOWER.TYPE
-			||
-			param1 == INFERNO_MAGMA_TOWER.ID
-			||
-			param1 == SiegeFactory.ID
-			||
-			param1 == SiegeLab.ID
-			||
-			param1 == SpurtzCannon.TYPE
-			||
-			param1 == BlackSpurtzCannon.TYPE
-			||
-			param1 == 128
-			||
-			param1 == 142
-			||
-			param1 == 143
-			||
-			param1 == 147
-			||
-			param1 == 148
-			||
-			param1 == 149
-			||
-			param1 == 150
-		) && !BASE.isInfernoMainYardOrOutpost;
-      }
+		public static function findBuilding(param1:int):BFOUNDATION
+		{
+			var _loc2_:Object = null;
+			var _loc3_:Vector.<Object> = null;
+			var _loc4_:BFOUNDATION = null;
+			_loc2_ = GLOBAL._buildingProps[param1];
+			_loc3_ = InstanceManager.getInstancesByClass(!!_loc2_.cls ? _loc2_.cls : BFOUNDATION);
+			for each (_loc4_ in _loc3_)
+			{
+				if (_loc4_._type === param1)
+				{
+					return _loc4_;
+				}
+			}
+			return null;
+		}
 
-      public static function hasNumBuildings(param1:int, param2:int = 0, param3:Boolean = false):int
-      {
-         var _loc4_:Object = null;
-         var _loc5_:Vector.<Object> = null;
-         var _loc6_:int = 0;
-         var _loc7_:BFOUNDATION = null;
-         _loc4_ = GLOBAL._buildingProps[param1 - 1];
-         _loc5_ = InstanceManager.getInstancesByClass(!!_loc4_.cls ? _loc4_.cls : BFOUNDATION);
-         _loc6_ = 0;
-         for each (_loc7_ in _loc5_)
-         {
-            if (_loc7_._type == param1 && _loc7_._lvl.Get() >= param2)
-            {
-               _loc6_++;
-               if (param3)
-               {
-                  break;
-               }
-            }
-         }
-         return _loc6_;
-      }
+		public static function isInfernoCreep(param1:String):Boolean
+		{
+			return param1.substring(0, 1) == "I";
+		}
 
-      public static function findBuilding(param1:int):BFOUNDATION
-      {
-         var _loc2_:Object = null;
-         var _loc3_:Vector.<Object> = null;
-         var _loc4_:BFOUNDATION = null;
-         _loc2_ = GLOBAL._buildingProps[param1];
-         _loc3_ = InstanceManager.getInstancesByClass(!!_loc2_.cls ? _loc2_.cls : BFOUNDATION);
-         for each (_loc4_ in _loc3_)
-         {
-            if (_loc4_._type === param1)
-            {
-               return _loc4_;
-            }
-         }
-         return null;
-      }
-
-      public static function isInfernoCreep(param1:String):Boolean
-      {
-         return param1.substring(0, 1) == "I";
-      }
-
-      public static function getEstimatedRepairDuration():Number
-      {
-         var _loc1_:Number = NaN;
-         var _loc2_:Vector.<Object> = null;
-         var _loc3_:BFOUNDATION = null;
-         var _loc4_:Number = NaN;
-         _loc1_ = 0;
-         _loc2_ = InstanceManager.getInstancesByClass(BFOUNDATION);
-         for each (_loc3_ in _loc2_)
-         {
-            _loc4_ = _loc3_.getEstimatedRepairTimeRemaining();
-            if (_loc4_ > _loc1_)
-            {
-               _loc1_ = _loc4_;
-            }
-         }
-         return _loc1_;
-      }
+		public static function getEstimatedRepairDuration():Number
+		{
+			var _loc1_:Number = NaN;
+			var _loc2_:Vector.<Object> = null;
+			var _loc3_:BFOUNDATION = null;
+			var _loc4_:Number = NaN;
+			_loc1_ = 0;
+			_loc2_ = InstanceManager.getInstancesByClass(BFOUNDATION);
+			for each (_loc3_ in _loc2_)
+			{
+				_loc4_ = _loc3_.getEstimatedRepairTimeRemaining();
+				if (_loc4_ > _loc1_)
+				{
+					_loc1_ = _loc4_;
+				}
+			}
+			return _loc1_;
+		}
 
 		public static function getNumHousingHealsPerTick():int
 		{
@@ -6802,37 +6489,46 @@ package
 			return houses.length;
 		}
 
-      public static function FindClosestHousingToPoint(param1:int, param2:int, param3:BFOUNDATION = null, param4:Boolean = true, param5:Boolean = true):BFOUNDATION
-      {
-         var _loc6_:Array = null;
-         var _loc8_:BFOUNDATION = null;
-         var _loc9_:int = 0;
-         var _loc10_:int = 0;
-         var _loc11_:int = 0;
-         var houses:Vector.<Object> = InstanceManager.getInstancesByClass(BUILDING15).concat(InstanceManager.getInstancesByClass(HOUSINGBUNKER));
-         _loc6_ = [];
-         for each (_loc8_ in houses)
-         {
-            if (_loc8_ != param3)
-            {
-               if (!(param4 == true && _loc8_._countdownBuild.Get() > 0))
-               {
-                  if (!(param5 == true && _loc8_.health <= 0))
-                  {
-                     _loc9_ = _loc8_.x - param1;
-                     _loc10_ = _loc8_.y - param2;
-                     _loc11_ = int(Math.sqrt(_loc9_ * _loc9_ + _loc10_ * _loc10_));
-                     _loc6_.push({"house" : _loc8_, "dist" : _loc11_});
-                  }
-               }
-            }
-         }
-         if (_loc6_.length == 0)
-         {
-            return null;
-         }
-         _loc6_.sortOn(["dist"], Array.NUMERIC);
-         return _loc6_[0].house;
-      }
-   }
+		public static function FindClosestHousingToPoint(param1:int, param2:int, param3:BFOUNDATION = null, param4:Boolean = true, param5:Boolean = true):BFOUNDATION
+		{
+			var _loc6_:Array = null;
+			var _loc8_:BFOUNDATION = null;
+			var _loc9_:int = 0;
+			var _loc10_:int = 0;
+			var _loc11_:int = 0;
+			var houses:Vector.<Object> = InstanceManager.getInstancesByClass(BUILDING15).concat(InstanceManager.getInstancesByClass(HOUSINGBUNKER));
+			_loc6_ = [];
+			for each (_loc8_ in houses)
+			{
+				if (_loc8_ != param3)
+				{
+					if (!(param4 == true && _loc8_._countdownBuild.Get() > 0))
+					{
+						if (!(param5 == true && _loc8_.health <= 0))
+						{
+							_loc9_ = _loc8_.x - param1;
+							_loc10_ = _loc8_.y - param2;
+							_loc11_ = int(Math.sqrt(_loc9_ * _loc9_ + _loc10_ * _loc10_));
+							_loc6_.push({"house" : _loc8_, "dist" : _loc11_});
+						}
+					}
+				}
+			}
+			if (_loc6_.length == 0)
+			{
+				return null;
+			}
+			_loc6_.sortOn(["dist"], Array.NUMERIC);
+			return _loc6_[0].house;
+		}
+
+	  	public static function GetExperienceBuff():Number {
+			return Math.min((BASE._conquerorPoints.Get() * 0.001) + GLOBAL.GetExperienceBuff(), 100.0);
+		}
+
+		public static function GetHealingBuff():Number {
+			return Math.min((BASE._conquerorPoints.Get() * 0.00001) + GLOBAL.GetHealingBuff(), 0.75);
+		}
+
+	}
 }

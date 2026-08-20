@@ -42,13 +42,10 @@ package
 		 var previous_mrl:int = GLOBAL.StatGet("mrl");
          if(MapRoomManager.instance.isInMapRoom3 && previous_mrl != 3){
             GLOBAL.StatSet("mrl", 3);
-			trace("set mrl 3");
          } else if(MapRoomManager.instance.isInMapRoom2 && previous_mrl != 2){
 			GLOBAL.StatSet("mrl", 2);
-			trace("set mrl 2");
 		 } else if(!MapRoomManager.instance.isInMapRoom3 && !MapRoomManager.instance.isInMapRoom2 && previous_mrl != 1){
 			GLOBAL.StatSet("mrl", 1);
-			trace("set mrl 1");
 		 }
          if(GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD && !GLOBAL._catchup && GLOBAL._render && _countdownUpgrade.Get() && _countdownUpgrade.Get() < 60 * 60 * 24 * 2)
          {

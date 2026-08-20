@@ -1757,63 +1757,61 @@ package
          };
       }
 
-      public static function Message(param1:String, param2:String = null, param3:Function = null, param4:Array = null, param5:String = null, param6:Function = null, param7:Array = null, param8:int = 1, param9:Boolean = true):MESSAGE
-      {
-         var _loc10_:MESSAGE;
-         return (_loc10_ = new MESSAGE()).Show(param1, param2, param3, param4, param5, param6, param7, param8, param9);
-      }
-
-      public static function Confirm(param1:String, param2:String = null, param3:Function = null, param4:Array = null, param5:int = 1):void
-      {
-         var _loc6_:MESSAGE;
-         (_loc6_ = new MESSAGE()).Show(param1, param2, param3, param4, param5.toString());
-      }
-
-		public static function FormatNumber(value:Number):String {
-			// Zaokrąglamy w dół zgodnie z oryginałem
-			var baseValue:Number = Math.floor(value);
-			
-			// Obsługa wartości od 10 milionów w górę
-			if (baseValue >= 10000000) {
-				var formatted:String = "";
-				
-				if (baseValue >= 1000000000000000) {
-					// Quadrillion (Q)
-					formatted = (baseValue / 1000000000000000).toFixed(2);
-					return formatted.replace(".", ",") + " Q";
-				} 
-				else if (baseValue >= 1000000000000) {
-					// Triliony (T)
-					formatted = (baseValue / 1000000000000).toFixed(2);
-					return formatted.replace(".", ",") + " T";
-				} 
-				else if (baseValue >= 1000000000) {
-					// Biliony (B)
-					formatted = (baseValue / 1000000000).toFixed(2);
-					return formatted.replace(".", ",") + " B";
-				} 
-				else {
-					// Miliony (M) - dla zakresu [1M - 1B)
-					formatted = (baseValue / 1000000).toFixed(2);
-					return formatted.replace(".", ",") + " M";
-				}
-			}
-
-			// Standardowe formatowanie z przecinkami dla liczb poniżej 1M
-			var valueString:String = baseValue.toString();
-			var segments:Array = new Array();
-			var currentIndex:int = valueString.length;
-			
-			while (currentIndex > 0) {
-				var nextIndex:int = Math.max(currentIndex - 3, 0);
-				segments.unshift(valueString.slice(nextIndex, currentIndex));
-				currentIndex = nextIndex;
-			}
-			
-			return segments.join(",");
+		public static function Message(param1:String, param2:String = null, param3:Function = null, param4:Array = null, param5:String = null, param6:Function = null, param7:Array = null, param8:int = 1, param9:Boolean = true):MESSAGE
+		{
+			var _loc10_:MESSAGE;
+			return (_loc10_ = new MESSAGE()).Show(param1, param2, param3, param4, param5, param6, param7, param8, param9);
 		}
 
-		public static function FormatNumberEx(value:Number):String {
+		public static function Confirm(param1:String, param2:String = null, param3:Function = null, param4:Array = null, param5:int = 1):void
+		{
+			var _loc6_:MESSAGE;
+			(_loc6_ = new MESSAGE()).Show(param1, param2, param3, param4, param5.toString());
+		}
+
+		public static function GetExperienceBuff():Number {
+			var currentDate:Date = new Date();
+			var dayOfWeek:int = currentDate.getDay();
+			if (dayOfWeek == 0 || dayOfWeek == 6) {
+				return 2.0; // +200 %
+			} else {
+				return 0.0;
+			}
+		}
+
+		public static function GetHealingBuff():Number {
+			var currentDate:Date = new Date();
+			var dayOfWeek:int = currentDate.getDay();
+			if (dayOfWeek == 0 || dayOfWeek == 6) {
+				return 0.05; // +5 %
+			} else {
+				return 0.0;
+			}
+		}
+
+		public static function FormatNumber(value:Number):String {
+			var baseValue:Number = Math.floor(value);
+			if (baseValue >= 1000000) return FormatNumberEXP(baseValue);
+			return FormatNumberNormal(baseValue);
+		}
+
+		public static function FormatNumberEXP(value:Number):String {
+			var baseValue:Number = Math.floor(value);
+			if (baseValue >= 1000000000000000) {
+				return (baseValue / 1000000000000000).toFixed(2).replace(".", ",") + " Q";
+			} else if (baseValue >= 1000000000000) {
+				return (baseValue / 1000000000000).toFixed(2).replace(".", ",") + " T";
+			} else if (baseValue >= 1000000000) {
+				return (baseValue / 1000000000).toFixed(2).replace(".", ",") + " B";
+			} else if (baseValue >= 1000000) {
+				return (baseValue / 1000000).toFixed(2).replace(".", ",") + " M";
+			} else if (baseValue >= 1000) {
+				return (baseValue / 1000).toFixed(2).replace(".", ",") + " K";
+			}
+			return baseValue.toString();
+		}
+
+		public static function FormatNumberNormal(value:Number):String {
 			var valueString:String = Math.floor(value).toString();
 			var segments:Array = new Array();
 			var currentIndex:int = valueString.length;
@@ -1825,38 +1823,38 @@ package
 			return segments.join(" ");
 		}
 
-      public static function DoubleDigit(param1:int):String
-      {
-         if (param1 < 10)
-         {
-            return "0" + param1;
-         }
-         return param1.toString();
-      }
+		public static function DoubleDigit(param1:int):String
+		{
+			if (param1 < 10)
+			{
+				return "0" + param1;
+			}
+			return param1.toString();
+		}
 
-      public static function NextCreepID():int
-      {
-         ++ _creepCount;
-         return _creepCount;
-      }
+		public static function NextCreepID():int
+		{
+			++ _creepCount;
+			return _creepCount;
+		}
 
-      public static function DataCheck(param1:String):Boolean
-      {
-         var _loc3_:Object = null;
-         var _loc2_:String = param1;
-         _loc3_ = JSON.parse(_loc2_);
-         var _loc4_:String = String(_loc3_.h);
-         var _loc5_:int = int(_loc3_.hid);
-         _loc2_ = _loc2_.split(",\"h\":\"" + _loc4_ + "\"").join("");
-         _loc2_ = _loc2_.split(",\"hid\":" + _loc5_).join("");
-         var _loc6_:String;
-         if ((_loc6_ = String(md5("ilevbioghv890347ho3nrkljebv" + _loc2_ + _loc5_ * (_loc5_ % 11)))) == _loc4_)
-         {
-            return true;
-         }
-         GLOBAL.ErrorMessage("Hash in Fail");
-         return false;
-      }
+		public static function DataCheck(param1:String):Boolean
+		{
+			var _loc3_:Object = null;
+			var _loc2_:String = param1;
+			_loc3_ = JSON.parse(_loc2_);
+			var _loc4_:String = String(_loc3_.h);
+			var _loc5_:int = int(_loc3_.hid);
+			_loc2_ = _loc2_.split(",\"h\":\"" + _loc4_ + "\"").join("");
+			_loc2_ = _loc2_.split(",\"hid\":" + _loc5_).join("");
+			var _loc6_:String;
+			if ((_loc6_ = String(md5("ilevbioghv890347ho3nrkljebv" + _loc2_ + _loc5_ * (_loc5_ % 11)))) == _loc4_)
+			{
+				return true;
+			}
+			GLOBAL.ErrorMessage("Hash in Fail");
+			return false;
+		}
 
       public static function Check():String
       {

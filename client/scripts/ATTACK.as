@@ -800,42 +800,41 @@ package
       
 		public static function Loot(index:int, quantity:int, param3:int, param4:int, param5:int = 10, param6:BFOUNDATION = null, param7:Boolean = false, force_inferno_resources:Boolean = false) : int
 		{
-			var _loc8_:Number = quantity;
-			var _loc9_:Number;
-			var _loc10_:Number;
+			var loot_value:Number = quantity;
+			var max_capacity:Number;
+			var player_resources:Number;
 			if(force_inferno_resources){
-				_loc9_ = Number(GLOBAL._iresources["r" + index + "max"]);
-				_loc10_ = Number(GLOBAL._iresources["r" + index].Get());
+				max_capacity = Number(GLOBAL._iresources["r" + index + "max"]);
+				player_resources = Number(GLOBAL._iresources["r" + index].Get());
 			} else {
-				_loc9_ = Number(GLOBAL._resources["r" + index + "max"]);
-				_loc10_ = Number(GLOBAL._resources["r" + index].Get());
+				max_capacity = Number(GLOBAL._resources["r" + index + "max"]);
+				player_resources = Number(GLOBAL._resources["r" + index].Get());
 			}
 
-			var _loc11_:Krallen;
-			_loc11_ = CREEPS.krallen;
-			if(_loc11_)
+			var krallen:Krallen = CREEPS.krallen;
+			if(krallen)
 			{
-				_loc9_ += _loc9_ * _loc11_._buff;
+				max_capacity += max_capacity * krallen._buff;
 			}
-			if(_loc10_ + quantity > _loc9_)
+			if(player_resources + quantity > max_capacity)
 			{
 				if(BASE.isInfernoMainYardOrOutpost && MAPROOM_DESCENT.DescentPassed || GLOBAL.mode == GLOBAL._loadmode)
 				{
-					if((_loc8_ = _loc9_ - _loc10_) < 0)
+					if((loot_value = max_capacity - player_resources) < 0)
 					{
-						_loc8_ = 0;
+						loot_value = 0;
 					}
 				}
 			}
 			if(force_inferno_resources){
-				_iloot["r" + index].Add(_loc8_);
-				GLOBAL._iresources["r" + index].Add(_loc8_);
-				_ideltaLoot["r" + index].Add(_loc8_);
+				_iloot["r" + index].Add(loot_value);
+				GLOBAL._iresources["r" + index].Add(loot_value);
+				_ideltaLoot["r" + index].Add(loot_value);
 				_ideltaLoot.dirty = true;
 			} else {
-				_loot["r" + index].Add(_loc8_);
-				GLOBAL._resources["r" + index].Add(_loc8_);
-				_deltaLoot["r" + index].Add(_loc8_);
+				_loot["r" + index].Add(loot_value);
+				GLOBAL._resources["r" + index].Add(loot_value);
+				_deltaLoot["r" + index].Add(loot_value);
 				_deltaLoot.dirty = true;
 			}
 			
@@ -860,7 +859,6 @@ package
       
 		public static function SaveDeltaLoot() : void
 		{
-			trace("SaveDeltaLoot");
 			var _loc1_:int = 0;
 			if(_deltaLoot.dirty)
 			{
@@ -876,7 +874,6 @@ package
 
 		public static function SaveInfernoDeltaLoot() : void
 		{
-			trace("SaveInfernoDeltaLoot");
 			var _loc1_:int = 0;
 			if(_ideltaLoot.dirty)
 			{

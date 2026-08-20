@@ -445,12 +445,13 @@ package
 			mc.mcPoints.tInfo.embedFonts = true;
 			mc.mcPoints.tInfo.defaultTextFormat = format;
 			mc.mcPoints.tInfo.htmlText = KEYS.Get("pop_experiencebar_new",{
-				"v1":GLOBAL.FormatNumber(base_level_data.points.Get()),
-				"v2":GLOBAL.FormatNumber(exp_current_level_have),
-				"v3":GLOBAL.FormatNumber(exp_current_level_total),
+				"v1":GLOBAL.FormatNumberEXP(base_level_data.points.Get()),
+				"v2":GLOBAL.FormatNumberEXP(exp_current_level_have),
+				"v3":GLOBAL.FormatNumberEXP(exp_current_level_total),
 				"v4":((exp_current_level_have / exp_current_level_total) * 100).toFixed(2).replace(".", ","),
-				"v5":((BASE._conquerorPoints.Get() * 0.001) * 100).toFixed(2).replace(".", ","),
-				"v6":GLOBAL.FormatNumberEx(BASE._basePower.Get())
+				"v5":(BASE.GetExperienceBuff() * 100).toFixed(2).replace(".", ","),
+				"v6":(BASE.GetHealingBuff() * 100).toFixed(2).replace(".", ","),
+				"v7":GLOBAL.FormatNumberNormal(BASE._basePower.Get())
 			});
 		}
       

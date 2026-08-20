@@ -528,6 +528,7 @@ export class Save {
     "monsters",
     "over",
     "protected",
+	"resources",
   ];
 
   public static createMainSave = async (em: EntityManager<PostgreSqlDriver>, user: User) => {

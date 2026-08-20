@@ -27,79 +27,70 @@ package
 					return 0;
 				}
 			}
-			var _loc4_:Object = null;
+			var selected:Object = null;
 			var _loc2_:int = 0;
-			var _loc3_:Array = [];
+			var options:Array = [];
 			var force_inferno_resources:Boolean = (_type == 151 || _type == 153);
 			if(force_inferno_resources){
 				if(BASE._iresources.r1.Get() > 0)
 				{
-					_loc3_.push({"id":1, "quantity":BASE._iresources.r1.Get()});
+					options.push({"id":1, "quantity":BASE._iresources.r1.Get()});
 				}
 				if(BASE._iresources.r2.Get() > 0)
 				{
-					_loc3_.push({"id":2, "quantity":BASE._iresources.r2.Get()});
+					options.push({"id":2, "quantity":BASE._iresources.r2.Get()});
 				}
 				if(BASE._iresources.r3.Get() > 0)
 				{
-					_loc3_.push({"id":3, "quantity":BASE._iresources.r3.Get()});
+					options.push({"id":3, "quantity":BASE._iresources.r3.Get()});
 				}
 				if(BASE._iresources.r4.Get() > 0)
 				{
-					_loc3_.push({"id":4, "quantity":BASE._iresources.r4.Get()});
+					options.push({"id":4, "quantity":BASE._iresources.r4.Get()});
 				}
 			} else {
 				if(BASE._resources.r1.Get() > 0)
 				{
-					_loc3_.push({"id":1, "quantity":BASE._resources.r1.Get()});
+					options.push({"id":1, "quantity":BASE._resources.r1.Get()});
 				}
 				if(BASE._resources.r2.Get() > 0)
 				{
-					_loc3_.push({"id":2, "quantity":BASE._resources.r2.Get()});
+					options.push({"id":2, "quantity":BASE._resources.r2.Get()});
 				}
 				if(BASE._resources.r3.Get() > 0)
 				{
-					_loc3_.push({"id":3, "quantity":BASE._resources.r3.Get()});
+					options.push({"id":3, "quantity":BASE._resources.r3.Get()});
 				}
 				if(BASE._resources.r4.Get() > 0)
 				{
-					_loc3_.push({"id":4, "quantity":BASE._resources.r4.Get()});
+					options.push({"id":4, "quantity":BASE._resources.r4.Get()});
 				}
 			}
 			
-			param1 = Math.max(0,param1);
-			if(_loc3_.length > 0)
+			param1 = Math.max(0, param1);
+			if(options.length > 0)
 			{
-				_loc4_ = _loc3_[int(Math.random() * _loc3_.length)];
-				var _loc5_:int = Math.min(int(_loc4_.quantity), Math.ceil(param1));
-				if(_loc5_ > 0)
+				selected = options[int(Math.random() * options.length)];
+				var loot_value:int = Math.min(int(selected.quantity), Math.ceil(param1));
+				if(loot_value > 0)
 				{
 					if(force_inferno_resources){
-						BASE._iresources["r" + _loc4_.id].Add(-_loc5_);
-						BASE._ideltaResources["r" + _loc4_.id].Add(-_loc5_);
+						BASE._iresources["r" + selected.id].Add(-loot_value);
+						BASE._ideltaResources["r" + selected.id].Add(-loot_value);
 						BASE._ideltaResources.dirty = true;
 					} else {
-						BASE._resources["r" + _loc4_.id].Add(-_loc5_);
-						BASE._deltaResources["r" + _loc4_.id].Add(-_loc5_);
+						BASE._resources["r" + selected.id].Add(-loot_value);
+						BASE._deltaResources["r" + selected.id].Add(-loot_value);
 						BASE._deltaResources.dirty = true;
 					}
-					_loc2_ = _loc5_;
-					if(MapRoomManager.instance.isInMapRoom2 && GLOBAL._currentCell && GLOBAL._currentCell.baseType == EnumYardType.OUTPOST)
-					{
-						_loc2_ = int(_loc2_ * 0.5);
-					}
-					if(GLOBAL.mode == "wmattack")
-					{
-						_loc2_ = int(_loc2_ / 5);
-					}
-					ATTACK.Loot(_loc4_.id, _loc2_, _mc.x, _mc.y, 9, this, false, force_inferno_resources);
+					ATTACK.Loot(selected.id, loot_value, _mc.x, _mc.y, 9, this, false, force_inferno_resources);
 				}
 			}
 			else
 			{
 				param1 = 0;
 			}
-			return super.Loot(_loc2_);
+			return super.Loot(loot_value);
 		}
 
 		override public function Destroyed(param1:Boolean = true) : void

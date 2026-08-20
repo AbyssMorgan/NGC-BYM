@@ -150,11 +150,13 @@ package com.monsters.maproom3
          this.m_TextDisplay = new Sprite();
          this.m_TextDisplay.mouseEnabled = false;
          this.m_InfoDisplay.addChild(this.m_TextDisplay);
+		 
          var _loc1_:DropShadowFilter = new DropShadowFilter();
+
          var _loc2_:TextFormat = new TextFormat();
          _loc2_.color = INFO_TEXT_COLOR_DEFAULT;
          _loc2_.font = "Verdana";
-         _loc2_.size = 11;
+         _loc2_.size = 10;
          this.m_InfoTextCellName = new TextField();
          this.m_InfoTextCellName.defaultTextFormat = _loc2_;
          this.m_InfoTextCellName.x = 56;
@@ -162,6 +164,7 @@ package com.monsters.maproom3
          this.m_InfoTextCellName.height = 20;
          this.m_InfoTextCellName.filters = [_loc1_];
          this.m_InfoTextCellName.selectable = false;
+
          var _loc3_:TextFormat = new TextFormat();
          _loc3_.color = INFO_TEXT_COLOR_DEFAULT;
          _loc3_.font = "Verdana";
@@ -180,6 +183,7 @@ package com.monsters.maproom3
          this.m_InfoTextCellType.height = 20;
          this.m_InfoTextCellType.filters = [_loc1_];
          this.m_InfoTextCellType.selectable = false;
+
          var _loc4_:TextFormat;
          (_loc4_ = new TextFormat()).font = "Verdana";
          _loc4_.size = 10;
@@ -191,6 +195,7 @@ package com.monsters.maproom3
          this.m_InfoTextBuff1.filters = [_loc1_];
          this.m_InfoTextBuff1.selectable = false;
          this.m_InfoTextBuff1.textColor = INFO_TEXT_COLOR_BUFF_BLUE;
+
          this.m_InfoTextBuff2 = new TextField();
          this.m_InfoTextBuff2.defaultTextFormat = _loc4_;
          this.m_InfoTextBuff2.x = 56;
@@ -362,7 +367,7 @@ package com.monsters.maproom3
             ImageCache.GetImageWithCallBack(_loc11_,this.OnAllianceIconLoaded,true,1);
             this.m_AllianceIcon.visible = true;
          }
-         this.m_InfoTextCellType.htmlText = param1.GetLocalisedCellTypeName() + " (" + _loc2_.toString() + ")";
+         this.m_InfoTextCellType.htmlText = param1.GetLocalisedCellTypeName(_loc2_);
          this.m_TextDisplay.addChild(this.m_InfoTextCellType);
          if(param1.isInRangeOfStronghold)
          {

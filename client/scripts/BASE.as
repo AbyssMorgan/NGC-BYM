@@ -5853,29 +5853,29 @@ package
 
 		public static function CalcBaseValue():void
 		{
-			if(isMainYardOrInfernoMainYard){
-				var power:SecNum = new SecNum(0);
-				var buildings:Vector.<Object> = InstanceManager.getInstancesByClass(BFOUNDATION);
-				var building:BFOUNDATION = null;
-				var level:int = 0;
-				var props:Object = null;
-				for each (building in buildings)
+			var power:SecNum = new SecNum(0);
+			var buildings:Vector.<Object> = InstanceManager.getInstancesByClass(BFOUNDATION);
+			var building:BFOUNDATION = null;
+			var level:int = 0;
+			var props:Object = null;
+			for each (building in buildings)
+			{
+				if (building._class != "decoration" && building._class != "enemy" && building._class != "wall" && building._class != "immovable" && building._class != "trap" && building !== GLOBAL._newBuilding && building._countdownBuild.Get() <= 0)
 				{
-					if (building._class != "decoration" && building._class != "enemy" && building._class != "wall" && building._class != "immovable" && building._class != "trap" && building !== GLOBAL._newBuilding && building._countdownBuild.Get() <= 0)
+					level = building._lvl.Get();
+					if (level <= 0)
 					{
-						level = building._lvl.Get();
-						if (level <= 0)
-						{
-							level = 1;
-						}
-						if (Boolean(props = GLOBAL._buildingProps[building._type - 1]) && Boolean(props.hp[level - 1]))
-						{
-							power.Add(props.hp[level - 1]);
-						}
+						level = 1;
+					}
+					if (Boolean(props = GLOBAL._buildingProps[building._type - 1]) && Boolean(props.hp[level - 1]))
+					{
+						power.Add(props.hp[level - 1]);
 					}
 				}
+			}
+			trace("base power = " + power.Get());
+			if(isMainYardOrInfernoMainYard){
 				_basePower.Set(power.Get());
-				trace("base power = " + power.Get());
 			}
 		}
 
@@ -6523,11 +6523,11 @@ package
 		}
 
 	  	public static function GetExperienceBuff():Number {
-			return Math.min((BASE._conquerorPoints.Get() * 0.001) + GLOBAL.GetExperienceBuff(), 100.0);
+			return Math.min((BASE._conquerorPoints.Get() * 0.001), 100.0) + GLOBAL.GetExperienceBuff();
 		}
 
 		public static function GetHealingBuff():Number {
-			return Math.min((BASE._conquerorPoints.Get() * 0.00001) + GLOBAL.GetHealingBuff(), 0.75);
+			return Math.min(Math.min((BASE._conquerorPoints.Get() * 0.00001), 0.75) + GLOBAL.GetHealingBuff(), 0.90);
 		}
 
 	}

@@ -309,130 +309,130 @@ package com.monsters.maproom_advanced
 		 }
       }
       
-      public function ShowInfo(param1:MapRoomCell) : void
-      {
-         if(!param1._updated)
-         {
-            return;
-         }
-         var _loc2_:int = int(mcInfo.mcProfilePic.mcImage.numChildren);
-         while(_loc2_--)
-         {
-            mcInfo.mcProfilePic.mcImage.removeChildAt(_loc2_);
-         }
-         _loc2_ = int(mcInfo.mcAlliancePic.mcImage.numChildren);
-         while(_loc2_--)
-         {
-            mcInfo.mcAlliancePic.mcImage.removeChildAt(_loc2_);
-         }
-         mcInfo.mcAlliancePic.visible = false;
-         if(!GLOBAL._flags.viximo)
-         {
-            if(param1._base > 1 && Boolean(param1._pic_square))
-            {
-               this.ProfilePicVix(param1._pic_square);
-               if(Boolean(param1._alliance) && Boolean(param1._alliance.image))
-               {
-                  this.AlliancePic(AllyInfo._picURLs.sizeM,param1._alliance);
-                  mcInfo.mcAlliancePic.visible = true;
-               }
-            }
-         }
-         else if(param1._base > 1 && Boolean(param1._facebookID))
-         {
-            this.ProfilePic(param1._facebookID);
-            if(Boolean(param1._alliance) && Boolean(param1._alliance.image))
-            {
-               this.AlliancePic(AllyInfo._picURLs.sizeM,param1._alliance);
-               mcInfo.mcAlliancePic.visible = true;
-            }
-         }
-         if(param1._base == 1 && Boolean(param1._name))
-         {
-            this.TribePic(param1._name);
-         }
-         if(param1._water)
-         {
-            mcInfo.tAlliance.htmlText = "";
-            mcInfo.tStatus.htmlText = KEYS.Get("status_water");
-            mcInfo.tOwner.htmlText = "";
-            mcInfo.tUserId.visible = false;
-         }
-         else
-         {
-            if(param1._alliance)
-            {
-               if(param1._base == 0)
-               {
-                  mcInfo.tAlliance.htmlText = "";
-               }
-               if(param1._base == 1)
-               {
-                  mcInfo.tAlliance.htmlText = KEYS.Get("newmap_wm");
-               }
-               if(param1._base == 2 && Boolean(param1._mine))
-               {
-                  mcInfo.tAlliance.htmlText = param1._alliance.name;
-               }
-               if(param1._base == 2 && !param1._mine)
-               {
-                  mcInfo.tAlliance.htmlText = param1._alliance.name;
-               }
-               if(param1._base == 3 && Boolean(param1._mine))
-               {
-                  mcInfo.tAlliance.htmlText = param1._alliance.name;
-               }
-               if(param1._base == 3 && !param1._mine)
-               {
-                  mcInfo.tAlliance.htmlText = param1._alliance.name;
-               }
-            }
-            else
-            {
-               if(param1._base == 0)
-               {
-                  mcInfo.tAlliance.htmlText = "";
-               }
-               if(param1._base == 1)
-               {
-                  mcInfo.tAlliance.htmlText = KEYS.Get("newmap_wm");
-               }
-               if(param1._base == 2 && Boolean(param1._mine))
-               {
-                  mcInfo.tAlliance.htmlText = KEYS.Get("newmap_my");
-               }
-               if(param1._base == 2 && !param1._mine)
-               {
-                  mcInfo.tAlliance.htmlText = KEYS.Get("newmap_ey");
-               }
-               if(param1._base == 3 && Boolean(param1._mine))
-               {
-                  mcInfo.tAlliance.htmlText = KEYS.Get("newmap_outposts");
-               }
-               if(param1._base == 3 && !param1._mine)
-               {
-                  mcInfo.tAlliance.htmlText = KEYS.Get("newmap_eo");
-               }
-            }
-            if(param1._damage)
-            {
-               mcInfo.tStatus.htmlText = "<font color=\"#FF0000\">" + KEYS.Get("newmap_inf_damaged",{"v1":int(param1._damage)}) + "</font>";
-            }
-            if(!param1._damage)
-            {
-               mcInfo.tStatus.htmlText = "Fine";
-            }
-            if(!param1._damage && param1._base < 1)
-            {
-               mcInfo.tStatus.htmlText = KEYS.Get("newmap_re");
-            }
-            mcInfo.tOwner.htmlText = param1._name;
-            mcInfo.tUserId.text = KEYS.Get("label_userid",{"v1":param1._userID});
-            mcInfo.tUserId.visible = true;
-         }
-         mcInfo.tLocation.htmlText = param1.X + " x " + param1.Y;
-         mcInfo.visible = true;
-      }
+		public function ShowInfo(param1:MapRoomCell) : void
+		{
+			if(!param1._updated)
+			{
+				return;
+			}
+			var _loc2_:int = int(mcInfo.mcProfilePic.mcImage.numChildren);
+			while(_loc2_--)
+			{
+				mcInfo.mcProfilePic.mcImage.removeChildAt(_loc2_);
+			}
+			_loc2_ = int(mcInfo.mcAlliancePic.mcImage.numChildren);
+			while(_loc2_--)
+			{
+				mcInfo.mcAlliancePic.mcImage.removeChildAt(_loc2_);
+			}
+			mcInfo.mcAlliancePic.visible = false;
+			if(!GLOBAL._flags.viximo)
+			{
+				if(param1._base > 1 && Boolean(param1._pic_square))
+				{
+					this.ProfilePicVix(param1._pic_square);
+					if(Boolean(param1._alliance) && Boolean(param1._alliance.image))
+					{
+						this.AlliancePic(AllyInfo._picURLs.sizeM,param1._alliance);
+						mcInfo.mcAlliancePic.visible = true;
+					}
+				}
+			}
+			else if(param1._base > 1 && Boolean(param1._facebookID))
+			{
+				this.ProfilePic(param1._facebookID);
+				if(Boolean(param1._alliance) && Boolean(param1._alliance.image))
+				{
+					this.AlliancePic(AllyInfo._picURLs.sizeM,param1._alliance);
+					mcInfo.mcAlliancePic.visible = true;
+				}
+			}
+			if(param1._base == 1 && Boolean(param1._name))
+			{
+				this.TribePic(param1._name);
+			}
+			if(param1._water)
+			{
+				mcInfo.tAlliance.htmlText = "";
+				mcInfo.tStatus.htmlText = KEYS.Get("status_water");
+				mcInfo.tOwner.htmlText = "";
+				mcInfo.tUserId.visible = false;
+			}
+			else
+			{
+				if(param1._alliance)
+				{
+					if(param1._base == 0)
+					{
+						mcInfo.tAlliance.htmlText = "";
+					}
+					if(param1._base == 1)
+					{
+						mcInfo.tAlliance.htmlText = KEYS.Get("newmap_wm");
+					}
+					if(param1._base == 2 && Boolean(param1._mine))
+					{
+						mcInfo.tAlliance.htmlText = param1._alliance.name;
+					}
+					if(param1._base == 2 && !param1._mine)
+					{
+						mcInfo.tAlliance.htmlText = param1._alliance.name;
+					}
+					if(param1._base == 3 && Boolean(param1._mine))
+					{
+						mcInfo.tAlliance.htmlText = param1._alliance.name;
+					}
+					if(param1._base == 3 && !param1._mine)
+					{
+						mcInfo.tAlliance.htmlText = param1._alliance.name;
+					}
+				}
+				else
+				{
+					if(param1._base == 0)
+					{
+						mcInfo.tAlliance.htmlText = "";
+					}
+					if(param1._base == 1)
+					{
+						mcInfo.tAlliance.htmlText = KEYS.Get("newmap_wm");
+					}
+					if(param1._base == 2 && Boolean(param1._mine))
+					{
+						mcInfo.tAlliance.htmlText = KEYS.Get("newmap_my");
+					}
+					if(param1._base == 2 && !param1._mine)
+					{
+						mcInfo.tAlliance.htmlText = KEYS.Get("newmap_ey");
+					}
+					if(param1._base == 3 && Boolean(param1._mine))
+					{
+						mcInfo.tAlliance.htmlText = KEYS.Get("newmap_outposts");
+					}
+					if(param1._base == 3 && !param1._mine)
+					{
+						mcInfo.tAlliance.htmlText = KEYS.Get("newmap_eo");
+					}
+				}
+				if(param1._damage)
+				{
+					mcInfo.tStatus.htmlText = "<font color=\"#FF0000\">" + KEYS.Get("newmap_inf_damaged",{"v1":int(param1._damage)}) + "</font>";
+				}
+				if(!param1._damage)
+				{
+					mcInfo.tStatus.htmlText = "Fine";
+				}
+				if(!param1._damage && param1._base < 1)
+				{
+					mcInfo.tStatus.htmlText = KEYS.Get("newmap_re");
+				}
+				mcInfo.tOwner.htmlText = param1._name;
+				mcInfo.tUserId.text = KEYS.Get("label_userid",{"v1":param1._userID});
+				mcInfo.tUserId.visible = true;
+			}
+			mcInfo.tLocation.htmlText = param1.X + " x " + param1.Y;
+			mcInfo.visible = true;
+		}
       
       private function ProfilePic(param1:Number) : void
       {

@@ -1231,408 +1231,412 @@ package
          }
       }
       
-      public function SortButtonIcons(param1:int = 2, param2:int = 4, param3:int = 0) : void
-      {
-         var _loc4_:int = 9;
-         var _loc5_:int = 195;
-         var _loc6_:int = param1;
-         var _loc7_:int = param2;
-         var _loc8_:int = 67;
-         var _loc9_:int = 55;
-         var _loc10_:int = param3;
-         var _loc11_:int = 0;
-         var _loc12_:int = 0;
-         var _loc13_:int = 0;
-        //  if(MapRoomManager.instance.isInMapRoom2)
-        //  {
-            _loc10_ += 35;
-        //  }
-         var _loc14_:int = 0;
-         while(_loc14_ < this._buttonIcons.length)
-         {
-            if(this._buttonIcons[_loc14_].visible)
-            {
-               this._buttonIcons[_loc14_].x = _loc4_ + _loc11_;
-               this._buttonIcons[_loc14_].y = _loc5_ + _loc10_;
-               _loc13_++;
-               _loc10_ += _loc9_;
-               if(_loc13_ >= _loc7_)
-               {
-                  _loc13_ = 0;
-                  _loc12_++;
-                  _loc10_ = 0;
-                  _loc11_ += _loc8_;
-               }
-            }
-            _loc14_++;
-         }
-      }
+		public function SortButtonIcons(param1:int = 2, param2:int = 4, param3:int = 0) : void
+		{
+			var _loc4_:int = 9;
+			var _loc5_:int = 195;
+			var _loc6_:int = param1;
+			var _loc7_:int = param2;
+			var _loc8_:int = 67;
+			var _loc9_:int = 55;
+			var _loc10_:int = param3;
+			var _loc11_:int = 0;
+			var _loc12_:int = 0;
+			var _loc13_:int = 0;
+			//  if(MapRoomManager.instance.isInMapRoom2)
+			//  {
+				_loc10_ += 35;
+			//  }
+			var _loc14_:int = 0;
+			while(_loc14_ < this._buttonIcons.length)
+			{
+				if(this._buttonIcons[_loc14_].visible)
+				{
+					this._buttonIcons[_loc14_].x = _loc4_ + _loc11_;
+					this._buttonIcons[_loc14_].y = _loc5_ + _loc10_;
+					_loc13_++;
+					_loc10_ += _loc9_;
+					if(_loc13_ >= _loc7_)
+					{
+						_loc13_ = 0;
+						_loc12_++;
+						_loc10_ = 0;
+						_loc11_ += _loc8_;
+					}
+				}
+				_loc14_++;
+			}
+		}
+		
+		public function InitDealspot() : void
+		{
+			if(mc.bDealSpot)
+			{
+				mc.bDealSpot.visible = true;
+				mc.bDealSpot.buttonMode = true;
+				mc.bDealSpot.mouseChildren = true;
+				while(mc.bDealSpot.numChildren)
+				{
+					mc.bDealSpot.removeChildAt(0);
+				}
+				this._dealspot = new DealSpot(this);
+				this._dealspot.x = -5;
+				this._dealspot.y = -5;
+				mc.bDealSpot.addChild(this._dealspot);
+			}
+			else if(mc.bDealSpot)
+			{
+				mc.bDealSpot.visible = false;
+				mc.bDealSpot.mouseChildren = false;
+				this._dealspot = null;
+			}
+		}
+		
+		public function ButtonClick(param1:String) : Function
+		{
+			var label:String = param1;
+			return function(param1:MouseEvent):void
+			{
+				if(label == "gift")
+				{
+					if(POPUPS.QueueCount("gifts") > 0 && GLOBAL._flags.gifts == 1)
+					{
+						POPUPS.Show("gifts");
+					}
+					else
+					{
+						// POPUPS.Gift();
+						GLOBAL.Message(KEYS.Get("disabled_gifts"));
+					}
+				}
+				else if(label == "alert")
+				{
+					if (BASE._currentAttacks && BASE._currentAttacks.length > 0)
+					{
+						for each (var attack:Object in BASE._currentAttacks)
+						{
+							attack.seen = true;
+						}
+						BASE._attacksModified = true;
+						BASE.Save();
+					}
+					POPUPS.Show("alerts");
+				}
+				else if(label == "invite")
+				{
+					if (GLOBAL._flags.invites == 1)
+					{
+						POPUPS.Invite();
+					}
+					else
+					{
+						GLOBAL.Message(KEYS.Get("disabled_invites"));
+					}
+				}
+				else if(label == "inbox")
+				{
+					if(GLOBAL._flags.messaging == 1)
+					{
+						MAILBOX.Show();
+					}
+					else
+					{
+						GLOBAL.Message(KEYS.Get("disabled_mail"));
+					}
+				}
+				else if(label == "daily")
+				{
+					BUY.Offers("daily");
+				}
+				else if(label == "earn")
+				{
+					GLOBAL.Message(KEYS.Get("discord_earn"));
+				}
+			};
+		}
       
-      public function InitDealspot() : void
-      {
-         if(mc.bDealSpot)
-         {
-            mc.bDealSpot.visible = true;
-            mc.bDealSpot.buttonMode = true;
-            mc.bDealSpot.mouseChildren = true;
-            while(mc.bDealSpot.numChildren)
-            {
-               mc.bDealSpot.removeChildAt(0);
-            }
-            this._dealspot = new DealSpot(this);
-            this._dealspot.x = -5;
-            this._dealspot.y = -5;
-            mc.bDealSpot.addChild(this._dealspot);
-         }
-         else if(mc.bDealSpot)
-         {
-            mc.bDealSpot.visible = false;
-            mc.bDealSpot.mouseChildren = false;
-            this._dealspot = null;
-         }
-      }
+		public function DescentDebuffShow() : void
+		{
+			var _loc1_:Boolean = (GLOBAL.mode == GLOBAL.e_BASE_MODE.ATTACK || GLOBAL.mode == GLOBAL.e_BASE_MODE.WMATTACK) && BASE.isInfernoMainYardOrOutpost && !MAPROOM_DESCENT.DescentPassed && (MAPROOM_DESCENT.DescentLevel > 6 && MAPROOM_DESCENT.DescentLevel < MAPROOM_DESCENT._descentLvlMax);
+			if(this._descentDebuff)
+			{
+				this.DescentDebuffHide();
+			}
+			if(_loc1_)
+			{
+				this._descentDebuff = new DescentDebuffPopup();
+				this._descentDebuff.Show(MAPROOM_DESCENT.DescentLevel);
+			}
+		}
+		
+		public function DescentDebuffHide() : void
+		{
+			if(this._descentDebuff)
+			{
+				this._descentDebuff.Hide();
+			}
+		}
       
-      public function ButtonClick(param1:String) : Function
-      {
-         var label:String = param1;
-         return function(param1:MouseEvent):void
-         {
-            if(label == "gift")
-            {
-               if(POPUPS.QueueCount("gifts") > 0 && GLOBAL._flags.gifts == 1)
-               {
-                  POPUPS.Show("gifts");
-               }
-               else
-               {
-                  // POPUPS.Gift();
-                  GLOBAL.Message(KEYS.Get("disabled_gifts"));
-               }
-            }
-            else if(label == "alert")
-            {
-               if (BASE._currentAttacks && BASE._currentAttacks.length > 0)
-               {
-                  for each (var attack:Object in BASE._currentAttacks)
-                  {
-                     attack.seen = true;
-                  }
-                  BASE._attacksModified = true;
-                  BASE.Save();
-               }
-               POPUPS.Show("alerts");
-            }
-            else if(label == "invite")
-            {
-               if (GLOBAL._flags.invites == 1)
-               {
-                  POPUPS.Invite();
-               }
-               else
-               {
-                  GLOBAL.Message(KEYS.Get("disabled_invites"));
-               }
-            }
-            else if(label == "inbox")
-            {
-               if(GLOBAL._flags.messaging == 1)
-               {
-                  MAILBOX.Show();
-               }
-               else
-               {
-                  GLOBAL.Message(KEYS.Get("disabled_mail"));
-               }
-            }
-            else if(label == "daily")
-            {
-               BUY.Offers("daily");
-            }
-            else if(label == "earn")
-            {
-               GLOBAL.Message(KEYS.Get("discord_earn"));
-            }
-         };
-      }
+		public function DisplayBuffs() : void
+		{
+			var _loc3_:int = 0;
+			var _loc4_:int = 0;
+			var _loc5_:int = 0;
+			var _loc6_:int = 0;
+			var _loc7_:int = 0;
+			var _loc8_:int = 0;
+			var _loc9_:int = 0;
+			var _loc10_:int = 0;
+			var _loc11_:Object = null;
+			var _loc12_:String = null;
+			var _loc13_:MovieClip = null;
+			if(BASE.isInfernoMainYardOrOutpost)
+			{
+				this.BuffHide(null);
+				return;
+			}
+			var _loc1_:Number = POWERUPS.CheckPowers(null,"NORMAL");
+			var _loc2_:int = this.mcBuffHolder.numChildren;
+			while(_loc2_--)
+			{
+				this.mcBuffHolder.getChildAt(_loc2_).removeEventListener(MouseEvent.ROLL_OVER,this.BuffShow);
+				this.mcBuffHolder.getChildAt(_loc2_).removeEventListener(MouseEvent.ROLL_OUT,this.BuffHide);
+				this.mcBuffHolder.removeChildAt(_loc2_);
+			}
+			if(_loc1_ > 0)
+			{
+				_loc3_ = 3;
+				_loc4_ = 2;
+				_loc5_ = -1 * (32 + 4);
+				_loc6_ = 32 + 4;
+				_loc7_ = 0;
+				_loc8_ = 0;
+				_loc9_ = 0;
+				_loc10_ = 0;
+				_loc11_ = POWERUPS.GetPowerups();
+				for(_loc12_ in _loc11_)
+				{
+					if(POWERUPS._expireRealTime)
+					{
+						if(_loc11_[_loc12_].endtime.Get() < GLOBAL.Timestamp())
+						{
+							this.BuffHide(null);
+							continue;
+						}
+					}
+					(_loc13_ = new ui_buffIcon_CLIP()).gotoAndStop(_loc12_);
+					_loc13_.name = _loc12_;
+					_loc13_.x = _loc9_ * _loc5_;
+					_loc13_.y = _loc10_ * _loc6_;
+					_loc9_++;
+					if(_loc9_ >= _loc3_)
+					{
+						_loc9_ = 0;
+						_loc10_++;
+					}
+					_loc13_.addEventListener(MouseEvent.ROLL_OVER,this.BuffShow);
+					_loc13_.addEventListener(MouseEvent.ROLL_OUT,this.BuffHide);
+					this.mcBuffHolder.addChild(_loc13_);
+				}
+			}
+			else
+			{
+				this.BuffHide(null);
+			}
+		}
       
-      public function DescentDebuffShow() : void
-      {
-         var _loc1_:Boolean = (GLOBAL.mode == GLOBAL.e_BASE_MODE.ATTACK || GLOBAL.mode == GLOBAL.e_BASE_MODE.WMATTACK) && BASE.isInfernoMainYardOrOutpost && !MAPROOM_DESCENT.DescentPassed && (MAPROOM_DESCENT.DescentLevel > 6 && MAPROOM_DESCENT.DescentLevel < MAPROOM_DESCENT._descentLvlMax);
-         if(this._descentDebuff)
-         {
-            this.DescentDebuffHide();
-         }
-         if(_loc1_)
-         {
-            this._descentDebuff = new DescentDebuffPopup();
-            this._descentDebuff.Show(MAPROOM_DESCENT.DescentLevel);
-         }
-      }
+		public function BuffShow(param1:MouseEvent) : void
+		{
+			var _loc8_:bubblepopupBuff = null;
+			var _loc2_:MovieClip = param1.currentTarget as MovieClip;
+			var _loc3_:String = "";
+			var _loc4_:* = "";
+			var _loc5_:BaseBuff;
+			_loc5_ = BaseBuff(BaseBuffHandler.instance.getBuffByName(_loc2_.name));
+			if(!_loc5_)
+			{
+				return;
+			}
+			var _loc6_:String = _loc5_.description;
+			var _loc7_:String = "buff_duration";
+			_loc3_ = _loc6_;
+			_loc4_ = "<b>" + KEYS.Get(_loc7_) + "</b>";
+			if(POWERUPS._expireRealTime)
+			{
+				if(POWERUPS.Timeleft(_loc2_.name) > 0)
+				{
+					_loc4_ += GLOBAL.ToTime(POWERUPS.Timeleft(_loc2_.name),true);
+				}
+				else
+				{
+					_loc4_ = "";
+				}
+			}
+			else if(POWERUPS.Timeleft(_loc2_.name) > 0)
+			{
+				_loc4_ += GLOBAL.ToTime(POWERUPS.Timeleft(_loc2_.name),true);
+			}
+			else
+			{
+				_loc4_ = "";
+			}
+			if(!this._popupBuff)
+			{
+				_loc8_ = new bubblepopupBuff();
+				this._popupBuff = addChild(_loc8_) as bubblepopupBuff;
+				_loc8_.Setup(_loc2_.x + _loc2_.width / 2,_loc2_.y + _loc2_.height + 4,_loc3_,_loc4_);
+				_loc8_.x = this.mcBuffHolder.x + (_loc2_.x + _loc2_.width / 2);
+				_loc8_.y = this.mcBuffHolder.y + (_loc2_.y + _loc2_.height + 4);
+			}
+			else
+			{
+				bubblepopupBuff(this._popupBuff).Update(_loc3_,_loc4_);
+			}
+		}
+			
+		public function BuffHide(param1:MouseEvent) : void
+		{
+			if(this._popupBuff)
+			{
+				removeChild(this._popupBuff);
+				this._popupBuff = null;
+			}
+		}
+		
+		public function BuffOff(param1:MouseEvent) : void
+		{
+			POWERUPS._testToggleOffPowers = true;
+			var _loc2_:MovieClip = param1.currentTarget as MovieClip;
+			POWERUPS.Remove(_loc2_.name);
+			this.BuffHide(null);
+		}
       
-      public function DescentDebuffHide() : void
-      {
-         if(this._descentDebuff)
-         {
-            this._descentDebuff.Hide();
-         }
-      }
+		public function ButtonInfoShow(param1:MouseEvent) : void
+		{
+			var _loc4_:String = null;
+			var _loc2_:int = param1.target.x + 50;
+			var _loc3_:int = param1.target.y + 25;
+			var _loc5_:Boolean = true;
+			switch(param1.target.name)
+			{
+				case "bInvite": {
+					_loc4_ = KEYS.Get("pop_invite");
+					break;
+				}
+				case "bGift": {
+					if(POPUPS.QueueCount("gifts") > 0)
+					{
+						_loc4_ = KEYS.Get("pop_acceptgifts",{"v1":POPUPS.QueueCount("gifts")});
+					}
+					else
+					{
+						_loc4_ = KEYS.Get("pop_sendgifts");
+					}
+					break;
+				}
+				case "bInbox": {
+					_loc4_ = KEYS.Get("pop_mailbox");
+					break;
+				}
+				case "bAlert": {
+					_loc4_ = KEYS.Get("pop_alerts");
+					break;
+				}
+				case "mcHit": {
+					_loc4_ = KEYS.Get("pop_outposts");
+					_loc2_ = param1.target.parent.x + 140;
+					_loc3_ = param1.target.parent.y + 20;
+					break;
+				}
+				case "bDealSpot":
+				case "_dealspot": {
+					_loc4_ = "<b>DealSpot Offers</b><br>Check DealSpot to earn Shiny.";
+					_loc2_ = param1.target.parent.x + 40;
+					_loc3_ = param1.target.parent.y + 20;
+					if(Boolean(this._dealspot) && this._dealspot._hasOffers)
+					{
+						_loc4_ = "<b>DealSpot Offers</b><br>Check DealSpot to earn Shiny.";
+						_loc3_ = param1.target.parent.y + 25;
+						break;
+					}
+					_loc4_ = " ";
+					mc.bDealSpot.mouseChildren = false;
+					this.BubbleHide();
+					mc.bDealSpot.visible = false;
+					mc.bDealSpot.enabled = false;
+					if(Boolean(this._dealspot) && Boolean(this._dealspot.parent))
+					{
+						this._dealspot.parent.removeChild(this._dealspot);
+					}
+					_loc5_ = false;
+					return;
+				}
+			}
+			if(_loc5_ && _loc4_ != null)
+			{
+				this.BubbleShow(_loc2_,_loc3_,_loc4_);
+			}
+		}
       
-      public function DisplayBuffs() : void
-      {
-         var _loc3_:int = 0;
-         var _loc4_:int = 0;
-         var _loc5_:int = 0;
-         var _loc6_:int = 0;
-         var _loc7_:int = 0;
-         var _loc8_:int = 0;
-         var _loc9_:int = 0;
-         var _loc10_:int = 0;
-         var _loc11_:Object = null;
-         var _loc12_:String = null;
-         var _loc13_:MovieClip = null;
-         if(BASE.isInfernoMainYardOrOutpost)
-         {
-            this.BuffHide(null);
-            return;
-         }
-         var _loc1_:Number = POWERUPS.CheckPowers(null,"NORMAL");
-         var _loc2_:int = this.mcBuffHolder.numChildren;
-         while(_loc2_--)
-         {
-            this.mcBuffHolder.getChildAt(_loc2_).removeEventListener(MouseEvent.ROLL_OVER,this.BuffShow);
-            this.mcBuffHolder.getChildAt(_loc2_).removeEventListener(MouseEvent.ROLL_OUT,this.BuffHide);
-            this.mcBuffHolder.removeChildAt(_loc2_);
-         }
-         if(_loc1_ > 0)
-         {
-            _loc3_ = 3;
-            _loc4_ = 2;
-            _loc5_ = -1 * (32 + 4);
-            _loc6_ = 32 + 4;
-            _loc7_ = 0;
-            _loc8_ = 0;
-            _loc9_ = 0;
-            _loc10_ = 0;
-            _loc11_ = POWERUPS.GetPowerups();
-            for(_loc12_ in _loc11_)
-            {
-               if(POWERUPS._expireRealTime)
-               {
-                  if(_loc11_[_loc12_].endtime.Get() < GLOBAL.Timestamp())
-                  {
-                     this.BuffHide(null);
-                     continue;
-                  }
-               }
-               (_loc13_ = new ui_buffIcon_CLIP()).gotoAndStop(_loc12_);
-               _loc13_.name = _loc12_;
-               _loc13_.x = _loc9_ * _loc5_;
-               _loc13_.y = _loc10_ * _loc6_;
-               _loc9_++;
-               if(_loc9_ >= _loc3_)
-               {
-                  _loc9_ = 0;
-                  _loc10_++;
-               }
-               _loc13_.addEventListener(MouseEvent.ROLL_OVER,this.BuffShow);
-               _loc13_.addEventListener(MouseEvent.ROLL_OUT,this.BuffHide);
-               this.mcBuffHolder.addChild(_loc13_);
-            }
-         }
-         else
-         {
-            this.BuffHide(null);
-         }
-      }
+		public function ButtonInfoHide(param1:MouseEvent) : void
+		{
+			this.BubbleHide();
+		}
+		
+		private function SetPoints(param1:Number, param2:Number, param3:Number, param4:Number, param5:uint, param6:Boolean) : void
+		{
+			var _loc7_:int = 0;
+			if(GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD)
+			{
+				mc.mcPoints.mcLevel.text = param5.toString();
+				_loc7_ = 200 / (param2 - param1) * (param4 - param1);
+				TweenLite.to(mc.mcPoints.mcBar,0.6,{
+					"width":_loc7_,
+					"ease":Elastic.easeInOut
+				});
+				if(param6)
+				{
+					mc.mcPoints.mcStar.scaleX = mc.mcPoints.mcStar.scaleY = 0.8;
+					mc.mcPoints.mcStar.rotation = 180;
+					TweenLite.to(mc.mcPoints.mcStar,1,{
+						"scaleX":1,
+						"scaleY":1,
+						"rotation":0,
+						"ease":Elastic.easeOut
+					});
+				}
+			}
+		}
       
-      public function BuffShow(param1:MouseEvent) : void
-      {
-         var _loc8_:bubblepopupBuff = null;
-         var _loc2_:MovieClip = param1.currentTarget as MovieClip;
-         var _loc3_:String = "";
-         var _loc4_:* = "";
-         var _loc5_:BaseBuff;
-         _loc5_ = BaseBuff(BaseBuffHandler.instance.getBuffByName(_loc2_.name));
-         if(!_loc5_)
-         {
-            return;
-         }
-         var _loc6_:String = _loc5_.description;
-         var _loc7_:String = "buff_duration";
-         _loc3_ = _loc6_;
-         _loc4_ = "<b>" + KEYS.Get(_loc7_) + "</b>";
-         if(POWERUPS._expireRealTime)
-         {
-            if(POWERUPS.Timeleft(_loc2_.name) > 0)
-            {
-               _loc4_ += GLOBAL.ToTime(POWERUPS.Timeleft(_loc2_.name),true);
-            }
-            else
-            {
-               _loc4_ = "";
-            }
-         }
-         else if(POWERUPS.Timeleft(_loc2_.name) > 0)
-         {
-            _loc4_ += GLOBAL.ToTime(POWERUPS.Timeleft(_loc2_.name),true);
-         }
-         else
-         {
-            _loc4_ = "";
-         }
-         if(!this._popupBuff)
-         {
-            _loc8_ = new bubblepopupBuff();
-            this._popupBuff = addChild(_loc8_) as bubblepopupBuff;
-            _loc8_.Setup(_loc2_.x + _loc2_.width / 2,_loc2_.y + _loc2_.height + 4,_loc3_,_loc4_);
-            _loc8_.x = this.mcBuffHolder.x + (_loc2_.x + _loc2_.width / 2);
-            _loc8_.y = this.mcBuffHolder.y + (_loc2_.y + _loc2_.height + 4);
-         }
-         else
-         {
-            bubblepopupBuff(this._popupBuff).Update(_loc3_,_loc4_);
-         }
-      }
-      
-      public function BuffHide(param1:MouseEvent) : void
-      {
-         if(this._popupBuff)
-         {
-            removeChild(this._popupBuff);
-            this._popupBuff = null;
-         }
-      }
-      
-      public function BuffOff(param1:MouseEvent) : void
-      {
-         POWERUPS._testToggleOffPowers = true;
-         var _loc2_:MovieClip = param1.currentTarget as MovieClip;
-         POWERUPS.Remove(_loc2_.name);
-         this.BuffHide(null);
-      }
-      
-      public function ButtonInfoShow(param1:MouseEvent) : void
-      {
-         var _loc4_:String = null;
-         var _loc2_:int = param1.target.x + 50;
-         var _loc3_:int = param1.target.y + 25;
-         var _loc5_:Boolean = true;
-         switch(param1.target.name)
-         {
-            case "bInvite":
-               _loc4_ = KEYS.Get("pop_invite");
-               break;
-            case "bGift":
-               if(POPUPS.QueueCount("gifts") > 0)
-               {
-                  _loc4_ = KEYS.Get("pop_acceptgifts",{"v1":POPUPS.QueueCount("gifts")});
-               }
-               else
-               {
-                  _loc4_ = KEYS.Get("pop_sendgifts");
-               }
-               break;
-            case "bInbox":
-               _loc4_ = KEYS.Get("pop_mailbox");
-               break;
-            case "bAlert":
-               _loc4_ = KEYS.Get("pop_alerts");
-               break;
-            case "mcHit":
-               _loc4_ = KEYS.Get("pop_outposts");
-               _loc2_ = param1.target.parent.x + 140;
-               _loc3_ = param1.target.parent.y + 20;
-               break;
-            case "bDealSpot":
-            case "_dealspot":
-               _loc4_ = "<b>DealSpot Offers</b><br>Check DealSpot to earn Shiny.";
-               _loc2_ = param1.target.parent.x + 40;
-               _loc3_ = param1.target.parent.y + 20;
-               if(Boolean(this._dealspot) && this._dealspot._hasOffers)
-               {
-                  _loc4_ = "<b>DealSpot Offers</b><br>Check DealSpot to earn Shiny.";
-                  _loc3_ = param1.target.parent.y + 25;
-                  break;
-               }
-               _loc4_ = " ";
-               mc.bDealSpot.mouseChildren = false;
-               this.BubbleHide();
-               mc.bDealSpot.visible = false;
-               mc.bDealSpot.enabled = false;
-               if(Boolean(this._dealspot) && Boolean(this._dealspot.parent))
-               {
-                  this._dealspot.parent.removeChild(this._dealspot);
-               }
-               _loc5_ = false;
-               return;
-         }
-         if(_loc5_ && _loc4_ != null)
-         {
-            this.BubbleShow(_loc2_,_loc3_,_loc4_);
-         }
-         else if(_loc4_ == null)
-         {
-         }
-      }
-      
-      public function ButtonInfoHide(param1:MouseEvent) : void
-      {
-         this.BubbleHide();
-      }
-      
-      private function SetPoints(param1:Number, param2:Number, param3:Number, param4:Number, param5:uint, param6:Boolean) : void
-      {
-         var _loc7_:int = 0;
-         if(GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD)
-         {
-            mc.mcPoints.mcLevel.text = param5.toString();
-            _loc7_ = 200 / (param2 - param1) * (param4 - param1);
-            TweenLite.to(mc.mcPoints.mcBar,0.6,{
-               "width":_loc7_,
-               "ease":Elastic.easeInOut
-            });
-            if(param6)
-            {
-               mc.mcPoints.mcStar.scaleX = mc.mcPoints.mcStar.scaleY = 0.8;
-               mc.mcPoints.mcStar.rotation = 180;
-               TweenLite.to(mc.mcPoints.mcStar,1,{
-                  "scaleX":1,
-                  "scaleY":1,
-                  "rotation":0,
-                  "ease":Elastic.easeOut
-               });
-            }
-         }
-      }
-      
-      public function BubbleShow(param1:int, param2:int, param3:String, param4:int = 3) : void
-      {
-         var _loc5_:bubblepopup3;
-         (_loc5_ = new bubblepopup3()).Setup(param1,param2,param3,param4);
-         _loc5_.Wobble();
-         this._bubbleDo = this.addChild(_loc5_);
-      }
-      
-      public function BubbleHide() : void
-      {
-         if(Boolean(this._bubbleDo) && Boolean(this._bubbleDo.parent))
-         {
-            this.removeChild(this._bubbleDo);
-         }
-      }
-      
-      public function validateSiegeWeapon() : Boolean
-      {
-         if(this._siegeweapon == null)
-         {
-            return false;
-         }
-         var _loc1_:Boolean = this._siegeweapon.validate();
-         if(!_loc1_)
-         {
-            this.ClearSiegeWeapon();
-         }
-         return _loc1_;
-      }
+		public function BubbleShow(param1:int, param2:int, param3:String, param4:int = 3) : void
+		{
+			var _loc5_:bubblepopup3;
+			(_loc5_ = new bubblepopup3()).Setup(param1,param2,param3,param4);
+			_loc5_.Wobble();
+			this._bubbleDo = this.addChild(_loc5_);
+		}
+		
+		public function BubbleHide() : void
+		{
+			if(Boolean(this._bubbleDo) && Boolean(this._bubbleDo.parent))
+			{
+				this.removeChild(this._bubbleDo);
+			}
+		}
+		
+		public function validateSiegeWeapon() : Boolean
+		{
+			if(this._siegeweapon == null)
+			{
+				return false;
+			}
+			var _loc1_:Boolean = this._siegeweapon.validate();
+			if(!_loc1_)
+			{
+				this.ClearSiegeWeapon();
+			}
+			return _loc1_;
+		}
+
    }
 }

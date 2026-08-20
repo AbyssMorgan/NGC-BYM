@@ -20,4 +20,5 @@ export type CellData = {
 	fbid?: string;
 	pic_square?: string;
 	cq?: number;
+	bv?: string;
 };

@@ -72,5 +72,6 @@ export const userCell = async (ctx: Context, cell: WorldMapCell, cellOwners: Map
 		pic_square: cellOwner.pic_square,
 		im: cellOwner.pic_square,
 		cq: cellOwner.save.empirevalue,
+		bv: cellOwner.save.basevalue,
 	};
 };

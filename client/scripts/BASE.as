@@ -5852,28 +5852,28 @@ package
 
 		public static function CalcBaseValue():void
 		{
-			var power:SecNum = new SecNum(0);
-			var buildings:Vector.<Object> = InstanceManager.getInstancesByClass(BFOUNDATION);
-			var building:BFOUNDATION = null;
-			var level:int = 0;
-			var props:Object = null;
-			for each (building in buildings)
-			{
-				if (building._class != "decoration" && building._class != "enemy" && building._class != "wall" && building._class != "immovable" && building._class != "trap" && building !== GLOBAL._newBuilding && building._countdownBuild.Get() <= 0)
+			if(isMainYardOrInfernoMainYard){
+				var power:SecNum = new SecNum(0);
+				var buildings:Vector.<Object> = InstanceManager.getInstancesByClass(BFOUNDATION);
+				var building:BFOUNDATION = null;
+				var level:int = 0;
+				var props:Object = null;
+				for each (building in buildings)
 				{
-					level = building._lvl.Get();
-					if (level <= 0)
+					if (building._class != "decoration" && building._class != "enemy" && building._class != "wall" && building._class != "immovable" && building._class != "trap" && building !== GLOBAL._newBuilding && building._countdownBuild.Get() <= 0)
 					{
-						level = 1;
-					}
-					if (Boolean(props = GLOBAL._buildingProps[building._type - 1]) && Boolean(props.hp[level - 1]))
-					{
-						power.Add(props.hp[level - 1]);
+						level = building._lvl.Get();
+						if (level <= 0)
+						{
+							level = 1;
+						}
+						if (Boolean(props = GLOBAL._buildingProps[building._type - 1]) && Boolean(props.hp[level - 1]))
+						{
+							power.Add(props.hp[level - 1]);
+						}
 					}
 				}
-			}
-			trace("base power = " + power.Get());
-			if(isMainYardOrInfernoMainYard){
+				trace("base power = " + power.Get());
 				_basePower.Set(power.Get());
 			}
 		}

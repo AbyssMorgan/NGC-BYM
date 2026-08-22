@@ -87,5 +87,5 @@ foreach($files as $file){
 		'repair_time' => $meta->repair_time,
 	];
 }
-file_put_contents("buildings.json", json_encode($buildings));
+file_put_contents("buildings.json", json_encode($buildings, JSON_PRETTY_PRINT));
 ?>

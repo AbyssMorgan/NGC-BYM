@@ -1,4 +1,4 @@
-import { STRUCTURE_RANGE } from "../../../../config/MapRoom3Config.js";
+import { OUTPOST_SAVES, STRUCTURE_RANGE, STRUCTURE_SAVES } from "../../../../config/MapRoom3Config.js";
 import { EnumBaseRelationship } from "../../../../enums/EnumBaseRelationship.js";
 import { Tribes } from "../../../../enums/Tribes.js";
 import { WorldMapCell } from "../../../../models/worldmapcell.model.js";
@@ -7,6 +7,7 @@ import { calculateStructureLevel } from "../../../../services/maproom/v3/calcula
 import { getGeneratedCells, cellKey } from "../../../../services/maproom/v3/generateCells.js";
 import type { CellData } from "../../../../types/CellData.js";
 import { MapRoomVersion } from "../../../../enums/MapRoom.js";
+import { EnumYardType } from "../../../../enums/EnumYardType.js";
 
 /**
  * Formats a wild monster cell (stronghold, resource outpost, or defender) for Map Room 3.
@@ -18,15 +19,13 @@ import { MapRoomVersion } from "../../../../enums/MapRoom.js";
  */
 export const wildMonsterCell = async (cell: WorldMapCell, worldId: string): Promise<CellData> => {
 	const [cellX, cellY] = [cell.x, cell.y];
-
 	const genCell = getGeneratedCells().get(cellKey(cellX, cellY));
 	const tribeIndex = genCell?.tribe ?? ((cellX + cellY) % 4);
-
 	const level = genCell?.level ?? calculateStructureLevel(cellX, cellY, cell.base_type);
 	const baseid = generateBaseId(worldId, cellX, cellY, MapRoomVersion.V3);
-
-	// 60% no clover (altitude 5-31), 40% on clovers (altitude 32-49)
 	const altitude = 5 + (cellX * 73 + cellY * 31) % 45;
+	const tribeSave = (cell.base_type === EnumYardType.OUTPOST) ? OUTPOST_SAVES[tribeIndex][level] : STRUCTURE_SAVES[cell.base_type][level];
+	const basevalue = (typeof tribeSave?.basevalue === "string") ? tribeSave.basevalue : "0";
 
 	return {
 		uid: 0,
@@ -43,6 +42,6 @@ export const wildMonsterCell = async (cell: WorldMapCell, worldId: string): Prom
 		b: cell.base_type,
 		rel: EnumBaseRelationship.ENEMY,
 		cq: 0,
-		bv: cell?.save?.basevalue || "0",
+		bv: cell?.save?.basevalue ?? basevalue,
 	};
 };

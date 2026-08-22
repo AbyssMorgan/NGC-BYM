@@ -86,7 +86,7 @@ export const playerCell = async (ctx: Context, cell: WorldMapCell, cellOwners: M
 		t: hasTruce ? 1 : 0,
 		rel: mine ? EnumBaseRelationship.SELF : EnumBaseRelationship.ENEMY,
 		pic_square: cellOwner.pic_square ?? undefined,
-		cq: cellOwner.save.empirevalue,
-		bv: cellOwner.save.basevalue,
+		cq: cellSave.empirevalue,
+		bv: cellSave.basevalue,
 	};
 };

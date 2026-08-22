@@ -198,16 +198,16 @@ package
 						4.0, // Level 10
 					],
 					"health":[
-						12000, // Level 1
-						20000, // Level 2
-						36000, // Level 3
-						42000, // Level 4
-						52000, // Level 5
-						60000, // Level 6
-						68000, // Level 7
-						76000, // Level 8
-						84000, // Level 9
-						92000, // Level 10
+						20000, // Level 1
+						28000, // Level 2
+						44000, // Level 3
+						50000, // Level 4
+						60000, // Level 5
+						68000, // Level 6
+						76000, // Level 7
+						84000, // Level 8
+						92000, // Level 9
+						100000, // Level 10
 					],
 					"healtime":[
 						1800, // Level 1

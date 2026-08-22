@@ -673,8 +673,8 @@ package
          }
          if (Boolean(GLOBAL._flags.viximo) || Boolean(GLOBAL._flags.kongregate))
          {
-            YARD_PROPS._yardProps[112].block = true;
-            OUTPOST_YARD_PROPS._outpostProps[112].block = true;
+            YARD_PROPS._yardProps[113 - 1].block = true;
+            OUTPOST_YARD_PROPS._outpostProps[113 - 1].block = true;
          }
 
 		if(LOGIN._playerID == 7 && BASE.isMainYard){

@@ -16,7 +16,6 @@ package com.monsters.replayableEvents.monsterInvasion.hellRaisers.rewards
       override protected function onApplication() : void
       {
          GLOBAL._buildingProps[INFERNO_MAGMA_TOWER.ID - 1].block = false;
-         GLOBAL._buildingProps[INFERNO_MAGMA_TOWER.ID - 1].quantity = [value];
       }
       
       override public function removed() : void

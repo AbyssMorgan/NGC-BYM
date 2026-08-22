@@ -305,7 +305,7 @@ package com.monsters.maproom_advanced
 		 if(MapRoomManager.instance.isInMapRoom2){
          	mcOutposts.tR.htmlText = GLOBAL._mapOutpost.length + " " + KEYS.Get("newmap_outposts");
 		 } else {
-			mcOutposts.tR.htmlText = BASE._conquerorPoints.Get() + ' CQ';
+			mcOutposts.tR.htmlText = GLOBAL.FormatNumberNormal(BASE._conquerorPoints.Get()) + ' CQ';
 		 }
       }
       

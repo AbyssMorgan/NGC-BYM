@@ -581,7 +581,12 @@ package com.monsters.maproom3
 				default: {
 					if(this.isOwnedByWildMonster)
 					{
-						return "TO Power " + GLOBAL.FormatNumberNormal(this.baseValue);
+						if(this.m_CellData.wildMonsterTribeId == 4){
+							return "MO Power " + GLOBAL.FormatNumberNormal(this.baseValue);
+						} else {
+							return "TO Power " + GLOBAL.FormatNumberNormal(this.baseValue);
+						}
+						
 					}
 					return "";
 				}

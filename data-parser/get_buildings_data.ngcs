@@ -42,6 +42,7 @@ $files = [
 	'bi_spurtzcannon.as',      // ID 136
 	'bi_blackspurtzcannon.as', // ID 137
 	'stronghold.as',           // ID 138
+	'resourceop.as',           // ID 139
 	'opdefender.as',           // ID 140
 	'bi_cannontower.as',       // ID 142
 	'bi_snipertower.as',       // ID 143

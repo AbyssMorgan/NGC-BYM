@@ -7501,7 +7501,7 @@ package
 					"group": 9,
 					"name": "Moloch Outpost x10",
 					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_3#\/10.",
-					"hint": "Moloch outposts level 100",
+					"hint": "Moloch outposts level 100 - 110",
 					"questimage": "tribe_moloch.png",
 					"rules":
 					{
@@ -7516,7 +7516,7 @@ package
 					"group": 9,
 					"name": "Moloch Outpost x25",
 					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_3#\/25.",
-					"hint": "Moloch outposts level 100",
+					"hint": "Moloch outposts level 100 - 110",
 					"questimage": "tribe_moloch.png",
 					"prereq": "ASSAULT_MO_3_10",
 					"rules":
@@ -7532,7 +7532,7 @@ package
 					"group": 9,
 					"name": "Moloch Outpost x50",
 					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_3#\/50.",
-					"hint": "Moloch outposts level 100",
+					"hint": "Moloch outposts level 100 - 110",
 					"questimage": "tribe_moloch.png",
 					"prereq": "ASSAULT_MO_3_25",
 					"rules":
@@ -7548,7 +7548,7 @@ package
 					"group": 9,
 					"name": "Moloch Outpost x100",
 					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_3#\/100.",
-					"hint": "Moloch outposts level 100",
+					"hint": "Moloch outposts level 100 - 110",
 					"questimage": "tribe_moloch.png",
 					"prereq": "ASSAULT_MO_3_50",
 					"rules":
@@ -7564,7 +7564,7 @@ package
 					"group": 9,
 					"name": "Moloch Outpost x250",
 					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_3#\/250.",
-					"hint": "Moloch outposts level 100",
+					"hint": "Moloch outposts level 100 - 110",
 					"questimage": "tribe_moloch.png",
 					"prereq": "ASSAULT_MO_3_100",
 					"rules":
@@ -7580,7 +7580,7 @@ package
 					"group": 9,
 					"name": "Moloch Outpost x500",
 					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_3#\/500.",
-					"hint": "Moloch outposts level 100",
+					"hint": "Moloch outposts level 100 - 110",
 					"questimage": "tribe_moloch.png",
 					"prereq": "ASSAULT_MO_3_250",
 					"rules":
@@ -7596,7 +7596,7 @@ package
 					"group": 9,
 					"name": "Moloch Outpost x1000",
 					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_3#\/1000.",
-					"hint": "Moloch outposts level 100",
+					"hint": "Moloch outposts level 100 - 110",
 					"questimage": "tribe_moloch.png",
 					"prereq": "ASSAULT_MO_3_500",
 					"rules":
@@ -7612,7 +7612,7 @@ package
 					"group": 9,
 					"name": "Moloch Outpost x2500",
 					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_3#\/2500.",
-					"hint": "Moloch outposts level 100",
+					"hint": "Moloch outposts level 100 - 110",
 					"questimage": "tribe_moloch.png",
 					"prereq": "ASSAULT_MO_3_1000",
 					"rules":
@@ -7628,7 +7628,7 @@ package
 					"group": 9,
 					"name": "Moloch Outpost x5000",
 					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_3#\/5000.",
-					"hint": "Moloch outposts level 100",
+					"hint": "Moloch outposts level 100 - 110",
 					"questimage": "tribe_moloch.png",
 					"prereq": "ASSAULT_MO_3_2500",
 					"rules":
@@ -7644,7 +7644,7 @@ package
 					"group": 9,
 					"name": "Moloch Outpost x10000",
 					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_3#\/10000.",
-					"hint": "Moloch outposts level 100",
+					"hint": "Moloch outposts level 100 - 110",
 					"questimage": "tribe_moloch.png",
 					"prereq": "ASSAULT_MO_3_5000",
 					"rules":

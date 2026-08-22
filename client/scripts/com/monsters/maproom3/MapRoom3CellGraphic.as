@@ -819,50 +819,60 @@ package com.monsters.maproom3
          this.m_LineLayer.addChild(_loc5_);
       }
       
-      private function DrawInfoLayer() : void
-      {
-         if(MapRoom3.mapRoom3Window.IsZoomedOut())
-         {
-            return;
-         }
-         if(this.m_Cell.cellType == EnumYardType.FORTIFICATION && DEBUG_DISPLAY == false)
-         {
-            return;
-         }
-         var _loc1_:TextField = new TextField();
-         _loc1_.defaultTextFormat = new TextFormat("Verdana",10,16777215,true,null,null,null,null,TextFormatAlign.CENTER);
-         _loc1_.width = int(HEX_WIDTH * 1.5);
-         _loc1_.height = 20;
-         _loc1_.x = int(-HEX_WIDTH * 0.25);
-         _loc1_.y = HEX_HEIGHT - _loc1_.height;
-         if(DEBUG_DISPLAY)
-         {
-            _loc1_.x = 0;
-            _loc1_.y = 0;
-            _loc1_.width = HEX_WIDTH;
-            _loc1_.height = HEX_HEIGHT;
-            _loc1_.multiline = true;
-            _loc1_.wordWrap = true;
-            _loc1_.htmlText = "x: " + this.m_Cell.cellX.toString() + " y: " + this.m_Cell.cellY.toString() + " h: " + this.m_Cell.cellHeight.toString() + " t: " + this.m_Cell.cellType.toString() + " rel: " + this.m_Cell.relationship.toString() + " r: " + this.m_Cell.attackRange.toString() + " in_r: " + this.m_Cell.isInAttackRange.toString();
-         }
-         else
-         {
-            var color:String;
-            if(this.m_Cell.relationship == EnumBaseRelationship.k_RELATIONSHIP_ALLY){
-               color = "#54b354";
-            } else if(this.m_Cell.relationship == EnumBaseRelationship.k_RELATIONSHIP_SELF){
-               color = "#78FA78";
-            } else {
-               color = "#FA7878";
-            }
-            _loc1_.htmlText = "<font color='" + color + "'>" + this.m_Cell.name + " (" + this.m_Cell.baseLevel.toString() + ")" + "</font>";
-         }
-         _loc1_.filters = [new GlowFilter(0,1,2,2,4,BitmapFilterQuality.HIGH)];
-         _loc1_.x = _loc1_.x + this.x;
-         _loc1_.y = _loc1_.y + this.y;
-         this.m_InfoLayer.addChild(_loc1_);
-         MapRoom3.mapRoom3Window.infoLayer.addChild(this.m_InfoLayer);
-      }
+		private function DrawInfoLayer() : void
+		{
+			if(MapRoom3.mapRoom3Window.IsZoomedOut())
+			{
+				return;
+			}
+			if(this.m_Cell.cellType == EnumYardType.FORTIFICATION && DEBUG_DISPLAY == false)
+			{
+				return;
+			}
+			var _loc1_:TextField = new TextField();
+			_loc1_.defaultTextFormat = new TextFormat("Verdana",10,16777215,true,null,null,null,null,TextFormatAlign.CENTER);
+			_loc1_.width = int(HEX_WIDTH * 1.5);
+			_loc1_.height = 20;
+			_loc1_.x = int(-HEX_WIDTH * 0.25);
+			_loc1_.y = HEX_HEIGHT - _loc1_.height;
+			if(DEBUG_DISPLAY)
+			{
+				_loc1_.x = 0;
+				_loc1_.y = 0;
+				_loc1_.width = HEX_WIDTH;
+				_loc1_.height = HEX_HEIGHT;
+				_loc1_.multiline = true;
+				_loc1_.wordWrap = true;
+				_loc1_.htmlText = "x: " + this.m_Cell.cellX.toString() + " y: " + this.m_Cell.cellY.toString() + " h: " + this.m_Cell.cellHeight.toString() + " t: " + this.m_Cell.cellType.toString() + " rel: " + this.m_Cell.relationship.toString() + " r: " + this.m_Cell.attackRange.toString() + " in_r: " + this.m_Cell.isInAttackRange.toString();
+			}
+			else
+			{
+				var color:String;
+				if(this.m_Cell.relationship == EnumBaseRelationship.k_RELATIONSHIP_ALLY){
+					color = "#54b354";
+				} else if(this.m_Cell.relationship == EnumBaseRelationship.k_RELATIONSHIP_SELF){
+					color = "#78FA78";
+				} else {
+					if(this.m_Cell.baseLevel == 120){
+						color = "#C93636";
+					} else if(this.m_Cell.baseLevel >= 90){
+						color = "#E95656";
+					} else if(this.m_Cell.baseLevel >= 70){
+						color = "#FA7878";
+					} else if(this.m_Cell.baseLevel >= 45){
+						color = "#F9A5A5";
+					} else {
+						color = "#CCCCCC";
+					}
+				}
+				_loc1_.htmlText = "<font color='" + color + "'>" + this.m_Cell.name + " (" + this.m_Cell.baseLevel.toString() + ")" + "</font>";
+			}
+			_loc1_.filters = [new GlowFilter(0,1,2,2,4,BitmapFilterQuality.HIGH)];
+			_loc1_.x = _loc1_.x + this.x;
+			_loc1_.y = _loc1_.y + this.y;
+			this.m_InfoLayer.addChild(_loc1_);
+			MapRoom3.mapRoom3Window.infoLayer.addChild(this.m_InfoLayer);
+		}
       
       private function DrawDamageBarLayer() : void
       {

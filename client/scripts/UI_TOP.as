@@ -801,7 +801,11 @@ package
 					}
 					else if(MapRoomManager.instance.isInMapRoom3)
 					{
+						var ab:Number = 0;
 						_loc5_ = BaseBuffHandler.instance.getBuffByName(AutoBankBaseBuff.k_NAME) as AutoBankBaseBuff;
+						if(_loc5_){
+							ab = _loc5_.value * 3600;
+						}
 						if(BASE.yardType === EnumYardType.RESOURCE)
 						{
 							_loc7_ = InstanceManager.getInstancesByClass(ResourceOutpost)[0] as ResourceOutpost;
@@ -810,7 +814,7 @@ package
 							"v1":KEYS.Get(GLOBAL._resourceNames[n - 1]),
 							"v2":GLOBAL.FormatNumber(GLOBAL._yardResources["r" + n + "max"]),
 							"v3":GLOBAL.FormatNumber(GLOBAL._yardResources["r" + n + "Rate"]),
-							"v4":GLOBAL.FormatNumber(_loc5_.value * 3600)
+							"v4":GLOBAL.FormatNumber(ab)
 						});
 						_loc3_ = 4;
 					}

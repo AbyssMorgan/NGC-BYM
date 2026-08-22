@@ -40,11 +40,11 @@ package com.monsters.maproom3
       
       private static const INFO_DISPLAY_OFFSET_Y:int = 8;
       
-      private static const INFO_TEXT_COLOR_DEFAULT:uint = 16777215;
+      private static const INFO_TEXT_COLOR_DEFAULT:uint = 0xCCCCCC;
       
-      private static const INFO_TEXT_COLOR_BUFF_BLUE:uint = 42495;
+      private static const INFO_TEXT_COLOR_BUFF_BLUE:uint = 0x00A5FF;
       
-      private static const INFO_TEXT_COLOR_BUFF_RED:uint = 16711680;
+      private static const INFO_TEXT_COLOR_BUFF_RED:uint = 0xF2685E;
        
       
       private var m_InfoDisplay:Sprite;

@@ -61,16 +61,16 @@ package monsters {
 					52000, // Level 10
 				],
 				"damage":[
-					-120, // Level 1
-					-140, // Level 2
-					-160, // Level 3
-					-180, // Level 4
-					-200, // Level 5
-					-220, // Level 6
-					-240, // Level 7
-					-260, // Level 8
-					-280, // Level 9
-					-300, // Level 10
+					-170, // Level 1
+					-190, // Level 2
+					-210, // Level 3
+					-230, // Level 4
+					-250, // Level 5
+					-270, // Level 6
+					-290, // Level 7
+					-310, // Level 8
+					-330, // Level 9
+					-350, // Level 10
 				],
 				"cTime":[
 					4500, // Level 1

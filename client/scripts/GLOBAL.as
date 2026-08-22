@@ -1772,7 +1772,12 @@ package
 		public static function GetExperienceBuff():Number {
 			var currentDate:Date = new Date();
 			var dayOfWeek:int = currentDate.getDay();
-			if (dayOfWeek == 0 || dayOfWeek == 6) {
+			var month:int = currentDate.getMonth() + 1;
+			var day:int = currentDate.getDate();
+			if(month == 12 && day >= 24 && day <= 31){
+				return 10.0; // +1000 %
+			}
+			if(dayOfWeek == 0 || dayOfWeek == 6){
 				return 2.0; // +200 %
 			} else {
 				return 0.0;
@@ -1782,7 +1787,12 @@ package
 		public static function GetHealingBuff():Number {
 			var currentDate:Date = new Date();
 			var dayOfWeek:int = currentDate.getDay();
-			if (dayOfWeek == 0 || dayOfWeek == 6) {
+			var month:int = currentDate.getMonth() + 1;
+			var day:int = currentDate.getDate();
+			if(month == 12 && day >= 24 && day <= 31){
+				return 0.10; // +10 %
+			}
+			if(dayOfWeek == 0 || dayOfWeek == 6){
 				return 0.05; // +5 %
 			} else {
 				return 0.0;

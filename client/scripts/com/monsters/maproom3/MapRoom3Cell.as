@@ -566,22 +566,22 @@ package com.monsters.maproom3
 			switch(this.cellType)
 			{
 				case EnumYardType.PLAYER: {
-					return this.conquerorPoints + " CQ";
+					return GLOBAL.FormatNumberNormal(this.conquerorPoints) + " CQ";
 				}
 				case EnumYardType.RESOURCE: {
-					return "RO Power " + this.baseValue;
+					return "RO Power " + GLOBAL.FormatNumberNormal(this.baseValue);
 				}
 				case EnumYardType.STRONGHOLD: {
-					return "SH Power " + this.baseValue;
+					return "SH Power " + GLOBAL.FormatNumberNormal(this.baseValue);
 				}
 				case EnumYardType.FORTIFICATION: {
-					return "DE Power " + this.baseValue;
+					return "DE Power " + GLOBAL.FormatNumberNormal(this.baseValue);
 				}
 				case EnumYardType.EMPTY:
 				default: {
 					if(this.isOwnedByWildMonster)
 					{
-						return "TO Power " + this.baseValue;
+						return "TO Power " + GLOBAL.FormatNumberNormal(this.baseValue);
 					}
 					return "";
 				}

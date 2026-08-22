@@ -41,9 +41,16 @@ package buildings.yard {
 					// "anim":["anim.v2.1.png",new Rectangle(-20,-25,51,39),30]
 				}
 			},
-			"quantity":[0,1],
-			"hp":[1],
-			"repairTime":[1]
+			"quantity":[
+				0,
+				1
+			],
+			"hp":[
+				1
+			],
+			"repairTime":[
+				1
+			]
 		};
 		
 	}

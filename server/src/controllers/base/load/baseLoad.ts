@@ -143,6 +143,7 @@ export const baseLoad: KoaController = async (ctx) => {
 				baseSave.champion = original.champion as Save["champion"];
 				baseSave.resources = original.resources as Save["resources"];
 				baseSave.storedata = original.storedata as Save["storedata"];
+				baseSave.basevalue = original.basevalue as Save["basevalue"];
 				baseSave.mapversion = MapRoomVersion.V3;
 				postgres.em.persist(baseSave);
 				await postgres.em.flush();

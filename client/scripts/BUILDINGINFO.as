@@ -198,10 +198,10 @@ package
                      else if(_props.id == 9)
                      {
                         _loc1_.push(["btn_juicemonsters",30,true]);
-                        if(CREATURES._guardian)
-                        {
-                           _loc1_.push(["btn_juiceguardian",30,true]);
-                        }
+                        // if(CREATURES._guardian)
+                        // {
+                        //    _loc1_.push(["btn_juiceguardian",30,true]);
+                        // }
                      }
                      else if(_props.id == 10)
                      {
@@ -612,10 +612,10 @@ package
          {
             HOUSING.Show();
          }
-         if(param1.target.labelKey == "btn_juiceguardian")
-         {
-            CHAMPIONCAGE.ShowJuice();
-         }
+        //  if(param1.target.labelKey == "btn_juiceguardian")
+        //  {
+        //     CHAMPIONCAGE.ShowJuice();
+        //  }
          if(param1.target.labelKey == "btn_openstore")
          {
             STORE.ShowB(1,0);

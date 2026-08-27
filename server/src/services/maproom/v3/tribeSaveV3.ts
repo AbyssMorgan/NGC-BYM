@@ -68,7 +68,7 @@ export const tribeSaveV3 = async (baseid: string, worldid: string): Promise<Save
 			const level = defenderLevels[defenderIndex];
 			const defenderSave = STRUCTURE_SAVES[EnumYardType.FORTIFICATION];
 			const genCell = getGeneratedCells().get(cellKey(parentCell.x, parentCell.y));
-			const tribeIndex = genCell!.tribe ?? (parentCell.x, parentCell.y) % 4;
+			const tribeIndex = genCell?.tribe ?? ((parentCell.x, parentCell.y) % 4);
 			
 			return postgres.em.create(Save, {
 				...defenderSave[level],

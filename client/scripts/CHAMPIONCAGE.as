@@ -717,10 +717,10 @@ package
          return 0;
       }
       
-      public static function ShowJuice() : void
-      {
-         GLOBAL.Message(KEYS.Get("msg_juicechampion_confirm"),KEYS.Get("msg_juicechampion_yes"),JuiceChampion);
-      }
+    //   public static function ShowJuice() : void
+    //   {
+    //      GLOBAL.Message(KEYS.Get("msg_juicechampion_confirm"),KEYS.Get("msg_juicechampion_yes"),JuiceChampion);
+    //   }
       
       public static function JuiceChampion() : void
       {

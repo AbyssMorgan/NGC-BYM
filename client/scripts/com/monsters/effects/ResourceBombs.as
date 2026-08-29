@@ -326,6 +326,7 @@ package com.monsters.effects
 				if(GLOBAL._attackersResources["r" + _loc2_.resource].Get() >= _loc2_.cost)
 				{
 					GLOBAL._resources["r" + _loc2_.resource].Add(-_loc2_.cost);
+					GLOBAL._attackersResources["r" + _loc2_.resource].Add(-_loc2_.cost);
 					GLOBAL._attackersDeltaResources["r" + _loc2_.resource] = new SecNum(-_loc2_.cost);
 					GLOBAL._attackersDeltaResources.dirty = true;
 					_loc3_ = true;

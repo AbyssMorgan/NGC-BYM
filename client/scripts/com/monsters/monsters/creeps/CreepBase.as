@@ -2374,12 +2374,12 @@ package com.monsters.monsters.creeps
          setHealth(0);
       }
       
-      private function applyInfernoVenom() : void
-      {
-         if(!this.m_bInfernoCreep && BASE.isInfernoMainYardOrOutpost && (GLOBAL.mode == GLOBAL.e_BASE_MODE.ATTACK || GLOBAL.mode == "wmattack"))
-         {
-            _damagePerSecond.Add(10);
-         }
-      }
-   }
+		private function applyInfernoVenom() : void
+		{
+			if(!this.m_bInfernoCreep && (GLOBAL.mode == GLOBAL.e_BASE_MODE.ATTACK || GLOBAL.mode == "wmattack") && (BASE.isInfernoMainYardOrOutpost || BASE._wmID == 41))
+			{
+				_damagePerSecond.Add(25);
+			}
+		}
+  	}
 }

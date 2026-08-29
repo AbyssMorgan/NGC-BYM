@@ -40,16 +40,16 @@ package monsters {
 					3.70, // Level 10
 				],
 				"health":[
-					600, // Level 1
-					900, // Level 2
-					1200, // Level 3
-					1600, // Level 4
-					2000, // Level 5
-					2400, // Level 6
-					2800, // Level 7
-					3200, // Level 8
-					3600, // Level 9
-					3800, // Level 10
+					6000, // Level 1
+					9000, // Level 2
+					12000, // Level 3
+					16000, // Level 4
+					20000, // Level 5
+					24000, // Level 6
+					28000, // Level 7
+					32000, // Level 8
+					36000, // Level 9
+					38000, // Level 10
 				],
 				"damage":[
 					4000, // Level 1

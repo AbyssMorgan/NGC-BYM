@@ -253,16 +253,16 @@ export const monsterStats: MonsterStatsMap = {
 				3.60, // Level 10
 			],
 			health:[
-				150, // Level 1
-				160, // Level 2
-				170, // Level 3
-				180, // Level 4
-				190, // Level 5
-				200, // Level 6
-				210, // Level 7
-				220, // Level 8
-				230, // Level 9
-				250, // Level 10
+				450, // Level 1
+				480, // Level 2
+				510, // Level 3
+				540, // Level 4
+				570, // Level 5
+				600, // Level 6
+				630, // Level 7
+				660, // Level 8
+				690, // Level 9
+				750, // Level 10
 			],
 			damage:[
 				15, // Level 1
@@ -442,16 +442,16 @@ export const monsterStats: MonsterStatsMap = {
 				3.70, // Level 10
 			],
 			health:[
-				600, // Level 1
-				900, // Level 2
-				1200, // Level 3
-				1600, // Level 4
-				2000, // Level 5
-				2400, // Level 6
-				2800, // Level 7
-				3200, // Level 8
-				3600, // Level 9
-				3800, // Level 10
+				6000, // Level 1
+				9000, // Level 2
+				12000, // Level 3
+				16000, // Level 4
+				20000, // Level 5
+				24000, // Level 6
+				28000, // Level 7
+				32000, // Level 8
+				36000, // Level 9
+				38000, // Level 10
 			],
 			damage:[
 				4000, // Level 1
@@ -718,6 +718,15 @@ export const monsterStats: MonsterStatsMap = {
 			],
 			health:[
 				400, // Level 1
+				450, // Level 2
+				500, // Level 3
+				550, // Level 4
+				600, // Level 5
+				650, // Level 6
+				700, // Level 7
+				750, // Level 8
+				800, // Level 9
+				850, // Level 10
 			],
 			damage:[
 				600, // Level 1
@@ -906,16 +915,16 @@ export const monsterStats: MonsterStatsMap = {
 				1.90, // Level 10
 			],
 			health:[
-				4000, // Level 1
-				4000, // Level 2
-				4300, // Level 3
-				4400, // Level 4
-				4600, // Level 5
-				4800, // Level 6
-				5000, // Level 7
-				5200, // Level 8
-				5400, // Level 9
-				5600, // Level 10
+				5000, // Level 1
+				5000, // Level 2
+				5300, // Level 3
+				5400, // Level 4
+				5600, // Level 5
+				5800, // Level 6
+				6000, // Level 7
+				6200, // Level 8
+				6400, // Level 9
+				6600, // Level 10
 			],
 			damage:[
 				100, // Level 1
@@ -996,16 +1005,16 @@ export const monsterStats: MonsterStatsMap = {
 				1.50, // Level 10
 			],
 			health:[
-				800, // Level 1
-				900, // Level 2
-				950, // Level 3
-				1000, // Level 4
-				1100, // Level 5
-				1200, // Level 6
-				1400, // Level 7
-				1600, // Level 8
-				1800, // Level 9
-				2000, // Level 10
+				1800, // Level 1
+				1900, // Level 2
+				1950, // Level 3
+				2000, // Level 4
+				2100, // Level 5
+				2200, // Level 6
+				2400, // Level 7
+				2600, // Level 8
+				2800, // Level 9
+				3000, // Level 10
 			],
 			damage:[
 				1200, // Level 1
@@ -1479,7 +1488,16 @@ export const monsterStats: MonsterStatsMap = {
 				3.75, // Level 10
 			],
 			health:[
-				750,
+				750, // Level 1
+				800, // Level 2
+				850, // Level 3
+				900, // Level 4
+				950, // Level 5
+				1000, // Level 6
+				1050, // Level 7
+				1100, // Level 8
+				1150, // Level 9
+				1200, // Level 10
 			],
 			damage:[
 				-60, // Level 1
@@ -1560,16 +1578,16 @@ export const monsterStats: MonsterStatsMap = {
 				1.90, // Level 10
 			],
 			health:[
-				700, // Level 1
-				725, // Level 2
-				750, // Level 3
-				800, // Level 4
-				900, // Level 5
-				1000, // Level 6
-				1100, // Level 7
-				1200, // Level 8
-				1300, // Level 9
-				1400, // Level 10
+				1700, // Level 1
+				1725, // Level 2
+				1750, // Level 3
+				1800, // Level 4
+				1900, // Level 5
+				2000, // Level 6
+				2100, // Level 7
+				2200, // Level 8
+				2300, // Level 9
+				2400, // Level 10
 			],
 			damage:[
 				850, // Level 1

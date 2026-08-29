@@ -566,7 +566,7 @@ package com.monsters.maproom3
 			switch(this.cellType)
 			{
 				case EnumYardType.PLAYER: {
-					return GLOBAL.FormatNumberNormal(this.conquerorPoints) + " CQ";
+					return "MY Power: " + GLOBAL.FormatNumberNormal(this.baseValue);
 				}
 				case EnumYardType.RESOURCE: {
 					return "RO Power: " + GLOBAL.FormatNumberNormal(this.baseValue);

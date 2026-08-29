@@ -18,6 +18,7 @@ package com.monsters.maproom3
    import flash.net.URLRequest;
    import flash.text.TextField;
    import flash.text.TextFormat;
+   import com.monsters.enums.EnumYardType;
    
    public class MapRoom3CellMouseover extends Sprite
    {
@@ -299,175 +300,177 @@ package com.monsters.maproom3
             this.m_ButtonDisplay.mouseEnabled = false;
          }
       }
+		
+		private function SetPosition(param1:Number, param2:Number) : void
+		{
+			var _loc3_:int = GLOBAL.StageX;
+			var _loc4_:int = GLOBAL.StageX + GLOBAL.StageWidth;
+			var _loc5_:int = GLOBAL.StageY + 80;
+			var _loc6_:int = this.m_InfoDisplay.width * 0.5;
+			if(param1 - _loc6_ < _loc3_)
+			{
+				param1 = _loc3_ + _loc6_;
+			}
+			else if(param1 + _loc6_ > _loc4_)
+			{
+				param1 = _loc4_ - _loc6_;
+			}
+			x = param1;
+			if(param2 - this.m_InfoDisplay.height < _loc5_)
+			{
+				y = param2 + MapRoom3CellGraphic.HEX_EDGE_LENGTH * MapRoom3.mapRoom3Window.scrollingCanvas.scaleY * 0.5 + this.m_InfoDisplay.height;
+			}
+			else
+			{
+				y = param2 - MapRoom3CellGraphic.HEX_EDGE_LENGTH * MapRoom3.mapRoom3Window.scrollingCanvas.scaleY * 0.5;
+			}
+		}
       
-      private function SetPosition(param1:Number, param2:Number) : void
-      {
-         var _loc3_:int = GLOBAL.StageX;
-         var _loc4_:int = GLOBAL.StageX + GLOBAL.StageWidth;
-         var _loc5_:int = GLOBAL.StageY + 80;
-         var _loc6_:int = this.m_InfoDisplay.width * 0.5;
-         if(param1 - _loc6_ < _loc3_)
-         {
-            param1 = _loc3_ + _loc6_;
-         }
-         else if(param1 + _loc6_ > _loc4_)
-         {
-            param1 = _loc4_ - _loc6_;
-         }
-         x = param1;
-         if(param2 - this.m_InfoDisplay.height < _loc5_)
-         {
-            y = param2 + MapRoom3CellGraphic.HEX_EDGE_LENGTH * MapRoom3.mapRoom3Window.scrollingCanvas.scaleY * 0.5 + this.m_InfoDisplay.height;
-         }
-         else
-         {
-            y = param2 - MapRoom3CellGraphic.HEX_EDGE_LENGTH * MapRoom3.mapRoom3Window.scrollingCanvas.scaleY * 0.5;
-         }
-      }
-      
-      private function SetInfo(param1:MapRoom3Cell) : void
-      {
-         var _loc6_:DisplayObject = null;
-         var _loc11_:* = null;
-         var buff_monster:Number = NaN;
-         var buff_tower:Number = NaN;
-         var buff_tower_wild:Number = NaN;
-         var _loc15_:uint = 0;
-         var _loc16_:uint = 0;
-         var _loc17_:MapRoom3Cell = null;
-         var _loc18_:int = 0;
-         this.ClearInfo();
-         this.m_SelectedCell = param1;
-         if(this.m_SelectedCell == null)
-         {
-            return;
-         }
-         if(param1.isOwnedByWildMonster)
-         {
-            ImageCache.GetImageWithCallBack("worldmap/rollover/tribe_" + param1.name.toLowerCase() + ".png",this.OnWildMonsterPortraitLoaded,true,1);
-            this.m_WildMonsterPortrait.visible = true;
-         }
-         else
-         {
-            this.m_ProfilePicture.load(new URLRequest(param1.picSquare));
-            this.m_ProfilePicture.visible = true;
-         }
-         this.m_DamageBarIcon.bitmapData = MapRoom3AssetCache.instance.GetDamageBarSegmentAsset(param1.damagePercentage);
-         this.m_DamageBarIcon.visible = true;
-         var _loc2_:int = param1.baseLevel;
-         var _loc3_:int = !!param1.playerLevel ? param1.playerLevel : _loc2_;
-         this.m_InfoTextCellName.htmlText = "<b>" + param1.name + " (" + _loc3_.toString() + ")</b>";
-         this.m_TextDisplay.addChild(this.m_InfoTextCellName);
-         var _loc4_:MapRoom3AllianceData;
-         if((_loc4_ = param1.GetAllianceData()) != null)
-         {
-            this.m_InfoTextAlliance.htmlText = _loc4_.name;
-            this.m_TextDisplay.addChild(this.m_InfoTextAlliance);
-            _loc11_ = "alliances/" + _loc4_.imageId + "_small.png";
-            ImageCache.GetImageWithCallBack(_loc11_,this.OnAllianceIconLoaded,true,1);
-            this.m_AllianceIcon.visible = true;
-         }
-         this.m_InfoTextCellType.htmlText = param1.GetLocalisedCellTypeName(_loc2_);
-         this.m_TextDisplay.addChild(this.m_InfoTextCellType);
-         if(param1.isInRangeOfStronghold)
-         {
-            buff_monster = 0;
-            buff_tower = 0;
-            buff_tower_wild = 0;
-            _loc15_ = param1.inRangeOfStrongholds.length;
-            _loc16_ = 0;
-            while(_loc16_ < _loc15_)
-            {
-               _loc17_ = param1.inRangeOfStrongholds[_loc16_];
-               _loc18_ = this.GetPercentageBuffFromStrongholdLevel(_loc17_.baseLevel);
-               if(_loc17_.isOwnedByPlayer)
-               {
-                  buff_monster += _loc18_;
-                  if(param1.isOwnedByPlayer)
-                  {
-                     buff_tower += _loc18_;
-                  }
-               }
-               else if(_loc17_.userID == param1.userID && _loc17_.wildMonsterTribeId == param1.wildMonsterTribeId)
-               {
-                  buff_tower_wild += _loc18_;
-               }
-               _loc16_++;
-            }
-			buff_monster = Math.min(buff_monster, 30);
-			buff_tower = Math.min(buff_tower, 30);
-			buff_tower_wild = Math.min(buff_tower_wild, 30);
-            if(buff_monster > 0 && buff_tower > 0 && buff_monster == buff_tower)
-            {
-               this.m_InfoTextBuff1.htmlText = KEYS.Get("mr3_shbuff_towermonster",{"v1":buff_monster});
-               this.m_TextDisplay.addChild(this.m_InfoTextBuff1);
-            }
-            else if(buff_monster > 0)
-            {
-               this.m_InfoTextBuff1.htmlText = KEYS.Get("mr3_shbuff_monster",{"v1":buff_monster});
-               this.m_TextDisplay.addChild(this.m_InfoTextBuff1);
-            }
-            else if(buff_tower > 0)
-            {
-               this.m_InfoTextBuff1.htmlText = KEYS.Get("mr3_shbuff_tower",{"v1":buff_tower});
-               this.m_TextDisplay.addChild(this.m_InfoTextBuff1);
-            }
-            if(buff_tower_wild > 0)
-            {
-               this.m_InfoTextBuff2.htmlText = KEYS.Get("mr3_shbuff_tower",{"v1":buff_tower_wild});
-               this.m_TextDisplay.addChild(this.m_InfoTextBuff2);
-            }
-         }
-         if(param1.isOwnedByPlayer)
-         {
-            this.m_ButtonDisplay.addChild(this.m_EnterOwnedCellButton);
-         }
-         else
-         {
-            this.m_ButtonDisplay.addChild(this.m_ScoutAttackButton);
-            if(param1.isOwnedByWildMonster == false)
-            {
-               this.m_ButtonDisplay.addChild(this.m_SendMessageButton);
-               if(ALLIANCES._myAlliance != null && param1.allianceID != ALLIANCES._allianceID)
-               {
-                  this.m_ButtonDisplay.addChild(this.m_InviteToAllianceButton);
-               }
-               if(param1.hasTruce == false)
-               {
-                  this.m_ButtonDisplay.addChild(this.m_RequestTruceButton);
-               }
-            }
-         }
-         if(BookmarksManager.instance.IsBookmarked(this.m_SelectedCell))
-         {
-            this.m_ButtonDisplay.addChild(this.m_RemoveBookmarkButton);
-         }
-         else
-         {
-            this.m_ButtonDisplay.addChild(this.m_AddBookmarkButton);
-         }
-         this.m_TruceIcon.visible = this.m_SelectedCell.hasTruce;
-         var _loc5_:int = 0;
-         var _loc7_:uint = uint(this.m_ButtonDisplay.numChildren);
-         var _loc8_:int = 0;
-         while(_loc8_ < _loc7_)
-         {
-            (_loc6_ = this.m_ButtonDisplay.getChildAt(_loc8_)).x = _loc5_;
-            _loc5_ += _loc6_.width;
-            _loc8_++;
-         }
-         this.m_ButtonDisplay.x = -(this.m_ButtonDisplay.width * 0.5);
-         this.m_ButtonDisplay.y = -this.m_ButtonDisplay.height;
-         var _loc9_:uint;
-         var _loc10_:int = (_loc9_ = uint(this.m_TextDisplay.numChildren)) <= 3 ? 6 : 0;
-         _loc8_ = 0;
-         while(_loc8_ < _loc9_)
-         {
-            (_loc6_ = this.m_TextDisplay.getChildAt(_loc8_)).y = _loc10_;
-            _loc10_ += 12;
-            _loc8_++;
-         }
-      }
+		private function SetInfo(param1:MapRoom3Cell) : void
+		{
+			var _loc6_:DisplayObject = null;
+			var _loc11_:* = null;
+			var buff_monster:Number = NaN;
+			var buff_tower:Number = NaN;
+			var buff_tower_wild:Number = NaN;
+			var _loc15_:uint = 0;
+			var _loc16_:uint = 0;
+			var _loc17_:MapRoom3Cell = null;
+			var _loc18_:int = 0;
+			this.ClearInfo();
+			this.m_SelectedCell = param1;
+			if(this.m_SelectedCell == null)
+			{
+				return;
+			}
+			if(param1.isOwnedByWildMonster)
+			{
+				ImageCache.GetImageWithCallBack("worldmap/rollover/tribe_" + param1.name.toLowerCase() + ".png",this.OnWildMonsterPortraitLoaded,true,1);
+				this.m_WildMonsterPortrait.visible = true;
+			}
+			else
+			{
+				this.m_ProfilePicture.load(new URLRequest(param1.picSquare));
+				this.m_ProfilePicture.visible = true;
+			}
+			this.m_DamageBarIcon.bitmapData = MapRoom3AssetCache.instance.GetDamageBarSegmentAsset(param1.damagePercentage);
+			this.m_DamageBarIcon.visible = true;
+			var _loc2_:int = param1.baseLevel;
+			var _loc3_:int = !!param1.playerLevel ? param1.playerLevel : _loc2_;
+			this.m_InfoTextCellName.htmlText = "<b>" + param1.name + " (" + _loc3_.toString() + ")</b>";
+			this.m_TextDisplay.addChild(this.m_InfoTextCellName);
+			var _loc4_:MapRoom3AllianceData;
+			if((_loc4_ = param1.GetAllianceData()) != null)
+			{
+				this.m_InfoTextAlliance.htmlText = _loc4_.name;
+				this.m_TextDisplay.addChild(this.m_InfoTextAlliance);
+				_loc11_ = "alliances/" + _loc4_.imageId + "_small.png";
+				ImageCache.GetImageWithCallBack(_loc11_,this.OnAllianceIconLoaded,true,1);
+				this.m_AllianceIcon.visible = true;
+			}
+			this.m_InfoTextCellType.htmlText = param1.GetLocalisedCellTypeName(_loc2_);
+			this.m_TextDisplay.addChild(this.m_InfoTextCellType);
+			if(param1.cellType == EnumYardType.PLAYER){
+				this.m_InfoTextBuff1.htmlText = GLOBAL.FormatNumberNormal(param1.conquerorPoints) + " CQ";
+				this.m_TextDisplay.addChild(this.m_InfoTextBuff1);
+			} else if(param1.isInRangeOfStronghold){
+				buff_monster = 0;
+				buff_tower = 0;
+				buff_tower_wild = 0;
+				_loc15_ = param1.inRangeOfStrongholds.length;
+				_loc16_ = 0;
+				while(_loc16_ < _loc15_)
+				{
+					_loc17_ = param1.inRangeOfStrongholds[_loc16_];
+					_loc18_ = this.GetPercentageBuffFromStrongholdLevel(_loc17_.baseLevel);
+					if(_loc17_.isOwnedByPlayer)
+					{
+						buff_monster += _loc18_;
+						if(param1.isOwnedByPlayer)
+						{
+							buff_tower += _loc18_;
+						}
+					}
+					else if(_loc17_.userID == param1.userID && _loc17_.wildMonsterTribeId == param1.wildMonsterTribeId)
+					{
+						buff_tower_wild += _loc18_;
+					}
+					_loc16_++;
+				}
+				buff_monster = Math.min(buff_monster, 30);
+				buff_tower = Math.min(buff_tower, 30);
+				buff_tower_wild = Math.min(buff_tower_wild, 30);
+				if(buff_monster > 0 && buff_tower > 0 && buff_monster == buff_tower)
+				{
+					this.m_InfoTextBuff1.htmlText = KEYS.Get("mr3_shbuff_towermonster",{"v1":buff_monster});
+					this.m_TextDisplay.addChild(this.m_InfoTextBuff1);
+				}
+				else if(buff_monster > 0)
+				{
+					this.m_InfoTextBuff1.htmlText = KEYS.Get("mr3_shbuff_monster",{"v1":buff_monster});
+					this.m_TextDisplay.addChild(this.m_InfoTextBuff1);
+				}
+				else if(buff_tower > 0)
+				{
+					this.m_InfoTextBuff1.htmlText = KEYS.Get("mr3_shbuff_tower",{"v1":buff_tower});
+					this.m_TextDisplay.addChild(this.m_InfoTextBuff1);
+				}
+				if(buff_tower_wild > 0)
+				{
+					this.m_InfoTextBuff2.htmlText = KEYS.Get("mr3_shbuff_tower",{"v1":buff_tower_wild});
+					this.m_TextDisplay.addChild(this.m_InfoTextBuff2);
+				}
+			}
+			if(param1.isOwnedByPlayer)
+			{
+				this.m_ButtonDisplay.addChild(this.m_EnterOwnedCellButton);
+			}
+			else
+			{
+				this.m_ButtonDisplay.addChild(this.m_ScoutAttackButton);
+				if(param1.isOwnedByWildMonster == false)
+				{
+					this.m_ButtonDisplay.addChild(this.m_SendMessageButton);
+					if(ALLIANCES._myAlliance != null && param1.allianceID != ALLIANCES._allianceID)
+					{
+						this.m_ButtonDisplay.addChild(this.m_InviteToAllianceButton);
+					}
+					if(param1.hasTruce == false)
+					{
+						this.m_ButtonDisplay.addChild(this.m_RequestTruceButton);
+					}
+				}
+			}
+			if(BookmarksManager.instance.IsBookmarked(this.m_SelectedCell))
+			{
+				this.m_ButtonDisplay.addChild(this.m_RemoveBookmarkButton);
+			}
+			else
+			{
+				this.m_ButtonDisplay.addChild(this.m_AddBookmarkButton);
+			}
+			this.m_TruceIcon.visible = this.m_SelectedCell.hasTruce;
+			var _loc5_:int = 0;
+			var _loc7_:uint = uint(this.m_ButtonDisplay.numChildren);
+			var _loc8_:int = 0;
+			while(_loc8_ < _loc7_)
+			{
+				(_loc6_ = this.m_ButtonDisplay.getChildAt(_loc8_)).x = _loc5_;
+				_loc5_ += _loc6_.width;
+				_loc8_++;
+			}
+			this.m_ButtonDisplay.x = -(this.m_ButtonDisplay.width * 0.5);
+			this.m_ButtonDisplay.y = -this.m_ButtonDisplay.height;
+			var _loc9_:uint;
+			var _loc10_:int = (_loc9_ = uint(this.m_TextDisplay.numChildren)) <= 3 ? 6 : 0;
+			_loc8_ = 0;
+			while(_loc8_ < _loc9_)
+			{
+				(_loc6_ = this.m_TextDisplay.getChildAt(_loc8_)).y = _loc10_;
+				_loc10_ += 12;
+				_loc8_++;
+			}
+		}
       
       private function GetPercentageBuffFromStrongholdLevel(param1:uint) : int
       {

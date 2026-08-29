@@ -907,6 +907,7 @@ package
 			if(this.NoMoreFeed()){
 				tNextFeedTitle.htmlText = "<b>" + KEYS.Get("gcage_nextFeedIn") + "</b>";
                	tNextFeed.htmlText = 'Never Forever';
+				bFeedTimer.mcBar.width = 100;
 			} else if((_loc5_ = CREATURES._guardian._feedTime.Get()) < GLOBAL.Timestamp()){
 				tNextFeedTitle.htmlText = "<b>" + KEYS.Get("gcage_hungry") + "</b>";
 				tNextFeed.htmlText = GLOBAL.ToTime(_loc5_ + CHAMPIONCAGE.STARVETIMER - GLOBAL.Timestamp());
@@ -1326,7 +1327,7 @@ package
 				{
 					if(_page == 1)
 					{
-					this.Switch(1);
+						this.Switch(1);
 					}
 					tNextFeedTitle.htmlText = "<b>" + KEYS.Get("gcage_hungry") + "</b>";
 					tNextFeed.htmlText = GLOBAL.ToTime(_loc1_ + CHAMPIONCAGE.STARVETIMER - GLOBAL.Timestamp());

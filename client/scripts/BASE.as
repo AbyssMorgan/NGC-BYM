@@ -5541,160 +5541,180 @@ package
          }
       }
 
-      public static function CalcResources():void
-      {
-         var _loc1_:Number = NaN;
-         var _loc2_:int = 0;
-         var _loc3_:int = 0;
-         var _loc4_:int = 0;
-         var _loc5_:Vector.<Object> = null;
-         var _loc6_:BFOUNDATION = null;
-         var _loc7_:ResourceCapacityBaseBuff = null;
-         var _loc8_:int = 0;
-         if (isOutpostOrInfernoOutpost)
-         {
-            if (GLOBAL.mode != GLOBAL.e_BASE_MODE.BUILD || MapRoomManager.instance.isInMapRoom3)
-            {
-               return;
-            }
-         }
-         else
-         {
-            _resources.r1max = 10000;
-            _resources.r2max = 10000;
-            _resources.r3max = 10000;
-            _resources.r4max = 10000;
-         }
-         if (_resources.r1.Get() > 25000000 && _resources.r2.Get() > 25000000 && _resources.r3.Get() > 25000000 && _resources.r4.Get() > 25000000)
-         {
-            ACHIEVEMENTS.Check("stockpile", 1);
-         }
-         _resources.r1Rate = 0;
-         _resources.r2Rate = 0;
-         _resources.r3Rate = 0;
-         _resources.r4Rate = 0;
-         _loc5_ = InstanceManager.getInstancesByClass(BRESOURCE);
-         for each (_loc6_ in _loc5_)
-         {
-            _loc3_ = int(_loc6_._type);
-            _loc4_ = _loc6_._lvl.Get();
-            if (isOutpost && Boolean(GLOBAL._currentCell))
-            {
-               if (Boolean(_loc6_._countdownUpgrade) && _loc6_._countdownUpgrade.Get() > 0)
-               {
-                  _loc4_++;
-               }
-            }
-            switch (_loc3_)
-            {
-               case 1:
-                  if (isOutpost && Boolean(GLOBAL._currentCell))
-                  {
-                     _resources.r1Rate += int(BRESOURCE.AdjustProduction(GLOBAL._currentCell, GLOBAL._buildingProps[_loc3_ - 1].produce[_loc4_ - 1]) / GLOBAL._buildingProps[_loc3_ - 1].cycleTime[_loc4_ - 1] * 60 * 60);
-                  }
-                  else
-                  {
-                     _resources.r1Rate += int(GLOBAL._buildingProps[_loc3_ - 1].produce[_loc4_ - 1] / GLOBAL._buildingProps[_loc3_ - 1].cycleTime[_loc4_ - 1] * 60 * 60);
-                  }
-                  break;
-               case 2:
-                  if (isOutpost && Boolean(GLOBAL._currentCell))
-                  {
-                     _resources.r2Rate += int(BRESOURCE.AdjustProduction(GLOBAL._currentCell, GLOBAL._buildingProps[_loc3_ - 1].produce[_loc4_ - 1]) / GLOBAL._buildingProps[_loc3_ - 1].cycleTime[_loc4_ - 1] * 60 * 60);
-                  }
-                  else
-                  {
-                     _resources.r2Rate += int(GLOBAL._buildingProps[_loc3_ - 1].produce[_loc4_ - 1] / GLOBAL._buildingProps[_loc3_ - 1].cycleTime[_loc4_ - 1] * 60 * 60);
-                  }
-                  break;
-               case 3:
-                  if (isOutpost && Boolean(GLOBAL._currentCell))
-                  {
-                     _resources.r3Rate += int(BRESOURCE.AdjustProduction(GLOBAL._currentCell, GLOBAL._buildingProps[_loc3_ - 1].produce[_loc4_ - 1]) / GLOBAL._buildingProps[_loc3_ - 1].cycleTime[_loc4_ - 1] * 60 * 60);
-                  }
-                  else
-                  {
-                     _resources.r3Rate += int(GLOBAL._buildingProps[_loc3_ - 1].produce[_loc4_ - 1] / GLOBAL._buildingProps[_loc3_ - 1].cycleTime[_loc4_ - 1] * 60 * 60);
-                  }
-                  break;
-               case 4:
-                  if (isOutpost && Boolean(GLOBAL._currentCell))
-                  {
-                     _resources.r4Rate += int(BRESOURCE.AdjustProduction(GLOBAL._currentCell, GLOBAL._buildingProps[_loc3_ - 1].produce[_loc4_ - 1]) / GLOBAL._buildingProps[_loc3_ - 1].cycleTime[_loc4_ - 1] * 60 * 60);
-                  }
-                  else
-                  {
-                     _resources.r4Rate += int(GLOBAL._buildingProps[_loc3_ - 1].produce[_loc4_ - 1] / GLOBAL._buildingProps[_loc3_ - 1].cycleTime[_loc4_ - 1] * 60 * 60);
-                  }
-                  break;
-            }
-         }
-         _loc5_ = InstanceManager.getInstancesByClass(BUILDING6);
-         for each (_loc6_ in _loc5_)
-         {
-            if (_loc6_._lvl.Get() >= 1 && isMainYardOrInfernoMainYard)
-            {
-               _loc3_ = _loc6_._type;
-               _resources.r1max += GLOBAL._buildingProps[_loc3_ - 1].capacity[_loc6_._lvl.Get() - 1];
-               _resources.r2max += GLOBAL._buildingProps[_loc3_ - 1].capacity[_loc6_._lvl.Get() - 1];
-               _resources.r3max += GLOBAL._buildingProps[_loc3_ - 1].capacity[_loc6_._lvl.Get() - 1];
-               _resources.r4max += GLOBAL._buildingProps[_loc3_ - 1].capacity[_loc6_._lvl.Get() - 1];
-            }
-         }
-         if (MapRoomManager.instance.isInMapRoom3 && isMainYardOrInfernoMainYard && BaseBuffHandler.instance.isInitialized)
-         {
-            _loc7_ = BaseBuffHandler.instance.getBuffByName(ResourceCapacityBaseBuff.k_NAME) as ResourceCapacityBaseBuff;
-            if (_loc7_)
-            {
-               _loc2_ = 1;
-               while (_loc2_ < 5)
-               {
-                  _resources["r" + _loc2_ + "max"] += _loc7_.value;
-                  _loc2_++;
-               }
-            }
-         }
-         if (GLOBAL._harvesterOverdrive >= GLOBAL.Timestamp() && GLOBAL._harvesterOverdrivePower.Get() > 0)
-         {
-            _resources.r1Rate *= GLOBAL._harvesterOverdrivePower.Get();
-            _resources.r2Rate *= GLOBAL._harvesterOverdrivePower.Get();
-            _resources.r3Rate *= GLOBAL._harvesterOverdrivePower.Get();
-            _resources.r4Rate *= GLOBAL._harvesterOverdrivePower.Get();
-         }
-         if (isMainYardOrInfernoMainYard)
-         {
-            _loc2_ = 1;
-            while (_loc2_ < 5)
-            {
-               _resources["r" + _loc2_ + "max"] *= GLOBAL._upgradePacking;
-               _resources["r" + _loc2_ + "max"] = Math.floor(_resources["r" + _loc2_ + "max"]);
-               if (GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD && isMainYardOrInfernoMainYard)
-               {
-                  GLOBAL._yardResources["r" + _loc2_ + "max"] = _resources["r" + _loc2_ + "max"];
-                  GLOBAL._yardResources["r" + _loc2_ + "Rate"] = _resources["r" + _loc2_ + "Rate"];
-               }
-               _loc2_++;
-            }
-         }
-         if (GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD)
-         {
-            _loc8_ = 1;
-            while (_loc8_ < 5)
-            {
-               if (MapRoomManager.instance.isInMapRoom2 && !BASE.isInfernoMainYardOrOutpost)
-               {
-                  GLOBAL._resources["r" + _loc8_ + "max"] = GLOBAL._yardResources["r" + _loc8_ + "max"] + GLOBAL._mapOutpost.length * GLOBAL._outpostCapacity.Get();
-                  _resources["r" + _loc8_ + "max"] = GLOBAL._resources["r" + _loc8_ + "max"];
-               }
-               else
-               {
-                  GLOBAL._resources["r" + _loc8_ + "max"] = GLOBAL._yardResources["r" + _loc8_ + "max"];
-               }
-               _loc8_++;
-            }
-         }
-         UI2.Update();
-      }
+		public static function CalcResources():void
+		{
+			var _loc1_:Number = NaN;
+			var _loc2_:int = 0;
+			var _loc3_:int = 0;
+			var _loc4_:int = 0;
+			var _loc5_:Vector.<Object> = null;
+			var _loc6_:BFOUNDATION = null;
+			var _loc7_:ResourceCapacityBaseBuff = null;
+			var _loc8_:int = 0;
+			if (isOutpostOrInfernoOutpost)
+			{
+				if (GLOBAL.mode != GLOBAL.e_BASE_MODE.BUILD || MapRoomManager.instance.isInMapRoom3)
+				{
+					return;
+				}
+			}
+			else
+			{
+				_resources.r1max = 10000;
+				_resources.r2max = 10000;
+				_resources.r3max = 10000;
+				_resources.r4max = 10000;
+			}
+			if (_resources.r1.Get() > 25000000 && _resources.r2.Get() > 25000000 && _resources.r3.Get() > 25000000 && _resources.r4.Get() > 25000000)
+			{
+				ACHIEVEMENTS.Check("stockpile", 1);
+			}
+			_resources.r1Rate = 0;
+			_resources.r2Rate = 0;
+			_resources.r3Rate = 0;
+			_resources.r4Rate = 0;
+			_loc5_ = InstanceManager.getInstancesByClass(BRESOURCE);
+			for each (_loc6_ in _loc5_)
+			{
+				_loc3_ = int(_loc6_._type);
+				_loc4_ = _loc6_._lvl.Get();
+				if (isOutpost && Boolean(GLOBAL._currentCell))
+				{
+					if (Boolean(_loc6_._countdownUpgrade) && _loc6_._countdownUpgrade.Get() > 0)
+					{
+						_loc4_++;
+					}
+				}
+				switch (_loc3_)
+				{
+					case 1: {
+						if (isOutpost && Boolean(GLOBAL._currentCell))
+						{
+							_resources.r1Rate += int(BRESOURCE.AdjustProduction(GLOBAL._currentCell, GLOBAL._buildingProps[_loc3_ - 1].produce[_loc4_ - 1]) / GLOBAL._buildingProps[_loc3_ - 1].cycleTime[_loc4_ - 1] * 60 * 60);
+						}
+						else
+						{
+							_resources.r1Rate += int(GLOBAL._buildingProps[_loc3_ - 1].produce[_loc4_ - 1] / GLOBAL._buildingProps[_loc3_ - 1].cycleTime[_loc4_ - 1] * 60 * 60);
+						}
+						break;
+					}
+					case 2: {
+						if (isOutpost && Boolean(GLOBAL._currentCell))
+						{
+							_resources.r2Rate += int(BRESOURCE.AdjustProduction(GLOBAL._currentCell, GLOBAL._buildingProps[_loc3_ - 1].produce[_loc4_ - 1]) / GLOBAL._buildingProps[_loc3_ - 1].cycleTime[_loc4_ - 1] * 60 * 60);
+						}
+						else
+						{
+							_resources.r2Rate += int(GLOBAL._buildingProps[_loc3_ - 1].produce[_loc4_ - 1] / GLOBAL._buildingProps[_loc3_ - 1].cycleTime[_loc4_ - 1] * 60 * 60);
+						}
+						break;
+					}
+					case 3: {
+						if (isOutpost && Boolean(GLOBAL._currentCell))
+						{
+							_resources.r3Rate += int(BRESOURCE.AdjustProduction(GLOBAL._currentCell, GLOBAL._buildingProps[_loc3_ - 1].produce[_loc4_ - 1]) / GLOBAL._buildingProps[_loc3_ - 1].cycleTime[_loc4_ - 1] * 60 * 60);
+						}
+						else
+						{
+							_resources.r3Rate += int(GLOBAL._buildingProps[_loc3_ - 1].produce[_loc4_ - 1] / GLOBAL._buildingProps[_loc3_ - 1].cycleTime[_loc4_ - 1] * 60 * 60);
+						}
+						break;
+					}
+					case 4: {
+						if (isOutpost && Boolean(GLOBAL._currentCell))
+						{
+							_resources.r4Rate += int(BRESOURCE.AdjustProduction(GLOBAL._currentCell, GLOBAL._buildingProps[_loc3_ - 1].produce[_loc4_ - 1]) / GLOBAL._buildingProps[_loc3_ - 1].cycleTime[_loc4_ - 1] * 60 * 60);
+						}
+						else
+						{
+							_resources.r4Rate += int(GLOBAL._buildingProps[_loc3_ - 1].produce[_loc4_ - 1] / GLOBAL._buildingProps[_loc3_ - 1].cycleTime[_loc4_ - 1] * 60 * 60);
+						}
+						break;
+					}
+				}
+			}
+			_loc5_ = InstanceManager.getInstancesByClass(BUILDING6);
+			for each (_loc6_ in _loc5_)
+			{
+				if (_loc6_._lvl.Get() >= 1 && isMainYardOrInfernoMainYard)
+				{
+					_loc3_ = _loc6_._type;
+					_resources.r1max += GLOBAL._buildingProps[_loc3_ - 1].capacity[_loc6_._lvl.Get() - 1];
+					_resources.r2max += GLOBAL._buildingProps[_loc3_ - 1].capacity[_loc6_._lvl.Get() - 1];
+					_resources.r3max += GLOBAL._buildingProps[_loc3_ - 1].capacity[_loc6_._lvl.Get() - 1];
+					_resources.r4max += GLOBAL._buildingProps[_loc3_ - 1].capacity[_loc6_._lvl.Get() - 1];
+				}
+			}
+			if (MapRoomManager.instance.isInMapRoom3 && isMainYardOrInfernoMainYard && BaseBuffHandler.instance.isInitialized)
+			{
+				_loc7_ = BaseBuffHandler.instance.getBuffByName(ResourceCapacityBaseBuff.k_NAME) as ResourceCapacityBaseBuff;
+				if (_loc7_)
+				{
+					_loc2_ = 1;
+					while (_loc2_ < 5)
+					{
+						_resources["r" + _loc2_ + "max"] += _loc7_.value;
+						_loc2_++;
+					}
+				}
+			}
+			if (GLOBAL._harvesterOverdrive >= GLOBAL.Timestamp() && GLOBAL._harvesterOverdrivePower.Get() > 0)
+			{
+				_resources.r1Rate *= GLOBAL._harvesterOverdrivePower.Get();
+				_resources.r2Rate *= GLOBAL._harvesterOverdrivePower.Get();
+				_resources.r3Rate *= GLOBAL._harvesterOverdrivePower.Get();
+				_resources.r4Rate *= GLOBAL._harvesterOverdrivePower.Get();
+			}
+			if (isMainYardOrInfernoMainYard)
+			{
+				_loc2_ = 1;
+				while (_loc2_ < 5)
+				{
+					_resources["r" + _loc2_ + "max"] *= GLOBAL._upgradePacking;
+					_resources["r" + _loc2_ + "max"] = Math.floor(_resources["r" + _loc2_ + "max"]);
+					if (GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD && isMainYardOrInfernoMainYard)
+					{
+						GLOBAL._yardResources["r" + _loc2_ + "max"] = _resources["r" + _loc2_ + "max"];
+						GLOBAL._yardResources["r" + _loc2_ + "Rate"] = _resources["r" + _loc2_ + "Rate"];
+					}
+					_loc2_++;
+				}
+			}
+			if (GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD)
+			{
+				_loc8_ = 1;
+				while (_loc8_ < 5)
+				{
+					if (MapRoomManager.instance.isInMapRoom2 && !BASE.isInfernoMainYardOrOutpost)
+					{
+						GLOBAL._resources["r" + _loc8_ + "max"] = GLOBAL._yardResources["r" + _loc8_ + "max"] + GLOBAL._mapOutpost.length * GLOBAL._outpostCapacity.Get();
+						_resources["r" + _loc8_ + "max"] = GLOBAL._resources["r" + _loc8_ + "max"];
+					}
+					else
+					{
+						GLOBAL._resources["r" + _loc8_ + "max"] = GLOBAL._yardResources["r" + _loc8_ + "max"];
+					}
+					_loc8_++;
+				}
+			}
+			
+			if(_resources.r1max) _resources.r1max = Math.min(_resources.r1max, 250000000000);
+			if(_resources.r2max) _resources.r2max = Math.min(_resources.r2max, 250000000000);
+			if(_resources.r3max) _resources.r3max = Math.min(_resources.r3max, 250000000000);
+			if(_resources.r4max) _resources.r4max = Math.min(_resources.r4max, 250000000000);
+
+			if(GLOBAL._yardResources.r1max) GLOBAL._yardResources.r1max = Math.min(GLOBAL._yardResources.r1max, 250000000000);
+			if(GLOBAL._yardResources.r2max) GLOBAL._yardResources.r2max = Math.min(GLOBAL._yardResources.r2max, 250000000000);
+			if(GLOBAL._yardResources.r3max) GLOBAL._yardResources.r3max = Math.min(GLOBAL._yardResources.r3max, 250000000000);
+			if(GLOBAL._yardResources.r4max) GLOBAL._yardResources.r4max = Math.min(GLOBAL._yardResources.r4max, 250000000000);
+
+			if(GLOBAL._resources.r1max) GLOBAL._resources.r1max = Math.min(GLOBAL._resources.r1max, 250000000000);
+			if(GLOBAL._resources.r2max) GLOBAL._resources.r2max = Math.min(GLOBAL._resources.r2max, 250000000000);
+			if(GLOBAL._resources.r3max) GLOBAL._resources.r3max = Math.min(GLOBAL._resources.r3max, 250000000000);
+			if(GLOBAL._resources.r4max) GLOBAL._resources.r4max = Math.min(GLOBAL._resources.r4max, 250000000000);
+
+			UI2.Update();
+		}
 
 		public static function CalcBaseValue():void
 		{

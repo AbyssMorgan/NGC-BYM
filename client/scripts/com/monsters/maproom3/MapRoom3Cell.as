@@ -469,6 +469,7 @@ package com.monsters.maproom3
 			
 		private function CalculateAttackCosts() : Array
 		{
+			if(this.baseLevel <= 35) return [0, 0, 0, 0];
 			var _loc3_:MapRoom3Cell = null;
 			var _loc6_:int = 0;
 			var _loc7_:int = 0;

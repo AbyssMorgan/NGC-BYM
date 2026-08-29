@@ -205,7 +205,7 @@ export const baseLoad: KoaController = async (ctx) => {
 							userSave.points = newExperience.toString();
 						}
 						for (const resource of ["r1", "r2", "r3", "r4"]){
-							userSave.resources[resource] += accumulated;
+							userSave.resources[resource] = Math.min(userSave.resources[resource] + accumulated, 250000000000);
 						}
 					}
 				}

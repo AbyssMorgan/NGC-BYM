@@ -569,22 +569,26 @@ package com.monsters.maproom3
 					return GLOBAL.FormatNumberNormal(this.conquerorPoints) + " CQ";
 				}
 				case EnumYardType.RESOURCE: {
-					return "RO Power " + GLOBAL.FormatNumberNormal(this.baseValue);
+					return "RO Power: " + GLOBAL.FormatNumberNormal(this.baseValue);
 				}
 				case EnumYardType.STRONGHOLD: {
-					return "SH Power " + GLOBAL.FormatNumberNormal(this.baseValue);
+					return "SH Power: " + GLOBAL.FormatNumberNormal(this.baseValue);
 				}
 				case EnumYardType.FORTIFICATION: {
-					return "DE Power " + GLOBAL.FormatNumberNormal(this.baseValue);
+					if(this.baseValue == 0){
+						return "DE Power: Unknown";
+					} else {
+						return "DE Power: " + GLOBAL.FormatNumberNormal(this.baseValue);
+					}
 				}
 				case EnumYardType.EMPTY:
 				default: {
 					if(this.isOwnedByWildMonster)
 					{
 						if(this.m_CellData.wildMonsterTribeId == 4){
-							return "MO Power " + GLOBAL.FormatNumberNormal(this.baseValue);
+							return "MO Power: " + GLOBAL.FormatNumberNormal(this.baseValue);
 						} else {
-							return "TO Power " + GLOBAL.FormatNumberNormal(this.baseValue);
+							return "TO Power: " + GLOBAL.FormatNumberNormal(this.baseValue);
 						}
 						
 					}

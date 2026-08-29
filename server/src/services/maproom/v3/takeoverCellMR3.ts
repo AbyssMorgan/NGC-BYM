@@ -110,10 +110,6 @@ export const takeoverCellMR3 = async (baseSave: Save, user: User, userSave: Save
 			([x, y, id]) => !(x === cell.x && y === cell.y && id === baseid),
 		);
 
-		if (previousOwner.save.buildingresources) {
-			delete previousOwner.save.buildingresources[`b${baseid}`];
-		}
-
 		postgres.em.persist(previousOwner);
 	}
 

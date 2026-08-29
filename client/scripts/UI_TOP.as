@@ -816,23 +816,6 @@ package
 						});
 						_loc3_ = 4;
 					}
-					else if(MapRoomManager.instance.isInMapRoom2)
-					{
-						_loc5_ = BaseBuffHandler.instance.getBuffByName(AutoBankBaseBuff.k_NAME) as AutoBankBaseBuff;
-						_loc6_ = MapRoomManager.instance.isInMapRoom3 && _loc5_ ? _loc5_.value * 3600 : BASE.getEmpireResources(n);
-						if(BASE.yardType === EnumYardType.RESOURCE)
-						{
-							_loc7_ = InstanceManager.getInstancesByClass(ResourceOutpost)[0] as ResourceOutpost;
-						}
-						_loc8_ = MapRoomManager.instance.isInMapRoom3 && _loc7_ ? _loc7_.resourcesPerSecond * 3600 : BASE._resources["r" + n + "Rate"];
-						_loc2_ = KEYS.Get("pop_resource2",{
-							"v1":KEYS.Get(GLOBAL._resourceNames[n - 1]),
-							"v2":GLOBAL.FormatNumber(GLOBAL._resources["r" + n + "max"]),
-							"v3":GLOBAL.FormatNumber(_loc8_),
-							"v4":GLOBAL.FormatNumber(_loc6_)
-						});
-						_loc3_ = 4;
-					}
 					else
 					{
 						_loc2_ = "<b><font size=\"12\">" + KEYS.Get(GLOBAL._resourceNames[n - 1]) + "</font></b><br>" + KEYS.Get("pop_resource",{

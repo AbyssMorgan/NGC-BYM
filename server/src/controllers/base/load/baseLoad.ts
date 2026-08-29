@@ -36,6 +36,7 @@ import { STRUCTURE_SAVES } from "../../../config/MapRoom3Config.js";
 import { getPlayerDefenderLevel } from "../../../services/maproom/v3/getPlayerDefenderLevel.js";
 import { getDefenderLevels } from "../../../services/maproom/v3/getDefenderLevels.js";
 import { getConnectedPlayerFortificationInfo } from "../../../services/maproom/v3/getConnectedPlayerFortificationInfo.js";
+import { getExperienceBuff } from "../../../services/maproom/v3/getExperienceBuff.js";
 
 
 /**
@@ -189,10 +190,20 @@ export const baseLoad: KoaController = async (ctx) => {
 				const lastAccumulated = userSave.buildingresources?.t;
 
 				if (lastAccumulated) {
+					const MAX_EXPERIENCE = 9000000000000000;
+					const multiplier = 1.0 + Math.min((userSave.empirevalue * 0.001), 100.0) + getExperienceBuff();
 					const elapsed = now - lastAccumulated;
 					const accumulated = Math.floor(totalResourceRate * elapsed);
 
 					if (accumulated > 0 && userSave.resources) {
+						var player_exp = Number(userSave.points), earned_exp = Math.floor(accumulated * multiplier * 4);
+						if(player_exp < MAX_EXPERIENCE){
+							var newExperience = player_exp + earned_exp;
+							if(newExperience >= MAX_EXPERIENCE){
+								newExperience = MAX_EXPERIENCE;
+							}
+							userSave.points = newExperience.toString();
+						}
 						for (const resource of ["r1", "r2", "r3", "r4"]){
 							userSave.resources[resource] += accumulated;
 						}

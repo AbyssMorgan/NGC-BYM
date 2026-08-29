@@ -281,15 +281,6 @@ package
             GLOBAL._baseURL = param1.baseurl;
             BASE._baseID = 0;
             BASE._loadedFriendlyBaseID = 0;
-            _loc2_ = 1;
-            while(_loc2_ < 5)
-            {
-               BASE._GIP["r" + _loc2_].Set(0);
-               _loc2_++;
-            }
-            BASE._lastProcessedGIP = GLOBAL.Timestamp();
-            BASE._rawGIP = {"t":BASE._lastProcessedGIP};
-            BASE._processedGIP = {"t":BASE._lastProcessedGIP};
             GLOBAL._mapOutpost = [];
             if(param1.basesaveid != 1)
             {

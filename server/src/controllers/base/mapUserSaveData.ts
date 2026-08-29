@@ -9,21 +9,20 @@ import { User } from "../../models/user.model.js";
  * @returns {Object} An object containing the mapped properties.
  */
 export const mapUserSaveData = (user: User) => {
-  const userSave = user.save!;
+	const userSave = user.save!;
 
-  return {
-    credits: userSave.credits,
-    empirevalue: userSave.empirevalue,
-    resources: userSave.resources,
-    lockerdata: userSave.lockerdata,
-    academy: userSave.academy,
-    outposts: userSave.outposts,
-    quests: userSave.quests,
-    stats: userSave.stats,
-    points: userSave.points,
-    basevalue: userSave.basevalue,
-    buildingresources: userSave.buildingresources,
-    rewards: userSave.rewards,
-    homebase: userSave.homebase,
-  };
+	return {
+		credits: userSave.credits,
+		empirevalue: userSave.empirevalue,
+		resources: userSave.resources,
+		lockerdata: userSave.lockerdata,
+		academy: userSave.academy,
+		outposts: userSave.outposts,
+		quests: userSave.quests,
+		stats: userSave.stats,
+		points: userSave.points,
+		basevalue: userSave.basevalue,
+		rewards: userSave.rewards,
+		homebase: userSave.homebase,
+	};
 };

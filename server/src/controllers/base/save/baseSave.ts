@@ -145,8 +145,6 @@ export const baseSave: KoaController = async (ctx) => {
 				}
 			}
 		}
-
-		if (isOutpostOwner) updateOutposts(userSave, baseSave, key);
 	}
 
 	if (!isAttack && saveData.purchase) purchaseHandler(ctx, saveData.purchase, userSave);
@@ -347,19 +345,4 @@ export const baseSave: KoaController = async (ctx) => {
 
 	ctx.status = Status.OK;
 	ctx.body = responseBody;
-};
-
-const updateOutposts = (
-  userSave: Save,
-  baseSave: Save,
-  key: keyof Save
-) => {
-  if (key === SaveKeys.BUILDING_RESOURCES && userSave.buildingresources) {
-    userSave.buildingresources[`b${baseSave.baseid}`] = baseSave.buildingresources?.[`b${baseSave.baseid}`];
-    userSave.buildingresources["t"] = getCurrentDateTime();
-  }
-
-  if (key === SaveKeys.QUESTS) {
-    userSave.quests = baseSave.quests;
-  }
 };

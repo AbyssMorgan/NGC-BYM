@@ -84,17 +84,9 @@ package
 
 		public static var _isavedDeltaResources:Object;
 
-		public static var _GIP:Object;
-
-		public static var _processedGIP:Object;
-
-		public static var _rawGIP:Object;
-
 		public static var _level:int;
 
 		public static var _rewards:Object;
-
-		public static var _lastProcessedGIP:int;
 
 		public static var _credits:SecNum;
 
@@ -926,11 +918,11 @@ package
 					_lastProcessed = int(serverData.savetime);
 					GLOBAL.t = _lastProcessed;
 					_currentTime = int(serverData.currenttime);
-					if (_lastProcessed < _currentTime - 60 * 60 * 24 * 30)
+					if (_lastProcessed < _currentTime - 86400 * 30)
 					{
 						// Limits the last known save time to 30 days ago at most, as this affects load times.
 						// Practically, no single time-based action in a base will take longer than this.
-						_lastProcessed = _currentTime - 60 * 60 * 24 * 30;
+						_lastProcessed = _currentTime - 86400 * 30;
 					}
 					if (serverData.chatservers != null)
 					{
@@ -1144,10 +1136,6 @@ package
 					}
 					_level = serverData.level;
 					_rewards = serverData.rewards;
-					_rawGIP = serverData.buildingresources;
-					_processedGIP = {};
-					_GIP = {"r1": new SecNum(0), "r2": new SecNum(0), "r3": new SecNum(0), "r4": new SecNum(0)};
-					_lastProcessedGIP = AutoBankManager.updateLoadData(_rawGIP, _GIP, _processedGIP, _lastProcessed, _lastProcessedGIP);
 					_baseName = serverData.basename;
 					if(isMainYardOrInfernoMainYard){
 						var points:Number = Number(serverData.points);
@@ -2134,11 +2122,6 @@ package
 			GLOBAL.t = _lastProcessed;
 			_lastProcessedB = _lastProcessed;
 			_catchupTime = _currentTime - _lastProcessed;
-			if (!isInfernoMainYardOrOutpost && !MapRoomManager.instance.isInMapRoom3)
-			{
-				AutoBankManager.autobank(MapRoomManager.instance.isInMapRoom3 ? _currentTime : _currentTime - _lastProcessedGIP, true);
-				BASE.Save(0,false,true);
-			}
 			hatqueue2 = [];
 			hatcount2 = 0;
 			hatcheryInstances = InstanceManager.getInstancesByClass(BUILDING13);
@@ -3008,9 +2991,6 @@ package
 			if (GLOBAL.Timestamp() % 10 == 0)
 			{
 				CHECKER.Check();
-				if (!isInfernoMainYardOrOutpost && BASE._pendingPurchase.length == 0){
-					AutoBankManager.autobank();
-				}
 			}
 			var _loc2_:int = int(Math.random() * 10) + 25;
 			if (GLOBAL._flags.pageinterval)
@@ -3719,7 +3699,6 @@ package
 			"fbpromos",
 			"iresources",
 			"siege",
-			"buildingresources",
 			"frontpage",
 			"events",
 			"buildinghealthdata",
@@ -3869,18 +3848,6 @@ package
 			if (frontpageData)
 			{
 				saveData["iresources"] = JSON.stringify(frontpageData);
-			}
-			if (MapRoomManager.instance.isInMapRoom2or3)
-			{
-				updateAutoBank = AutoBankManager.updateSaveData();
-				if (updateAutoBank)
-				{
-					updateAutoBank = JSON.stringify(updateAutoBank);
-				}
-				if (MapRoomManager.instance.isInMapRoom2)
-				{
-					saveData["buildingresources"] = updateAutoBank;
-				}
 			}
 			if (_saveOver)
 			{
@@ -4195,109 +4162,6 @@ package
                if (Boolean(serverData.updates) && serverData.updates.length > 0)
                {
                   UPDATES.Process(serverData.updates);
-               }
-               if (serverData.buildingresources)
-               {
-                  _rawGIP = serverData.buildingresources;
-                  _processedGIP = {};
-                  _GIP = {
-                        "r1": new SecNum(0),
-                        "r2": new SecNum(0),
-                        "r3": new SecNum(0),
-                        "r4": new SecNum(0)
-                     };
-                  if (_rawGIP)
-                  {
-                     if (_rawGIP["b" + GLOBAL._homeBaseID])
-                     {
-                        delete _rawGIP["b" + GLOBAL._homeBaseID];
-                     }
-                     if (_rawGIP["t"])
-                     {
-                        _lastProcessedGIP = _rawGIP["t"];
-                        delete _rawGIP["t"];
-                     }
-                     if (GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD || GLOBAL.mode == GLOBAL.e_BASE_MODE.ATTACK)
-                     {
-                        for (_loc4_ in _rawGIP)
-                        {
-                           _loc5_ = _rawGIP[_loc4_];
-                           if (_loc4_ == "t")
-                           {
-                              _lastProcessedGIP = _rawGIP[_loc4_];
-                           }
-                           else
-                           {
-                              if (_loc5_ is String)
-                              {
-                                 break;
-                              }
-                              if (_loc5_["r1"] != undefined)
-                              {
-                                 _processedGIP[_loc4_] = {
-                                       "r1": new SecNum(_loc5_["r1"]),
-                                       "r2": new SecNum(_loc5_["r2"]),
-                                       "r3": new SecNum(_loc5_["r3"]),
-                                       "r4": new SecNum(_loc5_["r4"])
-                                    };
-                              }
-                              else
-                              {
-                                 _loc6_ = int(_rawGIP[_loc4_]["height"]);
-                                 if (_loc6_)
-                                 {
-                                    delete _loc5_["height"];
-                                 }
-                                 else
-                                 {
-                                    _loc6_ = 100;
-                                 }
-                                 _processedGIP[_loc4_] = {
-                                       "r1": new SecNum(0),
-                                       "r2": new SecNum(0),
-                                       "r3": new SecNum(0),
-                                       "r4": new SecNum(0)
-                                    };
-                                 for each (_loc7_ in _loc5_)
-                                 {
-                                    if (_loc7_.t >= 1 && _loc7_.t <= 4)
-                                    {
-                                       if (_loc7_.l)
-                                       {
-                                          _loc8_ = int(OUTPOST_YARD_PROPS._outpostProps[_loc7_.t - 1].produce[_loc7_.l - 1]);
-                                       }
-                                       else
-                                       {
-                                          _loc8_ = int(OUTPOST_YARD_PROPS._outpostProps[_loc7_.t - 1].produce[0]);
-                                       }
-                                       _loc8_ = Math.max(int(_loc8_ * GLOBAL._averageAltitude.Get() / _loc6_), 1);
-                                       _processedGIP[_loc4_]["r" + _loc7_.t].Add(_loc8_);
-                                    }
-                                 }
-                                 _rawGIP[_loc4_] = {
-                                       "r1": _processedGIP[_loc4_].r1.Get(),
-                                       "r2": _processedGIP[_loc4_].r2.Get(),
-                                       "r3": _processedGIP[_loc4_].r3.Get(),
-                                       "r4": _processedGIP[_loc4_].r4.Get()
-                                    };
-                              }
-                              _GIP["r1"].Add(_processedGIP[_loc4_]["r1"].Get());
-                              _GIP["r2"].Add(_processedGIP[_loc4_]["r2"].Get());
-                              _GIP["r3"].Add(_processedGIP[_loc4_]["r3"].Get());
-                              _GIP["r4"].Add(_processedGIP[_loc4_]["r4"].Get());
-                           }
-                        }
-                        if (!_rawGIP["t"])
-                        {
-                           _lastProcessedGIP = _lastProcessed;
-                        }
-                        if (GLOBAL.Timestamp() - _lastProcessedGIP > 3600 * 24)
-                        {
-                           _lastProcessedGIP = GLOBAL.Timestamp() - 3600 * 24;
-                        }
-                        _processedGIP["t"] = _lastProcessedGIP;
-                     }
-                  }
                }
                if (GLOBAL._loadmode == GLOBAL.e_BASE_MODE.BUILD && isMainYard)
                {
@@ -6321,17 +6185,6 @@ package
 		public static function get isOutpostFortification():Boolean
 		{
 			return m_yardType == EnumYardType.FORTIFICATION;
-		}
-
-		public static function getEmpireResources(param1:int):Number
-		{
-			var _loc2_:int = 0;
-			_loc2_ = 1;
-			if (GLOBAL._harvesterOverdrive >= GLOBAL.Timestamp() && GLOBAL._harvesterOverdrivePower.Get() > 0)
-			{
-				_loc2_ = GLOBAL._harvesterOverdrivePower.Get();
-			}
-			return _GIP["r" + param1].Get() * 360 * _loc2_;
 		}
 
 		public static function HasRequirements(param1:Object):Boolean

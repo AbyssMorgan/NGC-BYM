@@ -35,102 +35,96 @@ const COOLDOWN_PERIOD = 24 * 60 * 60;
  * @throws Will throw an error if the base type is invalid, no homebase is found or if it catches an exception.
  */
 export const migrateBase: KoaController = async (ctx) => {
-  const { baseid, resources, shiny, type } = MigrateBaseSchema.parse(ctx.request.body);
+	const { baseid, resources, shiny, type } = MigrateBaseSchema.parse(ctx.request.body);
 
-  const currentUser: User = ctx.authUser;
-  await postgres.em.populate(currentUser, ["save"]);
+	const currentUser: User = ctx.authUser;
+	await postgres.em.populate(currentUser, ["save"]);
 
-  const userSave = currentUser.save!;
-  const currentTime = getCurrentDateTime();
+	const userSave = currentUser.save!;
+	const currentTime = getCurrentDateTime();
 
-  // Check if the user is within the cooldown period.
-  if (userSave.cantmovetill && userSave.cantmovetill > currentTime) {
-    ctx.status = Status.OK;
-    ctx.body = {
-      error: 0,
-      cantMoveTill: userSave.cantmovetill,
-      currenttime: currentTime,
-    };
-    return;
-  }
+	// Check if the user is within the cooldown period.
+	if (userSave.cantmovetill && userSave.cantmovetill > currentTime) {
+		ctx.status = Status.OK;
+		ctx.body = {
+		error: 0,
+		cantMoveTill: userSave.cantmovetill,
+		currenttime: currentTime,
+		};
+		return;
+	}
 
-  // User is relocating due to their empire being overrun.
-  if (type === BaseType.RANDOM) {
-    if (userSave.outposts.length > 0) throw relocateOutpostErr();
+	// User is relocating due to their empire being overrun.
+	if (type === BaseType.RANDOM) {
+		if (userSave.outposts.length > 0) throw relocateOutpostErr();
 
-    await leaveWorld(currentUser, userSave);
-    await joinOrCreateWorld(currentUser, userSave, postgres.em, true);
+		await leaveWorld(currentUser, userSave);
+		await joinOrCreateWorld(currentUser, userSave, postgres.em, true);
 
-    ctx.status = Status.OK;
-    ctx.body = { error: 0 };
-    return;
-  }
+		ctx.status = Status.OK;
+		ctx.body = { error: 0 };
+		return;
+	}
 
-  // Otherwise, fetch the outpost cell (destination) and the user's homeCell (origin) for migration.
-  const cells = await postgres.em.find(
-    WorldMapCell,
-    {
-      baseid: { $in: [baseid, userSave.baseid] }
-    },
-    { populate: ["save"] }
-  );
+	// Otherwise, fetch the outpost cell (destination) and the user's homeCell (origin) for migration.
+	const cells = await postgres.em.find(
+		WorldMapCell,
+		{
+		baseid: { $in: [baseid, userSave.baseid] }
+		},
+		{ populate: ["save"] }
+	);
 
-  const outpostCell = cells.find((cell) => cell.baseid === baseid);
+	const outpostCell = cells.find((cell) => cell.baseid === baseid);
 
-  const homeCell = cells.find(
-    (cell) =>
-      cell.baseid === userSave.baseid &&
-      cell.base_type === MapRoomCell.HOMECELL
-  );
+	const homeCell = cells.find(
+		(cell) =>
+		cell.baseid === userSave.baseid &&
+		cell.base_type === MapRoomCell.HOMECELL
+	);
 
-  if (!outpostCell || !outpostCell.save) {
-    throw new Error(`Invalid base or base type. Base ID: ${baseid}`);
-  }
+	if (!outpostCell || !outpostCell.save) {
+		throw new Error(`Invalid base or base type. Base ID: ${baseid}`);
+	}
 
-  if (!homeCell) throw new Error("Invalid home cell");
+	if (!homeCell) throw new Error("Invalid home cell");
 
-  // Store outpost details before removing it
-  const [outpostX, outpostY] = [outpostCell.x, outpostCell.y];
-  const outpostHeight = outpostCell.terrainHeight;
-  const outpostBaseId = outpostCell.save.baseid;
+	// Store outpost details before removing it
+	const [outpostX, outpostY] = [outpostCell.x, outpostCell.y];
+	const outpostHeight = outpostCell.terrainHeight;
 
-  // Update the user's homecell coordinates to the outpost cell
-  homeCell.x = outpostX;
-  homeCell.y = outpostY;
-  homeCell.terrainHeight = outpostHeight;
+	// Update the user's homecell coordinates to the outpost cell
+	homeCell.x = outpostX;
+	homeCell.y = outpostY;
+	homeCell.terrainHeight = outpostHeight;
 
-  // Update user's homebase coordinates to the outpost cell
-  userSave.homebase = [outpostX.toString(), outpostY.toString()];
+	// Update user's homebase coordinates to the outpost cell
+	userSave.homebase = [outpostX.toString(), outpostY.toString()];
 
-  // Set the migration cooldown period before the user can move again
-  userSave.cantmovetill = currentTime + COOLDOWN_PERIOD;
+	// Set the migration cooldown period before the user can move again
+	userSave.cantmovetill = currentTime + COOLDOWN_PERIOD;
 
-  // Remove the outpost from the user's save, 3rd element in the array is the baseid
-  userSave.outposts = userSave.outposts.filter(
-    (outpost) => outpost[2] !== baseid
-  )
+	// Remove the outpost from the user's save, 3rd element in the array is the baseid
+	userSave.outposts = userSave.outposts.filter(
+		(outpost) => outpost[2] !== baseid
+	)
 
-  // Remove baseid from building resources object
-  if (userSave.buildingresources) {
-    delete userSave.buildingresources[`b${outpostBaseId}`];
-  }
+	if (shiny){
+		userSave.credits = userSave.credits - shiny;
+	}
+	if (resources){
+		userSave.resources = updateResources(resources, userSave.resources ?? {}, Operation.SUBTRACT);
+	}
 
-  if (shiny){
-	userSave.credits = userSave.credits - shiny;
-  }
-  if (resources){
-    userSave.resources = updateResources(resources, userSave.resources ?? {}, Operation.SUBTRACT);
-  }
+	await postgres.em.transactional(async (em) => {
+		em.persist([homeCell, userSave]);
+		em.remove([outpostCell.save, outpostCell]);
+		await em.flush();
+	});
 
-  await postgres.em.transactional(async (em) => {
-    em.persist([homeCell, userSave]);
-    em.remove([outpostCell.save, outpostCell]);
-    await em.flush();
-  });
-
-  ctx.status = Status.OK;
-  ctx.body = {
-    error: 0,
-    coords: [outpostX, outpostY],
-  };
+	ctx.status = Status.OK;
+	ctx.body = {
+		error: 0,
+		coords: [outpostX, outpostY],
+	};
 };

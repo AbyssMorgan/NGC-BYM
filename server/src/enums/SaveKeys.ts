@@ -8,7 +8,6 @@ export enum SaveKeys {
   POINTS = "points",
   BASEVALUE = "basevalue",
   IRESOURCES = "iresources",
-  BUILDING_RESOURCES = "buildingresources",
   BUILDINGDATA = "buildingdata",
   PURCHASE = "purchase",
   ACADEMY = "academy",

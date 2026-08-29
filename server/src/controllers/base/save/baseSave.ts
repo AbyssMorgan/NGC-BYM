@@ -28,6 +28,7 @@ import { MapRoomVersion } from "../../../enums/MapRoom.js";
 import { MR1_TRIBE_IDS } from "../../../game-data/tribes/v1/index.js";
 import { scaledMR1Tribes } from "../../../services/maproom/v1/scaledMR1Tribes.js";
 import { getConquerorPointsByLevel } from "../../../utils/getConquerorPointsByLevel.js";
+import { getShinyPointsByLevel } from "../../../utils/getShinyPointsByLevel.js";
 import { getPlayerConquerorPointsByLevel } from "../../../utils/getPlayerConquerorPointsByLevel.js";
 
 /**
@@ -265,6 +266,7 @@ export const baseSave: KoaController = async (ctx) => {
 								userSave.stats.assault_to_4++;
 							}
 
+							userSave.credits += getShinyPointsByLevel(baseSave.level);
 							userSave.empirevalue += getConquerorPointsByLevel(baseSave.level);
 							postgres.em.persist(userSave);
 							await postgres.em.flush();
@@ -286,6 +288,7 @@ export const baseSave: KoaController = async (ctx) => {
 								userSave.stats.assault_mo_4++;
 							}
 
+							userSave.credits += getShinyPointsByLevel(baseSave.level);
 							userSave.empirevalue += getConquerorPointsByLevel(baseSave.level);
 							postgres.em.persist(userSave);
 							await postgres.em.flush();

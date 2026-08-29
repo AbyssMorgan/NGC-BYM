@@ -31,7 +31,7 @@ export const userCell = async (ctx: Context, cell: WorldMapCell, cellOwners: Map
 
 	const homeCell = cell.base_type === MapRoomCell.HOMECELL;
 		
-	const online = homeCell && (lastSeen.get(cell.uid) ?? 0) >= currentTime - 60;
+	const online = homeCell && (lastSeen.get(cell.uid) ?? 0) >= currentTime - 300;
 	const isUnderAttack = homeCell && isAttackActive(cellSave);
 
 	let locked = cellSave.locked;
@@ -66,7 +66,7 @@ export const userCell = async (ctx: Context, cell: WorldMapCell, cellOwners: Map
 		r: cellSave.resources,
 		m: cellSave.monsters || {},
 		l: baseLevel,
-		d: damage >= 90 ? 1 : 0,
+		d: damage >= 98 ? 1 : 0,
 		lo: locked,
 		dm: damage,
 		pic_square: cellOwner.pic_square,

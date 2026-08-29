@@ -56,7 +56,7 @@ export const playerCell = async (ctx: Context, cell: WorldMapCell, cellOwners: M
 
 	let isProtected = cellSave.protected > 0 && cellSave.protected > currentTime;
 
-	const online = homeCell && (lastSeen.get(cell.uid) ?? 0) >= currentTime - 60;
+	const online = homeCell && (lastSeen.get(cell.uid) ?? 0) >= currentTime - 300;
 	const isUnderAttack = homeCell && isAttackActive(cellSave);
 
 	let locked = 0;
@@ -82,7 +82,7 @@ export const playerCell = async (ctx: Context, cell: WorldMapCell, cellOwners: M
 		lo: locked,
 		fr: 0,
 		p: isProtected ? 1 : 0,
-		d: (cellSave?.damage ?? 0) >= 90 ? 1 : 0,
+		d: (cellSave?.damage ?? 0) >= 98 ? 1 : 0,
 		t: hasTruce ? 1 : 0,
 		rel: mine ? EnumBaseRelationship.SELF : EnumBaseRelationship.ENEMY,
 		pic_square: cellOwner.pic_square ?? undefined,

@@ -871,6 +871,10 @@ package
          feedIcons[1].mcImage.width = 30;
          feedIcons[1].mcImage.height = 27;
       }
+
+		public function NoMoreFeed() : Boolean {
+			return GLOBAL.assault_monsters >= 1000000 && CREATURES._guardian._foodBonus.Get() == 3 && CREATURES._guardian._level.Get() == 10;
+		}
       
       private function UpdateDNA() : void
       {
@@ -900,15 +904,15 @@ package
             _loc3_ = 222;
             _loc4_ = this.currFeeds / this.totalFeeds;
             barDNA_mask.x = _loc2_ + _loc4_ * _loc3_;
-            if((_loc5_ = CREATURES._guardian._feedTime.Get()) < GLOBAL.Timestamp())
-            {
-               tNextFeedTitle.htmlText = "<b>" + KEYS.Get("gcage_hungry") + "</b>";
-               tNextFeed.htmlText = GLOBAL.ToTime(_loc5_ + CHAMPIONCAGE.STARVETIMER - GLOBAL.Timestamp());
-            }
-            else
-            {
-               tNextFeedTitle.htmlText = "<b>" + KEYS.Get("gcage_nextFeedIn") + "</b>";
-               tNextFeed.htmlText = GLOBAL.ToTime(CREATURES._guardian._feedTime.Get() - GLOBAL.Timestamp());
+			if(this.NoMoreFeed()){
+				tNextFeedTitle.htmlText = "<b>" + KEYS.Get("gcage_nextFeedIn") + "</b>";
+               	tNextFeed.htmlText = 'Never Forever';
+			} else if((_loc5_ = CREATURES._guardian._feedTime.Get()) < GLOBAL.Timestamp()){
+				tNextFeedTitle.htmlText = "<b>" + KEYS.Get("gcage_hungry") + "</b>";
+				tNextFeed.htmlText = GLOBAL.ToTime(_loc5_ + CHAMPIONCAGE.STARVETIMER - GLOBAL.Timestamp());
+            } else {
+				tNextFeedTitle.htmlText = "<b>" + KEYS.Get("gcage_nextFeedIn") + "</b>";
+				tNextFeed.htmlText = GLOBAL.ToTime(CREATURES._guardian._feedTime.Get() - GLOBAL.Timestamp());
             }
             tFeedsFrom.htmlText = Math.max(0,this.totalFeeds - this.currFeeds) + KEYS.Get("gcage_feedsFromEvo");
             feedIcons[0].visible = false;
@@ -1310,36 +1314,38 @@ package
          }
       }
       
-      public function Tick() : void
-      {
-         if(!CREATURES._guardian)
-         {
-            return;
-         }
-         var _loc1_:int = CREATURES._guardian._feedTime.Get();
-         if(_loc1_ < GLOBAL.Timestamp())
-         {
-            if(_page == 1)
-            {
-               this.Switch(1);
-            }
-            tNextFeedTitle.htmlText = "<b>" + KEYS.Get("gcage_hungry") + "</b>";
-            tNextFeed.htmlText = GLOBAL.ToTime(_loc1_ + CHAMPIONCAGE.STARVETIMER - GLOBAL.Timestamp());
-            bFeedTimer.mcBar.width = 0;
-         }
-         else
-         {
-            tNextFeedTitle.htmlText = "<b>" + KEYS.Get("gcage_nextFeedIn") + "</b>";
-            tNextFeed.htmlText = GLOBAL.ToTime(CREATURES._guardian._feedTime.Get() - GLOBAL.Timestamp());
-            bFeedTimer.mcBar.width = Math.max(100,100 / CHAMPIONCAGE.GetGuardianProperty(CREATURES._guardian._creatureID,CREATURES._guardian._level.Get(),"feedTime") * (CREATURES._guardian._feedTime.Get() - GLOBAL.Timestamp()));
-         }
-         this.UpdateStats();
-         if(CREATURES._guardian.health >= CREATURES._guardian.maxHealth)
-         {
-            bHeal.removeEventListener(MouseEvent.CLICK,this.HealClick);
-            bHeal.Enabled = false;
-         }
-      }
+		public function Tick() : void
+		{
+			if(!CREATURES._guardian)
+			{
+				return;
+			}
+			if(!this.NoMoreFeed()){
+				var _loc1_:int = CREATURES._guardian._feedTime.Get();
+				if(_loc1_ < GLOBAL.Timestamp())
+				{
+					if(_page == 1)
+					{
+					this.Switch(1);
+					}
+					tNextFeedTitle.htmlText = "<b>" + KEYS.Get("gcage_hungry") + "</b>";
+					tNextFeed.htmlText = GLOBAL.ToTime(_loc1_ + CHAMPIONCAGE.STARVETIMER - GLOBAL.Timestamp());
+					bFeedTimer.mcBar.width = 0;
+				}
+				else
+				{
+					tNextFeedTitle.htmlText = "<b>" + KEYS.Get("gcage_nextFeedIn") + "</b>";
+					tNextFeed.htmlText = GLOBAL.ToTime(CREATURES._guardian._feedTime.Get() - GLOBAL.Timestamp());
+					bFeedTimer.mcBar.width = Math.max(100,100 / CHAMPIONCAGE.GetGuardianProperty(CREATURES._guardian._creatureID,CREATURES._guardian._level.Get(),"feedTime") * (CREATURES._guardian._feedTime.Get() - GLOBAL.Timestamp()));
+				}
+			}
+			this.UpdateStats();
+			if(CREATURES._guardian.health >= CREATURES._guardian.maxHealth)
+			{
+				bHeal.removeEventListener(MouseEvent.CLICK,this.HealClick);
+				bHeal.Enabled = false;
+			}
+		}
       
       public function SwitchClick(param1:int) : Function
       {

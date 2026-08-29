@@ -1,469 +1,473 @@
 package com.monsters.monsters.champions
 {
-   import com.cc.utils.SecNum;
-   import com.monsters.configs.BYMConfig;
-   import com.monsters.interfaces.ILootable;
-   import com.monsters.interfaces.ITargetable;
-   import com.monsters.managers.InstanceManager;
-   import com.monsters.monsters.MonsterBase;
-   import com.monsters.monsters.components.CModifiableProperty;
-   import com.monsters.monsters.components.modifiers.AdditionPropertyModifier;
-   import com.monsters.pathing.PATHING;
-   import com.monsters.rendering.RasterData;
-   import com.monsters.siege.SiegeWeapons;
-   import com.monsters.siege.weapons.Decoy;
-   import com.monsters.siege.weapons.SiegeWeapon;
-   import flash.display.Bitmap;
-   import flash.display.BitmapData;
-   import flash.events.MouseEvent;
-   import flash.geom.Point;
-   import flash.geom.Rectangle;
-   import flash.utils.getTimer;
-   import gs.*;
-   import gs.easing.*;
-   
-   public class ChampionBase extends MonsterBase
-   {
+	import com.cc.utils.SecNum;
+	import com.monsters.configs.BYMConfig;
+	import com.monsters.interfaces.ILootable;
+	import com.monsters.interfaces.ITargetable;
+	import com.monsters.managers.InstanceManager;
+	import com.monsters.monsters.MonsterBase;
+	import com.monsters.monsters.components.CModifiableProperty;
+	import com.monsters.monsters.components.modifiers.AdditionPropertyModifier;
+	import com.monsters.pathing.PATHING;
+	import com.monsters.rendering.RasterData;
+	import com.monsters.siege.SiegeWeapons;
+	import com.monsters.siege.weapons.Decoy;
+	import com.monsters.siege.weapons.SiegeWeapon;
+	import flash.display.Bitmap;
+	import flash.display.BitmapData;
+	import flash.events.MouseEvent;
+	import flash.geom.Point;
+	import flash.geom.Rectangle;
+	import flash.utils.getTimer;
+	import gs.*;
+	import gs.easing.*;
+	
+	public class ChampionBase extends MonsterBase
+	{
+		
+		public static const k_CHAMPION_STATUS_NORMAL:int = 0;
+		
+		public static const k_CHAMPION_STATUS_FROZEN:int = 1;
+		
+		public static const k_CHAMPION_STATUS_JUICED:int = 2;
+		
+		public static const k_CHAMPION_STATUS_DESTROYED:int = 3;
+		
+		public static const k_CHAMPION_STATUS_REFUND:int = 4;
+		
+		public static const k_CHAMPION_STATUS_MIGRATED:int = 5;
+		
+		
+		public var _behaviourMode:String = "defend";
+		
+		public var _attackType:String = "melee";
+		
+		public var _feeds:SecNum;
+		
+		public var _feedTime:SecNum;
+		
+		public var _level:SecNum;
+		
+		public var _foodBonus:SecNum;
+		
+		public var _powerLevel:SecNum;
+		
+		public var _warned:Boolean = false;
+		
+		public var _warnStarve:Boolean = false;
+		
+		public var _spriteID:String;
+		
+		public var _name:String;
+		
+		public var _regen:int;
+		
+		public var _buff:Number = 0;
+		
+		public var _buffRadius:Number = 0;
+		
+		public var _helpCreep:*;
+		
+		public var _type:int = 1;
+		
+		public var _lastHeal:int = 0;
+		
+		public const DEFENSE_RANGE:int = 30;
+		
+		public const DEFENSE_MODIFIER:Number = 1;
+		
+		public var m_status:int;
+		
+		public function ChampionBase(param1:String, param2:Point, param3:Number, param4:Point = null, param5:Boolean = false, param6:BFOUNDATION = null, param7:int = 1, param8:int = 0, param9:int = 0, param10:int = 1, param11:int = 20000, param12:int = 0, param13:int = 0)
+		{
+			super();
+			var _loc14_:int = getTimer();
+			_friendly = param5;
+			setInitialFriendlyFlags(_friendly);
+			if(param7 < 1)
+			{
+				param7 = 1;
+			}
+			this._level = new SecNum(param7);
+			this.m_status = k_CHAMPION_STATUS_NORMAL;
+			_middle = param7 * 5;
+			_creatureID = "G" + param10;
+			this._feeds = new SecNum(param8);
+			if(param9 > 0)
+			{
+				this._feedTime = new SecNum(param9);
+			}
+			else
+			{
+				this._feedTime = new SecNum(int(GLOBAL.Timestamp() + CHAMPIONCAGE.GetGuardianProperty(_creatureID,param7,"feedTime")));
+			}
+			if(param12)
+			{
+				this._foodBonus = new SecNum(param12);
+			}
+			else
+			{
+				this._foodBonus = new SecNum(0);
+			}
+			if(param13)
+			{
+				this._powerLevel = new SecNum(param13);
+			}
+			else
+			{
+				this._powerLevel = new SecNum(0);
+			}
+			var no_more_feed:Boolean = GLOBAL.assault_monsters >= 1000000 && this._foodBonus.Get() == 3 && this._level.Get() == 10;
+			if(no_more_feed){
+				this._feedTime = new SecNum(int(GLOBAL.Timestamp() + 86400));
+			}
+			this._lastHeal = GLOBAL.Timestamp();
+			_house = param6;
+			_hits = 0;
+			this._type = param10;
+			_pathing = "";
+			_spawnTime = GLOBAL.Timestamp();
+			_spawnPoint = new Point(int(param2.x / 100) * 100,int(param2.y / 100) * 100);
+			_targetGroup = 3;
+			_waypoints = [];
+			_targetCreeps = [];
+			_targetCreep = null;
+			graphic.mouseEnabled = false;
+			graphic.mouseChildren = false;
+			_speed = 0;
+			if(this._foodBonus.Get() > 0)
+			{
+				moveSpeedProperty.value = (CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._level.Get(),"speed") + CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._foodBonus.Get(),"bonusSpeed")) / 2;
+			}
+			else
+			{
+				moveSpeedProperty.value = CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._level.Get(),"speed") / 2;
+			}
+			if(this._foodBonus.Get() > 0)
+			{
+				maxHealthProperty.value = CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._level.Get(),"health") + CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._foodBonus.Get(),"bonusHealth");
+			}
+			else
+			{
+				maxHealthProperty.value = CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._level.Get(),"health");
+			}
+			this._regen = CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._level.Get(),"healtime");
+			if(param11 > 0 && param11 <= maxHealth)
+			{
+				setHealth(param11);
+			}
+			else if(param11 >= maxHealth)
+			{
+				setHealth(maxHealth);
+			}
+			else
+			{
+				setHealth(1);
+			}
+			if(this._foodBonus.Get() > 0)
+			{
+				damageProperty.value = int(CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._level.Get(),"damage")) + int(CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._foodBonus.Get(),"bonusDamage"));
+				m_range = CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._level.Get(),"range") + CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._foodBonus.Get(),"bonusRange");
+			}
+			else
+			{
+				damageProperty.value = int(CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._level.Get(),"damage"));
+				m_range = CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._level.Get(),"range");
+			}
+			_movement = CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._level.Get(),"movement");
+			if(this._foodBonus.Get() > 0)
+			{
+				this._buff = CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._level.Get(),"buffs") + CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._foodBonus.Get(),"bonusBuffs");
+			}
+			else
+			{
+				this._buff = CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._level.Get(),"buffs");
+			}
+			if(CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._level.Get(),"buffRadius"))
+			{
+				this._buffRadius = CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._level.Get(),"buffRadius");
+			}
+			_behaviour = param1;
+			attackDelayProperty.value = 56;
+			_targetPosition = param2;
+			_targetCenter = param4;
+			graphic.x = _targetPosition.x;
+			graphic.y = _targetPosition.y;
+			_tmpPoint.x = x;
+			_tmpPoint.y = y;
+			if(param3)
+			{
+				_targetRotation = param3;
+			}
+			else
+			{
+				_targetRotation = 0;
+			}
+			m_rotation = _targetRotation;
+			_attacking = false;
+			attackFlags |= Targeting.k_TARGETS_GROUND;
+			this.setupSprite();
+			if(_movement == "fly")
+			{
+				_altitude = 108;
+				defenseFlags |= Targeting.k_TARGETS_FLYING;
+			}
+			else
+			{
+				_altitude = 0;
+				defenseFlags |= Targeting.k_TARGETS_GROUND;
+			}
+			if(_behaviour == "bounce")
+			{
+				if(GLOBAL._render && _movement != "fly")
+				{
+					_graphicMC.y -= 90;
+					TweenLite.to(_graphicMC,0.6,{
+						"y":_graphicMC.y + 90,
+						"ease":Bounce.easeOut,
+						"onComplete":this.changeModeAttack
+					});
+				}
+				else
+				{
+					if(_movement == "fly")
+					{
+						_graphicMC.y -= _altitude;
+					}
+					else
+					{
+						_altitude = 0;
+					}
+					this.changeModeAttack();
+				}
+			}
+			else if(_behaviour == "defend")
+			{
+				_altitude = 0;
+				this.changeModeDefend();
+			}
+			else if(_behaviour == "decoy")
+			{
+				this.changeModeDecoy();
+			}
+			if(_behaviour == "juice")
+			{
+				this.changeModeJuice();
+			}
+			render();
+			graphic.mouseEnabled = false;
+			graphic.mouseChildren = false;
+			CModifiableProperty(getComponentByName(k_LOOT_PROPERTY)).addModifier(new AdditionPropertyModifier(1.5));
+		}
+		
+		public static function show() : void
+		{
+		}
+		
+		protected function setupSprite() : void
+		{
+			_frameNumber = Math.random() * 7;
+			this._spriteID = _creatureID + "_" + Math.min(this._level.Get(),CHAMPIONCAGE.GetGuardianProperties(_creatureID,"health").length);
+			SPRITES.SetupSprite(this._spriteID);
+			if(_movement == "fly")
+			{
+				SPRITES.SetupSprite("bigshadow");
+				_shadow = new BitmapData(52,50,true,16777215);
+				_shadowMC = BYMConfig.instance.RENDERER_ON ? new Bitmap(_shadow) : graphic.addChild(new Bitmap(_shadow));
+				_shadowMC.x = -21;
+				_shadowMC.y = -26;
+				_frameNumber = int(Math.random() * 1000);
+			}
+			var _loc1_:Object = SPRITES.GetSpriteDescriptor(this._spriteID);
+			_graphic = new BitmapData(_loc1_.width,_loc1_.height,true,16777215);
+			_graphicMC = BYMConfig.instance.RENDERER_ON ? new Bitmap(_graphic) : graphic.addChild(new Bitmap(_graphic)) as Bitmap;
+			_graphicMC.x = CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._level.Get(),"offset_x");
+			_graphicMC.y = CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._level.Get(),"offset_y");
+			if(BYMConfig.instance.RENDERER_ON)
+			{
+				_rasterData = new RasterData(_graphicMC,_rasterPt,int.MAX_VALUE);
+				if(_movement === "fly")
+				{
+					_shadowData = new RasterData(_shadow,_shadowPt,MAP.DEPTH_SHADOW,null,true);
+				}
+			}
+		}
       
-      public static const k_CHAMPION_STATUS_NORMAL:int = 0;
+		override public function changeModeJuice() : void
+		{
+			_behaviour = "juice";
+			changeMode();
+			_targetBuilding = GLOBAL._bJuicer;
+			if(_movement == "fly" && _altitude < 60)
+			{
+				if(BYMConfig.instance.RENDERER_ON)
+				{
+					TweenLite.to(_rasterPt,2,{
+						"y":_rasterPt.y - (108 - _altitude),
+						"ease":Sine.easeIn,
+						"onComplete":this.flyerTakeOff
+					});
+				}
+				else
+				{
+					TweenLite.to(_graphicMC,2,{
+						"y":_graphicMC.y - (108 - _altitude),
+						"ease":Sine.easeIn,
+						"onComplete":this.flyerTakeOff
+					});
+				}
+			}
+			++CREATURES._creatureID;
+			++CREATURES._creatureCount;
+			CREATURES._creatures[CREATURES._creatureID] = this;
+			var _loc1_:int = BASE.getGuardianIndex(CREATURES._guardian._type);
+			BASE._guardianData[_loc1_].status = ChampionBase.k_CHAMPION_STATUS_JUICED;
+			if(GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD)
+			{
+				_loc1_ = GLOBAL.getPlayerGuardianIndex(CREATURES._guardian._type);
+				if(_loc1_ != -1)
+				{
+					GLOBAL._playerGuardianData[_loc1_].status = ChampionBase.k_CHAMPION_STATUS_JUICED;
+				}
+			}
+			CREATURES._guardian = null;
+			BASE.Save();
+			PATHING.GetPath(_tmpPoint,new Rectangle(_targetBuilding._mc.x,_targetBuilding._mc.y,80,80),this.setWaypoints,true);
+		}
       
-      public static const k_CHAMPION_STATUS_FROZEN:int = 1;
+		override public function changeModeAttack() : void
+		{
+			changeMode();
+			_behaviour = GLOBAL.e_BASE_MODE.ATTACK;
+			_targetCreep = null;
+			this.findTarget(0);
+		}
+		
+		public function changeModeCage() : void
+		{
+			changeMode();
+			_behaviour = "cage";
+			_attacking = false;
+			var _loc1_:Point = new Point(_house._mc.x + 50,_house._mc.y + 60);
+			_targetCenter = GRID.FromISO(GLOBAL._bCage._mc.x,GLOBAL._bCage._mc.y);
+			PATHING.GetPath(_tmpPoint,new Rectangle(_loc1_.x,_loc1_.y,10,10),this.setWaypoints,true);
+			_house = GLOBAL._bCage;
+		}
       
-      public static const k_CHAMPION_STATUS_JUICED:int = 2;
+		public function changeModeFreeze() : void
+		{
+			changeMode();
+			_behaviour = "freeze";
+			_attacking = false;
+			++CREATURES._creatureID;
+			++CREATURES._creatureCount;
+			CREATURES._creatures[CREATURES._creatureID] = this;
+			PATHING.GetPath(_tmpPoint,new Rectangle(GLOBAL._bChamber._mc.x,GLOBAL._bChamber._mc.y,80,80),this.setWaypoints,true);
+		}
       
-      public static const k_CHAMPION_STATUS_DESTROYED:int = 3;
-      
-      public static const k_CHAMPION_STATUS_REFUND:int = 4;
-      
-      public static const k_CHAMPION_STATUS_MIGRATED:int = 5;
-       
-      
-      public var _behaviourMode:String = "defend";
-      
-      public var _attackType:String = "melee";
-      
-      public var _feeds:SecNum;
-      
-      public var _feedTime:SecNum;
-      
-      public var _level:SecNum;
-      
-      public var _foodBonus:SecNum;
-      
-      public var _powerLevel:SecNum;
-      
-      public var _warned:Boolean = false;
-      
-      public var _warnStarve:Boolean = false;
-      
-      public var _spriteID:String;
-      
-      public var _name:String;
-      
-      public var _regen:int;
-      
-      public var _buff:Number = 0;
-      
-      public var _buffRadius:Number = 0;
-      
-      public var _helpCreep:*;
-      
-      public var _type:int = 1;
-      
-      public var _lastHeal:int = 0;
-      
-      public const DEFENSE_RANGE:int = 30;
-      
-      public const DEFENSE_MODIFIER:Number = 1;
-      
-      public var m_status:int;
-      
-      public function ChampionBase(param1:String, param2:Point, param3:Number, param4:Point = null, param5:Boolean = false, param6:BFOUNDATION = null, param7:int = 1, param8:int = 0, param9:int = 0, param10:int = 1, param11:int = 20000, param12:int = 0, param13:int = 0)
-      {
-         super();
-         var _loc14_:int = getTimer();
-         _friendly = param5;
-         setInitialFriendlyFlags(_friendly);
-         if(param7 < 1)
-         {
-            param7 = 1;
-         }
-         this._level = new SecNum(param7);
-         this.m_status = k_CHAMPION_STATUS_NORMAL;
-         _middle = param7 * 5;
-         _creatureID = "G" + param10;
-         this._feeds = new SecNum(param8);
-         if(param9 > 0)
-         {
-            this._feedTime = new SecNum(param9);
-         }
-         else
-         {
-            this._feedTime = new SecNum(int(GLOBAL.Timestamp() + CHAMPIONCAGE.GetGuardianProperty(_creatureID,param7,"feedTime")));
-         }
-         if(param12)
-         {
-            this._foodBonus = new SecNum(param12);
-         }
-         else
-         {
-            this._foodBonus = new SecNum(0);
-         }
-         if(param13)
-         {
-            this._powerLevel = new SecNum(param13);
-         }
-         else
-         {
-            this._powerLevel = new SecNum(0);
-         }
-         this._lastHeal = GLOBAL.Timestamp();
-         _house = param6;
-         _hits = 0;
-         this._type = param10;
-         _pathing = "";
-         _spawnTime = GLOBAL.Timestamp();
-         _spawnPoint = new Point(int(param2.x / 100) * 100,int(param2.y / 100) * 100);
-         _targetGroup = 3;
-         _waypoints = [];
-         _targetCreeps = [];
-         _targetCreep = null;
-         graphic.mouseEnabled = false;
-         graphic.mouseChildren = false;
-         _speed = 0;
-         if(this._foodBonus.Get() > 0)
-         {
-            moveSpeedProperty.value = (CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._level.Get(),"speed") + CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._foodBonus.Get(),"bonusSpeed")) / 2;
-         }
-         else
-         {
-            moveSpeedProperty.value = CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._level.Get(),"speed") / 2;
-         }
-         if(this._foodBonus.Get() > 0)
-         {
-            maxHealthProperty.value = CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._level.Get(),"health") + CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._foodBonus.Get(),"bonusHealth");
-         }
-         else
-         {
-            maxHealthProperty.value = CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._level.Get(),"health");
-         }
-         this._regen = CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._level.Get(),"healtime");
-         if(param11 > 0 && param11 <= maxHealth)
-         {
-            setHealth(param11);
-         }
-         else if(param11 >= maxHealth)
-         {
-            setHealth(maxHealth);
-         }
-         else
-         {
-            setHealth(1);
-         }
-         if(this._foodBonus.Get() > 0)
-         {
-            damageProperty.value = int(CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._level.Get(),"damage")) + int(CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._foodBonus.Get(),"bonusDamage"));
-            m_range = CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._level.Get(),"range") + CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._foodBonus.Get(),"bonusRange");
-         }
-         else
-         {
-            damageProperty.value = int(CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._level.Get(),"damage"));
-            m_range = CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._level.Get(),"range");
-         }
-         _movement = CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._level.Get(),"movement");
-         if(this._foodBonus.Get() > 0)
-         {
-            this._buff = CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._level.Get(),"buffs") + CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._foodBonus.Get(),"bonusBuffs");
-         }
-         else
-         {
-            this._buff = CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._level.Get(),"buffs");
-         }
-         if(CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._level.Get(),"buffRadius"))
-         {
-            this._buffRadius = CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._level.Get(),"buffRadius");
-         }
-         _behaviour = param1;
-         attackDelayProperty.value = 56;
-         _targetPosition = param2;
-         _targetCenter = param4;
-         graphic.x = _targetPosition.x;
-         graphic.y = _targetPosition.y;
-         _tmpPoint.x = x;
-         _tmpPoint.y = y;
-         if(param3)
-         {
-            _targetRotation = param3;
-         }
-         else
-         {
-            _targetRotation = 0;
-         }
-         m_rotation = _targetRotation;
-         _attacking = false;
-         attackFlags |= Targeting.k_TARGETS_GROUND;
-         this.setupSprite();
-         if(_movement == "fly")
-         {
-            _altitude = 108;
-            defenseFlags |= Targeting.k_TARGETS_FLYING;
-         }
-         else
-         {
-            _altitude = 0;
-            defenseFlags |= Targeting.k_TARGETS_GROUND;
-         }
-         if(_behaviour == "bounce")
-         {
-            if(GLOBAL._render && _movement != "fly")
-            {
-               _graphicMC.y -= 90;
-               TweenLite.to(_graphicMC,0.6,{
-                  "y":_graphicMC.y + 90,
-                  "ease":Bounce.easeOut,
-                  "onComplete":this.changeModeAttack
-               });
-            }
-            else
-            {
-               if(_movement == "fly")
-               {
-                  _graphicMC.y -= _altitude;
-               }
-               else
-               {
-                  _altitude = 0;
-               }
-               this.changeModeAttack();
-            }
-         }
-         else if(_behaviour == "defend")
-         {
-            _altitude = 0;
-            this.changeModeDefend();
-         }
-         else if(_behaviour == "decoy")
-         {
-            this.changeModeDecoy();
-         }
-         if(_behaviour == "juice")
-         {
-            this.changeModeJuice();
-         }
-         render();
-         graphic.mouseEnabled = false;
-         graphic.mouseChildren = false;
-         CModifiableProperty(getComponentByName(k_LOOT_PROPERTY)).addModifier(new AdditionPropertyModifier(1.5));
-      }
-      
-      public static function show() : void
-      {
-      }
-      
-      protected function setupSprite() : void
-      {
-         _frameNumber = Math.random() * 7;
-         this._spriteID = _creatureID + "_" + Math.min(this._level.Get(),CHAMPIONCAGE.GetGuardianProperties(_creatureID,"health").length);
-         SPRITES.SetupSprite(this._spriteID);
-         if(_movement == "fly")
-         {
-            SPRITES.SetupSprite("bigshadow");
-            _shadow = new BitmapData(52,50,true,16777215);
-            _shadowMC = BYMConfig.instance.RENDERER_ON ? new Bitmap(_shadow) : graphic.addChild(new Bitmap(_shadow));
-            _shadowMC.x = -21;
-            _shadowMC.y = -26;
-            _frameNumber = int(Math.random() * 1000);
-         }
-         var _loc1_:Object = SPRITES.GetSpriteDescriptor(this._spriteID);
-         _graphic = new BitmapData(_loc1_.width,_loc1_.height,true,16777215);
-         _graphicMC = BYMConfig.instance.RENDERER_ON ? new Bitmap(_graphic) : graphic.addChild(new Bitmap(_graphic)) as Bitmap;
-         _graphicMC.x = CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._level.Get(),"offset_x");
-         _graphicMC.y = CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._level.Get(),"offset_y");
-         if(BYMConfig.instance.RENDERER_ON)
-         {
-            _rasterData = new RasterData(_graphicMC,_rasterPt,int.MAX_VALUE);
-            if(_movement === "fly")
-            {
-               _shadowData = new RasterData(_shadow,_shadowPt,MAP.DEPTH_SHADOW,null,true);
-            }
-         }
-      }
-      
-      override public function changeModeJuice() : void
-      {
-         _behaviour = "juice";
-         changeMode();
-         _targetBuilding = GLOBAL._bJuicer;
-         if(_movement == "fly" && _altitude < 60)
-         {
-            if(BYMConfig.instance.RENDERER_ON)
-            {
-               TweenLite.to(_rasterPt,2,{
-                  "y":_rasterPt.y - (108 - _altitude),
-                  "ease":Sine.easeIn,
-                  "onComplete":this.flyerTakeOff
-               });
-            }
-            else
-            {
-               TweenLite.to(_graphicMC,2,{
-                  "y":_graphicMC.y - (108 - _altitude),
-                  "ease":Sine.easeIn,
-                  "onComplete":this.flyerTakeOff
-               });
-            }
-         }
-         ++CREATURES._creatureID;
-         ++CREATURES._creatureCount;
-         CREATURES._creatures[CREATURES._creatureID] = this;
-         var _loc1_:int = BASE.getGuardianIndex(CREATURES._guardian._type);
-         BASE._guardianData[_loc1_].status = ChampionBase.k_CHAMPION_STATUS_JUICED;
-         if(GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD)
-         {
-            _loc1_ = GLOBAL.getPlayerGuardianIndex(CREATURES._guardian._type);
-            if(_loc1_ != -1)
-            {
-               GLOBAL._playerGuardianData[_loc1_].status = ChampionBase.k_CHAMPION_STATUS_JUICED;
-            }
-         }
-         CREATURES._guardian = null;
-         BASE.Save();
-         PATHING.GetPath(_tmpPoint,new Rectangle(_targetBuilding._mc.x,_targetBuilding._mc.y,80,80),this.setWaypoints,true);
-      }
-      
-      override public function changeModeAttack() : void
-      {
-         changeMode();
-         _behaviour = GLOBAL.e_BASE_MODE.ATTACK;
-         _targetCreep = null;
-         this.findTarget(0);
-      }
-      
-      public function changeModeCage() : void
-      {
-         changeMode();
-         _behaviour = "cage";
-         _attacking = false;
-         var _loc1_:Point = new Point(_house._mc.x + 50,_house._mc.y + 60);
-         _targetCenter = GRID.FromISO(GLOBAL._bCage._mc.x,GLOBAL._bCage._mc.y);
-         PATHING.GetPath(_tmpPoint,new Rectangle(_loc1_.x,_loc1_.y,10,10),this.setWaypoints,true);
-         _house = GLOBAL._bCage;
-      }
-      
-      public function changeModeFreeze() : void
-      {
-         changeMode();
-         _behaviour = "freeze";
-         _attacking = false;
-         ++CREATURES._creatureID;
-         ++CREATURES._creatureCount;
-         CREATURES._creatures[CREATURES._creatureID] = this;
-         PATHING.GetPath(_tmpPoint,new Rectangle(GLOBAL._bChamber._mc.x,GLOBAL._bChamber._mc.y,80,80),this.setWaypoints,true);
-      }
-      
-      public function changeModeDefend() : void
-      {
-         changeMode();
-         _behaviour = k_sBHVR_DEFEND;
-      }
-      
-      public function changeModeDecoy() : void
-      {
-         var _loc2_:Decoy = null;
-         var _loc3_:Rectangle = null;
-         var _loc4_:Number = NaN;
-         var _loc5_:Number = NaN;
-         var _loc6_:Point = null;
-         var _loc7_:Point = null;
-         var _loc8_:int = 0;
-         var _loc9_:int = 0;
-         var _loc10_:int = 0;
-         var _loc11_:Point = null;
-         var _loc1_:SiegeWeapon = SiegeWeapons.activeWeapon;
-         if(Boolean(_loc1_) && _loc1_ is Decoy)
-         {
-            changeMode();
-            _behaviour = "decoy";
-            _attacking = false;
-            _targetCreep = null;
-            _loc2_ = _loc1_ as Decoy;
-            _loc3_ = new Rectangle(_loc2_.x,_loc2_.y + _loc2_.decoyGraphic.height / 2,40,40);
-            _targetCenter = new Point(_loc3_.x,_loc3_.y);
-            if(_movement == "burrow")
-            {
-               _hasTarget = true;
-               _hasPath = true;
-               _loc7_ = GRID.FromISO(_loc3_.x,_loc3_.y);
-               _loc8_ = int(Math.random() * 4);
-               _loc9_ = _loc3_.height;
-               _loc10_ = _loc3_.width;
-               if(_loc8_ == 0)
-               {
-                  _loc7_.x += Math.random() * _loc9_;
-                  _loc7_.y += _loc10_;
-               }
-               else if(_loc8_ == 1)
-               {
-                  _loc7_.x += _loc9_;
-                  _loc7_.y += _loc10_;
-               }
-               else if(_loc8_ == 2)
-               {
-                  _loc7_.x += _loc9_ - Math.random() * _loc9_ / 2;
-                  _loc7_.y -= _loc10_ / 4;
-               }
-               else if(_loc8_ == 3)
-               {
-                  _loc7_.x -= _loc9_ / 4;
-                  _loc7_.y += _loc10_ - Math.random() * _loc10_ / 2;
-               }
-               _waypoints = [GRID.ToISO(_loc7_.x,_loc7_.y,0)];
-               _targetPosition = _waypoints[0];
-            }
-            else if(_movement == "fly")
-            {
-               _hasTarget = true;
-               _hasPath = true;
-               if(GLOBAL.QuickDistance(_tmpPoint,_targetCenter) < 50)
-               {
-                  _atTarget = true;
-                  _hasPath = true;
-                  _targetPosition = _targetCenter;
-               }
-               else
-               {
-                  _loc5_ = (_loc5_ = (_loc5_ = Math.atan2(_tmpPoint.y - _targetCenter.y,_tmpPoint.x - _targetCenter.x) * 57.2957795) + (Math.random() * 90 - 45)) / (180 / Math.PI);
-                  _loc4_ = 10 + Math.random() * 10;
-                  _loc6_ = new Point(_targetCenter.x + Math.cos(_loc5_) * _loc4_ * 1.7,_targetCenter.y + Math.sin(_loc5_) * _loc4_);
-                  _waypoints = [_loc6_];
-                  _targetPosition = _waypoints[0];
-               }
-            }
-            else
-            {
-               _loc5_ = (_loc5_ = (_loc5_ = Math.atan2(_tmpPoint.y - _targetCenter.y,_tmpPoint.x - _targetCenter.x) * 57.2957795) + (Math.random() * 90 - 45)) / (180 / Math.PI);
-               _loc4_ = 10 + Math.random() * 10;
-               _loc11_ = new Point(_targetCenter.x + Math.cos(_loc5_) * _loc4_ * 1.7,_targetCenter.y + Math.sin(_loc5_) * _loc4_);
-               _loc11_.x += Math.random() * -10 + 5;
-               _loc11_.y += Math.random() * -10 + 5;
-               _targetPosition = _targetCenter;
-               WaypointTo(_loc11_);
-            }
-         }
-         else
-         {
-            _hasTarget = false;
-            this.FindDefenseTargets();
-         }
-      }
-      
-      public function click(param1:MouseEvent) : void
-      {
-         if(GLOBAL.mode == "build")
-         {
-            show();
-         }
-      }
+		public function changeModeDefend() : void
+		{
+			changeMode();
+			_behaviour = k_sBHVR_DEFEND;
+		}
+		
+		public function changeModeDecoy() : void
+		{
+			var _loc2_:Decoy = null;
+			var _loc3_:Rectangle = null;
+			var _loc4_:Number = NaN;
+			var _loc5_:Number = NaN;
+			var _loc6_:Point = null;
+			var _loc7_:Point = null;
+			var _loc8_:int = 0;
+			var _loc9_:int = 0;
+			var _loc10_:int = 0;
+			var _loc11_:Point = null;
+			var _loc1_:SiegeWeapon = SiegeWeapons.activeWeapon;
+			if(Boolean(_loc1_) && _loc1_ is Decoy)
+			{
+				changeMode();
+				_behaviour = "decoy";
+				_attacking = false;
+				_targetCreep = null;
+				_loc2_ = _loc1_ as Decoy;
+				_loc3_ = new Rectangle(_loc2_.x,_loc2_.y + _loc2_.decoyGraphic.height / 2,40,40);
+				_targetCenter = new Point(_loc3_.x,_loc3_.y);
+				if(_movement == "burrow")
+				{
+					_hasTarget = true;
+					_hasPath = true;
+					_loc7_ = GRID.FromISO(_loc3_.x,_loc3_.y);
+					_loc8_ = int(Math.random() * 4);
+					_loc9_ = _loc3_.height;
+					_loc10_ = _loc3_.width;
+					if(_loc8_ == 0)
+					{
+						_loc7_.x += Math.random() * _loc9_;
+						_loc7_.y += _loc10_;
+					}
+					else if(_loc8_ == 1)
+					{
+						_loc7_.x += _loc9_;
+						_loc7_.y += _loc10_;
+					}
+					else if(_loc8_ == 2)
+					{
+						_loc7_.x += _loc9_ - Math.random() * _loc9_ / 2;
+						_loc7_.y -= _loc10_ / 4;
+					}
+					else if(_loc8_ == 3)
+					{
+						_loc7_.x -= _loc9_ / 4;
+						_loc7_.y += _loc10_ - Math.random() * _loc10_ / 2;
+					}
+					_waypoints = [GRID.ToISO(_loc7_.x,_loc7_.y,0)];
+					_targetPosition = _waypoints[0];
+				}
+				else if(_movement == "fly")
+				{
+					_hasTarget = true;
+					_hasPath = true;
+					if(GLOBAL.QuickDistance(_tmpPoint,_targetCenter) < 50)
+					{
+						_atTarget = true;
+						_hasPath = true;
+						_targetPosition = _targetCenter;
+					}
+					else
+					{
+						_loc5_ = (_loc5_ = (_loc5_ = Math.atan2(_tmpPoint.y - _targetCenter.y,_tmpPoint.x - _targetCenter.x) * 57.2957795) + (Math.random() * 90 - 45)) / (180 / Math.PI);
+						_loc4_ = 10 + Math.random() * 10;
+						_loc6_ = new Point(_targetCenter.x + Math.cos(_loc5_) * _loc4_ * 1.7,_targetCenter.y + Math.sin(_loc5_) * _loc4_);
+						_waypoints = [_loc6_];
+						_targetPosition = _waypoints[0];
+					}
+				}
+				else
+				{
+					_loc5_ = (_loc5_ = (_loc5_ = Math.atan2(_tmpPoint.y - _targetCenter.y,_tmpPoint.x - _targetCenter.x) * 57.2957795) + (Math.random() * 90 - 45)) / (180 / Math.PI);
+					_loc4_ = 10 + Math.random() * 10;
+					_loc11_ = new Point(_targetCenter.x + Math.cos(_loc5_) * _loc4_ * 1.7,_targetCenter.y + Math.sin(_loc5_) * _loc4_);
+					_loc11_.x += Math.random() * -10 + 5;
+					_loc11_.y += Math.random() * -10 + 5;
+					_targetPosition = _targetCenter;
+					WaypointTo(_loc11_);
+				}
+			}
+			else
+			{
+				_hasTarget = false;
+				this.FindDefenseTargets();
+			}
+		}
+		
+		public function click(param1:MouseEvent) : void
+		{
+			if(GLOBAL.mode == "build")
+			{
+				show();
+			}
+		}
       
       override public function canShootCreep() : Boolean
       {
@@ -1254,95 +1258,95 @@ package com.monsters.monsters.champions
       {
          return false;
       }
-      
-      public function tickBPen(param1:int) : void
-      {
-         var _loc2_:int = 0;
-         var _loc3_:int = 0;
-         var _loc4_:Number = NaN;
-         if(health < maxHealth)
-         {
-            if(this._lastHeal <= GLOBAL.Timestamp() - 5 || GLOBAL._catchup && BASE.firstBaseLoaded)
-            {
-		       var healing_multiplier:Number = 1.0 - BASE.GetHealingBuff();
-               this.modifyHealth(int(maxHealth * 5 / (this._regen * healing_multiplier)) * param1);
-               setHealth(Math.min(health,maxHealth));
-               this._lastHeal = GLOBAL.Timestamp();
-            }
-         }
-         if(this._behaviourMode == "defend" && _frameNumber % 200 == 0)
-         {
-            this.FindDefenseTargets();
-         }
-         if(_behaviour == "pen" && _frameNumber > 240 && int(Math.random() * 150) == 1 && GLOBAL._fps > 25)
-         {
-            _targetPosition = CHAMPIONCAGE.PointInCage(_targetCenter);
-            _hasPath = true;
-         }
-         if(GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD && this._level.Get() < 10)
-         {
-            if(!this._warnStarve)
-            {
-               if(GLOBAL.Timestamp() > this._feedTime.Get() + CHAMPIONCAGE.STARVETIMER)
-               {
-                  CHAMPIONCAGE.Hide();
-                  if(!GLOBAL._catchup)
-                  {
-                     GLOBAL.Message(KEYS.Get("msg_champion_starving"));
-                  }
-                  this._feeds.Add(-1);
-                  if(this._feeds.Get() < 0)
-                  {
-                     this._feeds.Set(0);
-                  }
-                  this._feedTime = new SecNum(int(GLOBAL.Timestamp() + CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._level.Get(),"feedTime")));
-                  this._warnStarve = true;
-                  LOGGER.Log("fed","Starved level " + this._level.Get());
-               }
-            }
-            else if(!this._warned)
-            {
-               if(GLOBAL.Timestamp() > this._feedTime.Get())
-               {
-                  CHAMPIONCAGE.Hide();
-                  if(!GLOBAL._catchup)
-                  {
-                     GLOBAL.Message(KEYS.Get("msg_champion_hungry",{"v1":GLOBAL.ToTime(this._feedTime.Get() - GLOBAL.Timestamp() + CHAMPIONCAGE.STARVETIMER)}));
-                  }
-                  this._warned = true;
-               }
-            }
-            if(this._feeds.Get() >= CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._level.Get(),"feeds"))
-            {
-               this.levelSet(this._level.Get() + 1);
-            }
-         }
-         else if(GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD && this._level.Get() == 10)
-         {
-            if(GLOBAL.Timestamp() > this._feedTime.Get() + CHAMPIONCAGE.STARVETIMER)
-            {
-               CHAMPIONCAGE.Hide();
-               _loc2_ = health;
-               _loc3_ = Math.max(1,this._foodBonus.Get() - 1);
-               _loc4_ = CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._level.Get(),"health") + CHAMPIONCAGE.GetGuardianProperty(_creatureID,_loc3_,"bonusHealth");
-               if(_loc2_ < 1)
-               {
-                  _loc2_ = 1;
-               }
-               else if(_loc2_ >= _loc4_)
-               {
-                  _loc2_ = _loc4_;
-               }
-               setHealth(_loc2_);
-               this._foodBonus.Add(-param1);
-               if(this._foodBonus.Get() < 0)
-               {
-                  this._foodBonus.Set(0);
-               }
-               this._feedTime = new SecNum(int(GLOBAL.Timestamp() + CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._level.Get(),"feedTime")));
-            }
-         }
-      }
+		
+		public function tickBPen(param1:int) : void
+		{
+			var _loc2_:int = 0;
+			var _loc3_:int = 0;
+			var _loc4_:Number = NaN;
+			if(health < maxHealth)
+			{
+				if(this._lastHeal <= GLOBAL.Timestamp() - 5 || GLOBAL._catchup && BASE.firstBaseLoaded)
+				{
+					var healing_multiplier:Number = 1.0 - BASE.GetHealingBuff();
+					this.modifyHealth(int(maxHealth * 5 / (this._regen * healing_multiplier)) * param1);
+					setHealth(Math.min(health,maxHealth));
+					this._lastHeal = GLOBAL.Timestamp();
+				}
+			}
+			if(this._behaviourMode == "defend" && _frameNumber % 200 == 0)
+			{
+				this.FindDefenseTargets();
+			}
+			if(_behaviour == "pen" && _frameNumber > 240 && int(Math.random() * 150) == 1 && GLOBAL._fps > 25)
+			{
+				_targetPosition = CHAMPIONCAGE.PointInCage(_targetCenter);
+				_hasPath = true;
+			}
+			if(GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD && this._level.Get() < 10)
+			{
+				if(!this._warnStarve)
+				{
+					if(GLOBAL.Timestamp() > this._feedTime.Get() + CHAMPIONCAGE.STARVETIMER)
+					{
+						CHAMPIONCAGE.Hide();
+						if(!GLOBAL._catchup)
+						{
+							GLOBAL.Message(KEYS.Get("msg_champion_starving"));
+						}
+						this._feeds.Add(-1);
+						if(this._feeds.Get() < 0)
+						{
+							this._feeds.Set(0);
+						}
+						this._feedTime = new SecNum(int(GLOBAL.Timestamp() + CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._level.Get(),"feedTime")));
+						this._warnStarve = true;
+						LOGGER.Log("fed","Starved level " + this._level.Get());
+					}
+				}
+				else if(!this._warned)
+				{
+					if(GLOBAL.Timestamp() > this._feedTime.Get())
+					{
+						CHAMPIONCAGE.Hide();
+						if(!GLOBAL._catchup)
+						{
+							GLOBAL.Message(KEYS.Get("msg_champion_hungry",{"v1":GLOBAL.ToTime(this._feedTime.Get() - GLOBAL.Timestamp() + CHAMPIONCAGE.STARVETIMER)}));
+						}
+						this._warned = true;
+					}
+				}
+				if(this._feeds.Get() >= CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._level.Get(),"feeds"))
+				{
+					this.levelSet(this._level.Get() + 1);
+				}
+			}
+			else if(GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD && this._level.Get() == 10)
+			{
+				if(GLOBAL.Timestamp() > this._feedTime.Get() + CHAMPIONCAGE.STARVETIMER)
+				{
+					CHAMPIONCAGE.Hide();
+					_loc2_ = health;
+					_loc3_ = Math.max(1,this._foodBonus.Get() - 1);
+					_loc4_ = CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._level.Get(),"health") + CHAMPIONCAGE.GetGuardianProperty(_creatureID,_loc3_,"bonusHealth");
+					if(_loc2_ < 1)
+					{
+						_loc2_ = 1;
+					}
+					else if(_loc2_ >= _loc4_)
+					{
+						_loc2_ = _loc4_;
+					}
+					setHealth(_loc2_);
+					this._foodBonus.Add(-param1);
+					if(this._foodBonus.Get() < 0)
+					{
+						this._foodBonus.Set(0);
+					}
+					this._feedTime = new SecNum(int(GLOBAL.Timestamp() + CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._level.Get(),"feedTime")));
+				}
+			}
+		}
       
       public function tickBCage(param1:int) : void
       {

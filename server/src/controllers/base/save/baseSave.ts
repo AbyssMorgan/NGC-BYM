@@ -228,7 +228,7 @@ export const baseSave: KoaController = async (ctx) => {
 									break;
 								}
 							}
-							if(baseSave.level >= 45 && baseSave.level <= 65){
+							if(baseSave.level >= 50 && baseSave.level <= 65){
 								switch(baseSave.wmid){
 									case 1: {
 										// Legionnaire

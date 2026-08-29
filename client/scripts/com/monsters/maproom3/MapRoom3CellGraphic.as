@@ -859,7 +859,7 @@ package com.monsters.maproom3
 						color = "#E95656";
 					} else if(this.m_Cell.baseLevel >= 70){
 						color = "#FA7878";
-					} else if(this.m_Cell.baseLevel >= 45){
+					} else if(this.m_Cell.baseLevel >= 50){
 						color = "#F9A5A5";
 					} else {
 						color = "#CCCCCC";

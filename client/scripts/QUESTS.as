@@ -6331,7 +6331,7 @@ package
 					"group": 7,
 					"name": "Legionnaire x10",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_0#\/10.",
-					"hint": "Tribe outposts level 45 - 65",
+					"hint": "Tribe outposts level 50 - 65",
 					"questimage": "tribe_legionnaire.v2.png",
 					"rules":
 					{
@@ -6346,7 +6346,7 @@ package
 					"group": 7,
 					"name": "Legionnaire x25",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_0#\/25.",
-					"hint": "Tribe outposts level 45 - 65",
+					"hint": "Tribe outposts level 50 - 65",
 					"questimage": "tribe_legionnaire.v2.png",
 					"prereq": "ASSAULT_TO_1_0_10",
 					"rules":
@@ -6362,7 +6362,7 @@ package
 					"group": 7,
 					"name": "Legionnaire x50",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_0#\/50.",
-					"hint": "Tribe outposts level 45 - 65",
+					"hint": "Tribe outposts level 50 - 65",
 					"questimage": "tribe_legionnaire.v2.png",
 					"prereq": "ASSAULT_TO_1_0_25",
 					"rules":
@@ -6378,7 +6378,7 @@ package
 					"group": 7,
 					"name": "Legionnaire x100",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_0#\/100.",
-					"hint": "Tribe outposts level 45 - 65",
+					"hint": "Tribe outposts level 50 - 65",
 					"questimage": "tribe_legionnaire.v2.png",
 					"prereq": "ASSAULT_TO_1_0_50",
 					"rules":
@@ -6394,7 +6394,7 @@ package
 					"group": 7,
 					"name": "Legionnaire x250",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_0#\/250.",
-					"hint": "Tribe outposts level 45 - 65",
+					"hint": "Tribe outposts level 50 - 65",
 					"questimage": "tribe_legionnaire.v2.png",
 					"prereq": "ASSAULT_TO_1_0_100",
 					"rules":
@@ -6410,7 +6410,7 @@ package
 					"group": 7,
 					"name": "Legionnaire x500",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_0#\/500.",
-					"hint": "Tribe outposts level 45 - 65",
+					"hint": "Tribe outposts level 50 - 65",
 					"questimage": "tribe_legionnaire.v2.png",
 					"prereq": "ASSAULT_TO_1_0_250",
 					"rules":
@@ -6426,7 +6426,7 @@ package
 					"group": 7,
 					"name": "Legionnaire x1000",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_0#\/1000.",
-					"hint": "Tribe outposts level 45 - 65",
+					"hint": "Tribe outposts level 50 - 65",
 					"questimage": "tribe_legionnaire.v2.png",
 					"prereq": "ASSAULT_TO_1_0_500",
 					"rules":
@@ -6442,7 +6442,7 @@ package
 					"group": 7,
 					"name": "Legionnaire x2500",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_0#\/2500.",
-					"hint": "Tribe outposts level 45 - 65",
+					"hint": "Tribe outposts level 50 - 65",
 					"questimage": "tribe_legionnaire.v2.png",
 					"prereq": "ASSAULT_TO_1_0_1000",
 					"rules":
@@ -6458,7 +6458,7 @@ package
 					"group": 7,
 					"name": "Legionnaire x5000",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_0#\/5000.",
-					"hint": "Tribe outposts level 45 - 65",
+					"hint": "Tribe outposts level 50 - 65",
 					"questimage": "tribe_legionnaire.v2.png",
 					"prereq": "ASSAULT_TO_1_0_2500",
 					"rules":
@@ -6475,7 +6475,7 @@ package
 					"group": 7,
 					"name": "Kozu x10",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_1#\/10.",
-					"hint": "Tribe outposts level 45 - 65",
+					"hint": "Tribe outposts level 50 - 65",
 					"questimage": "tribe_kozu.v2.png",
 					"rules":
 					{
@@ -6490,7 +6490,7 @@ package
 					"group": 7,
 					"name": "Kozu x25",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_1#\/25.",
-					"hint": "Tribe outposts level 45 - 65",
+					"hint": "Tribe outposts level 50 - 65",
 					"questimage": "tribe_kozu.v2.png",
 					"prereq": "ASSAULT_TO_1_1_10",
 					"rules":
@@ -6506,7 +6506,7 @@ package
 					"group": 7,
 					"name": "Kozu x50",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_1#\/50.",
-					"hint": "Tribe outposts level 45 - 65",
+					"hint": "Tribe outposts level 50 - 65",
 					"questimage": "tribe_kozu.v2.png",
 					"prereq": "ASSAULT_TO_1_1_25",
 					"rules":
@@ -6522,7 +6522,7 @@ package
 					"group": 7,
 					"name": "Kozu x100",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_1#\/100.",
-					"hint": "Tribe outposts level 45 - 65",
+					"hint": "Tribe outposts level 50 - 65",
 					"questimage": "tribe_kozu.v2.png",
 					"prereq": "ASSAULT_TO_1_1_50",
 					"rules":
@@ -6538,7 +6538,7 @@ package
 					"group": 7,
 					"name": "Kozu x250",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_1#\/250.",
-					"hint": "Tribe outposts level 45 - 65",
+					"hint": "Tribe outposts level 50 - 65",
 					"questimage": "tribe_kozu.v2.png",
 					"prereq": "ASSAULT_TO_1_1_100",
 					"rules":
@@ -6554,7 +6554,7 @@ package
 					"group": 7,
 					"name": "Kozu x500",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_1#\/500.",
-					"hint": "Tribe outposts level 45 - 65",
+					"hint": "Tribe outposts level 50 - 65",
 					"questimage": "tribe_kozu.v2.png",
 					"prereq": "ASSAULT_TO_1_1_250",
 					"rules":
@@ -6570,7 +6570,7 @@ package
 					"group": 7,
 					"name": "Kozu x1000",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_1#\/1000.",
-					"hint": "Tribe outposts level 45 - 65",
+					"hint": "Tribe outposts level 50 - 65",
 					"questimage": "tribe_kozu.v2.png",
 					"prereq": "ASSAULT_TO_1_1_500",
 					"rules":
@@ -6586,7 +6586,7 @@ package
 					"group": 7,
 					"name": "Kozu x2500",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_1#\/2500.",
-					"hint": "Tribe outposts level 45 - 65",
+					"hint": "Tribe outposts level 50 - 65",
 					"questimage": "tribe_kozu.v2.png",
 					"prereq": "ASSAULT_TO_1_1_1000",
 					"rules":
@@ -6602,7 +6602,7 @@ package
 					"group": 7,
 					"name": "Kozu x5000",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_1#\/5000.",
-					"hint": "Tribe outposts level 45 - 65",
+					"hint": "Tribe outposts level 50 - 65",
 					"questimage": "tribe_kozu.v2.png",
 					"prereq": "ASSAULT_TO_1_1_2500",
 					"rules":
@@ -6619,7 +6619,7 @@ package
 					"group": 7,
 					"name": "Abunakki x10",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_2#\/10.",
-					"hint": "Tribe outposts level 45 - 65",
+					"hint": "Tribe outposts level 50 - 65",
 					"questimage": "tribe_abunakki.v2.png",
 					"rules":
 					{
@@ -6634,7 +6634,7 @@ package
 					"group": 7,
 					"name": "Abunakki x25",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_2#\/25.",
-					"hint": "Tribe outposts level 45 - 65",
+					"hint": "Tribe outposts level 50 - 65",
 					"questimage": "tribe_abunakki.v2.png",
 					"prereq": "ASSAULT_TO_1_2_10",
 					"rules":
@@ -6650,7 +6650,7 @@ package
 					"group": 7,
 					"name": "Abunakki x50",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_2#\/50.",
-					"hint": "Tribe outposts level 45 - 65",
+					"hint": "Tribe outposts level 50 - 65",
 					"questimage": "tribe_abunakki.v2.png",
 					"prereq": "ASSAULT_TO_1_2_25",
 					"rules":
@@ -6666,7 +6666,7 @@ package
 					"group": 7,
 					"name": "Abunakki x100",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_2#\/100.",
-					"hint": "Tribe outposts level 45 - 65",
+					"hint": "Tribe outposts level 50 - 65",
 					"questimage": "tribe_abunakki.v2.png",
 					"prereq": "ASSAULT_TO_1_2_50",
 					"rules":
@@ -6682,7 +6682,7 @@ package
 					"group": 7,
 					"name": "Abunakki x250",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_2#\/250.",
-					"hint": "Tribe outposts level 45 - 65",
+					"hint": "Tribe outposts level 50 - 65",
 					"questimage": "tribe_abunakki.v2.png",
 					"prereq": "ASSAULT_TO_1_2_100",
 					"rules":
@@ -6698,7 +6698,7 @@ package
 					"group": 7,
 					"name": "Abunakki x500",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_2#\/500.",
-					"hint": "Tribe outposts level 45 - 65",
+					"hint": "Tribe outposts level 50 - 65",
 					"questimage": "tribe_abunakki.v2.png",
 					"prereq": "ASSAULT_TO_1_2_250",
 					"rules":
@@ -6714,7 +6714,7 @@ package
 					"group": 7,
 					"name": "Abunakki x1000",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_2#\/1000.",
-					"hint": "Tribe outposts level 45 - 65",
+					"hint": "Tribe outposts level 50 - 65",
 					"questimage": "tribe_abunakki.v2.png",
 					"prereq": "ASSAULT_TO_1_2_500",
 					"rules":
@@ -6730,7 +6730,7 @@ package
 					"group": 7,
 					"name": "Abunakki x2500",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_2#\/2500.",
-					"hint": "Tribe outposts level 45 - 65",
+					"hint": "Tribe outposts level 50 - 65",
 					"questimage": "tribe_abunakki.v2.png",
 					"prereq": "ASSAULT_TO_1_2_1000",
 					"rules":
@@ -6746,7 +6746,7 @@ package
 					"group": 7,
 					"name": "Abunakki x5000",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_2#\/5000.",
-					"hint": "Tribe outposts level 45 - 65",
+					"hint": "Tribe outposts level 50 - 65",
 					"questimage": "tribe_abunakki.v2.png",
 					"prereq": "ASSAULT_TO_1_2_2500",
 					"rules":
@@ -6763,7 +6763,7 @@ package
 					"group": 7,
 					"name": "Dreadnaught x10",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_3#\/10.",
-					"hint": "Tribe outposts level 45 - 65",
+					"hint": "Tribe outposts level 50 - 65",
 					"questimage": "tribe_dreadnaut.v2.png",
 					"rules":
 					{
@@ -6778,7 +6778,7 @@ package
 					"group": 7,
 					"name": "Dreadnaught x25",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_3#\/25.",
-					"hint": "Tribe outposts level 45 - 65",
+					"hint": "Tribe outposts level 50 - 65",
 					"questimage": "tribe_dreadnaut.v2.png",
 					"prereq": "ASSAULT_TO_1_3_10",
 					"rules":
@@ -6794,7 +6794,7 @@ package
 					"group": 7,
 					"name": "Dreadnaught x50",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_3#\/50.",
-					"hint": "Tribe outposts level 45 - 65",
+					"hint": "Tribe outposts level 50 - 65",
 					"questimage": "tribe_dreadnaut.v2.png",
 					"prereq": "ASSAULT_TO_1_3_25",
 					"rules":
@@ -6810,7 +6810,7 @@ package
 					"group": 7,
 					"name": "Dreadnaught x100",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_3#\/100.",
-					"hint": "Tribe outposts level 45 - 65",
+					"hint": "Tribe outposts level 50 - 65",
 					"questimage": "tribe_dreadnaut.v2.png",
 					"prereq": "ASSAULT_TO_1_3_50",
 					"rules":
@@ -6826,7 +6826,7 @@ package
 					"group": 7,
 					"name": "Dreadnaught x250",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_3#\/250.",
-					"hint": "Tribe outposts level 45 - 65",
+					"hint": "Tribe outposts level 50 - 65",
 					"questimage": "tribe_dreadnaut.v2.png",
 					"prereq": "ASSAULT_TO_1_3_100",
 					"rules":
@@ -6842,7 +6842,7 @@ package
 					"group": 7,
 					"name": "Dreadnaught x500",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_3#\/500.",
-					"hint": "Tribe outposts level 45 - 65",
+					"hint": "Tribe outposts level 50 - 65",
 					"questimage": "tribe_dreadnaut.v2.png",
 					"prereq": "ASSAULT_TO_1_3_250",
 					"rules":
@@ -6858,7 +6858,7 @@ package
 					"group": 7,
 					"name": "Dreadnaught x1000",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_3#\/1000.",
-					"hint": "Tribe outposts level 45 - 65",
+					"hint": "Tribe outposts level 50 - 65",
 					"questimage": "tribe_dreadnaut.v2.png",
 					"prereq": "ASSAULT_TO_1_3_500",
 					"rules":
@@ -6874,7 +6874,7 @@ package
 					"group": 7,
 					"name": "Dreadnaught x2500",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_3#\/2500.",
-					"hint": "Tribe outposts level 45 - 65",
+					"hint": "Tribe outposts level 50 - 65",
 					"questimage": "tribe_dreadnaut.v2.png",
 					"prereq": "ASSAULT_TO_1_3_1000",
 					"rules":
@@ -6890,7 +6890,7 @@ package
 					"group": 7,
 					"name": "Dreadnaught x5000",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_3#\/5000.",
-					"hint": "Tribe outposts level 45 - 65",
+					"hint": "Tribe outposts level 50 - 65",
 					"questimage": "tribe_dreadnaut.v2.png",
 					"prereq": "ASSAULT_TO_1_3_2500",
 					"rules":

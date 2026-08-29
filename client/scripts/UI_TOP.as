@@ -3,7 +3,6 @@ package
 	import com.monsters.baseBuffs.BaseBuff;
 	import com.monsters.baseBuffs.BaseBuffHandler;
 	import com.monsters.baseBuffs.buffs.AutoBankBaseBuff;
-	import com.monsters.configs.BYMConfig;
 	import com.monsters.dealspot.DealSpot;
 	import com.monsters.display.ScrollSetV;
 	import com.monsters.enums.EnumYardType;
@@ -77,7 +76,7 @@ package
 		private var m_creatureContainer:Sprite;
 		
 		private var m_scrollBar:ScrollSetV;
-      
+		
 		public function UI_TOP()
 		{
 			var _loc1_:int = 0;
@@ -95,7 +94,9 @@ package
 			} else {
 				gotoAndStop(GLOBAL._loadmode);
 			}
-			if (mc && mc.mcPoints) mc.mcPoints.stop();
+			if (mc && mc.mcPoints){
+				mc.mcPoints.stop();
+			}
 			if(GLOBAL._loadmode == GLOBAL.e_BASE_MODE.BUILD || GLOBAL._loadmode == GLOBAL.e_BASE_MODE.IBUILD)
 			{
 				this.setupBuildMode();
@@ -114,152 +115,152 @@ package
 			}
 			this.Update();
 		}
-      
-      private function setupBuildMode() : void
-      {
-         var _loc1_:int = 0;
-         mc.mcPoints.addEventListener(MouseEvent.MOUSE_OVER,this.InfoShow);
-         mc.mcPoints.addEventListener(MouseEvent.MOUSE_OUT,this.InfoHide);
-         _loc1_ = 1;
-         while(_loc1_ < 5)
-         {
-            mc["mcR" + _loc1_].mcHit.addEventListener(MouseEvent.MOUSE_OVER,this.StatsShow(_loc1_,false));
-            mc["mcR" + _loc1_].mcHit.addEventListener(MouseEvent.MOUSE_OUT,this.StatsHide);
-            mc["mcR" + _loc1_].bAdd.addEventListener(MouseEvent.CLICK,this.Topup(_loc1_));
-            mc["mcR" + _loc1_].bAdd.buttonMode = true;
-            mc["mcR" + _loc1_].bAdd.mouseEnabled = true;
-            mc["mcR" + _loc1_].bAdd.mouseChildren = false;
-            _loc1_++;
-         }
-         this._resourceUI = {};
-         this._resourceUI.r1 = GLOBAL._resources["r" + 1].Get();
-         this._resourceUI.r2 = GLOBAL._resources["r" + 2].Get();
-         this._resourceUI.r3 = GLOBAL._resources["r" + 3].Get();
-         this._resourceUI.r4 = GLOBAL._resources["r" + 4].Get();
-         mc["mcR" + 1]._resource = GLOBAL._resources["r" + 1].Get();
-         mc["mcR" + 2]._resource = GLOBAL._resources["r" + 2].Get();
-         mc["mcR" + 3]._resource = GLOBAL._resources["r" + 3].Get();
-         mc["mcR" + 4]._resource = GLOBAL._resources["r" + 4].Get();
-         mc.mcR5.bAdd.txtAdd.autoSize = TextFieldAutoSize.LEFT;
-         mc.mcR5.bAdd.txtAdd.htmlText = KEYS.Get("ui_topaddshiny");
-         mc.mcR5.bAdd.mcBG.width = mc.mcR5.bAdd.txtAdd.width + 11;
-         mc.mcR5.mcBG.width = 82 + mc.mcR5.bAdd.width;
-         // mc.mcR5.bAdd.addEventListener(MouseEvent.CLICK,BUY.Show);
-         mc.mcR5.bAdd.addEventListener(MouseEvent.CLICK,function(event:MouseEvent):void
-         {
-            GLOBAL.Message(KEYS.Get("disabled_addshiny"));
-         });
-         mc.mcR5.bAdd.buttonMode = true;
-         mc.mcR5.bAdd.mouseChildren = false;
-		 if(MapRoomManager.instance.isInMapRoom2){
-			mc.mcOutposts.mcHit.addEventListener(MouseEvent.MOUSE_OVER,this.ButtonInfoShow);
-			mc.mcOutposts.mcHit.addEventListener(MouseEvent.MOUSE_OUT,this.ButtonInfoHide);
-			mc.mcOutposts.bNext.addEventListener(MouseEvent.CLICK,BASE.LoadNext);
-			mc.mcOutposts.bNext.buttonMode = true;
-			mc.mcOutposts.bNext.mouseEnabled = true;
-			mc.mcOutposts.bNext.mouseChildren = false;
-		 } else {
-			mc.mcOutposts.bNext.visible = false;
-		 }
-         mc.bInvite.buttonMode = true;
-         mc.bInvite.mouseChildren = false;
-         mc.bInvite.addEventListener(MouseEvent.CLICK,this.ButtonClick("invite"));
-         mc.bInvite.addEventListener(MouseEvent.MOUSE_OVER,this.ButtonInfoShow);
-         mc.bInvite.addEventListener(MouseEvent.MOUSE_OUT,this.ButtonInfoHide);
-         mc.bGift.buttonMode = true;
-         mc.bGift.mouseChildren = false;
-         mc.bGift.addEventListener(MouseEvent.CLICK,this.ButtonClick("gift"));
-         mc.bGift.addEventListener(MouseEvent.MOUSE_OVER,this.ButtonInfoShow);
-         mc.bGift.addEventListener(MouseEvent.MOUSE_OUT,this.ButtonInfoHide);
-         mc.bInbox.buttonMode = true;
-         mc.bInbox.mouseChildren = false;
-         mc.bInbox.addEventListener(MouseEvent.CLICK,this.ButtonClick("inbox"));
-         mc.bInbox.addEventListener(MouseEvent.MOUSE_OVER,this.ButtonInfoShow);
-         mc.bInbox.addEventListener(MouseEvent.MOUSE_OUT,this.ButtonInfoHide);
-         mc.bAlert.buttonMode = true;
-         mc.bAlert.mouseChildren = false;
-         mc.bAlert.addEventListener(MouseEvent.CLICK,this.ButtonClick("alert"));
-         mc.bAlert.addEventListener(MouseEvent.MOUSE_OVER,this.ButtonInfoShow);
-         mc.bAlert.addEventListener(MouseEvent.MOUSE_OUT,this.ButtonInfoHide);
-         this._buttonIcons = [];
-         this._buttonIcons = [mc.bInvite,mc.bGift,mc.bInbox,mc.bAlert];
-         GLOBAL.RegisterTickFastTarget(this);
-         mc.bEarn.bAction.tLabel.htmlText = KEYS.Get("btn_earn");
-         if(GLOBAL._flags.showFBCEarn == 1)
-         {
-            mc.bEarn.buttonMode = true;
-            mc.bEarn.mouseChildren = false;
-            mc.bEarn.addEventListener(MouseEvent.CLICK,this.ButtonClick("earn"));
-            mc.bEarn.addEventListener(MouseEvent.MOUSE_OVER,this.ButtonInfoShow);
-            mc.bEarn.addEventListener(MouseEvent.MOUSE_OUT,this.ButtonInfoHide);
-         }
-         else
-         {
-            mc.bEarn.mouseChildren = false;
-            mc.bEarn.mouseEnabled = false;
-            mc.bEarn.visible = false;
-         }
-         mc.bDailyDeal.tLabel.htmlText = KEYS.Get("btn_dailydeal");
-         if(GLOBAL._flags.showFBCDaily == 1)
-         {
-            mc.bDailyDeal.buttonMode = true;
-            mc.bDailyDeal.mouseChildren = false;
-            mc.bDailyDeal.addEventListener(MouseEvent.CLICK,this.ButtonClick("daily"));
-            mc.bDailyDeal.addEventListener(MouseEvent.MOUSE_OVER,this.ButtonInfoShow);
-            mc.bDailyDeal.addEventListener(MouseEvent.MOUSE_OUT,this.ButtonInfoHide);
-            if(GLOBAL._flags.showFBCEarn == 0)
-            {
-               mc.bDailyDeal.x = mc.bEarn.x;
-            }
-         }
-         else
-         {
-            mc.bDailyDeal.mouseChildren = false;
-            mc.bDailyDeal.mouseEnabled = false;
-            mc.bDailyDeal.visible = false;
-         }
-      }
+		
+		private function setupBuildMode() : void
+		{
+			var _loc1_:int = 0;
+			mc.mcPoints.addEventListener(MouseEvent.MOUSE_OVER,this.InfoShow);
+			mc.mcPoints.addEventListener(MouseEvent.MOUSE_OUT,this.InfoHide);
+			_loc1_ = 1;
+			while(_loc1_ < 5)
+			{
+				mc["mcR" + _loc1_].mcHit.addEventListener(MouseEvent.MOUSE_OVER,this.StatsShow(_loc1_,false));
+				mc["mcR" + _loc1_].mcHit.addEventListener(MouseEvent.MOUSE_OUT,this.StatsHide);
+				mc["mcR" + _loc1_].bAdd.addEventListener(MouseEvent.CLICK,this.Topup(_loc1_));
+				mc["mcR" + _loc1_].bAdd.buttonMode = true;
+				mc["mcR" + _loc1_].bAdd.mouseEnabled = true;
+				mc["mcR" + _loc1_].bAdd.mouseChildren = false;
+				_loc1_++;
+			}
+			this._resourceUI = {};
+			this._resourceUI.r1 = GLOBAL._resources["r" + 1].Get();
+			this._resourceUI.r2 = GLOBAL._resources["r" + 2].Get();
+			this._resourceUI.r3 = GLOBAL._resources["r" + 3].Get();
+			this._resourceUI.r4 = GLOBAL._resources["r" + 4].Get();
+			mc["mcR" + 1]._resource = GLOBAL._resources["r" + 1].Get();
+			mc["mcR" + 2]._resource = GLOBAL._resources["r" + 2].Get();
+			mc["mcR" + 3]._resource = GLOBAL._resources["r" + 3].Get();
+			mc["mcR" + 4]._resource = GLOBAL._resources["r" + 4].Get();
+			mc.mcR5.bAdd.txtAdd.autoSize = TextFieldAutoSize.LEFT;
+			mc.mcR5.bAdd.txtAdd.htmlText = KEYS.Get("ui_topaddshiny");
+			mc.mcR5.bAdd.mcBG.width = mc.mcR5.bAdd.txtAdd.width + 11;
+			mc.mcR5.mcBG.width = 82 + mc.mcR5.bAdd.width;
+			// mc.mcR5.bAdd.addEventListener(MouseEvent.CLICK,BUY.Show);
+			mc.mcR5.bAdd.addEventListener(MouseEvent.CLICK,function(event:MouseEvent):void
+			{
+				GLOBAL.Message(KEYS.Get("disabled_addshiny"));
+			});
+			mc.mcR5.bAdd.buttonMode = true;
+			mc.mcR5.bAdd.mouseChildren = false;
+			if(MapRoomManager.instance.isInMapRoom2){
+				mc.mcOutposts.mcHit.addEventListener(MouseEvent.MOUSE_OVER,this.ButtonInfoShow);
+				mc.mcOutposts.mcHit.addEventListener(MouseEvent.MOUSE_OUT,this.ButtonInfoHide);
+				mc.mcOutposts.bNext.addEventListener(MouseEvent.CLICK,BASE.LoadNext);
+				mc.mcOutposts.bNext.buttonMode = true;
+				mc.mcOutposts.bNext.mouseEnabled = true;
+				mc.mcOutposts.bNext.mouseChildren = false;
+			} else {
+				mc.mcOutposts.bNext.visible = false;
+			}
+			mc.bInvite.buttonMode = true;
+			mc.bInvite.mouseChildren = false;
+			mc.bInvite.addEventListener(MouseEvent.CLICK,this.ButtonClick("invite"));
+			mc.bInvite.addEventListener(MouseEvent.MOUSE_OVER,this.ButtonInfoShow);
+			mc.bInvite.addEventListener(MouseEvent.MOUSE_OUT,this.ButtonInfoHide);
+			mc.bGift.buttonMode = true;
+			mc.bGift.mouseChildren = false;
+			mc.bGift.addEventListener(MouseEvent.CLICK,this.ButtonClick("gift"));
+			mc.bGift.addEventListener(MouseEvent.MOUSE_OVER,this.ButtonInfoShow);
+			mc.bGift.addEventListener(MouseEvent.MOUSE_OUT,this.ButtonInfoHide);
+			mc.bInbox.buttonMode = true;
+			mc.bInbox.mouseChildren = false;
+			mc.bInbox.addEventListener(MouseEvent.CLICK,this.ButtonClick("inbox"));
+			mc.bInbox.addEventListener(MouseEvent.MOUSE_OVER,this.ButtonInfoShow);
+			mc.bInbox.addEventListener(MouseEvent.MOUSE_OUT,this.ButtonInfoHide);
+			mc.bAlert.buttonMode = true;
+			mc.bAlert.mouseChildren = false;
+			mc.bAlert.addEventListener(MouseEvent.CLICK,this.ButtonClick("alert"));
+			mc.bAlert.addEventListener(MouseEvent.MOUSE_OVER,this.ButtonInfoShow);
+			mc.bAlert.addEventListener(MouseEvent.MOUSE_OUT,this.ButtonInfoHide);
+			this._buttonIcons = [];
+			this._buttonIcons = [mc.bInvite,mc.bGift,mc.bInbox,mc.bAlert];
+			GLOBAL.RegisterTickFastTarget(this);
+			mc.bEarn.bAction.tLabel.htmlText = KEYS.Get("btn_earn");
+			if(GLOBAL._flags.showFBCEarn == 1)
+			{
+				mc.bEarn.buttonMode = true;
+				mc.bEarn.mouseChildren = false;
+				mc.bEarn.addEventListener(MouseEvent.CLICK,this.ButtonClick("earn"));
+				mc.bEarn.addEventListener(MouseEvent.MOUSE_OVER,this.ButtonInfoShow);
+				mc.bEarn.addEventListener(MouseEvent.MOUSE_OUT,this.ButtonInfoHide);
+			}
+			else
+			{
+				mc.bEarn.mouseChildren = false;
+				mc.bEarn.mouseEnabled = false;
+				mc.bEarn.visible = false;
+			}
+			mc.bDailyDeal.tLabel.htmlText = KEYS.Get("btn_dailydeal");
+			if(GLOBAL._flags.showFBCDaily == 1)
+			{
+				mc.bDailyDeal.buttonMode = true;
+				mc.bDailyDeal.mouseChildren = false;
+				mc.bDailyDeal.addEventListener(MouseEvent.CLICK,this.ButtonClick("daily"));
+				mc.bDailyDeal.addEventListener(MouseEvent.MOUSE_OVER,this.ButtonInfoShow);
+				mc.bDailyDeal.addEventListener(MouseEvent.MOUSE_OUT,this.ButtonInfoHide);
+				if(GLOBAL._flags.showFBCEarn == 0)
+				{
+					mc.bDailyDeal.x = mc.bEarn.x;
+				}
+			}
+			else
+			{
+				mc.bDailyDeal.mouseChildren = false;
+				mc.bDailyDeal.mouseEnabled = false;
+				mc.bDailyDeal.visible = false;
+			}
+		}
 
-      private function onSpinnerTick(e:Event):void
-      {
-         for each (var btn:* in this._buttonIcons)
-         {
-            if (btn && btn.mcSpinner && btn.mcSpinner.visible)
-            {
-               btn.mcSpinner.rotation += 4;
-            }
-         }
-      }
+		private function onSpinnerTick(e:Event):void
+		{
+			for each (var btn:* in this._buttonIcons)
+			{
+				if (btn && btn.mcSpinner && btn.mcSpinner.visible)
+				{
+					btn.mcSpinner.rotation += 4;
+				}
+			}
+		}
 
-      public function TickFast(param1:Event = null):void
-      {
-         this.onSpinnerTick(param1);
-      }
+		public function TickFast(param1:Event = null):void
+		{
+			this.onSpinnerTick(param1);
+		}
 
-      private function setupScoutMode() : void
-      {
-         var _loc1_:MovieClip = null;
-         var _loc2_:int = 0;
-         this.setupAttackMode();
-         if(!GLOBAL._attackersFlinger)
-         {
-            this._creatureButtonsMC._mc._txtContainer.flinger_txt.htmlText = KEYS.Get("no_flinger");
-         }
-         else
-         {
-            this._creatureButtonsMC._mc._txtContainer.flinger_txt.htmlText = BASE.isInfernoMainYardOrOutpost ? KEYS.Get("monster_limit") : KEYS.Get("attack_flingerbar");
-         }
-         this._creatureButtonsMC._mc._txtContainer.mcBar.visible = false;
-         this._creatureButtonsMC._mc._txtContainer.tA.htmlText = "";
-         _loc2_ = 1;
-         while(_loc2_ < 5)
-         {
-            _loc1_ = mc["mcR" + _loc2_];
-            _loc1_.visible = false;
-            _loc2_++;
-         }
-      }
-      
+		private function setupScoutMode() : void
+		{
+			var _loc1_:MovieClip = null;
+			var _loc2_:int = 0;
+			this.setupAttackMode();
+			if(!GLOBAL._attackersFlinger)
+			{
+				this._creatureButtonsMC._mc._txtContainer.flinger_txt.htmlText = KEYS.Get("no_flinger");
+			}
+			else
+			{
+				this._creatureButtonsMC._mc._txtContainer.flinger_txt.htmlText = BASE.isInfernoMainYardOrOutpost ? KEYS.Get("monster_limit") : KEYS.Get("attack_flingerbar");
+			}
+			this._creatureButtonsMC._mc._txtContainer.mcBar.visible = false;
+			this._creatureButtonsMC._mc._txtContainer.tA.htmlText = "";
+			_loc2_ = 1;
+			while(_loc2_ < 5)
+			{
+				_loc1_ = mc["mcR" + _loc2_];
+				_loc1_.visible = false;
+				_loc2_++;
+			}
+		}
+		
 		private function setupAttackMode() : void
 		{
 			var _loc1_:Array = null;
@@ -320,116 +321,116 @@ package
 					this._catapult.Setup(!GLOBAL.isInAttackMode);
 				}
 			}
-      	}
-      
-      private function setupScrollMenu() : void
-      {
-         this.m_creatureContainer = new Sprite();
-         this._creatureButtonsMC.addChild(this.m_creatureContainer);
-         var _loc1_:Array = this.setupChampionButtons(this.m_creatureContainer);
-         this.setupCreatureButtons(this.m_creatureContainer,_loc1_[0],_loc1_[1]);
-         if(this.m_creatureContainer.numChildren == 0)
-         {
-            this._creatureButtonsMC._mc._txtContainer.flinger_txt.htmlText = KEYS.Get("no_monsters");
-            this._creatureButtonsMC._mc._bottomBar.visible = false;
-         }
-         var _loc2_:Sprite = new Sprite();
-         _loc2_.graphics.beginFill(16777215,1);
-         _loc2_.graphics.drawRect(0,22,200,GLOBAL._SCREEN.height - 476);
-         _loc2_.graphics.endFill();
-         _loc2_.mouseEnabled = false;
-         _loc2_.mouseChildren = false;
-         this._creatureButtonsMC.addChild(_loc2_);
-         this.m_creatureContainer.mask = _loc2_;
-         var _loc3_:ScrollSetV = new ScrollSetV(this.m_creatureContainer,_loc2_,true);
-         _loc3_.x = 202 - _loc3_.width;
-         _loc3_.y = 22;
-         this._creatureButtonsMC.addChild(_loc3_);
-      }
-      
-      private function setupChampionButtons(param1:DisplayObjectContainer) : Array
-      {
-         var _loc3_:int = 0;
-         var _loc4_:int = 0;
-         var _loc5_:Boolean = false;
-         var _loc6_:int = 0;
-         var _loc7_:int = 0;
-         var _loc8_:MovieClip = null;
-         var _loc2_:int = int(GLOBAL._playerGuardianData.length);
-         while(_loc7_ < _loc2_)
-         {
-            if(Boolean(GLOBAL._playerGuardianData[_loc7_]) && GLOBAL._playerGuardianData[_loc7_].hp.Get() > 0)
-            {
-               if((_loc6_ = !!GLOBAL._playerGuardianData[_loc7_].status ? int(GLOBAL._playerGuardianData[_loc7_].status) : ChampionBase.k_CHAMPION_STATUS_NORMAL) == ChampionBase.k_CHAMPION_STATUS_NORMAL)
-               {
-                  if(_loc5_ && GLOBAL._playerGuardianData[_loc7_].t != 5)
-                  {
-                     LOGGER.Log("log","User is initializing combat with more than one normal champ.");
-                  }
-                  else if(GLOBAL._loadmode == GLOBAL.mode || GLOBAL._loadmode != GLOBAL.mode && !MAPROOM_DESCENT.DescentPassed)
-                  {
-                     if(GLOBAL._playerGuardianData[_loc7_].t != 5)
-                     {
-                        _loc5_ = true;
-                     }
-                     (_loc8_ = param1.addChild(new CHAMPIONBUTTON("G" + GLOBAL._playerGuardianData[_loc7_].t,GLOBAL._playerGuardianData[_loc7_].l.Get(),_loc7_,_loc3_,this._creatureButtonsMC)) as CHAMPIONBUTTON).x = 14;
-                     _loc8_.y = 34 + _loc3_ * 53;
-                     _loc8_.addEventListener(UI_TOP.CREATUREBUTTONOVER,this.sortCreatureButtons);
-                     this._creatureButtons.push(_loc8_);
-                     _loc3_++;
-                     _loc4_++;
-                  }
-               }
-            }
-            _loc7_++;
-         }
-         if(_loc8_)
-         {
-            this._creatureButtonsMC._mc._bottomBar.y = Math.min(GLOBAL._SCREEN.height - 450,_loc8_.y + _loc8_.height - this._creatureButtonsMC._mc._bottomBar.height * 0.8);
-         }
-         return [_loc3_,_loc4_];
-      }
-      
-      private function setupCreatureButtons(param1:DisplayObjectContainer, param2:int, param3:int) : void
-      {
-         var _loc6_:String = null;
-         var _loc7_:int = 0;
-         var _loc8_:MovieClip = null;
-         var _loc9_:Array = null;
-         var _loc10_:String = null;
-         var _loc4_:Object = CREATURELOCKER._creatures;
-         var _loc5_:Boolean = MapRoomManager.instance.isInMapRoom3;
-         for(_loc6_ in _loc4_)
-         {
-            _loc7_ = int(_loc6_.substr(_loc6_.length - 1));
-            _loc9_ = ATTACK._curCreaturesAvailable;
-            if(ATTACK._curCreaturesAvailable[_loc6_])
-            {
-               _loc10_ = _loc6_;
-               if(ATTACK._curCreaturesAvailable[_loc10_] > 0)
-               {
-                  (_loc8_ = param1.addChild(new CREATUREBUTTON(_loc10_,param2,this._creatureButtonsMC)) as CREATUREBUTTON).x = 14;
-                  _loc8_.y = 34 + param2 * 53;
-                  if(MapRoomManager.instance.isInMapRoom2or3)
-                  {
-                     _loc8_.addEventListener(UI_TOP.CREATUREBUTTONOVER,this.sortCreatureButtons);
-                  }
-                  this._creatureButtons.push(_loc8_);
-                  param2++;
-               }
-            }
-         }
-         if(_loc8_)
-         {
-            this._creatureButtonsMC._mc._bottomBar.y = Math.min(GLOBAL._SCREEN.height - 450,_loc8_.y + _loc8_.height - this._creatureButtonsMC._mc._bottomBar.height * 0.8);
-         }
-      }
-      
-      private function sortCreatureButtons(param1:Event = null) : void
-      {
-         this._creatureButtonsMC.addChild(param1.target as DisplayObject);
-      }
-      
+		}
+		
+		private function setupScrollMenu() : void
+		{
+			this.m_creatureContainer = new Sprite();
+			this._creatureButtonsMC.addChild(this.m_creatureContainer);
+			var _loc1_:Array = this.setupChampionButtons(this.m_creatureContainer);
+			this.setupCreatureButtons(this.m_creatureContainer,_loc1_[0],_loc1_[1]);
+			if(this.m_creatureContainer.numChildren == 0)
+			{
+				this._creatureButtonsMC._mc._txtContainer.flinger_txt.htmlText = KEYS.Get("no_monsters");
+				this._creatureButtonsMC._mc._bottomBar.visible = false;
+			}
+			var _loc2_:Sprite = new Sprite();
+			_loc2_.graphics.beginFill(16777215,1);
+			_loc2_.graphics.drawRect(0,22,200,GLOBAL._SCREEN.height - 476);
+			_loc2_.graphics.endFill();
+			_loc2_.mouseEnabled = false;
+			_loc2_.mouseChildren = false;
+			this._creatureButtonsMC.addChild(_loc2_);
+			this.m_creatureContainer.mask = _loc2_;
+			var _loc3_:ScrollSetV = new ScrollSetV(this.m_creatureContainer,_loc2_,true);
+			_loc3_.x = 202 - _loc3_.width;
+			_loc3_.y = 22;
+			this._creatureButtonsMC.addChild(_loc3_);
+		}
+		
+		private function setupChampionButtons(param1:DisplayObjectContainer) : Array
+		{
+			var _loc3_:int = 0;
+			var _loc4_:int = 0;
+			var _loc5_:Boolean = false;
+			var _loc6_:int = 0;
+			var _loc7_:int = 0;
+			var _loc8_:MovieClip = null;
+			var _loc2_:int = int(GLOBAL._playerGuardianData.length);
+			while(_loc7_ < _loc2_)
+			{
+				if(Boolean(GLOBAL._playerGuardianData[_loc7_]) && GLOBAL._playerGuardianData[_loc7_].hp.Get() > 0)
+				{
+					if((_loc6_ = !!GLOBAL._playerGuardianData[_loc7_].status ? int(GLOBAL._playerGuardianData[_loc7_].status) : ChampionBase.k_CHAMPION_STATUS_NORMAL) == ChampionBase.k_CHAMPION_STATUS_NORMAL)
+					{
+						if(_loc5_ && GLOBAL._playerGuardianData[_loc7_].t != 5)
+						{
+							LOGGER.Log("log","User is initializing combat with more than one normal champ.");
+						}
+						else if(GLOBAL._loadmode == GLOBAL.mode || GLOBAL._loadmode != GLOBAL.mode && !MAPROOM_DESCENT.DescentPassed)
+						{
+							if(GLOBAL._playerGuardianData[_loc7_].t != 5)
+							{
+								_loc5_ = true;
+							}
+							(_loc8_ = param1.addChild(new CHAMPIONBUTTON("G" + GLOBAL._playerGuardianData[_loc7_].t,GLOBAL._playerGuardianData[_loc7_].l.Get(),_loc7_,_loc3_,this._creatureButtonsMC)) as CHAMPIONBUTTON).x = 14;
+							_loc8_.y = 34 + _loc3_ * 53;
+							_loc8_.addEventListener(UI_TOP.CREATUREBUTTONOVER,this.sortCreatureButtons);
+							this._creatureButtons.push(_loc8_);
+							_loc3_++;
+							_loc4_++;
+						}
+					}
+				}
+				_loc7_++;
+			}
+			if(_loc8_)
+			{
+				this._creatureButtonsMC._mc._bottomBar.y = Math.min(GLOBAL._SCREEN.height - 450,_loc8_.y + _loc8_.height - this._creatureButtonsMC._mc._bottomBar.height * 0.8);
+			}
+			return [_loc3_,_loc4_];
+		}
+		
+		private function setupCreatureButtons(param1:DisplayObjectContainer, param2:int, param3:int) : void
+		{
+			var _loc6_:String = null;
+			var _loc7_:int = 0;
+			var _loc8_:MovieClip = null;
+			var _loc9_:Array = null;
+			var _loc10_:String = null;
+			var _loc4_:Object = CREATURELOCKER._creatures;
+			var _loc5_:Boolean = MapRoomManager.instance.isInMapRoom3;
+			for(_loc6_ in _loc4_)
+			{
+				_loc7_ = int(_loc6_.substr(_loc6_.length - 1));
+				_loc9_ = ATTACK._curCreaturesAvailable;
+				if(ATTACK._curCreaturesAvailable[_loc6_])
+				{
+					_loc10_ = _loc6_;
+					if(ATTACK._curCreaturesAvailable[_loc10_] > 0)
+					{
+						(_loc8_ = param1.addChild(new CREATUREBUTTON(_loc10_,param2,this._creatureButtonsMC)) as CREATUREBUTTON).x = 14;
+						_loc8_.y = 34 + param2 * 53;
+						if(MapRoomManager.instance.isInMapRoom2or3)
+						{
+							_loc8_.addEventListener(UI_TOP.CREATUREBUTTONOVER,this.sortCreatureButtons);
+						}
+						this._creatureButtons.push(_loc8_);
+						param2++;
+					}
+				}
+			}
+			if(_loc8_)
+			{
+				this._creatureButtonsMC._mc._bottomBar.y = Math.min(GLOBAL._SCREEN.height - 450,_loc8_.y + _loc8_.height - this._creatureButtonsMC._mc._bottomBar.height * 0.8);
+			}
+		}
+		
+		private function sortCreatureButtons(param1:Event = null) : void
+		{
+			this._creatureButtonsMC.addChild(param1.target as DisplayObject);
+		}
+		
 		private function InfoShow(param1:MouseEvent) : void
 		{
 			mc.mcPoints.gotoAndStop(2);
@@ -454,332 +455,329 @@ package
 				"v7":GLOBAL.FormatNumberNormal(BASE._basePower.Get())
 			});
 		}
-      
-      private function InfoHide(param1:MouseEvent) : void
-      {
-         mc.mcPoints.gotoAndStop(1);
-      }
-      
-      public function resize(param1:Rectangle) : void
-      {
-         var _loc2_:uint = 0;
-         var _loc3_:uint = 0;
-         x = param1.x + 10;
-         y = param1.y + 4;
-         mcProtected.x = param1.width - 125;
-         mcReinforcements.x = param1.width - 125;
-         mcSpecialEvent.x = param1.width - 125;
-         mcBuffHolder.x = param1.width - 200;
-         if(GLOBAL.mode == GLOBAL.e_BASE_MODE.ATTACK || GLOBAL.mode == GLOBAL.e_BASE_MODE.WMATTACK)
-         {
-            mcZoom.x = param1.width - 38 - 24;
-            mcFullscreen.x = param1.width - 38;
-            mcSound.x = param1.width - 38 - 24;
-            mcMusic.x = param1.width - 38;
-            mcSave.x = param1.width - 38 - 24;
-         }
-         else
-         {
-            mcZoom.x = param1.width - 130;
-            mcFullscreen.x = param1.width - 100;
-            mcSound.x = param1.width - 70;
-            mcMusic.x = param1.width - 40;
-            mcSave.x = param1.width - 160;
-         }
-         if(this._descentDebuff)
-         {
-            this._descentDebuff.x = param1.width - 160;
-         }
-         if(this.m_creatureContainer)
-         {
-            _loc2_ = this._creatureButtons.length;
-            if(_loc2_)
-            {
-               while(_loc3_ < _loc2_)
-               {
-                  this._creatureButtons[_loc3_].x = 14;
-                  this._creatureButtons[_loc3_].y = 34 + _loc3_ * 53;
-                  _loc3_++;
-               }
-               this._creatureButtonsMC._mc._bottomBar.y = Math.min(GLOBAL._SCREEN.height - 450,this._creatureButtons[_loc2_ - 1].y + this._creatureButtons[_loc2_ - 1].height - this._creatureButtonsMC._mc._bottomBar.height * 0.8);
-            }
-            (this.m_creatureContainer.mask as Sprite).graphics.clear();
-            (this.m_creatureContainer.mask as Sprite).graphics.beginFill(16777215,1);
-            (this.m_creatureContainer.mask as Sprite).graphics.drawRect(0,22,200,GLOBAL._SCREEN.height - 476);
-            (this.m_creatureContainer.mask as Sprite).graphics.endFill();
-            this.m_creatureContainer.mask = this.m_creatureContainer.mask;
-            this.m_scrollBar.checkResize();
-         }
-      }
-      
-      public function Clear() : void
-      {
-         var _loc1_:int = 0;
-         if(GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD)
-         {
-            if(mc.mcPoints)
-            {
-               mc.mcPoints.removeEventListener(MouseEvent.MOUSE_OVER,this.InfoShow);
-               mc.mcPoints.removeEventListener(MouseEvent.MOUSE_OUT,this.InfoHide);
-            }
-            _loc1_ = 1;
-            while(_loc1_ < 5)
-            {
-               if(mc["mcR" + _loc1_])
-               {
-                  if(mc["mcR" + _loc1_].mcHit)
-                  {
-                     mc["mcR" + _loc1_].mcHit.removeEventListener(MouseEvent.MOUSE_OVER,this.StatsShow(_loc1_,false));
-                     mc["mcR" + _loc1_].mcHit.removeEventListener(MouseEvent.MOUSE_OUT,this.StatsHide);
-                  }
-                  if(mc["mcR" + _loc1_].bAdd)
-                  {
-                     mc["mcR" + _loc1_].bAdd.removeEventListener(MouseEvent.CLICK,this.Topup(_loc1_));
-                  }
-               }
-               _loc1_++;
-            }
-            if(Boolean(mc.mcR5) && Boolean(mc.mcR5.bAdd))
-            {
-               mc.mcR5.bAdd.removeEventListener(MouseEvent.CLICK,BUY.Show);
-            }
-			if(MapRoomManager.instance.isInMapRoom2){
-				if(Boolean(mc.mcOutposts) && Boolean(mc.mcOutposts.mcHit) && Boolean(mc.mcOutposts.bNext)){
-					mc.mcOutposts.mcHit.removeEventListener(MouseEvent.MOUSE_OVER,this.ButtonInfoShow);
-					mc.mcOutposts.mcHit.removeEventListener(MouseEvent.MOUSE_OUT,this.ButtonInfoHide);
-					mc.mcOutposts.bNext.removeEventListener(MouseEvent.CLICK,BASE.LoadNext);
+		
+		private function InfoHide(param1:MouseEvent) : void
+		{
+			mc.mcPoints.gotoAndStop(1);
+		}
+		
+		public function resize(param1:Rectangle) : void
+		{
+			var _loc2_:uint = 0;
+			var _loc3_:uint = 0;
+			x = param1.x + 10;
+			y = param1.y + 4;
+			mcProtected.x = param1.width - 125;
+			mcReinforcements.x = param1.width - 125;
+			mcSpecialEvent.x = param1.width - 125;
+			mcBuffHolder.x = param1.width - 200;
+			if(GLOBAL.mode == GLOBAL.e_BASE_MODE.ATTACK || GLOBAL.mode == GLOBAL.e_BASE_MODE.WMATTACK)
+			{
+				mcZoom.x = param1.width - 38 - 24;
+				mcFullscreen.x = param1.width - 38;
+				mcSound.x = param1.width - 38 - 24;
+				mcMusic.x = param1.width - 38;
+				mcSave.x = param1.width - 38 - 24;
+			}
+			else
+			{
+				mcZoom.x = param1.width - 130;
+				mcFullscreen.x = param1.width - 100;
+				mcSound.x = param1.width - 70;
+				mcMusic.x = param1.width - 40;
+				mcSave.x = param1.width - 160;
+			}
+			if(this._descentDebuff)
+			{
+				this._descentDebuff.x = param1.width - 160;
+			}
+			if(this.m_creatureContainer)
+			{
+				_loc2_ = this._creatureButtons.length;
+				if(_loc2_)
+				{
+					while(_loc3_ < _loc2_)
+					{
+						this._creatureButtons[_loc3_].x = 14;
+						this._creatureButtons[_loc3_].y = 34 + _loc3_ * 53;
+						_loc3_++;
+					}
+					this._creatureButtonsMC._mc._bottomBar.y = Math.min(GLOBAL._SCREEN.height - 450,this._creatureButtons[_loc2_ - 1].y + this._creatureButtons[_loc2_ - 1].height - this._creatureButtonsMC._mc._bottomBar.height * 0.8);
+				}
+				(this.m_creatureContainer.mask as Sprite).graphics.clear();
+				(this.m_creatureContainer.mask as Sprite).graphics.beginFill(16777215,1);
+				(this.m_creatureContainer.mask as Sprite).graphics.drawRect(0,22,200,GLOBAL._SCREEN.height - 476);
+				(this.m_creatureContainer.mask as Sprite).graphics.endFill();
+				this.m_creatureContainer.mask = this.m_creatureContainer.mask;
+				this.m_scrollBar.checkResize();
+			}
+		}
+		
+		public function Clear() : void
+		{
+			var _loc1_:int = 0;
+			if(GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD)
+			{
+				if(mc.mcPoints)
+				{
+					mc.mcPoints.removeEventListener(MouseEvent.MOUSE_OVER,this.InfoShow);
+					mc.mcPoints.removeEventListener(MouseEvent.MOUSE_OUT,this.InfoHide);
+				}
+				_loc1_ = 1;
+				while(_loc1_ < 5)
+				{
+					if(mc["mcR" + _loc1_])
+					{
+						if(mc["mcR" + _loc1_].mcHit)
+						{
+							mc["mcR" + _loc1_].mcHit.removeEventListener(MouseEvent.MOUSE_OVER,this.StatsShow(_loc1_,false));
+							mc["mcR" + _loc1_].mcHit.removeEventListener(MouseEvent.MOUSE_OUT,this.StatsHide);
+						}
+						if(mc["mcR" + _loc1_].bAdd)
+						{
+							mc["mcR" + _loc1_].bAdd.removeEventListener(MouseEvent.CLICK,this.Topup(_loc1_));
+						}
+					}
+					_loc1_++;
+				}
+				if(Boolean(mc.mcR5) && Boolean(mc.mcR5.bAdd))
+				{
+					mc.mcR5.bAdd.removeEventListener(MouseEvent.CLICK,BUY.Show);
+				}
+				if(MapRoomManager.instance.isInMapRoom2){
+					if(Boolean(mc.mcOutposts) && Boolean(mc.mcOutposts.mcHit) && Boolean(mc.mcOutposts.bNext)){
+						mc.mcOutposts.mcHit.removeEventListener(MouseEvent.MOUSE_OVER,this.ButtonInfoShow);
+						mc.mcOutposts.mcHit.removeEventListener(MouseEvent.MOUSE_OUT,this.ButtonInfoHide);
+						mc.mcOutposts.bNext.removeEventListener(MouseEvent.CLICK,BASE.LoadNext);
+					}
+				}
+				if(mc.bInvite)
+				{
+					mc.bInvite.removeEventListener(MouseEvent.CLICK,this.ButtonClick("invite"));
+					mc.bInvite.removeEventListener(MouseEvent.MOUSE_OVER,this.ButtonInfoShow);
+					mc.bInvite.removeEventListener(MouseEvent.MOUSE_OUT,this.ButtonInfoHide);
+				}
+				if(mc.bGift)
+				{
+					mc.bGift.removeEventListener(MouseEvent.CLICK,this.ButtonClick("gift"));
+					mc.bGift.removeEventListener(MouseEvent.MOUSE_OVER,this.ButtonInfoShow);
+					mc.bGift.removeEventListener(MouseEvent.MOUSE_OUT,this.ButtonInfoHide);
+				}
+				if(mc.bInbox)
+				{
+					mc.bInbox.removeEventListener(MouseEvent.CLICK,this.ButtonClick("inbox"));
+					mc.bInbox.removeEventListener(MouseEvent.MOUSE_OVER,this.ButtonInfoShow);
+					mc.bInbox.removeEventListener(MouseEvent.MOUSE_OUT,this.ButtonInfoHide);
+				}
+				if(mc.bAlert)
+				{
+					mc.bAlert.removeEventListener(MouseEvent.CLICK,this.ButtonClick("alert"));
+					mc.bAlert.removeEventListener(MouseEvent.MOUSE_OVER,this.ButtonInfoShow);
+					mc.bAlert.removeEventListener(MouseEvent.MOUSE_OUT,this.ButtonInfoHide);
+				}
+				if(mc.bEarn)
+				{
+					mc.bEarn.removeEventListener(MouseEvent.CLICK,this.ButtonClick("earn"));
+					mc.bEarn.removeEventListener(MouseEvent.MOUSE_OVER,this.ButtonInfoShow);
+					mc.bEarn.removeEventListener(MouseEvent.MOUSE_OUT,this.ButtonInfoHide);
+				}
+				if(Boolean(mc.bDailyDeal) && GLOBAL._flags.showFBCDaily == 1)
+				{
+					mc.bDailyDeal.removeEventListener(MouseEvent.CLICK,this.ButtonClick("daily"));
+					mc.bDailyDeal.removeEventListener(MouseEvent.MOUSE_OVER,this.ButtonInfoShow);
+					mc.bDailyDeal.removeEventListener(MouseEvent.MOUSE_OUT,this.ButtonInfoHide);
+				}
+				GLOBAL.UnregisterTickFastTarget(this);
+			}
+		}
+		
+		public function ClearSiegeWeapon() : void
+		{
+			if(Boolean(this._siegeweapon) && Boolean(this._siegeweapon.parent))
+			{
+				this._siegeweapon.parent.removeChild(this._siegeweapon);
+				this._siegeweapon = null;
+			}
+		}
+		
+		public function Topup(param1:int) : Function
+		{
+			var n:int = param1;
+			return function(param1:MouseEvent = null):void
+			{
+				var _loc2_:* = Math.min((n - 1) * 0.4,1);
+				if(BASE.isInfernoMainYardOrOutpost)
+				{
+					STORE.ShowB(2,_loc2_,["BR" + n + "1I","BR" + n + "2I","BR" + n + "3I"]);
+				}
+				else
+				{
+					STORE.ShowB(2,_loc2_,["BR" + n + "1","BR" + n + "2","BR" + n + "3"]);
+				}
+			};
+		}
+		
+		public function Setup() : void
+		{
+			var onImageLoad:Function;
+			var LoadImageError:Function;
+			var loader:Loader = null;
+			var mode:String = GLOBAL.mode;
+			if(GLOBAL.mode != GLOBAL.e_BASE_MODE.BUILD && GLOBAL.mode != GLOBAL.e_BASE_MODE.IBUILD)
+			{
+				onImageLoad = function(param1:Event):void
+				{
+					loader.width = loader.height = 50;
+					mc.mcPic.mcBG.addChild(loader);
+				};
+				LoadImageError = function(param1:IOErrorEvent):void
+				{
+				};
+				mc.mcPoints.tName.htmlText = BASE._ownerName;
+				loader = new Loader();
+				loader.contentLoaderInfo.addEventListener(IOErrorEvent.IO_ERROR,LoadImageError,false,0,true);
+				loader.contentLoaderInfo.addEventListener(Event.COMPLETE,onImageLoad);
+				if(GLOBAL._loadmode == "wmattack" || GLOBAL._loadmode == "wmview" || GLOBAL._loadmode == "iwmattack" || GLOBAL._loadmode == "iwmview")
+				{
+					loader.load(new URLRequest(GLOBAL._storageURL + BASE._ownerPic));
+				}
+				else if(Boolean(!GLOBAL._flags.viximo) || Boolean(!GLOBAL._flags.kongregate))
+				{
+					loader.load(new URLRequest(BASE._ownerPic));
+				}
+				else
+				{
+					loader.load(new URLRequest("http://graph.facebook.com/" + BASE._loadedFBID + "/picture"));
 				}
 			}
-            if(mc.bInvite)
-            {
-               mc.bInvite.removeEventListener(MouseEvent.CLICK,this.ButtonClick("invite"));
-               mc.bInvite.removeEventListener(MouseEvent.MOUSE_OVER,this.ButtonInfoShow);
-               mc.bInvite.removeEventListener(MouseEvent.MOUSE_OUT,this.ButtonInfoHide);
-            }
-            if(mc.bGift)
-            {
-               mc.bGift.removeEventListener(MouseEvent.CLICK,this.ButtonClick("gift"));
-               mc.bGift.removeEventListener(MouseEvent.MOUSE_OVER,this.ButtonInfoShow);
-               mc.bGift.removeEventListener(MouseEvent.MOUSE_OUT,this.ButtonInfoHide);
-            }
-            if(mc.bInbox)
-            {
-               mc.bInbox.removeEventListener(MouseEvent.CLICK,this.ButtonClick("inbox"));
-               mc.bInbox.removeEventListener(MouseEvent.MOUSE_OVER,this.ButtonInfoShow);
-               mc.bInbox.removeEventListener(MouseEvent.MOUSE_OUT,this.ButtonInfoHide);
-            }
-            if(mc.bAlert)
-            {
-               mc.bAlert.removeEventListener(MouseEvent.CLICK,this.ButtonClick("alert"));
-               mc.bAlert.removeEventListener(MouseEvent.MOUSE_OVER,this.ButtonInfoShow);
-               mc.bAlert.removeEventListener(MouseEvent.MOUSE_OUT,this.ButtonInfoHide);
-            }
-            if(mc.bEarn)
-            {
-               mc.bEarn.removeEventListener(MouseEvent.CLICK,this.ButtonClick("earn"));
-               mc.bEarn.removeEventListener(MouseEvent.MOUSE_OVER,this.ButtonInfoShow);
-               mc.bEarn.removeEventListener(MouseEvent.MOUSE_OUT,this.ButtonInfoHide);
-            }
-            if(Boolean(mc.bDailyDeal) && GLOBAL._flags.showFBCDaily == 1)
-            {
-               mc.bDailyDeal.removeEventListener(MouseEvent.CLICK,this.ButtonClick("daily"));
-               mc.bDailyDeal.removeEventListener(MouseEvent.MOUSE_OVER,this.ButtonInfoShow);
-               mc.bDailyDeal.removeEventListener(MouseEvent.MOUSE_OUT,this.ButtonInfoHide);
-            }
-            GLOBAL.UnregisterTickFastTarget(this);
-         }
-         else if(GLOBAL.mode == GLOBAL.e_BASE_MODE.ATTACK)
-         {
-         }
-      }
-      
-      public function ClearSiegeWeapon() : void
-      {
-         if(Boolean(this._siegeweapon) && Boolean(this._siegeweapon.parent))
-         {
-            this._siegeweapon.parent.removeChild(this._siegeweapon);
-            this._siegeweapon = null;
-         }
-      }
-      
-      public function Topup(param1:int) : Function
-      {
-         var n:int = param1;
-         return function(param1:MouseEvent = null):void
-         {
-            var _loc2_:* = Math.min((n - 1) * 0.4,1);
-            if(BASE.isInfernoMainYardOrOutpost)
-            {
-               STORE.ShowB(2,_loc2_,["BR" + n + "1I","BR" + n + "2I","BR" + n + "3I"]);
-            }
-            else
-            {
-               STORE.ShowB(2,_loc2_,["BR" + n + "1","BR" + n + "2","BR" + n + "3"]);
-            }
-         };
-      }
-      
-      public function Setup() : void
-      {
-         var onImageLoad:Function;
-         var LoadImageError:Function;
-         var loader:Loader = null;
-         var mode:String = GLOBAL.mode;
-         if(GLOBAL.mode != GLOBAL.e_BASE_MODE.BUILD && GLOBAL.mode != GLOBAL.e_BASE_MODE.IBUILD)
-         {
-            onImageLoad = function(param1:Event):void
-            {
-               loader.width = loader.height = 50;
-               mc.mcPic.mcBG.addChild(loader);
-            };
-            LoadImageError = function(param1:IOErrorEvent):void
-            {
-            };
-			mc.mcPoints.tName.htmlText = BASE._ownerName;
-            loader = new Loader();
-            loader.contentLoaderInfo.addEventListener(IOErrorEvent.IO_ERROR,LoadImageError,false,0,true);
-            loader.contentLoaderInfo.addEventListener(Event.COMPLETE,onImageLoad);
-            if(GLOBAL._loadmode == "wmattack" || GLOBAL._loadmode == "wmview" || GLOBAL._loadmode == "iwmattack" || GLOBAL._loadmode == "iwmview")
-            {
-               loader.load(new URLRequest(GLOBAL._storageURL + BASE._ownerPic));
-            }
-            else if(Boolean(!GLOBAL._flags.viximo) || Boolean(!GLOBAL._flags.kongregate))
-            {
-               loader.load(new URLRequest(BASE._ownerPic));
-            }
-            else
-            {
-               loader.load(new URLRequest("http://graph.facebook.com/" + BASE._loadedFBID + "/picture"));
-            }
-         }
-         else if(GLOBAL.mode == GLOBAL._loadmode)
-         {
-            mc.mcPoints.tName.htmlText = BASE._ownerName;
-         }
-         else
-         {
-            mc.mcPoints.tName.htmlText = BASE._ownerName;
-         }
-         if((GLOBAL._loadmode == GLOBAL.e_BASE_MODE.IWMATTACK || GLOBAL._loadmode == GLOBAL.e_BASE_MODE.IATTACK) && !MAPROOM_DESCENT.DescentPassed)
-         {
-            if(BASE.isInfernoMainYardOrOutpost && !MAPROOM_DESCENT.DescentPassed)
-            {
-               this.DescentDebuffShow();
-            }
-            else
-            {
-               this.DescentDebuffHide();
-            }
-         }
-      }
-      
-      public function addIcon(param1:DisplayObject) : void
-      {
-         if(Boolean(mc) && GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD)
-         {
-            param1.x = 222;
-            param1.y = 0;
-            this._kothIcon = mc.addChild(param1);
-            mc.mcR5.x = 284;
-            mc.bEarn.x = 415;
-            mc.bDealSpot.x = 502;
-            mc.bDailyDeal.x = 493;
-         }
-      }
-      
-      public function removeIcon(param1:DisplayObject) : void
-      {
-         if(Boolean(mc) && mc.contains(param1))
-         {
-            mc.removeChild(param1);
-            if(GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD)
-            {
-               mc.mcR5.x = 227;
-               mc.bEarn.x = 358;
-               mc.bDailyDeal.x = 436;
-               mc.bDealSpot.x = 445;
-            }
-         }
-         if(this._kothIcon)
-         {
-            if(this._kothIcon.parent)
-            {
-               this._kothIcon.parent.removeChild(this._kothIcon);
-            }
-            this._kothIcon = null;
-         }
-      }
-      
-      public function addResourceBar(param1:DisplayObject) : void
-      {
-         var _loc2_:MovieClip = null;
-         if(Boolean(mc) && GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD && !BASE.isInfernoMainYardOrOutpost)
-         {
-            _loc2_ = mc.mcOutposts;
-            param1.x = -4;
-            param1.y = _loc2_.y + 37;
-            this._daveClub = mc.addChild(param1);
-            ++this.extraResourceRows;
-            this.Update();
-         }
-      }
-      
-      public function removeResourceBar(param1:DisplayObject) : void
-      {
-         if(Boolean(mc) && mc.contains(param1))
-         {
-            mc.removeChild(param1);
-            if(this.extraResourceRows > 0)
-            {
-               --this.extraResourceRows;
-            }
-         }
-         if(this._daveClub)
-         {
-            if(this._daveClub.parent)
-            {
-               this._daveClub.parent.removeChild(this._daveClub);
-            }
-            this._daveClub = null;
-         }
-         this.Update();
-      }
-      
-      public function BombSelect(param1:int) : Function
-      {
-         var n:int = param1;
-         return function(param1:MouseEvent = null):void
-         {
-            MonsterDeselect();
-            BombDeselect();
-         };
-      }
-      
-      public function BombDeselect() : void
-      {
-      }
-      
-      public function MonsterDeselect() : void
-      {
-         var _loc1_:String = null;
-         var _loc2_:int = 0;
-         for(_loc1_ in ATTACK._flingerBucket)
-         {
-            if(Boolean(ATTACK._flingerBucket[_loc1_]) && ATTACK._flingerBucket[_loc1_].Get() > 0)
-            {
-               ATTACK._curCreaturesAvailable[_loc1_].Add(ATTACK._flingerBucket[_loc1_].Get());
-               ATTACK._flingerBucket[_loc1_].Set(0);
-            }
-         }
-         ATTACK.BucketUpdate();
-         _loc2_ = 0;
-         while(_loc2_ < this._creatureButtons.length)
-         {
-            this._creatureButtons[_loc2_].Update();
-            _loc2_++;
-         }
-      }
-      
+			else if(GLOBAL.mode == GLOBAL._loadmode)
+			{
+				mc.mcPoints.tName.htmlText = BASE._ownerName;
+			}
+			else
+			{
+				mc.mcPoints.tName.htmlText = BASE._ownerName;
+			}
+			if((GLOBAL._loadmode == GLOBAL.e_BASE_MODE.IWMATTACK || GLOBAL._loadmode == GLOBAL.e_BASE_MODE.IATTACK) && !MAPROOM_DESCENT.DescentPassed)
+			{
+				if(BASE.isInfernoMainYardOrOutpost && !MAPROOM_DESCENT.DescentPassed)
+				{
+					this.DescentDebuffShow();
+				}
+				else
+				{
+					this.DescentDebuffHide();
+				}
+			}
+		}
+		
+		public function addIcon(param1:DisplayObject) : void
+		{
+			if(Boolean(mc) && GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD)
+			{
+				param1.x = 222;
+				param1.y = 0;
+				this._kothIcon = mc.addChild(param1);
+				mc.mcR5.x = 284;
+				mc.bEarn.x = 415;
+				mc.bDealSpot.x = 502;
+				mc.bDailyDeal.x = 493;
+			}
+		}
+		
+		public function removeIcon(param1:DisplayObject) : void
+		{
+			if(Boolean(mc) && mc.contains(param1))
+			{
+				mc.removeChild(param1);
+				if(GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD)
+				{
+					mc.mcR5.x = 227;
+					mc.bEarn.x = 358;
+					mc.bDailyDeal.x = 436;
+					mc.bDealSpot.x = 445;
+				}
+			}
+			if(this._kothIcon)
+			{
+				if(this._kothIcon.parent)
+				{
+					this._kothIcon.parent.removeChild(this._kothIcon);
+				}
+				this._kothIcon = null;
+			}
+		}
+		
+		public function addResourceBar(param1:DisplayObject) : void
+		{
+			var _loc2_:MovieClip = null;
+			if(Boolean(mc) && GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD && !BASE.isInfernoMainYardOrOutpost)
+			{
+				_loc2_ = mc.mcOutposts;
+				param1.x = -4;
+				param1.y = _loc2_.y + 37;
+				this._daveClub = mc.addChild(param1);
+				++this.extraResourceRows;
+				this.Update();
+			}
+		}
+		
+		public function removeResourceBar(param1:DisplayObject) : void
+		{
+			if(Boolean(mc) && mc.contains(param1))
+			{
+				mc.removeChild(param1);
+				if(this.extraResourceRows > 0)
+				{
+					--this.extraResourceRows;
+				}
+			}
+			if(this._daveClub)
+			{
+				if(this._daveClub.parent)
+				{
+					this._daveClub.parent.removeChild(this._daveClub);
+				}
+				this._daveClub = null;
+			}
+			this.Update();
+		}
+		
+		public function BombSelect(param1:int) : Function
+		{
+			var n:int = param1;
+			return function(param1:MouseEvent = null):void
+			{
+				MonsterDeselect();
+				BombDeselect();
+			};
+		}
+		
+		public function BombDeselect() : void
+		{
+		}
+		
+		public function MonsterDeselect() : void
+		{
+			var _loc1_:String = null;
+			var _loc2_:int = 0;
+			for(_loc1_ in ATTACK._flingerBucket)
+			{
+				if(Boolean(ATTACK._flingerBucket[_loc1_]) && ATTACK._flingerBucket[_loc1_].Get() > 0)
+				{
+					ATTACK._curCreaturesAvailable[_loc1_].Add(ATTACK._flingerBucket[_loc1_].Get());
+					ATTACK._flingerBucket[_loc1_].Set(0);
+				}
+			}
+			ATTACK.BucketUpdate();
+			_loc2_ = 0;
+			while(_loc2_ < this._creatureButtons.length)
+			{
+				this._creatureButtons[_loc2_].Update();
+				_loc2_++;
+			}
+		}
+		
 		public function StatsShow(param1:int, param2:Boolean) : Function
 		{
 			var n:int = param1;
@@ -853,388 +851,388 @@ package
 				BubbleShow(_loc4_.x + 135,_loc4_.y + int(_loc4_.height * 0.5),_loc2_,_loc3_);
 			};
 		}
-      
-      public function StatsHide(param1:MouseEvent) : void
-      {
-         this.BubbleHide();
-      }
-      
-      public function OverchargeShow(param1:int) : void
-      {
-         if(!this._popupWarning)
-         {
-            this._popupWarning = addChild(new bubblepopup4()) as bubblepopup4;
-         }
-         this._popupWarning.tA.htmlText = BASE.isInfernoMainYardOrOutpost ? KEYS.Get("inf_ui_needmoreroom") : KEYS.Get("ui_needmoreroom");
-         this._popupWarning.x = 150;
-         this._popupWarning.y = 20 + 41 * param1;
-         this._popupWarning.Wobble();
-      }
-      
-      public function OverchargeHide() : void
-      {
-         if(this._popupWarning)
-         {
-            removeChild(this._popupWarning);
-            this._popupWarning = null;
-         }
-      }
-      
-      public function UpdateTweenResourceText(param1:Number) : void
-      {
-         var _loc3_:int = 0;
-         var _loc4_:MovieClip = null;
-         var _loc5_:Number = NaN;
-         var _loc6_:Number = NaN;
-         var _loc2_:int = param1;
-         _loc5_ = Number((_loc4_ = mc["mcR" + _loc2_])._resource);
-         _loc4_.tR.htmlText = "<b>" + GLOBAL.FormatNumber(_loc5_) + "</b>";
-         _loc3_ = 117 / GLOBAL._resources["r" + _loc2_ + "max"] * _loc5_;
-         if(_loc3_ > 117)
-         {
-            _loc3_ = 117;
-         }
-         _loc4_.mcBar.width = _loc3_;
-      }
-      
-      public function Update() : void
-      {
-         var _loc1_:Object = null;
-         if(!GLOBAL._catchup)
-         {
-            if(GLOBAL._loadmode == GLOBAL.e_BASE_MODE.BUILD || GLOBAL._loadmode == GLOBAL.e_BASE_MODE.IBUILD)
-            {
-               this.updateBuildMode();
-            }
-            else if(MapRoomManager.instance.isInMapRoom3 && (GLOBAL._loadmode === GLOBAL.e_BASE_MODE.VIEW || GLOBAL._loadmode === GLOBAL.e_BASE_MODE.WMVIEW))
-            {
-               this.updateScoutMode();
-            }
-            else if(GLOBAL._loadmode == GLOBAL.e_BASE_MODE.ATTACK || GLOBAL._loadmode == GLOBAL.e_BASE_MODE.WMATTACK || GLOBAL._loadmode == GLOBAL.e_BASE_MODE.IATTACK || GLOBAL._loadmode == GLOBAL.e_BASE_MODE.IWMATTACK || MapRoomManager.instance.isInMapRoom3 && (GLOBAL._loadmode == GLOBAL.e_BASE_MODE.ATTACK || GLOBAL._loadmode == GLOBAL.e_BASE_MODE.WMATTACK))
-            {
-               this.updateAttackMode();
-            }
-            _loc1_ = BASE.BaseLevel();
-            this.SetPoints(_loc1_.lower.Get(), _loc1_.upper.Get(), _loc1_.needed.Get(), _loc1_.points.Get(), _loc1_.level, false);
-         }
-      }
-      
-      private function updateBuildMode() : void
-      {
-         var _loc1_:int = 0;
-         var _loc2_:MovieClip = null;
-         var _loc7_:int = 0;
-         var _loc8_:int = 0;
-         var _loc9_:Boolean = false;
-         var _loc10_:int = 0;
-         var _loc11_:Boolean = false;
-         var _loc12_:MovieClip = null;
-         TweenLite.to(mc.mcR1,0.5,{
-            "_resource":GLOBAL._resources["r" + 1].Get(),
-            "onUpdate":this.UpdateTweenResourceText,
-            "onUpdateParams":[1],
-            "ease":Linear.easeNone,
-            "overwrite":1
-         });
-         TweenLite.to(mc.mcR2,0.5,{
-            "_resource":GLOBAL._resources["r" + 2].Get(),
-            "onUpdate":this.UpdateTweenResourceText,
-            "onUpdateParams":[2],
-            "ease":Linear.easeNone,
-            "overwrite":1
-         });
-         TweenLite.to(mc.mcR3,0.5,{
-            "_resource":GLOBAL._resources["r" + 3].Get(),
-            "onUpdate":this.UpdateTweenResourceText,
-            "onUpdateParams":[3],
-            "ease":Linear.easeNone,
-            "overwrite":1
-         });
-         TweenLite.to(mc.mcR4,0.5,{
-            "_resource":GLOBAL._resources["r" + 4].Get(),
-            "onUpdate":this.UpdateTweenResourceText,
-            "onUpdateParams":[4],
-            "ease":Linear.easeNone,
-            "overwrite":1
-         });
-         mc["mcR" + 5].tR.htmlText = "<b>" + GLOBAL.FormatNumber(BASE._credits.Get()) + "</b>";
-		 mc.mcOutposts.visible = true;
-         if(MapRoomManager.instance.isInMapRoom2)
-         {
-            mc.mcOutposts.tR.htmlText = GLOBAL._mapOutpost.length;
-         }
-         else
-         {
-			mc.mcOutposts.tR.htmlText = BASE._conquerorPoints.Get() + ' CQ';
-         }
-		 mc.mcR1.bAdd.visible = false;
-		 mc.mcR2.bAdd.visible = false;
-		 mc.mcR3.bAdd.visible = false;
-		 mc.mcR4.bAdd.visible = false;
-		 mc.mcR5.bAdd.visible = false;
-		 mc.bEarn.visible = false;
-         mc.bDailyDeal.visible = false;
-	     mc.bInvite.visible = false;
-         mc.bGift.visible = false;
-         if(TUTORIAL._stage < 200)
-         {
-            mc.bInbox.visible = false;
-            mc.bAlert.visible = false;
-            this.SortButtonIcons();
-         }
-         else
-         {
-            _loc7_ = 0;
-            if(GLOBAL._canInvite && !GLOBAL._flags.kongregate)
-            {
-               if(GLOBAL._sessionCount >= 2 && !GLOBAL._canGift && GLOBAL.Timestamp() - GLOBAL.StatGet("pi") > 60 * 60 * 36)
-               {
-                  mc.bInvite.mcSpinner.visible = true;
-               }
-               else
-               {
-                  mc.bInvite.mcSpinner.visible = false;
-               }
-            }
-            _loc8_ = this.extraResourceRows * this._RESOURCEBAR_HEIGHT;
-            this.SortButtonIcons(2,4,_loc8_);
-            mc.bGift.visible = false;
-            if((_loc7_ = POPUPS.QueueCount("gifts")) > 0)
-            {
-               mc.bGift.mcSpinner.visible = true;
-               mc.bGift.mcCounter.visible = true;
-               if(_loc7_ < 10)
-               {
-                  mc.bGift.mcCounter.t.htmlText = "<b>" + _loc7_ + "</b>";
-               }
-               else
-               {
-                  mc.bGift.mcCounter.t.htmlText = "<b>+</b>";
-               }
-            }
-            else
-            {
-               mc.bGift.mcSpinner.visible = false;
-               mc.bGift.mcCounter.visible = false;
-            }
-            mc.bInbox.visible = true;
-            if(GLOBAL._unreadMessages > 0)
-            {
-               mc.bInbox.mcCounter.t.htmlText = "<b>" + GLOBAL._unreadMessages + "</b>";
-               mc.bInbox.mcCounter.visible = true;
-               mc.bInbox.mcSpinner.visible = true;
-            }
-            else
-            {
-               mc.bInbox.mcCounter.visible = false;
-               mc.bInbox.mcSpinner.visible = false;
-            }
-            if((_loc7_ = POPUPS.QueueCount("alerts")) > 0)
-            {
-               mc.bAlert.visible = true;
-               mc.bAlert.mcSpinner.visible = true;
-               mc.bAlert.mcCounter.visible = true;
-               if(_loc7_ < 10)
-               {
-                  mc.bAlert.mcCounter.t.htmlText = "<b>" + _loc7_ + "</b>";
-               }
-               else
-               {
-                  mc.bAlert.mcCounter.t.htmlText = "<b>+</b>";
-               }
-            }
-            else
-            {
-               mc.bAlert.visible = false;
-            }
-            this.DisplayBuffs();
-            if(this._kothIcon)
-            {
-               _loc9_ = Boolean(CREATURES._krallen);
-               _loc10_ = 0;
-               if(_loc9_)
-               {
-                  _loc10_ = CREATURES._krallen._level.Get();
-               }
-               (this._kothIcon as KOTHHUDGraphic).update(_loc9_,_loc10_);
-            }
-            if(this._daveClub)
-            {
-               _loc11_ = SubscriptionHandler.instance.isSubscriptionActive;
-               (this._daveClub as MovieClip).gotoAndStop(_loc11_ ? "on" : "off");
-               _loc12_ = mc.mcOutposts;
-               this._daveClub.x = -4;
-               this._daveClub.y = _loc12_.y + 37;
-            }
-         }
-      }
-      
-      private function updateAttackMode() : void
-      {
-         var _loc2_:int = 0;
-         var _loc3_:MovieClip = null;
-         var _loc6_:String = null;
-         var _loc7_:* = false;
-         var _loc1_:int = int(this._creatureButtons.length);
-         _loc2_ = 1;
-         while(_loc2_ < 5)
-         {
-            _loc3_ = mc["mcR" + _loc2_];
-			if(BASE._wmID == 41){
-          	  _loc3_.tR.htmlText = "<b>" + GLOBAL.FormatNumber(ATTACK._iloot["r" + _loc2_].Get()) + "</b>";
-			} else {
-              _loc3_.tR.htmlText = "<b>" + GLOBAL.FormatNumber(ATTACK._loot["r" + _loc2_].Get()) + "</b>";
+		
+		public function StatsHide(param1:MouseEvent) : void
+		{
+			this.BubbleHide();
+		}
+		
+		public function OverchargeShow(param1:int) : void
+		{
+			if(!this._popupWarning)
+			{
+				this._popupWarning = addChild(new bubblepopup4()) as bubblepopup4;
 			}
-            _loc3_.mcBar.visible = false;
-            _loc2_++;
-         }
-         _loc2_ = 0;
-         while(_loc2_ < _loc1_)
-         {
-            this._creatureButtons[_loc2_].Update();
-            _loc2_++;
-         }
-         var _loc4_:int = int(GLOBAL._buildingProps[4].capacity[GLOBAL._attackersFlinger - 1]);
-         if(MAPROOM_DESCENT.InDescent)
-         {
-            _loc4_ = int(YARD_PROPS._yardProps[4].capacity[GLOBAL._attackersFlinger - 1]);
-         }
-         if(POWERUPS.CheckPowers(POWERUPS.ALLIANCE_DECLAREWAR,"OFFENSE"))
-         {
-            _loc4_ += _loc4_ * 0.25;
-         }
-         var _loc5_:int = _loc4_;
-         if(MapRoomManager.instance.isInMapRoom3 && ATTACK.USE_CUMULATIVE_FLINGER_CAPACITY)
-         {
-            _loc5_ -= ATTACK._flungSpace.Get();
-         }
-         for(_loc6_ in ATTACK._flingerBucket)
-         {
-            _loc7_ = _loc6_.substr(0,1) === "G";
-            if(!MapRoomManager.instance.isInMapRoom3 && _loc7_)
-            {
-               _loc5_ -= CHAMPIONCAGE.GetGuardianProperty(_loc6_.substr(0,2),1,"bucket");
-            }
-            else if(!_loc7_)
-            {
-               _loc5_ -= CREATURES.GetProperty(_loc6_,"bucket") * ATTACK._flingerBucket[_loc6_].Get();
-            }
-         }
-         this._creatureButtonsMC._mc._txtContainer.mcBar.width = 115 - 115 / _loc4_ * _loc5_;
-         if(MapRoomManager.instance.isInMapRoom3)
-         {
-            this._creatureButtonsMC._mc._txtContainer.mcBar.scaleX = (1 - _loc5_ / _loc4_) * 1.2;
-         }
-         else
-         {
-            this._creatureButtonsMC._mc._txtContainer.mcBar.scaleX = (100 - 100 / _loc4_ * _loc5_) / 100;
-         }
-         if(GLOBAL._attackersFlinger)
-         {
-            if(MapRoomManager.instance.isInMapRoom3)
-            {
-               this._creatureButtonsMC._mc._txtContainer.tA.width = 60;
-               this._creatureButtonsMC._mc._txtContainer.tA.htmlText = (_loc4_ - _loc5_).toString() + "/" + _loc4_.toString();
-            }
-            else
-            {
-               this._creatureButtonsMC._mc._txtContainer.tA.width = 56;
-               this._creatureButtonsMC._mc._txtContainer.tA.htmlText = Math.min(100,int((1 - _loc5_ / _loc4_) * 100)).toString() + "%";
-            }
-         }
-         if(GLOBAL.mode != GLOBAL._loadmode)
-         {
-            if(ATTACK._countdown > 0)
-            {
-               mc.tMessage.htmlText = KEYS.Get("attack_ui_attacklock");
-            }
-            else
-            {
-               mc.tMessage.htmlText = KEYS.Get("attack_ui_attackends");
-            }
-         }
-         else if(ATTACK._countdown > 0)
-         {
-            mc.tMessage.htmlText = KEYS.Get("attack_ui_flingerlock");
-         }
-         else
-         {
-            mc.tMessage.htmlText = KEYS.Get("attack_ui_attackends");
-         }
-         if(ATTACK._countdown > 30)
-         {
-            mc.tTime.htmlText = GLOBAL.ToTime(ATTACK._countdown,true);
-         }
-         else if(ATTACK._countdown > 0)
-         {
-            mc.tTime.htmlText = "<font color=\"#FF0000\">" + GLOBAL.ToTime(ATTACK._countdown,true) + "</font>";
-         }
-         else if(ATTACK._countdown > -120)
-         {
-            mc.tTime.htmlText = "<font color=\"#FFFFFF\">" + GLOBAL.ToTime(120 + ATTACK._countdown,true) + "</font>";
-         }
-         else
-         {
-            mc.tTime.htmlText = "<font color=\"#FFFFFF\">" + KEYS.Get("attack_ui_over") + "</font>";
-         }
-      }
-      
-      private function updateScoutMode() : void
-      {
-         var _loc2_:int = 0;
-         var _loc3_:MovieClip = null;
-         var _loc1_:int = int(this._creatureButtons.length);
-         _loc2_ = 1;
-         while(_loc2_ < 5)
-         {
-            _loc3_ = mc["mcR" + _loc2_];
-            _loc3_.tR.htmlText = "<b>" + GLOBAL.FormatNumber((GLOBAL._currentCell as MapRoom3Cell).attackCost[_loc2_ - 1]) + "</b>";
-            _loc3_.mcBar.visible = false;
-            _loc2_++;
-         }
-         _loc2_ = 0;
-         while(_loc2_ < _loc1_)
-         {
-            this._creatureButtons[_loc2_].Update();
-            _loc2_++;
-         }
-         if(GLOBAL.mode != GLOBAL._loadmode)
-         {
-            if(ATTACK._countdown > 0)
-            {
-               mc.tMessage.htmlText = KEYS.Get("attack_ui_attacklock");
-            }
-            else
-            {
-               mc.tMessage.htmlText = KEYS.Get("attack_ui_attackends");
-            }
-         }
-         else if(ATTACK._countdown > 0)
-         {
-            mc.tMessage.htmlText = KEYS.Get("attack_ui_flingerlock");
-         }
-         else
-         {
-            mc.tMessage.htmlText = KEYS.Get("attack_ui_attackends");
-         }
-         if(ATTACK._countdown > 30)
-         {
-            mc.tTime.htmlText = GLOBAL.ToTime(ATTACK._countdown,true);
-         }
-         else if(ATTACK._countdown > 0)
-         {
-            mc.tTime.htmlText = "<font color=\"#FF0000\">" + GLOBAL.ToTime(ATTACK._countdown,true) + "</font>";
-         }
-         else if(ATTACK._countdown > -120)
-         {
-            mc.tTime.htmlText = "<font color=\"#FFFFFF\">" + GLOBAL.ToTime(120 + ATTACK._countdown,true) + "</font>";
-         }
-         else
-         {
-            mc.tTime.htmlText = "<font color=\"#FFFFFF\">" + KEYS.Get("attack_ui_over") + "</font>";
-         }
-      }
-      
+			this._popupWarning.tA.htmlText = BASE.isInfernoMainYardOrOutpost ? KEYS.Get("inf_ui_needmoreroom") : KEYS.Get("ui_needmoreroom");
+			this._popupWarning.x = 150;
+			this._popupWarning.y = 20 + 41 * param1;
+			this._popupWarning.Wobble();
+		}
+		
+		public function OverchargeHide() : void
+		{
+			if(this._popupWarning)
+			{
+				removeChild(this._popupWarning);
+				this._popupWarning = null;
+			}
+		}
+			
+		public function UpdateTweenResourceText(param1:Number) : void
+		{
+			var _loc3_:int = 0;
+			var _loc4_:MovieClip = null;
+			var _loc5_:Number = NaN;
+			var _loc6_:Number = NaN;
+			var _loc2_:int = param1;
+			_loc5_ = Number((_loc4_ = mc["mcR" + _loc2_])._resource);
+			_loc4_.tR.htmlText = "<b>" + GLOBAL.FormatNumber(_loc5_) + "</b>";
+			_loc3_ = 117 / GLOBAL._resources["r" + _loc2_ + "max"] * _loc5_;
+			if(_loc3_ > 117)
+			{
+				_loc3_ = 117;
+			}
+			_loc4_.mcBar.width = _loc3_;
+		}
+		
+		public function Update() : void
+		{
+			var _loc1_:Object = null;
+			if(!GLOBAL._catchup)
+			{
+				if(GLOBAL._loadmode == GLOBAL.e_BASE_MODE.BUILD || GLOBAL._loadmode == GLOBAL.e_BASE_MODE.IBUILD)
+				{
+					this.updateBuildMode();
+				}
+				else if(MapRoomManager.instance.isInMapRoom3 && (GLOBAL._loadmode === GLOBAL.e_BASE_MODE.VIEW || GLOBAL._loadmode === GLOBAL.e_BASE_MODE.WMVIEW))
+				{
+					this.updateScoutMode();
+				}
+				else if(GLOBAL._loadmode == GLOBAL.e_BASE_MODE.ATTACK || GLOBAL._loadmode == GLOBAL.e_BASE_MODE.WMATTACK || GLOBAL._loadmode == GLOBAL.e_BASE_MODE.IATTACK || GLOBAL._loadmode == GLOBAL.e_BASE_MODE.IWMATTACK || MapRoomManager.instance.isInMapRoom3 && (GLOBAL._loadmode == GLOBAL.e_BASE_MODE.ATTACK || GLOBAL._loadmode == GLOBAL.e_BASE_MODE.WMATTACK))
+				{
+					this.updateAttackMode();
+				}
+				_loc1_ = BASE.BaseLevel();
+				this.SetPoints(_loc1_.lower.Get(), _loc1_.upper.Get(), _loc1_.needed.Get(), _loc1_.points.Get(), _loc1_.level, false);
+			}
+		}
+		
+		private function updateBuildMode() : void
+		{
+			var _loc1_:int = 0;
+			var _loc2_:MovieClip = null;
+			var _loc7_:int = 0;
+			var _loc8_:int = 0;
+			var _loc9_:Boolean = false;
+			var _loc10_:int = 0;
+			var _loc11_:Boolean = false;
+			var _loc12_:MovieClip = null;
+			TweenLite.to(mc.mcR1,0.5,{
+				"_resource":GLOBAL._resources["r" + 1].Get(),
+				"onUpdate":this.UpdateTweenResourceText,
+				"onUpdateParams":[1],
+				"ease":Linear.easeNone,
+				"overwrite":1
+			});
+			TweenLite.to(mc.mcR2,0.5,{
+				"_resource":GLOBAL._resources["r" + 2].Get(),
+				"onUpdate":this.UpdateTweenResourceText,
+				"onUpdateParams":[2],
+				"ease":Linear.easeNone,
+				"overwrite":1
+			});
+			TweenLite.to(mc.mcR3,0.5,{
+				"_resource":GLOBAL._resources["r" + 3].Get(),
+				"onUpdate":this.UpdateTweenResourceText,
+				"onUpdateParams":[3],
+				"ease":Linear.easeNone,
+				"overwrite":1
+			});
+			TweenLite.to(mc.mcR4,0.5,{
+				"_resource":GLOBAL._resources["r" + 4].Get(),
+				"onUpdate":this.UpdateTweenResourceText,
+				"onUpdateParams":[4],
+				"ease":Linear.easeNone,
+				"overwrite":1
+			});
+			mc["mcR" + 5].tR.htmlText = "<b>" + GLOBAL.FormatNumber(BASE._credits.Get()) + "</b>";
+			mc.mcOutposts.visible = true;
+			if(MapRoomManager.instance.isInMapRoom2)
+			{
+				mc.mcOutposts.tR.htmlText = GLOBAL._mapOutpost.length;
+			}
+			else
+			{
+				mc.mcOutposts.tR.htmlText = BASE._conquerorPoints.Get() + ' CQ';
+			}
+			mc.mcR1.bAdd.visible = false;
+			mc.mcR2.bAdd.visible = false;
+			mc.mcR3.bAdd.visible = false;
+			mc.mcR4.bAdd.visible = false;
+			mc.mcR5.bAdd.visible = false;
+			mc.bEarn.visible = false;
+			mc.bDailyDeal.visible = false;
+			mc.bInvite.visible = false;
+			mc.bGift.visible = false;
+			if(TUTORIAL._stage < 200)
+			{
+				mc.bInbox.visible = false;
+				mc.bAlert.visible = false;
+				this.SortButtonIcons();
+			}
+			else
+			{
+				_loc7_ = 0;
+				if(GLOBAL._canInvite && !GLOBAL._flags.kongregate)
+				{
+					if(GLOBAL._sessionCount >= 2 && !GLOBAL._canGift && GLOBAL.Timestamp() - GLOBAL.StatGet("pi") > 60 * 60 * 36)
+					{
+						mc.bInvite.mcSpinner.visible = true;
+					}
+					else
+					{
+						mc.bInvite.mcSpinner.visible = false;
+					}
+				}
+				_loc8_ = this.extraResourceRows * this._RESOURCEBAR_HEIGHT;
+				this.SortButtonIcons(2,4,_loc8_);
+				mc.bGift.visible = false;
+				if((_loc7_ = POPUPS.QueueCount("gifts")) > 0)
+				{
+					mc.bGift.mcSpinner.visible = true;
+					mc.bGift.mcCounter.visible = true;
+					if(_loc7_ < 10)
+					{
+						mc.bGift.mcCounter.t.htmlText = "<b>" + _loc7_ + "</b>";
+					}
+					else
+					{
+						mc.bGift.mcCounter.t.htmlText = "<b>+</b>";
+					}
+				}
+				else
+				{
+					mc.bGift.mcSpinner.visible = false;
+					mc.bGift.mcCounter.visible = false;
+				}
+				mc.bInbox.visible = true;
+				if(GLOBAL._unreadMessages > 0)
+				{
+					mc.bInbox.mcCounter.t.htmlText = "<b>" + GLOBAL._unreadMessages + "</b>";
+					mc.bInbox.mcCounter.visible = true;
+					mc.bInbox.mcSpinner.visible = true;
+				}
+				else
+				{
+					mc.bInbox.mcCounter.visible = false;
+					mc.bInbox.mcSpinner.visible = false;
+				}
+				if((_loc7_ = POPUPS.QueueCount("alerts")) > 0)
+				{
+					mc.bAlert.visible = true;
+					mc.bAlert.mcSpinner.visible = true;
+					mc.bAlert.mcCounter.visible = true;
+					if(_loc7_ < 10)
+					{
+						mc.bAlert.mcCounter.t.htmlText = "<b>" + _loc7_ + "</b>";
+					}
+					else
+					{
+						mc.bAlert.mcCounter.t.htmlText = "<b>+</b>";
+					}
+				}
+				else
+				{
+					mc.bAlert.visible = false;
+				}
+				this.DisplayBuffs();
+				if(this._kothIcon)
+				{
+					_loc9_ = Boolean(CREATURES._krallen);
+					_loc10_ = 0;
+					if(_loc9_)
+					{
+						_loc10_ = CREATURES._krallen._level.Get();
+					}
+					(this._kothIcon as KOTHHUDGraphic).update(_loc9_,_loc10_);
+				}
+				if(this._daveClub)
+				{
+					_loc11_ = SubscriptionHandler.instance.isSubscriptionActive;
+					(this._daveClub as MovieClip).gotoAndStop(_loc11_ ? "on" : "off");
+					_loc12_ = mc.mcOutposts;
+					this._daveClub.x = -4;
+					this._daveClub.y = _loc12_.y + 37;
+				}
+			}
+		}
+		
+		private function updateAttackMode() : void
+		{
+			var _loc2_:int = 0;
+			var _loc3_:MovieClip = null;
+			var _loc6_:String = null;
+			var _loc7_:* = false;
+			var _loc1_:int = int(this._creatureButtons.length);
+			_loc2_ = 1;
+			while(_loc2_ < 5)
+			{
+				_loc3_ = mc["mcR" + _loc2_];
+				if(BASE._wmID == 41){
+					_loc3_.tR.htmlText = "<b>" + GLOBAL.FormatNumber(ATTACK._iloot["r" + _loc2_].Get()) + "</b>";
+				} else {
+					_loc3_.tR.htmlText = "<b>" + GLOBAL.FormatNumber(ATTACK._loot["r" + _loc2_].Get()) + "</b>";
+				}
+				_loc3_.mcBar.visible = false;
+				_loc2_++;
+			}
+			_loc2_ = 0;
+			while(_loc2_ < _loc1_)
+			{
+				this._creatureButtons[_loc2_].Update();
+				_loc2_++;
+			}
+			var _loc4_:int = int(GLOBAL._buildingProps[4].capacity[GLOBAL._attackersFlinger - 1]);
+			if(MAPROOM_DESCENT.InDescent)
+			{
+				_loc4_ = int(YARD_PROPS._yardProps[4].capacity[GLOBAL._attackersFlinger - 1]);
+			}
+			if(POWERUPS.CheckPowers(POWERUPS.ALLIANCE_DECLAREWAR,"OFFENSE"))
+			{
+				_loc4_ += _loc4_ * 0.25;
+			}
+			var _loc5_:int = _loc4_;
+			if(MapRoomManager.instance.isInMapRoom3 && ATTACK.USE_CUMULATIVE_FLINGER_CAPACITY)
+			{
+				_loc5_ -= ATTACK._flungSpace.Get();
+			}
+			for(_loc6_ in ATTACK._flingerBucket)
+			{
+				_loc7_ = _loc6_.substr(0,1) === "G";
+				if(!MapRoomManager.instance.isInMapRoom3 && _loc7_)
+				{
+					_loc5_ -= CHAMPIONCAGE.GetGuardianProperty(_loc6_.substr(0,2),1,"bucket");
+				}
+				else if(!_loc7_)
+				{
+					_loc5_ -= CREATURES.GetProperty(_loc6_,"bucket") * ATTACK._flingerBucket[_loc6_].Get();
+				}
+			}
+			this._creatureButtonsMC._mc._txtContainer.mcBar.width = 115 - 115 / _loc4_ * _loc5_;
+			if(MapRoomManager.instance.isInMapRoom3)
+			{
+				this._creatureButtonsMC._mc._txtContainer.mcBar.scaleX = (1 - _loc5_ / _loc4_) * 1.2;
+			}
+			else
+			{
+				this._creatureButtonsMC._mc._txtContainer.mcBar.scaleX = (100 - 100 / _loc4_ * _loc5_) / 100;
+			}
+			if(GLOBAL._attackersFlinger)
+			{
+				if(MapRoomManager.instance.isInMapRoom3)
+				{
+					this._creatureButtonsMC._mc._txtContainer.tA.width = 60;
+					this._creatureButtonsMC._mc._txtContainer.tA.htmlText = (_loc4_ - _loc5_).toString() + "/" + _loc4_.toString();
+				}
+				else
+				{
+					this._creatureButtonsMC._mc._txtContainer.tA.width = 56;
+					this._creatureButtonsMC._mc._txtContainer.tA.htmlText = Math.min(100,int((1 - _loc5_ / _loc4_) * 100)).toString() + "%";
+				}
+			}
+			if(GLOBAL.mode != GLOBAL._loadmode)
+			{
+				if(ATTACK._countdown > 0)
+				{
+					mc.tMessage.htmlText = KEYS.Get("attack_ui_attacklock");
+				}
+				else
+				{
+					mc.tMessage.htmlText = KEYS.Get("attack_ui_attackends");
+				}
+			}
+			else if(ATTACK._countdown > 0)
+			{
+				mc.tMessage.htmlText = KEYS.Get("attack_ui_flingerlock");
+			}
+			else
+			{
+				mc.tMessage.htmlText = KEYS.Get("attack_ui_attackends");
+			}
+			if(ATTACK._countdown > 30)
+			{
+				mc.tTime.htmlText = GLOBAL.ToTime(ATTACK._countdown,true);
+			}
+			else if(ATTACK._countdown > 0)
+			{
+				mc.tTime.htmlText = "<font color=\"#FF0000\">" + GLOBAL.ToTime(ATTACK._countdown,true) + "</font>";
+			}
+			else if(ATTACK._countdown > -120)
+			{
+				mc.tTime.htmlText = "<font color=\"#FFFFFF\">" + GLOBAL.ToTime(120 + ATTACK._countdown,true) + "</font>";
+			}
+			else
+			{
+				mc.tTime.htmlText = "<font color=\"#FFFFFF\">" + KEYS.Get("attack_ui_over") + "</font>";
+			}
+		}
+		
+		private function updateScoutMode() : void
+		{
+			var _loc2_:int = 0;
+			var _loc3_:MovieClip = null;
+			var _loc1_:int = int(this._creatureButtons.length);
+			_loc2_ = 1;
+			while(_loc2_ < 5)
+			{
+				_loc3_ = mc["mcR" + _loc2_];
+				_loc3_.tR.htmlText = "<b>" + GLOBAL.FormatNumber((GLOBAL._currentCell as MapRoom3Cell).attackCost[_loc2_ - 1]) + "</b>";
+				_loc3_.mcBar.visible = false;
+				_loc2_++;
+			}
+			_loc2_ = 0;
+			while(_loc2_ < _loc1_)
+			{
+				this._creatureButtons[_loc2_].Update();
+				_loc2_++;
+			}
+			if(GLOBAL.mode != GLOBAL._loadmode)
+			{
+				if(ATTACK._countdown > 0)
+				{
+					mc.tMessage.htmlText = KEYS.Get("attack_ui_attacklock");
+				}
+				else
+				{
+					mc.tMessage.htmlText = KEYS.Get("attack_ui_attackends");
+				}
+			}
+			else if(ATTACK._countdown > 0)
+			{
+				mc.tMessage.htmlText = KEYS.Get("attack_ui_flingerlock");
+			}
+			else
+			{
+				mc.tMessage.htmlText = KEYS.Get("attack_ui_attackends");
+			}
+			if(ATTACK._countdown > 30)
+			{
+				mc.tTime.htmlText = GLOBAL.ToTime(ATTACK._countdown,true);
+			}
+			else if(ATTACK._countdown > 0)
+			{
+				mc.tTime.htmlText = "<font color=\"#FF0000\">" + GLOBAL.ToTime(ATTACK._countdown,true) + "</font>";
+			}
+			else if(ATTACK._countdown > -120)
+			{
+				mc.tTime.htmlText = "<font color=\"#FFFFFF\">" + GLOBAL.ToTime(120 + ATTACK._countdown,true) + "</font>";
+			}
+			else
+			{
+				mc.tTime.htmlText = "<font color=\"#FFFFFF\">" + KEYS.Get("attack_ui_over") + "</font>";
+			}
+		}
+		
 		public function SortButtonIcons(param1:int = 2, param2:int = 4, param3:int = 0) : void
 		{
 			var _loc4_:int = 9;
@@ -1358,7 +1356,7 @@ package
 				}
 			};
 		}
-      
+		
 		public function DescentDebuffShow() : void
 		{
 			var _loc1_:Boolean = (GLOBAL.mode == GLOBAL.e_BASE_MODE.ATTACK || GLOBAL.mode == GLOBAL.e_BASE_MODE.WMATTACK) && BASE.isInfernoMainYardOrOutpost && !MAPROOM_DESCENT.DescentPassed && (MAPROOM_DESCENT.DescentLevel > 6 && MAPROOM_DESCENT.DescentLevel < MAPROOM_DESCENT._descentLvlMax);
@@ -1380,7 +1378,7 @@ package
 				this._descentDebuff.Hide();
 			}
 		}
-      
+		
 		public function DisplayBuffs() : void
 		{
 			var _loc3_:int = 0;
@@ -1448,7 +1446,7 @@ package
 				this.BuffHide(null);
 			}
 		}
-      
+		
 		public function BuffShow(param1:MouseEvent) : void
 		{
 			var _loc8_:bubblepopupBuff = null;
@@ -1514,7 +1512,7 @@ package
 			POWERUPS.Remove(_loc2_.name);
 			this.BuffHide(null);
 		}
-      
+		
 		public function ButtonInfoShow(param1:MouseEvent) : void
 		{
 			var _loc4_:String = null;
@@ -1581,7 +1579,7 @@ package
 				this.BubbleShow(_loc2_,_loc3_,_loc4_);
 			}
 		}
-      
+		
 		public function ButtonInfoHide(param1:MouseEvent) : void
 		{
 			this.BubbleHide();
@@ -1611,7 +1609,7 @@ package
 				}
 			}
 		}
-      
+		
 		public function BubbleShow(param1:int, param2:int, param3:String, param4:int = 3) : void
 		{
 			var _loc5_:bubblepopup3;

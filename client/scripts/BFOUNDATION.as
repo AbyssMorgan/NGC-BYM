@@ -433,59 +433,59 @@ package
          return (param1 as BFOUNDATION).rasterPt[BFOUNDATION._RASTERDATA_SHADOW].y - (param2 as BFOUNDATION).rasterPt[BFOUNDATION._RASTERDATA_SHADOW].y;
       }
       
-      public static function getBuildingSaveData() : Vector.<Object>
-      {
-         var exportBuildingData:Object = null;
-         var buildingData:BFOUNDATION = null;
-         var saveData:Vector.<Object> = new Vector.<Object>();
-         var building:Vector.<Object> = InstanceManager.getInstancesByClass(BFOUNDATION);
-         var buildingHealthData:Object = {};
-         var buildingDataByID:Object = {};
-         var hashString:String = "";
-         saveData[0] = buildingDataByID;
-         saveData[1] = buildingHealthData;
-         s_totalBuildingHP = s_totalBuildingMaxHP = 0;
-         for each(buildingData in building)
-         {
-            if(!(buildingData is BMUSHROOM) && !(GLOBAL._newBuilding === buildingData))
-            {
-               if(buildingData._type == 53 && buildingData._expireTime < GLOBAL.Timestamp())
-               {
-                  buildingHealthData[buildingData._id] = 0;
-               }
-               else
-               {
-                  if(buildingData is BWALL === false)
-                  {
-                     if(BASE.isMainYardOrInfernoMainYard && (GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD || GLOBAL.mode == GLOBAL.e_BASE_MODE.IBUILD))
-                     {
-                        s_totalBuildingHP += buildingData.maxHealth;
-                     }
-                     else
-                     {
-                        s_totalBuildingHP += buildingData.health;
-                     }
-                     s_totalBuildingMaxHP += buildingData.maxHealth;
-                  }
-                  if(buildingData.health < buildingData.maxHealth)
-                  {
-                     buildingHealthData[buildingData._id] = int(buildingData.health);
-                  }
-                  exportBuildingData = buildingData.Export();
-                  if(exportBuildingData)
-                  {
-                     buildingDataByID[buildingData._id] = exportBuildingData;
-                     hashString += (exportBuildingData.X + exportBuildingData.Y).toString();
-                  }
-               }
-            }
-         }
-         BASE._percentDamaged = Math.max(0, Math.ceil(100.0 - 100.0 / s_totalBuildingMaxHP * s_totalBuildingHP));
-         // Comment: This gives an out-of-range index error. The md5.as class is malformed
-         //saveData[2] = md5(hashString);
-         saveData[2] = hashString;
-         return saveData;
-      }
+		public static function getBuildingSaveData() : Vector.<Object>
+		{
+			var exportBuildingData:Object = null;
+			var buildingData:BFOUNDATION = null;
+			var saveData:Vector.<Object> = new Vector.<Object>();
+			var building:Vector.<Object> = InstanceManager.getInstancesByClass(BFOUNDATION);
+			var buildingHealthData:Object = {};
+			var buildingDataByID:Object = {};
+			var hashString:String = "";
+			saveData[0] = buildingDataByID;
+			saveData[1] = buildingHealthData;
+			s_totalBuildingHP = s_totalBuildingMaxHP = 0;
+			for each(buildingData in building)
+			{
+				if(!(buildingData is BMUSHROOM) && !(GLOBAL._newBuilding === buildingData))
+				{
+					if(buildingData._type == 53 && buildingData._expireTime < GLOBAL.Timestamp())
+					{
+						buildingHealthData[buildingData._id] = 0;
+					}
+					else
+					{
+						if(buildingData is BWALL === false && buildingData is BTRAP === false && buildingData is BDECORATION === false)
+						{
+							if(BASE.isMainYardOrInfernoMainYard && (GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD || GLOBAL.mode == GLOBAL.e_BASE_MODE.IBUILD))
+							{
+								s_totalBuildingHP += buildingData.maxHealth;
+							}
+							else
+							{
+								s_totalBuildingHP += buildingData.health;
+							}
+							s_totalBuildingMaxHP += buildingData.maxHealth;
+						}
+						if(buildingData.health < buildingData.maxHealth)
+						{
+							buildingHealthData[buildingData._id] = int(buildingData.health);
+						}
+						exportBuildingData = buildingData.Export();
+						if(exportBuildingData)
+						{
+							buildingDataByID[buildingData._id] = exportBuildingData;
+							hashString += (exportBuildingData.X + exportBuildingData.Y).toString();
+						}
+					}
+				}
+			}
+			BASE._percentDamaged = Math.max(0, Math.ceil(100.0 - 100.0 / s_totalBuildingMaxHP * s_totalBuildingHP));
+			// Comment: This gives an out-of-range index error. The md5.as class is malformed
+			//saveData[2] = md5(hashString);
+			saveData[2] = hashString;
+			return saveData;
+		}
       
       override public function get width() : Number
       {

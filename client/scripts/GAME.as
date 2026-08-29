@@ -1,6 +1,5 @@
 package
 {
-   import com.flashdynamix.utils.SWFProfiler;
    import com.monsters.maproom_manager.MapRoomManager;
    import com.monsters.marketing.MarketingRecapture;
    import flash.display.*;
@@ -131,7 +130,6 @@ package
       {
          loaderInfo.uncaughtErrorEvents.addEventListener(UncaughtErrorEvent.UNCAUGHT_ERROR, this.uncaughtErrorThrown);
          setLauncherVars(loaderParams);
-         SWFProfiler.init(stage, this);
         //  Security.allowDomain("*");
          GLOBAL.init();
          GLOBAL._baseURL = urls._baseURL;

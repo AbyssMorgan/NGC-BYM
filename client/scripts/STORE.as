@@ -195,39 +195,34 @@ package {
 			var _loc23_: String = null;
 			if (BASE.isOutpost) {
 				_grouping = [
-					[MapRoomManager.instance.isInMapRoom3 ? [] : ["BST", "BLK2", "BLK3", "BLK4", "BLK5", "BLK6", "BLK7", "BLK8"]],
-					[MapRoomManager.instance.isInMapRoom3 ? [] : ["EXR1", "EXR2", "EXR3", "EXR4", "EXR10", "EXR20", "EXR30", "EXR40"]],
-					[MapRoomManager.instance.isInMapRoom3 ? ["SP1", "SP2", "SP3", "SP4", "FIX"] : ["SP1", "SP2", "SP3", "SP4", "POD", "FIX", "HOD", "HOD2", "HOD3"]],
-					[MapRoomManager.instance.isInMapRoom3 ? [] : ["PRO1", "PRO2", "PRO3", "TOD", "EXH"]]
+					[
+						[]
+					],
+					[
+						[]
+					],
+					[
+						[]
+					],
+					[
+						[]
+					],
 				];
 			} else if (BASE.isMainYard) {
-				if (MAPROOM_DESCENT.DescentPassed) {
-					_grouping = [
-						[
-							["BEW", "BST", "ENL", "BLK2", "BLK3", "BLK4", "BLK5", "BLK6", "BLK7", "BLK8"]
-						],
-						[
-							["EXR1", "EXR2", "EXR3", "EXR4", "EXR10", "EXR20", "EXR30", "EXR40", "BIP"]
-						],
-						[
-							["SP1", "SP2", "SP3", "SP4", "POD", "FIX", "HOD", "HOD2", "HOD3"]
-						],
-						[MapRoomManager.instance.isInMapRoom3 ? ["PRO1", "PRO2", "PRO3", "MOD", "MDOD", "MSOD", "TOD"] : ["PRO1", "PRO2", "PRO3", "MOD", "MDOD", "MSOD", "EXH", "TOD"]]
-					];
-				} else {
-					_grouping = [
-						[
-							["BEW", "BST", "ENL", "BLK2", "BLK3", "BLK4", "BLK5", "BLK6", "BLK7", "BLK8"]
-						],
-						[
-							["EXR1", "EXR2", "EXR3", "EXR4", "EXR10", "EXR20", "EXR30", "EXR40", "BIP"]
-						],
-						[
-							["SP1", "SP2", "SP3", "SP4", "POD", "FIX", "HOD", "HOD2", "HOD3"]
-						],
-						[MapRoomManager.instance.isInMapRoom3 ? ["PRO1", "PRO2", "PRO3", "MOD", "MDOD", "MSOD", "TOD"] : ["PRO1", "PRO2", "PRO3", "MOD", "MDOD", "MSOD", "EXH", "TOD"]]
-					];
-				}
+				_grouping = [
+					[
+						["BEW", "BST", "ENL", "BLK2", "BLK3", "BLK4", "BLK5", "BLK6", "BLK7", "BLK8"]
+					],
+					[
+						["EXR1", "EXR2", "EXR3", "EXR4", "EXR10", "EXR20", "EXR30", "EXR40", "EXR100", "EXR200", "EXR300", "EXR400", "BIP"]
+					],
+					[
+						["SP1", "SP2", "SP3", "SP4", "POD", "FIX", "HOD", "HOD2", "HOD3"]
+					],
+					[
+						MapRoomManager.instance.isInMapRoom3 ? ["PRO1", "PRO2", "PRO3", "MOD", "MDOD", "MSOD", "TOD"] : ["PRO1", "PRO2", "PRO3", "MOD", "MDOD", "MSOD", "EXH", "TOD"]
+					]
+				];
 			} else {
 				_grouping = [
 					[
@@ -693,14 +688,24 @@ package {
 				_storeItems.EXH.d = KEYS.Get(BASE.isInfernoMainYardOrOutpost ? "store_exhi_desc" : "store_exh_desc");
 				_storeItems.EXH.t = KEYS.Get("store_exh_title");
 			}
-			_storeItems.EXR1.resourceCost = 250000000;
-			_storeItems.EXR2.resourceCost = 250000000;
-			_storeItems.EXR3.resourceCost = 250000000;
-			_storeItems.EXR4.resourceCost = 250000000;
-			_storeItems.EXR10.resourceCost = 2500000000;
-			_storeItems.EXR20.resourceCost = 2500000000;
-			_storeItems.EXR30.resourceCost = 2500000000;
-			_storeItems.EXR40.resourceCost = 2500000000;
+
+			// 250M
+			_storeItems.EXR1.resourceCost   = 250000000;
+			_storeItems.EXR2.resourceCost   = 250000000;
+			_storeItems.EXR3.resourceCost   = 250000000;
+			_storeItems.EXR4.resourceCost   = 250000000;
+
+			// 2,5 B
+			_storeItems.EXR10.resourceCost  = 2500000000;
+			_storeItems.EXR20.resourceCost  = 2500000000;
+			_storeItems.EXR30.resourceCost  = 2500000000;
+			_storeItems.EXR40.resourceCost  = 2500000000;
+
+			// 25 B
+			_storeItems.EXR100.resourceCost = 25000000000;
+			_storeItems.EXR200.resourceCost = 25000000000;
+			_storeItems.EXR300.resourceCost = 25000000000;
+			_storeItems.EXR400.resourceCost = 25000000000;
 		}
 
 		public static function AddInventory(param1: String): void {
@@ -1324,7 +1329,6 @@ package {
 					_loc23_ = _loc22_;
 				}
 			} else {
-				if (BASE._pendingPurchase.length > 0) {}
 				if (_loc4_ >= _loc5_ && !_loc10_.i || _loc9_.substr(0, 3) == "BEW" && QUEUE._workerCount >= UI_WORKERS._maxWorkers || _loc9_.substr(0, 2) == "BR" && BASE._resources["r" + _loc9_.substr(2, 1)].Get() >= BASE._resources["r" + _loc9_.substr(2, 1) + "max"]) {
 					if ((_loc19_ = _loc9_).substr(0, 2) == "SP") {
 						_loc19_ = _loc19_.substr(0, 3);
@@ -1923,19 +1927,19 @@ package {
 					if (BASE._resources.r1.Get() < _resourceR1 || BASE._resources.r2.Get() < _resourceR2) {
 						_loc32_ = "Not enough resources";
 					}
-				} else if (_loc32_ == "" && (item == "EXR1" || item == "EXR10") && storeItemObject.resourceCost != undefined) {
+				} else if (_loc32_ == "" && (item == "EXR1" || item == "EXR10" || item == "EXR100") && storeItemObject.resourceCost != undefined) {
 					if (BASE._resources.r1.Get() < storeItemObject.resourceCost) {
 						_loc32_ = "Not enough resources";
 					}
-				} else if (_loc32_ == "" && (item == "EXR2" || item == "EXR20") && storeItemObject.resourceCost != undefined) {
+				} else if (_loc32_ == "" && (item == "EXR2" || item == "EXR20" || item == "EXR200") && storeItemObject.resourceCost != undefined) {
 					if (BASE._resources.r2.Get() < storeItemObject.resourceCost) {
 						_loc32_ = "Not enough resources";
 					}
-				} else if (_loc32_ == "" && (item == "EXR3" || item == "EXR30") && storeItemObject.resourceCost != undefined) {
+				} else if (_loc32_ == "" && (item == "EXR3" || item == "EXR30" || item == "EXR300") && storeItemObject.resourceCost != undefined) {
 					if (BASE._resources.r3.Get() < storeItemObject.resourceCost) {
 						_loc32_ = "Not enough resources";
 					}
-				} else if (_loc32_ == "" && (item == "EXR4" || item == "EXR40") && storeItemObject.resourceCost != undefined) {
+				} else if (_loc32_ == "" && (item == "EXR4" || item == "EXR40" || item == "EXR400") && storeItemObject.resourceCost != undefined) {
 					if (BASE._resources.r4.Get() < storeItemObject.resourceCost) {
 						_loc32_ = "Not enough resources";
 					}
@@ -2111,45 +2115,47 @@ package {
 				var _loc4_: * = undefined;
 				var _loc5_: * = undefined;
 				var _loc6_: * = undefined;
-				if (BASE._pendingPurchase.length == 0) {
-					_loc2_ = _storeItems[itemCode];
-					if (Boolean(_loc2_.fbc_cost) && _loc2_.fbc_cost[0] > 0) {
-						_loc5_ = true;
-						_loc4_ = _loc2_.fbc_cost;
-					} else {
-						_loc5_ = false;
-						_loc4_ = _loc2_.c;
+				if(BASE._pendingPurchase.length > 0){
+					GLOBAL.Message("Another purchase is ongoing, try again later.");
+					return;
+				}
+				_loc2_ = _storeItems[itemCode];
+				if (Boolean(_loc2_.fbc_cost) && _loc2_.fbc_cost[0] > 0) {
+					_loc5_ = true;
+					_loc4_ = _loc2_.fbc_cost;
+				} else {
+					_loc5_ = false;
+					_loc4_ = _loc2_.c;
+				}
+				_loc3_ = _loc4_[0];
+				if (Boolean(_storeData[itemCode]) && !_loc2_.i) {
+					_loc3_ = _loc4_[_storeData[itemCode].q];
+				}
+				if (_loc5_) {
+					FacebookCreditPurchase(itemCode);
+				} else {
+					if ((_loc6_ = itemCode).substr(0, 2) == "SP") {
+						_loc6_ = _loc6_.substr(0, 3);
 					}
-					_loc3_ = _loc4_[0];
-					if (Boolean(_storeData[itemCode]) && !_loc2_.i) {
-						_loc3_ = _loc4_[_storeData[itemCode].q];
-					}
-					if (_loc5_) {
-						FacebookCreditPurchase(itemCode);
-					} else {
-						if ((_loc6_ = itemCode).substr(0, 2) == "SP") {
-							_loc6_ = _loc6_.substr(0, 3);
+					if (Boolean(_storeInventory[_loc6_]) && _storeInventory[_loc6_].Get() > 0) {
+						_storeInventory[_loc6_].Add(-1);
+						if (_storeInventory[_loc6_].Get() <= 0) {
+							delete _storeInventory[_loc6_];
 						}
-						if (Boolean(_storeInventory[_loc6_]) && _storeInventory[_loc6_].Get() > 0) {
-							_storeInventory[_loc6_].Add(-1);
-							if (_storeInventory[_loc6_].Get() <= 0) {
-								delete _storeInventory[_loc6_];
-							}
-							BuyB(itemCode, true);
-						} else if (itemCode.substr(0, 3) == "BLK" && _loc2_.resourceCost != undefined) {
-							var blkCost: Number = Number(_loc2_.resourceCost);
-							var r1cost: Number = Math.ceil(blkCost / 2);
-							var r2cost: Number = blkCost - r1cost;
-							if (BASE._resources.r1.Get() >= r1cost && BASE._resources.r2.Get() >= r2cost) {
-								BuyB(itemCode);
-							} else {
-								GLOBAL.Message("Not enough resources for wall upgrade");
-							}
-						} else if (BASE._credits.Get() >= _loc3_) {
+						BuyB(itemCode, true);
+					} else if (itemCode.substr(0, 3) == "BLK" && _loc2_.resourceCost != undefined) {
+						var blkCost: Number = Number(_loc2_.resourceCost);
+						var r1cost: Number = Math.ceil(blkCost / 2);
+						var r2cost: Number = blkCost - r1cost;
+						if (BASE._resources.r1.Get() >= r1cost && BASE._resources.r2.Get() >= r2cost) {
 							BuyB(itemCode);
 						} else {
-							POPUPS.DisplayGetShiny();
+							GLOBAL.Message("Not enough resources for wall upgrade");
 						}
+					} else if (BASE._credits.Get() >= _loc3_) {
+						BuyB(itemCode);
+					} else {
+						POPUPS.DisplayGetShiny();
 					}
 				}
 			};
@@ -2173,6 +2179,7 @@ package {
 			var _loc21_: BFOUNDATION = null;
 			var _loc3_: Object = _storeItems[param1];
 			var _loc6_: Number = Number(_loc3_.quantity);
+			var hide_menu:Boolean = true;
 			if (param2) {
 				_loc7_ = false;
 				_loc5_ = _loc3_.c;
@@ -2206,10 +2213,10 @@ package {
 				BASE.Charge(1, r1cost, false, false);
 				BASE.Charge(2, r2cost, false, false);
 			} else if (param1.substr(0, 3) == "EXR" && !_loc7_ && !param2 && _loc3_.resourceCost != undefined) {
-				var resIndex: int = int(param1.substr(3, 1));
-				BASE.Charge(resIndex, Number(_loc3_.resourceCost), false, false);
+				BASE.Charge(int(param1.substr(3, 1)), Number(_loc3_.resourceCost), false, false);
 				BASE._credits.Add(-_loc4_);
 				BASE.Purchase(param1, _loc11_, "store");
+				hide_menu = false;
 			} else if (!_loc7_ && !param2) {
 				BASE._credits.Add(-_loc4_);
 			}
@@ -2422,7 +2429,7 @@ package {
 			}
 			if (_loc3_.a) {
 				m_tutorialBlock = false;
-				Hide();
+				if(hide_menu) Hide();
 			} else {
 				Switch(_tab, _page);
 			}

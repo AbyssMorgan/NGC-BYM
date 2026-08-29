@@ -294,6 +294,8 @@ package
 
 		public static var _conquerorPoints:SecNum = new SecNum(0);
 
+		public static var _TowerBuff:Boolean = false;
+
 		private static const s_levels:Array = [
 			new SecNum(0),                 // Level 1
 			new SecNum(900),               // Level 2
@@ -1173,6 +1175,11 @@ package
 						{
 							_buildingsStored[researchdata] = new SecNum(serverData.researchdata[researchdata]);
 						}
+					}
+					if(serverData.stats.assault_towers && Number(serverData.stats.assault_towers) >= 1000000){
+						_TowerBuff = true;
+					} else {
+						_TowerBuff = false;
 					}
 					if (GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD)
 					{

@@ -101,21 +101,24 @@ package
 		
 		public function Props() : void
 		{
-			var _loc1_:int = 0;
+			var range:int = 0;
 			if(_lvl.Get() > 0)
 			{
 				if(MapRoomManager.instance.isInMapRoom2 && (BASE.isOutpostMapRoom2Only || GLOBAL.mode == "wmattack"))
 				{
-					_loc1_ = int(GLOBAL._buildingProps[_type - 1].stats[_lvl.Get() - 1].range);
-					super._range = _loc1_;
+					range = int(GLOBAL._buildingProps[_type - 1].stats[_lvl.Get() - 1].range);
+					super._range = range;
 					if(GLOBAL._currentCell)
 					{
-						super._range = AdjustTowerRange(GLOBAL._currentCell,_loc1_);
+						super._range = AdjustTowerRange(GLOBAL._currentCell,range);
 					}
 				}
 				else
 				{
 					super._range = GLOBAL._buildingProps[_type - 1].stats[_lvl.Get() - 1].range;
+					if(BASE._TowerBuff){
+						super._range = int(super._range * 1.10);
+					}
 				}
 				damageProperty.value = GLOBAL._buildingProps[_type - 1].stats[_lvl.Get() - 1].damage;
 				super._rate = GLOBAL._buildingProps[_type - 1].stats[_lvl.Get() - 1].rate;
@@ -321,18 +324,18 @@ package
 			if(BYMConfig.instance.RENDERER_ON)
 			{
 				TweenLite.from(this._jarAnimation,1,{
-				"y":this._jarAnimation.y - 300,
-				"ease":Expo.easeIn,
-				"onUpdate":updateRasterData,
-				"onComplete":this.JarLanded
+					"y":this._jarAnimation.y - 300,
+					"ease":Expo.easeIn,
+					"onUpdate":updateRasterData,
+					"onComplete":this.JarLanded
 				});
 			}
 			else
 			{
 				TweenLite.from(this._jarAnimation,0.6,{
-				"y":this._jarAnimation.y - 300,
-				"ease":Expo.easeIn,
-				"onComplete":this.JarLanded
+					"y":this._jarAnimation.y - 300,
+					"ease":Expo.easeIn,
+					"onComplete":this.JarLanded
 				});
 			}
 			SOUNDS.Play(GetRandomString(Jars.LAND_SOUNDS));

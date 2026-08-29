@@ -925,89 +925,89 @@ package com.monsters.monsters
          }
       }
       
-      public function updateBuffs() : void
-      {
-         var _loc1_:Number = 0;
-         if(this._friendly)
-         {
-            if(Boolean(GLOBAL._monsterOverdrive) && GLOBAL._monsterOverdrive.Get() >= GLOBAL.Timestamp())
-            {
-               if(!this.damageProperty.getModifier(MonsterDust.k_damageModifier))
-               {
-                  this.damageProperty.addModifier(MonsterDust.k_damageModifier);
-               }
-               _loc1_ |= MonsterDust.k_color;
-            }
-            if(Boolean(GLOBAL._monsterDefenseOverdrive) && GLOBAL._monsterDefenseOverdrive.Get() >= GLOBAL.Timestamp())
-            {
-               if(!armorProperty.getModifier(BeastMode.k_armorModifier))
-               {
-                  armorProperty.addModifier(BeastMode.k_armorModifier);
-               }
-               _loc1_ |= BeastMode.k_color;
-            }
-            if(Boolean(GLOBAL._monsterSpeedOverdrive) && GLOBAL._monsterSpeedOverdrive.Get() >= GLOBAL.Timestamp())
-            {
-               if(!moveSpeedProperty.getModifier(HyperSpeed.k_moveSpeedModifier))
-               {
-                  moveSpeedProperty.addModifier(HyperSpeed.k_moveSpeedModifier);
-               }
-               if(!this.attackDelayProperty.getModifier(HyperSpeed.k_attackSpeedModifier))
-               {
-                  this.attackDelayProperty.addModifier(HyperSpeed.k_attackSpeedModifier);
-               }
-               _loc1_ |= HyperSpeed.k_color;
-            }
-         }
-         else
-         {
-            if(Boolean(GLOBAL._attackerMonsterOverdrive) && GLOBAL._attackerMonsterOverdrive.Get() >= GLOBAL.Timestamp())
-            {
-               if(!this.damageProperty.getModifier(MonsterDust.k_damageModifier))
-               {
-                  this.damageProperty.addModifier(MonsterDust.k_damageModifier);
-               }
-               _loc1_ |= MonsterDust.k_color;
-            }
-            if(Boolean(GLOBAL._attackerMonsterDefenseOverdrive) && GLOBAL._attackerMonsterDefenseOverdrive.Get() >= GLOBAL.Timestamp())
-            {
-               if(!armorProperty.getModifier(BeastMode.k_armorModifier))
-               {
-                  armorProperty.addModifier(BeastMode.k_armorModifier);
-               }
-               _loc1_ |= BeastMode.k_color;
-            }
-            if(Boolean(GLOBAL._attackerMonsterSpeedOverdrive) && GLOBAL._attackerMonsterSpeedOverdrive.Get() >= GLOBAL.Timestamp())
-            {
-               if(!moveSpeedProperty.getModifier(HyperSpeed.k_moveSpeedModifier))
-               {
-                  moveSpeedProperty.addModifier(HyperSpeed.k_moveSpeedModifier);
-               }
-               if(!this.attackDelayProperty.getModifier(HyperSpeed.k_attackSpeedModifier))
-               {
-                  this.attackDelayProperty.addModifier(HyperSpeed.k_attackSpeedModifier);
-               }
-               _loc1_ |= HyperSpeed.k_color;
-            }
-         }
-         if(_loc1_ != 0)
-         {
-            if(this._glow)
-            {
-               this._glow.color = _loc1_;
-            }
-            else
-            {
-               this._glow = new GlowFilter(_loc1_,1,7,7,6,1);
-               this.addFilter(this._glow);
-            }
-         }
-         else if(this._glow)
-         {
-            this.removeFilter(this._glow);
-            this._glow = null;
-         }
-      }
+		public function updateBuffs() : void
+		{
+			var _loc1_:Number = 0;
+			if(this._friendly)
+			{
+				if(Boolean(GLOBAL._monsterOverdrive) && GLOBAL._monsterOverdrive.Get() >= GLOBAL.Timestamp())
+				{
+					if(!this.damageProperty.getModifier(MonsterDust.k_damageModifier))
+					{
+						this.damageProperty.addModifier(MonsterDust.k_damageModifier);
+					}
+					_loc1_ |= MonsterDust.k_color;
+				}
+				if(Boolean(GLOBAL._monsterDefenseOverdrive) && GLOBAL._monsterDefenseOverdrive.Get() >= GLOBAL.Timestamp())
+				{
+					if(!armorProperty.getModifier(BeastMode.k_armorModifier))
+					{
+						armorProperty.addModifier(BeastMode.k_armorModifier);
+					}
+					_loc1_ |= BeastMode.k_color;
+				}
+				if(Boolean(GLOBAL._monsterSpeedOverdrive) && GLOBAL._monsterSpeedOverdrive.Get() >= GLOBAL.Timestamp())
+				{
+					if(!moveSpeedProperty.getModifier(HyperSpeed.k_moveSpeedModifier))
+					{
+						moveSpeedProperty.addModifier(HyperSpeed.k_moveSpeedModifier);
+					}
+					if(!this.attackDelayProperty.getModifier(HyperSpeed.k_attackSpeedModifier))
+					{
+						this.attackDelayProperty.addModifier(HyperSpeed.k_attackSpeedModifier);
+					}
+					_loc1_ |= HyperSpeed.k_color;
+				}
+			}
+			else
+			{
+				if(Boolean(GLOBAL._attackerMonsterOverdrive) && GLOBAL._attackerMonsterOverdrive.Get() >= GLOBAL.Timestamp())
+				{
+					if(!this.damageProperty.getModifier(MonsterDust.k_damageModifier))
+					{
+						this.damageProperty.addModifier(MonsterDust.k_damageModifier);
+					}
+					_loc1_ |= MonsterDust.k_color;
+				}
+				if(Boolean(GLOBAL._attackerMonsterDefenseOverdrive) && GLOBAL._attackerMonsterDefenseOverdrive.Get() >= GLOBAL.Timestamp())
+				{
+					if(!armorProperty.getModifier(BeastMode.k_armorModifier))
+					{
+						armorProperty.addModifier(BeastMode.k_armorModifier);
+					}
+					_loc1_ |= BeastMode.k_color;
+				}
+				if(Boolean(GLOBAL._attackerMonsterSpeedOverdrive) && GLOBAL._attackerMonsterSpeedOverdrive.Get() >= GLOBAL.Timestamp())
+				{
+					if(!moveSpeedProperty.getModifier(HyperSpeed.k_moveSpeedModifier))
+					{
+						moveSpeedProperty.addModifier(HyperSpeed.k_moveSpeedModifier);
+					}
+					if(!this.attackDelayProperty.getModifier(HyperSpeed.k_attackSpeedModifier))
+					{
+						this.attackDelayProperty.addModifier(HyperSpeed.k_attackSpeedModifier);
+					}
+					_loc1_ |= HyperSpeed.k_color;
+				}
+			}
+			if(_loc1_ != 0)
+			{
+				if(this._glow)
+				{
+				this._glow.color = _loc1_;
+				}
+				else
+				{
+				this._glow = new GlowFilter(_loc1_,1,7,7,6,1);
+				this.addFilter(this._glow);
+				}
+			}
+			else if(this._glow)
+			{
+				this.removeFilter(this._glow);
+				this._glow = null;
+			}
+		}
       
       public function poweredUp() : Boolean
       {

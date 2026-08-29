@@ -17,7 +17,6 @@ package
 	import com.monsters.maproom_manager.MapRoomManager;
 	import com.monsters.monsters.MonsterBase;
 	import com.monsters.monsters.champions.ChampionBase;
-	import com.monsters.monsters.champions.Krallen;
 	import com.monsters.player.MonsterData;
 	import com.monsters.player.Player;
 	import com.monsters.siege.SiegeWeapons;
@@ -885,11 +884,6 @@ package
 				player_resources = Number(GLOBAL._resources["r" + index].Get());
 			}
 
-			var krallen:Krallen = CREEPS.krallen;
-			if(krallen)
-			{
-				max_capacity += max_capacity * krallen._buff;
-			}
 			if(player_resources + quantity > max_capacity)
 			{
 				if(BASE.isInfernoMainYardOrOutpost && MAPROOM_DESCENT.DescentPassed || GLOBAL.mode == GLOBAL._loadmode)

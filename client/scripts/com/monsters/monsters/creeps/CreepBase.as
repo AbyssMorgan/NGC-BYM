@@ -27,7 +27,9 @@ package com.monsters.monsters.creeps
        
       // Performance optimization: Point object pool to reduce GC pressure
       private static var _pointPool:Vector.<Point> = new Vector.<Point>();
+	  
       private static var _poolSize:int = 0;
+
       private static const MAX_POOL_SIZE:int = 50;
       
       protected var _lastFrame:int = -1;

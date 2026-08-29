@@ -308,8 +308,6 @@ package
 
       public static var _FPStimestamp:int;
 
-      public static var _FPSarray:Array = [];
-
       public static var _mapHome:Point;
 
       public static var _mapOutpost:Array = [];
@@ -807,7 +805,6 @@ package
          }
          _fps = 40;
          _FPSframecount = 0;
-         _FPSarray = [];
          _FPStimestamp = 0;
          ImageCache.prependImagePath = GLOBAL._storageURL;
          MapRoom3AssetCache.instance.Load();
@@ -1513,23 +1510,7 @@ package
                {
                   TUTORIAL.Tick();
                }
-               if (_flags.logfps)
-               {
-                  if (_FPSframecount == 40 * 60)
-                  {
-                     LogFPS();
-                  }
-                  else if (_FPSframecount > 80 && _FPSframecount % 40 == 0)
-                  {
-                     _fps = int(1000 / ((_loc2_ - _FPStimestamp) / 40));
-                     if (_FPStimestamp > 0)
-                     {
-                        _FPSarray.push( {"fps": _fps});
-                     }
-                     _FPStimestamp = _loc2_;
-                  }
-               }
-               else if (_FPSframecount % 40 == 0)
+               if (_FPSframecount % 40 == 0)
                {
                   _fps = int(1000 / ((_loc2_ - _FPStimestamp) / 40));
                   _FPStimestamp = _loc2_;
@@ -1549,21 +1530,6 @@ package
          {
             lastTime = 0;
             _loops = 4;
-         }
-      }
-
-      public static function LogFPS():void
-      {
-         var _loc1_:int = 0;
-         var _loc2_:int = 0;
-         var _loc3_:int = 0;
-         if (_flags.logfps)
-         {
-            _FPSarray.sortOn("fps", Array.NUMERIC);
-            _loc1_ = int(_FPSarray[0].fps);
-            _loc2_ = int(_FPSarray[_FPSarray.length - 1].fps);
-            _loc3_ = int(_FPSarray[_FPSarray.length * 0.5].fps);
-            LOGGER.Log("fr" + GLOBAL.mode.substr(0, 1), GLOBAL.dd(_loc1_) + "," + GLOBAL.dd(_loc2_) + "," + GLOBAL.dd(_loc3_));
          }
       }
 

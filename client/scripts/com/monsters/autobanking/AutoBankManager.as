@@ -176,40 +176,40 @@ package com.monsters.autobanking
 			{
 				for(_loc3_ in _loc2_)
 				{
-				if(_loc3_ === k_OPKEY_TIME)
-				{
-					if(BYMConfig.instance.AUTOBANK_FIX && GLOBAL.mode === GLOBAL.e_BASE_MODE.ATTACK && BASE.isOutpost)
+					if(_loc3_ === k_OPKEY_TIME)
 					{
-						param1[_loc3_] = BASE._lastProcessedGIP;
-					}
-					else if(!BASE.isMainYardInfernoOnly)
-					{
-						param1[_loc3_] = GLOBAL.Timestamp();
+						if(BYMConfig.instance.AUTOBANK_FIX && GLOBAL.mode === GLOBAL.e_BASE_MODE.ATTACK && BASE.isOutpost)
+						{
+							param1[_loc3_] = BASE._lastProcessedGIP;
+						}
+						else if(!BASE.isMainYardInfernoOnly)
+						{
+							param1[_loc3_] = GLOBAL.Timestamp();
+						}
+						else
+						{
+							param1[_loc3_] = BASE._lastProcessedGIP;
+						}
 					}
 					else
 					{
-						param1[_loc3_] = BASE._lastProcessedGIP;
+						param1[_loc3_] = {
+							"r1":BASE._processedGIP[_loc3_][k_OPKEY_TWIGS].Get(),
+							"r2":BASE._processedGIP[_loc3_][k_OPKEY_PEBBLES].Get(),
+							"r3":BASE._processedGIP[_loc3_][k_OPKEY_PUTTY].Get(),
+							"r4":BASE._processedGIP[_loc3_][k_OPKEY_GOO].Get()
+						};
 					}
-				}
-				else
-				{
-					param1[_loc3_] = {
-						"r1":BASE._processedGIP[_loc3_][k_OPKEY_TWIGS].Get(),
-						"r2":BASE._processedGIP[_loc3_][k_OPKEY_PEBBLES].Get(),
-						"r3":BASE._processedGIP[_loc3_][k_OPKEY_PUTTY].Get(),
-						"r4":BASE._processedGIP[_loc3_][k_OPKEY_GOO].Get()
-					};
-				}
 				}
 			}
 			else
 			{
 				for(_loc3_ in _loc2_)
 				{
-				if(_loc3_ === k_OPKEY_TIME)
-				{
-					param1[_loc3_] = GLOBAL.Timestamp();
-				}
+					if(_loc3_ === k_OPKEY_TIME)
+					{
+						param1[_loc3_] = GLOBAL.Timestamp();
+					}
 				}
 			}
 		}

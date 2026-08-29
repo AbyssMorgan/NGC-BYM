@@ -1,82 +1,82 @@
 package
 {
-   import com.monsters.baseBuffs.BaseBuff;
-   import com.monsters.baseBuffs.BaseBuffHandler;
-   import com.monsters.baseBuffs.buffs.AutoBankBaseBuff;
-   import com.monsters.configs.BYMConfig;
-   import com.monsters.dealspot.DealSpot;
-   import com.monsters.display.ScrollSetV;
-   import com.monsters.enums.EnumYardType;
-   import com.monsters.kingOfTheHill.graphics.KOTHHUDGraphic;
-   import com.monsters.managers.InstanceManager;
-   import com.monsters.maproom3.MapRoom3Cell;
-   import com.monsters.maproom_inferno.views.DescentDebuffPopup;
-   import com.monsters.maproom_manager.MapRoomManager;
-   import com.monsters.monsters.champions.ChampionBase;
-   import com.monsters.siege.SiegeWeapons;
-   import com.monsters.subscriptions.SubscriptionHandler;
-   import flash.display.DisplayObject;
-   import flash.display.DisplayObjectContainer;
-   import flash.display.Loader;
-   import flash.display.MovieClip;
-   import flash.display.Sprite;
-   import flash.events.Event;
-   import flash.events.IOErrorEvent;
-   import flash.events.MouseEvent;
-   import flash.geom.Rectangle;
-   import flash.net.URLRequest;
-   import flash.text.TextFieldAutoSize;
-   import gs.*;
-   import gs.easing.*;
-   import flash.text.TextFormat;
-   
-   public class UI_TOP extends UI_TOP_CLIP
-   {
-      
-      public static const CREATUREBUTTONOVER:String = "creatureButtonOver";
-       
-      
-      public var _popupWarning:bubblepopup4;
-      
-      public var _popupBuff:bubblepopupBuff;
-      
-      public var _creatureButtons:Array;
-      
-      public var _creatureButtonsMC:flingerLevel;
-      
-      public var _bubbleDo:DisplayObject;
-      
-      public var _catapult:CATAPULTPOPUP;
-      
-      public var _siegeweapon:SIEGEWEAPONPOPUP;
-      
-      public var _buttonIcons:Array;
-      
-      public var _descentDebuff:DescentDebuffPopup;
-      
-      public var extraResourceRows:int = 0;
-      
-      public var _dealspot:DealSpot;
-      
-      public var _resourceUI:Object;
-      
-      public var _resourceR1:int;
-      
-      public var _resourceR2:int;
-      
-      public var _resourceR3:int;
-      
-      public var _resourceR4:int;
-      
-      public var _kothIcon:DisplayObject;
-      
-      public var _daveClub:DisplayObject;
-      
-      private const _RESOURCEBAR_HEIGHT:int = 37;
-      
-      private var m_creatureContainer:Sprite;
-      
-      private var m_scrollBar:ScrollSetV;
+	import com.monsters.baseBuffs.BaseBuff;
+	import com.monsters.baseBuffs.BaseBuffHandler;
+	import com.monsters.baseBuffs.buffs.AutoBankBaseBuff;
+	import com.monsters.configs.BYMConfig;
+	import com.monsters.dealspot.DealSpot;
+	import com.monsters.display.ScrollSetV;
+	import com.monsters.enums.EnumYardType;
+	import com.monsters.kingOfTheHill.graphics.KOTHHUDGraphic;
+	import com.monsters.managers.InstanceManager;
+	import com.monsters.maproom3.MapRoom3Cell;
+	import com.monsters.maproom_inferno.views.DescentDebuffPopup;
+	import com.monsters.maproom_manager.MapRoomManager;
+	import com.monsters.monsters.champions.ChampionBase;
+	import com.monsters.siege.SiegeWeapons;
+	import com.monsters.subscriptions.SubscriptionHandler;
+	import flash.display.DisplayObject;
+	import flash.display.DisplayObjectContainer;
+	import flash.display.Loader;
+	import flash.display.MovieClip;
+	import flash.display.Sprite;
+	import flash.events.Event;
+	import flash.events.IOErrorEvent;
+	import flash.events.MouseEvent;
+	import flash.geom.Rectangle;
+	import flash.net.URLRequest;
+	import flash.text.TextFieldAutoSize;
+	import gs.*;
+	import gs.easing.*;
+	import flash.text.TextFormat;
+	
+	public class UI_TOP extends UI_TOP_CLIP
+	{
+		
+		public static const CREATUREBUTTONOVER:String = "creatureButtonOver";
+		
+		
+		public var _popupWarning:bubblepopup4;
+		
+		public var _popupBuff:bubblepopupBuff;
+		
+		public var _creatureButtons:Array;
+		
+		public var _creatureButtonsMC:flingerLevel;
+		
+		public var _bubbleDo:DisplayObject;
+		
+		public var _catapult:CATAPULTPOPUP;
+		
+		public var _siegeweapon:SIEGEWEAPONPOPUP;
+		
+		public var _buttonIcons:Array;
+		
+		public var _descentDebuff:DescentDebuffPopup;
+		
+		public var extraResourceRows:int = 0;
+		
+		public var _dealspot:DealSpot;
+		
+		public var _resourceUI:Object;
+		
+		public var _resourceR1:int;
+		
+		public var _resourceR2:int;
+		
+		public var _resourceR3:int;
+		
+		public var _resourceR4:int;
+		
+		public var _kothIcon:DisplayObject;
+		
+		public var _daveClub:DisplayObject;
+		
+		private const _RESOURCEBAR_HEIGHT:int = 37;
+		
+		private var m_creatureContainer:Sprite;
+		
+		private var m_scrollBar:ScrollSetV;
       
 		public function UI_TOP()
 		{

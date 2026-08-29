@@ -674,7 +674,7 @@ package
 			{
 				if (GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD || GLOBAL.mode == GLOBAL.e_BASE_MODE.IBUILD)
 				{
-				GLOBAL.attackingPlayer = GLOBAL.player;
+					GLOBAL.attackingPlayer = GLOBAL.player;
 				}
 			}
 			GLOBAL.attackingPlayer.isAttacking = GLOBAL.attackingPlayer != GLOBAL.player;
@@ -784,8 +784,8 @@ package
 				_loc15_ = 0;
 				while (_loc15_ < _addtionalLoadArguments.length)
 				{
-				requestData.push(_addtionalLoadArguments[_loc15_]);
-				_loc15_++;
+					requestData.push(_addtionalLoadArguments[_loc15_]);
+					_loc15_++;
 				}
 			}
 			if (!_loadedSomething && ExternalInterface.available)
@@ -1542,17 +1542,17 @@ package
 							if (attackObj.count == 1)
 							{
 								popupMC.tA.htmlText = KEYS.Get("pop_attackedyou", {
-										"v1": attackObj.name,
-										"v2": GLOBAL.ToTime(_currentTime - int(attackObj.lastTime), true)
-									});
+									"v1": attackObj.name,
+									"v2": GLOBAL.ToTime(_currentTime - int(attackObj.lastTime), true)
+								});
 							}
 							else
 							{
 								popupMC.tA.htmlText = KEYS.Get("pop_attackedyouxtimes", {
-										"v1": attackObj.name,
-										"v2": attackObj.count,
-										"v3": GLOBAL.ToTime(_currentTime - int(attackObj.lastTime), true)
-									});
+									"v1": attackObj.name,
+									"v2": attackObj.count,
+									"v3": GLOBAL.ToTime(_currentTime - int(attackObj.lastTime), true)
+								});
 							}
 							if (attackObj.pic)
 							{
@@ -1610,10 +1610,10 @@ package
 							{
 								if (serverData.purchasereceive)
 								{
-								promoItemsArr = serverData.purchasereceive;
-								BUY.purchaseProcess(promoItemsArr);
-								BUY.purchaseComplete(serverData.promotiontimer);
-								GLOBAL._flags.hasPromo = 1;
+									promoItemsArr = serverData.purchasereceive;
+									BUY.purchaseProcess(promoItemsArr);
+									BUY.purchaseComplete(serverData.promotiontimer);
+									GLOBAL._flags.hasPromo = 1;
 								}
 							}
 						}
@@ -1628,25 +1628,25 @@ package
 							{
 								if (serverData.fbpromos.ids)
 								{
-								promoID = serverData.fbpromos.ids;
+									promoID = serverData.fbpromos.ids;
 								}
 								if (promoGifts)
 								{
-								promoGifts = serverData.fbpromos.items;
+									promoGifts = serverData.fbpromos.items;
 								}
 								if (Boolean(promoID) && Boolean(promoGifts))
 								{
-								_pendingFBPromo = 1;
-								GLOBAL._flags.hasFBPromo = 1;
-								if (promoGifts)
-								{
-									BUY.purchaseProcess(promoGifts);
-									BUY.purchaseComplete("biggulp");
-								}
-								if (promoID)
-								{
-									_pendingFBPromoIDs = promoID;
-								}
+									_pendingFBPromo = 1;
+									GLOBAL._flags.hasFBPromo = 1;
+									if (promoGifts)
+									{
+										BUY.purchaseProcess(promoGifts);
+										BUY.purchaseComplete("biggulp");
+									}
+									if (promoID)
+									{
+										_pendingFBPromoIDs = promoID;
+									}
 								}
 								GLOBAL._flags.hasPromo = 1;
 							}
@@ -1709,445 +1709,445 @@ package
          }
       }
 
-      public static function Build():void
-      {
-         var buildingFoundation:BFOUNDATION = null;
-         var counter:int = 0;
-         var building:Object = null;
-         var displayObject:DisplayObject = null;
-         var rawMonstersHidLength:int = 0;
-         var rawMonstersHLength:int = 0;
-         var rawMonsterIndex:int = 0;
-         var townHallLevel:int = 0;
-         var buildingTypeCount:int = 0;
-         var props:Object = null;
-         var foundationIndex:int = 0;
-         var propCount:int = 0;
-         PLEASEWAIT.Update(KEYS.Get("msg_building"));
-         if (MAPROOM_INFERNO._open)
-         {
-            MAPROOM_INFERNO.Hide();
-         }
-         if (MAPROOM._open)
-         {
-            MAPROOM.Hide();
-         }
-         var mapIndex:int = GLOBAL._layerMap.numChildren - 1;
-         while (mapIndex >= 0)
-         {
-            displayObject = GLOBAL._layerMap.getChildAt(mapIndex);
-            if (displayObject.parent)
-            {
-               displayObject.parent.removeChild(displayObject);
-            }
-            mapIndex--;
-         }
-         UI2.Setup();
-         GLOBAL.ResizeGame(null);
-         GLOBAL._render = false;
-         PATHING.Setup();
-         var timer:int = getTimer();
-         var terrainType:String = "grass";
-		 if(BASE.isInfernoMainYardOrOutpost){
-            terrainType = "lava";
-         } else if(MapRoomManager.instance.isInMapRoom3){
-			if(m_yardType == EnumYardType.PLAYER){
-				var extra_tiles:int = 0;
-				if(_rewards.hasOwnProperty("extraTiles") && _rewards.extraTiles != null){
-					extra_tiles = _rewards.extraTiles.value;
-				}
-				terrainType = MAP.getBackgroundName(extra_tiles);
-			} else if(m_yardType == EnumYardType.RESOURCE){
-				if(_level >= 90){
-					terrainType = "lava";
-				} else if(_level >= 80){
-					terrainType = "crater";
-				} else if(_level >= 70){
-					terrainType = "sand";
-				} else if(_level >= 60){
-					terrainType = "rock";
-				}
-			} else if(m_yardType == EnumYardType.STRONGHOLD){
-				if(_level >= 90){
-					terrainType = "lava";
-				} else if(_level >= 80){
-					terrainType = "crater";
-				} else if(_level >= 60){
-					terrainType = "sand";
-				}
-			} else if(m_yardType == EnumYardType.FORTIFICATION){
-				if(_level >= 90){
-					terrainType = "lava";
-				} else if(_level >= 80){
-					terrainType = "crater";
-				} else if(_level >= 70){
-					terrainType = "sand";
-				} else if(_level >= 60){
-					terrainType = "rock";
-				}
-			} else if(_wmID == 31 || _wmID == 21 || _wmID == 11 || _wmID == 1){
-				if(_level >= 65){
-					terrainType = "lava";
-				} else if(_level >= 60){
-					terrainType = "crater";
-				} else if(_level >= 55){
-					terrainType = "sand";
-				} else if(_level >= 50){
-					terrainType = "rock";
-				}
-			} else if(_wmID == 41){
-				terrainType = "lava";
+		public static function Build():void
+		{
+			var buildingFoundation:BFOUNDATION = null;
+			var counter:int = 0;
+			var building:Object = null;
+			var displayObject:DisplayObject = null;
+			var rawMonstersHidLength:int = 0;
+			var rawMonstersHLength:int = 0;
+			var rawMonsterIndex:int = 0;
+			var townHallLevel:int = 0;
+			var buildingTypeCount:int = 0;
+			var props:Object = null;
+			var foundationIndex:int = 0;
+			var propCount:int = 0;
+			PLEASEWAIT.Update(KEYS.Get("msg_building"));
+			if (MAPROOM_INFERNO._open)
+			{
+				MAPROOM_INFERNO.Hide();
 			}
-		 } else if(!MapRoomManager.instance.isInMapRoom3 && GLOBAL._currentCell && (isOutpostOrInfernoOutpost || GLOBAL.mode == GLOBAL.e_BASE_MODE.WMATTACK || GLOBAL.mode == GLOBAL.e_BASE_MODE.WMVIEW)){
-            terrainType = (GLOBAL._currentCell as MapRoomCell).terrain;
-         }
-         
-         var map:MAP = new MAP(terrainType);
-         var targeting:Targeting = new Targeting();
-         QUEUE.Spawn(0);
-         Smoke.Setup();
-         var currentBuilding:Object = {};
-         var buildingCount:int = 0;
-         var foundationType:int = 0;
-         var isCoreBuilding:Boolean = false;
-         if (MapRoom3Tutorial.instance.isStarted && (MapRoom3Tutorial.instance.tutorialStep === MapRoom3Tutorial.k_STEP_SCOUTWM || MapRoom3Tutorial.instance.tutorialStep === MapRoom3Tutorial.k_STEP_ATTACKWM))
-         {
-            _buildingData = null;
-         }
+			if (MAPROOM._open)
+			{
+				MAPROOM.Hide();
+			}
+			var mapIndex:int = GLOBAL._layerMap.numChildren - 1;
+			while (mapIndex >= 0)
+			{
+				displayObject = GLOBAL._layerMap.getChildAt(mapIndex);
+				if (displayObject.parent)
+				{
+				displayObject.parent.removeChild(displayObject);
+				}
+				mapIndex--;
+			}
+			UI2.Setup();
+			GLOBAL.ResizeGame(null);
+			GLOBAL._render = false;
+			PATHING.Setup();
+			var timer:int = getTimer();
+			var terrainType:String = "grass";
+			if(BASE.isInfernoMainYardOrOutpost){
+				terrainType = "lava";
+			} else if(MapRoomManager.instance.isInMapRoom3){
+				if(m_yardType == EnumYardType.PLAYER){
+					var extra_tiles:int = 0;
+					if(_rewards.hasOwnProperty("extraTiles") && _rewards.extraTiles != null){
+						extra_tiles = _rewards.extraTiles.value;
+					}
+					terrainType = MAP.getBackgroundName(extra_tiles);
+				} else if(m_yardType == EnumYardType.RESOURCE){
+					if(_level >= 90){
+						terrainType = "lava";
+					} else if(_level >= 80){
+						terrainType = "crater";
+					} else if(_level >= 70){
+						terrainType = "sand";
+					} else if(_level >= 60){
+						terrainType = "rock";
+					}
+				} else if(m_yardType == EnumYardType.STRONGHOLD){
+					if(_level >= 90){
+						terrainType = "lava";
+					} else if(_level >= 80){
+						terrainType = "crater";
+					} else if(_level >= 60){
+						terrainType = "sand";
+					}
+				} else if(m_yardType == EnumYardType.FORTIFICATION){
+					if(_level >= 90){
+						terrainType = "lava";
+					} else if(_level >= 80){
+						terrainType = "crater";
+					} else if(_level >= 70){
+						terrainType = "sand";
+					} else if(_level >= 60){
+						terrainType = "rock";
+					}
+				} else if(_wmID == 31 || _wmID == 21 || _wmID == 11 || _wmID == 1){
+					if(_level >= 65){
+						terrainType = "lava";
+					} else if(_level >= 60){
+						terrainType = "crater";
+					} else if(_level >= 55){
+						terrainType = "sand";
+					} else if(_level >= 50){
+						terrainType = "rock";
+					}
+				} else if(_wmID == 41){
+					terrainType = "lava";
+				}
+			} else if(!MapRoomManager.instance.isInMapRoom3 && GLOBAL._currentCell && (isOutpostOrInfernoOutpost || GLOBAL.mode == GLOBAL.e_BASE_MODE.WMATTACK || GLOBAL.mode == GLOBAL.e_BASE_MODE.WMVIEW)){
+				terrainType = (GLOBAL._currentCell as MapRoomCell).terrain;
+			}
+			
+			var map:MAP = new MAP(terrainType);
+			var targeting:Targeting = new Targeting();
+			QUEUE.Spawn(0);
+			Smoke.Setup();
+			var currentBuilding:Object = {};
+			var buildingCount:int = 0;
+			var foundationType:int = 0;
+			var isCoreBuilding:Boolean = false;
+			if (MapRoom3Tutorial.instance.isStarted && (MapRoom3Tutorial.instance.tutorialStep === MapRoom3Tutorial.k_STEP_SCOUTWM || MapRoom3Tutorial.instance.tutorialStep === MapRoom3Tutorial.k_STEP_ATTACKWM))
+			{
+				_buildingData = null;
+			}
 
-         // Client guards to ensure the main building on each yard is always the correct type
-         if (isMainYard && _buildingData.hasOwnProperty("0") && _buildingData["0"].t !== 14)
-         {
-            _buildingData["0"].t = 14;
-         }
+			// Client guards to ensure the main building on each yard is always the correct type
+			if (isMainYard && _buildingData.hasOwnProperty("0") && _buildingData["0"].t !== 14)
+			{
+				_buildingData["0"].t = 14;
+			}
 
-         if (isOutpostMapRoom2Only && _buildingData.hasOwnProperty("0") && _buildingData["0"].t !== 112)
-         {
-            _buildingData["0"].t = 112;
-         }
+			if (isOutpostMapRoom2Only && _buildingData.hasOwnProperty("0") && _buildingData["0"].t !== 112)
+			{
+				_buildingData["0"].t = 112;
+			}
 
-         var buildingTypeCounts:Dictionary = new Dictionary();
-         for each (building in _buildingData)
-         {
-            if (building)
-            {
-               if (building.t)
-               {
-                  buildingTypeCounts[building.t] ||= 0;
-                  ++buildingTypeCounts[building.t];
-               }
-			   if(building.t == 27){ //[TROJAN HORSE REMOVED] && !BASE.isMainYard
-				continue;
-			   }
-			   if(building.rE == 1 && (GLOBAL.mode == GLOBAL.e_BASE_MODE.ATTACK || GLOBAL.mode == GLOBAL.e_BASE_MODE.IATTACK)){
-				building.rE = 0;
-			   }
-               if (!(building.t == 53 || building.t == 54))
-               {
-                  currentBuilding = building;
-                  if (building.t == 18)
-                  {
-                     building.t = 17;
-                     building.l = 2;
-                  }
-                  if (building.t == 14)
-                  {
-                  }
-                  if (building.t == 7)
-                  {
-                     counter++;
-                  }
-                  buildingFoundation = addBuildingC(building.t);
-                  if (buildingFoundation)
-                  {
-                     foundationType = buildingFoundation._type;
-                  }
-                  if (building.t == 16 && _rawMonsters && Boolean(_rawMonsters.hcc))
-                  {
-                     building.mq = _rawMonsters.hcc;
-                  }
-                  if (building.t == 13 && _rawMonsters && Boolean(_rawMonsters.h) && Boolean(_rawMonsters.hid))
-                  {
-                     rawMonstersHidLength = int(_rawMonsters.hid.length);
-                     rawMonstersHLength = int(_rawMonsters.h.length);
-                     rawMonsterIndex = 0;
-                     while (rawMonsterIndex < rawMonstersHidLength && rawMonsterIndex < rawMonstersHLength)
-                     {
-                        if (_rawMonsters.hid[rawMonsterIndex] == building.id)
-                        {
-                           if (_rawMonsters.h[rawMonsterIndex].length > 0)
-                           {
-                              building.rIP = _rawMonsters.h[rawMonsterIndex][0];
-                              building.rCP = _rawMonsters.h[rawMonsterIndex][1];
-                           }
-                           else
-                           {
-                              building.rIP = "";
-                              building.rCP = 0;
-                           }
-                           if (Boolean(_rawMonsters.hstage) && _rawMonsters.hstage.length > rawMonsterIndex)
-                           {
-                              building.rPS = _rawMonsters.hstage[rawMonsterIndex];
-                           }
-                           if (building.id == _rawMonsters.hid[rawMonsterIndex] && _rawMonsters.h[rawMonsterIndex].length > 2)
-                           {
-                              building.mq = _rawMonsters.h[rawMonsterIndex][2];
-                           }
-                           else
-                           {
-                              building.mq = [];
-                           }
-                           building.saved = _rawMonsters.saved;
-                           break;
-                        }
-                        rawMonsterIndex++;
-                     }
-                  }
-                  if (buildingFoundation)
-                  {
-                     if (Boolean(_buildingHealthData) && building.id in _buildingHealthData)
-                     {
-                        building.hp = _buildingHealthData[building.id];
-                     }
-                     else if (MapRoomManager.instance.isInMapRoom3 && !BASE.isInfernoMainYardOrOutpost)
-                     {
-                        delete building.hp;
-                     }
-                     buildingFoundation.Setup(building);
-                     if (buildingFoundation._id > _buildingCount)
-                     {
-                        _buildingCount = buildingFoundation._id;
-                     }
-                     if (buildingFoundation is ICoreBuilding)
-                     {
-                        isCoreBuilding = true;
-                     }
-                     buildingCount++;
-                  }
-               }
-            }
-         }
-         BFOUNDATION.redrawAllShadowData();
-         _buildingHealthData = null;
-         _buildingData = null;
-         if (buildingCount == 0)
-         {
-            if (isOutpost && !MapRoom3Tutorial.instance.isStarted)
-            {
-               buildingFoundation = addBuildingC(112);
-               buildingFoundation.Setup({"X": 0, "Y": -50, "id": buildingCount++, "t": 112, "l": 1});
-            }
-            else if (BASE.isInfernoMainYardOrOutpost)
-            {
-				buildingFoundation = addBuildingC(14);
-				buildingFoundation.Setup({"X": -100, "Y": 0, "id": buildingCount++, "t": 14, "l": 1});
-				buildingFoundation = addBuildingC(1);
-				buildingFoundation.Setup({"X": 60, "Y": 0, "id": buildingCount++, "t": 1, "l": 1});
-				buildingFoundation = addBuildingC(2);
-				buildingFoundation.Setup({"X": 60, "Y": 70, "id": buildingCount++, "t": 2, "l": 1});
-				buildingFoundation = addBuildingC(6);
-				buildingFoundation.Setup({"X": 130, "Y": 0, "id": buildingCount++, "t": 6, "l": 3});
-				buildingFoundation = addBuildingC(6);
-				buildingFoundation.Setup({"X": 130, "Y": 80, "id": buildingCount++, "t": 6, "l": 3});
-				_baseExperience.Set(0);
-            }
-            else
-            {
-               buildingFoundation = addBuildingC(14);
-               buildingFoundation.Setup({"X": -70, "Y": 0, "id": buildingCount++, "t": 14, "l": 1});
-               buildingFoundation = addBuildingC(1);
-               buildingFoundation.Setup({"X": 60, "Y": 0, "id": buildingCount++, "t": 1, "l": 1});
-               buildingFoundation._stored.Set(200);
-               buildingFoundation._hpStored = 200;
-               buildingFoundation = addBuildingC(2);
-               buildingFoundation.Setup({"X": 60, "Y": 70, "id": buildingCount++, "t": 2, "l": 1});
-               buildingFoundation = addBuildingC(12);
-               buildingFoundation.Setup({"X": 60, "Y": -70, "id": buildingCount++, "t": 12, "l": 1});
-               _resources.r1.Set(1600);
-               _resources.r2.Set(1600);
-               _deltaResources.r1.Set(1600);
-               _deltaResources.r2.Set(1600);
-               _deltaResources.dirty = true;
-               _baseExperience.Set(0);
-               SOUNDS.TutorialStopMusic();
-            }
-         }
-         else if (isMainYard && !isCoreBuilding)
-         {
-            LOGGER.Log("err", "Town Hall Missing");
-         }
-         var bFoundation:Vector.<Object> = InstanceManager.getInstancesByClass(BFOUNDATION);
-         if (GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD && GLOBAL.townHall && isMainYardOrInfernoMainYard && !GLOBAL._aiDesignMode)
-         {
-            townHallLevel = GLOBAL.townHall._lvl.Get();
-            buildingTypeCount = 0;
-            for each (props in GLOBAL._buildingProps)
-            {
-               if (props.type != "decoration")
-               {
-                  buildingTypeCount = 0;
-                  foundationIndex = int(bFoundation.length - 1);
-                  while (foundationIndex >= 0)
-                  {
-                     buildingFoundation = bFoundation[foundationIndex] as BFOUNDATION;
-                     if (buildingFoundation)
-                     {
-                        if (buildingFoundation._type == props.id)
-                        {
-                           buildingTypeCount += 1;
-                        }
-                        propCount = townHallLevel < props.quantity.length ? int(props.quantity[townHallLevel]) : int(props.quantity[props.quantity.length - 1]);
-                        if (buildingTypeCount > propCount)
-                        {
-                           LOGGER.Log("log", "Too many buildings of type " + buildingFoundation._type + " th " + townHallLevel + " count " + buildingTypeCount);
-                           BASE.BuildingDeselect();
-                           buildingFoundation.clear();
-                           buildingTypeCount--;
-                        }
-                     }
-                     foundationIndex--;
-                  }
-               }
-            }
-         }
-         var _loc15_:int = 0;
-         var _loc16_:int = 0;
-         bFoundation = InstanceManager.getInstancesByClass(BFOUNDATION);
-         for each (buildingFoundation in bFoundation)
-         {
-            if (GRID.FromISO(buildingFoundation.x, buildingFoundation.y).x > 1000)
-            {
-               GRID.FindSpace(buildingFoundation);
-            }
-            if (buildingFoundation is BTRAP === false && buildingFoundation is BWALL === false)
-            {
-               _loc15_ += buildingFoundation.health;
-               _loc16_ += buildingFoundation.maxHealth;
-            }
-         }
-         LOGGER.Stat([17, 1, int(_tempLoot.r1)]);
-         if (_attackerNameArray.length > 0)
-         {
-            if (_loc15_ > _loc16_ * 0.8)
-            {
-               ATTACK.WellDefended(false, GLOBAL.Array2StringB(_attackerNameArray));
-            }
-         }
-         GRID.Clear();
-         MAP.SortDepth();
-         HOUSING.HousingSpace();
-         MONSTERBAITER.Update();
-         if (GLOBAL.mode == GLOBAL.e_BASE_MODE.WMVIEW || GLOBAL.mode == GLOBAL.e_BASE_MODE.WMATTACK)
-         {
-            _lastProcessed = _currentTime;
-         }
-         Process();
-         RADIO.Setup();
-      }
+			var buildingTypeCounts:Dictionary = new Dictionary();
+			for each (building in _buildingData)
+			{
+				if (building)
+				{
+				if (building.t)
+				{
+					buildingTypeCounts[building.t] ||= 0;
+					++buildingTypeCounts[building.t];
+				}
+				if(building.t == 27){ //[TROJAN HORSE REMOVED] && !BASE.isMainYard
+					continue;
+				}
+				if(building.rE == 1 && (GLOBAL.mode == GLOBAL.e_BASE_MODE.ATTACK || GLOBAL.mode == GLOBAL.e_BASE_MODE.IATTACK)){
+					building.rE = 0;
+				}
+				if (!(building.t == 53 || building.t == 54))
+				{
+					currentBuilding = building;
+					if (building.t == 18)
+					{
+						building.t = 17;
+						building.l = 2;
+					}
+					if (building.t == 14)
+					{
+					}
+					if (building.t == 7)
+					{
+						counter++;
+					}
+					buildingFoundation = addBuildingC(building.t);
+					if (buildingFoundation)
+					{
+						foundationType = buildingFoundation._type;
+					}
+					if (building.t == 16 && _rawMonsters && Boolean(_rawMonsters.hcc))
+					{
+						building.mq = _rawMonsters.hcc;
+					}
+					if (building.t == 13 && _rawMonsters && Boolean(_rawMonsters.h) && Boolean(_rawMonsters.hid))
+					{
+						rawMonstersHidLength = int(_rawMonsters.hid.length);
+						rawMonstersHLength = int(_rawMonsters.h.length);
+						rawMonsterIndex = 0;
+						while (rawMonsterIndex < rawMonstersHidLength && rawMonsterIndex < rawMonstersHLength)
+						{
+							if (_rawMonsters.hid[rawMonsterIndex] == building.id)
+							{
+							if (_rawMonsters.h[rawMonsterIndex].length > 0)
+							{
+								building.rIP = _rawMonsters.h[rawMonsterIndex][0];
+								building.rCP = _rawMonsters.h[rawMonsterIndex][1];
+							}
+							else
+							{
+								building.rIP = "";
+								building.rCP = 0;
+							}
+							if (Boolean(_rawMonsters.hstage) && _rawMonsters.hstage.length > rawMonsterIndex)
+							{
+								building.rPS = _rawMonsters.hstage[rawMonsterIndex];
+							}
+							if (building.id == _rawMonsters.hid[rawMonsterIndex] && _rawMonsters.h[rawMonsterIndex].length > 2)
+							{
+								building.mq = _rawMonsters.h[rawMonsterIndex][2];
+							}
+							else
+							{
+								building.mq = [];
+							}
+							building.saved = _rawMonsters.saved;
+							break;
+							}
+							rawMonsterIndex++;
+						}
+					}
+					if (buildingFoundation)
+					{
+						if (Boolean(_buildingHealthData) && building.id in _buildingHealthData)
+						{
+							building.hp = _buildingHealthData[building.id];
+						}
+						else if (MapRoomManager.instance.isInMapRoom3 && !BASE.isInfernoMainYardOrOutpost)
+						{
+							delete building.hp;
+						}
+						buildingFoundation.Setup(building);
+						if (buildingFoundation._id > _buildingCount)
+						{
+							_buildingCount = buildingFoundation._id;
+						}
+						if (buildingFoundation is ICoreBuilding)
+						{
+							isCoreBuilding = true;
+						}
+						buildingCount++;
+					}
+				}
+				}
+			}
+			BFOUNDATION.redrawAllShadowData();
+			_buildingHealthData = null;
+			_buildingData = null;
+			if (buildingCount == 0)
+			{
+				if (isOutpost && !MapRoom3Tutorial.instance.isStarted)
+				{
+					buildingFoundation = addBuildingC(112);
+					buildingFoundation.Setup({"X": 0, "Y": -50, "id": buildingCount++, "t": 112, "l": 1});
+				}
+				else if (BASE.isInfernoMainYardOrOutpost)
+				{
+					buildingFoundation = addBuildingC(14);
+					buildingFoundation.Setup({"X": -100, "Y": 0, "id": buildingCount++, "t": 14, "l": 1});
+					buildingFoundation = addBuildingC(1);
+					buildingFoundation.Setup({"X": 60, "Y": 0, "id": buildingCount++, "t": 1, "l": 1});
+					buildingFoundation = addBuildingC(2);
+					buildingFoundation.Setup({"X": 60, "Y": 70, "id": buildingCount++, "t": 2, "l": 1});
+					buildingFoundation = addBuildingC(6);
+					buildingFoundation.Setup({"X": 130, "Y": 0, "id": buildingCount++, "t": 6, "l": 3});
+					buildingFoundation = addBuildingC(6);
+					buildingFoundation.Setup({"X": 130, "Y": 80, "id": buildingCount++, "t": 6, "l": 3});
+					_baseExperience.Set(0);
+				}
+				else
+				{
+					buildingFoundation = addBuildingC(14);
+					buildingFoundation.Setup({"X": -70, "Y": 0, "id": buildingCount++, "t": 14, "l": 1});
+					buildingFoundation = addBuildingC(1);
+					buildingFoundation.Setup({"X": 60, "Y": 0, "id": buildingCount++, "t": 1, "l": 1});
+					buildingFoundation._stored.Set(200);
+					buildingFoundation._hpStored = 200;
+					buildingFoundation = addBuildingC(2);
+					buildingFoundation.Setup({"X": 60, "Y": 70, "id": buildingCount++, "t": 2, "l": 1});
+					buildingFoundation = addBuildingC(12);
+					buildingFoundation.Setup({"X": 60, "Y": -70, "id": buildingCount++, "t": 12, "l": 1});
+					_resources.r1.Set(1600);
+					_resources.r2.Set(1600);
+					_deltaResources.r1.Set(1600);
+					_deltaResources.r2.Set(1600);
+					_deltaResources.dirty = true;
+					_baseExperience.Set(0);
+					SOUNDS.TutorialStopMusic();
+				}
+			}
+			else if (isMainYard && !isCoreBuilding)
+			{
+				LOGGER.Log("err", "Town Hall Missing");
+			}
+			var bFoundation:Vector.<Object> = InstanceManager.getInstancesByClass(BFOUNDATION);
+			if (GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD && GLOBAL.townHall && isMainYardOrInfernoMainYard && !GLOBAL._aiDesignMode)
+			{
+				townHallLevel = GLOBAL.townHall._lvl.Get();
+				buildingTypeCount = 0;
+				for each (props in GLOBAL._buildingProps)
+				{
+					if (props.type != "decoration")
+					{
+						buildingTypeCount = 0;
+						foundationIndex = int(bFoundation.length - 1);
+						while (foundationIndex >= 0)
+						{
+							buildingFoundation = bFoundation[foundationIndex] as BFOUNDATION;
+							if (buildingFoundation)
+							{
+								if (buildingFoundation._type == props.id)
+								{
+									buildingTypeCount += 1;
+								}
+								propCount = townHallLevel < props.quantity.length ? int(props.quantity[townHallLevel]) : int(props.quantity[props.quantity.length - 1]);
+								if (buildingTypeCount > propCount)
+								{
+									LOGGER.Log("log", "Too many buildings of type " + buildingFoundation._type + " th " + townHallLevel + " count " + buildingTypeCount);
+									BASE.BuildingDeselect();
+									buildingFoundation.clear();
+									buildingTypeCount--;
+								}
+							}
+							foundationIndex--;
+						}
+					}
+				}
+			}
+			var _loc15_:int = 0;
+			var _loc16_:int = 0;
+			bFoundation = InstanceManager.getInstancesByClass(BFOUNDATION);
+			for each (buildingFoundation in bFoundation)
+			{
+				if (GRID.FromISO(buildingFoundation.x, buildingFoundation.y).x > 1000)
+				{
+					GRID.FindSpace(buildingFoundation);
+				}
+				if (buildingFoundation is BTRAP === false && buildingFoundation is BWALL === false)
+				{
+					_loc15_ += buildingFoundation.health;
+					_loc16_ += buildingFoundation.maxHealth;
+				}
+			}
+			LOGGER.Stat([17, 1, int(_tempLoot.r1)]);
+			if (_attackerNameArray.length > 0)
+			{
+				if (_loc15_ > _loc16_ * 0.8)
+				{
+				ATTACK.WellDefended(false, GLOBAL.Array2StringB(_attackerNameArray));
+				}
+			}
+			GRID.Clear();
+			MAP.SortDepth();
+			HOUSING.HousingSpace();
+			MONSTERBAITER.Update();
+			if (GLOBAL.mode == GLOBAL.e_BASE_MODE.WMVIEW || GLOBAL.mode == GLOBAL.e_BASE_MODE.WMATTACK)
+			{
+				_lastProcessed = _currentTime;
+			}
+			Process();
+			RADIO.Setup();
+    	}
 
-      public static function Process():void
-      {
-         var hatqueue2:Array;
-         var hatcount2:int;
-         var hatcheryInstances:Vector.<Object>;
-         var Post:Function;
-         var building:BFOUNDATION = null;
-         var hatchery:BUILDING13 = null;
-         var lootArray:Array = null;
-         var lootString:String = null;
-         var popupMC:popup_loot = null;
-         PLEASEWAIT.Update(KEYS.Get("msg_processing"));
-         _tmpPercent = 0;
-         HOUSING.Cull();
-         CalcResources();
-         if (_tempLoot)
-         {
-            lootArray = [];
-            if (Boolean(_tempLoot.r1) && _tempLoot.r1 > 0)
-            {
-               BASE.PointsAdd(_tempLoot.r1);
-               lootArray.push([_tempLoot.r1, GLOBAL._resourceNames[0]]);
-            }
-            if (Boolean(_tempLoot.r2) && _tempLoot.r2 > 0)
-            {
-               BASE.PointsAdd(_tempLoot.r2);
-               lootArray.push([_tempLoot.r2, GLOBAL._resourceNames[1]]);
-            }
-            if (Boolean(_tempLoot.r3) && _tempLoot.r3 > 0)
-            {
-               BASE.PointsAdd(_tempLoot.r3);
-               lootArray.push([_tempLoot.r3, GLOBAL._resourceNames[2]]);
-            }
-            if (Boolean(_tempLoot.r4) && _tempLoot.r4 > 0)
-            {
-               BASE.PointsAdd(_tempLoot.r4);
-               lootArray.push([_tempLoot.r4, GLOBAL._resourceNames[3]]);
-            }
-            if (GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD && lootArray.length > 0 && (BASE.isInfernoMainYardOrOutpost || !_tempLoot.isInferno))
-            {
-               Post = function(param1:MouseEvent):void
-               {
-                  POPUPS.Next();
-               };
-               lootString = GLOBAL.Array2String(lootArray);
-               popupMC = new popup_loot();
-               popupMC.tB.htmlText = "<b>" + KEYS.Get("pop_youlooted_title") + "</b>";
-               popupMC.tA.htmlText = KEYS.Get("pop_youlooted", {
-                        "v1": _tempLoot.name,
-                        "v2": lootString
-                     });
-               popupMC.bAction.SetupKey("btn_brag");
-               popupMC.bAction.addEventListener(MouseEvent.CLICK, Post);
-               popupMC.bAction.Highlight = true;
-               POPUPS.Push(popupMC, null, null, null, "loot.png");
-               if (_tempLoot.r1)
-               {
-                  LOGGER.Stat([17, 1, int(_tempLoot.r1)]);
-                  LOGGER.Stat([18, 1, Math.floor(100 / _resources.r1max * int(_tempLoot.r1))]);
-               }
-               if (_tempLoot.r2)
-               {
-                  LOGGER.Stat([17, 2, int(_tempLoot.r2)]);
-                  LOGGER.Stat([18, 2, Math.floor(100 / _resources.r2max * int(_tempLoot.r2))]);
-               }
-               if (_tempLoot.r3)
-               {
-                  LOGGER.Stat([17, 3, int(_tempLoot.r3)]);
-                  LOGGER.Stat([18, 3, Math.floor(100 / _resources.r3max * int(_tempLoot.r3))]);
-               }
-               if (_tempLoot.r4)
-               {
-                  LOGGER.Stat([17, 4, int(_tempLoot.r4)]);
-                  LOGGER.Stat([18, 4, Math.floor(100 / _resources.r4max * int(_tempLoot.r4))]);
-               }
-            }
-         }
-         _baseLevel = BaseLevel().level;
-         _bankedValue = 0;
-         GLOBAL.t = _lastProcessed;
-         _lastProcessedB = _lastProcessed;
-         _catchupTime = _currentTime - _lastProcessed;
-         if (!isInfernoMainYardOrOutpost && !MapRoomManager.instance.isInMapRoom3)
-         {
-            AutoBankManager.autobank(MapRoomManager.instance.isInMapRoom3 ? _currentTime : _currentTime - _lastProcessedGIP, true);
-            BASE.Save(0,false,true);
-         }
-         hatqueue2 = [];
-         hatcount2 = 0;
-         hatcheryInstances = InstanceManager.getInstancesByClass(BUILDING13);
-         for each (hatchery in hatcheryInstances)
-         {
-            hatqueue2[hatcount2] = [hatchery._inProduction, hatchery._countdownProduce.Get()];
-            if (hatchery._monsterQueue)
-            {
-               hatqueue2[hatcount2].push(hatchery._monsterQueue);
-            }
-            hatcount2++;
-         }
-         _timer = getTimer();
-         HideFootprints();
-         startProcessingTimer();
-      }
+    	public static function Process():void
+		{
+			var hatqueue2:Array;
+			var hatcount2:int;
+			var hatcheryInstances:Vector.<Object>;
+			var Post:Function;
+			var building:BFOUNDATION = null;
+			var hatchery:BUILDING13 = null;
+			var lootArray:Array = null;
+			var lootString:String = null;
+			var popupMC:popup_loot = null;
+			PLEASEWAIT.Update(KEYS.Get("msg_processing"));
+			_tmpPercent = 0;
+			HOUSING.Cull();
+			CalcResources();
+			if (_tempLoot)
+			{
+				lootArray = [];
+				if (Boolean(_tempLoot.r1) && _tempLoot.r1 > 0)
+				{
+					BASE.PointsAdd(_tempLoot.r1);
+					lootArray.push([_tempLoot.r1, GLOBAL._resourceNames[0]]);
+				}
+				if (Boolean(_tempLoot.r2) && _tempLoot.r2 > 0)
+				{
+					BASE.PointsAdd(_tempLoot.r2);
+					lootArray.push([_tempLoot.r2, GLOBAL._resourceNames[1]]);
+				}
+				if (Boolean(_tempLoot.r3) && _tempLoot.r3 > 0)
+				{
+					BASE.PointsAdd(_tempLoot.r3);
+					lootArray.push([_tempLoot.r3, GLOBAL._resourceNames[2]]);
+				}
+				if (Boolean(_tempLoot.r4) && _tempLoot.r4 > 0)
+				{
+					BASE.PointsAdd(_tempLoot.r4);
+					lootArray.push([_tempLoot.r4, GLOBAL._resourceNames[3]]);
+				}
+				if (GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD && lootArray.length > 0 && (BASE.isInfernoMainYardOrOutpost || !_tempLoot.isInferno))
+				{
+					Post = function(param1:MouseEvent):void
+					{
+						POPUPS.Next();
+					};
+					lootString = GLOBAL.Array2String(lootArray);
+					popupMC = new popup_loot();
+					popupMC.tB.htmlText = "<b>" + KEYS.Get("pop_youlooted_title") + "</b>";
+					popupMC.tA.htmlText = KEYS.Get("pop_youlooted", {
+						"v1": _tempLoot.name,
+						"v2": lootString
+					});
+					popupMC.bAction.SetupKey("btn_brag");
+					popupMC.bAction.addEventListener(MouseEvent.CLICK, Post);
+					popupMC.bAction.Highlight = true;
+					POPUPS.Push(popupMC, null, null, null, "loot.png");
+					if (_tempLoot.r1)
+					{
+						LOGGER.Stat([17, 1, int(_tempLoot.r1)]);
+						LOGGER.Stat([18, 1, Math.floor(100 / _resources.r1max * int(_tempLoot.r1))]);
+					}
+					if (_tempLoot.r2)
+					{
+						LOGGER.Stat([17, 2, int(_tempLoot.r2)]);
+						LOGGER.Stat([18, 2, Math.floor(100 / _resources.r2max * int(_tempLoot.r2))]);
+					}
+					if (_tempLoot.r3)
+					{
+						LOGGER.Stat([17, 3, int(_tempLoot.r3)]);
+						LOGGER.Stat([18, 3, Math.floor(100 / _resources.r3max * int(_tempLoot.r3))]);
+					}
+					if (_tempLoot.r4)
+					{
+						LOGGER.Stat([17, 4, int(_tempLoot.r4)]);
+						LOGGER.Stat([18, 4, Math.floor(100 / _resources.r4max * int(_tempLoot.r4))]);
+					}
+				}
+			}
+			_baseLevel = BaseLevel().level;
+			_bankedValue = 0;
+			GLOBAL.t = _lastProcessed;
+			_lastProcessedB = _lastProcessed;
+			_catchupTime = _currentTime - _lastProcessed;
+			if (!isInfernoMainYardOrOutpost && !MapRoomManager.instance.isInMapRoom3)
+			{
+				AutoBankManager.autobank(MapRoomManager.instance.isInMapRoom3 ? _currentTime : _currentTime - _lastProcessedGIP, true);
+				BASE.Save(0,false,true);
+			}
+			hatqueue2 = [];
+			hatcount2 = 0;
+			hatcheryInstances = InstanceManager.getInstancesByClass(BUILDING13);
+			for each (hatchery in hatcheryInstances)
+			{
+				hatqueue2[hatcount2] = [hatchery._inProduction, hatchery._countdownProduce.Get()];
+				if (hatchery._monsterQueue)
+				{
+					hatqueue2[hatcount2].push(hatchery._monsterQueue);
+				}
+				hatcount2++;
+			}
+			_timer = getTimer();
+			HideFootprints();
+			startProcessingTimer();
+		}
       
       private static function startProcessingTimer():void
       {
@@ -2323,451 +2323,451 @@ package
          }
       }
 
-      public static function ProcessD():void
-      {
-         var damageCount:int;
-         var bb:int;
-         var upgradeCount:int;
-         var helpedCount:int;
-         var MoreInfo711:Function;
-         var Action:Function;
-         var BragA:Function;
-         var BragB:Function;
-         var building:BFOUNDATION = null;
-         var buildingInstances:Vector.<Object> = null;
-         var helper:int = 0;
-         var needToHealCreeps:Boolean = false;
-         var length:int = 0;
-         var i:int = 0;
-         var popupMCDamaged:popup_damaged = null;
-         var RepairAll:Function = null;
-         var RepairNow:Function = null;
-         var numCreepsDamaged:int = 0;
-         var popupMCCreepDamaged:popup_damaged = null;
-         var StartHealAll:Function = null;
-         var HealShinyNow:Function = null;
-         var hasBigGulp:Boolean = false;
-         var fbPromoTimer:Number = NaN;
-         var fbPromoPopup:MovieClip = null;
-         var promptSPost:Boolean = false;
-         var b:BFOUNDATION = null;
-         var popupMCdamaged:MovieClip = null;
-         var hp:int = 0;
-         var hpMax:int = 0;
-         var popupMCDestroyed:PopupLostMainBase = null;
-         var t:int = getTimer();
-         s_processing = true;
-         if (GLOBAL.mode == GLOBAL.e_BASE_MODE.ATTACK || GLOBAL.mode == GLOBAL.e_BASE_MODE.WMATTACK)
-         {
-            ATTACK.Setup();
-         }
-         if (GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD)
-         {
-            if (CREEPS._creepCount == 0)
-            {
-               buildingInstances = InstanceManager.getInstancesByClass(BFOUNDATION);
-               for each (building in buildingInstances)
-               {
-                  building.GridCost(true);
-               }
-            }
-         }
-         EFFECTS.Process(_catchupTime);
-         if (isMainYard)
-         {
-            CREATURELOCKER.Tick();
-         }
-         if (_tempGifts)
-         {
-            GIFTS.Process(_tempGifts);
-         }
-         if (_tempSentGifts)
-         {
-            GIFTS.ProcessAcceptedGifts(_tempSentGifts);
-         }
-         if (_tempSentInvites)
-         {
-            GIFTS.ProcessAcceptedInvites(_tempSentInvites);
-         }
-         UPDATES.Catchup();
-         HOUSING.Cull();
-         HOUSING.Populate();
-         SOUNDS.Setup();
-         GLOBAL._render = true;
-         GLOBAL._catchup = false;
-         damageCount = 0;
-         buildingInstances ||= InstanceManager.getInstancesByClass(BFOUNDATION);
-         for each (building in buildingInstances)
-         {
-            building.Update(true);
-            if (building.health < building.maxHealth && building._repairing == 0)
-            {
-               damageCount++;
-            }
-            if (building._countdownBuild.Get() + building._countdownUpgrade.Get() + building._countdownFortify.Get() > 0)
-            {
-               upgradeCount++;
-               for each (helper in building._helpList)
-               {
-                  if (helper == LOGIN._playerID)
-                  {
-                     helpedCount++;
-                  }
-               }
-            }
-         }
-         if (GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD && !WMATTACK._inProgress)
-         {
-            if (damageCount > 0)
-            {
-               RepairAll = function(param1:MouseEvent = null):void
-               {
-                  var _loc3_:BFOUNDATION = null;
-                  if (MapRoomManager.instance.isInMapRoom3 && BASE.isOutpost)
-                  {
-                     repairAllBuildingsToMinimumPercentage(0.01);
-                  }
-                  popupMCDamaged.bAction.removeEventListener(MouseEvent.CLICK, RepairAll);
-                  popupMCDamaged.bAction2.removeEventListener(MouseEvent.CLICK, RepairNow);
-                  var _loc2_:Vector.<Object> = InstanceManager.getInstancesByClass(BFOUNDATION);
-                  for each (_loc3_ in _loc2_)
-                  {
-                     if (_loc3_.health < _loc3_.maxHealth && _loc3_._repairing == 0)
-                     {
-                        _loc3_.Repair();
-                     }
-                  }
-                  SOUNDS.Play("repair1", 0.25);
-                  POPUPS.Next();
-               };
-               RepairNow = function(param1:MouseEvent = null):void
-               {
-                  var _loc3_:BFOUNDATION = null;
-                  if (MapRoomManager.instance.isInMapRoom3 && BASE.isOutpost)
-                  {
-                     repairAllBuildingsToMinimumPercentage(0.01);
-                  }
-                  popupMCDamaged.bAction.removeEventListener(MouseEvent.CLICK, RepairAll);
-                  popupMCDamaged.bAction2.removeEventListener(MouseEvent.CLICK, RepairNow);
-                  var _loc2_:Vector.<Object> = InstanceManager.getInstancesByClass(BFOUNDATION);
-                  for each (_loc3_ in _loc2_)
-                  {
-                     if (_loc3_.health < _loc3_.maxHealth && _loc3_._repairing == 0)
-                     {
-                        _loc3_.Repair();
-                     }
-                  }
-                  STORE.ShowB(3, 1, ["FIX"], true);
-                  POPUPS.Next();
-               };
-               popupMCDamaged = new popup_damaged();
-               popupMCDamaged.mcFrame.Setup(false);
-               popupMCDamaged.title.htmlText = "<b>" + KEYS.Get("pop_damaged_title") + "</b>";
-               popupMCDamaged.tA.htmlText = KEYS.Get("pop_damaged", {"v1": damageCount});
-               popupMCDamaged.bAction.SetupKey("pop_damaged_repairall_btn");
-               popupMCDamaged.bAction.addEventListener(MouseEvent.CLICK, RepairAll);
-               popupMCDamaged.bAction2.SetupKey("pop_damaged_repairnow_btn");
-               popupMCDamaged.bAction2.addEventListener(MouseEvent.CLICK, RepairNow);
-               popupMCDamaged.bAction2.Highlight = true;
-               POPUPS.Push(popupMCDamaged, null, null, null, "duct-tape.png");
-               if (damageCount > 30)
-               {
-                  MARKETING.Show("catapult");
-               }
-            }
-            needToHealCreeps = false;
-            length = int(GLOBAL.player.monsterList.length);
-            i = 0;
-            while (i < length && !needToHealCreeps)
-            {
-               if (GLOBAL.player.monsterList[i].needsHeals())
-               {
-                  needToHealCreeps = true;
-               }
-               i++;
-            }
-            if (needToHealCreeps)
-            {
-               StartHealAll = function(param1:MouseEvent = null):void
-               {
-                  popupMCCreepDamaged.bAction.removeEventListener(MouseEvent.CLICK, StartHealAll);
-                  popupMCCreepDamaged.bAction2.removeEventListener(MouseEvent.CLICK, HealShinyNow);
-                  startHealAllHelper();
-               };
-               HealShinyNow = function(param1:MouseEvent = null):void
-               {
-                  popupMCCreepDamaged.bAction.removeEventListener(MouseEvent.CLICK, StartHealAll);
-                  popupMCCreepDamaged.bAction2.removeEventListener(MouseEvent.CLICK, HealShinyNow);
-                  healShinyNowHelper();
-               };
-               numCreepsDamaged = GLOBAL.player.getNumDamagedCreeps();
-               popupMCCreepDamaged = new popup_damaged();
-               popupMCCreepDamaged.mcFrame.Setup(false);
-               popupMCCreepDamaged.title.htmlText = "<b>" + KEYS.Get("pop_injured_title") + "</b>";
-               popupMCCreepDamaged.tA.htmlText = KEYS.Get("pop_injured", {"1": numCreepsDamaged});
-               popupMCCreepDamaged.bAction.SetupKey("btn_startheal");
-               popupMCCreepDamaged.bAction.addEventListener(MouseEvent.CLICK, StartHealAll);
-               popupMCCreepDamaged.bAction2.SetupKey("btn_healnow");
-               popupMCCreepDamaged.bAction2.addEventListener(MouseEvent.CLICK, HealShinyNow);
-               popupMCCreepDamaged.bAction2.Highlight = true;
-               POPUPS.Push(popupMCCreepDamaged, null, null, null, "duct-tape.png");
-            }
-         }
-         INFERNO_EMERGENCE_EVENT.Initialize();
-         if (INFERNO_DESCENT_POPUPS.isInDescent() && MAPROOM_DESCENT._descentLvl < MAPROOM_DESCENT._descentLvlMax && MAPROOM_DESCENT._descentLvl > 0)
-         {
-            INFERNO_DESCENT_POPUPS.ShowTauntDialog(MAPROOM_DESCENT._descentLvl);
-         }
-         FrontPageHandler.initialize();
-         MonsterMadness.initialize();
-         GLOBAL.player.initializeHandlers(loadObject);
-         GLOBAL.player.importPlayerSpecificHandlers(loadObject);
-         if (Boolean(GLOBAL.attackingPlayer) && GLOBAL.attackingPlayer != GLOBAL.player)
-         {
-            GLOBAL.attackingPlayer.importPlayerSpecificHandlers(loadObject);
-         }
-         if (!isInfernoMainYardOrOutpost)
-         {
-            MonsterMadness.updateKorathStats();
-         }
-         FrontPageHandler.setup(loadObject["frontpage"]);
-         FrontPageHandler.showPopup();
-         if (GLOBAL.DOES_USE_SCROLL)
-         {
-            MouseWheelEnabler.init(MAP.stage);
-         }
-         bb = 0;
-         upgradeCount = 0;
-         helpedCount = 0;
-         if (!GLOBAL._flags.viximo && !GLOBAL._flags.kongregate)
-         {
-         }
-         if (is711Valid())
-         {
-            if (GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD && isMainYard && TUTORIAL._stage > 200 && GLOBAL._sessionCount >= 5)
-            {
-               if (!GLOBAL._flags.viximo && !GLOBAL._flags.kongregate && !GLOBAL._displayedPromoNew && !_showingWhatsNew)
-               {
-                  hasBigGulp = Boolean(_buildingsStored["b120"]);
-                  if (!hasBigGulp)
-                  {
-                     buildingInstances ||= InstanceManager.getInstancesByClass(BDECORATION);
-                     for each (building in buildingInstances)
-                     {
-                        if (building._type == 120)
-                        {
-                           hasBigGulp = true;
-                           break;
-                        }
-                     }
-                  }
-                  if (!hasBigGulp)
-                  {
-                     fbPromoTimer = GLOBAL.Timestamp() + GLOBAL.StatGet("fbpromotimer");
-                     if (GLOBAL.StatGet("fbpromotimer") == 0 || GLOBAL.StatGet("fbpromotimer") > 0 && GLOBAL.Timestamp() > GLOBAL.StatGet("fbpromotimer") + GLOBAL._fbPromoTimer)
-                     {
-                        if (GLOBAL._countryCode == "us")
-                        {
-                           MoreInfo711 = function(param1:MouseEvent):void
-                           {
-                              GLOBAL.gotoURL("http://on.fb.me/mTMRnd", null, true, null);
-                              POPUPS.Next();
-                           };
-                           fbPromoPopup = new FBPROMO_711_CLIP();
-                           fbPromoPopup.bAction3.buttonMode = true;
-                           fbPromoPopup.bAction3.useHandCursor = true;
-                           fbPromoPopup.bAction3.mouseChildren = false;
-                           fbPromoPopup.bAction3.txt.htmlText = KEYS.Get("btn_goldenbiggulp");
-                           fbPromoPopup.bAction3.bg.visible = false;
-                           fbPromoPopup.bAction3.addEventListener(MouseEvent.CLICK, MoreInfo711);
-                           fbPromoPopup.bAction4.buttonMode = true;
-                           fbPromoPopup.bAction4.useHandCursor = true;
-                           fbPromoPopup.bAction4.mouseChildren = false;
-                           fbPromoPopup.bAction4.txt.htmlText = KEYS.Get("btn_hatcheryoverdrives");
-                           fbPromoPopup.bAction4.addEventListener(MouseEvent.CLICK, MoreInfo711);
-                           fbPromoPopup.bAction4.bg.visible = false;
-                           fbPromoPopup.bInfo.useHandCursor = true;
-                           fbPromoPopup.bInfo.buttonMode = true;
-                           fbPromoPopup.bInfo.mouseChildren = false;
-                           fbPromoPopup.bInfo.addEventListener(MouseEvent.CLICK, MoreInfo711);
-                           POPUPS.Push(fbPromoPopup, BUY.logFB711PromoShown, null, null, null, false);
-                           GLOBAL.StatSet("fbpromotimer", GLOBAL.Timestamp());
-                           GLOBAL._displayedPromoNew = true;
-                        }
-                     }
-                  }
-               }
-            }
-         }
-         if (GLOBAL._flags && GLOBAL._flags.fbcncpshow == 2 && GLOBAL._fbcncp > 0)
-         {
-            BUY.FBCNcpCheckEligibility();
-         }
-         if (GLOBAL.mode == GLOBAL.e_BASE_MODE.HELP && !(MapRoomManager.instance.isInMapRoom3 && BASE.isOutpost))
-         {
-            if (upgradeCount > 0)
-            {
-               if (upgradeCount - helpedCount == 1)
-               {
-                  GLOBAL.Message(KEYS.Get("base_pleasehelp"));
-               }
-               if (upgradeCount - helpedCount > 1)
-               {
-                  GLOBAL.Message(KEYS.Get("base_pleasehelpx", {"v1": upgradeCount - helpedCount}));
-               }
-            }
-            else
-            {
-               GLOBAL.Message(KEYS.Get("base_nohelpneeded"));
-            }
-         }
-         UI2.Update();
-         PLEASEWAIT.Hide();
-         CalcResources();
-         UI2._scrollMap = true;
-         if (GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD)
-         {
-            if (!WMATTACK._inProgress)
-            {
-               UI2.Show("top");
-               UI2.Show("bottom");
-            }
-         }
-         else if (GLOBAL.mode == GLOBAL.e_BASE_MODE.ATTACK || GLOBAL.mode == GLOBAL.e_BASE_MODE.WMATTACK)
-         {
-            UI2.Show("top");
-         }
-         else if (!WMATTACK._inProgress)
-         {
-            UI2.Show("top");
-         }
-         _baseLevel = BaseLevel().level;
-         _loadTime = GLOBAL.Timestamp();
-         _lastSaved = GLOBAL.Timestamp();
-         Save();
-         buildingInstances ||= InstanceManager.getInstancesByClass(BFOUNDATION);
-         for each (building in buildingInstances)
-         {
-            if (!building._repairing && building.health > 0 && building.health <= building.maxHealth * 0.5)
-            {
-               Smoke.CreateStream(new Point(building.x, building.y + building._middle));
-            }
-         }
-         QUESTS.TutorialCheck();
-         QUESTS.Check();
-         PATHING.ResetCosts();
-         TUTORIAL.Process();
-        //  MUSHROOMS.Setup();
-         NewPopupSystem.instance.CheckAll(true);
-         if (GLOBAL.mode == "help" && !(MapRoomManager.instance.isInMapRoom3 && BASE.isOutpost))
-         {
-            promptSPost = false;
-            for each (b in buildingInstances)
-            {
-               if (b.health < b.maxHealth && b._repairing == 0)
-               {
-                  promptSPost = true;
-               }
-            }
-            if (GLOBAL.Timestamp() - 24 * 3600 < BASE._damagedBaseWarnTime)
-            {
-               promptSPost = false;
-            }
-            if (promptSPost)
-            {
-               Action = function(param1:MouseEvent = null):void
-               {
-                  UPDATES.Create(["DBU"]);
-                  POPUPS.Next();
-               };
-               popupMCdamaged = new popup_damagedbase_onvisit();
-               popupMCdamaged.title_txt.htmlText = "<b>" + KEYS.Get("base_damaged_title") + "</b>";
-               popupMCdamaged.body_txt.htmlText = KEYS.Get("base_damaged_body", {"v1": BASE._ownerName});
-               popupMCdamaged.bAction.SetupKey("base_damaged_alert_btn");
-               popupMCdamaged.bAction.Highlight = true;
-               popupMCdamaged.bAction.addEventListener(MouseEvent.CLICK, Action);
-               POPUPS.Push(popupMCdamaged);
-            }
-         }
-         LOGGER.Stat([29, GLOBAL.mode]);
-         LOGGER.Stat([88, GLOBAL._loadmode, m_yardType]);
-         _loading = false;
-         if (_takeoverFirstOpen)
-         {
-            WMATTACK._history.lastAttack = GLOBAL.Timestamp() + 12 * 60 * 60;
-            WMATTACK._history.sessionsSinceLastAttack = 0;
-            if (WMATTACK._history.nextAttack)
-            {
-               delete WMATTACK._history.nextAttack;
-            }
-            if (WMATTACK._history.queued)
-            {
-               delete WMATTACK._history.queued;
-            }
-            if (_takeoverFirstOpen == 1)
-            {
-               BragA = function():void
-               {
-                  POPUPS.Next();
-               };
-               ACHIEVEMENTS.Check("wmoutpost", 1);
-               POPUPS.DisplayGeneric(KEYS.Get("venividivici"), KEYS.Get("destroyedbase_takeover", {"v1": _takeoverPreviousOwnersName}), KEYS.Get("btn_brag"), "building-outpost.png", BragA);
-            }
-            else if (_takeoverFirstOpen == 2)
-            {
-               BragB = function():void
-               {
-                  POPUPS.Next();
-               };
-               ++ACHIEVEMENTS._stats.playeroutpost;
-               ACHIEVEMENTS.Check();
-               POPUPS.DisplayGeneric(KEYS.Get("venividivici"), KEYS.Get("destroyedoutpost_takeover", {"v1": _takeoverPreviousOwnersName}), KEYS.Get("btn_brag"), "building-outpost.png", BragB);
-            }
-         }
-         _takeoverFirstOpen = 0;
-         if (GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD)
-         {
-            if (isOutpostMapRoom2Only || isOutpostInfernoOnly)
-            {
-               if (_buildingCount == 1)
-               {
-                  POPUPS.Push(new popup_prefab_help());
-               }
-            }
-            else
-            {
-               MARKETING.Process();
-               if (GLOBAL._flags.trialpayDealspot == 1 && (TUTORIAL._stage > 200 && GLOBAL._sessionCount > 10))
-               {
-                  UI2._top.InitDealspot();
-               }
-               hp = 0;
-               hpMax = 0;
-               buildingInstances ||= InstanceManager.getInstancesByClass(BFOUNDATION);
-               for each (building in buildingInstances)
-               {
-                  if (building._class != "trap" && building._class != "wall")
-                  {
-                     hp += building.health;
-                     hpMax += building.maxHealth;
-                  }
-               }
-               if (!ALLIANCES._myAlliance)
-               {
-                  if (GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD && !GLOBAL._empireDestroyedShown && MapRoomManager.instance.isInMapRoom2 && isMainYard && !WMATTACK._inProgress && (GLOBAL._mapOutpost.length == 0 || GLOBAL._empireDestroyed == 1) && hp < hpMax * 0.1)
-                  {
-                     GLOBAL._empireDestroyedShown = true;
-                     popupMCDestroyed = new PopupLostMainBase();
-                     popupMCDestroyed.Setup();
-                     POPUPS.Push(popupMCDestroyed, null, null, null, "base-destroyed.png");
-                  }
-               }
-            }
-         }
-         GLOBAL.CallJS("cc.injectFriendsSwf", null, false);
-         s_processing = false;
-         HideFootprints();
-      }
+		public static function ProcessD():void
+		{
+			var damageCount:int;
+			var bb:int;
+			var upgradeCount:int;
+			var helpedCount:int;
+			var MoreInfo711:Function;
+			var Action:Function;
+			var BragA:Function;
+			var BragB:Function;
+			var building:BFOUNDATION = null;
+			var buildingInstances:Vector.<Object> = null;
+			var helper:int = 0;
+			var needToHealCreeps:Boolean = false;
+			var length:int = 0;
+			var i:int = 0;
+			var popupMCDamaged:popup_damaged = null;
+			var RepairAll:Function = null;
+			var RepairNow:Function = null;
+			var numCreepsDamaged:int = 0;
+			var popupMCCreepDamaged:popup_damaged = null;
+			var StartHealAll:Function = null;
+			var HealShinyNow:Function = null;
+			var hasBigGulp:Boolean = false;
+			var fbPromoTimer:Number = NaN;
+			var fbPromoPopup:MovieClip = null;
+			var promptSPost:Boolean = false;
+			var b:BFOUNDATION = null;
+			var popupMCdamaged:MovieClip = null;
+			var hp:int = 0;
+			var hpMax:int = 0;
+			var popupMCDestroyed:PopupLostMainBase = null;
+			var t:int = getTimer();
+			s_processing = true;
+			if (GLOBAL.mode == GLOBAL.e_BASE_MODE.ATTACK || GLOBAL.mode == GLOBAL.e_BASE_MODE.WMATTACK)
+			{
+				ATTACK.Setup();
+			}
+			if (GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD)
+			{
+				if (CREEPS._creepCount == 0)
+				{
+				buildingInstances = InstanceManager.getInstancesByClass(BFOUNDATION);
+				for each (building in buildingInstances)
+				{
+					building.GridCost(true);
+				}
+				}
+			}
+			EFFECTS.Process(_catchupTime);
+			if (isMainYard)
+			{
+				CREATURELOCKER.Tick();
+			}
+			if (_tempGifts)
+			{
+				GIFTS.Process(_tempGifts);
+			}
+			if (_tempSentGifts)
+			{
+				GIFTS.ProcessAcceptedGifts(_tempSentGifts);
+			}
+			if (_tempSentInvites)
+			{
+				GIFTS.ProcessAcceptedInvites(_tempSentInvites);
+			}
+			UPDATES.Catchup();
+			HOUSING.Cull();
+			HOUSING.Populate();
+			SOUNDS.Setup();
+			GLOBAL._render = true;
+			GLOBAL._catchup = false;
+			damageCount = 0;
+			buildingInstances ||= InstanceManager.getInstancesByClass(BFOUNDATION);
+			for each (building in buildingInstances)
+			{
+				building.Update(true);
+				if (building.health < building.maxHealth && building._repairing == 0)
+				{
+				damageCount++;
+				}
+				if (building._countdownBuild.Get() + building._countdownUpgrade.Get() + building._countdownFortify.Get() > 0)
+				{
+				upgradeCount++;
+				for each (helper in building._helpList)
+				{
+					if (helper == LOGIN._playerID)
+					{
+						helpedCount++;
+					}
+				}
+				}
+			}
+			if (GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD && !WMATTACK._inProgress)
+			{
+				if (damageCount > 0)
+				{
+				RepairAll = function(param1:MouseEvent = null):void
+				{
+					var _loc3_:BFOUNDATION = null;
+					if (MapRoomManager.instance.isInMapRoom3 && BASE.isOutpost)
+					{
+						repairAllBuildingsToMinimumPercentage(0.01);
+					}
+					popupMCDamaged.bAction.removeEventListener(MouseEvent.CLICK, RepairAll);
+					popupMCDamaged.bAction2.removeEventListener(MouseEvent.CLICK, RepairNow);
+					var _loc2_:Vector.<Object> = InstanceManager.getInstancesByClass(BFOUNDATION);
+					for each (_loc3_ in _loc2_)
+					{
+						if (_loc3_.health < _loc3_.maxHealth && _loc3_._repairing == 0)
+						{
+							_loc3_.Repair();
+						}
+					}
+					SOUNDS.Play("repair1", 0.25);
+					POPUPS.Next();
+				};
+				RepairNow = function(param1:MouseEvent = null):void
+				{
+					var _loc3_:BFOUNDATION = null;
+					if (MapRoomManager.instance.isInMapRoom3 && BASE.isOutpost)
+					{
+						repairAllBuildingsToMinimumPercentage(0.01);
+					}
+					popupMCDamaged.bAction.removeEventListener(MouseEvent.CLICK, RepairAll);
+					popupMCDamaged.bAction2.removeEventListener(MouseEvent.CLICK, RepairNow);
+					var _loc2_:Vector.<Object> = InstanceManager.getInstancesByClass(BFOUNDATION);
+					for each (_loc3_ in _loc2_)
+					{
+						if (_loc3_.health < _loc3_.maxHealth && _loc3_._repairing == 0)
+						{
+							_loc3_.Repair();
+						}
+					}
+					STORE.ShowB(3, 1, ["FIX"], true);
+					POPUPS.Next();
+				};
+				popupMCDamaged = new popup_damaged();
+				popupMCDamaged.mcFrame.Setup(false);
+				popupMCDamaged.title.htmlText = "<b>" + KEYS.Get("pop_damaged_title") + "</b>";
+				popupMCDamaged.tA.htmlText = KEYS.Get("pop_damaged", {"v1": damageCount});
+				popupMCDamaged.bAction.SetupKey("pop_damaged_repairall_btn");
+				popupMCDamaged.bAction.addEventListener(MouseEvent.CLICK, RepairAll);
+				popupMCDamaged.bAction2.SetupKey("pop_damaged_repairnow_btn");
+				popupMCDamaged.bAction2.addEventListener(MouseEvent.CLICK, RepairNow);
+				popupMCDamaged.bAction2.Highlight = true;
+				POPUPS.Push(popupMCDamaged, null, null, null, "duct-tape.png");
+				if (damageCount > 30)
+				{
+					MARKETING.Show("catapult");
+				}
+				}
+				needToHealCreeps = false;
+				length = int(GLOBAL.player.monsterList.length);
+				i = 0;
+				while (i < length && !needToHealCreeps)
+				{
+				if (GLOBAL.player.monsterList[i].needsHeals())
+				{
+					needToHealCreeps = true;
+				}
+				i++;
+				}
+				if (needToHealCreeps)
+				{
+				StartHealAll = function(param1:MouseEvent = null):void
+				{
+					popupMCCreepDamaged.bAction.removeEventListener(MouseEvent.CLICK, StartHealAll);
+					popupMCCreepDamaged.bAction2.removeEventListener(MouseEvent.CLICK, HealShinyNow);
+					startHealAllHelper();
+				};
+				HealShinyNow = function(param1:MouseEvent = null):void
+				{
+					popupMCCreepDamaged.bAction.removeEventListener(MouseEvent.CLICK, StartHealAll);
+					popupMCCreepDamaged.bAction2.removeEventListener(MouseEvent.CLICK, HealShinyNow);
+					healShinyNowHelper();
+				};
+				numCreepsDamaged = GLOBAL.player.getNumDamagedCreeps();
+				popupMCCreepDamaged = new popup_damaged();
+				popupMCCreepDamaged.mcFrame.Setup(false);
+				popupMCCreepDamaged.title.htmlText = "<b>" + KEYS.Get("pop_injured_title") + "</b>";
+				popupMCCreepDamaged.tA.htmlText = KEYS.Get("pop_injured", {"1": numCreepsDamaged});
+				popupMCCreepDamaged.bAction.SetupKey("btn_startheal");
+				popupMCCreepDamaged.bAction.addEventListener(MouseEvent.CLICK, StartHealAll);
+				popupMCCreepDamaged.bAction2.SetupKey("btn_healnow");
+				popupMCCreepDamaged.bAction2.addEventListener(MouseEvent.CLICK, HealShinyNow);
+				popupMCCreepDamaged.bAction2.Highlight = true;
+				POPUPS.Push(popupMCCreepDamaged, null, null, null, "duct-tape.png");
+				}
+			}
+			INFERNO_EMERGENCE_EVENT.Initialize();
+			if (INFERNO_DESCENT_POPUPS.isInDescent() && MAPROOM_DESCENT._descentLvl < MAPROOM_DESCENT._descentLvlMax && MAPROOM_DESCENT._descentLvl > 0)
+			{
+				INFERNO_DESCENT_POPUPS.ShowTauntDialog(MAPROOM_DESCENT._descentLvl);
+			}
+			FrontPageHandler.initialize();
+			MonsterMadness.initialize();
+			GLOBAL.player.initializeHandlers(loadObject);
+			GLOBAL.player.importPlayerSpecificHandlers(loadObject);
+			if (Boolean(GLOBAL.attackingPlayer) && GLOBAL.attackingPlayer != GLOBAL.player)
+			{
+				GLOBAL.attackingPlayer.importPlayerSpecificHandlers(loadObject);
+			}
+			if (!isInfernoMainYardOrOutpost)
+			{
+				MonsterMadness.updateKorathStats();
+			}
+			FrontPageHandler.setup(loadObject["frontpage"]);
+			FrontPageHandler.showPopup();
+			if (GLOBAL.DOES_USE_SCROLL)
+			{
+				MouseWheelEnabler.init(MAP.stage);
+			}
+			bb = 0;
+			upgradeCount = 0;
+			helpedCount = 0;
+			if (!GLOBAL._flags.viximo && !GLOBAL._flags.kongregate)
+			{
+			}
+			if (is711Valid())
+			{
+				if (GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD && isMainYard && TUTORIAL._stage > 200 && GLOBAL._sessionCount >= 5)
+				{
+					if (!GLOBAL._flags.viximo && !GLOBAL._flags.kongregate && !GLOBAL._displayedPromoNew && !_showingWhatsNew)
+					{
+						hasBigGulp = Boolean(_buildingsStored["b120"]);
+						if (!hasBigGulp)
+						{
+							buildingInstances ||= InstanceManager.getInstancesByClass(BDECORATION);
+							for each (building in buildingInstances)
+							{
+								if (building._type == 120)
+								{
+									hasBigGulp = true;
+									break;
+								}
+							}
+						}
+						if (!hasBigGulp)
+						{
+							fbPromoTimer = GLOBAL.Timestamp() + GLOBAL.StatGet("fbpromotimer");
+							if (GLOBAL.StatGet("fbpromotimer") == 0 || GLOBAL.StatGet("fbpromotimer") > 0 && GLOBAL.Timestamp() > GLOBAL.StatGet("fbpromotimer") + GLOBAL._fbPromoTimer)
+							{
+								if (GLOBAL._countryCode == "us")
+								{
+									MoreInfo711 = function(param1:MouseEvent):void
+									{
+										GLOBAL.gotoURL("http://on.fb.me/mTMRnd", null, true, null);
+										POPUPS.Next();
+									};
+									fbPromoPopup = new FBPROMO_711_CLIP();
+									fbPromoPopup.bAction3.buttonMode = true;
+									fbPromoPopup.bAction3.useHandCursor = true;
+									fbPromoPopup.bAction3.mouseChildren = false;
+									fbPromoPopup.bAction3.txt.htmlText = KEYS.Get("btn_goldenbiggulp");
+									fbPromoPopup.bAction3.bg.visible = false;
+									fbPromoPopup.bAction3.addEventListener(MouseEvent.CLICK, MoreInfo711);
+									fbPromoPopup.bAction4.buttonMode = true;
+									fbPromoPopup.bAction4.useHandCursor = true;
+									fbPromoPopup.bAction4.mouseChildren = false;
+									fbPromoPopup.bAction4.txt.htmlText = KEYS.Get("btn_hatcheryoverdrives");
+									fbPromoPopup.bAction4.addEventListener(MouseEvent.CLICK, MoreInfo711);
+									fbPromoPopup.bAction4.bg.visible = false;
+									fbPromoPopup.bInfo.useHandCursor = true;
+									fbPromoPopup.bInfo.buttonMode = true;
+									fbPromoPopup.bInfo.mouseChildren = false;
+									fbPromoPopup.bInfo.addEventListener(MouseEvent.CLICK, MoreInfo711);
+									POPUPS.Push(fbPromoPopup, BUY.logFB711PromoShown, null, null, null, false);
+									GLOBAL.StatSet("fbpromotimer", GLOBAL.Timestamp());
+									GLOBAL._displayedPromoNew = true;
+								}
+							}
+						}
+					}
+				}
+			}
+			if (GLOBAL._flags && GLOBAL._flags.fbcncpshow == 2 && GLOBAL._fbcncp > 0)
+			{
+				BUY.FBCNcpCheckEligibility();
+			}
+			if (GLOBAL.mode == GLOBAL.e_BASE_MODE.HELP && !(MapRoomManager.instance.isInMapRoom3 && BASE.isOutpost))
+			{
+				if (upgradeCount > 0)
+				{
+					if (upgradeCount - helpedCount == 1)
+					{
+						GLOBAL.Message(KEYS.Get("base_pleasehelp"));
+					}
+					if (upgradeCount - helpedCount > 1)
+					{
+						GLOBAL.Message(KEYS.Get("base_pleasehelpx", {"v1": upgradeCount - helpedCount}));
+					}
+				}
+				else
+				{
+					GLOBAL.Message(KEYS.Get("base_nohelpneeded"));
+				}
+			}
+			UI2.Update();
+			PLEASEWAIT.Hide();
+			CalcResources();
+			UI2._scrollMap = true;
+			if (GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD)
+			{
+				if (!WMATTACK._inProgress)
+				{
+					UI2.Show("top");
+					UI2.Show("bottom");
+				}
+			}
+			else if (GLOBAL.mode == GLOBAL.e_BASE_MODE.ATTACK || GLOBAL.mode == GLOBAL.e_BASE_MODE.WMATTACK)
+			{
+				UI2.Show("top");
+			}
+			else if (!WMATTACK._inProgress)
+			{
+				UI2.Show("top");
+			}
+			_baseLevel = BaseLevel().level;
+			_loadTime = GLOBAL.Timestamp();
+			_lastSaved = GLOBAL.Timestamp();
+			Save();
+			buildingInstances ||= InstanceManager.getInstancesByClass(BFOUNDATION);
+			for each (building in buildingInstances)
+			{
+				if (!building._repairing && building.health > 0 && building.health <= building.maxHealth * 0.5)
+				{
+				Smoke.CreateStream(new Point(building.x, building.y + building._middle));
+				}
+			}
+			QUESTS.TutorialCheck();
+			QUESTS.Check();
+			PATHING.ResetCosts();
+			TUTORIAL.Process();
+			//  MUSHROOMS.Setup();
+			NewPopupSystem.instance.CheckAll(true);
+			if (GLOBAL.mode == "help" && !(MapRoomManager.instance.isInMapRoom3 && BASE.isOutpost))
+			{
+				promptSPost = false;
+				for each (b in buildingInstances)
+				{
+					if (b.health < b.maxHealth && b._repairing == 0)
+					{
+						promptSPost = true;
+					}
+				}
+				if (GLOBAL.Timestamp() - 24 * 3600 < BASE._damagedBaseWarnTime)
+				{
+					promptSPost = false;
+				}
+				if (promptSPost)
+				{
+					Action = function(param1:MouseEvent = null):void
+					{
+						UPDATES.Create(["DBU"]);
+						POPUPS.Next();
+					};
+					popupMCdamaged = new popup_damagedbase_onvisit();
+					popupMCdamaged.title_txt.htmlText = "<b>" + KEYS.Get("base_damaged_title") + "</b>";
+					popupMCdamaged.body_txt.htmlText = KEYS.Get("base_damaged_body", {"v1": BASE._ownerName});
+					popupMCdamaged.bAction.SetupKey("base_damaged_alert_btn");
+					popupMCdamaged.bAction.Highlight = true;
+					popupMCdamaged.bAction.addEventListener(MouseEvent.CLICK, Action);
+					POPUPS.Push(popupMCdamaged);
+				}
+			}
+			LOGGER.Stat([29, GLOBAL.mode]);
+			LOGGER.Stat([88, GLOBAL._loadmode, m_yardType]);
+			_loading = false;
+			if (_takeoverFirstOpen)
+			{
+				WMATTACK._history.lastAttack = GLOBAL.Timestamp() + 12 * 60 * 60;
+				WMATTACK._history.sessionsSinceLastAttack = 0;
+				if (WMATTACK._history.nextAttack)
+				{
+					delete WMATTACK._history.nextAttack;
+				}
+				if (WMATTACK._history.queued)
+				{
+					delete WMATTACK._history.queued;
+				}
+				if (_takeoverFirstOpen == 1)
+				{
+					BragA = function():void
+					{
+						POPUPS.Next();
+					};
+					ACHIEVEMENTS.Check("wmoutpost", 1);
+					POPUPS.DisplayGeneric(KEYS.Get("venividivici"), KEYS.Get("destroyedbase_takeover", {"v1": _takeoverPreviousOwnersName}), KEYS.Get("btn_brag"), "building-outpost.png", BragA);
+				}
+				else if (_takeoverFirstOpen == 2)
+				{
+					BragB = function():void
+					{
+						POPUPS.Next();
+					};
+					++ACHIEVEMENTS._stats.playeroutpost;
+					ACHIEVEMENTS.Check();
+					POPUPS.DisplayGeneric(KEYS.Get("venividivici"), KEYS.Get("destroyedoutpost_takeover", {"v1": _takeoverPreviousOwnersName}), KEYS.Get("btn_brag"), "building-outpost.png", BragB);
+				}
+			}
+			_takeoverFirstOpen = 0;
+			if (GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD)
+			{
+				if (isOutpostMapRoom2Only || isOutpostInfernoOnly)
+				{
+					if (_buildingCount == 1)
+					{
+						POPUPS.Push(new popup_prefab_help());
+					}
+				}
+				else
+				{
+					MARKETING.Process();
+					if (GLOBAL._flags.trialpayDealspot == 1 && (TUTORIAL._stage > 200 && GLOBAL._sessionCount > 10))
+					{
+						UI2._top.InitDealspot();
+					}
+					hp = 0;
+					hpMax = 0;
+					buildingInstances ||= InstanceManager.getInstancesByClass(BFOUNDATION);
+					for each (building in buildingInstances)
+					{
+						if (building._class != "trap" && building._class != "wall")
+						{
+							hp += building.health;
+							hpMax += building.maxHealth;
+						}
+					}
+					if (!ALLIANCES._myAlliance)
+					{
+						if (GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD && !GLOBAL._empireDestroyedShown && MapRoomManager.instance.isInMapRoom2 && isMainYard && !WMATTACK._inProgress && (GLOBAL._mapOutpost.length == 0 || GLOBAL._empireDestroyed == 1) && hp < hpMax * 0.1)
+						{
+							GLOBAL._empireDestroyedShown = true;
+							popupMCDestroyed = new PopupLostMainBase();
+							popupMCDestroyed.Setup();
+							POPUPS.Push(popupMCDestroyed, null, null, null, "base-destroyed.png");
+						}
+					}
+				}
+			}
+			GLOBAL.CallJS("cc.injectFriendsSwf", null, false);
+			s_processing = false;
+			HideFootprints();
+		}
 
       public static function repairAllBuildingsToMinimumPercentage(param1:Number):void
       {
@@ -2947,94 +2947,93 @@ package
          }
       }
 
-      private static function ShowBuildLab(param1:MouseEvent):void
-      {
-         BUILDINGS._buildingID = SiegeLab.ID;
-         BUILDINGS.Show();
-         POPUPS.Next();
-      }
+		private static function ShowBuildLab(param1:MouseEvent):void
+		{
+			BUILDINGS._buildingID = SiegeLab.ID;
+			BUILDINGS.Show();
+			POPUPS.Next();
+		}
 
-      public static function Tick():void
-      {
-         var saveDelay:int = 2;
-         if (GLOBAL._flags.savedelay)
-         {
-            saveDelay = int(GLOBAL._flags.savedelay);
-         }
-         if (_saveCounterA != _saveCounterB)
-         {
-            if (GLOBAL.mode == GLOBAL.e_BASE_MODE.ATTACK && BASE._saveOver != 1)
-            {
-               if (GLOBAL.Timestamp() - _lastSaveRequest > saveDelay * 2 || GLOBAL.Timestamp() - _lastSaved > 15)
-               {
-                  SaveB();
-               }
-            }
-            else if (GLOBAL.mode == GLOBAL.e_BASE_MODE.WMATTACK && BASE._saveOver != 1)
-            {
-               if (GLOBAL.Timestamp() - _lastSaveRequest > saveDelay * 2 || GLOBAL.Timestamp() - _lastSaved > 20)
-               {
-                  SaveB();
-               }
-            }
-            else if (GLOBAL.Timestamp() - _lastSaveRequest >= saveDelay || _pendingPurchase.length > 0 || _loadBase.length > 0 && BASE._saveOver != 1)
-            {
-               SaveB();
-            }
-            if (GLOBAL.mode == GLOBAL.e_BASE_MODE.ATTACK || GLOBAL.mode == GLOBAL.e_BASE_MODE.WMATTACK)
-            {
-               UI2._top.mcSave.gotoAndStop(2 + 2);
-            }
-            else
-            {
-               UI2._top.mcSave.gotoAndStop(2);
-            }
-         }
-         else if (GLOBAL.mode == GLOBAL.e_BASE_MODE.ATTACK || GLOBAL.mode == GLOBAL.e_BASE_MODE.WMATTACK)
-         {
-            UI2._top.mcSave.gotoAndStop(1 + 2);
-         }
-         else
-         {
-            UI2._top.mcSave.gotoAndStop(1);
-         }
-         if (GLOBAL.Timestamp() % 10 == 0)
-         {
-            CHECKER.Check();
-            if (!isInfernoMainYardOrOutpost)
-            {
-               AutoBankManager.autobank();
-            }
-         }
-         var _loc2_:int = int(Math.random() * 10) + 25;
-         if (GLOBAL._flags.pageinterval)
-         {
-            _loc2_ = int(GLOBAL._flags.pageinterval);
-         }
-         if (_lastPaged >= _loc2_ && !_paging && !_saving && GLOBAL.Timestamp() - _lastSaved >= _loc2_)
-         {
-            var activeEvent:* = SPECIALEVENT.getActiveSpecialEvent();
-            if (activeEvent.active)
-            {
-               _blockSave = false;
-               Save(0, false, true);
-               _lastSaved = GLOBAL.Timestamp();
-            }
-            else
-            {
-               Page();
-            }
-         }
-         ++_lastPaged;
-         if (GLOBAL._extraHousing < GLOBAL.Timestamp() && HOUSING._housingUsed.Get() > HOUSING._housingCapacity.Get())
-         {
-            HOUSING.Cull(false);
-            GLOBAL._extraHousing = 0;
-            GLOBAL._extraHousingPower.Set(0);
-            BASE.Save();
-         }
-         ShakeB();
-      }
+		public static function Tick():void
+		{
+			var saveDelay:int = 2;
+			if (GLOBAL._flags.savedelay)
+			{
+				saveDelay = int(GLOBAL._flags.savedelay);
+			}
+			if (_saveCounterA != _saveCounterB)
+			{
+				if (GLOBAL.mode == GLOBAL.e_BASE_MODE.ATTACK && BASE._saveOver != 1)
+				{
+					if (GLOBAL.Timestamp() - _lastSaveRequest > saveDelay * 2 || GLOBAL.Timestamp() - _lastSaved > 15)
+					{
+						SaveB();
+					}
+				}
+				else if (GLOBAL.mode == GLOBAL.e_BASE_MODE.WMATTACK && BASE._saveOver != 1)
+				{
+					if (GLOBAL.Timestamp() - _lastSaveRequest > saveDelay * 2 || GLOBAL.Timestamp() - _lastSaved > 20)
+					{
+						SaveB();
+					}
+				}
+				else if (GLOBAL.Timestamp() - _lastSaveRequest >= saveDelay || _pendingPurchase.length > 0 || _loadBase.length > 0 && BASE._saveOver != 1)
+				{
+					SaveB();
+				}
+				if (GLOBAL.mode == GLOBAL.e_BASE_MODE.ATTACK || GLOBAL.mode == GLOBAL.e_BASE_MODE.WMATTACK)
+				{
+					UI2._top.mcSave.gotoAndStop(2 + 2);
+				}
+				else
+				{
+					UI2._top.mcSave.gotoAndStop(2);
+				}
+			}
+			else if (GLOBAL.mode == GLOBAL.e_BASE_MODE.ATTACK || GLOBAL.mode == GLOBAL.e_BASE_MODE.WMATTACK)
+			{
+				UI2._top.mcSave.gotoAndStop(1 + 2);
+			}
+			else
+			{
+				UI2._top.mcSave.gotoAndStop(1);
+			}
+			if (GLOBAL.Timestamp() % 10 == 0)
+			{
+				CHECKER.Check();
+				if (!isInfernoMainYardOrOutpost && BASE._pendingPurchase.length == 0){
+					AutoBankManager.autobank();
+				}
+			}
+			var _loc2_:int = int(Math.random() * 10) + 25;
+			if (GLOBAL._flags.pageinterval)
+			{
+				_loc2_ = int(GLOBAL._flags.pageinterval);
+			}
+			if (_lastPaged >= _loc2_ && !_paging && !_saving && GLOBAL.Timestamp() - _lastSaved >= _loc2_)
+			{
+				var activeEvent:* = SPECIALEVENT.getActiveSpecialEvent();
+				if (activeEvent.active)
+				{
+					_blockSave = false;
+					Save(0, false, true);
+					_lastSaved = GLOBAL.Timestamp();
+				}
+				else
+				{
+					Page();
+				}
+			}
+			++_lastPaged;
+			if (GLOBAL._extraHousing < GLOBAL.Timestamp() && HOUSING._housingUsed.Get() > HOUSING._housingCapacity.Get())
+			{
+				HOUSING.Cull(false);
+				GLOBAL._extraHousing = 0;
+				GLOBAL._extraHousingPower.Set(0);
+				BASE.Save();
+			}
+			ShakeB();
+		}
 
       public static function Purchase(param1:String, param2:int, param3:String, param4:Boolean = false):Boolean
       {
@@ -3658,30 +3657,6 @@ package
          return _loc1_;
       }
 
-      private static function fixNegativeResourceValues():void
-      {
-         if (_resources.r1.Get() < 0)
-         {
-            LOGGER.Log("err", "Negative twigs reset: " + _resources.r1.Get());
-            Fund(1, _resources.r1.Get() * -1, true);
-         }
-         if (_resources.r2.Get() < 0)
-         {
-            LOGGER.Log("err", "Negative pebbles reset: " + _resources.r2.Get());
-            Fund(2, _resources.r2.Get() * -1, true);
-         }
-         if (_resources.r3.Get() < 0)
-         {
-            LOGGER.Log("err", "Negative putty reset: " + _resources.r3.Get());
-            Fund(3, _resources.r3.Get() * -1, true);
-         }
-         if (_resources.r4.Get() < 0)
-         {
-            LOGGER.Log("err", "Negative goo reset: " + _resources.r4.Get());
-            Fund(4, _resources.r4.Get() * -1, true);
-         }
-      }
-
       private static function getOrderedSaveVariablesFromObject(param1:Object):Array
       {
          var _loc2_:Array = [
@@ -3793,17 +3768,19 @@ package
 			}
 			_saving = true;
 			_saveCounterB = _saveCounterA;
-			if(_resources.r1.Get() < 0){
-				_resources.r1.Set(0);
-			}
-			if(_resources.r2.Get() < 0){
-				_resources.r2.Set(0);
-			}
-			if(_resources.r3.Get() < 0){
-				_resources.r3.Set(0);
-			}
-			if(_resources.r4.Get() < 0){
-				_resources.r4.Set(0);
+			if(!isMainYardOrInfernoMainYard){
+				if(_resources.r1.Get() < 0){
+					_resources.r1.Set(0);
+				}
+				if(_resources.r2.Get() < 0){
+					_resources.r2.Set(0);
+				}
+				if(_resources.r3.Get() < 0){
+					_resources.r3.Set(0);
+				}
+				if(_resources.r4.Get() < 0){
+					_resources.r4.Set(0);
+				}
 			}
 			CalcBaseValue();
 			CalcResources();
@@ -5415,98 +5392,96 @@ package
          return 0;
       }
 
-      public static function Fund(resource_index:int, quantity:Number, param3:Boolean = false, param4:BFOUNDATION = null, force_inferno_resources:Boolean = false, param6:Boolean = true):Number
-      {
-         var current_resources:Object = null;
-         var current_delta:Object = null;
-         var _loc10_:String = null;
-         var _loc11_:* = null;
-         var _loc12_:Number = NaN;
-         quantity = Math.floor(quantity);
-         if (force_inferno_resources && isInfernoMainYardOrOutpost)
-         {
-            force_inferno_resources = false;
-         }
-         if (resource_index < 5)
-         {
-            current_resources = force_inferno_resources ? _iresources : _resources;
-            current_delta = force_inferno_resources ? _ideltaResources : _deltaResources;
-            _loc10_ = "r" + resource_index;
-            _loc11_ = "r" + resource_index + "max";
-            _loc12_ = 0;
-            if (current_resources[_loc10_].Get() < current_resources[_loc11_] || param3)
-            {
-               if (current_resources[_loc10_].Get() + quantity < current_resources[_loc11_] || param3)
-               {
-                  current_resources[_loc10_].Add(quantity);
-                  if (current_delta[_loc10_])
-                  {
-                     current_delta[_loc10_].Add(quantity);
-                  }
-                  else
-                  {
-                     current_delta[_loc10_] = new SecNum(quantity);
-                  }
-                  if (GLOBAL.mode === GLOBAL.e_BASE_MODE.BUILD || GLOBAL.mode === GLOBAL.e_BASE_MODE.IBUILD)
-                  {
-					if(force_inferno_resources){
-						GLOBAL._iresources[_loc10_].Add(quantity);
-					} else {
-						GLOBAL._resources[_loc10_].Add(quantity);
+		public static function Fund(resource_index:int, quantity:Number, param3:Boolean = false, param4:BFOUNDATION = null, force_inferno_resources:Boolean = false, param6:Boolean = true):Number
+		{
+			var current_resources:Object = null;
+			var current_delta:Object = null;
+			var _loc10_:String = null;
+			var _loc11_:* = null;
+			var _loc12_:Number = NaN;
+			quantity = Math.floor(quantity);
+			trace("FUND " + quantity);
+			if (force_inferno_resources && isInfernoMainYardOrOutpost)
+			{
+				force_inferno_resources = false;
+			}
+			if (resource_index < 5)
+			{
+				current_resources = force_inferno_resources ? _iresources : _resources;
+				current_delta = force_inferno_resources ? _ideltaResources : _deltaResources;
+				_loc10_ = "r" + resource_index;
+				_loc11_ = "r" + resource_index + "max";
+				_loc12_ = 0;
+				if (current_resources[_loc10_].Get() < current_resources[_loc11_] || param3)
+				{
+					if (current_resources[_loc10_].Get() + quantity < current_resources[_loc11_] || param3)
+					{
+						current_resources[_loc10_].Add(quantity);
+						if (current_delta[_loc10_])
+						{
+							current_delta[_loc10_].Add(quantity);
+						}
+						else
+						{
+							current_delta[_loc10_] = new SecNum(quantity);
+						}
+						if (GLOBAL.mode === GLOBAL.e_BASE_MODE.BUILD || GLOBAL.mode === GLOBAL.e_BASE_MODE.IBUILD)
+						{
+							if(force_inferno_resources){
+								GLOBAL._iresources[_loc10_].Add(quantity);
+							} else {
+								GLOBAL._resources[_loc10_].Add(quantity);
+							}
+						}
+						current_delta.dirty = true;
+						_loc12_ = quantity;
 					}
-                  }
-                  current_delta.dirty = true;
-                  _loc12_ = quantity;
-               }
-               else
-               {
-                  _loc12_ = current_resources[_loc11_] - current_resources[_loc10_].Get();
-                  current_resources[_loc10_].Set(current_resources[_loc11_]);
-                  if (current_delta[_loc10_])
-                  {
-                     current_delta[_loc10_].Add(Math.floor(_loc12_));
-                  }
-                  else
-                  {
-                     current_delta[_loc10_] = new SecNum(Math.floor(_loc12_));
-                  }
-                  if (GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD || GLOBAL.mode === GLOBAL.e_BASE_MODE.IBUILD)
-                  {
-					if(force_inferno_resources){
-                     	GLOBAL._iresources[_loc10_].Add(Math.floor(_loc12_));
-					} else {
-						GLOBAL._resources[_loc10_].Add(Math.floor(_loc12_));
+					else
+					{
+						_loc12_ = current_resources[_loc11_] - current_resources[_loc10_].Get();
+						current_resources[_loc10_].Set(current_resources[_loc11_]);
+						if (current_delta[_loc10_])
+						{
+							current_delta[_loc10_].Add(Math.floor(_loc12_));
+						}
+						else
+						{
+							current_delta[_loc10_] = new SecNum(Math.floor(_loc12_));
+						}
+						if (GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD || GLOBAL.mode === GLOBAL.e_BASE_MODE.IBUILD)
+						{
+							if(force_inferno_resources){
+								GLOBAL._iresources[_loc10_].Add(Math.floor(_loc12_));
+							} else {
+								GLOBAL._resources[_loc10_].Add(Math.floor(_loc12_));
+							}
+						}
+						current_delta.dirty = true;
 					}
-                  }
-                  current_delta.dirty = true;
-               }
-               _bankedValue += _loc12_;
-               _bankedTime = GLOBAL.Timestamp();
-               if ((GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD || GLOBAL.mode === GLOBAL.e_BASE_MODE.IBUILD) && !force_inferno_resources)
-               {
-               }
-            }
-            else if ((GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD || GLOBAL.mode === GLOBAL.e_BASE_MODE.IBUILD) && !force_inferno_resources && !WMATTACK._inProgress && param6)
-            {
-               UI2._top.OverchargeShow(resource_index);
-            }
-            if (param4)
-            {
-               param4._stored.Add(-_loc12_);
-               if (!param4._producing)
-               {
-                  param4.StartProduction();
-               }
-               param4.Update();
-            }
-            if (_loc12_ > 0 && (GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD || GLOBAL.mode === GLOBAL.e_BASE_MODE.IBUILD) && param6)
-            {
-               Save();
-            }
-         }
-         UI2.Update();
-         return _loc12_;
-      }
+					_bankedValue += _loc12_;
+					_bankedTime = GLOBAL.Timestamp();
+				}
+				else if ((GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD || GLOBAL.mode === GLOBAL.e_BASE_MODE.IBUILD) && !force_inferno_resources && !WMATTACK._inProgress && param6)
+				{
+					UI2._top.OverchargeShow(resource_index);
+				}
+				if (param4)
+				{
+					param4._stored.Add(-_loc12_);
+					if (!param4._producing)
+					{
+						param4.StartProduction();
+					}
+					param4.Update();
+				}
+				if (_loc12_ > 0 && (GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD || GLOBAL.mode === GLOBAL.e_BASE_MODE.IBUILD) && param6)
+				{
+					Save();
+				}
+			}
+			UI2.Update();
+			return _loc12_;
+		}
 
       private static function JiggleResource(param1:int, param2:Number):void
       {

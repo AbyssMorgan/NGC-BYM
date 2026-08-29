@@ -11,7 +11,6 @@ package
 	public class CREATUREBUTTON extends CREATUREBUTTON_CLIP
 	{
 		
-		
 		public var _creatureID:String;
 		
 		public var _creatureData:Object;
@@ -25,6 +24,8 @@ package
 		private var _moreTimer:Timer;
 
 		private var _lessTimer:Timer;
+
+		private var _quantity:int = 1;
 		
 		public function CREATUREBUTTON(param1:String, param2:int, param3:DisplayObjectContainer)
 		{
@@ -109,31 +110,38 @@ package
 			}
 		}
 		
-		public function Over(param1:MouseEvent) : void
+		public function Over(event:MouseEvent) : void
 		{
 			this._description.visible = true;
 		}
 		
-		public function Out(param1:MouseEvent) : void
+		public function Out(event:MouseEvent) : void
 		{
 			this._description.visible = false;
 		}
 		
-		public function Clear(param1:MouseEvent = null) : void
+		public function Clear(event:MouseEvent = null) : void
 		{
 			this._moreTimer.stop();
 			this._lessTimer.stop();
 		}
 		
-		public function More(param1:MouseEvent) : void
+		public function More(event:MouseEvent) : void
 		{
+			if(event.shiftKey && !event.ctrlKey){
+				this._quantity = 100;
+			} else if(event.ctrlKey && !event.shiftKey){
+				this._quantity = 10;
+			} else {
+				this._quantity = 1;
+			}
 			UI2._top.BombDeselect();
 			this.MoreTickB();
 			this._tick = 0;
 			this._moreTimer.start();
 		}
 		
-		public function MoreTick(param1:TimerEvent = null) : void
+		public function MoreTick(event:TimerEvent = null) : void
 		{
 			if(this._tick > 10 && this._tick % 2 == 0)
 			{
@@ -145,13 +153,20 @@ package
 		
 		public function MoreTickB() : void
 		{
-			ATTACK.BucketAdd(this._creatureID);
+			ATTACK.BucketAdd(this._creatureID, this._quantity);
 			this.Update();
 			ATTACK.BucketUpdate();
 		}
       
-		public function Less(param1:MouseEvent) : void
+		public function Less(event:MouseEvent) : void
 		{
+			if(event.shiftKey && !event.ctrlKey){
+				this._quantity = 100;
+			} else if(event.ctrlKey && !event.shiftKey){
+				this._quantity = 10;
+			} else {
+				this._quantity = 1;
+			}
 			UI2._top.BombDeselect();
 			this.LessTickB();
 			this._tick = 0;
@@ -170,7 +185,7 @@ package
 		
 		public function LessTickB() : void
 		{
-			ATTACK.BucketRemove(this._creatureID);
+			ATTACK.BucketRemove(this._creatureID, this._quantity);
 			this.Update();
 			ATTACK.BucketUpdate();
 		}

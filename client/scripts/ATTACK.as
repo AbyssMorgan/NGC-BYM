@@ -682,72 +682,147 @@ package
 			RemoveDropZone();
 		}
       
-		public static function BucketAdd(param1:String) : Boolean
+		public static function BucketAdd(creature_id:String, quantity:int = 1) : Boolean
 		{
 			var _loc3_:String = null;
 			var _loc4_:int = 0;
 			var _loc2_:int = int(GLOBAL._buildingProps[4].capacity[GLOBAL._attackersFlinger - 1]);
+			var _added:int = 0;
+
+			if(quantity <= 0)
+			{
+				return false;
+			}
+
 			if(MAPROOM_DESCENT.InDescent)
 			{
 				_loc2_ = int(YARD_PROPS._yardProps[4].capacity[GLOBAL._attackersFlinger - 1]);
 			}
+
 			if(POWERUPS.CheckPowers(POWERUPS.ALLIANCE_DECLAREWAR,"OFFENSE"))
 			{
 				_loc2_ += Math.floor(_loc2_ * 0.25);
 			}
+
 			if(MapRoomManager.instance.isInMapRoom3 && USE_CUMULATIVE_FLINGER_CAPACITY)
 			{
 				_loc2_ -= _flungSpace.Get();
 			}
-			if(param1.substr(0,1) == "G")
+
+			// Guardian może znajdować się w bucket tylko raz.
+			if(creature_id.substr(0,1) == "G")
 			{
-				_loc4_ = GLOBAL.getPlayerGuardianIndex(int(param1.substr(1)));
+				_loc4_ = GLOBAL.getPlayerGuardianIndex(int(creature_id.substr(1)));
+
 				if(!MapRoomManager.instance.isInMapRoom3)
 				{
-				_loc2_ -= CHAMPIONCAGE.GetGuardianProperty(param1.substr(0,2),GLOBAL._playerGuardianData[_loc4_].l.Get(),"bucket");
+					_loc2_ -= CHAMPIONCAGE.GetGuardianProperty(
+						creature_id.substr(0,2),
+						GLOBAL._playerGuardianData[_loc4_].l.Get(),
+						"bucket"
+					);
 				}
-				ATTACK._flingerBucket[param1] = new SecNum(1);
-				_creaturesLoaded.Add(1);
-				SOUNDS.Play("click1");
+
+				if(!ATTACK._flingerBucket[creature_id])
+				{
+					ATTACK._flingerBucket[creature_id] = new SecNum(0);
+				}
+
+				if(ATTACK._flingerBucket[creature_id].Get() <= 0)
+				{
+					ATTACK._flingerBucket[creature_id] = new SecNum(1);
+					_creaturesLoaded.Add(1);
+					_added = 1;
+				}
 			}
-			else if(_curCreaturesAvailable[param1] > 0)
+			else
 			{
 				for(_loc3_ in _flingerBucket)
 				{
-					_loc2_ -= CREATURES.GetProperty(_loc3_,"bucket") * ATTACK._flingerBucket[_loc3_].Get();
+					_loc2_ -= CREATURES.GetProperty(_loc3_,"bucket") *
+					ATTACK._flingerBucket[_loc3_].Get();
 				}
-				if(_loc2_ >= CREATURES.GetProperty(param1,"bucket"))
+
+				while(_added < quantity)
 				{
-					_curCreaturesAvailable[param1] = _curCreaturesAvailable[param1] - 1;
-					_creaturesLoaded.Add(1);
-					if(!ATTACK._flingerBucket[param1])
+					// Brak dostępnych stworów.
+					if(_curCreaturesAvailable[creature_id] <= 0)
 					{
-						ATTACK._flingerBucket[param1] = new SecNum(0);
+						break;
 					}
-					ATTACK._flingerBucket[param1].Add(1);
-					SOUNDS.Play("click1");
+
+					// Brak miejsca na kolejne stworzenie.
+					if(_loc2_ < CREATURES.GetProperty(creature_id,"bucket"))
+					{
+						break;
+					}
+
+					_curCreaturesAvailable[creature_id] =
+					_curCreaturesAvailable[creature_id] - 1;
+
+					_creaturesLoaded.Add(1);
+
+					if(!ATTACK._flingerBucket[creature_id])
+					{
+						ATTACK._flingerBucket[creature_id] = new SecNum(0);
+					}
+
+					ATTACK._flingerBucket[creature_id].Add(1);
+
+					_loc2_ -= CREATURES.GetProperty(creature_id,"bucket");
+					_added++;
 				}
 			}
-			return false;
-		}
-		
-		public static function BucketRemove(param1:String) : Boolean
-		{
-			if(Boolean(ATTACK._flingerBucket[param1]) && ATTACK._flingerBucket[param1].Get() > 0)
+
+			// Jeden dźwięk niezależnie od quantity.
+			if(_added > 0)
 			{
-				ATTACK._flingerBucket[param1].Add(-1);
-				if(param1.substr(0,1) == "G")
-				{
-					delete ATTACK._flingerBucket[param1];
-				}
-				else
-				{
-					_curCreaturesAvailable[param1] += 1;
-				}
-				_creaturesLoaded.Add(-1);
 				SOUNDS.Play("click1");
 				return true;
 			}
+
+			return false;
+		}
+
+		public static function BucketRemove(creature_id:String, quantity:int = 1) : Boolean
+		{
+			var _removed:int = 0;
+
+			if(quantity <= 0)
+			{
+				return false;
+			}
+
+			while(_removed < quantity)
+			{
+				if(!ATTACK._flingerBucket[creature_id] ||
+				ATTACK._flingerBucket[creature_id].Get() <= 0)
+				{
+					break;
+				}
+
+				ATTACK._flingerBucket[creature_id].Add(-1);
+
+				if(creature_id.substr(0,1) == "G")
+				{
+					delete ATTACK._flingerBucket[creature_id];
+				}
+				else
+				{
+					_curCreaturesAvailable[creature_id] += 1;
+				}
+
+				_creaturesLoaded.Add(-1);
+				_removed++;
+			}
+
+			// Jeden dźwięk niezależnie od quantity.
+			if(_removed > 0)
+			{
+				SOUNDS.Play("click1");
+				return true;
+			}
+
 			return false;
 		}
       

@@ -296,14 +296,14 @@ package
             "delay":0.25
          });
          mcMonsterInfo.tSpeed.htmlText = KEYS.Get("mon_statsspeed",{"v1":CREATURES.GetProperty(creatureID,"speed")});
-         mcMonsterInfo.tHealth.htmlText = GLOBAL.FormatNumber(CREATURES.GetProperty(creatureID,"health"));
+         mcMonsterInfo.tHealth.htmlText = GLOBAL.FormatNumberNormal(CREATURES.GetProperty(creatureID,"health"));
          if(damageShown > 0)
          {
-            mcMonsterInfo.tDamage.htmlText = damageShown;
+            mcMonsterInfo.tDamage.htmlText = GLOBAL.FormatNumberNormal(damageShown);
          }
          else
          {
-            mcMonsterInfo.tDamage.htmlText = -damageShown + " (" + KEYS.Get("str_heal") + ")";
+            mcMonsterInfo.tDamage.htmlText = GLOBAL.FormatNumberNormal(-damageShown) + " (" + KEYS.Get("str_heal") + ")";
          }
          var v2:String = (creature.id.charAt(0) == "I") 
                ? KEYS.Get(BRESOURCE.GetResourceNameKey(7)) 

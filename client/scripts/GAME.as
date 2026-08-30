@@ -16,6 +16,7 @@ package
    import flash.utils.getTimer;
    import flash.text.Font;
    import CourierNew;
+   import CourierNewBold;
 
 
    public class GAME extends Sprite
@@ -87,8 +88,8 @@ package
             }
             this.Data(urls, loaderInfo.parameters);
          }
-		 var courier:Font = new CourierNew();
 		 Font.registerFont(CourierNew);
+		 Font.registerFont(CourierNewBold);
       }
 
       public static function disableWindowScroll(param1:Event = null):void

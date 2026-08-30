@@ -20,20 +20,20 @@ package buildings.yard {
 			"description":"flaktower_desc",
 			"cls":BUILDING115,
 			"stats":[
-				{"range":300, "damage":200, "rate":60, "speed":20, "splash":180}, // Level 1
-				{"range":320, "damage":250, "rate":60, "speed":24, "splash":185}, // Level 2
-				{"range":340, "damage":250, "rate":60, "speed":28, "splash":190}, // Level 3
-				{"range":360, "damage":250, "rate":60, "speed":32, "splash":195}, // Level 4
-				{"range":380, "damage":300, "rate":60, "speed":36, "splash":200}, // Level 5
-				{"range":400, "damage":350, "rate":60, "speed":40, "splash":215}, // Level 6
-				{"range":420, "damage":350, "rate":60, "speed":44, "splash":220}, // Level 7
-				{"range":440, "damage":400, "rate":60, "speed":48, "splash":225}, // Level 8
-				{"range":460, "damage":400, "rate":60, "speed":52, "splash":230}, // Level 9
-				{"range":480, "damage":450, "rate":60, "speed":56, "splash":235}, // Level 10
-				{"range":500, "damage":500, "rate":60, "speed":60, "splash":240}, // Level 11
-				{"range":520, "damage":550, "rate":60, "speed":64, "splash":245}, // Level 12
-				{"range":540, "damage":600, "rate":60, "speed":68, "splash":250}, // Level 13
-				{"range":560, "damage":650, "rate":60, "speed":72, "splash":255}, // Level 14
+				{"range":300, "damage":200, "rate":60, "speed":20, "splash":180, "shots": 1}, // Level 1
+				{"range":320, "damage":250, "rate":60, "speed":24, "splash":185, "shots": 2}, // Level 2
+				{"range":340, "damage":250, "rate":60, "speed":28, "splash":190, "shots": 3}, // Level 3
+				{"range":360, "damage":250, "rate":60, "speed":32, "splash":195, "shots": 4}, // Level 4
+				{"range":380, "damage":300, "rate":60, "speed":36, "splash":200, "shots": 5}, // Level 5
+				{"range":400, "damage":350, "rate":60, "speed":40, "splash":215, "shots": 6}, // Level 6
+				{"range":420, "damage":350, "rate":60, "speed":44, "splash":220, "shots": 7}, // Level 7
+				{"range":440, "damage":400, "rate":60, "speed":48, "splash":225, "shots": 8}, // Level 8
+				{"range":460, "damage":400, "rate":60, "speed":52, "splash":230, "shots": 9}, // Level 9
+				{"range":480, "damage":450, "rate":60, "speed":56, "splash":235, "shots": 10}, // Level 10
+				{"range":500, "damage":500, "rate":60, "speed":60, "splash":240, "shots": 11}, // Level 11
+				{"range":520, "damage":550, "rate":60, "speed":64, "splash":245, "shots": 12}, // Level 12
+				{"range":540, "damage":600, "rate":60, "speed":68, "splash":250, "shots": 13}, // Level 13
+				{"range":560, "damage":650, "rate":60, "speed":72, "splash":255, "shots": 14}, // Level 14
 			],
 			"costs":[
 				{"r1":new SecNum(215000), "r2":new SecNum(280000), "r3":new SecNum(62500), "r4":new SecNum(0), "time":new SecNum(86400 * 1), "re":[[14,1,4]]}, // Level 1

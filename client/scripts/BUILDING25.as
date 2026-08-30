@@ -41,48 +41,48 @@ package
          this.Props();
       }
       
-      override public function Description() : void
-      {
-         var _loc1_:Object = null;
-         var _loc2_:Object = null;
-         var _loc3_:int = 0;
-         var _loc4_:int = 0;
-         super.Description();
-         _upgradeDescription = "";
-         if(_lvl.Get() > 0 && _lvl.Get() < _buildingProps.costs.length)
-         {
-            _loc1_ = _buildingProps.stats[_lvl.Get() - 1];
-            _loc2_ = _buildingProps.stats[_lvl.Get()];
-            _loc3_ = int(_loc1_.range);
-            _loc4_ = int(_loc2_.range);
-            if(BASE.isOutpost)
-            {
-               _loc3_ = BTOWER.AdjustTowerRange(GLOBAL._currentCell,_loc3_);
-               _loc4_ = BTOWER.AdjustTowerRange(GLOBAL._currentCell,_loc4_);
-            }
-            if(_loc1_.range < _loc2_.range)
-            {
-               _upgradeDescription += KEYS.Get("building_rangeincrease",{
-                  "v1":_loc3_,
-                  "v2":_loc4_
-               }) + "<br>";
-            }
-            if(_loc1_.damage < _loc2_.damage)
-            {
-               _upgradeDescription += KEYS.Get("building_dpsincrease",{
-                  "v1":_loc1_.damage,
-                  "v2":_loc2_.damage
-               }) + "<br>";
-            }
-            if(_loc1_.rate < _loc2_.rate)
-            {
-               _upgradeDescription += KEYS.Get("building_sfpcincrease",{
-                  "v1":_loc1_.rate,
-                  "v2":_loc2_.rate
-               }) + "<br>";
-            }
-         }
-      }
+		override public function Description() : void
+		{
+			var _loc1_:Object = null;
+			var _loc2_:Object = null;
+			var _loc3_:int = 0;
+			var _loc4_:int = 0;
+			super.Description();
+			_upgradeDescription = "";
+			if(_lvl.Get() > 0 && _lvl.Get() < _buildingProps.costs.length)
+			{
+				_loc1_ = _buildingProps.stats[_lvl.Get() - 1];
+				_loc2_ = _buildingProps.stats[_lvl.Get()];
+				_loc3_ = int(_loc1_.range);
+				_loc4_ = int(_loc2_.range);
+				if(BASE.isOutpost)
+				{
+					_loc3_ = BTOWER.AdjustTowerRange(GLOBAL._currentCell,_loc3_);
+					_loc4_ = BTOWER.AdjustTowerRange(GLOBAL._currentCell,_loc4_);
+				}
+				if(_loc1_.range < _loc2_.range)
+				{
+					_upgradeDescription += KEYS.Get("building_rangeincrease",{
+						"v1":_loc3_,
+						"v2":_loc4_
+					}) + "<br>";
+				}
+				if(_loc1_.damage < _loc2_.damage)
+				{
+					_upgradeDescription += KEYS.Get("building_dpsincrease",{
+						"v1":_loc1_.damage,
+						"v2":_loc2_.damage
+					}) + "<br>";
+				}
+				if(_loc1_.rate < _loc2_.rate)
+				{
+					_upgradeDescription += KEYS.Get("building_sfpcincrease",{
+						"v1":_loc1_.duration,
+						"v2":_loc2_.duration
+					}) + "<br>";
+				}
+			}
+		}
       
       override public function AnimFrame(param1:Boolean = true) : void
       {
@@ -189,7 +189,7 @@ package
                      }
                      SOUNDS.Play("lightningfire",!isJard ? 0.8 : 0.4);
                      ++this._shotsFired;
-                     if(this._shotsFired >= _rate)
+                     if(this._shotsFired >= _duration)
                      {
                         this._fireStage = 3;
                         SOUNDS.Play("lightningend",!isJard ? 0.8 : 0.4);
@@ -236,7 +236,7 @@ package
                if(_frameNumber % 2 == 0)
                {
                   ++_animTick;
-                  if(_animTick == 55)
+                  if(_animTick >= _rate)
                   {
                      _animTick = 0;
                      this._fireStage = 0;

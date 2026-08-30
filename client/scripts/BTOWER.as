@@ -13,7 +13,6 @@ package
 	import com.monsters.siege.weapons.Jars;
 	import com.monsters.siege.weapons.Vacuum;
 	import com.monsters.siege.weapons.VacuumHose;
-	import flash.display.MovieClip;
 	import flash.display.Shape;
 	import flash.display.Sprite;
 	import flash.events.*;
@@ -36,7 +35,7 @@ package
 			"132":1, // Magma Tower
 			"136":0, // Spurtz Cannon
 			"137":0, // Black Spurtz Cannon
-			"142":0, // Blast Towe
+			"142":0, // Blast Tower
 			"143":1, // Sharpshooter
 			"146":1  // Crystal Hive
 		};
@@ -124,6 +123,16 @@ package
 				super._rate = GLOBAL._buildingProps[_type - 1].stats[_lvl.Get() - 1].rate;
 				super._splash = GLOBAL._buildingProps[_type - 1].stats[_lvl.Get() - 1].splash;
 				super._speed = GLOBAL._buildingProps[_type - 1].stats[_lvl.Get() - 1].speed;
+				if(GLOBAL._buildingProps[_type - 1].stats[_lvl.Get() - 1].duration){
+					super._duration = GLOBAL._buildingProps[_type - 1].stats[_lvl.Get() - 1].duration;
+				} else {
+					super._duration = 0;
+				}
+				if(GLOBAL._buildingProps[_type - 1].stats[_lvl.Get() - 1].shots){
+					super._shots = GLOBAL._buildingProps[_type - 1].stats[_lvl.Get() - 1].shots;
+				} else {
+					super._shots = 0;
+				}
 			}
 			else if(_lvl.Get() > GLOBAL._buildingProps[_type - 1].stats.length)
 			{

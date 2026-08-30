@@ -6,13 +6,11 @@ package
    import com.monsters.siege.weapons.Vacuum;
    import flash.display.BitmapData;
    import flash.display.MovieClip;
-   import flash.events.MouseEvent;
    import flash.geom.Point;
    import flash.geom.Rectangle;
    
    public class BUILDING115 extends BTOWER
    {
-       
       
       public var _animMC:MovieClip;
       
@@ -24,26 +22,8 @@ package
       
       public var _fireStage:int = 1;
       
-      public var _targetArray:Array;
-      
       public function BUILDING115()
       {
-         this._targetArray = [
-			1, // Level 1
-			2, // Level 2
-			3, // Level 3
-			4, // Level 4
-			5, // Level 5
-			6, // Level 6
-			7, // Level 7
-			8, // Level 8
-			9, // Level 9
-			10, // Level 10
-			11, // Level 11
-			12, // Level 12
-			13, // Level 13
-			14, // Level 14
-		];
          super();
          _frameNumber = 0;
          _type = 115;
@@ -66,7 +46,7 @@ package
          var _loc7_:int = 0;
          var _loc8_:int = 0;
          var _loc9_:int = 0;
-         var _loc1_:int = int(this._targetArray[_lvl.Get() - 1]);
+         var _loc1_:int = int(this._shots);
          ++_frameNumber;
          if(health > 0 && _countdownBuild.Get() + _countdownUpgrade.Get() + _countdownFortify.Get() == 0)
          {
@@ -220,8 +200,8 @@ package
             if(_lvl.Get() > 1)
             {
                _upgradeDescription += KEYS.Get("building_sfpsincrease",{
-                  "v1":this._targetArray[_lvl.Get() - 1],
-                  "v2":this._targetArray[_lvl.Get()]
+                  "v1":_loc1_.shots,
+                  "v2":_loc2_.shots
                }) + "<br>";
             }
          }

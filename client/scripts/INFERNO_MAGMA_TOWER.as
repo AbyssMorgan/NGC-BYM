@@ -23,28 +23,12 @@ package
       
       public var _fireStage:int = 1;
       
-      public var _targetArray:Array;
-      
       protected var _projectile:FIREBALL;
       
       protected var _projectileType:String;
       
       public function INFERNO_MAGMA_TOWER()
       {
-         this._targetArray = [
-			4, // Level 1
-			4, // Level 2
-			6, // Level 3
-			8, // Level 4
-			10, // Level 5
-			12, // Level 6
-			13, // Level 7
-			14, // Level 8
-			15, // Level 9
-			16, // Level 10
-			17, // Level 11
-			18, // Level 12
-		];
          super();
          _frameNumber = 0;
          _type = 132;
@@ -148,13 +132,6 @@ package
                _upgradeDescription += KEYS.Get("building_dpsincrease",{
                   "v1":_loc1_.damage,
                   "v2":_loc2_.damage
-               }) + "<br>";
-            }
-            if(_lvl.Get() > 1)
-            {
-               _upgradeDescription += KEYS.Get("building_sfpsincrease",{
-                  "v1":this._targetArray[_lvl.Get() - 1],
-                  "v2":this._targetArray[_lvl.Get()]
                }) + "<br>";
             }
          }

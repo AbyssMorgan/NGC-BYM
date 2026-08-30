@@ -79,33 +79,33 @@ package buildings.yard {
 				1, // Level 19
 				1, // Level 20
 			],
-			"produce":[
-				2, // Level 1
-				2, // Level 2
-				2, // Level 3
-				2, // Level 4
-				2, // Level 5
-				2, // Level 6
-				2, // Level 7
-				2, // Level 8
-				2, // Level 9
-				2, // Level 10
-				2, // Level 11
-				2, // Level 12
-			],
+			// "produce":[
+			// 	2, // Level 1
+			// 	2, // Level 2
+			// 	2, // Level 3
+			// 	2, // Level 4
+			// 	2, // Level 5
+			// 	2, // Level 6
+			// 	2, // Level 7
+			// 	2, // Level 8
+			// 	2, // Level 9
+			// 	2, // Level 10
+			// 	2, // Level 11
+			// 	2, // Level 12
+			// ],
 			"capacity":[
-				600, // Level 1
-				900, // Level 2
-				1200, // Level 3
-				1500, // Level 4
-				2100, // Level 5
-				3200, // Level 6
-				4800, // Level 7
-				7200, // Level 8
-				10800, // Level 9
-				16200, // Level 10
-				24300, // Level 11
-				36450, // Level 12
+				1000, // Level 1
+				2000, // Level 2
+				3000, // Level 3
+				4000, // Level 4
+				5000, // Level 5
+				6000, // Level 6
+				7000, // Level 7
+				8000, // Level 8
+				9000, // Level 9
+				10000, // Level 10
+				11000, // Level 11
+				12000, // Level 12
 			],
 			"hp":[
 				1000, // Level 1

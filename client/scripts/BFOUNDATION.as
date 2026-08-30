@@ -248,6 +248,10 @@ package
 		public var _range:int;
 		
 		public var _rate:int;
+
+		public var _duration:int;
+
+		public var _shots:int;
 		
 		public var _splash:int;
 		
@@ -764,149 +768,197 @@ package
          }
       }
       
-      public function Bank() : void
-      {
-      }
+		public function Bank() : void
+		{
+		}
       
-      public function Description() : void
-      {
-         var _loc1_:Number = NaN;
-         var _loc2_:Object = null;
-         var effectiveLvl:int = _lvl.Get();
-         if(this._buildingProps.names != null && this._buildingProps.names.length >= effectiveLvl)
-         {
-            this._buildingTitle = "<b>" + this._buildingProps.names[effectiveLvl - 1] + "</b>";
-         }
-         else
-         {
-            this._buildingTitle = "<b>" + this._buildingProps.name + "</b>";
-            if(this._buildingProps.costs.length > 1)
-            {
-               this._buildingTitle += " " + KEYS.Get("bdg_level",{"v1":effectiveLvl});
-            }
-         }
-         if(health < maxHealth)
-         {
-            if(this._countdownUpgrade.Get() > 0)
-            {
-               this._repairDescription = "<font color=\"#FF0000\"><b>" + KEYS.Get("repaironhold_upgrade") + "</b></font>";
-            }
-            else if(this._countdownFortify.Get() > 0)
-            {
-               this._repairDescription = "<font color=\"#FF0000\"><b>" + KEYS.Get("repaironhold_fortify") + "</b></font>";
-            }
-            else
-            {
-               _loc1_ = 100 - Math.ceil(100 / maxHealth * health);
-               this._specialDescription = "<font color=\"#FF0000\"><b>" + KEYS.Get("building_percentdamaged",{"v1":_loc1_}) + "</b></font>";
-            }
-         }
-         else
-         {
-            if(this._buildingProps.descriptions != null && this._buildingProps.descriptions.length >= this._lvl.Get())
-            {
-               this._specialDescription = this._buildingProps.descriptions[this._lvl.Get() - 1];
-            }
-            else
-            {
-               this._specialDescription = this._buildingProps.description;
-            }
-            if(!(this._type == 24 || this._type == 25 || this._type == 26))
-            {
-               if(this._type == 20 || this._type == 21 || this._type == 142 || this._type == 143)
-               {
-                  this._buildingStats = KEYS.Get("building_stats_dps",{
-                     "v1":this._range,
-                     "v2":this.damage,
-                     "v3":int(this.damage * (40 / this._rate)),
-                     "v4":this._splash,
-                     "v5":int(40 / this._rate * 10) / 10
-                  });
-                  if(this._type == 20 || this._type == 142)
-                  {
-                     this._buildingDescription = KEYS.Get("building_cannon_desc");
-                  }
-                  if(this._type == 21 || this._type == 143)
-                  {
-                     this._buildingDescription = KEYS.Get("building_sniper_desc");
-                  }
-                  if(this._lvl.Get() < this._buildingProps.costs.length)
-                  {
-                     this._upgradeDescription = KEYS.Get("building_stats",{
-                        "v1":this._buildingProps.stats[this._lvl.Get()].range,
-                        "v2":this._buildingProps.stats[this._lvl.Get()].damage,
-                        "v3":this._buildingProps.stats[this._lvl.Get()].splash,
-                        "v4":int(40 / this._buildingProps.stats[this._lvl.Get()].rate * 10) / 10
-                     });
-                  }
-               }
-            }
-         }
-         this._recycleDescription = "";
-         if(this._repairing == 1)
-         {
-            this._repairDescription = "<font color=\"#FF0000\"><b>" + KEYS.Get("building_damagedinattack") + "</b></font><br>" + KEYS.Get("building_repairinprogress",{
-               "v1":Math.floor(100 / maxHealth * health),
-               "v2":GLOBAL.ToTime(this.getEstimatedRepairTimeRemaining())
-            });
-         }
-         else
-         {
-            this._repairDescription = "<font color=\"#FF0000\"><b>" + KEYS.Get("building_damagedinattack") + "</b></font><br>" + KEYS.Get("building_repairfree");
-            if(this._countdownBuild.Get() > 0)
-            {
-               this._repairDescription += "<br>" + KEYS.Get("building_attackdestroy");
-            }
-            if(this._countdownUpgrade.Get() > 0)
-            {
-               this._repairDescription += "<br>" + KEYS.Get("building_attacksetback");
-            }
-         }
-         if(this._lvl.Get() >= getEffectiveLevelMax())
-         {
-            this._upgradeDescription = KEYS.Get("bdg_fullyupgraded");
-            this._upgradeCosts = "";
-         }
-         else
-         {
-            this._upgradeCosts = "";
-            _loc2_ = this._buildingProps.costs[this._lvl.Get()];
-            if(_loc2_.r1.Get() > 0)
-            {
-               if(_loc2_.r1.Get() > BASE._resources.r1.Get())
-               {
-                  this._upgradeCosts += "<font color=\"#FF0000\">";
-               }
-               this._upgradeCosts += GLOBAL.FormatNumber(_loc2_.r1.Get()) + " " + GLOBAL._resourceNames[0] + "</font> - ";
-            }
-            if(_loc2_.r2.Get() > 0)
-            {
-               if(_loc2_.r2.Get() > BASE._resources.r2.Get())
-               {
-                  this._upgradeCosts += "<font color=\"#FF0000\">";
-               }
-               this._upgradeCosts += GLOBAL.FormatNumber(_loc2_.r2.Get()) + " " + GLOBAL._resourceNames[1] + "</font> - ";
-            }
-            if(_loc2_.r3.Get() > 0)
-            {
-               if(_loc2_.r3.Get() > BASE._resources.r3.Get())
-               {
-                  this._upgradeCosts += "<font color=\"#FF0000\">";
-               }
-               this._upgradeCosts += GLOBAL.FormatNumber(_loc2_.r3.Get()) + " " + GLOBAL._resourceNames[2] + "</font> - ";
-            }
-            if(_loc2_.r4.Get() > 0)
-            {
-               if(_loc2_.r4.Get() > BASE._resources.r4.Get())
-               {
-                  this._upgradeCosts += "<font color=\"#FF0000\">";
-               }
-               this._upgradeCosts += GLOBAL.FormatNumber(_loc2_.r4.Get()) + " " + GLOBAL._resourceNames[3] + "</font> - ";
-            }
-            this._upgradeCosts += GLOBAL.ToTime(_loc2_.time.Get());
-            this._upgradeDescription = "";
-         }
-      }
+		public function Description() : void
+		{
+			var _loc1_:Number = NaN;
+			var _loc2_:Object = null;
+			var effectiveLvl:int = _lvl.Get();
+			if(this._buildingProps.names != null && this._buildingProps.names.length >= effectiveLvl)
+			{
+				this._buildingTitle = "<b>" + this._buildingProps.names[effectiveLvl - 1] + "</b>";
+			}
+			else
+			{
+				this._buildingTitle = "<b>" + this._buildingProps.name + "</b>";
+				if(this._buildingProps.costs.length > 1)
+				{
+					this._buildingTitle += " " + KEYS.Get("bdg_level",{"v1":effectiveLvl});
+				}
+			}
+			if(health < maxHealth)
+			{
+				if(this._countdownUpgrade.Get() > 0)
+				{
+					this._repairDescription = "<font color=\"#FF0000\"><b>" + KEYS.Get("repaironhold_upgrade") + "</b></font>";
+				}
+				else if(this._countdownFortify.Get() > 0)
+				{
+					this._repairDescription = "<font color=\"#FF0000\"><b>" + KEYS.Get("repaironhold_fortify") + "</b></font>";
+				}
+				else
+				{
+					_loc1_ = 100 - Math.ceil(100 / maxHealth * health);
+					this._specialDescription = "<font color=\"#FF0000\"><b>" + KEYS.Get("building_percentdamaged",{"v1":_loc1_}) + "</b></font>";
+				}
+			}
+			else
+			{
+				if(this._class != "decoration" && this._type != 127){
+					var stats:Array = [];
+					stats.push("<b>Level:</b> " + effectiveLvl);
+					stats.push("<b>HP:</b> " + GLOBAL.FormatNumberNormal(maxHealth));
+					if(this._fortification.Get() > 0){
+						stats.push("<b>DR:</b> " + (this._fortification.Get() * 10 + 10) + " %");
+					}
+					if(this._class == "tower" || this._type == 144){
+						var dmg_multiplier:Number = 1;
+						if(this._type != 144 && this._type != 22){
+							if(Boolean(GLOBAL._towerOverdrive) && GLOBAL._towerOverdrive.Get() >= GLOBAL.Timestamp()){
+								dmg_multiplier = 1.25;
+							}
+						}
+						if(this._range && this._range > 0){
+							stats.push("<b>Range:</b> " + GLOBAL.FormatNumberNormal(this._range));
+						}
+						if(this.damage && this.damage > 0){
+							stats.push("<b>DMG:</b> " + GLOBAL.FormatNumberNormal(this.damage * dmg_multiplier));
+							if(this._type == 115){
+								stats.push("<b>DPS:</b> " + GLOBAL.FormatNumberNormal(int((this.damage * dmg_multiplier) * (20 / this._rate))));
+							} else if(this._type == 25){
+								stats.push("<b>DPS:</b> " + GLOBAL.FormatNumberNormal(int((damage * _duration * 40) / (_duration * 4 + _rate * 2))));
+							} else {
+								stats.push("<b>DPS:</b> " + GLOBAL.FormatNumberNormal(int((this.damage * dmg_multiplier) * (40 / this._rate))));
+							}
+						}
+						if(this._duration && this._duration > 0){
+							stats.push("<b>Duration:</b> " + (this._duration / 5).toString().replace(".", ",") + " sec");
+						}
+						if(this._splash && this._splash > 0){
+							stats.push("<b>Splash:</b> " + GLOBAL.FormatNumberNormal(this._splash));
+						}
+						if(this._rate && this._rate > 0){
+							if(this._type == 115){
+								stats.push("<b>Reload:</b> " + (this._rate / 20).toString().replace(".", ",") + " sec");
+							} else {
+								stats.push("<b>Reload:</b> " + (this._rate / 40).toString().replace(".", ",") + " sec");
+							}
+						}
+						if(this._shots && this._shots > 0){
+							stats.push("<b>Shots:</b> " + GLOBAL.FormatNumberNormal(this._shots));
+						}
+						if(this._buildingProps.attackType && this._type != 144){
+							stats.push("<b>Target:</b> " + (this._buildingProps.attackType == 1 ? 'Ground' : (this._buildingProps.attackType == 2 ? 'Air' : 'Any')));
+						}
+					}
+					if(this._buildingProps.capacity){
+						stats.push("<b>Capacity:</b> " + GLOBAL.FormatNumberEXP(this._buildingProps.capacity[this._lvl.Get() - 1]));
+					}
+					if(this._buildingProps.produce){
+						stats.push("<b>Produce:</b> " + GLOBAL.FormatNumberEXP(int(this._buildingProps.produce[this._lvl.Get() - 1] * (3600 / 10))));
+					}
+					this._buildingStats = stats.join("<br>");
+				}
+				if(this._buildingProps.descriptions != null && this._buildingProps.descriptions.length >= this._lvl.Get())
+				{
+					this._specialDescription = this._buildingProps.descriptions[this._lvl.Get() - 1];
+				}
+				else
+				{
+					this._specialDescription = this._buildingProps.description;
+				}
+				if(!(this._type == 24 || this._type == 25 || this._type == 26))
+				{
+					if(this._type == 20 || this._type == 21 || this._type == 142 || this._type == 143)
+					{
+						if(this._type == 20 || this._type == 142)
+						{
+							this._buildingDescription = KEYS.Get("building_cannon_desc");
+						}
+						if(this._type == 21 || this._type == 143)
+						{
+							this._buildingDescription = KEYS.Get("building_sniper_desc");
+						}
+						if(this._lvl.Get() < this._buildingProps.costs.length)
+						{
+							this._upgradeDescription = KEYS.Get("building_stats",{
+								"v1":this._buildingProps.stats[this._lvl.Get()].range,
+								"v2":this._buildingProps.stats[this._lvl.Get()].damage,
+								"v3":this._buildingProps.stats[this._lvl.Get()].splash,
+								"v4":int(40 / this._buildingProps.stats[this._lvl.Get()].rate * 10) / 10
+							});
+						}
+					}
+				}
+			}
+			this._recycleDescription = "";
+			if(this._repairing == 1)
+			{
+				this._repairDescription = "<font color=\"#FF0000\"><b>" + KEYS.Get("building_damagedinattack") + "</b></font><br>" + KEYS.Get("building_repairinprogress",{
+					"v1":Math.floor(100 / maxHealth * health),
+					"v2":GLOBAL.ToTime(this.getEstimatedRepairTimeRemaining())
+				});
+			}
+			else
+			{
+				this._repairDescription = "<font color=\"#FF0000\"><b>" + KEYS.Get("building_damagedinattack") + "</b></font><br>" + KEYS.Get("building_repairfree");
+				if(this._countdownBuild.Get() > 0)
+				{
+					this._repairDescription += "<br>" + KEYS.Get("building_attackdestroy");
+				}
+				if(this._countdownUpgrade.Get() > 0)
+				{
+					this._repairDescription += "<br>" + KEYS.Get("building_attacksetback");
+				}
+			}
+			if(this._lvl.Get() >= getEffectiveLevelMax())
+			{
+				this._upgradeDescription = KEYS.Get("bdg_fullyupgraded");
+				this._upgradeCosts = "";
+			}
+			else
+			{
+				this._upgradeCosts = "";
+				_loc2_ = this._buildingProps.costs[this._lvl.Get()];
+				if(_loc2_.r1.Get() > 0)
+				{
+					if(_loc2_.r1.Get() > BASE._resources.r1.Get())
+					{
+						this._upgradeCosts += "<font color=\"#FF0000\">";
+					}
+					this._upgradeCosts += GLOBAL.FormatNumber(_loc2_.r1.Get()) + " " + GLOBAL._resourceNames[0] + "</font> - ";
+				}
+				if(_loc2_.r2.Get() > 0)
+				{
+					if(_loc2_.r2.Get() > BASE._resources.r2.Get())
+					{
+						this._upgradeCosts += "<font color=\"#FF0000\">";
+					}
+					this._upgradeCosts += GLOBAL.FormatNumber(_loc2_.r2.Get()) + " " + GLOBAL._resourceNames[1] + "</font> - ";
+				}
+				if(_loc2_.r3.Get() > 0)
+				{
+					if(_loc2_.r3.Get() > BASE._resources.r3.Get())
+					{
+						this._upgradeCosts += "<font color=\"#FF0000\">";
+					}
+					this._upgradeCosts += GLOBAL.FormatNumber(_loc2_.r3.Get()) + " " + GLOBAL._resourceNames[2] + "</font> - ";
+				}
+				if(_loc2_.r4.Get() > 0)
+				{
+					if(_loc2_.r4.Get() > BASE._resources.r4.Get())
+					{
+						this._upgradeCosts += "<font color=\"#FF0000\">";
+					}
+					this._upgradeCosts += GLOBAL.FormatNumber(_loc2_.r4.Get()) + " " + GLOBAL._resourceNames[3] + "</font> - ";
+				}
+				this._upgradeCosts += GLOBAL.ToTime(_loc2_.time.Get());
+				this._upgradeDescription = "";
+			}
+		}
       
       public function getEstimatedRepairTimeRemaining() : Number
       {
@@ -3828,11 +3880,11 @@ package
 		 else if(this._type == 144){
 			return new building20hit();
 		 }
-         else if(this._type == 20 || this._type == 142)
+         else if(this._type == 20)
          {
             return _loc2_ ? new cannonTowerHit() : new building20hit();
          }
-         else if(this._type == 21 || this._type == 143)
+         else if(this._type == 21)
          {
             return _loc2_ ? new sniperTowerHit() : new building21hit();
          }
@@ -3924,7 +3976,7 @@ package
          {
             return new building73hit();
          }
-         else if(this._type >= 74 && this._type <= 85 || this._type == 107)
+         else if((this._type >= 74 && this._type <= 85) || this._type == 107)
          {
             return new buildingheadhit();
          }
@@ -4103,6 +4155,14 @@ package
 		 else if(this._type == 141 || this._type == 145)
          {
             return new building112hit();
+         }
+		 else if(this._type == 142)
+         {
+            return new cannonTowerHit();
+         }
+         else if(this._type == 143)
+         {
+            return new sniperTowerHit();
          }
 		 else if(this._type == 147)
          {

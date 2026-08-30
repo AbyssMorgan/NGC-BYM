@@ -13,6 +13,9 @@ package
    import flash.geom.Point;
    import flash.text.TextField;
    import flash.text.TextFieldAutoSize;
+   import flash.text.TextFormatAlign;
+   import flash.text.TextFormat;
+   
    
    public class BUILDINGINFO
    {
@@ -35,47 +38,38 @@ package
          super();
       }
       
-      public static function Show(param1:BFOUNDATION) : void
-      {
-         if(Boolean(GLOBAL._selectedBuilding) && GLOBAL._selectedBuilding._moving)
-         {
-            return;
-         }
-         _positionSet = false;
-         _building = param1;
-         _props = GLOBAL._buildingProps[_building._type - 1];
-         _mc = MAP._BUILDINGINFO.addChild(new buildingInfoData()) as MovieClip;
-         _mc.tName.autoSize = TextFieldAutoSize.CENTER;
-         var _loc2_:* = "<b>" + KEYS.Get(_props.name) + "</b>";
-         var effectiveLvl:int = _building._lvl.Get();
-         if(_building._lvl.Get() > 0 && _props.costs && _props.costs.length > 1)
-         {
-            if(Boolean(_props.names) && _props.names.length > 1)
-            {
-               _loc2_ = "<b>" + KEYS.Get(_props.names[effectiveLvl - 1]) + "</b>";
-            }
-            else
-            {
-               _loc2_ += "<br><b>" + KEYS.Get("bdg_infopop_levelnum",{"v1":effectiveLvl}) + "</b>";
-            }
-            if(_building._fortification.Get() > 0)
-            {
-               _loc2_ += "<br><b>" + KEYS.Get("bdg_fortified_level",{"v1":_building._fortification.Get()}) + "</b>";
-            }
-            if(_building._class == "tower" && _building._type != 22 && GLOBAL._towerOverdrive && GLOBAL._towerOverdrive.Get() >= GLOBAL.Timestamp() && _building._countdownBuild.Get() == 0 && _building._countdownUpgrade.Get() == 0)
-            {
-               _loc2_ += "<font color=\"#0000ff\"> <br><b>" + KEYS.Get("bdg_25%boost") + "</b></font>";
-            }
-         }
-         _mc.tName.htmlText = _loc2_;
-         _mc.removeEventListener(Event.ENTER_FRAME,Tick);
-         _mc.addEventListener(Event.ENTER_FRAME,Tick);
-         if(GLOBAL._zoomed)
-         {
-            _mc.scaleX = _mc.scaleY = 2;
-         }
-         Update();
-      }
+		public static function Show(param1:BFOUNDATION) : void
+		{
+			if(Boolean(GLOBAL._selectedBuilding) && GLOBAL._selectedBuilding._moving)
+			{
+				return;
+			}
+			_positionSet = false;
+			_building = param1;
+			_props = GLOBAL._buildingProps[_building._type - 1];
+			_mc = MAP._BUILDINGINFO.addChild(new buildingInfoData()) as MovieClip;
+			_mc.tName.autoSize = TextFieldAutoSize.CENTER;
+			var effectiveLvl:int = _building._lvl.Get();
+			var info:* = "<p align=\"left\"><b>" + KEYS.Get(_props.name) + "</b></p>";
+			if(_building._lvl.Get() > 0 && _props.costs && _props.costs.length > 1)
+			{
+				if(Boolean(_props.names) && _props.names.length > 1)
+				{
+					info = "<p align=\"left\"><b>" + KEYS.Get(_props.names[effectiveLvl - 1]) + "</b></p>";
+				}
+			}
+			if(_building._buildingStats){
+				info += "<br><p align=\"left\">" + _building._buildingStats + "</p>";
+			}
+			_mc.tName.htmlText = info;
+			_mc.removeEventListener(Event.ENTER_FRAME,Tick);
+			_mc.addEventListener(Event.ENTER_FRAME,Tick);
+			if(GLOBAL._zoomed)
+			{
+				_mc.scaleX = _mc.scaleY = 2;
+			}
+			Update();
+		}
       
       public static function Update() : void
       {
@@ -305,7 +299,7 @@ package
                   }
                   if(_loc2_ && _props.type != "mushroom")
                   {
-                     if(_props.type != "decoration" && _props.id != MAPROOM.TYPE && !_loc3_)
+                     if(_props.type != "decoration" && _props.id != MAPROOM.TYPE && !_loc3_ && _building._lvl.Get() < _building.getEffectiveLevelMax())
                      {
                         _loc1_.push(["btn_upgrade",30]);
                      }
@@ -326,7 +320,7 @@ package
 					 }
                      if(TUTORIAL._stage >= 200 && can_edit)
                      {
-                        if(Boolean(_props.can_fortify) && !_loc3_)
+                        if(Boolean(_props.can_fortify) && !_loc3_ && _building._fortification.Get() < 5)
                         {
                            _loc1_.push(["btn_fortify",30]);
                         }

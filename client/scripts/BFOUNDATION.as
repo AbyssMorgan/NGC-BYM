@@ -807,7 +807,7 @@ package
 			}
 			else
 			{
-				if(this._class != "decoration" && this._type != 127){
+				if(this._class != "decoration" && this._type != 127 && this._type != 139){
 					var stats:Array = [];
 					stats.push("<b>Level:</b> " + effectiveLvl);
 					stats.push("<b>HP:</b> " + GLOBAL.FormatNumberNormal(maxHealth));
@@ -826,7 +826,9 @@ package
 						}
 						if(this.damage && this.damage > 0){
 							stats.push("<b>DMG:</b> " + GLOBAL.FormatNumberNormal(this.damage * dmg_multiplier));
-							if(this._type == 115){
+							if(this._type == 138){
+								stats.push("<b>DPS:</b> " + GLOBAL.FormatNumberNormal(int(this.damage * dmg_multiplier * 4)));
+							} else if(this._type == 115){
 								stats.push("<b>DPS:</b> " + GLOBAL.FormatNumberNormal(int((this.damage * dmg_multiplier) * (20 / this._rate))));
 							} else if(this._type == 25){
 								stats.push("<b>DPS:</b> " + GLOBAL.FormatNumberNormal(int((damage * _duration * 40) / (_duration * 4 + _rate * 2))));
@@ -841,7 +843,9 @@ package
 							stats.push("<b>Splash:</b> " + GLOBAL.FormatNumberNormal(this._splash));
 						}
 						if(this._rate && this._rate > 0){
-							if(this._type == 115){
+							if(this._type == 138){
+								stats.push("<b>Reload:</b> Nah");
+							} else if(this._type == 115){
 								stats.push("<b>Reload:</b> " + (this._rate / 20).toString().replace(".", ",") + " sec");
 							} else {
 								stats.push("<b>Reload:</b> " + (this._rate / 40).toString().replace(".", ",") + " sec");

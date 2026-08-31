@@ -264,7 +264,7 @@ export const baseSave: KoaController = async (ctx) => {
 								userSave.stats.assault_to_4++;
 							}
 
-							userSave.credits += getShinyPointsByLevel(baseSave.level);
+							// userSave.credits += getShinyPointsByLevel(baseSave.level);
 							userSave.empirevalue += getConquerorPointsByLevel(baseSave.level);
 							postgres.em.persist(userSave);
 							await postgres.em.flush();
@@ -286,7 +286,7 @@ export const baseSave: KoaController = async (ctx) => {
 								userSave.stats.assault_mo_4++;
 							}
 
-							userSave.credits += getShinyPointsByLevel(baseSave.level);
+							// userSave.credits += getShinyPointsByLevel(baseSave.level);
 							userSave.empirevalue += getConquerorPointsByLevel(baseSave.level);
 							postgres.em.persist(userSave);
 							await postgres.em.flush();

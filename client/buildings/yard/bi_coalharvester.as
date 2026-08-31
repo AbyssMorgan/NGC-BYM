@@ -47,15 +47,15 @@ package buildings.yard {
 			"imageData":{
 				"baseurl":"buildings/icoalproducer/",
 				1:{
-					"anim":["anim.1.v2.png",new Rectangle(-21,-45,40,18),47],
-					"anim2":["anim.2.v2.png",new Rectangle(-39,-9,39,63),47],
-					"anim3":["anim.3.v2.png",new Rectangle(-3,8.9,31,18),47],
-					"top":["top.1.v2.png",new Point(-32,-40)],
+					"anim":["anim.1.png",new Rectangle(-21,-45,40,18),47],
+					"anim2":["anim.2.png",new Rectangle(-39,-9,39,63),47],
+					"anim3":["anim.3.png",new Rectangle(-3,8.9,31,18),47],
+					"top":["top.1.png",new Point(-32,-40)],
 					"shadow":["shadow.1.jpg",new Point(-40,14)],
-					"topdamaged":["top.1.damaged.v2.png",new Point(-34,-42)],
-					"shadowdamaged":["shadow.1.damaged.v2.jpg",new Point(-64,4)],
-					"topdestroyed":["top.1.destroyed.v2.png",new Point(-44,-4)],
-					"shadowdestroyed":["shadow.1.destroyed.v2.jpg",new Point(-50,-2)]
+					"topdamaged":["top.1.damaged.png",new Point(-34,-42)],
+					"shadowdamaged":["shadow.1.damaged.jpg",new Point(-64,4)],
+					"topdestroyed":["top.1.destroyed.png",new Point(-44,-4)],
+					"shadowdestroyed":["shadow.1.destroyed.jpg",new Point(-50,-2)]
 				},
 				3:{
 					"anim":["anim.1.2.png",new Rectangle(-40,-52,74,105),45],
@@ -71,8 +71,7 @@ package buildings.yard {
 			"upgradeImgData":{
 				"baseurl":"buttons/buildings/",
 				1:{
-					"img":"coal_producer.v2.jpg",
-					"silhouette_img":"coal_producer.v2.silhouette.jpg"
+					"img":"coal_producer.jpg"
 				}
 			},
 			"quantity":[

@@ -41,7 +41,9 @@ package buildings.yard {
 			},
 			"upgradeImgData":{
 				"baseurl":"buttons/buildings/",
-				"1":{"img":"145.jpg"}
+				"1":{
+					"img":"145.jpg"
+				}
 			},
 			"quantity":[
 				0, // Level 0

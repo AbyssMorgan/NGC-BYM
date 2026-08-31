@@ -458,7 +458,7 @@ package
          creature = CREATURELOCKER._creatures[this._creatureID];
          if(!BASE.isInfernoMainYardOrOutpost)
          {
-            img = "quests/monster" + this._creatureID.substr(1) + ".v2.png";
+            img = "quests/monster" + this._creatureID.substr(1) + ".png";
          }
          else
          {

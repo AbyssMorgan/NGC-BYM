@@ -50,7 +50,7 @@ package buildings.yard {
 					"shadow":["shadow4.jpg",new Point(-67,-82)]
 				},
 				"5":{
-					"top":["top5.v2.png",new Point(-30,-110)],
+					"top":["top5.png",new Point(-30,-110)],
 					"shadow":["shadow4.jpg",new Point(-67,-82)]
 				},
 				"6":{

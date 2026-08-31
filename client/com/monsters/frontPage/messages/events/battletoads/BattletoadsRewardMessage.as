@@ -9,7 +9,7 @@ package com.monsters.frontPage.messages.events.battletoads
       public function BattletoadsRewardMessage()
       {
          super("event1reward","btn_brag");
-         this.imageURL = _IMAGE_DIRECTORY + "fp_event1reward.v2.jpg";
+         this.imageURL = _IMAGE_DIRECTORY + "fp_event1reward.jpg";
       }
       
       override public function get areRequirementsMet() : Boolean

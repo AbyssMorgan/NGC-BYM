@@ -25,36 +25,35 @@ package buildings.inferno {
 			"imageData":{
 				"baseurl":"buildings/iwalls/",
 				1:{
-					"top":["top.1.v2.png",new Point(-24,-5)],
-					"shadow":["shadow.1.v2.jpg",new Point(-20,0.8)],
-					"topdamaged":["top.1.damaged.v2.png",new Point(-24,-5)],
-					"shadowdamaged":["shadow.1.damaged.v2.jpg",new Point(-20,0.8)],
-					"topdestroyed":["top.1.destroyed.v2.png",new Point(-24,-5)],
-					"shadowdestroyed":["shadow.1.destroyed.v2.jpg",new Point(-20,0.8)]
+					"top":["top.1.png",new Point(-24,-5)],
+					"shadow":["shadow.1.jpg",new Point(-20,0.8)],
+					"topdamaged":["top.1.damaged.png",new Point(-24,-5)],
+					"shadowdamaged":["shadow.1.damaged.jpg",new Point(-20,0.8)],
+					"topdestroyed":["top.1.destroyed.png",new Point(-24,-5)],
+					"shadowdestroyed":["shadow.1.destroyed.jpg",new Point(-20,0.8)]
 				},
 				2:{
-					"top":["top.2.v2.png",new Point(-20,-9)],
-					"shadow":["shadow.2.v2.jpg",new Point(-20,-0.9)],
-					"topdamaged":["top.2.damaged.v2.png",new Point(-20,-9)],
-					"shadowdamaged":["shadow.2.v2.jpg",new Point(-20,-0.9)],
-					"topdestroyed":["top.2.destroyed.v2.png",new Point(-20,-9)],
-					"shadowdestroyed":["shadow.2.v2.jpg",new Point(-20,-0.9)]
+					"top":["top.2.png",new Point(-20,-9)],
+					"shadow":["shadow.2.jpg",new Point(-20,-0.9)],
+					"topdamaged":["top.2.damaged.png",new Point(-20,-9)],
+					"shadowdamaged":["shadow.2.jpg",new Point(-20,-0.9)],
+					"topdestroyed":["top.2.destroyed.png",new Point(-20,-9)],
+					"shadowdestroyed":["shadow.2.jpg",new Point(-20,-0.9)]
 				},
 				3:{
-					"top":["top.3.v2.png",new Point(-20,-27)],
-					"shadow":["shadow.3.v2.jpg",new Point(-20,-1)],
-					"topdamaged":["top.3.damaged.v2.png",new Point(-20,-27)],
-					"shadowdamaged":["shadow.3.v2.jpg",new Point(-20,-1)],
-					"topdestroyed":["top.3.destroyed.v2.png",new Point(-18,-8)],
-					"shadowdestroyed":["shadow.3.v2.jpg",new Point(-20,-1)]
+					"top":["top.3.png",new Point(-20,-27)],
+					"shadow":["shadow.3.jpg",new Point(-20,-1)],
+					"topdamaged":["top.3.damaged.png",new Point(-20,-27)],
+					"shadowdamaged":["shadow.3.jpg",new Point(-20,-1)],
+					"topdestroyed":["top.3.destroyed.png",new Point(-18,-8)],
+					"shadowdestroyed":["shadow.3.jpg",new Point(-20,-1)]
 				}
 			},
 			"buildingbuttons":["coal_wall.v3","iron_wall.v3","steel_wall.v3"],
 			"upgradeImgData":{
 				"baseurl":"buttons/buildings/",
 				1:{
-					"img":"coal_wall.v3.jpg",
-					"silhouette_img":"coal_wall.v3.silhouette.jpg"
+					"img":"coal_wall.v3.jpg"
 				},
 				2:{"img":"iron_wall.v3.jpg"},
 				3:{"img":"steel_wall.v3.jpg"}

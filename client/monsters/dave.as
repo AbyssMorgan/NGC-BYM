@@ -14,7 +14,7 @@ package monsters {
 			"name":"#m_dave#",
 			"classType":DAVE,
 			"description":"mon_davedesc",
-			"stream":["mon_davestream","mon_davestreambody","quests/monster12.v2.png"],
+			"stream":["mon_davestream","mon_davestreambody","quests/monster12.png"],
 			"trainingCosts":[
 				[8192000, 3600 * 48], // Level 2
 				[10000000, 3600 * 72], // Level 3

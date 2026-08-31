@@ -53,20 +53,19 @@ package buildings.yard {
 			"imageData":{
 				"baseurl":"buildings/istoragesilo/",
 				1:{
-					"top":["top.1.v2.png",new Point(-45,-58)],
-					"shadow":["shadow.1.v2.jpg",new Point(-48,17)],
-					"topdamaged":["top.1.damaged.v2.png",new Point(-47,-56)],
-					"shadowdamaged":["shadow.1.damaged.v2.jpg",new Point(-47,17)],
-					"topdestroyed":["top.1.destroyed.v2.png",new Point(-54,-14)],
-					"shadowdestroyed":["shadow.1.destroyed.v2.jpg",new Point(-54,12)]
+					"top":["top.1.png",new Point(-45,-58)],
+					"shadow":["shadow.1.jpg",new Point(-48,17)],
+					"topdamaged":["top.1.damaged.png",new Point(-47,-56)],
+					"shadowdamaged":["shadow.1.damaged.jpg",new Point(-47,17)],
+					"topdestroyed":["top.1.destroyed.png",new Point(-54,-14)],
+					"shadowdestroyed":["shadow.1.destroyed.jpg",new Point(-54,12)]
 				}
 			},
 			"buildingbuttons":["sillo.v2"],
 			"upgradeImgData":{
 				"baseurl":"buttons/buildings/",
 				1:{
-					"img":"sillo.v2.jpg",
-					"silhouette_img":"sillo.v2.silhouette.jpg"
+					"img":"sillo.jpg"
 				}
 			},
 			"fortImgData":{

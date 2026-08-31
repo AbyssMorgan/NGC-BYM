@@ -93,7 +93,7 @@ package
             "re":[[112,1,1]]
          }],
          "imageData":{
-            "baseurl":"buildings/twigsnapper.v2/",
+            "baseurl":"buildings/twigsnapper/",
             1:{
                "anim":["anim.1.png",new Rectangle(-4,10,23,33),34],
                "top":["top.1.png",new Point(-30,-19)],
@@ -134,8 +134,7 @@ package
          "upgradeImgData":{
             "baseurl":"buttons/buildings/",
             1:{
-               "img":"1.1.jpg",
-               "silhouette_img":"1.1.silhouette.jpg"
+               "img":"1.1.jpg"
             },
             3:{"img":"1.3.jpg"},
             6:{"img":"1.6.jpg"},
@@ -239,7 +238,7 @@ package
             "re":[[112,1,1]]
          }],
          "imageData":{
-            "baseurl":"buildings/pebbleshiner.v2/",
+            "baseurl":"buildings/pebbleshiner/",
             1:{
                "anim":["anim.1.png",new Rectangle(-21,8,42,24),26],
                "top":["top.1.png",new Point(-34,-12)],
@@ -280,8 +279,7 @@ package
          "upgradeImgData":{
             "baseurl":"buttons/buildings/",
             1:{
-               "img":"2.1.jpg",
-               "silhouette_img":"2.1.silhouette.jpg"
+               "img":"2.1.jpg"
             },
             3:{"img":"2.3.jpg"},
             6:{"img":"2.6.jpg"},
@@ -385,7 +383,7 @@ package
             "re":[[112,1,1]]
          }],
          "imageData":{
-            "baseurl":"buildings/puttysquisher.v2/",
+            "baseurl":"buildings/puttysquisher/",
             1:{
                "anim":["anim.1.png",new Rectangle(-10,8,28,18),26],
                "top":["top.1.png",new Point(-26,5)],
@@ -426,12 +424,11 @@ package
          "upgradeImgData":{
             "baseurl":"buttons/buildings/",
             1:{
-               "img":"3.1.jpg",
-               "silhouette_img":"3.1.silhouette.jpg"
+               "img":"3.1.jpg"
             },
-            3:{"img":"3.3.v2.jpg"},
-            6:{"img":"3.6.v2.jpg"},
-            10:{"img":"3.10.v2.jpg"}
+            3:{"img":"3.3.jpg"},
+            6:{"img":"3.6.jpg"},
+            10:{"img":"3.10.jpg"}
          },
          "thumbImgData":{
             "baseurl":"buildingthumbs/",
@@ -531,7 +528,7 @@ package
             "re":[[112,1,1]]
          }],
          "imageData":{
-            "baseurl":"buildings/goofactory.v2/",
+            "baseurl":"buildings/goofactory/",
             1:{
                "anim":["anim.1.png",new Rectangle(3,14,22,40),26],
                "top":["top.1.png",new Point(-26,-33)],
@@ -572,8 +569,7 @@ package
          "upgradeImgData":{
             "baseurl":"buttons/buildings/",
             1:{
-               "img":"4.1.jpg",
-               "silhouette_img":"4.1.silhouette.jpg"
+               "img":"4.1.jpg"
             },
             3:{"img":"4.3.jpg"},
             6:{"img":"4.6.jpg"},
@@ -671,8 +667,7 @@ package
          "upgradeImgData":{
             "baseurl":"buttons/buildings/",
             1:{
-               "img":"5.1.jpg",
-               "silhouette_img":"5.1.silhouette.jpg"
+               "img":"5.1.jpg"
             },
             2:{"img":"5.2.jpg"},
             3:{"img":"5.3.jpg"},
@@ -781,8 +776,7 @@ package
          "upgradeImgData":{
             "baseurl":"buttons/buildings/",
             1:{
-               "img":"9.jpg",
-               "silhouette_img":"9.silhouette.jpg"
+               "img":"9.jpg"
             }
          },
          "thumbImgData":{
@@ -827,8 +821,7 @@ package
          "upgradeImgData":{
             "baseurl":"buttons/buildings/",
             1:{
-               "img":"10.jpg",
-               "silhouette_img":"10.silhouette.jpg"
+               "img":"10.jpg"
             }
          },
          "thumbImgData":{
@@ -933,8 +926,7 @@ package
          "upgradeImgData":{
             "baseurl":"buttons/buildings/",
             1:{
-               "img":"13.1.jpg",
-               "silhouette_img":"13.2.silhouette.jpg"
+               "img":"13.1.jpg"
             },
             2:{"img":"13.2.jpg"},
             3:{"img":"13.3.jpg"}
@@ -1087,8 +1079,7 @@ package
          "upgradeImgData":{
             "baseurl":"buttons/buildings/",
             1:{
-               "img":"14.1.jpg",
-               "silhouette_img":"14.1.silhouette.jpg"
+               "img":"14.1.jpg"
             },
             2:{"img":"14.2.jpg"},
             3:{"img":"14.3.jpg"},
@@ -1170,19 +1161,18 @@ package
          "imageData":{
             "baseurl":"buildings/monsterhousing/",
             1:{
-               "top":["top.3.v2.png",new Point(-109,11)],
-               "shadow":["shadow.3.v2.jpg",new Point(-112,23)],
-               "topdamaged":["top.3.damaged.v2.png",new Point(-107,12)],
-               "shadowdamaged":["shadow.3.damaged.v2.jpg",new Point(-110,25)],
-               "topdestroyed":["top.3.destroyed.v2.png",new Point(-108,21)],
-               "shadowdestroyed":["shadow.3.destroyed.v2.jpg",new Point(-109,25)]
+               "top":["top.3.png",new Point(-109,11)],
+               "shadow":["shadow.3.jpg",new Point(-112,23)],
+               "topdamaged":["top.3.damaged.png",new Point(-107,12)],
+               "shadowdamaged":["shadow.3.damaged.jpg",new Point(-110,25)],
+               "topdestroyed":["top.3.destroyed.png",new Point(-108,21)],
+               "shadowdestroyed":["shadow.3.destroyed.jpg",new Point(-109,25)]
             }
          },
          "upgradeImgData":{
             "baseurl":"buttons/buildings/",
             1:{
-               "img":"15.jpg",
-               "silhouette_img":"15.silhouette.jpg"
+               "img":"15.jpg"
             }
          },
          "thumbImgData":{
@@ -1227,8 +1217,7 @@ package
          "upgradeImgData":{
             "baseurl":"buttons/buildings/",
             1:{
-               "img":"16.jpg",
-               "silhouette_img":"16.silhouette.jpg"
+               "img":"16.jpg"
             }
          },
          "thumbImgData":{
@@ -1313,9 +1302,9 @@ package
                "shadowdestroyed":["shadow.jpg",new Point(-28,-7)]
             },
             4:{
-               "top":["top.4.v2.png",new Point(-20,-22)],
+               "top":["top.4.png",new Point(-20,-22)],
                "shadow":["shadow.jpg",new Point(-28,-7)],
-               "topdamaged":["top.4.damaged.v2.png",new Point(-20,-22)],
+               "topdamaged":["top.4.damaged.png",new Point(-20,-22)],
                "shadowdamaged":["shadow.jpg",new Point(-28,-7)],
                "topdestroyed":["top.4.destroyed.png",new Point(-20,-2)],
                "shadowdestroyed":["shadow.jpg",new Point(-28,-7)]
@@ -1332,17 +1321,14 @@ package
          "upgradeImgData":{
             "baseurl":"buttons/buildings/",
             1:{
-               "img":"17.1.jpg",
-               "silhouette_img":"17.1.silhouette.jpg"
+               "img":"17.1.jpg"
             },
-            2:{"img":"17.2.v2.jpg"},
+            2:{"img":"17.2.jpg"},
             3:{
-               "img":"17.3.v2.jpg",
-               "silhouette_img":"17.3.v2.silhouette.jpg"
+               "img":"17.3.jpg"
             },
             4:{
-               "img":"17.4.jpg",
-               "silhouette_img":"17.4.silhouette.jpg"
+               "img":"17.4.jpg"
             },
             5:{"img":"17.5.jpg"}
          },
@@ -1574,8 +1560,7 @@ package
          "upgradeImgData":{
             "baseurl":"buttons/buildings/",
             1:{
-               "img":"20.jpg",
-               "silhouette_img":"20.silhouette.jpg"
+               "img":"20.jpg"
             }
          },
          "thumbImgData":{
@@ -1795,8 +1780,7 @@ package
          "upgradeImgData":{
             "baseurl":"buttons/buildings/",
             1:{
-               "img":"21.jpg",
-               "silhouette_img":"21.silhouette.jpg"
+               "img":"21.jpg"
             }
          },
          "thumbImgData":{
@@ -1882,8 +1866,7 @@ package
          "upgradeImgData":{
             "baseurl":"buttons/buildings/",
             1:{
-               "img":"22.jpg",
-               "silhouette_img":"22.silhouette.jpg"
+               "img":"22.jpg"
             }
          },
          "thumbImgData":{
@@ -2031,8 +2014,7 @@ package
          "upgradeImgData":{
             "baseurl":"buttons/buildings/",
             1:{
-               "img":"23.jpg",
-               "silhouette_img":"23.silhouette.jpg"
+               "img":"23.jpg"
             }
          },
          "thumbImgData":{
@@ -2093,8 +2075,7 @@ package
          "upgradeImgData":{
             "baseurl":"buttons/buildings/",
             1:{
-               "img":"24.jpg",
-               "silhouette_img":"24.silhouette.jpg"
+               "img":"24.jpg"
             }
          },
          "thumbImgData":{
@@ -2242,8 +2223,7 @@ package
          "upgradeImgData":{
             "baseurl":"buttons/buildings/",
             1:{
-               "img":"25.jpg",
-               "silhouette_img":"25.silhouette.jpg"
+               "img":"25.jpg"
             }
          },
          "thumbImgData":{
@@ -3177,8 +3157,7 @@ package
          "upgradeImgData":{
             "baseurl":"buttons/buildings/",
             1:{
-               "img":"51.1.jpg",
-               "silhouette_img":"51.3.silhouette.jpg"
+               "img":"51.1.jpg"
             },
             2:{"img":"51.2.jpg"},
             3:{"img":"51.3.jpg"}
@@ -5185,8 +5164,7 @@ package
          "upgradeImgData":{
             "baseurl":"buttons/buildings/",
             1:{
-               "img":"112.jpg",
-               "silhouette_img":"112.silhouette.jpg"
+               "img":"112.jpg"
             }
          },
          "thumbImgData":{
@@ -5411,8 +5389,7 @@ package
          "upgradeImgData":{
             "baseurl":"buttons/buildings/",
             1:{
-               "img":"115.jpg",
-               "silhouette_img":"115.silhouette.jpg"
+               "img":"115.jpg"
             }
          },
          "fortImgData":{
@@ -5482,8 +5459,7 @@ package
          "upgradeImgData":{
             "baseurl":"buttons/buildings/",
             1:{
-               "img":"117.jpg",
-               "silhouette_img":"117.silhouette.jpg"
+               "img":"117.jpg"
             }
          },
          "quantity":[0,5],
@@ -5629,8 +5605,7 @@ package
          "upgradeImgData":{
             "baseurl":"buttons/buildings/",
             1:{
-               "img":"118.jpg",
-               "silhouette_img":"118.silhouette.jpg"
+               "img":"118.jpg"
             }
          },
          "thumbImgData":{
@@ -6123,24 +6098,23 @@ package
          "imageData":{
             "baseurl":"buildings/imagmatower/",
             1:{
-               "anim":["anim.1.v2.png",new Rectangle(-26,-50,54,42),31],
-               "anim2":["anim.2.v2.png",new Rectangle(-17,26,38,19),31],
-               "top":["top.1.v2.png",new Point(-34,-9)],
-               "shadow":["shadow.1.v2.jpg",new Point(-31,10)],
-               "animdamaged":["anim.1.damaged.v2.png",new Rectangle(-28.6,-47.6,52,43),31],
-               "animdamaged2":["anim.2.damaged.v2.png",new Rectangle(-21,28,38,19),31],
-               "topdamaged":["top.1.damaged.v2.png",new Point(-38,-4)],
-               "shadowdamaged":["shadow.1.v2.jpg",new Point(-38,16)],
-               "topdestroyed":["top.1.destroyed.v2.png",new Point(-36,6)],
-               "shadowdestroyed":["shadow.1.destroyed.v2.jpg",new Point(-36,22)]
+               "anim":["anim.1.png",new Rectangle(-26,-50,54,42),31],
+               "anim2":["anim.2.png",new Rectangle(-17,26,38,19),31],
+               "top":["top.1.png",new Point(-34,-9)],
+               "shadow":["shadow.1.jpg",new Point(-31,10)],
+               "animdamaged":["anim.1.damaged.png",new Rectangle(-28.6,-47.6,52,43),31],
+               "animdamaged2":["anim.2.damaged.png",new Rectangle(-21,28,38,19),31],
+               "topdamaged":["top.1.damaged.png",new Point(-38,-4)],
+               "shadowdamaged":["shadow.1.jpg",new Point(-38,16)],
+               "topdestroyed":["top.1.destroyed.png",new Point(-36,6)],
+               "shadowdestroyed":["shadow.1.destroyed.jpg",new Point(-36,22)]
             }
          },
-         "buildingbuttons":["magma_tower.v2"],
+         "buildingbuttons":["magma_tower"],
          "upgradeImgData":{
             "baseurl":"buttons/buildings/",
             1:{
-               "img":"magma_tower.v2.jpg",
-               "silhouette_img":"magma_tower.v2.silhouette.jpg"
+               "img":"magma_tower.jpg"
             }
          },
          "fortImgData":{

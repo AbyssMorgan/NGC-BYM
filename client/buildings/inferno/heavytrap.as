@@ -34,8 +34,7 @@ package buildings.inferno {
 			"upgradeImgData":{
 				"baseurl":"buttons/buildings/",
 				1:{
-					"img":"booby_trap.v2.jpg",
-					"silhouette_img":"booby_trap.v2.silhouette.jpg"
+					"img":"booby_trap.jpg"
 				}
 			},
 			"quantity":[0,0,0,0,0,0],

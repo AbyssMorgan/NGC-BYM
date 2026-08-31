@@ -25,13 +25,15 @@ package buildings.yard {
 			"buildingbuttons":["101.v2"],
 			"upgradeImgData":{
 				"baseurl":"buttons/buildings/",
-				"1":{"img":"101.v2.jpg"}
+				"1":{
+					"img":"101.jpg"
+				}
 			},
 			"imageData":{
 				"baseurl":"buildings/decorations/statue-bigben/",
 				"1":{
-					"top":["top.v2.png",new Point(-32,-104)],
-					"shadow":["shadow.v2.jpg",new Point(-32,19)]
+					"top":["top.png",new Point(-32,-104)],
+					"shadow":["shadow.jpg",new Point(-32,19)]
 				}
 			},
 			"quantity":[0],

@@ -9,7 +9,7 @@ package com.monsters.frontPage.messages.events.battletoads
       public function BattletoadsPromoMessage1()
       {
          super("event1pop1");
-         this.imageURL = _IMAGE_DIRECTORY + "fp_event1pop1.v2.jpg";
+         this.imageURL = _IMAGE_DIRECTORY + "fp_event1pop1.jpg";
       }
    }
 }

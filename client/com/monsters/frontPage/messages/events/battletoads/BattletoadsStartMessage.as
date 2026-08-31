@@ -10,7 +10,7 @@ package com.monsters.frontPage.messages.events.battletoads
       public function BattletoadsStartMessage()
       {
          super("event1start","btn_attack");
-         this.imageURL = _IMAGE_DIRECTORY + "fp_event1start.v2.jpg";
+         this.imageURL = _IMAGE_DIRECTORY + "fp_event1start.jpg";
       }
       
       override protected function onButtonClick() : void

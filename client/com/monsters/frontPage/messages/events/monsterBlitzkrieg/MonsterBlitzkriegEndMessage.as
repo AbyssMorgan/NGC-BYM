@@ -9,7 +9,7 @@ package com.monsters.frontPage.messages.events.monsterBlitzkrieg
       public function MonsterBlitzkriegEndMessage()
       {
          super("event2end");
-         this.imageURL = _IMAGE_DIRECTORY + "fp_event2start.v2.jpg";
+         this.imageURL = _IMAGE_DIRECTORY + "fp_event2start.jpg";
       }
    }
 }

@@ -35,8 +35,7 @@ package buildings.inferno {
 			"upgradeImgData":{
 				"baseurl":"buttons/buildings/",
 				1:{
-					"img":"119.jpg",
-					"silhouette_img":"119.silhouette.jpg"
+					"img":"119.jpg"
 				}
 			},
 			"quantity":[0,0,0,0,0,0,0,0,0,0],

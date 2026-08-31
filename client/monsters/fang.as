@@ -14,7 +14,7 @@ package monsters {
 			"name":"#m_fang#",
 			"classType":Fang,
 			"description":"mon_fangdesc",
-			"stream":["mon_fangstream","mon_fangstreambody","quests/monster8.v2.png"],
+			"stream":["mon_fangstream","mon_fangstreambody","quests/monster8.png"],
 			"trainingCosts":[
 				[512000, 3600 * 12], // Level 2
 				[512000, 3600 * 16], // Level 3

@@ -11,7 +11,7 @@ package monsters {
 			"level":1,
 			"name":"#m_pokey#",
 			"description":"mon_pokeydesc",
-			"stream":["mon_pokeystream","mon_pokeystreambody","quests/monster1.v2.png"],
+			"stream":["mon_pokeystream","mon_pokeystreambody","quests/monster1.png"],
 			"unlock":[""],
 			"trainingCosts":[
 				[4000, 3600 * 2], // Level 2

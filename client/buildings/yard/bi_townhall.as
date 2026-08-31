@@ -53,36 +53,36 @@ package buildings.yard {
 			"imageData":{
 				"baseurl":"buildings/itownhall/",
 				1:{
-					"top":["top.1.v2.png",new Point(-52,-31)],
-					"shadow":["shadow.1.v2.jpg",new Point(-65,49)],
-					"topdamaged":["top.1.damaged.v2.png",new Point(-56,-33)],
-					"shadowdamaged":["shadow.1.damaged.v2.jpg",new Point(-65,47)],
-					"topdestroyed":["top.1.destroyed.v2.png",new Point(-63,10)],
-					"shadowdestroyed":["shadow.1.destroyed.v2.jpg",new Point(-68,43)]
+					"top":["top.1.png",new Point(-52,-31)],
+					"shadow":["shadow.1.jpg",new Point(-65,49)],
+					"topdamaged":["top.1.damaged.png",new Point(-56,-33)],
+					"shadowdamaged":["shadow.1.damaged.jpg",new Point(-65,47)],
+					"topdestroyed":["top.1.destroyed.png",new Point(-63,10)],
+					"shadowdestroyed":["shadow.1.destroyed.jpg",new Point(-68,43)]
 				},
 				2:{
-					"top":["top.2.v2.png",new Point(-50,-46)],
-					"shadow":["shadow.2.v2.jpg",new Point(-70,35)],
-					"topdamaged":["top.2.damaged.v2.png",new Point(-49,-46)],
-					"shadowdamaged":["shadow.2.damaged.v2.jpg",new Point(-59,44)],
-					"topdestroyed":["top.2.destroyed.v2.png",new Point(-52,5)],
-					"shadowdestroyed":["shadow.2.destroyed.v2.jpg",new Point(-76,33)]
+					"top":["top.2.png",new Point(-50,-46)],
+					"shadow":["shadow.2.jpg",new Point(-70,35)],
+					"topdamaged":["top.2.damaged.png",new Point(-49,-46)],
+					"shadowdamaged":["shadow.2.damaged.jpg",new Point(-59,44)],
+					"topdestroyed":["top.2.destroyed.png",new Point(-52,5)],
+					"shadowdestroyed":["shadow.2.destroyed.jpg",new Point(-76,33)]
 				},
 				3:{
-					"top":["top.3.v2.png",new Point(-51,-57)],
-					"shadow":["shadow.3.v2.jpg",new Point(-74,35)],
-					"topdamaged":["top.3.damaged.v2.png",new Point(-56,-55)],
-					"shadowdamaged":["shadow.3.damaged.v2.jpg",new Point(-73,33)],
-					"topdestroyed":["top.3.destroyed.v2.png",new Point(-62,-12)],
-					"shadowdestroyed":["shadow.3.destroyed.v2.jpg",new Point(-75,29)]
+					"top":["top.3.png",new Point(-51,-57)],
+					"shadow":["shadow.3.jpg",new Point(-74,35)],
+					"topdamaged":["top.3.damaged.png",new Point(-56,-55)],
+					"shadowdamaged":["shadow.3.damaged.jpg",new Point(-73,33)],
+					"topdestroyed":["top.3.destroyed.png",new Point(-62,-12)],
+					"shadowdestroyed":["shadow.3.destroyed.jpg",new Point(-75,29)]
 				}
 			},
 			"buildingbuttons":["townhall_L2.v2"],
 			"upgradeImgData":{
 				"baseurl":"buttons/buildings/",
-				1:{"img":"townhall_L2.v2.jpg"},
-				2:{"img":"townhall_L2.v2.jpg"},
-				3:{"img":"townhall_L3.v2.jpg"}
+				1:{"img":"townhall_L2.jpg"},
+				2:{"img":"townhall_L2.jpg"},
+				3:{"img":"townhall_L3.jpg"}
 			},
 			"fortImgData":{
 				"baseurl":"buildings/fortifications/",

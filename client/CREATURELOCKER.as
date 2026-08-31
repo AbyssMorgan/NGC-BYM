@@ -282,7 +282,7 @@ package {
 				delete _lockerData[_unlocking].s;
 				delete _lockerData[_unlocking].e;
 				creature = _creatures[_unlocking];
-				img = "quests/monster" + _unlocking.substr(1) + ".v2.png";
+				img = "quests/monster" + _unlocking.substr(1) + ".png";
 				if(creature.stream[2])
 				{
 					img = String(creature.stream[2]);

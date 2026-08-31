@@ -499,7 +499,7 @@ package
 					"name": "Storage Silo",
 					"description": "Build storage silo",
 					"hint": "You can speed up upgrades.",
-					"questimage": "building-storage.v2.png",
+					"questimage": "building-storage.png",
 					"rules":
 					{
 						"b6lvl": 1
@@ -514,7 +514,7 @@ package
 					"name": "Storage Silo level 2",
 					"description": "Upgrade your Storage Silo to level 2",
 					"hint": "You can speed up upgrades.",
-					"questimage": "building-storage.v2.png",
+					"questimage": "building-storage.png",
 					"prereq": "SS1",
 					"rules":
 					{
@@ -530,7 +530,7 @@ package
 					"name": "Storage Silo level 3",
 					"description": "Upgrade your Storage Silo to level 3",
 					"hint": "You can speed up upgrades.",
-					"questimage": "building-storage.v2.png",
+					"questimage": "building-storage.png",
 					"prereq": "SS2",
 					"rules":
 					{
@@ -546,7 +546,7 @@ package
 					"name": "Storage Silo level 4",
 					"description": "Upgrade your Storage Silo to level 4",
 					"hint": "You can speed up upgrades.",
-					"questimage": "building-storage.v2.png",
+					"questimage": "building-storage.png",
 					"prereq": "SS3",
 					"rules":
 					{
@@ -562,7 +562,7 @@ package
 					"name": "Storage Silo level 5",
 					"description": "Upgrade your Storage Silo to level 5",
 					"hint": "You can speed up upgrades.",
-					"questimage": "building-storage.v2.png",
+					"questimage": "building-storage.png",
 					"prereq": "SS4",
 					"rules":
 					{
@@ -578,7 +578,7 @@ package
 					"name": "Storage Silo level 6",
 					"description": "Upgrade your Storage Silo to level 6",
 					"hint": "You can speed up upgrades.",
-					"questimage": "building-storage.v2.png",
+					"questimage": "building-storage.png",
 					"prereq": "SS5",
 					"rules":
 					{
@@ -594,7 +594,7 @@ package
 					"name": "Storage Silo level 8",
 					"description": "Upgrade your Storage Silo to level 8",
 					"hint": "You can speed up upgrades.",
-					"questimage": "building-storage.v2.png",
+					"questimage": "building-storage.png",
 					"prereq": "SS7",
 					"rules":
 					{
@@ -610,7 +610,7 @@ package
 					"name": "Storage Silo level 10",
 					"description": "Upgrade your Storage Silo to level 10",
 					"hint": "You can speed up upgrades.",
-					"questimage": "building-storage.v2.png",
+					"questimage": "building-storage.png",
 					"prereq": "SS9",
 					"rules":
 					{
@@ -626,7 +626,7 @@ package
 					"name": "Storage Silo level 12",
 					"description": "Upgrade your Storage Silo to level 12",
 					"hint": "You can speed up upgrades.",
-					"questimage": "building-storage.v2.png",
+					"questimage": "building-storage.png",
 					"prereq": "SS10",
 					"rules":
 					{
@@ -642,7 +642,7 @@ package
 					"name": "Storage Silo level 14",
 					"description": "Upgrade your Storage Silo to level 14",
 					"hint": "You can speed up upgrades.",
-					"questimage": "building-storage.v2.png",
+					"questimage": "building-storage.png",
 					"prereq": "SS12",
 					"rules":
 					{
@@ -658,7 +658,7 @@ package
 					"name": "Storage Silo level 16",
 					"description": "Upgrade your Storage Silo to level 16",
 					"hint": "You can speed up upgrades.",
-					"questimage": "building-storage.v2.png",
+					"questimage": "building-storage.png",
 					"prereq": "SS14",
 					"rules":
 					{
@@ -674,7 +674,7 @@ package
 					"name": "Storage Silo level 18",
 					"description": "Upgrade your Storage Silo to level 18",
 					"hint": "You can speed up upgrades.",
-					"questimage": "building-storage.v2.png",
+					"questimage": "building-storage.png",
 					"prereq": "SS16",
 					"rules":
 					{
@@ -690,7 +690,7 @@ package
 					"name": "Storage Silo level 20",
 					"description": "Upgrade your Storage Silo to level 20",
 					"hint": "You can speed up upgrades.",
-					"questimage": "building-storage.v2.png",
+					"questimage": "building-storage.png",
 					"prereq": "SS18",
 					"rules":
 					{
@@ -706,7 +706,7 @@ package
 					"name": "Storage Silo level 21",
 					"description": "Upgrade your Storage Silo to level 21",
 					"hint": "You can speed up upgrades.",
-					"questimage": "building-storage.v2.png",
+					"questimage": "building-storage.png",
 					"prereq": "SS20",
 					"rules":
 					{
@@ -722,7 +722,7 @@ package
 					"name": "Storage Silo level 22",
 					"description": "Upgrade your Storage Silo to level 22",
 					"hint": "You can speed up upgrades.",
-					"questimage": "building-storage.v2.png",
+					"questimage": "building-storage.png",
 					"prereq": "SS21",
 					"rules":
 					{
@@ -738,7 +738,7 @@ package
 					"name": "Storage Silo level 23",
 					"description": "Upgrade your Storage Silo to level 23",
 					"hint": "You can speed up upgrades.",
-					"questimage": "building-storage.v2.png",
+					"questimage": "building-storage.png",
 					"prereq": "SS22",
 					"rules":
 					{
@@ -754,7 +754,7 @@ package
 					"name": "Storage Silo level 24",
 					"description": "Upgrade your Storage Silo to level 24",
 					"hint": "You can speed up upgrades.",
-					"questimage": "building-storage.v2.png",
+					"questimage": "building-storage.png",
 					"prereq": "SS23",
 					"rules":
 					{
@@ -770,7 +770,7 @@ package
 					"name": "Storage Silo level 25",
 					"description": "Upgrade your Storage Silo to level 25",
 					"hint": "You can speed up upgrades.",
-					"questimage": "building-storage.v2.png",
+					"questimage": "building-storage.png",
 					"prereq": "SS24",
 					"rules":
 					{
@@ -786,7 +786,7 @@ package
 					"name": "Storage Silo level 26",
 					"description": "Upgrade your Storage Silo to level 26",
 					"hint": "You can speed up upgrades.",
-					"questimage": "building-storage.v2.png",
+					"questimage": "building-storage.png",
 					"prereq": "SS25",
 					"rules":
 					{
@@ -802,7 +802,7 @@ package
 					"name": "Storage Silo level 27",
 					"description": "Upgrade your Storage Silo to level 27",
 					"hint": "You can speed up upgrades.",
-					"questimage": "building-storage.v2.png",
+					"questimage": "building-storage.png",
 					"prereq": "SS26",
 					"rules":
 					{
@@ -818,7 +818,7 @@ package
 					"name": "Storage Silo level 28",
 					"description": "Upgrade your Storage Silo to level 28",
 					"hint": "You can speed up upgrades.",
-					"questimage": "building-storage.v2.png",
+					"questimage": "building-storage.png",
 					"prereq": "SS27",
 					"rules":
 					{
@@ -834,7 +834,7 @@ package
 					"name": "Storage Silo level 29",
 					"description": "Upgrade your Storage Silo to level 29",
 					"hint": "You can speed up upgrades.",
-					"questimage": "building-storage.v2.png",
+					"questimage": "building-storage.png",
 					"prereq": "SS28",
 					"rules":
 					{
@@ -850,7 +850,7 @@ package
 					"name": "Storage Silo level 30",
 					"description": "Upgrade your Storage Silo to level 30",
 					"hint": "You can speed up upgrades.",
-					"questimage": "building-storage.v2.png",
+					"questimage": "building-storage.png",
 					"prereq": "SS29",
 					"rules":
 					{
@@ -3825,7 +3825,7 @@ package
 					"name": "q_cr1_name",
 					"description": "q_cr1_description",
 					"hint": "q_cr1_hint",
-					"questimage": "building-monsterlocker.v2.png",
+					"questimage": "building-monsterlocker.png",
 					"rules":
 					{
 						"b8lvl": 1
@@ -3935,7 +3935,7 @@ package
 					"name": "q_d1_name",
 					"description": "q_d1_description",
 					"hint": "q_d1_hint",
-					"questimage": "firstblood.v2.png",
+					"questimage": "firstblood.png",
 					"rules":
 					{
 						"kills": 1
@@ -3980,7 +3980,7 @@ package
 					"name": "q_wm1_name",
 					"description": "q_wm1_description",
 					"hint": "q_wm1_hint",
-					"questimage": "tribe_legionnaire.v2.png",
+					"questimage": "tribe_legionnaire.png",
 					"rules":
 					{
 						"destroy_tribe1": 1
@@ -4010,7 +4010,7 @@ package
 					"name": "q_wm2_name",
 					"description": "q_wm2_description",
 					"hint": "q_wm2_hint",
-					"questimage": "tribe_kozu.v2.png",
+					"questimage": "tribe_kozu.png",
 					"rules":
 					{
 						"destroy_tribe2": 1
@@ -4025,7 +4025,7 @@ package
 					"name": "q_wm3_name",
 					"description": "q_wm3_description",
 					"hint": "q_wm3_hint",
-					"questimage": "tribe_abunakki.v2.png",
+					"questimage": "tribe_abunakki.png",
 					"rules":
 					{
 						"destroy_tribe3": 1
@@ -4040,7 +4040,7 @@ package
 					"name": "q_wm4_name",
 					"description": "q_wm4_description",
 					"hint": "q_wm4_hint",
-					"questimage": "tribe_dreadnaut.v2.png",
+					"questimage": "tribe_dreadnaut.png",
 					"rules":
 					{
 						"destroy_tribe4": 1
@@ -4168,7 +4168,7 @@ package
 					"name": "q_bk1_name",
 					"description": "q_bk1_description",
 					"hint": "q_bk1_hint",
-					"questimage": "gatherer.v2.png",
+					"questimage": "gatherer.png",
 					"rules":
 					{
 						"singleclickbank": 1000
@@ -4183,7 +4183,7 @@ package
 					"name": "q_bk2_name",
 					"description": "q_bk2_description",
 					"hint": "q_bk2_hint",
-					"questimage": "trenchcoat.v2.png",
+					"questimage": "trenchcoat.png",
 					"prereq": "BK1",
 					"rules":
 					{
@@ -4199,7 +4199,7 @@ package
 					"name": "q_bk3_name",
 					"description": "q_bk3_description",
 					"hint": "q_bk3_hint",
-					"questimage": "wallstreet.v2.png",
+					"questimage": "wallstreet.png",
 					"prereq": "BK2",
 					"rules":
 					{
@@ -4215,7 +4215,7 @@ package
 					"name": "q_bk4_name",
 					"description": "q_bk4_description",
 					"hint": "q_bk4_hint",
-					"questimage": "mogul.v2.png",
+					"questimage": "mogul.png",
 					"prereq": "BK3",
 					"rules":
 					{
@@ -4282,7 +4282,7 @@ package
 					"name": "q_fan_name",
 					"description": "q_fan_description",
 					"hint": "q_fan_hint",
-					"questimage": "fantastic.v2.png",
+					"questimage": "fantastic.png",
 					"rules":
 					{
 						"bonus_fan": 1
@@ -4347,7 +4347,7 @@ package
 					"name": "q_bl1_name",
 					"description": "q_bl1_description",
 					"hint": "q_bl1_hint",
-					"questimage": "monsterjuice.v2.png",
+					"questimage": "monsterjuice.png",
 					"rules":
 					{
 						"monstersblended": 10
@@ -4362,7 +4362,7 @@ package
 					"name": "q_bl2_name",
 					"description": "q_bl2_description",
 					"hint": "q_bl2_hint",
-					"questimage": "smoothie.v2.png",
+					"questimage": "smoothie.png",
 					"prereq": "BL1",
 					"rules":
 					{
@@ -4378,7 +4378,7 @@ package
 					"name": "q_bl3_name",
 					"description": "q_bl3_description",
 					"hint": "q_bl3_hint",
-					"questimage": "monstershake.v2.png",
+					"questimage": "monstershake.png",
 					"prereq": "BL2",
 					"rules":
 					{
@@ -6332,7 +6332,7 @@ package
 					"name": "Legionnaire x10",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_0#\/10.",
 					"hint": "Tribe outposts level 50 - 65",
-					"questimage": "tribe_legionnaire.v2.png",
+					"questimage": "tribe_legionnaire.png",
 					"rules":
 					{
 						"assault_to_1_0": 10
@@ -6347,7 +6347,7 @@ package
 					"name": "Legionnaire x25",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_0#\/25.",
 					"hint": "Tribe outposts level 50 - 65",
-					"questimage": "tribe_legionnaire.v2.png",
+					"questimage": "tribe_legionnaire.png",
 					"prereq": "ASSAULT_TO_1_0_10",
 					"rules":
 					{
@@ -6363,7 +6363,7 @@ package
 					"name": "Legionnaire x50",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_0#\/50.",
 					"hint": "Tribe outposts level 50 - 65",
-					"questimage": "tribe_legionnaire.v2.png",
+					"questimage": "tribe_legionnaire.png",
 					"prereq": "ASSAULT_TO_1_0_25",
 					"rules":
 					{
@@ -6379,7 +6379,7 @@ package
 					"name": "Legionnaire x100",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_0#\/100.",
 					"hint": "Tribe outposts level 50 - 65",
-					"questimage": "tribe_legionnaire.v2.png",
+					"questimage": "tribe_legionnaire.png",
 					"prereq": "ASSAULT_TO_1_0_50",
 					"rules":
 					{
@@ -6395,7 +6395,7 @@ package
 					"name": "Legionnaire x250",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_0#\/250.",
 					"hint": "Tribe outposts level 50 - 65",
-					"questimage": "tribe_legionnaire.v2.png",
+					"questimage": "tribe_legionnaire.png",
 					"prereq": "ASSAULT_TO_1_0_100",
 					"rules":
 					{
@@ -6411,7 +6411,7 @@ package
 					"name": "Legionnaire x500",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_0#\/500.",
 					"hint": "Tribe outposts level 50 - 65",
-					"questimage": "tribe_legionnaire.v2.png",
+					"questimage": "tribe_legionnaire.png",
 					"prereq": "ASSAULT_TO_1_0_250",
 					"rules":
 					{
@@ -6427,7 +6427,7 @@ package
 					"name": "Legionnaire x1000",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_0#\/1000.",
 					"hint": "Tribe outposts level 50 - 65",
-					"questimage": "tribe_legionnaire.v2.png",
+					"questimage": "tribe_legionnaire.png",
 					"prereq": "ASSAULT_TO_1_0_500",
 					"rules":
 					{
@@ -6443,7 +6443,7 @@ package
 					"name": "Legionnaire x2500",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_0#\/2500.",
 					"hint": "Tribe outposts level 50 - 65",
-					"questimage": "tribe_legionnaire.v2.png",
+					"questimage": "tribe_legionnaire.png",
 					"prereq": "ASSAULT_TO_1_0_1000",
 					"rules":
 					{
@@ -6459,7 +6459,7 @@ package
 					"name": "Legionnaire x5000",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_0#\/5000.",
 					"hint": "Tribe outposts level 50 - 65",
-					"questimage": "tribe_legionnaire.v2.png",
+					"questimage": "tribe_legionnaire.png",
 					"prereq": "ASSAULT_TO_1_0_2500",
 					"rules":
 					{
@@ -6476,7 +6476,7 @@ package
 					"name": "Kozu x10",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_1#\/10.",
 					"hint": "Tribe outposts level 50 - 65",
-					"questimage": "tribe_kozu.v2.png",
+					"questimage": "tribe_kozu.png",
 					"rules":
 					{
 						"assault_to_1_1": 10
@@ -6491,7 +6491,7 @@ package
 					"name": "Kozu x25",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_1#\/25.",
 					"hint": "Tribe outposts level 50 - 65",
-					"questimage": "tribe_kozu.v2.png",
+					"questimage": "tribe_kozu.png",
 					"prereq": "ASSAULT_TO_1_1_10",
 					"rules":
 					{
@@ -6507,7 +6507,7 @@ package
 					"name": "Kozu x50",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_1#\/50.",
 					"hint": "Tribe outposts level 50 - 65",
-					"questimage": "tribe_kozu.v2.png",
+					"questimage": "tribe_kozu.png",
 					"prereq": "ASSAULT_TO_1_1_25",
 					"rules":
 					{
@@ -6523,7 +6523,7 @@ package
 					"name": "Kozu x100",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_1#\/100.",
 					"hint": "Tribe outposts level 50 - 65",
-					"questimage": "tribe_kozu.v2.png",
+					"questimage": "tribe_kozu.png",
 					"prereq": "ASSAULT_TO_1_1_50",
 					"rules":
 					{
@@ -6539,7 +6539,7 @@ package
 					"name": "Kozu x250",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_1#\/250.",
 					"hint": "Tribe outposts level 50 - 65",
-					"questimage": "tribe_kozu.v2.png",
+					"questimage": "tribe_kozu.png",
 					"prereq": "ASSAULT_TO_1_1_100",
 					"rules":
 					{
@@ -6555,7 +6555,7 @@ package
 					"name": "Kozu x500",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_1#\/500.",
 					"hint": "Tribe outposts level 50 - 65",
-					"questimage": "tribe_kozu.v2.png",
+					"questimage": "tribe_kozu.png",
 					"prereq": "ASSAULT_TO_1_1_250",
 					"rules":
 					{
@@ -6571,7 +6571,7 @@ package
 					"name": "Kozu x1000",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_1#\/1000.",
 					"hint": "Tribe outposts level 50 - 65",
-					"questimage": "tribe_kozu.v2.png",
+					"questimage": "tribe_kozu.png",
 					"prereq": "ASSAULT_TO_1_1_500",
 					"rules":
 					{
@@ -6587,7 +6587,7 @@ package
 					"name": "Kozu x2500",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_1#\/2500.",
 					"hint": "Tribe outposts level 50 - 65",
-					"questimage": "tribe_kozu.v2.png",
+					"questimage": "tribe_kozu.png",
 					"prereq": "ASSAULT_TO_1_1_1000",
 					"rules":
 					{
@@ -6603,7 +6603,7 @@ package
 					"name": "Kozu x5000",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_1#\/5000.",
 					"hint": "Tribe outposts level 50 - 65",
-					"questimage": "tribe_kozu.v2.png",
+					"questimage": "tribe_kozu.png",
 					"prereq": "ASSAULT_TO_1_1_2500",
 					"rules":
 					{
@@ -6620,7 +6620,7 @@ package
 					"name": "Abunakki x10",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_2#\/10.",
 					"hint": "Tribe outposts level 50 - 65",
-					"questimage": "tribe_abunakki.v2.png",
+					"questimage": "tribe_abunakki.png",
 					"rules":
 					{
 						"assault_to_1_2": 10
@@ -6635,7 +6635,7 @@ package
 					"name": "Abunakki x25",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_2#\/25.",
 					"hint": "Tribe outposts level 50 - 65",
-					"questimage": "tribe_abunakki.v2.png",
+					"questimage": "tribe_abunakki.png",
 					"prereq": "ASSAULT_TO_1_2_10",
 					"rules":
 					{
@@ -6651,7 +6651,7 @@ package
 					"name": "Abunakki x50",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_2#\/50.",
 					"hint": "Tribe outposts level 50 - 65",
-					"questimage": "tribe_abunakki.v2.png",
+					"questimage": "tribe_abunakki.png",
 					"prereq": "ASSAULT_TO_1_2_25",
 					"rules":
 					{
@@ -6667,7 +6667,7 @@ package
 					"name": "Abunakki x100",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_2#\/100.",
 					"hint": "Tribe outposts level 50 - 65",
-					"questimage": "tribe_abunakki.v2.png",
+					"questimage": "tribe_abunakki.png",
 					"prereq": "ASSAULT_TO_1_2_50",
 					"rules":
 					{
@@ -6683,7 +6683,7 @@ package
 					"name": "Abunakki x250",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_2#\/250.",
 					"hint": "Tribe outposts level 50 - 65",
-					"questimage": "tribe_abunakki.v2.png",
+					"questimage": "tribe_abunakki.png",
 					"prereq": "ASSAULT_TO_1_2_100",
 					"rules":
 					{
@@ -6699,7 +6699,7 @@ package
 					"name": "Abunakki x500",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_2#\/500.",
 					"hint": "Tribe outposts level 50 - 65",
-					"questimage": "tribe_abunakki.v2.png",
+					"questimage": "tribe_abunakki.png",
 					"prereq": "ASSAULT_TO_1_2_250",
 					"rules":
 					{
@@ -6715,7 +6715,7 @@ package
 					"name": "Abunakki x1000",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_2#\/1000.",
 					"hint": "Tribe outposts level 50 - 65",
-					"questimage": "tribe_abunakki.v2.png",
+					"questimage": "tribe_abunakki.png",
 					"prereq": "ASSAULT_TO_1_2_500",
 					"rules":
 					{
@@ -6731,7 +6731,7 @@ package
 					"name": "Abunakki x2500",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_2#\/2500.",
 					"hint": "Tribe outposts level 50 - 65",
-					"questimage": "tribe_abunakki.v2.png",
+					"questimage": "tribe_abunakki.png",
 					"prereq": "ASSAULT_TO_1_2_1000",
 					"rules":
 					{
@@ -6747,7 +6747,7 @@ package
 					"name": "Abunakki x5000",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_2#\/5000.",
 					"hint": "Tribe outposts level 50 - 65",
-					"questimage": "tribe_abunakki.v2.png",
+					"questimage": "tribe_abunakki.png",
 					"prereq": "ASSAULT_TO_1_2_2500",
 					"rules":
 					{
@@ -6764,7 +6764,7 @@ package
 					"name": "Dreadnaught x10",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_3#\/10.",
 					"hint": "Tribe outposts level 50 - 65",
-					"questimage": "tribe_dreadnaut.v2.png",
+					"questimage": "tribe_dreadnaut.png",
 					"rules":
 					{
 						"assault_to_1_3": 10
@@ -6779,7 +6779,7 @@ package
 					"name": "Dreadnaught x25",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_3#\/25.",
 					"hint": "Tribe outposts level 50 - 65",
-					"questimage": "tribe_dreadnaut.v2.png",
+					"questimage": "tribe_dreadnaut.png",
 					"prereq": "ASSAULT_TO_1_3_10",
 					"rules":
 					{
@@ -6795,7 +6795,7 @@ package
 					"name": "Dreadnaught x50",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_3#\/50.",
 					"hint": "Tribe outposts level 50 - 65",
-					"questimage": "tribe_dreadnaut.v2.png",
+					"questimage": "tribe_dreadnaut.png",
 					"prereq": "ASSAULT_TO_1_3_25",
 					"rules":
 					{
@@ -6811,7 +6811,7 @@ package
 					"name": "Dreadnaught x100",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_3#\/100.",
 					"hint": "Tribe outposts level 50 - 65",
-					"questimage": "tribe_dreadnaut.v2.png",
+					"questimage": "tribe_dreadnaut.png",
 					"prereq": "ASSAULT_TO_1_3_50",
 					"rules":
 					{
@@ -6827,7 +6827,7 @@ package
 					"name": "Dreadnaught x250",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_3#\/250.",
 					"hint": "Tribe outposts level 50 - 65",
-					"questimage": "tribe_dreadnaut.v2.png",
+					"questimage": "tribe_dreadnaut.png",
 					"prereq": "ASSAULT_TO_1_3_100",
 					"rules":
 					{
@@ -6843,7 +6843,7 @@ package
 					"name": "Dreadnaught x500",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_3#\/500.",
 					"hint": "Tribe outposts level 50 - 65",
-					"questimage": "tribe_dreadnaut.v2.png",
+					"questimage": "tribe_dreadnaut.png",
 					"prereq": "ASSAULT_TO_1_3_250",
 					"rules":
 					{
@@ -6859,7 +6859,7 @@ package
 					"name": "Dreadnaught x1000",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_3#\/1000.",
 					"hint": "Tribe outposts level 50 - 65",
-					"questimage": "tribe_dreadnaut.v2.png",
+					"questimage": "tribe_dreadnaut.png",
 					"prereq": "ASSAULT_TO_1_3_500",
 					"rules":
 					{
@@ -6875,7 +6875,7 @@ package
 					"name": "Dreadnaught x2500",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_3#\/2500.",
 					"hint": "Tribe outposts level 50 - 65",
-					"questimage": "tribe_dreadnaut.v2.png",
+					"questimage": "tribe_dreadnaut.png",
 					"prereq": "ASSAULT_TO_1_3_1000",
 					"rules":
 					{
@@ -6891,7 +6891,7 @@ package
 					"name": "Dreadnaught x5000",
 					"description": "Destroy tribe outposts.<br>Destroyed #assault_to_1_3#\/5000.",
 					"hint": "Tribe outposts level 50 - 65",
-					"questimage": "tribe_dreadnaut.v2.png",
+					"questimage": "tribe_dreadnaut.png",
 					"prereq": "ASSAULT_TO_1_3_2500",
 					"rules":
 					{
@@ -7892,7 +7892,7 @@ package
 				"keyvars":{"v1":KEYS.Get(_loc2_.name)},
 				"hint":"q_unlock_hint",
 				"creatureid":"C" + 2,
-				"questimage":"monster" + 2 + ".v2.png",
+				"questimage":"monster" + 2 + ".png",
 				"reward_creatureid":"C" + 2,
 				"monster_reward":_loc1_[2],
 				"prereq":"CR1",
@@ -7910,7 +7910,7 @@ package
 				"keyvars":{"v1":KEYS.Get(_loc2_.name)},
 				"hint":"q_unlock_hint",
 				"creatureid":"C" + 3,
-				"questimage":"monster" + 3 + ".v2.png",
+				"questimage":"monster" + 3 + ".png",
 				"reward_creatureid":"C" + 3,
 				"monster_reward":_loc1_[3],
 				"prereq":"UC" + 2,
@@ -7928,7 +7928,7 @@ package
 				"keyvars":{"v1":KEYS.Get(_loc2_.name)},
 				"hint":"q_unlock_hint",
 				"creatureid":"C" + 4,
-				"questimage":"monster" + 4 + ".v2.png",
+				"questimage":"monster" + 4 + ".png",
 				"reward_creatureid":"C" + 4,
 				"monster_reward":_loc1_[4],
 				"prereq":"UC" + 3,
@@ -7946,7 +7946,7 @@ package
 				"keyvars":{"v1":KEYS.Get(_loc2_.name)},
 				"hint":"q_unlock_hint",
 				"creatureid":"C" + 5,
-				"questimage":"monster" + 5 + ".v2.png",
+				"questimage":"monster" + 5 + ".png",
 				"reward_creatureid":"C" + 5,
 				"monster_reward":_loc1_[5],
 				"prereq":"C" + 14,
@@ -7964,7 +7964,7 @@ package
 				"keyvars":{"v1":KEYS.Get(_loc2_.name)},
 				"hint":"q_unlock_hint",
 				"creatureid":"C" + 6,
-				"questimage":"monster" + 6 + ".v2.png",
+				"questimage":"monster" + 6 + ".png",
 				"reward_creatureid":"C" + 6,
 				"monster_reward":_loc1_[6],
 				"prereq":"UC" + 5,
@@ -7982,7 +7982,7 @@ package
 				"keyvars":{"v1":KEYS.Get(_loc2_.name)},
 				"hint":"q_unlock_hint",
 				"creatureid":"C" + 7,
-				"questimage":"monster" + 7 + ".v2.png",
+				"questimage":"monster" + 7 + ".png",
 				"reward_creatureid":"C" + 7,
 				"monster_reward":_loc1_[7],
 				"prereq":"UC" + 6,
@@ -8000,7 +8000,7 @@ package
 				"keyvars":{"v1":KEYS.Get(_loc2_.name)},
 				"hint":"q_unlock_hint",
 				"creatureid":"C" + 8,
-				"questimage":"monster" + 8 + ".v2.png",
+				"questimage":"monster" + 8 + ".png",
 				"reward_creatureid":"C" + 8,
 				"monster_reward":_loc1_[8],
 				"prereq":"UC" + 7,
@@ -8018,7 +8018,7 @@ package
 				"keyvars":{"v1":KEYS.Get(_loc2_.name)},
 				"hint":"q_unlock_hint",
 				"creatureid":"C" + 9,
-				"questimage":"monster" + 9 + ".v2.png",
+				"questimage":"monster" + 9 + ".png",
 				"reward_creatureid":"C" + 9,
 				"monster_reward":_loc1_[9],
 				"prereq":"C" + 15,
@@ -8036,7 +8036,7 @@ package
 				"keyvars":{"v1":KEYS.Get(_loc2_.name)},
 				"hint":"q_unlock_hint",
 				"creatureid":"C" + 10,
-				"questimage":"monster" + 10 + ".v2.png",
+				"questimage":"monster" + 10 + ".png",
 				"reward_creatureid":"C" + 10,
 				"monster_reward":_loc1_[10],
 				"prereq":"UC" + 9,
@@ -8054,7 +8054,7 @@ package
 				"keyvars":{"v1":KEYS.Get(_loc2_.name)},
 				"hint":"q_unlock_hint",
 				"creatureid":"C" + 11,
-				"questimage":"monster" + 11 + ".v2.png",
+				"questimage":"monster" + 11 + ".png",
 				"reward_creatureid":"C" + 11,
 				"monster_reward":_loc1_[11],
 				"prereq":"UC" + 10,
@@ -8072,7 +8072,7 @@ package
 				"keyvars":{"v1":KEYS.Get(_loc2_.name)},
 				"hint":"q_unlock_hint",
 				"creatureid":"C" + 12,
-				"questimage":"monster" + 12 + ".v2.png",
+				"questimage":"monster" + 12 + ".png",
 				"reward_creatureid":"C" + 12,
 				"monster_reward":_loc1_[12],
 				"prereq":"UC" + 13,
@@ -8090,7 +8090,7 @@ package
 				"keyvars":{"v1":KEYS.Get(_loc2_.name)},
 				"hint":"q_unlock_hint",
 				"creatureid":"C" + 13,
-				"questimage":"monster" + 13 + ".v2.png",
+				"questimage":"monster" + 13 + ".png",
 				"reward_creatureid":"C" + 13,
 				"monster_reward":_loc1_[13],
 				"prereq":"UC" + 11,

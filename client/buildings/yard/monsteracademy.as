@@ -31,7 +31,7 @@ package buildings.yard {
 			"imageData":{
 				"baseurl":"buildings/monsteracademy/",
 				"1":{
-					"anim":["anim.1.v2.png",new Rectangle(-22,-13,48,26),21],
+					"anim":["anim.1.png",new Rectangle(-22,-13,48,26),21],
 					"top":["top.1.png",new Point(-42,-12)],
 					"shadow":["shadow.1.jpg",new Point(-47,27)],
 					"topdamaged":["top.1.damaged.png",new Point(-50,-12)],
@@ -79,8 +79,7 @@ package buildings.yard {
 			"upgradeImgData":{
 				"baseurl":"buttons/buildings/",
 				"1":{
-					"img":"26.1.jpg",
-					"silhouette_img":"26.2.silhouette.jpg"
+					"img":"26.1.jpg"
 				},
 				"2":{"img":"26.2.jpg"},
 				"3":{"img":"26.3.jpg"},

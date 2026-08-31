@@ -32,7 +32,7 @@ package buildings.yard {
 					"top":["top.1.v3.png",new Point(-75,-23)],
 					"topdamaged":["top.1.damaged.v3.png",new Point(-75,-88)],
 					"topdestroyed":["top.1.destroyed.png",new Point(-75,-48)],
-					"anim":["anim.1.v2.png",new Rectangle(-58,-99,129,77),35],
+					"anim":["anim.1.png",new Rectangle(-58,-99,129,77),35],
 					"shadow":["shadow.1.jpg",new Point(-29,14)],
 					"shadowdamaged":["shadow.1.jpg",new Point(-29,14)],
 					"shadowdestroyed":["shadow.1.jpg",new Point(-29,14)]
@@ -42,8 +42,7 @@ package buildings.yard {
 			"upgradeImgData":{
 				"baseurl":"buttons/buildings/",
 				"1":{
-					"img":"seige_factory.jpg",
-					"silhouette_img":"seige_factory.jpg"
+					"img":"seige_factory.jpg"
 				}
 			},
 			"quantity":[0,1,1,1,1,1,1,1,1,1,1],

@@ -34,8 +34,7 @@ package buildings.yard {
 			"upgradeImgData":{
 				"baseurl":"buttons/buildings/",
 				"1":{
-					"img":"24.jpg",
-					"silhouette_img":"24.silhouette.jpg"
+					"img":"24.jpg"
 				}
 			},
 			"quantity":[

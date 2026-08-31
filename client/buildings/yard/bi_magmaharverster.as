@@ -47,34 +47,33 @@ package buildings.yard {
 			"imageData":{
 				"baseurl":"buildings/imagmaproducer/",
 				1:{
-					"anim":["anim.1.v2.png",new Rectangle(9.2,12.6,25,31),49],
-					"anim2":["anim.2.v2.png",new Rectangle(-32,9,36,26),49],
-					"anim3":["anim.3.v2.png",new Rectangle(-18,-60,34,58),49],
-					"top":["top.1.v2.png",new Point(-35,-15)],
-					"shadow":["shadow.1.v2.jpg",new Point(-36,4)],
-					"topdamaged":["top.1.damaged.v2.png",new Point(-39,-36)],
-					"shadowdamaged":["shadow.1.damaged.v2.jpg",new Point(-49,2)],
-					"topdestroyed":["top.1.destroyed.v2.png",new Point(-37,-2)],
-					"shadowdestroyed":["shadow.1.destroyed.v2.jpg",new Point(-41,6)]
+					"anim":["anim.1.png",new Rectangle(9.2,12.6,25,31),49],
+					"anim2":["anim.2.png",new Rectangle(-32,9,36,26),49],
+					"anim3":["anim.3.png",new Rectangle(-18,-60,34,58),49],
+					"top":["top.1.png",new Point(-35,-15)],
+					"shadow":["shadow.1.jpg",new Point(-36,4)],
+					"topdamaged":["top.1.damaged.png",new Point(-39,-36)],
+					"shadowdamaged":["shadow.1.damaged.jpg",new Point(-49,2)],
+					"topdestroyed":["top.1.destroyed.png",new Point(-37,-2)],
+					"shadowdestroyed":["shadow.1.destroyed.jpg",new Point(-41,6)]
 				},
 				3:{
-					"anim":["anim.1.v2.png",new Rectangle(9.2,12.6,25,31),49],
-					"anim2":["anim.2.v2.png",new Rectangle(-32,9,36,26),49],
-					"anim3":["anim.3.v2.png",new Rectangle(-18,-60,34,58),49],
-					"top":["top.1.v2.png",new Point(-35,-15)],
-					"shadow":["shadow.1.v2.jpg",new Point(-36,4)],
-					"topdamaged":["top.1.damaged.v2.png",new Point(-39,-36)],
-					"shadowdamaged":["shadow.1.damaged.v2.jpg",new Point(-49,2)],
-					"topdestroyed":["top.1.destroyed.v2.png",new Point(-37,-2)],
-					"shadowdestroyed":["shadow.1.destroyed.v2.jpg",new Point(-41,6)]
+					"anim":["anim.1.png",new Rectangle(9.2,12.6,25,31),49],
+					"anim2":["anim.2.png",new Rectangle(-32,9,36,26),49],
+					"anim3":["anim.3.png",new Rectangle(-18,-60,34,58),49],
+					"top":["top.1.png",new Point(-35,-15)],
+					"shadow":["shadow.1.jpg",new Point(-36,4)],
+					"topdamaged":["top.1.damaged.png",new Point(-39,-36)],
+					"shadowdamaged":["shadow.1.damaged.jpg",new Point(-49,2)],
+					"topdestroyed":["top.1.destroyed.png",new Point(-37,-2)],
+					"shadowdestroyed":["shadow.1.destroyed.jpg",new Point(-41,6)]
 				}
 			},
 			"buildingbuttons":["magma_producer.v2"],
 			"upgradeImgData":{
 				"baseurl":"buttons/buildings/",
 				1:{
-					"img":"magma_producer.v2.jpg",
-					"silhouette_img":"magma_producer.v2.silhouette.jpg"
+					"img":"magma_producer.jpg"
 				}
 			},
 			"quantity":[

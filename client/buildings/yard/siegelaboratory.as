@@ -64,8 +64,7 @@ package buildings.yard {
 			"upgradeImgData":{
 				"baseurl":"buttons/buildings/",
 				"1":{
-					"img":"siege_lab.jpg",
-					"silhouette_img":"siege_lab.jpg"
+					"img":"siege_lab.jpg"
 				}
 			},
 			"quantity":[0,1,1,1,1,1,1,1,1,1,1],

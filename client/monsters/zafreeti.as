@@ -14,7 +14,7 @@ package monsters {
 			"name":"#m_zafreeti#",
 			"classType":Zafreeti,
 			"description":"mon_zafreetidesc",
-			"stream":["mon_zafreetistream","mon_zafreetistreambody","quests/monster15.v2.png"],
+			"stream":["mon_zafreetistream","mon_zafreetistreambody","quests/monster15.png"],
 			"trainingCosts":[
 				[6192000, 3600 * 36], // Level 2
 				[7800000, 3600 * 54], // Level 3

@@ -86,8 +86,7 @@ package buildings.yard {
 			"upgradeImgData":{
 				"baseurl":"buttons/buildings/",
 				"1":{
-					"img":"23.jpg",
-					"silhouette_img":"23.silhouette.jpg"
+					"img":"23.jpg"
 				}
 			},
 			"fortImgData":{

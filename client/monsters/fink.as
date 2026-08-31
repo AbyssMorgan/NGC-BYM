@@ -14,7 +14,7 @@ package monsters {
 			"name":"#m_fink#",
 			"classType":Fink,
 			"description":"mon_finkdesc",
-			"stream":["mon_finkstream","mon_finkstreambody","quests/monster4.v2.png"],
+			"stream":["mon_finkstream","mon_finkstreambody","quests/monster4.png"],
 			"trainingCosts":[
 				[32000, 3600 * 8], // Level 2
 				[64000, 3600 * 12], // Level 3

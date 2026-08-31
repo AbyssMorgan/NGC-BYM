@@ -320,7 +320,7 @@ package
             completeEmerge.bAction.visible = false;
             completeEmerge.bAction.mouseEnabled = false;
          }
-         ImageCache.GetImageWithCallBack("popups/" + "popup_emergecomplete.v2.jpg",imageCompleteEmerge);
+         ImageCache.GetImageWithCallBack("popups/" + "popup_emergecomplete.jpg",imageCompleteEmerge);
          POPUPS.Push(completeEmerge,null,null,"");
       }
       

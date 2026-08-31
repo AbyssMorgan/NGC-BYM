@@ -57,8 +57,7 @@ package buildings.yard {
 			"upgradeImgData":{
 				"baseurl":"buttons/buildings/",
 				1:{
-					"img":"inferno_monster_academy.jpg",
-					"silhouette_img":"inferno_monster_academy.jpg"
+					"img":"inferno_monster_academy.jpg"
 				},
 				2:{"img":"inferno_monster_academy.jpg"}
 			},

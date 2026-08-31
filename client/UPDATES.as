@@ -497,7 +497,7 @@ package
                _loc5_ += ", <b>" + KEYS.Get("pop_helped_3a",{"v1":GLOBAL.ToTime(_loc7_,false,false)}) + "</b>";
                _loc8_.tB.htmlText = _loc5_;
                _loc8_.bPost.Setup(KEYS.Get("pop_helped_saythanks_btn",{"v1":_loc3_[0][1]}));
-               _loc8_.bPost.addEventListener(MouseEvent.CLICK,GiveThanks(_loc3_[0][0],KEYS.Get("pop_helped_streamtitle"),KEYS.Get("pop_helped_pl_streambody",{"v1":_loc3_[0][1]}),"quests/build.v2.png"));
+               _loc8_.bPost.addEventListener(MouseEvent.CLICK,GiveThanks(_loc3_[0][0],KEYS.Get("pop_helped_streamtitle"),KEYS.Get("pop_helped_pl_streambody",{"v1":_loc3_[0][1]}),"quests/build.png"));
                _loc8_.bPost.Highlight = true;
             }
             else
@@ -510,13 +510,13 @@ package
                   "v4":GLOBAL.ToTime(_loc7_,false,false)
                });
                _loc8_.bPost.SetupKey("pop_saythanks_btn");
-               _loc8_.bPost.addEventListener(MouseEvent.CLICK,GiveThanks(0,KEYS.Get("pop_helped_streamtitle"),KEYS.Get("pop_helped_pl_streambody",{"v1":GLOBAL.Array2StringB(_loc3_)}),"quests/build.v2.png"));
+               _loc8_.bPost.addEventListener(MouseEvent.CLICK,GiveThanks(0,KEYS.Get("pop_helped_streamtitle"),KEYS.Get("pop_helped_pl_streambody",{"v1":GLOBAL.Array2StringB(_loc3_)}),"quests/build.png"));
                _loc8_.bPost.Highlight = true;
             }
             _loc8_.bPost.y = _loc8_.tB.height - 15;
             _loc8_.mcFrame.height = _loc8_.bPost.y + 110;
             (_loc8_.mcFrame as frame).Setup();
-            POPUPS.Push(_loc8_,null,null,"","build.v2.png");
+            POPUPS.Push(_loc8_,null,null,"","build.png");
             _catchupList = [];
          }
       }

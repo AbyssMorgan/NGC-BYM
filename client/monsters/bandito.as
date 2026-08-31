@@ -14,7 +14,7 @@ package monsters {
 			"name":"#m_bandito#",
 			"classType":Bandito,
 			"description":"mon_banditodesc",
-			"stream":["mon_banditostream","mon_banditostreambody","quests/monster7.v2.png"],
+			"stream":["mon_banditostream","mon_banditostreambody","quests/monster7.png"],
 			"trainingCosts":[
 				[256000, 3600 * 12], // Level 2
 				[512000, 3600 * 16], // Level 3

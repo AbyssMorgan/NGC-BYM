@@ -25,13 +25,15 @@ package buildings.yard {
 			"buildingbuttons":["96.v2"],
 			"upgradeImgData":{
 				"baseurl":"buttons/buildings/",
-				"1":{"img":"96.v2.jpg"}
+				"1":{
+					"img":"96.jpg"
+				}
 			},
 			"imageData":{
 				"baseurl":"buildings/decorations/statue-baseball/",
 				"1":{
-					"top":["top.v2.png",new Point(-20,-36)],
-					"shadow":["shadow.v2.jpg",new Point(-21,10)]
+					"top":["top.png",new Point(-20,-36)],
+					"shadow":["shadow.jpg",new Point(-21,10)]
 				}
 			},
 			"quantity":[0],

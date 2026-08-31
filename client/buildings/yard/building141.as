@@ -23,7 +23,9 @@ package buildings.yard {
 			],
 			"upgradeImgData":{
 				"baseurl":"buttons/buildings/",
-				"1":{"img":"141.jpg"}
+				"1":{
+					"img":"141.jpg"
+				}
 			},
 			"imageData":{
 				"baseurl":"buildings/decorations/conqueror/",

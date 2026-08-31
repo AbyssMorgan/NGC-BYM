@@ -2453,39 +2453,39 @@ package {
 							"v1": QUEUE._workerCount
 						}), KEYS.Get("str_code_bew_stream"), KEYS.Get("str_code_bew_streambody", {
 							"v1": QUEUE._workerCount
-						}), "purchased-worker.v2.png"];
+						}), "purchased-worker.png"];
 						break;
 					case "BST":
-						arr = [KEYS.Get("str_code_bst_title"), KEYS.Get("str_code_bst_body"), KEYS.Get("str_code_bst_stream"), KEYS.Get("str_code_bst_streambody"), "purchased-tools.v2.png"];
+						arr = [KEYS.Get("str_code_bst_title"), KEYS.Get("str_code_bst_body"), KEYS.Get("str_code_bst_stream"), KEYS.Get("str_code_bst_streambody"), "purchased-tools.png"];
 						break;
 					case "ENLI":
 						PLANNER.Update();
-						arr = [KEYS.Get("str_code_enli_title"), KEYS.Get("str_code_enli_body"), KEYS.Get("str_code_enli_stream"), KEYS.Get("str_code_enli_stream"), "purchased-enlarge.v2.png"];
+						arr = [KEYS.Get("str_code_enli_title"), KEYS.Get("str_code_enli_body"), KEYS.Get("str_code_enli_stream"), KEYS.Get("str_code_enli_stream"), "purchased-enlarge.png"];
 						break;
 					case "ENL":
 						PLANNER.Update();
-						arr = [KEYS.Get("str_code_enl_title"), KEYS.Get("str_code_enl_body"), KEYS.Get("str_code_enl_stream"), KEYS.Get("str_code_enl_stream"), "purchased-enlarge.v2.png"];
+						arr = [KEYS.Get("str_code_enl_title"), KEYS.Get("str_code_enl_body"), KEYS.Get("str_code_enl_stream"), KEYS.Get("str_code_enl_stream"), "purchased-enlarge.png"];
 						break;
 					case "BIP":
-						arr = [KEYS.Get("str_code_bip_title"), KEYS.Get("str_code_bip_body"), KEYS.Get("str_code_bip_stream"), KEYS.Get("str_code_bip_streambody"), "purchased-packing.v2.png"];
+						arr = [KEYS.Get("str_code_bip_title"), KEYS.Get("str_code_bip_body"), KEYS.Get("str_code_bip_stream"), KEYS.Get("str_code_bip_streambody"), "purchased-packing.png"];
 						break;
 					case "HOD":
-						arr = [KEYS.Get("str_code_hod_title"), KEYS.Get("str_code_hod_body"), KEYS.Get("str_code_hod_stream"), KEYS.Get("str_code_hod_streambody"), "purchased-hatchery.v2.png"];
+						arr = [KEYS.Get("str_code_hod_title"), KEYS.Get("str_code_hod_body"), KEYS.Get("str_code_hod_stream"), KEYS.Get("str_code_hod_streambody"), "purchased-hatchery.png"];
 						break;
 					case "HOD2":
-						arr = [KEYS.Get("str_code_hod2_title"), KEYS.Get("str_code_hod2_body"), KEYS.Get("str_code_hod2_stream"), KEYS.Get("str_code_hod2_streambody"), "purchased-hatchery.v2.png"];
+						arr = [KEYS.Get("str_code_hod2_title"), KEYS.Get("str_code_hod2_body"), KEYS.Get("str_code_hod2_stream"), KEYS.Get("str_code_hod2_streambody"), "purchased-hatchery.png"];
 						break;
 					case "HOD3":
-						arr = [KEYS.Get("str_code_hod3_title"), KEYS.Get("str_code_hod3_body"), KEYS.Get("str_code_hod3_stream"), KEYS.Get("str_code_hod3_streambody"), "purchased-hatchery.v2.png"];
+						arr = [KEYS.Get("str_code_hod3_title"), KEYS.Get("str_code_hod3_body"), KEYS.Get("str_code_hod3_stream"), KEYS.Get("str_code_hod3_streambody"), "purchased-hatchery.png"];
 						break;
 					case "HODI":
-						arr = [KEYS.Get("str_code_hodi_title"), KEYS.Get("str_code_hodi_body"), KEYS.Get("str_code_hodi_stream"), KEYS.Get("str_code_hodi_streambody"), "purchased-hatchery.v2.png"];
+						arr = [KEYS.Get("str_code_hodi_title"), KEYS.Get("str_code_hodi_body"), KEYS.Get("str_code_hodi_stream"), KEYS.Get("str_code_hodi_streambody"), "purchased-hatchery.png"];
 						break;
 					case "HOD2I":
-						arr = [KEYS.Get("str_code_hod2i_title"), KEYS.Get("str_code_hod2i_body"), KEYS.Get("str_code_hod2i_stream"), KEYS.Get("str_code_hod2i_streambody"), "purchased-hatchery.v2.png"];
+						arr = [KEYS.Get("str_code_hod2i_title"), KEYS.Get("str_code_hod2i_body"), KEYS.Get("str_code_hod2i_stream"), KEYS.Get("str_code_hod2i_streambody"), "purchased-hatchery.png"];
 						break;
 					case "HOD3I":
-						arr = [KEYS.Get("str_code_hod3i_title"), KEYS.Get("str_code_hod3i_body"), KEYS.Get("str_code_hod3i_stream"), KEYS.Get("str_code_hod3i_streambody"), "purchased-hatchery.v2.png"];
+						arr = [KEYS.Get("str_code_hod3i_title"), KEYS.Get("str_code_hod3i_body"), KEYS.Get("str_code_hod3i_stream"), KEYS.Get("str_code_hod3i_streambody"), "purchased-hatchery.png"];
 						break;
 					case "TOD":
 						arr = [KEYS.Get("tod_title2"), KEYS.Get("tod_body"), KEYS.Get("str_code_tod_stream"), KEYS.Get("str_code_tod_streambody"), "purchased-tod3.png"];
@@ -2506,7 +2506,7 @@ package {
 						arr = [KEYS.Get("exh_title"), KEYS.Get("exh_body"), KEYS.Get("str_code_exh_stream"), KEYS.Get("str_code_exh_streambody"), "purchased-exh.png"];
 						break;
 					case "CLOD":
-						arr = [KEYS.Get("str_code_clod_title"), KEYS.Get("str_code_clod_body"), KEYS.Get("str_code_clod_stream"), KEYS.Get("str_code_clod_streambody"), "purchased-locker.v2.png"];
+						arr = [KEYS.Get("str_code_clod_title"), KEYS.Get("str_code_clod_body"), KEYS.Get("str_code_clod_stream"), KEYS.Get("str_code_clod_streambody"), "purchased-locker.png"];
 						break;
 					case "PRO1":
 						arr = [KEYS.Get("str_code_pro1_title"), KEYS.Get("str_code_pro1_body"), KEYS.Get("str_code_pro1_stream"), "", "purchased-protection1.png"];
@@ -2797,7 +2797,7 @@ package {
 			ZazzleClear();
 			_zazzleMC = new MovieClip();
 			_mc.window.addChild(_zazzleMC);
-			img = "popups/" + "ZAZZLE_AD.v2" + ".jpg";
+			img = "popups/" + "ZAZZLE_AD" + ".jpg";
 			ImageCache.GetImageWithCallBack(img, ZazzleImageLoaded);
 		}
 

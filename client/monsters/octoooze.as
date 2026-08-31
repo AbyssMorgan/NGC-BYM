@@ -11,7 +11,7 @@ package monsters {
 			"level":1,
 			"name":"#m_octoooze#",
 			"description":"mon_octooozedesc",
-			"stream":["mon_octooozestream","mon_octooozestreambody","quests/monster2.v2.png"],
+			"stream":["mon_octooozestream","mon_octooozestreambody","quests/monster2.png"],
 			"trainingCosts":[
 				[8000, 3600 * 4], // Level 2
 				[16000, 3600 * 6], // Level 3

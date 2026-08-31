@@ -11,7 +11,7 @@ package monsters {
 			"level":2,
 			"name":"#m_ichi#",
 			"description":"mon_ichidesc",
-			"stream":["mon_ichistream","mon_ichistreambody","quests/monster6.v2.png"],
+			"stream":["mon_ichistream","mon_ichistreambody","quests/monster6.png"],
 			"trainingCosts":[
 				[128000, 3600 * 12], // Level 2
 				[256000, 3600 * 18], // Level 3

@@ -28,21 +28,20 @@ package buildings.inferno {
 			"imageData":{
 				"baseurl":"buildings/imonsterlab/",
 				1:{
-					"anim":["anim.1.v2.png",new Rectangle(-42,-41,86,88),31],
-					"top":["top.1.v2.png",new Point(-56,8)],
-					//"shadow":["shadow.1.v2.jpg",new Point(-81,10)],
-					"topdamaged":["top.1.damaged.v2.png",new Point(-56,-31)],
-					//"shadowdamaged":["shadow.1.damaged.v2.jpg",new Point(-76,8)],
-					"topdestroyed":["top.1.destroyed.v2.png",new Point(-53,10)]
-					//"shadowdestroyed":["shadow.1.destroyed.v2.jpg",new Point(-83,13)]
+					"anim":["anim.1.png",new Rectangle(-42,-41,86,88),31],
+					"top":["top.1.png",new Point(-56,8)],
+					//"shadow":["shadow.1.jpg",new Point(-81,10)],
+					"topdamaged":["top.1.damaged.png",new Point(-56,-31)],
+					//"shadowdamaged":["shadow.1.damaged.jpg",new Point(-76,8)],
+					"topdestroyed":["top.1.destroyed.png",new Point(-53,10)]
+					//"shadowdestroyed":["shadow.1.destroyed.jpg",new Point(-83,13)]
 				}
 			},
 			"buildingbuttons":["monster_locker.v2"],
 			"upgradeImgData":{
 				"baseurl":"buttons/buildings/",
 				1:{
-					"img":"monster_locker.v2.jpg",
-					"silhouette_img":"monster_locker.v2.jpg"
+					"img":"monster_locker.jpg"
 				}
 			},
 			"quantity":[0,1,1,1,1,1,1,1,1,1],

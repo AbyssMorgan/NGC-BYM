@@ -11,7 +11,7 @@ package monsters {
 			"level":3,
 			"name":"#m_crabatron#",
 			"description":"mon_crabatrondesc",
-			"stream":["mon_crabatronstream","mon_crabatronstreambody","quests/monster10.v2.png"],
+			"stream":["mon_crabatronstream","mon_crabatronstreambody","quests/monster10.png"],
 			"trainingCosts":[
 				[2048000, 3600 * 12], // Level 2
 				[3000000, 3600 * 18], // Level 3

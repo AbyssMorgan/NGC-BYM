@@ -5816,7 +5816,7 @@ package
 						mc.bPost.SetupKey("btn_brag");
 						mc.bPost.addEventListener(MouseEvent.CLICK, StreamPost);
 						mc.bPost.Highlight = true;
-						POPUPS.Push(mc, null, null, "levelup", "levelup.v2.png");
+						POPUPS.Push(mc, null, null, "levelup", "levelup.png");
 						QUESTS.Check("level_up", lvl.level);
 					}
 				}

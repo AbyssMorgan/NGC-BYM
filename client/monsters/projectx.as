@@ -14,7 +14,7 @@ package monsters {
 			"name":"#m_projectx#",
 			"classType":ProjectX,
 			"description":"mon_projectxdesc",
-			"stream":["mon_projectxstream","mon_projectxstreambody","quests/monster11.v2.png"],
+			"stream":["mon_projectxstream","mon_projectxstreambody","quests/monster11.png"],
 			"trainingCosts":[
 				[4096000, 3600 * 24], // Level 2
 				[7000000, 3600 * 36], // Level 3

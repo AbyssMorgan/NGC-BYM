@@ -25,13 +25,15 @@ package buildings.yard {
 			"buildingbuttons":["100.v2"],
 			"upgradeImgData":{
 				"baseurl":"buttons/buildings/",
-				"1":{"img":"100.v2.jpg"}
+				"1":{
+					"img":"100.jpg"
+				}
 			},
 			"imageData":{
 				"baseurl":"buildings/decorations/statue-eiffeltower/",
 				"1":{
-					"top":["top.v2.png",new Point(-60,-121)],
-					"shadow":["shadow.v2.jpg",new Point(-60,5)]
+					"top":["top.png",new Point(-60,-121)],
+					"shadow":["shadow.jpg",new Point(-60,5)]
 				}
 			},
 			"quantity":[0],

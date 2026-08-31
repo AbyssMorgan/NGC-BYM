@@ -61,10 +61,10 @@ package buildings.yard {
 			"imageData":{
 				"baseurl":"buildings/blackspurtztower/",
 				"1":{
-					"anim":["top-normal-anim.v2.png",new Rectangle(-27,-57,54,42),31],
+					"anim":["top-normal-anim.png",new Rectangle(-27,-57,54,42),31],
 					"top":["normal_base.png",new Point(-39,-35)],
 					"shadow":["normal_damaged_shadow.jpg",new Point(-31,10)],
-					"animdamaged":["top-damaged-anim.v2.png",new Rectangle(-27,-57,54,42),31],
+					"animdamaged":["top-damaged-anim.png",new Rectangle(-27,-57,54,42),31],
 					"topdamaged":["damaged_base.png",new Point(-39,-35)],
 					"shadowdamaged":["normal_damaged_shadow.jpg",new Point(-38,16)],
 					"topdestroyed":["destroyed_base.png",new Point(-39,-13)]
@@ -75,8 +75,7 @@ package buildings.yard {
 			"upgradeImgData":{
 				"baseurl":"buttons/buildings/",
 				"1":{
-					"img":"black_diamond_spurtz_cannon_button.jpg",
-					"silhouette_img":"black_diamond_spurtz_cannon_silohouette.jpg"
+					"img":"black_diamond_spurtz_cannon_button.jpg"
 				}
 			},
 			"fortImgData":{

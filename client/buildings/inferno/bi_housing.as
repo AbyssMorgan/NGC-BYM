@@ -29,19 +29,18 @@ package buildings.inferno {
 			"imageData":{
 				"baseurl":"buildings/monsterhousing/",
 				1:{
-					"top":["top.3.v2.png",new Point(-109,11)],
-					"shadow":["shadow.3.v2.jpg",new Point(-112,23)],
-					"topdamaged":["top.3.damaged.v2.png",new Point(-107,12)],
-					"shadowdamaged":["shadow.3.damaged.v2.jpg",new Point(-110,25)],
-					"topdestroyed":["top.3.destroyed.v2.png",new Point(-108,21)],
-					"shadowdestroyed":["shadow.3.destroyed.v2.jpg",new Point(-109,25)]
+					"top":["top.3.png",new Point(-109,11)],
+					"shadow":["shadow.3.jpg",new Point(-112,23)],
+					"topdamaged":["top.3.damaged.png",new Point(-107,12)],
+					"shadowdamaged":["shadow.3.damaged.jpg",new Point(-110,25)],
+					"topdestroyed":["top.3.destroyed.png",new Point(-108,21)],
+					"shadowdestroyed":["shadow.3.destroyed.jpg",new Point(-109,25)]
 				}
 			},
 			"upgradeImgData":{
 				"baseurl":"buttons/buildings/",
 				1:{
-					"img":"monster_housing.v2.jpg",
-					"silhouette_img":"monster_housing.v2.silhouette.jpg"
+					"img":"monster_housing.jpg"
 				}
 			},
 			"quantity":[0,0,0,0,0,0],

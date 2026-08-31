@@ -25,7 +25,7 @@ package buildings.inferno {
 				"baseurl":"buildings/monstercage/",
 				1:{
 					"top":["top.1.png",new Point(-128,-13)],
-					"topopen":["top.1.v2.png",new Point(-129,-13)],
+					"topopen":["top.1.png",new Point(-129,-13)],
 					"shadow":["shadow.1.jpg",new Point(-132,10)],
 					"shadowopen":["shadow.1.jpg",new Point(-132,10)]
 				}

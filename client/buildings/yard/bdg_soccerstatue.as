@@ -25,13 +25,15 @@ package buildings.yard {
 			"buildingbuttons":["98.v2"],
 			"upgradeImgData":{
 				"baseurl":"buttons/buildings/",
-				"1":{"img":"98.v2.jpg"}
+				"1":{
+					"img":"98.jpg"
+				}
 			},
 			"imageData":{
 				"baseurl":"buildings/decorations/statue-soccer/",
 				"1":{
-					"top":["top.v2.png",new Point(-23,-36)],
-					"shadow":["shadow.v2.jpg",new Point(-15,12)]
+					"top":["top.png",new Point(-23,-36)],
+					"shadow":["shadow.jpg",new Point(-15,12)]
 				}
 			},
 			"quantity":[0],

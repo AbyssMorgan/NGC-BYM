@@ -14,7 +14,7 @@ package com.monsters.subscriptions.ui
       
       private const _DAVECLUB_IMAGEURL:String = "subscriptions/";
       
-      private const _DAVECLUB_BENEFIT_IMAGEURL:Array = ["daveClub_slot01.png","daveClub_slot02.png","daveClub_slot03.png","daveClub_slot04.png","daveClub_slot05.png","daveClub_slot06.v2.png"];
+      private const _DAVECLUB_BENEFIT_IMAGEURL:Array = ["daveClub_slot01.png","daveClub_slot02.png","daveClub_slot03.png","daveClub_slot04.png","daveClub_slot05.png","daveClub_slot06.png"];
       
       public var rewardIndex:int = 0;
       
@@ -31,7 +31,7 @@ package com.monsters.subscriptions.ui
       
       public function setup() : void
       {
-         ImageCache.GetImageWithCallBack(this._DAVECLUB_IMAGEURL + "daveclub_promo_BG_buttons.v2.png",this.daveClubImageLoaded,true,1,"",[mcImageBG]);
+         ImageCache.GetImageWithCallBack(this._DAVECLUB_IMAGEURL + "daveclub_promo_BG_buttons.png",this.daveClubImageLoaded,true,1,"",[mcImageBG]);
          ImageCache.GetImageWithCallBack(this._DAVECLUB_IMAGEURL + "daveClub_promo_pricetag_995.png",this.daveClubImageLoaded,true,1,"",[mcImagePrice]);
          var _loc1_:int = 0;
          while(_loc1_ < this.circleNavigation.length)

@@ -26,22 +26,21 @@ package buildings.inferno {
 			"imageData":{
 				"baseurl":"buildings/ihatchery/",
 				1:{
-					"anim":["anim.1.v2.png",new Rectangle(-48,-45,33,78),50],
-					"anim2":["anim.2.v2.png",new Rectangle(5,14,27,31),50],
-					"top":["top.1.v2.png",new Point(-55,-28)],
-					"shadow":["shadow.1.v2.jpg",new Point(-77,15)],
-					"topdamaged":["top.1.damaged.v2.png",new Point(-50,-22)],
-					"shadowdamaged":["shadow.1.damaged.v2.jpg",new Point(-75,16)],
-					"topdestroyed":["top.1.destroyed.v2.png",new Point(-40,13)],
-					"shadowdestroyed":["shadow.1.destroyed.v2.jpg",new Point(-58,18)]
+					"anim":["anim.1.png",new Rectangle(-48,-45,33,78),50],
+					"anim2":["anim.2.png",new Rectangle(5,14,27,31),50],
+					"top":["top.1.png",new Point(-55,-28)],
+					"shadow":["shadow.1.jpg",new Point(-77,15)],
+					"topdamaged":["top.1.damaged.png",new Point(-50,-22)],
+					"shadowdamaged":["shadow.1.damaged.jpg",new Point(-75,16)],
+					"topdestroyed":["top.1.destroyed.png",new Point(-40,13)],
+					"shadowdestroyed":["shadow.1.destroyed.jpg",new Point(-58,18)]
 				}
 			},
-			"buildingbuttons":["hatchery.v2"],
+			"buildingbuttons":["hatchery"],
 			"upgradeImgData":{
 				"baseurl":"buttons/buildings/",
 				1:{
-					"img":"hatchery.v2.jpg",
-					"silhouette_img":"hatchery.v2.jpg"
+					"img":"hatchery.jpg"
 				}
 			},
 			"quantity":[

@@ -56,9 +56,9 @@ package buildings.yard {
 					"shadowdestroyed":["shadow.jpg",new Point(-28,-7)]
 				},
 				"4":{
-					"top":["top.4.v2.png",new Point(-20,-22)],
+					"top":["top.4.png",new Point(-20,-22)],
 					"shadow":["shadow.jpg",new Point(-28,-7)],
-					"topdamaged":["top.4.damaged.v2.png",new Point(-20,-22)],
+					"topdamaged":["top.4.damaged.png",new Point(-20,-22)],
 					"shadowdamaged":["shadow.jpg",new Point(-28,-7)],
 					"topdestroyed":["top.4.destroyed.png",new Point(-20,-2)],
 					"shadowdestroyed":["shadow.jpg",new Point(-28,-7)]
@@ -99,19 +99,16 @@ package buildings.yard {
 			"upgradeImgData":{
 				"baseurl":"buttons/buildings/",
 				"1":{
-					"img":"17.1.jpg",
-					"silhouette_img":"17.1.silhouette.jpg"
+					"img":"17.1.jpg"
 				},
 				"2":{
-					"img":"17.2.v2.jpg"
+					"img":"17.2.jpg"
 				},
 				"3":{
-					"img":"17.3.v2.jpg",
-					"silhouette_img":"17.3.v2.silhouette.jpg"
+					"img":"17.3.jpg"
 				},
 				"4":{
-					"img":"17.4.jpg",
-					"silhouette_img":"17.4.silhouette.jpg"
+					"img":"17.4.jpg"
 				},
 				"5":{
 					"img":"17.5.jpg"

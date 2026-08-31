@@ -248,7 +248,7 @@ package
             _loc1_.bPost.SetupKey("btn_brag");
             _loc1_.bPost.addEventListener(MouseEvent.CLICK,this.UpgradedBrag);
             _loc1_.bPost.Highlight = true;
-            POPUPS.Push(_loc1_,null,null,null,"build.v2.png");
+            POPUPS.Push(_loc1_,null,null,null,"build.png");
          }
       }
       
@@ -272,7 +272,7 @@ package
             _loc1_.bPost.SetupKey("btn_brag");
             _loc1_.bPost.addEventListener(MouseEvent.CLICK,this.ConstructedBrag);
             _loc1_.bPost.Highlight = true;
-            POPUPS.Push(_loc1_,null,null,null,"build.v2.png");
+            POPUPS.Push(_loc1_,null,null,null,"build.png");
          }
       }
       

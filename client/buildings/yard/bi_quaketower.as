@@ -61,29 +61,28 @@ package buildings.yard {
 				"baseurl":"buildings/iquaketower/",
 				"1":{
 					"anim":["anim.1.png",new Rectangle(-37,-75,75,132),33],
-					"shadow":["shadow.1.v2.jpg",new Point(-37,17)],
+					"shadow":["shadow.1.jpg",new Point(-37,17)],
 					"topdamaged":["top.1.damaged.png",new Point(-40,-75)],
 					"animdamaged":["anim.1.damaged.png",new Rectangle(-40,-75,84,133),33],
-					"shadowdamaged":["shadow.1.v2.jpg",new Point(-40,16)],
+					"shadowdamaged":["shadow.1.jpg",new Point(-40,16)],
 					"topdestroyed":["top.1.destroyed.png",new Point(-42,-8)]
-					// "shadowdestroyed":["shadow.1.v2.jpg",new Point(-44,10)]
+					// "shadowdestroyed":["shadow.1.jpg",new Point(-44,10)]
 				},
 				"12":{
 					"anim":["anim.heat.png",new Rectangle(-37,-75,75,132),33],
-					"shadow":["shadow.1.v2.jpg",new Point(-37,17)],
+					"shadow":["shadow.1.jpg",new Point(-37,17)],
 					"topdamaged":["top.heat.damaged.png",new Point(-40,-75)],
 					"animdamaged":["anim.heat.damaged.png",new Rectangle(-40,-75,84,133),33],
-					"shadowdamaged":["shadow.1.v2.jpg",new Point(-40,16)],
+					"shadowdamaged":["shadow.1.jpg",new Point(-40,16)],
 					"topdestroyed":["top.heat.destroyed.png",new Point(-42,-8)]
-					// "shadowdestroyed":["shadow.1.v2.jpg",new Point(-44,10)]
+					// "shadowdestroyed":["shadow.1.jpg",new Point(-44,10)]
 				}
 			},
 			"buildingbuttons":["quake_tower.v2"],
 			"upgradeImgData":{
 				"baseurl":"buttons/buildings/",
 				"1":{
-					"img":"quake_tower.v2.jpg",
-					"silhouette_img":"quake_tower.v2.silhouette.jpg"
+					"img":"quake_tower.jpg"
 				}
 			},
 			"fortImgData":{

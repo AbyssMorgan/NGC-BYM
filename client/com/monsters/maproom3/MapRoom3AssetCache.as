@@ -21,7 +21,7 @@ package com.monsters.maproom3
       
       internal static const CELL_ICON_STRONGHOLD:String = "worldmap/icons/guard_tower.png";
       
-      internal static const CELL_ICON_STRONGHOLD_BUFF_EFFECT_NEUTRAL:String = "worldmap/icons/guard_tower_buff_effect.v2.png";
+      internal static const CELL_ICON_STRONGHOLD_BUFF_EFFECT_NEUTRAL:String = "worldmap/icons/guard_tower_buff_effect.png";
       
       internal static const CELL_ICON_STRONGHOLD_BUFF_EFFECT_ENEMY:String = "worldmap/icons/guard_tower_buff_effect_enemy.v3.png";
       

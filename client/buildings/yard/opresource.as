@@ -35,10 +35,10 @@ package buildings.yard {
 			"imageData":{
 				"baseurl":"buildings/opresource/",
 				"1":{
-					"top":["top.v2.1.png",new Point(-86,-64)]
+					"top":["top.1.png",new Point(-86,-64)]
 					// MISSING ASSETS TO RECREATE OR FIND:
-					// "shadow":["shadow.v2.1.png",new Point(-86,25)],
-					// "anim":["anim.v2.1.png",new Rectangle(-20,-25,51,39),30]
+					// "shadow":["shadow.1.png",new Point(-86,25)],
+					// "anim":["anim.1.png",new Rectangle(-20,-25,51,39),30]
 				}
 			},
 			"quantity":[

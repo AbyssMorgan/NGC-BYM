@@ -10,7 +10,7 @@ package com.monsters.frontPage.messages.events.monsterBlitzkrieg
       public function MonsterBlitzkriegStartMessage()
       {
          super("event2start","btn_nextwave");
-         this.imageURL = _IMAGE_DIRECTORY + "fp_event2start.v2.jpg";
+         this.imageURL = _IMAGE_DIRECTORY + "fp_event2start.jpg";
       }
       
       override protected function onButtonClick() : void

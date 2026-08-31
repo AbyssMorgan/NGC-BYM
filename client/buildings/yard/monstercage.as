@@ -25,7 +25,7 @@ package buildings.yard {
 				"baseurl":"buildings/monstercage/",
 				"1":{
 					"top":["top.1.png",new Point(-128,-13)],
-					"topopen":["top.1.v2.png",new Point(-129,-13)],
+					"topopen":["topopen.1.png",new Point(-129,-13)],
 					"shadow":["shadow.1.jpg",new Point(-132,10)],
 					"shadowopen":["shadow.1.jpg",new Point(-132,10)]
 				}
@@ -33,8 +33,7 @@ package buildings.yard {
 			"upgradeImgData":{
 				"baseurl":"buttons/buildings/",
 				"1":{
-					"img":"114.jpg",
-					"silhouette_img":"114.silhouette.jpg"
+					"img":"114.jpg"
 				}
 			},
 			"quantity":[1,1,1,1,1,1,1,1,1,1,1],

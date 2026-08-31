@@ -44,14 +44,14 @@ package buildings.inferno {
 			"imageData":{
 				"baseurl":"buildings/iboneharvester/",
 				1:{
-					"anim":["anim.1.v2.png",new Rectangle(-32,-33,65,80),47],
-					"top":["top.1.v2.png",new Point(-48,-33)],
+					"anim":["anim.1.png",new Rectangle(-32,-33,65,80),47],
+					"top":["top.1.png",new Point(-48,-33)],
 					"shadow":["shadow.1.v4.jpg",new Point(-53,-1)],
 					//"shadow":["shadow.1.v4.jpg",new Point(-53,11)],
-					"topdamaged":["top.1.damaged.v2.png",new Point(-41,-26)],
-					"shadowdamaged":["shadow.1.damaged.v2.jpg",new Point(-51,-2)],
-					//"shadowdamaged":["shadow.1.damaged.v2.jpg",new Point(-51,5)],
-					"topdestroyed":["top.1.destroyed.v2.png",new Point(-45,0)],
+					"topdamaged":["top.1.damaged.png",new Point(-41,-26)],
+					"shadowdamaged":["shadow.1.damaged.jpg",new Point(-51,-2)],
+					//"shadowdamaged":["shadow.1.damaged.jpg",new Point(-51,5)],
+					"topdestroyed":["top.1.destroyed.png",new Point(-45,0)],
 					"shadowdestroyed":["shadow.1.destroyed.v4.jpg",new Point(-46,-2)]
 					// "shadowdestroyed":["shadow.1.destroyed.v4.jpg",new Point(-46,4)]
 				},
@@ -66,12 +66,11 @@ package buildings.inferno {
 					//"shadowdestroyed":["shadow.2.destroyed.jpg",new Point(-60,19)]
 				}
 			},
-			"buildingbuttons":["bone_crusher.v2"],
+			"buildingbuttons":["bone_crusher"],
 			"upgradeImgData":{
 				"baseurl":"buttons/buildings/",
 				1:{
-					"img":"bone_crusher.v2.jpg",
-					"silhouette_img":"bone_crusher.v2.silhouette.jpg"
+					"img":"bone_crusher.jpg"
 				}
 			},
 			"quantity":[

@@ -25,13 +25,15 @@ package buildings.yard {
 			"buildingbuttons":["99.v2"],
 			"upgradeImgData":{
 				"baseurl":"buttons/buildings/",
-				"1":{"img":"99.v2.jpg"}
+				"1":{
+					"img":"99.jpg"
+				}
 			},
 			"imageData":{
 				"baseurl":"buildings/decorations/statue-liberty/",
 				"1":{
-					"top":["top.v2.png",new Point(-37,-118)],
-					"shadow":["shadow.v2.jpg",new Point(-31,20)]
+					"top":["top.png",new Point(-37,-118)],
+					"shadow":["shadow.jpg",new Point(-31,20)]
 				}
 			},
 			"quantity":[0],

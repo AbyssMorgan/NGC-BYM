@@ -183,16 +183,16 @@ package com.monsters.maproom_advanced
             {
                case "Dreadnought":
                case "Dreadnaut":
-                  ImageCache.GetImageWithCallBack("monsters/tribe_dreadnaut_50.v2.jpg",imageComplete);
+                  ImageCache.GetImageWithCallBack("monsters/tribe_dreadnaut_50.jpg",imageComplete);
                   break;
                case "Kozu":
-                  ImageCache.GetImageWithCallBack("monsters/tribe_kozu_50.v2.jpg",imageComplete);
+                  ImageCache.GetImageWithCallBack("monsters/tribe_kozu_50.jpg",imageComplete);
                   break;
                case "Legionnaire":
-                  ImageCache.GetImageWithCallBack("monsters/tribe_legionnaire_50.v2.jpg",imageComplete);
+                  ImageCache.GetImageWithCallBack("monsters/tribe_legionnaire_50.jpg",imageComplete);
                   break;
                case "Abunakki":
-                  ImageCache.GetImageWithCallBack("monsters/tribe_abunakki_50.v2.jpg",imageComplete);
+                  ImageCache.GetImageWithCallBack("monsters/tribe_abunakki_50.jpg",imageComplete);
             }
          }
       }

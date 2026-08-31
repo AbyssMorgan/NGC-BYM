@@ -32,7 +32,7 @@ package buildings.yard {
 					"anim":["anim.1.png",new Rectangle(-28,-30,54,48),32],
 					"anim2":["anim.2.png",new Rectangle(-66,26,33,31),5],
 					"anim3":["anim.3.png",new Rectangle(32,26,33,31),5],
-					"top":["top.1.v2.png",new Point(-74,-96)],
+					"top":["top.1.png",new Point(-74,-96)],
 					"shadow":["shadow.1.jpg",new Point(-73,-6)],
 					"topdamaged":["top.1.damaged.png",new Point(-73,-80)],
 					"shadowdamaged":["shadow.1.jpg",new Point(-72,-6)],
@@ -43,8 +43,7 @@ package buildings.yard {
 			"upgradeImgData":{
 				"baseurl":"buttons/buildings/",
 				"1":{
-					"img":"116.jpg",
-					"silhouette_img":"116.silhouette.jpg"
+					"img":"116.jpg"
 				}
 			},
 			"quantity":[

@@ -14,7 +14,7 @@ package monsters {
 			"name":"#m_wormzer#",
 			"classType":Wormzer,
 			"description":"mon_wormzerdesc",
-			"stream":["mon_wormzerstream","mon_wormzerstreambody","quests/monster13.v2.png"],
+			"stream":["mon_wormzerstream","mon_wormzerstreambody","quests/monster13.png"],
 			"trainingCosts":[
 				[4096000, 3600 * 24], // Level 2
 				[8192000, 3600 * 48], // Level 3

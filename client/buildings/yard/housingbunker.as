@@ -66,18 +66,18 @@ package buildings.yard {
 			"imageData":{
 			"baseurl":"buildings/ihousingbunker/",
 			1:{
-				"top":["top.1.v2.png",new Point(-110,-49)],
+				"top":["top.1.png",new Point(-110,-49)],
 				"shadow":["shadow.1.jpg",new Point(-118,26)],
-				"topdamaged":["top.1.damaged.v2.png",new Point(-106,-39)],
+				"topdamaged":["top.1.damaged.png",new Point(-106,-39)],
 				"shadowdamaged":["shadow.1.damaged.jpg",new Point(-117,30)],
-				"topdestroyed":["top.1.destroyed.v2.png",new Point(-73,10)],
+				"topdestroyed":["top.1.destroyed.png",new Point(-73,10)],
 				"shadowdestroyed":["shadow.1.destroyed.jpg",new Point(-96,8)]
 			}
 			},
 			"buildingbuttons":["monster_housing.v2"],
 			"upgradeImgData":{
 			"baseurl":"buttons/buildings/",
-				1:{"img":"monster_housing.v2.jpg"}
+				1:{"img":"monster_housing.jpg"}
 			},
 			"quantity":[
 				0, // Level 0

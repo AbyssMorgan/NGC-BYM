@@ -14,7 +14,7 @@ package monsters {
 			"name":"#m_bolt#",
 			"classType":Bolt,
 			"description":"mon_boltdesc",
-			"stream":["mon_boltstream","mon_boltstreambody","quests/monster3.v2.png"],
+			"stream":["mon_boltstream","mon_boltstreambody","quests/monster3.png"],
 			"trainingCosts":[
 				[16000, 3600 * 4], // Level 2
 				[32000, 3600 * 6], // Level 3

@@ -46,22 +46,21 @@ package buildings.inferno {
 			"imageData":{
 				"baseurl":"buildings/isnipertower/",
 				1:{
-					"anim":["anim.1.v2.png",new Rectangle(-56,-86,85,81),30],
-					"top":["top.1.v2.png",new Point(-35,-5)],
-					"shadow":["shadow.1.v2.jpg",new Point(-50,12)],
-					"animdamaged":["anim.1.damaged.v2.png",new Rectangle(-52,-90,85,81),30],
-					"topdamaged":["top.1.damaged.v2.png",new Point(-40,-9)],
-					"shadowdamaged":["shadow.1.v2.jpg",new Point(-50,9)],
-					"topdestroyed":["top.1.destroyed.v2.png",new Point(-43,-8)],
-					"shadowdestroyed":["shadow.1.v2.jpg",new Point(-54,2)]
+					"anim":["anim.1.png",new Rectangle(-56,-86,85,81),30],
+					"top":["top.1.png",new Point(-35,-5)],
+					"shadow":["shadow.1.jpg",new Point(-50,12)],
+					"animdamaged":["anim.1.damaged.png",new Rectangle(-52,-90,85,81),30],
+					"topdamaged":["top.1.damaged.png",new Point(-40,-9)],
+					"shadowdamaged":["shadow.1.jpg",new Point(-50,9)],
+					"topdestroyed":["top.1.destroyed.png",new Point(-43,-8)],
+					"shadowdestroyed":["shadow.1.jpg",new Point(-54,2)]
 				}
 			},
 			"buildingbuttons":["sniper_tower.v2"],
 			"upgradeImgData":{
 				"baseurl":"buttons/buildings/",
 				1:{
-					"img":"sniper_tower.v2.jpg",
-					"silhouette_img":"sniper_tower.v2.silhouette.jpg"
+					"img":"sniper_tower.jpg"
 				}
 			},
 			"fortImgData":{

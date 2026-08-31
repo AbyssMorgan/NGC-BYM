@@ -14,7 +14,7 @@ package monsters {
 			"name":"#m_brain#",
 			"classType":Brain,
 			"description":"mon_braindesc",
-			"stream":["mon_brainstream","mon_brainstreambody","quests/monster9.v2.png"],
+			"stream":["mon_brainstream","mon_brainstreambody","quests/monster9.png"],
 			"trainingCosts":[
 				[1024000, 3600 * 12], // Level 2
 				[2056000, 3600 * 16], // Level 3

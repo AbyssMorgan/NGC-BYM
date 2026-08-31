@@ -9,7 +9,7 @@ package com.monsters.frontPage.messages.events.monsterBlitzkrieg
       public function MonsterBlitzkriegPromoMessage2()
       {
          super("event2pop2");
-         this.imageURL = _IMAGE_DIRECTORY + "fp_event2pop2.v2.jpg";
+         this.imageURL = _IMAGE_DIRECTORY + "fp_event2pop2.jpg";
       }
    }
 }

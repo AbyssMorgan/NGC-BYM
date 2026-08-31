@@ -9,7 +9,7 @@ package com.monsters.frontPage.messages.events.monsterBlitzkrieg
       public function MonsterBlitzkriegRewardMessage()
       {
          super("event2reward","btn_brag");
-         this.imageURL = _IMAGE_DIRECTORY + "fp_event2start.v2.jpg";
+         this.imageURL = _IMAGE_DIRECTORY + "fp_event2start.jpg";
       }
       
       override public function get areRequirementsMet() : Boolean

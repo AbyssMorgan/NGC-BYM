@@ -26,7 +26,7 @@ package com.monsters.frontPage.messages.events.kingOfTheHill
          }
          else
          {
-            imageURL = "popups/front_page/fp_event_kothstart.v2.jpg";
+            imageURL = "popups/front_page/fp_event_kothstart.jpg";
          }
       }
       

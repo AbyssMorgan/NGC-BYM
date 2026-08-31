@@ -14,7 +14,7 @@ package monsters {
 			"name":"#m_eyera#",
 			"classType":Eyera,
 			"description":"mon_eyeradesc",
-			"stream":["mon_eyerastream","mon_eyerastreambody","quests/monster5.v2.png"],
+			"stream":["mon_eyerastream","mon_eyerastreambody","quests/monster5.png"],
 			"trainingCosts":[
 				[64000, 3600 * 5], // Level 2
 				[128000, 3600 * 7], // Level 3

@@ -44,15 +44,15 @@ package buildings.inferno {
 			"imageData":{
 				"baseurl":"buildings/isulpherproducer/",
 				1:{
-					"anim":["anim.1.v2.png",new Rectangle(-35,-4,20,50),51],
-					"anim2":["anim.2.v2.png",new Rectangle(-20,-58,34,36),51],
-					"anim3":["anim.3.v2.png",new Rectangle(-11,-14,26,17),51],
-					"top":["top.1.v2.png",new Point(-24,-41)],
+					"anim":["anim.1.png",new Rectangle(-35,-4,20,50),51],
+					"anim2":["anim.2.png",new Rectangle(-20,-58,34,36),51],
+					"anim3":["anim.3.png",new Rectangle(-11,-14,26,17),51],
+					"top":["top.1.png",new Point(-24,-41)],
 					"shadow":["shadow.1.jpg",new Point(-33,13)],
-					"topdamaged":["top.1.damaged.v2.png",new Point(-45,-48)],
-					"shadowdamaged":["shadow.1.damaged.v2.jpg",new Point(-49,17)],
-					"topdestroyed":["top.1.destroyed.v2.png",new Point(-34,4)],
-					"shadowdestroyed":["shadow.1.destroyed.v2.jpg",new Point(-34,15)]
+					"topdamaged":["top.1.damaged.png",new Point(-45,-48)],
+					"shadowdamaged":["shadow.1.damaged.jpg",new Point(-49,17)],
+					"topdestroyed":["top.1.destroyed.png",new Point(-34,4)],
+					"shadowdestroyed":["shadow.1.destroyed.jpg",new Point(-34,15)]
 				},
 				3:{
 					"anim":["anim1.2.png",new Rectangle(-36,-60,60,118),45],
@@ -68,8 +68,7 @@ package buildings.inferno {
 			"upgradeImgData":{
 				"baseurl":"buttons/buildings/",
 				1:{
-					"img":"sulfur.v2.jpg",
-					"silhouette_img":"sulfur.v2.silhouette.jpg"
+					"img":"sulfur.jpg"
 				}
 			},
 			"quantity":[

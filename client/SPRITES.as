@@ -25,24 +25,24 @@ package {
 			}
 			else
 			{
-				_sprites.worker = new SpriteData("monsters/inferno_worker.v2.png",64,55,32,36);
+				_sprites.worker = new SpriteData("monsters/inferno_worker.png",64,55,32,36);
 			}
 			_sprites.C1 = new SpriteData("monsters/sprite.1.v1.png",24,21,8,14);
 			_sprites.C2 = new SpriteData("monsters/octoooze.png",39,28,19,15);
-			_sprites.C3 = new SpriteData("monsters/sprite.3.v2.png",30,28,7,20);
+			_sprites.C3 = new SpriteData("monsters/sprite.3.png",30,28,7,20);
 			_sprites.C4 = new SpriteData("monsters/fink.png",34,32,15,21);
 			_sprites.C5 = new SpriteData("monsters/eyera.png",26,23,11,15);
 			_sprites.C6 = new SpriteData("monsters/ichi.png",27,26,11,17);
 			_sprites.C7 = new SpriteData("monsters/bandito.png",29,28,11,17);
 			_sprites.C8 = new SpriteData("monsters/fang.png",34,31,16,19);
-			_sprites.C9 = new SpriteData("monsters/brain.v2.png",34,24,16,13);
+			_sprites.C9 = new SpriteData("monsters/brain.png",34,24,16,13);
 			_sprites.C10 = new SpriteData("monsters/crabatron.png",37,27,15,18);
-			_sprites.C11 = new SpriteData("monsters/sprite.11.v2.png",48,35,24,22);
-			_sprites.C12 = new SpriteData("monsters/sprite.12.v2.png",53,46,21,27);
+			_sprites.C11 = new SpriteData("monsters/sprite.11.png",48,35,24,22);
+			_sprites.C12 = new SpriteData("monsters/sprite.12.png",53,46,21,27);
 			_sprites.C12Gold = new SpriteData("monsters/sprite.12.gold.png",53,46,21,27);
 			_sprites.C13 = new SpriteData("monsters/13.png",40,26,19,17);
 			_sprites.C14 = new SpriteData("monsters/14.v1.png",28,28,15,14);
-			_sprites.C15 = new SpriteData("monsters/zafreeti.v2.png",56,70,28,35);
+			_sprites.C15 = new SpriteData("monsters/zafreeti.png",56,70,28,35);
 			_sprites.C16 = new SpriteData("monsters/vorg_anim.png",40,40,SpriteData.FUBAR_X,SpriteData.FUBAR_Y);
 			_sprites.C17 = new SpriteData("monsters/slimeattikus_anim.png",48,31,SpriteData.FUBAR_X,SpriteData.FUBAR_Y - 21);
 			_sprites.C18 = new SpriteData("monsters/slimeattikusmini_anim.png",30,20,SpriteData.FUBAR_X - 11,SpriteData.FUBAR_Y - 25);
@@ -52,7 +52,7 @@ package {
 			_sprites.IC3 = new SpriteData("monsters/malphus.png",51,35,25,17);
 			_sprites.IC4 = new SpriteData("monsters/valgos.png",55,32,11,15);
 			_sprites.IC5 = new SpriteData("monsters/balthazar.png",56,37,33,18.5);
-			_sprites.IC6 = new SpriteData("monsters/grokus.v2.png",57,39,28,20);
+			_sprites.IC6 = new SpriteData("monsters/grokus.png",57,39,28,20);
 			_sprites.IC7 = new SpriteData("monsters/sabnox.png",42,34,21,17);
 			_sprites.IC8 = new SpriteData("monsters/wormzer.png",58,42,29,21);
 
@@ -109,7 +109,7 @@ package {
 			_sprites.rocket = new SpriteData("monsters/daverocket.png",16,16,26,36);
 			_sprites.vacuum_pipe = new SpriteData("effects/vacuum_pipe.png",26,97,26,36);
 			_sprites.vacuum_end = new SpriteData("effects/vacuum_end.png",52,52,26,36);
-			_sprites.heart = new SpriteData("effects/heart_icon.v2.png",12,12,SpriteData.FUBAR_X,SpriteData.FUBAR_Y);
+			_sprites.heart = new SpriteData("effects/heart_icon.png",12,12,SpriteData.FUBAR_X,SpriteData.FUBAR_Y);
 			_sprites.flame = new SpriteData("effects/flame_icon.png",16,25,SpriteData.FUBAR_X,SpriteData.FUBAR_Y);
 			_sprites.venom = new SpriteData("effects/venom_icon.png",16,26,SpriteData.FUBAR_X,SpriteData.FUBAR_Y);
 			_sprites.venomBal = new SpriteData("effects/venomBal_icon.png",420,332,SpriteData.FUBAR_X,SpriteData.FUBAR_Y);

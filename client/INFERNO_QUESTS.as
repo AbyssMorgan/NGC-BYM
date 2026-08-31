@@ -72,7 +72,7 @@ package
          "name":"q_c3_name",
          "description":"q_c3_description",
          "hint":"q_c3_hint",
-         "questimage":"nextlevel2.v2.png",
+         "questimage":"nextlevel2.png",
          "questicon":"icon_nextlevel.png",
          "streamTitle":"q_c0_streamtitle",
          "streamDescription":"q_c0_streamdescription",

@@ -1,1 +1,0 @@
->Monster TransferSelect the monsters then press "Transfer" to select the target location.

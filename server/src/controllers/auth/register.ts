@@ -21,41 +21,41 @@ import type { UserData } from "../../types/EntityData.js";
  * @throws {Error} - Throws an error if registration fails or if the request body is invalid.
  */
 export const register: KoaController = async (ctx) => {
-  const registeredUser = UserRegistrationSchema.parse(ctx.request.body);
+	const registeredUser = UserRegistrationSchema.parse(ctx.request.body);
 
-  // Find user by username or email
-  const existingUser = await postgres.em.findOne(User, {
-    $or: [
-      { username: registeredUser.username },
-      { email: registeredUser.email },
-    ],
-  });
+	// Find user by username or email
+	const existingUser = await postgres.em.findOne(User, {
+		$or: [
+			{ username: registeredUser.username },
+			{ email: registeredUser.email },
+		],
+	});
 
-  // If user exists, check if username or email is already taken
-  if (existingUser) {
-    const isUsernameTaken = existingUser.username === registeredUser.username;
-    const isEmailTaken = existingUser.email === registeredUser.email;
+	// If user exists, check if username or email is already taken
+	if (existingUser) {
+		const isUsernameTaken = existingUser.username === registeredUser.username;
+		const isEmailTaken = existingUser.email === registeredUser.email;
 
-    if (isUsernameTaken) throw usernameUniqueErr();
-    if (isEmailTaken) throw emailUniqueErr();
-  }
+		if (isUsernameTaken) throw usernameUniqueErr();
+		if (isEmailTaken) throw emailUniqueErr();
+	}
 
-  const hash = await bcrypt.hash(registeredUser.password!, 10);
+	const hash = await bcrypt.hash(registeredUser.password!, 10);
 
-  // Create new user record
-  const user = postgres.em.create(User, {
-    ...registeredUser,
-    pic_square: `https://vps-b7b57ea9.vps.ovh.net/assets/bym-refitted-assets/placeholder.jpg`,
-    password: hash,
-  } as unknown as UserData);
+	// Create new user record
+	const user = postgres.em.create(User, {
+		...registeredUser,
+		pic_square: `https://vps-b7b57ea9.vps.ovh.net/assets/bym-refitted-assets/placeholder.jpg`,
+		password: hash,
+	} as unknown as UserData);
 
-  postgres.em.persist(user);
-  await postgres.em.flush();
-  const filteredUser = FilterFrontendKeys(user);
-  logger.info(
-    `User ${filteredUser.username} registered successfully | ID: ${filteredUser.userid} | Email: ${filteredUser.email} | IP Address: ${ctx.ip}`
-  );
+	postgres.em.persist(user);
+	await postgres.em.flush();
+	const filteredUser = FilterFrontendKeys(user);
+	logger.info(
+		`User ${filteredUser.username} registered successfully | ID: ${filteredUser.userid} | Email: ${filteredUser.email} | IP Address: ${ctx.ip}`
+	);
 
-  ctx.status = Status.OK;
-  ctx.body = { user: filteredUser };
+	ctx.status = Status.OK;
+	ctx.body = { user: filteredUser };
 };

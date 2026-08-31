@@ -81,7 +81,7 @@ function parse_building(string $file) : object {
 $buildings = [];
 
 foreach($files as $file){
-	$meta = parse_building($this->core->get_path("../client/scripts/buildings/yard/$file"));
+	$meta = parse_building($this->core->get_path("../client/buildings/yard/$file"));
 	$buildings[$meta->id] = (object)[
 		'hp' => $meta->hp,
 		'repair_time' => $meta->repair_time,

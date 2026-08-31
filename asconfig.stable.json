@@ -3,7 +3,7 @@
 	"type": "app",
 	"mainClass": "GAME",
 	"compilerOptions": {
-		"output": "bin/bymr-stable.swf",
+		"output": "bymr-stable.swf",
 		"target-player": "11.0",
 		"swf-version": 13,
 		"default-frame-rate": 144,
@@ -19,7 +19,7 @@
 		"advanced-telemetry": false,
 		"static-link-runtime-shared-libraries": true,
 		"source-path": [
-			"client/scripts"
+			"client"
 		],
 		"library-path": [
 			"./playerglobal.swc"

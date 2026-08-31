@@ -27,7 +27,7 @@ $files = [
 	'teslatower.as',           // ID 25
 	'monsteracademy.as',       // ID 26
 	'catapult.as',             // ID 51
-	'radio.as',                // ID 113
+	'radiotower.as',           // ID 113
 	'monstercage.as',          // ID 114
 	'flaktower.as',            // ID 115
 	'monsterlab.as',           // ID 116
@@ -38,16 +38,16 @@ $files = [
 	'bi_quaketower.as',        // ID 129
 	'bi_magmatower.as',        // ID 132
 	'siegefactory.as',         // ID 133
-	'siegeworks.as',           // ID 134
+	'siegelaboratory.as',      // ID 134
 	'bi_spurtzcannon.as',      // ID 136
 	'bi_blackspurtzcannon.as', // ID 137
 	'stronghold.as',           // ID 138
-	'resourceop.as',           // ID 139
+	'opresource.as',           // ID 139
 	'opdefender.as',           // ID 140
 	'bi_cannontower.as',       // ID 142
 	'bi_snipertower.as',       // ID 143
 	'anticatapult.as',         // ID 144
-	'techlaboratory.as',       // ID 145
+	'technologylaboratory.as', // ID 145
 	'crystalhive.as',          // ID 146
 	'bi_boneharvester.as',     // ID 147
 	'bi_coalharvester.as',     // ID 148
@@ -69,6 +69,9 @@ function extract_array(string $content, string $name) : array {
 }
 
 function parse_building(string $file) : object {
+	if(!file_exists($file)){
+		echo "File not exists \"$file\"\r\n";
+	}
 	$content = file_get_contents($file);
 	preg_match('/"id"\s*:\s*(\d+)/', $content, $id);
 	return (object)[
@@ -88,4 +91,5 @@ foreach($files as $file){
 	];
 }
 file_put_contents("buildings.json", json_encode($buildings, JSON_PRETTY_PRINT));
+$this->core->pause("Done");
 ?>

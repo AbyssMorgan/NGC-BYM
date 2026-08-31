@@ -31,7 +31,7 @@ package buildings.yard {
 				{"r1":new SecNum(320000000), "r2":new SecNum(320000000), "r3":new SecNum(160000000), "r4":new SecNum(0), "time":new SecNum(86400 * 7), "re":[[14,1,20],[11,1,1],[12,1,2]]}, // Level 10
 			],
 			"imageData":{
-				"baseurl":"buildings/005@flinger/",
+				"baseurl":"buildings/flinger/",
 				"1":{
 					"top":["top.1.png",new Point(-46,-43)],
 					"shadow":["shadow.1.jpg",new Point(-50,20)],

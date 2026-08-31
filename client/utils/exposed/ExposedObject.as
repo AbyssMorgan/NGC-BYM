@@ -13,12 +13,12 @@ package utils.exposed
          super();
       }
       
-      internal function get id() : String
+      public function get id() : String
       {
          return this.m_Id;
       }
       
-      internal function set id(param1:String) : void
+      public function set id(param1:String) : void
       {
          this.m_Id = param1;
       }

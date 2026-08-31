@@ -25,7 +25,7 @@ package buildings.yard {
 				{"r1":new SecNum(100000), "r2":new SecNum(100000), "r3":new SecNum(100000), "r4":new SecNum(0), "time":new SecNum(21600), "re":[[14,1,3],[15,1,1]]}
 			],
 			"imageData":{
-				"baseurl":"buildings/monsterjuiceloosener/",
+				"baseurl":"buildings/monsterjuicer/",
 				"1":{
 					"anim":["anim.2.png",new Rectangle(-30,-17,60,39),51],
 					"top":["top.2.png",new Point(-44,-8)],

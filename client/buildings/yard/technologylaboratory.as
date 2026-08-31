@@ -4,7 +4,7 @@ package buildings.yard {
 	import flash.geom.Point;
 	import buildings.cls.BUILDING145;
 
-	public class techlaboratory {
+	public class technologylaboratory {
 
 		public static const DATA:Object = {
 			"id":145,

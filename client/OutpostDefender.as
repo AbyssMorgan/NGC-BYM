@@ -58,6 +58,6 @@ class ColorData
    public function ColorData(param1:String)
    {
       super();
-      this.lightAnimation = "buildings/outpostdefender/" + param1;
+      this.lightAnimation = "buildings/opdefender/" + param1;
    }
 }

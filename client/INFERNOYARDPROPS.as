@@ -112,7 +112,7 @@ package {
 	import buildings.yard.bdg_halloween;
 	import buildings.yard.bdg_halloween_small;
 	import buildings.inferno.outpost;
-	import buildings.inferno.radio;
+	import buildings.inferno.radiotower;
 	import buildings.inferno.monstercage;
 	import buildings.inferno.flaktower;
 	import buildings.inferno.monsterlab;
@@ -133,7 +133,7 @@ package {
 	import buildings.yard.bdg_wmi2totem;
 	import buildings.inferno.bi_magmatower;
 	import buildings.inferno.siegefactory;
-	import buildings.inferno.siegeworks;
+	import buildings.inferno.siegelaboratory;
 	import buildings.yard.bdg_dave_trophy;
 	
 	public class INFERNOYARDPROPS {
@@ -251,7 +251,7 @@ package {
 			bdg_halloween.DATA,        // ID 110 (Missing in storeItems)
 			bdg_halloween_small.DATA,  // ID 111 (Missing in storeItems)
 			outpost.DATA,              // ID 112
-			radio.DATA,                // ID 113
+			radiotower.DATA,           // ID 113
 			monstercage.DATA,          // ID 114
 			flaktower.DATA,            // ID 115
 			monsterlab.DATA,           // ID 116
@@ -272,7 +272,7 @@ package {
 			bdg_wmi2totem.DATA,        // ID 131
 			bi_magmatower.DATA,        // ID 132
 			siegefactory.DATA,         // ID 133
-			siegeworks.DATA,           // ID 134
+			siegelaboratory.DATA,      // ID 134
 			bdg_dave_trophy.DATA,      // ID 135
 		];
 		

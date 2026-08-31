@@ -34,7 +34,7 @@ package buildings.yard {
 				{"r1":new SecNum(512000000), "r2":new SecNum(512000000), "r3":new SecNum(160000000), "r4":new SecNum(0), "time":new SecNum(86400 * 12), "re":[[14,1,20],[8,1,4],[12,1,2]]} // Level 12
 			],
 			"imageData":{
-				"baseurl":"buildings/monsterbaiter/",
+				"baseurl":"buildings/wildmonsterbaiter/",
 				"1":{
 					"anim":["anim.1.png",new Rectangle(-33,-23,67,77),41],
 					"top":["top.1.png",new Point(-37,-6)],

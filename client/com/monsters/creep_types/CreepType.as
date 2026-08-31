@@ -56,12 +56,12 @@ package com.monsters.creep_types
          super();
       }
       
-      public function get id() : String
+      override public function get id() : String
       {
          return this.m_Id;
       }
       
-      public function set id(param1:String) : void
+      override public function set id(param1:String) : void
       {
          this.m_Id = param1;
       }

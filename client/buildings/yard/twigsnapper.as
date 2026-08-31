@@ -43,7 +43,7 @@ package buildings.yard {
 				{"r1":new SecNum(2500000000), "r2":new SecNum(2500000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 14), "re":[[14,1,20],[12,1,2]]} // Level 20
 			],
 			"imageData":{
-				"baseurl":"buildings/001@twigsnapper/",
+				"baseurl":"buildings/twigsnapper/",
 				"1":{
 					"anim":["anim.1.png",new Rectangle(-4,10,23,33),34],
 					"top":["top.1.png",new Point(-30,-19)],

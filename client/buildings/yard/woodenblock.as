@@ -30,7 +30,7 @@ package buildings.yard {
 			],
 			"buildingbuttons":["17.1"],
 			"imageData":{
-				"baseurl":"buildings/walls/",
+				"baseurl":"buildings/woodenblock/",
 				"1":{
 					"top":["top.1.png",new Point(-21,-21)],
 					"shadow":["shadow.jpg",new Point(-28,-7)],

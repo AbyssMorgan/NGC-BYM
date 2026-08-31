@@ -767,7 +767,7 @@ package
             "re":[[112,1,1],[15,1,1]]
          }],
          "imageData":{
-            "baseurl":"buildings/monsterjuiceloosener/",
+            "baseurl":"buildings/monsterjuicer/",
             1:{
                "anim":["anim.2.png",new Rectangle(-30,-17,60,39),51],
                "top":["top.2.png",new Point(-44,-8)],
@@ -1214,7 +1214,7 @@ package
             "re":[[112,1,1],[13,2,1]]
          }],
          "imageData":{
-            "baseurl":"buildings/hatcherycontrolcenter/",
+            "baseurl":"buildings/hcc/",
             1:{
                "top":["top.1.png",new Point(-40,-58)],
                "shadow":["shadow.1.jpg",new Point(-51,20)],
@@ -6267,7 +6267,7 @@ package
             "re":[]
          }],
          "imageData":{
-            "baseurl":"buildings/siegelab/",
+            "baseurl":"buildings/siegelaboratory/",
             1:{
                "top":["top.1.png",new Point(-68,-66)],
                "topdamaged":["top.1.damaged.png",new Point(-69,-111)],

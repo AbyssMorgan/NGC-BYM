@@ -12,11 +12,6 @@ package com.monsters.rendering
    public class Renderer
    {
       
-      renderer_friend static var _debug:Boolean;
-      
-      private static var _debugShape:Shape;
-       
-      
       renderer_friend var _canvas:BitmapData;
       
       renderer_friend var _viewRect:Rectangle;
@@ -36,26 +31,6 @@ package com.monsters.rendering
          super();
          this.renderer_friend::_canvas = param1;
          this.renderer_friend::_viewRect = param2;
-      }
-      
-      public static function get debug() : Boolean
-      {
-         return renderer_friend::_debug;
-      }
-      
-      public static function set debug(param1:Boolean) : void
-      {
-         renderer_friend::_debug = param1;
-         if(renderer_friend::_debug)
-         {
-            _debugShape = _debugShape || new Shape();
-            RasterData.renderer_friend::showDebug();
-         }
-         else
-         {
-            _debugShape = null;
-            RasterData.renderer_friend::hideDebug();
-         }
       }
       
       public function set canvas(param1:BitmapData) : void

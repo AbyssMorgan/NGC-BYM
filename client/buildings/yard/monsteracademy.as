@@ -29,7 +29,7 @@ package buildings.yard {
 				{"r1":new SecNum(500000000), "r2":new SecNum(500000000), "r3":new SecNum(500000000), "r4":new SecNum(0), "time":new SecNum(86400 * 6), "re":[[14,1,18],[8,1,4],[12,1,2]]}, // Level 9
 			],
 			"imageData":{
-				"baseurl":"buildings/academy/",
+				"baseurl":"buildings/monsteracademy/",
 				"1":{
 					"anim":["anim.1.v2.png",new Rectangle(-22,-13,48,26),21],
 					"top":["top.1.png",new Point(-42,-12)],

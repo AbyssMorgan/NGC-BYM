@@ -55,7 +55,7 @@ package buildings.yard {
 				{"r1":new SecNum(2500000000), "r2":new SecNum(2500000000), "r3":new SecNum(5000000000), "r4":new SecNum(5000000000), "time":new SecNum(259200), "re":[[145,1,5]]},
 			],
 			"imageData":{
-				"baseurl":"buildings/guardtower/",
+				"baseurl":"buildings/stronghold/",
 				"1":{
 					"top":["top.v2.1.png",new Point(-98,-100)],
 					// MISSING ASSETS TO RECREATE OR FIND:

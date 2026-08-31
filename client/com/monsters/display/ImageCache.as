@@ -248,9 +248,7 @@ package com.monsters.display
 					++queue.tries;
 					if(queue.tries < queue.tryLimit)
 					{
-						this.queue.push(
-							load.splice(_loc2_,1)[0]
-						);
+						this.queue.push(load.splice(_loc2_,1)[0]);
 					}
 					else
 					{

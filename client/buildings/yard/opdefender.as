@@ -35,7 +35,7 @@ package buildings.yard {
 				{"r1":new SecNum(5), "r2":new SecNum(5), "r3":new SecNum(5), "r4":new SecNum(5), "time":new SecNum(1), "re":[]}, // Level 9
 			],
 			"imageData":{
-				"baseurl":"buildings/outpostdefender/",
+				"baseurl":"buildings/opdefender/",
 				"1":{
 					"top":["top.1.png",new Point(-59,-19)],
 					"shadow":["shadow.1.png",new Point(-59,39)],

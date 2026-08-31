@@ -112,7 +112,7 @@ package {
 	import buildings.yard.bdg_halloween;
 	import buildings.yard.bdg_halloween_small;
 	import buildings.yard.outpost;
-	import buildings.yard.radio;
+	import buildings.yard.radiotower;
 	import buildings.yard.monstercage;
 	import buildings.yard.flaktower;
 	import buildings.yard.monsterlab;
@@ -133,18 +133,18 @@ package {
 	import buildings.yard.bdg_wmi2totem;
 	import buildings.yard.bi_magmatower;
 	import buildings.yard.siegefactory;
-	import buildings.yard.siegeworks;
+	import buildings.yard.siegelaboratory;
 	import buildings.yard.bdg_dave_trophy;
 	import buildings.yard.bi_spurtzcannon;
 	import buildings.yard.bi_blackspurtzcannon;
 	import buildings.yard.stronghold;
-	import buildings.yard.resourceop;
+	import buildings.yard.opresource;
 	import buildings.yard.opdefender;
 	import buildings.yard.building141;
 	import buildings.yard.bi_cannontower;
 	import buildings.yard.bi_snipertower;
 	import buildings.yard.anticatapult;
-	import buildings.yard.techlaboratory;
+	import buildings.yard.technologylaboratory;
 	import buildings.yard.crystalhive;
 	import buildings.yard.bi_boneharvester;
 	import buildings.yard.bi_coalharvester;
@@ -270,7 +270,7 @@ package {
 			bdg_halloween.DATA,        // ID 110
 			bdg_halloween_small.DATA,  // ID 111
 			outpost.DATA,              // ID 112 (Locked)
-			radio.DATA,                // ID 113
+			radiotower.DATA,           // ID 113
 			monstercage.DATA,          // ID 114
 			flaktower.DATA,            // ID 115
 			monsterlab.DATA,           // ID 116
@@ -291,18 +291,18 @@ package {
 			bdg_wmi2totem.DATA,        // ID 131 (WMI only)
 			bi_magmatower.DATA,        // ID 132
 			siegefactory.DATA,         // ID 133
-			siegeworks.DATA,           // ID 134
+			siegelaboratory.DATA,      // ID 134
 			bdg_dave_trophy.DATA,      // ID 135 (Locked)
 			bi_spurtzcannon.DATA,      // ID 136
 			bi_blackspurtzcannon.DATA, // ID 137
 			stronghold.DATA,           // ID 138
-			resourceop.DATA,           // ID 139
+			opresource.DATA,           // ID 139
 			opdefender.DATA,           // ID 140
 			building141.DATA,          // ID 141
 			bi_cannontower.DATA,       // ID 142
 			bi_snipertower.DATA,       // ID 143
 			anticatapult.DATA,         // ID 144
-			techlaboratory.DATA,       // ID 145
+			technologylaboratory.DATA, // ID 145
 			crystalhive.DATA,          // ID 146
 			bi_boneharvester.DATA,     // ID 147
 			bi_coalharvester.DATA,     // ID 148

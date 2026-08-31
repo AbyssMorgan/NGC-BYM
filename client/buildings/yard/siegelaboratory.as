@@ -5,7 +5,7 @@ package buildings.yard {
 	import flash.geom.Rectangle;
 	import com.monsters.siege.SiegeLab;
 
-	public class siegeworks {
+	public class siegelaboratory {
 
 		public static const DATA:Object = {
 			"id":134,
@@ -35,7 +35,7 @@ package buildings.yard {
 				{"r1":new SecNum(9000000), "r2":new SecNum(9000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(432000), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]}
 			],
 			"imageData":{
-				"baseurl":"buildings/siegelab/",
+				"baseurl":"buildings/siegelaboratory/",
 				"1":{
 					"top":["top.1.v6.png",new Point(-69,-68)],
 					"topdamaged":["top.1.damaged.v4.png",new Point(-66,-98)],

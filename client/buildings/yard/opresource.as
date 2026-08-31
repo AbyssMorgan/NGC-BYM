@@ -3,7 +3,7 @@ package buildings.yard {
 	import com.cc.utils.SecNum;
 	import flash.geom.Point;
 
-	public class resourceop {
+	public class opresource {
 
 		public static const DATA:Object = {
 			"id":139,
@@ -33,7 +33,7 @@ package buildings.yard {
 				23,
 			],
 			"imageData":{
-				"baseurl":"buildings/resourceoutpost/",
+				"baseurl":"buildings/opresource/",
 				"1":{
 					"top":["top.v2.1.png",new Point(-86,-64)]
 					// MISSING ASSETS TO RECREATE OR FIND:

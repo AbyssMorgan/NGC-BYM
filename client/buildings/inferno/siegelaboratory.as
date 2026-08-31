@@ -5,7 +5,7 @@ package buildings.inferno {
 	import flash.geom.Rectangle;
 	import com.monsters.siege.SiegeLab;
 
-	public class siegeworks {
+	public class siegelaboratory {
 
 		public static const DATA:Object = {
 			"id":134,
@@ -26,7 +26,7 @@ package buildings.inferno {
 				{"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":0, "time":new SecNum(0), "re":[]}
 			],
 			"imageData":{
-				"baseurl":"buildings/siegelab/",
+				"baseurl":"buildings/siegelaboratory/",
 				1:{
 					"top":["top.1.png",new Point(-68,-66)],
 					"topdamaged":["top.1.damaged.png",new Point(-69,-111)],

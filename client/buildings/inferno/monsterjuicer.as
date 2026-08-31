@@ -25,7 +25,7 @@ package buildings.inferno {
 				{"r1":new SecNum(500000), "r2":new SecNum(500000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(43200), "re":[[14,1,1],[128,1,1]]}
 			],
 			"imageData":{
-				"baseurl":"buildings/monsterjuiceloosener/",
+				"baseurl":"buildings/monsterjuicer/",
 				1:{
 					"anim":["anim.2.png",new Rectangle(-30,-17,60,39),51],
 					"top":["top.2.png",new Point(-44,-8)],

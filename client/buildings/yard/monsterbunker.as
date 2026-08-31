@@ -45,7 +45,7 @@ package buildings.yard {
 				{"r1":new SecNum(2500000000), "r2":new SecNum(2500000000), "r3":new SecNum(5000000000), "r4":new SecNum(5000000000), "time":new SecNum(259200), "re":[[145,1,5]]},
 			],
 			"imageData":{
-				"baseurl":"buildings/bunker/",
+				"baseurl":"buildings/monsterbunker/",
 				"1":{
 					"anim":["anim.1.png",new Rectangle(-46,-15,90,83),15],
 					"shadow":["shadow.1.jpg",new Point(-66,10)],

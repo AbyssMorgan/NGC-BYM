@@ -23,7 +23,7 @@ package buildings.yard {
 				{"r1":new SecNum(4000000), "r2":new SecNum(4000000), "r3":new SecNum(4000000), "r4":new SecNum(0), "time":new SecNum(90000), "re":[[14,1,3],[13,3,2]]}, // Level 1
 			],
 			"imageData":{
-				"baseurl":"buildings/hatcherycontrolcenter/",
+				"baseurl":"buildings/hcc/",
 				"1":{
 					"top":["top.1.png",new Point(-40,-58)],
 					"shadow":["shadow.1.jpg",new Point(-51,20)],

@@ -32,7 +32,9 @@ package buildings.yard {
 				{"range":260, "damage":340, "rate":80, "speed":0, "splash":44}, // Level 11
 				{"range":270, "damage":360, "rate":80, "speed":0, "splash":46}, // Level 12
 				{"range":280, "damage":380, "rate":80, "speed":0, "splash":48}, // Level 13
-				{"range":290, "damage":400, "rate":80, "speed":0, "splash":50}, // Level 14
+				{"range":290, "damage":400, "rate":60, "speed":0, "splash":50}, // Level 14
+				{"range":300, "damage":420, "rate":40, "speed":0, "splash":52}, // Level 15
+				{"range":310, "damage":450, "rate":20, "speed":0, "splash":54}, // Level 16
 			],
 			"costs":[
 				{"r1":new SecNum(500000), "r2":new SecNum(250000), "r3":new SecNum(100000), "r4":new SecNum(0), "time":new SecNum(86400 * 1), "re":[[14,1,4]]}, // Level 1
@@ -49,6 +51,8 @@ package buildings.yard {
 				{"r1":new SecNum(1600000000), "r2":new SecNum(1600000000), "r3":new SecNum(1600000000), "r4":new SecNum(0), "time":new SecNum(86400 * 12), "re":[[14,1,16],[12,1,2]]}, // Level 12
 				{"r1":new SecNum(2000000000), "r2":new SecNum(2000000000), "r3":new SecNum(2000000000), "r4":new SecNum(0), "time":new SecNum(86400 * 13), "re":[[14,1,18],[12,1,2]]}, // Level 13
 				{"r1":new SecNum(2400000000), "r2":new SecNum(2400000000), "r3":new SecNum(2400000000), "r4":new SecNum(0), "time":new SecNum(86400 * 14), "re":[[14,1,20],[12,1,2]]}, // Level 14
+				{"r1":new SecNum(10000000000), "r2":new SecNum(10000000000), "r3":new SecNum(10000000000), "r4":new SecNum(10000000000), "time":new SecNum(86400 * 15), "re":[[14,1,22],[12,1,3],[145,1,7]]}, // Level 15
+				{"r1":new SecNum(25000000000), "r2":new SecNum(25000000000), "r3":new SecNum(25000000000), "r4":new SecNum(25000000000), "time":new SecNum(86400 * 16), "re":[[14,1,24],[12,1,3],[145,1,9]]}, // Level 16
 			],
 			"can_fortify":true,
 			"fortify_costs":[
@@ -79,6 +83,17 @@ package buildings.yard {
 					"topdamaged":["top.heat.damaged.png",new Point(-40,-28)],
 					"shadowdamaged":["shadow.1.jpg",new Point(-37,-17)],
 					"topdestroyed":["top.heat.destroyed.png",new Point(-39,-3)],
+					"shadowdestroyed":["shadow.1.jpg",new Point(-37,14)],
+					"topdestroyedfire":["top.1.destroyed.fire.png",new Point(-39,-3)]
+				},
+				"16":{
+					"anim":["anim.ngc.png",new Rectangle(-13,-50,29,32),54],
+					"top":["top.ngc.png",new Point(-33,-29)],
+					"shadow":["shadow.1.jpg",new Point(-36,15)],
+					"animdamaged":["anim.ngc.damaged.png",new Rectangle(-22,-46,52,44),54],
+					"topdamaged":["top.ngc.damaged.png",new Point(-40,-28)],
+					"shadowdamaged":["shadow.1.jpg",new Point(-37,-17)],
+					"topdestroyed":["top.ngc.destroyed.png",new Point(-39,-3)],
 					"shadowdestroyed":["shadow.1.jpg",new Point(-37,14)],
 					"topdestroyedfire":["top.1.destroyed.fire.png",new Point(-39,-3)]
 				}
@@ -155,6 +170,8 @@ package buildings.yard {
 				111168, // Level 12
 				122284, // Level 13
 				134512, // Level 14
+				180000, // Level 15
+				250000, // Level 16
 			],
 			"repairTime":[
 				1920, // Level 1
@@ -171,6 +188,8 @@ package buildings.yard {
 				259200, // Level 12
 				302400, // Level 13
 				345600, // Level 14
+				388800, // Level 15
+				432000, // Level 16
 			]
 		};
 		

@@ -44,7 +44,7 @@ package buildings.inferno {
 				"shadowdestroyed":["shadow.1.destroyed.jpg",new Point(-96,8)]
 			}
 			},
-			"buildingbuttons":["monster_housing.v2"],
+			"buildingbuttons":["monster_housing"],
 			"upgradeImgData":{
 			"baseurl":"buttons/buildings/",
 				1:{"img":"monster_housing.jpg"}

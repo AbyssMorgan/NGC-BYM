@@ -67,7 +67,7 @@ package buildings.yard {
 					"shadowdestroyed":["shadow.2.destroyed.jpg",new Point(-46,17)]
 				}
 			},
-			"buildingbuttons":["coal_producer.v2"],
+			"buildingbuttons":["coal_producer"],
 			"upgradeImgData":{
 				"baseurl":"buttons/buildings/",
 				1:{

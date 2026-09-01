@@ -67,7 +67,7 @@ package buildings.yard {
 					"shadowdestroyed":["shadow.2.destroyed.jpg",new Point(-42,12)]
 				}
 			},
-			"buildingbuttons":["sulfur.v2"],
+			"buildingbuttons":["sulfur"],
 			"upgradeImgData":{
 				"baseurl":"buttons/buildings/",
 				1:{

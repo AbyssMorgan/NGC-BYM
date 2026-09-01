@@ -69,7 +69,7 @@ package buildings.yard {
 					//"shadowdestroyed":["shadow.2.destroyed.jpg",new Point(-60,19)]
 				}
 			},
-			"buildingbuttons":["bone_crusher.v2"],
+			"buildingbuttons":["bone_crusher"],
 			"upgradeImgData":{
 				"baseurl":"buttons/buildings/",
 				1:{

@@ -1052,6 +1052,14 @@ export const storeItems: { [key: string]: StoreItem } = {
 		i: 1,
 		a: 1,
 	},
+	BLK9: {
+		t: "NGC Composite Block",
+		d: " ",
+		du: 0,
+		c: [1],
+		i: 1,
+		a: 1,
+	},
 	MDOD: {
 		t: "Monster Defensive Buff",
 		d: " ",

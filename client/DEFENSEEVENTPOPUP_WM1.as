@@ -75,7 +75,7 @@ package
          }
          else if(popupnum == 5)
          {
-            ImageCache.GetImageWithCallBack("specialevent/tshirt_v2.png",imageComplete);
+            ImageCache.GetImageWithCallBack("specialevent/tshirt.png",imageComplete);
             mcText.htmlText = KEYS.Get("wmi_tshirt");
          }
          mcFrame.Setup(true);

@@ -8,7 +8,6 @@ package
    import flash.display.MovieClip;
    import flash.display.Shape;
    import flash.events.Event;
-   import flash.events.MouseEvent;
    import flash.filters.GlowFilter;
    import flash.geom.Point;
    import flash.geom.Rectangle;
@@ -205,7 +204,7 @@ package
                this._gunballs[_loc7_].x = this._spot.x + this._segment.x;
                this._gunballs[_loc7_].y = this._spot.y + this._segment.y;
                this._trail[_loc7_] = new Shape();
-               this._trail[_loc7_].graphics.lineStyle(1,16777215,1);
+               this._trail[_loc7_].graphics.lineStyle(1,0xFFFFFF,1);
                this._trail[_loc7_].graphics.moveTo(this._spot.x,this._spot.y);
                this._trail[_loc7_].graphics.lineTo(this._spot.x + this._segment.x,this._spot.y + this._segment.y);
                this._trail[_loc7_].filters = [new GlowFilter(35003,1,5 + Math.random() * 2,5 + Math.random() * 2,4,1,false,false)];

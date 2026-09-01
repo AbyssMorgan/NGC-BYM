@@ -320,7 +320,7 @@ package
 					 }
                      if(TUTORIAL._stage >= 200 && can_edit)
                      {
-                        if(Boolean(_props.can_fortify) && !_loc3_ && _building._fortification.Get() < 5)
+                        if(Boolean(_props.can_fortify) && !_loc3_ && _building._fortification.Get() < (BASE.isMainYard ? 5 : 4))
                         {
                            _loc1_.push(["btn_fortify",30]);
                         }
@@ -721,7 +721,7 @@ package
             }
             else
             {
-               STORE.ShowB(1,0,["BLK2","BLK3","BLK4","BLK5","BLK6","BLK7","BLK8"]);
+               STORE.ShowB(1,0,["BLK2","BLK3","BLK4","BLK5","BLK6","BLK7","BLK8","BLK9"]);
             }
          }
          if(param1.target.labelKey == "btn_more")

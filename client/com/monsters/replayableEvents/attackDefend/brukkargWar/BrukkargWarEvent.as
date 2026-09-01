@@ -36,8 +36,8 @@ package com.monsters.replayableEvents.attackDefend.brukkargWar
          _wavesTotal = this._WAVES_TOTAL;
          _wavesBeforeAttack = 5;
          _maxWaves = 25;
-         _titleImage = "events/brukkargWar/brukkarg_countdown_title_v2.png";
-         _imageURL = "events/brukkargWar/brukkarg_countdown_image_v2.png";
+         _titleImage = "events/brukkargWar/brukkarg_countdown_title.png";
+         _imageURL = "events/brukkargWar/brukkarg_countdown_image.png";
          _messages = Vector.<Message>([new BrukkargWarPromoMessage1(),new BrukkargWarPromoMessage2(),new BrukkargWarPromoMessage3(),new BrukkargWarStartMessage(),new BrukkargWarEndMessage()]);
          _rewardMessage = new BrukkargWarRewardMessage();
          super(this._WAVES_TOTAL);

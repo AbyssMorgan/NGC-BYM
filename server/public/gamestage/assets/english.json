@@ -1951,6 +1951,8 @@
     "str_scourgewalls": "Scourge Infinity Walls",
 	"desc_reaverwalls": "Instantly upgrades #v1# of your blocks to Reaver Bulkhead, using you #v2# resources.",
     "str_reaverwalls": "Reaver Bulkhead Walls",
+	"desc_ngcwalls": "Instantly upgrades #v1# of your blocks to NGC Composite, using you #v2# resources.",
+    "str_ngcwalls": "NGC Composite Walls",
     "str_code_mdod_title": "Beast Mode",
     "str_code_mdod_body": "Reduces damage inflicted to your monsters by 30% for 1 hour.",
     "mdod_title": "Beast Mode purchased",

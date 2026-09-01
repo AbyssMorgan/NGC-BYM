@@ -211,7 +211,7 @@ package {
 			} else if (BASE.isMainYard) {
 				_grouping = [
 					[
-						["BEW", "BST", "ENL", "BLK2", "BLK3", "BLK4", "BLK5", "BLK6", "BLK7", "BLK8"]
+						["BEW", "BST", "ENL", "BLK2", "BLK3", "BLK4", "BLK5", "BLK6", "BLK7", "BLK8", "BLK9"]
 					],
 					[
 						["EXR1", "EXR2", "EXR3", "EXR4", "EXR10", "EXR20", "EXR30", "EXR40", "EXR100", "EXR200", "EXR300", "EXR400", "BIP"]
@@ -444,6 +444,7 @@ package {
 			var resources_blk6: uint = 1000000 * 2;
 			var resources_blk7: uint = 5000000 * 2;
 			var resources_blk8: uint = 10000000 * 2;
+			var resources_blk9: uint = 20000000 * 2;
 			var _loc18_: Vector.<Object> = InstanceManager.getInstancesByClass(BWALL);
 
 			for each(_loc13_ in _loc18_) {
@@ -670,6 +671,53 @@ package {
 					"v2": GLOBAL.FormatNumber(_loc11_)
 				});
 				_storeItems.BLK8.t = KEYS.Get("str_reaverwalls");
+			}
+
+			if (!BASE.isInfernoMainYardOrOutpost) {
+				_loc12_ = 0;
+				_loc11_ = 0;
+				for each(_loc13_ in _loc18_) {
+					if (_loc13_._lvl.Get() <= 1) {
+						_loc11_ += resources_blk9 + resources_blk8 + resources_blk7 + resources_blk6 + resources_blk5 + resources_blk4 + resources_blk3 + resources_blk2;
+						_loc12_ += 1;
+					}
+					if (_loc13_._lvl.Get() == 2) {
+						_loc11_ += resources_blk9 + resources_blk8 + resources_blk7 + resources_blk6 + resources_blk5 + resources_blk4 + resources_blk3;
+						_loc12_ += 1;
+					}
+					if (_loc13_._lvl.Get() == 3) {
+						_loc11_ += resources_blk9 + resources_blk8 + resources_blk7 + resources_blk6 + resources_blk5 + resources_blk4;
+						_loc12_ += 1;
+					}
+					if (_loc13_._lvl.Get() == 4) {
+						_loc11_ += resources_blk9 + resources_blk8 + resources_blk7 + resources_blk6 + resources_blk5;
+						_loc12_ += 1;
+					}
+					if (_loc13_._lvl.Get() == 5) {
+						_loc11_ += resources_blk9 + resources_blk8 + resources_blk7 + resources_blk6;
+						_loc12_ += 1;
+					}
+					if (_loc13_._lvl.Get() == 6) {
+						_loc11_ += resources_blk9 + resources_blk8 + resources_blk7;
+						_loc12_ += 1;
+					}
+					if (_loc13_._lvl.Get() == 7) {
+						_loc11_ += resources_blk9 + resources_blk8;
+						_loc12_ += 1;
+					}
+					if (_loc13_._lvl.Get() == 8) {
+						_loc11_ += resources_blk9;
+						_loc12_ += 1;
+					}
+				}
+
+				_storeItems.BLK9.c = [0];
+				_storeItems.BLK9.resourceCost = _loc11_;
+				_storeItems.BLK9.d = KEYS.Get("desc_ngcwalls", {
+					"v1": _loc12_,
+					"v2": GLOBAL.FormatNumber(_loc11_)
+				});
+				_storeItems.BLK9.t = KEYS.Get("str_ngcwalls");
 			}
 
 			if (BASE.isInfernoMainYardOrOutpost) {
@@ -1255,9 +1303,13 @@ package {
 					_loc20_ = KEYS.Get("upgradeth", {
 						"v1": 18
 					});
-				}  else if (!BASE.isOutpost && _loc26_ < 20 && _loc9_.substr(3, 1) == "8") {
+				} else if (!BASE.isOutpost && _loc26_ < 20 && _loc9_.substr(3, 1) == "8") {
 					_loc20_ = KEYS.Get("upgradeth", {
 						"v1": 20
+					});
+				} else if (!BASE.isOutpost && _loc26_ < 24 && _loc9_.substr(3, 1) == "9") {
+					_loc20_ = KEYS.Get("upgradeth", {
+						"v1": 24
 					});
 				} else {
 					_loc27_ = false;
@@ -1841,7 +1893,11 @@ package {
 						_loc32_ = KEYS.Get("upgradeth", {
 							"v1": 20
 						});
-					} else {
+					} else if (!BASE.isOutpost && town_hall_level < 24 && item.substr(3, 1) == "9") {
+						_loc32_ = KEYS.Get("upgradeth", {
+							"v1": 24
+						});
+					}  else {
 						block_level_2 = false;
 						block_level_3 = false;
 						block_level_4 = false;

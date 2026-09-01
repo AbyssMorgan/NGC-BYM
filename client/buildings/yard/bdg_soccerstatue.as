@@ -22,7 +22,7 @@ package buildings.yard {
 			"costs":[
 				{"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "r5":150, "time":new SecNum(0), "re":[]}
 			],
-			"buildingbuttons":["98.v2"],
+			"buildingbuttons":["98"],
 			"upgradeImgData":{
 				"baseurl":"buttons/buildings/",
 				"1":{

@@ -31,10 +31,12 @@ package buildings.yard {
 				{"range":400, "damage":2500, "rate":160, "speed":20, "splash":0}, // Level 8
 				{"range":410, "damage":2750, "rate":160, "speed":20, "splash":0}, // Level 9
 				{"range":420, "damage":3000, "rate":160, "speed":20, "splash":0}, // Level 10
-				{"range":430, "damage":3250, "rate":160, "speed":20, "splash":0}, // Level 11
-				{"range":440, "damage":3500, "rate":160, "speed":20, "splash":0}, // Level 12
-				{"range":450, "damage":3750, "rate":160, "speed":20, "splash":0}, // Level 13
-				{"range":460, "damage":4000, "rate":160, "speed":20, "splash":0}, // Level 14
+				{"range":430, "damage":3250, "rate":140, "speed":20, "splash":0}, // Level 11
+				{"range":440, "damage":3500, "rate":120, "speed":20, "splash":0}, // Level 12
+				{"range":450, "damage":3750, "rate":100, "speed":20, "splash":0}, // Level 13
+				{"range":460, "damage":4000, "rate":80, "speed":20, "splash":0}, // Level 14
+				{"range":480, "damage":4500, "rate":60, "speed":20, "splash":0}, // Level 15
+				{"range":500, "damage":5000, "rate":40, "speed":20, "splash":0}, // Level 16
 			],
 			"costs":[
 				{"r1":new SecNum(2000000), "r2":new SecNum(2400000), "r3":new SecNum(1600000), "r4":new SecNum(0), "time":new SecNum(86400 * 1), "re":[[14,1,5]]}, // Level 1
@@ -51,6 +53,8 @@ package buildings.yard {
 				{"r1":new SecNum(1600000000), "r2":new SecNum(1600000000), "r3":new SecNum(1600000000), "r4":new SecNum(0), "time":new SecNum(86400 * 12), "re":[[14,1,16],[12,1,2]]}, // Level 12
 				{"r1":new SecNum(2000000000), "r2":new SecNum(2000000000), "r3":new SecNum(2000000000), "r4":new SecNum(0), "time":new SecNum(86400 * 13), "re":[[14,1,18],[12,1,2]]}, // Level 13
 				{"r1":new SecNum(2400000000), "r2":new SecNum(2400000000), "r3":new SecNum(2400000000), "r4":new SecNum(0), "time":new SecNum(86400 * 14), "re":[[14,1,20],[12,1,2]]}, // Level 14
+				{"r1":new SecNum(10000000000), "r2":new SecNum(10000000000), "r3":new SecNum(10000000000), "r4":new SecNum(10000000000), "time":new SecNum(86400 * 15), "re":[[14,1,22],[12,1,3],[145,1,7]]}, // Level 15
+				{"r1":new SecNum(25000000000), "r2":new SecNum(25000000000), "r3":new SecNum(25000000000), "r4":new SecNum(25000000000), "time":new SecNum(86400 * 16), "re":[[14,1,24],[12,1,3],[145,1,9]]}, // Level 16
 			],
 			"can_fortify":true,
 			"fortify_costs":[
@@ -81,6 +85,17 @@ package buildings.yard {
 					"topdamaged":["top.heat.damaged.png",new Point(-39,7)],
 					"shadowdamaged":["shadow.3.jpg",new Point(-40,20)],
 					"topdestroyed":["top.heat.destroyed.png",new Point(-34,-5)],
+					"shadowdestroyed":["shadow.3.destroyed.jpg",new Point(-36,23)],
+					"topdestroyedfire":["top.3.destroyed.fire.png",new Point(-45,-13)]
+				},
+				"16":{
+					"anim":["anim.ngc.loaded.png",new Rectangle(-49,-9,96,56),32],
+					"top":["top.ngc.png",new Point(-39,7)],
+					"shadow":["shadow.3.jpg",new Point(-40,20)],
+					"animdamaged":["anim.ngc.damaged.png",new Rectangle(-49,-9,97,56),32],
+					"topdamaged":["top.ngc.damaged.png",new Point(-39,7)],
+					"shadowdamaged":["shadow.3.jpg",new Point(-40,20)],
+					"topdestroyed":["top.ngc.destroyed.png",new Point(-34,-5)],
 					"shadowdestroyed":["shadow.3.destroyed.jpg",new Point(-36,23)],
 					"topdestroyedfire":["top.3.destroyed.fire.png",new Point(-45,-13)]
 				}
@@ -157,6 +172,8 @@ package buildings.yard {
 				210000, // Level 12
 				230000, // Level 13
 				250000, // Level 14
+				300000, // Level 15
+				350000, // Level 16
 			],
 			"repairTime":[
 				1920, // Level 1
@@ -173,6 +190,8 @@ package buildings.yard {
 				259200, // Level 12
 				302400, // Level 13
 				345600, // Level 14
+				388800, // Level 15
+				432000, // Level 16
 			]
 		};
 		

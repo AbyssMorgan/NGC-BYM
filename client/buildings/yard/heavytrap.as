@@ -18,8 +18,15 @@ package buildings.yard {
 			"sale":0,
 			"description":"heavytrap_desc",
 			"cls":BUILDING117,
+			"stats":[
+				{"range":20, "damage":10000}, // Level 1
+				{"range":25, "damage":11000}, // Level 2
+				{"range":30, "damage":12000}, // Level 3
+			],
 			"costs":[
-				{"r1":new SecNum(5000000), "r2":new SecNum(5000000), "r3":new SecNum(5000000), "r4":new SecNum(0), "time":new SecNum(0), "re":[[14,1,4]]}, // Level 1
+				{"r1":new SecNum(5000000), "r2":new SecNum(5000000), "r3":new SecNum(5000000), "r4":new SecNum(5000000), "time":new SecNum(0), "re":[[14,1,4]]}, // Level 1
+				{"r1":new SecNum(10000000), "r2":new SecNum(10000000), "r3":new SecNum(10000000), "r4":new SecNum(10000000), "time":new SecNum(5), "re":[[14,1,10]]}, // Level 2
+				{"r1":new SecNum(20000000), "r2":new SecNum(20000000), "r3":new SecNum(20000000), "r4":new SecNum(20000000), "time":new SecNum(5), "re":[[14,1,20]]}, // Level 3
 			],
 			"imageData":{
 				"baseurl":"buildings/heavytrap/",
@@ -27,6 +34,18 @@ package buildings.yard {
 					"top":["top.1.png",new Point(-16,-5)],
 					"shadow":["shadow.1.jpg",new Point(-18,1)],
 					"topdestroyed":["top.1.destroyed.png",new Point(-16,5)],
+					"shadowdestroyed":["shadow.1.jpg",new Point(-18,1)]
+				},
+				"2":{
+					"top":["top.2.png",new Point(-16,-5)],
+					"shadow":["shadow.1.jpg",new Point(-18,1)],
+					"topdestroyed":["top.2.destroyed.png",new Point(-16,5)],
+					"shadowdestroyed":["shadow.1.jpg",new Point(-18,1)]
+				},
+				"3":{
+					"top":["top.3.png",new Point(-16,-5)],
+					"shadow":["shadow.1.jpg",new Point(-18,1)],
+					"topdestroyed":["top.3.destroyed.png",new Point(-16,5)],
 					"shadowdestroyed":["shadow.1.jpg",new Point(-18,1)]
 				}
 			},
@@ -64,14 +83,15 @@ package buildings.yard {
 				25, // Level 24
 				26, // Level 25
 			],
-			"damage":[
-				10000, // Level 1
-			],
 			"hp":[
 				10, // Level 1
+				10, // Level 2
+				10, // Level 3
 			],
 			"repairTime":[
 				5, // Level 1
+				5, // Level 2
+				5, // Level 3
 			]
 		};
 		

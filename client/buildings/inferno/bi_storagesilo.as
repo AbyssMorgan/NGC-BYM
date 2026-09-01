@@ -37,7 +37,17 @@ package buildings.inferno {
 				{"r1":new SecNum(400000000), "r2":new SecNum(400000000), "r3":new SecNum(400000000), "r4":new SecNum(0), "time":new SecNum(86400 * 8), "re":[[14,1,17],[12,1,2]]}, // Level 17
 				{"r1":new SecNum(600000000), "r2":new SecNum(600000000), "r3":new SecNum(600000000), "r4":new SecNum(0), "time":new SecNum(86400 * 10), "re":[[14,1,18],[12,1,2]]}, // Level 18
 				{"r1":new SecNum(800000000), "r2":new SecNum(800000000), "r3":new SecNum(800000000), "r4":new SecNum(0), "time":new SecNum(86400 * 12), "re":[[14,1,19],[12,1,2]]}, // Level 19
-				{"r1":new SecNum(1000000000), "r2":new SecNum(1000000000), "r3":new SecNum(1000000000), "r4":new SecNum(0), "time":new SecNum(86400 * 14), "re":[[14,1,20],[12,1,2]]} // Level 20
+				{"r1":new SecNum(1000000000), "r2":new SecNum(1000000000), "r3":new SecNum(1000000000), "r4":new SecNum(0), "time":new SecNum(86400 * 14), "re":[[14,1,20],[12,1,2]]}, // Level 20
+				{"r1":new SecNum(2000000000), "r2":new SecNum(2000000000), "r3":new SecNum(2000000000), "r4":new SecNum(0), "time":new SecNum(86400 * 16), "re":[[14,1,20],[12,1,3]]}, // Level 21
+				{"r1":new SecNum(3000000000), "r2":new SecNum(3000000000), "r3":new SecNum(3000000000), "r4":new SecNum(0), "time":new SecNum(86400 * 18), "re":[[14,1,21],[12,1,3]]}, // Level 22
+				{"r1":new SecNum(4000000000), "r2":new SecNum(4000000000), "r3":new SecNum(4000000000), "r4":new SecNum(0), "time":new SecNum(86400 * 20), "re":[[14,1,21],[12,1,3]]}, // Level 23
+				{"r1":new SecNum(5000000000), "r2":new SecNum(5000000000), "r3":new SecNum(5000000000), "r4":new SecNum(0), "time":new SecNum(86400 * 22), "re":[[14,1,22],[12,1,3]]}, // Level 24
+				{"r1":new SecNum(6000000000), "r2":new SecNum(6000000000), "r3":new SecNum(6000000000), "r4":new SecNum(0), "time":new SecNum(86400 * 25), "re":[[14,1,22],[12,1,3]]}, // Level 25
+				{"r1":new SecNum(7000000000), "r2":new SecNum(7000000000), "r3":new SecNum(7000000000), "r4":new SecNum(0), "time":new SecNum(86400 * 26), "re":[[14,1,23],[12,1,3]]}, // Level 26
+				{"r1":new SecNum(8000000000), "r2":new SecNum(8000000000), "r3":new SecNum(8000000000), "r4":new SecNum(0), "time":new SecNum(86400 * 27), "re":[[14,1,23],[12,1,3]]}, // Level 27
+				{"r1":new SecNum(9000000000), "r2":new SecNum(9000000000), "r3":new SecNum(9000000000), "r4":new SecNum(0), "time":new SecNum(86400 * 28), "re":[[14,1,24],[12,1,3]]}, // Level 28
+				{"r1":new SecNum(10000000000), "r2":new SecNum(10000000000), "r3":new SecNum(10000000000), "r4":new SecNum(0), "time":new SecNum(86400 * 29), "re":[[14,1,24],[12,1,3]]}, // Level 29
+				{"r1":new SecNum(12000000000), "r2":new SecNum(12000000000), "r3":new SecNum(12000000000), "r4":new SecNum(0), "time":new SecNum(86400 * 30), "re":[[14,1,25],[12,1,3]]}, // Level 30
 			],
 			"can_fortify":true,
 			"fortify_costs":[
@@ -57,7 +67,7 @@ package buildings.inferno {
 					"shadowdestroyed":["shadow.1.destroyed.jpg",new Point(-54,12)]
 				}
 			},
-			"buildingbuttons":["sillo.v2"],
+			"buildingbuttons":["sillo"],
 			"upgradeImgData":{
 				"baseurl":"buttons/buildings/",
 				1:{
@@ -101,10 +111,15 @@ package buildings.inferno {
 				6, // Level 14
 				6, // Level 15
 				6, // Level 16
-				6, // Level 17
-				6, // Level 18
-				6, // Level 19
-				6, // Level 20
+				7, // Level 17
+				7, // Level 18
+				8, // Level 19
+				8, // Level 20
+				8, // Level 21
+				8, // Level 22
+				8, // Level 23
+				8, // Level 24
+				8, // Level 25
 			],
 			"capacity":[
 				7500, // Level 1
@@ -127,6 +142,16 @@ package buildings.inferno {
 				200000000, // Level 18
 				400000000, // Level 19
 				600000000, // Level 20
+				800000000, // Level 21
+				1000000000, // Level 22
+				1200000000, // Level 23
+				1300000000, // Level 24
+				1500000000, // Level 25
+				1600000000, // Level 26
+				1800000000, // Level 27
+				2000000000, // Level 28
+				2200000000, // Level 29
+				2400000000, // Level 30
 			],
 			"hp":[
 				750, // Level 1
@@ -149,6 +174,16 @@ package buildings.inferno {
 				320000, // Level 18
 				330000, // Level 19
 				350000, // Level 20
+				370000, // Level 21
+				390000, // Level 22
+				410000, // Level 23
+				430000, // Level 24
+				450000, // Level 25
+				475000, // Level 26
+				500000, // Level 27
+				525000, // Level 28
+				550000, // Level 29
+				600000, // Level 30
 			],
 			"repairTime":[
 				30, // Level 1
@@ -171,6 +206,16 @@ package buildings.inferno {
 				69984, // Level 18
 				77760, // Level 19
 				86400, // Level 20
+				103680, // Level 21
+				120960, // Level 22
+				138240, // Level 23
+				155520, // Level 24
+				172800, // Level 25
+				172800, // Level 26
+				172800, // Level 27
+				172800, // Level 28
+				172800, // Level 29
+				172800, // Level 30
 			]
 		};
 		

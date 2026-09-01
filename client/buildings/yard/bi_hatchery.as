@@ -39,7 +39,7 @@ package buildings.yard {
 					"shadowdestroyed":["shadow.1.destroyed.jpg",new Point(-58,18)]
 				}
 			},
-			"buildingbuttons":["hatchery.v2"],
+			"buildingbuttons":["hatchery"],
 			"upgradeImgData":{
 				"baseurl":"buttons/buildings/",
 				1:{

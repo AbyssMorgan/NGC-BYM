@@ -54,7 +54,7 @@ package buildings.inferno {
 					"shadowdestroyed":["shadow.1.jpg",new Point(-44,10)]
 				}
 			},
-			"buildingbuttons":["quake_tower.v2"],
+			"buildingbuttons":["quake_tower"],
 			"upgradeImgData":{
 			"baseurl":"buttons/buildings/",
 				1:{

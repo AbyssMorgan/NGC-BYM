@@ -37,7 +37,7 @@ package buildings.inferno {
 					//"shadowdestroyed":["shadow.1.destroyed.jpg",new Point(-83,13)]
 				}
 			},
-			"buildingbuttons":["monster_locker.v2"],
+			"buildingbuttons":["monster_locker"],
 			"upgradeImgData":{
 				"baseurl":"buttons/buildings/",
 				1:{

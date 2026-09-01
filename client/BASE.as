@@ -4313,8 +4313,8 @@ package
                            "errorMessage": _loc5_
                         };
                   }
-                  _loc10_ = GLOBAL.StatGet(BUILDING14.UNDERHALL_LEVEL);
-                  _loc11_ = true;
+                //   _loc10_ = GLOBAL.StatGet(BUILDING14.UNDERHALL_LEVEL);
+                //   _loc11_ = true;
                   if (!_loc10_)
                   {
                      _loc4_ = true;

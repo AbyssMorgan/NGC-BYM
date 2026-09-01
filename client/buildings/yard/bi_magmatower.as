@@ -35,20 +35,24 @@ package buildings.yard {
 				{"range":360, "damage":1800, "rate":20, "speed":23, "splash":20}, // Level 10
 				{"range":380, "damage":2000, "rate":20, "speed":24, "splash":20}, // Level 11
 				{"range":400, "damage":2200, "rate":20, "speed":25, "splash":20}, // Level 12
+				{"range":420, "damage":2400, "rate":20, "speed":28, "splash":20}, // Level 13
+				{"range":440, "damage":2600, "rate":20, "speed":30, "splash":20}, // Level 14
 			],
 			"costs":[
-				{"r1":new SecNum(187500), "r2":new SecNum(250000), "r3":new SecNum(62500), "r4":new SecNum(0), "time":new SecNum(86400 * 1), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]}, // Level 1
-				{"r1":new SecNum(750000), "r2":new SecNum(1000000), "r3":new SecNum(250000), "r4":new SecNum(0), "time":new SecNum(86400 * 2), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]}, // Level 2
-				{"r1":new SecNum(2250000), "r2":new SecNum(3000000), "r3":new SecNum(750000), "r4":new SecNum(0), "time":new SecNum(86400 * 3), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]}, // Level 3
-				{"r1":new SecNum(5250000), "r2":new SecNum(5000000), "r3":new SecNum(1250000), "r4":new SecNum(0), "time":new SecNum(86400 * 4), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]}, // Level 4
-				{"r1":new SecNum(12000000), "r2":new SecNum(10000000), "r3":new SecNum(2000000), "r4":new SecNum(0), "time":new SecNum(86400 * 5), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]}, // Level 5
-				{"r1":new SecNum(16000000), "r2":new SecNum(15000000), "r3":new SecNum(3000000), "r4":new SecNum(0), "time":new SecNum(86400 * 6), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1]]}, // Level 6
-				{"r1":new SecNum(24000000), "r2":new SecNum(16000000), "r3":new SecNum(6400000), "r4":new SecNum(0), "time":new SecNum(86400 * 7), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1],[14,1,10],[12,1,2]]}, // Level 7
-				{"r1":new SecNum(27000000), "r2":new SecNum(25000000), "r3":new SecNum(12800000), "r4":new SecNum(0), "time":new SecNum(86400 * 8), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1],[14,1,12],[12,1,2]]}, // Level 8
-				{"r1":new SecNum(400000000), "r2":new SecNum(400000000), "r3":new SecNum(400000000), "r4":new SecNum(0), "time":new SecNum(86400 * 9), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1],[14,1,14],[12,1,2]]}, // Level 9
-				{"r1":new SecNum(800000000), "r2":new SecNum(800000000), "r3":new SecNum(800000000), "r4":new SecNum(0), "time":new SecNum(86400 * 10), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1],[14,1,16],[12,1,2]]}, // Level 10
-				{"r1":new SecNum(1200000000), "r2":new SecNum(1200000000), "r3":new SecNum(1200000000), "r4":new SecNum(0), "time":new SecNum(86400 * 11), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1],[14,1,18],[12,1,2]]}, // Level 11
-				{"r1":new SecNum(1600000000), "r2":new SecNum(1600000000), "r3":new SecNum(1600000000), "r4":new SecNum(0), "time":new SecNum(86400 * 12), "re":[[INFERNOQUAKETOWER.UNDERHALL_ID,1,1],[14,1,20],[12,1,2]]}, // Level 12
+				{"r1":new SecNum(187500), "r2":new SecNum(250000), "r3":new SecNum(62500), "r4":new SecNum(0), "time":new SecNum(86400 * 1), "re":[[14,1,1]]}, // Level 1
+				{"r1":new SecNum(750000), "r2":new SecNum(1000000), "r3":new SecNum(250000), "r4":new SecNum(0), "time":new SecNum(86400 * 2), "re":[[14,1,1]]}, // Level 2
+				{"r1":new SecNum(2250000), "r2":new SecNum(3000000), "r3":new SecNum(750000), "r4":new SecNum(0), "time":new SecNum(86400 * 3), "re":[[14,1,1]]}, // Level 3
+				{"r1":new SecNum(5250000), "r2":new SecNum(5000000), "r3":new SecNum(1250000), "r4":new SecNum(0), "time":new SecNum(86400 * 4), "re":[[14,1,1]]}, // Level 4
+				{"r1":new SecNum(12000000), "r2":new SecNum(10000000), "r3":new SecNum(2000000), "r4":new SecNum(0), "time":new SecNum(86400 * 5), "re":[[14,1,1]]}, // Level 5
+				{"r1":new SecNum(16000000), "r2":new SecNum(15000000), "r3":new SecNum(3000000), "r4":new SecNum(0), "time":new SecNum(86400 * 6), "re":[[14,1,1]]}, // Level 6
+				{"r1":new SecNum(24000000), "r2":new SecNum(16000000), "r3":new SecNum(6400000), "r4":new SecNum(0), "time":new SecNum(86400 * 7), "re":[[14,1,1],[14,1,10],[12,1,2]]}, // Level 7
+				{"r1":new SecNum(27000000), "r2":new SecNum(25000000), "r3":new SecNum(12800000), "r4":new SecNum(0), "time":new SecNum(86400 * 8), "re":[[14,1,1],[14,1,12],[12,1,2]]}, // Level 8
+				{"r1":new SecNum(400000000), "r2":new SecNum(400000000), "r3":new SecNum(400000000), "r4":new SecNum(0), "time":new SecNum(86400 * 9), "re":[[14,1,1],[14,1,14],[12,1,2]]}, // Level 9
+				{"r1":new SecNum(800000000), "r2":new SecNum(800000000), "r3":new SecNum(800000000), "r4":new SecNum(0), "time":new SecNum(86400 * 10), "re":[[14,1,1],[14,1,16],[12,1,2]]}, // Level 10
+				{"r1":new SecNum(1200000000), "r2":new SecNum(1200000000), "r3":new SecNum(1200000000), "r4":new SecNum(0), "time":new SecNum(86400 * 11), "re":[[14,1,1],[14,1,18],[12,1,2]]}, // Level 11
+				{"r1":new SecNum(1600000000), "r2":new SecNum(1600000000), "r3":new SecNum(1600000000), "r4":new SecNum(0), "time":new SecNum(86400 * 12), "re":[[14,1,1],[14,1,20],[12,1,2]]}, // Level 12
+				{"r1":new SecNum(10000000000), "r2":new SecNum(10000000000), "r3":new SecNum(10000000000), "r4":new SecNum(10000000000), "time":new SecNum(86400 * 13), "re":[[14,1,22],[12,1,3],[145,1,7]]}, // Level 13
+				{"r1":new SecNum(25000000000), "r2":new SecNum(25000000000), "r3":new SecNum(25000000000), "r4":new SecNum(25000000000), "time":new SecNum(86400 * 14), "re":[[14,1,24],[12,1,3],[145,1,9]]}, // Level 14
 			],
 			"can_fortify":true,
 			"fortify_costs":[
@@ -83,9 +87,21 @@ package buildings.yard {
 					"shadowdamaged":["shadow.1.jpg",new Point(-38,16)],
 					"topdestroyed":["top.heat.destroyed.png",new Point(-36,6)]
 					//"shadowdestroyed":["shadow.1.destroyed.jpg",new Point(-36,22)]
+				},
+				"14":{
+					"anim":["anim.ngc.png",new Rectangle(-26,-50,54,42),31],
+					"anim2":["anim2.ngc.png",new Rectangle(-17,26,38,19),31],
+					"top":["top.ngc.png",new Point(-34,-9)],
+					"shadow":["shadow.1.jpg",new Point(-31,10)],
+					//"animdamaged":["anim.1.damaged.png",new Rectangle(-28.6,-47.6,52,43),31],
+					//"animdamaged2":["anim.2.damaged.png",new Rectangle(-21,28,38,19),31],
+					"topdamaged":["top.ngc.damaged.png",new Point(-38,-4)],
+					"shadowdamaged":["shadow.1.jpg",new Point(-38,16)],
+					"topdestroyed":["top.ngc.destroyed.png",new Point(-36,6)]
+					//"shadowdestroyed":["shadow.1.destroyed.jpg",new Point(-36,22)]
 				}
 			},
-			"buildingbuttons":["magma_tower.v2"],
+			"buildingbuttons":["magma_tower"],
 			"upgradeImgData":{
 				"baseurl":"buttons/buildings/",
 				"1":{
@@ -156,6 +172,8 @@ package buildings.yard {
 				110000, // Level 10
 				120000, // Level 11
 				130000, // Level 12
+				180000, // Level 13
+				250000, // Level 14
 			],
 			"repairTime":[
 				1920, // Level 1
@@ -169,7 +187,9 @@ package buildings.yard {
 				43200, // Level 9
 				86400, // Level 10
 				172800, // Level 11
-				259200, // Level 12
+				216000, // Level 12
+				259200, // Level 13
+				302400, // Level 14
 			]
 		};
 		

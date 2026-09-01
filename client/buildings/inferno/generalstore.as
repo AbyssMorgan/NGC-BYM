@@ -18,8 +18,9 @@ package buildings.inferno {
 			"sale":0,
 			"description":"generalstore_desc",
 			"costs":[
-				{"r1":new SecNum(1080), "r2":new SecNum(720), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(10), "re":[[14,1,1]]},
-				{"r1":new SecNum(50000000), "r2":new SecNum(50000000), "r3":new SecNum(50000000), "r4":new SecNum(50000000), "time":new SecNum(10), "re":[[14,1,10]]}
+				{"r1":new SecNum(1080), "r2":new SecNum(720), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(10), "re":[[14,1,1]]}, // Level 1
+				{"r1":new SecNum(50000000), "r2":new SecNum(50000000), "r3":new SecNum(50000000), "r4":new SecNum(50000000), "time":new SecNum(10), "re":[[14,1,10]]}, // Level 2
+				{"r1":new SecNum(1500000000), "r2":new SecNum(1500000000), "r3":new SecNum(1500000000), "r4":new SecNum(1500000000), "time":new SecNum(10), "re":[[14,1,20]]}, // Level 3
 			],
 			"cls":BUILDING12,
 			"imageData":{
@@ -39,9 +40,44 @@ package buildings.inferno {
 					"img":"12.jpg"
 				}
 			},
-			"quantity":[0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
-			"hp":[4000,10000],
-			"repairTime":[10,30]
+			"quantity":[
+				0, // Level 0
+				1, // Level 1
+				1, // Level 2
+				1, // Level 3
+				1, // Level 4
+				1, // Level 5
+				1, // Level 6
+				1, // Level 7
+				1, // Level 8
+				1, // Level 9
+				1, // Level 10
+				1, // Level 11
+				1, // Level 12
+				1, // Level 13
+				1, // Level 14
+				1, // Level 15
+				1, // Level 16
+				1, // Level 17
+				1, // Level 18
+				1, // Level 19
+				1, // Level 20
+				1, // Level 21
+				1, // Level 22
+				1, // Level 23
+				1, // Level 24
+				1, // Level 25
+			],
+			"hp":[
+				4000, // Level 1
+				10000, // Level 2
+				20000, // Level 3
+			],
+			"repairTime":[
+				10, // Level 1
+				30, // Level 2
+				60, // Level 3
+			]
 		};
 		
 	}

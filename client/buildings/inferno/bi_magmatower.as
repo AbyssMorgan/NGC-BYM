@@ -56,7 +56,7 @@ package buildings.inferno {
 					//"shadowdestroyed":["shadow.1.destroyed.jpg",new Point(-36,22)]
 				}
 			},
-			"buildingbuttons":["magma_tower.v2"],
+			"buildingbuttons":["magma_tower"],
 			"upgradeImgData":{
 				"baseurl":"buttons/buildings/",
 				1:{

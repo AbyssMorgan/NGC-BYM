@@ -27,6 +27,7 @@ package buildings.yard {
 				{"r1":new SecNum(1000000), "r2":new SecNum(1000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(5), "re":[[14,1,16]]}, // Level 6
 				{"r1":new SecNum(5000000), "r2":new SecNum(5000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(5), "re":[[14,1,18]]}, // Level 7
 				{"r1":new SecNum(10000000), "r2":new SecNum(10000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(5), "re":[[14,1,20]]}, // Level 8
+				{"r1":new SecNum(20000000), "r2":new SecNum(20000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(5), "re":[[14,1,24]]}, // Level 9
 			],
 			"buildingbuttons":["17.1"],
 			"imageData":{
@@ -94,6 +95,14 @@ package buildings.yard {
 					"shadowdamaged":["shadow.jpg",new Point(-28,-7)],
 					"topdestroyed":["top.8.destroyed.png",new Point(-20,-3)],
 					"shadowdestroyed":["shadow.jpg",new Point(-28,-7)]
+				},
+				"9":{
+					"top":["top.9.png",new Point(-20,-22)],
+					"shadow":["shadow.jpg",new Point(-28,-7)],
+					"topdamaged":["top.9.damaged.png",new Point(-20,-19)],
+					"shadowdamaged":["shadow.jpg",new Point(-28,-7)],
+					"topdestroyed":["top.9.destroyed.png",new Point(-20,-3)],
+					"shadowdestroyed":["shadow.jpg",new Point(-28,-7)]
 				}
 			},
 			"upgradeImgData":{
@@ -121,6 +130,9 @@ package buildings.yard {
 				},
 				"8":{
 					"img":"17.8.jpg"
+				},
+				"9":{
+					"img":"17.9.jpg"
 				}
 			},
 			"quantity":[
@@ -160,6 +172,7 @@ package buildings.yard {
 				40000, // Level 6
 				56000, // Level 7
 				80000, // Level 8
+				120000, // Level 9
 			],
 			"repairTime":[
 				5, // Level 1
@@ -170,6 +183,7 @@ package buildings.yard {
 				5, // Level 6
 				5, // Level 7
 				5, // Level 8
+				5, // Level 9
 			]
 		};
 		

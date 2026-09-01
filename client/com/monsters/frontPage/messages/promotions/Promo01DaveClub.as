@@ -15,7 +15,7 @@ package com.monsters.frontPage.messages.promotions
       
       public function Promo01DaveClub()
       {
-         super("promodaveclub","btn_tellmore","fp_promodaveclub_v2.jpg");
+         super("promodaveclub","btn_tellmore","fp_promodaveclub.jpg");
       }
       
       public function get canBeShown() : Boolean

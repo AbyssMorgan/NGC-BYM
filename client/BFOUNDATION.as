@@ -810,11 +810,13 @@ package
 				if(this._class != "decoration" && this._type != 127 && this._type != 139){
 					var stats:Array = [];
 					stats.push("<b>Level:</b> " + effectiveLvl);
-					stats.push("<b>HP:</b> " + GLOBAL.FormatNumberNormal(maxHealth));
+					if(this._class != "trap" && this._type != 114){
+						stats.push("<b>HP:</b> " + GLOBAL.FormatNumberNormal(maxHealth));
+					}
 					if(this._fortification.Get() > 0){
 						stats.push("<b>DR:</b> " + (this._fortification.Get() * 10 + 10) + " %");
 					}
-					if(this._class == "tower" || this._type == 144){
+					if(this._class == "tower" || this._class == "trap" || this._type == 144){
 						var dmg_multiplier:Number = 1;
 						if(this._type != 144 && this._type != 22){
 							if(Boolean(GLOBAL._towerOverdrive) && GLOBAL._towerOverdrive.Get() >= GLOBAL.Timestamp()){
@@ -826,14 +828,16 @@ package
 						}
 						if(this.damage && this.damage > 0){
 							stats.push("<b>DMG:</b> " + GLOBAL.FormatNumberNormal(this.damage * dmg_multiplier));
-							if(this._type == 138){
-								stats.push("<b>DPS:</b> " + GLOBAL.FormatNumberNormal(int(this.damage * dmg_multiplier * 4)));
-							} else if(this._type == 115){
-								stats.push("<b>DPS:</b> " + GLOBAL.FormatNumberNormal(int((this.damage * dmg_multiplier) * (20 / this._rate))));
-							} else if(this._type == 25){
-								stats.push("<b>DPS:</b> " + GLOBAL.FormatNumberNormal(int((damage * _duration * 40) / (_duration * 4 + _rate * 2))));
-							} else {
-								stats.push("<b>DPS:</b> " + GLOBAL.FormatNumberNormal(int((this.damage * dmg_multiplier) * (40 / this._rate))));
+							if(this._class == "tower"){
+								if(this._type == 138){
+									stats.push("<b>DPS:</b> " + GLOBAL.FormatNumberNormal(int(this.damage * dmg_multiplier * 4)));
+								} else if(this._type == 115){
+									stats.push("<b>DPS:</b> " + GLOBAL.FormatNumberNormal(int((this.damage * dmg_multiplier) * (20 / this._rate))));
+								} else if(this._type == 25){
+									stats.push("<b>DPS:</b> " + GLOBAL.FormatNumberNormal(int((damage * _duration * 40) / (_duration * 4 + _rate * 2))));
+								} else {
+									stats.push("<b>DPS:</b> " + GLOBAL.FormatNumberNormal(int((this.damage * dmg_multiplier) * (40 / this._rate))));
+								}
 							}
 						}
 						if(this._duration && this._duration > 0){

@@ -30,7 +30,7 @@ package buildings.yard {
 			],
 			"names":["bdg_wmi2totem1","bdg_wmi2totem2","bdg_wmi2totem3","bdg_wmi2totem4","bdg_wmi2totem5","bdg_wmi2totem6"],
 			"descriptions":["bdg_wmi2totem1_desc","bdg_wmi2totem2_desc","bdg_wmi2totem3_desc","bdg_wmi2totem4_desc","bdg_wmi2totem5_desc","bdg_wmi2totem6_desc"],
-			"buildingbuttons":["131.bb1","131.bb2","131.bb3","131.bb4","131.bb5.v2","131.bb6"],
+			"buildingbuttons":["131.bb1","131.bb2","131.bb3","131.bb4","131.bb5","131.bb6"],
 			"imageData":{
 				"baseurl":"buildings/decorations/wmitotem2/",
 				"1":{

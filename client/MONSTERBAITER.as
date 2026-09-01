@@ -18,7 +18,7 @@ package
       
       public static var _muskLimit:int = 300;
       
-      public static var _replenishRate:int = 0;
+    //   public static var _replenishRate:int = 0;
       
       public static var _currentAttackers:Array;
       
@@ -172,7 +172,7 @@ package
             {
                _loc1_ = GLOBAL._buildingProps[18];
                _muskLimit = _loc1_.capacity[GLOBAL._bBaiter._lvl.Get() - 1];
-               _replenishRate = _loc1_.produce[GLOBAL._bBaiter._lvl.Get() - 1];
+            //    _replenishRate = _loc1_.produce[GLOBAL._bBaiter._lvl.Get() - 1];
             }
          }
          catch(e:*)

@@ -23,7 +23,9 @@ package buildings.yard {
 			"isUntargetable":true,
 			"isNoMoreInfoButton":true,
 			"costs":[
-				{"r1":new SecNum(5), "r2":new SecNum(5), "r3":new SecNum(5), "r4":new SecNum(5), "time":new SecNum(1), "re":[]}
+				{"r1":new SecNum(5), "r2":new SecNum(5), "r3":new SecNum(5), "r4":new SecNum(5), "time":new SecNum(1), "re":[]}, // Level 1
+				{"r1":new SecNum(5), "r2":new SecNum(5), "r3":new SecNum(5), "r4":new SecNum(5), "time":new SecNum(1), "re":[]}, // Level 2
+				{"r1":new SecNum(5), "r2":new SecNum(5), "r3":new SecNum(5), "r4":new SecNum(5), "time":new SecNum(1), "re":[]}, // Level 3
 			],
 			"rps":[
 				1,
@@ -36,20 +38,51 @@ package buildings.yard {
 				"baseurl":"buildings/opresource/",
 				"1":{
 					"top":["top.1.png",new Point(-86,-64)]
-					// MISSING ASSETS TO RECREATE OR FIND:
-					// "shadow":["shadow.1.png",new Point(-86,25)],
-					// "anim":["anim.1.png",new Rectangle(-20,-25,51,39),30]
+				},
+				"2":{
+					"top":["top.heat.png",new Point(-86,-64)]
+				},
+				"3":{
+					"top":["top.ngc.png",new Point(-86,-64)]
 				}
 			},
 			"quantity":[
-				0,
-				1
+				0, // Level 0
+				1, // Level 1
+				1, // Level 2
+				1, // Level 3
+				1, // Level 4
+				1, // Level 5
+				1, // Level 6
+				1, // Level 7
+				1, // Level 8
+				1, // Level 9
+				1, // Level 10
+				1, // Level 11
+				1, // Level 12
+				1, // Level 13
+				1, // Level 14
+				1, // Level 15
+				1, // Level 16
+				1, // Level 17
+				1, // Level 18
+				1, // Level 19
+				1, // Level 20
+				1, // Level 21
+				1, // Level 22
+				1, // Level 23
+				1, // Level 24
+				1, // Level 25
 			],
 			"hp":[
-				1
+				1, // Level 1
+				1, // Level 2
+				1, // Level 3
 			],
 			"repairTime":[
-				1
+				1, // Level 1
+				1, // Level 2
+				1, // Level 3
 			]
 		};
 		

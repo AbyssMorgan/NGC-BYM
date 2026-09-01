@@ -33,6 +33,8 @@ package buildings.yard {
 				{"range":700, "damage":1600, "rate":1}, // Level 8
 				{"range":750, "damage":1700, "rate":1}, // Level 9
 				{"range":800, "damage":1800, "rate":1}, // Level 10
+				{"range":850, "damage":1900, "rate":1}, // Level 11
+				{"range":900, "damage":2000, "rate":1}, // Level 12
 			],
 			"costs":[
 				{"r1":new SecNum(5), "r2":new SecNum(5), "r3":new SecNum(5), "r4":new SecNum(5), "time":new SecNum(1), "re":[]}, // Level 1 (30)
@@ -44,7 +46,9 @@ package buildings.yard {
 				{"r1":new SecNum(5), "r2":new SecNum(5), "r3":new SecNum(5), "r4":new SecNum(5), "time":new SecNum(1), "re":[]}, // Level 7 (90)
 				{"r1":new SecNum(5), "r2":new SecNum(5), "r3":new SecNum(5), "r4":new SecNum(5), "time":new SecNum(1), "re":[]}, // Level 8 (100)
 				{"r1":new SecNum(5), "r2":new SecNum(5), "r3":new SecNum(5), "r4":new SecNum(5), "time":new SecNum(1), "re":[]}, // Level 9 (110)
-				{"r1":new SecNum(5), "r2":new SecNum(5), "r3":new SecNum(5), "r4":new SecNum(5), "time":new SecNum(1), "re":[]}, // Level 10 (120)
+				{"r1":new SecNum(5), "r2":new SecNum(5), "r3":new SecNum(5), "r4":new SecNum(5), "time":new SecNum(1), "re":[]}, // Level 10 (Normal: 120 Moloch: 100)
+				{"r1":new SecNum(5), "r2":new SecNum(5), "r3":new SecNum(5), "r4":new SecNum(5), "time":new SecNum(1), "re":[]}, // Level 11 (Normal: N/D Moloch: 110)
+				{"r1":new SecNum(5), "r2":new SecNum(5), "r3":new SecNum(5), "r4":new SecNum(5), "time":new SecNum(1), "re":[]}, // Level 12 (Normal: N/D Moloch: 120)
 			],
 			"can_fortify":true,
 			"fortify_costs":[
@@ -73,6 +77,11 @@ package buildings.yard {
 					"top":["top.heat.png",new Point(-98,-100)],
 					"topdamaged":["top.heat.damaged.png",new Point(-98,-95)],
 					"topdestroyed":["top.heat.destroyed.png",new Point(-102,-65)]
+				},
+				"12":{
+					"top":["top.ngc.png",new Point(-98,-100)],
+					"topdamaged":["top.ngc.damaged.png",new Point(-98,-95)],
+					"topdestroyed":["top.ngc.destroyed.png",new Point(-102,-65)]
 				}
 			},
 			"upgradeImgData":{
@@ -116,6 +125,21 @@ package buildings.yard {
 				1, // Level 8
 				1, // Level 9
 				1, // Level 10
+				1, // Level 11
+				1, // Level 12
+				1, // Level 13
+				1, // Level 14
+				1, // Level 15
+				1, // Level 16
+				1, // Level 17
+				1, // Level 18
+				1, // Level 19
+				1, // Level 20
+				1, // Level 21
+				1, // Level 22
+				1, // Level 23
+				1, // Level 24
+				1, // Level 25
 			],
 			"hp":[
 				400000, // Level 1
@@ -128,6 +152,8 @@ package buildings.yard {
 				1400000, // Level 8
 				1600000, // Level 9
 				1800000, // Level 10
+				2000000, // Level 11
+				2500000, // Level 12
 			],
 			"repairTime":[
 				86400, // Level 1
@@ -140,6 +166,8 @@ package buildings.yard {
 				259200, // Level 8
 				302400, // Level 9
 				345600, // Level 10
+				388800, // Level 11
+				432000, // Level 12
 			]
 		};
 		

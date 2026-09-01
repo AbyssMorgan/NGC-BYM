@@ -33,6 +33,9 @@ package buildings.yard {
 				{"r1":new SecNum(5), "r2":new SecNum(5), "r3":new SecNum(5), "r4":new SecNum(5), "time":new SecNum(1), "re":[]}, // Level 7
 				{"r1":new SecNum(5), "r2":new SecNum(5), "r3":new SecNum(5), "r4":new SecNum(5), "time":new SecNum(1), "re":[]}, // Level 8
 				{"r1":new SecNum(5), "r2":new SecNum(5), "r3":new SecNum(5), "r4":new SecNum(5), "time":new SecNum(1), "re":[]}, // Level 9
+				{"r1":new SecNum(5), "r2":new SecNum(5), "r3":new SecNum(5), "r4":new SecNum(5), "time":new SecNum(1), "re":[]}, // Level 10
+				{"r1":new SecNum(5), "r2":new SecNum(5), "r3":new SecNum(5), "r4":new SecNum(5), "time":new SecNum(1), "re":[]}, // Level 11
+				{"r1":new SecNum(5), "r2":new SecNum(5), "r3":new SecNum(5), "r4":new SecNum(5), "time":new SecNum(1), "re":[]}, // Level 12
 			],
 			"imageData":{
 				"baseurl":"buildings/opdefender/",
@@ -53,6 +56,15 @@ package buildings.yard {
 					"shadowdamaged":["shadow.1.png",new Point(-59,39)],
 					"topdestroyed":["top.heat.destroyed.png",new Point(-74,-4)],
 					"shadowdestroyed":["shadow.1.destroyed.png",new Point(-70,41)]
+				},
+				"12":{
+					"top":["top.ngc.png",new Point(-59,-19)],
+					"shadow":["shadow.1.png",new Point(-59,39)],
+					"anim":["anim.1.png",new Rectangle(-91,-101,178,156),32],
+					"topdamaged":["top.ngc.damaged.png",new Point(-59,-55)],
+					"shadowdamaged":["shadow.1.png",new Point(-59,39)],
+					"topdestroyed":["top.ngc.destroyed.png",new Point(-74,-4)],
+					"shadowdestroyed":["shadow.1.destroyed.png",new Point(-70,41)]
 				}
 			},
 			"upgradeImgData":{
@@ -72,6 +84,22 @@ package buildings.yard {
 				1, // Level 7
 				1, // Level 8
 				1, // Level 9
+				1, // Level 10
+				1, // Level 11
+				1, // Level 12
+				1, // Level 13
+				1, // Level 14
+				1, // Level 15
+				1, // Level 16
+				1, // Level 17
+				1, // Level 18
+				1, // Level 19
+				1, // Level 20
+				1, // Level 21
+				1, // Level 22
+				1, // Level 23
+				1, // Level 24
+				1, // Level 25
 			],
 			"hp":[
 				8800, // Level 1
@@ -83,17 +111,23 @@ package buildings.yard {
 				1000000, // Level 7
 				1200000, // Level 8
 				1500000, // Level 9
+				1600000, // Level 10
+				1800000, // Level 11
+				2000000, // Level 12
 			],
 			"repairTime":[
-				1920, // Level 1
-				7680, // Level 2
-				30720, // Level 3
-				86400, // Level 4
-				216000, // Level 5
-				259200, // Level 6
-				302400, // Level 7
-				345600, // Level 8
-				388800, // Level 9
+				86400, // Level 1
+				103680, // Level 2
+				120960, // Level 3
+				138240, // Level 4
+				155520, // Level 5
+				172800, // Level 6
+				216000, // Level 7
+				259200, // Level 8
+				302400, // Level 9
+				345600, // Level 10
+				388800, // Level 11
+				432000, // Level 12
 			]
 		};
 		

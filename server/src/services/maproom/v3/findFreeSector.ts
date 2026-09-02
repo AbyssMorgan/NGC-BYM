@@ -26,10 +26,10 @@ interface Cell {
  */
 const canOverride = (dbCell: WorldMapCell | null, genCell: GeneratedCell | undefined): boolean => {
 	// Check database cell first
-	if (dbCell) return (dbCell.base_type === EnumYardType.OUTPOST || dbCell.base_type === EnumYardType.MOLOCH_OUTPOST);
+	if (dbCell) return (dbCell.base_type === EnumYardType.OUTPOST || dbCell.base_type === EnumYardType.MOLOCH_OUTPOST || dbCell.base_type === EnumYardType.MIRANDA_OUTPOST);
 
 	// No database cell, check generated cell
-	if (genCell?.type !== undefined) return (genCell.type === EnumYardType.OUTPOST || genCell.type === EnumYardType.MOLOCH_OUTPOST);
+	if (genCell?.type !== undefined) return (genCell.type === EnumYardType.OUTPOST || genCell.type === EnumYardType.MOLOCH_OUTPOST || genCell.type === EnumYardType.MIRANDA_OUTPOST);
 
 	// No database cell, no generated structure = terrain/empty, can override
 	return true;

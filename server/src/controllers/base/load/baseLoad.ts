@@ -136,7 +136,6 @@ export const baseLoad: KoaController = async (ctx) => {
 				}
 			}
 			if(original && (original.version != baseSave.version || original.level != baseSave.level)){
-
 				baseSave.buildingdata = original.buildingdata as Save["buildingdata"];
 				baseSave.version = original.version as Save["version"];
 				baseSave.level = original.level as Save["level"];

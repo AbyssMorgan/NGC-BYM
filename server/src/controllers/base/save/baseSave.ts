@@ -278,7 +278,17 @@ export const baseSave: KoaController = async (ctx) => {
 							} else if(baseSave.level >= 70 && baseSave.level <= 80){
 								userSave.stats.assault_mo_2 ??= 0;
 								userSave.stats.assault_mo_2++;
-							} else if(baseSave.level == 100 || baseSave.level == 110){
+							}
+
+							// userSave.credits += getShinyPointsByLevel(baseSave.level);
+							userSave.empirevalue += getConquerorPointsByLevel(baseSave.level);
+							postgres.em.persist(userSave);
+							await postgres.em.flush();
+						} else if(baseSave.wmid == 51){
+							if(userSave.stats == null){
+								userSave.stats = {};
+							}
+							if(baseSave.level >= 100 && baseSave.level <= 110){
 								userSave.stats.assault_mo_3 ??= 0;
 								userSave.stats.assault_mo_3++;
 							} else if(baseSave.level == 120){

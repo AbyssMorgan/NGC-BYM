@@ -20,6 +20,8 @@ package com.monsters.maproom3
 		internal static const CELL_ICON_RESOURCE_CELL:String = "worldmap/icons/resource_cell.png";
 
 		internal static const CELL_ICON_RESOURCE_CELL_HEAT:String = "worldmap/icons/resource_cell_heat.png";
+
+		internal static const CELL_ICON_RESOURCE_CELL_NGC:String = "worldmap/icons/resource_cell_ngc.png";
 		
 		internal static const CELL_ICON_STRONGHOLD:String = "worldmap/icons/guard_tower.png";
 
@@ -168,6 +170,7 @@ package com.monsters.maproom3
 			CELL_ICON_PLAYER_BASE,
 			CELL_ICON_RESOURCE_CELL,
 			CELL_ICON_RESOURCE_CELL_HEAT,
+			CELL_ICON_RESOURCE_CELL_NGC,
 			CELL_ICON_STRONGHOLD,
 			CELL_ICON_STRONGHOLD_HEAT,
 			CELL_ICON_STRONGHOLD_BUFF_EFFECT_NEUTRAL,

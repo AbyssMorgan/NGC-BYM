@@ -268,12 +268,13 @@ export const getGeneratedCells = (): Map<number, GeneratedCell> => {
 		
 		if (!occupiedCells.has(key)) {
 			const molochOutpostLevels = STRUCTURE_LEVELS[EnumYardType.MOLOCH_OUTPOST];
+			const molochLevel = Math.floor(molochRng() * molochOutpostLevels.length);
 			cells.push({
 				x,
 				y,
-				type: EnumYardType.MOLOCH_OUTPOST,
-				level: molochOutpostLevels[Math.floor(molochRng() * molochOutpostLevels.length)],
-				tribe: 4,
+				type: molochLevel >= 100 ? EnumYardType.MIRANDA_OUTPOST : EnumYardType.MOLOCH_OUTPOST,
+				level: molochOutpostLevels[molochLevel],
+				tribe: molochLevel >= 100 ? 5 : 4,
 			});
 			occupiedCells.add(key);
 		}

@@ -35,7 +35,8 @@ export const createCellData = async (
 			return wildMonsterCell(cell, worldid);
 		}
 		case EnumYardType.OUTPOST:
-		case EnumYardType.MOLOCH_OUTPOST: {
+		case EnumYardType.MOLOCH_OUTPOST:
+		case EnumYardType.MIRANDA_OUTPOST: {
 			return tribeOutpostCell(cell, worldid);
 		}
 		case EnumYardType.BORDER: {

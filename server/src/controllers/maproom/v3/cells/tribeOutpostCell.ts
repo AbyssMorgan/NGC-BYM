@@ -10,24 +10,31 @@ import { MapRoomVersion } from "../../../../enums/MapRoom.js";
 import { calculateStructureLevel } from "../../../../services/maproom/v3/calculateStructureLevel.js";
 
 export const tribeOutpostCell = async (cell: WorldMapCell, worldId: string): Promise<CellData> => {
-	const [cellX, cellY] = [cell.x, cell.y];
-
-	const genCell = getGeneratedCells().get(cellKey(cellX, cellY));
-	const level = genCell?.level ?? calculateStructureLevel(cellX, cellY, cell.base_type);
-	const tribeIndex = genCell?.tribe ?? ((cellX + cellY) % 4);
-	const baseid = generateBaseId(worldId, cellX, cellY, MapRoomVersion.V3);
-	const altitude = 5 + (cellX * 73 + cellY * 31) % 45;
-	const tribeSave = (cell.base_type === EnumYardType.OUTPOST) ? OUTPOST_SAVES[tribeIndex][level] : STRUCTURE_SAVES[cell.base_type][level];
-	const basevalue = (typeof tribeSave?.basevalue === "string") ? tribeSave.basevalue : "0";
-
+	var genCell = getGeneratedCells().get(cellKey(cell.x, cell.y));
+	var level = genCell?.level ?? calculateStructureLevel(cell.x, cell.y, cell.base_type);
+	var tribeIndex = genCell?.tribe ?? ((cell.x + cell.y) % 4);
+	var baseid = generateBaseId(worldId, cell.x, cell.y, MapRoomVersion.V3);
+	var altitude = 5 + (cell.x * 73 + cell.y * 31) % 45;
+	var tribeSave = (cell.base_type === EnumYardType.OUTPOST) ? OUTPOST_SAVES[tribeIndex][level] : STRUCTURE_SAVES[cell.base_type][level];
+	var basevalue = (typeof tribeSave?.basevalue === "string") ? tribeSave.basevalue : "0";
+	var tribe_name = 'Unknown';
+	if(cell.base_type == EnumYardType.MOLOCH_OUTPOST){
+		tribe_name = 'Moloch';
+		tribeIndex = 4;
+	} else if(cell.base_type == EnumYardType.MIRANDA_OUTPOST){
+		tribe_name = 'Miranda';
+		tribeIndex = 5;
+	} else {
+		tribe_name = Tribes[tribeIndex];
+	}
 	return {
 		uid: 0,
 		b: EnumYardType.EMPTY,
 		bid: baseid,
-		n: cell.base_type == EnumYardType.MOLOCH_OUTPOST ? 'Moloch' : Tribes[tribeIndex],
-		tid: cell.base_type == EnumYardType.MOLOCH_OUTPOST ? 4 : tribeIndex,
-		x: cellX,
-		y: cellY,
+		n: tribe_name,
+		tid: tribeIndex,
+		x: cell.x,
+		y: cell.y,
 		i: altitude,
 		l: genCell?.level ?? 0,
 		rel: EnumBaseRelationship.ENEMY,

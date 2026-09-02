@@ -7499,10 +7499,10 @@ package
 					"reward": [5000000, 5000000, 5000000, 5000000, 5],
 					"id": "ASSAULT_MO_3_10",
 					"group": 9,
-					"name": "Moloch Outpost x10",
-					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_3#\/10.",
-					"hint": "Moloch outposts level 100 - 110",
-					"questimage": "tribe_moloch.png",
+					"name": "Miranda Outpost x10",
+					"description": "Destroy miranda outposts.<br>Destroyed #assault_mo_3#\/10.",
+					"hint": "",
+					"questimage": "tribe_miranda.png",
 					"rules":
 					{
 						"assault_mo_3": 10
@@ -7514,10 +7514,10 @@ package
 					"reward": [13000000, 13000000, 13000000, 13000000, 13],
 					"id": "ASSAULT_MO_3_25",
 					"group": 9,
-					"name": "Moloch Outpost x25",
-					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_3#\/25.",
-					"hint": "Moloch outposts level 100 - 110",
-					"questimage": "tribe_moloch.png",
+					"name": "Miranda Outpost x25",
+					"description": "Destroy miranda outposts.<br>Destroyed #assault_mo_3#\/25.",
+					"hint": "",
+					"questimage": "tribe_miranda.png",
 					"prereq": "ASSAULT_MO_3_10",
 					"rules":
 					{
@@ -7530,10 +7530,10 @@ package
 					"reward": [25000000, 25000000, 25000000, 25000000, 25],
 					"id": "ASSAULT_MO_3_50",
 					"group": 9,
-					"name": "Moloch Outpost x50",
-					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_3#\/50.",
-					"hint": "Moloch outposts level 100 - 110",
-					"questimage": "tribe_moloch.png",
+					"name": "Miranda Outpost x50",
+					"description": "Destroy miranda outposts.<br>Destroyed #assault_mo_3#\/50.",
+					"hint": "",
+					"questimage": "tribe_miranda.png",
 					"prereq": "ASSAULT_MO_3_25",
 					"rules":
 					{
@@ -7546,10 +7546,10 @@ package
 					"reward": [50000000, 50000000, 50000000, 50000000, 50],
 					"id": "ASSAULT_MO_3_100",
 					"group": 9,
-					"name": "Moloch Outpost x100",
-					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_3#\/100.",
-					"hint": "Moloch outposts level 100 - 110",
-					"questimage": "tribe_moloch.png",
+					"name": "Miranda Outpost x100",
+					"description": "Destroy miranda outposts.<br>Destroyed #assault_mo_3#\/100.",
+					"hint": "",
+					"questimage": "tribe_miranda.png",
 					"prereq": "ASSAULT_MO_3_50",
 					"rules":
 					{
@@ -7562,10 +7562,10 @@ package
 					"reward": [125000000, 125000000, 125000000, 125000000, 125],
 					"id": "ASSAULT_MO_3_250",
 					"group": 9,
-					"name": "Moloch Outpost x250",
-					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_3#\/250.",
-					"hint": "Moloch outposts level 100 - 110",
-					"questimage": "tribe_moloch.png",
+					"name": "Miranda Outpost x250",
+					"description": "Destroy miranda outposts.<br>Destroyed #assault_mo_3#\/250.",
+					"hint": "",
+					"questimage": "tribe_miranda.png",
 					"prereq": "ASSAULT_MO_3_100",
 					"rules":
 					{
@@ -7578,10 +7578,10 @@ package
 					"reward": [250000000, 250000000, 250000000, 250000000, 250],
 					"id": "ASSAULT_MO_3_500",
 					"group": 9,
-					"name": "Moloch Outpost x500",
-					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_3#\/500.",
-					"hint": "Moloch outposts level 100 - 110",
-					"questimage": "tribe_moloch.png",
+					"name": "Miranda Outpost x500",
+					"description": "Destroy miranda outposts.<br>Destroyed #assault_mo_3#\/500.",
+					"hint": "",
+					"questimage": "tribe_miranda.png",
 					"prereq": "ASSAULT_MO_3_250",
 					"rules":
 					{
@@ -7594,10 +7594,10 @@ package
 					"reward": [500000000, 500000000, 500000000, 500000000, 500],
 					"id": "ASSAULT_MO_3_1000",
 					"group": 9,
-					"name": "Moloch Outpost x1000",
-					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_3#\/1000.",
-					"hint": "Moloch outposts level 100 - 110",
-					"questimage": "tribe_moloch.png",
+					"name": "Miranda Outpost x1000",
+					"description": "Destroy miranda outposts.<br>Destroyed #assault_mo_3#\/1000.",
+					"hint": "",
+					"questimage": "tribe_miranda.png",
 					"prereq": "ASSAULT_MO_3_500",
 					"rules":
 					{
@@ -7610,10 +7610,10 @@ package
 					"reward": [1250000000, 1250000000, 1250000000, 1250000000, 1250],
 					"id": "ASSAULT_MO_3_2500",
 					"group": 9,
-					"name": "Moloch Outpost x2500",
-					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_3#\/2500.",
-					"hint": "Moloch outposts level 100 - 110",
-					"questimage": "tribe_moloch.png",
+					"name": "Miranda Outpost x2500",
+					"description": "Destroy miranda outposts.<br>Destroyed #assault_mo_3#\/2500.",
+					"hint": "",
+					"questimage": "tribe_miranda.png",
 					"prereq": "ASSAULT_MO_3_1000",
 					"rules":
 					{
@@ -7626,10 +7626,10 @@ package
 					"reward": [2500000000, 2500000000, 2500000000, 2500000000, 2500],
 					"id": "ASSAULT_MO_3_5000",
 					"group": 9,
-					"name": "Moloch Outpost x5000",
-					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_3#\/5000.",
-					"hint": "Moloch outposts level 100 - 110",
-					"questimage": "tribe_moloch.png",
+					"name": "Miranda Outpost x5000",
+					"description": "Destroy miranda outposts.<br>Destroyed #assault_mo_3#\/5000.",
+					"hint": "",
+					"questimage": "tribe_miranda.png",
 					"prereq": "ASSAULT_MO_3_2500",
 					"rules":
 					{
@@ -7642,10 +7642,10 @@ package
 					"reward": [5000000000, 5000000000, 5000000000, 5000000000, 5000],
 					"id": "ASSAULT_MO_3_10000",
 					"group": 9,
-					"name": "Moloch Outpost x10000",
-					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_3#\/10000.",
-					"hint": "Moloch outposts level 100 - 110",
-					"questimage": "tribe_moloch.png",
+					"name": "Miranda Outpost x10000",
+					"description": "Destroy miranda outposts.<br>Destroyed #assault_mo_3#\/10000.",
+					"hint": "",
+					"questimage": "tribe_miranda.png",
 					"prereq": "ASSAULT_MO_3_5000",
 					"rules":
 					{
@@ -7772,10 +7772,10 @@ package
 					"reward": [30000000, 30000000, 30000000, 30000000, 30],
 					"id": "ASSAULT_MO_4_10",
 					"group": 10,
-					"name": "Moloch Outpost x10",
-					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_4#\/10.",
-					"hint": "Moloch outposts level 120",
-					"questimage": "tribe_moloch.png",
+					"name": "Miranda Outpost x10",
+					"description": "Destroy miranda outposts.<br>Destroyed #assault_mo_4#\/10.",
+					"hint": "",
+					"questimage": "tribe_miranda.png",
 					"rules":
 					{
 						"assault_mo_4": 10
@@ -7787,10 +7787,10 @@ package
 					"reward": [75000000, 75000000, 75000000, 75000000, 75],
 					"id": "ASSAULT_MO_4_25",
 					"group": 10,
-					"name": "Moloch Outpost x25",
-					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_4#\/25.",
-					"hint": "Moloch outposts level 120",
-					"questimage": "tribe_moloch.png",
+					"name": "Miranda Outpost x25",
+					"description": "Destroy miranda outposts.<br>Destroyed #assault_mo_4#\/25.",
+					"hint": "",
+					"questimage": "tribe_miranda.png",
 					"prereq": "ASSAULT_MO_4_10",
 					"rules":
 					{
@@ -7803,10 +7803,10 @@ package
 					"reward": [150000000, 150000000, 150000000, 150000000, 150],
 					"id": "ASSAULT_MO_4_50",
 					"group": 10,
-					"name": "Moloch Outpost x50",
-					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_4#\/50.",
-					"hint": "Moloch outposts level 120",
-					"questimage": "tribe_moloch.png",
+					"name": "Miranda Outpost x50",
+					"description": "Destroy miranda outposts.<br>Destroyed #assault_mo_4#\/50.",
+					"hint": "",
+					"questimage": "tribe_miranda.png",
 					"prereq": "ASSAULT_MO_4_25",
 					"rules":
 					{
@@ -7819,10 +7819,10 @@ package
 					"reward": [300000000, 300000000, 300000000, 300000000, 300],
 					"id": "ASSAULT_MO_4_100",
 					"group": 10,
-					"name": "Moloch Outpost x100",
-					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_4#\/100.",
-					"hint": "Moloch outposts level 120",
-					"questimage": "tribe_moloch.png",
+					"name": "Miranda Outpost x100",
+					"description": "Destroy miranda outposts.<br>Destroyed #assault_mo_4#\/100.",
+					"hint": "",
+					"questimage": "tribe_miranda.png",
 					"prereq": "ASSAULT_MO_4_50",
 					"rules":
 					{
@@ -7835,10 +7835,10 @@ package
 					"reward": [750000000, 750000000, 750000000, 750000000, 750],
 					"id": "ASSAULT_MO_4_250",
 					"group": 10,
-					"name": "Moloch Outpost x250",
-					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_4#\/250.",
-					"hint": "Moloch outposts level 120",
-					"questimage": "tribe_moloch.png",
+					"name": "Miranda Outpost x250",
+					"description": "Destroy miranda outposts.<br>Destroyed #assault_mo_4#\/250.",
+					"hint": "",
+					"questimage": "tribe_miranda.png",
 					"prereq": "ASSAULT_MO_4_100",
 					"rules":
 					{
@@ -7851,10 +7851,10 @@ package
 					"reward": [1500000000, 1500000000, 1500000000, 1500000000, 1500],
 					"id": "ASSAULT_MO_4_500",
 					"group": 10,
-					"name": "Moloch Outpost x500",
-					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_4#\/500.",
-					"hint": "Moloch outposts level 120",
-					"questimage": "tribe_moloch.png",
+					"name": "Miranda Outpost x500",
+					"description": "Destroy miranda outposts.<br>Destroyed #assault_mo_4#\/500.",
+					"hint": "",
+					"questimage": "tribe_miranda.png",
 					"prereq": "ASSAULT_MO_4_250",
 					"rules":
 					{
@@ -7867,10 +7867,10 @@ package
 					"reward": [3000000000, 3000000000, 3000000000, 3000000000, 3000],
 					"id": "ASSAULT_MO_4_1000",
 					"group": 10,
-					"name": "Moloch Outpost x1000",
-					"description": "Destroy moloch outposts.<br>Destroyed #assault_mo_4#\/1000.",
-					"hint": "Moloch outposts level 120",
-					"questimage": "tribe_moloch.png",
+					"name": "Miranda Outpost x1000",
+					"description": "Destroy miranda outposts.<br>Destroyed #assault_mo_4#\/1000.",
+					"hint": "",
+					"questimage": "tribe_miranda.png",
 					"prereq": "ASSAULT_MO_4_500",
 					"rules":
 					{

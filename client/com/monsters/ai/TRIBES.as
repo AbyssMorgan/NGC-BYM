@@ -22,7 +22,9 @@ package com.monsters.ai
 		
 		public static const D_IDS:Array = [31, 32, 33, 34, 35, 102, 103, 104];
 
-		public static const M_IDS:Array = [41];
+		public static const MOLOCH_IDS:Array = [41];
+
+		public static const MIRANDA_IDS:Array = [51];
 		
 		public static const k_DIGIT_LEVEL:uint = 0;
 		
@@ -46,7 +48,8 @@ package com.monsters.ai
 				"k":K_IDS,
 				"a":A_IDS,
 				"d":D_IDS,
-				"m":M_IDS,
+				"moloch":MOLOCH_IDS,
+				"miranda":MIRANDA_IDS,
 				"b":B_IDS
 			};
 			_tribes.l = {
@@ -60,7 +63,7 @@ package com.monsters.ai
 				"succ":KEYS.Get("ai_legion_succ"),
 				"succ_stream":KEYS.Get("ai_legion_succstream"),
 				"fail":KEYS.Get("ai_legion_fail"),
-				"profilepic":"monsters/tribe_legionnaire_50.jpg",
+				"profilepic":"monsters/tribe_legionnaire.png",
 				"streampostpic":"tribe-legionnaire.png"
 			};
 			_tribes.k = {
@@ -74,7 +77,7 @@ package com.monsters.ai
 				"succ":KEYS.Get("ai_kozu_succ"),
 				"succ_stream":KEYS.Get("ai_kozu_succstream"),
 				"fail":KEYS.Get("ai_kozu_fail"),
-				"profilepic":"monsters/tribe_kozu_50.jpg",
+				"profilepic":"monsters/tribe_kozu.png",
 				"streampostpic":"tribe-kozu.png"
 			};
 			_tribes.a = {
@@ -88,7 +91,7 @@ package com.monsters.ai
 				"succ":KEYS.Get("ai_abunakki_succ"),
 				"succ_stream":KEYS.Get("ai_abunakki_succstream"),
 				"fail":KEYS.Get("ai_abunakki_fail"),
-				"profilepic":"monsters/tribe_abunakki_50.jpg",
+				"profilepic":"monsters/tribe_abunakki.png",
 				"streampostpic":"tribe-abunakki.png",
 				"behaviour":"juice"
 			};
@@ -103,10 +106,10 @@ package com.monsters.ai
 				"succ":KEYS.Get("ai_dread_succ"),
 				"succ_stream":KEYS.Get("ai_dread_succstream"),
 				"fail":KEYS.Get("ai_dread_fail"),
-				"profilepic":"monsters/tribe_dreadnaut_50.jpg",
+				"profilepic":"monsters/tribe_dreadnaut.png",
 				"streampostpic":"tribe-dreadnaut.png"
 			};
-			_tribes.m = {
+			_tribes.moloch = {
 				"id":5,
 				"name":KEYS.Get("ai_descenttribe_name"),
 				"process":PROCESS7,
@@ -117,8 +120,22 @@ package com.monsters.ai
 				"succ":KEYS.Get("ai_descenttribe_succ"),
 				"succ_stream":KEYS.Get("ai_descenttribe_succstream"),
 				"fail":KEYS.Get("ai_descenttribe_fail"),
-				"profilepic":"monsters/tribe_moloch_50.jpg",
-				"streampostpic":"tribe-moloch.png"
+				"profilepic":"monsters/tribe_moloch.png",
+				"streampostpic":"tribe_moloch.png"
+			};
+			_tribes.miranda = {
+				"id":6,
+				"name":KEYS.Get("ai_descenttribe_name"),
+				"process":PROCESS7,
+				"type":WMATTACK.TYPE_NERD,
+				"taunt":KEYS.Get("ai_descenttribe_taunt"),
+				"splash":"popups/tribe_miranda.png",
+				"description":KEYS.Get("ai_descenttribe_description"),
+				"succ":KEYS.Get("ai_descenttribe_succ"),
+				"succ_stream":KEYS.Get("ai_descenttribe_succstream"),
+				"fail":KEYS.Get("ai_descenttribe_fail"),
+				"profilepic":"monsters/tribe_miranda.png",
+				"streampostpic":"tribe_miranda.png"
 			};
 			_infernotribes = {};
 			_infernotribes.d = {
@@ -132,8 +149,8 @@ package com.monsters.ai
 				"succ":KEYS.Get("ai_descenttribe_succ"),
 				"succ_stream":KEYS.Get("ai_descenttribe_succstream"),
 				"fail":KEYS.Get("ai_descenttribe_fail"),
-				"profilepic":"monsters/tribe_moloch_50.jpg",
-				"streampostpic":"tribe-moloch.png"
+				"profilepic":"monsters/tribe_moloch.png",
+				"streampostpic":"tribe_moloch.png"
 			};
 			_eventtribes = {};
 			_eventtribes.b = {
@@ -147,7 +164,7 @@ package com.monsters.ai
 				"succ":KEYS.Get("ai_brukkarg_succ"),
 				"succ_stream":KEYS.Get("ai_brukkarg_succstream"),
 				"fail":KEYS.Get("ai_brukkarg_fail"),
-				"profilepic":"monsters/tribe_brukkarg_50.jpg",
+				"profilepic":"monsters/tribe_brukkarg.png",
 				"streampostpic":"tribe_brukkarg.png"
 			};
 		}
@@ -198,13 +215,14 @@ package com.monsters.ai
 			{
 				return _eventtribes.b;
 			}
-			if(wmid == 102 || wmid == 103 || wmid == 104 || wmid == 41){
+			if(wmid == 102 || wmid == 103 || wmid == 104 || wmid == 41 || wmid == 51){
 				switch(tribe_index){
 					case 0: return _tribes.l;
 					case 1: return _tribes.k;
 					case 2: return _tribes.a;
 					case 3: return _tribes.d;
-					case 4: return _tribes.m;
+					case 4: return _tribes.moloch;
+					case 5: return _tribes.miranda;
 				}
 			}
 			for(_loc3_ in _assoc)

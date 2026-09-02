@@ -303,7 +303,12 @@ package
 					else
 					{
 						hintStr = KEYS.Get(q.hint,q.keyvars);
-						this._infoMC.tHint.htmlText = "<b>" + KEYS.Get("q_ui_hint") + "</b> <i>" + hintStr + "</i>";
+						if(hintStr.length > 0){
+							this._infoMC.tHint.htmlText = "<b>" + KEYS.Get("q_ui_hint") + "</b> <i>" + hintStr + "</i>";
+						} else {
+							this._infoMC.tHint.htmlText = "";
+						}
+						
 					}
 					if(q.questimage)
 					{

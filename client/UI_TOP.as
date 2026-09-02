@@ -84,12 +84,12 @@ package
 			super();
 			trace("GLOBAL.mode = " + GLOBAL.mode);
 			if(MapRoomManager.instance.isInMapRoom3 && (GLOBAL.mode === GLOBAL.e_BASE_MODE.VIEW || GLOBAL.mode === GLOBAL.e_BASE_MODE.WMVIEW)){
-				if(BASE._wmID == 41){
+				if(BASE._wmID == 41 || BASE._wmID == 51){
 					gotoAndStop(GLOBAL.e_BASE_MODE.IATTACK);
 				} else {
 					gotoAndStop(GLOBAL.e_BASE_MODE.ATTACK);
 				}
-			} else if(MapRoomManager.instance.isInMapRoom3 && GLOBAL._loadmode == GLOBAL.e_BASE_MODE.WMATTACK && BASE._wmID == 41){
+			} else if(MapRoomManager.instance.isInMapRoom3 && GLOBAL._loadmode == GLOBAL.e_BASE_MODE.WMATTACK && (BASE._wmID == 41 || BASE._wmID == 51)){
 				gotoAndStop(GLOBAL.e_BASE_MODE.IATTACK);
 			} else {
 				gotoAndStop(GLOBAL._loadmode);
@@ -1061,7 +1061,7 @@ package
 			while(_loc2_ < 5)
 			{
 				_loc3_ = mc["mcR" + _loc2_];
-				if(BASE._wmID == 41){
+				if(BASE._wmID == 41 || BASE._wmID == 51){
 					_loc3_.tR.htmlText = "<b>" + GLOBAL.FormatNumber(ATTACK._iloot["r" + _loc2_].Get()) + "</b>";
 				} else {
 					_loc3_.tR.htmlText = "<b>" + GLOBAL.FormatNumber(ATTACK._loot["r" + _loc2_].Get()) + "</b>";

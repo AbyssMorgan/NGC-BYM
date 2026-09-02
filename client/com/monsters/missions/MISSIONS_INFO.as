@@ -88,7 +88,11 @@ package com.monsters.missions
          else
          {
             hintStr = KEYS.Get(this._missionObject.hint,this._missionObject.keyvars);
-            tHint.htmlText = "<b>" + KEYS.Get("q_ui_hint") + "</b> <i>" + hintStr + "</i>";
+			if(hintStr.length > 0){
+ 				tHint.htmlText = "<b>" + KEYS.Get("q_ui_hint") + "</b> <i>" + hintStr + "</i>";
+			} else {
+				tHint.htmlText = "";
+			}
          }
          if(this._missionObject.questimage)
          {

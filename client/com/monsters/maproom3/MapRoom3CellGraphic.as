@@ -536,7 +536,7 @@ package com.monsters.maproom3
 				}
 				case EnumYardType.FORTIFICATION: {
 					if(this.m_Cell.isDestroyed){
-						_loc1_ = new Bitmap(MapRoom3AssetCache.instance.GetAsset(MapRoom3AssetCache.CELL_ICON_FORTIFICATION));
+						_loc1_ = new Bitmap(MapRoom3AssetCache.instance.GetAsset(this.m_Cell.baseLevel >= 100 ? MapRoom3AssetCache.CELL_ICON_FORTIFICATION_HEAT : MapRoom3AssetCache.CELL_ICON_FORTIFICATION));
 					} else {
 						_loc1_ = this.GetFortificationIconToDisplay();
 						this.DrawFortificationLightIcon();
@@ -570,7 +570,7 @@ package com.monsters.maproom3
 			}
 			if(_loc2_)
 			{
-				_loc3_ = new Bitmap(MapRoom3AssetCache.instance.GetAsset(MapRoom3AssetCache.CELL_ICON_FULLY_FORTIFIED_FRONT));
+				_loc3_ = new Bitmap(MapRoom3AssetCache.instance.GetAsset(this.m_Cell.baseLevel >= 100 ? MapRoom3AssetCache.CELL_ICON_FULLY_FORTIFIED_FRONT_HEAT : MapRoom3AssetCache.CELL_ICON_FULLY_FORTIFIED_FRONT));
 				_loc3_.x = Math.round((HEX_WIDTH - _loc3_.width) * 0.5);
 				_loc3_.y = Math.round((HEX_HEIGHT - _loc3_.height) * 0.5);
 				this.m_IconLayer.addChildAt(_loc3_,0);
@@ -583,7 +583,7 @@ package com.monsters.maproom3
 			}
 			if(_loc2_)
 			{
-				(_loc4_ = new Bitmap(MapRoom3AssetCache.instance.GetAsset(MapRoom3AssetCache.CELL_ICON_FULLY_FORTIFIED_BACK))).x = Math.round((HEX_WIDTH - _loc4_.width) * 0.5);
+				(_loc4_ = new Bitmap(MapRoom3AssetCache.instance.GetAsset(this.m_Cell.baseLevel >= 100 ? MapRoom3AssetCache.CELL_ICON_FULLY_FORTIFIED_BACK_HEAT : MapRoom3AssetCache.CELL_ICON_FULLY_FORTIFIED_BACK))).x = Math.round((HEX_WIDTH - _loc4_.width) * 0.5);
 				_loc4_.y = Math.round((HEX_HEIGHT - _loc4_.height) * 0.5);
 				this.m_IconLayer.addChildAt(_loc4_,0);
 			}

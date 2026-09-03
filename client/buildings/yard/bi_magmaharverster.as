@@ -72,6 +72,17 @@ package buildings.yard {
 					"shadowdamaged":["shadow.1.damaged.jpg",new Point(-49,2)],
 					"topdestroyed":["top.1.destroyed.png",new Point(-37,-2)],
 					"shadowdestroyed":["shadow.1.destroyed.jpg",new Point(-41,6)]
+				},
+				25:{
+					"anim":["anim1.25.png",new Rectangle(9.2,12.6,25,31),49],
+					"anim2":["anim2.25.png",new Rectangle(-32,9,36,26),49],
+					"anim3":["anim3.25.png",new Rectangle(-18,-60,34,58),49],
+					"top":["top.25.png",new Point(-35,-15)],
+					"shadow":["shadow.1.jpg",new Point(-36,4)],
+					"topdamaged":["top.25.damaged.png",new Point(-39,-36)],
+					"shadowdamaged":["shadow.1.damaged.jpg",new Point(-49,2)],
+					"topdestroyed":["top.1.destroyed.png",new Point(-37,-2)],
+					"shadowdestroyed":["shadow.1.destroyed.jpg",new Point(-41,6)]
 				}
 			},
 			"buildingbuttons":["magma_producer"],

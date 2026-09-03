@@ -70,6 +70,15 @@ package buildings.yard {
 					"shadowdamaged":["shadow.2.damaged.jpg",new Point(-43,5)],
 					"topdestroyed":["top.2.destroyed.png",new Point(-43,-9)],
 					"shadowdestroyed":["shadow.2.destroyed.jpg",new Point(-46,17)]
+				},
+				25:{
+					"anim":["anim.1.25.png",new Rectangle(-40,-52,74,105),45],
+					"top":["top.25.png",new Point(-40,-50)],
+					"shadow":["shadow.2.jpg",new Point(-42,7)],
+					"topdamaged":["top.25.damaged.png",new Point(-39,-52)],
+					"shadowdamaged":["shadow.2.damaged.jpg",new Point(-43,5)],
+					"topdestroyed":["top.2.destroyed.png",new Point(-43,-9)],
+					"shadowdestroyed":["shadow.2.destroyed.jpg",new Point(-46,17)]
 				}
 			},
 			"buildingbuttons":["coal_producer"],

@@ -66,12 +66,16 @@ package buildings.yard {
 				3:{
 					"anim":["anim.2.png",new Rectangle(-44,-38,90,97),50],
 					"top":["top.2.png",new Point(-44,25)],
-					// "shadow":["shadow.2.jpg",new Point(-39,16)], // original
 					"shadow":["shadow.2.jpg",new Point(-39,7)],
 					"topdamaged":["top.2.damaged.png",new Point(-37,-27)],
-					//"shadowdamaged":["shadow.2.damaged.jpg",new Point(-39,19)],
 					"topdestroyed":["top.2.destroyed.png",new Point(-57,8)]
-					//"shadowdestroyed":["shadow.2.destroyed.jpg",new Point(-60,19)]
+				},
+				25:{
+					"anim":["anim.25.png",new Rectangle(-44,-38,90,97),50],
+					"top":["top.25.png",new Point(-44,25)],
+					"shadow":["shadow.2.jpg",new Point(-39,7)],
+					"topdamaged":["top.25.damaged.png",new Point(-37,-27)],
+					"topdestroyed":["top.2.destroyed.png",new Point(-57,8)]
 				}
 			},
 			"buildingbuttons":["bone_crusher"],

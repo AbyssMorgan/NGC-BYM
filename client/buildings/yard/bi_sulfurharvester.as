@@ -70,6 +70,15 @@ package buildings.yard {
 					"shadowdamaged":["shadow.2.damaged.jpg",new Point(-28,30)],
 					"topdestroyed":["top.2.destroyed.png",new Point(-45,-6)],
 					"shadowdestroyed":["shadow.2.destroyed.jpg",new Point(-42,12)]
+				},
+				25:{
+					"anim":["anim1.25.png",new Rectangle(-36,-60,60,118),45],
+					"top":["top.25.png",new Point(0,-15)],
+					"shadow":["shadow.2.jpg",new Point(-25,27)],
+					"topdamaged":["top.25.damaged.png",new Point(-38,-62)],
+					"shadowdamaged":["shadow.2.damaged.jpg",new Point(-28,30)],
+					"topdestroyed":["top.2.destroyed.png",new Point(-45,-6)],
+					"shadowdestroyed":["shadow.2.destroyed.jpg",new Point(-42,12)]
 				}
 			},
 			"buildingbuttons":["sulfur"],

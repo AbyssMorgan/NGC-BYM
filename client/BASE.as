@@ -53,6 +53,7 @@ package
 	import flash.utils.getTimer;
 	import gs.*;
 	import gs.easing.*;
+	import com.monsters.display.ImageCache;
 
 	public class BASE
 	{
@@ -1612,19 +1613,24 @@ package
 							}
 							if (attackObj.pic)
 							{
-								onImageLoad = function(param1:Event):void
-								{
-								loader.height = 50;
-								loader.width = 50;
-								};
-								LoadImageError = function(param1:IOErrorEvent):void
-								{
-								};
-								loader = new Loader();
-								loader.contentLoaderInfo.addEventListener(IOErrorEvent.IO_ERROR, LoadImageError, false, 0, true);
-								loader.contentLoaderInfo.addEventListener(Event.COMPLETE, onImageLoad);
-								popupMC.mcPic.mcBG.addChild(loader);
-								loader.load(new URLRequest(attackObj.pic));
+								if(GLOBAL.mode == GLOBAL.e_BASE_MODE.WMATTACK || GLOBAL.mode == GLOBAL.e_BASE_MODE.WMVIEW){
+									ImageCache.GetImageWithCallBack(attackObj.pic, function(param1:String, param2:BitmapData) : void {
+										popupMC.mcPic.mcBG.addChild(new Bitmap(param2));
+									})
+								} else {
+									onImageLoad = function(param1:Event):void {
+										loader.height = 50;
+										loader.width = 50;
+									};
+									LoadImageError = function(param1:IOErrorEvent):void {
+
+									};
+									loader = new Loader();
+									loader.contentLoaderInfo.addEventListener(IOErrorEvent.IO_ERROR, LoadImageError, false, 0, true);
+									loader.contentLoaderInfo.addEventListener(Event.COMPLETE, onImageLoad);
+									popupMC.mcPic.mcBG.addChild(loader);
+									loader.load(new URLRequest(attackObj.pic));
+								}
 							}
 							if (attackObj.friend == 1)
 							{
@@ -3119,7 +3125,6 @@ package
 
       public static function Save(param1:int = 0, return_home:Boolean = false, force:Boolean = false, param4:Boolean = false):void
       {
-		trace("Save");
          if (Boolean(UI2._top) && Boolean(UI2._top.mcSave))
          {
             UI2._top.mcSave.gotoAndStop(2);
@@ -5807,7 +5812,6 @@ package
 						}
 					}
 				}
-				trace("base power = " + power.Get());
 				_basePower.Set(power.Get());
 			}
 		}

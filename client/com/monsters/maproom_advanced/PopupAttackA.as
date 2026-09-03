@@ -532,65 +532,73 @@ package com.monsters.maproom_advanced
          }
       }
 
-      private function ProfilePic():void
-      {
-         var onImageLoad:Function = null;
-         var imageComplete:Function = null;
-         var LoadImageError:Function = null;
-         onImageLoad = function(param1:Event):void
-         {
-            if (_profilePic)
-            {
-               _profilePic.height = 50;
-               _profilePic.width = 50;
-            }
-         };
-         imageComplete = function(param1:String, param2:BitmapData):void
-         {
-            _profileBmp = new Bitmap(param2);
-            mcProfilePic.mcBG.addChild(_profileBmp);
-         };
-         LoadImageError = function(param1:IOErrorEvent):void
-         {
-         };
-         if (!this._cell._facebookID && this._cell._base != 1 && !this._cell._pic_square)
-         {
-            return;
-         }
-         if (this._cell._base > 1)
-         {
-            this._profilePic = new Loader();
-            this._profilePic.contentLoaderInfo.addEventListener(IOErrorEvent.IO_ERROR, LoadImageError, false, 0, true);
-            this._profilePic.contentLoaderInfo.addEventListener(Event.COMPLETE, onImageLoad);
-            if (Boolean(!GLOBAL._flags.viximo) && Boolean(this._cell._pic_square))
-            {
-               this._profilePic.load(new URLRequest(this._cell._pic_square));
-            }
-            else
-            {
-               this._profilePic.load(new URLRequest("http://graph.facebook.com/" + this._cell._facebookID + "/picture"));
-            }
-            this.mcProfilePic.mcBG.addChild(this._profilePic);
-         }
-         else
-         {
-            switch (this._cell._name)
-            {
-               case "Dreadnought":
-               case "Dreadnaut":
-                  ImageCache.GetImageWithCallBack("monsters/tribe_dreadnaut_50.jpg", imageComplete);
-                  break;
-               case "Kozu":
-                  ImageCache.GetImageWithCallBack("monsters/tribe_kozu_50.jpg", imageComplete);
-                  break;
-               case "Legionnaire":
-                  ImageCache.GetImageWithCallBack("monsters/tribe_legionnaire_50.jpg", imageComplete);
-                  break;
-               case "Abunakki":
-                  ImageCache.GetImageWithCallBack("monsters/tribe_abunakki_50.jpg", imageComplete);
-            }
-         }
-      }
+		private function ProfilePic():void
+		{
+			var onImageLoad:Function = null;
+			var imageComplete:Function = null;
+			var LoadImageError:Function = null;
+			onImageLoad = function(param1:Event):void
+			{
+				if (_profilePic)
+				{
+					_profilePic.height = 50;
+					_profilePic.width = 50;
+				}
+			};
+			imageComplete = function(param1:String, param2:BitmapData):void
+			{
+				_profileBmp = new Bitmap(param2);
+				mcProfilePic.mcBG.addChild(_profileBmp);
+			};
+			LoadImageError = function(param1:IOErrorEvent):void
+			{
+			};
+			if (!this._cell._facebookID && this._cell._base != 1 && !this._cell._pic_square)
+			{
+				return;
+			}
+			if (this._cell._base > 1)
+			{
+				this._profilePic = new Loader();
+				this._profilePic.contentLoaderInfo.addEventListener(IOErrorEvent.IO_ERROR, LoadImageError, false, 0, true);
+				this._profilePic.contentLoaderInfo.addEventListener(Event.COMPLETE, onImageLoad);
+				if (Boolean(!GLOBAL._flags.viximo) && Boolean(this._cell._pic_square))
+				{
+					this._profilePic.load(new URLRequest(this._cell._pic_square));
+				}
+				else
+				{
+					this._profilePic.load(new URLRequest("http://graph.facebook.com/" + this._cell._facebookID + "/picture"));
+				}
+				this.mcProfilePic.mcBG.addChild(this._profilePic);
+			}
+			else
+			{
+				switch (this._cell._name)
+				{
+					case "Dreadnaut": {
+						ImageCache.GetImageWithCallBack("worldmap/rollover/tribe_dreadnaut.png", imageComplete);
+						break;
+					}
+					case "Kozu": {
+						ImageCache.GetImageWithCallBack("worldmap/rollover/tribe_kozu.png", imageComplete);
+						break;
+					}
+					case "Legionnaire": {
+						ImageCache.GetImageWithCallBack("worldmap/rollover/tribe_legionnaire.png", imageComplete);
+						break;
+					}
+					case "Abunakki": {
+						ImageCache.GetImageWithCallBack("worldmap/rollover/tribe_abunakki.png", imageComplete);
+						break;
+					}
+					case "Miranda": {
+						ImageCache.GetImageWithCallBack("worldmap/rollover/tribe_miranda.png", imageComplete);
+						break;
+					}
+				}
+			}
+		}
 
       private function AlliancePic(param1:String, param2:MovieClip, param3:MovieClip = null, param4:Boolean = false):void
       {

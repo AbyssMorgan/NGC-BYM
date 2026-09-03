@@ -482,31 +482,39 @@ package com.monsters.maproom_advanced
          profilePic.load(new URLRequest(imgURL));
       }
       
-      private function TribePic(param1:String) : void
-      {
-         var imageComplete:Function = null;
-         var tribe:String = param1;
-         imageComplete = function(param1:String, param2:BitmapData):void
-         {
-            var _loc3_:Bitmap = new Bitmap(param2);
-            mcInfo.mcProfilePic.mcImage.addChild(_loc3_);
-         };
-         switch(tribe)
-         {
-            case "Dreadnought":
-            case "Dreadnaut":
-               ImageCache.GetImageWithCallBack("monsters/tribe_dreadnaut_50.jpg",imageComplete);
-               break;
-            case "Kozu":
-               ImageCache.GetImageWithCallBack("monsters/tribe_kozu_50.jpg",imageComplete);
-               break;
-            case "Legionnaire":
-               ImageCache.GetImageWithCallBack("monsters/tribe_legionnaire_50.jpg",imageComplete);
-               break;
-            case "Abunakki":
-               ImageCache.GetImageWithCallBack("monsters/tribe_abunakki_50.jpg",imageComplete);
-         }
-      }
+		private function TribePic(param1:String) : void
+		{
+			var imageComplete:Function = null;
+			var tribe:String = param1;
+			imageComplete = function(param1:String, param2:BitmapData):void
+			{
+				var _loc3_:Bitmap = new Bitmap(param2);
+				mcInfo.mcProfilePic.mcImage.addChild(_loc3_);
+			};
+			switch(tribe)
+			{
+				case "Dreadnaut": {
+					ImageCache.GetImageWithCallBack("worldmap/rollover/tribe_dreadnaut.png", imageComplete);
+					break;
+				}
+				case "Kozu": {
+					ImageCache.GetImageWithCallBack("worldmap/rollover/tribe_kozu.png", imageComplete);
+					break;
+				}
+				case "Legionnaire": {
+					ImageCache.GetImageWithCallBack("worldmap/rollover/tribe_legionnaire.png", imageComplete);
+					break;
+				}
+				case "Abunakki": {
+					ImageCache.GetImageWithCallBack("worldmap/rollover/tribe_abunakki.png", imageComplete);
+					break;
+				}
+				case "Miranda": {
+					ImageCache.GetImageWithCallBack("worldmap/rollover/tribe_miranda.png", imageComplete);
+					break;
+				}
+			}
+		}
       
       private function AlliancePic(param1:String, param2:AllyInfo) : void
       {

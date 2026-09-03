@@ -865,7 +865,6 @@ package com.monsters.monsters.creeps
 			{
 				_homeBunker.FindTargets(3);
 				_targetCreep = _homeBunker.GetTarget(targetMode);
-				trace(_targetCreep);
 				if(_targetCreep)
 				{
 					_atTarget = false;

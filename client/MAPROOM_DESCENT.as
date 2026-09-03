@@ -58,8 +58,7 @@ package
 			"succ":KEYS.Get("ai_descenttribe_succ"),
 			"succ_stream":KEYS.Get("ai_descenttribe_succstream"),
 			"fail":KEYS.Get("ai_descenttribe_fail"),
-			"profilepic":"monsters/tribe_dreadnaut_50.jpg",
-			"streampostpic":"tribe-dreadnaut.png"
+			"profilepic":"worldmap/rollover/tribe_moloch.png"
 		};
 		
 		public static var _initialized:Boolean = false;

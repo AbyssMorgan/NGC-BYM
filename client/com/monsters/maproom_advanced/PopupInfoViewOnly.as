@@ -133,69 +133,77 @@ package com.monsters.maproom_advanced
          this.ButtonInfo("view");
          this.Update();
       }
-      
-      private function ProfilePic() : void
-      {
-         var onImageLoad:Function = null;
-         var imageComplete:Function = null;
-         var LoadImageError:Function = null;
-         onImageLoad = function(param1:Event):void
-         {
-            _profilePic.width = _profilePic.height = 50;
-            _profilePic.contentLoaderInfo.removeEventListener(IOErrorEvent.IO_ERROR,LoadImageError,false);
-            _profilePic.contentLoaderInfo.removeEventListener(Event.COMPLETE,onImageLoad);
-         };
-         imageComplete = function(param1:String, param2:BitmapData):void
-         {
-            _profileBmp = new Bitmap(param2);
-            mcProfilePic.mcBG.addChild(_profileBmp);
-         };
-         LoadImageError = function(param1:IOErrorEvent):void
-         {
-            _profilePic.contentLoaderInfo.removeEventListener(IOErrorEvent.IO_ERROR,LoadImageError,false);
-            _profilePic.contentLoaderInfo.removeEventListener(Event.COMPLETE,onImageLoad);
-         };
-         if(!this._cell._facebookID && this._cell._base != 1 && !this._cell._pic_square)
-         {
-            return;
-         }
-         if(this._cell._base > 1)
-         {
-            if(!GLOBAL._flags.viximo)
-            {
-               this._profilePic.contentLoaderInfo.addEventListener(IOErrorEvent.IO_ERROR,LoadImageError,false,0,true);
-               this._profilePic.contentLoaderInfo.addEventListener(Event.COMPLETE,onImageLoad);
-               if(this._cell._pic_square)
-               {
-                  this._profilePic.load(new URLRequest(this._cell._pic_square));
-               }
-            }
-            else
-            {
-               this._profilePic.contentLoaderInfo.addEventListener(IOErrorEvent.IO_ERROR,LoadImageError,false,0,true);
-               this._profilePic.contentLoaderInfo.addEventListener(Event.COMPLETE,onImageLoad);
-               this._profilePic.load(new URLRequest("http://graph.facebook.com/" + this._cell._facebookID + "/picture"));
-            }
-         }
-         else
-         {
-            switch(this._cell._name)
-            {
-               case "Dreadnought":
-               case "Dreadnaut":
-                  ImageCache.GetImageWithCallBack("monsters/tribe_dreadnaut_50.jpg",imageComplete);
-                  break;
-               case "Kozu":
-                  ImageCache.GetImageWithCallBack("monsters/tribe_kozu_50.jpg",imageComplete);
-                  break;
-               case "Legionnaire":
-                  ImageCache.GetImageWithCallBack("monsters/tribe_legionnaire_50.jpg",imageComplete);
-                  break;
-               case "Abunakki":
-                  ImageCache.GetImageWithCallBack("monsters/tribe_abunakki_50.jpg",imageComplete);
-            }
-         }
-      }
+		
+		private function ProfilePic() : void
+		{
+			var onImageLoad:Function = null;
+			var imageComplete:Function = null;
+			var LoadImageError:Function = null;
+			onImageLoad = function(param1:Event):void
+			{
+				_profilePic.width = _profilePic.height = 50;
+				_profilePic.contentLoaderInfo.removeEventListener(IOErrorEvent.IO_ERROR,LoadImageError,false);
+				_profilePic.contentLoaderInfo.removeEventListener(Event.COMPLETE,onImageLoad);
+			};
+			imageComplete = function(param1:String, param2:BitmapData):void
+			{
+				_profileBmp = new Bitmap(param2);
+				mcProfilePic.mcBG.addChild(_profileBmp);
+			};
+			LoadImageError = function(param1:IOErrorEvent):void
+			{
+				_profilePic.contentLoaderInfo.removeEventListener(IOErrorEvent.IO_ERROR,LoadImageError,false);
+				_profilePic.contentLoaderInfo.removeEventListener(Event.COMPLETE,onImageLoad);
+			};
+			if(!this._cell._facebookID && this._cell._base != 1 && !this._cell._pic_square)
+			{
+				return;
+			}
+			if(this._cell._base > 1)
+			{
+				if(!GLOBAL._flags.viximo)
+				{
+					this._profilePic.contentLoaderInfo.addEventListener(IOErrorEvent.IO_ERROR,LoadImageError,false,0,true);
+					this._profilePic.contentLoaderInfo.addEventListener(Event.COMPLETE,onImageLoad);
+					if(this._cell._pic_square)
+					{
+						this._profilePic.load(new URLRequest(this._cell._pic_square));
+					}
+				}
+				else
+				{
+					this._profilePic.contentLoaderInfo.addEventListener(IOErrorEvent.IO_ERROR,LoadImageError,false,0,true);
+					this._profilePic.contentLoaderInfo.addEventListener(Event.COMPLETE,onImageLoad);
+					this._profilePic.load(new URLRequest("http://graph.facebook.com/" + this._cell._facebookID + "/picture"));
+				}
+			}
+			else
+			{
+				switch(this._cell._name)
+				{
+					case "Dreadnaut": {
+						ImageCache.GetImageWithCallBack("worldmap/rollover/tribe_dreadnaut.png", imageComplete);
+						break;
+					}
+					case "Kozu": {
+						ImageCache.GetImageWithCallBack("worldmap/rollover/tribe_kozu.png", imageComplete);
+						break;
+					}
+					case "Legionnaire": {
+						ImageCache.GetImageWithCallBack("worldmap/rollover/tribe_legionnaire.png", imageComplete);
+						break;
+					}
+					case "Abunakki": {
+						ImageCache.GetImageWithCallBack("worldmap/rollover/tribe_abunakki.png", imageComplete);
+						break;
+					}
+					case "Miranda": {
+						ImageCache.GetImageWithCallBack("worldmap/rollover/tribe_miranda.png", imageComplete);
+						break;
+					}
+				}
+			}
+		}
       
       public function Cleanup() : void
       {

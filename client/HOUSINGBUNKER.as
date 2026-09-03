@@ -500,7 +500,6 @@ package
       
       public function RemoveCreature(param1:String) : void
       {
-		 trace("RemoveCreature ");
          // Only decrement stored counts when NOT in MapRoom3 AND NOT a main/inferno yard
          if(!MapRoomManager.instance.isInMapRoom3 && !BASE.isMainYardOrInfernoMainYard)
          {

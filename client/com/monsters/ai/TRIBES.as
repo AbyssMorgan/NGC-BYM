@@ -63,8 +63,7 @@ package com.monsters.ai
 				"succ":KEYS.Get("ai_legion_succ"),
 				"succ_stream":KEYS.Get("ai_legion_succstream"),
 				"fail":KEYS.Get("ai_legion_fail"),
-				"profilepic":"monsters/tribe_legionnaire.png",
-				"streampostpic":"tribe-legionnaire.png"
+				"profilepic":"worldmap/rollover/tribe_legionnaire.png"
 			};
 			_tribes.k = {
 				"id":2,
@@ -77,8 +76,7 @@ package com.monsters.ai
 				"succ":KEYS.Get("ai_kozu_succ"),
 				"succ_stream":KEYS.Get("ai_kozu_succstream"),
 				"fail":KEYS.Get("ai_kozu_fail"),
-				"profilepic":"monsters/tribe_kozu.png",
-				"streampostpic":"tribe-kozu.png"
+				"profilepic":"worldmap/rollover/tribe_kozu.png"
 			};
 			_tribes.a = {
 				"id":3,
@@ -91,8 +89,7 @@ package com.monsters.ai
 				"succ":KEYS.Get("ai_abunakki_succ"),
 				"succ_stream":KEYS.Get("ai_abunakki_succstream"),
 				"fail":KEYS.Get("ai_abunakki_fail"),
-				"profilepic":"monsters/tribe_abunakki.png",
-				"streampostpic":"tribe-abunakki.png",
+				"profilepic":"worldmap/rollover/tribe_abunakki.png",
 				"behaviour":"juice"
 			};
 			_tribes.d = {
@@ -106,8 +103,7 @@ package com.monsters.ai
 				"succ":KEYS.Get("ai_dread_succ"),
 				"succ_stream":KEYS.Get("ai_dread_succstream"),
 				"fail":KEYS.Get("ai_dread_fail"),
-				"profilepic":"monsters/tribe_dreadnaut.png",
-				"streampostpic":"tribe-dreadnaut.png"
+				"profilepic":"worldmap/rollover/tribe_dreadnaut.png"
 			};
 			_tribes.moloch = {
 				"id":5,
@@ -120,8 +116,7 @@ package com.monsters.ai
 				"succ":KEYS.Get("ai_descenttribe_succ"),
 				"succ_stream":KEYS.Get("ai_descenttribe_succstream"),
 				"fail":KEYS.Get("ai_descenttribe_fail"),
-				"profilepic":"monsters/tribe_moloch.png",
-				"streampostpic":"tribe_moloch.png"
+				"profilepic":"worldmap/rollover/tribe_moloch.png"
 			};
 			_tribes.miranda = {
 				"id":6,
@@ -134,8 +129,7 @@ package com.monsters.ai
 				"succ":KEYS.Get("ai_descenttribe_succ"),
 				"succ_stream":KEYS.Get("ai_descenttribe_succstream"),
 				"fail":KEYS.Get("ai_descenttribe_fail"),
-				"profilepic":"monsters/tribe_miranda.png",
-				"streampostpic":"tribe_miranda.png"
+				"profilepic":"worldmap/rollover/tribe_miranda.png"
 			};
 			_infernotribes = {};
 			_infernotribes.d = {
@@ -149,8 +143,7 @@ package com.monsters.ai
 				"succ":KEYS.Get("ai_descenttribe_succ"),
 				"succ_stream":KEYS.Get("ai_descenttribe_succstream"),
 				"fail":KEYS.Get("ai_descenttribe_fail"),
-				"profilepic":"monsters/tribe_moloch.png",
-				"streampostpic":"tribe_moloch.png"
+				"profilepic":"worldmap/rollover/tribe_moloch.png"
 			};
 			_eventtribes = {};
 			_eventtribes.b = {
@@ -164,8 +157,7 @@ package com.monsters.ai
 				"succ":KEYS.Get("ai_brukkarg_succ"),
 				"succ_stream":KEYS.Get("ai_brukkarg_succstream"),
 				"fail":KEYS.Get("ai_brukkarg_fail"),
-				"profilepic":"monsters/tribe_brukkarg.png",
-				"streampostpic":"tribe_brukkarg.png"
+				"profilepic":"tribes/brukkarg.jpg"
 			};
 		}
 		

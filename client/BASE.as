@@ -288,7 +288,17 @@ package
 
 		public static var _enchantedCrystal:SecNum = new SecNum(0);
 
-		public static var _TowerBuff:Boolean = false;
+		public static var _BuffTowerRange:Number = 0.0;
+
+		public static var _BuffBunkerRange:Number = 0.0;
+
+		public static var _BuffHealTime:Number = 0.0;
+
+		public static var _BuffExperience:Number = 0.0;
+
+		public static var _BuffInfernoVenomBase:Boolean = false;
+
+		public static var _BuffInfernoVenomResistance:Boolean = false;
 
 		private static const s_levels:Array = [
 			new SecNum(0),                 // Level 1
@@ -1167,11 +1177,59 @@ package
 							_buildingsStored[researchdata] = new SecNum(serverData.researchdata[researchdata]);
 						}
 					}
+					_BuffTowerRange = 0.0;
+					_BuffBunkerRange = 0.0;
+					_BuffHealTime = 0.0;
+					_BuffExperience = 0.0;
+					_BuffInfernoVenomBase = false;
+					_BuffInfernoVenomResistance = false;
+
+					// T5 Rewards
 					if(serverData.stats.assault_towers && Number(serverData.stats.assault_towers) >= 1000000){
-						_TowerBuff = true;
-					} else {
-						_TowerBuff = false;
+						_BuffTowerRange += 0.10;
 					}
+
+					// T4 Rewards
+					if(serverData.stats.assault_to_4 && Number(serverData.stats.assault_to_4) >= 1000){
+						_BuffTowerRange += 0.10;
+					}
+					if(serverData.stats.assault_mo_4 && Number(serverData.stats.assault_mo_4) >= 1000){
+						_BuffInfernoVenomBase = true;
+					}
+
+					// T3 Rewards
+					if(serverData.stats.assault_to_3 && Number(serverData.stats.assault_to_3) >= 2500){
+						_BuffBunkerRange += 0.10;
+					}
+					if(serverData.stats.assault_mo_3 && Number(serverData.stats.assault_mo_3) >= 2500){
+						_BuffBunkerRange += 0.10;
+					}
+
+					// T2 Rewards
+					if(serverData.stats.assault_to_2 && Number(serverData.stats.assault_to_2) >= 10000){
+						_BuffHealTime += 0.05;
+					}
+					if(serverData.stats.assault_mo_2 && Number(serverData.stats.assault_mo_2) >= 10000){
+						_BuffHealTime += 0.05;
+					}
+
+					// T1 Rewards
+					if(serverData.stats.assault_to_1_0 && Number(serverData.stats.assault_to_1_0) >= 5000){
+						_BuffExperience += 1.25;
+					}
+					if(serverData.stats.assault_to_1_1 && Number(serverData.stats.assault_to_1_1) >= 5000){
+						_BuffExperience += 1.25;
+					}
+					if(serverData.stats.assault_to_1_2 && Number(serverData.stats.assault_to_1_2) >= 5000){
+						_BuffExperience += 1.25;
+					}
+					if(serverData.stats.assault_to_1_3 && Number(serverData.stats.assault_to_1_3) >= 5000){
+						_BuffExperience += 1.25;
+					}
+					if(serverData.stats.assault_mo_1 && Number(serverData.stats.assault_mo_1) >= 5000){
+						_BuffInfernoVenomResistance = true;
+					}
+
 					if (GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD)
 					{
 						if (isMainYard && _userID == LOGIN._playerID){
@@ -6381,11 +6439,11 @@ package
 		}
 
 	  	public static function GetExperienceBuff():Number {
-			return Math.min((BASE._conquerorPoints.Get() * 0.001), 100.0) + GLOBAL.GetExperienceBuff();
+			return Math.min((BASE._conquerorPoints.Get() * 0.001), 100.0) + GLOBAL.GetExperienceBuff() + _BuffExperience;
 		}
 
 		public static function GetHealingBuff():Number {
-			return Math.min(Math.min((BASE._conquerorPoints.Get() * 0.00001), 0.75) + GLOBAL.GetHealingBuff(), 0.90);
+			return Math.min(Math.min((BASE._conquerorPoints.Get() * 0.00001), 0.75) + GLOBAL.GetHealingBuff() + _BuffHealTime, 0.90);
 		}
 
 	}

@@ -2378,10 +2378,17 @@ package com.monsters.monsters.creeps
       
 		private function applyInfernoVenom() : void
 		{
-			if(!this.m_bInfernoCreep && (GLOBAL.mode == GLOBAL.e_BASE_MODE.ATTACK || GLOBAL.mode == "wmattack") && (BASE.isInfernoMainYardOrOutpost || BASE._wmID == 41 || BASE._wmID == 51))
-			{
-				_damagePerSecond.Add(25);
+			var is_attack:Boolean = (GLOBAL.mode == GLOBAL.e_BASE_MODE.ATTACK || GLOBAL.mode == "wmattack");
+			if(is_attack){
+				if(BASE._BuffInfernoVenomBase){
+					_damagePerSecond.Add(25);
+				} else {
+					if(!this.m_bInfernoCreep && !BASE._BuffInfernoVenomResistance && (BASE.isInfernoMainYardOrOutpost || BASE._wmID == 41 || BASE._wmID == 51)){
+						_damagePerSecond.Add(25);
+					}
+				}
 			}
+			
 		}
   	}
 }

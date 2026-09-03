@@ -115,9 +115,7 @@ package
 				else
 				{
 					super._range = GLOBAL._buildingProps[_type - 1].stats[_lvl.Get() - 1].range;
-					if(BASE._TowerBuff){
-						super._range = int(super._range * 1.10);
-					}
+					super._range = int(Math.round(super._range * (1.0 + BASE._BuffTowerRange)));
 				}
 				damageProperty.value = GLOBAL._buildingProps[_type - 1].stats[_lvl.Get() - 1].damage;
 				super._rate = GLOBAL._buildingProps[_type - 1].stats[_lvl.Get() - 1].rate;

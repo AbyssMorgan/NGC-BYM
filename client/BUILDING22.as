@@ -581,6 +581,7 @@ package
          {
             this._capacity = GLOBAL._buildingProps[21].capacity[_lvl.Get() - 1];
             super._range = GLOBAL._buildingProps[_type - 1].stats[_lvl.Get() - 1].range;
+			super._range = int(Math.round(super._range * (1.0 + BASE._BuffBunkerRange)));
          }
       }
       

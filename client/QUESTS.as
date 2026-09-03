@@ -878,8 +878,8 @@ package
 					"reward": [40000, 0, 0, 0, 0],
 					"id": "TW4",
 					"group": 0,
-					"name": "Level 3 Twig Snapper",
-					"description": "Upgrade your Twig Snapper to level 3",
+					"name": "Level 4 Twig Snapper",
+					"description": "Upgrade your Twig Snapper to level 4",
 					"hint": "You can speed up upgrades.",
 					"questimage": "resourcetwigs.png",
 					"prereq": "TW3",
@@ -1017,6 +1017,55 @@ package
 					}
 				},
 				{
+					"order": 22,
+					"list": true,
+					"reward": [1280000000, 0, 0, 0, 0],
+					"id": "TW22",
+					"group": 0,
+					"name": "Level 22 Twig Snapper",
+					"description": "Upgrade your Twig Snapper to level 22",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourcetwigs.png",
+					"prereq": "TW20",
+					"rules":
+					{
+						"b1lvl": 22
+					}
+				},
+				{
+					"order": 24,
+					"list": true,
+					"reward": [2560000000, 0, 0, 0, 0],
+					"id": "TW24",
+					"group": 0,
+					"name": "Level 24 Twig Snapper",
+					"description": "Upgrade your Twig Snapper to level 24",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourcetwigs.png",
+					"prereq": "TW22",
+					"rules":
+					{
+						"b1lvl": 24
+					}
+				},
+				{
+					"order": 25,
+					"list": true,
+					"reward": [5120000000, 0, 0, 0, 0],
+					"id": "TW25",
+					"group": 0,
+					"name": "Level 25 Twig Snapper",
+					"description": "Upgrade your Twig Snapper to level 25",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourcetwigs.png",
+					"prereq": "TW24",
+					"rules":
+					{
+						"b1lvl": 25
+					}
+				},
+
+				{
 					"order": 3,
 					"list": true,
 					"reward": [0, 20000, 0, 0, 0],
@@ -1037,8 +1086,8 @@ package
 					"reward": [0, 40000, 0, 0, 0],
 					"id": "PE4",
 					"group": 0,
-					"name": "Level 3 Pebble Shiner",
-					"description": "Upgrade your Pebble Shiner to level 3",
+					"name": "Level 4 Pebble Shiner",
+					"description": "Upgrade your Pebble Shiner to level 4",
 					"hint": "You can speed up upgrades.",
 					"questimage": "resourcepebbles.png",
 					"prereq": "PE3",
@@ -1176,6 +1225,55 @@ package
 					}
 				},
 				{
+					"order": 22,
+					"list": true,
+					"reward": [0, 1280000000, 0, 0, 0],
+					"id": "PE22",
+					"group": 0,
+					"name": "Level 22 Pebble Shiner",
+					"description": "Upgrade your Pebble Shiner to level 22",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourcepebbles.png",
+					"prereq": "PE20",
+					"rules":
+					{
+						"b2lvl": 22
+					}
+				},
+				{
+					"order": 24,
+					"list": true,
+					"reward": [0, 2560000000, 0, 0, 0],
+					"id": "PE24",
+					"group": 0,
+					"name": "Level 24 Pebble Shiner",
+					"description": "Upgrade your Pebble Shiner to level 24",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourcepebbles.png",
+					"prereq": "PE22",
+					"rules":
+					{
+						"b2lvl": 24
+					}
+				},
+				{
+					"order": 25,
+					"list": true,
+					"reward": [0, 5120000000, 0, 0, 0],
+					"id": "PE25",
+					"group": 0,
+					"name": "Level 25 Pebble Shiner",
+					"description": "Upgrade your Pebble Shiner to level 25",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourcepebbles.png",
+					"prereq": "PE24",
+					"rules":
+					{
+						"b2lvl": 25
+					}
+				},
+
+				{
 					"order": 3,
 					"list": true,
 					"reward": [0, 0, 20000, 0, 0],
@@ -1196,8 +1294,8 @@ package
 					"reward": [0, 0, 40000, 0, 0],
 					"id": "PU4",
 					"group": 0,
-					"name": "Level 3 Putty Squisher",
-					"description": "Upgrade your Putty Squisher to level 3",
+					"name": "Level 4 Putty Squisher",
+					"description": "Upgrade your Putty Squisher to level 4",
 					"hint": "You can speed up upgrades.",
 					"questimage": "resourceputty.png",
 					"prereq": "PU3",
@@ -1335,6 +1433,55 @@ package
 					}
 				},
 				{
+					"order": 22,
+					"list": true,
+					"reward": [0, 0, 1280000000, 0, 0],
+					"id": "PU22",
+					"group": 0,
+					"name": "Level 22 Putty Squisher",
+					"description": "Upgrade your Putty Squisher to level 22",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourceputty.png",
+					"prereq": "PU20",
+					"rules":
+					{
+						"b3lvl": 22
+					}
+				},
+				{
+					"order": 24,
+					"list": true,
+					"reward": [0, 0, 2560000000, 0, 0],
+					"id": "PU24",
+					"group": 0,
+					"name": "Level 24 Putty Squisher",
+					"description": "Upgrade your Putty Squisher to level 24",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourceputty.png",
+					"prereq": "PU22",
+					"rules":
+					{
+						"b3lvl": 24
+					}
+				},
+				{
+					"order": 25,
+					"list": true,
+					"reward": [0, 0, 5120000000, 0, 0],
+					"id": "PU25",
+					"group": 0,
+					"name": "Level 25 Putty Squisher",
+					"description": "Upgrade your Putty Squisher to level 25",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourceputty.png",
+					"prereq": "PU24",
+					"rules":
+					{
+						"b3lvl": 25
+					}
+				},
+
+				{
 					"order": 3,
 					"list": true,
 					"reward": [0, 0, 0, 20000, 0],
@@ -1355,8 +1502,8 @@ package
 					"reward": [0, 0, 0, 40000, 0],
 					"id": "GO4",
 					"group": 0,
-					"name": "Level 3 Goo Factory",
-					"description": "Upgrade your Goo Factory to level 3",
+					"name": "Level 4 Goo Factory",
+					"description": "Upgrade your Goo Factory to level 4",
 					"hint": "You can speed up upgrades.",
 					"questimage": "resourcegoo.png",
 					"prereq": "GO3",
@@ -1493,6 +1640,55 @@ package
 						"b4lvl": 20
 					}
 				},
+				{
+					"order": 22,
+					"list": true,
+					"reward": [0, 0, 0, 1280000000, 0],
+					"id": "GO22",
+					"group": 0,
+					"name": "Level 22 Goo Factory",
+					"description": "Upgrade your Goo Factory to level 22",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourcegoo.png",
+					"prereq": "GO20",
+					"rules":
+					{
+						"b4lvl": 22
+					}
+				},
+				{
+					"order": 24,
+					"list": true,
+					"reward": [0, 0, 0, 2560000000, 0],
+					"id": "GO24",
+					"group": 0,
+					"name": "Level 24 Goo Factory",
+					"description": "Upgrade your Goo Factory to level 24",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourcegoo.png",
+					"prereq": "GO22",
+					"rules":
+					{
+						"b4lvl": 24
+					}
+				},
+				{
+					"order": 25,
+					"list": true,
+					"reward": [0, 0, 0, 5120000000, 0],
+					"id": "GO25",
+					"group": 0,
+					"name": "Level 25 Goo Factory",
+					"description": "Upgrade your Goo Factory to level 25",
+					"hint": "You can speed up upgrades.",
+					"questimage": "resourcegoo.png",
+					"prereq": "GO24",
+					"rules":
+					{
+						"b4lvl": 25
+					}
+				},
+
 				{
 					"order": 1,
 					"list": true,
@@ -1669,6 +1865,23 @@ package
 					}
 				},
 				{
+					"order": 18,
+					"list": true,
+					"reward": [500000000, 500000000, 500000000, 500000000, 0],
+					"id": "ST18",
+					"group": 0,
+					"name": "Sniper Tower level 18",
+					"description": "Upgrade your Sniper Tower to level 18",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-sniper.png",
+					"prereq": "ST16",
+					"rules":
+					{
+						"b21lvl": 18
+					}
+				},
+
+				{
 					"order": 1,
 					"list": true,
 					"reward": [200000, 200000, 100000, 100000, 0],
@@ -1843,7 +2056,24 @@ package
 						"b20lvl": 16
 					}
 				},
-								{
+				{
+					"order": 18,
+					"list": true,
+					"reward": [500000000, 500000000, 500000000, 500000000, 0],
+					"id": "CT18",
+					"group": 0,
+					"name": "Cannon Tower level 18",
+					"description": "Upgrade your Cannon Tower to level 18",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-cannon.png",
+					"prereq": "CT16",
+					"rules":
+					{
+						"b20lvl": 18
+					}
+				},
+
+				{
 					"order": 1,
 					"list": true,
 					"reward": [200000, 200000, 100000, 100000, 0],
@@ -2018,6 +2248,23 @@ package
 						"b143lvl": 16
 					}
 				},
+				{
+					"order": 18,
+					"list": true,
+					"reward": [500000000, 500000000, 500000000, 500000000, 0],
+					"id": "SHARP18",
+					"group": 0,
+					"name": "Sharpshooter level 18",
+					"description": "Upgrade your Sharpshooter to level 18",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-sharpshooter.png",
+					"prereq": "SHARP16",
+					"rules":
+					{
+						"b143lvl": 18
+					}
+				},
+
 				{
 					"order": 1,
 					"list": true,
@@ -2194,6 +2441,23 @@ package
 					}
 				},
 				{
+					"order": 18,
+					"list": true,
+					"reward": [500000000, 500000000, 500000000, 500000000, 0],
+					"id": "BLAST18",
+					"group": 0,
+					"name": "Blast Tower level 18",
+					"description": "Upgrade your Blast Tower to level 18",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-blast_tower.png",
+					"prereq": "BLAST16",
+					"rules":
+					{
+						"b142lvl": 18
+					}
+				},
+
+				{
 					"order": 1,
 					"list": true,
 					"reward": [200000, 200000, 100000, 100000, 0],
@@ -2352,6 +2616,23 @@ package
 						"b25lvl": 14
 					}
 				},
+				{
+					"order": 16,
+					"list": true,
+					"reward": [500000000, 500000000, 500000000, 500000000, 0],
+					"id": "TESLA16",
+					"group": 0,
+					"name": "Tesla Tower level 16",
+					"description": "Upgrade your Tesla Tower to level 16",
+					"hint": "You can speed up upgrades.",
+					"questimage": "tesla_tower.png",
+					"prereq": "TESLA14",
+					"rules":
+					{
+						"b25lvl": 16
+					}
+				},
+
 				{
 					"order": 1,
 					"list": true,
@@ -2512,6 +2793,23 @@ package
 					}
 				},
 				{
+					"order": 16,
+					"list": true,
+					"reward": [500000000, 500000000, 500000000, 500000000, 0],
+					"id": "LASER16",
+					"group": 0,
+					"name": "Laser Tower level 16",
+					"description": "Upgrade your Laser Tower to level 16",
+					"hint": "You can speed up upgrades.",
+					"questimage": "laser_tower.jpg",
+					"prereq": "LASER14",
+					"rules":
+					{
+						"b23lvl": 16
+					}
+				},
+
+				{
 					"order": 1,
 					"list": true,
 					"reward": [200000, 200000, 100000, 100000, 0],
@@ -2670,6 +2968,23 @@ package
 						"b118lvl": 14
 					}
 				},
+				{
+					"order": 16,
+					"list": true,
+					"reward": [500000000, 500000000, 500000000, 500000000, 0],
+					"id": "RAILGUN16",
+					"group": 0,
+					"name": "Railgun level 16",
+					"description": "Upgrade your Railgun to level 16",
+					"hint": "You can speed up upgrades.",
+					"questimage": "railgun.jpg",
+					"prereq": "RAILGUN14",
+					"rules":
+					{
+						"b118lvl": 16
+					}
+				},
+
 				{
 					"order": 1,
 					"list": true,
@@ -2830,6 +3145,23 @@ package
 					}
 				},
 				{
+					"order": 16,
+					"list": true,
+					"reward": [500000000, 500000000, 500000000, 500000000, 0],
+					"id": "adt16",
+					"group": 0,
+					"name": "ADT level 16",
+					"description": "Upgrade your ADT to level 16",
+					"hint": "You can speed up upgrades.",
+					"questimage": "adt.jpg",
+					"prereq": "adt14",
+					"rules":
+					{
+						"b115lvl": 16
+					}
+				},
+
+				{
 					"order": 1,
 					"list": true,
 					"reward": [200000, 200000, 100000, 100000, 0],
@@ -2973,6 +3305,23 @@ package
 					}
 				},
 				{
+					"order": 14,
+					"list": true,
+					"reward": [500000000, 500000000, 500000000, 500000000, 0],
+					"id": "MAGMA14",
+					"group": 0,
+					"name": "Magma Tower level 14",
+					"description": "Upgrade your Magma Tower to level 14",
+					"hint": "You can speed up upgrades.",
+					"questimage": "magma_tower.jpg",
+					"prereq": "MAGMA12",
+					"rules":
+					{
+						"b132lvl": 14
+					}
+				},
+
+				{
 					"order": 1,
 					"list": true,
 					"reward": [200000, 200000, 100000, 100000, 0],
@@ -3115,6 +3464,23 @@ package
 						"b129lvl": 12
 					}
 				},
+				{
+					"order": 14,
+					"list": true,
+					"reward": [500000000, 500000000, 500000000, 500000000, 0],
+					"id": "QUAKE14",
+					"group": 0,
+					"name": "Quake Tower level 14",
+					"description": "Upgrade your Quake Tower to level 14",
+					"hint": "You can speed up upgrades.",
+					"questimage": "quake_tower.jpg",
+					"prereq": "QUAKE12",
+					"rules":
+					{
+						"b129lvl": 14
+					}
+				},
+
 				{
 					"order": 1,
 					"list": true,
@@ -3482,6 +3848,39 @@ package
 					}
 				},
 				{
+					"order": 11,
+					"list": true,
+					"reward": [0, 0, 2000000000, 2000000000, 0],
+					"id": "TL11",
+					"group": 0,
+					"name": "Technology Laboratory level 11",
+					"description": "Upgrade your Technology Laboratory to level 11",
+					"hint": "You can speed up upgrades.",
+					"questimage": "tech_laboratory.png",
+					"prereq": "TL10",
+					"rules":
+					{
+						"b145lvl": 11
+					}
+				},
+				{
+					"order": 12,
+					"list": true,
+					"reward": [0, 0, 4000000000, 4000000000, 0],
+					"id": "TL12",
+					"group": 0,
+					"name": "Technology Laboratory level 12",
+					"description": "Upgrade your Technology Laboratory to level 12",
+					"hint": "You can speed up upgrades.",
+					"questimage": "tech_laboratory.png",
+					"prereq": "TL11",
+					"rules":
+					{
+						"b145lvl": 12
+					}
+				},
+
+				{
 					"order": 1,
 					"list": true,
 					"reward": [0, 0, 100000000, 100000000, 0],
@@ -3641,6 +4040,39 @@ package
 					}
 				},
 				{
+					"order": 11,
+					"list": true,
+					"reward": [0, 0, 2000000000, 2000000000, 0],
+					"id": "AC11",
+					"group": 0,
+					"name": "Anti-Catapult level 11",
+					"description": "Upgrade your Anti-Catapult to level 11",
+					"hint": "You can speed up upgrades.",
+					"questimage": "anti_catapult.png",
+					"prereq": "AC10",
+					"rules":
+					{
+						"b144lvl": 11
+					}
+				},
+				{
+					"order": 12,
+					"list": true,
+					"reward": [0, 0, 4000000000, 4000000000, 0],
+					"id": "AC12",
+					"group": 0,
+					"name": "Anti-Catapult level 12",
+					"description": "Upgrade your Anti-Catapult to level 12",
+					"hint": "You can speed up upgrades.",
+					"questimage": "anti_catapult.png",
+					"prereq": "AC11",
+					"rules":
+					{
+						"b144lvl": 12
+					}
+				},
+
+				{
 					"order": 1,
 					"list": true,
 					"reward": [0, 0, 100000000, 100000000, 0],
@@ -3797,6 +4229,38 @@ package
 					"rules":
 					{
 						"b146lvl": 10
+					}
+				},
+				{
+					"order": 11,
+					"list": true,
+					"reward": [0, 0, 2000000000, 2000000000, 0],
+					"id": "CH11",
+					"group": 0,
+					"name": "Crystal Hive level 11",
+					"description": "Upgrade your Crystal Hive to level 11",
+					"hint": "You can speed up upgrades.",
+					"questimage": "crystal_hive.png",
+					"prereq": "CH10",
+					"rules":
+					{
+						"b146lvl": 11
+					}
+				},
+				{
+					"order": 12,
+					"list": true,
+					"reward": [0, 0, 4000000000, 4000000000, 0],
+					"id": "CH12",
+					"group": 0,
+					"name": "Crystal Hive level 12",
+					"description": "Upgrade your Crystal Hive to level 12",
+					"hint": "You can speed up upgrades.",
+					"questimage": "crystal_hive.png",
+					"prereq": "CH11",
+					"rules":
+					{
+						"b146lvl": 12
 					}
 				},
 

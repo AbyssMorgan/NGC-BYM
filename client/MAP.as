@@ -100,6 +100,10 @@ package
       public static const MAP_TYPE_CRATER:int = 3;
       
       public static const MAP_TYPE_LAVA:int = 4;
+
+      public static const MAP_TYPE_LAVA_HEAT:int = 5;
+
+      public static const MAP_TYPE_LAVA_NGC:int = 6;
       
       public static const DEPTH_SHADOW:uint = 1;
       
@@ -249,84 +253,111 @@ package
          _inited = true;
       }
       
-      public static function get effectsBMD() : BitmapData
-      {
-         return _EFFECTSBMP;
-      }
-      
-      public static function get texture() : String
-      {
-         return s_texture;
-      }
-      
-      public static function get instance() : MAP
-      {
-         return _instance;
-      }
-      
-      public static function swapBG(param1:String) : void
-      {
-         var _loc3_:DisplayObject = null;
-         var _loc4_:int = 0;
-         var _loc5_:int = 0;
-         s_texture = param1;
-         if(!BYMConfig.instance.RENDERER_ON)
-         {
-            while(_BGTILES.numChildren)
-            {
-               _BGTILES.removeChildAt(0);
-            }
-         }
-         _bmdTile = MAPBG.MakeTile(s_texture);
-         var _loc2_:Array = [];
-         var _loc6_:Point = new Point();
-         if(BYMConfig.instance.RENDERER_ON)
-         {
-            _loc4_ = 0;
-            while(_loc4_ < 4)
-            {
-               _loc5_ = 0;
-               while(_loc5_ < 4)
-               {
-                  _loc6_.x = _loc4_ * MAPBG.width;
-                  _loc6_.y = _loc5_ * MAPBG.height;
-                  _EFFECTSBMP.copyPixels(_bmdTile,_bmdTile.rect,_loc6_);
-                  _loc5_++;
-               }
-               _loc4_++;
-            }
-            _bmdTile.dispose();
-            _bmdTile = null;
-            Edge();
-         }
-         else
-         {
-            _loc4_ = -2;
-            while(_loc4_ < 2)
-            {
-               _loc5_ = -2;
-               while(_loc5_ < 2)
-               {
-                  _loc3_ = _BGTILES.addChild(new Bitmap(_bmdTile));
-                  _loc3_.x = _loc4_ * (MAPBG.width - 2);
-                  _loc3_.y = _loc5_ * (MAPBG.height - 2);
-                  _loc3_.cacheAsBitmap = true;
-                  _loc5_++;
-               }
-               _loc4_++;
-            }
-         }
-      }
-
-	public static function getBackgroundName(param1:int) : String {
-		switch(param1){
-			case MAP_TYPE_ROCK: return "rock";
-			case MAP_TYPE_SAND: return "sand";
-			case MAP_TYPE_CRATER: return "crater";
-			case MAP_TYPE_LAVA: return "lava";
+		public static function get effectsBMD() : BitmapData
+		{
+			return _EFFECTSBMP;
 		}
-		return "grass";
-	}
+		
+		public static function get texture() : String
+		{
+			return s_texture;
+		}
+		
+		public static function get instance() : MAP
+		{
+			return _instance;
+		}
+      
+		public static function swapBG(param1:String):void
+		{
+			var _loc3_:DisplayObject = null;
+			var _loc4_:int = 0;
+			var _loc5_:int = 0;
+
+			s_texture = param1;
+			var requestedTexture:String = param1;
+			if(!BYMConfig.instance.RENDERER_ON)
+			{
+				while(_BGTILES.numChildren)
+				{
+					_BGTILES.removeChildAt(0);
+				}
+			}
+
+			MAPBG.MakeTile(
+				requestedTexture,
+				function(tile:BitmapData):void
+				{
+					if(s_texture != requestedTexture)
+					{
+						if(tile != null)
+						{
+							tile.dispose();
+						}
+						return;
+					}
+
+					if(tile == null)
+					{
+						LOGGER.Log("err", "swapBG: failed to create tile for " + requestedTexture);
+						return;
+					}
+
+					_bmdTile = tile;
+
+					var _loc6_:Point = new Point();
+
+					if(BYMConfig.instance.RENDERER_ON)
+					{
+						_loc4_ = 0;
+						while(_loc4_ < 4)
+						{
+							_loc5_ = 0;
+							while(_loc5_ < 4)
+							{
+								_loc6_.x = _loc4_ * MAPBG.width;
+								_loc6_.y = _loc5_ * MAPBG.height;
+								_EFFECTSBMP.copyPixels(_bmdTile, _bmdTile.rect, _loc6_);
+								_loc5_++;
+							}
+							_loc4_++;
+						}
+						_bmdTile.dispose();
+						_bmdTile = null;
+						Edge();
+					}
+					else
+					{
+						_loc4_ = -2;
+						while(_loc4_ < 2)
+						{
+							_loc5_ = -2;
+							while(_loc5_ < 2)
+							{
+								_loc3_ = _BGTILES.addChild(new Bitmap(_bmdTile));
+								_loc3_.x = _loc4_ * (MAPBG.width - 2);
+								_loc3_.y = _loc5_ * (MAPBG.height - 2);
+								_loc3_.cacheAsBitmap = true;
+								_loc5_++;
+							}
+							_loc4_++;
+						}
+					}
+				}
+			);
+		}
+
+		public static function getBackgroundName(param1:int) : String {
+			switch(param1){
+				case MAP_TYPE_ROCK: return "rock";
+				case MAP_TYPE_SAND: return "sand";
+				case MAP_TYPE_CRATER: return "crater";
+				case MAP_TYPE_LAVA: return "lava";
+				case MAP_TYPE_LAVA_HEAT: return "lava_heat";
+				case MAP_TYPE_LAVA_NGC: return "lava_ngc";
+			}
+			return "grass";
+		}
       
       public static function swapIntBG(id:int) : void
       {

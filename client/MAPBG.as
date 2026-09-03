@@ -1,124 +1,192 @@
-package
-{
-	import flash.display.Bitmap;
+package {
 	import flash.display.BitmapData;
 	import flash.display.BitmapDataChannel;
-	import flash.geom.*;
-	import flash.utils.getTimer;
+	import flash.geom.Point;
+	import flash.geom.Rectangle;
+	import com.monsters.display.ImageCache;
 
-	public class MAPBG
-	{
-
+	public class MAPBG {
 		public static var width:int = 1000;
-
 		public static var height:int = 500;
 
-		public function MAPBG()
-		{
+		public function MAPBG(){
 			super();
 		}
-		
-		public static function MakeTile(param1:String = "grass") : BitmapData
-		{
-			var tile:int = 0;
-			var ti:int = 0;
-			var tileCount:int = 0;
-			var g:Object = null;
-			var t:Object = null;
-			var h:int = 0;
-			var groundMask:BitmapData = null;
-			var groundCompiled:BitmapData = null;
-			var groundCompiledBMP:Bitmap = null;
-			var v:int = 0;
-			var i:int = 0;
+
+		public static function MakeTile(param1:String = "grass", callback:Function = null):void {
 			var texture:String = param1;
+			var files:Array = null;
+
 			var pattern_width:int = 200;
 			var pattern_height:int = 100;
 			var quantity_horizontal:int = 5;
 			var quantity_vertical:int = 5;
-			height = 500;
-			try
-			{
-				ti = getTimer();
-				tileCount = 0;
-				switch(texture){
-					case "lava": {
-						g = {"g1" :new inferno_lava1(0, 0), "g2" :new inferno_lava2(0, 0), "g3" :new inferno_lava3(0, 0), "g4" :new inferno_lava4(0, 0)};
-						tileCount = 4;
-						break;
-					}
-					case "rock": {
-						g = {"g1" :new isorock1(0, 0), "g2" :new isorock2(0, 0), "g3" :new isorock3(0, 0), "g4" :new isograss1(0, 0), "g5" :new isograss2(0, 0)};
-						tileCount = 5;
-						break;
-					}
-					case "sand": {
-						g = {"g1" :new isosand1(0, 0), "g2" :new isosand2(0, 0), "g3" :new isosand3(0, 0), "g4" :new isosand4(0, 0)};
-						tileCount = 4;
-						break;
-					}
-					case "grass": {
-						g = {"g1" :new isograss1(0, 0), "g2" :new isograss2(0, 0), "g3" :new isograss3(0, 0), "g4" :new isograss4(0, 0), "g5" :new isograss5(0, 0), "g6" :new isograss6(0, 0), "g7" :new isograss7(0, 0)};
-						tileCount = 7;
-						break;
-					}
-					case "crater": {
-						g = {"g1" :new isocrater1(0, 0)};
-						tileCount = 1;
-						break;
-					}
+
+			width = quantity_horizontal * pattern_width;
+			height = quantity_vertical * pattern_height;
+
+			switch(texture){
+				case "lava_ngc": {
+					files = [
+						"yardbg/lava/inferno_lava1.png",
+						"yardbg/lava/inferno_lava2.png",
+						"yardbg/lava/inferno_lava3.png",
+						"yardbg/lava/inferno_lava4.png"
+					];
+					break;
 				}
-				t = {
-					"t1" :new BitmapData(quantity_horizontal * pattern_width, quantity_vertical * pattern_height, true, 0), 
-					"t2" :new BitmapData(quantity_horizontal * pattern_width, quantity_vertical * pattern_height, true, 0), 
-					"t3" :new BitmapData(quantity_horizontal * pattern_width, quantity_vertical * pattern_height, true, 0), 
-					"t4" :new BitmapData(quantity_horizontal * pattern_width, quantity_vertical * pattern_height, true, 0), 
-					"t5" :new BitmapData(quantity_horizontal * pattern_width, quantity_vertical * pattern_height, true, 0), 
-					"t6" :new BitmapData(quantity_horizontal * pattern_width, quantity_vertical * pattern_height, true, 0), 
-					"t7" :new BitmapData(quantity_horizontal * pattern_width, quantity_vertical * pattern_height, true, 0)
-				};
-				width = quantity_horizontal * pattern_width;
-				height = quantity_vertical * pattern_height;
-				h = 0;
-				while(h < quantity_horizontal)
-				{
-					v = 0;
-					while(v < quantity_vertical)
-					{
-						i = 1;
-						while(i <= tileCount)
-						{
-							t["t" + i].copyPixels(g["g" + i], new Rectangle(0, 0, pattern_width, pattern_height), new Point(h * pattern_width, v * pattern_height), null, null, true);
-							i++;
+				case "lava_heat": {
+					files = [
+						"yardbg/lava/inferno_lava1.png",
+						"yardbg/lava/inferno_lava2.png",
+						"yardbg/lava/inferno_lava3.png",
+						"yardbg/lava/inferno_lava4.png"
+					];
+					break;
+				}
+				case "lava": {
+					files = [
+						"yardbg/lava/inferno_lava1.png",
+						"yardbg/lava/inferno_lava2.png",
+						"yardbg/lava/inferno_lava3.png",
+						"yardbg/lava/inferno_lava4.png"
+					];
+					break;
+				}
+				case "rock": {
+					files = [
+						"yardbg/rock/isorock1.png",
+						"yardbg/rock/isorock2.png",
+						"yardbg/rock/isorock3.png",
+						"yardbg/grass/isograss1.png",
+						"yardbg/grass/isograss2.png"
+					];
+					break;
+				}
+				case "sand": {
+					files = [
+						"yardbg/sand/isosand1.png",
+						"yardbg/sand/isosand2.png",
+						"yardbg/sand/isosand3.png",
+						"yardbg/sand/isosand4.png"
+					];
+					break;
+				}
+				case "grass": {
+					files = [
+						"yardbg/grass/isograss1.png",
+						"yardbg/grass/isograss2.png",
+						"yardbg/grass/isograss3.png",
+						"yardbg/grass/isograss4.png",
+						"yardbg/grass/isograss5.png",
+						"yardbg/grass/isograss6.png",
+						"yardbg/grass/isograss7.png"
+					];
+					break;
+				}
+				case "crater": {
+					files = [
+						"yardbg/crater/isocrater1.png"
+					];
+					break;
+				}
+				default: {
+					LOGGER.Log("err", "MAPBG.MakeTile: Unknown texture: " + texture);
+					if(callback != null){
+						callback(null);
+					}
+					return;
+				}
+			}
+
+			var groupName:String = "MAPBG_" + texture;
+
+			ImageCache.GetImageGroupWithCallBack(groupName, files, function(images:Array, state:String = null):void {
+				try {
+					var g:Array = [];
+					var entry:Array;
+					var bmd:BitmapData;
+					for each(entry in images){
+						bmd = entry[1];
+						if(bmd == null){
+							LOGGER.Log("err", "MAPBG.MakeTile: Failed loading " + entry[0]);
+							if(callback != null){
+								callback(null);
+							}
+							return;
 						}
-						v++;
+						g.push(bmd);
 					}
-					h++;
+
+					var tileCount:int = g.length;
+
+					if(tileCount <= 0){
+						if(callback != null){
+							callback(null);
+						}
+						return;
+					}
+
+					var t:Array = [];
+
+					var tileWidth:int = quantity_horizontal * pattern_width;
+					var tileHeight:int = quantity_vertical * pattern_height;
+
+					var i:int;
+					var h:int;
+					var v:int;
+					var tile:int;
+
+					for(i = 0; i < tileCount; i++){
+						t.push(new BitmapData(tileWidth, tileHeight, true, 0));
+					}
+
+					h = 0;
+
+					while(h < quantity_horizontal){
+						v = 0;
+						while(v < quantity_vertical){
+							i = 0;
+							while(i < tileCount)
+							{
+								t[i].copyPixels(g[i], new Rectangle(0, 0, pattern_width, pattern_height), new Point(h * pattern_width, v * pattern_height), null, null, true);
+								i++;
+							}
+							v++;
+						}
+						h++;
+					}
+
+					var groundCompiled:BitmapData = new BitmapData(tileWidth, tileHeight, true, 0);
+
+					groundCompiled.draw(t[0]);
+
+					tile = 1;
+
+					while(tile < tileCount){
+						var groundMask:BitmapData = new BitmapData(tileWidth, tileHeight, true, 0);
+						groundMask.perlinNoise(50 * (tile + 1), 25 * (tile + 1), 2, BASE._baseSeed + 1 + (tile + 1), true, false, BitmapDataChannel.ALPHA, true, null);
+						groundCompiled.copyPixels(t[tile], new Rectangle( 0, 0, tileWidth, tileHeight ), new Point(0, 0), groundMask, null, true);
+						groundMask.dispose();
+						tile++;
+					}
+
+					for each(var tmp:BitmapData in t){
+						tmp.dispose();
+					}
+
+					if(callback != null){
+						callback(groundCompiled);
+					}
 				}
-				groundCompiled = new BitmapData(quantity_horizontal * pattern_width, quantity_vertical * pattern_height, true, 0);
-				groundCompiledBMP = new Bitmap(groundCompiled);
-				groundCompiled.draw(t["t1"]);
-				tile = 2;
-				while(tile <= tileCount)
-				{
-					groundMask = new BitmapData(quantity_horizontal * pattern_width, quantity_vertical * pattern_height, true, 0);
-					groundMask.perlinNoise(50 * tile, 25 * tile, 2, BASE._baseSeed + 1 + tile, true, false, BitmapDataChannel.ALPHA, true, null);
-					groundCompiled.copyPixels(t["t" + tile], new Rectangle(0, 0, quantity_horizontal * pattern_width, quantity_vertical * pattern_height), new Point(0, 0), groundMask, null, true);
-					tile++;
+				catch(e:Error){
+					LOGGER.Log("err", "MAPBG.MakeTile: " + e.message + " | " + e.getStackTrace());
+					if(callback != null){
+						callback(null);
+					}
 				}
-				i = 1;
-				while(i < tileCount)
-				{
-					g["g" + i].dispose();
-					t["t" + i].dispose();
-					i++;
-				}
-			}
-			catch(e:Error)
-			{
-				LOGGER.Log("err", "MAPBG.MakeTile: " + e.message + " | " + e.getStackTrace());
-			}
-			return groundCompiled;
+			}, true, 4, texture);
 		}
 	}
+	
 }

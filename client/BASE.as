@@ -1854,7 +1854,13 @@ package
 				} else if(_wmID == 41){
 					terrainType = "lava";
 				} else if(_wmID == 51){
-					terrainType = "lava";
+					if(_level >= 120){
+						terrainType = "lava_ngc";
+					} else if(_level >= 100){
+						terrainType = "lava_heat";
+					} else {
+						terrainType = "lava";
+					}
 				}
 			} else if(!MapRoomManager.instance.isInMapRoom3 && GLOBAL._currentCell && (isOutpostOrInfernoOutpost || GLOBAL.mode == GLOBAL.e_BASE_MODE.WMATTACK || GLOBAL.mode == GLOBAL.e_BASE_MODE.WMVIEW)){
 				terrainType = (GLOBAL._currentCell as MapRoomCell).terrain;

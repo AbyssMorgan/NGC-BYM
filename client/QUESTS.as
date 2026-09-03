@@ -8,6 +8,7 @@ package
 	import com.monsters.siege.weapons.Vacuum;
 	import flash.events.MouseEvent;
 	import flash.text.TextFieldAutoSize;
+	import com.cc.utils.SecNum;
 	
 	public class QUESTS
 	{
@@ -175,7 +176,7 @@ package
 					"order": 1,
 					"list": true,
 					"priority": 1,
-					"reward": [20000, 20000, 20000, 20000, 0],
+					"reward": [new SecNum(20000), new SecNum(20000), new SecNum(20000), new SecNum(20000), new SecNum(0)],
 					"id": "EM1",
 					"group": 0,
 					"name": "q_em1_name",
@@ -190,7 +191,7 @@ package
 				{
 					"order": 2,
 					"list": true,
-					"reward": [25000, 25000, 25000, 25000, 0],
+					"reward": [new SecNum(25000), new SecNum(25000), new SecNum(25000), new SecNum(25000), new SecNum(0)],
 					"id": "TH2",
 					"group": 0,
 					"name": "Town Hall level 2",
@@ -205,7 +206,7 @@ package
 				{
 					"order": 3,
 					"list": true,
-					"reward": [50000, 50000, 50000, 50000, 0],
+					"reward": [new SecNum(50000), new SecNum(50000), new SecNum(50000), new SecNum(50000), new SecNum(0)],
 					"id": "TH3",
 					"group": 0,
 					"name": "Town Hall level 3",
@@ -221,7 +222,7 @@ package
 				{
 					"order": 4,
 					"list": true,
-					"reward": [100000, 100000, 100000, 100000, 0],
+					"reward": [new SecNum(100000), new SecNum(100000), new SecNum(100000), new SecNum(100000), new SecNum(0)],
 					"id": "TH4",
 					"group": 0,
 					"name": "Town Hall level 4",
@@ -237,7 +238,7 @@ package
 				{
 					"order": 5,
 					"list": true,
-					"reward": [250000, 250000, 250000, 250000, 0],
+					"reward": [new SecNum(250000), new SecNum(250000), new SecNum(250000), new SecNum(250000), new SecNum(0)],
 					"id": "TH5",
 					"group": 0,
 					"name": "Town Hall level 5",
@@ -253,7 +254,7 @@ package
 				{
 					"order": 3,
 					"list": true,
-					"reward": [500000, 500000, 500000, 500000, 0],
+					"reward": [new SecNum(500000), new SecNum(500000), new SecNum(500000), new SecNum(500000), new SecNum(0)],
 					"id": "TH6",
 					"group": 0,
 					"name": "Town Hall level 6",
@@ -269,7 +270,7 @@ package
 				{
 					"order": 7,
 					"list": true,
-					"reward": [1000000, 1000000, 1000000, 1000000, 0],
+					"reward": [new SecNum(1000000), new SecNum(1000000), new SecNum(1000000), new SecNum(1000000), new SecNum(0)],
 					"id": "TH7",
 					"group": 0,
 					"name": "Town Hall level 7",
@@ -285,7 +286,7 @@ package
 				{
 					"order": 8,
 					"list": true,
-					"reward": [2500000, 2500000, 2500000, 2500000, 0],
+					"reward": [new SecNum(2500000), new SecNum(2500000), new SecNum(2500000), new SecNum(2500000), new SecNum(0)],
 					"id": "TH8",
 					"group": 0,
 					"name": "Town Hall level 8",
@@ -301,7 +302,7 @@ package
 				{
 					"order": 9,
 					"list": true,
-					"reward": [5000000, 5000000, 5000000, 5000000, 0],
+					"reward": [new SecNum(5000000), new SecNum(5000000), new SecNum(5000000), new SecNum(5000000), new SecNum(0)],
 					"id": "TH9",
 					"group": 0,
 					"name": "Town Hall level 9",
@@ -317,7 +318,7 @@ package
 				{
 					"order": 10,
 					"list": true,
-					"reward": [50000000, 50000000, 50000000, 50000000, 0],
+					"reward": [new SecNum(50000000), new SecNum(50000000), new SecNum(50000000), new SecNum(50000000), new SecNum(0)],
 					"id": "TH10",
 					"group": 0,
 					"name": "Town Hall level 10",
@@ -333,7 +334,7 @@ package
 				{
 					"order": 12,
 					"list": true,
-					"reward": [100000000, 100000000, 100000000, 100000000, 0],
+					"reward": [new SecNum(100000000), new SecNum(100000000), new SecNum(100000000), new SecNum(100000000), new SecNum(0)],
 					"id": "TH12",
 					"group": 0,
 					"name": "Town Hall level 12",
@@ -349,7 +350,7 @@ package
 				{
 					"order": 14,
 					"list": true,
-					"reward": [250000000, 250000000, 250000000, 250000000, 0],
+					"reward": [new SecNum(250000000), new SecNum(250000000), new SecNum(250000000), new SecNum(250000000), new SecNum(0)],
 					"id": "TH14",
 					"group": 0,
 					"name": "Town Hall level 14",
@@ -365,7 +366,7 @@ package
 				{
 					"order": 16,
 					"list": true,
-					"reward": [500000000, 500000000, 500000000, 500000000, 0],
+					"reward": [new SecNum(500000000), new SecNum(500000000), new SecNum(500000000), new SecNum(500000000), new SecNum(0)],
 					"id": "TH16",
 					"group": 0,
 					"name": "Town Hall level 16",
@@ -381,7 +382,7 @@ package
 				{
 					"order": 18,
 					"list": true,
-					"reward": [1000000000, 1000000000, 1000000000, 1000000000, 0],
+					"reward": [new SecNum(1000000000), new SecNum(1000000000), new SecNum(1000000000), new SecNum(1000000000), new SecNum(0)],
 					"id": "TH18",
 					"group": 0,
 					"name": "Town Hall level 18",
@@ -397,7 +398,7 @@ package
 				{
 					"order": 20,
 					"list": true,
-					"reward": [1500000000, 1500000000, 1500000000, 1500000000, 0],
+					"reward": [new SecNum(1500000000), new SecNum(1500000000), new SecNum(1500000000), new SecNum(1500000000), new SecNum(0)],
 					"id": "TH20",
 					"group": 0,
 					"name": "Town Hall level 20",
@@ -413,7 +414,7 @@ package
 				{
 					"order": 21,
 					"list": true,
-					"reward": [2000000000, 2000000000, 2000000000, 2000000000, 0],
+					"reward": [new SecNum(2000000000), new SecNum(2000000000), new SecNum(2000000000), new SecNum(2000000000), new SecNum(0)],
 					"id": "TH21",
 					"group": 0,
 					"name": "Town Hall level 21",
@@ -429,7 +430,7 @@ package
 				{
 					"order": 22,
 					"list": true,
-					"reward": [2500000000, 2500000000, 2500000000, 2500000000, 0],
+					"reward": [new SecNum(2500000000), new SecNum(2500000000), new SecNum(2500000000), new SecNum(2500000000), new SecNum(0)],
 					"id": "TH22",
 					"group": 0,
 					"name": "Town Hall level 22",
@@ -445,7 +446,7 @@ package
 				{
 					"order": 23,
 					"list": true,
-					"reward": [5000000000, 5000000000, 5000000000, 5000000000, 0],
+					"reward": [new SecNum(5000000000), new SecNum(5000000000), new SecNum(5000000000), new SecNum(5000000000), new SecNum(0)],
 					"id": "TH23",
 					"group": 0,
 					"name": "Town Hall level 23",
@@ -461,7 +462,7 @@ package
 				{
 					"order": 24,
 					"list": true,
-					"reward": [10000000000, 10000000000, 10000000000, 10000000000, 0],
+					"reward": [new SecNum(10000000000), new SecNum(10000000000), new SecNum(10000000000), new SecNum(10000000000), new SecNum(0)],
 					"id": "TH24",
 					"group": 0,
 					"name": "Town Hall level 24",
@@ -477,7 +478,7 @@ package
 				{
 					"order": 25,
 					"list": true,
-					"reward": [20000000000, 20000000000, 20000000000, 20000000000, 0],
+					"reward": [new SecNum(20000000000), new SecNum(20000000000), new SecNum(20000000000), new SecNum(20000000000), new SecNum(0)],
 					"id": "TH25",
 					"group": 0,
 					"name": "Town Hall level 25",
@@ -493,7 +494,7 @@ package
 				{
 					"order": 1,
 					"list": true,
-					"reward": [20000, 20000, 10000, 10000, 0],
+					"reward": [new SecNum(20000), new SecNum(20000), new SecNum(10000), new SecNum(10000), new SecNum(0)],
 					"id": "SS1",
 					"group": 0,
 					"name": "Storage Silo",
@@ -508,7 +509,7 @@ package
 				{
 					"order": 2,
 					"list": true,
-					"reward": [40000, 40000, 20000, 20000, 0],
+					"reward": [new SecNum(40000), new SecNum(40000), new SecNum(20000), new SecNum(20000), new SecNum(0)],
 					"id": "SS2",
 					"group": 0,
 					"name": "Storage Silo level 2",
@@ -524,7 +525,7 @@ package
 				{
 					"order": 3,
 					"list": true,
-					"reward": [80000, 80000, 40000, 40000, 0],
+					"reward": [new SecNum(80000), new SecNum(80000), new SecNum(40000), new SecNum(40000), new SecNum(0)],
 					"id": "SS3",
 					"group": 0,
 					"name": "Storage Silo level 3",
@@ -540,7 +541,7 @@ package
 				{
 					"order": 4,
 					"list": true,
-					"reward": [160000, 160000, 80000, 80000, 0],
+					"reward": [new SecNum(160000), new SecNum(160000), new SecNum(80000), new SecNum(80000), new SecNum(0)],
 					"id": "SS4",
 					"group": 0,
 					"name": "Storage Silo level 4",
@@ -556,7 +557,7 @@ package
 				{
 					"order": 5,
 					"list": true,
-					"reward": [320000, 320000, 160000, 160000, 0],
+					"reward": [new SecNum(320000), new SecNum(320000), new SecNum(160000), new SecNum(160000), new SecNum(0)],
 					"id": "SS5",
 					"group": 0,
 					"name": "Storage Silo level 5",
@@ -572,7 +573,7 @@ package
 				{
 					"order": 6,
 					"list": true,
-					"reward": [640000, 640000, 320000, 320000, 0],
+					"reward": [new SecNum(640000), new SecNum(640000), new SecNum(320000), new SecNum(320000), new SecNum(0)],
 					"id": "SS6",
 					"group": 0,
 					"name": "Storage Silo level 6",
@@ -588,7 +589,7 @@ package
 				{
 					"order": 8,
 					"list": true,
-					"reward": [1280000, 1280000, 640000, 640000, 0],
+					"reward": [new SecNum(1280000), new SecNum(1280000), new SecNum(640000), new SecNum(640000), new SecNum(0)],
 					"id": "SS8",
 					"group": 0,
 					"name": "Storage Silo level 8",
@@ -604,7 +605,7 @@ package
 				{
 					"order": 10,
 					"list": true,
-					"reward": [2560000, 2560000, 1280000, 1280000, 0],
+					"reward": [new SecNum(2560000), new SecNum(2560000), new SecNum(1280000), new SecNum(1280000), new SecNum(0)],
 					"id": "SS10",
 					"group": 0,
 					"name": "Storage Silo level 10",
@@ -620,7 +621,7 @@ package
 				{
 					"order": 12,
 					"list": true,
-					"reward": [5120000, 5120000, 2560000, 2560000, 0],
+					"reward": [new SecNum(5120000), new SecNum(5120000), new SecNum(2560000), new SecNum(2560000), new SecNum(0)],
 					"id": "SS12",
 					"group": 0,
 					"name": "Storage Silo level 12",
@@ -636,7 +637,7 @@ package
 				{
 					"order": 14,
 					"list": true,
-					"reward": [10240000, 10240000, 5120000, 5120000, 0],
+					"reward": [new SecNum(10240000), new SecNum(10240000), new SecNum(5120000), new SecNum(5120000), new SecNum(0)],
 					"id": "SS14",
 					"group": 0,
 					"name": "Storage Silo level 14",
@@ -652,7 +653,7 @@ package
 				{
 					"order": 16,
 					"list": true,
-					"reward": [20480000, 20480000, 10240000, 10240000, 0],
+					"reward": [new SecNum(20480000), new SecNum(20480000), new SecNum(10240000), new SecNum(10240000), new SecNum(0)],
 					"id": "SS16",
 					"group": 0,
 					"name": "Storage Silo level 16",
@@ -668,7 +669,7 @@ package
 				{
 					"order": 18,
 					"list": true,
-					"reward": [40960000, 40960000, 20480000, 20480000, 0],
+					"reward": [new SecNum(40960000), new SecNum(40960000), new SecNum(20480000), new SecNum(20480000), new SecNum(0)],
 					"id": "SS18",
 					"group": 0,
 					"name": "Storage Silo level 18",
@@ -684,7 +685,7 @@ package
 				{
 					"order": 20,
 					"list": true,
-					"reward": [81920000, 81920000, 40960000, 40960000, 0],
+					"reward": [new SecNum(81920000), new SecNum(81920000), new SecNum(40960000), new SecNum(40960000), new SecNum(0)],
 					"id": "SS20",
 					"group": 0,
 					"name": "Storage Silo level 20",
@@ -700,7 +701,7 @@ package
 				{
 					"order": 21,
 					"list": true,
-					"reward": [100000000, 100000000, 50000000, 50000000, 0],
+					"reward": [new SecNum(100000000), new SecNum(100000000), new SecNum(50000000), new SecNum(50000000), new SecNum(0)],
 					"id": "SS21",
 					"group": 0,
 					"name": "Storage Silo level 21",
@@ -716,7 +717,7 @@ package
 				{
 					"order": 22,
 					"list": true,
-					"reward": [200000000, 200000000, 100000000, 100000000, 0],
+					"reward": [new SecNum(200000000), new SecNum(200000000), new SecNum(100000000), new SecNum(100000000), new SecNum(0)],
 					"id": "SS22",
 					"group": 0,
 					"name": "Storage Silo level 22",
@@ -732,7 +733,7 @@ package
 				{
 					"order": 23,
 					"list": true,
-					"reward": [400000000, 400000000, 200000000, 200000000, 0],
+					"reward": [new SecNum(400000000), new SecNum(400000000), new SecNum(200000000), new SecNum(200000000), new SecNum(0)],
 					"id": "SS23",
 					"group": 0,
 					"name": "Storage Silo level 23",
@@ -748,7 +749,7 @@ package
 				{
 					"order": 24,
 					"list": true,
-					"reward": [800000000, 800000000, 400000000, 400000000, 0],
+					"reward": [new SecNum(800000000), new SecNum(800000000), new SecNum(400000000), new SecNum(400000000), new SecNum(0)],
 					"id": "SS24",
 					"group": 0,
 					"name": "Storage Silo level 24",
@@ -764,7 +765,7 @@ package
 				{
 					"order": 25,
 					"list": true,
-					"reward": [1600000000, 1600000000, 800000000, 800000000, 0],
+					"reward": [new SecNum(1600000000), new SecNum(1600000000), new SecNum(800000000), new SecNum(800000000), new SecNum(0)],
 					"id": "SS25",
 					"group": 0,
 					"name": "Storage Silo level 25",
@@ -780,7 +781,7 @@ package
 				{
 					"order": 26,
 					"list": true,
-					"reward": [2000000000, 2000000000, 1000000000, 1000000000, 0],
+					"reward": [new SecNum(2000000000), new SecNum(2000000000), new SecNum(1000000000), new SecNum(1000000000), new SecNum(0)],
 					"id": "SS26",
 					"group": 0,
 					"name": "Storage Silo level 26",
@@ -796,7 +797,7 @@ package
 				{
 					"order": 27,
 					"list": true,
-					"reward": [4000000000, 4000000000, 2000000000, 2000000000, 0],
+					"reward": [new SecNum(4000000000), new SecNum(4000000000), new SecNum(2000000000), new SecNum(2000000000), new SecNum(0)],
 					"id": "SS27",
 					"group": 0,
 					"name": "Storage Silo level 27",
@@ -812,7 +813,7 @@ package
 				{
 					"order": 28,
 					"list": true,
-					"reward": [6000000000, 6000000000, 3000000000, 3000000000, 0],
+					"reward": [new SecNum(6000000000), new SecNum(6000000000), new SecNum(3000000000), new SecNum(3000000000), new SecNum(0)],
 					"id": "SS28",
 					"group": 0,
 					"name": "Storage Silo level 28",
@@ -828,7 +829,7 @@ package
 				{
 					"order": 29,
 					"list": true,
-					"reward": [8000000000, 8000000000, 4000000000, 4000000000, 0],
+					"reward": [new SecNum(8000000000), new SecNum(8000000000), new SecNum(4000000000), new SecNum(4000000000), new SecNum(0)],
 					"id": "SS29",
 					"group": 0,
 					"name": "Storage Silo level 29",
@@ -844,7 +845,7 @@ package
 				{
 					"order": 30,
 					"list": true,
-					"reward": [10000000000, 10000000000, 5000000000, 5000000000, 0],
+					"reward": [new SecNum(10000000000), new SecNum(10000000000), new SecNum(5000000000), new SecNum(5000000000), new SecNum(0)],
 					"id": "SS30",
 					"group": 0,
 					"name": "Storage Silo level 30",
@@ -860,7 +861,7 @@ package
 				{
 					"order": 3,
 					"list": true,
-					"reward": [20000, 0, 0, 0, 0],
+					"reward": [new SecNum(20000), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0)],
 					"id": "TW3",
 					"group": 0,
 					"name": "Level 3 Twig Snapper",
@@ -875,7 +876,7 @@ package
 				{
 					"order": 4,
 					"list": true,
-					"reward": [40000, 0, 0, 0, 0],
+					"reward": [new SecNum(40000), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0)],
 					"id": "TW4",
 					"group": 0,
 					"name": "Level 4 Twig Snapper",
@@ -891,7 +892,7 @@ package
 				{
 					"order": 6,
 					"list": true,
-					"reward": [200000, 0, 0, 0, 0],
+					"reward": [new SecNum(200000), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0)],
 					"id": "TW6",
 					"group": 0,
 					"name": "Level 6 Twig Snapper",
@@ -907,7 +908,7 @@ package
 				{
 					"order": 8,
 					"list": true,
-					"reward": [2000000, 0, 0, 0, 0],
+					"reward": [new SecNum(2000000), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0)],
 					"id": "TW8",
 					"group": 0,
 					"name": "Level 8 Twig Snapper",
@@ -923,7 +924,7 @@ package
 				{
 					"order": 10,
 					"list": true,
-					"reward": [20000000, 0, 0, 0, 0],
+					"reward": [new SecNum(20000000), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0)],
 					"id": "TW10",
 					"group": 0,
 					"name": "Level 10 Twig Snapper",
@@ -939,7 +940,7 @@ package
 				{
 					"order": 12,
 					"list": true,
-					"reward": [40000000, 0, 0, 0, 0],
+					"reward": [new SecNum(40000000), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0)],
 					"id": "TW12",
 					"group": 0,
 					"name": "Level 12 Twig Snapper",
@@ -955,7 +956,7 @@ package
 				{
 					"order": 14,
 					"list": true,
-					"reward": [80000000, 0, 0, 0, 0],
+					"reward": [new SecNum(80000000), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0)],
 					"id": "TW14",
 					"group": 0,
 					"name": "Level 14 Twig Snapper",
@@ -971,7 +972,7 @@ package
 				{
 					"order": 16,
 					"list": true,
-					"reward": [160000000, 0, 0, 0, 0],
+					"reward": [new SecNum(160000000), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0)],
 					"id": "TW16",
 					"group": 0,
 					"name": "Level 16 Twig Snapper",
@@ -987,7 +988,7 @@ package
 				{
 					"order": 18,
 					"list": true,
-					"reward": [320000000, 0, 0, 0, 0],
+					"reward": [new SecNum(320000000), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0)],
 					"id": "TW18",
 					"group": 0,
 					"name": "Level 18 Twig Snapper",
@@ -1003,7 +1004,7 @@ package
 				{
 					"order": 20,
 					"list": true,
-					"reward": [640000000, 0, 0, 0, 0],
+					"reward": [new SecNum(640000000), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0)],
 					"id": "TW20",
 					"group": 0,
 					"name": "Level 20 Twig Snapper",
@@ -1019,7 +1020,7 @@ package
 				{
 					"order": 22,
 					"list": true,
-					"reward": [1280000000, 0, 0, 0, 0],
+					"reward": [new SecNum(1280000000), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0)],
 					"id": "TW22",
 					"group": 0,
 					"name": "Level 22 Twig Snapper",
@@ -1035,7 +1036,7 @@ package
 				{
 					"order": 24,
 					"list": true,
-					"reward": [2560000000, 0, 0, 0, 0],
+					"reward": [new SecNum(2560000000), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0)],
 					"id": "TW24",
 					"group": 0,
 					"name": "Level 24 Twig Snapper",
@@ -1051,7 +1052,7 @@ package
 				{
 					"order": 25,
 					"list": true,
-					"reward": [5120000000, 0, 0, 0, 0],
+					"reward": [new SecNum(5120000000), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0)],
 					"id": "TW25",
 					"group": 0,
 					"name": "Level 25 Twig Snapper",
@@ -1068,7 +1069,7 @@ package
 				{
 					"order": 3,
 					"list": true,
-					"reward": [0, 20000, 0, 0, 0],
+					"reward": [new SecNum(0), new SecNum(20000), new SecNum(0), new SecNum(0), new SecNum(0)],
 					"id": "PE3",
 					"group": 0,
 					"name": "Level 3 Pebble Shiner",
@@ -1083,7 +1084,7 @@ package
 				{
 					"order": 4,
 					"list": true,
-					"reward": [0, 40000, 0, 0, 0],
+					"reward": [new SecNum(0), new SecNum(40000), new SecNum(0), new SecNum(0), new SecNum(0)],
 					"id": "PE4",
 					"group": 0,
 					"name": "Level 4 Pebble Shiner",
@@ -1099,7 +1100,7 @@ package
 				{
 					"order": 6,
 					"list": true,
-					"reward": [0, 200000, 0, 0, 0],
+					"reward": [new SecNum(0), new SecNum(200000), new SecNum(0), new SecNum(0), new SecNum(0)],
 					"id": "PE6",
 					"group": 0,
 					"name": "Level 6 Pebble Shiner",
@@ -1115,7 +1116,7 @@ package
 				{
 					"order": 8,
 					"list": true,
-					"reward": [0, 2000000, 0, 0, 0],
+					"reward": [new SecNum(0), new SecNum(2000000), new SecNum(0), new SecNum(0), new SecNum(0)],
 					"id": "PE8",
 					"group": 0,
 					"name": "Level 8 Pebble Shiner",
@@ -1131,7 +1132,7 @@ package
 				{
 					"order": 10,
 					"list": true,
-					"reward": [0, 20000000, 0, 0, 0],
+					"reward": [new SecNum(0), new SecNum(20000000), new SecNum(0), new SecNum(0), new SecNum(0)],
 					"id": "PE10",
 					"group": 0,
 					"name": "Level 10 Pebble Shiner",
@@ -1147,7 +1148,7 @@ package
 				{
 					"order": 12,
 					"list": true,
-					"reward": [0, 40000000, 0, 0, 0],
+					"reward": [new SecNum(0), new SecNum(40000000), new SecNum(0), new SecNum(0), new SecNum(0)],
 					"id": "PE12",
 					"group": 0,
 					"name": "Level 12 Pebble Shiner",
@@ -1163,7 +1164,7 @@ package
 				{
 					"order": 14,
 					"list": true,
-					"reward": [0, 80000000, 0, 0, 0],
+					"reward": [new SecNum(0), new SecNum(80000000), new SecNum(0), new SecNum(0), new SecNum(0)],
 					"id": "PE14",
 					"group": 0,
 					"name": "Level 14 Pebble Shiner",
@@ -1179,7 +1180,7 @@ package
 				{
 					"order": 16,
 					"list": true,
-					"reward": [0, 160000000, 0, 0, 0],
+					"reward": [new SecNum(0), new SecNum(160000000), new SecNum(0), new SecNum(0), new SecNum(0)],
 					"id": "PE16",
 					"group": 0,
 					"name": "Level 16 Pebble Shiner",
@@ -1195,7 +1196,7 @@ package
 				{
 					"order": 18,
 					"list": true,
-					"reward": [0, 320000000, 0, 0, 0],
+					"reward": [new SecNum(0), new SecNum(320000000), new SecNum(0), new SecNum(0), new SecNum(0)],
 					"id": "PE18",
 					"group": 0,
 					"name": "Level 18 Pebble Shiner",
@@ -1211,7 +1212,7 @@ package
 				{
 					"order": 20,
 					"list": true,
-					"reward": [0, 640000000, 0, 0, 0],
+					"reward": [new SecNum(0), new SecNum(640000000), new SecNum(0), new SecNum(0), new SecNum(0)],
 					"id": "PE20",
 					"group": 0,
 					"name": "Level 20 Pebble Shiner",
@@ -1227,7 +1228,7 @@ package
 				{
 					"order": 22,
 					"list": true,
-					"reward": [0, 1280000000, 0, 0, 0],
+					"reward": [new SecNum(0), new SecNum(1280000000), new SecNum(0), new SecNum(0), new SecNum(0)],
 					"id": "PE22",
 					"group": 0,
 					"name": "Level 22 Pebble Shiner",
@@ -1243,7 +1244,7 @@ package
 				{
 					"order": 24,
 					"list": true,
-					"reward": [0, 2560000000, 0, 0, 0],
+					"reward": [new SecNum(0), new SecNum(2560000000), new SecNum(0), new SecNum(0), new SecNum(0)],
 					"id": "PE24",
 					"group": 0,
 					"name": "Level 24 Pebble Shiner",
@@ -1259,7 +1260,7 @@ package
 				{
 					"order": 25,
 					"list": true,
-					"reward": [0, 5120000000, 0, 0, 0],
+					"reward": [new SecNum(0), new SecNum(5120000000), new SecNum(0), new SecNum(0), new SecNum(0)],
 					"id": "PE25",
 					"group": 0,
 					"name": "Level 25 Pebble Shiner",
@@ -1276,7 +1277,7 @@ package
 				{
 					"order": 3,
 					"list": true,
-					"reward": [0, 0, 20000, 0, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(20000), new SecNum(0), new SecNum(0)],
 					"id": "PU3",
 					"group": 0,
 					"name": "Level 3 Putty Squisher",
@@ -1291,7 +1292,7 @@ package
 				{
 					"order": 4,
 					"list": true,
-					"reward": [0, 0, 40000, 0, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(40000), new SecNum(0), new SecNum(0)],
 					"id": "PU4",
 					"group": 0,
 					"name": "Level 4 Putty Squisher",
@@ -1307,7 +1308,7 @@ package
 				{
 					"order": 6,
 					"list": true,
-					"reward": [0, 0, 200000, 0, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(200000), new SecNum(0), new SecNum(0)],
 					"id": "PU6",
 					"group": 0,
 					"name": "Level 6 Putty Squisher",
@@ -1323,7 +1324,7 @@ package
 				{
 					"order": 8,
 					"list": true,
-					"reward": [0, 0, 2000000, 0, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(2000000), new SecNum(0), new SecNum(0)],
 					"id": "PU8",
 					"group": 0,
 					"name": "Level 8 Putty Squisher",
@@ -1339,7 +1340,7 @@ package
 				{
 					"order": 10,
 					"list": true,
-					"reward": [0, 0, 20000000, 0, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(20000000), new SecNum(0), new SecNum(0)],
 					"id": "PU10",
 					"group": 0,
 					"name": "Level 10 Putty Squisher",
@@ -1355,7 +1356,7 @@ package
 				{
 					"order": 12,
 					"list": true,
-					"reward": [0, 0, 40000000, 0, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(40000000), new SecNum(0), new SecNum(0)],
 					"id": "PU12",
 					"group": 0,
 					"name": "Level 12 Putty Squisher",
@@ -1371,7 +1372,7 @@ package
 				{
 					"order": 14,
 					"list": true,
-					"reward": [0, 0, 80000000, 0, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(80000000), new SecNum(0), new SecNum(0)],
 					"id": "PU14",
 					"group": 0,
 					"name": "Level 14 Putty Squisher",
@@ -1387,7 +1388,7 @@ package
 				{
 					"order": 16,
 					"list": true,
-					"reward": [0, 0, 160000000, 0, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(160000000), new SecNum(0), new SecNum(0)],
 					"id": "PU16",
 					"group": 0,
 					"name": "Level 16 Putty Squisher",
@@ -1403,7 +1404,7 @@ package
 				{
 					"order": 18,
 					"list": true,
-					"reward": [0, 0, 320000000, 0, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(320000000), new SecNum(0), new SecNum(0)],
 					"id": "PU18",
 					"group": 0,
 					"name": "Level 18 Putty Squisher",
@@ -1419,7 +1420,7 @@ package
 				{
 					"order": 20,
 					"list": true,
-					"reward": [0, 0, 640000000, 0, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(640000000), new SecNum(0), new SecNum(0)],
 					"id": "PU20",
 					"group": 0,
 					"name": "Level 20 Putty Squisher",
@@ -1435,7 +1436,7 @@ package
 				{
 					"order": 22,
 					"list": true,
-					"reward": [0, 0, 1280000000, 0, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(1280000000), new SecNum(0), new SecNum(0)],
 					"id": "PU22",
 					"group": 0,
 					"name": "Level 22 Putty Squisher",
@@ -1451,7 +1452,7 @@ package
 				{
 					"order": 24,
 					"list": true,
-					"reward": [0, 0, 2560000000, 0, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(2560000000), new SecNum(0), new SecNum(0)],
 					"id": "PU24",
 					"group": 0,
 					"name": "Level 24 Putty Squisher",
@@ -1467,7 +1468,7 @@ package
 				{
 					"order": 25,
 					"list": true,
-					"reward": [0, 0, 5120000000, 0, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(5120000000), new SecNum(0), new SecNum(0)],
 					"id": "PU25",
 					"group": 0,
 					"name": "Level 25 Putty Squisher",
@@ -1484,7 +1485,7 @@ package
 				{
 					"order": 3,
 					"list": true,
-					"reward": [0, 0, 0, 20000, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(20000), new SecNum(0)],
 					"id": "GO3",
 					"group": 0,
 					"name": "Level 3 Goo Factory",
@@ -1499,7 +1500,7 @@ package
 				{
 					"order": 4,
 					"list": true,
-					"reward": [0, 0, 0, 40000, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(40000), new SecNum(0)],
 					"id": "GO4",
 					"group": 0,
 					"name": "Level 4 Goo Factory",
@@ -1515,7 +1516,7 @@ package
 				{
 					"order": 6,
 					"list": true,
-					"reward": [0, 0, 0, 200000, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(200000), new SecNum(0)],
 					"id": "GO6",
 					"group": 0,
 					"name": "Level 6 Goo Factory",
@@ -1531,7 +1532,7 @@ package
 				{
 					"order": 8,
 					"list": true,
-					"reward": [0, 0, 0, 2000000, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(2000000), new SecNum(0)],
 					"id": "GO8",
 					"group": 0,
 					"name": "Level 8 Goo Factory",
@@ -1547,7 +1548,7 @@ package
 				{
 					"order": 10,
 					"list": true,
-					"reward": [0, 0, 0, 20000000, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(20000000), new SecNum(0)],
 					"id": "GO10",
 					"group": 0,
 					"name": "Level 10 Goo Factory",
@@ -1563,7 +1564,7 @@ package
 				{
 					"order": 12,
 					"list": true,
-					"reward": [0, 0, 0, 40000000, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(40000000), new SecNum(0)],
 					"id": "GO12",
 					"group": 0,
 					"name": "Level 12 Goo Factory",
@@ -1579,7 +1580,7 @@ package
 				{
 					"order": 14,
 					"list": true,
-					"reward": [0, 0, 0, 80000000, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(80000000), new SecNum(0)],
 					"id": "GO14",
 					"group": 0,
 					"name": "Level 14 Goo Factory",
@@ -1595,7 +1596,7 @@ package
 				{
 					"order": 16,
 					"list": true,
-					"reward": [0, 0, 0, 160000000, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(160000000), new SecNum(0)],
 					"id": "GO16",
 					"group": 0,
 					"name": "Level 16 Goo Factory",
@@ -1611,7 +1612,7 @@ package
 				{
 					"order": 18,
 					"list": true,
-					"reward": [0, 0, 0, 320000000, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(320000000), new SecNum(0)],
 					"id": "GO18",
 					"group": 0,
 					"name": "Level 18 Goo Factory",
@@ -1627,7 +1628,7 @@ package
 				{
 					"order": 20,
 					"list": true,
-					"reward": [0, 0, 0, 640000000, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(640000000), new SecNum(0)],
 					"id": "GO20",
 					"group": 0,
 					"name": "Level 20 Goo Factory",
@@ -1643,7 +1644,7 @@ package
 				{
 					"order": 22,
 					"list": true,
-					"reward": [0, 0, 0, 1280000000, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(1280000000), new SecNum(0)],
 					"id": "GO22",
 					"group": 0,
 					"name": "Level 22 Goo Factory",
@@ -1659,7 +1660,7 @@ package
 				{
 					"order": 24,
 					"list": true,
-					"reward": [0, 0, 0, 2560000000, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(2560000000), new SecNum(0)],
 					"id": "GO24",
 					"group": 0,
 					"name": "Level 24 Goo Factory",
@@ -1675,7 +1676,7 @@ package
 				{
 					"order": 25,
 					"list": true,
-					"reward": [0, 0, 0, 5120000000, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(5120000000), new SecNum(0)],
 					"id": "GO25",
 					"group": 0,
 					"name": "Level 25 Goo Factory",
@@ -1692,7 +1693,7 @@ package
 				{
 					"order": 1,
 					"list": true,
-					"reward": [200000, 200000, 100000, 100000, 0],
+					"reward": [new SecNum(200000), new SecNum(200000), new SecNum(100000), new SecNum(100000), new SecNum(0)],
 					"id": "ST1",
 					"group": 0,
 					"name": "Sniper Tower",
@@ -1707,7 +1708,7 @@ package
 				{
 					"order": 2,
 					"list": true,
-					"reward": [400000, 400000, 200000, 200000, 0],
+					"reward": [new SecNum(400000), new SecNum(400000), new SecNum(200000), new SecNum(200000), new SecNum(0)],
 					"id": "ST2",
 					"group": 0,
 					"name": "Sniper Tower level 2",
@@ -1723,7 +1724,7 @@ package
 				{
 					"order": 3,
 					"list": true,
-					"reward": [800000, 800000, 400000, 400000, 0],
+					"reward": [new SecNum(800000), new SecNum(800000), new SecNum(400000), new SecNum(400000), new SecNum(0)],
 					"id": "ST3",
 					"group": 0,
 					"name": "Sniper Tower level 3",
@@ -1739,7 +1740,7 @@ package
 				{
 					"order": 4,
 					"list": true,
-					"reward": [1600000, 1600000, 800000, 800000, 0],
+					"reward": [new SecNum(1600000), new SecNum(1600000), new SecNum(800000), new SecNum(800000), new SecNum(0)],
 					"id": "ST4",
 					"group": 0,
 					"name": "Sniper Tower level 4",
@@ -1755,7 +1756,7 @@ package
 				{
 					"order": 5,
 					"list": true,
-					"reward": [3200000, 3200000, 1600000, 1600000, 0],
+					"reward": [new SecNum(3200000), new SecNum(3200000), new SecNum(1600000), new SecNum(1600000), new SecNum(0)],
 					"id": "ST5",
 					"group": 0,
 					"name": "Sniper Tower level 5",
@@ -1771,7 +1772,7 @@ package
 				{
 					"order": 6,
 					"list": true,
-					"reward": [6400000, 6400000, 3200000, 3200000, 0],
+					"reward": [new SecNum(6400000), new SecNum(6400000), new SecNum(3200000), new SecNum(3200000), new SecNum(0)],
 					"id": "ST6",
 					"group": 0,
 					"name": "Sniper Tower level 6",
@@ -1787,7 +1788,7 @@ package
 				{
 					"order": 8,
 					"list": true,
-					"reward": [12800000, 12800000, 6400000, 6400000, 0],
+					"reward": [new SecNum(12800000), new SecNum(12800000), new SecNum(6400000), new SecNum(6400000), new SecNum(0)],
 					"id": "ST8",
 					"group": 0,
 					"name": "Sniper Tower level 8",
@@ -1803,7 +1804,7 @@ package
 				{
 					"order": 10,
 					"list": true,
-					"reward": [25600000, 25600000, 12800000, 12800000, 0],
+					"reward": [new SecNum(25600000), new SecNum(25600000), new SecNum(12800000), new SecNum(12800000), new SecNum(0)],
 					"id": "ST10",
 					"group": 0,
 					"name": "Sniper Tower level 10",
@@ -1819,7 +1820,7 @@ package
 				{
 					"order": 12,
 					"list": true,
-					"reward": [51200000, 51200000, 25600000, 25600000, 0],
+					"reward": [new SecNum(51200000), new SecNum(51200000), new SecNum(25600000), new SecNum(25600000), new SecNum(0)],
 					"id": "ST12",
 					"group": 0,
 					"name": "Sniper Tower level 12",
@@ -1835,7 +1836,7 @@ package
 				{
 					"order": 14,
 					"list": true,
-					"reward": [102400000, 102400000, 51200000, 51200000, 0],
+					"reward": [new SecNum(102400000), new SecNum(102400000), new SecNum(51200000), new SecNum(51200000), new SecNum(0)],
 					"id": "ST14",
 					"group": 0,
 					"name": "Sniper Tower level 14",
@@ -1851,7 +1852,7 @@ package
 				{
 					"order": 16,
 					"list": true,
-					"reward": [204800000, 204800000, 102400000, 102400000, 0],
+					"reward": [new SecNum(204800000), new SecNum(204800000), new SecNum(102400000), new SecNum(102400000), new SecNum(0)],
 					"id": "ST16",
 					"group": 0,
 					"name": "Sniper Tower level 16",
@@ -1867,7 +1868,7 @@ package
 				{
 					"order": 18,
 					"list": true,
-					"reward": [500000000, 500000000, 500000000, 500000000, 0],
+					"reward": [new SecNum(500000000), new SecNum(500000000), new SecNum(500000000), new SecNum(500000000), new SecNum(0)],
 					"id": "ST18",
 					"group": 0,
 					"name": "Sniper Tower level 18",
@@ -1884,7 +1885,7 @@ package
 				{
 					"order": 1,
 					"list": true,
-					"reward": [200000, 200000, 100000, 100000, 0],
+					"reward": [new SecNum(200000), new SecNum(200000), new SecNum(100000), new SecNum(100000), new SecNum(0)],
 					"id": "CT1",
 					"group": 0,
 					"name": "Cannon Tower",
@@ -1899,7 +1900,7 @@ package
 				{
 					"order": 2,
 					"list": true,
-					"reward": [400000, 400000, 200000, 200000, 0],
+					"reward": [new SecNum(400000), new SecNum(400000), new SecNum(200000), new SecNum(200000), new SecNum(0)],
 					"id": "CT2",
 					"group": 0,
 					"name": "Cannon Tower level 2",
@@ -1915,7 +1916,7 @@ package
 				{
 					"order": 3,
 					"list": true,
-					"reward": [800000, 800000, 400000, 400000, 0],
+					"reward": [new SecNum(800000), new SecNum(800000), new SecNum(400000), new SecNum(400000), new SecNum(0)],
 					"id": "CT3",
 					"group": 0,
 					"name": "Cannon Tower level 3",
@@ -1931,7 +1932,7 @@ package
 				{
 					"order": 4,
 					"list": true,
-					"reward": [1600000, 1600000, 800000, 800000, 0],
+					"reward": [new SecNum(1600000), new SecNum(1600000), new SecNum(800000), new SecNum(800000), new SecNum(0)],
 					"id": "CT4",
 					"group": 0,
 					"name": "Cannon Tower level 4",
@@ -1947,7 +1948,7 @@ package
 				{
 					"order": 5,
 					"list": true,
-					"reward": [3200000, 3200000, 1600000, 1600000, 0],
+					"reward": [new SecNum(3200000), new SecNum(3200000), new SecNum(1600000), new SecNum(1600000), new SecNum(0)],
 					"id": "CT5",
 					"group": 0,
 					"name": "Cannon Tower level 5",
@@ -1963,7 +1964,7 @@ package
 				{
 					"order": 6,
 					"list": true,
-					"reward": [6400000, 6400000, 3200000, 3200000, 0],
+					"reward": [new SecNum(6400000), new SecNum(6400000), new SecNum(3200000), new SecNum(3200000), new SecNum(0)],
 					"id": "CT6",
 					"group": 0,
 					"name": "Cannon Tower level 6",
@@ -1979,7 +1980,7 @@ package
 				{
 					"order": 8,
 					"list": true,
-					"reward": [12800000, 12800000, 6400000, 6400000, 0],
+					"reward": [new SecNum(12800000), new SecNum(12800000), new SecNum(6400000), new SecNum(6400000), new SecNum(0)],
 					"id": "CT8",
 					"group": 0,
 					"name": "Cannon Tower level 8",
@@ -1995,7 +1996,7 @@ package
 				{
 					"order": 10,
 					"list": true,
-					"reward": [25600000, 25600000, 12800000, 12800000, 0],
+					"reward": [new SecNum(25600000), new SecNum(25600000), new SecNum(12800000), new SecNum(12800000), new SecNum(0)],
 					"id": "CT10",
 					"group": 0,
 					"name": "Cannon Tower level 10",
@@ -2011,7 +2012,7 @@ package
 				{
 					"order": 12,
 					"list": true,
-					"reward": [51200000, 51200000, 25600000, 25600000, 0],
+					"reward": [new SecNum(51200000), new SecNum(51200000), new SecNum(25600000), new SecNum(25600000), new SecNum(0)],
 					"id": "CT12",
 					"group": 0,
 					"name": "Cannon Tower level 12",
@@ -2027,7 +2028,7 @@ package
 				{
 					"order": 14,
 					"list": true,
-					"reward": [102400000, 102400000, 51200000, 51200000, 0],
+					"reward": [new SecNum(102400000), new SecNum(102400000), new SecNum(51200000), new SecNum(51200000), new SecNum(0)],
 					"id": "CT14",
 					"group": 0,
 					"name": "Cannon Tower level 14",
@@ -2043,7 +2044,7 @@ package
 				{
 					"order": 16,
 					"list": true,
-					"reward": [204800000, 204800000, 102400000, 102400000, 0],
+					"reward": [new SecNum(204800000), new SecNum(204800000), new SecNum(102400000), new SecNum(102400000), new SecNum(0)],
 					"id": "CT16",
 					"group": 0,
 					"name": "Cannon Tower level 16",
@@ -2059,7 +2060,7 @@ package
 				{
 					"order": 18,
 					"list": true,
-					"reward": [500000000, 500000000, 500000000, 500000000, 0],
+					"reward": [new SecNum(500000000), new SecNum(500000000), new SecNum(500000000), new SecNum(500000000), new SecNum(0)],
 					"id": "CT18",
 					"group": 0,
 					"name": "Cannon Tower level 18",
@@ -2076,7 +2077,7 @@ package
 				{
 					"order": 1,
 					"list": true,
-					"reward": [200000, 200000, 100000, 100000, 0],
+					"reward": [new SecNum(200000), new SecNum(200000), new SecNum(100000), new SecNum(100000), new SecNum(0)],
 					"id": "SHARP1",
 					"group": 0,
 					"name": "Sharpshooter",
@@ -2091,7 +2092,7 @@ package
 				{
 					"order": 2,
 					"list": true,
-					"reward": [400000, 400000, 200000, 200000, 0],
+					"reward": [new SecNum(400000), new SecNum(400000), new SecNum(200000), new SecNum(200000), new SecNum(0)],
 					"id": "SHARP2",
 					"group": 0,
 					"name": "Sharpshooter level 2",
@@ -2107,7 +2108,7 @@ package
 				{
 					"order": 3,
 					"list": true,
-					"reward": [800000, 800000, 400000, 400000, 0],
+					"reward": [new SecNum(800000), new SecNum(800000), new SecNum(400000), new SecNum(400000), new SecNum(0)],
 					"id": "SHARP3",
 					"group": 0,
 					"name": "Sharpshooter level 3",
@@ -2123,7 +2124,7 @@ package
 				{
 					"order": 4,
 					"list": true,
-					"reward": [1600000, 1600000, 800000, 800000, 0],
+					"reward": [new SecNum(1600000), new SecNum(1600000), new SecNum(800000), new SecNum(800000), new SecNum(0)],
 					"id": "SHARP4",
 					"group": 0,
 					"name": "Sharpshooter level 4",
@@ -2139,7 +2140,7 @@ package
 				{
 					"order": 5,
 					"list": true,
-					"reward": [3200000, 3200000, 1600000, 1600000, 0],
+					"reward": [new SecNum(3200000), new SecNum(3200000), new SecNum(1600000), new SecNum(1600000), new SecNum(0)],
 					"id": "SHARP5",
 					"group": 0,
 					"name": "Sharpshooter level 5",
@@ -2155,7 +2156,7 @@ package
 				{
 					"order": 6,
 					"list": true,
-					"reward": [6400000, 6400000, 3200000, 3200000, 0],
+					"reward": [new SecNum(6400000), new SecNum(6400000), new SecNum(3200000), new SecNum(3200000), new SecNum(0)],
 					"id": "SHARP6",
 					"group": 0,
 					"name": "Sharpshooter level 6",
@@ -2171,7 +2172,7 @@ package
 				{
 					"order": 8,
 					"list": true,
-					"reward": [12800000, 12800000, 6400000, 6400000, 0],
+					"reward": [new SecNum(12800000), new SecNum(12800000), new SecNum(6400000), new SecNum(6400000), new SecNum(0)],
 					"id": "SHARP8",
 					"group": 0,
 					"name": "Sharpshooter level 8",
@@ -2187,7 +2188,7 @@ package
 				{
 					"order": 10,
 					"list": true,
-					"reward": [25600000, 25600000, 12800000, 12800000, 0],
+					"reward": [new SecNum(25600000), new SecNum(25600000), new SecNum(12800000), new SecNum(12800000), new SecNum(0)],
 					"id": "SHARP10",
 					"group": 0,
 					"name": "Sharpshooter level 10",
@@ -2203,7 +2204,7 @@ package
 				{
 					"order": 12,
 					"list": true,
-					"reward": [51200000, 51200000, 25600000, 25600000, 0],
+					"reward": [new SecNum(51200000), new SecNum(51200000), new SecNum(25600000), new SecNum(25600000), new SecNum(0)],
 					"id": "SHARP12",
 					"group": 0,
 					"name": "Sharpshooter level 12",
@@ -2219,7 +2220,7 @@ package
 				{
 					"order": 14,
 					"list": true,
-					"reward": [102400000, 102400000, 51200000, 51200000, 0],
+					"reward": [new SecNum(102400000), new SecNum(102400000), new SecNum(51200000), new SecNum(51200000), new SecNum(0)],
 					"id": "SHARP14",
 					"group": 0,
 					"name": "Sharpshooter level 14",
@@ -2235,7 +2236,7 @@ package
 				{
 					"order": 16,
 					"list": true,
-					"reward": [204800000, 204800000, 102400000, 102400000, 0],
+					"reward": [new SecNum(204800000), new SecNum(204800000), new SecNum(102400000), new SecNum(102400000), new SecNum(0)],
 					"id": "SHARP16",
 					"group": 0,
 					"name": "Sharpshooter level 16",
@@ -2251,7 +2252,7 @@ package
 				{
 					"order": 18,
 					"list": true,
-					"reward": [500000000, 500000000, 500000000, 500000000, 0],
+					"reward": [new SecNum(500000000), new SecNum(500000000), new SecNum(500000000), new SecNum(500000000), new SecNum(0)],
 					"id": "SHARP18",
 					"group": 0,
 					"name": "Sharpshooter level 18",
@@ -2268,7 +2269,7 @@ package
 				{
 					"order": 1,
 					"list": true,
-					"reward": [200000, 200000, 100000, 100000, 0],
+					"reward": [new SecNum(200000), new SecNum(200000), new SecNum(100000), new SecNum(100000), new SecNum(0)],
 					"id": "BLAST1",
 					"group": 0,
 					"name": "Blast Tower",
@@ -2283,7 +2284,7 @@ package
 				{
 					"order": 2,
 					"list": true,
-					"reward": [400000, 400000, 200000, 200000, 0],
+					"reward": [new SecNum(400000), new SecNum(400000), new SecNum(200000), new SecNum(200000), new SecNum(0)],
 					"id": "BLAST2",
 					"group": 0,
 					"name": "Blast Tower level 2",
@@ -2299,7 +2300,7 @@ package
 				{
 					"order": 3,
 					"list": true,
-					"reward": [800000, 800000, 400000, 400000, 0],
+					"reward": [new SecNum(800000), new SecNum(800000), new SecNum(400000), new SecNum(400000), new SecNum(0)],
 					"id": "BLAST3",
 					"group": 0,
 					"name": "Blast Tower level 3",
@@ -2315,7 +2316,7 @@ package
 				{
 					"order": 4,
 					"list": true,
-					"reward": [1600000, 1600000, 800000, 800000, 0],
+					"reward": [new SecNum(1600000), new SecNum(1600000), new SecNum(800000), new SecNum(800000), new SecNum(0)],
 					"id": "BLAST4",
 					"group": 0,
 					"name": "Blast Tower level 4",
@@ -2331,7 +2332,7 @@ package
 				{
 					"order": 5,
 					"list": true,
-					"reward": [3200000, 3200000, 1600000, 1600000, 0],
+					"reward": [new SecNum(3200000), new SecNum(3200000), new SecNum(1600000), new SecNum(1600000), new SecNum(0)],
 					"id": "BLAST5",
 					"group": 0,
 					"name": "Blast Tower level 5",
@@ -2347,7 +2348,7 @@ package
 				{
 					"order": 6,
 					"list": true,
-					"reward": [6400000, 6400000, 3200000, 3200000, 0],
+					"reward": [new SecNum(6400000), new SecNum(6400000), new SecNum(3200000), new SecNum(3200000), new SecNum(0)],
 					"id": "BLAST6",
 					"group": 0,
 					"name": "Blast Tower level 6",
@@ -2363,7 +2364,7 @@ package
 				{
 					"order": 8,
 					"list": true,
-					"reward": [12800000, 12800000, 6400000, 6400000, 0],
+					"reward": [new SecNum(12800000), new SecNum(12800000), new SecNum(6400000), new SecNum(6400000), new SecNum(0)],
 					"id": "BLAST8",
 					"group": 0,
 					"name": "Blast Tower level 8",
@@ -2379,7 +2380,7 @@ package
 				{
 					"order": 10,
 					"list": true,
-					"reward": [25600000, 25600000, 12800000, 12800000, 0],
+					"reward": [new SecNum(25600000), new SecNum(25600000), new SecNum(12800000), new SecNum(12800000), new SecNum(0)],
 					"id": "BLAST10",
 					"group": 0,
 					"name": "Blast Tower level 10",
@@ -2395,7 +2396,7 @@ package
 				{
 					"order": 12,
 					"list": true,
-					"reward": [51200000, 51200000, 25600000, 25600000, 0],
+					"reward": [new SecNum(51200000), new SecNum(51200000), new SecNum(25600000), new SecNum(25600000), new SecNum(0)],
 					"id": "BLAST12",
 					"group": 0,
 					"name": "Blast Tower level 12",
@@ -2411,7 +2412,7 @@ package
 				{
 					"order": 14,
 					"list": true,
-					"reward": [102400000, 102400000, 51200000, 51200000, 0],
+					"reward": [new SecNum(102400000), new SecNum(102400000), new SecNum(51200000), new SecNum(51200000), new SecNum(0)],
 					"id": "BLAST14",
 					"group": 0,
 					"name": "Blast Tower level 14",
@@ -2427,7 +2428,7 @@ package
 				{
 					"order": 16,
 					"list": true,
-					"reward": [204800000, 204800000, 102400000, 102400000, 0],
+					"reward": [new SecNum(204800000), new SecNum(204800000), new SecNum(102400000), new SecNum(102400000), new SecNum(0)],
 					"id": "BLAST16",
 					"group": 0,
 					"name": "Blast Tower level 16",
@@ -2443,7 +2444,7 @@ package
 				{
 					"order": 18,
 					"list": true,
-					"reward": [500000000, 500000000, 500000000, 500000000, 0],
+					"reward": [new SecNum(500000000), new SecNum(500000000), new SecNum(500000000), new SecNum(500000000), new SecNum(0)],
 					"id": "BLAST18",
 					"group": 0,
 					"name": "Blast Tower level 18",
@@ -2460,7 +2461,7 @@ package
 				{
 					"order": 1,
 					"list": true,
-					"reward": [200000, 200000, 100000, 100000, 0],
+					"reward": [new SecNum(200000), new SecNum(200000), new SecNum(100000), new SecNum(100000), new SecNum(0)],
 					"id": "TESLA1",
 					"group": 0,
 					"name": "Tesla Tower",
@@ -2475,7 +2476,7 @@ package
 				{
 					"order": 2,
 					"list": true,
-					"reward": [400000, 400000, 200000, 200000, 0],
+					"reward": [new SecNum(400000), new SecNum(400000), new SecNum(200000), new SecNum(200000), new SecNum(0)],
 					"id": "TESLA2",
 					"group": 0,
 					"name": "Tesla Tower level 2",
@@ -2491,7 +2492,7 @@ package
 				{
 					"order": 3,
 					"list": true,
-					"reward": [800000, 800000, 400000, 400000, 0],
+					"reward": [new SecNum(800000), new SecNum(800000), new SecNum(400000), new SecNum(400000), new SecNum(0)],
 					"id": "TESLA3",
 					"group": 0,
 					"name": "Tesla Tower level 3",
@@ -2507,7 +2508,7 @@ package
 				{
 					"order": 4,
 					"list": true,
-					"reward": [1600000, 1600000, 800000, 800000, 0],
+					"reward": [new SecNum(1600000), new SecNum(1600000), new SecNum(800000), new SecNum(800000), new SecNum(0)],
 					"id": "TESLA4",
 					"group": 0,
 					"name": "Tesla Tower level 4",
@@ -2523,7 +2524,7 @@ package
 				{
 					"order": 5,
 					"list": true,
-					"reward": [3200000, 3200000, 1600000, 1600000, 0],
+					"reward": [new SecNum(3200000), new SecNum(3200000), new SecNum(1600000), new SecNum(1600000), new SecNum(0)],
 					"id": "TESLA5",
 					"group": 0,
 					"name": "Tesla Tower level 5",
@@ -2539,7 +2540,7 @@ package
 				{
 					"order": 6,
 					"list": true,
-					"reward": [6400000, 6400000, 3200000, 3200000, 0],
+					"reward": [new SecNum(6400000), new SecNum(6400000), new SecNum(3200000), new SecNum(3200000), new SecNum(0)],
 					"id": "TESLA6",
 					"group": 0,
 					"name": "Tesla Tower level 6",
@@ -2555,7 +2556,7 @@ package
 				{
 					"order": 8,
 					"list": true,
-					"reward": [12800000, 12800000, 6400000, 6400000, 0],
+					"reward": [new SecNum(12800000), new SecNum(12800000), new SecNum(6400000), new SecNum(6400000), new SecNum(0)],
 					"id": "TESLA8",
 					"group": 0,
 					"name": "Tesla Tower level 8",
@@ -2571,7 +2572,7 @@ package
 				{
 					"order": 10,
 					"list": true,
-					"reward": [25600000, 25600000, 12800000, 12800000, 0],
+					"reward": [new SecNum(25600000), new SecNum(25600000), new SecNum(12800000), new SecNum(12800000), new SecNum(0)],
 					"id": "TESLA10",
 					"group": 0,
 					"name": "Tesla Tower level 10",
@@ -2587,7 +2588,7 @@ package
 				{
 					"order": 12,
 					"list": true,
-					"reward": [51200000, 51200000, 25600000, 25600000, 0],
+					"reward": [new SecNum(51200000), new SecNum(51200000), new SecNum(25600000), new SecNum(25600000), new SecNum(0)],
 					"id": "TESLA12",
 					"group": 0,
 					"name": "Tesla Tower level 12",
@@ -2603,7 +2604,7 @@ package
 				{
 					"order": 14,
 					"list": true,
-					"reward": [102400000, 102400000, 51200000, 51200000, 0],
+					"reward": [new SecNum(102400000), new SecNum(102400000), new SecNum(51200000), new SecNum(51200000), new SecNum(0)],
 					"id": "TESLA14",
 					"group": 0,
 					"name": "Tesla Tower level 14",
@@ -2619,7 +2620,7 @@ package
 				{
 					"order": 16,
 					"list": true,
-					"reward": [500000000, 500000000, 500000000, 500000000, 0],
+					"reward": [new SecNum(500000000), new SecNum(500000000), new SecNum(500000000), new SecNum(500000000), new SecNum(0)],
 					"id": "TESLA16",
 					"group": 0,
 					"name": "Tesla Tower level 16",
@@ -2636,7 +2637,7 @@ package
 				{
 					"order": 1,
 					"list": true,
-					"reward": [200000, 200000, 100000, 100000, 0],
+					"reward": [new SecNum(200000), new SecNum(200000), new SecNum(100000), new SecNum(100000), new SecNum(0)],
 					"id": "LASER1",
 					"group": 0,
 					"name": "Laser Tower",
@@ -2651,7 +2652,7 @@ package
 				{
 					"order": 2,
 					"list": true,
-					"reward": [400000, 400000, 200000, 200000, 0],
+					"reward": [new SecNum(400000), new SecNum(400000), new SecNum(200000), new SecNum(200000), new SecNum(0)],
 					"id": "LASER2",
 					"group": 0,
 					"name": "Laser Tower level 2",
@@ -2667,7 +2668,7 @@ package
 				{
 					"order": 3,
 					"list": true,
-					"reward": [800000, 800000, 400000, 400000, 0],
+					"reward": [new SecNum(800000), new SecNum(800000), new SecNum(400000), new SecNum(400000), new SecNum(0)],
 					"id": "LASER3",
 					"group": 0,
 					"name": "Laser Tower level 3",
@@ -2683,7 +2684,7 @@ package
 				{
 					"order": 4,
 					"list": true,
-					"reward": [1600000, 1600000, 800000, 800000, 0],
+					"reward": [new SecNum(1600000), new SecNum(1600000), new SecNum(800000), new SecNum(800000), new SecNum(0)],
 					"id": "LASER4",
 					"group": 0,
 					"name": "Laser Tower level 4",
@@ -2699,7 +2700,7 @@ package
 				{
 					"order": 5,
 					"list": true,
-					"reward": [3200000, 3200000, 1600000, 1600000, 0],
+					"reward": [new SecNum(3200000), new SecNum(3200000), new SecNum(1600000), new SecNum(1600000), new SecNum(0)],
 					"id": "LASER5",
 					"group": 0,
 					"name": "Laser Tower level 5",
@@ -2715,7 +2716,7 @@ package
 				{
 					"order": 6,
 					"list": true,
-					"reward": [6400000, 6400000, 3200000, 3200000, 0],
+					"reward": [new SecNum(6400000), new SecNum(6400000), new SecNum(3200000), new SecNum(3200000), new SecNum(0)],
 					"id": "LASER6",
 					"group": 0,
 					"name": "Laser Tower level 6",
@@ -2731,7 +2732,7 @@ package
 				{
 					"order": 8,
 					"list": true,
-					"reward": [12800000, 12800000, 6400000, 6400000, 0],
+					"reward": [new SecNum(12800000), new SecNum(12800000), new SecNum(6400000), new SecNum(6400000), new SecNum(0)],
 					"id": "LASER8",
 					"group": 0,
 					"name": "Laser Tower level 8",
@@ -2747,7 +2748,7 @@ package
 				{
 					"order": 10,
 					"list": true,
-					"reward": [25600000, 25600000, 12800000, 12800000, 0],
+					"reward": [new SecNum(25600000), new SecNum(25600000), new SecNum(12800000), new SecNum(12800000), new SecNum(0)],
 					"id": "LASER10",
 					"group": 0,
 					"name": "Laser Tower level 10",
@@ -2763,7 +2764,7 @@ package
 				{
 					"order": 12,
 					"list": true,
-					"reward": [51200000, 51200000, 25600000, 25600000, 0],
+					"reward": [new SecNum(51200000), new SecNum(51200000), new SecNum(25600000), new SecNum(25600000), new SecNum(0)],
 					"id": "LASER12",
 					"group": 0,
 					"name": "Laser Tower level 12",
@@ -2779,7 +2780,7 @@ package
 				{
 					"order": 14,
 					"list": true,
-					"reward": [102400000, 102400000, 51200000, 51200000, 0],
+					"reward": [new SecNum(102400000), new SecNum(102400000), new SecNum(51200000), new SecNum(51200000), new SecNum(0)],
 					"id": "LASER14",
 					"group": 0,
 					"name": "Laser Tower level 14",
@@ -2795,7 +2796,7 @@ package
 				{
 					"order": 16,
 					"list": true,
-					"reward": [500000000, 500000000, 500000000, 500000000, 0],
+					"reward": [new SecNum(500000000), new SecNum(500000000), new SecNum(500000000), new SecNum(500000000), new SecNum(0)],
 					"id": "LASER16",
 					"group": 0,
 					"name": "Laser Tower level 16",
@@ -2812,7 +2813,7 @@ package
 				{
 					"order": 1,
 					"list": true,
-					"reward": [200000, 200000, 100000, 100000, 0],
+					"reward": [new SecNum(200000), new SecNum(200000), new SecNum(100000), new SecNum(100000), new SecNum(0)],
 					"id": "RAILGUN1",
 					"group": 0,
 					"name": "Railgun",
@@ -2827,7 +2828,7 @@ package
 				{
 					"order": 2,
 					"list": true,
-					"reward": [400000, 400000, 200000, 200000, 0],
+					"reward": [new SecNum(400000), new SecNum(400000), new SecNum(200000), new SecNum(200000), new SecNum(0)],
 					"id": "RAILGUN2",
 					"group": 0,
 					"name": "Railgun level 2",
@@ -2843,7 +2844,7 @@ package
 				{
 					"order": 3,
 					"list": true,
-					"reward": [800000, 800000, 400000, 400000, 0],
+					"reward": [new SecNum(800000), new SecNum(800000), new SecNum(400000), new SecNum(400000), new SecNum(0)],
 					"id": "RAILGUN3",
 					"group": 0,
 					"name": "Railgun level 3",
@@ -2859,7 +2860,7 @@ package
 				{
 					"order": 4,
 					"list": true,
-					"reward": [1600000, 1600000, 800000, 800000, 0],
+					"reward": [new SecNum(1600000), new SecNum(1600000), new SecNum(800000), new SecNum(800000), new SecNum(0)],
 					"id": "RAILGUN4",
 					"group": 0,
 					"name": "Railgun level 4",
@@ -2875,7 +2876,7 @@ package
 				{
 					"order": 5,
 					"list": true,
-					"reward": [3200000, 3200000, 1600000, 1600000, 0],
+					"reward": [new SecNum(3200000), new SecNum(3200000), new SecNum(1600000), new SecNum(1600000), new SecNum(0)],
 					"id": "RAILGUN5",
 					"group": 0,
 					"name": "Railgun level 5",
@@ -2891,7 +2892,7 @@ package
 				{
 					"order": 6,
 					"list": true,
-					"reward": [6400000, 6400000, 3200000, 3200000, 0],
+					"reward": [new SecNum(6400000), new SecNum(6400000), new SecNum(3200000), new SecNum(3200000), new SecNum(0)],
 					"id": "RAILGUN6",
 					"group": 0,
 					"name": "Railgun level 6",
@@ -2907,7 +2908,7 @@ package
 				{
 					"order": 8,
 					"list": true,
-					"reward": [12800000, 12800000, 6400000, 6400000, 0],
+					"reward": [new SecNum(12800000), new SecNum(12800000), new SecNum(6400000), new SecNum(6400000), new SecNum(0)],
 					"id": "RAILGUN8",
 					"group": 0,
 					"name": "Railgun level 8",
@@ -2923,7 +2924,7 @@ package
 				{
 					"order": 10,
 					"list": true,
-					"reward": [25600000, 25600000, 12800000, 12800000, 0],
+					"reward": [new SecNum(25600000), new SecNum(25600000), new SecNum(12800000), new SecNum(12800000), new SecNum(0)],
 					"id": "RAILGUN10",
 					"group": 0,
 					"name": "Railgun level 10",
@@ -2939,7 +2940,7 @@ package
 				{
 					"order": 12,
 					"list": true,
-					"reward": [51200000, 51200000, 25600000, 25600000, 0],
+					"reward": [new SecNum(51200000), new SecNum(51200000), new SecNum(25600000), new SecNum(25600000), new SecNum(0)],
 					"id": "RAILGUN12",
 					"group": 0,
 					"name": "Railgun level 12",
@@ -2955,7 +2956,7 @@ package
 				{
 					"order": 14,
 					"list": true,
-					"reward": [102400000, 102400000, 51200000, 51200000, 0],
+					"reward": [new SecNum(102400000), new SecNum(102400000), new SecNum(51200000), new SecNum(51200000), new SecNum(0)],
 					"id": "RAILGUN14",
 					"group": 0,
 					"name": "Railgun level 14",
@@ -2971,7 +2972,7 @@ package
 				{
 					"order": 16,
 					"list": true,
-					"reward": [500000000, 500000000, 500000000, 500000000, 0],
+					"reward": [new SecNum(500000000), new SecNum(500000000), new SecNum(500000000), new SecNum(500000000), new SecNum(0)],
 					"id": "RAILGUN16",
 					"group": 0,
 					"name": "Railgun level 16",
@@ -2988,7 +2989,7 @@ package
 				{
 					"order": 1,
 					"list": true,
-					"reward": [200000, 200000, 100000, 100000, 0],
+					"reward": [new SecNum(200000), new SecNum(200000), new SecNum(100000), new SecNum(100000), new SecNum(0)],
 					"id": "adt1",
 					"group": 0,
 					"name": "ADT",
@@ -3003,7 +3004,7 @@ package
 				{
 					"order": 2,
 					"list": true,
-					"reward": [400000, 400000, 200000, 200000, 0],
+					"reward": [new SecNum(400000), new SecNum(400000), new SecNum(200000), new SecNum(200000), new SecNum(0)],
 					"id": "adt2",
 					"group": 0,
 					"name": "ADT level 2",
@@ -3019,7 +3020,7 @@ package
 				{
 					"order": 3,
 					"list": true,
-					"reward": [800000, 800000, 400000, 400000, 0],
+					"reward": [new SecNum(800000), new SecNum(800000), new SecNum(400000), new SecNum(400000), new SecNum(0)],
 					"id": "adt3",
 					"group": 0,
 					"name": "ADT level 3",
@@ -3035,7 +3036,7 @@ package
 				{
 					"order": 4,
 					"list": true,
-					"reward": [1600000, 1600000, 800000, 800000, 0],
+					"reward": [new SecNum(1600000), new SecNum(1600000), new SecNum(800000), new SecNum(800000), new SecNum(0)],
 					"id": "adt4",
 					"group": 0,
 					"name": "ADT level 4",
@@ -3051,7 +3052,7 @@ package
 				{
 					"order": 5,
 					"list": true,
-					"reward": [3200000, 3200000, 1600000, 1600000, 0],
+					"reward": [new SecNum(3200000), new SecNum(3200000), new SecNum(1600000), new SecNum(1600000), new SecNum(0)],
 					"id": "adt5",
 					"group": 0,
 					"name": "ADT level 5",
@@ -3067,7 +3068,7 @@ package
 				{
 					"order": 6,
 					"list": true,
-					"reward": [6400000, 6400000, 3200000, 3200000, 0],
+					"reward": [new SecNum(6400000), new SecNum(6400000), new SecNum(3200000), new SecNum(3200000), new SecNum(0)],
 					"id": "adt6",
 					"group": 0,
 					"name": "ADT level 6",
@@ -3083,7 +3084,7 @@ package
 				{
 					"order": 8,
 					"list": true,
-					"reward": [12800000, 12800000, 6400000, 6400000, 0],
+					"reward": [new SecNum(12800000), new SecNum(12800000), new SecNum(6400000), new SecNum(6400000), new SecNum(0)],
 					"id": "adt8",
 					"group": 0,
 					"name": "ADT level 8",
@@ -3099,7 +3100,7 @@ package
 				{
 					"order": 10,
 					"list": true,
-					"reward": [25600000, 25600000, 12800000, 12800000, 0],
+					"reward": [new SecNum(25600000), new SecNum(25600000), new SecNum(12800000), new SecNum(12800000), new SecNum(0)],
 					"id": "adt10",
 					"group": 0,
 					"name": "ADT level 10",
@@ -3115,7 +3116,7 @@ package
 				{
 					"order": 12,
 					"list": true,
-					"reward": [51200000, 51200000, 25600000, 25600000, 0],
+					"reward": [new SecNum(51200000), new SecNum(51200000), new SecNum(25600000), new SecNum(25600000), new SecNum(0)],
 					"id": "adt12",
 					"group": 0,
 					"name": "ADT level 12",
@@ -3131,7 +3132,7 @@ package
 				{
 					"order": 14,
 					"list": true,
-					"reward": [102400000, 102400000, 51200000, 51200000, 0],
+					"reward": [new SecNum(102400000), new SecNum(102400000), new SecNum(51200000), new SecNum(51200000), new SecNum(0)],
 					"id": "adt14",
 					"group": 0,
 					"name": "ADT level 14",
@@ -3147,7 +3148,7 @@ package
 				{
 					"order": 16,
 					"list": true,
-					"reward": [500000000, 500000000, 500000000, 500000000, 0],
+					"reward": [new SecNum(500000000), new SecNum(500000000), new SecNum(500000000), new SecNum(500000000), new SecNum(0)],
 					"id": "adt16",
 					"group": 0,
 					"name": "ADT level 16",
@@ -3164,7 +3165,7 @@ package
 				{
 					"order": 1,
 					"list": true,
-					"reward": [200000, 200000, 100000, 100000, 0],
+					"reward": [new SecNum(200000), new SecNum(200000), new SecNum(100000), new SecNum(100000), new SecNum(0)],
 					"id": "MAGMA1",
 					"group": 0,
 					"name": "Magma Tower",
@@ -3179,7 +3180,7 @@ package
 				{
 					"order": 2,
 					"list": true,
-					"reward": [400000, 400000, 200000, 200000, 0],
+					"reward": [new SecNum(400000), new SecNum(400000), new SecNum(200000), new SecNum(200000), new SecNum(0)],
 					"id": "MAGMA2",
 					"group": 0,
 					"name": "Magma Tower level 2",
@@ -3195,7 +3196,7 @@ package
 				{
 					"order": 3,
 					"list": true,
-					"reward": [800000, 800000, 400000, 400000, 0],
+					"reward": [new SecNum(800000), new SecNum(800000), new SecNum(400000), new SecNum(400000), new SecNum(0)],
 					"id": "MAGMA3",
 					"group": 0,
 					"name": "Magma Tower level 3",
@@ -3211,7 +3212,7 @@ package
 				{
 					"order": 4,
 					"list": true,
-					"reward": [1600000, 1600000, 800000, 800000, 0],
+					"reward": [new SecNum(1600000), new SecNum(1600000), new SecNum(800000), new SecNum(800000), new SecNum(0)],
 					"id": "MAGMA4",
 					"group": 0,
 					"name": "Magma Tower level 4",
@@ -3227,7 +3228,7 @@ package
 				{
 					"order": 5,
 					"list": true,
-					"reward": [3200000, 3200000, 1600000, 1600000, 0],
+					"reward": [new SecNum(3200000), new SecNum(3200000), new SecNum(1600000), new SecNum(1600000), new SecNum(0)],
 					"id": "MAGMA5",
 					"group": 0,
 					"name": "Magma Tower level 5",
@@ -3243,7 +3244,7 @@ package
 				{
 					"order": 6,
 					"list": true,
-					"reward": [6400000, 6400000, 3200000, 3200000, 0],
+					"reward": [new SecNum(6400000), new SecNum(6400000), new SecNum(3200000), new SecNum(3200000), new SecNum(0)],
 					"id": "MAGMA6",
 					"group": 0,
 					"name": "Magma Tower level 6",
@@ -3259,7 +3260,7 @@ package
 				{
 					"order": 8,
 					"list": true,
-					"reward": [12800000, 12800000, 6400000, 6400000, 0],
+					"reward": [new SecNum(12800000), new SecNum(12800000), new SecNum(6400000), new SecNum(6400000), new SecNum(0)],
 					"id": "MAGMA8",
 					"group": 0,
 					"name": "Magma Tower level 8",
@@ -3275,7 +3276,7 @@ package
 				{
 					"order": 10,
 					"list": true,
-					"reward": [25600000, 25600000, 12800000, 12800000, 0],
+					"reward": [new SecNum(25600000), new SecNum(25600000), new SecNum(12800000), new SecNum(12800000), new SecNum(0)],
 					"id": "MAGMA10",
 					"group": 0,
 					"name": "Magma Tower level 10",
@@ -3291,7 +3292,7 @@ package
 				{
 					"order": 12,
 					"list": true,
-					"reward": [51200000, 51200000, 25600000, 25600000, 0],
+					"reward": [new SecNum(51200000), new SecNum(51200000), new SecNum(25600000), new SecNum(25600000), new SecNum(0)],
 					"id": "MAGMA12",
 					"group": 0,
 					"name": "Magma Tower level 12",
@@ -3307,7 +3308,7 @@ package
 				{
 					"order": 14,
 					"list": true,
-					"reward": [500000000, 500000000, 500000000, 500000000, 0],
+					"reward": [new SecNum(500000000), new SecNum(500000000), new SecNum(500000000), new SecNum(500000000), new SecNum(0)],
 					"id": "MAGMA14",
 					"group": 0,
 					"name": "Magma Tower level 14",
@@ -3324,7 +3325,7 @@ package
 				{
 					"order": 1,
 					"list": true,
-					"reward": [200000, 200000, 100000, 100000, 0],
+					"reward": [new SecNum(200000), new SecNum(200000), new SecNum(100000), new SecNum(100000), new SecNum(0)],
 					"id": "QUAKE1",
 					"group": 0,
 					"name": "Quake Tower",
@@ -3339,7 +3340,7 @@ package
 				{
 					"order": 2,
 					"list": true,
-					"reward": [400000, 400000, 200000, 200000, 0],
+					"reward": [new SecNum(400000), new SecNum(400000), new SecNum(200000), new SecNum(200000), new SecNum(0)],
 					"id": "QUAKE2",
 					"group": 0,
 					"name": "Quake Tower level 2",
@@ -3355,7 +3356,7 @@ package
 				{
 					"order": 3,
 					"list": true,
-					"reward": [800000, 800000, 400000, 400000, 0],
+					"reward": [new SecNum(800000), new SecNum(800000), new SecNum(400000), new SecNum(400000), new SecNum(0)],
 					"id": "QUAKE3",
 					"group": 0,
 					"name": "Quake Tower level 3",
@@ -3371,7 +3372,7 @@ package
 				{
 					"order": 4,
 					"list": true,
-					"reward": [1600000, 1600000, 800000, 800000, 0],
+					"reward": [new SecNum(1600000), new SecNum(1600000), new SecNum(800000), new SecNum(800000), new SecNum(0)],
 					"id": "QUAKE4",
 					"group": 0,
 					"name": "Quake Tower level 4",
@@ -3387,7 +3388,7 @@ package
 				{
 					"order": 5,
 					"list": true,
-					"reward": [3200000, 3200000, 1600000, 1600000, 0],
+					"reward": [new SecNum(3200000), new SecNum(3200000), new SecNum(1600000), new SecNum(1600000), new SecNum(0)],
 					"id": "QUAKE5",
 					"group": 0,
 					"name": "Quake Tower level 5",
@@ -3403,7 +3404,7 @@ package
 				{
 					"order": 6,
 					"list": true,
-					"reward": [6400000, 6400000, 3200000, 3200000, 0],
+					"reward": [new SecNum(6400000), new SecNum(6400000), new SecNum(3200000), new SecNum(3200000), new SecNum(0)],
 					"id": "QUAKE6",
 					"group": 0,
 					"name": "Quake Tower level 6",
@@ -3419,7 +3420,7 @@ package
 				{
 					"order": 8,
 					"list": true,
-					"reward": [12800000, 12800000, 6400000, 6400000, 0],
+					"reward": [new SecNum(12800000), new SecNum(12800000), new SecNum(6400000), new SecNum(6400000), new SecNum(0)],
 					"id": "QUAKE8",
 					"group": 0,
 					"name": "Quake Tower level 8",
@@ -3435,7 +3436,7 @@ package
 				{
 					"order": 10,
 					"list": true,
-					"reward": [25600000, 25600000, 12800000, 12800000, 0],
+					"reward": [new SecNum(25600000), new SecNum(25600000), new SecNum(12800000), new SecNum(12800000), new SecNum(0)],
 					"id": "QUAKE10",
 					"group": 0,
 					"name": "Quake Tower level 10",
@@ -3451,7 +3452,7 @@ package
 				{
 					"order": 12,
 					"list": true,
-					"reward": [51200000, 51200000, 25600000, 25600000, 0],
+					"reward": [new SecNum(51200000), new SecNum(51200000), new SecNum(25600000), new SecNum(25600000), new SecNum(0)],
 					"id": "QUAKE12",
 					"group": 0,
 					"name": "Quake Tower level 12",
@@ -3467,7 +3468,7 @@ package
 				{
 					"order": 14,
 					"list": true,
-					"reward": [500000000, 500000000, 500000000, 500000000, 0],
+					"reward": [new SecNum(500000000), new SecNum(500000000), new SecNum(500000000), new SecNum(500000000), new SecNum(0)],
 					"id": "QUAKE14",
 					"group": 0,
 					"name": "Quake Tower level 14",
@@ -3484,7 +3485,7 @@ package
 				{
 					"order": 1,
 					"list": true,
-					"reward": [20000, 20000, 10000, 10000, 0],
+					"reward": [new SecNum(20000), new SecNum(20000), new SecNum(10000), new SecNum(10000), new SecNum(0)],
 					"id": "HOUSE1",
 					"group": 0,
 					"name": "Housing",
@@ -3499,7 +3500,7 @@ package
 				{
 					"order": 2,
 					"list": true,
-					"reward": [40000, 40000, 20000, 20000, 0],
+					"reward": [new SecNum(40000), new SecNum(40000), new SecNum(20000), new SecNum(20000), new SecNum(0)],
 					"id": "HOUSE2",
 					"group": 0,
 					"name": "Housing level 2",
@@ -3515,7 +3516,7 @@ package
 				{
 					"order": 3,
 					"list": true,
-					"reward": [80000, 80000, 40000, 40000, 0],
+					"reward": [new SecNum(80000), new SecNum(80000), new SecNum(40000), new SecNum(40000), new SecNum(0)],
 					"id": "HOUSE3",
 					"group": 0,
 					"name": "Housing level 3",
@@ -3531,7 +3532,7 @@ package
 				{
 					"order": 4,
 					"list": true,
-					"reward": [160000, 160000, 80000, 80000, 0],
+					"reward": [new SecNum(160000), new SecNum(160000), new SecNum(80000), new SecNum(80000), new SecNum(0)],
 					"id": "HOUSE4",
 					"group": 0,
 					"name": "Housing level 4",
@@ -3547,7 +3548,7 @@ package
 				{
 					"order": 5,
 					"list": true,
-					"reward": [320000, 320000, 160000, 160000, 0],
+					"reward": [new SecNum(320000), new SecNum(320000), new SecNum(160000), new SecNum(160000), new SecNum(0)],
 					"id": "HOUSE5",
 					"group": 0,
 					"name": "Housing level 5",
@@ -3563,7 +3564,7 @@ package
 				{
 					"order": 6,
 					"list": true,
-					"reward": [640000, 640000, 320000, 320000, 0],
+					"reward": [new SecNum(640000), new SecNum(640000), new SecNum(320000), new SecNum(320000), new SecNum(0)],
 					"id": "HOUSE6",
 					"group": 0,
 					"name": "Housing level 6",
@@ -3579,7 +3580,7 @@ package
 				{
 					"order": 8,
 					"list": true,
-					"reward": [1280000, 1280000, 640000, 640000, 0],
+					"reward": [new SecNum(1280000), new SecNum(1280000), new SecNum(640000), new SecNum(640000), new SecNum(0)],
 					"id": "HOUSE8",
 					"group": 0,
 					"name": "Housing level 8",
@@ -3595,7 +3596,7 @@ package
 				{
 					"order": 10,
 					"list": true,
-					"reward": [2560000, 2560000, 1280000, 1280000, 0],
+					"reward": [new SecNum(2560000), new SecNum(2560000), new SecNum(1280000), new SecNum(1280000), new SecNum(0)],
 					"id": "HOUSE10",
 					"group": 0,
 					"name": "Housing level 10",
@@ -3611,7 +3612,7 @@ package
 				{
 					"order": 12,
 					"list": true,
-					"reward": [5120000, 5120000, 2560000, 2560000, 0],
+					"reward": [new SecNum(5120000), new SecNum(5120000), new SecNum(2560000), new SecNum(2560000), new SecNum(0)],
 					"id": "HOUSE12",
 					"group": 0,
 					"name": "Housing level 12",
@@ -3627,7 +3628,7 @@ package
 				{
 					"order": 14,
 					"list": true,
-					"reward": [10240000, 10240000, 5120000, 5120000, 0],
+					"reward": [new SecNum(10240000), new SecNum(10240000), new SecNum(5120000), new SecNum(5120000), new SecNum(0)],
 					"id": "HOUSE14",
 					"group": 0,
 					"name": "Housing level 14",
@@ -3643,7 +3644,7 @@ package
 				{
 					"order": 16,
 					"list": true,
-					"reward": [20480000, 20480000, 10240000, 10240000, 0],
+					"reward": [new SecNum(20480000), new SecNum(20480000), new SecNum(10240000), new SecNum(10240000), new SecNum(0)],
 					"id": "HOUSE16",
 					"group": 0,
 					"name": "Housing level 16",
@@ -3659,7 +3660,7 @@ package
 				{
 					"order": 18,
 					"list": true,
-					"reward": [40960000, 40960000, 20480000, 20480000, 0],
+					"reward": [new SecNum(40960000), new SecNum(40960000), new SecNum(20480000), new SecNum(20480000), new SecNum(0)],
 					"id": "HOUSE18",
 					"group": 0,
 					"name": "Housing level 18",
@@ -3675,7 +3676,7 @@ package
 				{
 					"order": 20,
 					"list": true,
-					"reward": [81920000, 81920000, 40960000, 40960000, 0],
+					"reward": [new SecNum(81920000), new SecNum(81920000), new SecNum(40960000), new SecNum(40960000), new SecNum(0)],
 					"id": "HOUSE20",
 					"group": 0,
 					"name": "Housing level 20",
@@ -3691,7 +3692,7 @@ package
 				{
 					"order": 1,
 					"list": true,
-					"reward": [0, 0, 100000000, 100000000, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(100000000), new SecNum(100000000), new SecNum(0)],
 					"id": "TL1",
 					"group": 0,
 					"name": "Technology Laboratory",
@@ -3706,7 +3707,7 @@ package
 				{
 					"order": 2,
 					"list": true,
-					"reward": [0, 0, 200000000, 200000000, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(200000000), new SecNum(200000000), new SecNum(0)],
 					"id": "TL2",
 					"group": 0,
 					"name": "Technology Laboratory level 2",
@@ -3722,7 +3723,7 @@ package
 				{
 					"order": 3,
 					"list": true,
-					"reward": [0, 0, 300000000, 300000000, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(300000000), new SecNum(300000000), new SecNum(0)],
 					"id": "TL3",
 					"group": 0,
 					"name": "Technology Laboratory level 3",
@@ -3738,7 +3739,7 @@ package
 				{
 					"order": 4,
 					"list": true,
-					"reward": [0, 0, 400000000, 400000000, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(400000000), new SecNum(400000000), new SecNum(0)],
 					"id": "TL4",
 					"group": 0,
 					"name": "Technology Laboratory level 4",
@@ -3754,7 +3755,7 @@ package
 				{
 					"order": 5,
 					"list": true,
-					"reward": [0, 0, 500000000, 500000000, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(500000000), new SecNum(500000000), new SecNum(0)],
 					"id": "TL5",
 					"group": 0,
 					"name": "Technology Laboratory level 5",
@@ -3770,7 +3771,7 @@ package
 				{
 					"order": 6,
 					"list": true,
-					"reward": [0, 0, 600000000, 600000000, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(600000000), new SecNum(600000000), new SecNum(0)],
 					"id": "TL6",
 					"group": 0,
 					"name": "Technology Laboratory level 6",
@@ -3786,7 +3787,7 @@ package
 				{
 					"order": 7,
 					"list": true,
-					"reward": [0, 0, 700000000, 700000000, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(700000000), new SecNum(700000000), new SecNum(0)],
 					"id": "TL7",
 					"group": 0,
 					"name": "Technology Laboratory level 7",
@@ -3802,7 +3803,7 @@ package
 				{
 					"order": 8,
 					"list": true,
-					"reward": [0, 0, 800000000, 800000000, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(800000000), new SecNum(800000000), new SecNum(0)],
 					"id": "TL8",
 					"group": 0,
 					"name": "Technology Laboratory level 8",
@@ -3818,7 +3819,7 @@ package
 				{
 					"order": 9,
 					"list": true,
-					"reward": [0, 0, 900000000, 900000000, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(900000000), new SecNum(900000000), new SecNum(0)],
 					"id": "TL9",
 					"group": 0,
 					"name": "Technology Laboratory level 9",
@@ -3834,7 +3835,7 @@ package
 				{
 					"order": 10,
 					"list": true,
-					"reward": [0, 0, 1000000000, 1000000000, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(1000000000), new SecNum(1000000000), new SecNum(0)],
 					"id": "TL10",
 					"group": 0,
 					"name": "Technology Laboratory level 10",
@@ -3850,7 +3851,7 @@ package
 				{
 					"order": 11,
 					"list": true,
-					"reward": [0, 0, 2000000000, 2000000000, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(2000000000), new SecNum(2000000000), new SecNum(0)],
 					"id": "TL11",
 					"group": 0,
 					"name": "Technology Laboratory level 11",
@@ -3866,7 +3867,7 @@ package
 				{
 					"order": 12,
 					"list": true,
-					"reward": [0, 0, 4000000000, 4000000000, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(4000000000), new SecNum(4000000000), new SecNum(0)],
 					"id": "TL12",
 					"group": 0,
 					"name": "Technology Laboratory level 12",
@@ -3883,7 +3884,7 @@ package
 				{
 					"order": 1,
 					"list": true,
-					"reward": [0, 0, 100000000, 100000000, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(100000000), new SecNum(100000000), new SecNum(0)],
 					"id": "AC1",
 					"group": 0,
 					"name": "Anti-Catapult",
@@ -3898,7 +3899,7 @@ package
 				{
 					"order": 2,
 					"list": true,
-					"reward": [0, 0, 200000000, 200000000, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(200000000), new SecNum(200000000), new SecNum(0)],
 					"id": "AC2",
 					"group": 0,
 					"name": "Anti-Catapult level 2",
@@ -3914,7 +3915,7 @@ package
 				{
 					"order": 3,
 					"list": true,
-					"reward": [0, 0, 300000000, 300000000, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(300000000), new SecNum(300000000), new SecNum(0)],
 					"id": "AC3",
 					"group": 0,
 					"name": "Anti-Catapult level 3",
@@ -3930,7 +3931,7 @@ package
 				{
 					"order": 4,
 					"list": true,
-					"reward": [0, 0, 400000000, 400000000, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(400000000), new SecNum(400000000), new SecNum(0)],
 					"id": "AC4",
 					"group": 0,
 					"name": "Anti-Catapult level 4",
@@ -3946,7 +3947,7 @@ package
 				{
 					"order": 5,
 					"list": true,
-					"reward": [0, 0, 500000000, 500000000, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(500000000), new SecNum(500000000), new SecNum(0)],
 					"id": "AC5",
 					"group": 0,
 					"name": "Anti-Catapult level 5",
@@ -3962,7 +3963,7 @@ package
 				{
 					"order": 6,
 					"list": true,
-					"reward": [0, 0, 600000000, 600000000, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(600000000), new SecNum(600000000), new SecNum(0)],
 					"id": "AC6",
 					"group": 0,
 					"name": "Anti-Catapult level 6",
@@ -3978,7 +3979,7 @@ package
 				{
 					"order": 7,
 					"list": true,
-					"reward": [0, 0, 700000000, 700000000, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(700000000), new SecNum(700000000), new SecNum(0)],
 					"id": "AC7",
 					"group": 0,
 					"name": "Anti-Catapult level 7",
@@ -3994,7 +3995,7 @@ package
 				{
 					"order": 8,
 					"list": true,
-					"reward": [0, 0, 800000000, 800000000, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(800000000), new SecNum(800000000), new SecNum(0)],
 					"id": "AC8",
 					"group": 0,
 					"name": "Anti-Catapult level 8",
@@ -4010,7 +4011,7 @@ package
 				{
 					"order": 9,
 					"list": true,
-					"reward": [0, 0, 900000000, 900000000, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(900000000), new SecNum(900000000), new SecNum(0)],
 					"id": "AC9",
 					"group": 0,
 					"name": "Anti-Catapult level 9",
@@ -4026,7 +4027,7 @@ package
 				{
 					"order": 10,
 					"list": true,
-					"reward": [0, 0, 1000000000, 1000000000, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(1000000000), new SecNum(1000000000), new SecNum(0)],
 					"id": "AC10",
 					"group": 0,
 					"name": "Anti-Catapult level 10",
@@ -4042,7 +4043,7 @@ package
 				{
 					"order": 11,
 					"list": true,
-					"reward": [0, 0, 2000000000, 2000000000, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(2000000000), new SecNum(2000000000), new SecNum(0)],
 					"id": "AC11",
 					"group": 0,
 					"name": "Anti-Catapult level 11",
@@ -4058,7 +4059,7 @@ package
 				{
 					"order": 12,
 					"list": true,
-					"reward": [0, 0, 4000000000, 4000000000, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(4000000000), new SecNum(4000000000), new SecNum(0)],
 					"id": "AC12",
 					"group": 0,
 					"name": "Anti-Catapult level 12",
@@ -4075,7 +4076,7 @@ package
 				{
 					"order": 1,
 					"list": true,
-					"reward": [0, 0, 100000000, 100000000, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(100000000), new SecNum(100000000), new SecNum(0)],
 					"id": "CH1",
 					"group": 0,
 					"name": "Crystal Hive",
@@ -4090,7 +4091,7 @@ package
 				{
 					"order": 2,
 					"list": true,
-					"reward": [0, 0, 200000000, 200000000, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(200000000), new SecNum(200000000), new SecNum(0)],
 					"id": "CH2",
 					"group": 0,
 					"name": "Crystal Hive level 2",
@@ -4106,7 +4107,7 @@ package
 				{
 					"order": 3,
 					"list": true,
-					"reward": [0, 0, 300000000, 300000000, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(300000000), new SecNum(300000000), new SecNum(0)],
 					"id": "CH3",
 					"group": 0,
 					"name": "Crystal Hive level 3",
@@ -4122,7 +4123,7 @@ package
 				{
 					"order": 4,
 					"list": true,
-					"reward": [0, 0, 400000000, 400000000, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(400000000), new SecNum(400000000), new SecNum(0)],
 					"id": "CH4",
 					"group": 0,
 					"name": "Crystal Hive level 4",
@@ -4138,7 +4139,7 @@ package
 				{
 					"order": 5,
 					"list": true,
-					"reward": [0, 0, 500000000, 500000000, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(500000000), new SecNum(500000000), new SecNum(0)],
 					"id": "CH5",
 					"group": 0,
 					"name": "Crystal Hive level 5",
@@ -4154,7 +4155,7 @@ package
 				{
 					"order": 6,
 					"list": true,
-					"reward": [0, 0, 600000000, 600000000, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(600000000), new SecNum(600000000), new SecNum(0)],
 					"id": "CH6",
 					"group": 0,
 					"name": "Crystal Hive level 6",
@@ -4170,7 +4171,7 @@ package
 				{
 					"order": 7,
 					"list": true,
-					"reward": [0, 0, 700000000, 700000000, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(700000000), new SecNum(700000000), new SecNum(0)],
 					"id": "CH7",
 					"group": 0,
 					"name": "Crystal Hive level 7",
@@ -4186,7 +4187,7 @@ package
 				{
 					"order": 8,
 					"list": true,
-					"reward": [0, 0, 800000000, 800000000, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(800000000), new SecNum(800000000), new SecNum(0)],
 					"id": "CH8",
 					"group": 0,
 					"name": "Crystal Hive level 8",
@@ -4202,7 +4203,7 @@ package
 				{
 					"order": 9,
 					"list": true,
-					"reward": [0, 0, 900000000, 900000000, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(900000000), new SecNum(900000000), new SecNum(0)],
 					"id": "CH9",
 					"group": 0,
 					"name": "Crystal Hive level 9",
@@ -4218,7 +4219,7 @@ package
 				{
 					"order": 10,
 					"list": true,
-					"reward": [0, 0, 1000000000, 1000000000, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(1000000000), new SecNum(1000000000), new SecNum(0)],
 					"id": "CH10",
 					"group": 0,
 					"name": "Crystal Hive level 10",
@@ -4234,7 +4235,7 @@ package
 				{
 					"order": 11,
 					"list": true,
-					"reward": [0, 0, 2000000000, 2000000000, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(2000000000), new SecNum(2000000000), new SecNum(0)],
 					"id": "CH11",
 					"group": 0,
 					"name": "Crystal Hive level 11",
@@ -4250,7 +4251,7 @@ package
 				{
 					"order": 12,
 					"list": true,
-					"reward": [0, 0, 4000000000, 4000000000, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(4000000000), new SecNum(4000000000), new SecNum(0)],
 					"id": "CH12",
 					"group": 0,
 					"name": "Crystal Hive level 12",
@@ -4268,7 +4269,7 @@ package
 				{
 					"order": 2,
 					"list": true,
-					"reward": [1000, 1000, 0, 1000, 0],
+					"reward": [new SecNum(1000), new SecNum(1000), new SecNum(0), new SecNum(1000), new SecNum(0)],
 					"id": "CR2",
 					"group": 1,
 					"name": "q_cr2_name",
@@ -4283,7 +4284,7 @@ package
 				{
 					"order": 3,
 					"list": true,
-					"reward": [1000, 1000, 5000, 0, 0],
+					"reward": [new SecNum(1000), new SecNum(1000), new SecNum(5000), new SecNum(0), new SecNum(0)],
 					"id": "CR1",
 					"group": 1,
 					"name": "q_cr1_name",
@@ -4298,7 +4299,7 @@ package
 				{
 					"order": 4,
 					"list": true,
-					"reward": [0, 0, 0, 10000, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(10000), new SecNum(0)],
 					"id": "HG1",
 					"group": 1,
 					"name": "q_cm1_name",
@@ -4313,7 +4314,7 @@ package
 				{
 					"order": 5,
 					"list": true,
-					"reward": [0, 0, 0, 800000, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(800000), new SecNum(0)],
 					"id": "UG1",
 					"group": 1,
 					"name": "q_cm2_name",
@@ -4329,7 +4330,7 @@ package
 				{
 					"order": 6,
 					"list": true,
-					"reward": [0, 0, 0, 10000, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(10000), new SecNum(0)],
 					"id": "HG2",
 					"group": 1,
 					"name": "q_cm3_name",
@@ -4344,7 +4345,7 @@ package
 				{
 					"order": 7,
 					"list": true,
-					"reward": [0, 0, 0, 800000, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(800000), new SecNum(0)],
 					"id": "UG2",
 					"group": 1,
 					"name": "q_cm4_name",
@@ -4360,7 +4361,7 @@ package
 				{
 					"order": 8,
 					"list": true,
-					"reward": [0, 0, 0, 10000, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(10000), new SecNum(0)],
 					"id": "HG3",
 					"group": 1,
 					"name": "q_cm5_name",
@@ -4375,7 +4376,7 @@ package
 				{
 					"order": 9,
 					"list": true,
-					"reward": [0, 0, 0, 800000, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(800000), new SecNum(0)],
 					"id": "UG3",
 					"group": 1,
 					"name": "q_cm6_name",
@@ -4393,7 +4394,7 @@ package
 				{
 					"order": 6,
 					"list": true,
-					"reward": [800, 800, 1000, 1000, 0],
+					"reward": [new SecNum(800), new SecNum(800), new SecNum(1000), new SecNum(1000), new SecNum(0)],
 					"id": "D1",
 					"group": 2,
 					"name": "q_d1_name",
@@ -4408,7 +4409,7 @@ package
 				{
 					"order": 8,
 					"list": true,
-					"reward": [0, 0, 0, 1000, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(1000), new SecNum(0)],
 					"id": "C18",
 					"group": 2,
 					"name": "q_c18_name",
@@ -4423,7 +4424,7 @@ package
 				{
 					"order": 9,
 					"list": true,
-					"reward": [0, 0, 0, 1000, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(1000), new SecNum(0)],
 					"id": "C17",
 					"group": 2,
 					"name": "q_c17_name",
@@ -4438,7 +4439,7 @@ package
 				{
 					"order": 10,
 					"list": true,
-					"reward": [6500, 6500, 500, 1500, 0],
+					"reward": [new SecNum(6500), new SecNum(6500), new SecNum(500), new SecNum(1500), new SecNum(0)],
 					"id": "WM1",
 					"group": 2,
 					"name": "q_wm1_name",
@@ -4453,7 +4454,7 @@ package
 				{
 					"order": 36,
 					"list": true,
-					"reward": [20000, 0, 0, 0, 0],
+					"reward": [new SecNum(20000), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0)],
 					"id": "C51",
 					"group": 2,
 					"name": "q_c51_name",
@@ -4468,7 +4469,7 @@ package
 				{
 					"order": 18,
 					"list": true,
-					"reward": [10000, 10000, 10000, 10000, 0],
+					"reward": [new SecNum(10000), new SecNum(10000), new SecNum(10000), new SecNum(10000), new SecNum(0)],
 					"id": "WM2",
 					"group": 2,
 					"name": "q_wm2_name",
@@ -4483,7 +4484,7 @@ package
 				{
 					"order": 33,
 					"list": true,
-					"reward": [20000, 20000, 20000, 20000, 0],
+					"reward": [new SecNum(20000), new SecNum(20000), new SecNum(20000), new SecNum(20000), new SecNum(0)],
 					"id": "WM3",
 					"group": 2,
 					"name": "q_wm3_name",
@@ -4498,7 +4499,7 @@ package
 				{
 					"order": 50,
 					"list": true,
-					"reward": [40000, 40000, 40000, 40000, 0],
+					"reward": [new SecNum(40000), new SecNum(40000), new SecNum(40000), new SecNum(40000), new SecNum(0)],
 					"id": "WM4",
 					"group": 2,
 					"name": "q_wm4_name",
@@ -4515,7 +4516,7 @@ package
 				{
 					"order": 63,
 					"list": true,
-					"reward": [5000, 5000, 5000, 5000, 0],
+					"reward": [new SecNum(5000), new SecNum(5000), new SecNum(5000), new SecNum(5000), new SecNum(0)],
 					"id": "M2",
 					"group": 3,
 					"name": "q_m2_name",
@@ -4531,7 +4532,7 @@ package
 				{
 					"order": 64,
 					"list": true,
-					"reward": [5000, 5000, 5000, 5000, 0],
+					"reward": [new SecNum(5000), new SecNum(5000), new SecNum(5000), new SecNum(5000), new SecNum(0)],
 					"id": "M5",
 					"group": 3,
 					"name": "q_m5_name",
@@ -4547,7 +4548,7 @@ package
 				{
 					"order": 65,
 					"list": true,
-					"reward": [50000, 50000, 50000, 50000, 0],
+					"reward": [new SecNum(50000), new SecNum(50000), new SecNum(50000), new SecNum(50000), new SecNum(0)],
 					"id": "M6",
 					"group": 3,
 					"name": "q_m6_name",
@@ -4563,7 +4564,7 @@ package
 				{
 					"order": 66,
 					"list": true,
-					"reward": [10000, 10000, 20000, 20000, 0],
+					"reward": [new SecNum(10000), new SecNum(10000), new SecNum(20000), new SecNum(20000), new SecNum(0)],
 					"id": "M3",
 					"group": 3,
 					"name": "q_m3_name",
@@ -4580,7 +4581,7 @@ package
 					"order": 3,
 					"block": true,
 					"list": false,
-					"reward": [500, 1500, 500, 500, 1000],
+					"reward": [new SecNum(500), new SecNum(1500), new SecNum(500), new SecNum(500), new SecNum(1000)],
 					"id": "C8",
 					"group": 3,
 					"name": "q_c8_name",
@@ -4595,7 +4596,7 @@ package
 				{
 					"order": 13,
 					"list": true,
-					"reward": [1000, 1000, 500, 500, 0],
+					"reward": [new SecNum(1000), new SecNum(1000), new SecNum(500), new SecNum(500), new SecNum(0)],
 					"id": "M1",
 					"group": 3,
 					"name": "q_m1_name",
@@ -4610,7 +4611,7 @@ package
 				{
 					"order": 62,
 					"list": true,
-					"reward": [1000, 1000, 500, 500, 0],
+					"reward": [new SecNum(1000), new SecNum(1000), new SecNum(500), new SecNum(500), new SecNum(0)],
 					"id": "M4",
 					"group": 3,
 					"name": "q_m4_name",
@@ -4626,7 +4627,7 @@ package
 				{
 					"order": 28,
 					"list": true,
-					"reward": [1000, 1000, 1000, 1000, 0],
+					"reward": [new SecNum(1000), new SecNum(1000), new SecNum(1000), new SecNum(1000), new SecNum(0)],
 					"id": "BK1",
 					"group": 3,
 					"name": "q_bk1_name",
@@ -4641,7 +4642,7 @@ package
 				{
 					"order": 43,
 					"list": true,
-					"reward": [2000, 2000, 2000, 2000, 0],
+					"reward": [new SecNum(2000), new SecNum(2000), new SecNum(2000), new SecNum(2000), new SecNum(0)],
 					"id": "BK2",
 					"group": 3,
 					"name": "q_bk2_name",
@@ -4657,7 +4658,7 @@ package
 				{
 					"order": 57,
 					"list": true,
-					"reward": [10000, 10000, 10000, 10000, 0],
+					"reward": [new SecNum(10000), new SecNum(10000), new SecNum(10000), new SecNum(10000), new SecNum(0)],
 					"id": "BK3",
 					"group": 3,
 					"name": "q_bk3_name",
@@ -4673,7 +4674,7 @@ package
 				{
 					"order": 58,
 					"list": true,
-					"reward": [50000, 50000, 50000, 50000, 0],
+					"reward": [new SecNum(50000), new SecNum(50000), new SecNum(50000), new SecNum(50000), new SecNum(0)],
 					"id": "BK4",
 					"group": 3,
 					"name": "q_bk4_name",
@@ -4690,7 +4691,7 @@ package
 					"order": 72,
 					"list": true,
 					"priority": 1,
-					"reward": [1000, 1000, 1000, 1000, 0],
+					"reward": [new SecNum(1000), new SecNum(1000), new SecNum(1000), new SecNum(1000), new SecNum(0)],
 					"id": "GA1",
 					"group": 3,
 					"name": "q_ga1_name",
@@ -4706,7 +4707,7 @@ package
 					"order": 73,
 					"list": true,
 					"priority": 1,
-					"reward": [10000, 10000, 10000, 10000, 0],
+					"reward": [new SecNum(10000), new SecNum(10000), new SecNum(10000), new SecNum(10000), new SecNum(0)],
 					"id": "GA2",
 					"group": 3,
 					"name": "q_ga2_name",
@@ -4723,7 +4724,7 @@ package
 					"order": 73,
 					"list": true,
 					"priority": 1,
-					"reward": [20000, 20000, 20000, 20000, 0],
+					"reward": [new SecNum(20000), new SecNum(20000), new SecNum(20000), new SecNum(20000), new SecNum(0)],
 					"id": "GA3",
 					"group": 3,
 					"name": "q_ga3_name",
@@ -4740,7 +4741,7 @@ package
 					"order": 70,
 					"list": true,
 					"priority": 1,
-					"reward": [0, 0, 0, 0, 50],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(50)],
 					"id": "FAN",
 					"group": 3,
 					"name": "q_fan_name",
@@ -4756,7 +4757,7 @@ package
 					"order": 71,
 					"list": true,
 					"priority": 1,
-					"reward": [0, 0, 0, 0, 25],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(25)],
 					"id": "INVITE1",
 					"group": 3,
 					"name": "q_invite1_name",
@@ -4772,7 +4773,7 @@ package
 					"order": 74,
 					"list": true,
 					"priority": 1,
-					"reward": [0, 0, 0, 0, 45],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(45)],
 					"id": "INVITE5",
 					"group": 3,
 					"name": "q_invite5_name",
@@ -4789,7 +4790,7 @@ package
 					"order": 76,
 					"list": true,
 					"priority": 1,
-					"reward": [0, 0, 0, 0, 65],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(65)],
 					"id": "INVITE10",
 					"group": 3,
 					"name": "q_invite10_name",
@@ -4805,7 +4806,7 @@ package
 				{
 					"order": 44,
 					"list": true,
-					"reward": [0, 0, 1000, 1000, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(1000), new SecNum(1000), new SecNum(0)],
 					"id": "BL1",
 					"group": 3,
 					"name": "q_bl1_name",
@@ -4820,7 +4821,7 @@ package
 				{
 					"order": 59,
 					"list": true,
-					"reward": [0, 0, 10000, 10000, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(10000), new SecNum(10000), new SecNum(0)],
 					"id": "BL2",
 					"group": 3,
 					"name": "q_bl2_name",
@@ -4836,7 +4837,7 @@ package
 				{
 					"order": 60,
 					"list": true,
-					"reward": [0, 0, 100000, 100000, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(100000), new SecNum(100000), new SecNum(0)],
 					"id": "BL3",
 					"group": 3,
 					"name": "q_bl3_name",
@@ -4852,7 +4853,7 @@ package
 				{
 					"order": 61,
 					"list": true,
-					"reward": [0, 0, 1000000, 1000000, 0],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(1000000), new SecNum(1000000), new SecNum(0)],
 					"id": "BL4",
 					"group": 3,
 					"name": "q_bl4_name",
@@ -4870,7 +4871,7 @@ package
 				{
 					"order": 10,
 					"list": true,
-					"reward": [0, 0, 0, 0, 100],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(100)],
 					"id": "LVL10",
 					"group": 4,
 					"name": "q_lvl_name",
@@ -4885,7 +4886,7 @@ package
 				{
 					"order": 15,
 					"list": true,
-					"reward": [0, 0, 0, 0, 150],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(150)],
 					"id": "LVL15",
 					"group": 4,
 					"name": "q_lvl_name",
@@ -4901,7 +4902,7 @@ package
 				{
 					"order": 20,
 					"list": true,
-					"reward": [0, 0, 0, 0, 200],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(200)],
 					"id": "LVL20",
 					"group": 4,
 					"name": "q_lvl_name",
@@ -4917,7 +4918,7 @@ package
 				{
 					"order": 25,
 					"list": true,
-					"reward": [0, 0, 0, 0, 250],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(250)],
 					"id": "LVL25",
 					"group": 4,
 					"name": "q_lvl_name",
@@ -4933,7 +4934,7 @@ package
 				{
 					"order": 30,
 					"list": true,
-					"reward": [0, 0, 0, 0, 300],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(300)],
 					"id": "LVL30",
 					"group": 4,
 					"name": "q_lvl_name",
@@ -4949,7 +4950,7 @@ package
 				{
 					"order": 35,
 					"list": true,
-					"reward": [0, 0, 0, 0, 350],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(350)],
 					"id": "LVL35",
 					"group": 4,
 					"name": "q_lvl_name",
@@ -4965,7 +4966,7 @@ package
 				{
 					"order": 40,
 					"list": true,
-					"reward": [0, 0, 0, 0, 400],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(400)],
 					"id": "LVL40",
 					"group": 4,
 					"name": "q_lvl_name",
@@ -4981,7 +4982,7 @@ package
 				{
 					"order": 45,
 					"list": true,
-					"reward": [0, 0, 0, 0, 450],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(450)],
 					"id": "LVL45",
 					"group": 4,
 					"name": "q_lvl_name",
@@ -4997,7 +4998,7 @@ package
 				{
 					"order": 50,
 					"list": true,
-					"reward": [0, 0, 0, 0, 500],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(500)],
 					"id": "LVL50",
 					"group": 4,
 					"name": "q_lvl_name",
@@ -5013,7 +5014,7 @@ package
 				{
 					"order": 55,
 					"list": true,
-					"reward": [0, 0, 0, 0, 550],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(550)],
 					"id": "LVL55",
 					"group": 4,
 					"name": "q_lvl_name",
@@ -5029,7 +5030,7 @@ package
 				{
 					"order": 60,
 					"list": true,
-					"reward": [0, 0, 0, 0, 600],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(600)],
 					"id": "LVL60",
 					"group": 4,
 					"name": "q_lvl_name",
@@ -5045,7 +5046,7 @@ package
 				{
 					"order": 65,
 					"list": true,
-					"reward": [0, 0, 0, 0, 650],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(650)],
 					"id": "LVL65",
 					"group": 4,
 					"name": "q_lvl_name",
@@ -5061,7 +5062,7 @@ package
 				{
 					"order": 70,
 					"list": true,
-					"reward": [0, 0, 0, 0, 700],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(700)],
 					"id": "LVL70",
 					"group": 4,
 					"name": "q_lvl_name",
@@ -5077,7 +5078,7 @@ package
 				{
 					"order": 75,
 					"list": true,
-					"reward": [0, 0, 0, 0, 750],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(750)],
 					"id": "LVL75",
 					"group": 4,
 					"name": "q_lvl_name",
@@ -5093,7 +5094,7 @@ package
 				{
 					"order": 80,
 					"list": true,
-					"reward": [0, 0, 0, 0, 800],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(800)],
 					"id": "LVL80",
 					"group": 4,
 					"name": "q_lvl_name",
@@ -5109,7 +5110,7 @@ package
 				{
 					"order": 85,
 					"list": true,
-					"reward": [0, 0, 0, 0, 850],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(850)],
 					"id": "LVL85",
 					"group": 4,
 					"name": "q_lvl_name",
@@ -5125,7 +5126,7 @@ package
 				{
 					"order": 90,
 					"list": true,
-					"reward": [0, 0, 0, 0, 900],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(900)],
 					"id": "LVL90",
 					"group": 4,
 					"name": "q_lvl_name",
@@ -5141,7 +5142,7 @@ package
 				{
 					"order": 95,
 					"list": true,
-					"reward": [0, 0, 0, 0, 950],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(950)],
 					"id": "LVL95",
 					"group": 4,
 					"name": "q_lvl_name",
@@ -5157,7 +5158,7 @@ package
 				{
 					"order": 100,
 					"list": true,
-					"reward": [0, 0, 0, 0, 1000],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(1000)],
 					"id": "LVL100",
 					"group": 4,
 					"name": "q_lvl_name",
@@ -5173,7 +5174,7 @@ package
 				{
 					"order": 101,
 					"list": true,
-					"reward": [0, 0, 0, 0, 1010],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(1010)],
 					"id": "LVL101",
 					"group": 4,
 					"name": "q_lvl_name",
@@ -5189,7 +5190,7 @@ package
 				{
 					"order": 102,
 					"list": true,
-					"reward": [0, 0, 0, 0, 1020],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(1020)],
 					"id": "LVL102",
 					"group": 4,
 					"name": "q_lvl_name",
@@ -5205,7 +5206,7 @@ package
 				{
 					"order": 103,
 					"list": true,
-					"reward": [0, 0, 0, 0, 1030],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(1030)],
 					"id": "LVL103",
 					"group": 4,
 					"name": "q_lvl_name",
@@ -5221,7 +5222,7 @@ package
 				{
 					"order": 104,
 					"list": true,
-					"reward": [0, 0, 0, 0, 1040],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(1040)],
 					"id": "LVL104",
 					"group": 4,
 					"name": "q_lvl_name",
@@ -5237,7 +5238,7 @@ package
 				{
 					"order": 105,
 					"list": true,
-					"reward": [0, 0, 0, 0, 1050],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(1050)],
 					"id": "LVL105",
 					"group": 4,
 					"name": "q_lvl_name",
@@ -5253,7 +5254,7 @@ package
 				{
 					"order": 106,
 					"list": true,
-					"reward": [0, 0, 0, 0, 1060],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(1060)],
 					"id": "LVL106",
 					"group": 4,
 					"name": "q_lvl_name",
@@ -5269,7 +5270,7 @@ package
 				{
 					"order": 107,
 					"list": true,
-					"reward": [0, 0, 0, 0, 1070],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(1070)],
 					"id": "LVL107",
 					"group": 4,
 					"name": "q_lvl_name",
@@ -5285,7 +5286,7 @@ package
 				{
 					"order": 108,
 					"list": true,
-					"reward": [0, 0, 0, 0, 1080],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(1080)],
 					"id": "LVL108",
 					"group": 4,
 					"name": "q_lvl_name",
@@ -5301,7 +5302,7 @@ package
 				{
 					"order": 109,
 					"list": true,
-					"reward": [0, 0, 0, 0, 1090],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(1090)],
 					"id": "LVL109",
 					"group": 4,
 					"name": "q_lvl_name",
@@ -5317,7 +5318,7 @@ package
 				{
 					"order": 110,
 					"list": true,
-					"reward": [0, 0, 0, 0, 1100],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(1100)],
 					"id": "LVL110",
 					"group": 4,
 					"name": "q_lvl_name",
@@ -5333,7 +5334,7 @@ package
 				{
 					"order": 111,
 					"list": true,
-					"reward": [0, 0, 0, 0, 1110],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(1110)],
 					"id": "LVL111",
 					"group": 4,
 					"name": "q_lvl_name",
@@ -5349,7 +5350,7 @@ package
 				{
 					"order": 112,
 					"list": true,
-					"reward": [0, 0, 0, 0, 1120],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(1120)],
 					"id": "LVL112",
 					"group": 4,
 					"name": "q_lvl_name",
@@ -5365,7 +5366,7 @@ package
 				{
 					"order": 113,
 					"list": true,
-					"reward": [0, 0, 0, 0, 1130],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(1130)],
 					"id": "LVL113",
 					"group": 4,
 					"name": "q_lvl_name",
@@ -5381,7 +5382,7 @@ package
 				{
 					"order": 114,
 					"list": true,
-					"reward": [0, 0, 0, 0, 1140],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(1140)],
 					"id": "LVL114",
 					"group": 4,
 					"name": "q_lvl_name",
@@ -5397,7 +5398,7 @@ package
 				{
 					"order": 115,
 					"list": true,
-					"reward": [0, 0, 0, 0, 1150],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(1150)],
 					"id": "LVL115",
 					"group": 4,
 					"name": "q_lvl_name",
@@ -5413,7 +5414,7 @@ package
 				{
 					"order": 116,
 					"list": true,
-					"reward": [0, 0, 0, 0, 1160],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(1160)],
 					"id": "LVL116",
 					"group": 4,
 					"name": "q_lvl_name",
@@ -5429,7 +5430,7 @@ package
 				{
 					"order": 117,
 					"list": true,
-					"reward": [0, 0, 0, 0, 1170],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(1170)],
 					"id": "LVL117",
 					"group": 4,
 					"name": "q_lvl_name",
@@ -5445,7 +5446,7 @@ package
 				{
 					"order": 118,
 					"list": true,
-					"reward": [0, 0, 0, 0, 1180],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(1180)],
 					"id": "LVL118",
 					"group": 4,
 					"name": "q_lvl_name",
@@ -5461,7 +5462,7 @@ package
 				{
 					"order": 119,
 					"list": true,
-					"reward": [0, 0, 0, 0, 1190],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(1190)],
 					"id": "LVL119",
 					"group": 4,
 					"name": "q_lvl_name",
@@ -5477,7 +5478,7 @@ package
 				{
 					"order": 120,
 					"list": true,
-					"reward": [0, 0, 0, 0, 1200],
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(1200)],
 					"id": "LVL120",
 					"group": 4,
 					"name": "q_lvl_name",
@@ -5495,7 +5496,7 @@ package
 				{
 					"order": 100,
 					"list": true,
-					"reward": [10000000, 10000000, 10000000, 10000000, 0],
+					"reward": [new SecNum(10000000), new SecNum(10000000), new SecNum(10000000), new SecNum(10000000), new SecNum(0)],
 					"id": "ASSAULT_TOWERS_100",
 					"group": 5,
 					"name": "Enemy towers x100",
@@ -5510,7 +5511,7 @@ package
 				{
 					"order": 250,
 					"list": true,
-					"reward": [25000000, 25000000, 25000000, 25000000, 0],
+					"reward": [new SecNum(25000000), new SecNum(25000000), new SecNum(25000000), new SecNum(25000000), new SecNum(0)],
 					"id": "ASSAULT_TOWERS_250",
 					"group": 5,
 					"name": "Enemy towers x250",
@@ -5526,7 +5527,7 @@ package
 				{
 					"order": 500,
 					"list": true,
-					"reward": [50000000, 50000000, 50000000, 50000000, 0],
+					"reward": [new SecNum(50000000), new SecNum(50000000), new SecNum(50000000), new SecNum(50000000), new SecNum(0)],
 					"id": "ASSAULT_TOWERS_500",
 					"group": 5,
 					"name": "Enemy towers x500",
@@ -5542,7 +5543,7 @@ package
 				{
 					"order": 1000,
 					"list": true,
-					"reward": [100000000, 100000000, 100000000, 100000000, 10],
+					"reward": [new SecNum(100000000), new SecNum(100000000), new SecNum(100000000), new SecNum(100000000), new SecNum(10)],
 					"id": "ASSAULT_TOWERS_1000",
 					"group": 5,
 					"name": "Enemy towers x1000",
@@ -5558,7 +5559,7 @@ package
 				{
 					"order": 2500,
 					"list": true,
-					"reward": [250000000, 250000000, 250000000, 250000000, 25],
+					"reward": [new SecNum(250000000), new SecNum(250000000), new SecNum(250000000), new SecNum(250000000), new SecNum(25)],
 					"id": "ASSAULT_TOWERS_2500",
 					"group": 5,
 					"name": "Enemy towers x2500",
@@ -5574,7 +5575,7 @@ package
 				{
 					"order": 5000,
 					"list": true,
-					"reward": [500000000, 500000000, 500000000, 500000000, 50],
+					"reward": [new SecNum(500000000), new SecNum(500000000), new SecNum(500000000), new SecNum(500000000), new SecNum(50)],
 					"id": "ASSAULT_TOWERS_5000",
 					"group": 5,
 					"name": "Enemy towers x5000",
@@ -5590,7 +5591,7 @@ package
 				{
 					"order": 7500,
 					"list": true,
-					"reward": [750000000, 750000000, 750000000, 750000000, 75],
+					"reward": [new SecNum(750000000), new SecNum(750000000), new SecNum(750000000), new SecNum(750000000), new SecNum(75)],
 					"id": "ASSAULT_TOWERS_7500",
 					"group": 5,
 					"name": "Enemy towers x7500",
@@ -5606,7 +5607,7 @@ package
 				{
 					"order": 10000,
 					"list": true,
-					"reward": [1000000000, 1000000000, 1000000000, 1000000000, 100],
+					"reward": [new SecNum(1000000000), new SecNum(1000000000), new SecNum(1000000000), new SecNum(1000000000), new SecNum(100)],
 					"id": "ASSAULT_TOWERS_10000",
 					"group": 5,
 					"name": "Enemy towers x10000",
@@ -5622,7 +5623,7 @@ package
 				{
 					"order": 20000,
 					"list": true,
-					"reward": [2000000000, 2000000000, 2000000000, 2000000000, 200],
+					"reward": [new SecNum(2000000000), new SecNum(2000000000), new SecNum(2000000000), new SecNum(2000000000), new SecNum(200)],
 					"id": "ASSAULT_TOWERS_20000",
 					"group": 5,
 					"name": "Enemy towers x20000",
@@ -5638,7 +5639,7 @@ package
 				{
 					"order": 40000,
 					"list": true,
-					"reward": [4000000000, 4000000000, 4000000000, 4000000000, 400],
+					"reward": [new SecNum(4000000000), new SecNum(4000000000), new SecNum(4000000000), new SecNum(4000000000), new SecNum(400)],
 					"id": "ASSAULT_TOWERS_40000",
 					"group": 5,
 					"name": "Enemy towers x40000",
@@ -5654,7 +5655,7 @@ package
 				{
 					"order": 60000,
 					"list": true,
-					"reward": [6000000000, 6000000000, 6000000000, 6000000000, 600],
+					"reward": [new SecNum(6000000000), new SecNum(6000000000), new SecNum(6000000000), new SecNum(6000000000), new SecNum(600)],
 					"id": "ASSAULT_TOWERS_60000",
 					"group": 5,
 					"name": "Enemy towers x60000",
@@ -5670,7 +5671,7 @@ package
 				{
 					"order": 80000,
 					"list": true,
-					"reward": [8000000000, 8000000000, 8000000000, 8000000000, 800],
+					"reward": [new SecNum(8000000000), new SecNum(8000000000), new SecNum(8000000000), new SecNum(8000000000), new SecNum(800)],
 					"id": "ASSAULT_TOWERS_80000",
 					"group": 5,
 					"name": "Enemy towers x80000",
@@ -5686,7 +5687,7 @@ package
 				{
 					"order": 100000,
 					"list": true,
-					"reward": [10000000000, 10000000000, 10000000000, 10000000000, 1000],
+					"reward": [new SecNum(10000000000), new SecNum(10000000000), new SecNum(10000000000), new SecNum(10000000000), new SecNum(1000)],
 					"id": "ASSAULT_TOWERS_100000",
 					"group": 5,
 					"name": "Enemy towers x100000",
@@ -5702,7 +5703,7 @@ package
 				{
 					"order": 200000,
 					"list": true,
-					"reward": [20000000000, 20000000000, 20000000000, 20000000000, 2000],
+					"reward": [new SecNum(20000000000), new SecNum(20000000000), new SecNum(20000000000), new SecNum(20000000000), new SecNum(2000)],
 					"id": "ASSAULT_TOWERS_200000",
 					"group": 5,
 					"name": "Enemy towers x200000",
@@ -5718,7 +5719,7 @@ package
 				{
 					"order": 400000,
 					"list": true,
-					"reward": [40000000000, 40000000000, 40000000000, 40000000000, 4000],
+					"reward": [new SecNum(40000000000), new SecNum(40000000000), new SecNum(40000000000), new SecNum(40000000000), new SecNum(4000)],
 					"id": "ASSAULT_TOWERS_400000",
 					"group": 5,
 					"name": "Enemy towers x400000",
@@ -5734,7 +5735,7 @@ package
 				{
 					"order": 600000,
 					"list": true,
-					"reward": [60000000000, 60000000000, 60000000000, 60000000000, 6000],
+					"reward": [new SecNum(60000000000), new SecNum(60000000000), new SecNum(60000000000), new SecNum(60000000000), new SecNum(6000)],
 					"id": "ASSAULT_TOWERS_600000",
 					"group": 5,
 					"name": "Enemy towers x600000",
@@ -5750,7 +5751,7 @@ package
 				{
 					"order": 800000,
 					"list": true,
-					"reward": [80000000000, 80000000000, 80000000000, 80000000000, 8000],
+					"reward": [new SecNum(80000000000), new SecNum(80000000000), new SecNum(80000000000), new SecNum(80000000000), new SecNum(8000)],
 					"id": "ASSAULT_TOWERS_800000",
 					"group": 5,
 					"name": "Enemy towers x800000",
@@ -5766,7 +5767,7 @@ package
 				{
 					"order": 1000000,
 					"list": true,
-					"reward": [100000000000, 100000000000, 100000000000, 100000000000, 10000],
+					"reward": [new SecNum(100000000000), new SecNum(100000000000), new SecNum(100000000000), new SecNum(100000000000), new SecNum(10000)],
 					"id": "ASSAULT_TOWERS_1000000",
 					"group": 5,
 					"name": "Enemy towers x1000000",
@@ -5782,7 +5783,7 @@ package
 				{
 					"order": 100,
 					"list": true,
-					"reward": [1000000, 1000000, 1000000, 1000000, 0],
+					"reward": [new SecNum(1000000), new SecNum(1000000), new SecNum(1000000), new SecNum(1000000), new SecNum(0)],
 					"id": "ASSAULT_MONSTERS_100",
 					"group": 5,
 					"name": "Enemy monsters x100",
@@ -5797,7 +5798,7 @@ package
 				{
 					"order": 250,
 					"list": true,
-					"reward": [2500000, 2500000, 2500000, 2500000, 0],
+					"reward": [new SecNum(2500000), new SecNum(2500000), new SecNum(2500000), new SecNum(2500000), new SecNum(0)],
 					"id": "ASSAULT_MONSTERS_250",
 					"group": 5,
 					"name": "Enemy monsters x250",
@@ -5813,7 +5814,7 @@ package
 				{
 					"order": 500,
 					"list": true,
-					"reward": [5000000, 5000000, 5000000, 5000000, 0],
+					"reward": [new SecNum(5000000), new SecNum(5000000), new SecNum(5000000), new SecNum(5000000), new SecNum(0)],
 					"id": "ASSAULT_MONSTERS_500",
 					"group": 5,
 					"name": "Enemy monsters x500",
@@ -5829,7 +5830,7 @@ package
 				{
 					"order": 1000,
 					"list": true,
-					"reward": [10000000, 10000000, 10000000, 10000000, 0],
+					"reward": [new SecNum(10000000), new SecNum(10000000), new SecNum(10000000), new SecNum(10000000), new SecNum(0)],
 					"id": "ASSAULT_MONSTERS_1000",
 					"group": 5,
 					"name": "Enemy monsters x1000",
@@ -5845,7 +5846,7 @@ package
 				{
 					"order": 2500,
 					"list": true,
-					"reward": [25000000, 25000000, 25000000, 25000000, 0],
+					"reward": [new SecNum(25000000), new SecNum(25000000), new SecNum(25000000), new SecNum(25000000), new SecNum(0)],
 					"id": "ASSAULT_MONSTERS_2500",
 					"group": 5,
 					"name": "Enemy monsters x2500",
@@ -5861,7 +5862,7 @@ package
 				{
 					"order": 5000,
 					"list": true,
-					"reward": [50000000, 50000000, 50000000, 50000000, 0],
+					"reward": [new SecNum(50000000), new SecNum(50000000), new SecNum(50000000), new SecNum(50000000), new SecNum(0)],
 					"id": "ASSAULT_MONSTERS_5000",
 					"group": 5,
 					"name": "Enemy monsters x5000",
@@ -5877,7 +5878,7 @@ package
 				{
 					"order": 7500,
 					"list": true,
-					"reward": [75000000, 75000000, 75000000, 75000000, 0],
+					"reward": [new SecNum(75000000), new SecNum(75000000), new SecNum(75000000), new SecNum(75000000), new SecNum(0)],
 					"id": "ASSAULT_MONSTERS_7500",
 					"group": 5,
 					"name": "Enemy monsters x7500",
@@ -5893,7 +5894,7 @@ package
 				{
 					"order": 10000,
 					"list": true,
-					"reward": [100000000, 100000000, 100000000, 100000000, 0],
+					"reward": [new SecNum(100000000), new SecNum(100000000), new SecNum(100000000), new SecNum(100000000), new SecNum(0)],
 					"id": "ASSAULT_MONSTERS_10000",
 					"group": 5,
 					"name": "Enemy monsters x10000",
@@ -5909,7 +5910,7 @@ package
 				{
 					"order": 20000,
 					"list": true,
-					"reward": [200000000, 200000000, 200000000, 200000000, 0],
+					"reward": [new SecNum(200000000), new SecNum(200000000), new SecNum(200000000), new SecNum(200000000), new SecNum(0)],
 					"id": "ASSAULT_MONSTERS_20000",
 					"group": 5,
 					"name": "Enemy monsters x20000",
@@ -5925,7 +5926,7 @@ package
 				{
 					"order": 40000,
 					"list": true,
-					"reward": [400000000, 400000000, 400000000, 400000000, 0],
+					"reward": [new SecNum(400000000), new SecNum(400000000), new SecNum(400000000), new SecNum(400000000), new SecNum(0)],
 					"id": "ASSAULT_MONSTERS_40000",
 					"group": 5,
 					"name": "Enemy monsters x40000",
@@ -5941,7 +5942,7 @@ package
 				{
 					"order": 60000,
 					"list": true,
-					"reward": [600000000, 600000000, 600000000, 600000000, 0],
+					"reward": [new SecNum(600000000), new SecNum(600000000), new SecNum(600000000), new SecNum(600000000), new SecNum(0)],
 					"id": "ASSAULT_MONSTERS_60000",
 					"group": 5,
 					"name": "Enemy monsters x60000",
@@ -5957,7 +5958,7 @@ package
 				{
 					"order": 80000,
 					"list": true,
-					"reward": [800000000, 800000000, 800000000, 800000000, 0],
+					"reward": [new SecNum(800000000), new SecNum(800000000), new SecNum(800000000), new SecNum(800000000), new SecNum(0)],
 					"id": "ASSAULT_MONSTERS_80000",
 					"group": 5,
 					"name": "Enemy monsters x80000",
@@ -5973,7 +5974,7 @@ package
 				{
 					"order": 100000,
 					"list": true,
-					"reward": [1000000000, 1000000000, 1000000000, 1000000000, 0],
+					"reward": [new SecNum(1000000000), new SecNum(1000000000), new SecNum(1000000000), new SecNum(1000000000), new SecNum(0)],
 					"id": "ASSAULT_MONSTERS_100000",
 					"group": 5,
 					"name": "Enemy monsters x100000",
@@ -5989,7 +5990,7 @@ package
 				{
 					"order": 200000,
 					"list": true,
-					"reward": [2000000000, 2000000000, 2000000000, 2000000000, 0],
+					"reward": [new SecNum(2000000000), new SecNum(2000000000), new SecNum(2000000000), new SecNum(2000000000), new SecNum(0)],
 					"id": "ASSAULT_MONSTERS_200000",
 					"group": 5,
 					"name": "Enemy monsters x200000",
@@ -6005,7 +6006,7 @@ package
 				{
 					"order": 400000,
 					"list": true,
-					"reward": [4000000000, 4000000000, 4000000000, 4000000000, 0],
+					"reward": [new SecNum(4000000000), new SecNum(4000000000), new SecNum(4000000000), new SecNum(4000000000), new SecNum(0)],
 					"id": "ASSAULT_MONSTERS_400000",
 					"group": 5,
 					"name": "Enemy monsters x400000",
@@ -6021,7 +6022,7 @@ package
 				{
 					"order": 600000,
 					"list": true,
-					"reward": [6000000000, 6000000000, 6000000000, 6000000000, 0],
+					"reward": [new SecNum(6000000000), new SecNum(6000000000), new SecNum(6000000000), new SecNum(6000000000), new SecNum(0)],
 					"id": "ASSAULT_MONSTERS_600000",
 					"group": 5,
 					"name": "Enemy monsters x600000",
@@ -6037,7 +6038,7 @@ package
 				{
 					"order": 800000,
 					"list": true,
-					"reward": [8000000000, 8000000000, 8000000000, 8000000000, 0],
+					"reward": [new SecNum(8000000000), new SecNum(8000000000), new SecNum(8000000000), new SecNum(8000000000), new SecNum(0)],
 					"id": "ASSAULT_MONSTERS_800000",
 					"group": 5,
 					"name": "Enemy monsters x800000",
@@ -6053,7 +6054,7 @@ package
 				{
 					"order": 1000000,
 					"list": true,
-					"reward": [10000000000, 10000000000, 10000000000, 10000000000, 2500],
+					"reward": [new SecNum(10000000000), new SecNum(10000000000), new SecNum(10000000000), new SecNum(10000000000), new SecNum(2500)],
 					"id": "ASSAULT_MONSTERS_1000000",
 					"group": 5,
 					"name": "Enemy monsters x1000000",
@@ -6071,7 +6072,7 @@ package
 				{
 					"order": 1,
 					"list": true,
-					"reward": [5000000, 5000000, 5000000, 5000000, 0],
+					"reward": [new SecNum(5000000), new SecNum(5000000), new SecNum(5000000), new SecNum(5000000), new SecNum(0)],
 					"id": "assault_sh_1",
 					"group": 6,
 					"name": "Stronghold x1",
@@ -6086,7 +6087,7 @@ package
 				{
 					"order": 2,
 					"list": true,
-					"reward": [25000000, 25000000, 25000000, 25000000, 0],
+					"reward": [new SecNum(25000000), new SecNum(25000000), new SecNum(25000000), new SecNum(25000000), new SecNum(0)],
 					"id": "assault_sh_5",
 					"group": 6,
 					"name": "Stronghold x5",
@@ -6102,7 +6103,7 @@ package
 				{
 					"order": 3,
 					"list": true,
-					"reward": [50000000, 50000000, 50000000, 50000000, 0],
+					"reward": [new SecNum(50000000), new SecNum(50000000), new SecNum(50000000), new SecNum(50000000), new SecNum(0)],
 					"id": "assault_sh_10",
 					"group": 6,
 					"name": "Stronghold x10",
@@ -6118,7 +6119,7 @@ package
 				{
 					"order": 4,
 					"list": true,
-					"reward": [100000000, 100000000, 100000000, 100000000, 0],
+					"reward": [new SecNum(100000000), new SecNum(100000000), new SecNum(100000000), new SecNum(100000000), new SecNum(0)],
 					"id": "assault_sh_15",
 					"group": 6,
 					"name": "Stronghold x15",
@@ -6134,7 +6135,7 @@ package
 				{
 					"order": 5,
 					"list": true,
-					"reward": [250000000, 250000000, 250000000, 250000000, 0],
+					"reward": [new SecNum(250000000), new SecNum(250000000), new SecNum(250000000), new SecNum(250000000), new SecNum(0)],
 					"id": "assault_sh_20",
 					"group": 6,
 					"name": "Stronghold x20",
@@ -6150,7 +6151,7 @@ package
 				{
 					"order": 6,
 					"list": true,
-					"reward": [500000000, 500000000, 500000000, 500000000, 0],
+					"reward": [new SecNum(500000000), new SecNum(500000000), new SecNum(500000000), new SecNum(500000000), new SecNum(0)],
 					"id": "assault_sh_25",
 					"group": 6,
 					"name": "Stronghold x25",
@@ -6166,7 +6167,7 @@ package
 				{
 					"order": 7,
 					"list": true,
-					"reward": [1000000000, 1000000000, 1000000000, 1000000000, 0],
+					"reward": [new SecNum(1000000000), new SecNum(1000000000), new SecNum(1000000000), new SecNum(1000000000), new SecNum(0)],
 					"id": "assault_sh_30",
 					"group": 6,
 					"name": "Stronghold x30",
@@ -6182,7 +6183,7 @@ package
 				{
 					"order": 8,
 					"list": true,
-					"reward": [2000000000, 2000000000, 2000000000, 2000000000, 0],
+					"reward": [new SecNum(2000000000), new SecNum(2000000000), new SecNum(2000000000), new SecNum(2000000000), new SecNum(0)],
 					"id": "assault_sh_35",
 					"group": 6,
 					"name": "Stronghold x35",
@@ -6198,7 +6199,7 @@ package
 				{
 					"order": 9,
 					"list": true,
-					"reward": [4000000000, 4000000000, 4000000000, 4000000000, 0],
+					"reward": [new SecNum(4000000000), new SecNum(4000000000), new SecNum(4000000000), new SecNum(4000000000), new SecNum(0)],
 					"id": "assault_sh_40",
 					"group": 6,
 					"name": "Stronghold x40",
@@ -6214,7 +6215,7 @@ package
 				{
 					"order": 10,
 					"list": true,
-					"reward": [5000000000, 5000000000, 5000000000, 5000000000, 0],
+					"reward": [new SecNum(5000000000), new SecNum(5000000000), new SecNum(5000000000), new SecNum(5000000000), new SecNum(0)],
 					"id": "assault_sh_45",
 					"group": 6,
 					"name": "Stronghold x45",
@@ -6230,7 +6231,7 @@ package
 				{
 					"order": 11,
 					"list": true,
-					"reward": [6000000000, 6000000000, 6000000000, 6000000000, 0],
+					"reward": [new SecNum(6000000000), new SecNum(6000000000), new SecNum(6000000000), new SecNum(6000000000), new SecNum(0)],
 					"id": "assault_sh_50",
 					"group": 6,
 					"name": "Stronghold x50",
@@ -6246,7 +6247,7 @@ package
 				{
 					"order": 12,
 					"list": true,
-					"reward": [7000000000, 7000000000, 7000000000, 7000000000, 0],
+					"reward": [new SecNum(7000000000), new SecNum(7000000000), new SecNum(7000000000), new SecNum(7000000000), new SecNum(0)],
 					"id": "assault_sh_60",
 					"group": 6,
 					"name": "Stronghold x60",
@@ -6262,7 +6263,7 @@ package
 				{
 					"order": 13,
 					"list": true,
-					"reward": [8000000000, 8000000000, 8000000000, 8000000000, 0],
+					"reward": [new SecNum(8000000000), new SecNum(8000000000), new SecNum(8000000000), new SecNum(8000000000), new SecNum(0)],
 					"id": "assault_sh_70",
 					"group": 6,
 					"name": "Stronghold x70",
@@ -6278,7 +6279,7 @@ package
 				{
 					"order": 14,
 					"list": true,
-					"reward": [9000000000, 9000000000, 9000000000, 9000000000, 0],
+					"reward": [new SecNum(9000000000), new SecNum(9000000000), new SecNum(9000000000), new SecNum(9000000000), new SecNum(0)],
 					"id": "assault_sh_80",
 					"group": 6,
 					"name": "Stronghold x80",
@@ -6294,7 +6295,7 @@ package
 				{
 					"order": 15,
 					"list": true,
-					"reward": [10000000000, 10000000000, 10000000000, 10000000000, 0],
+					"reward": [new SecNum(10000000000), new SecNum(10000000000), new SecNum(10000000000), new SecNum(10000000000), new SecNum(0)],
 					"id": "assault_sh_90",
 					"group": 6,
 					"name": "Stronghold x90",
@@ -6310,7 +6311,7 @@ package
 				{
 					"order": 16,
 					"list": true,
-					"reward": [12000000000, 12000000000, 12000000000, 12000000000, 1000],
+					"reward": [new SecNum(12000000000), new SecNum(12000000000), new SecNum(12000000000), new SecNum(12000000000), new SecNum(1000)],
 					"id": "assault_sh_100",
 					"group": 6,
 					"name": "Stronghold x100",
@@ -6326,7 +6327,7 @@ package
 				{
 					"order": 1,
 					"list": true,
-					"reward": [5000000, 5000000, 5000000, 5000000, 0],
+					"reward": [new SecNum(5000000), new SecNum(5000000), new SecNum(5000000), new SecNum(5000000), new SecNum(0)],
 					"id": "assault_ro_5",
 					"group": 6,
 					"name": "Resource Outpost x5",
@@ -6341,7 +6342,7 @@ package
 				{
 					"order": 2,
 					"list": true,
-					"reward": [10000000, 10000000, 10000000, 10000000, 0],
+					"reward": [new SecNum(10000000), new SecNum(10000000), new SecNum(10000000), new SecNum(10000000), new SecNum(0)],
 					"id": "assault_ro_10",
 					"group": 6,
 					"name": "Resource Outpost x10",
@@ -6357,7 +6358,7 @@ package
 				{
 					"order": 3,
 					"list": true,
-					"reward": [250000000, 250000000, 250000000, 250000000, 0],
+					"reward": [new SecNum(250000000), new SecNum(250000000), new SecNum(250000000), new SecNum(250000000), new SecNum(0)],
 					"id": "assault_ro_25",
 					"group": 6,
 					"name": "Resource Outpost x25",
@@ -6373,7 +6374,7 @@ package
 				{
 					"order": 4,
 					"list": true,
-					"reward": [500000000, 500000000, 500000000, 500000000, 50],
+					"reward": [new SecNum(500000000), new SecNum(500000000), new SecNum(500000000), new SecNum(500000000), new SecNum(50)],
 					"id": "assault_ro_50",
 					"group": 6,
 					"name": "Resource Outpost x50",
@@ -6389,7 +6390,7 @@ package
 				{
 					"order": 5,
 					"list": true,
-					"reward": [750000000, 750000000, 750000000, 750000000, 75],
+					"reward": [new SecNum(750000000), new SecNum(750000000), new SecNum(750000000), new SecNum(750000000), new SecNum(75)],
 					"id": "assault_ro_75",
 					"group": 6,
 					"name": "Resource Outpost x75",
@@ -6405,7 +6406,7 @@ package
 				{
 					"order": 6,
 					"list": true,
-					"reward": [1000000000, 1000000000, 1000000000, 1000000000, 100],
+					"reward": [new SecNum(1000000000), new SecNum(1000000000), new SecNum(1000000000), new SecNum(1000000000), new SecNum(100)],
 					"id": "assault_ro_100",
 					"group": 6,
 					"name": "Resource Outpost x100",
@@ -6421,7 +6422,7 @@ package
 				{
 					"order": 7,
 					"list": true,
-					"reward": [1500000000, 1500000000, 1500000000, 1500000000, 150],
+					"reward": [new SecNum(1500000000), new SecNum(1500000000), new SecNum(1500000000), new SecNum(1500000000), new SecNum(150)],
 					"id": "assault_ro_150",
 					"group": 6,
 					"name": "Resource Outpost x150",
@@ -6437,7 +6438,7 @@ package
 				{
 					"order": 8,
 					"list": true,
-					"reward": [2000000000, 2000000000, 2000000000, 2000000000, 200],
+					"reward": [new SecNum(2000000000), new SecNum(2000000000), new SecNum(2000000000), new SecNum(2000000000), new SecNum(200)],
 					"id": "assault_ro_200",
 					"group": 6,
 					"name": "Resource Outpost x200",
@@ -6453,7 +6454,7 @@ package
 				{
 					"order": 9,
 					"list": true,
-					"reward": [2500000000, 2500000000, 2500000000, 2500000000, 250],
+					"reward": [new SecNum(2500000000), new SecNum(2500000000), new SecNum(2500000000), new SecNum(2500000000), new SecNum(250)],
 					"id": "assault_ro_250",
 					"group": 6,
 					"name": "Resource Outpost x250",
@@ -6469,7 +6470,7 @@ package
 				{
 					"order": 10,
 					"list": true,
-					"reward": [3000000000, 3000000000, 3000000000, 3000000000, 300],
+					"reward": [new SecNum(3000000000), new SecNum(3000000000), new SecNum(3000000000), new SecNum(3000000000), new SecNum(300)],
 					"id": "assault_ro_300",
 					"group": 6,
 					"name": "Resource Outpost x300",
@@ -6485,7 +6486,7 @@ package
 				{
 					"order": 11,
 					"list": true,
-					"reward": [3500000000, 3500000000, 3500000000, 3500000000, 350],
+					"reward": [new SecNum(3500000000), new SecNum(3500000000), new SecNum(3500000000), new SecNum(3500000000), new SecNum(350)],
 					"id": "assault_ro_350",
 					"group": 6,
 					"name": "Resource Outpost x350",
@@ -6501,7 +6502,7 @@ package
 				{
 					"order": 12,
 					"list": true,
-					"reward": [4000000000, 4000000000, 4000000000, 4000000000, 400],
+					"reward": [new SecNum(4000000000), new SecNum(4000000000), new SecNum(4000000000), new SecNum(4000000000), new SecNum(400)],
 					"id": "assault_ro_400",
 					"group": 6,
 					"name": "Resource Outpost x400",
@@ -6517,7 +6518,7 @@ package
 				{
 					"order": 13,
 					"list": true,
-					"reward": [4500000000, 4500000000, 4500000000, 4500000000, 450],
+					"reward": [new SecNum(4500000000), new SecNum(4500000000), new SecNum(4500000000), new SecNum(4500000000), new SecNum(450)],
 					"id": "assault_ro_450",
 					"group": 6,
 					"name": "Resource Outpost x450",
@@ -6533,7 +6534,7 @@ package
 				{
 					"order": 14,
 					"list": true,
-					"reward": [5000000000, 5000000000, 5000000000, 5000000000, 500],
+					"reward": [new SecNum(5000000000), new SecNum(5000000000), new SecNum(5000000000), new SecNum(5000000000), new SecNum(500)],
 					"id": "assault_ro_500",
 					"group": 6,
 					"name": "Resource Outpost x500",
@@ -6549,7 +6550,7 @@ package
 				{
 					"order": 15,
 					"list": true,
-					"reward": [6000000000, 6000000000, 6000000000, 6000000000, 600],
+					"reward": [new SecNum(6000000000), new SecNum(6000000000), new SecNum(6000000000), new SecNum(6000000000), new SecNum(600)],
 					"id": "assault_ro_600",
 					"group": 6,
 					"name": "Resource Outpost x600",
@@ -6565,7 +6566,7 @@ package
 				{
 					"order": 16,
 					"list": true,
-					"reward": [7000000000, 7000000000, 7000000000, 7000000000, 700],
+					"reward": [new SecNum(7000000000), new SecNum(7000000000), new SecNum(7000000000), new SecNum(7000000000), new SecNum(700)],
 					"id": "assault_ro_700",
 					"group": 6,
 					"name": "Resource Outpost x700",
@@ -6581,7 +6582,7 @@ package
 				{
 					"order": 17,
 					"list": true,
-					"reward": [8000000000, 8000000000, 8000000000, 8000000000, 800],
+					"reward": [new SecNum(8000000000), new SecNum(8000000000), new SecNum(8000000000), new SecNum(8000000000), new SecNum(800)],
 					"id": "assault_ro_800",
 					"group": 6,
 					"name": "Resource Outpost x800",
@@ -6597,7 +6598,7 @@ package
 				{
 					"order": 18,
 					"list": true,
-					"reward": [9000000000, 9000000000, 9000000000, 9000000000, 900],
+					"reward": [new SecNum(9000000000), new SecNum(9000000000), new SecNum(9000000000), new SecNum(9000000000), new SecNum(900)],
 					"id": "assault_ro_900",
 					"group": 6,
 					"name": "Resource Outpost x900",
@@ -6613,7 +6614,7 @@ package
 				{
 					"order": 19,
 					"list": true,
-					"reward": [10000000000, 10000000000, 10000000000, 10000000000, 1000],
+					"reward": [new SecNum(10000000000), new SecNum(10000000000), new SecNum(10000000000), new SecNum(10000000000), new SecNum(1000)],
 					"id": "assault_ro_1000",
 					"group": 6,
 					"name": "Resource Outpost x1000",
@@ -6629,7 +6630,7 @@ package
 				{
 					"order": 1,
 					"list": true,
-					"reward": [5000000, 5000000, 5000000, 5000000, 0],
+					"reward": [new SecNum(5000000), new SecNum(5000000), new SecNum(5000000), new SecNum(5000000), new SecNum(0)],
 					"id": "assault_de_10",
 					"group": 6,
 					"name": "Defenders x10",
@@ -6644,7 +6645,7 @@ package
 				{
 					"order": 2,
 					"list": true,
-					"reward": [13000000, 13000000, 13000000, 13000000, 0],
+					"reward": [new SecNum(13000000), new SecNum(13000000), new SecNum(13000000), new SecNum(13000000), new SecNum(0)],
 					"id": "assault_de_25",
 					"group": 6,
 					"name": "Defenders x25",
@@ -6660,7 +6661,7 @@ package
 				{
 					"order": 3,
 					"list": true,
-					"reward": [25000000, 25000000, 25000000, 25000000, 0],
+					"reward": [new SecNum(25000000), new SecNum(25000000), new SecNum(25000000), new SecNum(25000000), new SecNum(0)],
 					"id": "assault_de_50",
 					"group": 6,
 					"name": "Defenders x50",
@@ -6676,7 +6677,7 @@ package
 				{
 					"order": 4,
 					"list": true,
-					"reward": [50000000, 50000000, 50000000, 50000000, 0],
+					"reward": [new SecNum(50000000), new SecNum(50000000), new SecNum(50000000), new SecNum(50000000), new SecNum(0)],
 					"id": "assault_de_100",
 					"group": 6,
 					"name": "Defenders x100",
@@ -6692,7 +6693,7 @@ package
 				{
 					"order": 5,
 					"list": true,
-					"reward": [125000000, 125000000, 125000000, 125000000, 0],
+					"reward": [new SecNum(125000000), new SecNum(125000000), new SecNum(125000000), new SecNum(125000000), new SecNum(0)],
 					"id": "assault_de_250",
 					"group": 6,
 					"name": "Defenders x250",
@@ -6708,7 +6709,7 @@ package
 				{
 					"order": 6,
 					"list": true,
-					"reward": [250000000, 250000000, 250000000, 250000000, 0],
+					"reward": [new SecNum(250000000), new SecNum(250000000), new SecNum(250000000), new SecNum(250000000), new SecNum(0)],
 					"id": "assault_de_500",
 					"group": 6,
 					"name": "Defenders x500",
@@ -6724,7 +6725,7 @@ package
 				{
 					"order": 7,
 					"list": true,
-					"reward": [500000000, 500000000, 500000000, 500000000, 0],
+					"reward": [new SecNum(500000000), new SecNum(500000000), new SecNum(500000000), new SecNum(500000000), new SecNum(0)],
 					"id": "assault_de_1000",
 					"group": 6,
 					"name": "Defenders x1000",
@@ -6740,7 +6741,7 @@ package
 				{
 					"order": 8,
 					"list": true,
-					"reward": [1250000000, 1250000000, 1250000000, 1250000000, 0],
+					"reward": [new SecNum(1250000000), new SecNum(1250000000), new SecNum(1250000000), new SecNum(1250000000), new SecNum(0)],
 					"id": "assault_de_2500",
 					"group": 6,
 					"name": "Defenders x2500",
@@ -6756,7 +6757,7 @@ package
 				{
 					"order": 9,
 					"list": true,
-					"reward": [2500000000, 2500000000, 2500000000, 2500000000, 1000],
+					"reward": [new SecNum(2500000000), new SecNum(2500000000), new SecNum(2500000000), new SecNum(2500000000), new SecNum(1000)],
 					"id": "assault_de_5000",
 					"group": 6,
 					"name": "Defenders x5000",
@@ -6772,7 +6773,7 @@ package
 				{
 					"order": 10,
 					"list": true,
-					"reward": [5000000000, 5000000000, 5000000000, 5000000000, 2000],
+					"reward": [new SecNum(5000000000), new SecNum(5000000000), new SecNum(5000000000), new SecNum(5000000000), new SecNum(2000)],
 					"id": "assault_de_10000",
 					"group": 6,
 					"name": "Defenders x10000",
@@ -6790,7 +6791,7 @@ package
 				{
 					"order": 10,
 					"list": true,
-					"reward": [3000000, 3000000, 3000000, 3000000, 3],
+					"reward": [new SecNum(3000000), new SecNum(3000000), new SecNum(3000000), new SecNum(3000000), new SecNum(3)],
 					"id": "ASSAULT_TO_1_0_10",
 					"group": 7,
 					"name": "Legionnaire x10",
@@ -6805,7 +6806,7 @@ package
 				{
 					"order": 25,
 					"list": true,
-					"reward": [7000000, 7000000, 7000000, 7000000, 7],
+					"reward": [new SecNum(7000000), new SecNum(7000000), new SecNum(7000000), new SecNum(7000000), new SecNum(7)],
 					"id": "ASSAULT_TO_1_0_25",
 					"group": 7,
 					"name": "Legionnaire x25",
@@ -6821,7 +6822,7 @@ package
 				{
 					"order": 50,
 					"list": true,
-					"reward": [13000000, 13000000, 13000000, 13000000, 13],
+					"reward": [new SecNum(13000000), new SecNum(13000000), new SecNum(13000000), new SecNum(13000000), new SecNum(13)],
 					"id": "ASSAULT_TO_1_0_50",
 					"group": 7,
 					"name": "Legionnaire x50",
@@ -6837,7 +6838,7 @@ package
 				{
 					"order": 100,
 					"list": true,
-					"reward": [25000000, 25000000, 25000000, 25000000, 25],
+					"reward": [new SecNum(25000000), new SecNum(25000000), new SecNum(25000000), new SecNum(25000000), new SecNum(25)],
 					"id": "ASSAULT_TO_1_0_100",
 					"group": 7,
 					"name": "Legionnaire x100",
@@ -6853,7 +6854,7 @@ package
 				{
 					"order": 250,
 					"list": true,
-					"reward": [63000000, 63000000, 63000000, 63000000, 63],
+					"reward": [new SecNum(63000000), new SecNum(63000000), new SecNum(63000000), new SecNum(63000000), new SecNum(63)],
 					"id": "ASSAULT_TO_1_0_250",
 					"group": 7,
 					"name": "Legionnaire x250",
@@ -6869,7 +6870,7 @@ package
 				{
 					"order": 500,
 					"list": true,
-					"reward": [125000000, 125000000, 125000000, 125000000, 125],
+					"reward": [new SecNum(125000000), new SecNum(125000000), new SecNum(125000000), new SecNum(125000000), new SecNum(125)],
 					"id": "ASSAULT_TO_1_0_500",
 					"group": 7,
 					"name": "Legionnaire x500",
@@ -6885,7 +6886,7 @@ package
 				{
 					"order": 1000,
 					"list": true,
-					"reward": [250000000, 250000000, 250000000, 250000000, 250],
+					"reward": [new SecNum(250000000), new SecNum(250000000), new SecNum(250000000), new SecNum(250000000), new SecNum(250)],
 					"id": "ASSAULT_TO_1_0_1000",
 					"group": 7,
 					"name": "Legionnaire x1000",
@@ -6901,7 +6902,7 @@ package
 				{
 					"order": 2500,
 					"list": true,
-					"reward": [625000000, 625000000, 625000000, 625000000, 625],
+					"reward": [new SecNum(625000000), new SecNum(625000000), new SecNum(625000000), new SecNum(625000000), new SecNum(625)],
 					"id": "ASSAULT_TO_1_0_2500",
 					"group": 7,
 					"name": "Legionnaire x2500",
@@ -6917,7 +6918,7 @@ package
 				{
 					"order": 5000,
 					"list": true,
-					"reward": [1250000000, 1250000000, 1250000000, 1250000000, 1250],
+					"reward": [new SecNum(1250000000), new SecNum(1250000000), new SecNum(1250000000), new SecNum(1250000000), new SecNum(1250)],
 					"id": "ASSAULT_TO_1_0_5000",
 					"group": 7,
 					"name": "Legionnaire x5000",
@@ -6934,7 +6935,7 @@ package
 				{
 					"order": 10,
 					"list": true,
-					"reward": [3000000, 3000000, 3000000, 3000000, 3],
+					"reward": [new SecNum(3000000), new SecNum(3000000), new SecNum(3000000), new SecNum(3000000), new SecNum(3)],
 					"id": "ASSAULT_TO_1_1_10",
 					"group": 7,
 					"name": "Kozu x10",
@@ -6949,7 +6950,7 @@ package
 				{
 					"order": 25,
 					"list": true,
-					"reward": [7000000, 7000000, 7000000, 7000000, 7],
+					"reward": [new SecNum(7000000), new SecNum(7000000), new SecNum(7000000), new SecNum(7000000), new SecNum(7)],
 					"id": "ASSAULT_TO_1_1_25",
 					"group": 7,
 					"name": "Kozu x25",
@@ -6965,7 +6966,7 @@ package
 				{
 					"order": 50,
 					"list": true,
-					"reward": [13000000, 13000000, 13000000, 13000000, 13],
+					"reward": [new SecNum(13000000), new SecNum(13000000), new SecNum(13000000), new SecNum(13000000), new SecNum(13)],
 					"id": "ASSAULT_TO_1_1_50",
 					"group": 7,
 					"name": "Kozu x50",
@@ -6981,7 +6982,7 @@ package
 				{
 					"order": 100,
 					"list": true,
-					"reward": [25000000, 25000000, 25000000, 25000000, 25],
+					"reward": [new SecNum(25000000), new SecNum(25000000), new SecNum(25000000), new SecNum(25000000), new SecNum(25)],
 					"id": "ASSAULT_TO_1_1_100",
 					"group": 7,
 					"name": "Kozu x100",
@@ -6997,7 +6998,7 @@ package
 				{
 					"order": 250,
 					"list": true,
-					"reward": [63000000, 63000000, 63000000, 63000000, 63],
+					"reward": [new SecNum(63000000), new SecNum(63000000), new SecNum(63000000), new SecNum(63000000), new SecNum(63)],
 					"id": "ASSAULT_TO_1_1_250",
 					"group": 7,
 					"name": "Kozu x250",
@@ -7013,7 +7014,7 @@ package
 				{
 					"order": 500,
 					"list": true,
-					"reward": [125000000, 125000000, 125000000, 125000000, 125],
+					"reward": [new SecNum(125000000), new SecNum(125000000), new SecNum(125000000), new SecNum(125000000), new SecNum(125)],
 					"id": "ASSAULT_TO_1_1_500",
 					"group": 7,
 					"name": "Kozu x500",
@@ -7029,7 +7030,7 @@ package
 				{
 					"order": 1000,
 					"list": true,
-					"reward": [250000000, 250000000, 250000000, 250000000, 250],
+					"reward": [new SecNum(250000000), new SecNum(250000000), new SecNum(250000000), new SecNum(250000000), new SecNum(250)],
 					"id": "ASSAULT_TO_1_1_1000",
 					"group": 7,
 					"name": "Kozu x1000",
@@ -7045,7 +7046,7 @@ package
 				{
 					"order": 2500,
 					"list": true,
-					"reward": [625000000, 625000000, 625000000, 625000000, 625],
+					"reward": [new SecNum(625000000), new SecNum(625000000), new SecNum(625000000), new SecNum(625000000), new SecNum(625)],
 					"id": "ASSAULT_TO_1_1_2500",
 					"group": 7,
 					"name": "Kozu x2500",
@@ -7061,7 +7062,7 @@ package
 				{
 					"order": 5000,
 					"list": true,
-					"reward": [1250000000, 1250000000, 1250000000, 1250000000, 1250],
+					"reward": [new SecNum(1250000000), new SecNum(1250000000), new SecNum(1250000000), new SecNum(1250000000), new SecNum(1250)],
 					"id": "ASSAULT_TO_1_1_5000",
 					"group": 7,
 					"name": "Kozu x5000",
@@ -7078,7 +7079,7 @@ package
 				{
 					"order": 10,
 					"list": true,
-					"reward": [3000000, 3000000, 3000000, 3000000, 3],
+					"reward": [new SecNum(3000000), new SecNum(3000000), new SecNum(3000000), new SecNum(3000000), new SecNum(3)],
 					"id": "ASSAULT_TO_1_2_10",
 					"group": 7,
 					"name": "Abunakki x10",
@@ -7093,7 +7094,7 @@ package
 				{
 					"order": 25,
 					"list": true,
-					"reward": [7000000, 7000000, 7000000, 7000000, 7],
+					"reward": [new SecNum(7000000), new SecNum(7000000), new SecNum(7000000), new SecNum(7000000), new SecNum(7)],
 					"id": "ASSAULT_TO_1_2_25",
 					"group": 7,
 					"name": "Abunakki x25",
@@ -7109,7 +7110,7 @@ package
 				{
 					"order": 50,
 					"list": true,
-					"reward": [13000000, 13000000, 13000000, 13000000, 13],
+					"reward": [new SecNum(13000000), new SecNum(13000000), new SecNum(13000000), new SecNum(13000000), new SecNum(13)],
 					"id": "ASSAULT_TO_1_2_50",
 					"group": 7,
 					"name": "Abunakki x50",
@@ -7125,7 +7126,7 @@ package
 				{
 					"order": 100,
 					"list": true,
-					"reward": [25000000, 25000000, 25000000, 25000000, 25],
+					"reward": [new SecNum(25000000), new SecNum(25000000), new SecNum(25000000), new SecNum(25000000), new SecNum(25)],
 					"id": "ASSAULT_TO_1_2_100",
 					"group": 7,
 					"name": "Abunakki x100",
@@ -7141,7 +7142,7 @@ package
 				{
 					"order": 250,
 					"list": true,
-					"reward": [63000000, 63000000, 63000000, 63000000, 63],
+					"reward": [new SecNum(63000000), new SecNum(63000000), new SecNum(63000000), new SecNum(63000000), new SecNum(63)],
 					"id": "ASSAULT_TO_1_2_250",
 					"group": 7,
 					"name": "Abunakki x250",
@@ -7157,7 +7158,7 @@ package
 				{
 					"order": 500,
 					"list": true,
-					"reward": [125000000, 125000000, 125000000, 125000000, 125],
+					"reward": [new SecNum(125000000), new SecNum(125000000), new SecNum(125000000), new SecNum(125000000), new SecNum(125)],
 					"id": "ASSAULT_TO_1_2_500",
 					"group": 7,
 					"name": "Abunakki x500",
@@ -7173,7 +7174,7 @@ package
 				{
 					"order": 1000,
 					"list": true,
-					"reward": [250000000, 250000000, 250000000, 250000000, 250],
+					"reward": [new SecNum(250000000), new SecNum(250000000), new SecNum(250000000), new SecNum(250000000), new SecNum(250)],
 					"id": "ASSAULT_TO_1_2_1000",
 					"group": 7,
 					"name": "Abunakki x1000",
@@ -7189,7 +7190,7 @@ package
 				{
 					"order": 2500,
 					"list": true,
-					"reward": [625000000, 625000000, 625000000, 625000000, 625],
+					"reward": [new SecNum(625000000), new SecNum(625000000), new SecNum(625000000), new SecNum(625000000), new SecNum(625)],
 					"id": "ASSAULT_TO_1_2_2500",
 					"group": 7,
 					"name": "Abunakki x2500",
@@ -7205,7 +7206,7 @@ package
 				{
 					"order": 5000,
 					"list": true,
-					"reward": [1250000000, 1250000000, 1250000000, 1250000000, 1250],
+					"reward": [new SecNum(1250000000), new SecNum(1250000000), new SecNum(1250000000), new SecNum(1250000000), new SecNum(1250)],
 					"id": "ASSAULT_TO_1_2_5000",
 					"group": 7,
 					"name": "Abunakki x5000",
@@ -7222,7 +7223,7 @@ package
 				{
 					"order": 10,
 					"list": true,
-					"reward": [3000000, 3000000, 3000000, 3000000, 3],
+					"reward": [new SecNum(3000000), new SecNum(3000000), new SecNum(3000000), new SecNum(3000000), new SecNum(3)],
 					"id": "ASSAULT_TO_1_3_10",
 					"group": 7,
 					"name": "Dreadnaught x10",
@@ -7237,7 +7238,7 @@ package
 				{
 					"order": 25,
 					"list": true,
-					"reward": [7000000, 7000000, 7000000, 7000000, 7],
+					"reward": [new SecNum(7000000), new SecNum(7000000), new SecNum(7000000), new SecNum(7000000), new SecNum(7)],
 					"id": "ASSAULT_TO_1_3_25",
 					"group": 7,
 					"name": "Dreadnaught x25",
@@ -7253,7 +7254,7 @@ package
 				{
 					"order": 50,
 					"list": true,
-					"reward": [13000000, 13000000, 13000000, 13000000, 13],
+					"reward": [new SecNum(13000000), new SecNum(13000000), new SecNum(13000000), new SecNum(13000000), new SecNum(13)],
 					"id": "ASSAULT_TO_1_3_50",
 					"group": 7,
 					"name": "Dreadnaught x50",
@@ -7269,7 +7270,7 @@ package
 				{
 					"order": 100,
 					"list": true,
-					"reward": [25000000, 25000000, 25000000, 25000000, 25],
+					"reward": [new SecNum(25000000), new SecNum(25000000), new SecNum(25000000), new SecNum(25000000), new SecNum(25)],
 					"id": "ASSAULT_TO_1_3_100",
 					"group": 7,
 					"name": "Dreadnaught x100",
@@ -7285,7 +7286,7 @@ package
 				{
 					"order": 250,
 					"list": true,
-					"reward": [63000000, 63000000, 63000000, 63000000, 63],
+					"reward": [new SecNum(63000000), new SecNum(63000000), new SecNum(63000000), new SecNum(63000000), new SecNum(63)],
 					"id": "ASSAULT_TO_1_3_250",
 					"group": 7,
 					"name": "Dreadnaught x250",
@@ -7301,7 +7302,7 @@ package
 				{
 					"order": 500,
 					"list": true,
-					"reward": [125000000, 125000000, 125000000, 125000000, 125],
+					"reward": [new SecNum(125000000), new SecNum(125000000), new SecNum(125000000), new SecNum(125000000), new SecNum(125)],
 					"id": "ASSAULT_TO_1_3_500",
 					"group": 7,
 					"name": "Dreadnaught x500",
@@ -7317,7 +7318,7 @@ package
 				{
 					"order": 1000,
 					"list": true,
-					"reward": [250000000, 250000000, 250000000, 250000000, 250],
+					"reward": [new SecNum(250000000), new SecNum(250000000), new SecNum(250000000), new SecNum(250000000), new SecNum(250)],
 					"id": "ASSAULT_TO_1_3_1000",
 					"group": 7,
 					"name": "Dreadnaught x1000",
@@ -7333,7 +7334,7 @@ package
 				{
 					"order": 2500,
 					"list": true,
-					"reward": [625000000, 625000000, 625000000, 625000000, 625],
+					"reward": [new SecNum(625000000), new SecNum(625000000), new SecNum(625000000), new SecNum(625000000), new SecNum(625)],
 					"id": "ASSAULT_TO_1_3_2500",
 					"group": 7,
 					"name": "Dreadnaught x2500",
@@ -7349,7 +7350,7 @@ package
 				{
 					"order": 5000,
 					"list": true,
-					"reward": [1250000000, 1250000000, 1250000000, 1250000000, 1250],
+					"reward": [new SecNum(1250000000), new SecNum(1250000000), new SecNum(1250000000), new SecNum(1250000000), new SecNum(1250)],
 					"id": "ASSAULT_TO_1_3_5000",
 					"group": 7,
 					"name": "Dreadnaught x5000",
@@ -7366,7 +7367,7 @@ package
 				{
 					"order": 10,
 					"list": true,
-					"reward": [3000000, 3000000, 3000000, 3000000, 3],
+					"reward": [new SecNum(3000000), new SecNum(3000000), new SecNum(3000000), new SecNum(3000000), new SecNum(3)],
 					"id": "ASSAULT_MO_1_10",
 					"group": 7,
 					"name": "Moloch x10",
@@ -7381,7 +7382,7 @@ package
 				{
 					"order": 25,
 					"list": true,
-					"reward": [7000000, 7000000, 7000000, 7000000, 7],
+					"reward": [new SecNum(7000000), new SecNum(7000000), new SecNum(7000000), new SecNum(7000000), new SecNum(7)],
 					"id": "ASSAULT_MO_1_25",
 					"group": 7,
 					"name": "Moloch x25",
@@ -7397,7 +7398,7 @@ package
 				{
 					"order": 50,
 					"list": true,
-					"reward": [13000000, 13000000, 13000000, 13000000, 13],
+					"reward": [new SecNum(13000000), new SecNum(13000000), new SecNum(13000000), new SecNum(13000000), new SecNum(13)],
 					"id": "ASSAULT_MO_1_50",
 					"group": 7,
 					"name": "Moloch x50",
@@ -7413,7 +7414,7 @@ package
 				{
 					"order": 100,
 					"list": true,
-					"reward": [25000000, 25000000, 25000000, 25000000, 25],
+					"reward": [new SecNum(25000000), new SecNum(25000000), new SecNum(25000000), new SecNum(25000000), new SecNum(25)],
 					"id": "ASSAULT_MO_1_100",
 					"group": 7,
 					"name": "Moloch x100",
@@ -7429,7 +7430,7 @@ package
 				{
 					"order": 250,
 					"list": true,
-					"reward": [63000000, 63000000, 63000000, 63000000, 63],
+					"reward": [new SecNum(63000000), new SecNum(63000000), new SecNum(63000000), new SecNum(63000000), new SecNum(63)],
 					"id": "ASSAULT_MO_1_250",
 					"group": 7,
 					"name": "Moloch x250",
@@ -7445,7 +7446,7 @@ package
 				{
 					"order": 500,
 					"list": true,
-					"reward": [125000000, 125000000, 125000000, 125000000, 125],
+					"reward": [new SecNum(125000000), new SecNum(125000000), new SecNum(125000000), new SecNum(125000000), new SecNum(125)],
 					"id": "ASSAULT_MO_1_500",
 					"group": 7,
 					"name": "Moloch x500",
@@ -7461,7 +7462,7 @@ package
 				{
 					"order": 1000,
 					"list": true,
-					"reward": [250000000, 250000000, 250000000, 250000000, 250],
+					"reward": [new SecNum(250000000), new SecNum(250000000), new SecNum(250000000), new SecNum(250000000), new SecNum(250)],
 					"id": "ASSAULT_MO_1_1000",
 					"group": 7,
 					"name": "Moloch x1000",
@@ -7477,7 +7478,7 @@ package
 				{
 					"order": 2500,
 					"list": true,
-					"reward": [625000000, 625000000, 625000000, 625000000, 625],
+					"reward": [new SecNum(625000000), new SecNum(625000000), new SecNum(625000000), new SecNum(625000000), new SecNum(625)],
 					"id": "ASSAULT_MO_1_2500",
 					"group": 7,
 					"name": "Moloch x2500",
@@ -7493,7 +7494,7 @@ package
 				{
 					"order": 5000,
 					"list": true,
-					"reward": [1250000000, 1250000000, 1250000000, 1250000000, 1250],
+					"reward": [new SecNum(1250000000), new SecNum(1250000000), new SecNum(1250000000), new SecNum(1250000000), new SecNum(1250)],
 					"id": "ASSAULT_MO_1_5000",
 					"group": 7,
 					"name": "Moloch x5000",
@@ -7511,7 +7512,7 @@ package
 				{
 					"order": 10,
 					"list": true,
-					"reward": [5000000, 5000000, 5000000, 5000000, 5],
+					"reward": [new SecNum(5000000), new SecNum(5000000), new SecNum(5000000), new SecNum(5000000), new SecNum(5)],
 					"id": "ASSAULT_TO_2_10",
 					"group": 8,
 					"name": "Tribe Outpost x10",
@@ -7526,7 +7527,7 @@ package
 				{
 					"order": 25,
 					"list": true,
-					"reward": [13000000, 13000000, 13000000, 13000000, 13],
+					"reward": [new SecNum(13000000), new SecNum(13000000), new SecNum(13000000), new SecNum(13000000), new SecNum(13)],
 					"id": "ASSAULT_TO_2_25",
 					"group": 8,
 					"name": "Tribe Outpost x25",
@@ -7542,7 +7543,7 @@ package
 				{
 					"order": 50,
 					"list": true,
-					"reward": [25000000, 25000000, 25000000, 25000000, 25],
+					"reward": [new SecNum(25000000), new SecNum(25000000), new SecNum(25000000), new SecNum(25000000), new SecNum(25)],
 					"id": "ASSAULT_TO_2_50",
 					"group": 8,
 					"name": "Tribe Outpost x50",
@@ -7558,7 +7559,7 @@ package
 				{
 					"order": 100,
 					"list": true,
-					"reward": [50000000, 50000000, 50000000, 50000000, 50],
+					"reward": [new SecNum(50000000), new SecNum(50000000), new SecNum(50000000), new SecNum(50000000), new SecNum(50)],
 					"id": "ASSAULT_TO_2_100",
 					"group": 8,
 					"name": "Tribe Outpost x100",
@@ -7574,7 +7575,7 @@ package
 				{
 					"order": 250,
 					"list": true,
-					"reward": [125000000, 125000000, 125000000, 125000000, 125],
+					"reward": [new SecNum(125000000), new SecNum(125000000), new SecNum(125000000), new SecNum(125000000), new SecNum(125)],
 					"id": "ASSAULT_TO_2_250",
 					"group": 8,
 					"name": "Tribe Outpost x250",
@@ -7590,7 +7591,7 @@ package
 				{
 					"order": 500,
 					"list": true,
-					"reward": [250000000, 250000000, 250000000, 250000000, 250],
+					"reward": [new SecNum(250000000), new SecNum(250000000), new SecNum(250000000), new SecNum(250000000), new SecNum(250)],
 					"id": "ASSAULT_TO_2_500",
 					"group": 8,
 					"name": "Tribe Outpost x500",
@@ -7606,7 +7607,7 @@ package
 				{
 					"order": 1000,
 					"list": true,
-					"reward": [500000000, 500000000, 500000000, 500000000, 500],
+					"reward": [new SecNum(500000000), new SecNum(500000000), new SecNum(500000000), new SecNum(500000000), new SecNum(500)],
 					"id": "ASSAULT_TO_2_1000",
 					"group": 8,
 					"name": "Tribe Outpost x1000",
@@ -7622,7 +7623,7 @@ package
 				{
 					"order": 2500,
 					"list": true,
-					"reward": [1250000000, 1250000000, 1250000000, 1250000000, 1250],
+					"reward": [new SecNum(1250000000), new SecNum(1250000000), new SecNum(1250000000), new SecNum(1250000000), new SecNum(1250)],
 					"id": "ASSAULT_TO_2_2500",
 					"group": 8,
 					"name": "Tribe Outpost x2500",
@@ -7638,7 +7639,7 @@ package
 				{
 					"order": 5000,
 					"list": true,
-					"reward": [2500000000, 2500000000, 2500000000, 2500000000, 2500],
+					"reward": [new SecNum(2500000000), new SecNum(2500000000), new SecNum(2500000000), new SecNum(2500000000), new SecNum(2500)],
 					"id": "ASSAULT_TO_2_5000",
 					"group": 8,
 					"name": "Tribe Outpost x5000",
@@ -7654,7 +7655,7 @@ package
 				{
 					"order": 10000,
 					"list": true,
-					"reward": [5000000000, 5000000000, 5000000000, 5000000000, 5000],
+					"reward": [new SecNum(5000000000), new SecNum(5000000000), new SecNum(5000000000), new SecNum(5000000000), new SecNum(5000)],
 					"id": "ASSAULT_TO_2_10000",
 					"group": 8,
 					"name": "Tribe Outpost x10000",
@@ -7671,7 +7672,7 @@ package
 				{
 					"order": 10,
 					"list": true,
-					"reward": [5000000, 5000000, 5000000, 5000000, 5],
+					"reward": [new SecNum(5000000), new SecNum(5000000), new SecNum(5000000), new SecNum(5000000), new SecNum(5)],
 					"id": "ASSAULT_MO_2_10",
 					"group": 8,
 					"name": "Moloch Outpost x10",
@@ -7686,7 +7687,7 @@ package
 				{
 					"order": 25,
 					"list": true,
-					"reward": [13000000, 13000000, 13000000, 13000000, 13],
+					"reward": [new SecNum(13000000), new SecNum(13000000), new SecNum(13000000), new SecNum(13000000), new SecNum(13)],
 					"id": "ASSAULT_MO_2_25",
 					"group": 8,
 					"name": "Moloch Outpost x25",
@@ -7702,7 +7703,7 @@ package
 				{
 					"order": 50,
 					"list": true,
-					"reward": [25000000, 25000000, 25000000, 25000000, 25],
+					"reward": [new SecNum(25000000), new SecNum(25000000), new SecNum(25000000), new SecNum(25000000), new SecNum(25)],
 					"id": "ASSAULT_MO_2_50",
 					"group": 8,
 					"name": "Moloch Outpost x50",
@@ -7718,7 +7719,7 @@ package
 				{
 					"order": 100,
 					"list": true,
-					"reward": [50000000, 50000000, 50000000, 50000000, 50],
+					"reward": [new SecNum(50000000), new SecNum(50000000), new SecNum(50000000), new SecNum(50000000), new SecNum(50)],
 					"id": "ASSAULT_MO_2_100",
 					"group": 8,
 					"name": "Moloch Outpost x100",
@@ -7734,7 +7735,7 @@ package
 				{
 					"order": 250,
 					"list": true,
-					"reward": [125000000, 125000000, 125000000, 125000000, 125],
+					"reward": [new SecNum(125000000), new SecNum(125000000), new SecNum(125000000), new SecNum(125000000), new SecNum(125)],
 					"id": "ASSAULT_MO_2_250",
 					"group": 8,
 					"name": "Moloch Outpost x250",
@@ -7750,7 +7751,7 @@ package
 				{
 					"order": 500,
 					"list": true,
-					"reward": [250000000, 250000000, 250000000, 250000000, 250],
+					"reward": [new SecNum(250000000), new SecNum(250000000), new SecNum(250000000), new SecNum(250000000), new SecNum(250)],
 					"id": "ASSAULT_MO_2_500",
 					"group": 8,
 					"name": "Moloch Outpost x500",
@@ -7766,7 +7767,7 @@ package
 				{
 					"order": 1000,
 					"list": true,
-					"reward": [500000000, 500000000, 500000000, 500000000, 500],
+					"reward": [new SecNum(500000000), new SecNum(500000000), new SecNum(500000000), new SecNum(500000000), new SecNum(500)],
 					"id": "ASSAULT_MO_2_1000",
 					"group": 8,
 					"name": "Moloch Outpost x1000",
@@ -7782,7 +7783,7 @@ package
 				{
 					"order": 2500,
 					"list": true,
-					"reward": [1250000000, 1250000000, 1250000000, 1250000000, 1250],
+					"reward": [new SecNum(1250000000), new SecNum(1250000000), new SecNum(1250000000), new SecNum(1250000000), new SecNum(1250)],
 					"id": "ASSAULT_MO_2_2500",
 					"group": 8,
 					"name": "Moloch Outpost x2500",
@@ -7798,7 +7799,7 @@ package
 				{
 					"order": 5000,
 					"list": true,
-					"reward": [2500000000, 2500000000, 2500000000, 2500000000, 2500],
+					"reward": [new SecNum(2500000000), new SecNum(2500000000), new SecNum(2500000000), new SecNum(2500000000), new SecNum(2500)],
 					"id": "ASSAULT_MO_2_5000",
 					"group": 8,
 					"name": "Moloch Outpost x5000",
@@ -7814,7 +7815,7 @@ package
 				{
 					"order": 10000,
 					"list": true,
-					"reward": [5000000000, 5000000000, 5000000000, 5000000000, 5000],
+					"reward": [new SecNum(5000000000), new SecNum(5000000000), new SecNum(5000000000), new SecNum(5000000000), new SecNum(5000)],
 					"id": "ASSAULT_MO_2_10000",
 					"group": 8,
 					"name": "Moloch Outpost x10000",
@@ -7832,7 +7833,7 @@ package
 				{
 					"order": 10,
 					"list": true,
-					"reward": [10000000, 10000000, 10000000, 10000000, 10],
+					"reward": [new SecNum(10000000), new SecNum(10000000), new SecNum(10000000), new SecNum(10000000), new SecNum(10)],
 					"id": "ASSAULT_TO_3_10",
 					"group": 9,
 					"name": "Tribe Outpost x10",
@@ -7847,7 +7848,7 @@ package
 				{
 					"order": 25,
 					"list": true,
-					"reward": [25000000, 25000000, 25000000, 25000000, 25],
+					"reward": [new SecNum(25000000), new SecNum(25000000), new SecNum(25000000), new SecNum(25000000), new SecNum(25)],
 					"id": "ASSAULT_TO_3_25",
 					"group": 9,
 					"name": "Tribe Outpost x25",
@@ -7863,7 +7864,7 @@ package
 				{
 					"order": 50,
 					"list": true,
-					"reward": [50000000, 50000000, 50000000, 50000000, 50],
+					"reward": [new SecNum(50000000), new SecNum(50000000), new SecNum(50000000), new SecNum(50000000), new SecNum(50)],
 					"id": "ASSAULT_TO_3_50",
 					"group": 9,
 					"name": "Tribe Outpost x50",
@@ -7879,7 +7880,7 @@ package
 				{
 					"order": 100,
 					"list": true,
-					"reward": [100000000, 100000000, 100000000, 100000000, 100],
+					"reward": [new SecNum(100000000), new SecNum(100000000), new SecNum(100000000), new SecNum(100000000), new SecNum(100)],
 					"id": "ASSAULT_TO_3_100",
 					"group": 9,
 					"name": "Tribe Outpost x100",
@@ -7895,7 +7896,7 @@ package
 				{
 					"order": 250,
 					"list": true,
-					"reward": [250000000, 250000000, 250000000, 250000000, 250],
+					"reward": [new SecNum(250000000), new SecNum(250000000), new SecNum(250000000), new SecNum(250000000), new SecNum(250)],
 					"id": "ASSAULT_TO_3_250",
 					"group": 9,
 					"name": "Tribe Outpost x250",
@@ -7911,7 +7912,7 @@ package
 				{
 					"order": 500,
 					"list": true,
-					"reward": [500000000, 500000000, 500000000, 500000000, 500],
+					"reward": [new SecNum(500000000), new SecNum(500000000), new SecNum(500000000), new SecNum(500000000), new SecNum(500)],
 					"id": "ASSAULT_TO_3_500",
 					"group": 9,
 					"name": "Tribe Outpost x500",
@@ -7927,7 +7928,7 @@ package
 				{
 					"order": 1000,
 					"list": true,
-					"reward": [1000000000, 1000000000, 1000000000, 1000000000, 1000],
+					"reward": [new SecNum(1000000000), new SecNum(1000000000), new SecNum(1000000000), new SecNum(1000000000), new SecNum(1000)],
 					"id": "ASSAULT_TO_3_1000",
 					"group": 9,
 					"name": "Tribe Outpost x1000",
@@ -7943,7 +7944,7 @@ package
 				{
 					"order": 2500,
 					"list": true,
-					"reward": [2500000000, 2500000000, 2500000000, 2500000000, 2500],
+					"reward": [new SecNum(2500000000), new SecNum(2500000000), new SecNum(2500000000), new SecNum(2500000000), new SecNum(2500)],
 					"id": "ASSAULT_TO_3_2500",
 					"group": 9,
 					"name": "Tribe Outpost x2500",
@@ -7960,7 +7961,7 @@ package
 				{
 					"order": 10,
 					"list": true,
-					"reward": [5000000, 5000000, 5000000, 5000000, 5],
+					"reward": [new SecNum(5000000), new SecNum(5000000), new SecNum(5000000), new SecNum(5000000), new SecNum(5)],
 					"id": "ASSAULT_MO_3_10",
 					"group": 9,
 					"name": "Miranda Outpost x10",
@@ -7975,7 +7976,7 @@ package
 				{
 					"order": 25,
 					"list": true,
-					"reward": [13000000, 13000000, 13000000, 13000000, 13],
+					"reward": [new SecNum(13000000), new SecNum(13000000), new SecNum(13000000), new SecNum(13000000), new SecNum(13)],
 					"id": "ASSAULT_MO_3_25",
 					"group": 9,
 					"name": "Miranda Outpost x25",
@@ -7991,7 +7992,7 @@ package
 				{
 					"order": 50,
 					"list": true,
-					"reward": [25000000, 25000000, 25000000, 25000000, 25],
+					"reward": [new SecNum(25000000), new SecNum(25000000), new SecNum(25000000), new SecNum(25000000), new SecNum(25)],
 					"id": "ASSAULT_MO_3_50",
 					"group": 9,
 					"name": "Miranda Outpost x50",
@@ -8007,7 +8008,7 @@ package
 				{
 					"order": 100,
 					"list": true,
-					"reward": [50000000, 50000000, 50000000, 50000000, 50],
+					"reward": [new SecNum(50000000), new SecNum(50000000), new SecNum(50000000), new SecNum(50000000), new SecNum(50)],
 					"id": "ASSAULT_MO_3_100",
 					"group": 9,
 					"name": "Miranda Outpost x100",
@@ -8023,7 +8024,7 @@ package
 				{
 					"order": 250,
 					"list": true,
-					"reward": [125000000, 125000000, 125000000, 125000000, 125],
+					"reward": [new SecNum(125000000), new SecNum(125000000), new SecNum(125000000), new SecNum(125000000), new SecNum(125)],
 					"id": "ASSAULT_MO_3_250",
 					"group": 9,
 					"name": "Miranda Outpost x250",
@@ -8039,7 +8040,7 @@ package
 				{
 					"order": 500,
 					"list": true,
-					"reward": [250000000, 250000000, 250000000, 250000000, 250],
+					"reward": [new SecNum(250000000), new SecNum(250000000), new SecNum(250000000), new SecNum(250000000), new SecNum(250)],
 					"id": "ASSAULT_MO_3_500",
 					"group": 9,
 					"name": "Miranda Outpost x500",
@@ -8055,7 +8056,7 @@ package
 				{
 					"order": 1000,
 					"list": true,
-					"reward": [500000000, 500000000, 500000000, 500000000, 500],
+					"reward": [new SecNum(500000000), new SecNum(500000000), new SecNum(500000000), new SecNum(500000000), new SecNum(500)],
 					"id": "ASSAULT_MO_3_1000",
 					"group": 9,
 					"name": "Miranda Outpost x1000",
@@ -8071,7 +8072,7 @@ package
 				{
 					"order": 2500,
 					"list": true,
-					"reward": [1250000000, 1250000000, 1250000000, 1250000000, 1250],
+					"reward": [new SecNum(1250000000), new SecNum(1250000000), new SecNum(1250000000), new SecNum(1250000000), new SecNum(1250)],
 					"id": "ASSAULT_MO_3_2500",
 					"group": 9,
 					"name": "Miranda Outpost x2500",
@@ -8087,7 +8088,7 @@ package
 				{
 					"order": 5000,
 					"list": true,
-					"reward": [2500000000, 2500000000, 2500000000, 2500000000, 2500],
+					"reward": [new SecNum(2500000000), new SecNum(2500000000), new SecNum(2500000000), new SecNum(2500000000), new SecNum(2500)],
 					"id": "ASSAULT_MO_3_5000",
 					"group": 9,
 					"name": "Miranda Outpost x5000",
@@ -8103,7 +8104,7 @@ package
 				{
 					"order": 10000,
 					"list": true,
-					"reward": [5000000000, 5000000000, 5000000000, 5000000000, 5000],
+					"reward": [new SecNum(5000000000), new SecNum(5000000000), new SecNum(5000000000), new SecNum(5000000000), new SecNum(5000)],
 					"id": "ASSAULT_MO_3_10000",
 					"group": 9,
 					"name": "Miranda Outpost x10000",
@@ -8121,7 +8122,7 @@ package
 				{
 					"order": 10,
 					"list": true,
-					"reward": [30000000, 30000000, 30000000, 30000000, 30],
+					"reward": [new SecNum(30000000), new SecNum(30000000), new SecNum(30000000), new SecNum(30000000), new SecNum(30)],
 					"id": "ASSAULT_TO_4_10",
 					"group": 10,
 					"name": "Tribe Outpost x10",
@@ -8136,7 +8137,7 @@ package
 				{
 					"order": 25,
 					"list": true,
-					"reward": [75000000, 75000000, 75000000, 75000000, 75],
+					"reward": [new SecNum(75000000), new SecNum(75000000), new SecNum(75000000), new SecNum(75000000), new SecNum(75)],
 					"id": "ASSAULT_TO_4_25",
 					"group": 10,
 					"name": "Tribe Outpost x25",
@@ -8152,7 +8153,7 @@ package
 				{
 					"order": 50,
 					"list": true,
-					"reward": [150000000, 150000000, 150000000, 150000000, 150],
+					"reward": [new SecNum(150000000), new SecNum(150000000), new SecNum(150000000), new SecNum(150000000), new SecNum(150)],
 					"id": "ASSAULT_TO_4_50",
 					"group": 10,
 					"name": "Tribe Outpost x50",
@@ -8168,7 +8169,7 @@ package
 				{
 					"order": 100,
 					"list": true,
-					"reward": [300000000, 300000000, 300000000, 300000000, 300],
+					"reward": [new SecNum(300000000), new SecNum(300000000), new SecNum(300000000), new SecNum(300000000), new SecNum(300)],
 					"id": "ASSAULT_TO_4_100",
 					"group": 10,
 					"name": "Tribe Outpost x100",
@@ -8184,7 +8185,7 @@ package
 				{
 					"order": 250,
 					"list": true,
-					"reward": [750000000, 750000000, 750000000, 750000000, 750],
+					"reward": [new SecNum(750000000), new SecNum(750000000), new SecNum(750000000), new SecNum(750000000), new SecNum(750)],
 					"id": "ASSAULT_TO_4_250",
 					"group": 10,
 					"name": "Tribe Outpost x250",
@@ -8200,7 +8201,7 @@ package
 				{
 					"order": 500,
 					"list": true,
-					"reward": [1500000000, 1500000000, 1500000000, 1500000000, 1500],
+					"reward": [new SecNum(1500000000), new SecNum(1500000000), new SecNum(1500000000), new SecNum(1500000000), new SecNum(1500)],
 					"id": "ASSAULT_TO_4_500",
 					"group": 10,
 					"name": "Tribe Outpost x500",
@@ -8216,7 +8217,7 @@ package
 				{
 					"order": 1000,
 					"list": true,
-					"reward": [3000000000, 3000000000, 3000000000, 3000000000, 3000],
+					"reward": [new SecNum(3000000000), new SecNum(3000000000), new SecNum(3000000000), new SecNum(3000000000), new SecNum(3000)],
 					"id": "ASSAULT_TO_4_1000",
 					"group": 10,
 					"name": "Tribe Outpost x1000",
@@ -8233,7 +8234,7 @@ package
 				{
 					"order": 10,
 					"list": true,
-					"reward": [30000000, 30000000, 30000000, 30000000, 30],
+					"reward": [new SecNum(30000000), new SecNum(30000000), new SecNum(30000000), new SecNum(30000000), new SecNum(30)],
 					"id": "ASSAULT_MO_4_10",
 					"group": 10,
 					"name": "Miranda Outpost x10",
@@ -8248,7 +8249,7 @@ package
 				{
 					"order": 25,
 					"list": true,
-					"reward": [75000000, 75000000, 75000000, 75000000, 75],
+					"reward": [new SecNum(75000000), new SecNum(75000000), new SecNum(75000000), new SecNum(75000000), new SecNum(75)],
 					"id": "ASSAULT_MO_4_25",
 					"group": 10,
 					"name": "Miranda Outpost x25",
@@ -8264,7 +8265,7 @@ package
 				{
 					"order": 50,
 					"list": true,
-					"reward": [150000000, 150000000, 150000000, 150000000, 150],
+					"reward": [new SecNum(150000000), new SecNum(150000000), new SecNum(150000000), new SecNum(150000000), new SecNum(150)],
 					"id": "ASSAULT_MO_4_50",
 					"group": 10,
 					"name": "Miranda Outpost x50",
@@ -8280,7 +8281,7 @@ package
 				{
 					"order": 100,
 					"list": true,
-					"reward": [300000000, 300000000, 300000000, 300000000, 300],
+					"reward": [new SecNum(300000000), new SecNum(300000000), new SecNum(300000000), new SecNum(300000000), new SecNum(300)],
 					"id": "ASSAULT_MO_4_100",
 					"group": 10,
 					"name": "Miranda Outpost x100",
@@ -8296,7 +8297,7 @@ package
 				{
 					"order": 250,
 					"list": true,
-					"reward": [750000000, 750000000, 750000000, 750000000, 750],
+					"reward": [new SecNum(750000000), new SecNum(750000000), new SecNum(750000000), new SecNum(750000000), new SecNum(750)],
 					"id": "ASSAULT_MO_4_250",
 					"group": 10,
 					"name": "Miranda Outpost x250",
@@ -8312,7 +8313,7 @@ package
 				{
 					"order": 500,
 					"list": true,
-					"reward": [1500000000, 1500000000, 1500000000, 1500000000, 1500],
+					"reward": [new SecNum(1500000000), new SecNum(1500000000), new SecNum(1500000000), new SecNum(1500000000), new SecNum(1500)],
 					"id": "ASSAULT_MO_4_500",
 					"group": 10,
 					"name": "Miranda Outpost x500",
@@ -8328,7 +8329,7 @@ package
 				{
 					"order": 1000,
 					"list": true,
-					"reward": [3000000000, 3000000000, 3000000000, 3000000000, 3000],
+					"reward": [new SecNum(3000000000), new SecNum(3000000000), new SecNum(3000000000), new SecNum(3000000000), new SecNum(3000)],
 					"id": "ASSAULT_MO_4_1000",
 					"group": 10,
 					"name": "Miranda Outpost x1000",
@@ -8348,7 +8349,7 @@ package
 			_quests.push({
 				"order":20,
 				"list":true,
-				"reward":[0,0,0,0,0],
+				"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0)],
 				"id":"UC2",
 				"group": 1,
 				"name":"q_unlock_name",
@@ -8366,7 +8367,7 @@ package
 			_quests.push({
 				"order":21,
 				"list":true,
-				"reward":[0,0,0,0,0],
+				"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0)],
 				"id":"UC3",
 				"group": 1,
 				"name":"q_unlock_name",
@@ -8384,7 +8385,7 @@ package
 			_quests.push({
 				"order":22,
 				"list":true,
-				"reward":[0,0,0,0,0],
+				"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0)],
 				"id":"UC4",
 				"group": 1,
 				"name":"q_unlock_name",
@@ -8402,7 +8403,7 @@ package
 			_quests.push({
 				"order":39,
 				"list":true,
-				"reward":[0,0,0,0,0],
+				"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0)],
 				"id":"UC5",
 				"group": 1,
 				"name":"q_unlock_name",
@@ -8420,7 +8421,7 @@ package
 			_quests.push({
 				"order":40,
 				"list":true,
-				"reward":[0,0,0,0,0],
+				"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0)],
 				"id":"UC6",
 				"group": 1,
 				"name":"q_unlock_name",
@@ -8438,7 +8439,7 @@ package
 			_quests.push({
 				"order":41,
 				"list":true,
-				"reward":[0,0,0,0,0],
+				"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0)],
 				"id":"UC7",
 				"group": 1,
 				"name":"q_unlock_name",
@@ -8456,7 +8457,7 @@ package
 			_quests.push({
 				"order":42,
 				"list":true,
-				"reward":[0,0,0,0,0],
+				"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0)],
 				"id":"UC8",
 				"group": 1,
 				"name":"q_unlock_name",
@@ -8474,7 +8475,7 @@ package
 			_quests.push({
 				"order":47,
 				"list":true,
-				"reward":[0,0,0,0,0],
+				"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0)],
 				"id":"UC9",
 				"group": 1,
 				"name":"q_unlock_name",
@@ -8492,7 +8493,7 @@ package
 			_quests.push({
 				"order":48,
 				"list":true,
-				"reward":[0,0,0,0,0],
+				"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0)],
 				"id":"UC10",
 				"group": 1,
 				"name":"q_unlock_name",
@@ -8510,7 +8511,7 @@ package
 			_quests.push({
 				"order":49,
 				"list":true,
-				"reward":[0,0,0,0,0],
+				"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0)],
 				"id":"UC11",
 				"group": 1,
 				"name":"q_unlock_name",
@@ -8528,7 +8529,7 @@ package
 			_quests.push({
 				"order":56,
 				"list":true,
-				"reward":[0,0,0,0,0],
+				"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0)],
 				"id":"UC12",
 				"group": 1,
 				"name":"q_unlock_name",
@@ -8546,7 +8547,7 @@ package
 			_quests.push({
 				"order":55,
 				"list":true,
-				"reward":[0,0,0,0,0],
+				"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0)],
 				"id":"UC13",
 				"group": 1,
 				"name":"q_unlock_name",
@@ -8563,7 +8564,7 @@ package
 			_quests.push({
 				"order":59,
 				"list":true,
-				"reward":[0,0,0,0,0],
+				"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0)],
 				"id":"SW4",
 				"group": 2,
 				"name":"q_unlockweapon_name",
@@ -8579,7 +8580,7 @@ package
 			_quests.push({
 				"order":60,
 				"list":true,
-				"reward":[0,0,0,0,0],
+				"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0)],
 				"id":"SW5",
 				"group": 2,
 				"name":"q_unlockweapon_name",
@@ -8595,7 +8596,7 @@ package
 			_quests.push({
 				"order":61,
 				"list":true,
-				"reward":[0,0,0,0,0],
+				"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0)],
 				"id":"SW6",
 				"group": 2,
 				"name":"q_unlockweapon_name",
@@ -8611,7 +8612,7 @@ package
 			_quests.push({
 				"order":62,
 				"list":true,
-				"reward":[0,0,0,0,0],
+				"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0)],
 				"id":"SW7",
 				"group": 2,
 				"name":"q_upgradeweapon_name",
@@ -8630,7 +8631,7 @@ package
 			_quests.push({
 				"order":63,
 				"list":true,
-				"reward":[0,0,0,0,0],
+				"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0)],
 				"id":"SW8",
 				"group": 2,
 				"name":"q_upgradeweapon_name",
@@ -8649,7 +8650,7 @@ package
 			_quests.push({
 				"order":64,
 				"list":true,
-				"reward":[0,0,0,0,0],
+				"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0)],
 				"id":"SW9",
 				"group": 2,
 				"name":"q_upgradeweapon_name",
@@ -8668,7 +8669,7 @@ package
 			_quests.push({
 				"order":65,
 				"list":true,
-				"reward":[0,0,0,0,0],
+				"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0)],
 				"id":"SW10",
 				"group": 2,
 				"name":"q_upgradeweapon_name",
@@ -8687,7 +8688,7 @@ package
 			_quests.push({
 				"order":66,
 				"list":true,
-				"reward":[0,0,0,0,0],
+				"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0)],
 				"id":"SW11",
 				"group": 2,
 				"name":"q_upgradeweapon_name",
@@ -8706,7 +8707,7 @@ package
 			_quests.push({
 				"order":67,
 				"list":true,
-				"reward":[0,0,0,0,0],
+				"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0)],
 				"id":"SW12",
 				"group": 2,
 				"name":"q_upgradeweapon_name",
@@ -8968,21 +8969,21 @@ package
 				r = 0;
 				while(r < reward.length)
 				{
-					if(reward[r] > 0)
+					if(reward[r].Get() > 0)
 					{
-						collectedArr.push([r,reward[r]]);
+						collectedArr.push([r,reward[r].Get()]);
 						if(r < 4)
 						{
-							BASE.Fund(r + 1,reward[r],true);
+							BASE.Fund(r + 1,reward[r].Get(),true);
 						}
 						else
 						{
 							_completed[questID] = 2;
-							BASE._credits.Add(reward[r]);
+							BASE._credits.Add(reward[r].Get());
 							BASE.Purchase("Q" + questID,1,"quest");
 							saveOK = false;
 						}
-						value += reward[r];
+						value += reward[r].Get();
 					}
 					r++;
 				}
@@ -9089,25 +9090,25 @@ package
 					Brag = function():void
 					{
 						var _loc1_:Array = [];
-						if(q.reward[0] > 0)
+						if(q.reward[0].Get() > 0)
 						{
-							_loc1_.push([q.reward[0],KEYS.Get(GLOBAL._resourceNames[0])]);
+							_loc1_.push([q.reward[0].Get(), KEYS.Get(GLOBAL._resourceNames[0])]);
 						}
-						if(q.reward[1] > 0)
+						if(q.reward[1].Get() > 0)
 						{
-							_loc1_.push([q.reward[1],KEYS.Get(GLOBAL._resourceNames[1])]);
+							_loc1_.push([q.reward[1].Get(), KEYS.Get(GLOBAL._resourceNames[1])]);
 						}
-						if(q.reward[2] > 0)
+						if(q.reward[2].Get() > 0)
 						{
-							_loc1_.push([q.reward[2],KEYS.Get(GLOBAL._resourceNames[2])]);
+							_loc1_.push([q.reward[2].Get(), KEYS.Get(GLOBAL._resourceNames[2])]);
 						}
-						if(q.reward[3] > 0)
+						if(q.reward[3].Get() > 0)
 						{
-							_loc1_.push([q.reward[3],KEYS.Get(GLOBAL._resourceNames[3])]);
+							_loc1_.push([q.reward[3].Get(), KEYS.Get(GLOBAL._resourceNames[3])]);
 						}
-						if(q.reward[4] > 0)
+						if(q.reward[4].Get() > 0)
 						{
-							_loc1_.push([q.reward[4],KEYS.Get(GLOBAL._resourceNames[4])]);
+							_loc1_.push([q.reward[4].Get(), KEYS.Get(GLOBAL._resourceNames[4])]);
 						}
 						if(q.monster_reward != undefined)
 						{

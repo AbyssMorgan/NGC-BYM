@@ -373,7 +373,7 @@ package
 								this._infoMC["R" + (c + 1)].gotoAndStop(c + 7);
 							}
 							this._infoMC["R" + (c + 1)].tTitle.htmlText = KEYS.Get(GLOBAL._resourceNames[c]);
-							this._infoMC["R" + (c + 1)].tValue.htmlText = "<b>" + GLOBAL.FormatNumber(q.reward[c]) + "</b>";
+							this._infoMC["R" + (c + 1)].tValue.htmlText = "<b>" + GLOBAL.FormatNumber(q.reward[c].Get()) + "</b>";
 							this._infoMC["R" + (c + 1)].visible = true;
 							c++;
 						}

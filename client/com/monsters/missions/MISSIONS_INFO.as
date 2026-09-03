@@ -132,7 +132,7 @@ package com.monsters.missions
                   this["R" + (qq + 1)].gotoAndStop(c + 7);
                }
                this["R" + (qq + 1)].tTitle.htmlText = KEYS.Get(GLOBAL._resourceNames[c]);
-               this["R" + (qq + 1)].tValue.htmlText = "<b>" + GLOBAL.FormatNumber(this._missionObject.reward[c]) + "</b>";
+               this["R" + (qq + 1)].tValue.htmlText = "<b>" + GLOBAL.FormatNumber(this._missionObject.reward[c].Get()) + "</b>";
                this["R" + (qq + 1)].visible = false;
                qq++;
             }
@@ -169,7 +169,7 @@ package com.monsters.missions
                   this["R" + (c + 1)].gotoAndStop(c + 7);
                }
                this["R" + (c + 1)].tTitle.htmlText = KEYS.Get(GLOBAL._resourceNames[c]);
-               this["R" + (c + 1)].tValue.htmlText = "<b>" + GLOBAL.FormatNumber(this._missionObject.reward[c]) + "</b>";
+               this["R" + (c + 1)].tValue.htmlText = "<b>" + GLOBAL.FormatNumber(this._missionObject.reward[c].Get()) + "</b>";
                this["R" + (c + 1)].visible = true;
                c++;
             }

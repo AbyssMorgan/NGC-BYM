@@ -28,19 +28,19 @@ package {
 			switch(texture){
 				case "lava_ngc": {
 					files = [
-						"yardbg/lava/inferno_lava1.png",
-						"yardbg/lava/inferno_lava2.png",
-						"yardbg/lava/inferno_lava3.png",
-						"yardbg/lava/inferno_lava4.png"
+						"yardbg/lava_ngc/inferno_lava1.png",
+						"yardbg/lava_ngc/inferno_lava2.png",
+						"yardbg/lava_ngc/inferno_lava3.png",
+						"yardbg/lava_ngc/inferno_lava4.png"
 					];
 					break;
 				}
 				case "lava_heat": {
 					files = [
-						"yardbg/lava/inferno_lava1.png",
-						"yardbg/lava/inferno_lava2.png",
-						"yardbg/lava/inferno_lava3.png",
-						"yardbg/lava/inferno_lava4.png"
+						"yardbg/lava_heat/inferno_lava1.png",
+						"yardbg/lava_heat/inferno_lava2.png",
+						"yardbg/lava_heat/inferno_lava3.png",
+						"yardbg/lava_heat/inferno_lava4.png"
 					];
 					break;
 				}

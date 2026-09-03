@@ -38,7 +38,7 @@ package buildings.yard {
 				{"r1":new SecNum(3000000), "r2":new SecNum(2250000), "r3":new SecNum(1500000), "r4":new SecNum(0), "time":new SecNum(86400 * 4), "re":[[14,1,9]]}, // Level 4
 				{"r1":new SecNum(12000000), "r2":new SecNum(9000000), "r3":new SecNum(6000000), "r4":new SecNum(0), "time":new SecNum(86400 * 5), "re":[[14,1,10]]}, // Level 5
 				{"r1":new SecNum(16500000), "r2":new SecNum(12687500), "r3":new SecNum(7562500), "r4":new SecNum(0), "time":new SecNum(86400 * 6), "re":[[14,1,10]]}, // Level 6
-				{"r1":new SecNum(10000000000), "r2":new SecNum(10000000000), "r3":new SecNum(10000000000), "r4":new SecNum(10000000000), "time":new SecNum(86400 * 7), "re":[[14,1,25],[12,1,3]]}, // Level 7
+				{"r1":new SecNum(10000000000), "r2":new SecNum(10000000000), "r3":new SecNum(10000000000), "r4":new SecNum(10000000000), "r6": new SecNum(5), "time":new SecNum(86400 * 7), "re":[[14,1,25],[12,1,3]]}, // Level 7
 			],
 			"can_fortify":true,
 			"fortify_costs":[

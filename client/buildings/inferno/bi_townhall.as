@@ -40,10 +40,10 @@ package buildings.inferno {
 				{"r1":new SecNum(2000000000), "r2":new SecNum(2000000000), "r3":new SecNum(2000000000), "r4":new SecNum(2000000000), "time":new SecNum(86400 * 26), "re":[[14,1,18]]}, // Level 19
 				{"r1":new SecNum(2400000000), "r2":new SecNum(2400000000), "r3":new SecNum(2400000000), "r4":new SecNum(2400000000), "time":new SecNum(86400 * 30), "re":[[14,1,19]]}, // Level 20
 				{"r1":new SecNum(5000000000), "r2":new SecNum(5000000000), "r3":new SecNum(5000000000), "r4":new SecNum(5000000000), "time":new SecNum(86400 * 34), "re":[[14,1,20]]}, // Level 21
-				{"r1":new SecNum(10000000000), "r2":new SecNum(10000000000), "r3":new SecNum(10000000000), "r4":new SecNum(10000000000), "time":new SecNum(86400 * 38), "re":[[14,1,21]]}, // Level 22
-				{"r1":new SecNum(15000000000), "r2":new SecNum(15000000000), "r3":new SecNum(15000000000), "r4":new SecNum(15000000000), "time":new SecNum(86400 * 42), "re":[[14,1,22]]}, // Level 23
-				{"r1":new SecNum(20000000000), "r2":new SecNum(20000000000), "r3":new SecNum(20000000000), "r4":new SecNum(20000000000), "time":new SecNum(86400 * 46), "re":[[14,1,23]]}, // Level 24
-				{"r1":new SecNum(25000000000), "r2":new SecNum(25000000000), "r3":new SecNum(25000000000), "r4":new SecNum(25000000000), "time":new SecNum(86400 * 50), "re":[[14,1,24]]}, // Level 25
+				{"r1":new SecNum(10000000000), "r2":new SecNum(10000000000), "r3":new SecNum(10000000000), "r4":new SecNum(10000000000), "r6": new SecNum(2), "time":new SecNum(86400 * 38), "re":[[14,1,21]]}, // Level 22
+				{"r1":new SecNum(15000000000), "r2":new SecNum(15000000000), "r3":new SecNum(15000000000), "r4":new SecNum(15000000000), "r6": new SecNum(5), "time":new SecNum(86400 * 42), "re":[[14,1,22]]}, // Level 23
+				{"r1":new SecNum(20000000000), "r2":new SecNum(20000000000), "r3":new SecNum(20000000000), "r4":new SecNum(20000000000), "r6": new SecNum(10), "time":new SecNum(86400 * 46), "re":[[14,1,23]]}, // Level 24
+				{"r1":new SecNum(25000000000), "r2":new SecNum(25000000000), "r3":new SecNum(25000000000), "r4":new SecNum(25000000000), "r6": new SecNum(25), "time":new SecNum(86400 * 50), "re":[[14,1,24]]}, // Level 25
 			],
 			"can_fortify":true,
 			"fortify_costs":[

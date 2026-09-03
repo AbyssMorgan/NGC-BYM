@@ -35,7 +35,7 @@ package com.monsters.display
 		
 		public var cache:Object;
 		
-		private var concurrentLoadLimit:uint = 20;
+		private var concurrentLoadLimit:uint = 200;
 		
 		private var loadTick:Timer;
 		

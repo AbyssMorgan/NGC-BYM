@@ -2715,7 +2715,7 @@ package
 			{
 				if (!building._repairing && building.health > 0 && building.health <= building.maxHealth * 0.5)
 				{
-				Smoke.CreateStream(new Point(building.x, building.y + building._middle));
+					Smoke.CreateStream(new Point(building.x, building.y + building._middle));
 				}
 			}
 			QUESTS.TutorialCheck();

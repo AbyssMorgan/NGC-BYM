@@ -199,6 +199,7 @@ package
                   "r3":new SecNum(0),
                   "r4":new SecNum(0),
                   "r5":0,
+                  "r6":new SecNum(0),
                   "time":new SecNum(_loc3_.time.Get())
                };
             }
@@ -423,17 +424,28 @@ package
                }
                _loc14_++;
             }
-            (_loc15_ = this.mcResources.mcTime).gotoAndStop(BASE.isInfernoBuilding(this._building._type) || BASE.isInfernoMainYardOrOutpost ? 12 : 6);
-            if(TUTORIAL._stage >= 200 && _loc3_.time.Get() > 0)
-            {
-               _loc15_.visible = true;
-               _loc15_.tTitle.htmlText = "<b>" + KEYS.Get(_loc18_[5]) + "</b>";
-               _loc15_.tValue.htmlText = "<b>" + GLOBAL.ToTime(_loc13_,true,false) + "</b>";
-            }
-            else
-            {
-               _loc15_.visible = false;
-            }
+
+			if(Boolean(_loc3_["r6"].Get()) && _loc3_["r6"].Get() > 0){
+				(_loc15_ = this.mcResources.mcTime).gotoAndStop(BASE.isInfernoBuilding(this._building._type) || BASE.isInfernoMainYardOrOutpost ? 12 : 6);
+				_loc15_.visible = true;
+				_loc15_.tTitle.htmlText = "<b>Crystals</b>";
+				_loc15_.tValue.htmlText = "<b><font color=\"#" + (_loc3_["r6"].Get() > BASE._enchantedCrystal.Get() && (param1 == "upgrade" || param1 == "build" || param1 == "fortify") ? "FF0000" : "000000") + "\">" + GLOBAL.FormatNumber(BASE._enchantedCrystal.Get()) + " / " + GLOBAL.FormatNumber(_loc3_["r6"].Get()) + "</font></b>";
+				mcInstant.visible = false;
+				mcResources.bAction.visible = BASE._enchantedCrystal.Get() >= _loc3_["r6"].Get();
+			} else {
+ 				(_loc15_ = this.mcResources.mcTime).gotoAndStop(BASE.isInfernoBuilding(this._building._type) || BASE.isInfernoMainYardOrOutpost ? 12 : 6);
+				if(TUTORIAL._stage >= 200 && _loc3_.time.Get() > 0)
+				{
+					_loc15_.visible = true;
+					_loc15_.tTitle.htmlText = "<b>" + KEYS.Get(_loc18_[5]) + "</b>";
+					_loc15_.tValue.htmlText = "<b>" + GLOBAL.ToTime(_loc13_,true,false) + "</b>";
+				}
+				else
+				{
+					_loc15_.visible = false;
+				}
+			}
+           
             if(this._doStreamPost && BASE.isMainYard)
             {
                if(_loc3_.time.Get() > 600)

@@ -42,7 +42,12 @@ package buildings.yard {
 				{"r1":new SecNum(250000000), "r2":new SecNum(250000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 10), "re":[[14,1,16],[12,1,2]]}, // Level 17
 				{"r1":new SecNum(500000000), "r2":new SecNum(500000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 11), "re":[[14,1,18],[12,1,2]]}, // Level 18
 				{"r1":new SecNum(1250000000), "r2":new SecNum(1250000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 12), "re":[[14,1,19],[12,1,2]]}, // Level 19
-				{"r1":new SecNum(2500000000), "r2":new SecNum(2500000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 14), "re":[[14,1,20],[12,1,2]]} // Level 20
+				{"r1":new SecNum(2500000000), "r2":new SecNum(2500000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(86400 * 14), "re":[[14,1,20],[12,1,2]]}, // Level 20
+				{"r1":new SecNum(5000000000), "r2":new SecNum(5000000000), "r3":new SecNum(0), "r4":new SecNum(0), "r6":new SecNum(1), "time":new SecNum(86400 * 14), "re":[[14,1,21],[12,1,3],[145,1,6]]}, // Level 21
+				{"r1":new SecNum(10000000000), "r2":new SecNum(10000000000), "r3":new SecNum(0), "r4":new SecNum(0), "r6":new SecNum(2), "time":new SecNum(86400 * 14), "re":[[14,1,22],[12,1,3],[145,1,7]]}, // Level 22
+				{"r1":new SecNum(20000000000), "r2":new SecNum(20000000000), "r3":new SecNum(0), "r4":new SecNum(0), "r6":new SecNum(3), "time":new SecNum(86400 * 14), "re":[[14,1,23],[12,1,3],[145,1,8]]}, // Level 23
+				{"r1":new SecNum(30000000000), "r2":new SecNum(30000000000), "r3":new SecNum(0), "r4":new SecNum(0), "r6":new SecNum(4), "time":new SecNum(86400 * 14), "re":[[14,1,24],[12,1,3],[145,1,9]]}, // Level 24
+				{"r1":new SecNum(40000000000), "r2":new SecNum(40000000000), "r3":new SecNum(0), "r4":new SecNum(0), "r6":new SecNum(5), "time":new SecNum(86400 * 14), "re":[[14,1,25],[12,1,3],[145,1,10]]}, // Level 25
 			],
 			"imageData":{
 				"baseurl":"buildings/iboneharvester/",
@@ -98,6 +103,11 @@ package buildings.yard {
 				6, // Level 18
 				6, // Level 19
 				6, // Level 20
+				6, // Level 21
+				6, // Level 22
+				6, // Level 23
+				6, // Level 24
+				6, // Level 25
 			],
 			"produce":[
 				20, // Level 1
@@ -120,6 +130,11 @@ package buildings.yard {
 				11000, // Level 18
 				13000, // Level 19
 				15000, // Level 20
+				17000, // Level 21
+				19000, // Level 22
+				21000, // Level 23
+				23000, // Level 24
+				25000, // Level 25
 			],
 			"cycleTime":[
 				10, // Level 1
@@ -142,6 +157,11 @@ package buildings.yard {
 				10, // Level 18
 				10, // Level 19
 				10, // Level 20
+				10, // Level 21
+				10, // Level 22
+				10, // Level 23
+				10, // Level 24
+				10, // Level 25
 			],
 			"capacity":[
 				720, // Level 1
@@ -164,6 +184,11 @@ package buildings.yard {
 				62500000, // Level 18
 				125000000, // Level 19
 				250000000, // Level 20
+				375000000, // Level 21
+				500000000, // Level 22
+				625000000, // Level 23
+				750000000, // Level 24
+				1000000000, // Level 25
 			],
 			"hp":[
 				500, // Level 1
@@ -186,6 +211,11 @@ package buildings.yard {
 				550000, // Level 18
 				600000, // Level 19
 				650000, // Level 20
+				700000, // Level 21
+				750000, // Level 22
+				800000, // Level 23
+				850000, // Level 24
+				900000, // Level 25
 			],
 			"repairTime":[
 				30, // Level 1
@@ -208,6 +238,11 @@ package buildings.yard {
 				69984, // Level 18
 				77760, // Level 19
 				86400, // Level 20
+				86400, // Level 21
+				86400, // Level 22
+				86400, // Level 23
+				86400, // Level 24
+				86400, // Level 25
 			]
 		};
 		

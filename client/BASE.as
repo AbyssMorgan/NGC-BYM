@@ -286,6 +286,8 @@ package
 
 		public static var _conquerorPoints:SecNum = new SecNum(0);
 
+		public static var _enchantedCrystal:SecNum = new SecNum(0);
+
 		public static var _TowerBuff:Boolean = false;
 
 		private static const s_levels:Array = [
@@ -1150,6 +1152,7 @@ package
 						} else {
 							_basePower.Set(0);
 						}
+						_enchantedCrystal = new SecNum(int(serverData.crystals));
 						_conquerorPoints = new SecNum(int(serverData.empirevalue));
 						_credits = new SecNum(int(serverData.credits));
 						GLOBAL._credits = new SecNum(int(serverData.credits));
@@ -3784,6 +3787,7 @@ package
 			saveData["buildinghealthdata"] = JSON.stringify(buildingSaveData[1]);
 			saveData["buildingkeydata"] = JSON.stringify(buildingSaveData[2]);
 			saveData["stats"] = JSON.stringify(getStatsSaveData());
+			saveData["crystals"] = JSON.stringify(BASE._enchantedCrystal.Get());
 			saveData["resources"] = JSON.stringify(getResourceSaveData());
 			if (MapRoomManager.instance.isInMapRoom2)
 			{
@@ -4251,13 +4255,12 @@ package
          var _loc16_:BFOUNDATION = null;
          var _loc17_:Array = null;
          var _loc18_:int = 0;
-         var _loc19_:int = 0;
-         var _loc20_:int = 0;
-         var _loc21_:int = 0;
-         var _loc22_:int = 0;
-         var _loc23_:int = 0;
+         var _loc19_:Number = 0;
+         var _loc20_:Number = 0;
+         var _loc21_:Number = 0;
+         var _loc22_:Number = 0;
          var _loc24_:int = 0;
-         var _loc25_:int = 0;
+         var _loc25_:Number = 0;
          var _loc26_:Boolean = false;
          var _loc27_:Object = null;
          var _loc28_:Array = null;
@@ -4421,11 +4424,10 @@ package
          }
          if (!_loc4_ && !param2)
          {
-            _loc19_ = int(_loc3_.costs[0].r1.Get());
-            _loc20_ = int(_loc3_.costs[0].r2.Get());
-            _loc21_ = int(_loc3_.costs[0].r3.Get());
-            _loc22_ = int(_loc3_.costs[0].r4.Get());
-            _loc23_ = 0;
+            _loc19_ = Number(_loc3_.costs[0].r1.Get());
+            _loc20_ = Number(_loc3_.costs[0].r2.Get());
+            _loc21_ = Number(_loc3_.costs[0].r3.Get());
+            _loc22_ = Number(_loc3_.costs[0].r4.Get());
             _loc25_ = 0;
             if (GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD || GLOBAL.mode == "ibuild")
             {

@@ -846,10 +846,9 @@ package com.monsters.player
          return _loc6_;
       }
       
-      public function getResourceCostInShinyByID(param1:String) : int
+      public function getResourceCostInShinyByID(param1:String) : Number
       {
-         var _loc2_:int = 0;
-         var _loc3_:int = this.getResourceCostByID(param1);
+         var _loc3_:Number = this.getResourceCostByID(param1);
          return GLOBAL.getShinyCostFromResourceAmt(_loc3_);
       }
       

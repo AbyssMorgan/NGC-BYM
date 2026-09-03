@@ -2575,86 +2575,91 @@ package
          return false;
       }
       
-      public function UpgradeB() : void
-      {
-         var GetFriends:Function;
-         var canUpgrade:Object = null;
-         var o:Object = null;
-         var isInfernoBuilding:Boolean = false;
-         var tmpUpgradeTime:int = 0;
-         var popupMC:popup_helpme = null;
-         if(this._countdownUpgrade.Get() == 0)
-         {
-            canUpgrade = BASE.CanUpgrade(this);
-            if(!canUpgrade.error)
-            {
-               o = this.UpgradeCost();
-               isInfernoBuilding = BASE.isInfernoBuilding(this._type);
-               if(o.r1.Get() > 0)
-               {
-                  BASE.Charge(1,o.r1.Get(),false,isInfernoBuilding);
-               }
-               if(o.r2.Get() > 0)
-               {
-                  BASE.Charge(2,o.r2.Get(),false,isInfernoBuilding);
-               }
-               if(o.r3.Get() > 0)
-               {
-                  BASE.Charge(3,o.r3.Get(),false,isInfernoBuilding);
-               }
-               if(o.r4.Get() > 0)
-               {
-                  BASE.Charge(4,o.r4.Get(),false,isInfernoBuilding);
-               }
-               tmpUpgradeTime = int(this._buildingProps.costs[this._lvl.Get()].time.Get() * GLOBAL._buildTime);
-               this._countdownUpgrade.Set(tmpUpgradeTime);
-               if(this._type != 14 && this._countdownUpgrade.Get() > 60 * 60 * 2 && TUTORIAL._stage > 200)
-               {
-                  if(!GLOBAL._promptedInvite && BASE._credits.Get() < 40 && GLOBAL._canInvite && GLOBAL._friendCount == 0)
-                  {
-                     GetFriends = function():void
-                     {
-                        if(BYMDevConfig.instance.USE_CLIENT_WITH_CALLBACK)
-                        {
-                           GLOBAL.CallJSWithClient("cc.showFeedDialog","callbackgift",["invite"]);
-                        }
-                        else
-                        {
-                           GLOBAL.CallJS("cc.showFeedDialog",["invite","callbackgift"]);
-                        }
-                     };
-                     GLOBAL._promptedInvite = true;
-                     popupMC = new popup_helpme();
-                     popupMC.tB.text = KEYS.Get("pop_helpme");
-                     popupMC.bAction.SetupKey("btn_invitefriends");
-                     popupMC.bAction.addEventListener(MouseEvent.CLICK,GetFriends);
-                     POPUPS.Push(popupMC);
-                  }
-               }
-               this._hasResources = false;
-               this._hasWorker = false;
-               if(GLOBAL._catchup)
-               {
-                  this._hasResources = true;
-                  this._hasWorker = true;
-               }
-               QUEUE.Add("building" + this._id,this);
-               LOGGER.Stat([7,this._type,this._lvl.Get() + 1]);
-               this._helpList = [];
-               this.Update();
-               if(GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD && this._class == "tower")
-               {
-                  GLOBAL._selectedBuilding = this;
-                  GLOBAL.Message(KEYS.Get("msg_inactiveupgrade"),KEYS.Get("btn_speedup"),STORE.SpeedUp,["SP4"]);
-               }
-               GLOBAL.eventDispatcher.dispatchEvent(new BuildingEvent(BuildingEvent.UPGRADED,this));
-            }
-            else if(GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD)
-            {
-               GLOBAL.Message(canUpgrade.errorMessage);
-            }
-         }
-      }
+		public function UpgradeB() : void
+		{
+			var GetFriends:Function;
+			var canUpgrade:Object = null;
+			var o:Object = null;
+			var isInfernoBuilding:Boolean = false;
+			var tmpUpgradeTime:int = 0;
+			var popupMC:popup_helpme = null;
+			if(this._countdownUpgrade.Get() == 0)
+			{
+				canUpgrade = BASE.CanUpgrade(this);
+				if(!canUpgrade.error)
+				{
+					o = this.UpgradeCost();
+					isInfernoBuilding = BASE.isInfernoBuilding(this._type);
+					if(o.r1.Get() > 0)
+					{
+						BASE.Charge(1,o.r1.Get(),false,isInfernoBuilding);
+					}
+					if(o.r2.Get() > 0)
+					{
+						BASE.Charge(2,o.r2.Get(),false,isInfernoBuilding);
+					}
+					if(o.r3.Get() > 0)
+					{
+						BASE.Charge(3,o.r3.Get(),false,isInfernoBuilding);
+					}
+					if(o.r4.Get() > 0)
+					{
+						BASE.Charge(4,o.r4.Get(),false,isInfernoBuilding);
+					}
+					if(Boolean(o.r6) && o.r6.Get() > 0)
+					{
+						BASE._enchantedCrystal.Add(-o.r6.Get());
+						BASE.Save();
+					}
+					tmpUpgradeTime = int(this._buildingProps.costs[this._lvl.Get()].time.Get() * GLOBAL._buildTime);
+					this._countdownUpgrade.Set(tmpUpgradeTime);
+					if(this._type != 14 && this._countdownUpgrade.Get() > 60 * 60 * 2 && TUTORIAL._stage > 200)
+					{
+						if(!GLOBAL._promptedInvite && BASE._credits.Get() < 40 && GLOBAL._canInvite && GLOBAL._friendCount == 0)
+						{
+							GetFriends = function():void
+							{
+								if(BYMDevConfig.instance.USE_CLIENT_WITH_CALLBACK)
+								{
+									GLOBAL.CallJSWithClient("cc.showFeedDialog","callbackgift",["invite"]);
+								}
+								else
+								{
+									GLOBAL.CallJS("cc.showFeedDialog",["invite","callbackgift"]);
+								}
+							};
+							GLOBAL._promptedInvite = true;
+							popupMC = new popup_helpme();
+							popupMC.tB.text = KEYS.Get("pop_helpme");
+							popupMC.bAction.SetupKey("btn_invitefriends");
+							popupMC.bAction.addEventListener(MouseEvent.CLICK,GetFriends);
+							POPUPS.Push(popupMC);
+						}
+					}
+					this._hasResources = false;
+					this._hasWorker = false;
+					if(GLOBAL._catchup)
+					{
+						this._hasResources = true;
+						this._hasWorker = true;
+					}
+					QUEUE.Add("building" + this._id,this);
+					LOGGER.Stat([7,this._type,this._lvl.Get() + 1]);
+					this._helpList = [];
+					this.Update();
+					if(GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD && this._class == "tower")
+					{
+						GLOBAL._selectedBuilding = this;
+						GLOBAL.Message(KEYS.Get("msg_inactiveupgrade"),KEYS.Get("btn_speedup"),STORE.SpeedUp,["SP4"]);
+					}
+					GLOBAL.eventDispatcher.dispatchEvent(new BuildingEvent(BuildingEvent.UPGRADED,this));
+				}
+				else if(GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD)
+				{
+					GLOBAL.Message(canUpgrade.errorMessage);
+				}
+			}
+		}
       
       public function Help() : Boolean
       {
@@ -2743,35 +2748,35 @@ package
          this.UpgradeCancelC();
       }
       
-      public function UpgradeCancelC() : void
-      {
-         var _loc1_:Object = null;
-         var _loc2_:Boolean = false;
-         if(this._countdownUpgrade.Get() > 0)
-         {
-            QUEUE.Remove("building" + this._id,false,this);
-            this._countdownUpgrade.Set(0);
-            _loc1_ = this.UpgradeCost();
-            _loc2_ = BASE.isInfernoBuilding(this._type);
-            if(_loc1_.r1.Get())
-            {
-               BASE.Fund(1,_loc1_.r1.Get(),false,null,_loc2_);
-            }
-            if(_loc1_.r2.Get())
-            {
-               BASE.Fund(2,_loc1_.r2.Get(),false,null,_loc2_);
-            }
-            if(_loc1_.r3.Get())
-            {
-               BASE.Fund(3,_loc1_.r3.Get(),false,null,_loc2_);
-            }
-            if(_loc1_.r4.Get())
-            {
-               BASE.Fund(4,_loc1_.r4.Get(),false,null,_loc2_);
-            }
-            BASE.Save();
-         }
-      }
+		public function UpgradeCancelC() : void
+		{
+			var _loc1_:Object = null;
+			var _loc2_:Boolean = false;
+			if(this._countdownUpgrade.Get() > 0)
+			{
+				QUEUE.Remove("building" + this._id,false,this);
+				this._countdownUpgrade.Set(0);
+				_loc1_ = this.UpgradeCost();
+				_loc2_ = BASE.isInfernoBuilding(this._type);
+				if(_loc1_.r1.Get())
+				{
+					BASE.Fund(1,_loc1_.r1.Get(),false,null,_loc2_);
+				}
+				if(_loc1_.r2.Get())
+				{
+					BASE.Fund(2,_loc1_.r2.Get(),false,null,_loc2_);
+				}
+				if(_loc1_.r3.Get())
+				{
+					BASE.Fund(3,_loc1_.r3.Get(),false,null,_loc2_);
+				}
+				if(_loc1_.r4.Get())
+				{
+					BASE.Fund(4,_loc1_.r4.Get(),false,null,_loc2_);
+				}
+				BASE.Save();
+			}
+		}
       
       public function Upgraded() : void
       {
@@ -3066,45 +3071,51 @@ package
          return _loc1_;
       }
       
-      public function UpgradeCost() : Object
-      {
-         var _loc1_:Object = null;
-         var _loc2_:Object = null;
-         if(this._buildingProps.costs.length > this._lvl.Get())
-         {
-            _loc1_ = {
-               "time":new SecNum(0),
-               "r1":new SecNum(this._buildingProps.costs[this._lvl.Get()].r1.Get()),
-               "r2":new SecNum(this._buildingProps.costs[this._lvl.Get()].r2.Get()),
-               "r3":new SecNum(this._buildingProps.costs[this._lvl.Get()].r3.Get()),
-               "r4":new SecNum(this._buildingProps.costs[this._lvl.Get()].r4.Get()),
-               "r1over":false,
-               "r2over":false,
-               "r3over":false,
-               "r4over":false
-            };
-            _loc2_ = this._buildingProps.costs[this._lvl.Get()];
-            if(BASE._resources.r1.Get() < _loc2_.r1.Get())
-            {
-               _loc1_.r1over = true;
-            }
-            if(BASE._resources.r2.Get() < _loc2_.r2.Get())
-            {
-               _loc1_.r2over = true;
-            }
-            if(BASE._resources.r3.Get() < _loc2_.r3.Get())
-            {
-               _loc1_.r3over = true;
-            }
-            if(BASE._resources.r4.Get() < _loc2_.r4.Get())
-            {
-               _loc1_.r4over = true;
-            }
-            _loc1_.time.Set(_loc2_.time.Get());
-            return _loc1_;
-         }
-         return {};
-      }
+		public function UpgradeCost() : Object
+		{
+			var _loc1_:Object = null;
+			var _loc2_:Object = null;
+			if(this._buildingProps.costs.length > this._lvl.Get())
+			{
+				_loc1_ = {
+					"time":new SecNum(0),
+					"r1":new SecNum(this._buildingProps.costs[this._lvl.Get()].r1.Get()),
+					"r2":new SecNum(this._buildingProps.costs[this._lvl.Get()].r2.Get()),
+					"r3":new SecNum(this._buildingProps.costs[this._lvl.Get()].r3.Get()),
+					"r4":new SecNum(this._buildingProps.costs[this._lvl.Get()].r4.Get()),
+					"r6":new SecNum(this._buildingProps.costs[this._lvl.Get()].r6 ? this._buildingProps.costs[this._lvl.Get()].r6.Get() : 0),
+					"r1over":false,
+					"r2over":false,
+					"r3over":false,
+					"r4over":false,
+					"r6over":false
+				};
+				_loc2_ = this._buildingProps.costs[this._lvl.Get()];
+				if(BASE._resources.r1.Get() < _loc2_.r1.Get())
+				{
+					_loc1_.r1over = true;
+				}
+				if(BASE._resources.r2.Get() < _loc2_.r2.Get())
+				{
+					_loc1_.r2over = true;
+				}
+				if(BASE._resources.r3.Get() < _loc2_.r3.Get())
+				{
+					_loc1_.r3over = true;
+				}
+				if(BASE._resources.r4.Get() < _loc2_.r4.Get())
+				{
+					_loc1_.r4over = true;
+				}
+				if(Boolean(_loc2_.r6) && BASE._enchantedCrystal.Get() < _loc2_.r6.Get())
+				{
+					_loc1_.r6over = true;
+				}
+				_loc1_.time.Set(_loc2_.time.Get());
+				return _loc1_;
+			}
+			return {};
+		}
       
       public function FortifyCost() : Object
       {

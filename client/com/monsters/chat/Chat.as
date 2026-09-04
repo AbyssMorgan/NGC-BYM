@@ -245,7 +245,7 @@ package com.monsters.chat
          {
             return false;
          }
-         if(MapRoomManager.instance.isInMapRoom2 && MapRoomManager.instance.isOpen && GLOBAL._ROOT.stage.displayState == StageDisplayState.FULL_SCREEN)
+         if(MapRoomManager.instance.isInMapRoom2 && MapRoomManager.instance.isOpen && GLOBAL._ROOT.stage.displayState == StageDisplayState.FULL_SCREEN_INTERACTIVE)
          {
             return false;
          }

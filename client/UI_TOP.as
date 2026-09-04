@@ -473,22 +473,11 @@ package
 			mcReinforcements.x = param1.width - 125;
 			mcSpecialEvent.x = param1.width - 125;
 			mcBuffHolder.x = param1.width - 200;
-			if(GLOBAL.mode == GLOBAL.e_BASE_MODE.ATTACK || GLOBAL.mode == GLOBAL.e_BASE_MODE.WMATTACK)
-			{
-				mcZoom.x = param1.width - 38 - 24;
-				mcFullscreen.x = param1.width - 38;
-				mcSound.x = param1.width - 38 - 24;
-				mcMusic.x = param1.width - 38;
-				mcSave.x = param1.width - 38 - 24;
-			}
-			else
-			{
-				mcZoom.x = param1.width - 130;
-				mcFullscreen.x = param1.width - 100;
-				mcSound.x = param1.width - 70;
-				mcMusic.x = param1.width - 40;
-				mcSave.x = param1.width - 160;
-			}
+			mcZoom.x = param1.width - 130;
+			mcFullscreen.x = param1.width - 100;
+			mcSound.x = param1.width - 70;
+			mcMusic.x = param1.width - 40;
+			mcSave.x = param1.width - 160;
 			if(this._descentDebuff)
 			{
 				this._descentDebuff.x = param1.width - 160;

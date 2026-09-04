@@ -60,7 +60,7 @@ package
             GLOBAL.BlockerAdd();
             if(_useOldPlanner)
             {
-               if(GLOBAL._ROOT.stage.displayState == StageDisplayState.FULL_SCREEN)
+               if(GLOBAL._ROOT.stage.displayState == StageDisplayState.FULL_SCREEN_INTERACTIVE)
                {
                   GLOBAL._ROOT.stage.displayState = StageDisplayState.NORMAL;
                }

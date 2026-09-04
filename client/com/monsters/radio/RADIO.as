@@ -175,33 +175,26 @@ package com.monsters.radio
          return _settings;
       }
       
-      public static function Show() : void
-      {
-         if(!_open)
-         {
-            if(GLOBAL._ROOT.stage.displayState == StageDisplayState.FULL_SCREEN)
-            {
-               if(GLOBAL.mode == GLOBAL.e_BASE_MODE.ATTACK || GLOBAL.mode == GLOBAL.e_BASE_MODE.WMATTACK)
-               {
-                  UI2._top.mcZoom.gotoAndStop(1 + 3);
-               }
-               else
-               {
-                  UI2._top.mcZoom.gotoAndStop(1);
-               }
-               GLOBAL._ROOT.stage.displayState = StageDisplayState.NORMAL;
-               GLOBAL._zoomed = false;
-               MAP._GROUND.scaleX = MAP._GROUND.scaleY = 1;
-               MAP.Focus(0,0);
-            }
-            GLOBAL.BlockerAdd();
-            _mc = new RADIOSETTINGSPOPUP();
-            _mc.Center();
-            _mc.ScaleUp();
-            GLOBAL._layerWindows.addChild(_mc);
-            _open = true;
-         }
-      }
+		public static function Show() : void
+		{
+			if(!_open)
+			{
+				if(GLOBAL._ROOT.stage.displayState == StageDisplayState.FULL_SCREEN_INTERACTIVE)
+				{
+					UI2._top.mcZoom.gotoAndStop(1);
+					GLOBAL._ROOT.stage.displayState = StageDisplayState.NORMAL;
+					GLOBAL._zoomed = false;
+					MAP._GROUND.scaleX = MAP._GROUND.scaleY = 1;
+					MAP.Focus(0,0);
+				}
+				GLOBAL.BlockerAdd();
+				_mc = new RADIOSETTINGSPOPUP();
+				_mc.Center();
+				_mc.ScaleUp();
+				GLOBAL._layerWindows.addChild(_mc);
+				_open = true;
+			}
+		}
       
       public static function Hide() : void
       {

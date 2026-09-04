@@ -156,7 +156,7 @@ package
       
       private function detectFS(param1:FullScreenEvent = null) : void
       {
-         if(Boolean(stage) && stage.displayState == StageDisplayState.FULL_SCREEN)
+         if(Boolean(stage) && stage.displayState == StageDisplayState.FULL_SCREEN_INTERACTIVE)
          {
             this.fsWarning.tBody.htmlText = KEYS.Get("fswarning");
             addChild(this.fsWarning);

@@ -406,26 +406,12 @@ package {
 			{
 				if (param1)
 				{
-					if (GLOBAL.mode == GLOBAL.e_BASE_MODE.ATTACK || GLOBAL.mode == GLOBAL.e_BASE_MODE.WMATTACK)
-					{
-						UI2._top.mcSound.gotoAndStop(2 + 2);
-					}
-					else
-					{
-						UI2._top.mcSound.gotoAndStop(2);
-					}
+					UI2._top.mcSound.gotoAndStop(2);
 					_muted = 1;
 				}
 				else
 				{
-					if (GLOBAL.mode == GLOBAL.e_BASE_MODE.ATTACK || GLOBAL.mode == GLOBAL.e_BASE_MODE.WMATTACK)
-					{
-						UI2._top.mcSound.gotoAndStop(1 + 2);
-					}
-					else
-					{
-						UI2._top.mcSound.gotoAndStop(1);
-					}
+					UI2._top.mcSound.gotoAndStop(1);
 					_muted = 0;
 				}
 			}
@@ -434,27 +420,13 @@ package {
 				_loc3_ = new SoundTransform();
 				if (param1)
 				{
-					if (GLOBAL.mode == GLOBAL.e_BASE_MODE.ATTACK || GLOBAL.mode == GLOBAL.e_BASE_MODE.WMATTACK)
-					{
-						UI2._top.mcMusic.gotoAndStop(2 + 2);
-					}
-					else
-					{
-						UI2._top.mcMusic.gotoAndStop(2);
-					}
+					UI2._top.mcMusic.gotoAndStop(2);
 					_musicVolume = 0;
 					_mutedMusic = 1;
 				}
 				else
 				{
-					if (GLOBAL.mode == GLOBAL.e_BASE_MODE.ATTACK || GLOBAL.mode == GLOBAL.e_BASE_MODE.WMATTACK)
-					{
-						UI2._top.mcMusic.gotoAndStop(1 + 2);
-					}
-					else
-					{
-						UI2._top.mcMusic.gotoAndStop(1);
-					}
+					UI2._top.mcMusic.gotoAndStop(1);
 					_musicVolume = 0.7;
 					_mutedMusic = 0;
 					if (_currentMusic == null && _queuedMusic == null)

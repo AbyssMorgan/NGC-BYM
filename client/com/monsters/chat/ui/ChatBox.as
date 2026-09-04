@@ -235,7 +235,7 @@ package com.monsters.chat.ui
       
       private function onInputFocus(param1:Event) : void
       {
-         if(stage.displayState == StageDisplayState.FULL_SCREEN)
+         if(stage.displayState == StageDisplayState.FULL_SCREEN_INTERACTIVE)
          {
             GLOBAL.goFullScreen(null);
          }

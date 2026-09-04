@@ -610,39 +610,21 @@ package
          }
       }
       
-      public static function updateZoom() : void
-      {
-         var _loc1_:int = 0;
-         if(GLOBAL.mode == GLOBAL.e_BASE_MODE.ATTACK || GLOBAL.mode == GLOBAL.e_BASE_MODE.WMATTACK)
-         {
-            _loc1_ = 6;
-            _top.mcZoom.y = _loc1_;
-            _top.mcFullscreen.y = _loc1_;
-            _top.mcSound.y = _loc1_ + 24;
-            _top.mcMusic.y = _loc1_ + 24;
-            _top.mcSave.y = _loc1_ + 24 + 24;
-            UI2._top.mcFullscreen.gotoAndStop(1 + 2);
-            UI2._top.mcZoom.gotoAndStop(1 + 3);
-            if(GLOBAL._zoomed)
-            {
-               UI2._top.mcZoom.gotoAndStop(2 + 3);
-            }
-         }
-         else
-         {
-            _top.mcZoom.y = _loc1_;
-            _top.mcFullscreen.y = _loc1_;
-            _top.mcSound.y = _loc1_;
-            _top.mcMusic.y = _loc1_;
-            _top.mcSave.y = _loc1_;
-            UI2._top.mcFullscreen.gotoAndStop(1);
-            UI2._top.mcZoom.gotoAndStop(1);
-            if(GLOBAL._zoomed)
-            {
-               UI2._top.mcZoom.gotoAndStop(2);
-            }
-         }
-      }
+		public static function updateZoom() : void
+		{
+			var _loc1_:int = 0;
+			_top.mcZoom.y = _loc1_;
+			_top.mcFullscreen.y = _loc1_;
+			_top.mcSound.y = _loc1_;
+			_top.mcMusic.y = _loc1_;
+			_top.mcSave.y = _loc1_;
+			UI2._top.mcFullscreen.gotoAndStop(1);
+			UI2._top.mcZoom.gotoAndStop(1);
+			if(GLOBAL._zoomed)
+			{
+				UI2._top.mcZoom.gotoAndStop(2);
+			}
+		}
       
       public static function ResizeHandler(param1:Event = null) : void
       {

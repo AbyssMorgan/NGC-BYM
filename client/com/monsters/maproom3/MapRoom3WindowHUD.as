@@ -457,7 +457,7 @@ package com.monsters.maproom3
       
       private function OnFullscreenButtonMouseOver(param1:MouseEvent) : void
       {
-         var _loc2_:String = GLOBAL._ROOT.stage.displayState == StageDisplayState.FULL_SCREEN || GLOBAL._ROOT.stage.displayState == StageDisplayState.FULL_SCREEN_INTERACTIVE ? "settings_fullscreenexit" : "settings_fullscreenenter";
+         var _loc2_:String = GLOBAL._ROOT.stage.displayState == StageDisplayState.FULL_SCREEN_INTERACTIVE || GLOBAL._ROOT.stage.displayState == StageDisplayState.FULL_SCREEN_INTERACTIVE ? "settings_fullscreenexit" : "settings_fullscreenenter";
          this.ShowOptionButtonToolTip(_loc2_,param1.target.x,param1.target.y);
       }
       

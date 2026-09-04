@@ -24,7 +24,7 @@ package
          var Resume:Function;
          var _message:String = param1;
          var errortype:int = param2;
-         if(GLOBAL._ROOT.stage.displayState == StageDisplayState.FULL_SCREEN)
+         if(GLOBAL._ROOT.stage.displayState == StageDisplayState.FULL_SCREEN_INTERACTIVE)
          {
             GLOBAL._ROOT.stage.displayState = StageDisplayState.NORMAL;
          }

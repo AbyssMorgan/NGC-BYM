@@ -406,7 +406,7 @@ package
       {
          var _loc1_:MovieClip = null;
          SOUNDS.StopAll();
-         if(GLOBAL._ROOT.stage.displayState == StageDisplayState.FULL_SCREEN)
+         if(GLOBAL._ROOT.stage.displayState == StageDisplayState.FULL_SCREEN_INTERACTIVE)
          {
             print("game timed out, kicking the client out of fullscreen");
             GLOBAL._ROOT.stage.displayState = StageDisplayState.NORMAL;

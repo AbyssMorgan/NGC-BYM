@@ -37,6 +37,8 @@ package
    import flash.utils.*;
    import gs.TweenLite;
    import gs.easing.Cubic;
+   import flash.ui.Keyboard;
+   import flash.events.KeyboardEvent;
 
    public class GLOBAL
    {
@@ -468,6 +470,10 @@ package
 	  
 	  public static var assault_monsters:int = 0;
 
+	  public static var _shiftDown:Boolean = false;
+
+	  public static var _ctrlDown:Boolean = false;
+
       public function GLOBAL()
       {
          super();
@@ -480,31 +486,32 @@ package
        *
        * @return void
        */
-      public static function init():void
-      {
-         new URLLoaderApi().load(serverUrl + "init", [["apiVersion", apiVersionSuffix]], function(serverData:Object) : void
-            {
-               var stage:Stage = GAME._instance.stage;
+		public static function init():void
+		{
+			new URLLoaderApi().load(serverUrl + "init", [["apiVersion", apiVersionSuffix]], function(serverData:Object) : void {
+				var stage:Stage = GAME._instance.stage;
+			
+				stage.addEventListener(KeyboardEvent.KEY_DOWN, KeyDown);
+				stage.addEventListener(KeyboardEvent.KEY_UP, KeyUp);
 
-               if (serverData.hasOwnProperty("error"))
-               {
-                  GLOBAL.initError = serverData.error;
-                  GLOBAL.versionMismatch = !!serverData.versionMismatch;
-                  GLOBAL.eventDispatcher.dispatchEvent(new Event("initError"));
-                  return;
-               }
-               GLOBAL.LanguageSetup();
-               if (serverData.hasOwnProperty("debugMode"))
-               {
-                  _aiDesignMode = serverData.debugMode;
-               }
-            }, function(error:IOErrorEvent):void
-            {
-               GLOBAL.initError = "Failed to connect to the server." + error.text;
-               GLOBAL.eventDispatcher.dispatchEvent(new Event("initError"));
-               return;
-            });
-      }
+				if (serverData.hasOwnProperty("error"))
+				{
+					GLOBAL.initError = serverData.error;
+					GLOBAL.versionMismatch = !!serverData.versionMismatch;
+					GLOBAL.eventDispatcher.dispatchEvent(new Event("initError"));
+					return;
+				}
+				GLOBAL.LanguageSetup();
+				if (serverData.hasOwnProperty("debugMode"))
+				{
+					_aiDesignMode = serverData.debugMode;
+				}
+			}, function(error:IOErrorEvent):void {
+				GLOBAL.initError = "Failed to connect to the server." + error.text;
+				GLOBAL.eventDispatcher.dispatchEvent(new Event("initError"));
+				return;
+			});
+		}
 
       /**
        * Halts the game loop, preventing any further updates or interactions.
@@ -1060,7 +1067,7 @@ package
 
       public static function get isFullScreen():Boolean
       {
-         return _ROOT.stage.displayState === StageDisplayState.FULL_SCREEN ||
+         return _ROOT.stage.displayState === StageDisplayState.FULL_SCREEN_INTERACTIVE ||
             _ROOT.stage.displayState === StageDisplayState.FULL_SCREEN_INTERACTIVE;
       }
 
@@ -1070,7 +1077,7 @@ package
          var zoomScale:Number = MAP._GROUND.scaleX > 0 ? MAP._GROUND.scaleX : 1;
          if (_ROOT.stage.displayState == StageDisplayState.NORMAL)
          {
-            _ROOT.stage.displayState = StageDisplayState.FULL_SCREEN;
+            _ROOT.stage.displayState = StageDisplayState.FULL_SCREEN_INTERACTIVE;
             _zoomed = wasZoomed;
             if (_zoomed)
             {
@@ -1104,14 +1111,7 @@ package
 			if (_zoomed)
 			{
 				_zoomed = false;
-				if (GLOBAL.mode == e_BASE_MODE.ATTACK || GLOBAL.mode == e_BASE_MODE.WMATTACK)
-				{
-					UI2._top.mcZoom.gotoAndStop(1 + 3);
-				}
-				else
-				{
-					UI2._top.mcZoom.gotoAndStop(1);
-				}
+				UI2._top.mcZoom.gotoAndStop(1);
 				TweenLite.to(MAP._GROUND, 0.1, {
 					"scaleX": 1,
 					"scaleY": 1,
@@ -1130,14 +1130,7 @@ package
 			else
 			{
 				_zoomed = true;
-				if (GLOBAL.mode == e_BASE_MODE.ATTACK || GLOBAL.mode == e_BASE_MODE.WMATTACK)
-				{
-					UI2._top.mcZoom.gotoAndStop(2 + 3);
-				}
-				else
-				{
-					UI2._top.mcZoom.gotoAndStop(2);
-				}
+				UI2._top.mcZoom.gotoAndStop(2);
 				TweenLite.to(MAP._GROUND, 0.4, {
 					"scaleX": 0.5,
 					"scaleY": 0.5,
@@ -2659,6 +2652,18 @@ package
       {
          return _ROOT.stage.stageHeight;
       }
+
+		public static function KeyDown(event:KeyboardEvent):void
+		{
+			if(event.keyCode == Keyboard.SHIFT) _shiftDown = true;
+			if(event.keyCode == Keyboard.CONTROL) _ctrlDown = true;
+		}
+
+		public static function KeyUp(event:KeyboardEvent):void
+		{
+			if(event.keyCode == Keyboard.SHIFT) _shiftDown = false;
+			if(event.keyCode == Keyboard.CONTROL) _ctrlDown = false;
+		}
 
    }
 }

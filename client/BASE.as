@@ -3046,18 +3046,7 @@ package
 				{
 					SaveB();
 				}
-				if (GLOBAL.mode == GLOBAL.e_BASE_MODE.ATTACK || GLOBAL.mode == GLOBAL.e_BASE_MODE.WMATTACK)
-				{
-					UI2._top.mcSave.gotoAndStop(2 + 2);
-				}
-				else
-				{
-					UI2._top.mcSave.gotoAndStop(2);
-				}
-			}
-			else if (GLOBAL.mode == GLOBAL.e_BASE_MODE.ATTACK || GLOBAL.mode == GLOBAL.e_BASE_MODE.WMATTACK)
-			{
-				UI2._top.mcSave.gotoAndStop(1 + 2);
+				UI2._top.mcSave.gotoAndStop(2);
 			}
 			else
 			{
@@ -3128,14 +3117,6 @@ package
          if (Boolean(UI2._top) && Boolean(UI2._top.mcSave))
          {
             UI2._top.mcSave.gotoAndStop(2);
-            if (GLOBAL.mode == GLOBAL.e_BASE_MODE.ATTACK || GLOBAL.mode == GLOBAL.e_BASE_MODE.WMATTACK)
-            {
-               UI2._top.mcSave.gotoAndStop(2 + 2);
-            }
-            else
-            {
-               UI2._top.mcSave.gotoAndStop(2);
-            }
          }
          if (param1 > 0)
          {

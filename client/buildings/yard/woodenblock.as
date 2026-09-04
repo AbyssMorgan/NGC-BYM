@@ -34,75 +34,75 @@ package buildings.yard {
 				"baseurl":"buildings/woodenblock/",
 				"1":{
 					"top":["top.1.png",new Point(-21,-21)],
-					"shadow":["shadow.jpg",new Point(-28,-7)],
+					// "shadow":["shadow.jpg",new Point(-28,-7)],
 					"topdamaged":["top.1.damaged.png",new Point(-21,-21)],
-					"shadowdamaged":["shadow.jpg",new Point(-28,-7)],
-					"topdestroyed":["top.1.destroyed.png",new Point(-21,-5)],
-					"shadowdestroyed":["shadow.jpg",new Point(-28,-7)]
+					// "shadowdamaged":["shadow.jpg",new Point(-28,-7)],
+					"topdestroyed":["top.1.destroyed.png",new Point(-21,-5)]
+					// "shadowdestroyed":["shadow.jpg",new Point(-28,-7)]
 				},
 				"2":{
 					"top":["top.2.png",new Point(-20,-20)],
-					"shadow":["shadow.jpg",new Point(-28,-7)],
+					// "shadow":["shadow.jpg",new Point(-28,-7)],
 					"topdamaged":["top.2.damaged.png",new Point(-21,-20)],
-					"shadowdamaged":["shadow.jpg",new Point(-28,-7)],
 					"topdestroyed":["top.2.destroyed.png",new Point(-19,0)],
-					"shadowdestroyed":["shadow.jpg",new Point(-28,-7)]
+					"shadowdamaged":["shadow.jpg",new Point(-28,-7)]
+					// "shadowdestroyed":["shadow.jpg",new Point(-28,-7)]
 				},
 				"3":{
 					"top":["top.3.png",new Point(-21,-21)],
-					"shadow":["shadow.jpg",new Point(-28,-7)],
+					// "shadow":["shadow.jpg",new Point(-28,-7)],
 					"topdamaged":["top.3.damaged.png",new Point(-22,-21)],
-					"shadowdamaged":["shadow.jpg",new Point(-28,-7)],
-					"topdestroyed":["top.3.destroyed.png",new Point(-21,-3)],
-					"shadowdestroyed":["shadow.jpg",new Point(-28,-7)]
+					// "shadowdamaged":["shadow.jpg",new Point(-28,-7)],
+					"topdestroyed":["top.3.destroyed.png",new Point(-21,-3)]
+					// "shadowdestroyed":["shadow.jpg",new Point(-28,-7)]
 				},
 				"4":{
 					"top":["top.4.png",new Point(-20,-22)],
-					"shadow":["shadow.jpg",new Point(-28,-7)],
+					// "shadow":["shadow.jpg",new Point(-28,-7)],
 					"topdamaged":["top.4.damaged.png",new Point(-20,-22)],
-					"shadowdamaged":["shadow.jpg",new Point(-28,-7)],
-					"topdestroyed":["top.4.destroyed.png",new Point(-20,-2)],
-					"shadowdestroyed":["shadow.jpg",new Point(-28,-7)]
+					// "shadowdamaged":["shadow.jpg",new Point(-28,-7)],
+					"topdestroyed":["top.4.destroyed.png",new Point(-20,-2)]
+					// "shadowdestroyed":["shadow.jpg",new Point(-28,-7)]
 				},
 				"5":{
 					"top":["top.5.png",new Point(-20,-22)],
-					"shadow":["shadow.jpg",new Point(-28,-7)],
+					// "shadow":["shadow.jpg",new Point(-28,-7)],
 					"topdamaged":["top.5.damaged.png",new Point(-20,-19)],
-					"shadowdamaged":["shadow.jpg",new Point(-28,-7)],
-					"topdestroyed":["top.5.destroyed.png",new Point(-20,-3)],
-					"shadowdestroyed":["shadow.jpg",new Point(-28,-7)]
+					// "shadowdamaged":["shadow.jpg",new Point(-28,-7)],
+					"topdestroyed":["top.5.destroyed.png",new Point(-20,-3)]
+					// "shadowdestroyed":["shadow.jpg",new Point(-28,-7)]
 				},
 				"6":{
 					"top":["top.6.png",new Point(-20,-22)],
-					"shadow":["shadow.jpg",new Point(-28,-7)],
+					// "shadow":["shadow.jpg",new Point(-28,-7)],
 					"topdamaged":["top.6.damaged.png",new Point(-20,-19)],
-					"shadowdamaged":["shadow.jpg",new Point(-28,-7)],
-					"topdestroyed":["top.6.destroyed.png",new Point(-20,-3)],
-					"shadowdestroyed":["shadow.jpg",new Point(-28,-7)]
+					// "shadowdamaged":["shadow.jpg",new Point(-28,-7)],
+					"topdestroyed":["top.6.destroyed.png",new Point(-20,-3)]
+					// "shadowdestroyed":["shadow.jpg",new Point(-28,-7)]
 				},
 				"7":{
 					"top":["top.7.png",new Point(-20,-22)],
-					"shadow":["shadow.jpg",new Point(-28,-7)],
+					// "shadow":["shadow.jpg",new Point(-28,-7)],
 					"topdamaged":["top.7.damaged.png",new Point(-20,-19)],
-					"shadowdamaged":["shadow.jpg",new Point(-28,-7)],
-					"topdestroyed":["top.7.destroyed.png",new Point(-20,-3)],
-					"shadowdestroyed":["shadow.jpg",new Point(-28,-7)]
+					// "shadowdamaged":["shadow.jpg",new Point(-28,-7)],
+					"topdestroyed":["top.7.destroyed.png",new Point(-20,-3)]
+					// "shadowdestroyed":["shadow.jpg",new Point(-28,-7)]
 				},
 				"8":{
 					"top":["top.8.png",new Point(-20,-22)],
-					"shadow":["shadow.jpg",new Point(-28,-7)],
+					// "shadow":["shadow.jpg",new Point(-28,-7)],
 					"topdamaged":["top.8.damaged.png",new Point(-20,-19)],
-					"shadowdamaged":["shadow.jpg",new Point(-28,-7)],
-					"topdestroyed":["top.8.destroyed.png",new Point(-20,-3)],
-					"shadowdestroyed":["shadow.jpg",new Point(-28,-7)]
+					// "shadowdamaged":["shadow.jpg",new Point(-28,-7)],
+					"topdestroyed":["top.8.destroyed.png",new Point(-20,-3)]
+					// "shadowdestroyed":["shadow.jpg",new Point(-28,-7)]
 				},
 				"9":{
 					"top":["top.9.png",new Point(-20,-22)],
-					"shadow":["shadow.jpg",new Point(-28,-7)],
+					// "shadow":["shadow.jpg",new Point(-28,-7)],
 					"topdamaged":["top.9.damaged.png",new Point(-20,-19)],
-					"shadowdamaged":["shadow.jpg",new Point(-28,-7)],
-					"topdestroyed":["top.9.destroyed.png",new Point(-20,-3)],
-					"shadowdestroyed":["shadow.jpg",new Point(-28,-7)]
+					// "shadowdamaged":["shadow.jpg",new Point(-28,-7)],
+					"topdestroyed":["top.9.destroyed.png",new Point(-20,-3)]
+					// "shadowdestroyed":["shadow.jpg",new Point(-28,-7)]
 				}
 			},
 			"upgradeImgData":{

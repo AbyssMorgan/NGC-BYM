@@ -117,9 +117,9 @@ package
       
       private static var _canvasContainer:Bitmap;
       
-      public static const MAP_WIDTH:uint = 3994;
+      public static const MAP_WIDTH:uint = 4000;// - 6;
       
-      public static const MAP_HEIGHT:uint = 1994;
+      public static const MAP_HEIGHT:uint = 2250;// - 6;
       
       private static const _viewRect:Rectangle = new Rectangle();
       
@@ -796,7 +796,7 @@ package
          var _loc1_:Rectangle = GLOBAL._SCREEN;
          var _loc2_:Number = _GROUND.scaleX > 0 ? _GROUND.scaleX : 1;
          var _loc3_:Number = _GROUND.scaleY > 0 ? _GROUND.scaleY : 1;
-         var _loc4_:int = 32;
+         var _loc4_:int = 0;
          _viewRect.x = ((_loc1_.x - _GROUND.x) / _loc2_) + (MAP_WIDTH * 0.5) - _loc4_;
          _viewRect.y = ((_loc1_.y - _GROUND.y) / _loc3_) + (MAP_HEIGHT * 0.5) - _loc4_;
          _viewRect.width = _loc1_.width / _loc2_ + (_loc4_ * 2);

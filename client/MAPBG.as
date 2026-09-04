@@ -6,6 +6,7 @@ package {
 	import com.monsters.display.ImageCache;
 
 	public class MAPBG {
+		
 		public static var width:int = 1000;
 		public static var height:int = 500;
 
@@ -20,7 +21,7 @@ package {
 			var pattern_width:int = 200;
 			var pattern_height:int = 100;
 			var quantity_horizontal:int = 5;
-			var quantity_vertical:int = 5;
+			var quantity_vertical:int = 6;
 
 			width = quantity_horizontal * pattern_width;
 			height = quantity_vertical * pattern_height;

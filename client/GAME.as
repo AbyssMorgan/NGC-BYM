@@ -79,7 +79,6 @@ package
 
                urls.languageurl = cdnUrl + "gamestage/assets/";
                urls._storageURL = cdnUrl + "assets/";
-               urls._soundPathURL = cdnUrl + "assets/sounds/";
 			   
                urls._gameURL = serverUrl + "";
                urls._appid = serverUrl + "";
@@ -140,7 +139,6 @@ package
          GLOBAL._storageURL = urls._storageURL;
          GLOBAL.languageUrl = urls.languageurl;
          GLOBAL._allianceURL = urls._allianceURL;
-         GLOBAL._soundPathURL = urls._soundPathURL;
          GLOBAL._statsURL = urls._statsURL;
          GLOBAL._mapURL = urls._mapURL;
          MapRoomManager.instance.mapRoom3URL = urls.map3url;

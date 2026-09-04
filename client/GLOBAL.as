@@ -142,8 +142,6 @@ package
 
       public static var _allianceURL:String;
 
-      public static var _soundPathURL:String;
-
       public static var _mapURL:String;
 
       public static var _statsURL:String;

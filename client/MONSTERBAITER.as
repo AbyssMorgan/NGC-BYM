@@ -118,14 +118,7 @@ package
          }
          UI2.Hide("scareAway");
          UI2.Hide("warning");
-         if(BASE.isInfernoMainYardOrOutpost)
-         {
-            SOUNDS.PlayMusic("musicibuild");
-         }
-         else
-         {
-            SOUNDS.PlayMusic("musicbuild");
-         }
+         SOUNDS.AutoPlay();
          for each(_loc2_ in _currentAttackers)
          {
             _loc3_ = 0;

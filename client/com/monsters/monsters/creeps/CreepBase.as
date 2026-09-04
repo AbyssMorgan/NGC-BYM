@@ -1893,7 +1893,7 @@ package com.monsters.monsters.creeps
          if(_behaviour != k_sBHVR_JUICE && _behaviour != k_sBHVR_RETREAT && _behaviour != k_sBHVR_HOUSING && _behaviour != k_sBHVR_BUNKER && _behaviour != k_sBHVR_PEN && !_atTarget && (_targetCreep && this.canShootCreep() || this.canShootBuilding()))
          {
             _atTarget = true;
-            SOUNDS.Play("imonster" + int(1 + Math.random() * 4));
+            SOUNDS.Play("imonster" + int(1 + Math.random() * 4), 0.2);
             if(_targetCreep)
             {
                _xd = _targetCreep._tmpPoint.x - _tmpPoint.x;

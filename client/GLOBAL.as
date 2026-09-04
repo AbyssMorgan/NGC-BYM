@@ -468,10 +468,6 @@ package
 	  
 	  public static var assault_monsters:int = 0;
 
-	  public static var _shiftDown:Boolean = false;
-
-	  public static var _ctrlDown:Boolean = false;
-
       public function GLOBAL()
       {
          super();
@@ -488,9 +484,6 @@ package
 		{
 			new URLLoaderApi().load(serverUrl + "init", [["apiVersion", apiVersionSuffix]], function(serverData:Object) : void {
 				var stage:Stage = GAME._instance.stage;
-			
-				stage.addEventListener(KeyboardEvent.KEY_DOWN, KeyDown);
-				stage.addEventListener(KeyboardEvent.KEY_UP, KeyUp);
 
 				if (serverData.hasOwnProperty("error"))
 				{
@@ -883,60 +876,7 @@ package
                _attackersFlinger = 4;
             }
          }
-         switch (_loadmode)
-         {
-            case e_BASE_MODE.IATTACK:
-            case e_BASE_MODE.IWMATTACK: {
-				SOUNDS.PlayMusic("musiciattack");
-				break;
-			}
-            case e_BASE_MODE.IBUILD:
-            case e_BASE_MODE.IHELP:
-            case e_BASE_MODE.IVIEW: {
-				SOUNDS.PlayMusic("musicibuild");
-				break;
-			}
-            case e_BASE_MODE.ATTACK:
-            case e_BASE_MODE.WMATTACK: {
-				// if(baseType == EnumYardType.RESOURCE || baseType == EnumYardType.STRONGHOLD || baseType == EnumYardType.FORTIFICATION){
-				// 	switch(baseLevel){
-				// 		case 50: {
-				// 			SOUNDS.PlayMusic("op_50");
-				// 			break;
-				// 		}
-				// 		case 60: {
-				// 			SOUNDS.PlayMusic("op_60");
-				// 			break;
-				// 		}
-				// 		case 70: {
-				// 			SOUNDS.PlayMusic("op_70");
-				// 			break;
-				// 		}
-				// 		case 80: {
-				// 			SOUNDS.PlayMusic("op_80");
-				// 			break;
-				// 		}
-				// 		case 90: {
-				// 			SOUNDS.PlayMusic("op_90");
-				// 			break;
-				// 		}
-				// 		case 100: {
-				// 			SOUNDS.PlayMusic("op_100");
-				// 			break;
-				// 		}
-				// 	}
-				// }
-				SOUNDS.PlayMusic("musicattack");
-            	break;
-			}
-            case e_BASE_MODE.BUILD:
-            case e_BASE_MODE.HELP:
-            case e_BASE_MODE.VIEW:
-            default: {
-				SOUNDS.PlayMusic("musicbuild");
-				break;
-			} 
-         }
+         SOUNDS.AutoPlay();
          _render = false;
          _creepCount = 0;
          _timePlayed = 0;
@@ -2650,18 +2590,6 @@ package
       {
          return _ROOT.stage.stageHeight;
       }
-
-		public static function KeyDown(event:KeyboardEvent):void
-		{
-			if(event.keyCode == Keyboard.SHIFT) _shiftDown = true;
-			if(event.keyCode == Keyboard.CONTROL) _ctrlDown = true;
-		}
-
-		public static function KeyUp(event:KeyboardEvent):void
-		{
-			if(event.keyCode == Keyboard.SHIFT) _shiftDown = false;
-			if(event.keyCode == Keyboard.CONTROL) _ctrlDown = false;
-		}
 
    }
 }

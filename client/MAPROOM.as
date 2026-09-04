@@ -84,6 +84,7 @@ package
       
       public static function Show(param1:MouseEvent = null) : void
       {
+		 SOUNDS.AutoPlay();
          if(GLOBAL._otherStats["mrlsr"] != undefined)
          {
             _lastSortReversed = GLOBAL.StatGet("mrlsr");

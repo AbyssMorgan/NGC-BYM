@@ -949,14 +949,7 @@ package
          {
             ResetWait();
          }
-         if(BASE.isInfernoMainYardOrOutpost)
-         {
-            SOUNDS.PlayMusic("musicibuild");
-         }
-         else
-         {
-            SOUNDS.PlayMusic("musicbuild");
-         }
+         SOUNDS.AutoPlay();
          var _loc1_:Vector.<Object> = InstanceManager.getInstancesByClass(BFOUNDATION);
          for each(_loc2_ in _loc1_)
          {
@@ -1031,14 +1024,7 @@ package
          {
             ResetWait();
          }
-         if(BASE.isInfernoMainYardOrOutpost)
-         {
-            SOUNDS.PlayMusic("musicibuild");
-         }
-         else
-         {
-            SOUNDS.PlayMusic("musicbuild");
-         }
+         SOUNDS.AutoPlay();
          var _loc1_:Vector.<Object> = InstanceManager.getInstancesByClass(BFOUNDATION);
          for each(_loc4_ in _loc1_)
          {
@@ -1070,14 +1056,7 @@ package
          var _loc3_:int = 0;
          var _loc4_:BFOUNDATION = null;
          Tick();
-         if(BASE.isInfernoMainYardOrOutpost)
-         {
-            SOUNDS.PlayMusic("musicibuild");
-         }
-         else
-         {
-            SOUNDS.PlayMusic("musicbuild");
-         }
+         SOUNDS.AutoPlay();
          UI2.Show("top");
          UI2.Show("bottom");
          UI2.Hide("warning");

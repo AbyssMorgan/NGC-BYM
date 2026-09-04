@@ -20,7 +20,7 @@ package {
 
 		private static var _currentMusic:String = null;
 
-		private static var _queuedMusic:String = "musicbuild";
+		private static var _queuedMusic:String = "op_main";
 
 		private static var _musicVolume:Number = 0.7;
 
@@ -118,12 +118,17 @@ package {
 			"musiciattack": "inferno/Music_IAttack.mp3",
 			"musicibuild": "inferno/Music_IBuild.mp3",
 			"musicipanic": "inferno/Music_IDefense.mp3",
-			"op_50": "op/BGM_2001.mp3"
-			// "op_60": "op/op_60.mp3",
-			// "op_70": "op/op_70.mp3",
-			// "op_80": "op/op_80.mp3",
-			// "op_90": "op/op_90.mp3",
-			// "op_100": "op/op_100.mp3"
+			"op_main":"op/BGM_ENDGAME.mp3",
+			"op_default":"op/BGM_2001.mp3", //25 - 50
+			"op_55":"op/BGM_3017.mp3",
+			"op_60":"op/BGM_6017.mp3",
+			"op_65":"op/BGM_3008.mp3",
+			"op_70":"op/BGM_3013.mp3",
+			"op_75":"op/BGM_4006.mp3",
+			"op_80":"op/BGM_3002.mp3",
+			"op_100":"op/BGM_4001.mp3",
+			"op_110":"op/BGM_2007.mp3",
+			"op_120":"op/BGM_6016.mp3"
 		};
 
 		public static var music_volumes:Object = {
@@ -417,20 +422,7 @@ package {
 					_mutedMusic = 0;
 					if (_currentMusic == null && _queuedMusic == null)
 					{
-						switch (GLOBAL.mode)
-						{
-							case GLOBAL.e_BASE_MODE.ATTACK:
-							case GLOBAL.e_BASE_MODE.WMATTACK: {
-								PlayMusic("musicattack");
-								break;
-							}
-							case GLOBAL.e_BASE_MODE.BUILD:
-							case GLOBAL.e_BASE_MODE.HELP:
-							case GLOBAL.e_BASE_MODE.VIEW:
-							default: {
-								PlayMusic("musicbuild");
-							}	
-						}
+						AutoPlay();
 					}
 				}
 				_loc3_.volume = _musicVolume;
@@ -438,6 +430,62 @@ package {
 				{
 					_musicChannel.soundTransform = _loc3_;
 				}
+			}
+		}
+
+		public static function AutoPlay() : void {
+			switch(GLOBAL.mode){
+				case GLOBAL.e_BASE_MODE.IATTACK:
+				case GLOBAL.e_BASE_MODE.IWMATTACK: {
+					SOUNDS.PlayMusic("musiciattack");
+					break;
+				}
+				case GLOBAL.e_BASE_MODE.IBUILD:
+				case GLOBAL.e_BASE_MODE.IHELP:
+				case GLOBAL.e_BASE_MODE.IVIEW: {
+					SOUNDS.PlayMusic("musicibuild");
+					break;
+				}
+				case GLOBAL.e_BASE_MODE.ATTACK:
+				case GLOBAL.e_BASE_MODE.WMATTACK:
+				case GLOBAL.e_BASE_MODE.VIEW:
+				case GLOBAL.e_BASE_MODE.WMVIEW: {
+					PlayMusicOP(BASE._level);
+					break;
+				}
+				case GLOBAL.e_BASE_MODE.BUILD:
+				case GLOBAL.e_BASE_MODE.HELP:
+				case GLOBAL.e_BASE_MODE.VIEW:
+				default: {
+					PlayMusic("op_main");
+					break;
+				}	
+			}
+		}
+
+		public static function PlayMusicOP(level:int) : void {
+			if(level >= 120){
+				SOUNDS.PlayMusic("op_120");
+			} else if(level >= 110){
+				SOUNDS.PlayMusic("op_110");
+			} else if(level >= 100){
+				SOUNDS.PlayMusic("op_100");
+			} else if(level >= 90){
+				SOUNDS.PlayMusic("op_100");
+			} else if(level >= 80){
+				SOUNDS.PlayMusic("op_80");
+			} else if(level >= 75){
+				SOUNDS.PlayMusic("op_75");
+			} else if(level >= 70){
+				SOUNDS.PlayMusic("op_70");
+			} else if(level >= 65){
+				SOUNDS.PlayMusic("op_65");
+			} else if(level >= 60){
+				SOUNDS.PlayMusic("op_60");
+			} else if(level >= 55){
+				SOUNDS.PlayMusic("op_55");
+			} else {
+				SOUNDS.PlayMusic("op_default");
 			}
 		}
 	}

@@ -294,17 +294,17 @@ package
 			if(BASE.isOutpost)
 			{
 				_canFunction = health >= 0;
-				if(!GLOBAL._catchup)
-				{
-					if(_countdownProduce.Add(-1) <= 0 && _canFunction)
-					{
-						if(health > 0)
-						{
-							ResourcePackages.Create(this.resource_real_type,this,1);
-						}
-						_countdownProduce.Set(10 + Math.random() * 10);
-					}
-				}
+				// if(!GLOBAL._catchup)
+				// {
+				// 	if(_countdownProduce.Add(-1) <= 0 && _canFunction)
+				// 	{
+				// 		if(health > 0)
+				// 		{
+				// 			ResourcePackages.Create(this.resource_real_type,this,1);
+				// 		}
+				// 		_countdownProduce.Set(10 + Math.random() * 10);
+				// 	}
+				// }
 			}
 			else if(_countdownBuild.Get() + _countdownUpgrade.Get() + _countdownFortify.Get() == 0)
 			{

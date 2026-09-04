@@ -5,7 +5,6 @@ package
 	import com.monsters.ai.TRIBES;
 	import com.monsters.ai.WMBASE;
 	import com.monsters.alliances.ALLIANCES;
-	import com.monsters.autobanking.AutoBankManager;
 	import com.monsters.baseBuffs.BaseBuffHandler;
 	import com.monsters.baseBuffs.buffs.ResourceCapacityBaseBuff;
 	import com.monsters.baseplanner.BaseTemplate;
@@ -2430,11 +2429,11 @@ package
 			{
 				if (CREEPS._creepCount == 0)
 				{
-				buildingInstances = InstanceManager.getInstancesByClass(BFOUNDATION);
-				for each (building in buildingInstances)
-				{
-					building.GridCost(true);
-				}
+					buildingInstances = InstanceManager.getInstancesByClass(BFOUNDATION);
+					for each (building in buildingInstances)
+					{
+						building.GridCost(true);
+					}
 				}
 			}
 			EFFECTS.Process(_catchupTime);
@@ -2458,6 +2457,7 @@ package
 			HOUSING.Cull();
 			HOUSING.Populate();
 			SOUNDS.Setup();
+			SOUNDS.AutoPlay();
 			GLOBAL._render = true;
 			GLOBAL._catchup = false;
 			damageCount = 0;
@@ -2467,115 +2467,115 @@ package
 				building.Update(true);
 				if (building.health < building.maxHealth && building._repairing == 0)
 				{
-				damageCount++;
+					damageCount++;
 				}
 				if (building._countdownBuild.Get() + building._countdownUpgrade.Get() + building._countdownFortify.Get() > 0)
 				{
-				upgradeCount++;
-				for each (helper in building._helpList)
-				{
-					if (helper == LOGIN._playerID)
+					upgradeCount++;
+					for each (helper in building._helpList)
 					{
-						helpedCount++;
+						if (helper == LOGIN._playerID)
+						{
+							helpedCount++;
+						}
 					}
-				}
 				}
 			}
 			if (GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD && !WMATTACK._inProgress)
 			{
 				if (damageCount > 0)
 				{
-				RepairAll = function(param1:MouseEvent = null):void
-				{
-					var _loc3_:BFOUNDATION = null;
-					if (MapRoomManager.instance.isInMapRoom3 && BASE.isOutpost)
+					RepairAll = function(param1:MouseEvent = null):void
 					{
-						repairAllBuildingsToMinimumPercentage(0.01);
-					}
-					popupMCDamaged.bAction.removeEventListener(MouseEvent.CLICK, RepairAll);
-					popupMCDamaged.bAction2.removeEventListener(MouseEvent.CLICK, RepairNow);
-					var _loc2_:Vector.<Object> = InstanceManager.getInstancesByClass(BFOUNDATION);
-					for each (_loc3_ in _loc2_)
-					{
-						if (_loc3_.health < _loc3_.maxHealth && _loc3_._repairing == 0)
+						var _loc3_:BFOUNDATION = null;
+						if (MapRoomManager.instance.isInMapRoom3 && BASE.isOutpost)
 						{
-							_loc3_.Repair();
+							repairAllBuildingsToMinimumPercentage(0.01);
 						}
-					}
-					SOUNDS.Play("repair1", 0.25);
-					POPUPS.Next();
-				};
-				RepairNow = function(param1:MouseEvent = null):void
-				{
-					var _loc3_:BFOUNDATION = null;
-					if (MapRoomManager.instance.isInMapRoom3 && BASE.isOutpost)
-					{
-						repairAllBuildingsToMinimumPercentage(0.01);
-					}
-					popupMCDamaged.bAction.removeEventListener(MouseEvent.CLICK, RepairAll);
-					popupMCDamaged.bAction2.removeEventListener(MouseEvent.CLICK, RepairNow);
-					var _loc2_:Vector.<Object> = InstanceManager.getInstancesByClass(BFOUNDATION);
-					for each (_loc3_ in _loc2_)
-					{
-						if (_loc3_.health < _loc3_.maxHealth && _loc3_._repairing == 0)
+						popupMCDamaged.bAction.removeEventListener(MouseEvent.CLICK, RepairAll);
+						popupMCDamaged.bAction2.removeEventListener(MouseEvent.CLICK, RepairNow);
+						var _loc2_:Vector.<Object> = InstanceManager.getInstancesByClass(BFOUNDATION);
+						for each (_loc3_ in _loc2_)
 						{
-							_loc3_.Repair();
+							if (_loc3_.health < _loc3_.maxHealth && _loc3_._repairing == 0)
+							{
+								_loc3_.Repair();
+							}
 						}
+						SOUNDS.Play("repair1", 0.25);
+						POPUPS.Next();
+					};
+					RepairNow = function(param1:MouseEvent = null):void
+					{
+						var _loc3_:BFOUNDATION = null;
+						if (MapRoomManager.instance.isInMapRoom3 && BASE.isOutpost)
+						{
+							repairAllBuildingsToMinimumPercentage(0.01);
+						}
+						popupMCDamaged.bAction.removeEventListener(MouseEvent.CLICK, RepairAll);
+						popupMCDamaged.bAction2.removeEventListener(MouseEvent.CLICK, RepairNow);
+						var _loc2_:Vector.<Object> = InstanceManager.getInstancesByClass(BFOUNDATION);
+						for each (_loc3_ in _loc2_)
+						{
+							if (_loc3_.health < _loc3_.maxHealth && _loc3_._repairing == 0)
+							{
+								_loc3_.Repair();
+							}
+						}
+						STORE.ShowB(3, 1, ["FIX"], true);
+						POPUPS.Next();
+					};
+					popupMCDamaged = new popup_damaged();
+					popupMCDamaged.mcFrame.Setup(false);
+					popupMCDamaged.title.htmlText = "<b>" + KEYS.Get("pop_damaged_title") + "</b>";
+					popupMCDamaged.tA.htmlText = KEYS.Get("pop_damaged", {"v1": damageCount});
+					popupMCDamaged.bAction.SetupKey("pop_damaged_repairall_btn");
+					popupMCDamaged.bAction.addEventListener(MouseEvent.CLICK, RepairAll);
+					popupMCDamaged.bAction2.SetupKey("pop_damaged_repairnow_btn");
+					popupMCDamaged.bAction2.addEventListener(MouseEvent.CLICK, RepairNow);
+					popupMCDamaged.bAction2.Highlight = true;
+					POPUPS.Push(popupMCDamaged, null, null, null, "duct-tape.png");
+					if (damageCount > 30)
+					{
+						MARKETING.Show("catapult");
 					}
-					STORE.ShowB(3, 1, ["FIX"], true);
-					POPUPS.Next();
-				};
-				popupMCDamaged = new popup_damaged();
-				popupMCDamaged.mcFrame.Setup(false);
-				popupMCDamaged.title.htmlText = "<b>" + KEYS.Get("pop_damaged_title") + "</b>";
-				popupMCDamaged.tA.htmlText = KEYS.Get("pop_damaged", {"v1": damageCount});
-				popupMCDamaged.bAction.SetupKey("pop_damaged_repairall_btn");
-				popupMCDamaged.bAction.addEventListener(MouseEvent.CLICK, RepairAll);
-				popupMCDamaged.bAction2.SetupKey("pop_damaged_repairnow_btn");
-				popupMCDamaged.bAction2.addEventListener(MouseEvent.CLICK, RepairNow);
-				popupMCDamaged.bAction2.Highlight = true;
-				POPUPS.Push(popupMCDamaged, null, null, null, "duct-tape.png");
-				if (damageCount > 30)
-				{
-					MARKETING.Show("catapult");
-				}
 				}
 				needToHealCreeps = false;
 				length = int(GLOBAL.player.monsterList.length);
 				i = 0;
 				while (i < length && !needToHealCreeps)
 				{
-				if (GLOBAL.player.monsterList[i].needsHeals())
-				{
-					needToHealCreeps = true;
-				}
-				i++;
+					if (GLOBAL.player.monsterList[i].needsHeals())
+					{
+						needToHealCreeps = true;
+					}
+					i++;
 				}
 				if (needToHealCreeps)
 				{
-				StartHealAll = function(param1:MouseEvent = null):void
-				{
-					popupMCCreepDamaged.bAction.removeEventListener(MouseEvent.CLICK, StartHealAll);
-					popupMCCreepDamaged.bAction2.removeEventListener(MouseEvent.CLICK, HealShinyNow);
-					startHealAllHelper();
-				};
-				HealShinyNow = function(param1:MouseEvent = null):void
-				{
-					popupMCCreepDamaged.bAction.removeEventListener(MouseEvent.CLICK, StartHealAll);
-					popupMCCreepDamaged.bAction2.removeEventListener(MouseEvent.CLICK, HealShinyNow);
-					healShinyNowHelper();
-				};
-				numCreepsDamaged = GLOBAL.player.getNumDamagedCreeps();
-				popupMCCreepDamaged = new popup_damaged();
-				popupMCCreepDamaged.mcFrame.Setup(false);
-				popupMCCreepDamaged.title.htmlText = "<b>" + KEYS.Get("pop_injured_title") + "</b>";
-				popupMCCreepDamaged.tA.htmlText = KEYS.Get("pop_injured", {"1": numCreepsDamaged});
-				popupMCCreepDamaged.bAction.SetupKey("btn_startheal");
-				popupMCCreepDamaged.bAction.addEventListener(MouseEvent.CLICK, StartHealAll);
-				popupMCCreepDamaged.bAction2.SetupKey("btn_healnow");
-				popupMCCreepDamaged.bAction2.addEventListener(MouseEvent.CLICK, HealShinyNow);
-				popupMCCreepDamaged.bAction2.Highlight = true;
-				POPUPS.Push(popupMCCreepDamaged, null, null, null, "duct-tape.png");
+					StartHealAll = function(param1:MouseEvent = null):void
+					{
+						popupMCCreepDamaged.bAction.removeEventListener(MouseEvent.CLICK, StartHealAll);
+						popupMCCreepDamaged.bAction2.removeEventListener(MouseEvent.CLICK, HealShinyNow);
+						startHealAllHelper();
+					};
+					HealShinyNow = function(param1:MouseEvent = null):void
+					{
+						popupMCCreepDamaged.bAction.removeEventListener(MouseEvent.CLICK, StartHealAll);
+						popupMCCreepDamaged.bAction2.removeEventListener(MouseEvent.CLICK, HealShinyNow);
+						healShinyNowHelper();
+					};
+					numCreepsDamaged = GLOBAL.player.getNumDamagedCreeps();
+					popupMCCreepDamaged = new popup_damaged();
+					popupMCCreepDamaged.mcFrame.Setup(false);
+					popupMCCreepDamaged.title.htmlText = "<b>" + KEYS.Get("pop_injured_title") + "</b>";
+					popupMCCreepDamaged.tA.htmlText = KEYS.Get("pop_injured", {"1": numCreepsDamaged});
+					popupMCCreepDamaged.bAction.SetupKey("btn_startheal");
+					popupMCCreepDamaged.bAction.addEventListener(MouseEvent.CLICK, StartHealAll);
+					popupMCCreepDamaged.bAction2.SetupKey("btn_healnow");
+					popupMCCreepDamaged.bAction2.addEventListener(MouseEvent.CLICK, HealShinyNow);
+					popupMCCreepDamaged.bAction2.Highlight = true;
+					POPUPS.Push(popupMCCreepDamaged, null, null, null, "duct-tape.png");
 				}
 			}
 			INFERNO_EMERGENCE_EVENT.Initialize();
@@ -3786,7 +3786,6 @@ package
 			trace("SaveB");
 			var handler:IHandler = null;
 			var exportedData:Object = null;
-			var updateAutoBank:Object = null;
 			var champion:Array = null;
 			var attackerChampion:Array = null;
 			if (GLOBAL.isHalted)

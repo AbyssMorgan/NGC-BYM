@@ -1228,14 +1228,7 @@ package
 					ACHIEVEMENTS.Check(ACHIEVEMENTS.DESCENT_LEVEL,MAPROOM_DESCENT.DescentLevel);
 				}
 			}
-			if(BASE.isInfernoMainYardOrOutpost)
-			{
-				SOUNDS.PlayMusic("musicibuild");
-			}
-			else
-			{
-				SOUNDS.PlayMusic("musicbuild");
-			}
+			SOUNDS.AutoPlay();
 			GLOBAL.eventDispatcher.dispatchEvent(new AttackEvent(AttackEvent.ATTACK_OVER,_loc1_,BASE._wmID,_loot));
 			if(MapRoomManager.instance.isInMapRoom2 && BASE.isOutpostMapRoom2Only || (GLOBAL.mode == GLOBAL.e_BASE_MODE.WMATTACK || GLOBAL.mode == GLOBAL.e_BASE_MODE.IWMATTACK))
 			{

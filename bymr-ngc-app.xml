@@ -10,7 +10,8 @@
 		<visible>true</visible>
 		<width>760</width>
 		<height>670</height>
-		<renderMode>direct</renderMode>
+		<renderMode>gpu</renderMode>
+		<fullScreen>true</fullScreen>
 	</initialWindow>
 	<icon>
 		<image16x16>icons/16x16.png</image16x16>

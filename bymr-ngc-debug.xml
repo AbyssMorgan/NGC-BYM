@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <application xmlns="http://ns.adobe.com/air/application/50.2">
+	<allowMultipleInstances>true</allowMultipleInstances>
 	<id>bymr-ngc-app</id>
 	<versionNumber>1.2.0</versionNumber>
 	<filename>NGC Backyard Monsters</filename>
@@ -9,7 +10,8 @@
 		<visible>true</visible>
 		<width>760</width>
 		<height>670</height>
-		<renderMode>direct</renderMode>
+		<renderMode>gpu</renderMode>
+		<fullScreen>true</fullScreen>
 	</initialWindow>
 	<icon>
 		<image16x16>icons/16x16.png</image16x16>

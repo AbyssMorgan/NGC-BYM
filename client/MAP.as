@@ -178,7 +178,7 @@ package
             }
             else
             {
-               _EFFECTSBMP = new BitmapData(3200,1800,true,0);
+               _EFFECTSBMP = new BitmapData(MAP_WIDTH,MAP_HEIGHT,true,0);
                efxbmp = _GROUND.addChild(new Bitmap(_EFFECTSBMP)) as Bitmap;
                efxbmp.x = -_EFFECTSBMP.width * 0.5;
                efxbmp.y = -_EFFECTSBMP.height * 0.5;
@@ -794,12 +794,13 @@ package
       public function resizeViewRect() : void
       {
          var _loc1_:Rectangle = GLOBAL._SCREEN;
-         var _loc2_:int = 32;
-         var _loc3_:int = 50;
-         _viewRect.width = _loc1_.width * (1 / _GROUND.scaleX) + _loc2_;
-         _viewRect.height = _loc1_.height * (1 / _GROUND.scaleY) + _loc2_;
-         _viewRect.x = -(_GROUND.x * (1 / _GROUND.scaleX)) - (1 / _GROUND.scaleX - 1) * _loc3_ + (MAP_WIDTH >>> 1) + _loc1_.x - _loc2_;
-         _viewRect.y = -(_GROUND.y * (1 / _GROUND.scaleY)) - (1 / _GROUND.scaleY - 1) * _loc3_ + (MAP_HEIGHT >>> 1) + _loc1_.y - _loc2_;
+         var _loc2_:Number = _GROUND.scaleX > 0 ? _GROUND.scaleX : 1;
+         var _loc3_:Number = _GROUND.scaleY > 0 ? _GROUND.scaleY : 1;
+         var _loc4_:int = 32;
+         _viewRect.x = ((_loc1_.x - _GROUND.x) / _loc2_) + (MAP_WIDTH * 0.5) - _loc4_;
+         _viewRect.y = ((_loc1_.y - _GROUND.y) / _loc3_) + (MAP_HEIGHT * 0.5) - _loc4_;
+         _viewRect.width = _loc1_.width / _loc2_ + (_loc4_ * 2);
+         _viewRect.height = _loc1_.height / _loc3_ + (_loc4_ * 2);
       }
       
       private function render(param1:Event) : void

@@ -1099,50 +1099,67 @@ package
          }
       }
 
-      public static function Zoom(param1:MouseEvent = null):void
-      {
-         if (_ROOT.stage.displayState != StageDisplayState.FULL_SCREEN)
-         {
-            BASE.BuildingDeselect();
-            MAP.FocusTo(0, 0, 0.4);
-            if (_zoomed)
-            {
-               _zoomed = false;
-               if (GLOBAL.mode == e_BASE_MODE.ATTACK || GLOBAL.mode == e_BASE_MODE.WMATTACK)
-               {
-                  UI2._top.mcZoom.gotoAndStop(1 + 3);
-               }
-               else
-               {
-                  UI2._top.mcZoom.gotoAndStop(1);
-               }
-               TweenLite.to(MAP._GROUND, 0.1, {
-                        "scaleX": 1,
-                        "scaleY": 1,
-                        "ease": Cubic.easeInOut,
-                        "overwrite": false
-                     });
-            }
-            else
-            {
-               _zoomed = true;
-               if (GLOBAL.mode == e_BASE_MODE.ATTACK || GLOBAL.mode == e_BASE_MODE.WMATTACK)
-               {
-                  UI2._top.mcZoom.gotoAndStop(2 + 3);
-               }
-               else
-               {
-                  UI2._top.mcZoom.gotoAndStop(2);
-               }
-               TweenLite.to(MAP._GROUND, 0.4, {
-                        "scaleX": 0.5,
-                        "scaleY": 0.5,
-                        "ease": Cubic.easeInOut,
-                        "overwrite": false
-                     });
-            }
-         }
-      }
+		public static function Zoom(param1:MouseEvent = null):void
+		{
+			trace("base zoom");
+			if (_ROOT.stage.displayState != StageDisplayState.FULL_SCREEN)
+			{
+				BASE.BuildingDeselect();
+				MAP.FocusTo(0, 0, 0.4);
+				if (_zoomed)
+				{
+					_zoomed = false;
+					if (GLOBAL.mode == e_BASE_MODE.ATTACK || GLOBAL.mode == e_BASE_MODE.WMATTACK)
+					{
+						UI2._top.mcZoom.gotoAndStop(1 + 3);
+					}
+					else
+					{
+						UI2._top.mcZoom.gotoAndStop(1);
+					}
+					TweenLite.to(MAP._GROUND, 0.1, {
+						"scaleX": 1,
+						"scaleY": 1,
+						"ease": Cubic.easeInOut,
+						"overwrite": false,
+						"onUpdate": function():void
+						{
+							if (MAP.instance)
+							{
+								MAP.instance.resizeViewRect();
+								BFOUNDATION.updateAllRasterData();
+							}
+						}
+					});
+				}
+				else
+				{
+					_zoomed = true;
+					if (GLOBAL.mode == e_BASE_MODE.ATTACK || GLOBAL.mode == e_BASE_MODE.WMATTACK)
+					{
+						UI2._top.mcZoom.gotoAndStop(2 + 3);
+					}
+					else
+					{
+						UI2._top.mcZoom.gotoAndStop(2);
+					}
+					TweenLite.to(MAP._GROUND, 0.4, {
+						"scaleX": 0.5,
+						"scaleY": 0.5,
+						"ease": Cubic.easeInOut,
+						"overwrite": false,
+						"onUpdate": function():void
+						{
+							if (MAP.instance)
+							{
+								MAP.instance.resizeViewRect();
+								BFOUNDATION.updateAllRasterData();
+							}
+						}
+					});
+				}
+			}
+		}
 
       public static function Tick():void
       {
@@ -2559,20 +2576,20 @@ package
          return _magnification;
       }
 
-      public static function set magnification(param1:Number):void
-      {
-         if (param1 == _magnification)
-         {
-            return;
-         }
-         print("zoom " + param1);
-         param1 = Math.max(_MAGNIFICATION_BOUNDS.x, param1);
-         param1 = Math.min(_MAGNIFICATION_BOUNDS.y, param1);
-         TweenLite.to(GLOBAL, 0.25, {
-                  "_magnification": param1,
-                  "onUpdate": onMagnificationUpdate
-               });
-      }
+		public static function set magnification(param1:Number):void
+		{
+			if (param1 == _magnification)
+			{
+				return;
+			}
+			print("zoom " + param1);
+			param1 = Math.max(_MAGNIFICATION_BOUNDS.x, param1);
+			param1 = Math.min(_MAGNIFICATION_BOUNDS.y, param1);
+			TweenLite.to(GLOBAL, 0.25, {
+				"_magnification": param1,
+				"onUpdate": onMagnificationUpdate
+			});
+		}
 
       private static function onMagnificationUpdate():void
       {
@@ -2580,6 +2597,11 @@ package
          MAP._GROUND.scaleX = MAP._GROUND.scaleY = _magnification;
          MAP.Focus(0, 0);
          RefreshScreen();
+         if (MAP.instance)
+         {
+            MAP.instance.resizeViewRect();
+            BFOUNDATION.updateAllRasterData();
+         }
          UI_BOTTOM.Resize();
       }
 

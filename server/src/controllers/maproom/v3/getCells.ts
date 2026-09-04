@@ -29,6 +29,7 @@ const CELL_OWNER_FIELDS = [
 	"userid",
 	"username",
 	"pic_square",
+	"save.empirevalue",
 	"save.points",
 	"save.basevalue",
 ] as const;

@@ -110,7 +110,7 @@ package
          var building:BFOUNDATION = param1;
          return function(param1:MouseEvent = null):void
          {
-            MAP.FocusTo(building._mc.x,building._mc.y,0.6);
+            // MAP.FocusTo(building._mc.x,building._mc.y,0.6);
             BASE.BuildingSelect(building,true);
          };
       }

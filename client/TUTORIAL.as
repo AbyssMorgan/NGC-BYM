@@ -645,7 +645,7 @@ package
                   _loc9_++;
                }
                MAP.Focus(_loc5_.x,_loc5_.y);
-               MAP.FocusTo(GLOBAL._bHousing.x,GLOBAL._bHousing.y,int(_loc6_ / 120),0,0,false);
+               // MAP.FocusTo(GLOBAL._bHousing.x,GLOBAL._bHousing.y,int(_loc6_ / 120),0,0,false);
                if(GLOBAL._flags.viximo)
                {
                   Add(6,BOBBOTTOMLEFTLOW,KEYS.Get("tut_NWM_Step20"),POINT_QUEST,["mc",UI_BOTTOM._mc.bQuests,new Point(15,15),-30],false,false,ConditionQuestsOpen,ConditionQuestCollectCR3);
@@ -991,7 +991,7 @@ package
             case 110:
                MapRoom3Tutorial.instance.advance();
                MAP.Focus(-200,0);
-               MAP.FocusTo(200,0,5,0,0,false);
+               // MAP.FocusTo(200,0,5,0,0,false);
                Add(6,BOBBOTTOMLEFTLOW,KEYS.Get("tut_110"),new Point(_mcBob.mcButton.x,_mcBob.mcButton.y),["mc",_mcBob.mcButton,new Point(200,30),150],true,true);
                break;
             case 111:

@@ -119,7 +119,7 @@ package
       
       public static const MAP_WIDTH:uint = 4000;// - 6;
       
-      public static const MAP_HEIGHT:uint = 2250;// - 6;
+      public static const MAP_HEIGHT:uint = 2250 + 96;// - 6;
       
       private static const _viewRect:Rectangle = new Rectangle();
       

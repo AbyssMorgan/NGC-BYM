@@ -49,7 +49,7 @@ package
                "Y":_loc2_,
                "id":BASE._buildingCount
             });
-            MAP.FocusTo(_loc3_.x,_loc3_.y,2);
+            // MAP.FocusTo(_loc3_.x,_loc3_.y,2);
             BASE.Save(0,false,true);
          }
       }
@@ -66,7 +66,7 @@ package
          }
          var _loc3_:Array = WMATTACK.SpawnA(param1);
          var _loc4_:MonsterBase = _loc3_[0][0];
-         MAP.FocusTo(_loc4_.x,_loc4_.y,2);
+        //  MAP.FocusTo(_loc4_.x,_loc4_.y,2);
          return _loc3_;
       }
       
@@ -107,7 +107,7 @@ package
          }
          WMATTACK.AttackB();
          WMATTACK.AttackC();
-         MAP.FocusTo(GLOBAL._bTower.x,GLOBAL._bTower.y,int(_loc3_ / 100),0,0,false);
+        //  MAP.FocusTo(GLOBAL._bTower.x,GLOBAL._bTower.y,int(_loc3_ / 100),0,0,false);
          for each(_loc4_ in CREEPS._creeps)
          {
             _loc4_.maxHealthProperty.value = 1;

@@ -332,7 +332,7 @@ package
       public static function JumpToWorker(param1:int) : void
       {
          var _loc2_:MovieClip = _stack[param1].workermc;
-         MAP.FocusTo(_loc2_.x,_loc2_.y,0.5);
+        //  MAP.FocusTo(_loc2_.x,_loc2_.y,0.5);
       }
       
       public static function Move(param1:int, param2:int) : void

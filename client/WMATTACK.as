@@ -692,10 +692,10 @@ package
                _loc16_._hitLimit = _hitsPerCreep;
             }
          }
-         if(_loc14_.length > 0 && _loc14_[0].length > 0)
-         {
-            MAP.FocusTo(_loc14_[0][0].x,_loc14_[0][0].y,1);
-         }
+        //  if(_loc14_.length > 0 && _loc14_[0].length > 0)
+        //  {
+        //     MAP.FocusTo(_loc14_[0][0].x,_loc14_[0][0].y,1);
+        //  }
       }
       
       public static function Attack(param1:String = "") : void
@@ -721,10 +721,10 @@ package
          }
          _loc7_ = SpawnCreep(_loc5_,_loc10_,param1.creatureID,param1.numCreep,param1.behavior,param1.level);
          _loc4_.push(_loc7_);
-         if(param1.cameraFocus)
-         {
-            MAP.FocusTo(_loc6_.x,_loc6_.y,1,0,0,true);
-         }
+        //  if(param1.cameraFocus)
+        //  {
+        //     MAP.FocusTo(_loc6_.x,_loc6_.y,1,0,0,true);
+        //  }
          return _loc4_;
       }
       

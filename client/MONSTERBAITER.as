@@ -100,7 +100,7 @@ package
          _scaredAway = true;
          _attPrep = 4;
          _attacking = 1;
-         MAP.FocusTo(GLOBAL._bBaiter.x,GLOBAL._bBaiter.y,2);
+        //  MAP.FocusTo(GLOBAL._bBaiter.x,GLOBAL._bBaiter.y,2);
          UI2.Show("warning");
          BASE.Save();
          UI2.Hide("top");

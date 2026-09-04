@@ -622,20 +622,10 @@ package
             _top.mcMusic.y = _loc1_ + 24;
             _top.mcSave.y = _loc1_ + 24 + 24;
             UI2._top.mcFullscreen.gotoAndStop(1 + 2);
-            if(GLOBAL._ROOT.stage.displayState == StageDisplayState.NORMAL)
+            UI2._top.mcZoom.gotoAndStop(1 + 3);
+            if(GLOBAL._zoomed)
             {
-               UI2._top.mcZoom.gotoAndStop(1 + 3);
-            }
-            else
-            {
-               UI2._top.mcZoom.gotoAndStop(3 + 3);
-            }
-            if(GLOBAL._ROOT.stage.displayState != StageDisplayState.FULL_SCREEN)
-            {
-               if(GLOBAL._zoomed)
-               {
-                  UI2._top.mcZoom.gotoAndStop(2 + 3);
-               }
+               UI2._top.mcZoom.gotoAndStop(2 + 3);
             }
          }
          else
@@ -646,20 +636,10 @@ package
             _top.mcMusic.y = _loc1_;
             _top.mcSave.y = _loc1_;
             UI2._top.mcFullscreen.gotoAndStop(1);
-            if(GLOBAL._ROOT.stage.displayState == StageDisplayState.NORMAL)
+            UI2._top.mcZoom.gotoAndStop(1);
+            if(GLOBAL._zoomed)
             {
-               UI2._top.mcZoom.gotoAndStop(1);
-            }
-            else
-            {
-               UI2._top.mcZoom.gotoAndStop(3);
-            }
-            if(GLOBAL._ROOT.stage.displayState != StageDisplayState.FULL_SCREEN)
-            {
-               if(GLOBAL._zoomed)
-               {
-                  UI2._top.mcZoom.gotoAndStop(2);
-               }
+               UI2._top.mcZoom.gotoAndStop(2);
             }
          }
       }

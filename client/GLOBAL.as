@@ -1066,98 +1066,93 @@ package
 
       public static function goFullScreen(param1:MouseEvent = null):void
       {
+         var wasZoomed:Boolean = _zoomed;
+         var zoomScale:Number = MAP._GROUND.scaleX > 0 ? MAP._GROUND.scaleX : 1;
          if (_ROOT.stage.displayState == StageDisplayState.NORMAL)
          {
             _ROOT.stage.displayState = StageDisplayState.FULL_SCREEN;
-            if (GLOBAL.mode == e_BASE_MODE.ATTACK || GLOBAL.mode == e_BASE_MODE.WMATTACK)
+            _zoomed = wasZoomed;
+            if (_zoomed)
             {
-               UI2._top.mcZoom.gotoAndStop(3 + 3);
+               MAP._GROUND.scaleX = MAP._GROUND.scaleY = zoomScale;
             }
             else
             {
-               UI2._top.mcZoom.gotoAndStop(3);
+               MAP._GROUND.scaleX = MAP._GROUND.scaleY = 1;
             }
-            MAP._GROUND.scaleX = MAP._GROUND.scaleY = 1;
          }
          else
          {
-            if (GLOBAL.mode == e_BASE_MODE.ATTACK || GLOBAL.mode == e_BASE_MODE.WMATTACK)
-            {
-               UI2._top.mcZoom.gotoAndStop(1 + 3);
-            }
-            else
-            {
-               UI2._top.mcZoom.gotoAndStop(1);
-            }
             _ROOT.stage.displayState = StageDisplayState.NORMAL;
+            _zoomed = wasZoomed;
+            MAP._GROUND.scaleX = MAP._GROUND.scaleY = zoomScale;
          }
-         _zoomed = false;
-         magnification = 1;
          if (MapRoomManager.instance.isOpen)
          {
             MapRoomManager.instance.ResizeHandler();
+         }
+         if (UI2 && UI2._top && UI2._top.mcZoom)
+         {
+            UI2.updateZoom();
          }
       }
 
 		public static function Zoom(param1:MouseEvent = null):void
 		{
 			trace("base zoom");
-			if (_ROOT.stage.displayState != StageDisplayState.FULL_SCREEN)
+			BASE.BuildingDeselect();
+			MAP.FocusTo(0, 0, 0.4);
+			if (_zoomed)
 			{
-				BASE.BuildingDeselect();
-				MAP.FocusTo(0, 0, 0.4);
-				if (_zoomed)
+				_zoomed = false;
+				if (GLOBAL.mode == e_BASE_MODE.ATTACK || GLOBAL.mode == e_BASE_MODE.WMATTACK)
 				{
-					_zoomed = false;
-					if (GLOBAL.mode == e_BASE_MODE.ATTACK || GLOBAL.mode == e_BASE_MODE.WMATTACK)
-					{
-						UI2._top.mcZoom.gotoAndStop(1 + 3);
-					}
-					else
-					{
-						UI2._top.mcZoom.gotoAndStop(1);
-					}
-					TweenLite.to(MAP._GROUND, 0.1, {
-						"scaleX": 1,
-						"scaleY": 1,
-						"ease": Cubic.easeInOut,
-						"overwrite": false,
-						"onUpdate": function():void
-						{
-							if (MAP.instance)
-							{
-								MAP.instance.resizeViewRect();
-								BFOUNDATION.updateAllRasterData();
-							}
-						}
-					});
+					UI2._top.mcZoom.gotoAndStop(1 + 3);
 				}
 				else
 				{
-					_zoomed = true;
-					if (GLOBAL.mode == e_BASE_MODE.ATTACK || GLOBAL.mode == e_BASE_MODE.WMATTACK)
-					{
-						UI2._top.mcZoom.gotoAndStop(2 + 3);
-					}
-					else
-					{
-						UI2._top.mcZoom.gotoAndStop(2);
-					}
-					TweenLite.to(MAP._GROUND, 0.4, {
-						"scaleX": 0.5,
-						"scaleY": 0.5,
-						"ease": Cubic.easeInOut,
-						"overwrite": false,
-						"onUpdate": function():void
-						{
-							if (MAP.instance)
-							{
-								MAP.instance.resizeViewRect();
-								BFOUNDATION.updateAllRasterData();
-							}
-						}
-					});
+					UI2._top.mcZoom.gotoAndStop(1);
 				}
+				TweenLite.to(MAP._GROUND, 0.1, {
+					"scaleX": 1,
+					"scaleY": 1,
+					"ease": Cubic.easeInOut,
+					"overwrite": false,
+					"onUpdate": function():void
+					{
+						if (MAP.instance)
+						{
+							MAP.instance.resizeViewRect();
+							BFOUNDATION.updateAllRasterData();
+						}
+					}
+				});
+			}
+			else
+			{
+				_zoomed = true;
+				if (GLOBAL.mode == e_BASE_MODE.ATTACK || GLOBAL.mode == e_BASE_MODE.WMATTACK)
+				{
+					UI2._top.mcZoom.gotoAndStop(2 + 3);
+				}
+				else
+				{
+					UI2._top.mcZoom.gotoAndStop(2);
+				}
+				TweenLite.to(MAP._GROUND, 0.4, {
+					"scaleX": 0.5,
+					"scaleY": 0.5,
+					"ease": Cubic.easeInOut,
+					"overwrite": false,
+					"onUpdate": function():void
+					{
+						if (MAP.instance)
+						{
+							MAP.instance.resizeViewRect();
+							BFOUNDATION.updateAllRasterData();
+						}
+					}
+				});
 			}
 		}
 

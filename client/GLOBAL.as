@@ -1099,7 +1099,6 @@ package
 
 		public static function Zoom(param1:MouseEvent = null):void
 		{
-			trace("base zoom");
 			BASE.BuildingDeselect();
 			MAP.FocusTo(0, 0, 0.4);
 			if (_zoomed)

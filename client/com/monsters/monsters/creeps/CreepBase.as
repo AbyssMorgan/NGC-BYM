@@ -2380,10 +2380,10 @@ package com.monsters.monsters.creeps
 			var is_attack:Boolean = (GLOBAL.mode == GLOBAL.e_BASE_MODE.ATTACK || GLOBAL.mode == "wmattack");
 			if(is_attack){
 				if(BASE._BuffInfernoVenomBase){
-					_damagePerSecond.Add(25);
+					_damagePerSecond.Add(50);
 				} else {
 					if(!this.m_bInfernoCreep && !BASE._BuffInfernoVenomResistance && (BASE.isInfernoMainYardOrOutpost || BASE._wmID == 41 || BASE._wmID == 51)){
-						_damagePerSecond.Add(25);
+						_damagePerSecond.Add(50);
 					}
 				}
 			}

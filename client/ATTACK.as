@@ -993,13 +993,16 @@ package
 			{
 				particleSpawn.x -= 10 * amount.toString().length;
 			}
-			var damageParticle:ParticleDamageItem = ParticleText.Create(particleSpawn,amount,particleType);
-			if(Math.abs(Math.round(amountModified)) != 0 && Boolean(damageParticle))
-			{
-				var modifier:String = amountModified < 0 ? "-" : "+";
-				damageParticle._mc.tLootA.htmlText += "(" + modifier + Math.abs(Math.round(amountModified)) + ")";
-				damageParticle._mc.tLootB.htmlText += "(" + modifier + Math.abs(Math.round(amountModified)) + ")";
+			if(amountModified != 0){
+				ParticleText.Create(particleSpawn, amountModified, particleType);
 			}
+			
+			// if(Math.abs(Math.round(amountModified)) != 0 && Boolean(damageParticle))
+			// {
+			// 	var modifier:String = amountModified < 0 ? "-" : "+";
+			// 	damageParticle._mc.tLootA.htmlText += "(" + modifier + Math.abs(Math.round(amountModified)) + ")";
+			// 	damageParticle._mc.tLootB.htmlText += "(" + modifier + Math.abs(Math.round(amountModified)) + ")";
+			// }
 		}
 		
 		public static function Damage(param1:Number, param2:Number, param3:int, param4:Boolean = true, param5:Boolean = false) : void

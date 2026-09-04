@@ -385,55 +385,55 @@ package com.monsters.monsters
          return null;
       }
       
-      override public function modifyHealth(param1:Number, param2:ITargetable = null) : Number
-      {
-         var _loc6_:Component = null;
-         if(!health || param1 == 0)
-         {
-            return 0;
-         }
-         var _loc3_:Number = param1;
-         var _loc4_:int = 0;
-         while(_loc4_ < this._components.length)
-         {
-            if((_loc6_ = this._components[_loc4_]) is IDefendingComponent)
-            {
-               param1 = IDefendingComponent(_loc6_).onDefend(this,param1,param2);
-            }
-            _loc4_++;
-         }
-         var _loc5_:Number;
-         if((_loc5_ = param1 + health) == health)
-         {
-            return 0;
-         }
-         if(param1 < 0)
-         {
-            param1 *= !!armor ? 1 - armor : 1;
-            this.damaged(param1);
-         }
-         else
-         {
-            if(_loc5_ >= maxHealth)
-            {
-               if(this._graphic)
-               {
-                  this._graphic.fillRect(this._graphic.rect,0);
-               }
-               param1 = maxHealth - health;
-            }
-            this.healed(param1);
-         }
-         if(k_DOES_PRINT_DETAILED_LOGGING && GLOBAL._aiDesignMode)
-         {
-            param1 = Math.round(param1);
-            _loc3_ = Math.round(_loc3_);
-            print(this + " was modified for " + param1 + (!!(_loc3_ - param1) ? "(" + _loc3_ + " - " + (_loc3_ - param1) + ")" : "") + " health points, left with " + health + " out of " + maxHealth + "hp");
-         }
-         ATTACK.damage(-param1,this,param1 < 0 ? param1 - _loc3_ : 0);
-         setHealth(health + param1);
-         return param1;
-      }
+		override public function modifyHealth(param1:Number, param2:ITargetable = null) : Number
+		{
+			var _loc6_:Component = null;
+			if(!health || param1 == 0)
+			{
+				return 0;
+			}
+			var _loc3_:Number = param1;
+			var _loc4_:int = 0;
+			while(_loc4_ < this._components.length)
+			{
+				if((_loc6_ = this._components[_loc4_]) is IDefendingComponent)
+				{
+					param1 = IDefendingComponent(_loc6_).onDefend(this,param1,param2);
+				}
+				_loc4_++;
+			}
+			var _loc5_:Number;
+			if((_loc5_ = param1 + health) == health)
+			{
+				return 0;
+			}
+			if(param1 < 0)
+			{
+				param1 *= !!armor ? 1 - armor : 1;
+				this.damaged(param1);
+			}
+			else
+			{
+				if(_loc5_ >= maxHealth)
+				{
+					if(this._graphic)
+					{
+						this._graphic.fillRect(this._graphic.rect,0);
+					}
+					param1 = maxHealth - health;
+				}
+				this.healed(param1);
+			}
+			if(k_DOES_PRINT_DETAILED_LOGGING && GLOBAL._aiDesignMode)
+			{
+				param1 = Math.round(param1);
+				_loc3_ = Math.round(_loc3_);
+				print(this + " was modified for " + param1 + (!!(_loc3_ - param1) ? "(" + _loc3_ + " - " + (_loc3_ - param1) + ")" : "") + " health points, left with " + health + " out of " + maxHealth + "hp");
+			}
+			ATTACK.damage(-param1, this, param1 < 0 ? param1 - _loc3_ : param1);
+			setHealth(health + param1);
+			return param1;
+		}
       
       protected function healed(param1:Number) : void
       {

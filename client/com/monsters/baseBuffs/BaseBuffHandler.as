@@ -107,7 +107,7 @@ package com.monsters.baseBuffs
 			{
 				if(!(!(_loc2_ is uint) || param1[_loc2_] == null || param1[_loc2_] == 0))
 				{
-					_loc3_ = BaseBuffLibrary.getBuffByID(uint(_loc2_),this.m_player.isAttacking ? BaseBuffLibrary.k_ATTACKING : BaseBuffLibrary.k_DEFENDING);
+					_loc3_ = BaseBuffLibrary.getBuffByID(uint(_loc2_), this.m_player.isAttacking ? BaseBuffLibrary.k_ATTACKING : BaseBuffLibrary.k_DEFENDING);
 					if(_loc3_)
 					{
 						_loc3_.value = param1[_loc2_];

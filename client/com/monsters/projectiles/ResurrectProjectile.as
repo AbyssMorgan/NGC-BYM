@@ -13,10 +13,6 @@ package com.monsters.projectiles
    public class ResurrectProjectile extends Projectilev2
    {
       
-      public static const k_resurecctProjectile:String = "resurrectProjectile";
-      
-      public static const k_projectileImageURL:String = "monsters/projectiles/rezghul_projectile.png";
-      
       private static const k_MAX_DISTANCE_TO_LIGHTNING_TARGET:uint = 125;
       
       private static const k_PROJECTILE_SPEED:uint = 2;
@@ -94,12 +90,7 @@ package com.monsters.projectiles
       
       private function getBitmapData() : BitmapData
       {
-         var _loc1_:BitmapData = SpriteData(SPRITES.GetSpriteDescriptor(k_resurecctProjectile)).sprite;
-         if(!_loc1_)
-         {
-            _loc1_ = ProjectileUtils.getFireballBitmapData();
-         }
-         return _loc1_.clone();
+         return ProjectileUtils.getFireballBitmapData().clone();
       }
    }
 }

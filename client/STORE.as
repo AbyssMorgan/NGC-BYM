@@ -226,7 +226,7 @@ package {
 			} else {
 				_grouping = [
 					[
-						["ENLI", "BLK2I", "BLK3I"]
+						["BEW", "BST", "ENLI", "BLK2I", "BLK3I"]
 					],
 					[
 						["EXR1", "EXR2", "EXR3", "EXR4", "EXR10", "EXR20", "EXR30", "EXR40", "BIP"]

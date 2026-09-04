@@ -425,7 +425,7 @@ package
                _loc14_++;
             }
 
-			if(Boolean(_loc3_["r6"].Get()) && _loc3_["r6"].Get() > 0){
+			if(Boolean(_loc3_["r6"]) && _loc3_["r6"].Get() > 0){
 				(_loc15_ = this.mcResources.mcTime).gotoAndStop(BASE.isInfernoBuilding(this._building._type) || BASE.isInfernoMainYardOrOutpost ? 12 : 6);
 				_loc15_.visible = true;
 				_loc15_.tTitle.htmlText = "<b>Crystals</b>";

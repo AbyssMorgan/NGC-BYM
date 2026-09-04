@@ -118,7 +118,6 @@ package {
 			_sprites[Decoy.DECOY_WAVE] = new SpriteData("effects/decoy_wave_anim.png",61,70,SpriteData.FUBAR_X,SpriteData.FUBAR_Y);
 			_sprites[Decoy.DECOY_FUSE] = new SpriteData("effects/decoy_fuse_anim.png",44,49,SpriteData.FUBAR_X,SpriteData.FUBAR_Y);
 			_sprites[Decoy.DECOY_EXPLOSION] = new SpriteData("effects/decoy_explosion_anim.png",184,195,SpriteData.FUBAR_X,SpriteData.FUBAR_Y);
-			_sprites[ResurrectProjectile.k_resurecctProjectile] = new SpriteData(ResurrectProjectile.k_projectileImageURL,20,20,0,0);
 		}
 		
 		public static function Clear() : void {

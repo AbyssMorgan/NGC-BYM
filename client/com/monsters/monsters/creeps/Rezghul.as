@@ -39,7 +39,6 @@ package com.monsters.monsters.creeps
          var _loc13_:Zombiefy = null;
          var _loc14_:ResurrectProjectile = null;
          super(param1,param2,param3,param4,param5,param6,param7,param8,param9,param10,param11,param12);
-         SPRITES.SetupSprite(ResurrectProjectile.k_resurecctProjectile);
          SPRITES.SetupSprite("shadow");
          _shadow = new BitmapData(52,50,true,0);
          _shadowMC = BYMConfig.instance.RENDERER_ON ? new Bitmap(_shadow) : graphic.addChild(new Bitmap(_shadow));

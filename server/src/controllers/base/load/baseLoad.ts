@@ -48,13 +48,18 @@ import { getExperienceBuff } from "../../../services/maproom/v3/getExperienceBuf
  */
 export const baseLoad: KoaController = async (ctx) => {
 	const user: User = ctx.authUser;
-	await postgres.em.populate(user, ["save", "infernosave"]);
+	await postgres.em.populate(user, [
+		"save",
+		"save.cell",
+		"infernosave",
+		"infernosave.cell",
+	]);
 
 	const { baseid, type, mapversion, attackData, attackcost } = BaseLoadSchema.parse(ctx.request.body);
 
 	let baseSave: Save | null = null;
 
-	switch (type) {
+	switch (type){
 		case BaseMode.BUILD: {
 			baseSave = await baseModeBuild(user, baseid);
 			redis.setex(`last-seen:main:${user.userid}`, 120, getCurrentDateTime().toString());
@@ -106,11 +111,11 @@ export const baseLoad: KoaController = async (ctx) => {
 		}
 	}
 
-	if (!baseSave) throw new Error("Base save not found.");
+	if(!baseSave) throw new Error("Base save not found.");
 
 	const userSave = user.save!;
 
-	if (type === BaseMode.BUILD) {
+	if(type === BaseMode.BUILD){
 		userSave.level = calculateBaseLevel(userSave.points);
 		if(mapversion === MapRoomVersion.V1){
 			const mr1Tribes = await createMR1Tribes(userSave, MR1_TRIBES);
@@ -128,7 +133,7 @@ export const baseLoad: KoaController = async (ctx) => {
 			let original = tribeSave[baseSave.level];
 			if(baseSave.wmid == EnumYardType.FORTIFICATION){
 				const connectedPlayerInfo = await getConnectedPlayerFortificationInfo(baseSave, user.save?.worldid ?? userSave.worldid);
-				if (connectedPlayerInfo?.isPlayerConnected) {
+				if(connectedPlayerInfo?.isPlayerConnected){
 					const defenderLevels = getDefenderLevels(EnumYardType.PLAYER, getPlayerDefenderLevel(connectedPlayerInfo.playerLevel));
 					if(defenderLevels){
 						original = tribeSave[defenderLevels[0]];
@@ -165,36 +170,36 @@ export const baseLoad: KoaController = async (ctx) => {
 
 	let totalResourceRate = 0;
 	let totalResourceCapacity = 0;
-	let totalStrongholdBonus = 0;
+	let totalAtackerStrongholdBonus = 0;
 	let totalDefenderStrongholdBonus = 0;
 	let defenderReduction = 0;
 
-	if (mapversion === MapRoomVersion.V3) {
+	if(mapversion === MapRoomVersion.V3){
 		// Sum production rate and storage capacity from all player-owned MR3 resource outposts.
-		if (isOwner) {
+		if(isOwner){
 			const resourceOutposts = await postgres.em.find(Save, {
 				saveuserid: user.userid,
 				type: BaseType.OUTPOST,
 				wmid: EnumYardType.RESOURCE,
 			});
 
-			for (const { level } of resourceOutposts) {
+			for (const { level } of resourceOutposts){
 				totalResourceRate += RESOURCE_PRODUCTION_RATES[level];
 				totalResourceCapacity += RESOURCE_CAPACITIES[level];
 			}
 
 			// Auto-bank calculates and applies resources accumulated since the player's last session.
-			if (type === BaseMode.BUILD && totalResourceRate > 0) {
+			if(type === BaseMode.BUILD && totalResourceRate > 0){
 				const now = getCurrentDateTime();
 				const lastAccumulated = userSave.buildingresources?.t;
 
-				if (lastAccumulated) {
+				if(lastAccumulated){
 					const MAX_EXPERIENCE = 9000000000000000;
 					const multiplier = 1.0 + Math.min((userSave.empirevalue * 0.001), 100.0) + getExperienceBuff();
 					const elapsed = now - lastAccumulated;
 					const accumulated = Math.floor(totalResourceRate * elapsed);
 
-					if (accumulated > 0 && userSave.resources) {
+					if(accumulated > 0 && userSave.resources){
 						var player_exp = Number(userSave.points), earned_exp = Math.floor(accumulated * multiplier * 4);
 						if(player_exp < MAX_EXPERIENCE){
 							var newExperience = player_exp + earned_exp;
@@ -217,30 +222,8 @@ export const baseLoad: KoaController = async (ctx) => {
 
 		// Strongholds boost monster damage (attacker) and tower damage (defender),
 		// but only if the target cell falls within their attack range.
-		if (type === BaseMode.ATTACK && baseSave.cell) {
+		if(baseSave.cell){
 			const targetCell: WorldMapCell = baseSave.cell;
-
-			const [attackerStrongholds, defenderStrongholds] = await Promise.all([
-				postgres.em.find(
-					Save,
-					{
-						saveuserid: user.userid,
-						type: BaseType.OUTPOST,
-						wmid: EnumYardType.STRONGHOLD,
-					},
-					{ populate: ["cell"] },
-				),
-					
-				postgres.em.find(
-					Save,
-					{
-						saveuserid: baseSave.saveuserid,
-						type: BaseType.OUTPOST,
-						wmid: EnumYardType.STRONGHOLD,
-					},
-					{ populate: ["cell"] },
-				),
-			]);
 
 			const strongholdBonus = (strongholds: Save[]) => {
 				let bonus = 0;
@@ -254,41 +237,58 @@ export const baseLoad: KoaController = async (ctx) => {
 				return bonus;
 			};
 
-			totalStrongholdBonus = strongholdBonus(attackerStrongholds);
+			if(type === BaseMode.ATTACK){
+				const attackerStrongholds = await postgres.em.find(
+					Save,
+					{
+						saveuserid: user.userid,
+						type: BaseType.OUTPOST,
+						wmid: EnumYardType.STRONGHOLD,
+					},
+					{ populate: ["cell"] },
+				);
+				totalAtackerStrongholdBonus = strongholdBonus(attackerStrongholds);
+			}
+
+			const defenderStrongholds = await postgres.em.find(
+				Save,
+				{
+					saveuserid: baseSave.saveuserid,
+					type: BaseType.OUTPOST,
+					wmid: EnumYardType.STRONGHOLD,
+				},
+				{ populate: ["cell"] },
+			);
 			totalDefenderStrongholdBonus = strongholdBonus(defenderStrongholds);
-		}
-	}
 
-	// Set damage reduction buff for attacking bases with defenders
-	if (mapversion === MapRoomVersion.V3 && !isOwner && type === BaseMode.ATTACK) {
-		const attackedCell = baseSave.cell;
-
-		if (attackedCell && isDefensiveStructure(attackedCell.base_type)) {
-			const defenderCoords = getDefenderCoords(attackedCell.x, attackedCell.y, attackedCell.base_type);
-			if(attackedCell?.uid){
-				// Count only base owner defenders
-				const defenderCells = await postgres.em.find(WorldMapCell, {
-					$and: [
-						{ $or: defenderCoords.map(([x, y]) => ({ x, y })) },
-						{ base_type: EnumYardType.FORTIFICATION },
-						{ uid: attackedCell.uid },
-						{ map_version: MapRoomVersion.V3 },
-						{ world: user.save!.worldid },
-					],
-				});
-				defenderReduction = DEFENDER_DAMAGE_REDUCTION[defenderCells.length];
-			} else {
-				// Count all not owned by players defenders
-				const defendersGetByPlayers = await postgres.em.find(WorldMapCell, {
-					$and: [
-						{ $or: defenderCoords.map(([x, y]) => ({ x, y })) },
-						{ base_type: EnumYardType.FORTIFICATION },
-						{ uid: { $gt: 0 } },
-						{ map_version: MapRoomVersion.V3 },
-						{ world: user.save!.worldid },
-					],
-				});
-				defenderReduction = DEFENDER_DAMAGE_REDUCTION[6 - defendersGetByPlayers.length];
+			// Set damage reduction buff for attacking bases with defenders
+			if(isDefensiveStructure(targetCell.base_type)){
+				const defenderCoords = getDefenderCoords(targetCell.x, targetCell.y, targetCell.base_type);
+				if(targetCell.uid > 0){
+					// Count only base owner defenders
+					const defenderCells = await postgres.em.find(WorldMapCell, {
+						$and: [
+							{ $or: defenderCoords.map(([x, y]) => ({ x, y })) },
+							{ base_type: EnumYardType.FORTIFICATION },
+							{ uid: targetCell.uid },
+							{ map_version: MapRoomVersion.V3 },
+							{ world: user.save!.worldid },
+						],
+					});
+					defenderReduction = DEFENDER_DAMAGE_REDUCTION[defenderCells.length];
+				} else {
+					// Count all not owned by players defenders
+					const defendersGetByPlayers = await postgres.em.find(WorldMapCell, {
+						$and: [
+							{ $or: defenderCoords.map(([x, y]) => ({ x, y })) },
+							{ base_type: EnumYardType.FORTIFICATION },
+							{ uid: { $gt: 0 } },
+							{ map_version: MapRoomVersion.V3 },
+							{ world: user.save!.worldid },
+						],
+					});
+					defenderReduction = DEFENDER_DAMAGE_REDUCTION[6 - defendersGetByPlayers.length];
+				}
 			}
 		}
 	}
@@ -297,7 +297,7 @@ export const baseLoad: KoaController = async (ctx) => {
 
 	let avatarUser;
 
-	if (isOwner) {
+	if(isOwner){
 		avatarUser = user;
 	} else {
 		avatarUser = await postgres.em.findOne(
@@ -323,21 +323,30 @@ export const baseLoad: KoaController = async (ctx) => {
 		pic_square: avatar,
 		...(isOwner && mapUserSaveData(user)),
 	};
+	
+	if(mapversion === MapRoomVersion.V3){
+		const defenderBuffs: Record<number, number> = {};
+		const atackerBuffs: Record<number, number> = {};
 
-	if (isOwner && mapversion === MapRoomVersion.V3) {
-		response.player = { buffs: { 2: totalResourceRate, 10: totalResourceCapacity } };
+		// Defender buffs
+		defenderBuffs[1] = defenderReduction;
+		defenderBuffs[2] = totalResourceRate;
+		defenderBuffs[6] = totalDefenderStrongholdBonus;
+		defenderBuffs[10] = totalResourceCapacity;
+
+		// Attacker buffs
+		atackerBuffs[5] = totalAtackerStrongholdBonus;
+
+		if(isOwner){
+			response.player = {buffs: defenderBuffs};
+		} else {
+			response.player = {buffs: atackerBuffs};
+		}
+		response.attackingplayer = {buffs: atackerBuffs};
+		response.defendingplayer = {buffs: defenderBuffs};
 	}
-
-	if (defenderReduction > 0) {
-		response.player = { buffs: { 1: defenderReduction } };
-	}
-
-	if (type === BaseMode.ATTACK && mapversion === MapRoomVersion.V3) {
-		if (totalStrongholdBonus > 0) response.attackingplayer = { buffs: { 5: totalStrongholdBonus } };
-		if (totalDefenderStrongholdBonus > 0) response.defendingplayer = { buffs: { 6: totalDefenderStrongholdBonus } };
-	}
-
-	if (type === BaseMode.IDESCENT) {
+	
+	if(type === BaseMode.IDESCENT){
 		const wmstatus = (filteredSave.wmstatus ?? []).filter(baseid => baseid[0] >= 201 && baseid[0] <= 213);
 		response.resources = filteredSave.iresources;
 		response.wmstatus = wmstatus;

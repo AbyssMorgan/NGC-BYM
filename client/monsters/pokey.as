@@ -88,7 +88,9 @@ package monsters {
 					5, // Level 9
 					5, // Level 10
 				],
-				"bucket":[7],
+				"bucket":[
+					7, // Level 1
+				],
 				"targetGroup":[1],
 				"hTime":[
 					5, // Level 1

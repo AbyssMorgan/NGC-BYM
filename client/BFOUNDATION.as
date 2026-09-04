@@ -813,8 +813,16 @@ package
 					if(this._class != "trap" && this._type != 114){
 						stats.push("<b>HP:</b> " + GLOBAL.FormatNumberNormal(maxHealth));
 					}
-					if(this._fortification.Get() > 0){
-						stats.push("<b>DR:</b> " + (this._fortification.Get() * 10 + 10) + " %");
+
+					var damage_multiplier:Number = 1;
+					if (this._fortification.Get() > 0){
+						damage_multiplier *= (90 - this._fortification.Get() * 10) / 100;
+					}
+					damage_multiplier *= armor ? (1.0 - armor) : 1.0;
+					var dr:Number = (1.0 - damage_multiplier) * 100;
+
+					if(dr > 0){
+						stats.push("<b>DR:</b> " + dr.toFixed(2).replace(".", ",") + " %");
 					}
 					if(this._class == "tower" || this._class == "trap" || this._type == 144){
 						var dmg_multiplier:Number = 1;

@@ -12,13 +12,15 @@ import { logger } from "../../../utils/logger.js";
  * Save fields fetched for the player's own cells.
  */
 const CELL_SAVE_FIELDS = [
-  "*",
-  "save.basesaveid",
-  "save.level",
-  "save.protected",
-  "save.damage",
-  "save.attackid",
-  "save.attacks",
+	"*",
+	"save.basesaveid",
+	"save.level",
+	"save.protected",
+	"save.basevalue",
+	"save.empirevalue",
+	"save.damage",
+	"save.attackid",
+	"save.attacks",
 ] as const;
 
 /**
@@ -39,43 +41,42 @@ const CELL_SAVE_FIELDS = [
  * @returns {Promise<void>} Cell data response with all player-owned cells
  */
 export const initialPlayerCellData: KoaController = async (ctx) => {
-  const user: User = ctx.authUser;
-  await postgres.em.populate(user, ["save"]);
+	const user: User = ctx.authUser;
+	await postgres.em.populate(user, ["save"]);
 
-  const { worldid } = user.save!;
-  
-  if (!worldid) throw new Error(`${user.username} has no world ID.`);
+	const { worldid } = user.save!;
+	
+	if (!worldid) throw new Error(`${user.username} has no world ID.`);
 
-  // Fetch all player-owned cells
-  const playerCells = await postgres.em.find(
-    WorldMapCell,
-    {
-      uid: user.userid,
-      map_version: MapRoomVersion.V3,
-      world: worldid,
-      base_type: {
-        $in: [
-          EnumYardType.PLAYER,
-          EnumYardType.RESOURCE,
-          EnumYardType.STRONGHOLD,
-          EnumYardType.FORTIFICATION,
-        ],
-      },
-    },
-    { populate: ["save"], fields: CELL_SAVE_FIELDS },
-  );
+	// Fetch all player-owned cells
+	const playerCells = await postgres.em.find(
+		WorldMapCell,
+		{
+			uid: user.userid,
+			map_version: MapRoomVersion.V3,
+			world: worldid,
+			base_type: {
+				$in: [
+					EnumYardType.PLAYER,
+					EnumYardType.RESOURCE,
+					EnumYardType.STRONGHOLD,
+					EnumYardType.FORTIFICATION,
+				],
+			},
+		},
+		{ populate: ["save"], fields: CELL_SAVE_FIELDS },
+	);
 
-  if (!playerCells.length)
-    logger.info(`No MapRoom3 player cells found for user: ${user.username}`);
+	if(!playerCells.length){
+		logger.info(`No MapRoom3 player cells found for user: ${user.username}`);
+	}
+	
+	const cellOwners = new Map([[user.userid, user]]);
 
-  const cellOwners = new Map([[user.userid, user]]);
+	const celldata = await Promise.all(
+		playerCells.sort((cell) => (cell.base_type === EnumYardType.PLAYER ? -1 : 1)).map((cell) => createCellData(cell as unknown as WorldMapCell, worldid, ctx, cellOwners)),
+	);
 
-  const celldata = await Promise.all(
-    playerCells
-      .sort((cell) => (cell.base_type === EnumYardType.PLAYER ? -1 : 1))
-      .map((cell) => createCellData(cell as unknown as WorldMapCell, worldid, ctx, cellOwners)),
-  );
-
-  ctx.status = Status.OK;
-  ctx.body = { error: 0, celldata };
+	ctx.status = Status.OK;
+	ctx.body = { error: 0, celldata };
 };

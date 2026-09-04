@@ -22,36 +22,39 @@ package com.monsters.effects.particles
          this.Move(param1);
       }
       
-      public function Fill(param1:int, param2:uint) : void
-      {
-         var _loc3_:* = null;
-         var _loc4_:String = null;
-         var _loc5_:String = null;
-         var _loc6_:String = null;
-         if(param2 == ParticleText.TYPE_DAMAGE || param2 == ParticleText.TYPE_HEAL)
-         {
-            switch(param2)
-            {
-               case ParticleText.TYPE_DAMAGE:
-                  _loc4_ = "FF0000";
-                  _loc3_ = "<b>" + param1 + "</b>";
-                  break;
-               case ParticleText.TYPE_HEAL:
-                  _loc4_ = "00ff00";
-                  _loc3_ = "<b>+" + param1 * -1 + "</b>";
-            }
-         }
-         else
-         {
-            _loc4_ = this.getLootColor(param2);
-            _loc5_ = GLOBAL.mode;
-            _loc6_ = "";
-            _loc6_ = _loc5_ == "attack" || _loc5_ == "wmattack" ? "+" : "-";
-            _loc3_ = "<b>" + _loc6_ + param1 + "</b>";
-         }
-         this._mc.tLootA.htmlText = "<font color=\"#" + _loc4_ + "\">" + _loc3_ + "</font>";
-         this._mc.tLootB.htmlText = _loc3_;
-      }
+		public function Fill(param1:int, param2:uint) : void
+		{
+			var _loc3_:* = null;
+			var _loc4_:String = null;
+			var _loc5_:String = null;
+			var _loc6_:String = null;
+			if(param2 == ParticleText.TYPE_DAMAGE || param2 == ParticleText.TYPE_HEAL)
+			{
+				switch(param2)
+				{
+					case ParticleText.TYPE_DAMAGE: {
+						_loc4_ = "FF0000";
+						_loc3_ = "<b>" + int(Math.abs(param1)) + "</b>";
+						break;
+					}
+						
+					case ParticleText.TYPE_HEAL: {
+						_loc4_ = "00FF00";
+						_loc3_ = "<b>+" + int(Math.abs(param1)) + "</b>";
+					}
+				}
+			}
+			else
+			{
+				_loc4_ = this.getLootColor(param2);
+				_loc5_ = GLOBAL.mode;
+				_loc6_ = "";
+				_loc6_ = _loc5_ == "attack" || _loc5_ == "wmattack" ? "+" : "-";
+				_loc3_ = "<b>" + _loc6_ + int(Math.abs(param1)) + "</b>";
+			}
+			this._mc.tLootA.htmlText = "<font color=\"#" + _loc4_ + "\">" + _loc3_ + "</font>";
+			this._mc.tLootB.htmlText = _loc3_;
+		}
       
       public function getLootColor(param1:uint) : String
       {

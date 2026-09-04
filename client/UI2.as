@@ -108,6 +108,9 @@ package
          {
             DebugWarning();
          }
+		 
+		 _top.mcMusic.gotoAndStop(SOUNDS._mutedMusic == 0 ? 1 : 2);
+		 _top.mcSound.gotoAndStop(SOUNDS._muted == 0 ? 1 : 2);
       }
       
       public static function SetupHUD() : void

@@ -457,7 +457,7 @@ package {
 				case GLOBAL.e_BASE_MODE.HELP:
 				case GLOBAL.e_BASE_MODE.VIEW:
 				default: {
-					PlayMusic("op_main");
+					PlayMusic("op_main", 0.5);
 					break;
 				}	
 			}
@@ -465,27 +465,27 @@ package {
 
 		public static function PlayMusicOP(level:int) : void {
 			if(level >= 120){
-				SOUNDS.PlayMusic("op_120");
+				SOUNDS.PlayMusic("op_120", 0.5);
 			} else if(level >= 110){
-				SOUNDS.PlayMusic("op_110");
+				SOUNDS.PlayMusic("op_110", 0.5);
 			} else if(level >= 100){
-				SOUNDS.PlayMusic("op_100");
+				SOUNDS.PlayMusic("op_100", 0.5);
 			} else if(level >= 90){
-				SOUNDS.PlayMusic("op_100");
+				SOUNDS.PlayMusic("op_100", 0.5);
 			} else if(level >= 80){
-				SOUNDS.PlayMusic("op_80");
+				SOUNDS.PlayMusic("op_80", 0.5);
 			} else if(level >= 75){
-				SOUNDS.PlayMusic("op_75");
+				SOUNDS.PlayMusic("op_75", 0.5);
 			} else if(level >= 70){
-				SOUNDS.PlayMusic("op_70");
+				SOUNDS.PlayMusic("op_70", 0.5);
 			} else if(level >= 65){
-				SOUNDS.PlayMusic("op_65");
+				SOUNDS.PlayMusic("op_65", 0.5);
 			} else if(level >= 60){
-				SOUNDS.PlayMusic("op_60");
+				SOUNDS.PlayMusic("op_60", 0.5);
 			} else if(level >= 55){
-				SOUNDS.PlayMusic("op_55");
+				SOUNDS.PlayMusic("op_55", 0.5);
 			} else {
-				SOUNDS.PlayMusic("op_default");
+				SOUNDS.PlayMusic("op_default", 0.5);
 			}
 		}
 	}

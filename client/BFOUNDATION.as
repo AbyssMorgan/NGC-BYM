@@ -34,6 +34,7 @@ package
 	import flash.geom.Matrix;
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
+	import flash.utils.getTimer;
 	
 	public class BFOUNDATION extends GameObject
 	{
@@ -69,7 +70,12 @@ package
 		public static const k_STATE_DAMAGED:String = "damaged";
 		
 		public static const k_STATE_DEFAULT:String = "";
-		
+
+		public static var RASTER_UPDATE_MIN_INTERVAL_MS:int = 33;
+
+		private static var _lastRasterUpdate:uint = 0;
+
+		private static var s_rect:Rectangle = new Rectangle();
 		
 		public var _mcBase:MovieClip;
 		
@@ -404,13 +410,19 @@ package
 			return s_totalBuildingMaxHP;
 		}
 			
-		public static function updateAllRasterData() : void
+		public static function updateAllRasterData(force:Boolean = false) : void
 		{
 			var _loc2_:BFOUNDATION = null;
 			if(!BYMConfig.instance.RENDERER_ON)
 			{
 				return;
 			}
+			var _now:uint = getTimer();
+			if(!force && _now - _lastRasterUpdate < RASTER_UPDATE_MIN_INTERVAL_MS)
+			{
+				return;
+			}
+			_lastRasterUpdate = _now;
 			var _loc1_:Vector.<Object> = InstanceManager.getInstancesByClass(BFOUNDATION);
 			for each(_loc2_ in _loc1_)
 			{
@@ -1678,7 +1690,6 @@ package
          }
          var _loc1_:Point = MAP.instance.offset;
          var _loc2_:Function = MAP.instance.viewRect.intersects;
-         var _loc3_:Rectangle = new Rectangle();
          if(this._mcHit)
          {
             this._mcHit.x = _mc.x + this._offsets[this.m_hitOffsetIndex].x;
@@ -1705,11 +1716,11 @@ package
                   _loc5_.x = _mc.x + this._offsets[_loc10_].x - _loc1_.x;
                   _loc5_.y = _mc.y + this._offsets[_loc10_].y - _loc1_.y;
                   _loc9_ = this._sources[_loc10_];
-                  _loc3_.x = _loc5_.x;
-                  _loc3_.y = _loc5_.y;
-                  _loc3_.width = _loc4_.rect.width;
-                  _loc3_.height = _loc4_.rect.height;
-                  _loc4_.visible = _loc2_(_loc3_) && (Boolean(_loc9_) && !_loc9_.visible ? false : _mc.visible);
+                  s_rect.x = _loc5_.x;
+                  s_rect.y = _loc5_.y;
+                  s_rect.width = _loc4_.rect.width;
+                  s_rect.height = _loc4_.rect.height;
+                  _loc4_.visible = _loc2_(s_rect) && (Boolean(_loc9_) && !_loc9_.visible ? false : _mc.visible);
                   _loc4_.alpha = _mc.alpha;
                }
                _loc10_++;
@@ -1722,11 +1733,11 @@ package
                _loc5_.y = this._mcBase.y + this._offsets[_RASTERDATA_SHADOW].y - _loc1_.y;
                if(!this._moving && GLOBAL._newBuilding !== this)
                {
-                  _loc3_.x = _loc5_.x;
-                  _loc3_.y = _loc5_.y;
-                  _loc3_.width = _loc4_.rect.width;
-                  _loc3_.height = _loc4_.rect.height;
-                  _loc4_.visible = _loc2_(_loc3_) && this._mcBase.visible;
+                  s_rect.x = _loc5_.x;
+                  s_rect.y = _loc5_.y;
+                  s_rect.width = _loc4_.rect.width;
+                  s_rect.height = _loc4_.rect.height;
+                  _loc4_.visible = _loc2_(s_rect) && this._mcBase.visible;
                }
             }
          }

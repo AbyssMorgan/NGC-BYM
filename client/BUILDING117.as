@@ -10,6 +10,7 @@ package
 		public function BUILDING117()
 		{
 			super();
+			attackFlags = Targeting.getOldStyleTargets(-1);
 			_type = 117;
 			_footprint = [new Rectangle(0,0,20,20)];
 			_buildInstant = true;

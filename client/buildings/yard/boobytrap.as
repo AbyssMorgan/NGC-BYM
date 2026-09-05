@@ -25,9 +25,9 @@ package buildings.yard {
 				{"range":30, "damage":2000}, // Level 3
 			],
 			"costs":[
-				{"r1":new SecNum(100000), "r2":new SecNum(100000), "r3":new SecNum(100000), "r4":new SecNum(100000), "time":new SecNum(0), "re":[[14,1,2]]}, // Level 1
-				{"r1":new SecNum(1000000), "r2":new SecNum(1000000), "r3":new SecNum(1000000), "r4":new SecNum(1000000), "time":new SecNum(5), "re":[[14,1,10]]}, // Level 2
-				{"r1":new SecNum(10000000), "r2":new SecNum(10000000), "r3":new SecNum(10000000), "r4":new SecNum(10000000), "time":new SecNum(5), "re":[[14,1,20]]}, // Level 3
+				{"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(0), "re":[[14,1,2]]}, // Level 1
+				{"r1":new SecNum(100000000), "r2":new SecNum(100000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(5), "re":[[14,1,10]]}, // Level 2
+				{"r1":new SecNum(250000000), "r2":new SecNum(250000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(5), "re":[[14,1,20]]}, // Level 3
 			],
 			"imageData":{
 				"baseurl":"buildings/boobytrap/",

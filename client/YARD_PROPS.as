@@ -154,6 +154,7 @@ package {
 	import buildings.yard.bi_hatchery;
 	import buildings.yard.bi_townhall;
 	import buildings.yard.bi_academy;
+	import buildings.yard.airtrap;
 	
 	public class YARD_PROPS {
 
@@ -312,6 +313,7 @@ package {
 			bi_hatchery.DATA,          // ID 152
 			bi_townhall.DATA,          // ID 153
 			bi_academy.DATA,           // ID 154
+			airtrap.DATA,              // ID 155
 		];
 		
 		public function YARD_PROPS(){

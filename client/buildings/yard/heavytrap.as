@@ -13,6 +13,7 @@ package buildings.yard {
 			"type":"trap",
 			"name":"#b_heavytrap#",
 			"size":90,
+			"attackType":1,
 			"attackgroup":4,
 			"tutstage":200,
 			"sale":0,
@@ -24,9 +25,9 @@ package buildings.yard {
 				{"range":30, "damage":12000}, // Level 3
 			],
 			"costs":[
-				{"r1":new SecNum(5000000), "r2":new SecNum(5000000), "r3":new SecNum(5000000), "r4":new SecNum(5000000), "time":new SecNum(0), "re":[[14,1,4]]}, // Level 1
-				{"r1":new SecNum(10000000), "r2":new SecNum(10000000), "r3":new SecNum(10000000), "r4":new SecNum(10000000), "time":new SecNum(5), "re":[[14,1,10]]}, // Level 2
-				{"r1":new SecNum(20000000), "r2":new SecNum(20000000), "r3":new SecNum(20000000), "r4":new SecNum(20000000), "time":new SecNum(5), "re":[[14,1,20]]}, // Level 3
+				{"r1":new SecNum(0), "r2":new SecNum(0), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(0), "re":[[14,1,4]]}, // Level 1
+				{"r1":new SecNum(100000000), "r2":new SecNum(100000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(5), "re":[[14,1,10]]}, // Level 2
+				{"r1":new SecNum(250000000), "r2":new SecNum(250000000), "r3":new SecNum(0), "r4":new SecNum(0), "time":new SecNum(5), "re":[[14,1,20]]}, // Level 3
 			],
 			"imageData":{
 				"baseurl":"buildings/heavytrap/",

@@ -898,7 +898,7 @@ package
 				{
 					this._specialDescription = this._buildingProps.description;
 				}
-				if(!(this._type == 24 || this._type == 25 || this._type == 26))
+				if(!(this._type == 24 || this._type == 25 || this._type == 26 || this._type == 155))
 				{
 					if(this._type == 20 || this._type == 21 || this._type == 142 || this._type == 143)
 					{
@@ -4236,6 +4236,10 @@ package
 		 else if(this._type == 154)
          {
             return new infernoAcademyHit();
+         }
+		 else if(this._type == 155)
+         {
+            return new building24hit();
          }
          return !!_loc1_.hitCls ? new (_loc1_.hitCls as Class)() : new building1hit();
       }

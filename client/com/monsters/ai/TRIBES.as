@@ -120,7 +120,7 @@ package com.monsters.ai
 			};
 			_tribes.miranda = {
 				"id":6,
-				"name":KEYS.Get("ai_descenttribe_name"),
+				"name":"Miranda",
 				"process":PROCESS7,
 				"type":WMATTACK.TYPE_NERD,
 				"taunt":KEYS.Get("ai_descenttribe_taunt"),

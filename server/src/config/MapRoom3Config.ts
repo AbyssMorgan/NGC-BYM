@@ -191,6 +191,7 @@ export const STRUCTURE_SAVES: Record<number, Record<number, SaveData>> = {
 	[EnumYardType.RESOURCE]: resources,
 	[EnumYardType.FORTIFICATION]: defenders,
 	[EnumYardType.MOLOCH_OUTPOST]: moloch,
+	[EnumYardType.MIRANDA_OUTPOST]: moloch,
 };
 
 /** Save data templates for tribe outposts, keyed by tribe index then level. */

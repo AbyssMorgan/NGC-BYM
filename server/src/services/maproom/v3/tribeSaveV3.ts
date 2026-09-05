@@ -85,9 +85,11 @@ export const tribeSaveV3 = async (baseid: string, worldid: string): Promise<Save
 	const structureType = genCell?.type;
 
 	if (structureType === EnumYardType.OUTPOST) {
-		const tribeIndex = genCell!.tribe ?? (cellX + cellY) % 4;
+		var tribeIndex = genCell!.tribe ?? (cellX + cellY) % 4;
 		const level = genCell!.level ?? 0;
 		const outpostSave = OUTPOST_SAVES[tribeIndex]?.[level];
+
+		if(tribeIndex == 4 && level >= 100) tribeIndex = 5;
 
 		if (!outpostSave) return null;
 

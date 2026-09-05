@@ -95,6 +95,10 @@ package buildings.yard {
 				"4":{
 					"front":["fort70_F4.png",new Point(-70,-3)],
 					"back":["fort70_B4.png",new Point(-62,-31)]
+				},
+				"5":{
+					"front":["fort70_F5.png",new Point(-70,-3)],
+					"back":["fort70_B5.png",new Point(-62,-31)]
 				}
 			},
 			"quantity":[

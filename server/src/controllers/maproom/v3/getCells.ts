@@ -262,7 +262,8 @@ export const getMapRoomCells: KoaController = async (ctx) => {
 					cell.base_type = EnumYardType.FORTIFICATION;
 				} else if (genCell) {
 					cell = new WorldMapCell(undefined, genCell.x, genCell.y, genCell.altitude);
-					cell.base_type = genCell.type || 0;
+					cell.base_type = genCell.type ?? 0;
+					cell.terrainHeight = genCell.altitude ?? cell.terrainHeight;
 				} else {
 					cell = new WorldMapCell(undefined, x, y, 0);
 				}

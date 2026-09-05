@@ -10,18 +10,20 @@ import { MapRoomVersion } from "../../../../enums/MapRoom.js";
 import { calculateStructureLevel } from "../../../../services/maproom/v3/calculateStructureLevel.js";
 
 export const tribeOutpostCell = async (cell: WorldMapCell, worldId: string): Promise<CellData> => {
-	var genCell = getGeneratedCells().get(cellKey(cell.x, cell.y));
-	var level = genCell?.level ?? calculateStructureLevel(cell.x, cell.y, cell.base_type);
-	var tribeIndex = genCell?.tribe ?? ((cell.x + cell.y) % 4);
-	var baseid = generateBaseId(worldId, cell.x, cell.y, MapRoomVersion.V3);
-	var altitude = 5 + (cell.x * 73 + cell.y * 31) % 45;
-	var tribeSave = (cell.base_type === EnumYardType.OUTPOST) ? OUTPOST_SAVES[tribeIndex][level] : STRUCTURE_SAVES[cell.base_type][level];
-	var basevalue = (typeof tribeSave?.basevalue === "string") ? tribeSave.basevalue : "0";
-	var tribe_name = 'Unknown';
-	if(cell.base_type == EnumYardType.MOLOCH_OUTPOST){
+	const genCell = getGeneratedCells().get(cellKey(cell.x, cell.y));
+	const generatedType = genCell?.type ?? cell.base_type;
+	const generatedTribe = genCell?.tribe ?? ((cell.x + cell.y) % 4);
+	const level = genCell?.level ?? calculateStructureLevel(cell.x, cell.y, cell.base_type);
+	let tribeIndex = generatedTribe;
+	const baseid = generateBaseId(worldId, cell.x, cell.y, MapRoomVersion.V3);
+	const altitude = 5 + (cell.x * 73 + cell.y * 31) % 45;
+	const tribeSave = (generatedType === EnumYardType.OUTPOST) ? OUTPOST_SAVES[tribeIndex][level] : STRUCTURE_SAVES[generatedType][level];
+	const basevalue = (typeof tribeSave?.basevalue === "string") ? tribeSave.basevalue : "0";
+	let tribe_name = 'Unknown';
+	if(generatedType === EnumYardType.MOLOCH_OUTPOST){
 		tribe_name = 'Moloch';
 		tribeIndex = 4;
-	} else if(cell.base_type == EnumYardType.MIRANDA_OUTPOST){
+	} else if(generatedType === EnumYardType.MIRANDA_OUTPOST){
 		tribe_name = 'Miranda';
 		tribeIndex = 5;
 	} else {
@@ -36,7 +38,7 @@ export const tribeOutpostCell = async (cell: WorldMapCell, worldId: string): Pro
 		x: cell.x,
 		y: cell.y,
 		i: altitude,
-		l: genCell?.level ?? 0,
+		l: level,
 		rel: EnumBaseRelationship.ENEMY,
 		dm: cell?.save?.damage || 0,
 		d: cell?.save?.destroyed || 0,

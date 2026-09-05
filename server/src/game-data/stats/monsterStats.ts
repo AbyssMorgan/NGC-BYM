@@ -481,10 +481,10 @@ export const monsterStats: MonsterStatsMap = {
 				1280000, // Level 10
 			],
 			cStorage:[
-				60, // Level 1
+				20, // Level 1
 			],
 			bucket:[
-				60, // Level 1
+				20, // Level 1
 			],
 			targetGroup:[2],
 			explode:[1],
@@ -1134,10 +1134,10 @@ export const monsterStats: MonsterStatsMap = {
 				12800000, // Level 10
 			],
 			cStorage:[
-				120, // Level 1
+				70, // Level 1
 			],
 			bucket:[
-				120, // Level 1
+				70, // Level 1
 			],
 			targetGroup:[1],
 			hTime:[
@@ -1400,6 +1400,15 @@ export const monsterStats: MonsterStatsMap = {
 			],
 			health:[
 				8000, // Level 1
+				8200, // Level 2
+				8400, // Level 3
+				8600, // Level 4
+				8800, // Level 5
+				9000, // Level 6
+				9200, // Level 7
+				9400, // Level 8
+				9600, // Level 9
+				10000, // Level 10
 			],
 			damage:[
 				-400, // Level 1

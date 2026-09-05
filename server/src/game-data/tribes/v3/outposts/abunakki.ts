@@ -54520,7 +54520,7 @@ export const abunakki: Record<number, SaveData> = {
 		damage: 0,
 		locked: 0,
 		points: "0",
-		basevalue: "82912444",
+		basevalue: "82412444",
 		protected: 0,
 		lastupdate: 0,
 		usemap: 1,
@@ -54533,7 +54533,7 @@ export const abunakki: Record<number, SaveData> = {
 		chatenabled: 0,
 		relationship: 0,
 		timeplayed: 0,
-		version: 132,
+		version: 133,
 		clienttime: 0,
 		baseseed: 0,
 		healtime: 0,
@@ -54547,7 +54547,7 @@ export const abunakki: Record<number, SaveData> = {
 			0: {
 				X: -60,
 				Y: -65,
-				l: 25,
+				l: 24,
 				t: 14,
 				id: 0,
 				fort: 5

@@ -22480,7 +22480,7 @@ export const resources: Record<number, SaveData> = {
 		chatenabled: 0,
 		relationship: 0,
 		timeplayed: 0,
-		version: 132,
+		version: 133,
 		clienttime: 0,
 		baseseed: 0,
 		healtime: 0,
@@ -30371,6 +30371,7 @@ export const resources: Record<number, SaveData> = {
 				X: 290,
 				Y: 290,
 				t: 139,
+				l: 2,
 				id: 2169
 			},
 			2170: {

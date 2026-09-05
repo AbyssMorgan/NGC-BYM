@@ -2,7 +2,7 @@
 <application xmlns="http://ns.adobe.com/air/application/50.2">
 	<allowMultipleInstances>true</allowMultipleInstances>
 	<id>bymr-ngc-app</id>
-	<versionNumber>1.4.6</versionNumber>
+	<versionNumber>1.5.0</versionNumber>
 	<filename>NGC Backyard Monsters</filename>
 	<name>NGC Backyard Monsters</name>
 	<initialWindow>
@@ -14,10 +14,10 @@
 		<fullScreen>true</fullScreen>
 	</initialWindow>
 	<icon>
-		<image16x16>icons/16x16.png</image16x16>
-		<image32x32>icons/32x32.png</image32x32>
-		<image48x48>icons/48x48.png</image48x48>
-		<image128x128>icons/128x128.png</image128x128>
-		<image256x256>icons/256x256.png</image256x256>
+		<image16x16>icons/pc/16x16.png</image16x16>
+		<image32x32>icons/pc/32x32.png</image32x32>
+		<image48x48>icons/pc/48x48.png</image48x48>
+		<image128x128>icons/pc/128x128.png</image128x128>
+		<image256x256>icons/pc/256x256.png</image256x256>
 	</icon>
 </application>

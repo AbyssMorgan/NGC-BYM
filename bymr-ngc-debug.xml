@@ -2,7 +2,7 @@
 <application xmlns="http://ns.adobe.com/air/application/50.2">
 	<allowMultipleInstances>true</allowMultipleInstances>
 	<id>bymr-ngc-app</id>
-	<versionNumber>1.2.0</versionNumber>
+	<versionNumber>1.5.0</versionNumber>
 	<filename>NGC Backyard Monsters</filename>
 	<name>NGC Backyard Monsters</name>
 	<initialWindow>

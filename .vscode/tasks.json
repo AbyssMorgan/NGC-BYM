@@ -15,6 +15,13 @@
 			"problemMatcher": []
 		},
 		{
+			"label": "compile-android",
+			"type": "actionscript",
+			"debug": false,
+			"asconfig": "asconfig.android.json",
+			"problemMatcher": []
+		},
+		{
 			// Debug build is used for development and testing
 			"label": "BYMR - Debug",
 			"detail": "Debug build with stack traces and trace() output.",
@@ -31,6 +38,15 @@
 			"args": ["", "bin/bymr-stable.swf"],
 			"group": { "kind": "build", "isDefault": true },
 			"dependsOn": "compile-stable"
+		},
+		{
+			// Stable build is used for releasing optimized production-ready .swfs
+			"label": "BYMR - Android",
+			"detail": "Optimized production release build",
+			"type": "shell",
+			"args": ["", "bin/bymr-android.swf"],
+			"group": { "kind": "build", "isDefault": true },
+			"dependsOn": "compile-android"
 		}
 	]
 }

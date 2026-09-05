@@ -94,7 +94,9 @@ export const baseSave: KoaController = async (ctx) => {
 				break;
 			}
 			case SaveKeys.CRYSTALS: {
-				baseSave.crystals = Number(value);
+				if(value){
+					baseSave.crystals = Number(value);
+				}
 				break;
 			}
 			case SaveKeys.BASEVALUE: {

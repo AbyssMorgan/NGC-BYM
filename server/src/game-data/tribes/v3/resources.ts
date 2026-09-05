@@ -30378,18 +30378,21 @@ export const resources: Record<number, SaveData> = {
 				X: 290,
 				Y: -420,
 				t: 139,
+				l: 2,
 				id: 2170
 			},
 			2171: {
 				X: -420,
 				Y: 290,
 				t: 139,
+				l: 2,
 				id: 2171
 			},
 			2172: {
 				X: -420,
 				Y: -420,
 				t: 139,
+				l: 2,
 				id: 2172
 			},
 			2175: {

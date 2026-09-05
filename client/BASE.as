@@ -1229,6 +1229,10 @@ package
 					if(serverData.stats.assault_mo_1 && Number(serverData.stats.assault_mo_1) >= 5000){
 						_BuffInfernoVenomResistance = true;
 					}
+					if(_wmID == EnumYardType.MIRANDA_OUTPOST){
+						trace("apply miranda tower range buff");
+						_BuffTowerRange = 0.20;
+					}
 
 					if (GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD)
 					{
@@ -1536,7 +1540,7 @@ package
 								}
 								if (GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD && isMainYard && Boolean(_guardianData[j]))
 								{
-								GLOBAL._playerGuardianData[j] = _guardianData[j];
+									GLOBAL._playerGuardianData[j] = _guardianData[j];
 								}
 								if (addedGuardian)
 								{

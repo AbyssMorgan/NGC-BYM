@@ -303,15 +303,21 @@ export const baseSave: KoaController = async (ctx) => {
 								userSave.stats.assault_mo_4++;
 							}
 
-							if(baseSave.level >= 120){
-								userSave.crystals += (isProbable(15) ? 1 : 0) + (isProbable(15) ? 1 : 0) + (isProbable(15) ? 1 : 0);
-							} else if(baseSave.level == 110){
-								userSave.crystals += (isProbable(10) ? 1 : 0) + (isProbable(10) ? 1 : 0);
-							} else if(baseSave.level == 100){
-								userSave.crystals += (isProbable(5) ? 1 : 0);
+							switch(baseSave.level){
+								case 120: {
+									userSave.crystals += (isProbable(15) ? 1 : 0) + (isProbable(15) ? 1 : 0) + (isProbable(15) ? 1 : 0);
+									break;
+								}
+								case 110: {
+									userSave.crystals += (isProbable(10) ? 1 : 0) + (isProbable(10) ? 1 : 0);
+									break;
+								}
+								case 100: {
+									userSave.crystals += (isProbable(5) ? 1 : 0);
+									break;
+								}
 							}
-
-							// 
+							
 							// userSave.credits += getShinyPointsByLevel(baseSave.level);
 							userSave.empirevalue += getConquerorPointsByLevel(baseSave.level);
 							postgres.em.persist(userSave);

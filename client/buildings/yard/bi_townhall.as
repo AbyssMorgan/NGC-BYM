@@ -123,6 +123,10 @@ package buildings.yard {
 				4:{
 					"front":["fort130_F4.png",new Point(-124,15)],
 					"back":["fort130_B4.png",new Point(-116,-49)]
+				},
+				5:{
+					"front":["fort130_F5.png",new Point(-124,15)],
+					"back":["fort130_B5.png",new Point(-116,-49)]
 				}
 			},
 			"quantity":[

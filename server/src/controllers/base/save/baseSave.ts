@@ -93,6 +93,10 @@ export const baseSave: KoaController = async (ctx) => {
 				baseSave.points = value.toString();
 				break;
 			}
+			case SaveKeys.CRYSTALS: {
+				baseSave.crystals = Number(value);
+				break;
+			}
 			case SaveKeys.BASEVALUE: {
 				baseSave.basevalue = value.toString();
 				break;

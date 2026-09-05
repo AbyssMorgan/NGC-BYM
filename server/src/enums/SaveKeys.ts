@@ -6,6 +6,7 @@
 export enum SaveKeys {
   RESOURCES = "resources",
   POINTS = "points",
+  CRYSTALS = "crystals",
   BASEVALUE = "basevalue",
   IRESOURCES = "iresources",
   BUILDINGDATA = "buildingdata",

@@ -46,10 +46,6 @@ package
 		}
 
 		public function Props() : void {
-			trace("level = " + _lvl.Get());
-			// if(_lvl.Get() == 0){
-			// 	_lvl.Set(1);
-			// }
 			damageProperty.value = GLOBAL._buildingProps[_type - 1].stats[_lvl.Get() - 1].damage;
 			_range = GLOBAL._buildingProps[_type - 1].stats[_lvl.Get() - 1].range;
 		}

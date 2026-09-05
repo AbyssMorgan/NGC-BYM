@@ -3762,7 +3762,8 @@ package
 			"events",
 			"buildinghealthdata",
 			"healtime",
-			"lootbonus"
+			"lootbonus",
+			"crystals"
 		];
          var _loc3_:int = int(GLOBAL.player.handlers.length);
          var _loc4_:int = 0;
@@ -3840,7 +3841,7 @@ package
 			saveData["buildinghealthdata"] = JSON.stringify(buildingSaveData[1]);
 			saveData["buildingkeydata"] = JSON.stringify(buildingSaveData[2]);
 			saveData["stats"] = JSON.stringify(getStatsSaveData());
-			saveData["crystals"] = JSON.stringify(BASE._enchantedCrystal.Get());
+			saveData["crystals"] = BASE._enchantedCrystal.Get();
 			saveData["resources"] = JSON.stringify(getResourceSaveData());
 			if (MapRoomManager.instance.isInMapRoom2)
 			{

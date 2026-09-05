@@ -32,16 +32,26 @@ package
 		{
 			var _loc1_:RasterData = null;
 			super.SetProps();
-			if(_lvl.Get() == 0){
-				_lvl.Set(1);
-			}
-			damageProperty.value = GLOBAL._buildingProps[_type - 1].stats[_lvl.Get() - 1].damage;
-			_range = GLOBAL._buildingProps[_type - 1].stats[_lvl.Get() - 1].range;
 			if(GLOBAL.mode != GLOBAL.e_BASE_MODE.BUILD)
 			{
 				_mc.visible = false;
 				_mcBase.visible = false;
 			}
+		}
+
+		override public function Setup(param1:Object) : void
+		{
+			super.Setup(param1);
+			this.Props();
+		}
+
+		public function Props() : void {
+			trace("level = " + _lvl.Get());
+			// if(_lvl.Get() == 0){
+			// 	_lvl.Set(1);
+			// }
+			damageProperty.value = GLOBAL._buildingProps[_type - 1].stats[_lvl.Get() - 1].damage;
+			_range = GLOBAL._buildingProps[_type - 1].stats[_lvl.Get() - 1].range;
 		}
 		
 		override protected function updateRasterData() : void
@@ -173,6 +183,18 @@ package
 			//  {
 			//     RecycleC();
 			//  }
+		}
+
+		override public function Upgraded() : void
+		{
+			super.Upgraded();
+			this.Props();
+		}
+		
+		override public function Constructed() : void
+		{
+			super.Constructed();
+			this.Props();
 		}
 	}
 }

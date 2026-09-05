@@ -28,7 +28,8 @@ import { MapRoomVersion } from "../../../enums/MapRoom.js";
 import { MR1_TRIBE_IDS } from "../../../game-data/tribes/v1/index.js";
 import { scaledMR1Tribes } from "../../../services/maproom/v1/scaledMR1Tribes.js";
 import { getConquerorPointsByLevel } from "../../../utils/getConquerorPointsByLevel.js";
-import { getShinyPointsByLevel } from "../../../utils/getShinyPointsByLevel.js";
+// import { getShinyPointsByLevel } from "../../../utils/getShinyPointsByLevel.js";
+import { isProbable } from "../../../utils/isProbable.js";
 import { getPlayerConquerorPointsByLevel } from "../../../utils/getPlayerConquerorPointsByLevel.js";
 
 /**
@@ -296,6 +297,15 @@ export const baseSave: KoaController = async (ctx) => {
 								userSave.stats.assault_mo_4++;
 							}
 
+							if(baseSave.level >= 120){
+								userSave.crystals += (isProbable(15) ? 1 : 0) + (isProbable(15) ? 1 : 0) + (isProbable(15) ? 1 : 0);
+							} else if(baseSave.level == 110){
+								userSave.crystals += (isProbable(10) ? 1 : 0) + (isProbable(10) ? 1 : 0);
+							} else if(baseSave.level == 100){
+								userSave.crystals += (isProbable(5) ? 1 : 0);
+							}
+
+							// 
 							// userSave.credits += getShinyPointsByLevel(baseSave.level);
 							userSave.empirevalue += getConquerorPointsByLevel(baseSave.level);
 							postgres.em.persist(userSave);

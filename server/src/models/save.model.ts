@@ -454,6 +454,10 @@ export class Save {
   @Property({ columnType: "jsonb", nullable: true })
   attpowerups: string[] = [];
 
+  @FrontendKey
+  @Property({ type: 'number', default: 0 })
+  crystals!: number;
+
   public static PlayerSaveKeys: (keyof Save)[] = [
     "buildingdata",
     "buildingkeydata",
@@ -512,6 +516,7 @@ export class Save {
     "empirevalue",
     "points",
     "tutorialstage",
+	"crystals",
   ];
 
   public static attackSaveKeys: (keyof Save)[] = [

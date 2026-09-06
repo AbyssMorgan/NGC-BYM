@@ -850,7 +850,7 @@ package
 							stats.push("<b>DMG:</b> " + GLOBAL.FormatNumberNormal(this.damage * dmg_multiplier));
 							if(this._class == "tower"){
 								if(this._type == 138){
-									stats.push("<b>DPS:</b> " + GLOBAL.FormatNumberNormal(int(this.damage * dmg_multiplier * 4)));
+									stats.push("<b>DPS:</b> " + GLOBAL.FormatNumberNormal(int((this.damage * dmg_multiplier * 4) * (20 / this._rate))));
 								} else if(this._type == 115){
 									stats.push("<b>DPS:</b> " + GLOBAL.FormatNumberNormal(int((this.damage * dmg_multiplier) * (20 / this._rate))));
 								} else if(this._type == 25){
@@ -867,9 +867,7 @@ package
 							stats.push("<b>Splash:</b> " + GLOBAL.FormatNumberNormal(this._splash));
 						}
 						if(this._rate && this._rate > 0){
-							if(this._type == 138){
-								stats.push("<b>Reload:</b> Nah");
-							} else if(this._type == 115){
+							if(this._type == 115){
 								stats.push("<b>Reload:</b> " + (this._rate / 20).toString().replace(".", ",") + " sec");
 							} else {
 								stats.push("<b>Reload:</b> " + (this._rate / 40).toString().replace(".", ",") + " sec");

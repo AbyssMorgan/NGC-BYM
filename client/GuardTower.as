@@ -65,7 +65,7 @@ package
 			var _loc1_:int = 0;
 			while(_loc1_ < m_teslaPositions.length)
 			{
-				_loc2_ = new GuardTowerTesla(damage,_range,m_teslaPositions[_loc1_].angleRange,_rate);
+				_loc2_ = new GuardTowerTesla(damage,_range,m_teslaPositions[_loc1_].angleRange,_rate,_duration);
 				if(_loc1_ == 0)
 				{
 					_loc2_.parent = MAP._CREEPSMC;
@@ -150,117 +150,185 @@ import flash.geom.Point;
 
 class GuardTowerTesla implements ITickable
 {
-    
-   
-   public var parent:DisplayObjectContainer;
-   
-   private var m_x:Number;
-   
-   private var m_y:Number;
-   
-   private var m_target:MonsterBase;
-   
-   private var m_damage:Number;
-   
-   private var m_range:Number;
-   
-   private var m_attackSpeed:Number;
-   
-   private var m_angleRange:Point;
-   
-   private var m_timeAbleToFire:Number;
-   
-   public function GuardTowerTesla(param1:Number, param2:Number, param3:Point, param4:Number = 0)
-   {
-      super();
-      this.m_timeAbleToFire = 0;
-      this.m_damage = param1;
-      this.m_attackSpeed = param4;
-      this.m_range = param2;
-      this.m_angleRange = param3;
-   }
-   
-   public function get target() : MonsterBase
-   {
-      return this.m_target;
-   }
-   
-   public function tick(param1:int = 1) : void
-   {
-      if(!this.m_target || this.m_target.health <= 0 || !this.m_target.isTargetable)
-      {
-         this.m_target = this.getTarget();
-      }
-      if(this.m_target)
-      {
-         if(Math.random() > 0.9)
-         {
-            EFFECTS.Lightning(this.m_x,this.m_y,this.m_target.x,this.m_target.getDisplayY(),this.parent);
-         }
-         if(Number(GLOBAL.Timestamp()) >= this.m_timeAbleToFire)
-         {
-            this.fire();
-         }
-      }
-   }
-   
-   private function fire() : void
-   {
-      SOUNDS.Play("lightningfire",0.8);
-      EFFECTS.Lightning(this.m_x,this.m_y,this.m_target.x,this.m_target.getDisplayY(),this.parent);
-      this.m_target.modifyHealth(-this.m_damage,this.m_target);
-      this.m_timeAbleToFire = Number(GLOBAL.Timestamp()) + this.m_attackSpeed;
-   }
-   
-   public function moveTo(param1:Point) : void
-   {
-      this.m_x = param1.x;
-      this.m_y = param1.y;
-   }
-   
-   private function getTarget() : MonsterBase
-   {
-      var _loc3_:MonsterBase = null;
-      var _loc4_:Number = NaN;
-      var _loc1_:Array = Targeting.getCreepsInRange(this.m_range,new Point(this.m_x,this.m_y),Targeting.k_TARGETS_FLYING | Targeting.k_TARGETS_GROUND | Targeting.k_TARGETS_ATTACKERS);
-      if(_loc1_.length <= 0)
-      {
-         return null;
-      }
-      _loc1_.sortOn(["dist"],Array.NUMERIC);
-      var _loc2_:int = 0;
-      while(_loc2_ < _loc1_.length)
-      {
-         _loc3_ = _loc1_[_loc2_].creep as MonsterBase;
-         _loc4_ = MathUtils.getAngleBetweenTwoPointsInDegrees(new Point(this.m_x,this.m_y),new Point(_loc3_.x,_loc3_.y));
-         if(this.m_angleRange == GuardTower.k_SPECIAL_ANGLE)
-         {
-            _loc4_ = Math.abs(_loc4_);
-         }
-         if(_loc4_ >= this.m_angleRange.x && _loc4_ <= this.m_angleRange.y)
-         {
-            return _loc3_;
-         }
-         _loc2_++;
-      }
-      return null;
-   }
+	
+	
+	public var parent:DisplayObjectContainer;
+	
+	private var m_x:Number;
+	
+	private var m_y:Number;
+	
+	private var m_target:MonsterBase;
+	
+	private var m_damage:Number;
+	
+	private var m_range:Number;
+	
+	private var m_attackSpeed:Number;
+	
+	private var m_duration:int;
+	
+	private var m_fireStage:int;
+	
+	private var m_shotsFired:int;
+	
+	private var m_angleRange:Point;
+	
+	private var m_timeAbleToFire:Number;
+	
+	public function GuardTowerTesla(param1:Number, param2:Number, param3:Point, param4:Number = 0, param5:int = 0)
+	{
+		super();
+		this.m_timeAbleToFire = 0;
+		this.m_damage = param1;
+		this.m_attackSpeed = param4;
+		this.m_duration = param5 > 0 ? param5 : 1;
+		this.m_fireStage = 0;
+		this.m_shotsFired = 0;
+		this.m_range = param2;
+		this.m_angleRange = param3;
+	}
+	
+	public function get target() : MonsterBase
+	{
+		return this.m_target;
+	}
+	
+	public function tick(param1:int = 1) : void
+	{
+		if(!this.m_target || this.m_target.health <= 0 || !this.m_target.isTargetable)
+		{
+			this.m_target = this.getTarget();
+		}
+		if(!this.m_target)
+		{
+			if(this.m_fireStage != 0)
+			{
+				this.m_fireStage = 0;
+				this.m_shotsFired = 0;
+				this.m_timeAbleToFire = 0;
+			}
+			return;
+		}
+		if(this.m_fireStage == 0)
+		{
+			this.m_fireStage = 1;
+			this.m_shotsFired = 0;
+			this.m_timeAbleToFire = 1;
+			return;
+		}
+		if(this.m_fireStage == 1)
+		{
+			--this.m_timeAbleToFire;
+			if(this.m_timeAbleToFire <= 0)
+			{
+				this.m_fireStage = 2;
+				this.m_timeAbleToFire = Math.max(int(this.m_attackSpeed),1);
+			}
+			return;
+		}
+		if(this.m_fireStage == 2)
+		{
+			--this.m_timeAbleToFire;
+			if(this.m_timeAbleToFire <= 0)
+			{
+				this.fire();
+			}
+			return;
+		}
+		if(this.m_fireStage == 3)
+		{
+			--this.m_timeAbleToFire;
+			if(this.m_timeAbleToFire <= 0)
+			{
+				this.m_fireStage = 0;
+				this.m_shotsFired = 0;
+				this.m_timeAbleToFire = 0;
+			}
+		}
+	}
+	
+	private function fire() : void
+	{
+		if(!this.m_target || this.m_target.health <= 0 || !this.m_target.isTargetable)
+		{
+			this.m_target = this.getTarget();
+			if(!this.m_target)
+			{
+				this.m_fireStage = 0;
+				this.m_shotsFired = 0;
+				this.m_timeAbleToFire = 0;
+				return;
+			}
+		}
+		SOUNDS.Play("lightningfire",0.8);
+		if(this.parent)
+		{
+			EFFECTS.Lightning(this.m_x,this.m_y,this.m_target.x,this.m_target.getDisplayY(),this.parent);
+		}
+		else
+		{
+			EFFECTS.Lightning(this.m_x,this.m_y,this.m_target.x,this.m_target.getDisplayY());
+		}
+		this.m_target.modifyHealth(-this.m_damage,this.m_target);
+		++this.m_shotsFired;
+		if(this.m_shotsFired >= this.m_duration)
+		{
+			this.m_fireStage = 3;
+			this.m_timeAbleToFire = Math.max(int(this.m_attackSpeed),1);
+			return;
+		}
+		this.m_timeAbleToFire = Math.max(int(this.m_attackSpeed),1);
+	}
+	
+	public function moveTo(param1:Point) : void
+	{
+		this.m_x = param1.x;
+		this.m_y = param1.y;
+	}
+	
+	private function getTarget() : MonsterBase
+	{
+		var _loc3_:MonsterBase = null;
+		var _loc4_:Number = NaN;
+		var _loc1_:Array = Targeting.getCreepsInRange(this.m_range,new Point(this.m_x,this.m_y),Targeting.k_TARGETS_FLYING | Targeting.k_TARGETS_GROUND | Targeting.k_TARGETS_ATTACKERS);
+		if(_loc1_.length <= 0)
+		{
+			return null;
+		}
+		_loc1_.sortOn(["dist"],Array.NUMERIC);
+		var _loc2_:int = 0;
+		while(_loc2_ < _loc1_.length)
+		{
+			_loc3_ = _loc1_[_loc2_].creep as MonsterBase;
+			_loc4_ = MathUtils.getAngleBetweenTwoPointsInDegrees(new Point(this.m_x,this.m_y),new Point(_loc3_.x,_loc3_.y));
+			if(this.m_angleRange == GuardTower.k_SPECIAL_ANGLE)
+			{
+				_loc4_ = Math.abs(_loc4_);
+			}
+			if(_loc4_ >= this.m_angleRange.x && _loc4_ <= this.m_angleRange.y)
+			{
+				return _loc3_;
+			}
+			_loc2_++;
+		}
+		return null;
+	}
 }
 
 import flash.geom.Point;
 
 class TeslaData
-{
-    
-   
-   public var position:Point;
-   
-   public var angleRange:Point;
-   
-   public function TeslaData(param1:Point, param2:Point)
-   {
-      super();
-      this.position = param1;
-      this.angleRange = param2;
-   }
+{	
+	
+	public var position:Point;
+	
+	public var angleRange:Point;
+	
+	public function TeslaData(param1:Point, param2:Point)
+	{
+		super();
+		this.position = param1;
+		this.angleRange = param2;
+	}
 }

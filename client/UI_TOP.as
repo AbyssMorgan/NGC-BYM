@@ -619,7 +619,6 @@ package
 				if(GLOBAL._loadmode == "wmattack" || GLOBAL._loadmode == "wmview" || GLOBAL._loadmode == "iwmattack" || GLOBAL._loadmode == "iwmview")
 				{
 					ImageCache.GetImageWithCallBack(BASE._ownerPic, function(param1:String, param2:BitmapData) : void {
-						trace("load wild tribe avatar");
 						mc.mcPic.mcBG.addChild(new Bitmap(param2));
 					})
 				}

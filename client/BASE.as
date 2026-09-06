@@ -1230,7 +1230,6 @@ package
 						_BuffInfernoVenomResistance = true;
 					}
 					if(_wmID == EnumYardType.MIRANDA_OUTPOST){
-						trace("apply miranda tower range buff");
 						_BuffTowerRange = 0.20;
 					}
 
@@ -5329,7 +5328,6 @@ package
 			var _loc11_:* = null;
 			var _loc12_:Number = NaN;
 			quantity = Math.floor(quantity);
-			trace("FUND " + quantity);
 			if (force_inferno_resources && isInfernoMainYardOrOutpost)
 			{
 				force_inferno_resources = false;

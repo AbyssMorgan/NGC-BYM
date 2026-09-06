@@ -24,7 +24,7 @@
 		{
 			// Debug build is used for development and testing
 			"label": "BYMR - Debug",
-			"detail": "Debug build with stack traces and trace() output.",
+			"detail": "Debug build with stack traces and trace output.",
 			"type": "shell",
 			"args": ["", "bin/bymr-debug.swf"],
 			"group": { "kind": "build", "isDefault": true },

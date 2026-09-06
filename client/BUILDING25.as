@@ -248,20 +248,5 @@ package
 				}
 			}
 		}
-		
-		override public function Props() : void
-		{
-			super.Props();
-		}
-		
-		override public function Upgraded() : void
-		{
-			super.Upgraded();
-		}
-		
-		override public function Constructed() : void
-		{
-			super.Constructed();
-		}
 	}
 }

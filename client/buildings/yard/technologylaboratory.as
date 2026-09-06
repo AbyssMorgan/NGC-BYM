@@ -30,8 +30,8 @@ package buildings.yard {
 				{"r1":new SecNum(800000000), "r2":new SecNum(800000000), "r3":new SecNum(4500000000), "r4":new SecNum(4500000000), "time":new SecNum(86400 * 8), "re":[[14,1,23],[12,1,3]]}, // Level 8
 				{"r1":new SecNum(900000000), "r2":new SecNum(900000000), "r3":new SecNum(5000000000), "r4":new SecNum(5000000000), "time":new SecNum(86400 * 9), "re":[[14,1,24],[12,1,3]]}, // Level 9
 				{"r1":new SecNum(1000000000), "r2":new SecNum(1000000000), "r3":new SecNum(6000000000), "r4":new SecNum(6000000000), "time":new SecNum(86400 * 10), "re":[[14,1,25],[12,1,3]]}, // Level 10
-				{"r1":new SecNum(50000000000), "r2":new SecNum(50000000000), "r3":new SecNum(50000000000), "r4":new SecNum(50000000000), "time":new SecNum(86400 * 11), "re":[[14,1,25],[12,1,3]]}, // Level 11
-				{"r1":new SecNum(100000000000), "r2":new SecNum(100000000000), "r3":new SecNum(100000000000), "r4":new SecNum(100000000000), "time":new SecNum(86400 * 12), "re":[[14,1,25],[12,1,3]]}, // Level 12
+				{"r1":new SecNum(50000000000), "r2":new SecNum(50000000000), "r3":new SecNum(50000000000), "r4":new SecNum(50000000000), "r6": new SecNum(2), "time":new SecNum(86400 * 11), "re":[[14,1,25],[12,1,3]]}, // Level 11
+				{"r1":new SecNum(100000000000), "r2":new SecNum(100000000000), "r3":new SecNum(100000000000), "r4":new SecNum(100000000000), "r6": new SecNum(5), "time":new SecNum(86400 * 12), "re":[[14,1,25],[12,1,3]]}, // Level 12
 			],
 			"imageData":{
 				"baseurl":"buildings/technologylaboratory/",
@@ -39,6 +39,11 @@ package buildings.yard {
 					"top":["top.1.png",new Point(-73,-68)],
 					"topdamaged":["top.1.damaged.png",new Point(-73,-68)],
 					"topdestroyed":["top.1.destroyed.png",new Point(-73,-68)]
+				},
+				"12":{
+					"top":["top.ngc.png",new Point(-73,-68)],
+					"topdamaged":["top.ngc.damaged.png",new Point(-73,-68)],
+					"topdestroyed":["top.ngc.destroyed.png",new Point(-73,-68)]
 				}
 			},
 			"upgradeImgData":{

@@ -118,6 +118,7 @@ package buildings.cls
       
       override public function TickAttack() : void
       {
+		 if(ATTACK._AttackEndProtection) return;
          if(health <= 0)
          {
             _animTick = 0;

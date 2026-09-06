@@ -357,6 +357,7 @@ package
       
       override public function TickAttack() : void
       {
+		if(ATTACK._AttackEndProtection) return;
          var _loc2_:CreepInfo = null;
          var _loc3_:String = null;
          var _loc4_:int = 0;

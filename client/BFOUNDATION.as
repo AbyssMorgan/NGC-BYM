@@ -535,7 +535,7 @@ package
 		{
 			var _loc4_:Number = NaN;
 			var _loc5_:uint = 0;
-			if(!isTargetable)
+			if(!isTargetable || ATTACK._AttackEndProtection)
 			{
 				return 0;
 			}

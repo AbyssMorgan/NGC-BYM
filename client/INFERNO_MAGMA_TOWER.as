@@ -42,6 +42,7 @@ package
       
       override public function TickAttack() : void
       {
+		 if(ATTACK._AttackEndProtection) return;
          super.TickAttack();
          Rotate();
       }

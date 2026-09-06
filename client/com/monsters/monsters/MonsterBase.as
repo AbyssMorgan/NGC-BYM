@@ -387,6 +387,7 @@ package com.monsters.monsters
       
 		override public function modifyHealth(param1:Number, param2:ITargetable = null) : Number
 		{
+			if(ATTACK._AttackEndProtection) return 0;
 			var _loc6_:Component = null;
 			if(!health || param1 == 0)
 			{

@@ -38,6 +38,7 @@ package
       
       override public function TickAttack() : void
       {
+		 if(ATTACK._AttackEndProtection) return;
          var _loc2_:Boolean = false;
          var _loc3_:int = 0;
          var _loc4_:MonsterBase = null;

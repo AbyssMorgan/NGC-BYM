@@ -175,6 +175,7 @@ package com.monsters.siege.weapons
 		
 		public function modifyHealth(param1:Number, param2:ITargetable = null) : Number
 		{
+			if(ATTACK._AttackEndProtection) return 0;
 			this._vacuumHealth.Set(this._vacuumHealth.Get() + param1);
 			return param1;
 		}

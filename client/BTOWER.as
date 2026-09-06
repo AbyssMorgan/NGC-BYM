@@ -207,6 +207,7 @@ package
 		
 		override public function TickAttack() : void
 		{
+			if(ATTACK._AttackEndProtection) return;
 			var _loc1_:VacuumHose = null;
 			var _loc2_:Boolean = false;
 			var _loc3_:int = 0;

@@ -122,6 +122,7 @@ package
 		
 		override public function TickAttack() : void
 		{
+			if(ATTACK._AttackEndProtection) return;
 			super.TickAttack();
 			this._shotsPerFire = _buildingProps.stats[_lvl.Get() - 1].shots;
 			this.updateTarget();

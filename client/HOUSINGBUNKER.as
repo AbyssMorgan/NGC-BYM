@@ -283,6 +283,7 @@ package
       
       override public function TickAttack() : void
       {
+		 if(ATTACK._AttackEndProtection) return;
          var _loc4_:String = null;
          var _loc5_:* = undefined;
          var _loc6_:* = undefined;
@@ -430,18 +431,19 @@ package
          ++this._frameNumber;
       }
       
-      override public function modifyHealth(param1:Number, param2:ITargetable = null) : Number
-      {
-         if(health <= 0)
-         {
-            ATTACK.Log("b" + _id,"<font color=\"#990000\">" + KEYS.Get("attack_log_%damaged",{
-               "v1":_lvl.Get(),
-               "v2":KEYS.Get(_buildingProps.name),
-               "v3":100 - int(100 / maxHealth * health)
-            }) + "</font>");
-         }
-         return super.modifyHealth(param1);
-      }
+		override public function modifyHealth(param1:Number, param2:ITargetable = null) : Number
+		{
+			if(ATTACK._AttackEndProtection) return 0;
+			if(health <= 0)
+			{
+				ATTACK.Log("b" + _id,"<font color=\"#990000\">" + KEYS.Get("attack_log_%damaged",{
+				"v1":_lvl.Get(),
+				"v2":KEYS.Get(_buildingProps.name),
+				"v3":100 - int(100 / maxHealth * health)
+				}) + "</font>");
+			}
+			return super.modifyHealth(param1);
+		}
       
       public function Cull() : void
       {

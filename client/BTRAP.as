@@ -62,6 +62,7 @@ package
 		
 		override public function TickAttack() : void
 		{
+			if(ATTACK._AttackEndProtection) return;
 			if(_countdownBuild.Get() == 0 && !_fired)
 			{
 				if(!this._hasTargets)

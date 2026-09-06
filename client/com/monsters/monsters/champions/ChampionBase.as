@@ -1015,11 +1015,12 @@ package com.monsters.monsters.champions
          }
       }
       
-      override public function modifyHealth(param1:Number, param2:ITargetable = null) : Number
-      {
-         return super.modifyHealth(param1,param2);
-      }
-      
+		override public function modifyHealth(param1:Number, param2:ITargetable = null) : Number
+		{
+			if(ATTACK._AttackEndProtection) return 0;
+			return super.modifyHealth(param1,param2);
+		}
+		
       protected function tickBDefend() : void
       {
          if(health <= 0)

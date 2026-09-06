@@ -1,152 +1,145 @@
 package
 {
-   import com.monsters.interfaces.ICoreBuilding;
-   import flash.events.Event;
-   import flash.geom.Point;
-   import flash.geom.Rectangle;
-   
-   public class GuardTower extends BTOWER implements ICoreBuilding
-   {
-      
-      public static const k_SPECIAL_ANGLE:Point = new Point(90,180);
-      
-      private static var m_teslaPositions:Vector.<TeslaData>;
-      
-      private static var m_teslaDamagedPositions:Vector.<TeslaData>;
-      
-      public static const k_TYPE:int = 138;
-       
-      
-      private var m_lastDamagedState:Boolean;
-      
-      private var m_teslas:Vector.<GuardTowerTesla>;
-      
-      private var m_tick:int;
-      
-      private var m_isAttacking:Boolean;
-      
-      public function GuardTower()
-      {
-         super();
-         m_teslaPositions = Vector.<TeslaData>([new TeslaData(new Point(-0.5,-68),new Point(-180,0)),new TeslaData(new Point(58,-37),new Point(-90,90)),new TeslaData(new Point(-0.5,-7),new Point(0,180)),new TeslaData(new Point(-59,-40),k_SPECIAL_ANGLE)]);
-         m_teslaDamagedPositions = Vector.<TeslaData>([new TeslaData(new Point(-0.5,-68),new Point(-180,0)),new TeslaData(new Point(58,-26),new Point(-90,90)),new TeslaData(new Point(-6,-7),new Point(0,180)),new TeslaData(new Point(-67,-53),k_SPECIAL_ANGLE)]);
-         this.m_teslas = new Vector.<GuardTowerTesla>();
-         _animRandomStart = false;
-         _footprint = [new Rectangle(0,0,130,130)];
-         _gridCost = [[new Rectangle(0,0,130,130),10],[new Rectangle(10,10,110,110),200]];
-         _type = k_TYPE;
-         SetProps();
-        //  graphic.addEventListener(Event.ENTER_FRAME,this.onEnterFrame);
-      }
-      
-      override public function ApplyJar(param1:int) : void
-      {
-      }
-      
-      override protected function onEnterFrame(param1:Event) : void
-      {
-
-      }
-      
-      override public function Setup(param1:Object) : void
-      {
-         super.Setup(param1);
-         this.setupTeslas();
-         GLOBAL.setTownHall(this);
-      }
-      
-      override public function Cancel() : void
-      {
-         GLOBAL.setTownHall(null);
-         super.Cancel();
-      }
-      
-      override public function Constructed() : void
-      {
-         super.Constructed();
-         GLOBAL.setTownHall(this);
-      }
-      
-      private function setupTeslas() : void
-      {
-         var _loc2_:GuardTowerTesla = null;
-         var _loc1_:int = 0;
-         while(_loc1_ < m_teslaPositions.length)
-         {
-            _loc2_ = new GuardTowerTesla(damage,_range,m_teslaPositions[_loc1_].angleRange,_rate);
-            if(_loc1_ == 0)
-            {
-               _loc2_.parent = MAP._CREEPSMC;
-            }
-            this.m_teslas.push(_loc2_);
-            _loc1_++;
-         }
-         this.updateTeslaPositions();
-      }
-      
-      private function updateTeslas() : void
-      {
-         var _loc2_:GuardTowerTesla = null;
-         this.m_isAttacking = false;
-         var _loc1_:int = 0;
-         while(_loc1_ < this.m_teslas.length)
-         {
-            _loc2_ = this.m_teslas[_loc1_];
-            _loc2_.tick();
-            if(_loc2_.target)
-            {
-               this.m_isAttacking = true;
-            }
-            _loc1_++;
-         }
-      }
-      
-      override public function Tick(param1:int) : void
-      {
-         super.Tick(param1);
-         if(isDamaged != this.m_lastDamagedState && Boolean(this.m_teslas))
-         {
-            this.updateTeslaPositions();
-         }
-		 if(_mcHit.parent){
-			anim2Container.visible = false;
-			++this.m_tick;
-			AnimFrame(true);
-			if(this.m_tick % 2 == 0)
+	import com.monsters.interfaces.ICoreBuilding;
+	import flash.geom.Point;
+	import flash.geom.Rectangle;
+	
+	public class GuardTower extends BTOWER implements ICoreBuilding
+	{
+		
+		public static const k_SPECIAL_ANGLE:Point = new Point(90,180);
+		
+		private static var m_teslaPositions:Vector.<TeslaData>;
+		
+		private static var m_teslaDamagedPositions:Vector.<TeslaData>;
+		
+		public static const k_TYPE:int = 138;
+		
+		private var m_lastDamagedState:Boolean;
+		
+		private var m_teslas:Vector.<GuardTowerTesla>;
+		
+		private var m_tick:int;
+		
+		private var m_isAttacking:Boolean;
+		
+		public function GuardTower()
+		{
+			super();
+			m_teslaPositions = Vector.<TeslaData>([new TeslaData(new Point(-0.5,-68),new Point(-180,0)),new TeslaData(new Point(58,-37),new Point(-90,90)),new TeslaData(new Point(-0.5,-7),new Point(0,180)),new TeslaData(new Point(-59,-40),k_SPECIAL_ANGLE)]);
+			m_teslaDamagedPositions = Vector.<TeslaData>([new TeslaData(new Point(-0.5,-68),new Point(-180,0)),new TeslaData(new Point(58,-26),new Point(-90,90)),new TeslaData(new Point(-6,-7),new Point(0,180)),new TeslaData(new Point(-67,-53),k_SPECIAL_ANGLE)]);
+			this.m_teslas = new Vector.<GuardTowerTesla>();
+			_animRandomStart = false;
+			_footprint = [new Rectangle(0,0,130,130)];
+			_gridCost = [[new Rectangle(0,0,130,130),10],[new Rectangle(10,10,110,110),200]];
+			_type = k_TYPE;
+			SetProps();
+		}
+		
+		override public function ApplyJar(param1:int) : void
+		{
+		}
+		
+		override public function Setup(param1:Object) : void
+		{
+			super.Setup(param1);
+			this.setupTeslas();
+			GLOBAL.setTownHall(this);
+		}
+		
+		override public function Cancel() : void
+		{
+			GLOBAL.setTownHall(null);
+			super.Cancel();
+		}
+		
+		override public function Constructed() : void
+		{
+			super.Constructed();
+			GLOBAL.setTownHall(this);
+		}
+		
+		private function setupTeslas() : void
+		{
+			var _loc2_:GuardTowerTesla = null;
+			var _loc1_:int = 0;
+			while(_loc1_ < m_teslaPositions.length)
 			{
-				--_animTick;
+				_loc2_ = new GuardTowerTesla(damage,_range,m_teslaPositions[_loc1_].angleRange,_rate);
+				if(_loc1_ == 0)
+				{
+					_loc2_.parent = MAP._CREEPSMC;
+				}
+				this.m_teslas.push(_loc2_);
+				_loc1_++;
 			}
-			anim2Container.visible = this.m_isAttacking;
-		 }
-      }
-      
-      private function updateTeslaPositions() : void
-      {
-         var _loc1_:Point = new Point(x,y);
-         var _loc2_:Vector.<TeslaData> = isDamaged ? m_teslaDamagedPositions : m_teslaPositions;
-         var _loc3_:int = 0;
-         while(_loc3_ < this.m_teslas.length)
-         {
-            this.m_teslas[_loc3_].moveTo(_loc1_.add(_loc2_[_loc3_].position));
-            _loc3_++;
-         }
-         this.m_lastDamagedState = isDamaged;
-      }
-      
-      override public function TickAttack() : void
-      {
-         super.TickAttack();
-         if(Boolean(this.m_teslas) && canAttack)
-         {
-            this.updateTeslas();
-         }
-      }
-      
-      override protected function onMove() : void
-      {
-         this.updateTeslaPositions();
-      }
-   }
+			this.updateTeslaPositions();
+		}
+		
+		private function updateTeslas() : void
+		{
+			var _loc2_:GuardTowerTesla = null;
+			this.m_isAttacking = false;
+			var _loc1_:int = 0;
+			while(_loc1_ < this.m_teslas.length)
+			{
+				_loc2_ = this.m_teslas[_loc1_];
+				_loc2_.tick();
+				if(_loc2_.target)
+				{
+					this.m_isAttacking = true;
+				}
+				_loc1_++;
+			}
+		}
+		
+		override public function Tick(param1:int) : void
+		{
+			super.Tick(param1);
+			if(isDamaged != this.m_lastDamagedState && Boolean(this.m_teslas))
+			{
+				this.updateTeslaPositions();
+			}
+			if(_mcHit.parent){
+				anim2Container.visible = false;
+				++this.m_tick;
+				AnimFrame(true);
+				if(this.m_tick % 2 == 0)
+				{
+					--_animTick;
+				}
+				anim2Container.visible = this.m_isAttacking;
+			}
+		}
+		
+		private function updateTeslaPositions() : void
+		{
+			var _loc1_:Point = new Point(x,y);
+			var _loc2_:Vector.<TeslaData> = isDamaged ? m_teslaDamagedPositions : m_teslaPositions;
+			var _loc3_:int = 0;
+			while(_loc3_ < this.m_teslas.length)
+			{
+				this.m_teslas[_loc3_].moveTo(_loc1_.add(_loc2_[_loc3_].position));
+				_loc3_++;
+			}
+			this.m_lastDamagedState = isDamaged;
+		}
+		
+		override public function TickAttack() : void
+		{
+			if(ATTACK._AttackEndProtection) return;
+			super.TickAttack();
+			if(Boolean(this.m_teslas) && canAttack)
+			{
+				this.updateTeslas();
+			}
+		}
+		
+		override protected function onMove() : void
+		{
+			this.updateTeslaPositions();
+		}
+	}
 }
 
 import com.monsters.interfaces.ITickable;

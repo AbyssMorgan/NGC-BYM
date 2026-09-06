@@ -6,7 +6,6 @@ package
 	import com.monsters.configs.BYMConfig;
 	import com.monsters.display.ScrollSet;
 	import com.monsters.effects.ResourceBombs;
-	import com.monsters.effects.particles.ParticleDamageItem;
 	import com.monsters.effects.particles.ParticleText;
 	import com.monsters.enums.EnumYardType;
 	import com.monsters.events.AttackEvent;
@@ -99,6 +98,8 @@ package
 		private static var m_lastAttackTime:int;
 		
 		public static var _curCreaturesAvailable:Array;
+
+		public static var _AttackEndProtection:Boolean = false;
 		
 		public function ATTACK()
 		{
@@ -148,6 +149,7 @@ package
 			m_recentlyAttacked = new Dictionary();
 			_flingerCooldown = 5;
 			_flingerCooling = 0;
+			_AttackEndProtection = false;
 			_creaturesFlung.Set(0);
 			_creaturesLoaded.Set(0);
 			_flingerBucket = {};
@@ -1081,6 +1083,7 @@ package
 		
 		public static function End() : void
 		{
+			_AttackEndProtection = true;
 			var _loc1_:MonsterBase = null;
 			m_waitingForSaveToComplete = false;
 			BucketClear();
@@ -1088,7 +1091,7 @@ package
 			{
 				if(BASE._saveOver != 1)
 				{
-				BASE.Save(1,false,true);
+					BASE.Save(1,false,true);
 				}
 				_sentOver = true;
 			}

@@ -145,18 +145,13 @@ package {
 
 		private static function getShinyCostforCreep(param1: String): int {
 			var _loc2_: Player = GLOBAL.player;
-			var _loc3_: Number = 0;
 			var _loc4_: int = 0;
-			_loc3_ = GLOBAL.getShinyCostFromResourceAmt(GLOBAL.player.getResourceCostByID(param1) - GLOBAL.player.getResourceCostByID(param1, true));
 			_loc4_ = _loc2_.getSecsTillDoneByID(param1, true);
-			return _loc3_ + STORE.GetTimeCost(_loc4_, false) * GLOBAL.ABTestHealingTimeShinyMod();
+			return GetTimeCost(_loc4_, false);
 		}
 
 		public static function GetInstantBuyCost(param1: Object): int {
-			// TODO: @React / @ambx - fix SecNum
-			//return GetTimeCost(param1.time.Get()) + GetResourceCost([param1.r1,param1.r2,param1.r3,param1.r4]);
 			return GetTimeCost(param1.time) + GetResourceCost([param1.r1, param1.r2, param1.r3, param1.r4]);
-
 		}
 
 		public static function GetTimeCost(seconds: int, free_available: Boolean = true): int {

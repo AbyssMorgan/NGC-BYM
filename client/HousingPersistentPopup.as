@@ -498,7 +498,6 @@ package
          for(_loc2_ in this.m_monsterBarList)
          {
             _loc1_ += this.m_monsterBarList[_loc2_].getTimeCost(true);
-            _loc1_ += this.m_monsterBarList[_loc2_].getResourceCostInShiny();
          }
          return _loc1_;
       }

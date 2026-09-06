@@ -30,7 +30,8 @@ package
       private static var _ogInfernoData:Object;
       
       private static var _ogAscensionData:Object;
-       
+
+	  public static var _InfernoPortalLevel:int = 0;
       
       private var _popup:popup_horse;
       
@@ -254,6 +255,7 @@ package
             "l":param1
          });
          _loc4_.SetLevel(param1);
+		 _InfernoPortalLevel = param1;
          return _loc4_;
       }
       

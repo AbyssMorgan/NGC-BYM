@@ -175,6 +175,7 @@ package
          UI2.Hide("bottom");
          var _loc1_:Sprite = INFERNOPORTAL.building._mc;
         //  MAP.FocusTo(_loc1_.x,_loc1_.y,2,0,0,true,FocusedOnPortal);
+		 FocusedOnPortal();
       }
       
       private static function FocusedOnPortal() : void

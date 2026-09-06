@@ -464,7 +464,7 @@ package
 			// 	}
 			// }
 			// return _loc1_;
-			return _descentLvlMax;
+			return INFERNOPORTAL._InfernoPortalLevel == 5 ? _descentLvlMax : 1;
 		}
       
 		public static function get InDescent() : Boolean
@@ -475,12 +475,12 @@ package
 			//     _descentLvl = GLOBAL.StatGet("descentLvl");
 			//  }
 			//  return _descentLvl < _descentLvlMax ? true : false;
-			return true;
+			return INFERNOPORTAL._InfernoPortalLevel == 5;
 		}
       
 		public static function get DescentPassed() : Boolean
 		{
-			return true;
+			return INFERNOPORTAL._InfernoPortalLevel == 5;
 			// var _loc2_:int = 0;
 			// var _loc1_:Boolean = false;
 			// if(GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD && GLOBAL.StatGet("descentLvl") < 1)

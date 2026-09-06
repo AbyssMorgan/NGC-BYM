@@ -9,3 +9,4 @@ bin/*
 bymr_cert.p12
 *.cmd
 *.swf
+data-parser

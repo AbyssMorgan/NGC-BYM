@@ -431,7 +431,11 @@ package com.monsters.monsters
 				_loc3_ = Math.round(_loc3_);
 				print(this + " was modified for " + param1 + (!!(_loc3_ - param1) ? "(" + _loc3_ + " - " + (_loc3_ - param1) + ")" : "") + " health points, left with " + health + " out of " + maxHealth + "hp");
 			}
-			ATTACK.damage(-param1, this, param1 < 0 ? param1 - _loc3_ : param1);
+			if(param1 < 0){
+				ATTACK.damage(-param1, this,param1 < 0 ? param1 - _loc3_ : 0);
+			} else {
+				ATTACK.damage(-param1, this, param1 < 0 ? param1 - _loc3_ : param1);
+			}
 			setHealth(health + param1);
 			return param1;
 		}

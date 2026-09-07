@@ -21,9 +21,6 @@ package com.auth
     import flash.events.TimerEvent;
 	import com.monsters.display.ImageCache;
 	import flash.display.BitmapData;
-	import flash.filesystem.File;
-	import flash.filesystem.FileMode;
-	import flash.filesystem.FileStream;
 
     // TODO: This file needs a complete refactor. It is currently very messy and hard to read.
     public class AuthForm extends Sprite
@@ -258,7 +255,7 @@ package com.auth
 
             rememberPasswordCheckbox = createRememberPasswordCheckbox();
 
-            var auth_data:Object = loadJSON("auth.json");
+            var auth_data:Object = GAME.loadJSON("auth.json");
             if (auth_data && auth_data.remember_password === true)
             {
                 rememberPasswordCheckbox.Checked = true;
@@ -270,7 +267,7 @@ package com.auth
             else
             {
                 rememberPasswordCheckbox.Checked = false;
-                saveJSON("auth.json", { email: "", password: "", remember_password: false });
+                GAME.saveJSON("auth.json", { email: "", password: "", remember_password: false });
             }
 
             // Create button
@@ -666,7 +663,7 @@ package com.auth
 
             if (rememberPasswordCheckbox.Checked)
             {
-                saveJSON("auth.json", {
+                GAME.saveJSON("auth.json", {
                     email: emailValue,
                     password: passwordValue,
                     remember_password: true
@@ -674,7 +671,7 @@ package com.auth
             }
             else
             {
-                saveJSON("auth.json", {
+                GAME.saveJSON("auth.json", {
                     email: "",
                     password: "",
                     remember_password: false
@@ -817,9 +814,9 @@ package com.auth
                         var newUser:Array = [["username", usernameValue], ["email", emailValue], ["password", passwordValue], ["last_name", ""], ["pic_square", ""]];
 
                         new URLLoaderApi().load(GLOBAL._apiURL + "player/register", newUser, registerNewUser, function(event:IOErrorEvent):void
-                            {
-                                GLOBAL.Message("An error occurred during registration on the server.");
-                            });
+						{
+							GLOBAL.Message("An error occurred during registration on the server.");
+						});
                     }
                     else
                     {
@@ -832,11 +829,11 @@ package com.auth
                     const authInfo:Array = [["email", emailValue], ["password", passwordValue]];
                     if (rememberPasswordCheckbox && rememberPasswordCheckbox.Checked)
                     {
-                        saveJSON("auth.json", { email: emailValue, password: passwordValue, remember_password: true });
+                        GAME.saveJSON("auth.json", { email: emailValue, password: passwordValue, remember_password: true });
                     }
                     else
                     {
-                        saveJSON("auth.json", { email: "", password: "", remember_password: false });
+                        GAME.saveJSON("auth.json", { email: "", password: "", remember_password: false });
                     }
                     LOGIN.AuthenticateUser(authInfo);
                 }
@@ -964,32 +961,6 @@ package com.auth
             if (this.parent)
                 this.parent.removeChild(this);
         }
-
-		private function saveJSON(file_name:String, data:Object):void
-		{
-			var file:File = File.applicationStorageDirectory.resolvePath(file_name);
-			var stream:FileStream = new FileStream();
-			try
-			{
-				stream.open(file, FileMode.WRITE);
-				stream.writeUTFBytes(JSON.stringify(data));
-			}
-			finally
-			{
-				stream.close();
-			}
-		}
-
-		private function loadJSON(file_name:String):Object
-		{
-			var file:File = File.applicationStorageDirectory.resolvePath(file_name);
-			if(!file.exists) return null;
-			var stream:FileStream = new FileStream();
-			stream.open(file, FileMode.READ);
-			var json:String = stream.readUTFBytes(stream.bytesAvailable);
-			stream.close();
-			return JSON.parse(json);
-		}
 
     }
 }

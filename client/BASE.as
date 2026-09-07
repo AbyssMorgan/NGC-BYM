@@ -1585,13 +1585,13 @@ package
 							{
 								_attackerNameArray.push([0, attackObj.name]);
 								_attackerArray.push({
-										"fbid": attackObj.fbid,
-										"name": attackObj.name,
-										"pic": attackObj.pic_square,
-										"friend": attackObj.friend,
-										"count": 1,
-										"lastTime": attackObj.starttime
-									});
+									"fbid": attackObj.fbid,
+									"name": attackObj.name,
+									"pic": attackObj.pic_square,
+									"friend": attackObj.friend,
+									"count": 1,
+									"lastTime": attackObj.starttime
+								});
 							}
 						}
 						for each (attackObj in _attackerArray)
@@ -1660,7 +1660,7 @@ package
 						}
 					}
 					_ownerName = GLOBAL.mode == GLOBAL.e_BASE_MODE.WMATTACK || GLOBAL.mode == GLOBAL.e_BASE_MODE.WMVIEW ? String(TRIBES.TribeForBaseID(_wmID, 0, _tribeIndex).name) : String(serverData.name);
-					_ownerPic = GLOBAL.mode == GLOBAL.e_BASE_MODE.WMATTACK || GLOBAL.mode == GLOBAL.e_BASE_MODE.WMVIEW ? String(TRIBES.TribeForBaseID(_wmID, 0, _tribeIndex).profilepic) : String(serverData.pic_square);
+					_ownerPic = GLOBAL.mode == GLOBAL.e_BASE_MODE.WMATTACK || GLOBAL.mode == GLOBAL.e_BASE_MODE.WMVIEW ? String(TRIBES.TribeForBaseID(_wmID, 0, _tribeIndex).profilepic) : String("worldmap/rollover/player.png");
 					if (!GLOBAL._flags.viximo && !GLOBAL._flags.kongregate)
 					{
 						if (serverData.promotiontimer)

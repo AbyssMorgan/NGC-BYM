@@ -14,7 +14,6 @@ package com.auth
     import flash.text.TextFormat;
     import flash.display.Bitmap;
     import flash.display.Loader;
-    import flash.net.URLRequest;
     import flash.events.FocusEvent;
     import flash.text.TextFormatAlign;
     import flash.events.IOErrorEvent;
@@ -22,6 +21,9 @@ package com.auth
     import flash.events.TimerEvent;
 	import com.monsters.display.ImageCache;
 	import flash.display.BitmapData;
+	import flash.filesystem.File;
+	import flash.filesystem.FileMode;
+	import flash.filesystem.FileStream;
 
     // TODO: This file needs a complete refactor. It is currently very messy and hard to read.
     public class AuthForm extends Sprite
@@ -66,6 +68,10 @@ package com.auth
         private var defaultText:TextField;
 
         private var hasAccountFormat:TextFormat;
+
+        private var rememberPasswordCheckbox:Checkbox;
+
+        private var rememberPasswordLabel:TextField;
 
         private var button:Sprite;
 
@@ -217,25 +223,25 @@ package com.auth
             var formWidth:Number = 450;
             var formHeight:Number = 600;
 
-            languages = KEYS.supportedLanguagesJson;
-            var selectInput:Sprite = createSelectInput();
-            contentContainer.addChild(selectInput);
-            selectInput.x = 20;
-            selectInput.y = 10;
+            // languages = KEYS.supportedLanguagesJson;
+            // var selectInput:Sprite = createSelectInput();
+            // contentContainer.addChild(selectInput);
+            // selectInput.x = 20;
+            // selectInput.y = 10;
 
             HeaderTitle();
             contentContainer.addChild(navContainer);
 
             formContainer.graphics.drawRect(0, 0, formWidth, formHeight);
             formContainer.x = 155;
-            formContainer.y = 45;
+            formContainer.y = 0;
             contentContainer.addChild(formContainer);
 
             // Y-position for the first input field
-            startY = 345;
+            startY = 300;
 
             // Get image asset
-			ImageCache.GetImageWithCallBack("monsters/C5-LAB-150.png", function(param1:String, param2:BitmapData):void {
+			ImageCache.GetImageWithCallBack("ui/logo_2026.png", function(param1:String, param2:BitmapData):void {
 				image = new Bitmap(param2);
 				image.x = 150;
 				image.y = 150;
@@ -249,6 +255,23 @@ package com.auth
             passwordInput = createBlock(350, 35, "Password", true);
             CreateBorder(emailInput);
             CreateBorder(passwordInput);
+
+            rememberPasswordCheckbox = createRememberPasswordCheckbox();
+
+            var auth_data:Object = loadJSON("auth.json");
+            if (auth_data && auth_data.remember_password === true)
+            {
+                rememberPasswordCheckbox.Checked = true;
+                emailValue = auth_data.email != null ? String(auth_data.email) : "";
+                passwordValue = auth_data.password != null ? String(auth_data.password) : "";
+                emailInput.text = emailValue;
+                passwordInput.text = passwordValue;
+            }
+            else
+            {
+                rememberPasswordCheckbox.Checked = false;
+                saveJSON("auth.json", { email: "", password: "", remember_password: false });
+            }
 
             // Create button
             submitButton = createButton();
@@ -364,7 +387,7 @@ package com.auth
 
         public static function DiscordLink(param1:Event = null):void
         {
-            GLOBAL.gotoURL("https://discord.gg/7pGmvrNK6g");
+            GLOBAL.gotoURL("https://discord.gg/xj2PQDkZun");
         }
 
         private function HeaderTitle():void
@@ -379,10 +402,10 @@ package com.auth
             var textContainer:Sprite = new Sprite();
             navContainer.addChild(textContainer);
 
-            var titlePrefix:TextField = createRichText(KEYS.Get("auth_header_prefix"), WHITE);
+            var titlePrefix:TextField = createRichText("NGC ", 0xFF923DFF);
             textContainer.addChild(titlePrefix);
 
-            var titleSuffix:TextField = createRichText(KEYS.Get("auth_header_suffix"), SECONDARY);
+            var titleSuffix:TextField = createRichText("Backyard Monsters", WHITE);
             textContainer.addChild(titleSuffix);
             titleSuffix.x = titlePrefix.x + titlePrefix.width;
 
@@ -502,92 +525,92 @@ package com.auth
             return input;
         }
 
-        private function createSelectInput(defaultOption:String = "English"):Sprite
-        {
-            selectField = new Sprite();
-            var selectWidth:Number = 80;
-            var selectHeight:Number = 30;
-            selectField.graphics.lineStyle(1, WHITE);
-            selectField.graphics.drawRect(0, 0, selectWidth, selectHeight);
+        // private function createSelectInput(defaultOption:String = "English"):Sprite
+        // {
+        //     selectField = new Sprite();
+        //     var selectWidth:Number = 80;
+        //     var selectHeight:Number = 30;
+        //     selectField.graphics.lineStyle(1, WHITE);
+        //     selectField.graphics.drawRect(0, 0, selectWidth, selectHeight);
 
-            defaultText = new TextField();
-            var defaultTextStyle:TextFormat = new TextFormat();
-            defaultTextStyle.font = "Groboldov";
-            defaultTextStyle.size = 13;
+        //     defaultText = new TextField();
+        //     var defaultTextStyle:TextFormat = new TextFormat();
+        //     defaultTextStyle.font = "Groboldov";
+        //     defaultTextStyle.size = 13;
 
-            defaultText.textColor = WHITE;
-            defaultText.embedFonts = true;
-            defaultText.defaultTextFormat = defaultTextStyle;
-            defaultText.text = defaultOption.toLocaleUpperCase();
-            defaultText.x = (selectWidth - defaultText.textWidth) / 2;
-            defaultText.y = (selectHeight - defaultText.textHeight) / 2;
-            mousePointerCursor(defaultText);
-            selectField.addChild(defaultText);
+        //     defaultText.textColor = WHITE;
+        //     defaultText.embedFonts = true;
+        //     defaultText.defaultTextFormat = defaultTextStyle;
+        //     defaultText.text = defaultOption.toLocaleUpperCase();
+        //     defaultText.x = (selectWidth - defaultText.textWidth) / 2;
+        //     defaultText.y = (selectHeight - defaultText.textHeight) / 2;
+        //     mousePointerCursor(defaultText);
+        //     selectField.addChild(defaultText);
 
-            // Create the dropdown menu
-            dropdownMenu = new Sprite();
-            dropdownMenu.visible = false;
-            selectField.addChild(dropdownMenu);
+        //     // Create the dropdown menu
+        //     dropdownMenu = new Sprite();
+        //     dropdownMenu.visible = false;
+        //     selectField.addChild(dropdownMenu);
 
-            // Populate the dropdown menu with options
-            for (var index:int = 0; index < languages.length; index++)
-            {
-                var langSelectText:TextField = new TextField();
-                var langSelectTextStyle:TextFormat = new TextFormat();
-                langSelectTextStyle.font = "Groboldov";
-                langSelectTextStyle.size = 13;
+        //     // Populate the dropdown menu with options
+        //     for (var index:int = 0; index < languages.length; index++)
+        //     {
+        //         var langSelectText:TextField = new TextField();
+        //         var langSelectTextStyle:TextFormat = new TextFormat();
+        //         langSelectTextStyle.font = "Groboldov";
+        //         langSelectTextStyle.size = 13;
 
-                langSelectText.embedFonts = true;
-                langSelectText.textColor = WHITE;
-                langSelectText.defaultTextFormat = langSelectTextStyle;
-                langSelectText.text = languages[index].toLocaleUpperCase();
-                langSelectText.y = index * 30;
-                langSelectText.width = 200;
-                langSelectText.selectable = false;
-                langSelectText.antiAliasType = AntiAliasType.NORMAL;
-                langSelectText.addEventListener(MouseEvent.CLICK, langSelectClickHandler);
-                mousePointerCursor(langSelectText);
-                dropdownMenu.addChild(langSelectText);
-            }
+        //         langSelectText.embedFonts = true;
+        //         langSelectText.textColor = WHITE;
+        //         langSelectText.defaultTextFormat = langSelectTextStyle;
+        //         langSelectText.text = languages[index].toLocaleUpperCase();
+        //         langSelectText.y = index * 30;
+        //         langSelectText.width = 200;
+        //         langSelectText.selectable = false;
+        //         langSelectText.antiAliasType = AntiAliasType.NORMAL;
+        //         langSelectText.addEventListener(MouseEvent.CLICK, langSelectClickHandler);
+        //         mousePointerCursor(langSelectText);
+        //         dropdownMenu.addChild(langSelectText);
+        //     }
 
-            // Handle click events to toggle the dropdown menu visibility
-            selectField.addEventListener(MouseEvent.CLICK, function(event:MouseEvent):void
-                {
-                    dropdownMenu.visible = !dropdownMenu.visible;
-                });
+        //     // Handle click events to toggle the dropdown menu visibility
+        //     selectField.addEventListener(MouseEvent.CLICK, function(event:MouseEvent):void
+		// 	{
+		// 		dropdownMenu.visible = !dropdownMenu.visible;
+		// 	});
 
-            dropdownMenu.y = 50;
+        //     dropdownMenu.y = 50;
 
-            return selectField;
-        }
+        //     return selectField;
+        // }
 
         // Function to handle language select event
-        private function langSelectClickHandler(event:MouseEvent):void
-        {
-            var selectedLanguage:String = event.currentTarget.text;
-            defaultText.text = selectedLanguage;
-            defaultText.width = 200;
-            dropdownMenu.visible = true;
+        // private function langSelectClickHandler(event:MouseEvent):void
+        // {
+        //     var selectedLanguage:String = event.currentTarget.text;
+        //     defaultText.text = selectedLanguage;
+        //     defaultText.width = 200;
+        //     dropdownMenu.visible = true;
 
-            var textWidth:Number = defaultText.textWidth;
-            var newSelectWidth:Number = textWidth + 23;
+        //     var textWidth:Number = defaultText.textWidth;
+        //     var newSelectWidth:Number = textWidth + 23;
 
-            selectField.graphics.clear();
-            selectField.graphics.lineStyle(1, WHITE);
-            selectField.graphics.drawRect(0, 0, newSelectWidth, 30);
+        //     selectField.graphics.clear();
+        //     selectField.graphics.lineStyle(1, WHITE);
+        //     selectField.graphics.drawRect(0, 0, newSelectWidth, 30);
 
-            // Iterate over the supported languages and pass them to KEYS.Setup()
-            // to grab available language file.
-            for each (var language:String in languages)
-            {
-                if (selectedLanguage.toLocaleLowerCase() === language.toLocaleLowerCase())
-                {
-                    KEYS.Setup(language.toLowerCase());
-                    return;
-                }
-            }
-            KEYS.Setup("english");
-        }
+        //     // Iterate over the supported languages and pass them to KEYS.Setup()
+        //     // to grab available language file.
+        //     for each (var language:String in languages)
+        //     {
+        //         if (selectedLanguage.toLocaleLowerCase() === language.toLocaleLowerCase())
+        //         {
+        //             KEYS.Setup(language.toLowerCase());
+        //             return;
+        //         }
+        //     }
+        //     KEYS.Setup("english");
+        // }
 
         private function CreateBorder(input:TextField):Sprite
         {
@@ -600,6 +623,63 @@ package com.auth
 
             formContainer.addChild(borderContainer);
             return borderContainer;
+        }
+
+        private function createRememberPasswordCheckbox():Checkbox
+        {
+            var checkbox:Checkbox = new Checkbox();
+            checkbox.Checked = false;
+            checkbox.x = 0;
+            checkbox.y = 4;
+            checkbox.addEventListener(Checkbox.CHECK_EVENT, rememberPasswordToggleHandler);
+
+            var label:TextField = new TextField();
+            var labelFormat:TextFormat = new TextFormat();
+            labelFormat.font = "Verdana";
+            labelFormat.size = 14;
+            labelFormat.color = WHITE;
+            label.defaultTextFormat = labelFormat;
+            label.text = "Remember password";
+            label.x = checkbox.width + 5;
+            label.y = 0;
+			label.width = 200;
+            label.selectable = false;
+            label.mouseEnabled = false;
+
+            var checkboxContainer:Sprite = new Sprite();
+            checkboxContainer.addChild(checkbox);
+            checkboxContainer.addChild(label);
+            checkboxContainer.x = 50;
+            checkboxContainer.y = startY + 12;
+            formContainer.addChild(checkboxContainer);
+
+            rememberPasswordLabel = label;
+            startY = checkboxContainer.y + checkbox.height + 18;
+
+            return checkbox;
+        }
+
+        private function rememberPasswordToggleHandler(event:Event):void
+        {
+            if (!rememberPasswordCheckbox)
+                return;
+
+            if (rememberPasswordCheckbox.Checked)
+            {
+                saveJSON("auth.json", {
+                    email: emailValue,
+                    password: passwordValue,
+                    remember_password: true
+                });
+            }
+            else
+            {
+                saveJSON("auth.json", {
+                    email: "",
+                    password: "",
+                    remember_password: false
+                });
+            }
         }
 
         private function createButton():Sprite
@@ -750,6 +830,14 @@ package com.auth
                 {
                     // Authentication call
                     const authInfo:Array = [["email", emailValue], ["password", passwordValue]];
+                    if (rememberPasswordCheckbox && rememberPasswordCheckbox.Checked)
+                    {
+                        saveJSON("auth.json", { email: emailValue, password: passwordValue, remember_password: true });
+                    }
+                    else
+                    {
+                        saveJSON("auth.json", { email: "", password: "", remember_password: false });
+                    }
                     LOGIN.AuthenticateUser(authInfo);
                 }
             }
@@ -876,6 +964,32 @@ package com.auth
             if (this.parent)
                 this.parent.removeChild(this);
         }
+
+		private function saveJSON(file_name:String, data:Object):void
+		{
+			var file:File = File.applicationStorageDirectory.resolvePath(file_name);
+			var stream:FileStream = new FileStream();
+			try
+			{
+				stream.open(file, FileMode.WRITE);
+				stream.writeUTFBytes(JSON.stringify(data));
+			}
+			finally
+			{
+				stream.close();
+			}
+		}
+
+		private function loadJSON(file_name:String):Object
+		{
+			var file:File = File.applicationStorageDirectory.resolvePath(file_name);
+			if(!file.exists) return null;
+			var stream:FileStream = new FileStream();
+			stream.open(file, FileMode.READ);
+			var json:String = stream.readUTFBytes(stream.bytesAvailable);
+			stream.close();
+			return JSON.parse(json);
+		}
 
     }
 }

@@ -7,7 +7,6 @@ import { getCellsLimiter, registerLimiter } from "./middleware/rateLimiters.js";
 import { Status } from "./enums/StatusCodes.js";
 
 import { init } from "./controllers/init.js";
-import { supportedLangs } from "./controllers/supportedLangs.js";
 
 import { login } from "./controllers/auth/login.js";
 import { register } from "./controllers/auth/register.js";
@@ -67,7 +66,6 @@ router.post("/api/:apiVersion/player/getinfo", apiVersion, logRequest, login);
 router.post("/api/:apiVersion/player/register", apiVersion, registerLimiter, logRequest, register);
 router.post("/api/:apiVersion/player/forgotPassword", apiVersion, forgotPassword);
 router.post("/api/:apiVersion/player/reset-password", resetPassword);
-router.get("/api/:apiVersion/supportedLangs", apiVersion, logRequest, supportedLangs);
 
 /**  ────────────────────────────────────────────────
 * 📦 Base

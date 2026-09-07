@@ -37,14 +37,10 @@ package
    import flash.utils.*;
    import gs.TweenLite;
    import gs.easing.Cubic;
-   import flash.ui.Keyboard;
-   import flash.events.KeyboardEvent;
 
    public class GLOBAL
    {
       public static var serverUrl:String = CONFIG::SERVER_URL;
-
-      public static var cdnUrl:String = CONFIG::CDN_URL;
 
       public static var apiVersionSuffix:String = "ngc-v1.5.0";
 
@@ -135,10 +131,6 @@ package
       public static var _apiURL:String;
 
       public static var _gameURL:String;
-
-      public static var _storageURL:String;
-
-      public static var languageUrl:String;
 
       public static var _allianceURL:String;
 
@@ -569,11 +561,6 @@ package
        */
       public static function LanguageSetup():void
       {
-
-         var token:String = GAME.sharedObj.data.token;
-         var language:String = GAME.sharedObj.data.language;
-         KEYS._storageURL = GLOBAL.languageUrl;
-         KEYS.GetSupportedLanguages();
          KEYS.Setup("english");
       }
 

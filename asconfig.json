@@ -22,15 +22,12 @@
 			"client"
 		],
 		"library-path": [
-			"./playerglobal.swc"
+			"./playerglobal.swc",
+			"./airglobal.swc"
 		],
 		"define": [
 			{
 				"name": "CONFIG::SERVER_URL",
-				"value": "'https://vps-b7b57ea9.vps.ovh.net/'"
-			},
-			{
-				"name": "CONFIG::CDN_URL",
 				"value": "'https://vps-b7b57ea9.vps.ovh.net/'"
 			}
 		]

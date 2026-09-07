@@ -10,7 +10,6 @@ import { EntityManager, PostgreSqlDriver } from "@mikro-orm/postgresql";
 import { logger } from "./utils/logger.js";
 import { ascii_node } from "./utils/ascii_art.js";
 import { ErrorInterceptor } from "./middleware/clientSafeError.js";
-import { processLanguagesFile } from "./middleware/processLanguageFile.js";
 import { logMissingAssets, morganLogging } from "./middleware/morganLogging.js";
 import { corsCacheControl } from "./middleware/corsCacheControlSetup.js";
 import { Env } from "./enums/Env.js";
@@ -65,7 +64,6 @@ redis.onclose = (err) => logger.error(`Redis disconnected: ${err.message}`);
   if (process.env.ENV !== Env.LOCAL) app.use(morganLogging);
 
   // Serve static files
-  app.use(processLanguagesFile);
   app.use(serve("public/"));
 
   process.on("unhandledRejection", (reason, promise) => {
@@ -81,9 +79,6 @@ redis.onclose = (err) => logger.error(`Redis disconnected: ${err.message}`);
   await initAnticheat();
 
   app.listen(PORT, () => {
-    console.log(`
-${ascii_node}
-Server running on: ${BASE_URL}:${PORT}
-    `);
+    console.log(`${ascii_node} Server running on: ${BASE_URL}:${PORT}`);
   });
 })().catch((e) => logger.error(`Startup failed: ${e}`));

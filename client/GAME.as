@@ -59,7 +59,6 @@ package
 
          var serverUrl:String = GLOBAL.serverUrl;
          var apiVersionSuffix:String = GLOBAL.apiVersionSuffix + "/";
-         var cdnUrl:String = GLOBAL.cdnUrl;
          super();
          _instance = this;
          GLOBAL._local = !ExternalInterface.available;
@@ -76,9 +75,6 @@ package
                urls._mapURL = serverUrl + "worldmapv2/";
                urls.map3url = serverUrl + "worldmapv3/";
                urls._allianceURL = serverUrl + "alliance/";
-
-               urls.languageurl = cdnUrl + "gamestage/assets/";
-               urls._storageURL = cdnUrl + "assets/";
 			   
                urls._gameURL = serverUrl + "";
                urls._appid = serverUrl + "";
@@ -136,8 +132,6 @@ package
          GLOBAL._infBaseURL = urls.infbaseurl;
          GLOBAL._apiURL = urls._apiURL;
          GLOBAL._gameURL = urls._gameURL;
-         GLOBAL._storageURL = urls._storageURL;
-         GLOBAL.languageUrl = urls.languageurl;
          GLOBAL._allianceURL = urls._allianceURL;
          GLOBAL._statsURL = urls._statsURL;
          GLOBAL._mapURL = urls._mapURL;

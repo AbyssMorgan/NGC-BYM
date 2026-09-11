@@ -1615,24 +1615,9 @@ package
 							}
 							if (attackObj.pic)
 							{
-								if(GLOBAL.mode == GLOBAL.e_BASE_MODE.WMATTACK || GLOBAL.mode == GLOBAL.e_BASE_MODE.WMVIEW){
-									ImageCache.GetImageWithCallBack(attackObj.pic, function(param1:String, param2:BitmapData) : void {
-										popupMC.mcPic.mcBG.addChild(new Bitmap(param2));
-									})
-								} else {
-									onImageLoad = function(param1:Event):void {
-										loader.height = 50;
-										loader.width = 50;
-									};
-									LoadImageError = function(param1:IOErrorEvent):void {
-
-									};
-									loader = new Loader();
-									loader.contentLoaderInfo.addEventListener(IOErrorEvent.IO_ERROR, LoadImageError, false, 0, true);
-									loader.contentLoaderInfo.addEventListener(Event.COMPLETE, onImageLoad);
-									popupMC.mcPic.mcBG.addChild(loader);
-									loader.load(new URLRequest(attackObj.pic));
-								}
+								ImageCache.GetImageWithCallBack(attackObj.pic, function(param1:String, param2:BitmapData) : void {
+									popupMC.mcPic.mcBG.addChild(new Bitmap(param2));
+								})
 							}
 							if (attackObj.friend == 1)
 							{
@@ -1659,8 +1644,13 @@ package
 							POPUPS.Push(popupMC);
 						}
 					}
-					_ownerName = GLOBAL.mode == GLOBAL.e_BASE_MODE.WMATTACK || GLOBAL.mode == GLOBAL.e_BASE_MODE.WMVIEW ? String(TRIBES.TribeForBaseID(_wmID, 0, _tribeIndex).name) : String(serverData.name);
-					_ownerPic = GLOBAL.mode == GLOBAL.e_BASE_MODE.WMATTACK || GLOBAL.mode == GLOBAL.e_BASE_MODE.WMVIEW ? String(TRIBES.TribeForBaseID(_wmID, 0, _tribeIndex).profilepic) : String("worldmap/rollover/player.png");
+					if(GLOBAL.mode == GLOBAL.e_BASE_MODE.WMATTACK || GLOBAL.mode == GLOBAL.e_BASE_MODE.WMVIEW){
+						_ownerName = String(TRIBES.TribeForBaseID(_wmID, 0, _tribeIndex).name);
+						_ownerPic = String(TRIBES.TribeForBaseID(_wmID, 0, _tribeIndex).profilepic);
+					} else {
+						_ownerName = String(serverData.name);
+						_ownerPic = "worldmap/rollover/player.png";
+					}
 					if (!GLOBAL._flags.viximo && !GLOBAL._flags.kongregate)
 					{
 						if (serverData.promotiontimer)
@@ -2443,18 +2433,6 @@ package
 			if (isMainYard)
 			{
 				CREATURELOCKER.Tick();
-			}
-			if (_tempGifts)
-			{
-				GIFTS.Process(_tempGifts);
-			}
-			if (_tempSentGifts)
-			{
-				GIFTS.ProcessAcceptedGifts(_tempSentGifts);
-			}
-			if (_tempSentInvites)
-			{
-				GIFTS.ProcessAcceptedInvites(_tempSentInvites);
 			}
 			UPDATES.Catchup();
 			HOUSING.Cull();
@@ -3965,18 +3943,6 @@ package
 				{
 					saveData.monsterupdate = JSON.stringify(GLOBAL.attackingPlayer.exportMonsters());
 				}
-			}
-			if (GIFTS._giftsAccepted.length > 0)
-			{
-				saveData.gifts = JSON.stringify(GIFTS._giftsAccepted);
-			}
-			if (GIFTS._sentGiftsAccepted.length > 0)
-			{
-				saveData.sentgifts = JSON.stringify(GIFTS._sentGiftsAccepted);
-			}
-			if (GIFTS._sentInvitesAccepted.length > 0)
-			{
-				saveData.sentinvites = JSON.stringify(GIFTS._sentInvitesAccepted);
 			}
 			if (_pendingPurchase.length > 0)
 			{

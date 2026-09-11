@@ -172,7 +172,6 @@ package
             GLOBAL.player.ID = serverData.userid;
             GLOBAL.player.name = serverData.username;
             GLOBAL.player.lastName = serverData.last_name;
-            GLOBAL.player.picture = serverData.pic_square;
             GLOBAL.player.timePlayed = serverData.timeplayed;
             GLOBAL.player.email = serverData.email;
             _playerID = serverData.userid;

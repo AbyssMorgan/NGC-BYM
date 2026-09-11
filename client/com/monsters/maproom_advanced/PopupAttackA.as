@@ -34,8 +34,6 @@ package com.monsters.maproom_advanced
 
       private var _enabled:Boolean = false;
 
-      private var _profilePic:Loader;
-
       private var _profileBmp:Bitmap;
 
       private var _protectedInRange:Boolean;
@@ -537,40 +535,14 @@ package com.monsters.maproom_advanced
 			var onImageLoad:Function = null;
 			var imageComplete:Function = null;
 			var LoadImageError:Function = null;
-			onImageLoad = function(param1:Event):void
-			{
-				if (_profilePic)
-				{
-					_profilePic.height = 50;
-					_profilePic.width = 50;
-				}
-			};
 			imageComplete = function(param1:String, param2:BitmapData):void
 			{
 				_profileBmp = new Bitmap(param2);
 				mcProfilePic.mcBG.addChild(_profileBmp);
 			};
-			LoadImageError = function(param1:IOErrorEvent):void
-			{
-			};
-			if (!this._cell._facebookID && this._cell._base != 1 && !this._cell._pic_square)
-			{
-				return;
-			}
 			if (this._cell._base > 1)
 			{
-				this._profilePic = new Loader();
-				this._profilePic.contentLoaderInfo.addEventListener(IOErrorEvent.IO_ERROR, LoadImageError, false, 0, true);
-				this._profilePic.contentLoaderInfo.addEventListener(Event.COMPLETE, onImageLoad);
-				if (Boolean(!GLOBAL._flags.viximo) && Boolean(this._cell._pic_square))
-				{
-					this._profilePic.load(new URLRequest(this._cell._pic_square));
-				}
-				else
-				{
-					this._profilePic.load(new URLRequest("http://graph.facebook.com/" + this._cell._facebookID + "/picture"));
-				}
-				this.mcProfilePic.mcBG.addChild(this._profilePic);
+				ImageCache.GetImageWithCallBack("worldmap/rollover/player.png", imageComplete);
 			}
 			else
 			{

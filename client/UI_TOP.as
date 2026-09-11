@@ -616,26 +616,6 @@ package
 			var mode:String = GLOBAL.mode;
 			if(GLOBAL.mode != GLOBAL.e_BASE_MODE.BUILD && GLOBAL.mode != GLOBAL.e_BASE_MODE.IBUILD)
 			{
-				// if(GLOBAL._loadmode == "wmattack" || GLOBAL._loadmode == "wmview" || GLOBAL._loadmode == "iwmattack" || GLOBAL._loadmode == "iwmview")
-				// {
-				// 	ImageCache.GetImageWithCallBack(BASE._ownerPic, function(param1:String, param2:BitmapData) : void {
-				// 		mc.mcPic.mcBG.addChild(new Bitmap(param2));
-				// 	})
-				// }
-				// else
-				// {
-				// 	onImageLoad = function(param1:Event):void {
-				// 		loader.width = loader.height = 50;
-				// 		mc.mcPic.mcBG.addChild(loader);
-				// 	};
-				// 	LoadImageError = function(param1:IOErrorEvent):void {
-
-				// 	};
-				// 	loader = new Loader();
-				// 	loader.contentLoaderInfo.addEventListener(IOErrorEvent.IO_ERROR,LoadImageError,false,0,true);
-				// 	loader.contentLoaderInfo.addEventListener(Event.COMPLETE,onImageLoad);
-				// 	loader.load(new URLRequest(BASE._ownerPic));
-				// }
 				ImageCache.GetImageWithCallBack(BASE._ownerPic, function(param1:String, param2:BitmapData) : void {
 					mc.mcPic.mcBG.addChild(new Bitmap(param2));
 				})

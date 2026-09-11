@@ -28,8 +28,6 @@ package com.monsters.player
       
       public var lastName:String;
       
-      public var picture:String;
-      
       public var timePlayed:int;
       
       public var level:int;

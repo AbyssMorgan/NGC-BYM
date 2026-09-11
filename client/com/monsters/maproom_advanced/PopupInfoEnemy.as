@@ -49,8 +49,6 @@ package com.monsters.maproom_advanced
       
       private var _message:Message;
       
-      private var _profilePic:Loader;
-      
       private var _profileBmp:Bitmap;
       
       public function PopupInfoEnemy()
@@ -135,11 +133,6 @@ package com.monsters.maproom_advanced
       
       public function Hide(param1:MouseEvent = null) : void
       {
-         if(Boolean(this._profilePic) && Boolean(this._profilePic.parent))
-         {
-            this._profilePic.parent.removeChild(this._profilePic);
-            this._profilePic = null;
-         }
          if(Boolean(this._profileBmp) && Boolean(this._profileBmp.parent))
          {
             this._profileBmp.parent.removeChild(this._profileBmp);
@@ -469,47 +462,16 @@ package com.monsters.maproom_advanced
       
 		private function ProfilePic() : void
 		{
-			var onImageLoad:Function = null;
 			var imageComplete:Function = null;
 			var LoadImageError:Function = null;
-			onImageLoad = function(param1:Event):void
-			{
-				if(_profilePic)
-				{
-					_profilePic.width = _profilePic.height = 50;
-				}
-			};
 			imageComplete = function(param1:String, param2:BitmapData):void
 			{
 				_profileBmp = new Bitmap(param2);
 				mcProfilePic.mcBG.addChild(_profileBmp);
 			};
-			LoadImageError = function(param1:IOErrorEvent):void
-			{
-			};
-			if(!this._cell._facebookID && this._cell._base != 1 && !this._cell._pic_square)
-			{
-				return;
-			}
 			if(this._cell._base > 1)
 			{
-				this._profilePic = new Loader();
-				if(!GLOBAL._flags.viximo)
-				{
-					this._profilePic.contentLoaderInfo.addEventListener(IOErrorEvent.IO_ERROR,LoadImageError,false,0,true);
-					this._profilePic.contentLoaderInfo.addEventListener(Event.COMPLETE,onImageLoad);
-					if(this._cell._pic_square)
-					{
-						this._profilePic.load(new URLRequest(this._cell._pic_square));
-					}
-				}
-				else
-				{
-					this._profilePic.contentLoaderInfo.addEventListener(IOErrorEvent.IO_ERROR,LoadImageError,false,0,true);
-					this._profilePic.contentLoaderInfo.addEventListener(Event.COMPLETE,onImageLoad);
-					this._profilePic.load(new URLRequest("http://graph.facebook.com/" + this._cell._facebookID + "/picture"));
-				}
-				this.mcProfilePic.mcBG.addChild(this._profilePic);
+				ImageCache.GetImageWithCallBack("worldmap/rollover/player.png", imageComplete);
 			}
 			else
 			{

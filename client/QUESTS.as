@@ -8859,8 +8859,8 @@ package
 			var _loc6_:popup_quest;
 			(_loc6_ = new popup_quest()).tA.autoSize = TextFieldAutoSize.LEFT;
 			_loc6_.tA.htmlText = KEYS.Get("pop_questcomplete_body",{
-			"v1":param2,
-			"v2":param3
+				"v1":param2,
+				"v2":param3
 			});
 			_loc6_.bAction.SetupKey("pop_questcomplete_collect_btn");
 			_loc6_.bAction.addEventListener(MouseEvent.CLICK,Collect(param1,true));
@@ -8868,14 +8868,14 @@ package
 			var _loc7_:int = _loc6_.tA.height + 60;
 			if(param4 != "")
 			{
-			_loc7_ += 175;
-			_loc6_.mcImage.y = _loc6_.tA.y + _loc6_.tA.height + 10;
+				_loc7_ += 175;
+				_loc6_.mcImage.y = _loc6_.tA.y + _loc6_.tA.height + 10;
 			}
 			_loc6_.mcBG.height = _loc7_;
 			_loc6_.bAction.y = _loc6_.mcBG.y + _loc7_ - 40;
 			if(TUTORIAL._stage < 200)
 			{
-			_loc6_.bClose.visible = false;
+				_loc6_.bClose.visible = false;
 			}
 			POPUPS.Push(_loc6_,null,null,null,param4);
 		}
@@ -8886,7 +8886,7 @@ package
 			var popup:Boolean = param2;
 			return function(param1:MouseEvent = null):void
 			{
-			CollectB(questID,popup);
+				CollectB(questID,popup);
 			};
 		}
 		

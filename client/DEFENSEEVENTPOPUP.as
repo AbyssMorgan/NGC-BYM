@@ -58,7 +58,6 @@ package
       public function rsvpDown(param1:MouseEvent) : void
       {
          this.Hide();
-         // GLOBAL.gotoURL("https://www.facebook.com/events/211384668938961/",null,true,null);
          GLOBAL.gotoURL("https://backyard-monsters.fandom.com/wiki/Wild_Monster_Invasion_2",null,true,null);
       }
       

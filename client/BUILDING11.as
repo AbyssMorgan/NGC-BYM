@@ -59,7 +59,6 @@ package
          var _loc1_:Array = null;
          if(!MapRoomManager.instance.isInMapRoom3 && GLOBAL.mode == GLOBAL._loadmode && GLOBAL._flags.maproom2)
          {
-            ACHIEVEMENTS.Check("map2",1);
             if(this.callPending)
             {
                return;
@@ -319,10 +318,6 @@ package
          {
             _lvl.Set(2);
 			MapRoomManager.instance.UpgradeToMapRoom3();
-         }
-         if(_lvl.Get() > 1)
-         {
-            ACHIEVEMENTS.Check("map2",1);
          }
          if(_countdownBuild.Get() == 0)
          {

@@ -869,61 +869,58 @@ package com.monsters.monsters.champions
             _looking = false;
          }
       }
-      
-      public function levelSet(param1:int, param2:int = 0) : void
-      {
-         var _loc3_:Object = null;
-         if(param1 != this._level.Get())
-         {
-            this._level = new SecNum(param1);
-            if(this is Krallen)
-            {
-               this._spriteID = _creatureID + "_" + this._powerLevel.Get();
-            }
-            else
-            {
-               this._spriteID = _creatureID + "_" + param1;
-            }
-            if(_graphicMC.parent)
-            {
-               _graphicMC.parent.removeChild(_graphicMC);
-            }
-            SPRITES.SetupSprite(this._spriteID);
-            _loc3_ = SPRITES.GetSpriteDescriptor(this._spriteID);
-            _graphic = new BitmapData(_loc3_.width,_loc3_.height,true,16777215);
-            _graphicMC = !BYMConfig.instance.RENDERER_ON ? graphic.addChild(new Bitmap(_graphic)) as Bitmap : new Bitmap(_graphic);
-            if(BYMConfig.instance.RENDERER_ON && Boolean(_rasterData))
-            {
-               _rasterData.data = _graphic;
-            }
-            if(this is Krallen)
-            {
-               _graphicMC.x = CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._powerLevel.Get(),"offset_x");
-               _graphicMC.y = CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._powerLevel.Get(),"offset_y");
-            }
-            else
-            {
-               _graphicMC.x = CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._level.Get(),"offset_x");
-               _graphicMC.y = CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._level.Get(),"offset_y");
-            }
-            this._feeds = new SecNum(0);
-            this._feedTime = new SecNum(int(GLOBAL.Timestamp() + CHAMPIONCAGE.GetGuardianProperty(_creatureID,param1,"feedTime")));
-            LOGGER.Log("fed","level " + this._level.Get());
-            maxHealthProperty.value = CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._level.Get(),"health");
-            moveSpeedProperty.value = CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._level.Get(),"speed") / 2;
-            this._regen = CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._level.Get(),"healtime");
-            setHealth(maxHealth);
-            damageProperty.value = int(CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._level.Get(),"damage"));
-            m_range = CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._level.Get(),"range");
-            _movement = CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._level.Get(),"movement");
-            if(param1 >= 10)
-            {
-               QUESTS.Check("upgrade_champ" + _creatureID.substr(1,1),1);
-            }
-            LOGGER.Stat([57,_creatureID,param2,this._level.Get()]);
-            BASE.Save();
-         }
-      }
+		
+		public function levelSet(param1:int, param2:int = 0) : void
+		{
+			var _loc3_:Object = null;
+			if(param1 != this._level.Get())
+			{
+				this._level = new SecNum(param1);
+				if(this is Krallen)
+				{
+					this._spriteID = _creatureID + "_" + this._powerLevel.Get();
+				}
+				else
+				{
+					this._spriteID = _creatureID + "_" + param1;
+				}
+				if(_graphicMC.parent)
+				{
+					_graphicMC.parent.removeChild(_graphicMC);
+				}
+				SPRITES.SetupSprite(this._spriteID);
+				_loc3_ = SPRITES.GetSpriteDescriptor(this._spriteID);
+				_graphic = new BitmapData(_loc3_.width,_loc3_.height,true,16777215);
+				_graphicMC = !BYMConfig.instance.RENDERER_ON ? graphic.addChild(new Bitmap(_graphic)) as Bitmap : new Bitmap(_graphic);
+				if(BYMConfig.instance.RENDERER_ON && Boolean(_rasterData))
+				{
+					_rasterData.data = _graphic;
+				}
+				if(this is Krallen)
+				{
+					_graphicMC.x = CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._powerLevel.Get(),"offset_x");
+					_graphicMC.y = CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._powerLevel.Get(),"offset_y");
+				}
+				else
+				{
+					_graphicMC.x = CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._level.Get(),"offset_x");
+					_graphicMC.y = CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._level.Get(),"offset_y");
+				}
+				this._feeds = new SecNum(0);
+				this._feedTime = new SecNum(int(GLOBAL.Timestamp() + CHAMPIONCAGE.GetGuardianProperty(_creatureID,param1,"feedTime")));
+				LOGGER.Log("fed","level " + this._level.Get());
+				maxHealthProperty.value = CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._level.Get(),"health");
+				moveSpeedProperty.value = CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._level.Get(),"speed") / 2;
+				this._regen = CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._level.Get(),"healtime");
+				setHealth(maxHealth);
+				damageProperty.value = int(CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._level.Get(),"damage"));
+				m_range = CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._level.Get(),"range");
+				_movement = CHAMPIONCAGE.GetGuardianProperty(_creatureID,this._level.Get(),"movement");
+				QUESTS.Check("champion_" + _creatureID.substr(1,1), param1);
+				LOGGER.Stat([57,_creatureID,param2,this._level.Get()]);
+				BASE.Save();
+			}
+		}
       
       protected function tickBAttack() : void
       {

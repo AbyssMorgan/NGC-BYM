@@ -474,7 +474,6 @@ package com.monsters.monsters.creeps
             });
          }
          PATHING.GetPath(_tmpPoint,new Rectangle(_targetBuilding._mc.x,_targetBuilding._mc.y,80,80),setWaypoints,true);
-         GLOBAL._bJuicer.Prep(_creatureID);
       }
       
       public function changeModeHeal() : void

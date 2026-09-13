@@ -38,14 +38,10 @@ package com.monsters.missions
          this._missionKey = this._missionObject.id;
          nametxt = KEYS.Get(this._missionObject.name,this._missionObject.keyvars);
          description = KEYS.Get(this._missionObject.description,this._missionObject.keyvars);
-         description = description.replace("#installsgenerated#",BASE._installsGenerated);
 		 if(this._missionObject.rules.hasOwnProperty('level_up')){
          	description = description.replace("#level_required#",this._missionObject.rules.level_up);
          	nametxt = nametxt.replace("#level_required#",this._missionObject.rules.level_up);
 		 }
-         description = description.replace("#mushroomspicked#",QUESTS._global.mushroomspicked);
-         description = description.replace("#goldmushroomspicked#",QUESTS._global.goldmushroomspicked);
-         description = description.replace("#monstersblended#",QUESTS._global.monstersblended);
 		 description = description.replace("#assault_to_1_0#",QUESTS._global.assault_to_1_0);
 		 description = description.replace("#assault_to_1_1#",QUESTS._global.assault_to_1_1);
 		 description = description.replace("#assault_to_1_2#",QUESTS._global.assault_to_1_2);
@@ -62,8 +58,6 @@ package com.monsters.missions
          description = description.replace("#assault_de#",QUESTS._global.assault_de);
          description = description.replace("#assault_towers#",QUESTS._global.assault_towers);
          description = description.replace("#assault_monsters#",QUESTS._global.assault_monsters);
-         description = description.replace("#giftssent#",QUESTS._global.bonus_gifts);
-         description = description.replace("#sentgiftsaccepted#",QUESTS._global.gift_accept);
          tName.htmlText = "<b>" + nametxt + "</b>";
          if(description.length > 50)
          {

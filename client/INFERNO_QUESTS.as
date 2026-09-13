@@ -287,21 +287,6 @@ package
 			"streamImage":"quests/resource_pod.png",
 			"rules":{"b6lvl":2}
 		},{
-			"order":17,
-			"list":true,
-			"reward": [new SecNum(1000), new SecNum(1000), new SecNum(1000), new SecNum(1000), new SecNum(0)],
-			"id":"IBK1",
-			"group":0,
-			"name":"q_bk1_name",
-			"description":"q_bk1_description",
-			"hint":"q_bk1_hint",
-			"questimage":"gatherer.png",
-			"questicon":"icon_wallstreet.png",
-			"streamTitle":"q_c0_streamtitle",
-			"streamDescription":"q_c0_streamdescription",
-			"streamImage":"quests/gatherer.png",
-			"rules":{"singleclickbank":1000}
-		},{
 			"order":18,
 			"prereq":"IC9",
 			"list":true,
@@ -567,22 +552,6 @@ package
 			"streamImage":"quests/quake_tower.png",
 			"rules":{"b129lvl":1}
 		},{
-			"order":31,
-			"prereq":"IBK1",
-			"list":true,
-			"reward": [new SecNum(2000), new SecNum(2000), new SecNum(2000), new SecNum(2000), new SecNum(0)],
-			"id":"IBK2",
-			"group":0,
-			"name":"q_bk2_name",
-			"description":"q_bk2_description",
-			"hint":"q_bk2_hint",
-			"questimage":"trenchcoat.png",
-			"questicon":"icon_wallstreet.png",
-			"streamTitle":"q_c0_streamtitle",
-			"streamDescription":"q_c0_streamdescription",
-			"streamImage":"quests/trenchcoat.png",
-			"rules":{"singleclickbank":20000}
-		},{
 			"order":32,
 			"prereq":"IC14",
 			"list":true,
@@ -727,38 +696,6 @@ package
 			"rules":{"UNLOCK":"IC8"},
 			"reward_creatureid":"IC8",
 			"monster_reward":2
-		},{
-			"order":39,
-			"prereq":"IBK2",
-			"list":true,
-			"reward": [new SecNum(10000), new SecNum(10000), new SecNum(10000), new SecNum(10000), new SecNum(0)],
-			"id":"IBK3",
-			"group":0,
-			"name":"q_bk3_name",
-			"description":"q_bk3_description",
-			"hint":"q_bk3_hint",
-			"questimage":"wallstreet.png",
-			"questicon":"icon_wallstreet.png",
-			"streamTitle":"q_c0_streamtitle",
-			"streamDescription":"q_c0_streamdescription",
-			"streamImage":"quests/wallstreet.png",
-			"rules":{"singleclickbank":100000}
-		},{
-			"order":40,
-			"prereq":"IBK3",
-			"list":true,
-			"reward": [new SecNum(50000), new SecNum(50000), new SecNum(50000), new SecNum(50000), new SecNum(0)],
-			"id":"IBK4",
-			"group":0,
-			"name":"q_bk4_name",
-			"description":"q_bk4_description",
-			"hint":"q_bk4_hint",
-			"questimage":"mogul.png",
-			"questicon":"icon_mogul.png",
-			"streamTitle":"q_c0_streamtitle",
-			"streamDescription":"q_c0_streamdescription",
-			"streamImage":"quests/mogul.png",
-			"rules":{"singleclickbank":500000}
 		}];
 		
 		

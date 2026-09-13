@@ -450,7 +450,7 @@ package
 				_stored.Set(Math.min(_stored.Get() + (this.productionValue * totalIterations),this.productionCapacity));
 				if(_stored.Get() >= this.productionCapacity)
 				{
-				_producing = 0;
+					_producing = 0;
 				}
 			}
 			if(_producing)
@@ -482,6 +482,7 @@ package
 		
 		override public function Bank() : void
 		{
+			if(BASE._saving) return;
 			var _loc3_:SecNum = null;
 			var _loc1_:SecNum = new SecNum(_stored.Get());
 			var _loc2_:SecNum = new SecNum(_buildingProps.capacity[_lvl.Get() - 1]);
@@ -498,14 +499,6 @@ package
 					BASE.PointsAdd(_loc3_.Get());
 				}
 				BASE.CalcResources();
-				if(_loc1_.Get() > QUESTS._global.singleclickbank)
-				{
-					QUESTS._global.singleclickbank = _loc1_.Get();
-				}
-				if(!GLOBAL._catchup)
-				{
-					QUESTS.Check();
-				}
 				LOGGER.Stat([32,this.resource_index,_loc1_.Get()]);
 			}
 		}

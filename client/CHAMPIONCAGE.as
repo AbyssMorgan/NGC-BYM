@@ -1068,125 +1068,121 @@ package
          }
       }
       
-      override public function Setup(param1:Object) : void
-      {
-         super.Setup(param1);
-         var _loc2_:Vector.<Object> = BASE._guardianData;
-         var _loc3_:int = 0;
-         while(_loc3_ < BASE._guardianData.length)
-         {
-            if(_loc2_[_loc3_] && _loc2_[_loc3_].t && _loc2_[_loc3_].status == ChampionBase.k_CHAMPION_STATUS_NORMAL)
-            {
-               this.SpawnGuardian(BASE._guardianData[_loc3_].l.Get(),BASE._guardianData[_loc3_].fd,BASE._guardianData[_loc3_].ft,BASE._guardianData[_loc3_].t,BASE._guardianData[_loc3_].hp.Get(),BASE._guardianData[_loc3_].nm,BASE._guardianData[_loc3_].fb.Get(),BASE._guardianData[_loc3_].pl.Get());
-               if(CREATURES._guardian && isBasicGuardian("G" + CREATURES._guardian._type) && BASE._guardianData[_loc3_].l.Get() == 10)
-               {
-                  ACHIEVEMENTS.Check("upgrade_champ" + CREATURES._guardian._type,1);
-               }
-            }
-            _loc3_++;
-         }
-      }
+		override public function Setup(param1:Object) : void
+		{
+			super.Setup(param1);
+			var _loc2_:Vector.<Object> = BASE._guardianData;
+			var _loc3_:int = 0;
+			while(_loc3_ < BASE._guardianData.length)
+			{
+				if(_loc2_[_loc3_] && _loc2_[_loc3_].t && _loc2_[_loc3_].status == ChampionBase.k_CHAMPION_STATUS_NORMAL)
+				{
+					this.SpawnGuardian(BASE._guardianData[_loc3_].l.Get(),BASE._guardianData[_loc3_].fd,BASE._guardianData[_loc3_].ft,BASE._guardianData[_loc3_].t,BASE._guardianData[_loc3_].hp.Get(),BASE._guardianData[_loc3_].nm,BASE._guardianData[_loc3_].fb.Get(),BASE._guardianData[_loc3_].pl.Get());
+				}
+				_loc3_++;
+			}
+		}
       
-      override public function Tick(param1:int) : void
-      {
-         super.Tick(param1);
-         if(!GLOBAL._catchup)
-         {
-            if(GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD && (WMATTACK._inProgress || MONSTERBAITER._attacking) || GLOBAL.mode != GLOBAL.e_BASE_MODE.BUILD)
-            {
-               Render("open");
-            }
-            else
-            {
-               Render("");
-            }
-         }
-         if(_open && Boolean(_popup))
-         {
-            _popup.Tick();
-         }
-      }
+		override public function Tick(param1:int) : void
+		{
+			super.Tick(param1);
+			if(!GLOBAL._catchup)
+			{
+				if(GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD && (WMATTACK._inProgress || MONSTERBAITER._attacking) || GLOBAL.mode != GLOBAL.e_BASE_MODE.BUILD)
+				{
+					Render("open");
+				}
+				else
+				{
+					Render("");
+				}
+			}
+			if(_open && Boolean(_popup))
+			{
+				_popup.Tick();
+			}
+		}
       
-      public function SpawnGuardian(param1:int, param2:int, param3:int = 0, param4:int = 1, param5:int = 1000000000, param6:String = "", param7:int = 0, param8:int = 0) : void
-      {
-         var _loc11_:Object = null;
-         var _loc12_:ChampionBase = null;
-         var _loc13_:Boolean = false;
-         var _loc9_:Point = GRID.FromISO(x - 20 + Math.random() * 40,y - 20 + Math.random() * 40);
-         var _loc10_:Class = getGuardianSpawnClass(param4);
-         if(param3 == 0)
-         {
-            param3 = GLOBAL.Timestamp() + GetGuardianProperty("G" + param4,param1,"feedTime");
-         }
-         if(!CREATURES.getGuardian(param4) && this.canSpawnGuardian(param4))
-         {
-            if(_guardians["G" + param4].classType == CLASS_TYPE_BASIC)
-            {
-               CREATURES._guardian = new _loc10_("pen",PointInCage(_loc9_),0,_loc9_,true,this,param1,param2,param3,param4,param5,param7,param8);
-               for each(_loc11_ in BASE._guardianData)
-               {
-                  if(_loc11_.t == param4 && _loc11_.status != ChampionBase.k_CHAMPION_STATUS_NORMAL)
-                  {
-                     _loc11_.status = ChampionBase.k_CHAMPION_STATUS_NORMAL;
-                     break;
-                  }
-               }
-               if(GLOBAL.mode == "build")
-               {
-                  for each(_loc11_ in GLOBAL._playerGuardianData)
-                  {
-                     if(_loc11_.t == param4 && _loc11_.status != ChampionBase.k_CHAMPION_STATUS_NORMAL)
-                     {
-                        _loc11_.status = ChampionBase.k_CHAMPION_STATUS_NORMAL;
-                        break;
-                     }
-                  }
-               }
-               CREATURES._guardian.export();
-               if(param6 != "")
-               {
-                  CREATURES._guardian._name = param6;
-               }
-               if(!BYMConfig.instance.RENDERER_ON)
-               {
-                  MAP._BUILDINGTOPS.addChild(CREATURES._guardian.graphic);
-               }
-            }
-            else
-            {
-               _loc12_ = new _loc10_("pen",PointInCage(_loc9_),0,_loc9_,true,this,param1,param2,param3,param4,param5,param7,param8);
-               _loc13_ = CREATURES.addGuardian(_loc12_);
-               if(_loc13_)
-               {
-                  _loc12_.export();
-                  if(param6 != "")
-                  {
-                     _loc12_._name = param6;
-                  }
-                  if(!BYMConfig.instance.RENDERER_ON)
-                  {
-                     MAP._BUILDINGTOPS.addChild(_loc12_.graphic);
-                  }
-               }
-            }
-         }
-         QUESTS.Check("hatch_champ" + param4,1);
-      }
+		public function SpawnGuardian(param1:int, param2:int, param3:int = 0, param4:int = 1, param5:int = 1000000000, param6:String = "", param7:int = 0, param8:int = 0) : void
+		{
+			var _loc11_:Object = null;
+			var _loc12_:ChampionBase = null;
+			var _loc13_:Boolean = false;
+			var _loc9_:Point = GRID.FromISO(x - 20 + Math.random() * 40,y - 20 + Math.random() * 40);
+			var _loc10_:Class = getGuardianSpawnClass(param4);
+			if(param3 == 0)
+			{
+				param3 = GLOBAL.Timestamp() + GetGuardianProperty("G" + param4,param1,"feedTime");
+			}
+			if(!CREATURES.getGuardian(param4) && this.canSpawnGuardian(param4))
+			{
+				if(_guardians["G" + param4].classType == CLASS_TYPE_BASIC)
+				{
+					CREATURES._guardian = new _loc10_("pen",PointInCage(_loc9_),0,_loc9_,true,this,param1,param2,param3,param4,param5,param7,param8);
+					for each(_loc11_ in BASE._guardianData)
+					{
+						if(_loc11_.t == param4 && _loc11_.status != ChampionBase.k_CHAMPION_STATUS_NORMAL)
+						{
+							_loc11_.status = ChampionBase.k_CHAMPION_STATUS_NORMAL;
+							break;
+						}
+					}
+					if(GLOBAL.mode == "build")
+					{
+						for each(_loc11_ in GLOBAL._playerGuardianData)
+						{
+							if(_loc11_.t == param4 && _loc11_.status != ChampionBase.k_CHAMPION_STATUS_NORMAL)
+							{
+								_loc11_.status = ChampionBase.k_CHAMPION_STATUS_NORMAL;
+								break;
+							}
+						}
+					}
+					CREATURES._guardian.export();
+					if(param6 != "")
+					{
+						CREATURES._guardian._name = param6;
+					}
+					if(!BYMConfig.instance.RENDERER_ON)
+					{
+						MAP._BUILDINGTOPS.addChild(CREATURES._guardian.graphic);
+					}
+				}
+				else
+				{
+					_loc12_ = new _loc10_("pen",PointInCage(_loc9_),0,_loc9_,true,this,param1,param2,param3,param4,param5,param7,param8);
+					_loc13_ = CREATURES.addGuardian(_loc12_);
+					if(_loc13_)
+					{
+						_loc12_.export();
+						if(param6 != "")
+						{
+							_loc12_._name = param6;
+						}
+						if(!BYMConfig.instance.RENDERER_ON)
+						{
+							MAP._BUILDINGTOPS.addChild(_loc12_.graphic);
+						}
+					}
+				}
+			}
+			QUESTS.Check("champion_" + param4, param1);
+		}
       
-      public function canSpawnGuardian(param1:int) : Boolean
-      {
-         var _loc2_:int = int(BASE._guardianData.length);
-         var _loc3_:int = 0;
-         while(_loc3_ < _loc2_)
-         {
-            if(BASE._guardianData[_loc3_].t == param1)
-            {
-               return BASE._guardianData[_loc3_].status == ChampionBase.k_CHAMPION_STATUS_NORMAL;
-            }
-            _loc3_++;
-         }
-         return true;
-      }
+		public function canSpawnGuardian(param1:int) : Boolean
+		{
+			var _loc2_:int = int(BASE._guardianData.length);
+			var _loc3_:int = 0;
+			while(_loc3_ < _loc2_)
+			{
+				if(BASE._guardianData[_loc3_].t == param1)
+				{
+					return BASE._guardianData[_loc3_].status == ChampionBase.k_CHAMPION_STATUS_NORMAL;
+				}
+				_loc3_++;
+			}
+			return true;
+		}
       
       public function FeedGuardian(param1:String, param2:int, param3:Boolean, param4:Boolean = false) : void
       {
@@ -1340,10 +1336,6 @@ package
                   GLOBAL.Message(KEYS.Get("msg_champion_fullyevolved",{"v1":param2 + 1}));
                }
                CREATURES._guardian.levelSet(param2 + 1);
-               if(CREATURES._guardian._level.Get() == 10)
-               {
-                  ACHIEVEMENTS.Check("upgrade_champ" + CREATURES._guardian._type,1);
-               }
             }
             else
             {
@@ -1396,10 +1388,6 @@ package
                if(CREATURES._guardian._feeds.Get() >= GetGuardianProperty(param1,param2,"feedCount"))
                {
                   CREATURES._guardian.levelSet(param2 + 1);
-                  if(CREATURES._guardian._level.Get() == 10)
-                  {
-                     ACHIEVEMENTS.Check("upgrade_champ" + CREATURES._guardian._type,1);
-                  }
                   if(param2 < 5)
                   {
                      GLOBAL.Message(KEYS.Get("msg_champion_evolved",{
@@ -1429,65 +1417,66 @@ package
          }
       }
       
-      override public function PlaceB() : void
-      {
-         super.PlaceB();
-         GLOBAL._bCage = this;
-      }
+		override public function PlaceB() : void
+		{
+			super.PlaceB();
+			GLOBAL._bCage = this;
+		}
+		
+		override public function Description() : void
+		{
+			super.Description();
+		}
+		
+		override public function Constructed() : void
+		{
+			super.Constructed();
+			GLOBAL._bCage = this;
+		}
+		
+		override public function Upgraded() : void
+		{
+			super.Upgraded();
+		}
+		
+		override public function Recycle() : void
+		{
+			if(CREATURES._guardianList.length)
+			{
+				GLOBAL.Message(KEYS.Get("msg_cage_recycle"));
+			}
+			else
+			{
+				GLOBAL._bCage = null;
+				super.Recycle();
+			}
+		}
       
-      override public function Description() : void
-      {
-         super.Description();
-      }
-      
-      override public function Constructed() : void
-      {
-         super.Constructed();
-         GLOBAL._bCage = this;
-      }
-      
-      override public function Upgraded() : void
-      {
-         super.Upgraded();
-      }
-      
-      override public function Recycle() : void
-      {
-         if(CREATURES._guardianList.length)
-         {
-            GLOBAL.Message(KEYS.Get("msg_cage_recycle"));
-         }
-         else
-         {
-            GLOBAL._bCage = null;
-            super.Recycle();
-         }
-      }
-      
-      override public function Export() : Object
-      {
-         return super.Export();
-      }
-      
-      override public function modifyHealth(param1:Number, param2:ITargetable = null) : Number
-      {
-         return 0;
-      }
-      
-      public function RemoveGuardian(param1:uint, param2:int = 3) : void
-      {
-         CREATURES.removeGuardianType(param1);
-         var _loc3_:int = 0;
-         _loc3_ = GLOBAL.getPlayerGuardianIndex(param1);
-         if(_loc3_ >= 0)
-         {
-            GLOBAL._playerGuardianData[_loc3_].status = param2;
-         }
-         _loc3_ = BASE.getGuardianIndex(param1);
-         if(_loc3_ >= 0)
-         {
-            BASE._guardianData[_loc3_].status = param2;
-         }
-      }
-   }
+		override public function Export() : Object
+		{
+			return super.Export();
+		}
+		
+		override public function modifyHealth(param1:Number, param2:ITargetable = null) : Number
+		{
+			return 0;
+		}
+		
+		public function RemoveGuardian(param1:uint, param2:int = 3) : void
+		{
+			CREATURES.removeGuardianType(param1);
+			var _loc3_:int = 0;
+			_loc3_ = GLOBAL.getPlayerGuardianIndex(param1);
+			if(_loc3_ >= 0)
+			{
+				GLOBAL._playerGuardianData[_loc3_].status = param2;
+			}
+			_loc3_ = BASE.getGuardianIndex(param1);
+			if(_loc3_ >= 0)
+			{
+				BASE._guardianData[_loc3_].status = param2;
+			}
+		}
+
+  	}
 }

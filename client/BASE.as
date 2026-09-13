@@ -218,8 +218,6 @@ package
 
 		public static var _isBookmarked:int;
 
-		public static var _installsGenerated:int;
-
 		public static var _ownerName:String;
 
 		public static var _ownerPic:String;
@@ -490,7 +488,6 @@ package
 			_isSanctuary = 0;
 			_isFan = 0;
 			_isBookmarked = 0;
-			_installsGenerated = 0;
 			_resources = {"r1": new SecNum(0), "r2": new SecNum(0), "r3": new SecNum(0), "r4": new SecNum(0), "r1max": 0, "r2max": 0, "r3max": 0, "r4max": 0, "r1Rate":0, "r2Rate":0, "r3Rate":0, "r4Rate":0, "bip": 0};
 			_iresources = {"r1": new SecNum(0), "r2": new SecNum(0), "r3": new SecNum(0), "r4": new SecNum(0), "r1max": 0, "r2max": 0, "r3max": 0, "r4max": 0, "r1Rate":0, "r2Rate":0, "r3Rate":0, "r4Rate":0, "bip": 0};
 			_deltaResources = {"dirty": false, "r1": new SecNum(0), "r2": new SecNum(0), "r3": new SecNum(0), "r4": new SecNum(0)};
@@ -912,21 +909,6 @@ package
 					_isFan = int(0);
 					_isBookmarked = int(serverData.bookmarked);
 					_isBookmarked = int(0);
-					_installsGenerated = int(42069);
-					
-					if (serverData.fan)
-					{
-						QUESTS._global.bonus_fan = 1;
-					}
-					if (serverData.bookmarked)
-					{
-						QUESTS._global.bonus_bookmark = 1;
-					}
-					if (serverData.giftsentcount)
-					{
-						QUESTS._global.bonus_gifts = serverData.giftsentcount;
-					}
-					QUESTS._global.bonus_invites = _installsGenerated;
 					_lastProcessed = int(serverData.savetime);
 					GLOBAL.t = _lastProcessed;
 					_currentTime = int(serverData.currenttime);
@@ -971,7 +953,6 @@ package
 							{
 								ALLIANCES._allianceID = int(serverData.alliancedata.alliance_id);
 								ALLIANCES._myAlliance = ALLIANCES.SetAlliance(serverData.alliancedata);
-								ACHIEVEMENTS.Check("alliance", 1);
 							}
 						}
 						else if (_userID == LOGIN._playerID && (ALLIANCES._allianceID || ALLIANCES._myAlliance))
@@ -1236,10 +1217,6 @@ package
 					if (GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD)
 					{
 						if (isMainYard && _userID == LOGIN._playerID){
-							QUESTS._global.gift_accept = 50;
-							QUESTS._global.bonus_fan = 1;
-							QUESTS._global.goldmushroomspicked = 50;
-							QUESTS._global.mushroomspicked = 200;
 							QUESTS.Check("level_up", _level);
 						}
 						kx = 1;
@@ -1250,12 +1227,6 @@ package
 							kx++;
 						}
 						if(isMainYard){
-							if (serverData.stats.mob){
-								QUESTS._global.monstersblended = serverData.stats.mob;
-							}
-							if (serverData.stats.mobg){
-								QUESTS._global.monstersblendedgoo = serverData.stats.mobg;
-							}
 							if (serverData.stats.assault_to_1_0){
 								QUESTS._global.assault_to_1_0 = serverData.stats.assault_to_1_0;
 							}
@@ -1423,30 +1394,6 @@ package
 						if (Chat.flagsShouldChatExist())
 						{
 							Chat.initChat();
-						}
-					}
-					if (serverData.stats.achievements)
-					{
-						ACHIEVEMENTS.Data(serverData.stats.achievements);
-						ACHIEVEMENTS.CheckRetroactiveAchievments();
-					}
-					else if (serverData.quests)
-					{
-						if (GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD)
-						{
-							ACHIEVEMENTS._stats.upgrade_champ1 = QUESTS._global.upgrade_champ1;
-							ACHIEVEMENTS._stats.upgrade_champ2 = QUESTS._global.upgrade_champ2;
-							ACHIEVEMENTS._stats.upgrade_champ3 = QUESTS._global.upgrade_champ3;
-							ACHIEVEMENTS._stats.monstersblended = QUESTS._global.monstersblended;
-							ACHIEVEMENTS._stats.wm2hall = QUESTS._global.destroy_tribe2;
-							if (serverData.alliancedata)
-							{
-								if (serverData.alliancedata.alliance_id)
-								{
-								ACHIEVEMENTS._stats.alliance = 1;
-								}
-							}
-							ACHIEVEMENTS.Check();
 						}
 					}
 					_guardianData.length = 0;
@@ -2756,7 +2703,6 @@ package
 					{
 						POPUPS.Next();
 					};
-					ACHIEVEMENTS.Check("wmoutpost", 1);
 					POPUPS.DisplayGeneric(KEYS.Get("venividivici"), KEYS.Get("destroyedbase_takeover", {"v1": _takeoverPreviousOwnersName}), KEYS.Get("btn_brag"), "building-outpost.png", BragA);
 				}
 				else if (_takeoverFirstOpen == 2)
@@ -2765,8 +2711,6 @@ package
 					{
 						POPUPS.Next();
 					};
-					++ACHIEVEMENTS._stats.playeroutpost;
-					ACHIEVEMENTS.Check();
 					POPUPS.DisplayGeneric(KEYS.Get("venividivici"), KEYS.Get("destroyedoutpost_takeover", {"v1": _takeoverPreviousOwnersName}), KEYS.Get("btn_brag"), "building-outpost.png", BragB);
 				}
 			}
@@ -3067,98 +3011,92 @@ package
 			ShakeB();
 		}
 
-      public static function Purchase(param1:String, param2:int, param3:String, param4:Boolean = false):Boolean
-      {
-         if (_pendingPurchase.length > 0)
-         {
-            GLOBAL.ErrorMessage(KEYS.Get("msg_err_purchase"), GLOBAL.ERROR_ORANGE_BOX_ONLY);
-            return false;
-         }
-         if (!param2)
-         {
-            return false;
-         }
-         if (param2 <= 0)
-         {
-            GLOBAL.ErrorMessage("BASE.Purchase zero quantity");
-            LOGGER.Log("err", "BASE.Purchase Id " + param1 + ", illegal quantity " + param2 + ", possible hack");
-            return false;
-         }
-         _pendingPurchase = [param1, param2, _saveCounterA + 1, param3, param4];
-         if (param3 != "store")
-         {
-            LOGGER.Stat([61, param1, param2]);
-         }
-         BASE.Save();
-         return true;
-      }
+		public static function Purchase(param1:String, param2:int, param3:String, param4:Boolean = false):Boolean
+		{
+			if (_pendingPurchase.length > 0)
+			{
+				GLOBAL.ErrorMessage(KEYS.Get("msg_err_purchase"), GLOBAL.ERROR_ORANGE_BOX_ONLY);
+				return false;
+			}
+			if (!param2)
+			{
+				return false;
+			}
+			if (param2 <= 0)
+			{
+				GLOBAL.ErrorMessage("BASE.Purchase zero quantity");
+				LOGGER.Log("err", "BASE.Purchase Id " + param1 + ", illegal quantity " + param2 + ", possible hack");
+				return false;
+			}
+			_pendingPurchase = [param1, param2, _saveCounterA + 1, param3, param4];
+			if (param3 != "store")
+			{
+				LOGGER.Stat([61, param1, param2]);
+			}
+			BASE.Save();
+			return true;
+		}
 
-      public static function Save(param1:int = 0, return_home:Boolean = false, force:Boolean = false, param4:Boolean = false):void
-      {
-         if (Boolean(UI2._top) && Boolean(UI2._top.mcSave))
-         {
-            UI2._top.mcSave.gotoAndStop(2);
-         }
-         if (param1 > 0)
-         {
-            _saveOver = param1;
-         }
-         if (return_home)
-         {
-            _returnHome = true;
-         }
-         _lastSaveRequest = GLOBAL.Timestamp();
-         ++_saveCounterA;
-         if (force || _pendingPurchase.length > 0)
-         {
-            SaveB();
-         }
-         if (isInfernoMainYardOrOutpost || param4 || GLOBAL._loadmode != GLOBAL.mode)
-         {
-            _infernoSaveLoad = true;
-         }
-      }
+		public static function Save(param1:int = 0, return_home:Boolean = false, force:Boolean = false, param4:Boolean = false):void
+		{
+			if (Boolean(UI2._top) && Boolean(UI2._top.mcSave))
+			{
+				UI2._top.mcSave.gotoAndStop(2);
+			}
+			if (param1 > 0)
+			{
+				_saveOver = param1;
+			}
+			if (return_home)
+			{
+				_returnHome = true;
+			}
+			_lastSaveRequest = GLOBAL.Timestamp();
+			++_saveCounterA;
+			if (force || _pendingPurchase.length > 0)
+			{
+				SaveB();
+			}
+			if (isInfernoMainYardOrOutpost || param4 || GLOBAL._loadmode != GLOBAL.mode)
+			{
+				_infernoSaveLoad = true;
+			}
+		}
 
-      private static function getStatsSaveData():Object
-      {
-         var _loc1_:Object = {};
-         _loc1_.mp = int(QUESTS._global.mushroomspicked);
-         _loc1_.mg = int(QUESTS._global.goldmushroomspicked);
-         _loc1_.mob = int(QUESTS._global.monstersblended);
-         _loc1_.mobg = int(QUESTS._global.monstersblendedgoo);
-         _loc1_.assault_to_1_0 = int(QUESTS._global.assault_to_1_0);
-         _loc1_.assault_to_1_1 = int(QUESTS._global.assault_to_1_1);
-         _loc1_.assault_to_1_2 = int(QUESTS._global.assault_to_1_2);
-         _loc1_.assault_to_1_3 = int(QUESTS._global.assault_to_1_3);
-         _loc1_.assault_to_2 = int(QUESTS._global.assault_to_2);
-         _loc1_.assault_to_3 = int(QUESTS._global.assault_to_3);
-         _loc1_.assault_to_4 = int(QUESTS._global.assault_to_4);
-         _loc1_.assault_mo_1 = int(QUESTS._global.assault_mo_1);
-         _loc1_.assault_mo_2 = int(QUESTS._global.assault_mo_2);
-         _loc1_.assault_mo_3 = int(QUESTS._global.assault_mo_3);
-         _loc1_.assault_mo_4 = int(QUESTS._global.assault_mo_4);
-         _loc1_.assault_sh = int(QUESTS._global.assault_sh);
-         _loc1_.assault_ro = int(QUESTS._global.assault_ro);
-         _loc1_.assault_de = int(QUESTS._global.assault_de);
-         _loc1_.assault_towers = int(QUESTS._global.assault_towers);
-         _loc1_.assault_monsters = int(QUESTS._global.assault_monsters);
-         _loc1_.moga = int(QUESTS._global.gift_accept);
-         _loc1_.updateid = GLOBAL._whatsnewid;
-         _loc1_.updateid_mr2 = GLOBAL._mr2TutorialId;
-         _loc1_.updateid_mr3 = MapRoom3Tutorial.instance.tutorialId;
-         _loc1_.other = GLOBAL._otherStats;
-         _loc1_.achievements = ACHIEVEMENTS.Export();
-         _loc1_.popupdata = NewPopupSystem.instance.Export();
-         if (BASE.isInfernoMainYardOrOutpost && GLOBAL._otherStats.descentLvl >= MAPROOM_DESCENT._descentLvlMax)
-         {
-            _loc1_.inferno = 1;
-         }
-         else
-         {
-            _loc1_.inferno = 0;
-         }
-         return _loc1_;
-      }
+		private static function getStatsSaveData():Object
+		{
+			var _loc1_:Object = {};
+			_loc1_.assault_to_1_0 = int(QUESTS._global.assault_to_1_0);
+			_loc1_.assault_to_1_1 = int(QUESTS._global.assault_to_1_1);
+			_loc1_.assault_to_1_2 = int(QUESTS._global.assault_to_1_2);
+			_loc1_.assault_to_1_3 = int(QUESTS._global.assault_to_1_3);
+			_loc1_.assault_to_2 = int(QUESTS._global.assault_to_2);
+			_loc1_.assault_to_3 = int(QUESTS._global.assault_to_3);
+			_loc1_.assault_to_4 = int(QUESTS._global.assault_to_4);
+			_loc1_.assault_mo_1 = int(QUESTS._global.assault_mo_1);
+			_loc1_.assault_mo_2 = int(QUESTS._global.assault_mo_2);
+			_loc1_.assault_mo_3 = int(QUESTS._global.assault_mo_3);
+			_loc1_.assault_mo_4 = int(QUESTS._global.assault_mo_4);
+			_loc1_.assault_sh = int(QUESTS._global.assault_sh);
+			_loc1_.assault_ro = int(QUESTS._global.assault_ro);
+			_loc1_.assault_de = int(QUESTS._global.assault_de);
+			_loc1_.assault_towers = int(QUESTS._global.assault_towers);
+			_loc1_.assault_monsters = int(QUESTS._global.assault_monsters);
+			_loc1_.updateid = GLOBAL._whatsnewid;
+			_loc1_.updateid_mr2 = GLOBAL._mr2TutorialId;
+			_loc1_.updateid_mr3 = MapRoom3Tutorial.instance.tutorialId;
+			_loc1_.other = GLOBAL._otherStats;
+			_loc1_.popupdata = NewPopupSystem.instance.Export();
+			if (BASE.isInfernoMainYardOrOutpost && GLOBAL._otherStats.descentLvl >= MAPROOM_DESCENT._descentLvlMax)
+			{
+				_loc1_.inferno = 1;
+			}
+			else
+			{
+				_loc1_.inferno = 0;
+			}
+			return _loc1_;
+		}
 
 		private static function getResourceSaveData():Object
 		{
@@ -3175,84 +3113,84 @@ package
 			};
 		}
 
-      private static function getHousingSaveData():Object
-      {
-         var _loc1_:int = 0;
-         var _loc8_:BUILDING13 = null;
-         var _loc9_:Object = null;
-         var _loc2_:Object = {};
-         var _loc3_:int = 0;
-         var _loc4_:Array = [];
-         var _loc5_:Array = [];
-         var _loc6_:Array = [];
-         if (WORKERS._workers && WORKERS._workers.length > 0 && Boolean(WORKERS._workers[0].task))
-         {
-            _loc1_ = GLOBAL.Timestamp() + WORKERS._workers[0].task._countdownBuild.Get() + WORKERS._workers[0].task._countdownUpgrade.Get() + WORKERS._workers[0].task._countdownFortify.Get();
-         }
-         var _loc7_:Vector.<Object> = InstanceManager.getInstancesByClass(BUILDING13);
-         for each (_loc8_ in _loc7_)
-         {
-            _loc4_[_loc3_] = [_loc8_._inProduction, _loc8_._countdownProduce.Get()];
-            _loc5_[_loc3_] = _loc8_._productionStage.Get();
-            _loc6_[_loc3_] = _loc8_._id;
-            if (_loc8_._monsterQueue)
-            {
-               _loc4_[_loc3_].push(_loc8_._monsterQueue);
-            }
-            _loc3_++;
-         }
-         _loc2_ = GLOBAL.player.exportMonsters();
-         if (GLOBAL._bHatcheryCC)
-         {
-            _loc9_ = {
-                  "saved": GLOBAL.Timestamp(),
-                  "housed": _loc2_,
-                  "space": HOUSING._housingCapacity.Get(),
-                  "hcount": _loc3_,
-                  "hcc": GLOBAL._bHatcheryCC._monsterQueue,
-                  "h": _loc4_,
-                  "hid": _loc6_,
-                  "hstage": _loc5_,
-                  "overdrivepower": GLOBAL._hatcheryOverdrivePower.Get(),
-                  "overdrivetime": GLOBAL._hatcheryOverdrive,
-                  "finishtime": _loc1_
-               };
-         }
-         else
-         {
-            _loc9_ = {
-                  "saved": GLOBAL.Timestamp(),
-                  "housed": _loc2_,
-                  "space": HOUSING._housingCapacity.Get(),
-                  "hcount": _loc3_,
-                  "hcc": [],
-                  "h": _loc4_,
-                  "hid": _loc6_,
-                  "hstage": _loc5_,
-                  "overdrivepower": GLOBAL._hatcheryOverdrivePower.Get(),
-                  "overdrivetime": GLOBAL._hatcheryOverdrive,
-                  "finishtime": _loc1_
-               };
-         }
-         return _loc9_;
-      }
+		private static function getHousingSaveData():Object
+		{
+			var _loc1_:int = 0;
+			var _loc8_:BUILDING13 = null;
+			var _loc9_:Object = null;
+			var _loc2_:Object = {};
+			var _loc3_:int = 0;
+			var _loc4_:Array = [];
+			var _loc5_:Array = [];
+			var _loc6_:Array = [];
+			if (WORKERS._workers && WORKERS._workers.length > 0 && Boolean(WORKERS._workers[0].task))
+			{
+				_loc1_ = GLOBAL.Timestamp() + WORKERS._workers[0].task._countdownBuild.Get() + WORKERS._workers[0].task._countdownUpgrade.Get() + WORKERS._workers[0].task._countdownFortify.Get();
+			}
+			var _loc7_:Vector.<Object> = InstanceManager.getInstancesByClass(BUILDING13);
+			for each (_loc8_ in _loc7_)
+			{
+				_loc4_[_loc3_] = [_loc8_._inProduction, _loc8_._countdownProduce.Get()];
+				_loc5_[_loc3_] = _loc8_._productionStage.Get();
+				_loc6_[_loc3_] = _loc8_._id;
+				if (_loc8_._monsterQueue)
+				{
+					_loc4_[_loc3_].push(_loc8_._monsterQueue);
+				}
+				_loc3_++;
+			}
+			_loc2_ = GLOBAL.player.exportMonsters();
+			if (GLOBAL._bHatcheryCC)
+			{
+				_loc9_ = {
+					"saved": GLOBAL.Timestamp(),
+					"housed": _loc2_,
+					"space": HOUSING._housingCapacity.Get(),
+					"hcount": _loc3_,
+					"hcc": GLOBAL._bHatcheryCC._monsterQueue,
+					"h": _loc4_,
+					"hid": _loc6_,
+					"hstage": _loc5_,
+					"overdrivepower": GLOBAL._hatcheryOverdrivePower.Get(),
+					"overdrivetime": GLOBAL._hatcheryOverdrive,
+					"finishtime": _loc1_
+				};
+			}
+			else
+			{
+				_loc9_ = {
+					"saved": GLOBAL.Timestamp(),
+					"housed": _loc2_,
+					"space": HOUSING._housingCapacity.Get(),
+					"hcount": _loc3_,
+					"hcc": [],
+					"h": _loc4_,
+					"hid": _loc6_,
+					"hstage": _loc5_,
+					"overdrivepower": GLOBAL._hatcheryOverdrivePower.Get(),
+					"overdrivetime": GLOBAL._hatcheryOverdrive,
+					"finishtime": _loc1_
+				};
+			}
+			return _loc9_;
+		}
 
-      private static function getStoredBuildingsSaveData():Object
-      {
-         var _loc2_:String = null;
-         var _loc1_:Object = {};
-         for (_loc2_ in _buildingsStored)
-         {
-            if (_buildingsStored[_loc2_].Get())
-            {
-               _loc1_[_loc2_] = _buildingsStored[_loc2_].Get();
-            }
-         }
-         return _loc1_;
-      }
+		private static function getStoredBuildingsSaveData():Object
+		{
+			var _loc2_:String = null;
+			var _loc1_:Object = {};
+			for (_loc2_ in _buildingsStored)
+			{
+				if (_buildingsStored[_loc2_].Get())
+				{
+					_loc1_[_loc2_] = _buildingsStored[_loc2_].Get();
+				}
+			}
+			return _loc1_;
+		}
 
-      private static function getInfernoResourcesSaveData():Object
-      {
+		private static function getInfernoResourcesSaveData():Object
+		{
 			return {
 				"r1": _isavedDeltaResources.r1.Get(),
 				"r2": _isavedDeltaResources.r2.Get(),
@@ -3266,35 +3204,35 @@ package
 			};
 		}
 
-      private static function getMushroomSaveData():Object
-      {
-		return {"l" : [], "s" : int(_lastSpawnedMushroom)};
-        //  var _loc1_:BFOUNDATION = null;
-        //  var _loc2_:Object = null;
-        //  _mushroomList = [];
-        //  var _loc3_:Vector.<Object> = InstanceManager.getInstancesByClass(BMUSHROOM);
-        //  for each (_loc1_ in _loc3_)
-        //  {
-        //     _loc2_ = _loc1_.Export();
-        //     _mushroomList.push([_loc2_.frame, _loc2_.X, _loc2_.Y]);
-        //  }
-        //  return {
-        //        "l": _mushroomList,
-        //        "s": int(_lastSpawnedMushroom)
-        //     };
-      }
+		private static function getMushroomSaveData():Object
+		{
+			return {"l" : [], "s" : int(_lastSpawnedMushroom)};
+			//  var _loc1_:BFOUNDATION = null;
+			//  var _loc2_:Object = null;
+			//  _mushroomList = [];
+			//  var _loc3_:Vector.<Object> = InstanceManager.getInstancesByClass(BMUSHROOM);
+			//  for each (_loc1_ in _loc3_)
+			//  {
+			//     _loc2_ = _loc1_.Export();
+			//     _mushroomList.push([_loc2_.frame, _loc2_.X, _loc2_.Y]);
+			//  }
+			//  return {
+			//        "l": _mushroomList,
+			//        "s": int(_lastSpawnedMushroom)
+			//     };
+		}
 
-		// private static function getLootReportSaveData():Object
-		// {
-		// 	return {
-		// 		"r1": ATTACK._loot.r1.Get(),
-		// 		"r2": ATTACK._loot.r2.Get(),
-		// 		"r3": ATTACK._loot.r3.Get(),
-		// 		"r4": ATTACK._loot.r4.Get(),
-		// 		"isInferno": BASE.isInfernoMainYardOrOutpost,
-		// 		"name": _ownerName
-		// 	};
-		// }
+			// private static function getLootReportSaveData():Object
+			// {
+			// 	return {
+			// 		"r1": ATTACK._loot.r1.Get(),
+			// 		"r2": ATTACK._loot.r2.Get(),
+			// 		"r3": ATTACK._loot.r3.Get(),
+			// 		"r4": ATTACK._loot.r4.Get(),
+			// 		"isInferno": BASE.isInfernoMainYardOrOutpost,
+			// 		"name": _ownerName
+			// 	};
+			// }
 
       private static function getChampionSaveData():Array
       {
@@ -3859,7 +3797,7 @@ package
 			}
 			saveData["effects"] = EFFECTS._effectsJSON;
 			saveData["inventory"] = STORE.InventoryExport();
-			saveData["achieved"] = JSON.stringify(ACHIEVEMENTS.Report());
+			saveData["achieved"] = '{}';
 			var frontpageData:Object = FrontPageHandler.export();
 			if (frontpageData)
 			{
@@ -4006,113 +3944,104 @@ package
 			return true;
 		}
 
-      private static function handleLoadSuccessful(serverData:Object):void
-      {
-         var yardType:int = 0;
-         var resourceIndex:int = 0;
-         var securedOutpost:MapRoom3OutpostSecured = null;
-         if (serverData.error == 0)
-         {
-            GLOBAL.CleanAttackersDeltaResources();
-            CleanDeltaResources();
-            if (GLOBAL.mode != GLOBAL.e_BASE_MODE.BUILD && GLOBAL.mode != "ibuild")
-            {
-               ATTACK.CleanLoot();
-            }
-            if (_returnHome && serverData.over == 1)
-            {
-               if (isInfernoMainYardOrOutpost)
-               {
-                  LoadBase(null, 0, 0, "ibuild", false, EnumYardType.INFERNO_YARD);
-               }
-               else
-               {
-                  yardType = MapRoomManager.instance.isInMapRoom3 ? int(EnumYardType.PLAYER) : int(EnumYardType.MAIN_YARD);
-                  LoadBase(null, 0, 0, GLOBAL.e_BASE_MODE.BUILD, false, yardType);
-               }
-               return;
-            }
-            _saveErrors = 0;
-            _lastSaved = GLOBAL.Timestamp();
-            _lastSaveID = serverData.basesaveid;
-            _conquerorPoints.Set(int(serverData.empirevalue));
-            _credits.Set(int(serverData.credits));
-            GLOBAL._credits.Set(int(serverData.credits));
-            if (serverData.resources)
-            {
-               if (_saveCounterA == _saveCounterB)
-               {
-                  resourceIndex = 1;
-                  while (resourceIndex < 5)
-                  {
-                     if (serverData.resources["r" + resourceIndex])
-                     {
-                        _resources["r" + resourceIndex].Set(serverData.resources["r" + resourceIndex]);
-                        if (GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD || GLOBAL.mode == "ibuild")
-                        {
-                           GLOBAL._resources["r" + resourceIndex].Set(serverData.resources["r" + resourceIndex]);
-						   GLOBAL._iresources["r" + resourceIndex].Set(serverData.iresources["r" + resourceIndex]);
-                        }
-                     }
-                     resourceIndex++;
-                  }
-               }
-               if (GLOBAL.mode != GLOBAL.e_BASE_MODE.BUILD && GLOBAL.mode != "ibuild")
-               {
-                  ATTACK.CleanLoot();
-                  GLOBAL.CleanAttackersDeltaResources();
-               }
-               CleanDeltaResources();
-            }
-            _isProtected = int(serverData["protected"]);
-            _isFan = int(serverData.fan);
-            _isBookmarked = int(serverData.bookmarked);
-            _installsGenerated = int(serverData.installsgenerated);
-            if (serverData.fan)
-            {
-               QUESTS._global.bonus_fan = 1;
-            }
-            if (serverData.bookmarked)
-            {
-               QUESTS._global.bonus_bookmark = 1;
-            }
-            if (Boolean(serverData.updates) && serverData.updates.length > 0)
-            {
-               UPDATES.Process(serverData.updates);
-            }
-            if (_loadBase.length > 0)
-            {
-               LoadBaseB();
-            }
-            if (ATTACK.waitingForSaveToComplete)
-            {
-               ATTACK.End();
-            }
-            if (serverData.takeover)
-            {
-               securedOutpost = new MapRoom3OutpostSecured(BASE.yardType, serverData.takeover);
-               POPUPS.Push(securedOutpost);
-            }
-         }
-         else
-         {
-            LOGGER.Log("err", "Base.Save: " + JSON.stringify(serverData));
-            GLOBAL.ErrorMessage("BASE.SaveB 2: " + serverData.error);
-         }
-         _saving = false;
-      }
+		private static function handleLoadSuccessful(serverData:Object):void
+		{
+			var yardType:int = 0;
+			var resourceIndex:int = 0;
+			var securedOutpost:MapRoom3OutpostSecured = null;
+			if (serverData.error == 0)
+			{
+				GLOBAL.CleanAttackersDeltaResources();
+				CleanDeltaResources();
+				if (GLOBAL.mode != GLOBAL.e_BASE_MODE.BUILD && GLOBAL.mode != "ibuild")
+				{
+					ATTACK.CleanLoot();
+				}
+				if (_returnHome && serverData.over == 1)
+				{
+					if (isInfernoMainYardOrOutpost)
+					{
+						LoadBase(null, 0, 0, "ibuild", false, EnumYardType.INFERNO_YARD);
+					}
+					else
+					{
+						yardType = MapRoomManager.instance.isInMapRoom3 ? int(EnumYardType.PLAYER) : int(EnumYardType.MAIN_YARD);
+						LoadBase(null, 0, 0, GLOBAL.e_BASE_MODE.BUILD, false, yardType);
+					}
+					return;
+				}
+				_saveErrors = 0;
+				_lastSaved = GLOBAL.Timestamp();
+				_lastSaveID = serverData.basesaveid;
+				_conquerorPoints.Set(int(serverData.empirevalue));
+				_credits.Set(int(serverData.credits));
+				GLOBAL._credits.Set(int(serverData.credits));
+				if (serverData.resources)
+				{
+					if (_saveCounterA == _saveCounterB)
+					{
+						resourceIndex = 1;
+						while (resourceIndex < 5)
+						{
+							if (serverData.resources["r" + resourceIndex])
+							{
+								_resources["r" + resourceIndex].Set(serverData.resources["r" + resourceIndex]);
+								if (GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD || GLOBAL.mode == "ibuild")
+								{
+									GLOBAL._resources["r" + resourceIndex].Set(serverData.resources["r" + resourceIndex]);
+									GLOBAL._iresources["r" + resourceIndex].Set(serverData.iresources["r" + resourceIndex]);
+								}
+							}
+							resourceIndex++;
+						}
+					}
+					if (GLOBAL.mode != GLOBAL.e_BASE_MODE.BUILD && GLOBAL.mode != "ibuild")
+					{
+						ATTACK.CleanLoot();
+						GLOBAL.CleanAttackersDeltaResources();
+					}
+					CleanDeltaResources();
+				}
+				_isProtected = int(serverData["protected"]);
+				_isFan = int(serverData.fan);
+				_isBookmarked = int(serverData.bookmarked);
+				if (Boolean(serverData.updates) && serverData.updates.length > 0)
+				{
+					UPDATES.Process(serverData.updates);
+				}
+				if (_loadBase.length > 0)
+				{
+					LoadBaseB();
+				}
+				if (ATTACK.waitingForSaveToComplete)
+				{
+					ATTACK.End();
+				}
+				if (serverData.takeover)
+				{
+					securedOutpost = new MapRoom3OutpostSecured(BASE.yardType, serverData.takeover);
+					POPUPS.Push(securedOutpost);
+				}
+			}
+			else
+			{
+				LOGGER.Log("err", "Base.Save: " + JSON.stringify(serverData));
+				GLOBAL.ErrorMessage("BASE.SaveB 2: " + serverData.error);
+			}
+			_saving = false;
+		}
 
-      private static function handleLoadError(error:IOErrorEvent):void
-      {
-         ++_saveErrors;
-         --_saveCounterB;
-         _saving = false;
-         if (_saveErrors >= 5)
-         {
-            LOGGER.Log("err", "Base.Save HTTP");
-            GLOBAL.ErrorMessage("BASE.Save HTTP" + error.text);
-         }
-      }
+		private static function handleLoadError(error:IOErrorEvent):void
+		{
+			++_saveErrors;
+			--_saveCounterB;
+			_saving = false;
+			if (_saveErrors >= 5)
+			{
+				LOGGER.Log("err", "Base.Save HTTP");
+				GLOBAL.ErrorMessage("BASE.Save HTTP" + error.text);
+			}
+		}
 
       private static function guardianFlung():Boolean
       {
@@ -4152,7 +4081,6 @@ package
                _isProtected = int(serverData["protected"]);
                _isFan = int(serverData.fan);
                _isBookmarked = int(serverData.bookmarked);
-               _installsGenerated = int(serverData.installsgenerated);
                if ((GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD || GLOBAL.mode == GLOBAL.e_BASE_MODE.IBUILD) && serverData.resources && _saveCounterA == _saveCounterB)
                {
                   if (serverData.resources.r1 != _resources.r1.Get() || serverData.resources.r2 != _resources.r2.Get() || serverData.resources.r3 != _resources.r3.Get() || serverData.resources.r4 != _resources.r4.Get())
@@ -4171,18 +4099,6 @@ package
                      }
                      resourceIndex++;
                   }
-               }
-               if (serverData.fan)
-               {
-                  QUESTS._global.bonus_fan = 1;
-               }
-               if (serverData.bookmarked)
-               {
-                  QUESTS._global.bonus_bookmark = 1;
-               }
-               if (serverData.giftsentcount)
-               {
-                  QUESTS._global.bonus_gifts = serverData.giftsentcount;
                }
                if (Boolean(serverData.updates) && serverData.updates.length > 0)
                {
@@ -5586,10 +5502,6 @@ package
 				_resources.r2max = 10000;
 				_resources.r3max = 10000;
 				_resources.r4max = 10000;
-			}
-			if (_resources.r1.Get() > 25000000 && _resources.r2.Get() > 25000000 && _resources.r3.Get() > 25000000 && _resources.r4.Get() > 25000000)
-			{
-				ACHIEVEMENTS.Check("stockpile", 1);
 			}
 			_resources.r1Rate = 0;
 			_resources.r2Rate = 0;

@@ -45,18 +45,6 @@ package
          SetProps();
       }
       
-      public function Prep(param1:String) : void
-      {
-         ++QUESTS._global.monstersblended;
-         QUESTS._global.monstersblendedgoo += Math.ceil(CREATURES.GetProperty(param1,"cResource") * 0.7);
-         ACHIEVEMENTS.Check("monstersblended",QUESTS._global.monstersblended);
-         QUESTS.Check();
-         if(GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD)
-         {
-            BASE.Save();
-         }
-      }
-      
       public function Blend(param1:int, param2:String, param3:Number = 1) : void
       {
          var _loc4_:* = param2.substr(0,2) == "IC";
@@ -176,14 +164,6 @@ package
          if(_countdownBuild.Get() == 0)
          {
             GLOBAL._bJuicer = this;
-         }
-         if(param1.tjc)
-         {
-            QUESTS._global.monstersblended = param1.tjc;
-         }
-         if(param1.tjg)
-         {
-            QUESTS._global.monstersblendedgoo = param1.tjg;
          }
          _animRandomStart = false;
          _animTick = 2;

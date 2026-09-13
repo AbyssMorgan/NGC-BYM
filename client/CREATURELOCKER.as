@@ -83,35 +83,6 @@ package {
 				_lockerData.C12 = _lockerData.C100;
 				delete _lockerData.C100;
 			}
-			if(GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD)
-			{
-				if(BASE.isInfernoMainYardOrOutpost)
-				{
-				_loc2_ = 2;
-				while(_loc2_ <= NUM_ICREEP_TYPE)
-				{
-					if(Boolean(_lockerData["IC" + _loc2_]) && _lockerData["IC" + _loc2_].t == 2)
-					{
-						ACHIEVEMENTS.Check("unlock_monster",1);
-						break;
-					}
-					_loc2_++;
-				}
-				}
-				else
-				{
-				_loc2_ = 2;
-				while(_loc2_ <= NUM_CREEP_TYPE)
-				{
-					if(Boolean(_lockerData["C" + _loc2_]) && _lockerData["C" + _loc2_].t == 2)
-					{
-						ACHIEVEMENTS.Check("unlock_monster",1);
-						break;
-					}
-					_loc2_++;
-				}
-				}
-			}
 		}
 
 		public static function clone_data(src:Object):Object {
@@ -278,7 +249,6 @@ package {
 				{
 				_lockerData[_unlocking].t = 2;
 				GLOBAL.player.m_upgrades[_unlocking] = {"level":1};
-				ACHIEVEMENTS.Check("unlock_monster",1);
 				delete _lockerData[_unlocking].s;
 				delete _lockerData[_unlocking].e;
 				creature = _creatures[_unlocking];

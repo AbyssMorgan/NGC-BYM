@@ -36,12 +36,6 @@ package
             MovieClip(topContainer).addChild(new Bitmap(param2));
          }
       }
-      
-      override public function Constructed() : void
-      {
-         ACHIEVEMENTS._stats["blocksbuilt"] = int(ACHIEVEMENTS._stats["blocksbuilt"]) + 1;
-         ACHIEVEMENTS.Check();
-         super.Constructed();
-      }
+	  
    }
 }

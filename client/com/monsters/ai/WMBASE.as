@@ -260,25 +260,6 @@ package com.monsters.ai
       
       public static function CheckQuests() : void
       {
-         var base:String = null;
-         var index:int = 0;
-         var bases:Array = ChooseBase();
-         for(base in bases)
-         {
-            if(bases[base].destroyed == 1)
-            {
-               if(GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD)
-               {
-                  index = 0;
-                  // Comment: Added this null check, since it could try to access a non-existent tribe 
-                  if (bases[base].tribe && bases[base].tribe.id !== undefined)
-                  {
-                     index = int(bases[base].tribe.id);
-                  }
-                  QUESTS.Check("destroy_tribe" + index,1);
-               }
-            }
-         }
       }
       
       public static function CheckDescentProgress() : int

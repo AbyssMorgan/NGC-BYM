@@ -18,11 +18,5 @@ package
 			SetProps();
 		}
 		
-		override public function Constructed() : void
-		{
-			ACHIEVEMENTS._stats["heavytraps"] = int(ACHIEVEMENTS._stats["heavytraps"]) + 1;
-			ACHIEVEMENTS.Check();
-			super.Constructed();
-		}
 	}
 }

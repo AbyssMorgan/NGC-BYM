@@ -1205,10 +1205,6 @@ package
 				{
 					if(_loc9_.health == 0 && _loc9_._repairing == 0 && (GLOBAL.mode == GLOBAL.e_BASE_MODE.WMATTACK || GLOBAL.mode == GLOBAL.e_BASE_MODE.IWMATTACK))
 					{
-						if(TRIBES.TribeForBaseID(BASE._wmID).id == 2)
-						{
-							ACHIEVEMENTS.Check("wm2hall",1);
-						}
 						if(!MAPROOM_DESCENT.InDescent)
 						{
 							_loc1_ = true;
@@ -1223,7 +1219,6 @@ package
 				if(INFERNO_DESCENT_POPUPS.isInDescent())
 				{
 					INFERNO_DESCENT_POPUPS.ShowPostAttackPopup(MAPROOM_DESCENT._descentLvl,_loc1_,Vector.<uint>([_loot.r1.Get(),_loot.r2.Get(),_loot.r3.Get(),_loot.r4.Get()]),Vector.<uint>([MAPROOM_DESCENT._loot.r1.Get(),MAPROOM_DESCENT._loot.r2.Get(),MAPROOM_DESCENT._loot.r3.Get(),MAPROOM_DESCENT._loot.r4.Get()]));
-					ACHIEVEMENTS.Check(ACHIEVEMENTS.DESCENT_LEVEL,MAPROOM_DESCENT.DescentLevel);
 				}
 			}
 			SOUNDS.AutoPlay();

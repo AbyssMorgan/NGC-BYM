@@ -1453,7 +1453,6 @@ package com.monsters.monsters
          if(health <= 0)
          {
             dispatchEvent(new Event(k_DEATH_EVENT));
-            ++QUESTS._global.kills;
             this.deathSplat();
 			if((!BASE.isMainYardOrInfernoMainYard || WMATTACK._isAI) && GLOBAL.assault_monsters < 2000000000){
 				GLOBAL.assault_monsters++;

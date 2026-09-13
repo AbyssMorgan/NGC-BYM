@@ -81,6 +81,7 @@ package
 				"b51lvl":0,
 				"b113lvl":0,
 				"b115lvl":0,
+				"b117lvl":0,
 				"b118lvl":0,
 				"b128lvl":0,
 				"b129lvl":0,
@@ -92,29 +93,9 @@ package
 				"b144lvl":0,
 				"b145lvl":0,
 				"b146lvl":0,
-				"kills":0,
-				"bonus_bookmark":0,
-				"bonus_fan":0,
-				"bonus_invites":0,
-				"bonus_gifts":0,
-				"mushroomspicked":0,
-				"goldmushroomspicked":0,
-				"monstersblended":0,
-				"monstersblendedgoo":0,
-				"singleclickbank":0,
-				"destroy_tribe1":0,
-				"destroy_tribe2":0,
-				"destroy_tribe3":0,
-				"destroy_tribe4":0,
+				"b155lvl":0,
 				"destroy_baseL":0,
 				"worder_count":0,
-				"hatch_champ1":0,
-				"hatch_champ2":0,
-				"hatch_champ3":0,
-				"upgrade_champ1":0,
-				"upgrade_champ2":0,
-				"upgrade_champ3":0,
-				"gift_accept":0,
 				"email_build":0,
 				"email_att":0,
 				"email_news":0,
@@ -140,13 +121,17 @@ package
 				"assault_de":0,
 				"assault_towers":0,
 				"assault_monsters":0,
-				"level_up":0
+				"level_up":0,
+				"champion_1":0,
+				"champion_2":0,
+				"champion_3":0,
+				"champion_4":0
 			};
 			_questGroups = [
 				{"id":0, "name":"Construction"},
 				{"id":1, "name":"Monsters"},
-				{"id":2, "name":"Attacking"},
-				{"id":3, "name":"Basic"},
+				{"id":2, "name":"Champions"},
+				{"id":3, "name":"Events"},
 				{"id":4, "name":"Progress"},
 				{"id":5, "name":"Challenges"},
 				{"id":6, "name":"Conqueror"},
@@ -186,6 +171,116 @@ package
 					"rules":
 					{
 						"b113lvl": 1
+					}
+				},
+				{
+					"order": 1,
+					"list": true,
+					"reward": [new SecNum(100000), new SecNum(100000), new SecNum(100000), new SecNum(100000), new SecNum(0)],
+					"id": "HAT1",
+					"group": 0,
+					"name": "Hatchery",
+					"description": "Build Hatchery",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-hatchery.png",
+					"rules":
+					{
+						"b13lvl": 1
+					}
+				},
+				{
+					"order": 2,
+					"list": true,
+					"reward": [new SecNum(250000), new SecNum(250000), new SecNum(250000), new SecNum(250000), new SecNum(0)],
+					"id": "HAT2",
+					"group": 0,
+					"name": "Hatchery level 2",
+					"description": "Upgrade your Hatchery to level 2",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-hatchery.png",
+					"prereq": "HAT1",
+					"rules":
+					{
+						"b13lvl": 2
+					}
+				},
+				{
+					"order": 3,
+					"list": true,
+					"reward": [new SecNum(1000000), new SecNum(1000000), new SecNum(1000000), new SecNum(1000000), new SecNum(0)],
+					"id": "HAT3",
+					"group": 0,
+					"name": "Hatchery level 3",
+					"description": "Upgrade your Hatchery to level 3",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-hatchery.png",
+					"prereq": "HAT2",
+					"rules":
+					{
+						"b13lvl": 3
+					}
+				},
+				{
+					"order": 1,
+					"list": true,
+					"reward": [new SecNum(100000), new SecNum(100000), new SecNum(100000), new SecNum(100000), new SecNum(0)],
+					"id": "CRL1",
+					"group": 0,
+					"name": "Creature Locker",
+					"description": "Build Creature Locker",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-monsterlocker.png",
+					"rules":
+					{
+						"b8lvl": 1
+					}
+				},
+				{
+					"order": 2,
+					"list": true,
+					"reward": [new SecNum(250000), new SecNum(250000), new SecNum(250000), new SecNum(250000), new SecNum(0)],
+					"id": "CRL2",
+					"group": 0,
+					"name": "Creature Locker level 2",
+					"description": "Upgrade your Creature Locker to level 2",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-monsterlocker.png",
+					"prereq": "CRL1",
+					"rules":
+					{
+						"b8lvl": 2
+					}
+				},
+				{
+					"order": 3,
+					"list": true,
+					"reward": [new SecNum(1000000), new SecNum(1000000), new SecNum(1000000), new SecNum(1000000), new SecNum(0)],
+					"id": "CRL3",
+					"group": 0,
+					"name": "Creature Locker level 3",
+					"description": "Upgrade your Creature Locker to level 3",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-monsterlocker.png",
+					"prereq": "CRL2",
+					"rules":
+					{
+						"b8lvl": 3
+					}
+				},
+				{
+					"order": 4,
+					"list": true,
+					"reward": [new SecNum(2500000), new SecNum(2500000), new SecNum(2500000), new SecNum(2500000), new SecNum(0)],
+					"id": "CRL4",
+					"group": 0,
+					"name": "Creature Locker level 4",
+					"description": "Upgrade your Creature Locker to level 4",
+					"hint": "You can speed up upgrades.",
+					"questimage": "building-monsterlocker.png",
+					"prereq": "CRL3",
+					"rules":
+					{
+						"b8lvl": 4
 					}
 				},
 				{
@@ -4266,606 +4361,647 @@ package
 				},
 
 				// Group 1 (Monsters)
+
+
+				// Group 2 (Champions)
+				{
+					"order": 1,
+					"list": true,
+					"reward": [new SecNum(1000000), new SecNum(1000000), new SecNum(1000000), new SecNum(1000000), new SecNum(0)],
+					"id": "CHAMPION_1_1",
+					"group": 2,
+					"name": "Hatch Gorgo",
+					"description": "Hatch Gorgo in the Champion Cage",
+					"hint": "Build the Monster Cage to hatch Gorgo",
+					"questimage": "G1_L1-150.png",
+					"rules":
+					{
+						"champion_1": 1
+					}
+				},
 				{
 					"order": 2,
 					"list": true,
-					"reward": [new SecNum(1000), new SecNum(1000), new SecNum(0), new SecNum(1000), new SecNum(0)],
-					"id": "CR2",
-					"group": 1,
-					"name": "q_cr2_name",
-					"description": "q_cr2_description",
-					"hint": "q_cr2_hint",
-					"questimage": "building-hatchery.png",
+					"reward": [new SecNum(2500000), new SecNum(2500000), new SecNum(2500000), new SecNum(2500000), new SecNum(0)],
+					"id": "CHAMPION_1_2",
+					"group": 2,
+					"name": "Gorgo level 2",
+					"description": "Evolve Gorgo to level 2",
+					"hint": "Feed your Champion other monsters and watch him evolve",
+					"questimage": "G1_L2-150.png",
+					"prereq": "CHAMPION_1_1",
 					"rules":
 					{
-						"b13lvl": 1
+						"champion_1": 2
 					}
 				},
 				{
 					"order": 3,
 					"list": true,
-					"reward": [new SecNum(1000), new SecNum(1000), new SecNum(5000), new SecNum(0), new SecNum(0)],
-					"id": "CR1",
-					"group": 1,
-					"name": "q_cr1_name",
-					"description": "q_cr1_description",
-					"hint": "q_cr1_hint",
-					"questimage": "building-monsterlocker.png",
+					"reward": [new SecNum(5000000), new SecNum(5000000), new SecNum(5000000), new SecNum(5000000), new SecNum(0)],
+					"id": "CHAMPION_1_3",
+					"group": 2,
+					"name": "Gorgo level 3",
+					"description": "Evolve Gorgo to level 3",
+					"hint": "Feed your Champion other monsters and watch him evolve",
+					"questimage": "G1_L3-150.png",
+					"prereq": "CHAMPION_1_2",
 					"rules":
 					{
-						"b8lvl": 1
+						"champion_1": 3
 					}
 				},
 				{
 					"order": 4,
 					"list": true,
-					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(10000), new SecNum(0)],
-					"id": "HG1",
-					"group": 1,
-					"name": "q_cm1_name",
-					"description": "q_cm1_description",
-					"hint": "q_cm1_hint",
-					"questimage": "G1_L1-150.png",
+					"reward": [new SecNum(10000000), new SecNum(10000000), new SecNum(10000000), new SecNum(10000000), new SecNum(0)],
+					"id": "CHAMPION_1_4",
+					"group": 2,
+					"name": "Gorgo level 4",
+					"description": "Evolve Gorgo to level 4",
+					"hint": "Feed your Champion other monsters and watch him evolve",
+					"questimage": "G1_L4-150.png",
+					"prereq": "CHAMPION_1_3",
 					"rules":
 					{
-						"hatch_champ1": 1
+						"champion_1": 4
 					}
 				},
 				{
 					"order": 5,
 					"list": true,
-					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(800000), new SecNum(0)],
-					"id": "UG1",
-					"group": 1,
-					"name": "q_cm2_name",
-					"description": "q_cm2_description",
-					"hint": "q_cm2_hint",
-					"questimage": "G1_L6-150.png",
-					"prereq": "HG1",
+					"reward": [new SecNum(25000000), new SecNum(25000000), new SecNum(25000000), new SecNum(25000000), new SecNum(0)],
+					"id": "CHAMPION_1_5",
+					"group": 2,
+					"name": "Gorgo level 5",
+					"description": "Evolve Gorgo to level 5",
+					"hint": "Feed your Champion other monsters and watch him evolve",
+					"questimage": "G1_L5-150.png",
+					"prereq": "CHAMPION_1_4",
 					"rules":
 					{
-						"upgrade_champ1": 1
+						"champion_1": 5
 					}
 				},
 				{
 					"order": 6,
 					"list": true,
-					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(10000), new SecNum(0)],
-					"id": "HG2",
-					"group": 1,
-					"name": "q_cm3_name",
-					"description": "q_cm3_description",
-					"hint": "q_cm3_hint",
-					"questimage": "G2_L1-150.png",
+					"reward": [new SecNum(50000000), new SecNum(50000000), new SecNum(50000000), new SecNum(50000000), new SecNum(0)],
+					"id": "CHAMPION_1_6",
+					"group": 2,
+					"name": "Gorgo level 6",
+					"description": "Evolve Gorgo to level 6",
+					"hint": "Feed your Champion other monsters and watch him evolve",
+					"questimage": "G1_L6-150.png",
+					"prereq": "CHAMPION_1_5",
 					"rules":
 					{
-						"hatch_champ2": 1
+						"champion_1": 6
 					}
 				},
 				{
 					"order": 7,
 					"list": true,
-					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(800000), new SecNum(0)],
-					"id": "UG2",
-					"group": 1,
-					"name": "q_cm4_name",
-					"description": "q_cm4_description",
-					"hint": "q_cm4_hint",
-					"questimage": "G2_L6-150.png",
-					"prereq": "HG2",
+					"reward": [new SecNum(100000000), new SecNum(100000000), new SecNum(100000000), new SecNum(100000000), new SecNum(0)],
+					"id": "CHAMPION_1_7",
+					"group": 2,
+					"name": "Gorgo level 7",
+					"description": "Evolve Gorgo to level 7",
+					"hint": "Feed your Champion other monsters and watch him evolve",
+					"questimage": "G1_L6-150.png",
+					"prereq": "CHAMPION_1_6",
 					"rules":
 					{
-						"upgrade_champ2": 1
+						"champion_1": 7
 					}
 				},
 				{
 					"order": 8,
 					"list": true,
-					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(10000), new SecNum(0)],
-					"id": "HG3",
-					"group": 1,
-					"name": "q_cm5_name",
-					"description": "q_cm5_description",
-					"hint": "q_cm5_hint",
-					"questimage": "G3_L1-150.png",
+					"reward": [new SecNum(250000000), new SecNum(250000000), new SecNum(250000000), new SecNum(250000000), new SecNum(0)],
+					"id": "CHAMPION_1_8",
+					"group": 2,
+					"name": "Gorgo level 8",
+					"description": "Evolve Gorgo to level 8",
+					"hint": "Feed your Champion other monsters and watch him evolve",
+					"questimage": "G1_L6-150.png",
+					"prereq": "CHAMPION_1_7",
 					"rules":
 					{
-						"hatch_champ3": 1
+						"champion_1": 8
 					}
 				},
 				{
 					"order": 9,
 					"list": true,
-					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(800000), new SecNum(0)],
-					"id": "UG3",
-					"group": 1,
-					"name": "q_cm6_name",
-					"description": "q_cm6_description",
-					"hint": "q_cm6_hint",
-					"questimage": "G3_L6-150.png",
-					"prereq": "HG3",
-					"rules":
-					{
-						"upgrade_champ3": 1
-					}
-				},
-
-				// Group 2 (Attacking)
-				{
-					"order": 6,
-					"list": true,
-					"reward": [new SecNum(800), new SecNum(800), new SecNum(1000), new SecNum(1000), new SecNum(0)],
-					"id": "D1",
+					"reward": [new SecNum(500000000), new SecNum(500000000), new SecNum(500000000), new SecNum(500000000), new SecNum(0)],
+					"id": "CHAMPION_1_9",
 					"group": 2,
-					"name": "q_d1_name",
-					"description": "q_d1_description",
-					"hint": "q_d1_hint",
-					"questimage": "firstblood.png",
+					"name": "Gorgo level 9",
+					"description": "Evolve Gorgo to level 9",
+					"hint": "Feed your Champion other monsters and watch him evolve",
+					"questimage": "G1_L6-150.png",
+					"prereq": "CHAMPION_1_8",
 					"rules":
 					{
-						"kills": 1
-					}
-				},
-				{
-					"order": 8,
-					"list": true,
-					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(1000), new SecNum(0)],
-					"id": "C18",
-					"group": 2,
-					"name": "q_c18_name",
-					"description": "q_c18_description",
-					"hint": "q_c18_hint",
-					"questimage": "building-flinger.png",
-					"rules":
-					{
-						"b5lvl": 1
-					}
-				},
-				{
-					"order": 9,
-					"list": true,
-					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(1000), new SecNum(0)],
-					"id": "C17",
-					"group": 2,
-					"name": "q_c17_name",
-					"description": "q_c17_description",
-					"hint": "q_c17_hint",
-					"questimage": "building-map.png",
-					"rules":
-					{
-						"b11lvl": 1
+						"champion_1": 9
 					}
 				},
 				{
 					"order": 10,
 					"list": true,
-					"reward": [new SecNum(6500), new SecNum(6500), new SecNum(500), new SecNum(1500), new SecNum(0)],
-					"id": "WM1",
+					"reward": [new SecNum(1000000000), new SecNum(1000000000), new SecNum(1000000000), new SecNum(1000000000), new SecNum(0)],
+					"id": "CHAMPION_1_10",
 					"group": 2,
-					"name": "q_wm1_name",
-					"description": "q_wm1_description",
-					"hint": "q_wm1_hint",
-					"questimage": "tribe_legionnaire.png",
+					"name": "Gorgo level 10",
+					"description": "Evolve Gorgo to level 10",
+					"hint": "Feed your Champion other monsters and watch him evolve",
+					"questimage": "G1_L6-150.png",
+					"prereq": "CHAMPION_1_9",
 					"rules":
 					{
-						"destroy_tribe1": 1
+						"champion_1": 10
 					}
 				},
 				{
-					"order": 36,
+					"order": 1,
 					"list": true,
-					"reward": [new SecNum(20000), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0)],
-					"id": "C51",
+					"reward": [new SecNum(1000000), new SecNum(1000000), new SecNum(1000000), new SecNum(1000000), new SecNum(0)],
+					"id": "CHAMPION_2_1",
 					"group": 2,
-					"name": "q_c51_name",
-					"description": "q_c51_description",
-					"hint": "q_c51_hint",
-					"questimage": "building-catapult.png",
+					"name": "Hatch Drull",
+					"description": "Hatch Drull in the Champion Cage",
+					"hint": "Build the Monster Cage to hatch Drull",
+					"questimage": "G2_L1-150.png",
 					"rules":
 					{
-						"b51lvl": 1
+						"champion_2": 1
 					}
 				},
 				{
-					"order": 18,
+					"order": 2,
 					"list": true,
-					"reward": [new SecNum(10000), new SecNum(10000), new SecNum(10000), new SecNum(10000), new SecNum(0)],
-					"id": "WM2",
+					"reward": [new SecNum(2500000), new SecNum(2500000), new SecNum(2500000), new SecNum(2500000), new SecNum(0)],
+					"id": "CHAMPION_2_2",
 					"group": 2,
-					"name": "q_wm2_name",
-					"description": "q_wm2_description",
-					"hint": "q_wm2_hint",
-					"questimage": "tribe_kozu.png",
+					"name": "Drull level 2",
+					"description": "Evolve Drull to level 2",
+					"hint": "Feed your Champion other monsters and watch him evolve",
+					"questimage": "G2_L2-150.png",
+					"prereq": "CHAMPION_2_1",
 					"rules":
 					{
-						"destroy_tribe2": 1
-					}
-				},
-				{
-					"order": 33,
-					"list": true,
-					"reward": [new SecNum(20000), new SecNum(20000), new SecNum(20000), new SecNum(20000), new SecNum(0)],
-					"id": "WM3",
-					"group": 2,
-					"name": "q_wm3_name",
-					"description": "q_wm3_description",
-					"hint": "q_wm3_hint",
-					"questimage": "tribe_abunakki.png",
-					"rules":
-					{
-						"destroy_tribe3": 1
-					}
-				},
-				{
-					"order": 50,
-					"list": true,
-					"reward": [new SecNum(40000), new SecNum(40000), new SecNum(40000), new SecNum(40000), new SecNum(0)],
-					"id": "WM4",
-					"group": 2,
-					"name": "q_wm4_name",
-					"description": "q_wm4_description",
-					"hint": "q_wm4_hint",
-					"questimage": "tribe_dreadnaut.png",
-					"rules":
-					{
-						"destroy_tribe4": 1
-					}
-				},
-
-				// Group 3 (Basic)
-				{
-					"order": 63,
-					"list": true,
-					"reward": [new SecNum(5000), new SecNum(5000), new SecNum(5000), new SecNum(5000), new SecNum(0)],
-					"id": "M2",
-					"group": 3,
-					"name": "q_m2_name",
-					"description": "q_m2_description",
-					"hint": "q_m2_hint",
-					"questimage": "loot.png",
-					"prereq": "M1",
-					"rules":
-					{
-						"mushroomspicked": 100
-					}
-				},
-				{
-					"order": 64,
-					"list": true,
-					"reward": [new SecNum(5000), new SecNum(5000), new SecNum(5000), new SecNum(5000), new SecNum(0)],
-					"id": "M5",
-					"group": 3,
-					"name": "q_m5_name",
-					"description": "q_m5_description",
-					"hint": "q_m5_hint",
-					"questimage": "mushroombling.png",
-					"prereq": "M4",
-					"rules":
-					{
-						"goldmushroomspicked": 20
-					}
-				},
-				{
-					"order": 65,
-					"list": true,
-					"reward": [new SecNum(50000), new SecNum(50000), new SecNum(50000), new SecNum(50000), new SecNum(0)],
-					"id": "M6",
-					"group": 3,
-					"name": "q_m6_name",
-					"description": "q_m6_description",
-					"hint": "q_m6_hint",
-					"questimage": "slotmachine.png",
-					"prereq": "M5",
-					"rules":
-					{
-						"goldmushroomspicked": 50
-					}
-				},
-				{
-					"order": 66,
-					"list": true,
-					"reward": [new SecNum(10000), new SecNum(10000), new SecNum(20000), new SecNum(20000), new SecNum(0)],
-					"id": "M3",
-					"group": 3,
-					"name": "q_m3_name",
-					"description": "q_m3_description",
-					"hint": "q_m3_hint",
-					"questimage": "burger.png",
-					"prereq": "M2",
-					"rules":
-					{
-						"mushroomspicked": 200
+						"champion_2": 2
 					}
 				},
 				{
 					"order": 3,
-					"block": true,
-					"list": false,
-					"reward": [new SecNum(500), new SecNum(1500), new SecNum(500), new SecNum(500), new SecNum(1000)],
-					"id": "C8",
-					"group": 3,
-					"name": "q_c8_name",
-					"description": "q_c8_description",
-					"hint": "q_c8_hint",
-					"questimage": "building-store.png",
+					"list": true,
+					"reward": [new SecNum(5000000), new SecNum(5000000), new SecNum(5000000), new SecNum(5000000), new SecNum(0)],
+					"id": "CHAMPION_2_3",
+					"group": 2,
+					"name": "Drull level 3",
+					"description": "Evolve Drull to level 3",
+					"hint": "Feed your Champion other monsters and watch him evolve",
+					"questimage": "G2_L3-150.png",
+					"prereq": "CHAMPION_2_2",
 					"rules":
 					{
-						"b12lvl": 1
+						"champion_2": 3
 					}
 				},
 				{
-					"order": 13,
+					"order": 4,
 					"list": true,
-					"reward": [new SecNum(1000), new SecNum(1000), new SecNum(500), new SecNum(500), new SecNum(0)],
-					"id": "M1",
-					"group": 3,
-					"name": "q_m1_name",
-					"description": "q_m1_description",
-					"hint": "q_m1_hint",
-					"questimage": "mushroomsoup.png",
+					"reward": [new SecNum(10000000), new SecNum(10000000), new SecNum(10000000), new SecNum(10000000), new SecNum(0)],
+					"id": "CHAMPION_2_4",
+					"group": 2,
+					"name": "Drull level 4",
+					"description": "Evolve Drull to level 4",
+					"hint": "Feed your Champion other monsters and watch him evolve",
+					"questimage": "G2_L4-150.png",
+					"prereq": "CHAMPION_2_3",
 					"rules":
 					{
-						"mushroomspicked": 5
+						"champion_2": 4
 					}
 				},
 				{
-					"order": 62,
+					"order": 5,
 					"list": true,
-					"reward": [new SecNum(1000), new SecNum(1000), new SecNum(500), new SecNum(500), new SecNum(0)],
-					"id": "M4",
-					"group": 3,
-					"name": "q_m4_name",
-					"description": "q_m4_description",
-					"hint": "q_m4_hint",
-					"questimage": "loot.png",
-					"prereq": "M1",
+					"reward": [new SecNum(25000000), new SecNum(25000000), new SecNum(25000000), new SecNum(25000000), new SecNum(0)],
+					"id": "CHAMPION_2_5",
+					"group": 2,
+					"name": "Drull level 5",
+					"description": "Evolve Drull to level 5",
+					"hint": "Feed your Champion other monsters and watch him evolve",
+					"questimage": "G2_L5-150.png",
+					"prereq": "CHAMPION_2_4",
 					"rules":
 					{
-						"goldmushroomspicked": 5
+						"champion_2": 5
 					}
 				},
 				{
-					"order": 28,
+					"order": 6,
 					"list": true,
-					"reward": [new SecNum(1000), new SecNum(1000), new SecNum(1000), new SecNum(1000), new SecNum(0)],
-					"id": "BK1",
-					"group": 3,
-					"name": "q_bk1_name",
-					"description": "q_bk1_description",
-					"hint": "q_bk1_hint",
-					"questimage": "gatherer.png",
+					"reward": [new SecNum(50000000), new SecNum(50000000), new SecNum(50000000), new SecNum(50000000), new SecNum(0)],
+					"id": "CHAMPION_2_6",
+					"group": 2,
+					"name": "Drull level 6",
+					"description": "Evolve Drull to level 6",
+					"hint": "Feed your Champion other monsters and watch him evolve",
+					"questimage": "G2_L6-150.png",
+					"prereq": "CHAMPION_2_5",
 					"rules":
 					{
-						"singleclickbank": 1000
+						"champion_2": 6
 					}
 				},
 				{
-					"order": 43,
+					"order": 7,
 					"list": true,
-					"reward": [new SecNum(2000), new SecNum(2000), new SecNum(2000), new SecNum(2000), new SecNum(0)],
-					"id": "BK2",
-					"group": 3,
-					"name": "q_bk2_name",
-					"description": "q_bk2_description",
-					"hint": "q_bk2_hint",
-					"questimage": "trenchcoat.png",
-					"prereq": "BK1",
+					"reward": [new SecNum(100000000), new SecNum(100000000), new SecNum(100000000), new SecNum(100000000), new SecNum(0)],
+					"id": "CHAMPION_2_7",
+					"group": 2,
+					"name": "Drull level 7",
+					"description": "Evolve Drull to level 7",
+					"hint": "Feed your Champion other monsters and watch him evolve",
+					"questimage": "G2_L6-150.png",
+					"prereq": "CHAMPION_2_6",
 					"rules":
 					{
-						"singleclickbank": 20000
+						"champion_2": 7
 					}
 				},
 				{
-					"order": 57,
+					"order": 8,
 					"list": true,
-					"reward": [new SecNum(10000), new SecNum(10000), new SecNum(10000), new SecNum(10000), new SecNum(0)],
-					"id": "BK3",
-					"group": 3,
-					"name": "q_bk3_name",
-					"description": "q_bk3_description",
-					"hint": "q_bk3_hint",
-					"questimage": "wallstreet.png",
-					"prereq": "BK2",
+					"reward": [new SecNum(250000000), new SecNum(250000000), new SecNum(250000000), new SecNum(250000000), new SecNum(0)],
+					"id": "CHAMPION_2_8",
+					"group": 2,
+					"name": "Drull level 8",
+					"description": "Evolve Drull to level 8",
+					"hint": "Feed your Champion other monsters and watch him evolve",
+					"questimage": "G2_L6-150.png",
+					"prereq": "CHAMPION_2_7",
 					"rules":
 					{
-						"singleclickbank": 100000
+						"champion_2": 8
 					}
 				},
 				{
-					"order": 58,
+					"order": 9,
 					"list": true,
-					"reward": [new SecNum(50000), new SecNum(50000), new SecNum(50000), new SecNum(50000), new SecNum(0)],
-					"id": "BK4",
-					"group": 3,
-					"name": "q_bk4_name",
-					"description": "q_bk4_description",
-					"hint": "q_bk4_hint",
-					"questimage": "mogul.png",
-					"prereq": "BK3",
+					"reward": [new SecNum(500000000), new SecNum(500000000), new SecNum(500000000), new SecNum(500000000), new SecNum(0)],
+					"id": "CHAMPION_2_9",
+					"group": 2,
+					"name": "Drull level 9",
+					"description": "Evolve Drull to level 9",
+					"hint": "Feed your Champion other monsters and watch him evolve",
+					"questimage": "G2_L6-150.png",
+					"prereq": "CHAMPION_2_8",
 					"rules":
 					{
-						"singleclickbank": 500000
+						"champion_2": 9
 					}
 				},
 				{
-					"order": 72,
+					"order": 10,
 					"list": true,
-					"priority": 1,
-					"reward": [new SecNum(1000), new SecNum(1000), new SecNum(1000), new SecNum(1000), new SecNum(0)],
-					"id": "GA1",
-					"group": 3,
-					"name": "q_ga1_name",
-					"description": "q_ga1_description",
-					"hint": "q_ga1_hint",
-					"questimage": "brasscoin.png",
+					"reward": [new SecNum(1000000000), new SecNum(1000000000), new SecNum(1000000000), new SecNum(1000000000), new SecNum(0)],
+					"id": "CHAMPION_2_10",
+					"group": 2,
+					"name": "Drull level 10",
+					"description": "Evolve Drull to level 10",
+					"hint": "Feed your Champion other monsters and watch him evolve",
+					"questimage": "G2_L6-150.png",
+					"prereq": "CHAMPION_2_9",
 					"rules":
 					{
-						"gift_accept": 5
+						"champion_2": 10
 					}
 				},
 				{
-					"order": 73,
+					"order": 1,
 					"list": true,
-					"priority": 1,
-					"reward": [new SecNum(10000), new SecNum(10000), new SecNum(10000), new SecNum(10000), new SecNum(0)],
-					"id": "GA2",
-					"group": 3,
-					"name": "q_ga2_name",
-					"description": "q_ga2_description",
-					"hint": "q_ga2_hint",
-					"questimage": "silvercoin.png",
-					"prereq": "GA1",
+					"reward": [new SecNum(1000000), new SecNum(1000000), new SecNum(1000000), new SecNum(1000000), new SecNum(0)],
+					"id": "CHAMPION_3_1",
+					"group": 2,
+					"name": "Hatch Fomor",
+					"description": "Hatch Fomor in the Champion Cage",
+					"hint": "Build the Monster Cage to hatch Fomor",
+					"questimage": "G3_L1-150.png",
 					"rules":
 					{
-						"gift_accept": 25
+						"champion_3": 1
 					}
 				},
 				{
-					"order": 73,
+					"order": 2,
 					"list": true,
-					"priority": 1,
-					"reward": [new SecNum(20000), new SecNum(20000), new SecNum(20000), new SecNum(20000), new SecNum(0)],
-					"id": "GA3",
-					"group": 3,
-					"name": "q_ga3_name",
-					"description": "q_ga3_description",
-					"hint": "q_ga3_hint",
-					"questimage": "goldcoin.png",
-					"prereq": "GA2",
+					"reward": [new SecNum(2500000), new SecNum(2500000), new SecNum(2500000), new SecNum(2500000), new SecNum(0)],
+					"id": "CHAMPION_3_2",
+					"group": 2,
+					"name": "Fomor level 2",
+					"description": "Evolve Fomor to level 2",
+					"hint": "Feed your Champion other monsters and watch him evolve",
+					"questimage": "G3_L2-150.png",
+					"prereq": "CHAMPION_3_1",
 					"rules":
 					{
-						"gift_accept": 50
+						"champion_3": 2
 					}
 				},
 				{
-					"order": 70,
+					"order": 3,
 					"list": true,
-					"priority": 1,
-					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(50)],
-					"id": "FAN",
-					"group": 3,
-					"name": "q_fan_name",
-					"description": "q_fan_description",
-					"hint": "q_fan_hint",
-					"questimage": "fantastic.png",
+					"reward": [new SecNum(5000000), new SecNum(5000000), new SecNum(5000000), new SecNum(5000000), new SecNum(0)],
+					"id": "CHAMPION_3_3",
+					"group": 2,
+					"name": "Fomor level 3",
+					"description": "Evolve Fomor to level 3",
+					"hint": "Feed your Champion other monsters and watch him evolve",
+					"questimage": "G3_L3-150.png",
+					"prereq": "CHAMPION_3_2",
 					"rules":
 					{
-						"bonus_fan": 1
+						"champion_3": 3
 					}
 				},
 				{
-					"order": 71,
+					"order": 4,
 					"list": true,
-					"priority": 1,
-					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(25)],
-					"id": "INVITE1",
-					"group": 3,
-					"name": "q_invite1_name",
-					"description": "q_invite1_description",
-					"hint": "q_invite1_hint",
-					"questimage": "friendlymonster.png",
+					"reward": [new SecNum(10000000), new SecNum(10000000), new SecNum(10000000), new SecNum(10000000), new SecNum(0)],
+					"id": "CHAMPION_3_4",
+					"group": 2,
+					"name": "Fomor level 4",
+					"description": "Evolve Fomor to level 4",
+					"hint": "Feed your Champion other monsters and watch him evolve",
+					"questimage": "G3_L4-150.png",
+					"prereq": "CHAMPION_3_3",
 					"rules":
 					{
-						"bonus_invites": 1
+						"champion_3": 4
 					}
 				},
 				{
-					"order": 74,
+					"order": 5,
 					"list": true,
-					"priority": 1,
-					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(45)],
-					"id": "INVITE5",
-					"group": 3,
-					"name": "q_invite5_name",
-					"description": "q_invite5_description",
-					"hint": "q_invite5_hint",
-					"questimage": "bandofmonsters.png",
-					"prereq": "INVITE1",
+					"reward": [new SecNum(25000000), new SecNum(25000000), new SecNum(25000000), new SecNum(25000000), new SecNum(0)],
+					"id": "CHAMPION_3_5",
+					"group": 2,
+					"name": "Fomor level 5",
+					"description": "Evolve Fomor to level 5",
+					"hint": "Feed your Champion other monsters and watch him evolve",
+					"questimage": "G3_L5-150.png",
+					"prereq": "CHAMPION_3_4",
 					"rules":
 					{
-						"bonus_invites": 5
+						"champion_3": 5
 					}
 				},
 				{
-					"order": 76,
+					"order": 6,
 					"list": true,
-					"priority": 1,
-					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(65)],
-					"id": "INVITE10",
-					"group": 3,
-					"name": "q_invite10_name",
-					"description": "q_invite10_description",
-					"hint": "q_invite10_hint",
-					"questimage": "monsterparty.png",
-					"prereq": "INVITE5",
+					"reward": [new SecNum(50000000), new SecNum(50000000), new SecNum(50000000), new SecNum(50000000), new SecNum(0)],
+					"id": "CHAMPION_3_6",
+					"group": 2,
+					"name": "Fomor level 6",
+					"description": "Evolve Fomor to level 6",
+					"hint": "Feed your Champion other monsters and watch him evolve",
+					"questimage": "G3_L6-150.png",
+					"prereq": "CHAMPION_3_5",
 					"rules":
 					{
-						"bonus_invites": 10
+						"champion_3": 6
 					}
 				},
 				{
-					"order": 44,
+					"order": 7,
 					"list": true,
-					"reward": [new SecNum(0), new SecNum(0), new SecNum(1000), new SecNum(1000), new SecNum(0)],
-					"id": "BL1",
-					"group": 3,
-					"name": "q_bl1_name",
-					"description": "q_bl1_description",
-					"hint": "q_bl1_hint",
-					"questimage": "monsterjuice.png",
+					"reward": [new SecNum(100000000), new SecNum(100000000), new SecNum(100000000), new SecNum(100000000), new SecNum(0)],
+					"id": "CHAMPION_3_7",
+					"group": 2,
+					"name": "Fomor level 7",
+					"description": "Evolve Fomor to level 7",
+					"hint": "Feed your Champion other monsters and watch him evolve",
+					"questimage": "G3_L6-150.png",
+					"prereq": "CHAMPION_3_6",
 					"rules":
 					{
-						"monstersblended": 10
+						"champion_3": 7
 					}
 				},
 				{
-					"order": 59,
+					"order": 8,
 					"list": true,
-					"reward": [new SecNum(0), new SecNum(0), new SecNum(10000), new SecNum(10000), new SecNum(0)],
-					"id": "BL2",
-					"group": 3,
-					"name": "q_bl2_name",
-					"description": "q_bl2_description",
-					"hint": "q_bl2_hint",
-					"questimage": "smoothie.png",
-					"prereq": "BL1",
+					"reward": [new SecNum(250000000), new SecNum(250000000), new SecNum(250000000), new SecNum(250000000), new SecNum(0)],
+					"id": "CHAMPION_3_8",
+					"group": 2,
+					"name": "Fomor level 8",
+					"description": "Evolve Fomor to level 8",
+					"hint": "Feed your Champion other monsters and watch him evolve",
+					"questimage": "G3_L6-150.png",
+					"prereq": "CHAMPION_3_7",
 					"rules":
 					{
-						"monstersblended": 100
+						"champion_3": 8
 					}
 				},
 				{
-					"order": 60,
+					"order": 9,
 					"list": true,
-					"reward": [new SecNum(0), new SecNum(0), new SecNum(100000), new SecNum(100000), new SecNum(0)],
-					"id": "BL3",
-					"group": 3,
-					"name": "q_bl3_name",
-					"description": "q_bl3_description",
-					"hint": "q_bl3_hint",
-					"questimage": "monstershake.png",
-					"prereq": "BL2",
+					"reward": [new SecNum(500000000), new SecNum(500000000), new SecNum(500000000), new SecNum(500000000), new SecNum(0)],
+					"id": "CHAMPION_3_9",
+					"group": 2,
+					"name": "Fomor level 9",
+					"description": "Evolve Fomor to level 9",
+					"hint": "Feed your Champion other monsters and watch him evolve",
+					"questimage": "G3_L6-150.png",
+					"prereq": "CHAMPION_3_8",
 					"rules":
 					{
-						"monstersblended": 1000
+						"champion_3": 9
 					}
 				},
 				{
-					"order": 61,
+					"order": 10,
 					"list": true,
-					"reward": [new SecNum(0), new SecNum(0), new SecNum(1000000), new SecNum(1000000), new SecNum(0)],
-					"id": "BL4",
-					"group": 3,
-					"name": "q_bl4_name",
-					"description": "q_bl4_description",
-					"hint": "q_bl4_hint",
-					"questimage": "margarita.png",
-					"prereq": "BL3",
+					"reward": [new SecNum(1000000000), new SecNum(1000000000), new SecNum(1000000000), new SecNum(1000000000), new SecNum(0)],
+					"id": "CHAMPION_3_10",
+					"group": 2,
+					"name": "Fomor level 10",
+					"description": "Evolve Fomor to level 10",
+					"hint": "Feed your Champion other monsters and watch him evolve",
+					"questimage": "G3_L6-150.png",
+					"prereq": "CHAMPION_3_9",
 					"rules":
 					{
-						"monstersblended": 5000
+						"champion_3": 10
 					}
 				},
+				{
+					"order": 1,
+					"list": true,
+					"reward": [new SecNum(1000000), new SecNum(1000000), new SecNum(1000000), new SecNum(1000000), new SecNum(0)],
+					"id": "CHAMPION_4_1",
+					"group": 2,
+					"name": "Hatch Korath",
+					"description": "Hatch Korath in the Champion Cage",
+					"hint": "Build the Monster Cage to hatch Korath",
+					"questimage": "G4_L1-150.png",
+					"rules":
+					{
+						"champion_4": 1
+					}
+				},
+				{
+					"order": 2,
+					"list": true,
+					"reward": [new SecNum(2500000), new SecNum(2500000), new SecNum(2500000), new SecNum(2500000), new SecNum(0)],
+					"id": "CHAMPION_4_2",
+					"group": 2,
+					"name": "Korath level 2",
+					"description": "Evolve Korath to level 2",
+					"hint": "Feed your Champion other monsters and watch him evolve",
+					"questimage": "G4_L2-150.png",
+					"prereq": "CHAMPION_4_1",
+					"rules":
+					{
+						"champion_4": 2
+					}
+				},
+				{
+					"order": 3,
+					"list": true,
+					"reward": [new SecNum(5000000), new SecNum(5000000), new SecNum(5000000), new SecNum(5000000), new SecNum(0)],
+					"id": "CHAMPION_4_3",
+					"group": 2,
+					"name": "Korath level 3",
+					"description": "Evolve Korath to level 3",
+					"hint": "Feed your Champion other monsters and watch him evolve",
+					"questimage": "G4_L3-150.png",
+					"prereq": "CHAMPION_4_2",
+					"rules":
+					{
+						"champion_4": 3
+					}
+				},
+				{
+					"order": 4,
+					"list": true,
+					"reward": [new SecNum(10000000), new SecNum(10000000), new SecNum(10000000), new SecNum(10000000), new SecNum(0)],
+					"id": "CHAMPION_4_4",
+					"group": 2,
+					"name": "Korath level 4",
+					"description": "Evolve Korath to level 4",
+					"hint": "Feed your Champion other monsters and watch him evolve",
+					"questimage": "G4_L4-150.png",
+					"prereq": "CHAMPION_4_3",
+					"rules":
+					{
+						"champion_4": 4
+					}
+				},
+				{
+					"order": 5,
+					"list": true,
+					"reward": [new SecNum(25000000), new SecNum(25000000), new SecNum(25000000), new SecNum(25000000), new SecNum(0)],
+					"id": "CHAMPION_4_5",
+					"group": 2,
+					"name": "Korath level 5",
+					"description": "Evolve Korath to level 5",
+					"hint": "Feed your Champion other monsters and watch him evolve",
+					"questimage": "G4_L5-150.png",
+					"prereq": "CHAMPION_4_4",
+					"rules":
+					{
+						"champion_4": 5
+					}
+				},
+				{
+					"order": 6,
+					"list": true,
+					"reward": [new SecNum(50000000), new SecNum(50000000), new SecNum(50000000), new SecNum(50000000), new SecNum(0)],
+					"id": "CHAMPION_4_6",
+					"group": 2,
+					"name": "Korath level 6",
+					"description": "Evolve Korath to level 6",
+					"hint": "Feed your Champion other monsters and watch him evolve",
+					"questimage": "G4_L6-150.png",
+					"prereq": "CHAMPION_4_5",
+					"rules":
+					{
+						"champion_4": 6
+					}
+				},
+				{
+					"order": 7,
+					"list": true,
+					"reward": [new SecNum(100000000), new SecNum(100000000), new SecNum(100000000), new SecNum(100000000), new SecNum(0)],
+					"id": "CHAMPION_4_7",
+					"group": 2,
+					"name": "Korath level 7",
+					"description": "Evolve Korath to level 7",
+					"hint": "Feed your Champion other monsters and watch him evolve",
+					"questimage": "G4_L6-150.png",
+					"prereq": "CHAMPION_4_6",
+					"rules":
+					{
+						"champion_4": 7
+					}
+				},
+				{
+					"order": 8,
+					"list": true,
+					"reward": [new SecNum(250000000), new SecNum(250000000), new SecNum(250000000), new SecNum(250000000), new SecNum(0)],
+					"id": "CHAMPION_4_8",
+					"group": 2,
+					"name": "Korath level 8",
+					"description": "Evolve Korath to level 8",
+					"hint": "Feed your Champion other monsters and watch him evolve",
+					"questimage": "G4_L6-150.png",
+					"prereq": "CHAMPION_4_7",
+					"rules":
+					{
+						"champion_4": 8
+					}
+				},
+				{
+					"order": 9,
+					"list": true,
+					"reward": [new SecNum(500000000), new SecNum(500000000), new SecNum(500000000), new SecNum(500000000), new SecNum(0)],
+					"id": "CHAMPION_4_9",
+					"group": 2,
+					"name": "Korath level 9",
+					"description": "Evolve Korath to level 9",
+					"hint": "Feed your Champion other monsters and watch him evolve",
+					"questimage": "G4_L6-150.png",
+					"prereq": "CHAMPION_4_8",
+					"rules":
+					{
+						"champion_4": 9
+					}
+				},
+				{
+					"order": 10,
+					"list": true,
+					"reward": [new SecNum(1000000000), new SecNum(1000000000), new SecNum(1000000000), new SecNum(1000000000), new SecNum(0)],
+					"id": "CHAMPION_4_10",
+					"group": 2,
+					"name": "Korath level 10",
+					"description": "Evolve Korath to level 10",
+					"hint": "Feed your Champion other monsters and watch him evolve",
+					"questimage": "G4_L6-150.png",
+					"prereq": "CHAMPION_4_9",
+					"rules":
+					{
+						"champion_4": 10
+					}
+				},
+
+				// Group 3 (Events)
 
 				// Group 4 (Progress)
 				{
@@ -8344,7 +8480,8 @@ package
 				},
 
 			];
-			var _loc1_:Array = [0,0,10,10,10,2,15,15,15,20,20,5,2,5,5,1];
+
+			var _loc1_:Array = [0, 0, 10, 10, 10, 2, 15, 15, 15, 20, 20, 5, 2, 5, 5, 1];
 			_loc2_ = CREATURELOCKER._creatures["C" + 2];
 			_quests.push({
 				"order":20,
@@ -8754,81 +8891,77 @@ package
 			var v:int = param2;
 			try
 			{
-			if(GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD && MapRoomManager.instance.isInMapRoom3 && BASE.isMainYardOrInfernoMainYard || GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD && !MapRoomManager.instance.isInMapRoom3)
-			{
-				if(Boolean(n) && _global[n] < v)
+				if(GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD && MapRoomManager.instance.isInMapRoom3 && BASE.isMainYardOrInfernoMainYard || GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD && !MapRoomManager.instance.isInMapRoom3)
 				{
-					_global[n] = v;
-				}
-				if(!_completed)
-				{
-					_completed = {};
-				}
-				i = 0;
-				while(i < _quests.length)
-				{
-					q = _quests[i];
-					block = false;
-					if(q.id == "BOOKMARK" && !GLOBAL._flags.fanfriendbookmarkquests)
+					if(Boolean(n) && _global[n] < v)
 					{
-						block = true;
+						_global[n] = v;
 					}
-					if(q.id.substr(0,6) == "INVITE" && !GLOBAL._flags.fanfriendbookmarkquests)
+					if(!_completed)
 					{
-						block = true;
+						_completed = {};
 					}
-					if(q.id == "FAN" && !GLOBAL._flags.fanfriendbookmarkquests)
+					i = 0;
+					while(i < _quests.length)
 					{
-						block = true;
-					}
-					if(q.block)
-					{
-						block = true;
-					}
-					if(TUTORIAL._stage < 200 && (q.id == "BOOKMARK" || q.id == "FAN"))
-					{
-						block = true;
-					}
-					if(q.group != 99 && !block)
-					{
-						if(!_completed[q.id])
+						q = _quests[i];
+						block = false;
+						if(q.id == "BOOKMARK" && !GLOBAL._flags.fanfriendbookmarkquests)
 						{
-							fail = false;
-							for(n in q.rules)
+							block = true;
+						}
+						if(q.id.substr(0,6) == "INVITE" && !GLOBAL._flags.fanfriendbookmarkquests)
+						{
+							block = true;
+						}
+						if(q.id == "FAN" && !GLOBAL._flags.fanfriendbookmarkquests)
+						{
+							block = true;
+						}
+						if(q.block)
+						{
+							block = true;
+						}
+						if(TUTORIAL._stage < 200 && (q.id == "BOOKMARK" || q.id == "FAN"))
+						{
+							block = true;
+						}
+						if(q.group != 99 && !block)
+						{
+							if(!_completed[q.id])
 							{
-								if(n == "UNLOCK")
+								fail = false;
+								for(n in q.rules)
 								{
-									if(!CREATURELOCKER._lockerData[q.rules.UNLOCK] || CREATURELOCKER._lockerData[q.rules.UNLOCK].t == 1)
+									if(n == "UNLOCK")
+									{
+										if(!CREATURELOCKER._lockerData[q.rules.UNLOCK] || CREATURELOCKER._lockerData[q.rules.UNLOCK].t == 1)
+										{
+											fail = true;
+										}
+									}
+									else if(q.rules[n] > _global[n])
 									{
 										fail = true;
 									}
 								}
-								else if(q.rules[n] > _global[n])
+								if(Boolean(_completed[q.id]) && _completed[q.id] == 2)
 								{
 									fail = true;
 								}
-							}
-							if(Boolean(_completed[q.id]) && _completed[q.id] == 2)
-							{
-								fail = true;
-							}
-							if(!fail)
-							{
-								_completed[q.id] = 1;
-								if(BASE.isInfernoMainYardOrOutpost)
+								if(!fail)
 								{
-									ACHIEVEMENTS.Check(ACHIEVEMENTS.INFERNO_QUESTS_COMPLETED,amountCompleted);
+									_completed[q.id] = 1;
 								}
 							}
 						}
+						i++;
 					}
-					i++;
 				}
-			}
 			}
 			catch(e:Error)
 			{
-			LOGGER.Log("err","Quests.Check: " + e.message + " | " + e.getStackTrace());
+				LOGGER.Log("err","Quests.Check: " + e.message + " | " + e.getStackTrace());
 			}
 		}
 		
@@ -8841,10 +8974,10 @@ package
 			var _loc2_:Object = null;
 			for each(_loc2_ in _quests)
 			{
-			if(_loc2_.id == param1)
-			{
-				return _loc2_;
-			}
+				if(_loc2_.id == param1)
+				{
+					return _loc2_;
+				}
 			}
 			return null;
 		}

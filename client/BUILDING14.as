@@ -166,8 +166,6 @@ package
       override public function Constructed() : void
       {
          GLOBAL.setTownHall(this);
-         ACHIEVEMENTS.Check("thlevel",_lvl.Get());
-         ACHIEVEMENTS.Check(ACHIEVEMENTS.UNDERHALL_LEVEL,_lvl.Get());
          super.Constructed();
       }
       
@@ -183,8 +181,6 @@ package
       override public function Upgraded() : void
       {
          LOGGER.KongStat([2,_lvl.Get()]);
-         ACHIEVEMENTS.Check("thlevel",_lvl.Get());
-         ACHIEVEMENTS.Check(ACHIEVEMENTS.UNDERHALL_LEVEL,_lvl.Get());
          super.Upgraded();
          this.UnlockBuildings();
       }
@@ -215,8 +211,6 @@ package
             UI2._top.validateSiegeWeapon();
          }
          this.UnlockBuildings();
-         ACHIEVEMENTS.Check("thlevel",_lvl.Get());
-         ACHIEVEMENTS.Check(ACHIEVEMENTS.UNDERHALL_LEVEL,_lvl.Get());
       }
    }
 }

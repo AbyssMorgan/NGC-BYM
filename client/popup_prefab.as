@@ -319,7 +319,6 @@ package
                }
             }
          }
-         ACHIEVEMENTS.Check("starterkit",1);
          PATHING.ResetCosts();
          POPUPS.Next();
          BASE.Save();

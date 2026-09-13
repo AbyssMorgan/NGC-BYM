@@ -2795,67 +2795,67 @@ package
 			}
 		}
       
-      public function Upgraded() : void
-      {
-         var c:Object;
-         var a:Number;
-         try
-         {
-            if(Math.max(this._countdownUpgrade.Get(),0))
-            {
-            }
-            this._countdownUpgrade.Set(0);
-            this._lvl.Add(1);
-            ++this._hpLvl;
-            maxHealthProperty.value = this._buildingProps.hp[this._lvl.Get() - 1];
-            setHealth(maxHealth);
-         }
-         catch(e:Error)
-         {
-            LOGGER.Log("err","Foundation.Upgraded: " + e.message + " | " + e.getStackTrace());
-         }
-         QUESTS.Check("blvl",this._lvl.Get());
-         if(this._type < 5)
-         {
-            QUESTS.Check("brlvl",this._lvl.Get());
-         }
-         QUESTS.Check("b" + this._type + "lvl",this._lvl.Get());
-         BASE.CalcResources();
-         c = this._buildingProps.costs[this._lvl.Get() - 2];
-         a = Math.floor((c.time.Get() + c.r1.Get() + c.r2.Get() + c.r3.Get() + c.r4.Get()) / 3);
-         BASE.PointsAdd(a);
-         this.Description();
-         QUEUE.Remove("building" + this._id,true,this);
-         LOGGER.Stat([8,this._type,this._lvl.Get()]);
-      }
+		public function Upgraded() : void
+		{
+			var c:Object;
+			var a:Number;
+			try
+			{
+				if(Math.max(this._countdownUpgrade.Get(),0))
+				{
+				}
+				this._countdownUpgrade.Set(0);
+				this._lvl.Add(1);
+				++this._hpLvl;
+				maxHealthProperty.value = this._buildingProps.hp[this._lvl.Get() - 1];
+				setHealth(maxHealth);
+			}
+			catch(e:Error)
+			{
+				LOGGER.Log("err","Foundation.Upgraded: " + e.message + " | " + e.getStackTrace());
+			}
+			QUESTS.Check("blvl",this._lvl.Get());
+			if(this._type < 5)
+			{
+				QUESTS.Check("brlvl",this._lvl.Get());
+			}
+			QUESTS.Check("b" + this._type + "lvl",this._lvl.Get());
+			BASE.CalcResources();
+			c = this._buildingProps.costs[this._lvl.Get() - 2];
+			a = Math.floor((c.time.Get() + c.r1.Get() + c.r2.Get() + c.r3.Get() + c.r4.Get()) / 3);
+			BASE.PointsAdd(a);
+			this.Description();
+			QUEUE.Remove("building" + this._id,true,this);
+			LOGGER.Stat([8,this._type,this._lvl.Get()]);
+		}
       
-      public function downgraded() : void
-      {
-      }
-      
-      public function Downgrade_TOTEM_DEBUG() : void
-      {
-         if(this._type != BTOTEM.BTOTEM_WMI2)
-         {
-            return;
-         }
-         if(this._lvl.Get() <= 1)
-         {
-            return;
-         }
-         try
-         {
-            this._countdownUpgrade.Set(0);
-            this._lvl.Add(-1);
-            --this._hpLvl;
-            maxHealthProperty.value = this._buildingProps.hp[this._lvl.Get() - 1];
-            setHealth(maxHealth);
-         }
-         catch(e:Error)
-         {
-            LOGGER.Log("err","Foundation.Downgrade_TOTEM_DEBUG: " + e.message + " | " + e.getStackTrace());
-         }
-      }
+		public function downgraded() : void
+		{
+		}
+		
+		public function Downgrade_TOTEM_DEBUG() : void
+		{
+			if(this._type != BTOTEM.BTOTEM_WMI2)
+			{
+				return;
+			}
+			if(this._lvl.Get() <= 1)
+			{
+				return;
+			}
+			try
+			{
+				this._countdownUpgrade.Set(0);
+				this._lvl.Add(-1);
+				--this._hpLvl;
+				maxHealthProperty.value = this._buildingProps.hp[this._lvl.Get() - 1];
+				setHealth(maxHealth);
+			}
+			catch(e:Error)
+			{
+				LOGGER.Log("err","Foundation.Downgrade_TOTEM_DEBUG: " + e.message + " | " + e.getStackTrace());
+			}
+		}
       
       public function Fortified() : void
       {
@@ -3369,55 +3369,55 @@ package
          return param1;
       }
       
-      public function Constructed() : void
-      {
-         if(BASE.isOutpostOrInfernoOutpost)
-         {
-            this._blockRecycle = true;
-         }
-         this._countdownBuild.Set(0);
-         this._constructed = true;
-         if(!this._prefab && !BTOTEM.IsTotem2(this._type))
-         {
-            this._lvl.Set(1);
-            this._hpLvl = 1;
-         }
-         else
-         {
-            this._prefab = 0;
-         }
-         BASE.CalcResources();
-         QUESTS.Check("blvl",this._lvl.Get());
-         QUESTS.Check("b" + this._type + "lvl",this._lvl.Get());
-         if(this._type < 5)
-         {
-            QUESTS.Check("brlvl",this._lvl.Get());
-         }
-         var _loc1_:Object = this._buildingProps.costs[0];
-         var _loc2_:Number = Math.floor(_loc1_.time.Get() / 2 + (_loc1_.r1.Get() + _loc1_.r2.Get() + _loc1_.r3.Get() + _loc1_.r4.Get()) / 10);
-         if(this._type == 14)
-         {
-            _loc2_ += 100;
-         }
-         BASE.PointsAdd(_loc2_);
-         this.Description();
-         QUEUE.Remove("building" + this._id,true,this);
-         LOGGER.Stat([6,this._type]);
-         this.Update();
-      }
-      
-      public function BlockClicks() : void
-      {
-         if(this._mcHit)
-         {
-            this._mcHit.mouseEnabled = false;
-            this._mcHit.buttonMode = false;
-         }
-         if(_mc)
-         {
-            _mc.alpha = 0.5;
-         }
-      }
+		public function Constructed() : void
+		{
+			if(BASE.isOutpostOrInfernoOutpost)
+			{
+				this._blockRecycle = true;
+			}
+			this._countdownBuild.Set(0);
+			this._constructed = true;
+			if(!this._prefab && !BTOTEM.IsTotem2(this._type))
+			{
+				this._lvl.Set(1);
+				this._hpLvl = 1;
+			}
+			else
+			{
+				this._prefab = 0;
+			}
+			BASE.CalcResources();
+			QUESTS.Check("blvl",this._lvl.Get());
+			QUESTS.Check("b" + this._type + "lvl",this._lvl.Get());
+			if(this._type < 5)
+			{
+				QUESTS.Check("brlvl",this._lvl.Get());
+			}
+			var _loc1_:Object = this._buildingProps.costs[0];
+			var _loc2_:Number = Math.floor(_loc1_.time.Get() / 2 + (_loc1_.r1.Get() + _loc1_.r2.Get() + _loc1_.r3.Get() + _loc1_.r4.Get()) / 10);
+			if(this._type == 14)
+			{
+				_loc2_ += 100;
+			}
+			BASE.PointsAdd(_loc2_);
+			this.Description();
+			QUEUE.Remove("building" + this._id,true,this);
+			LOGGER.Stat([6,this._type]);
+			this.Update();
+		}
+		
+		public function BlockClicks() : void
+		{
+			if(this._mcHit)
+			{
+				this._mcHit.mouseEnabled = false;
+				this._mcHit.buttonMode = false;
+			}
+			if(_mc)
+			{
+				_mc.alpha = 0.5;
+			}
+		}
       
       public function UnblockClicks() : void
       {
@@ -3550,205 +3550,205 @@ package
          return _loc1_;
       }
       
-      public function Setup(building:Object) : void
-      {
-         var _loc2_:Point = null;
-         var _loc3_:int = 0;
-         var _loc4_:int = 0;
-         var _loc5_:int = 0;
-         var _loc6_:int = 0;
-         this._type = building.t;
-         this._id = building.id;
-         _loc2_ = GRID.ToISO(building.X,building.Y,0);
-         if(this._type == 112)
-         {
-            building.l = 1;
-         }
-         if(Boolean(building.l) && building.l <= int.MAX_VALUE)
-         {
-            this._lvl.Set(int(building.l));
-         }
-         else
-         {
-            this._lvl.Set(1);
-         }
-         _mc.x = _loc2_.x;
-         _mc.y = _loc2_.y;
-         ++BASE._buildingCount;
-         this._countdownBuild.Set(int(building.cB));
-         if(building.prefab)
-         {
-            this._prefab = building.prefab;
-            this._lvl.Set(building.prefab);
-            if(this._countdownBuild.Get() == 0)
-            {
-               _loc3_ = 0;
-               _loc4_ = 0;
-               while(_loc4_ < building.prefab)
-               {
-                  _loc3_ += GLOBAL._buildingProps[this._type - 1].costs[_loc4_].time.Get();
-                  _loc4_++;
-               }
-               this._countdownBuild.Set(_loc3_);
-            }
-         }
-         this._countdownUpgrade.Set(int(building.cU));
-         // In MR2, cancel any in-progress upgrade that targets a level above the MR2 cap.
-         // This handles the case where a player started a housing/flinger upgrade on MR3 then
-         // downgraded back to MR2.
-         if(this._countdownUpgrade.Get() > 0 && this._lvl.Get() >= getEffectiveLevelMax())
-         {
-            this._countdownUpgrade.Set(0);
-            BASE.Save();
-         }
-         this._countdownRebuild.Set(int(building.cR));
-         this._hpCountdownRebuild = this._countdownRebuild.Get();
-         if(building.fort)
-         {
-            this._fortification.Set(Math.min(building.fort,BYMConfig.k_sMAX_FORTIFICATION_LEVEL));
-         }
-         else
-         {
-            this._fortification.Set(0);
-         }
-         if(Boolean(building.cF) && this._fortification.Get() < BYMConfig.k_sMAX_FORTIFICATION_LEVEL)
-         {
-            this._countdownFortify.Set(int(building.cF));
-         }
-         else
-         {
-            this._countdownFortify.Set(0);
-         }
-         this._repairing = int(building.rE);
-         if(this._repairing > 0)
-         {
-            this._repairing = 1;
-         }
-         this._productionStage.Set(int(building.rPS));
-         this._countdownProduce.Set(int(building.rCP));
-         this._hpCountdownProduce = this._countdownProduce.Get();
-         if(Boolean(building.rIP) && building.rIP != "")
-         {
-            this._inProduction = building.rIP;
-         }
-         if(this._inProduction == "C100")
-         {
-            this._inProduction = "C12";
-         }
-         if(building.hl)
-         {
-            this._helpList = building.hl;
-         }
-         if(building.ti)
-         {
-            this._threadid = building.ti;
-         }
-         if(building.sid)
-         {
-            this._senderid = building.sid;
-         }
-         if(building.snm)
-         {
-            this._senderName = building.snm;
-         }
-         if(building.spc)
-         {
-            this._senderPic = building.spc;
-         }
-         if(building.sbj)
-         {
-            this._subject = building.sbj;
-         }
-         if(this._countdownBuild.Get() > 0 && !this._prefab)
-         {
-            this._lvl.Set(0);
-         }
-         var hpLevel:int = _lvl.Get();
-         this._hpLvl = hpLevel;
-         if(hpLevel == 0)
-         {
-            maxHealthProperty.value = this._buildingProps.hp[0];
-         }
-         else
-         {
-            maxHealthProperty.value = int(this._buildingProps.hp[hpLevel - 1]);
-         }
-         if(building.hp == null)
-         {
-            setHealth(maxHealth);
-         }
-         else
-         {
-            setHealth(int(building.hp));
-            if(health > maxHealth)
-            {
-               setHealth(maxHealth);
-            }
-         }
-         if(health == 0)
-         {
-            this._destroyed = true;
-            this._fired = true;
-         }
-         this.Description();
-         this._constructed = this._countdownBuild.Get() == 0;
-         if(this._lvl.Get() == 0 && this._constructed)
-         {
-            this._lvl.Set(1);
-         }
-         if(this._type == 17)
-         {
-            this._gridCost[1][1] = 100 + this._lvl.Get() * 25;
-         }
-         this.PlaceB();
-         if(this._countdownBuild.Get() > 0)
-         {
-            if(this._prefab) // Comment: Instantly builds a building
-            {
-               this._hasResources = true;
-               this._hasWorker = true;
-            }
-            else if(QUEUE.Add("building" + this._id,this)) // Comment: Resources needed to build a building
-            {
-               this._hasResources = true;
-            }
-            else
-            {
-               this.RecycleC(); // Comment: Deletes the building
-            }
-         }
-         else if(this._countdownUpgrade.Get() > 0)
-         {
-            if(QUEUE.Add("building" + this._id,this))
-            {
-               this._hasResources = true;
-            }
-            else
-            {
-               this.UpgradeCancelB();
-            }
-         }
-         else if(this._countdownFortify.Get() > 0)
-         {
-            if(QUEUE.Add("building" + this._id,this))
-            {
-               this._hasResources = true;
-            }
-            else
-            {
-               this.FortifyCancelB();
-            }
-         }
-         else
-         {
-            QUESTS.Check("blvl",this._lvl.Get());
-            QUESTS.Check("b" + this._type + "lvl",this._lvl.Get());
-            if(this._class == "resource")
-            {
-               QUESTS.Check("brlvl",this._lvl.Get());
-            }
-         }
-      }
+		public function Setup(building:Object) : void
+		{
+			var _loc2_:Point = null;
+			var _loc3_:int = 0;
+			var _loc4_:int = 0;
+			var _loc5_:int = 0;
+			var _loc6_:int = 0;
+			this._type = building.t;
+			this._id = building.id;
+			_loc2_ = GRID.ToISO(building.X,building.Y,0);
+			if(this._type == 112)
+			{
+				building.l = 1;
+			}
+			if(Boolean(building.l) && building.l <= int.MAX_VALUE)
+			{
+				this._lvl.Set(int(building.l));
+			}
+			else
+			{
+				this._lvl.Set(1);
+			}
+			_mc.x = _loc2_.x;
+			_mc.y = _loc2_.y;
+			++BASE._buildingCount;
+			this._countdownBuild.Set(int(building.cB));
+			if(building.prefab)
+			{
+				this._prefab = building.prefab;
+				this._lvl.Set(building.prefab);
+				if(this._countdownBuild.Get() == 0)
+				{
+				_loc3_ = 0;
+				_loc4_ = 0;
+				while(_loc4_ < building.prefab)
+				{
+					_loc3_ += GLOBAL._buildingProps[this._type - 1].costs[_loc4_].time.Get();
+					_loc4_++;
+				}
+				this._countdownBuild.Set(_loc3_);
+				}
+			}
+			this._countdownUpgrade.Set(int(building.cU));
+			// In MR2, cancel any in-progress upgrade that targets a level above the MR2 cap.
+			// This handles the case where a player started a housing/flinger upgrade on MR3 then
+			// downgraded back to MR2.
+			if(this._countdownUpgrade.Get() > 0 && this._lvl.Get() >= getEffectiveLevelMax())
+			{
+				this._countdownUpgrade.Set(0);
+				BASE.Save();
+			}
+			this._countdownRebuild.Set(int(building.cR));
+			this._hpCountdownRebuild = this._countdownRebuild.Get();
+			if(building.fort)
+			{
+				this._fortification.Set(Math.min(building.fort,BYMConfig.k_sMAX_FORTIFICATION_LEVEL));
+			}
+			else
+			{
+				this._fortification.Set(0);
+			}
+			if(Boolean(building.cF) && this._fortification.Get() < BYMConfig.k_sMAX_FORTIFICATION_LEVEL)
+			{
+				this._countdownFortify.Set(int(building.cF));
+			}
+			else
+			{
+				this._countdownFortify.Set(0);
+			}
+			this._repairing = int(building.rE);
+			if(this._repairing > 0)
+			{
+				this._repairing = 1;
+			}
+			this._productionStage.Set(int(building.rPS));
+			this._countdownProduce.Set(int(building.rCP));
+			this._hpCountdownProduce = this._countdownProduce.Get();
+			if(Boolean(building.rIP) && building.rIP != "")
+			{
+				this._inProduction = building.rIP;
+			}
+			if(this._inProduction == "C100")
+			{
+				this._inProduction = "C12";
+			}
+			if(building.hl)
+			{
+				this._helpList = building.hl;
+			}
+			if(building.ti)
+			{
+				this._threadid = building.ti;
+			}
+			if(building.sid)
+			{
+				this._senderid = building.sid;
+			}
+			if(building.snm)
+			{
+				this._senderName = building.snm;
+			}
+			if(building.spc)
+			{
+				this._senderPic = building.spc;
+			}
+			if(building.sbj)
+			{
+				this._subject = building.sbj;
+			}
+			if(this._countdownBuild.Get() > 0 && !this._prefab)
+			{
+				this._lvl.Set(0);
+			}
+			var hpLevel:int = _lvl.Get();
+			this._hpLvl = hpLevel;
+			if(hpLevel == 0)
+			{
+				maxHealthProperty.value = this._buildingProps.hp[0];
+			}
+			else
+			{
+				maxHealthProperty.value = int(this._buildingProps.hp[hpLevel - 1]);
+			}
+			if(building.hp == null)
+			{
+				setHealth(maxHealth);
+			}
+			else
+			{
+				setHealth(int(building.hp));
+				if(health > maxHealth)
+				{
+					setHealth(maxHealth);
+				}
+			}
+			if(health == 0)
+			{
+				this._destroyed = true;
+				this._fired = true;
+			}
+			this.Description();
+			this._constructed = this._countdownBuild.Get() == 0;
+			if(this._lvl.Get() == 0 && this._constructed)
+			{
+				this._lvl.Set(1);
+			}
+			if(this._type == 17)
+			{
+				this._gridCost[1][1] = 100 + this._lvl.Get() * 25;
+			}
+			this.PlaceB();
+			if(this._countdownBuild.Get() > 0)
+			{
+				if(this._prefab) // Comment: Instantly builds a building
+				{
+					this._hasResources = true;
+					this._hasWorker = true;
+				}
+				else if(QUEUE.Add("building" + this._id,this)) // Comment: Resources needed to build a building
+				{
+					this._hasResources = true;
+				}
+				else
+				{
+					this.RecycleC(); // Comment: Deletes the building
+				}
+			}
+			else if(this._countdownUpgrade.Get() > 0)
+			{
+				if(QUEUE.Add("building" + this._id,this))
+				{
+					this._hasResources = true;
+				}
+				else
+				{
+					this.UpgradeCancelB();
+				}
+			}
+			else if(this._countdownFortify.Get() > 0)
+			{
+				if(QUEUE.Add("building" + this._id,this))
+				{
+					this._hasResources = true;
+				}
+				else
+				{
+					this.FortifyCancelB();
+				}
+			}
+			else
+			{
+				QUESTS.Check("blvl",this._lvl.Get());
+				QUESTS.Check("b" + this._type + "lvl",this._lvl.Get());
+				if(this._class == "resource")
+				{
+					QUESTS.Check("brlvl",this._lvl.Get());
+				}
+			}
+		}
       
       override public function clear() : void
       {

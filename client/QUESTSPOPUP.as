@@ -263,13 +263,9 @@ package
 				if(q.id == questID)
 				{
 					description = KEYS.Get(q.description,q.keyvars);
-					description = description.replace("#installsgenerated#",BASE._installsGenerated);
 					if(q.rules.hasOwnProperty('level_up')){
 						description = description.replace("#level_required#",q.rules.level_up);
 					}
-					description = description.replace("#mushroomspicked#",QUESTS._global.mushroomspicked);
-					description = description.replace("#goldmushroomspicked#",QUESTS._global.goldmushroomspicked);
-					description = description.replace("#monstersblended#",QUESTS._global.monstersblended);
 					description = description.replace("#assault_to_1_0#",QUESTS._global.assault_to_1_0);
 					description = description.replace("#assault_to_1_1#",QUESTS._global.assault_to_1_1);
 					description = description.replace("#assault_to_1_2#",QUESTS._global.assault_to_1_2);
@@ -286,8 +282,6 @@ package
 					description = description.replace("#assault_de#",QUESTS._global.assault_de);
 					description = description.replace("#assault_towers#",QUESTS._global.assault_towers);
 					description = description.replace("#assault_monsters#",QUESTS._global.assault_monsters);
-					description = description.replace("#giftssent#",QUESTS._global.bonus_gifts);
-					description = description.replace("#sentgiftsaccepted#",QUESTS._global.gift_accept);
 					if(Boolean(QUESTS._completed) && QUESTS._completed[questID] == 1)
 					{
 						this._infoMC.tDescription.htmlText = "<b>" + KEYS.Get("q_ui_completed") + "</b><br>" + description;

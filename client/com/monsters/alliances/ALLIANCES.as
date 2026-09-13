@@ -28,7 +28,6 @@ package com.monsters.alliances
             if(GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD)
             {
                _allianceID = param1;
-               ACHIEVEMENTS.Check("alliance",1,true);
             }
          }
       }

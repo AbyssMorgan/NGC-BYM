@@ -1057,12 +1057,10 @@ package
                break;
             case 130:
                MapRoom3Tutorial.instance.finish();
-               QUESTS.Check("destroy_tribe1",1);
                MAP._canScroll = false;
                Add(6,BOBBOTTOMLEFTLOW,KEYS.Get("tut_130"),new Point(84,60),null,false,false,ConditionPopupClose);
                break;
             case 131:
-               QUESTS.Check("destroy_tribe1",1);
                MAP._canScroll = false;
                if(GLOBAL._flags.viximo)
                {
@@ -1074,7 +1072,6 @@ package
                }
                break;
             case 132:
-               QUESTS.Check("destroy_tribe1",1);
                MAP._canScroll = false;
                _advanceCondition = ConditionQuestCollectWM1;
                break;

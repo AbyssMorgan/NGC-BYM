@@ -259,10 +259,8 @@ package
          var _loc4_:Rndm = new Rndm(int(param1.x * param1.y));
          var _loc5_:int = 0;
          var _loc6_:int = 0;
-         ++QUESTS._global.mushroomspicked;
          if(int(_loc4_.random() * 4) == 0)
          {
-            ++QUESTS._global.goldmushroomspicked;
             GLOBAL.ValidateMushroomPick(param1);
             if((_loc5_ = Math.random() * 3 + 1) == 3)
             {

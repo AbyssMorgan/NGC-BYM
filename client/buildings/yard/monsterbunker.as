@@ -27,6 +27,7 @@ package buildings.yard {
 				{"range":450}, // Level 4
 				{"range":500}, // Level 5
 				{"range":600}, // Level 6
+				{"range":700}, // Level 7
 			],
 			"costs":[
 				{"r1":new SecNum(250000), "r2":new SecNum(187500), "r3":new SecNum(62500), "r4":new SecNum(0), "time":new SecNum(21600), "re":[[14,1,3],[15,1,1]]}, // Level 1
@@ -34,7 +35,8 @@ package buildings.yard {
 				{"r1":new SecNum(2000000), "r2":new SecNum(2000000), "r3":new SecNum(1000000), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,5],[15,1,3]]}, // Level 3
 				{"r1":new SecNum(4000000), "r2":new SecNum(4000000), "r3":new SecNum(2000000), "r4":new SecNum(0), "time":new SecNum(172800), "re":[[14,1,9],[15,1,3]]}, // Level 4
 				{"r1":new SecNum(8000000), "r2":new SecNum(8000000), "r3":new SecNum(4000000), "r4":new SecNum(0), "time":new SecNum(345600), "re":[[14,1,10],[15,1,3]]}, // Level 5
-				{"r1":new SecNum(16000000), "r2":new SecNum(16000000), "r3":new SecNum(8000000), "r4":new SecNum(0), "time":new SecNum(432000), "re":[[14,1,12],[15,1,3],[12,1,2]]} // Level 6
+				{"r1":new SecNum(16000000), "r2":new SecNum(16000000), "r3":new SecNum(8000000), "r4":new SecNum(0), "time":new SecNum(432000), "re":[[14,1,12],[15,1,3],[12,1,2]]}, // Level 6
+				{"r1":new SecNum(10000000000), "r2":new SecNum(10000000000), "r3":new SecNum(10000000000), "r4":new SecNum(10000000000), "r6": new SecNum(2), "time":new SecNum(86400 * 17), "re":[[14,1,22],[12,1,3],[145,1,7]]}, // Level 7
 			],
 			"can_fortify":true,
 			"fortify_costs":[
@@ -127,6 +129,7 @@ package buildings.yard {
 				660, // Level 4
 				800, // Level 5
 				1000, // Level 6
+				1200, // Level 7
 			],
 			"hp":[
 				10000, // Level 1
@@ -135,6 +138,7 @@ package buildings.yard {
 				75000, // Level 4
 				105000, // Level 5
 				147000, // Level 6
+				200000, // Level 7
 			],
 			"repairTime":[
 				120, // Level 1
@@ -143,6 +147,7 @@ package buildings.yard {
 				960, // Level 4
 				1920, // Level 5
 				3600, // Level 6
+				5280, // Level 7
 			]
 		};
 		

@@ -615,320 +615,320 @@ package com.monsters.monsters
          return _loc2_;
       }
       
-      public function changeState(param1:int) : Boolean
-      {
-         this.m_state = param1;
-         return true;
-      }
+		public function changeState(param1:int) : Boolean
+		{
+			this.m_state = param1;
+			return true;
+		}
+		
+		public function getState() : int
+		{
+			return this.m_state;
+		}
+		
+		public function get state() : int
+		{
+			return this.m_state;
+		}
+		
+		protected function tickState(param1:int = 1) : Boolean
+		{
+			this._frameNumber += 1;
+			if(Boolean(graphic) && graphic.filters.length > 0)
+			{
+				if(this._friendly)
+				{
+					if(GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD)
+					{
+						if(GLOBAL._playerMonsterOverdrive && GLOBAL._playerMonsterOverdrive.Get() < GLOBAL.Timestamp() || GLOBAL._playerMonsterDefenseOverdrive && GLOBAL._playerMonsterDefenseOverdrive.Get() < GLOBAL.Timestamp() || GLOBAL._playerMonsterSpeedOverdrive && GLOBAL._playerMonsterSpeedOverdrive.Get() < GLOBAL.Timestamp())
+						{
+							this.updateBuffs();
+						}
+					}
+					if(GLOBAL.mode != GLOBAL.e_BASE_MODE.BUILD)
+					{
+						if(GLOBAL._monsterOverdrive && GLOBAL._monsterOverdrive.Get() < GLOBAL.Timestamp() || GLOBAL._monsterDefenseOverdrive && GLOBAL._monsterDefenseOverdrive.Get() < GLOBAL.Timestamp() || GLOBAL._monsterSpeedOverdrive && GLOBAL._monsterSpeedOverdrive.Get() < GLOBAL.Timestamp())
+						{
+							this.updateBuffs();
+						}
+					}
+				}
+				else if(GLOBAL._attackerMonsterOverdrive && GLOBAL._attackerMonsterOverdrive.Get() < GLOBAL.Timestamp() || GLOBAL._attackerMonsterDefenseOverdrive && GLOBAL._attackerMonsterDefenseOverdrive.Get() < GLOBAL.Timestamp() || GLOBAL._attackerMonsterSpeedOverdrive && GLOBAL._attackerMonsterSpeedOverdrive.Get() < GLOBAL.Timestamp())
+				{
+					this.updateBuffs();
+				}
+			}
+			return true;
+		}
+		
+		protected function move() : void
+		{
+		}
       
-      public function getState() : int
-      {
-         return this.m_state;
-      }
+		protected function render() : void
+		{
+			var _loc1_:Number = NaN;
+			var _loc2_:String = null;
+			var _loc3_:int = 0;
+			var _loc4_:int = 0;
+			if(!GLOBAL._catchup)
+			{
+				if (!this._lockRotation)
+				{
+					// Only calculate rotation when movement direction changes
+					if(_lastXd !== this._xd || _lastYd !== this._yd) {
+						this._targetRotation = Math.atan2(this._yd, this._xd) * 57.2957795 - 90;
+						_lastXd = this._xd;
+						_lastYd = this._yd;
+						_cachedTargetRotation = this._targetRotation;
+					} else {
+						// Use cached rotation
+						this._targetRotation = _cachedTargetRotation;
+					}
+				}
+				_loc1_ = this.m_rotation - this._targetRotation;
+				if(_loc1_ > 180)
+				{
+					this._targetRotation += 360;
+				}
+				else if(_loc1_ < -180)
+				{
+					this._targetRotation -= 360;
+				}
+				this._targetRotation += 90;
+				this.m_rotation = this._targetRotation;
+				while(this.m_rotation < 0)
+				{
+					this.m_rotation += 360;
+				}
+				this.m_rotation %= 360;
+				if(x != int(this._tmpPoint.x) || y != int(this._tmpPoint.y))
+				{
+					graphic.x = int(this._tmpPoint.x);
+					graphic.y = int(this._tmpPoint.y);
+				}
+				if(this._graphic)
+				{
+					this._graphic.lock();
+				}
+				if(this._shadow)
+				{
+					this._shadow.lock();
+				}
+				_loc3_ = 0;
+				if(this._movement == "burrow" && (this._behaviour === k_sBHVR_ATTACK || this._behaviour === k_sBHVR_DEFEND))
+				{
+					this.renderBurrow();
+				}
+				else
+				{
+					this._visible = true;
+					if(BYMConfig.instance.RENDERER_ON)
+					{
+						this._rasterData.visible = true;
+					}
+					if(!graphic.alpha)
+					{
+						graphic.alpha = 1;
+					}
+				}
+				this.getNextSprite();
+				this._lastRotation = int(this.m_rotation / 12);
+				if(health < maxHealth)
+				{
+					_loc4_ = 11 - int(11 / maxHealth * health);
+					this._graphic.copyPixels(CREEPS._bmdHPbar,new Rectangle(0,5 * _loc4_,17,5),new Point(-this._graphicMC.x - CREEPS._bmdHPbar.width / 2,6));
+				}
+				if(this._graphic)
+				{
+					this._graphic.unlock();
+				}
+				if(this._shadow)
+				{
+					this._shadow.unlock();
+				}
+				this.updateRasterData();
+			}
+		}
       
-      public function get state() : int
-      {
-         return this.m_state;
-      }
+		protected function getNextSprite() : void
+		{
+		}
+		
+		protected function renderBurrow() : void
+		{
+			if(this._speed > 0 && (this._behaviour === k_sBHVR_ATTACK || this._doDefenseBurrow))
+			{
+				if(this._phase != 1)
+				{
+					this._phase = 1;
+					if(graphic.alpha)
+					{
+						graphic.alpha = 0;
+					}
+					this.invisible = true;
+					this._visible = false;
+					if(BYMConfig.instance.RENDERER_ON)
+					{
+						this._rasterData.visible = false;
+					}
+					EFFECTS.Dig(x,y);
+					SOUNDS.Play("dig",0.5);
+				}
+				else if(this._frameNumber % 5 == 0)
+				{
+					EFFECTS.Burrow(x,y);
+				}
+			}
+			else if(this._phase == 1)
+			{
+				this._phase = 0;
+				this.jump();
+				if(!graphic.alpha)
+				{
+					graphic.alpha = 1;
+				}
+				this.invisible = false;
+				this._visible = true;
+				if(BYMConfig.instance.RENDERER_ON)
+				{
+					this._rasterData.visible = true;
+				}
+				if(this._behaviour == k_sBHVR_ATTACK || this._doDefenseBurrow)
+				{
+					EFFECTS.Dig(x,y);
+				}
+				SOUNDS.Play("arise",0.5);
+			}
+		}
       
-      protected function tickState(param1:int = 1) : Boolean
-      {
-         this._frameNumber += 1;
-         if(Boolean(graphic) && graphic.filters.length > 0)
-         {
-            if(this._friendly)
-            {
-               if(GLOBAL.mode == GLOBAL.e_BASE_MODE.BUILD)
-               {
-                  if(GLOBAL._playerMonsterOverdrive && GLOBAL._playerMonsterOverdrive.Get() < GLOBAL.Timestamp() || GLOBAL._playerMonsterDefenseOverdrive && GLOBAL._playerMonsterDefenseOverdrive.Get() < GLOBAL.Timestamp() || GLOBAL._playerMonsterSpeedOverdrive && GLOBAL._playerMonsterSpeedOverdrive.Get() < GLOBAL.Timestamp())
-                  {
-                     this.updateBuffs();
-                  }
-               }
-               if(GLOBAL.mode != GLOBAL.e_BASE_MODE.BUILD)
-               {
-                  if(GLOBAL._monsterOverdrive && GLOBAL._monsterOverdrive.Get() < GLOBAL.Timestamp() || GLOBAL._monsterDefenseOverdrive && GLOBAL._monsterDefenseOverdrive.Get() < GLOBAL.Timestamp() || GLOBAL._monsterSpeedOverdrive && GLOBAL._monsterSpeedOverdrive.Get() < GLOBAL.Timestamp())
-                  {
-                     this.updateBuffs();
-                  }
-               }
-            }
-            else if(GLOBAL._attackerMonsterOverdrive && GLOBAL._attackerMonsterOverdrive.Get() < GLOBAL.Timestamp() || GLOBAL._attackerMonsterDefenseOverdrive && GLOBAL._attackerMonsterDefenseOverdrive.Get() < GLOBAL.Timestamp() || GLOBAL._attackerMonsterSpeedOverdrive && GLOBAL._attackerMonsterSpeedOverdrive.Get() < GLOBAL.Timestamp())
-            {
-               this.updateBuffs();
-            }
-         }
-         return true;
-      }
+		public function jump() : void
+		{
+			var Land:Function = null;
+			Land = function():void
+			{
+				TweenLite.to(_graphicMC,0.6,{
+					"y":_graphicMC.y + 15,
+					"ease":Bounce.easeOut
+				});
+			};
+			TweenLite.to(this._graphicMC,0.3,{
+				"y":this._graphicMC.y - 15,
+				"ease":Sine.easeIn,
+				"onComplete":Land
+			});
+		}
+		
+		protected function hackCheck() : Boolean
+		{
+			return true;
+		}
+		
+		override protected function updateRasterData() : void
+		{
+			var _loc2_:Number = NaN;
+			var _loc3_:int = 0;
+			if(!BYMConfig.instance.RENDERER_ON)
+			{
+				return;
+			}
+			var _loc1_:Point = MAP.instance.offset;
+			if(Boolean(this._graphicMC) && Boolean(this._rasterData))
+			{
+				_loc2_ = graphic.height * 0.5;
+				if(_middle)
+				{
+					_loc2_ = _middle;
+				}
+				this._rasterPt.x = x + this._graphicMC.x - _loc1_.x;
+				this._rasterPt.y = y + this._graphicMC.y - _loc1_.y;
+				this._rasterData.depth = Math.max(MAP.DEPTH_SHADOW + 1,(y + this._altitude - _loc1_.y + _loc2_) * 1000 + x - _loc1_.x);
+				if(Boolean(this._graphicMC.filters.length) && this._rasterData.data !== this._graphicMC)
+				{
+					this._rasterData.data = this._graphicMC;
+				}
+				else if(!this._graphicMC.filters.length && this._rasterData.data !== this._graphic)
+				{
+					this._rasterData.data = this._graphic;
+				}
+			}
+			if(this._shadowMC)
+			{
+				this._shadowPt.x = x + this._shadowMC.x - _loc1_.x;
+				this._shadowPt.y = y + this._shadowMC.y - _loc1_.y;
+			}
+			super.updateRasterData();
+		}
       
-      protected function move() : void
-      {
-      }
+		protected function changeMode() : void
+		{
+			this._hasTarget = false;
+			this._atTarget = false;
+			this._hasPath = false;
+		}
+		
+		public function changeModeJuice() : void
+		{
+		}
+		
+		public function changeModeAttack() : void
+		{
+			if(this._behaviour === k_sBHVR_RETREAT)
+			{
+				return;
+			}
+			this._behaviour = k_sBHVR_ATTACK;
+			this.changeMode();
+			this.findTarget(this._targetGroup);
+		}
+		
+		public function changeModeRetreat() : void
+		{
+			this._behaviour = k_sBHVR_RETREAT;
+			this.changeMode();
+			this._attacking = false;
+			if(this._movement == "burrow")
+			{
+				EFFECTS.Dig(x,y);
+				SOUNDS.Play("dig");
+			}
+			this.WaypointTo(this._spawnPoint);
+		}
       
-      protected function render() : void
-      {
-         var _loc1_:Number = NaN;
-         var _loc2_:String = null;
-         var _loc3_:int = 0;
-         var _loc4_:int = 0;
-         if(!GLOBAL._catchup)
-         {
-            if (!this._lockRotation)
-            {
-               // Only calculate rotation when movement direction changes
-               if(_lastXd !== this._xd || _lastYd !== this._yd) {
-                  this._targetRotation = Math.atan2(this._yd, this._xd) * 57.2957795 - 90;
-                  _lastXd = this._xd;
-                  _lastYd = this._yd;
-                  _cachedTargetRotation = this._targetRotation;
-               } else {
-                  // Use cached rotation
-                  this._targetRotation = _cachedTargetRotation;
-               }
-            }
-            _loc1_ = this.m_rotation - this._targetRotation;
-            if(_loc1_ > 180)
-            {
-               this._targetRotation += 360;
-            }
-            else if(_loc1_ < -180)
-            {
-               this._targetRotation -= 360;
-            }
-            this._targetRotation += 90;
-            this.m_rotation = this._targetRotation;
-            while(this.m_rotation < 0)
-            {
-               this.m_rotation += 360;
-            }
-            this.m_rotation %= 360;
-            if(x != int(this._tmpPoint.x) || y != int(this._tmpPoint.y))
-            {
-               graphic.x = int(this._tmpPoint.x);
-               graphic.y = int(this._tmpPoint.y);
-            }
-            if(this._graphic)
-            {
-               this._graphic.lock();
-            }
-            if(this._shadow)
-            {
-               this._shadow.lock();
-            }
-            _loc3_ = 0;
-            if(this._movement == "burrow" && (this._behaviour === k_sBHVR_ATTACK || this._behaviour === k_sBHVR_DEFEND))
-            {
-               this.renderBurrow();
-            }
-            else
-            {
-               this._visible = true;
-               if(BYMConfig.instance.RENDERER_ON)
-               {
-                  this._rasterData.visible = true;
-               }
-               if(!graphic.alpha)
-               {
-                  graphic.alpha = 1;
-               }
-            }
-            this.getNextSprite();
-            this._lastRotation = int(this.m_rotation / 12);
-            if(health < maxHealth)
-            {
-               _loc4_ = 11 - int(11 / maxHealth * health);
-               this._graphic.copyPixels(CREEPS._bmdHPbar,new Rectangle(0,5 * _loc4_,17,5),new Point(-this._graphicMC.x - CREEPS._bmdHPbar.width / 2,6));
-            }
-            if(this._graphic)
-            {
-               this._graphic.unlock();
-            }
-            if(this._shadow)
-            {
-               this._shadow.unlock();
-            }
-            this.updateRasterData();
-         }
-      }
-      
-      protected function getNextSprite() : void
-      {
-      }
-      
-      protected function renderBurrow() : void
-      {
-         if(this._speed > 0 && (this._behaviour === k_sBHVR_ATTACK || this._doDefenseBurrow))
-         {
-            if(this._phase != 1)
-            {
-               this._phase = 1;
-               if(graphic.alpha)
-               {
-                  graphic.alpha = 0;
-               }
-               this.invisible = true;
-               this._visible = false;
-               if(BYMConfig.instance.RENDERER_ON)
-               {
-                  this._rasterData.visible = false;
-               }
-               EFFECTS.Dig(x,y);
-               SOUNDS.Play("dig",0.5);
-            }
-            else if(this._frameNumber % 5 == 0)
-            {
-               EFFECTS.Burrow(x,y);
-            }
-         }
-         else if(this._phase == 1)
-         {
-            this._phase = 0;
-            this.jump();
-            if(!graphic.alpha)
-            {
-               graphic.alpha = 1;
-            }
-            this.invisible = false;
-            this._visible = true;
-            if(BYMConfig.instance.RENDERER_ON)
-            {
-               this._rasterData.visible = true;
-            }
-            if(this._behaviour == k_sBHVR_ATTACK || this._doDefenseBurrow)
-            {
-               EFFECTS.Dig(x,y);
-            }
-            SOUNDS.Play("arise",0.5);
-         }
-      }
-      
-      public function jump() : void
-      {
-         var Land:Function = null;
-         Land = function():void
-         {
-            TweenLite.to(_graphicMC,0.6,{
-               "y":_graphicMC.y + 15,
-               "ease":Bounce.easeOut
-            });
-         };
-         TweenLite.to(this._graphicMC,0.3,{
-            "y":this._graphicMC.y - 15,
-            "ease":Sine.easeIn,
-            "onComplete":Land
-         });
-      }
-      
-      protected function hackCheck() : Boolean
-      {
-         return true;
-      }
-      
-      override protected function updateRasterData() : void
-      {
-         var _loc2_:Number = NaN;
-         var _loc3_:int = 0;
-         if(!BYMConfig.instance.RENDERER_ON)
-         {
-            return;
-         }
-         var _loc1_:Point = MAP.instance.offset;
-         if(Boolean(this._graphicMC) && Boolean(this._rasterData))
-         {
-            _loc2_ = graphic.height * 0.5;
-            if(_middle)
-            {
-               _loc2_ = _middle;
-            }
-            this._rasterPt.x = x + this._graphicMC.x - _loc1_.x;
-            this._rasterPt.y = y + this._graphicMC.y - _loc1_.y;
-            this._rasterData.depth = Math.max(MAP.DEPTH_SHADOW + 1,(y + this._altitude - _loc1_.y + _loc2_) * 1000 + x - _loc1_.x);
-            if(Boolean(this._graphicMC.filters.length) && this._rasterData.data !== this._graphicMC)
-            {
-               this._rasterData.data = this._graphicMC;
-            }
-            else if(!this._graphicMC.filters.length && this._rasterData.data !== this._graphic)
-            {
-               this._rasterData.data = this._graphic;
-            }
-         }
-         if(this._shadowMC)
-         {
-            this._shadowPt.x = x + this._shadowMC.x - _loc1_.x;
-            this._shadowPt.y = y + this._shadowMC.y - _loc1_.y;
-         }
-         super.updateRasterData();
-      }
-      
-      protected function changeMode() : void
-      {
-         this._hasTarget = false;
-         this._atTarget = false;
-         this._hasPath = false;
-      }
-      
-      public function changeModeJuice() : void
-      {
-      }
-      
-      public function changeModeAttack() : void
-      {
-         if(this._behaviour === k_sBHVR_RETREAT)
-         {
-            return;
-         }
-         this._behaviour = k_sBHVR_ATTACK;
-         this.changeMode();
-         this.findTarget(this._targetGroup);
-      }
-      
-      public function changeModeRetreat() : void
-      {
-         this._behaviour = k_sBHVR_RETREAT;
-         this.changeMode();
-         this._attacking = false;
-         if(this._movement == "burrow")
-         {
-            EFFECTS.Dig(x,y);
-            SOUNDS.Play("dig");
-         }
-         this.WaypointTo(this._spawnPoint);
-      }
-      
-      public function changeModeFeed() : void
-      {
-         this._behaviour = k_sBHVR_FEED;
-         this.changeMode();
-         this._targetBuilding = GLOBAL._bCage;
-         this.WaypointTo(CREATURES._guardian._tmpPoint,null);
-      }
-      
-      public function changeModeHousing() : void
-      {
-         this._behaviour = k_sBHVR_HOUSING;
-         this.changeMode();
-         var _loc1_:Point = GRID.ToISO(this._targetCenter.x + Math.random() * 100 + 30,this._targetCenter.y + Math.random() * 60 + 30,0);
-         PATHING.GetPath(this._tmpPoint,new Rectangle(_loc1_.x,_loc1_.y,10,10),this.setWaypoints,true);
-      }
-      
-      public function addFilter(param1:BitmapFilter) : void
-      {
-         if(this.m_filters.indexOf(param1) == -1)
-         {
-            this.m_filters.push(param1);
-            this._graphicMC.filters = this.m_filters;
-         }
-      }
-      
-      public function removeFilter(param1:BitmapFilter) : void
-      {
-         var _loc2_:int = this.m_filters.indexOf(param1);
-         if(_loc2_ >= 0)
-         {
-            this.m_filters.splice(_loc2_,1);
-            this._graphicMC.filters = this.m_filters;
-         }
-      }
+		public function changeModeFeed() : void
+		{
+			this._behaviour = k_sBHVR_FEED;
+			this.changeMode();
+			this._targetBuilding = GLOBAL._bCage;
+			this.WaypointTo(CREATURES._guardian._tmpPoint,null);
+		}
+		
+		public function changeModeHousing() : void
+		{
+			this._behaviour = k_sBHVR_HOUSING;
+			this.changeMode();
+			var _loc1_:Point = GRID.ToISO(this._targetCenter.x + Math.random() * 100 + 30,this._targetCenter.y + Math.random() * 60 + 30,0);
+			PATHING.GetPath(this._tmpPoint,new Rectangle(_loc1_.x,_loc1_.y,10,10),this.setWaypoints,true);
+		}
+		
+		public function addFilter(param1:BitmapFilter) : void
+		{
+			if(this.m_filters.indexOf(param1) == -1)
+			{
+				this.m_filters.push(param1);
+				this._graphicMC.filters = this.m_filters;
+			}
+		}
+		
+		public function removeFilter(param1:BitmapFilter) : void
+		{
+			var _loc2_:int = this.m_filters.indexOf(param1);
+			if(_loc2_ >= 0)
+			{
+				this.m_filters.splice(_loc2_,1);
+				this._graphicMC.filters = this.m_filters;
+			}
+		}
       
 		public function updateBuffs() : void
 		{
@@ -999,12 +999,12 @@ package com.monsters.monsters
 			{
 				if(this._glow)
 				{
-				this._glow.color = _loc1_;
+					this._glow.color = _loc1_;
 				}
 				else
 				{
-				this._glow = new GlowFilter(_loc1_,1,7,7,6,1);
-				this.addFilter(this._glow);
+					this._glow = new GlowFilter(_loc1_,1,7,7,6,1);
+					this.addFilter(this._glow);
 				}
 			}
 			else if(this._glow)
@@ -1013,400 +1013,400 @@ package com.monsters.monsters
 				this._glow = null;
 			}
 		}
-      
-      public function poweredUp() : Boolean
-      {
-         if(this.isDisposable)
-         {
-            return false;
-         }
-         if(!this._friendly)
-         {
-            var activeEvent:* = SPECIALEVENT.getActiveSpecialEvent();
-            if(activeEvent.active || Boolean(GLOBAL._wmCreaturePowerups[this._creatureID]))
-            {
-               if(GLOBAL._wmCreaturePowerups[this._creatureID])
-               {
-                  return true;
-               }
-            }
-            else if(GLOBAL.mode != GLOBAL.e_BASE_MODE.BUILD && GLOBAL.attackingPlayer.m_upgrades[this._creatureID] && Boolean(GLOBAL.attackingPlayer.m_upgrades[this._creatureID].powerup))
-            {
-               return true;
-            }
-         }
-         else if(Boolean(GLOBAL.player.m_upgrades[this._creatureID]) && Boolean(GLOBAL.player.m_upgrades[this._creatureID].powerup))
-         {
-            return true;
-         }
-         return false;
-      }
-      
-      public function powerUpLevel() : int
-      {
-         if(!this.poweredUp())
-         {
-            return 0;
-         }
-         if(!this._friendly)
-         {
-            if(SPECIALEVENT.active || Boolean(GLOBAL._wmCreaturePowerups[this._creatureID]))
-            {
-               if(GLOBAL._wmCreaturePowerups[this._creatureID])
-               {
-                  return GLOBAL._wmCreaturePowerups[this._creatureID];
-               }
-            }
-            else if(GLOBAL.attackingPlayer.m_upgrades[this._creatureID].powerup)
-            {
-               return GLOBAL.attackingPlayer.m_upgrades[this._creatureID].powerup;
-            }
-         }
-         else if(GLOBAL.player.m_upgrades[this._creatureID].powerup)
-         {
-            return GLOBAL.player.m_upgrades[this._creatureID].powerup;
-         }
-         return 0;
-      }
-      
-      override public function clear() : void
-      {
-         var _loc1_:uint = 0;
-         var _loc2_:uint = 0;
-         setHealth(0);
-         if(this._house)
-         {
-            _loc1_ = this._house._creatures.length;
-            _loc2_ = 0;
-            while(_loc2_ < _loc1_)
-            {
-               if(this._house._creatures[_loc2_] === this)
-               {
-                  this._house._creatures.splice(_loc2_,1);
-                  break;
-               }
-               _loc2_++;
-            }
-         }
-         if(this._rasterData)
-         {
-            this._rasterData.clear();
-         }
-         if(this._shadowData)
-         {
-            this._shadowData.clear();
-         }
-         this._rasterData = null;
-         this._shadowData = null;
-         this._rasterPt = null;
-         this._shadowPt = null;
-         if(this._graphic)
-         {
-            this._graphic.dispose();
-         }
-         if(this._shadow)
-         {
-            this._shadow.dispose();
-         }
-         this._graphic = null;
-         this._shadow = null;
-         super.clear();
-      }
-      
-      public function canShootCreep() : Boolean
-      {
-         return false;
-      }
-      
-      public function findHuntingTargets() : void
-      {
-         var monster:MonsterBase = null;
-         var amount:int = 0;
-         var targets:Array = [];
-         var allMonsters:Object = CREATURES._creatures;
-         for each(monster in allMonsters)
-         {
-            if(!(monster._behaviour != k_sBHVR_DEFEND && monster._behaviour != k_sBHVR_BUNKER))
-            {
-               targets.push({
-                  "creep":monster,
-                  "dist":GLOBAL.QuickDistance(monster._tmpPoint,this._tmpPoint)
-               });
-               amount++;
-               if(amount >= 10)
-               {
-                  break;
-               }
-            }
-         }
-         if(Boolean(CREATURES._guardian) && CREATURES._guardian.health > 0)
-         {
-            targets.push({
-               "creep":CREATURES._guardian,
-               "dist":GLOBAL.QuickDistance(CREATURES._guardian._tmpPoint,this._tmpPoint)
-            });
-         }
-         if(Boolean(CREATURES._krallen) && CREATURES._krallen.health > 0)
-         {
-            targets.push({
-               "creep":CREATURES._krallen,
-               "dist":GLOBAL.QuickDistance(CREATURES._krallen._tmpPoint,this._tmpPoint)
-            });
-         }
-         if(targets.length > 0)
-         {
-            targets.sortOn("dist",Array.NUMERIC);
-            while(targets.length > 0 && targets[0].creep.health <= 0)
-            {
-               targets.splice(0,1);
-            }
-         }
-         if(targets.length > 0)
-         {
-            this._targetCreep = targets[0].creep;
-            this._waypoints = [this._targetCreep._tmpPoint];
-         }
-      }
-      
-      public function loseTarget() : void
-      {
-         this._hasTarget = false;
-         this._attacking = false;
-         this._atTarget = false;
-         this._targetCreep = null;
-      }
-      
-      public function findTarget(targetGroup:int = 0) : void
-      {
-         var building:BFOUNDATION = null;
-         var startPoint:Point = PATHING.FromISO(this._tmpPoint);
-         var closestBuilding:Object = null;
-         var secondClosestBuilding:Object = null;
-         this._looking = true;
-         var checkTarget:Function = function(building:BFOUNDATION) : void
-         {
-            var targetPoint:Point = GRID.FromISO(building._mc.x,building._mc.y + building._middle);
-            var distance:Number = GLOBAL.QuickDistance(startPoint,targetPoint) - building._middle;
-            if(!closestBuilding || distance < closestBuilding.distance)
-            {
-               if(closestBuilding)
-               {
-                  secondClosestBuilding = {"building":closestBuilding.building, "distance":closestBuilding.distance};
-               }
-               closestBuilding = {"building":building, "distance":distance};
-            }
-            else if(!secondClosestBuilding || distance < secondClosestBuilding.distance)
-            {
-               secondClosestBuilding = {"building":building, "distance":distance};
-            }
-         };
-         // Preferred target is walls
-         if(targetGroup == 2)
-         {
-            for each(building in BASE._buildingsWalls)
-            {
-               if(!building._destroyed && building.health > 0)
-               {
-                  checkTarget(building);
-               }
-            }
-         }
-         // Preferred target is resource buildings
-         else if(targetGroup == 3)
-         {
-            for each(building in BASE._buildingsMain)
-            {
-               if(building.health > 0 && building is ILootable && !building._looted)
-               {
-                  checkTarget(building);
-               }
-            }
-         }
-         // Preferred target is defense towers
-         else if(targetGroup == 4)
-         {
-            for each(building in BASE._buildingsTowers)
-            {
-				if(building._type == 144 && building.health > 0){
-					checkTarget(building);
-				}
-				else if(MONSTERBUNKER.isBunkerBuilding(building._type))
+		
+		public function poweredUp() : Boolean
+		{
+			if(this.isDisposable)
+			{
+				return false;
+			}
+			if(!this._friendly)
+			{
+				var activeEvent:* = SPECIALEVENT.getActiveSpecialEvent();
+				if(activeEvent.active || Boolean(GLOBAL._wmCreaturePowerups[this._creatureID]))
 				{
-					var bunker:* = building;
-					if(bunker.health > 0 && (bunker._used > 0 || bunker._monstersDispatchedTotal > 0))
+					if(GLOBAL._wmCreaturePowerups[this._creatureID])
+					{
+						return true;
+					}
+				}
+				else if(GLOBAL.mode != GLOBAL.e_BASE_MODE.BUILD && GLOBAL.attackingPlayer.m_upgrades[this._creatureID] && Boolean(GLOBAL.attackingPlayer.m_upgrades[this._creatureID].powerup))
+				{
+					return true;
+				}
+			}
+			else if(Boolean(GLOBAL.player.m_upgrades[this._creatureID]) && Boolean(GLOBAL.player.m_upgrades[this._creatureID].powerup))
+			{
+				return true;
+			}
+			return false;
+		}
+		
+		public function powerUpLevel() : int
+		{
+			if(!this.poweredUp())
+			{
+				return 0;
+			}
+			if(!this._friendly)
+			{
+				if(SPECIALEVENT.active || Boolean(GLOBAL._wmCreaturePowerups[this._creatureID]))
+				{
+					if(GLOBAL._wmCreaturePowerups[this._creatureID])
+					{
+						return GLOBAL._wmCreaturePowerups[this._creatureID];
+					}
+				}
+				else if(GLOBAL.attackingPlayer.m_upgrades[this._creatureID].powerup)
+				{
+					return GLOBAL.attackingPlayer.m_upgrades[this._creatureID].powerup;
+				}
+			}
+			else if(GLOBAL.player.m_upgrades[this._creatureID].powerup)
+			{
+				return GLOBAL.player.m_upgrades[this._creatureID].powerup;
+			}
+			return 0;
+		}
+		
+		override public function clear() : void
+		{
+			var _loc1_:uint = 0;
+			var _loc2_:uint = 0;
+			setHealth(0);
+			if(this._house)
+			{
+				_loc1_ = this._house._creatures.length;
+				_loc2_ = 0;
+				while(_loc2_ < _loc1_)
+				{
+					if(this._house._creatures[_loc2_] === this)
+					{
+						this._house._creatures.splice(_loc2_,1);
+						break;
+					}
+					_loc2_++;
+				}
+			}
+			if(this._rasterData)
+			{
+				this._rasterData.clear();
+			}
+			if(this._shadowData)
+			{
+				this._shadowData.clear();
+			}
+			this._rasterData = null;
+			this._shadowData = null;
+			this._rasterPt = null;
+			this._shadowPt = null;
+			if(this._graphic)
+			{
+				this._graphic.dispose();
+			}
+			if(this._shadow)
+			{
+				this._shadow.dispose();
+			}
+			this._graphic = null;
+			this._shadow = null;
+			super.clear();
+		}
+      
+		public function canShootCreep() : Boolean
+		{
+			return false;
+		}
+      
+		public function findHuntingTargets() : void
+		{
+			var monster:MonsterBase = null;
+			var amount:int = 0;
+			var targets:Array = [];
+			var allMonsters:Object = CREATURES._creatures;
+			for each(monster in allMonsters)
+			{
+				if(!(monster._behaviour != k_sBHVR_DEFEND && monster._behaviour != k_sBHVR_BUNKER))
+				{
+					targets.push({
+						"creep":monster,
+						"dist":GLOBAL.QuickDistance(monster._tmpPoint,this._tmpPoint)
+					});
+					amount++;
+					if(amount >= 10)
+					{
+						break;
+					}
+				}
+			}
+			if(Boolean(CREATURES._guardian) && CREATURES._guardian.health > 0)
+			{
+				targets.push({
+					"creep":CREATURES._guardian,
+					"dist":GLOBAL.QuickDistance(CREATURES._guardian._tmpPoint,this._tmpPoint)
+				});
+			}
+			if(Boolean(CREATURES._krallen) && CREATURES._krallen.health > 0)
+			{
+				targets.push({
+					"creep":CREATURES._krallen,
+					"dist":GLOBAL.QuickDistance(CREATURES._krallen._tmpPoint,this._tmpPoint)
+				});
+			}
+			if(targets.length > 0)
+			{
+				targets.sortOn("dist",Array.NUMERIC);
+				while(targets.length > 0 && targets[0].creep.health <= 0)
+				{
+					targets.splice(0,1);
+				}
+			}
+			if(targets.length > 0)
+			{
+				this._targetCreep = targets[0].creep;
+				this._waypoints = [this._targetCreep._tmpPoint];
+			}
+		}
+		
+		public function loseTarget() : void
+		{
+			this._hasTarget = false;
+			this._attacking = false;
+			this._atTarget = false;
+			this._targetCreep = null;
+		}
+      
+		public function findTarget(targetGroup:int = 0) : void
+		{
+			var building:BFOUNDATION = null;
+			var startPoint:Point = PATHING.FromISO(this._tmpPoint);
+			var closestBuilding:Object = null;
+			var secondClosestBuilding:Object = null;
+			this._looking = true;
+			var checkTarget:Function = function(building:BFOUNDATION) : void
+			{
+				var targetPoint:Point = GRID.FromISO(building._mc.x,building._mc.y + building._middle);
+				var distance:Number = GLOBAL.QuickDistance(startPoint,targetPoint) - building._middle;
+				if(!closestBuilding || distance < closestBuilding.distance)
+				{
+					if(closestBuilding)
+					{
+						secondClosestBuilding = {"building":closestBuilding.building, "distance":closestBuilding.distance};
+					}
+					closestBuilding = {"building":building, "distance":distance};
+				}
+				else if(!secondClosestBuilding || distance < secondClosestBuilding.distance)
+				{
+					secondClosestBuilding = {"building":building, "distance":distance};
+				}
+			};
+			// Preferred target is walls
+			if(targetGroup == 2)
+			{
+				for each(building in BASE._buildingsWalls)
+				{
+					if(!building._destroyed && building.health > 0)
 					{
 						checkTarget(building);
 					}
 				}
-				else if(building._class != "trap" && building.health > 0 && !(building as BTOWER).isJard)
+			}
+			// Preferred target is resource buildings
+			else if(targetGroup == 3)
+			{
+				for each(building in BASE._buildingsMain)
 				{
-					checkTarget(building);
-				}
-            }
-         }
-         // Preferred target is other monsters and bunkers
-         else if(this._targetGroup == 6)
-         {
-            if(CREATURES._creatureCount > 0 || CREATURES._hasLivingGuardian)
-            {
-               this.findHuntingTargets();
-               if(this._targetCreep)
-               {
-                  this._hasTarget = true;
-                  this._hasPath = true;
-                  this._waypoints = [this._targetCreep._tmpPoint];
-                  this._targetPosition = this._targetCreep._tmpPoint;
-                  this._targetCenter = this._targetCreep._tmpPoint;
-               }
-            }
-            for each(var huntBunker:Bunker in BASE._buildingsBunkers)
-            {
-               if(huntBunker.health > 0)
-               {
-                  var bunkerUsed:Boolean = false;
-                  if(huntBunker._type == 22)
-                  {
-                     if(huntBunker._used > 0 || huntBunker._monstersDispatchedTotal > 0)
-                     {
-                        bunkerUsed = true;
-                     }
-                  }
-                  if(huntBunker._type == 128)
-                  {
-                     if(HOUSING._housingUsed.Get() > 0)
-                     {
-                        bunkerUsed = true;
-                     }
-                  }
-                  if(bunkerUsed)
-                  {
-                     checkTarget(huntBunker);
-                  }
-               }
-            }
-         }
-         // No preferred targets left or targets all
-         if(!closestBuilding || targetGroup == 1)
-         {
-            for each(building in BASE._buildingsMain)
-            {
-				if(building._type == 144 && building.health > 0){
-					if(this._targetGroup != 4)
+					if(building.health > 0 && building is ILootable && !building._looted)
 					{
-						this._targetGroup = 1;
+						checkTarget(building);
 					}
-					checkTarget(building);
-				} else if(building._class != "decoration" && building._class != "immovable" && building.health > 0 && building._class != "enemy"){
-					if(this._targetGroup != 4)
-					{
-						this._targetGroup = 1;
-					}
-					checkTarget(building);
 				}
-            }
-         }
-         if(!closestBuilding && !this._targetCreep)
-         {
-            // No valid targets left
-            this.changeModeRetreat();
-         }
-         else
-         {
-            // Burrowing monsters move to a random side of their target
-            if(this._movement == "burrow")
-            {
-               this._hasTarget = true;
-               this._hasPath = true;
-               var burrowWaypoint:Point = GRID.FromISO(closestBuilding.building._mc.x,closestBuilding.building._mc.y);
-               var randSide:int = int(Math.random() * 4);
-               var height:int = int(closestBuilding.building._footprint[0].height);
-               var width:int = int(closestBuilding.building._footprint[0].width);
-               if(randSide == 0)
-               {
-                  burrowWaypoint.x += Math.random() * height;
-                  burrowWaypoint.y += width;
-               }
-               else if(randSide == 1)
-               {
-                  burrowWaypoint.x += height;
-                  burrowWaypoint.y += width;
-               }
-               else if(randSide == 2)
-               {
-                  burrowWaypoint.x += height - Math.random() * height / 2;
-                  burrowWaypoint.y -= width / 4;
-               }
-               else if(randSide == 3)
-               {
-                  burrowWaypoint.x -= height / 4;
-                  burrowWaypoint.y += width - Math.random() * width / 2;
-               }
-               this._waypoints = [GRID.ToISO(burrowWaypoint.x,burrowWaypoint.y,0)];
-               this._targetPosition = this._waypoints[0];
-               this._targetBuilding = closestBuilding.building;
-            }
-            // Flying monsters circle around their target
-            else if(this._movement == "fly" || this._movement == "fly_low")
-            {
-               this._hasTarget = true;
-               this._hasPath = true;
-               this._targetBuilding = closestBuilding.building;
-               this._targetCenter = this._targetBuilding._position;
-               var randAngle:Number = NaN;
-               var randRadius:Number = NaN;
-               var flyWaypoint:Point = null;
-               // Balthazar gets closer to their target than other flying monsters
-               if(this._creatureID == "IC5")
-               {
-                  if(!this._targetCreep)
-                  {
-                     if(GLOBAL.QuickDistance(this._tmpPoint,this._targetCenter) < 50)
-                     {
-                        this._atTarget = true;
-                        this._hasPath = true;
-                        this._targetPosition = this._targetCenter;
-                     }
-                     else
-                     {
-                        this._movement = "fly";
-                        randAngle = (randAngle = (randAngle = Math.atan2(this._tmpPoint.y - this._targetCenter.y,this._tmpPoint.x - this._targetCenter.x) * 57.2957795) + (Math.random() * 40 - 20)) / (180 / Math.PI);
-                        randRadius = 30 + Math.random() * 10;
-                        flyWaypoint = new Point(this._targetCenter.x + Math.cos(randAngle) * randRadius,this._targetCenter.y + Math.sin(randAngle) * randRadius);
-                        this._waypoints = [flyWaypoint];
-                        this._targetPosition = this._waypoints[0];
-                     }
-                  }
-               }
-               else if(GLOBAL.QuickDistance(this._tmpPoint,this._targetCenter) < 170)
-               {
-                  this._atTarget = true;
-                  this._hasPath = true;
-                  this._targetPosition = this._targetCenter;
-               }
-               else
-               {
-                  randAngle = (randAngle = (randAngle = Math.atan2(this._tmpPoint.y - this._targetCenter.y,this._tmpPoint.x - this._targetCenter.x) * 57.2957795) + (Math.random() * 40 - 20)) / (180 / Math.PI);
-                  randRadius = 120 + Math.random() * 10;
-                  flyWaypoint = new Point(this._targetCenter.x + Math.cos(randAngle) * randRadius * 1.7,this._targetCenter.y + Math.sin(randAngle) * randRadius);
-                  this._waypoints = [flyWaypoint];
-                  this._targetPosition = this._waypoints[0];
-               }
-            }
-            else if(GLOBAL._catchup)
-            {
-               this.WaypointTo(new Point(closestBuilding.building._mc.x,closestBuilding.building._mc.y),closestBuilding.building);
-            }
-            else
-            {
-               // Get paths to the closest 2 buildings
-               this.WaypointTo(new Point(closestBuilding.building._mc.x,closestBuilding.building._mc.y),closestBuilding.building);
-               if(secondClosestBuilding)
-               {
-                  this.WaypointTo(new Point(secondClosestBuilding.building._mc.x,secondClosestBuilding.building._mc.y),secondClosestBuilding.building);
-               }
-            }
-         }
-      }
+			}
+			// Preferred target is defense towers
+			else if(targetGroup == 4)
+			{
+				for each(building in BASE._buildingsTowers)
+				{
+					if(building._type == 144 && building.health > 0){
+						checkTarget(building);
+					}
+					else if(MONSTERBUNKER.isBunkerBuilding(building._type))
+					{
+						var bunker:* = building;
+						if(bunker.health > 0 && (bunker._used > 0 || bunker._monstersDispatchedTotal > 0))
+						{
+							checkTarget(building);
+						}
+					}
+					else if(building._class != "trap" && building.health > 0 && !(building as BTOWER).isJard)
+					{
+						checkTarget(building);
+					}
+				}
+			}
+			// Preferred target is other monsters and bunkers
+			else if(this._targetGroup == 6)
+			{
+				if(CREATURES._creatureCount > 0 || CREATURES._hasLivingGuardian)
+				{
+					this.findHuntingTargets();
+					if(this._targetCreep)
+					{
+						this._hasTarget = true;
+						this._hasPath = true;
+						this._waypoints = [this._targetCreep._tmpPoint];
+						this._targetPosition = this._targetCreep._tmpPoint;
+						this._targetCenter = this._targetCreep._tmpPoint;
+					}
+				}
+				for each(var huntBunker:Bunker in BASE._buildingsBunkers)
+				{
+					if(huntBunker.health > 0)
+					{
+						var bunkerUsed:Boolean = false;
+						if(huntBunker._type == 22)
+						{
+							if(huntBunker._used > 0 || huntBunker._monstersDispatchedTotal > 0)
+							{
+								bunkerUsed = true;
+							}
+						}
+						if(huntBunker._type == 128)
+						{
+							if(HOUSING._housingUsed.Get() > 0)
+							{
+								bunkerUsed = true;
+							}
+						}
+						if(bunkerUsed)
+						{
+							checkTarget(huntBunker);
+						}
+					}
+				}
+			}
+			// No preferred targets left or targets all
+			if(!closestBuilding || targetGroup == 1)
+			{
+				for each(building in BASE._buildingsMain)
+				{
+					if(building._type == 144 && building.health > 0){
+						if(this._targetGroup != 4)
+						{
+							this._targetGroup = 1;
+						}
+						checkTarget(building);
+					} else if(building._class != "decoration" && building._class != "immovable" && building.health > 0 && building._class != "enemy"){
+						if(this._targetGroup != 4)
+						{
+							this._targetGroup = 1;
+						}
+						checkTarget(building);
+					}
+				}
+			}
+			if(!closestBuilding && !this._targetCreep)
+			{
+				// No valid targets left
+				this.changeModeRetreat();
+			}
+			else
+			{
+				// Burrowing monsters move to a random side of their target
+				if(this._movement == "burrow")
+				{
+					this._hasTarget = true;
+					this._hasPath = true;
+					var burrowWaypoint:Point = GRID.FromISO(closestBuilding.building._mc.x,closestBuilding.building._mc.y);
+					var randSide:int = int(Math.random() * 4);
+					var height:int = int(closestBuilding.building._footprint[0].height);
+					var width:int = int(closestBuilding.building._footprint[0].width);
+					if(randSide == 0)
+					{
+						burrowWaypoint.x += Math.random() * height;
+						burrowWaypoint.y += width;
+					}
+					else if(randSide == 1)
+					{
+						burrowWaypoint.x += height;
+						burrowWaypoint.y += width;
+					}
+					else if(randSide == 2)
+					{
+						burrowWaypoint.x += height - Math.random() * height / 2;
+						burrowWaypoint.y -= width / 4;
+					}
+					else if(randSide == 3)
+					{
+						burrowWaypoint.x -= height / 4;
+						burrowWaypoint.y += width - Math.random() * width / 2;
+					}
+					this._waypoints = [GRID.ToISO(burrowWaypoint.x,burrowWaypoint.y,0)];
+					this._targetPosition = this._waypoints[0];
+					this._targetBuilding = closestBuilding.building;
+				}
+				// Flying monsters circle around their target
+				else if(this._movement == "fly" || this._movement == "fly_low")
+				{
+					this._hasTarget = true;
+					this._hasPath = true;
+					this._targetBuilding = closestBuilding.building;
+					this._targetCenter = this._targetBuilding._position;
+					var randAngle:Number = NaN;
+					var randRadius:Number = NaN;
+					var flyWaypoint:Point = null;
+					// Balthazar gets closer to their target than other flying monsters
+					if(this._creatureID == "IC5")
+					{
+						if(!this._targetCreep)
+						{
+							if(GLOBAL.QuickDistance(this._tmpPoint,this._targetCenter) < 50)
+							{
+								this._atTarget = true;
+								this._hasPath = true;
+								this._targetPosition = this._targetCenter;
+							}
+							else
+							{
+								this._movement = "fly";
+								randAngle = (randAngle = (randAngle = Math.atan2(this._tmpPoint.y - this._targetCenter.y,this._tmpPoint.x - this._targetCenter.x) * 57.2957795) + (Math.random() * 40 - 20)) / (180 / Math.PI);
+								randRadius = 30 + Math.random() * 10;
+								flyWaypoint = new Point(this._targetCenter.x + Math.cos(randAngle) * randRadius,this._targetCenter.y + Math.sin(randAngle) * randRadius);
+								this._waypoints = [flyWaypoint];
+								this._targetPosition = this._waypoints[0];
+							}
+						}
+					}
+					else if(GLOBAL.QuickDistance(this._tmpPoint,this._targetCenter) < 170)
+					{
+						this._atTarget = true;
+						this._hasPath = true;
+						this._targetPosition = this._targetCenter;
+					}
+					else
+					{
+						randAngle = (randAngle = (randAngle = Math.atan2(this._tmpPoint.y - this._targetCenter.y,this._tmpPoint.x - this._targetCenter.x) * 57.2957795) + (Math.random() * 40 - 20)) / (180 / Math.PI);
+						randRadius = 120 + Math.random() * 10;
+						flyWaypoint = new Point(this._targetCenter.x + Math.cos(randAngle) * randRadius * 1.7,this._targetCenter.y + Math.sin(randAngle) * randRadius);
+						this._waypoints = [flyWaypoint];
+						this._targetPosition = this._waypoints[0];
+					}
+				}
+				else if(GLOBAL._catchup)
+				{
+					this.WaypointTo(new Point(closestBuilding.building._mc.x,closestBuilding.building._mc.y),closestBuilding.building);
+				}
+				else
+				{
+					// Get paths to the closest 2 buildings
+					this.WaypointTo(new Point(closestBuilding.building._mc.x,closestBuilding.building._mc.y),closestBuilding.building);
+					if(secondClosestBuilding)
+					{
+						this.WaypointTo(new Point(secondClosestBuilding.building._mc.x,secondClosestBuilding.building._mc.y),secondClosestBuilding.building);
+					}
+				}
+			}
+		}
       
       public function WaypointTo(targetPoint:Point, targetBuilding:BFOUNDATION = null) : void
       {

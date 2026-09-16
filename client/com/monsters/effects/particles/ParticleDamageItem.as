@@ -45,6 +45,7 @@ package com.monsters.effects.particles
 					_loc6_ = "";
 					_loc6_ = _loc5_ == "attack" || _loc5_ == "wmattack" ? "+" : "-";
 					_loc3_ = "<b>" + _loc6_ + int(Math.abs(param1)) + "</b>";
+					break;
 				}
 			}
 			this._mc.tLootA.htmlText = "<font color=\"#" + _loc4_ + "\">" + _loc3_ + "</font>";

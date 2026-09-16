@@ -385,33 +385,32 @@ package com.monsters.monsters
          return null;
       }
       
-		override public function modifyHealth(param1:Number, param2:ITargetable = null) : Number
+		override public function modifyHealth(value:Number, param2:ITargetable = null) : Number
 		{
 			if(ATTACK._AttackEndProtection) return 0;
 			var _loc6_:Component = null;
-			if(!health || param1 == 0)
+			if(!health || value == 0)
 			{
 				return 0;
 			}
-			var _loc3_:Number = param1;
-			var _loc4_:int = 0;
-			while(_loc4_ < this._components.length)
+			var component_id:int = 0;
+			while(component_id < this._components.length)
 			{
-				if((_loc6_ = this._components[_loc4_]) is IDefendingComponent)
+				if((_loc6_ = this._components[component_id]) is IDefendingComponent)
 				{
-					param1 = IDefendingComponent(_loc6_).onDefend(this,param1,param2);
+					value = IDefendingComponent(_loc6_).onDefend(this,value,param2);
 				}
-				_loc4_++;
+				component_id++;
 			}
 			var _loc5_:Number;
-			if((_loc5_ = param1 + health) == health)
+			if((_loc5_ = value + health) == health)
 			{
 				return 0;
 			}
-			if(param1 < 0)
+			if(value < 0)
 			{
-				param1 *= !!armor ? 1 - armor : 1;
-				this.damaged(param1);
+				value *= !!armor ? 1 - armor : 1;
+				this.damaged(value);
 			}
 			else
 			{
@@ -421,23 +420,14 @@ package com.monsters.monsters
 					{
 						this._graphic.fillRect(this._graphic.rect,0);
 					}
-					param1 = maxHealth - health;
+					value = maxHealth - health;
 				}
-				this.healed(param1);
+				this.healed(value);
 			}
-			if(k_DOES_PRINT_DETAILED_LOGGING && GLOBAL._aiDesignMode)
-			{
-				param1 = Math.round(param1);
-				_loc3_ = Math.round(_loc3_);
-				print(this + " was modified for " + param1 + (!!(_loc3_ - param1) ? "(" + _loc3_ + " - " + (_loc3_ - param1) + ")" : "") + " health points, left with " + health + " out of " + maxHealth + "hp");
-			}
-			if(param1 < 0){
-				ATTACK.damage(-param1, this,param1 < 0 ? param1 - _loc3_ : 0);
-			} else {
-				ATTACK.damage(-param1, this, param1 < 0 ? param1 - _loc3_ : param1);
-			}
-			setHealth(health + param1);
-			return param1;
+			value = Math.round(value);
+			ATTACK.damage(-value, this);
+			setHealth(health + value);
+			return value;
 		}
       
       protected function healed(param1:Number) : void

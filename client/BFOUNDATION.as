@@ -573,7 +573,7 @@ package
 					_loc4_ = MonsterBase(param2).lootingMultiplier;
 				}
 				_loc5_ = this.Loot(param1 * _loc4_);
-				ATTACK.damage(param1, this, param1 - _loc3_);
+				ATTACK.damage(param1, this);
 			}
 			if(k_DOES_PRINT_DETAILED_LOGGING && GLOBAL._aiDesignMode)
 			{

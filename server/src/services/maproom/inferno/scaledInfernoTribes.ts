@@ -8,6 +8,7 @@ import { User } from "../../../models/user.model.js";
 import { postgres } from "../../../server.js";
 import { getCurrentDateTime } from "../../../utils/getCurrentDateTime.js";
 import { BaseSaveSchema } from "../../../schemas/BaseSaveSchema.js";
+import { championHandler } from "../../../controllers/base/save/handlers/championHandler.js";
 import { molochTribes } from "../../../game-data/tribes/inferno/molochTribes.js";
 
 type BaseSaveData = TypeOf<typeof BaseSaveSchema>;
@@ -69,7 +70,7 @@ export const scaledInfernoTribes = async (user: User, saveData: BaseSaveData) =>
         break;
 
       case SaveKeys.ATTACKERCHAMPION:
-        if (saveData.attackerchampion) userSave.champion = saveData.attackerchampion;
+        if (saveData.attackerchampion) championHandler(saveData.attackerchampion, userSave);
         break;
 
       case SaveKeys.ATTACKLOOT:

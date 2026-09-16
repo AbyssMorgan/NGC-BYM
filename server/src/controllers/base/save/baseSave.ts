@@ -123,7 +123,7 @@ export const baseSave: KoaController = async (ctx) => {
 			case SaveKeys.CHAMPION: {
 				if (isAttack) {
 					if (saveData.attackerchampion) {
-						userSave.champion = saveData.attackerchampion;
+						championHandler(saveData.attackerchampion, userSave);
 					}
 					if (saveData.champion) {
 						championHandler(saveData.champion, baseSave);

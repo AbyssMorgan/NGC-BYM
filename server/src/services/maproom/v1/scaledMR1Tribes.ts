@@ -8,6 +8,7 @@ import { postgres } from "../../../server.js";
 import { getCurrentDateTime } from "../../../utils/getCurrentDateTime.js";
 import { BaseSaveSchema } from "../../../schemas/BaseSaveSchema.js";
 import { attackLootHandler } from "../../../controllers/base/save/handlers/attackLootHandler.js";
+import { championHandler } from "../../../controllers/base/save/handlers/championHandler.js";
 import { MR1_TRIBES_MAP } from "../../../game-data/tribes/v1/index.js";
 
 type BaseSaveData = TypeOf<typeof BaseSaveSchema>;
@@ -60,7 +61,7 @@ export const scaledMR1Tribes = async (user: User, saveData: BaseSaveData) => {
         break;
 
       case SaveKeys.ATTACKERCHAMPION:
-        if (saveData.attackerchampion) userSave.champion = saveData.attackerchampion;
+        if (saveData.attackerchampion) championHandler(saveData.attackerchampion, userSave);
         break;
 
       case SaveKeys.ATTACKLOOT:

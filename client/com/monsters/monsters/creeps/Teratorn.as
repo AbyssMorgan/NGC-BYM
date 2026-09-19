@@ -2,7 +2,6 @@ package com.monsters.monsters.creeps
 {
 	import com.monsters.interfaces.ITargetable;
 	import com.monsters.monsters.MonsterBase;
-	import com.monsters.monsters.components.abilities.GlavesOnAttack;
 	import flash.geom.Point;
 	
 	public class Teratorn extends CreepBase
@@ -11,10 +10,6 @@ package com.monsters.monsters.creeps
 		{
 			super(param1, param2, param3, param4, param5, param6, param7, param8, param9, param10, param11, param12);
 			SPRITES.SetupSprite("shadow");
-			// if(poweredUp())
-			// {
-			// 	addComponent(new GlavesOnAttack(powerUpLevel()));
-			// }
 		}
 		
 		override protected function rangedAttack(param1:ITargetable) : ITargetable

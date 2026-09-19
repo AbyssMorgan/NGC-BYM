@@ -409,7 +409,8 @@ package com.monsters.monsters
 			}
 			if(value < 0)
 			{
-				value *= !!armor ? 1 - armor : 1;
+				var multiplier:Number = !!armor ? 1.0 - armor : 1.0;
+				value *= multiplier;
 				this.damaged(value);
 			}
 			else

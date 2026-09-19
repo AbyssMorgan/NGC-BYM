@@ -95,7 +95,6 @@ package com.monsters.monsters.components.abilities
          this.m_blinkDistance = param1;
          owner.graphic.alpha = 0.3;
          ++owner.targetableStatus;
-         print("starting blink");
       }
       
       private function stopBlink() : void
@@ -104,7 +103,6 @@ package com.monsters.monsters.components.abilities
          owner.graphic.alpha = 1;
          this.m_blinkPoints = 0;
          --owner.targetableStatus;
-         print("stopping blink");
       }
    }
 }

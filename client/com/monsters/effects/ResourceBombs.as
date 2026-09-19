@@ -231,6 +231,16 @@ package com.monsters.effects
 					"catapultLevel":7
 				}
 			};
+			if(GLOBAL._attackersCatapult >= 8){
+				var bomb_id:String = null;
+				for(bomb_id in _bombs){
+					if(_bombs[bomb_id].group == 2){
+						_bombs[bomb_id].range = int(Math.round(_bombs[bomb_id].damage * 1.20));
+					} else {
+						_bombs[bomb_id].damage = int(Math.round(_bombs[bomb_id].damage * 1.20));
+					}
+				}
+			}
 		}
 		
 		public static function Setup() : void

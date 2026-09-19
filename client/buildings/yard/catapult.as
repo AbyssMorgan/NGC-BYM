@@ -27,6 +27,7 @@ package buildings.yard {
 				{"r1":new SecNum(50000000), "r2":new SecNum(50000000), "r3":new SecNum(50000000), "r4":new SecNum(0), "time":new SecNum(86400), "re":[[14,1,12],[5,1,1],[12,1,2]]}, // Level 5
 				{"r1":new SecNum(100000000), "r2":new SecNum(100000000), "r3":new SecNum(100000000), "r4":new SecNum(0), "time":new SecNum(86400 * 2), "re":[[14,1,14],[5,1,1],[12,1,2]]}, // Level 6
 				{"r1":new SecNum(200000000), "r2":new SecNum(200000000), "r3":new SecNum(200000000), "r4":new SecNum(0), "time":new SecNum(86400 * 3), "re":[[14,1,16],[5,1,1],[12,1,2]]}, // Level 7
+				{"r1":new SecNum(5000000000), "r2":new SecNum(5000000000), "r3":new SecNum(5000000000), "r4":new SecNum(5000000000), "r6": new SecNum(5), "time":new SecNum(86400 * 4), "re":[[14,1,21],[5,1,1],[12,1,2]]}, // Level 8
 			],
 			"imageData":{
 				"baseurl":"buildings/catapult/",
@@ -61,6 +62,14 @@ package buildings.yard {
 					"shadowdamaged":["shadow.3.damaged.jpg",new Point(-51,30)],
 					"topdestroyed":["top.heat.destroyed.png",new Point(-48,9)],
 					"shadowdestroyed":["shadow.3.destroyed.jpg",new Point(-47,23)]
+				},
+				"8":{
+					"top":["top.ngc.png",new Point(-43,-29)],
+					"shadow":["shadow.3.jpg",new Point(-39,27)],
+					"topdamaged":["top.ngc.damaged.png",new Point(-51,-29)],
+					"shadowdamaged":["shadow.3.damaged.jpg",new Point(-51,30)],
+					"topdestroyed":["top.ngc.destroyed.png",new Point(-48,9)],
+					"shadowdestroyed":["shadow.3.destroyed.jpg",new Point(-47,23)]
 				}
 			},
 			"upgradeImgData":{
@@ -93,6 +102,11 @@ package buildings.yard {
 				1, // Level 18
 				1, // Level 19
 				1, // Level 20
+				1, // Level 21
+				1, // Level 22
+				1, // Level 23
+				1, // Level 24
+				1, // Level 25
 			],
 			"hp":[
 				4000, // Level 1
@@ -102,6 +116,7 @@ package buildings.yard {
 				64000, // Level 5
 				96000, // Level 6
 				128000, // Level 7
+				150000, // Level 8
 			],
 			"repairTime":[
 				120, // Level 1
@@ -111,6 +126,7 @@ package buildings.yard {
 				1440, // Level 5
 				1920, // Level 6
 				2400, // Level 7
+				3600, // Level 8
 			]
 		};
 		

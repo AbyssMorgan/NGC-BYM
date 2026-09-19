@@ -100,9 +100,10 @@ package
          {
 			if(this._props.resource == 3){
 				_loc1_ += "<br>" + KEYS.Get(this._props.description,{
-					"v1":this._props.speed * 100 + "%",
-					"v2":Math.round(this._props.damageMult * 100) + "%",
-					"v3":this._props.speedlength
+					"v1":this._props.radius,
+					"v2":this._props.speed * 100 + "%",
+					"v3":Math.round(this._props.damageMult * 100) + "%",
+					"v4":this._props.speedlength
 				});
 			} else {
 				_loc1_ += "<br>" + KEYS.Get(this._props.description,{

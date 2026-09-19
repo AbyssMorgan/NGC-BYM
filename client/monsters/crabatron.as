@@ -52,16 +52,16 @@ package monsters {
 					6600, // Level 10
 				],
 				"damage":[
-					100, // Level 1
-					120, // Level 2
-					130, // Level 3
-					140, // Level 4
-					150, // Level 5
-					170, // Level 6
-					190, // Level 7
-					210, // Level 8
-					230, // Level 9
-					250, // Level 10
+					200, // Level 1
+					240, // Level 2
+					260, // Level 3
+					280, // Level 4
+					300, // Level 5
+					340, // Level 6
+					380, // Level 7
+					420, // Level 8
+					460, // Level 9
+					500, // Level 10
 				],
 				"cTime":[
 					750, // Level 1
@@ -79,10 +79,10 @@ package monsters {
 					1920000, // Level 10
 				],
 				"cStorage":[
-					40, // Level 1
+					50, // Level 1
 				],
 				"bucket":[
-					40, // Level 1
+					50, // Level 1
 				],
 				"targetGroup":[4],
 				"hTime":[

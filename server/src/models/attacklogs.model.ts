@@ -14,17 +14,11 @@ export class AttackLogs {
   @Property({ type: 'string' })
   attacker_username!: string;
 
-  @Property({ type: 'string', nullable: true })
-  attacker_pic_square?: string;
-
   @Property({ type: 'number' })
   defender_userid!: number;
 
   @Property({ type: 'string' })
   defender_username!: string;
-
-  @Property({ type: 'string', nullable: true })
-  defender_pic_square?: string;
 
   @Property({ type: 'string' })
   type!: string;

@@ -82,10 +82,10 @@ package monsters {
 					19264000, // Level 10
 				],
 				"cStorage":[
-					100, // Level 1
+					70, // Level 1
 				],
 				"bucket":[
-					100, // Level 1
+					70, // Level 1
 				],
 				"targetGroup":[1],
 				"hTime":[

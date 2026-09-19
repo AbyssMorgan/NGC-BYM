@@ -43,7 +43,7 @@ package
    {
       public static var serverUrl:String = CONFIG::SERVER_URL;
 
-      public static var apiVersionSuffix:String = "ngc-v1.5.0";
+      public static var apiVersionSuffix:String = "ngc-v1.5.1";
 
       public static var connectionCounter:int;
 

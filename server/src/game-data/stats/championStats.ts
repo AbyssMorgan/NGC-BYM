@@ -270,16 +270,16 @@ export const championStats: ChampionStatsMap = {
 		name: "Fomor",
 		props: {
 			speed:[
-				1.2, // Level 1
-				1.4, // Level 2
-				2.0, // Level 3
-				2.1, // Level 4
-				2.2, // Level 5
-				2.3, // Level 6
-				2.4, // Level 7
-				2.5, // Level 8
-				2.6, // Level 9
-				2.8, // Level 10
+				1.7, // Level 1
+				1.9, // Level 2
+				2.1, // Level 3
+				2.3, // Level 4
+				2.5, // Level 5
+				2.7, // Level 6
+				2.9, // Level 7
+				3.1, // Level 8
+				3.3, // Level 9
+				3.5, // Level 10
 			],
 			health:[
 				15000, // Level 1
@@ -529,7 +529,13 @@ export const championStats: ChampionStatsMap = {
 				3600 * 3, // Level 4
 				3600 * 4, // Level 5
 			],
-			range: [35, 45, 55, 60, 65],
+			range: [
+				120, // Level 1
+				140, // Level 2
+				160, // Level 3
+				180, // Level 4
+				200, // Level 5
+			],
 			damage: [
 				800 * 2, // Level 1
 				850 * 2, // Level 2

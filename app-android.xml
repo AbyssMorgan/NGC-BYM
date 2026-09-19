@@ -2,8 +2,8 @@
 <application xmlns="http://ns.adobe.com/air/application/50.2"> 
 	<id>com.bymr-ngc-app</id>
 	<filename>NGC Backyard Monsters</filename>
-	<versionNumber>1.5.0</versionNumber> 
-	<versionLabel>1.5.0</versionLabel>
+	<versionNumber>1.5.1</versionNumber> 
+	<versionLabel>1.5.1</versionLabel>
 	<supportedProfiles>mobileDevice</supportedProfiles>
 	<customUpdateUI>false</customUpdateUI>
 	<allowBrowserInvocation>false</allowBrowserInvocation>

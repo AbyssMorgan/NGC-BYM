@@ -18,11 +18,9 @@ export const createAttackLog = async (attacker: User, defender: User, save: Save
   const attackLog = postgres.em.create(AttackLogs, {
     attacker_userid: attacker.userid,
     attacker_username: attacker.username,
-    attacker_pic_square: attacker.pic_square,
 
     defender_userid: defender.userid,
     defender_username: defender.username,
-    defender_pic_square: defender.pic_square,
 
     type: save.type,
     x: save.cell?.x || null,

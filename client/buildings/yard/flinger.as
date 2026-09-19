@@ -29,8 +29,8 @@ package buildings.yard {
 				{"r1":new SecNum(80000000), "r2":new SecNum(80000000), "r3":new SecNum(40000000), "r4":new SecNum(0), "time":new SecNum(86400 * 5), "re":[[14,1,16],[11,1,1],[12,1,2]]}, // Level 8
 				{"r1":new SecNum(160000000), "r2":new SecNum(160000000), "r3":new SecNum(80000000), "r4":new SecNum(0), "time":new SecNum(86400 * 6), "re":[[14,1,18],[11,1,1],[12,1,2]]}, // Level 9
 				{"r1":new SecNum(320000000), "r2":new SecNum(320000000), "r3":new SecNum(160000000), "r4":new SecNum(0), "time":new SecNum(86400 * 7), "re":[[14,1,20],[11,1,1],[12,1,2]]}, // Level 10
-				// {"r1":new SecNum(10000000000), "r2":new SecNum(10000000000), "r3":new SecNum(10000000000), "r4":new SecNum(10000000000), "r6": new SecNum(5), "time":new SecNum(86400 * 8), "re":[[14,1,22],[12,1,3],[145,1,7]]}, // Level 11
-				// {"r1":new SecNum(25000000000), "r2":new SecNum(25000000000), "r3":new SecNum(25000000000), "r4":new SecNum(25000000000), "r6": new SecNum(10), "time":new SecNum(86400 * 9), "re":[[14,1,24],[12,1,3],[145,1,9]]}, // Level 12
+				{"r1":new SecNum(10000000000), "r2":new SecNum(10000000000), "r3":new SecNum(10000000000), "r4":new SecNum(10000000000), "r6": new SecNum(5), "time":new SecNum(86400 * 8), "re":[[14,1,22],[12,1,3],[145,1,7]]}, // Level 11
+				{"r1":new SecNum(25000000000), "r2":new SecNum(25000000000), "r3":new SecNum(25000000000), "r4":new SecNum(25000000000), "r6": new SecNum(10), "time":new SecNum(86400 * 9), "re":[[14,1,24],[12,1,3],[145,1,9]]}, // Level 12
 			],
 			"imageData":{
 				"baseurl":"buildings/flinger/",

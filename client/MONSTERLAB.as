@@ -53,7 +53,7 @@ package
 			}
 		}
 		
-		public static function GetPuttyCost(param1:String, param2:int) : int
+		public static function GetPuttyCost(param1:String, param2:int) : Number
 		{
 			if(_powerupProps)
 			{
@@ -94,8 +94,6 @@ package
 					"description":"lab_boltdesc",
 					"ability":"Blink Range",
 					"upgrade_description":"lab_boltdesc_u",
-					"stream":["lab_boltstream","lab_boltstream_unlock","lab_boltstream_upgrade"],
-					"streampic":"lab_bolt.png",
 					"costs":[
 						[48000, 60 * 60 * 24], // Level 1
 						[72000, 60 * 60 * 24], // Level 2
@@ -119,8 +117,6 @@ package
 					"description":"lab_finkdesc",
 					"ability":"Extra Target(s)",
 					"upgrade_description":"lab_finkdesc_u",
-					"stream":["lab_finkstream","lab_finkstream_unlock","lab_finkstream_upgrade"],
-					"streampic":"lab_fink5.png",
 					"costs":[
 						[96000, 60 * 60 * 24], // Level 1
 						[128000, 60 * 60 * 24], // Level 2
@@ -144,8 +140,6 @@ package
 					"description":"lab_banditodesc",
 					"ability":"Whirlwind",
 					"upgrade_description":"lab_banditodesc_u",
-					"stream":["lab_banditostream","lab_banditostream_unlock","lab_banditostream_upgrade"],
-					"streampic":"lab_bandito.png",
 					"costs":[
 						[1000000, 60 * 60 * 24], // Level 1
 						[1500000, 60 * 60 * 24], // Level 2
@@ -169,8 +163,6 @@ package
 					"description":"lab_fangdesc",
 					"ability":"Venom Damage",
 					"upgrade_description":"lab_fangdesc_u",
-					"stream":["lab_fangstream","lab_fangstream_unlock","lab_fangstream_upgrade"],
-					"streampic":"lab_fang5.png",
 					"costs":[
 						[2000000, 60 * 60 * 24], // Level 1
 						[3000000, 60 * 60 * 24], // Level 2
@@ -194,8 +186,6 @@ package
 					"description":"lab_eyeradesc",
 					"ability":"Airburst Bonus",
 					"upgrade_description":"lab_eyeradesc_u",
-					"stream":["lab_eyerastream","lab_eyerastream_unlock","lab_eyerastream_upgrade"],
-					"streampic":"lab_eyera5.png",
 					"costs":[
 						[3560000, 60 * 60 * 24], // Level 1
 						[4120000, 60 * 60 * 24], // Level 2
@@ -219,8 +209,6 @@ package
 					"description":"lab_braindesc",
 					"ability":"s Cloak Delay",
 					"upgrade_description":"lab_braindesc_u",
-					"stream":["lab_brainstream","lab_brainstream_unlock","lab_brainstream_upgrade"],
-					"streampic":"lab_brain.png",
 					"costs":[
 						[3000000, 60 * 60 * 24], // Level 1
 						[4500000, 60 * 60 * 24], // Level 2
@@ -238,14 +226,35 @@ package
 						20, // Level 6
 					]
 				},
+				"C10":{
+					"name":"Additional health",
+					"order":7,
+					"description":"Increase health",
+					"ability":"Additional health",
+					"upgrade_description":"Increase health",
+					"costs":[
+						[8000000, 60 * 60 * 24], // Level 1
+						[12000000, 60 * 60 * 24], // Level 2
+						[18000000, 60 * 60 * 24], // Level 3
+						[72000000, 60 * 60 * 24], // Level 4
+						[288000000, 60 * 60 * 24], // Level 5
+						[1152000000, 60 * 60 * 24], // Level 6
+					],
+					"effect":[
+						1, // Level 1
+						2, // Level 2
+						3, // Level 3
+						4, // Level 4
+						5, // Level 5
+						6, // Level 6
+					]
+				},
 				"C11":{
 					"name":"lab_projectxname",
-					"order":7,
+					"order":8,
 					"description":"lab_projectxdesc",
 					"ability":"Acid Damage",
 					"upgrade_description":"lab_projectxdesc_u",
-					"stream":["lab_projxstream","lab_projxstream_unlock","lab_projxstream_upgrade"],
-					"streampic":"lab_projectx.png",
 					"costs":[
 						[8000000, 60 * 60 * 24], // Level 1
 						[12000000, 60 * 60 * 24], // Level 2
@@ -269,8 +278,6 @@ package
 					"description":"lab_davedesc",
 					"ability":"Rocket Range",
 					"upgrade_description":"lab_davedesc_u",
-					"stream":["lab_davestream","lab_davestream_unlock","lab_davestream_upgrade"],
-					"streampic":"lab_dave.png",
 					"costs":[
 						[15000000, 60 * 60 * 24], // Level 1
 						[22500000, 60 * 60 * 24], // Level 2
@@ -294,8 +301,6 @@ package
 					"description":"lab_wormzerdesc",
 					"ability":"Splash Damage",
 					"upgrade_description":"lab_wormzerdesc_u",
-					"stream":["lab_wormstream","lab_wormstream_unlock","lab_wormstream_upgrade"],
-					"streampic":"lab_wormzer.png",
 					"costs":[
 						[10000000, 60 * 60 * 24], // Level 1
 						[15000000, 60 * 60 * 24], // Level 2
@@ -319,8 +324,6 @@ package
 					"description":"Multiple fireball power",
 					"ability":"multiplier",
 					"upgrade_description":"Multiple fireball power",
-					"stream":["lab_terastream","lab_terastream_unlock","lab_terastream_upgrade"],
-					"streampic":"lab_teratorn.png",
 					"costs":[
 						[12000000, 60 * 60 * 24], // Level 1
 						[18000000, 60 * 60 * 24], // Level 2
@@ -336,6 +339,167 @@ package
 						2.0, // Level 4
 						2.5, // Level 5
 						3.0, // Level 6
+					]
+				},
+				"C15":{
+					"name":"Additional speed",
+					"order":7,
+					"description":"Increase speed",
+					"ability":"Additional speed",
+					"upgrade_description":"Increase speed",
+					"costs":[
+						[8000000, 60 * 60 * 24], // Level 1
+						[12000000, 60 * 60 * 24], // Level 2
+						[18000000, 60 * 60 * 24], // Level 3
+						[72000000, 60 * 60 * 24], // Level 4
+						[288000000, 60 * 60 * 24], // Level 5
+						[1152000000, 60 * 60 * 24], // Level 6
+					],
+					"effect":[
+						1, // Level 1
+						2, // Level 2
+						3, // Level 3
+						4, // Level 4
+						5, // Level 5
+						6, // Level 6
+					]
+				},
+				"C16":{
+					"name":"Additional speed",
+					"order":7,
+					"description":"Increase speed",
+					"ability":"Additional speed",
+					"upgrade_description":"Increase speed",
+					"costs":[
+						[8000000, 60 * 60 * 24], // Level 1
+						[12000000, 60 * 60 * 24], // Level 2
+						[18000000, 60 * 60 * 24], // Level 3
+						[72000000, 60 * 60 * 24], // Level 4
+						[288000000, 60 * 60 * 24], // Level 5
+						[1152000000, 60 * 60 * 24], // Level 6
+					],
+					"effect":[
+						1, // Level 1
+						2, // Level 2
+						3, // Level 3
+						4, // Level 4
+						5, // Level 5
+						6, // Level 6
+					]
+				},
+				"C19":{
+					"name":"Additional healing",
+					"order":10,
+					"description":"Increase healing power",
+					"ability":"Additional healing",
+					"upgrade_description":"Increase healing power",
+					"costs":[
+						[15000000, 60 * 60 * 24], // Level 1
+						[22500000, 60 * 60 * 24], // Level 2
+						[33750000, 60 * 60 * 24], // Level 3
+						[135000000, 60 * 60 * 24], // Level 4
+						[540000000, 60 * 60 * 24], // Level 5
+						[2160000000, 60 * 60 * 24], // Level 6
+					],
+					"effect":[
+						1, // Level 1
+						2, // Level 2
+						3, // Level 3
+						4, // Level 4
+						5, // Level 5
+						6, // Level 6
+					]
+				},
+				"IC5":{
+					"name":"Additional damage",
+					"order":7,
+					"description":"Increase damage",
+					"ability":"Additional damage",
+					"upgrade_description":"Increase damage",
+					"costs":[
+						[8000000, 60 * 60 * 24], // Level 1
+						[12000000, 60 * 60 * 24], // Level 2
+						[18000000, 60 * 60 * 24], // Level 3
+						[72000000, 60 * 60 * 24], // Level 4
+						[288000000, 60 * 60 * 24], // Level 5
+						[1152000000, 60 * 60 * 24], // Level 6
+					],
+					"effect":[
+						1, // Level 1
+						2, // Level 2
+						3, // Level 3
+						4, // Level 4
+						5, // Level 5
+						6, // Level 6
+					]
+				},
+				"IC6":{
+					"name":"Additional damage",
+					"order":7,
+					"description":"Increase damage",
+					"ability":"Additional damage",
+					"upgrade_description":"Increase damage",
+					"costs":[
+						[8000000, 60 * 60 * 24], // Level 1
+						[12000000, 60 * 60 * 24], // Level 2
+						[18000000, 60 * 60 * 24], // Level 3
+						[72000000, 60 * 60 * 24], // Level 4
+						[288000000, 60 * 60 * 24], // Level 5
+						[1152000000, 60 * 60 * 24], // Level 6
+					],
+					"effect":[
+						1, // Level 1
+						2, // Level 2
+						3, // Level 3
+						4, // Level 4
+						5, // Level 5
+						6, // Level 6
+					]
+				},
+				"IC7":{
+					"name":"Additional health",
+					"order":7,
+					"description":"Increase health",
+					"ability":"Additional health",
+					"upgrade_description":"Increase health",
+					"costs":[
+						[8000000, 60 * 60 * 24], // Level 1
+						[12000000, 60 * 60 * 24], // Level 2
+						[18000000, 60 * 60 * 24], // Level 3
+						[72000000, 60 * 60 * 24], // Level 4
+						[288000000, 60 * 60 * 24], // Level 5
+						[1152000000, 60 * 60 * 24], // Level 6
+					],
+					"effect":[
+						1, // Level 1
+						2, // Level 2
+						3, // Level 3
+						4, // Level 4
+						5, // Level 5
+						6, // Level 6
+					]
+				},
+				"IC8":{
+					"name":"Additional health",
+					"order":7,
+					"description":"Increase health",
+					"ability":"Additional health",
+					"upgrade_description":"Increase health",
+					"costs":[
+						[8000000, 60 * 60 * 24], // Level 1
+						[12000000, 60 * 60 * 24], // Level 2
+						[18000000, 60 * 60 * 24], // Level 3
+						[72000000, 60 * 60 * 24], // Level 4
+						[288000000, 60 * 60 * 24], // Level 5
+						[1152000000, 60 * 60 * 24], // Level 6
+					],
+					"effect":[
+						1, // Level 1
+						2, // Level 2
+						3, // Level 3
+						4, // Level 4
+						5, // Level 5
+						6, // Level 6
 					]
 				}
 			};
@@ -516,8 +680,8 @@ package
 			if(_upgrading)
 			{
 				GLOBAL.Message(KEYS.Get("lab_confirmcancel",{
-				"v1":KEYS.Get(CREATURELOCKER._creatures[_upgrading].name),
-				"v2":KEYS.Get(_powerupProps[_upgrading].name)
+					"v1":KEYS.Get(CREATURELOCKER._creatures[_upgrading].name),
+					"v2":KEYS.Get(_powerupProps[_upgrading].name)
 				}),KEYS.Get("lab_confirmcancel_btn"),this.CancelMonsterPowerupB);
 			}
 		}

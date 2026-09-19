@@ -1,5 +1,7 @@
 package monsters {
 
+	import com.monsters.monsters.creeps.Crabatron;
+
 	public class crabatron {
 
 		public const DATA:Object = {
@@ -10,6 +12,7 @@ package monsters {
 			"time":3600 * 58,
 			"level":3,
 			"name":"#m_crabatron#",
+			"classType":Crabatron,
 			"description":"mon_crabatrondesc",
 			"stream":["mon_crabatronstream","mon_crabatronstreambody","quests/monster10.png"],
 			"trainingCosts":[

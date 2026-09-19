@@ -95,18 +95,23 @@ package com.monsters.monsters.creeps
 			// Performance optimization counters
 			this.m_findTargetsCounter = int(Math.random() * 200); // Randomize initial counter to spread load
 			
-			moveSpeedProperty.value = CREATURES.GetProperty(_creatureID,"speed",level,_friendly) / 2;
-			if(TUTORIAL._stage < 200)
-			{
-				moveSpeedProperty.value *= 2;
-			}
+			moveSpeedProperty.value = CREATURES.GetProperty(_creatureID,"speed",level,_friendly);
+			damageProperty.set(int(CREATURES.GetProperty(_creatureID,"damage",level,_friendly) * param10));
 			setHealth(int(CREATURES.GetProperty(_creatureID,"health",level,_friendly) * param10));
 			maxHealthProperty.value = health;
 			if(health > customHealth)
 			{
 				setHealth(customHealth);
 			}
-			damageProperty.set(int(CREATURES.GetProperty(_creatureID,"damage",level,_friendly) * param10));
+			if((_creatureID == "C10" || _creatureID == "IC7" || _creatureID == "IC8") && powerUpLevel() > 0){
+				maxHealthProperty.store();
+				maxHealthProperty.addModifier(new AdditionPropertyModifier(powerUpLevel() * 2000));
+				maxHealthProperty.updateHealth();
+			} else if((_creatureID == "C15" || _creatureID == "C16") && powerUpLevel() > 0){
+				moveSpeedProperty.addModifier(new AdditionPropertyModifier(powerUpLevel() * 0.20));
+			} else if((_creatureID == "IC5" || _creatureID == "IC6") && powerUpLevel() > 0){
+				damageProperty.addModifier(new AdditionPropertyModifier(powerUpLevel() * 100));
+			}
 			_goo = CREATURES.GetProperty(_creatureID,"cResource",level,_friendly);
 			_targetPosition = param3;
 			_targetCenter = targetCenter;
@@ -305,7 +310,7 @@ package com.monsters.monsters.creeps
 			{
 				if(_frameNumber % 60 == 0)
 				{
-				modifyHealth(-_damagePerSecond.Get());
+					modifyHealth(-_damagePerSecond.Get());
 				}
 			}
 			if(!this.hackCheck())
@@ -750,11 +755,11 @@ package com.monsters.monsters.creeps
 				changeModeRetreat();
 				return;
 			}
-			var _loc4_:Boolean = false;
+			var _loc4_:Boolean = false, heal_value:int = -(damage - (powerUpLevel() * 75));
 			_targetCreeps = Targeting.getCreepsInRange(1000,_tmpPoint,attackFlags,this);
 			if(_targetCreeps.length > 0)
 			{
-				_targetCreeps.sortOn(["dist"],Array.NUMERIC);
+				_targetCreeps.sortOn(["hp"],Array.NUMERIC);
 				var target_stats:Object, target_id:String;
 				if(!(Boolean(_targetCreep) && _targetCreep.health > 0 && Math.round(_targetCreep.health) < Math.round(_targetCreep.maxHealth)))
 				{
@@ -774,22 +779,49 @@ package com.monsters.monsters.creeps
 					}
 					if(_targetCreeps.length > 0)
 					{
-						_targetCreep = _targetCreeps[0].creep;
-						_waypoints = [_targetCreep._tmpPoint];
+						if(Math.round(_targetCreeps[0].maxHealth) - Math.round(_targetCreeps[0].health) >= (heal_value * 2)){
+							_targetCreep = _targetCreeps[0].creep;
+							_waypoints = [_targetCreep._tmpPoint];
+						}
 					}
 				}
-				while(_targetCreeps.length > 0){
-					target_id = _targetCreeps[0].creep._creatureID;
-					if(target_id.substr(0, 1) == "G"){
-						target_stats = CHAMPIONCAGE._guardians[target_id];
-					} else {
-						target_stats = CREATURELOCKER._creatures[target_id];
+				if(!_targetCreep){
+					_targetCreeps = Targeting.getCreepsInRange(1000,_tmpPoint,attackFlags,this);
+					if(!(Boolean(_targetCreep) && _targetCreep.health > 0 && Math.round(_targetCreep.health) < Math.round(_targetCreep.maxHealth)))
+					{
+						_loc4_ = true;
+						while(_targetCreeps.length > 0){
+							target_id = _targetCreeps[0].creep._creatureID;
+							if(target_id.substr(0, 1) == "G"){
+								target_stats = CHAMPIONCAGE._guardians[target_id];
+							} else {
+								target_stats = CREATURELOCKER._creatures[target_id];
+							}
+							if(target_stats.antiHeal || (_creatureID == "C19" && target_stats.antiGroundHeal)){
+								_targetCreeps.shift();
+								continue;
+							}
+							break;
+						}
+						if(_targetCreeps.length > 0)
+						{
+							_targetCreep = _targetCreeps[0].creep;
+							_waypoints = [_targetCreep._tmpPoint];
+						}
 					}
-					if(target_stats.antiHeal || (_creatureID == "C19" && target_stats.antiGroundHeal) || _targetCreeps[0].creep._behaviour == k_sBHVR_RETREAT || _targetCreeps[0].creep.health == _targetCreeps[0].creep.maxHealth){
-						_targetCreeps.shift();
-						continue;
+					while(_targetCreeps.length > 0){
+						target_id = _targetCreeps[0].creep._creatureID;
+						if(target_id.substr(0, 1) == "G"){
+							target_stats = CHAMPIONCAGE._guardians[target_id];
+						} else {
+							target_stats = CREATURELOCKER._creatures[target_id];
+						}
+						if(target_stats.antiHeal || (_creatureID == "C19" && target_stats.antiGroundHeal) || _targetCreeps[0].creep._behaviour == k_sBHVR_RETREAT || _targetCreeps[0].creep.health == _targetCreeps[0].creep.maxHealth){
+							_targetCreeps.shift();
+							continue;
+						}
+						break;
 					}
-					break;
 				}
 			}
 			if(_targetCreeps.length > 0)
@@ -2386,10 +2418,10 @@ package com.monsters.monsters.creeps
 			var is_attack:Boolean = (GLOBAL.mode == GLOBAL.e_BASE_MODE.ATTACK || GLOBAL.mode == "wmattack");
 			if(is_attack){
 				if(BASE._BuffInfernoVenomBase){
-					_damagePerSecond.Add(50);
+					_damagePerSecond.Set(50);
 				} else {
 					if(!this.m_bInfernoCreep && !BASE._BuffInfernoVenomResistance && (BASE.isInfernoMainYardOrOutpost || BASE._wmID == 41 || BASE._wmID == 51)){
-						_damagePerSecond.Add(50);
+						_damagePerSecond.Set(50);
 					}
 				}
 			}

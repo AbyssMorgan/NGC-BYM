@@ -37,6 +37,7 @@ package
    import flash.utils.*;
    import gs.TweenLite;
    import gs.easing.Cubic;
+   import com.monsters.effects.ResourceBombs;
 
    public class GLOBAL
    {
@@ -863,6 +864,7 @@ package
                _attackersFlinger = 4;
             }
          }
+		 ResourceBombs.Data();
          SOUNDS.AutoPlay();
          _render = false;
          _creepCount = 0;

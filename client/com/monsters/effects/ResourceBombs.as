@@ -232,12 +232,12 @@ package com.monsters.effects
 				}
 			};
 			if(GLOBAL._attackersCatapult >= 8){
-				var bomb_id:String = null;
+				var bomb_id:String = null, buff_multiplier:int = GLOBAL._attackersCatapult - 7;
 				for(bomb_id in _bombs){
 					if(_bombs[bomb_id].group == 2){
-						_bombs[bomb_id].range = int(Math.round(_bombs[bomb_id].damage * 1.20));
+						_bombs[bomb_id].radius = int(Math.round(_bombs[bomb_id].radius * (1.0 + (0.15 * buff_multiplier))));
 					} else {
-						_bombs[bomb_id].damage = int(Math.round(_bombs[bomb_id].damage * 1.20));
+						_bombs[bomb_id].damage = int(Math.round(_bombs[bomb_id].damage * (1.0 + (0.10 * buff_multiplier))));
 					}
 				}
 			}

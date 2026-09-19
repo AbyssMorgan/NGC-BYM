@@ -3234,117 +3234,117 @@ package
 			// 	};
 			// }
 
-      private static function getChampionSaveData():Array
-      {
-         var _loc5_:int = 0;
-         var _loc7_:Vector.<Object> = null;
-         var _loc8_:int = 0;
-         var _loc1_:Dictionary = new Dictionary();
-         var _loc2_:Boolean = false;
-         var _loc3_:int = 0;
-         var _loc4_:Array = new Array();
-         var _loc6_:Boolean = false;
-         _loc5_ = 0;
-         while (_loc5_ < _guardianData.length)
-         {
-            if (Boolean(_guardianData[_loc5_]) && _loc1_[_guardianData[_loc5_].t] === undefined)
-            {
-               _loc1_[_guardianData[_loc5_].t] = _loc5_;
-               _loc4_.push(new Object());
-               if (_guardianData[_loc5_].nm)
-               {
-                  _loc4_[_loc3_].nm = _guardianData[_loc5_].nm;
-               }
-               if (_guardianData[_loc5_].t)
-               {
-                  _loc4_[_loc3_].t = _guardianData[_loc5_].t;
-               }
-               if (_guardianData[_loc5_].hp)
-               {
-                  _loc4_[_loc3_].hp = _guardianData[_loc5_].hp.Get();
-               }
-               else
-               {
-                  _loc4_[_loc3_].hp = 0;
-               }
-               if (_guardianData[_loc5_].l)
-               {
-                  _loc4_[_loc3_].l = _guardianData[_loc5_].l.Get();
-               }
-               if (_guardianData[_loc5_].ft)
-               {
-                  _loc4_[_loc3_].ft = _guardianData[_loc5_].ft;
-               }
-               if (_guardianData[_loc5_].fd)
-               {
-                  _loc4_[_loc3_].fd = _guardianData[_loc5_].fd;
-               }
-               else
-               {
-                  _loc4_[_loc3_].fd = 0;
-               }
-               if (_guardianData[_loc5_].fb)
-               {
-                  _loc4_[_loc3_].fb = _guardianData[_loc5_].fb.Get();
-               }
-               else
-               {
-                  _loc4_[_loc3_].fb = 0;
-               }
-               if (_guardianData[_loc5_].pl)
-               {
-                  if (_guardianData[_loc5_].pl is SecNum)
-                  {
-                     _loc4_[_loc3_].pl = _guardianData[_loc5_].pl.Get();
-                  }
-                  else
-                  {
-                     _loc4_[_loc3_].pl = _guardianData[_loc5_].pl;
-                  }
-               }
-               else
-               {
-                  _loc4_[_loc3_].pl = 0;
-               }
-               if (_guardianData[_loc5_].status == ChampionBase.k_CHAMPION_STATUS_NORMAL && _guardianData[_loc5_].t != 5)
-               {
-                  if (_loc2_)
-                  {
-                     _guardianData[_loc5_].status = ChampionBase.k_CHAMPION_STATUS_FROZEN;
-                  }
-                  _loc2_ = true;
-               }
-               if (_guardianData[_loc5_].status)
-               {
-                  _loc4_[_loc3_].status = _guardianData[_loc5_].status;
-               }
-               else
-               {
-                  _loc4_[_loc3_].status = ChampionBase.k_CHAMPION_STATUS_NORMAL;
-               }
-               _loc3_++;
-            }
-            else
-            {
-               _loc6_ = true;
-            }
-            _loc5_++;
-         }
-         if (_loc6_)
-         {
-            _loc7_ = new Vector.<Object>();
-            for each (_loc8_ in _loc1_)
-            {
-               _loc7_.push(_guardianData[_loc8_]);
-            }
-            _guardianData = _loc7_;
-         }
-         if (_loc4_.length)
-         {
-            return _loc4_;
-         }
-         return null;
-      }
+		private static function getChampionSaveData():Array
+		{
+			var _loc5_:int = 0;
+			var _loc7_:Vector.<Object> = null;
+			var _loc8_:int = 0;
+			var _loc1_:Dictionary = new Dictionary();
+			var _loc2_:Boolean = false;
+			var _loc3_:int = 0;
+			var _loc4_:Array = new Array();
+			var _loc6_:Boolean = false;
+			_loc5_ = 0;
+			while (_loc5_ < _guardianData.length)
+			{
+				if (Boolean(_guardianData[_loc5_]) && _loc1_[_guardianData[_loc5_].t] === undefined)
+				{
+					_loc1_[_guardianData[_loc5_].t] = _loc5_;
+					_loc4_.push(new Object());
+					if (_guardianData[_loc5_].nm)
+					{
+						_loc4_[_loc3_].nm = _guardianData[_loc5_].nm;
+					}
+					if (_guardianData[_loc5_].t)
+					{
+						_loc4_[_loc3_].t = _guardianData[_loc5_].t;
+					}
+					if (_guardianData[_loc5_].hp)
+					{
+						_loc4_[_loc3_].hp = _guardianData[_loc5_].hp.Get();
+					}
+					else
+					{
+						_loc4_[_loc3_].hp = 0;
+					}
+					if (_guardianData[_loc5_].l)
+					{
+						_loc4_[_loc3_].l = _guardianData[_loc5_].l.Get();
+					}
+					if (_guardianData[_loc5_].ft)
+					{
+						_loc4_[_loc3_].ft = _guardianData[_loc5_].ft;
+					}
+					if (_guardianData[_loc5_].fd)
+					{
+						_loc4_[_loc3_].fd = _guardianData[_loc5_].fd;
+					}
+					else
+					{
+						_loc4_[_loc3_].fd = 0;
+					}
+					if (_guardianData[_loc5_].fb)
+					{
+						_loc4_[_loc3_].fb = _guardianData[_loc5_].fb.Get();
+					}
+					else
+					{
+						_loc4_[_loc3_].fb = 0;
+					}
+					if (_guardianData[_loc5_].pl)
+					{
+						if (_guardianData[_loc5_].pl is SecNum)
+						{
+							_loc4_[_loc3_].pl = _guardianData[_loc5_].pl.Get();
+						}
+						else
+						{
+							_loc4_[_loc3_].pl = _guardianData[_loc5_].pl;
+						}
+					}
+					else
+					{
+						_loc4_[_loc3_].pl = 0;
+					}
+					if (_guardianData[_loc5_].status == ChampionBase.k_CHAMPION_STATUS_NORMAL && _guardianData[_loc5_].t != 5)
+					{
+						if (_loc2_)
+						{
+							_guardianData[_loc5_].status = ChampionBase.k_CHAMPION_STATUS_FROZEN;
+						}
+						_loc2_ = true;
+					}
+					if (_guardianData[_loc5_].status)
+					{
+						_loc4_[_loc3_].status = _guardianData[_loc5_].status;
+					}
+					else
+					{
+						_loc4_[_loc3_].status = ChampionBase.k_CHAMPION_STATUS_NORMAL;
+					}
+					_loc3_++;
+				}
+				else
+				{
+					_loc6_ = true;
+				}
+				_loc5_++;
+			}
+			if (_loc6_)
+			{
+				_loc7_ = new Vector.<Object>();
+				for each (_loc8_ in _loc1_)
+				{
+					_loc7_.push(_guardianData[_loc8_]);
+				}
+				_guardianData = _loc7_;
+			}
+			if (_loc4_.length)
+			{
+				return _loc4_;
+			}
+			return null;
+		}
 
 		private static function getAttackerDeltaResourcesSaveData():Object
 		{
@@ -3380,89 +3380,89 @@ package
          return -1;
       }
 
-      private static function getAttackingPlayerGuardianSaveData():Array
-      {
-         var championData:Array = new Array();
-         var unfrozenFound:Boolean = false;
-         var guardian:Object = null;
-         var champion:Object = null;
-         var i:int = 0;
-         while (i < GLOBAL._playerGuardianData.length)
-         {
-            guardian = GLOBAL._playerGuardianData[i];
-            if (Boolean(guardian) && guardian.t > 0)
-            {
-               champion = new Object();
-               if (guardian.nm)
-               {
-                  champion.nm = guardian.nm;
-               }
-               if (guardian.t)
-               {
-                  champion.t = guardian.t;
-               }
-               if (guardian.hp)
-               {
-                  champion.hp = guardian.hp.Get();
-               }
-               if (guardian.l)
-               {
-                  champion.l = guardian.l.Get();
-               }
-               if (guardian.ft)
-               {
-                  champion.ft = guardian.ft;
-               }
-               if (guardian.fd)
-               {
-                  champion.fd = guardian.fd;
-               }
-               else
-               {
-                  champion.fd = 0;
-               }
-               if (guardian.fb)
-               {
-                  champion.fb = guardian.fb.Get();
-               }
-               else
-               {
-                  champion.fb = 0;
-               }
-               if (guardian.pl)
-               {
-                  champion.pl = guardian.pl.Get();
-               }
-               else
-               {
-                  champion.pl = 0;
-               }
-               if (guardian.status == ChampionBase.k_CHAMPION_STATUS_NORMAL && guardian.t != 5)
-               {
-                  if (unfrozenFound)
-                  {
-                     guardian.status = ChampionBase.k_CHAMPION_STATUS_FROZEN;
-                  }
-                  unfrozenFound = true;
-               }
-               if (guardian.status)
-               {
-                  champion.status = guardian.status;
-               }
-               else
-               {
-                  champion.status = 0;
-               }
-               championData.push(champion);
-            }
-            i++;
-         }
-         if (championData.length)
-         {
-            return championData;
-         }
-         return null;
-      }
+		private static function getAttackingPlayerGuardianSaveData():Array
+		{
+			var championData:Array = new Array();
+			var unfrozenFound:Boolean = false;
+			var guardian:Object = null;
+			var champion:Object = null;
+			var i:int = 0;
+			while (i < GLOBAL._playerGuardianData.length)
+			{
+				guardian = GLOBAL._playerGuardianData[i];
+				if (Boolean(guardian) && guardian.t > 0)
+				{
+					champion = new Object();
+					if (guardian.nm)
+					{
+						champion.nm = guardian.nm;
+					}
+					if (guardian.t)
+					{
+						champion.t = guardian.t;
+					}
+					if (guardian.hp)
+					{
+						champion.hp = guardian.hp.Get();
+					}
+					if (guardian.l)
+					{
+						champion.l = guardian.l.Get();
+					}
+					if (guardian.ft)
+					{
+						champion.ft = guardian.ft;
+					}
+					if (guardian.fd)
+					{
+						champion.fd = guardian.fd;
+					}
+					else
+					{
+						champion.fd = 0;
+					}
+					if (guardian.fb)
+					{
+						champion.fb = guardian.fb.Get();
+					}
+					else
+					{
+						champion.fb = 0;
+					}
+					if (guardian.pl)
+					{
+						champion.pl = guardian.pl.Get();
+					}
+					else
+					{
+						champion.pl = 0;
+					}
+					if (guardian.status == ChampionBase.k_CHAMPION_STATUS_NORMAL && guardian.t != 5)
+					{
+						if (unfrozenFound)
+						{
+							guardian.status = ChampionBase.k_CHAMPION_STATUS_FROZEN;
+						}
+						unfrozenFound = true;
+					}
+					if (guardian.status)
+					{
+						champion.status = guardian.status;
+					}
+					else
+					{
+						champion.status = 0;
+					}
+					championData.push(champion);
+				}
+				i++;
+			}
+			if (championData.length)
+			{
+				return championData;
+			}
+			return null;
+		}
 
       public static function _guardianDataNumNormal():int
       {

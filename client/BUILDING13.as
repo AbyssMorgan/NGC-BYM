@@ -5,6 +5,7 @@ package
    import flash.events.Event;
    import flash.events.MouseEvent;
    import flash.geom.Point;
+   import com.monsters.interfaces.ITargetable;
    
    public class BUILDING13 extends HatcheryBase
    {
@@ -81,7 +82,7 @@ package
          }
       }
       
-      override public function Destroyed(param1:Boolean = true) : void
+      override public function Destroyed(param1:Boolean = true, param2:ITargetable = null) : void
       {
          var _loc5_:int = 0;
          var _loc6_:int = 0;
@@ -169,7 +170,7 @@ package
             }
             _loc3_++;
          }
-         super.Destroyed(param1);
+         super.Destroyed(param1, param2);
       }
       
       override public function Description() : void

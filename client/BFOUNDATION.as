@@ -554,7 +554,7 @@ package
 				setHealth(0);
 				if(!this._destroyed)
 				{
-					this.Destroyed(param2 != null);
+					this.Destroyed(param2 != null, param2);
 				}
 			}
 			else if(this._class != "wall")
@@ -881,7 +881,11 @@ package
 						}
 					}
 					if(this._buildingProps.capacity){
-						stats.push("<b>Capacity:</b> " + GLOBAL.FormatNumberEXP(this._buildingProps.capacity[this._lvl.Get() - 1]));
+						if(this._type == 6 || this._type == 151){
+							stats.push("<b>Capacity:</b> " + GLOBAL.FormatNumberEXP(this._buildingProps.capacity[this._lvl.Get() - 1] * GLOBAL._upgradePacking));
+						} else {
+							stats.push("<b>Capacity:</b> " + GLOBAL.FormatNumberEXP(this._buildingProps.capacity[this._lvl.Get() - 1]));
+						}
 					}
 					if(this._buildingProps.produce){
 						stats.push("<b>Produce:</b> " + GLOBAL.FormatNumberEXP(int(this._buildingProps.produce[this._lvl.Get() - 1] * (3600 / 10))));
@@ -2220,7 +2224,7 @@ package
          this.updateRasterData();
       }
       
-      public function Destroyed(param1:Boolean = true) : void
+      public function Destroyed(param1:Boolean = true, param2:ITargetable = null) : void
       {
          var _loc2_:int = 0;
          var _loc3_:int = 0;

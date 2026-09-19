@@ -2,6 +2,7 @@ package buildings.cls
 {
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
+	import com.monsters.interfaces.ITargetable;
 	import flash.display.Shape;
 	import flash.display.Sprite;
 	import flash.events.*;
@@ -103,9 +104,9 @@ package buildings.cls
 			}
 		}
 
-		override public function Destroyed(param1:Boolean = true) : void
+		override public function Destroyed(param1:Boolean = true, param2:ITargetable = null) : void
 		{
-			super.Destroyed(param1);
+			super.Destroyed(param1, param2);
 			if(Boolean(this._radiusGraphic))
 			{
 				if(this._radiusGraphic.parent)

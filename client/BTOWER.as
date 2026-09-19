@@ -5,6 +5,7 @@ package
 	import com.monsters.display.SpriteData;
 	import com.monsters.display.SpriteSheetAnimation;
 	import com.monsters.interfaces.IAttackable;
+	import com.monsters.interfaces.ITargetable;
 	import com.monsters.maproom_manager.IMapRoomCell;
 	import com.monsters.maproom_manager.MapRoomManager;
 	import com.monsters.monsters.MonsterBase;
@@ -287,9 +288,9 @@ package
 			}
 		}
 
-		override public function Destroyed(param1:Boolean = true) : void
+		override public function Destroyed(param1:Boolean = true, param2:ITargetable = null) : void
 		{
-			super.Destroyed(param1);
+			super.Destroyed(param1, param2);
 			if(!BASE.isMainYardOrInfernoMainYard && GLOBAL.assault_towers < 2000000000){
 				GLOBAL.assault_towers++;
 				QUESTS._global.assault_towers++;

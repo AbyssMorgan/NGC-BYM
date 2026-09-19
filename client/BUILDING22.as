@@ -6,6 +6,7 @@ package
    import com.monsters.player.CreepInfo;
    import com.monsters.siege.SiegeWeapons;
    import com.monsters.siege.weapons.Decoy;
+   import com.monsters.interfaces.ITargetable;
    import flash.display.Bitmap;
    import flash.display.BitmapData;
    import flash.display.MovieClip;
@@ -586,7 +587,7 @@ package
          }
       }
       
-      override public function Destroyed(param1:Boolean = true) : void
+      override public function Destroyed(param1:Boolean = true, param2:ITargetable = null) : void
       {
          var _loc2_:String = null;
          var _loc3_:int = 0;

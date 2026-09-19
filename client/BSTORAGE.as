@@ -3,7 +3,11 @@ package
 	import com.cc.utils.SecNum;
 	import com.monsters.enums.EnumYardType;
 	import com.monsters.interfaces.ILootable;
+	import com.monsters.interfaces.ITargetable;
 	import com.monsters.maproom_manager.MapRoomManager;
+	import com.monsters.monsters.MonsterBase;
+	import com.monsters.monsters.components.abilities.LootingMultiplier;
+
 	public class BSTORAGE extends BFOUNDATION implements ILootable
 	{
 		
@@ -93,11 +97,11 @@ package
 			return super.Loot(loot_value);
 		}
 
-		override public function Destroyed(param1:Boolean = true) : void
+		override public function Destroyed(param1:Boolean = true, param2:ITargetable = null) : void
 		{
 			var multiplier:Number = 0;
 			var resource_index:int = 0;
-			var loot_value:Number = 0;
+			var loot_max:Number = 0;
 			var force_inferno_resources:Boolean = (_type == 151 || _type == 153);
 			if(param1 && !_destroyed)
 			{
@@ -113,24 +117,37 @@ package
 					multiplier = _LOOT_PCT_BASE;
 				}
 
+				var additional_multiplier:Number = 1;
+				if(param2 is MonsterBase)
+				{
+					if(MonsterBase(param2).getComponentByType(LootingMultiplier) as LootingMultiplier){
+						additional_multiplier = 1.30;
+					}
+				}
+
+				multiplier *= additional_multiplier;
+
 				resource_index = 1;
 				while(resource_index < 5)
 				{
 					if(force_inferno_resources){
-						loot_value = BASE._iresources["r" + resource_index].Get() * multiplier;
+						loot_max = BASE._iresources["r" + resource_index].Get();
 					} else {
-						loot_value = BASE._resources["r" + resource_index].Get() * multiplier;
+						loot_max = BASE._resources["r" + resource_index].Get();
 					}
-
+					
+					var loot_value:Number = loot_max * multiplier, loot_decrease:Number = Math.min(loot_max, loot_value);
+					loot_value = int(Math.round(loot_value));
+					loot_decrease = int(Math.round(loot_decrease));
 					if(loot_value > 0)
 					{
 						if(force_inferno_resources){
-							BASE._iresources["r" + resource_index].Add(-loot_value);
-							BASE._ideltaResources["r" + resource_index].Add(-loot_value);
+							BASE._iresources["r" + resource_index].Add(-loot_decrease);
+							BASE._ideltaResources["r" + resource_index].Add(-loot_decrease);
 							BASE._ideltaResources.dirty = true;
 						} else {
-							BASE._resources["r" + resource_index].Add(-loot_value);
-							BASE._deltaResources["r" + resource_index].Add(-loot_value);
+							BASE._resources["r" + resource_index].Add(-loot_decrease);
+							BASE._deltaResources["r" + resource_index].Add(-loot_decrease);
 							BASE._deltaResources.dirty = true;
 						}
 						ATTACK.Loot(resource_index, loot_value, _mc.x, int(_mc.y + 20 - resource_index * 10), 12, null, false, force_inferno_resources);
@@ -150,7 +167,7 @@ package
 					"v2":_buildingProps.name
 				}));
 			}
-			super.Destroyed(param1);
+			super.Destroyed(param1, param2);
 		}
 	}
 }

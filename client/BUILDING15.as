@@ -3,6 +3,7 @@ package
    import com.monsters.maproom_manager.MapRoomManager;
    import com.monsters.monsters.creeps.CreepBase;
    import flash.display.MovieClip;
+   import com.monsters.interfaces.ITargetable;
    import flash.events.MouseEvent;
    import flash.geom.Rectangle;
    
@@ -89,10 +90,10 @@ package
          RelocateHousedCreatures();
       }
       
-      override public function Destroyed(param1:Boolean = true) : void
+      override public function Destroyed(param1:Boolean = true, param2:ITargetable = null) : void
       {
          var _loc3_:CreepBase = null;
-         super.Destroyed(param1);
+         super.Destroyed(param1, param2);
          var _loc2_:Boolean = MapRoomManager.instance.isInMapRoom3;
          var _loc4_:int = 0;
          while(_loc4_ < _creatures.length)

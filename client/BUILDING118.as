@@ -1,6 +1,7 @@
 package
 {
    import com.monsters.interfaces.IAttackable;
+   import com.monsters.interfaces.ITargetable;
    import com.monsters.monsters.MonsterBase;
    import com.monsters.pathing.PATHING;
    import com.monsters.siege.weapons.Vacuum;
@@ -269,9 +270,9 @@ package
          super.Upgraded();
       }
       
-      override public function Destroyed(param1:Boolean = true) : void
+      override public function Destroyed(param1:Boolean = true, param2:ITargetable = null) : void
       {
-         super.Destroyed(param1);
+         super.Destroyed(param1, param2);
          while(this._gunballs.length > 0)
          {
             if(Boolean(this._gunballs[0]) && Boolean(this._gunballs[0].parent))

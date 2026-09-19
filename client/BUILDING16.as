@@ -2,6 +2,7 @@ package
 {
    import com.cc.utils.SecNum;
    import com.monsters.managers.InstanceManager;
+   import com.monsters.interfaces.ITargetable;
    import flash.display.MovieClip;
    import flash.events.MouseEvent;
    import flash.geom.Point;
@@ -24,7 +25,7 @@ package
          super.PlaceB();
       }
       
-      override public function Destroyed(param1:Boolean = true) : void
+      override public function Destroyed(param1:Boolean = true, param2:ITargetable = null) : void
       {
          var _loc5_:int = 0;
          var _loc6_:int = 0;
@@ -100,7 +101,7 @@ package
             }
             _loc3_++;
          }
-         super.Destroyed(param1);
+         super.Destroyed(param1, param2);
       }
       
       public function ResetProduction() : void

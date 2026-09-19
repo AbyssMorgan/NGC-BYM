@@ -127,9 +127,9 @@ package
          RelocateHousedCreatures();
       }
       
-      override public function Destroyed(param1:Boolean = true) : void
+      override public function Destroyed(param1:Boolean = true, param2:ITargetable = null) : void
       {
-         super.Destroyed(param1);
+         super.Destroyed(param1, param2);
          var _loc2_:Boolean = MapRoomManager.instance.isInMapRoom3;
          var _loc3_:int = 0;
          while(_loc3_ < _creatures.length)

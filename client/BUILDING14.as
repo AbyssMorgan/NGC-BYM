@@ -2,6 +2,7 @@ package
 {
    import com.monsters.ai.WMBASE;
    import com.monsters.interfaces.ICoreBuilding;
+   import com.monsters.interfaces.ITargetable;
    import com.monsters.maproom_manager.MapRoomManager;
    import flash.events.MouseEvent;
    import flash.geom.Point;
@@ -61,9 +62,9 @@ package
          GLOBAL.Message(KEYS.Get("msg_cantrecycleth",{"v1":GLOBAL.townHall._buildingProps.name}));
       }
       
-      override public function Destroyed(param1:Boolean = true) : void
+      override public function Destroyed(param1:Boolean = true, param2:ITargetable = null) : void
       {
-         super.Destroyed(param1);
+         super.Destroyed(param1, param2);
          if(!MapRoomManager.instance.isInMapRoom2or3 && GLOBAL.mode == "wmattack")
          {
             WMBASE._destroyed = true;

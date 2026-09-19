@@ -3,9 +3,12 @@ package
 	import com.cc.utils.SecNum;
 	import com.monsters.enums.EnumYardType;
 	import com.monsters.interfaces.ILootable;
+	import com.monsters.interfaces.ITargetable;
+	import com.monsters.monsters.MonsterBase;
 	import com.monsters.maproom_manager.IMapRoomCell;
 	import com.monsters.maproom_manager.MapRoomManager;
 	import com.monsters.monsters.components.CModifiableProperty;
+	import com.monsters.monsters.components.abilities.LootingMultiplier;
 	import flash.display.MovieClip;
 	import flash.events.*;
 	
@@ -107,41 +110,50 @@ package
 	
 		override public function Loot(param1:int) : uint
 		{
-			param1 = Math.max(0,param1);
-			var loot_value:Number = Math.min(_stored.Get(), param1);
+			var loot_value:Number = Math.max(0,param1), loot_decrease:Number = Math.min(_stored.Get(), loot_value);
+			loot_value = int(Math.round(loot_value));
+			loot_decrease = int(Math.round(loot_decrease));
 			if(loot_value > 0)
 			{
-				_stored.Add(-loot_value);
+				_stored.Add(-loot_decrease);
 				ATTACK.Loot(this.resource_index, loot_value, _mc.x, _mc.y, 0, this, false, this.force_inferno_resources);
 				if(BASE.isOutpost)
 				{
 					if(this.force_inferno_resources){
-						BASE._iresources["r" + this.resource_index].Add(-loot_value);
-						BASE._ideltaResources["r" + this.resource_index].Add(-loot_value);
+						BASE._iresources["r" + this.resource_index].Add(-loot_decrease);
+						BASE._ideltaResources["r" + this.resource_index].Add(-loot_decrease);
 						BASE._ideltaResources.dirty = true;
 					} else {
-						BASE._resources["r" + this.resource_index].Add(-loot_value);
-						BASE._deltaResources["r" + this.resource_index].Add(-loot_value);
+						BASE._resources["r" + this.resource_index].Add(-loot_decrease);
+						BASE._deltaResources["r" + this.resource_index].Add(-loot_decrease);
 						BASE._deltaResources.dirty = true;
 					}
 				}
 			}
 			if(_stored.Get() <= 0)
 			{
+				_stored.Set(0);
 				_looted = true;
 				_canFunction = false;
 				_producing = 0;
 			}
-			return super.Loot(loot_value);
+			return super.Loot(loot_decrease);
 		}
 		
-		override public function Destroyed(param1:Boolean = true) : void
+		override public function Destroyed(param1:Boolean = true, param2:ITargetable = null) : void
 		{
 			if(param1)
 			{
-				this.Loot(_stored.Get());
+				var additional_multiplier:Number = 1;
+				if(param2 is MonsterBase)
+				{
+					if(MonsterBase(param2).getComponentByType(LootingMultiplier) as LootingMultiplier){
+						additional_multiplier = 1.30;
+					}
+				}
+				this.Loot(int(Math.round(_stored.Get() * additional_multiplier)));
 			}
-			super.Destroyed(param1);
+			super.Destroyed(param1, param2);
 		}
 		
 		override public function Constructed() : void
@@ -360,8 +372,7 @@ package
 			{
 				if(_stored.Get() < 0)
 				{
-					LOGGER.Log("hak","Attack harvester storage < 0");
-					GLOBAL.ErrorMessage();
+					_stored.Set(0);
 				}
 			}
 		}

@@ -417,10 +417,6 @@ package com.monsters.monsters
 			{
 				if(_loc5_ >= maxHealth)
 				{
-					if(this._graphic)
-					{
-						this._graphic.fillRect(this._graphic.rect,0);
-					}
 					value = maxHealth - health;
 				}
 				this.healed(value);
@@ -725,10 +721,10 @@ package com.monsters.monsters
 				}
 				this.getNextSprite();
 				this._lastRotation = int(this.m_rotation / 12);
-				if(health < maxHealth)
-				{
-					_loc4_ = 11 - int(11 / maxHealth * health);
-					this._graphic.copyPixels(CREEPS._bmdHPbar,new Rectangle(0,5 * _loc4_,17,5),new Point(-this._graphicMC.x - CREEPS._bmdHPbar.width / 2,6));
+				_loc4_ = 11 - int(11 / maxHealth * health);
+				
+				if(health < maxHealth){
+					this._graphic.copyPixels(CREEPS._bmdHPbar, new Rectangle(0, 5 * _loc4_, 17, 5), new Point(-this._graphicMC.x - CREEPS._bmdHPbar.width / 2,6));
 				}
 				if(this._graphic)
 				{

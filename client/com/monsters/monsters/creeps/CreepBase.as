@@ -755,7 +755,7 @@ package com.monsters.monsters.creeps
 				changeModeRetreat();
 				return;
 			}
-			var _loc4_:Boolean = false, heal_value:int = -(damage - (powerUpLevel() * 75));
+			var _loc4_:Boolean = false, heal_value:int = -(damage - (powerUpLevel() * 75)), has_target:Boolean = false;
 			_targetCreeps = Targeting.getCreepsInRange(1000,_tmpPoint,attackFlags,this);
 			if(_targetCreeps.length > 0)
 			{
@@ -779,13 +779,14 @@ package com.monsters.monsters.creeps
 					}
 					if(_targetCreeps.length > 0)
 					{
-						if(Math.round(_targetCreeps[0].maxHealth) - Math.round(_targetCreeps[0].health) >= (heal_value * 2)){
+						if(Math.round(_targetCreeps[0].creep.maxHealth) - Math.round(_targetCreeps[0].creep.health) >= (heal_value * 2)){
 							_targetCreep = _targetCreeps[0].creep;
 							_waypoints = [_targetCreep._tmpPoint];
+							has_target = true;
 						}
 					}
 				}
-				if(!_targetCreep){
+				if(!has_target){
 					_targetCreeps = Targeting.getCreepsInRange(1000,_tmpPoint,attackFlags,this);
 					if(!(Boolean(_targetCreep) && _targetCreep.health > 0 && Math.round(_targetCreep.health) < Math.round(_targetCreep.maxHealth)))
 					{
@@ -807,6 +808,7 @@ package com.monsters.monsters.creeps
 						{
 							_targetCreep = _targetCreeps[0].creep;
 							_waypoints = [_targetCreep._tmpPoint];
+							has_target = true;
 						}
 					}
 					while(_targetCreeps.length > 0){

@@ -244,6 +244,8 @@ package com.monsters.monsters
       private var _lastYd:Number = NaN;
 
       private var _cachedTargetRotation:Number = NaN;
+
+	  private var blank:BitmapData = new BitmapData(17, 60, true, 0x00000000);
       
       public function MonsterBase()
       {
@@ -722,9 +724,10 @@ package com.monsters.monsters
 				this.getNextSprite();
 				this._lastRotation = int(this.m_rotation / 12);
 				_loc4_ = 11 - int(11 / maxHealth * health);
-				
 				if(health < maxHealth){
 					this._graphic.copyPixels(CREEPS._bmdHPbar, new Rectangle(0, 5 * _loc4_, 17, 5), new Point(-this._graphicMC.x - CREEPS._bmdHPbar.width / 2,6));
+				} else {
+					this._graphic.copyPixels(this.blank, new Rectangle(0, 5 * _loc4_, 17, 5), new Point(-this._graphicMC.x - CREEPS._bmdHPbar.width / 2,6));
 				}
 				if(this._graphic)
 				{

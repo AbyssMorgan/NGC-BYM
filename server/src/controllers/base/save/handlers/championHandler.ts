@@ -11,15 +11,13 @@ import type { ChampionData } from "../../../../schemas/ChampionSchema.js";
  * @param {Save} save - The defender's save record
  */
 export const championHandler = (reported: ChampionData[], save: Save) => {
-  const { champion } = save;
+	const { champion } = save;
 
-  const champions: ChampionData[] = champion.map((champion) => {
-    const match = reported.find(({ t }) => t === champion.t);
+	const champions: ChampionData[] = champion.map((champion) => {
+		const match = reported.find(({ t }) => t === champion.t);
+		if (!match) return champion;
+		return { ...champion, hp: match.hp};
+	});
 
-    if (!match) return champion;
-
-    return { ...champion, hp: Math.min(champion.hp, match.hp) };
-  });
-
-  save.champion = champions;
+	save.champion = champions;
 };

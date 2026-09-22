@@ -484,24 +484,20 @@ package {
 		
 		public static function GetFrame(param1:BitmapData, param2:SpriteData, param3:int, param4:int = 0) : void
 		{
-		if(Boolean(param2) && Boolean(param2.image))
-		{
-			param2.rect.x = param2.rect.width * param3;
-			param2.rect.y = param2.rect.height * param4;
-			if(param1)
+			if(Boolean(param2) && Boolean(param2.image))
 			{
-				param1.copyPixels(param2.image,param2.rect,param2.offset);
+				param2.rect.x = param2.rect.width * param3;
+				param2.rect.y = param2.rect.height * param4;
+				if(param1)
+				{
+					param1.copyPixels(param2.image,param2.rect,param2.offset);
+				}
 			}
-			else
-			{
-				print("passed in a null canvas",true);
-			}
-		}
 		}
 		
 		public static function GetFrameById(param1:BitmapData, param2:String, param3:int, param4:int = 0) : void
 		{
-		GetFrame(param1,_sprites[param2],param3,param4);
+			GetFrame(param1,_sprites[param2],param3,param4);
 		}
 	}
 }

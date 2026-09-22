@@ -367,7 +367,8 @@ package
                            "creep":_loc14_,
                            "dist":Math.sqrt(_loc17_),
                            "pos":_loc16_,
-                           "hp":_loc15_
+                           "hp":_loc15_,
+                           "hp_percent":(_loc14_.health / _loc14_.maxHealth) * 100
                         });
                      }
                   }

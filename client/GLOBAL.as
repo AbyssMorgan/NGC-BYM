@@ -2580,5 +2580,15 @@ package
          return _ROOT.stage.stageHeight;
       }
 
-   }
+		public static function shuffle_array(array:Array):Array{
+			var result:Array = array.concat();
+			for (var i:int = result.length - 1; i > 0; i--){
+				var j:int = Math.floor(Math.random() * (i + 1));
+				var temp:* = result[i];
+				result[i] = result[j];
+				result[j] = temp;
+			}
+			return result;
+		}
+	}
 }

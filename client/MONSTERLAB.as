@@ -77,10 +77,10 @@ package
 			return 0;
 		}
 		
-		public static function GetShinyCost(param1:String, param2:int) : int
+		public static function GetShinyCost(param1:String, param2:int) : Number
 		{
 			var _loc3_:int = STORE.GetTimeCost(GetTimeCost(param1,param2),false);
-			var _loc4_:int = Math.ceil(Math.pow(Math.sqrt(GetPuttyCost(param1,param2) / 2),0.75));
+			var _loc4_:Number = Math.ceil(Math.pow(Math.sqrt(GetPuttyCost(param1,param2) / 2),0.75));
 			return _loc3_ + _loc4_;
 		}
       

@@ -197,7 +197,7 @@ package
       
 		public function Update(param1:String, param2:Boolean = false) : void
 		{
-			var _loc12_:int = 0;
+			var _loc12_:Number = 0;
 			var _loc13_:int = 0;
 			var _loc16_:Boolean = false;
 			_creatureID = param1;

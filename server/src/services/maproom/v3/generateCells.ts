@@ -22,6 +22,7 @@ import {
 	ULTIMATE_RESOURCE_SEED,
 	TRIBE_OUTPOST_SEED,
 	MOLOCH_TRIBE_OUTPOST_SEED,
+	PUMPKIN_TRIBE_OUTPOST_SEED,
 	STRUCTURE_LEVELS,
 } from "../../../config/MapRoom3Config.js";
 
@@ -275,6 +276,32 @@ export const getGeneratedCells = (): Map<number, GeneratedCell> => {
 				type: molochOutpostLevels[molochLevel] >= 100 ? EnumYardType.MIRANDA_OUTPOST : EnumYardType.MOLOCH_OUTPOST,
 				level: molochOutpostLevels[molochLevel],
 				tribe: molochOutpostLevels[molochLevel] >= 100 ? 5 : 4,
+			});
+			occupiedCells.add(key);
+		}
+	}
+
+	// ============================================================================
+	// PHASE 7: Pumpkin Outpost
+	// ============================================================================
+	const pumpkinRng = alea(PUMPKIN_TRIBE_OUTPOST_SEED);
+	const maxPumpkinAttempts = (WIDTH - 2 * CELL_EDGE) * (HEIGHT - 2 * CELL_EDGE) * 0.10; // 10 %
+
+	for (let attempt = 0; attempt < maxPumpkinAttempts; attempt++) {
+		const x = CELL_EDGE + Math.floor(pumpkinRng() * (WIDTH - 2 * CELL_EDGE));
+		const y = CELL_EDGE + Math.floor(pumpkinRng() * (HEIGHT - 2 * CELL_EDGE));
+
+		const key = cellKey(x, y);
+		
+		if (!occupiedCells.has(key)) {
+			const pumpkinOutpostLevels = STRUCTURE_LEVELS[EnumYardType.PUMPKIN_OUTPOST];
+			const pumpkinLevel = Math.floor(pumpkinRng() * pumpkinOutpostLevels.length);
+			cells.push({
+				x,
+				y,
+				type: EnumYardType.PUMPKIN_OUTPOST,
+				level: pumpkinOutpostLevels[pumpkinLevel],
+				tribe: 6,
 			});
 			occupiedCells.add(key);
 		}

@@ -25,6 +25,8 @@ package com.monsters.ai
 		public static const MOLOCH_IDS:Array = [41];
 
 		public static const MIRANDA_IDS:Array = [51];
+
+		public static const PUMPKIN_IDS:Array = [61];
 		
 		public static const k_DIGIT_LEVEL:uint = 0;
 		
@@ -50,6 +52,7 @@ package com.monsters.ai
 				"d":D_IDS,
 				"moloch":MOLOCH_IDS,
 				"miranda":MIRANDA_IDS,
+				"pumpkin":PUMPKIN_IDS,
 				"b":B_IDS
 			};
 			_tribes.l = {
@@ -131,6 +134,19 @@ package com.monsters.ai
 				"fail":KEYS.Get("ai_descenttribe_fail"),
 				"profilepic":"worldmap/rollover/tribe_miranda.png"
 			};
+			_tribes.pumpkin = {
+				"id":7,
+				"name":"Jerry",
+				"process":PROCESS7,
+				"type":WMATTACK.TYPE_NERD,
+				"taunt":KEYS.Get("ai_descenttribe_taunt"),
+				"splash":"popups/tribe_jerry.png",
+				"description":KEYS.Get("ai_descenttribe_description"),
+				"succ":KEYS.Get("ai_descenttribe_succ"),
+				"succ_stream":KEYS.Get("ai_descenttribe_succstream"),
+				"fail":KEYS.Get("ai_descenttribe_fail"),
+				"profilepic":"worldmap/rollover/tribe_jerry.png"
+			};
 			_infernotribes = {};
 			_infernotribes.d = {
 				"id":1,
@@ -207,7 +223,7 @@ package com.monsters.ai
 			{
 				return _eventtribes.b;
 			}
-			if(wmid == 102 || wmid == 103 || wmid == 104 || wmid == 41 || wmid == 51){
+			if(wmid == EnumYardType.RESOURCE || EnumYardType.STRONGHOLD || wmid == EnumYardType.FORTIFICATION || wmid == EnumYardType.MOLOCH_OUTPOST || wmid == EnumYardType.MIRANDA_OUTPOST || wmid == EnumYardType.PUMPKIN_OUTPOST){
 				switch(tribe_index){
 					case 0: return _tribes.l;
 					case 1: return _tribes.k;
@@ -215,6 +231,7 @@ package com.monsters.ai
 					case 3: return _tribes.d;
 					case 4: return _tribes.moloch;
 					case 5: return _tribes.miranda;
+					case 6: return _tribes.pumpkin;
 				}
 			}
 			for(_loc3_ in _assoc)

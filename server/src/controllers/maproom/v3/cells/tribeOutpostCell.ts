@@ -26,6 +26,9 @@ export const tribeOutpostCell = async (cell: WorldMapCell, worldId: string): Pro
 	} else if(generatedType === EnumYardType.MIRANDA_OUTPOST){
 		tribe_name = 'Miranda';
 		tribeIndex = 5;
+	} else if(generatedType === EnumYardType.PUMPKIN_OUTPOST){
+		tribe_name = 'Jerry';
+		tribeIndex = 6;
 	} else {
 		tribe_name = Tribes[tribeIndex];
 	}

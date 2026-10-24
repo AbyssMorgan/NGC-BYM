@@ -357,7 +357,9 @@ package com.monsters.maproom3
 			{
 				return;
 			}
-			if(this.m_Cell.wildMonsterTribeId == 4 || this.m_Cell.wildMonsterTribeId == 5){
+			if(this.m_Cell.wildMonsterTribeId == 6){
+				this.m_CellOverlayLayer.addChild(new Bitmap(MapRoom3AssetCache.instance.GetAsset(MapRoom3AssetCache.CELL_ICON_HELLRAISER_EVENT_BASE_TILE_NGC)));
+			} else if(this.m_Cell.wildMonsterTribeId == 4 || this.m_Cell.wildMonsterTribeId == 5){
 				if(this.m_Cell.baseLevel >= 120){
 					this.m_CellOverlayLayer.addChild(new Bitmap(MapRoom3AssetCache.instance.GetAsset(MapRoom3AssetCache.CELL_ICON_HELLRAISER_EVENT_BASE_TILE_NGC)));
 				} else if(this.m_Cell.baseLevel >= 100){
@@ -548,7 +550,9 @@ package com.monsters.maproom3
 				}	
 				case EnumYardType.EMPTY: {
 					if(this.m_Cell.isOwnedByWildMonster){
-						if(this.m_Cell.wildMonsterTribeId == 4 || this.m_Cell.wildMonsterTribeId == 5){
+						if(this.m_Cell.wildMonsterTribeId == 6){
+							_loc1_ = new Bitmap(MapRoom3AssetCache.instance.GetAsset(MapRoom3AssetCache.CELL_ICON_RESOURCE_CELL_NGC));
+						} else if(this.m_Cell.wildMonsterTribeId == 4 || this.m_Cell.wildMonsterTribeId == 5){
 							if(this.m_Cell.baseLevel >= 120){
 								_loc1_ = new Bitmap(MapRoom3AssetCache.instance.GetAsset(MapRoom3AssetCache.CELL_ICON_HELLRAISER_EVENT_BASE_NGC));
 							} else if(this.m_Cell.baseLevel >= 100){

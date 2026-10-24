@@ -21,6 +21,7 @@ export interface Stats {
 	assault_mo_2?:number,
 	assault_mo_3?:number,
 	assault_mo_4?:number,
+	assault_pumpkin?:number,
 	assault_sh?:number,
 	assault_ro?:number,
 	assault_de?:number,

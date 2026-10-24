@@ -1126,7 +1126,8 @@ package
 						case EnumYardType.STRONGHOLD:
 						case EnumYardType.FORTIFICATION:
 						case EnumYardType.MOLOCH_OUTPOST:
-						case EnumYardType.MIRANDA_OUTPOST: {
+						case EnumYardType.MIRANDA_OUTPOST:
+						case EnumYardType.PUMPKIN_OUTPOST: {
 							imageGroupYardType = int(EnumYardType.OUTPOST);
 						}	
 					}

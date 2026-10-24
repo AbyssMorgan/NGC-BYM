@@ -14,6 +14,8 @@ package com.monsters.enums
 		public static const MOLOCH_OUTPOST:uint = 41;
 
 		public static const MIRANDA_OUTPOST:uint = 51;
+
+		public static const PUMPKIN_OUTPOST:uint = 61;
 		
 		public static const EMPTY:uint = 100;
 		

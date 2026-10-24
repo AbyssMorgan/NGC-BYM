@@ -1260,6 +1260,9 @@ package
 							if (serverData.stats.assault_mo_4){
 								QUESTS._global.assault_mo_4 = serverData.stats.assault_mo_4;
 							}
+							if (serverData.stats.assault_pumpkin){
+								QUESTS._global.assault_pumpkin = serverData.stats.assault_pumpkin;
+							}
 							if (serverData.stats.assault_ro && GLOBAL.assault_ro == 0){
 								GLOBAL.assault_ro = serverData.stats.assault_ro;
 								QUESTS._global.assault_ro = serverData.stats.assault_ro;
@@ -1796,9 +1799,9 @@ package
 					} else if(_level >= 50){
 						terrainType = "rock";
 					}
-				} else if(_wmID == 41){
+				} else if(_wmID == EnumYardType.MOLOCH_OUTPOST){
 					terrainType = "lava";
-				} else if(_wmID == 51){
+				} else if(_wmID == EnumYardType.MIRANDA_OUTPOST){
 					if(_level >= 120){
 						terrainType = "lava_ngc";
 					} else if(_level >= 100){
@@ -1806,6 +1809,8 @@ package
 					} else {
 						terrainType = "lava";
 					}
+				} else if(_wmID == EnumYardType.PUMPKIN_OUTPOST){
+					terrainType = "lava_ngc";
 				}
 			} else if(!MapRoomManager.instance.isInMapRoom3 && GLOBAL._currentCell && (isOutpostOrInfernoOutpost || GLOBAL.mode == GLOBAL.e_BASE_MODE.WMATTACK || GLOBAL.mode == GLOBAL.e_BASE_MODE.WMVIEW)){
 				terrainType = (GLOBAL._currentCell as MapRoomCell).terrain;
@@ -3077,6 +3082,7 @@ package
 			_loc1_.assault_mo_2 = int(QUESTS._global.assault_mo_2);
 			_loc1_.assault_mo_3 = int(QUESTS._global.assault_mo_3);
 			_loc1_.assault_mo_4 = int(QUESTS._global.assault_mo_4);
+			_loc1_.assault_pumpkin = int(QUESTS._global.assault_pumpkin);
 			_loc1_.assault_sh = int(QUESTS._global.assault_sh);
 			_loc1_.assault_ro = int(QUESTS._global.assault_ro);
 			_loc1_.assault_de = int(QUESTS._global.assault_de);
@@ -6108,7 +6114,7 @@ package
 
 		public static function get isOutpost():Boolean
 		{
-			return m_yardType == EnumYardType.OUTPOST || m_yardType == EnumYardType.RESOURCE || m_yardType == EnumYardType.STRONGHOLD || m_yardType == EnumYardType.FORTIFICATION || m_yardType == EnumYardType.MOLOCH_OUTPOST || m_yardType == EnumYardType.MIRANDA_OUTPOST;
+			return m_yardType == EnumYardType.OUTPOST || m_yardType == EnumYardType.RESOURCE || m_yardType == EnumYardType.STRONGHOLD || m_yardType == EnumYardType.FORTIFICATION || m_yardType == EnumYardType.MOLOCH_OUTPOST || m_yardType == EnumYardType.MIRANDA_OUTPOST || m_yardType == EnumYardType.PUMPKIN_OUTPOST;
 		}
 
 		public static function get isOutpostMapRoom2Only():Boolean
@@ -6123,7 +6129,7 @@ package
 
 		public static function get isOutpostOrInfernoOutpost():Boolean
 		{
-			return m_yardType == EnumYardType.OUTPOST || m_yardType == EnumYardType.INFERNO_OUTPOST || m_yardType == EnumYardType.RESOURCE || m_yardType == EnumYardType.STRONGHOLD || m_yardType == EnumYardType.FORTIFICATION || m_yardType == EnumYardType.MOLOCH_OUTPOST || m_yardType == EnumYardType.MIRANDA_OUTPOST;
+			return m_yardType == EnumYardType.OUTPOST || m_yardType == EnumYardType.INFERNO_OUTPOST || m_yardType == EnumYardType.RESOURCE || m_yardType == EnumYardType.STRONGHOLD || m_yardType == EnumYardType.FORTIFICATION || m_yardType == EnumYardType.MOLOCH_OUTPOST || m_yardType == EnumYardType.MIRANDA_OUTPOST || m_yardType == EnumYardType.PUMPKIN_OUTPOST;
 		}
 
 		public static function get isOutpostResource():Boolean

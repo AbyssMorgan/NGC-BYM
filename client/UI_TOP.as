@@ -86,12 +86,12 @@ package
 			var _loc3_:Boolean = false;
 			super();
 			if(MapRoomManager.instance.isInMapRoom3 && (GLOBAL.mode === GLOBAL.e_BASE_MODE.VIEW || GLOBAL.mode === GLOBAL.e_BASE_MODE.WMVIEW)){
-				if(BASE._wmID == 41 || BASE._wmID == 51){
+				if(BASE._wmID == EnumYardType.MOLOCH_OUTPOST || BASE._wmID == EnumYardType.MIRANDA_OUTPOST || BASE._wmID == EnumYardType.PUMPKIN_OUTPOST){
 					gotoAndStop(GLOBAL.e_BASE_MODE.IATTACK);
 				} else {
 					gotoAndStop(GLOBAL.e_BASE_MODE.ATTACK);
 				}
-			} else if(MapRoomManager.instance.isInMapRoom3 && GLOBAL._loadmode == GLOBAL.e_BASE_MODE.WMATTACK && (BASE._wmID == 41 || BASE._wmID == 51)){
+			} else if(MapRoomManager.instance.isInMapRoom3 && GLOBAL._loadmode == GLOBAL.e_BASE_MODE.WMATTACK && (BASE._wmID == EnumYardType.MOLOCH_OUTPOST || BASE._wmID == EnumYardType.MIRANDA_OUTPOST || BASE._wmID == EnumYardType.PUMPKIN_OUTPOST)){
 				gotoAndStop(GLOBAL.e_BASE_MODE.IATTACK);
 			} else {
 				gotoAndStop(GLOBAL._loadmode);
@@ -305,8 +305,14 @@ package
 				this.m_scrollBar.y = 22;
 				this._creatureButtonsMC.addChild(this.m_scrollBar);
 			}
+			var siege_available:Boolean = true, catapult_available:Boolean = true;
 			if(!BASE.isInfernoMainYardOrOutpost){
-				if(SiegeWeapons.availableWeapon != null)
+				if(BASE._wmID == EnumYardType.PUMPKIN_OUTPOST){
+					siege_available = false;
+					catapult_available = false;
+				}
+
+				if(SiegeWeapons.availableWeapon != null && siege_available)
 				{
 					this._siegeweapon = new SIEGEWEAPONPOPUP();
 					mc.addChild(this._siegeweapon);
@@ -314,7 +320,7 @@ package
 					this._siegeweapon.y = 20;
 					this._siegeweapon.Setup(!GLOBAL.isInAttackMode);
 				}
-				if(GLOBAL._attackersCatapult > 0)
+				if(GLOBAL._attackersCatapult > 0 && catapult_available)
 				{
 					this._catapult = new CATAPULTPOPUP();
 					mc.addChild(this._catapult);
@@ -1032,7 +1038,7 @@ package
 			while(_loc2_ < 5)
 			{
 				_loc3_ = mc["mcR" + _loc2_];
-				if(BASE._wmID == 41 || BASE._wmID == 51){
+				if(BASE._wmID == EnumYardType.MOLOCH_OUTPOST || BASE._wmID == EnumYardType.MIRANDA_OUTPOST || BASE._wmID == EnumYardType.PUMPKIN_OUTPOST){
 					_loc3_.tR.htmlText = "<b>" + GLOBAL.FormatNumber(ATTACK._iloot["r" + _loc2_].Get()) + "</b>";
 				} else {
 					_loc3_.tR.htmlText = "<b>" + GLOBAL.FormatNumber(ATTACK._loot["r" + _loc2_].Get()) + "</b>";

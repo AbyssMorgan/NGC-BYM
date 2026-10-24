@@ -116,6 +116,7 @@ package
 				"assault_mo_2":0,
 				"assault_mo_3":0,
 				"assault_mo_4":0,
+				"assault_pumpkin":0,
 				"assault_sh":0,
 				"assault_ro":0,
 				"assault_de":0,
@@ -5002,6 +5003,453 @@ package
 				},
 
 				// Group 3 (Events)
+				{
+					"order": 10,
+					"list": true,
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(10)],
+					"id": "ASSAULT_PUMPKIN_10",
+					"group": 3,
+					"name": "Jerry x10",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_pumpkin#\/10.",
+					"hint": "",
+					"questimage": "tribe_jerry.png",
+					"rules":
+					{
+						"assault_pumpkin": 10
+					}
+				},
+				{
+					"order": 20,
+					"list": true,
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(20)],
+					"id": "ASSAULT_PUMPKIN_20",
+					"group": 3,
+					"name": "Jerry x20",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_pumpkin#\/20.",
+					"hint": "",
+					"questimage": "tribe_jerry.png",
+					"prereq": "ASSAULT_PUMPKIN_10",
+					"rules":
+					{
+						"assault_pumpkin": 20
+					}
+				},
+				{
+					"order": 30,
+					"list": true,
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(30)],
+					"id": "ASSAULT_PUMPKIN_30",
+					"group": 3,
+					"name": "Jerry x30",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_pumpkin#\/30.",
+					"hint": "",
+					"questimage": "tribe_jerry.png",
+					"prereq": "ASSAULT_PUMPKIN_20",
+					"rules":
+					{
+						"assault_pumpkin": 30
+					}
+				},
+				{
+					"order": 40,
+					"list": true,
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(40)],
+					"id": "ASSAULT_PUMPKIN_40",
+					"group": 3,
+					"name": "Jerry x40",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_pumpkin#\/40.",
+					"hint": "",
+					"questimage": "tribe_jerry.png",
+					"prereq": "ASSAULT_PUMPKIN_30",
+					"rules":
+					{
+						"assault_pumpkin": 40
+					}
+				},
+				{
+					"order": 50,
+					"list": true,
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(50)],
+					"id": "ASSAULT_PUMPKIN_50",
+					"group": 3,
+					"name": "Jerry x50",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_pumpkin#\/50.",
+					"hint": "",
+					"questimage": "tribe_jerry.png",
+					"prereq": "ASSAULT_PUMPKIN_40",
+					"rules":
+					{
+						"assault_pumpkin": 50
+					}
+				},
+				{
+					"order": 60,
+					"list": true,
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(60)],
+					"id": "ASSAULT_PUMPKIN_60",
+					"group": 3,
+					"name": "Jerry x60",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_pumpkin#\/60.",
+					"hint": "",
+					"questimage": "tribe_jerry.png",
+					"prereq": "ASSAULT_PUMPKIN_50",
+					"rules":
+					{
+						"assault_pumpkin": 60
+					}
+				},
+				{
+					"order": 70,
+					"list": true,
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(70)],
+					"id": "ASSAULT_PUMPKIN_70",
+					"group": 3,
+					"name": "Jerry x70",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_pumpkin#\/70.",
+					"hint": "",
+					"questimage": "tribe_jerry.png",
+					"prereq": "ASSAULT_PUMPKIN_60",
+					"rules":
+					{
+						"assault_pumpkin": 70
+					}
+				},
+				{
+					"order": 80,
+					"list": true,
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(80)],
+					"id": "ASSAULT_PUMPKIN_80",
+					"group": 3,
+					"name": "Jerry x80",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_pumpkin#\/80.",
+					"hint": "",
+					"questimage": "tribe_jerry.png",
+					"prereq": "ASSAULT_PUMPKIN_70",
+					"rules":
+					{
+						"assault_pumpkin": 80
+					}
+				},
+				{
+					"order": 90,
+					"list": true,
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(90)],
+					"id": "ASSAULT_PUMPKIN_90",
+					"group": 3,
+					"name": "Jerry x90",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_pumpkin#\/90.",
+					"hint": "",
+					"questimage": "tribe_jerry.png",
+					"prereq": "ASSAULT_PUMPKIN_80",
+					"rules":
+					{
+						"assault_pumpkin": 90
+					}
+				},
+				{
+					"order": 100,
+					"list": true,
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(100)],
+					"id": "ASSAULT_PUMPKIN_100",
+					"group": 3,
+					"name": "Jerry x100",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_pumpkin#\/100.",
+					"hint": "",
+					"questimage": "tribe_jerry.png",
+					"prereq": "ASSAULT_PUMPKIN_90",
+					"rules":
+					{
+						"assault_pumpkin": 100
+					}
+				},
+				{
+					"order": 150,
+					"list": true,
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(150)],
+					"id": "ASSAULT_PUMPKIN_150",
+					"group": 3,
+					"name": "Jerry x150",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_pumpkin#\/150.",
+					"hint": "",
+					"questimage": "tribe_jerry.png",
+					"prereq": "ASSAULT_PUMPKIN_100",
+					"rules":
+					{
+						"assault_pumpkin": 150
+					}
+				},
+				{
+					"order": 200,
+					"list": true,
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(200)],
+					"id": "ASSAULT_PUMPKIN_200",
+					"group": 3,
+					"name": "Jerry x200",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_pumpkin#\/200.",
+					"hint": "",
+					"questimage": "tribe_jerry.png",
+					"prereq": "ASSAULT_PUMPKIN_150",
+					"rules":
+					{
+						"assault_pumpkin": 200
+					}
+				},
+				{
+					"order": 250,
+					"list": true,
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(250)],
+					"id": "ASSAULT_PUMPKIN_250",
+					"group": 3,
+					"name": "Jerry x250",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_pumpkin#\/250.",
+					"hint": "",
+					"questimage": "tribe_jerry.png",
+					"prereq": "ASSAULT_PUMPKIN_200",
+					"rules":
+					{
+						"assault_pumpkin": 250
+					}
+				},
+				{
+					"order": 300,
+					"list": true,
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(300)],
+					"id": "ASSAULT_PUMPKIN_300",
+					"group": 3,
+					"name": "Jerry x300",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_pumpkin#\/300.",
+					"hint": "",
+					"questimage": "tribe_jerry.png",
+					"prereq": "ASSAULT_PUMPKIN_250",
+					"rules":
+					{
+						"assault_pumpkin": 300
+					}
+				},
+				{
+					"order": 350,
+					"list": true,
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(350)],
+					"id": "ASSAULT_PUMPKIN_350",
+					"group": 3,
+					"name": "Jerry x350",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_pumpkin#\/350.",
+					"hint": "",
+					"questimage": "tribe_jerry.png",
+					"prereq": "ASSAULT_PUMPKIN_300",
+					"rules":
+					{
+						"assault_pumpkin": 350
+					}
+				},
+				{
+					"order": 400,
+					"list": true,
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(400)],
+					"id": "ASSAULT_PUMPKIN_400",
+					"group": 3,
+					"name": "Jerry x400",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_pumpkin#\/400.",
+					"hint": "",
+					"questimage": "tribe_jerry.png",
+					"prereq": "ASSAULT_PUMPKIN_350",
+					"rules":
+					{
+						"assault_pumpkin": 400
+					}
+				},
+				{
+					"order": 450,
+					"list": true,
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(450)],
+					"id": "ASSAULT_PUMPKIN_450",
+					"group": 3,
+					"name": "Jerry x450",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_pumpkin#\/450.",
+					"hint": "",
+					"questimage": "tribe_jerry.png",
+					"prereq": "ASSAULT_PUMPKIN_400",
+					"rules":
+					{
+						"assault_pumpkin": 450
+					}
+				},
+				{
+					"order": 500,
+					"list": true,
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(500)],
+					"id": "ASSAULT_PUMPKIN_500",
+					"group": 3,
+					"name": "Jerry x500",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_pumpkin#\/500.",
+					"hint": "",
+					"questimage": "tribe_jerry.png",
+					"prereq": "ASSAULT_PUMPKIN_450",
+					"rules":
+					{
+						"assault_pumpkin": 500
+					}
+				},
+				{
+					"order": 550,
+					"list": true,
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(550)],
+					"id": "ASSAULT_PUMPKIN_550",
+					"group": 3,
+					"name": "Jerry x550",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_pumpkin#\/550.",
+					"hint": "",
+					"questimage": "tribe_jerry.png",
+					"prereq": "ASSAULT_PUMPKIN_500",
+					"rules":
+					{
+						"assault_pumpkin": 550
+					}
+				},
+				{
+					"order": 600,
+					"list": true,
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(600)],
+					"id": "ASSAULT_PUMPKIN_600",
+					"group": 3,
+					"name": "Jerry x600",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_pumpkin#\/600.",
+					"hint": "",
+					"questimage": "tribe_jerry.png",
+					"prereq": "ASSAULT_PUMPKIN_550",
+					"rules":
+					{
+						"assault_pumpkin": 600
+					}
+				},
+				{
+					"order": 650,
+					"list": true,
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(650)],
+					"id": "ASSAULT_PUMPKIN_650",
+					"group": 3,
+					"name": "Jerry x650",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_pumpkin#\/650.",
+					"hint": "",
+					"questimage": "tribe_jerry.png",
+					"prereq": "ASSAULT_PUMPKIN_600",
+					"rules":
+					{
+						"assault_pumpkin": 650
+					}
+				},
+				{
+					"order": 700,
+					"list": true,
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(700)],
+					"id": "ASSAULT_PUMPKIN_700",
+					"group": 3,
+					"name": "Jerry x700",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_pumpkin#\/700.",
+					"hint": "",
+					"questimage": "tribe_jerry.png",
+					"prereq": "ASSAULT_PUMPKIN_650",
+					"rules":
+					{
+						"assault_pumpkin": 700
+					}
+				},
+				{
+					"order": 750,
+					"list": true,
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(750)],
+					"id": "ASSAULT_PUMPKIN_750",
+					"group": 3,
+					"name": "Jerry x750",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_pumpkin#\/750.",
+					"hint": "",
+					"questimage": "tribe_jerry.png",
+					"prereq": "ASSAULT_PUMPKIN_700",
+					"rules":
+					{
+						"assault_pumpkin": 750
+					}
+				},
+				{
+					"order": 800,
+					"list": true,
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(800)],
+					"id": "ASSAULT_PUMPKIN_800",
+					"group": 3,
+					"name": "Jerry x800",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_pumpkin#\/800.",
+					"hint": "",
+					"questimage": "tribe_jerry.png",
+					"prereq": "ASSAULT_PUMPKIN_750",
+					"rules":
+					{
+						"assault_pumpkin": 800
+					}
+				},
+				{
+					"order": 850,
+					"list": true,
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(850)],
+					"id": "ASSAULT_PUMPKIN_850",
+					"group": 3,
+					"name": "Jerry x850",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_pumpkin#\/850.",
+					"hint": "",
+					"questimage": "tribe_jerry.png",
+					"prereq": "ASSAULT_PUMPKIN_800",
+					"rules":
+					{
+						"assault_pumpkin": 850
+					}
+				},
+				{
+					"order": 900,
+					"list": true,
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(900)],
+					"id": "ASSAULT_PUMPKIN_900",
+					"group": 3,
+					"name": "Jerry x900",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_pumpkin#\/900.",
+					"hint": "",
+					"questimage": "tribe_jerry.png",
+					"prereq": "ASSAULT_PUMPKIN_850",
+					"rules":
+					{
+						"assault_pumpkin": 900
+					}
+				},
+				{
+					"order": 950,
+					"list": true,
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(950)],
+					"id": "ASSAULT_PUMPKIN_950",
+					"group": 3,
+					"name": "Jerry x950",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_pumpkin#\/950.",
+					"hint": "",
+					"questimage": "tribe_jerry.png",
+					"prereq": "ASSAULT_PUMPKIN_900",
+					"rules":
+					{
+						"assault_pumpkin": 950
+					}
+				},
+				{
+					"order": 1000,
+					"list": true,
+					"reward": [new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(0), new SecNum(1000)],
+					"id": "ASSAULT_PUMPKIN_1000",
+					"group": 3,
+					"name": "Jerry x1000",
+					"description": "Destroy tribe outposts.<br>Destroyed #assault_pumpkin#\/1000.",
+					"hint": "",
+					"questimage": "tribe_jerry.png",
+					"prereq": "ASSAULT_PUMPKIN_950",
+					"rules":
+					{
+						"assault_pumpkin": 1000
+					}
+				},
 
 				// Group 4 (Progress)
 				{

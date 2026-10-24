@@ -43,7 +43,7 @@ package
    {
       public static var serverUrl:String = CONFIG::SERVER_URL;
 
-      public static var apiVersionSuffix:String = "ngc-v1.5.1";
+      public static var apiVersionSuffix:String = "ngc-v1.5.2";
 
       public static var connectionCounter:int;
 
@@ -1662,7 +1662,11 @@ package
 			var dayOfWeek:int = currentDate.getDay();
 			var month:int = currentDate.getMonth() + 1;
 			var day:int = currentDate.getDate();
-			if(month == 12 && day >= 24 && day <= 31){
+			if(month == 10 && day >= 24 && day <= 31){
+				return 5.0; // +500 % (Halloween 2026)
+			} else if(month == 11 && day >= 1 && day <= 8){
+				return 5.0; // +500 % (Halloween 2026)
+			} else if(month == 12 && day >= 24 && day <= 31){
 				return 10.0; // +1000 %
 			}
 			if(dayOfWeek == 0 || dayOfWeek == 6){
@@ -1677,8 +1681,12 @@ package
 			var dayOfWeek:int = currentDate.getDay();
 			var month:int = currentDate.getMonth() + 1;
 			var day:int = currentDate.getDate();
-			if(month == 12 && day >= 24 && day <= 31){
-				return 0.10; // +10 %
+			if(month == 10 && day >= 24 && day <= 31){
+				return 0.10; // +10 % (Halloween 2026)
+			} else if(month == 11 && day >= 1 && day <= 8){
+				return 0.10; // +10 % (Halloween 2026)
+			} else if(month == 12 && day >= 24 && day <= 31){
+				return 0.10; // +10 % (Christmas)
 			}
 			if(dayOfWeek == 0 || dayOfWeek == 6){
 				return 0.05; // +5 %

@@ -36,7 +36,8 @@ export const createCellData = async (
 		}
 		case EnumYardType.OUTPOST:
 		case EnumYardType.MOLOCH_OUTPOST:
-		case EnumYardType.MIRANDA_OUTPOST: {
+		case EnumYardType.MIRANDA_OUTPOST:
+		case EnumYardType.PUMPKIN_OUTPOST: {
 			return tribeOutpostCell(cell, worldid);
 		}
 		case EnumYardType.BORDER: {

@@ -31,6 +31,7 @@ import { getConquerorPointsByLevel } from "../../../utils/getConquerorPointsByLe
 // import { getShinyPointsByLevel } from "../../../utils/getShinyPointsByLevel.js";
 import { isProbable } from "../../../utils/isProbable.js";
 import { getPlayerConquerorPointsByLevel } from "../../../utils/getPlayerConquerorPointsByLevel.js";
+import { EnumYardType } from "../../../enums/EnumYardType.js";
 
 /**
  * Controller responsible for saving the user's base data.
@@ -275,7 +276,7 @@ export const baseSave: KoaController = async (ctx) => {
 							userSave.empirevalue += getConquerorPointsByLevel(baseSave.level);
 							postgres.em.persist(userSave);
 							await postgres.em.flush();
-						} else if(baseSave.wmid == 41){
+						} else if(baseSave.wmid == EnumYardType.MOLOCH_OUTPOST){
 							if(userSave.stats == null){
 								userSave.stats = {};
 							}
@@ -291,7 +292,7 @@ export const baseSave: KoaController = async (ctx) => {
 							userSave.empirevalue += getConquerorPointsByLevel(baseSave.level);
 							postgres.em.persist(userSave);
 							await postgres.em.flush();
-						} else if(baseSave.wmid == 51){
+						} else if(baseSave.wmid == EnumYardType.MIRANDA_OUTPOST){
 							if(userSave.stats == null){
 								userSave.stats = {};
 							}
@@ -322,6 +323,15 @@ export const baseSave: KoaController = async (ctx) => {
 							userSave.empirevalue += getConquerorPointsByLevel(baseSave.level);
 							postgres.em.persist(userSave);
 							await postgres.em.flush();
+						} else if(baseSave.wmid == EnumYardType.PUMPKIN_OUTPOST){
+							if(userSave.stats == null){
+								userSave.stats = {};
+							}
+							userSave.stats.assault_pumpkin ??= 0;
+							userSave.stats.assault_pumpkin++;
+							userSave.credits += 1;
+							userSave.empirevalue += 1;
+							postgres.em.persist(userSave);
 						}
 						break;
 					}

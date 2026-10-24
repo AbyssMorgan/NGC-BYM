@@ -8,6 +8,7 @@ import { moloch } from "../game-data/tribes/v3/outposts/moloch.js";
 import { legionnaire } from "../game-data/tribes/v3/outposts/legionnaire.js";
 import { abunakki } from "../game-data/tribes/v3/outposts/abunakki.js";
 import { dreadnaught } from "../game-data/tribes/v3/outposts/dreadnaught.js";
+import { pumpkin } from "../game-data/tribes/v3/outposts/pumpkin.js";
 
 /**
  * The seed for cell generation. Changing this will produce a different cell layout.
@@ -87,6 +88,8 @@ export const TRIBE_OUTPOST_SEED = "maproom3-tribes";
  */
 export const MOLOCH_TRIBE_OUTPOST_SEED = "maproom3-moloch-tribes";
 
+export const PUMPKIN_TRIBE_OUTPOST_SEED = "maproom3-pumpkin-tribes";
+
 /** Available levels per structure type. */
 export const STRUCTURE_LEVELS: Record<number, number[]> = {
 	[EnumYardType.STRONGHOLD]: [
@@ -126,6 +129,9 @@ export const STRUCTURE_LEVELS: Record<number, number[]> = {
 		100, 100, 100,                                                                  //  3 %
 		110, 110,                                                                       //  2 %
 		120,                                                                            //  1 %
+	],
+	[EnumYardType.PUMPKIN_OUTPOST]: [
+		20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35
 	],
 };
 
@@ -192,6 +198,7 @@ export const STRUCTURE_SAVES: Record<number, Record<number, SaveData>> = {
 	[EnumYardType.FORTIFICATION]: defenders,
 	[EnumYardType.MOLOCH_OUTPOST]: moloch,
 	[EnumYardType.MIRANDA_OUTPOST]: moloch,
+	[EnumYardType.PUMPKIN_OUTPOST]: pumpkin,
 };
 
 /** Save data templates for tribe outposts, keyed by tribe index then level. */

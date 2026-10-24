@@ -277,6 +277,7 @@ package
 					description = description.replace("#assault_mo_2#",QUESTS._global.assault_mo_2);
 					description = description.replace("#assault_mo_3#",QUESTS._global.assault_mo_3);
 					description = description.replace("#assault_mo_4#",QUESTS._global.assault_mo_4);
+					description = description.replace("#assault_pumpkin#",QUESTS._global.assault_pumpkin);
 					description = description.replace("#assault_sh#",QUESTS._global.assault_sh);
 					description = description.replace("#assault_ro#",QUESTS._global.assault_ro);
 					description = description.replace("#assault_de#",QUESTS._global.assault_de);

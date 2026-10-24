@@ -107,7 +107,7 @@ package
 			{
 				if(BASE.isMainYard || (GLOBAL._currentCell && (GLOBAL._currentCell.baseType == EnumYardType.PLAYER))){
 					multiplier = 0.0;
-				} else if(GLOBAL._currentCell && (GLOBAL._currentCell.baseType == EnumYardType.OUTPOST || EnumYardType.RESOURCE || EnumYardType.MOLOCH_OUTPOST || EnumYardType.MIRANDA_OUTPOST)){
+				} else if(GLOBAL._currentCell && (GLOBAL._currentCell.baseType == EnumYardType.OUTPOST || EnumYardType.RESOURCE || EnumYardType.MOLOCH_OUTPOST || EnumYardType.MIRANDA_OUTPOST || EnumYardType.PUMPKIN_OUTPOST)){
 					multiplier = 1.0;
 				} else if(_type == 14 || _type == 153){
 					multiplier = _LOOT_PCT_TH;

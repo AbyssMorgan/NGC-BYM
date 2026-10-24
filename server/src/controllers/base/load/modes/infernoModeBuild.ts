@@ -23,47 +23,48 @@ import { baseUnderAttackErr, permissionErr } from "../../../../errors/errors.js"
  * @throws {Error} If user attempts to access an unauthorized base
  */
 export const infernoModeBuild = async (user: User) => {
-  const userSave = user.save!;
-  let infernoSave = user.infernosave;
+	const userSave = user.save!;
+	let infernoSave = user.infernosave;
 
-  if (!infernoSave) infernoSave = await Save.createInfernoSave(postgres.em, user);
+	if (!infernoSave) infernoSave = await Save.createInfernoSave(postgres.em, user);
 
-  if (infernoSave.userid !== user.userid) throw permissionErr();
-  if (isAttackActive(infernoSave)) throw baseUnderAttackErr();
+	if (infernoSave.userid !== user.userid) throw permissionErr();
+	if (isAttackActive(infernoSave)) throw baseUnderAttackErr();
 
-  const { points, stats, academy, lockerdata } = infernoSave;
-  infernoSave.level = calculateBaseLevel(points);
+	const { points, stats, academy, lockerdata } = infernoSave;
+	infernoSave.level = calculateBaseLevel(points);
 
-  // Set worldid to match the user's main save for neighbor matching
-  infernoSave.worldid = userSave.worldid;
+	// Set worldid to match the user's main save for neighbor matching
+	infernoSave.worldid = userSave.worldid;
 
-  // Create Inferno tribes based on the user's current level
-  infernoSave.wmstatus = await createInfernoTribes(infernoSave, INFERNO_TRIBES);
+	// Create Inferno tribes based on the user's current level
+	infernoSave.wmstatus = await createInfernoTribes(infernoSave, INFERNO_TRIBES);
 
-  infernoSave.credits = userSave.credits;
-  infernoSave.empirevalue = userSave.empirevalue;
-  infernoSave.resources = userSave.iresources;
+	infernoSave.credits = userSave.credits;
+	infernoSave.empirevalue = userSave.empirevalue;
+	infernoSave.resources = userSave.iresources;
 
-  if (userSave.stats?.["other"] && stats?.["other"])
-    userSave.stats["other"]["underhalLevel"] = stats["other"]["underhalLevel"];
+	if (userSave.stats?.["other"] && stats?.["other"])
+		userSave.stats["other"]["underhalLevel"] = stats["other"]["underhalLevel"];
 
-  // Persist Inferno monster levels to overworld only if the values differ
-  if (academy) {
-    inferoMonsters.forEach((key) => {
-      const academyLevel = academy[key];
-      
-      if (academyLevel && (userSave.academy ??= {})[key] !== academyLevel)
-        userSave.academy[key] = academyLevel;
-    });
-  }
+	// Persist Inferno monster levels to overworld only if the values differ
+	if (academy) {
+		inferoMonsters.forEach((key) => {
+			const academyLevel = academy[key]?.level;
+			const userAcademy = (userSave.academy ??= {});
 
-  // Persist Inferno lockerdata to overworld
-  if (lockerdata) {
-    Object.entries(lockerdata).forEach(([key, itemCount]) => {
-      (userSave.lockerdata ??= {})[key] = itemCount;
-    });
-  }
+			if (academyLevel != null && userAcademy[key]?.level !== academyLevel)
+				(userAcademy[key] ??= {}).level = academyLevel;
+		});
+	}
 
-  await postgres.em.flush();
-  return infernoSave;
+	// Persist Inferno lockerdata to overworld
+	if (lockerdata) {
+		Object.entries(lockerdata).forEach(([key, itemCount]) => {
+			(userSave.lockerdata ??= {})[key] = itemCount;
+		});
+	}
+
+	await postgres.em.flush();
+	return infernoSave;
 };

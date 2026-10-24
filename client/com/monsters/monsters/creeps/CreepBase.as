@@ -21,6 +21,7 @@ package com.monsters.monsters.creeps
 	import gs.TweenLite;
 	import gs.easing.Bounce;
 	import gs.easing.Sine;
+	import com.monsters.enums.EnumYardType;
 	
 	public class CreepBase extends MonsterBase
 	{
@@ -2389,7 +2390,7 @@ package com.monsters.monsters.creeps
 				if(BASE._BuffInfernoVenomBase){
 					_damagePerSecond.Set(50);
 				} else {
-					if(!this.m_bInfernoCreep && !BASE._BuffInfernoVenomResistance && (BASE.isInfernoMainYardOrOutpost || BASE._wmID == 41 || BASE._wmID == 51)){
+					if(!this.m_bInfernoCreep && !BASE._BuffInfernoVenomResistance && (BASE.isInfernoMainYardOrOutpost || BASE._wmID == EnumYardType.MOLOCH_OUTPOST || BASE._wmID == EnumYardType.MIRANDA_OUTPOST)){
 						_damagePerSecond.Set(50);
 					}
 				}
